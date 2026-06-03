@@ -32,20 +32,19 @@ export function DemoUserSwitcher() {
   };
 
   return (
-    <>
-    <p>Number of users: {DEMO_USERS.length}</p>
-    <Select value={taxonomy || undefined} onValueChange={handleValueChange}>
-      <SelectTrigger className="h-10 w-[15rem]">
-        <SelectValue placeholder="Login" />
-      </SelectTrigger>
-      <SelectContent align="end">
-        {DEMO_USERS.map((user) => (
-          <SelectItem key={user.taxonomy} value={user.taxonomy}>
-            {user.label}
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
-    </>
+    <div className="demo-user-switcher header-top-links__item flex items-center px-4" role="listitem">
+      <Select value={taxonomy || undefined} onValueChange={handleValueChange}>
+        <SelectTrigger className="h-9 w-[min(100%,15rem)] border-[#00316d]/25 bg-white text-[#00316d] shadow-sm">
+          <SelectValue placeholder="Demo login" />
+        </SelectTrigger>
+        <SelectContent align="end" side="bottom" sideOffset={6} className="z-[250]">
+          {DEMO_USERS.map((user) => (
+            <SelectItem key={user.taxonomy} value={user.taxonomy}>
+              {user.label}
+            </SelectItem>
+          ))}
+        </SelectContent>
+      </Select>
+    </div>
   );
 }

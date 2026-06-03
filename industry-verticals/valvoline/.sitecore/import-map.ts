@@ -78,13 +78,13 @@ import { useMatchMedia } from '@/hooks/use-match-media';
 import { useContainerQuery } from '@/hooks/use-container-query';
 import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
-import { usePathname, useRouter as useRouter_38d453563358e259e30871f8ef5a0334c186c57e, useSearchParams } from 'next/navigation';
 import { DEMO_TAXONOMY_CHANGE_EVENT, DEMO_TAXONOMY_STORAGE_KEY } from 'lib/demo-taxonomy';
 import { Badge } from '@/components/ui/badge';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { cn as cn_b4c06b3218abd6b3fb46a1f6d67407cec902c758 } from 'lib/utils';
-import { brands, categories, contentTypes, getDefaultCardImage, itemMatchesQuery, itemMetadataLine, itemVisibleForDemoUser, normalizeQuery, parseDemoUserTaxonomy, popularSearches, relevanceScore, RESULTS_PAGE_SIZE, searchCatalog, searchFacetLabels, selectAiSearchInsight, supplementalResultsForDemoUserTaxonomy } from 'src/components/search-results/data';
+import { brands, categories, contentTypes, getDefaultCardImage, SEARCH_CARD_IMAGE_URLS, itemMatchesQuery, itemMetadataLine, itemVisibleForDemoUser, normalizeQuery, parseDemoUserTaxonomy, popularSearches, relevanceScore, RESULTS_PAGE_SIZE, searchCatalog, searchFacetLabels, selectAiSearchInsight, supplementalResultsForDemoUserTaxonomy } from 'src/components/search-results/data';
+import { usePathname, useRouter as useRouter_38d453563358e259e30871f8ef5a0334c186c57e, useSearchParams } from 'next/navigation';
 import { DEMO_TAXONOMY_CHANGE_EVENT as DEMO_TAXONOMY_CHANGE_EVENT_277736465aaa05b1f6df89a3f1b25537a2c74807, DEMO_TAXONOMY_STORAGE_KEY as DEMO_TAXONOMY_STORAGE_KEY_277736465aaa05b1f6df89a3f1b25537a2c74807 } from '@/lib/demo-taxonomy';
 import { WidgetDataType, usePreviewSearch, widget, PageController } from '@sitecore-search/react';
 import { ArticleCard, Presence, PreviewSearch } from '@sitecore-search/ui';
@@ -568,14 +568,6 @@ const importMap = [
     ]
   },
   {
-    module: 'next/navigation',
-    exports: [
-      { name: 'usePathname', value: usePathname },
-      { name: 'useRouter', value: useRouter_38d453563358e259e30871f8ef5a0334c186c57e },
-      { name: 'useSearchParams', value: useSearchParams },
-    ]
-  },
-  {
     module: 'lib/demo-taxonomy',
     exports: [
       { name: 'DEMO_TAXONOMY_CHANGE_EVENT', value: DEMO_TAXONOMY_CHANGE_EVENT },
@@ -615,6 +607,7 @@ const importMap = [
       { name: 'categories', value: categories },
       { name: 'contentTypes', value: contentTypes },
       { name: 'getDefaultCardImage', value: getDefaultCardImage },
+      { name: 'SEARCH_CARD_IMAGE_URLS', value: SEARCH_CARD_IMAGE_URLS },
       { name: 'itemMatchesQuery', value: itemMatchesQuery },
       { name: 'itemMetadataLine', value: itemMetadataLine },
       { name: 'itemVisibleForDemoUser', value: itemVisibleForDemoUser },
@@ -627,6 +620,14 @@ const importMap = [
       { name: 'searchFacetLabels', value: searchFacetLabels },
       { name: 'selectAiSearchInsight', value: selectAiSearchInsight },
       { name: 'supplementalResultsForDemoUserTaxonomy', value: supplementalResultsForDemoUserTaxonomy },
+    ]
+  },
+  {
+    module: 'next/navigation',
+    exports: [
+      { name: 'usePathname', value: usePathname },
+      { name: 'useRouter', value: useRouter_38d453563358e259e30871f8ef5a0334c186c57e },
+      { name: 'useSearchParams', value: useSearchParams },
     ]
   },
   {

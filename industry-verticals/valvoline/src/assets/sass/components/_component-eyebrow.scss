@@ -149,6 +149,13 @@ $valvoline-eyebrow-region-bg: #f0f0f0;
       }
     }
   }
+
+  .demo-user-switcher {
+    position: relative;
+    z-index: 110;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 }
 
 // Hide empty left placeholder wrapper noise
