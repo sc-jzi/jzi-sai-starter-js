@@ -12,37 +12,30 @@ Languages:
   Versions:
   - Version: 1
     Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260605T150013Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
     - ID: "729034fc-24f3-40b7-8fa4-fb49d7de20dd"
       Hint: Text
       Value: |
-        <a href="/">
-        <h1>
-        <span class="play">
-        <?xml version="1.0" encoding="UTF-8" />
-        <svg id="p-sign" data-name="p-sign" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 20.42">
-          <defs>
-            <style>
-              .cls-1 {
-                fill: currentColor;
-              }
-        
-              .cls-2 {
-                fill: #ff3c28;
-              }
-            </style>
-          </defs>
-          <g id="Layer_1-2" data-name="Layer 1">
-            <g>
-              <path id="Path_88" data-name="Path 88" class="cls-1" d="M8.57,0H2.53C1.23,0,.09,.99,0,2.29c-.09,1.35,.93,2.53,2.28,2.62,.06,0,.11,0,.17,0H7.88c1.38,0,1.91,.72,1.91,1.79s-.53,1.8-1.91,1.8H2.42C1.08,8.51,0,9.6,0,10.94c0,1.33,1.08,2.41,2.41,2.41h6.15c4.92,0,7.43-3.01,7.43-6.63C16,2.76,13.49,0,8.57,0"></path>
-              <rect class="cls-2" x="0" y="14.31" width="6.12" height="6.12" rx="3.06" ry="3.06"></rect>
-            </g>
-          </g>
-        </svg>
-        <span>LAY!</span></span><span class="finance">finance</span></h1>
-        </a>
+        <div class="ck-content"><h1><img src="https://aua.sitecoresandbox.cloud/api/public/content/c5ddb486d0ee44deba3412d65983fc36?v=3824d998" /></h1></div>
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "721ca742-25d0-4d00-ad23-7a2417681a50"
+      Value: "10c98b96-b5f4-4a55-839d-cdf4f09b04ac"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260605T150014Z
 - Language: "fr-CA"
   Versions:
   - Version: 1

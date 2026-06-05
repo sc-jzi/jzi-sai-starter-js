@@ -121,7 +121,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['CountUp', { ...CountUp }],
   ['Header', { ...Header }],
   ['Footer', { ...Footer }],
-  ['Eyebrow', { ...Eyebrow }],
+  ['Eyebrow', { ...Eyebrow, componentType: 'client' }],
   ['Breadcrumb', { ...Breadcrumb }],
 ]);
 

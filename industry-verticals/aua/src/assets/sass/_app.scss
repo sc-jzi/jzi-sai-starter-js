@@ -10,7 +10,9 @@ body {
   overflow: auto;
   overflow-x: hidden;
   color: $text-basic;
-  font-size: 1rem;
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 400;
   line-height: 1.6;
   background: $page-bg;
   -webkit-tap-highlight-color: rgb(0 0 0 / 0%);

@@ -36,6 +36,7 @@ import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import { FacebookIcon, FacebookShareButton, LinkedinIcon, LinkedinShareButton, TwitterIcon, TwitterShareButton } from 'react-share';
 import { ParallaxBanner, useParallax, Parallax } from 'react-scroll-parallax';
 import { IconAccent } from 'components/NonSitecore/IconAccent';
+import { Default } from 'src/components/Utilities/ThemeSwitcher';
 
 const importMap = [
   {
@@ -233,6 +234,12 @@ const importMap = [
     module: 'components/NonSitecore/IconAccent',
     exports: [
       { name: 'IconAccent', value: IconAccent },
+    ]
+  },
+  {
+    module: 'src/components/Utilities/ThemeSwitcher',
+    exports: [
+      { name: 'Default', value: Default },
     ]
   }
 ] as ImportEntry[];

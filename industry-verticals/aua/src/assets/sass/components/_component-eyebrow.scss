@@ -1,39 +1,293 @@
 @import 'src/assets/sass/abstracts/vars';
 
-.eyebrow {
-  color: var(--text-footer);
-  background-color: var(--bg-footer);
-  width: 100%;
-  transition: 0.4s;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+$eyebrow-primary: #00567a;
+$eyebrow-secondary: #91aabc;
 
-  @include respond-to(mobile-large) {
-    padding: 0 $size-padding;
+.component.eyebrow {
+  padding: 0;
+}
+
+.eyebrow {
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: 100%;
+  color: #fff;
+  font-family: var(--font-family);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0;
+  text-transform: none;
+
+  a,
+  a:hover,
+  a:focus {
+    color: #fff;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: inherit;
+    line-height: inherit;
   }
 
-  .col-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 1.5rem;
-    min-height: 2.5rem;
+  button.eyebrow-websites-toggle,
+  .eyebrow-websites-toggle span {
+    color: #fff;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
   }
 
   a {
-    color: var(--text-footer);
     text-decoration: none;
 
     &:hover {
-      color: var(--text-footer);
-      opacity: 0.85;
       text-decoration: underline;
     }
   }
 
-  .container {
-    border-bottom: 1px solid rgb(255 255 255 / 15%);
+  &-primary,
+  &-secondary {
+    width: 100%;
+  }
+
+  &-primary {
+    background-color: $eyebrow-primary;
+  }
+
+  &-secondary {
+    background-color: $eyebrow-secondary;
+  }
+
+  &-container {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+
+    @include respond-to(mobile-large) {
+      padding: 0 1rem;
+    }
+  }
+
+  &-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    min-height: 75px;
+
+    @include respond-to(mobile-large) {
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      min-height: auto;
+      padding: 8px 0;
+    }
+  }
+
+  &-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+
+    .theme-switcher {
+      width: 2.5rem;
+      height: 1.375rem;
+      margin: 0;
+
+      &-slider {
+        background-color: rgb(255 255 255 / 25%);
+        border-color: rgb(255 255 255 / 45%);
+
+        &::before {
+          height: 1rem;
+          width: 1rem;
+          background-color: #fff;
+        }
+      }
+
+      input:checked + .theme-switcher-slider {
+        background-color: rgb(255 255 255 / 35%);
+
+        &::before {
+          background-color: #fff;
+        }
+      }
+    }
+  }
+
+  &-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-left: auto;
+
+    @include respond-to(mobile-large) {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  &-websites-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    white-space: nowrap;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &-chevron {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+
+    &-up {
+      transform: rotate(180deg);
+    }
+  }
+
+  &-utility-nav {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0 1.25rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      @include respond-to(mobile-large) {
+        gap: 0.35rem 0.85rem;
+      }
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      height: 75px;
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;
+
+      @include respond-to(mobile-large) {
+        height: auto;
+      }
+    }
+
+    a {
+      display: inline-block;
+    }
+  }
+
+  &-search-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border: none;
+    border-radius: 1px;
+    background-color: #fff;
+    color: $eyebrow-primary;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &-search-panel {
+    display: flex;
+    align-items: center;
+    min-height: 75px;
+
+    .sitecore-preview-search-form {
+      width: 100%;
+    }
+
+    .sitecore-preview-search-input {
+      width: 100%;
+      max-width: none;
+      border-color: rgb(255 255 255 / 35%);
+      background: rgb(255 255 255 / 12%);
+      color: #fff;
+      font-size: 13px;
+
+      &::placeholder {
+        color: rgb(255 255 255 / 70%);
+      }
+
+      &:focus {
+        outline: 2px solid #fff;
+        outline-offset: 1px;
+      }
+    }
+  }
+
+  &-websites-nav {
+    min-height: 75px;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0 1.5rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      @include respond-to(mobile-large) {
+        gap: 0.35rem 1rem;
+      }
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      height: 75px;
+      margin: 0;
+      padding: 0;
+      white-space: nowrap;
+
+      @include respond-to(mobile-large) {
+        height: auto;
+      }
+    }
+
+    a {
+      display: inline-block;
+      font-size: 16px;
+    }
+  }
+}
+
+// Hide legacy eyebrow placeholder utilities rendered as extra header rows
+#header {
+  .language-switcher {
+    display: none !important;
+  }
+
+  > .component:not(.eyebrow):has(.language-switcher),
+  > .component:not(.eyebrow):has(.theme-switcher) {
+    display: none !important;
   }
 }
