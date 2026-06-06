@@ -30,7 +30,7 @@ $aua-card-spacing: $small-margin;
   }
 }
 
-.row:has(.aua-card) {
+.row:has(.aua-card):not(.column-splitter) {
   margin-left: 0 !important;
   margin-right: 0 !important;
   width: 100% !important;
@@ -38,12 +38,9 @@ $aua-card-spacing: $small-margin;
   --bs-gutter-x: 0 !important;
 }
 
-.row.column-splitter:has(.aua-card) {
-  column-gap: $aua-card-spacing;
-}
-
 .row.column-splitter > div > .row:has(.aua-card) {
   margin-left: 0 !important;
   margin-right: 0 !important;
   width: 100% !important;
+  gap: $aua-card-spacing !important;
 }

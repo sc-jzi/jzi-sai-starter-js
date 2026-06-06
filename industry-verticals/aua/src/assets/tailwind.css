@@ -19,7 +19,7 @@
     overflow: hidden;
   }
 
-  .row:has(.aua-card) {
+  .row:has(.aua-card):not(.column-splitter) {
     margin-left: 0 !important;
     margin-right: 0 !important;
     width: 100% !important;
@@ -27,7 +27,10 @@
     --bs-gutter-x: 0 !important;
   }
 
-  .row.column-splitter:has(.aua-card) {
-    column-gap: 0.625rem;
+  .row.column-splitter > div > .row:has(.aua-card) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    gap: 0.625rem !important;
   }
 }
