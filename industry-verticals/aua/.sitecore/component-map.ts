@@ -46,6 +46,7 @@ import * as DocumentsList from 'src/components/PageContent/DocumentsList';
 import * as CtaBanner from 'src/components/PageContent/CtaBanner';
 import * as Comparison from 'src/components/PageContent/Comparison';
 import * as Carousel from 'src/components/PageContent/Carousel';
+import * as Card from 'src/components/PageContent/Card';
 import * as AuthorWidget from 'src/components/PageContent/AuthorWidget';
 import * as AuthorList from 'src/components/PageContent/AuthorList';
 import * as AuthorDetails from 'src/components/PageContent/AuthorDetails';
@@ -108,6 +109,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['CtaBanner', { ...CtaBanner }],
   ['Comparison', { ...Comparison }],
   ['Carousel', { ...Carousel }],
+  ['Card', { ...Card }],
   ['AuthorWidget', { ...AuthorWidget }],
   ['AuthorList', { ...AuthorList }],
   ['AuthorDetails', { ...AuthorDetails }],

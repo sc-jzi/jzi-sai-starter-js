@@ -32,14 +32,14 @@ export const Default = (props: ComponentProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
 
   return (
-    <div className={`row component column-splitter ${styles}`} id={id ? id : undefined}>
+    <div className={`row component column-splitter ${styles} [&:has(.aua-card)]:!gap-2.5`} id={id ? id : undefined}>
       {enabledPlaceholders.map((ph, index) => {
         const phKey = `column-${ph}-{*}`;
         const phStyles = `${columnWidths[+ph - 1]} ${columnStyles[+ph - 1] ?? ''}`.trimEnd();
 
         return (
           <div key={index} className={phStyles}>
-            <div key={index} className="row">
+            <div key={index} className="row w-full [&:has(.aua-card)]:!mx-0 [&:has(.aua-card)]:!gap-2.5">
               <Placeholder key={index} name={phKey} rendering={props.rendering} />
             </div>
           </div>

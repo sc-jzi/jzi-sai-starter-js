@@ -5,6 +5,7 @@ import Bootstrap from 'src/Bootstrap';
 import { JSX } from 'react';
 import scConfig from 'sitecore.config';
 import 'assets/main.scss';
+import 'assets/tailwind.css';
 
 // DEMO TEAM CUSTOMIZATION - Search SDK integration
 import { isSearchSDKEnabled, config as searchSDKConfig } from '../services/SearchSDKService';

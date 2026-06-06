@@ -1,0 +1,49 @@
+@import 'src/assets/sass/abstracts/vars';
+
+$aua-card-spacing: $small-margin;
+
+// Apply on the card itself so rules work in Pages editor (ErrorBoundary / Suspense wrappers
+// prevent `.row > .aua-card` from ever matching).
+.aua-card.component {
+  box-sizing: border-box !important;
+  display: block !important;
+  flex: 0 0 calc(100% - #{$aua-card-spacing * 2}) !important;
+  width: calc(100% - #{$aua-card-spacing * 2}) !important;
+  max-width: calc(100% - #{$aua-card-spacing * 2}) !important;
+  margin: $aua-card-spacing !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+  overflow: hidden;
+
+  img,
+  picture {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+  }
+
+  > a {
+    display: block;
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+.row:has(.aua-card) {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100% !important;
+  gap: $aua-card-spacing !important;
+  --bs-gutter-x: 0 !important;
+}
+
+.row.column-splitter:has(.aua-card) {
+  column-gap: $aua-card-spacing;
+}
+
+.row.column-splitter > div > .row:has(.aua-card) {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100% !important;
+}

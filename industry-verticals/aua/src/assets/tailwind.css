@@ -1,0 +1,33 @@
+@layer theme, utilities;
+
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+@source '../components/**/*.{js,ts,jsx,tsx}';
+@source '../pages/**/*.{js,ts,jsx,tsx}';
+
+@layer components {
+  .aua-card.component {
+    box-sizing: border-box !important;
+    display: block !important;
+    flex: 0 0 calc(100% - 1.25rem) !important;
+    width: calc(100% - 1.25rem) !important;
+    max-width: calc(100% - 1.25rem) !important;
+    margin: 0.625rem !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+    overflow: hidden;
+  }
+
+  .row:has(.aua-card) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    gap: 0.625rem !important;
+    --bs-gutter-x: 0 !important;
+  }
+
+  .row.column-splitter:has(.aua-card) {
+    column-gap: 0.625rem;
+  }
+}
