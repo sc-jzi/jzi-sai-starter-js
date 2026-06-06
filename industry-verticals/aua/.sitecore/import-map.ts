@@ -11,6 +11,7 @@ import Head from 'next/head';
 import client from 'lib/sitecore-client';
 import { useCallback, useRef, useState, useEffect, useMemo } from 'react';
 import React from 'react';
+import * as React_7214d18997ee864dd178de7b3a8430f6783e8b89 from 'react';
 import { Placeholder, RichText, NextImage, Link, Text, useSitecore, withDatasourceCheck, CdpHelper, Image as Image_8a80e63291fea86e0744df19113dc44bec187216 } from '@sitecore-content-sdk/nextjs';
 import PreviewSearchWidget from 'src/components/Search/PreviewSearch/PreviewSearch';
 import { isSearchSDKEnabled } from 'src/services/SearchSDKService';
@@ -23,6 +24,68 @@ import nextConfig from 'next.config';
 import { pageView } from '@sitecore-cloudsdk/events/browser';
 import config from 'sitecore.config';
 import { useI18n } from 'next-localization';
+import * as TooltipPrimitive from '@radix-ui/react-tooltip';
+import { cn } from '@/lib/utils';
+import * as TogglePrimitive from '@radix-ui/react-toggle';
+import { cva } from 'class-variance-authority';
+import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group';
+import { toggleVariants } from '@/components/ui/toggle';
+import { useToast } from '@/hooks/use-toast';
+import { Toast, ToastClose, ToastDescription, ToastProvider, ToastTitle, ToastViewport } from '@/components/ui/toast';
+import * as ToastPrimitives from '@radix-ui/react-toast';
+import { X, PanelLeft, Check, ChevronDown, ChevronUp, GripVertical, Circle, ChevronLeft, ChevronRight, MoreHorizontal, Dot, Search, ArrowLeft, ArrowRight, ArrowUpRight, BookOpen, FileText, Loader2, Package, Sparkles, Wrench, Heart, Users } from 'lucide-react';
+import * as TabsPrimitive from '@radix-ui/react-tabs';
+import { useTheme } from 'next-themes';
+import { Toaster } from 'sonner';
+import * as SliderPrimitive from '@radix-ui/react-slider';
+import { Slot } from '@radix-ui/react-slot';
+import { useIsMobile } from '@/hooks/use-mobile';
+import { Button, buttonVariants } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Separator } from '@/components/ui/separator';
+import { Sheet, SheetContent } from '@/components/ui/sheet';
+import { Skeleton } from '@/components/ui/skeleton';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import * as SheetPrimitive from '@radix-ui/react-dialog';
+import * as SeparatorPrimitive from '@radix-ui/react-separator';
+import * as SelectPrimitive from '@radix-ui/react-select';
+import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area';
+import * as ResizablePrimitive from 'react-resizable-panels';
+import * as RadioGroupPrimitive from '@radix-ui/react-radio-group';
+import * as ProgressPrimitive from '@radix-ui/react-progress';
+import * as PopoverPrimitive from '@radix-ui/react-popover';
+import * as NavigationMenuPrimitive from '@radix-ui/react-navigation-menu';
+import * as MenubarPrimitive from '@radix-ui/react-menubar';
+import * as LabelPrimitive from '@radix-ui/react-label';
+import { OTPInput, OTPInputContext } from 'input-otp';
+import * as HoverCardPrimitive from '@radix-ui/react-hover-card';
+import { Controller, FormProvider, useFormContext } from 'react-hook-form';
+import { Label } from '@/components/ui/label';
+import * as DropdownMenuPrimitive from '@radix-ui/react-dropdown-menu';
+import { Drawer } from 'vaul';
+import * as ContextMenuPrimitive from '@radix-ui/react-context-menu';
+import { Command } from 'cmdk';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
+import * as CollapsiblePrimitive from '@radix-ui/react-collapsible';
+import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
+import * as RechartsPrimitive from 'recharts';
+import useEmblaCarousel from 'embla-carousel-react';
+import { DayPicker } from 'react-day-picker';
+import * as AvatarPrimitive from '@radix-ui/react-avatar';
+import * as AspectRatioPrimitive from '@radix-ui/react-aspect-ratio';
+import { motion } from 'framer-motion';
+import { useMatchMedia } from '@/hooks/use-match-media';
+import { useContainerQuery } from '@/hooks/use-container-query';
+import * as AlertDialogPrimitive from '@radix-ui/react-alert-dialog';
+import * as AccordionPrimitive from '@radix-ui/react-accordion';
+import { DEMO_TAXONOMY_CHANGE_EVENT, DEMO_TAXONOMY_STORAGE_KEY } from 'lib/demo-taxonomy';
+import { Badge } from '@/components/ui/badge';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { cn as cn_b4c06b3218abd6b3fb46a1f6d67407cec902c758 } from 'lib/utils';
+import { brands, categories, contentTypes, getDefaultCardImage, SEARCH_CARD_IMAGE_URLS, itemMatchesQuery, itemMetadataLine, itemVisibleForDemoUser, normalizeQuery, parseDemoUserTaxonomy, popularSearches, relevanceScore, RESULTS_PAGE_SIZE, searchCatalog, searchFacetLabels, selectAiSearchInsight, supplementalResultsForDemoUserTaxonomy } from 'src/components/search-results/data';
+import { usePathname, useRouter as useRouter_38d453563358e259e30871f8ef5a0334c186c57e, useSearchParams } from 'next/navigation';
+import { DEMO_TAXONOMY_CHANGE_EVENT as DEMO_TAXONOMY_CHANGE_EVENT_277736465aaa05b1f6df89a3f1b25537a2c74807, DEMO_TAXONOMY_STORAGE_KEY as DEMO_TAXONOMY_STORAGE_KEY_277736465aaa05b1f6df89a3f1b25537a2c74807 } from '@/lib/demo-taxonomy';
 import { WidgetDataType, usePreviewSearch, widget, PageController } from '@sitecore-search/react';
 import { ArticleCard, Presence, PreviewSearch } from '@sitecore-search/ui';
 import Spinner from 'src/components/Search/components/Spinner/Spinner';
@@ -60,6 +123,7 @@ const importMap = [
       { name: 'useEffect', value: useEffect },
       { name: 'useMemo', value: useMemo },
       { name: 'default', value: React },
+      { name: '*', value: React_7214d18997ee864dd178de7b3a8430f6783e8b89 },
     ]
   },
   {
@@ -140,6 +204,436 @@ const importMap = [
     module: 'next-localization',
     exports: [
       { name: 'useI18n', value: useI18n },
+    ]
+  },
+  {
+    module: '@radix-ui/react-tooltip',
+    exports: [
+      { name: '*', value: TooltipPrimitive },
+    ]
+  },
+  {
+    module: '@/lib/utils',
+    exports: [
+      { name: 'cn', value: cn },
+    ]
+  },
+  {
+    module: '@radix-ui/react-toggle',
+    exports: [
+      { name: '*', value: TogglePrimitive },
+    ]
+  },
+  {
+    module: 'class-variance-authority',
+    exports: [
+      { name: 'cva', value: cva },
+    ]
+  },
+  {
+    module: '@radix-ui/react-toggle-group',
+    exports: [
+      { name: '*', value: ToggleGroupPrimitive },
+    ]
+  },
+  {
+    module: '@/components/ui/toggle',
+    exports: [
+      { name: 'toggleVariants', value: toggleVariants },
+    ]
+  },
+  {
+    module: '@/hooks/use-toast',
+    exports: [
+      { name: 'useToast', value: useToast },
+    ]
+  },
+  {
+    module: '@/components/ui/toast',
+    exports: [
+      { name: 'Toast', value: Toast },
+      { name: 'ToastClose', value: ToastClose },
+      { name: 'ToastDescription', value: ToastDescription },
+      { name: 'ToastProvider', value: ToastProvider },
+      { name: 'ToastTitle', value: ToastTitle },
+      { name: 'ToastViewport', value: ToastViewport },
+    ]
+  },
+  {
+    module: '@radix-ui/react-toast',
+    exports: [
+      { name: '*', value: ToastPrimitives },
+    ]
+  },
+  {
+    module: 'lucide-react',
+    exports: [
+      { name: 'X', value: X },
+      { name: 'PanelLeft', value: PanelLeft },
+      { name: 'Check', value: Check },
+      { name: 'ChevronDown', value: ChevronDown },
+      { name: 'ChevronUp', value: ChevronUp },
+      { name: 'GripVertical', value: GripVertical },
+      { name: 'Circle', value: Circle },
+      { name: 'ChevronLeft', value: ChevronLeft },
+      { name: 'ChevronRight', value: ChevronRight },
+      { name: 'MoreHorizontal', value: MoreHorizontal },
+      { name: 'Dot', value: Dot },
+      { name: 'Search', value: Search },
+      { name: 'ArrowLeft', value: ArrowLeft },
+      { name: 'ArrowRight', value: ArrowRight },
+      { name: 'ArrowUpRight', value: ArrowUpRight },
+      { name: 'BookOpen', value: BookOpen },
+      { name: 'FileText', value: FileText },
+      { name: 'Loader2', value: Loader2 },
+      { name: 'Package', value: Package },
+      { name: 'Sparkles', value: Sparkles },
+      { name: 'Wrench', value: Wrench },
+      { name: 'Heart', value: Heart },
+      { name: 'Users', value: Users },
+    ]
+  },
+  {
+    module: '@radix-ui/react-tabs',
+    exports: [
+      { name: '*', value: TabsPrimitive },
+    ]
+  },
+  {
+    module: 'next-themes',
+    exports: [
+      { name: 'useTheme', value: useTheme },
+    ]
+  },
+  {
+    module: 'sonner',
+    exports: [
+      { name: 'Toaster', value: Toaster },
+    ]
+  },
+  {
+    module: '@radix-ui/react-slider',
+    exports: [
+      { name: '*', value: SliderPrimitive },
+    ]
+  },
+  {
+    module: '@radix-ui/react-slot',
+    exports: [
+      { name: 'Slot', value: Slot },
+    ]
+  },
+  {
+    module: '@/hooks/use-mobile',
+    exports: [
+      { name: 'useIsMobile', value: useIsMobile },
+    ]
+  },
+  {
+    module: '@/components/ui/button',
+    exports: [
+      { name: 'Button', value: Button },
+      { name: 'buttonVariants', value: buttonVariants },
+    ]
+  },
+  {
+    module: '@/components/ui/input',
+    exports: [
+      { name: 'Input', value: Input },
+    ]
+  },
+  {
+    module: '@/components/ui/separator',
+    exports: [
+      { name: 'Separator', value: Separator },
+    ]
+  },
+  {
+    module: '@/components/ui/sheet',
+    exports: [
+      { name: 'Sheet', value: Sheet },
+      { name: 'SheetContent', value: SheetContent },
+    ]
+  },
+  {
+    module: '@/components/ui/skeleton',
+    exports: [
+      { name: 'Skeleton', value: Skeleton },
+    ]
+  },
+  {
+    module: '@/components/ui/tooltip',
+    exports: [
+      { name: 'Tooltip', value: Tooltip },
+      { name: 'TooltipContent', value: TooltipContent },
+      { name: 'TooltipProvider', value: TooltipProvider },
+      { name: 'TooltipTrigger', value: TooltipTrigger },
+    ]
+  },
+  {
+    module: '@radix-ui/react-dialog',
+    exports: [
+      { name: '*', value: SheetPrimitive },
+    ]
+  },
+  {
+    module: '@radix-ui/react-separator',
+    exports: [
+      { name: '*', value: SeparatorPrimitive },
+    ]
+  },
+  {
+    module: '@radix-ui/react-select',
+    exports: [
+      { name: '*', value: SelectPrimitive },
+    ]
+  },
+  {
+    module: '@radix-ui/react-scroll-area',
+    exports: [
+      { name: '*', value: ScrollAreaPrimitive },
+    ]
+  },
+  {
+    module: 'react-resizable-panels',
+    exports: [
+      { name: '*', value: ResizablePrimitive },
+    ]
+  },
+  {
+    module: '@radix-ui/react-radio-group',
+    exports: [
+      { name: '*', value: RadioGroupPrimitive },
+    ]
+  },
+  {
+    module: '@radix-ui/react-progress',
+    exports: [
+      { name: '*', value: ProgressPrimitive },
+    ]
+  },
+  {
+    module: '@radix-ui/react-popover',
+    exports: [
+      { name: '*', value: PopoverPrimitive },
+    ]
+  },
+  {
+    module: '@radix-ui/react-navigation-menu',
+    exports: [
+      { name: '*', value: NavigationMenuPrimitive },
+    ]
+  },
+  {
+    module: '@radix-ui/react-menubar',
+    exports: [
+      { name: '*', value: MenubarPrimitive },
+    ]
+  },
+  {
+    module: '@radix-ui/react-label',
+    exports: [
+      { name: '*', value: LabelPrimitive },
+    ]
+  },
+  {
+    module: 'input-otp',
+    exports: [
+      { name: 'OTPInput', value: OTPInput },
+      { name: 'OTPInputContext', value: OTPInputContext },
+    ]
+  },
+  {
+    module: '@radix-ui/react-hover-card',
+    exports: [
+      { name: '*', value: HoverCardPrimitive },
+    ]
+  },
+  {
+    module: 'react-hook-form',
+    exports: [
+      { name: 'Controller', value: Controller },
+      { name: 'FormProvider', value: FormProvider },
+      { name: 'useFormContext', value: useFormContext },
+    ]
+  },
+  {
+    module: '@/components/ui/label',
+    exports: [
+      { name: 'Label', value: Label },
+    ]
+  },
+  {
+    module: '@radix-ui/react-dropdown-menu',
+    exports: [
+      { name: '*', value: DropdownMenuPrimitive },
+    ]
+  },
+  {
+    module: 'vaul',
+    exports: [
+      { name: 'Drawer', value: Drawer },
+    ]
+  },
+  {
+    module: '@radix-ui/react-context-menu',
+    exports: [
+      { name: '*', value: ContextMenuPrimitive },
+    ]
+  },
+  {
+    module: 'cmdk',
+    exports: [
+      { name: 'Command', value: Command },
+    ]
+  },
+  {
+    module: '@/components/ui/dialog',
+    exports: [
+      { name: 'Dialog', value: Dialog },
+      { name: 'DialogContent', value: DialogContent },
+    ]
+  },
+  {
+    module: '@radix-ui/react-collapsible',
+    exports: [
+      { name: '*', value: CollapsiblePrimitive },
+    ]
+  },
+  {
+    module: '@radix-ui/react-checkbox',
+    exports: [
+      { name: '*', value: CheckboxPrimitive },
+    ]
+  },
+  {
+    module: 'recharts',
+    exports: [
+      { name: '*', value: RechartsPrimitive },
+    ]
+  },
+  {
+    module: 'embla-carousel-react',
+    exports: [
+      { name: 'default', value: useEmblaCarousel },
+    ]
+  },
+  {
+    module: 'react-day-picker',
+    exports: [
+      { name: 'DayPicker', value: DayPicker },
+    ]
+  },
+  {
+    module: '@radix-ui/react-avatar',
+    exports: [
+      { name: '*', value: AvatarPrimitive },
+    ]
+  },
+  {
+    module: '@radix-ui/react-aspect-ratio',
+    exports: [
+      { name: '*', value: AspectRatioPrimitive },
+    ]
+  },
+  {
+    module: 'framer-motion',
+    exports: [
+      { name: 'motion', value: motion },
+    ]
+  },
+  {
+    module: '@/hooks/use-match-media',
+    exports: [
+      { name: 'useMatchMedia', value: useMatchMedia },
+    ]
+  },
+  {
+    module: '@/hooks/use-container-query',
+    exports: [
+      { name: 'useContainerQuery', value: useContainerQuery },
+    ]
+  },
+  {
+    module: '@radix-ui/react-alert-dialog',
+    exports: [
+      { name: '*', value: AlertDialogPrimitive },
+    ]
+  },
+  {
+    module: '@radix-ui/react-accordion',
+    exports: [
+      { name: '*', value: AccordionPrimitive },
+    ]
+  },
+  {
+    module: 'lib/demo-taxonomy',
+    exports: [
+      { name: 'DEMO_TAXONOMY_CHANGE_EVENT', value: DEMO_TAXONOMY_CHANGE_EVENT },
+      { name: 'DEMO_TAXONOMY_STORAGE_KEY', value: DEMO_TAXONOMY_STORAGE_KEY },
+    ]
+  },
+  {
+    module: '@/components/ui/badge',
+    exports: [
+      { name: 'Badge', value: Badge },
+    ]
+  },
+  {
+    module: '@/components/ui/checkbox',
+    exports: [
+      { name: 'Checkbox', value: Checkbox },
+    ]
+  },
+  {
+    module: '@/components/ui/collapsible',
+    exports: [
+      { name: 'Collapsible', value: Collapsible },
+      { name: 'CollapsibleContent', value: CollapsibleContent },
+      { name: 'CollapsibleTrigger', value: CollapsibleTrigger },
+    ]
+  },
+  {
+    module: 'lib/utils',
+    exports: [
+      { name: 'cn', value: cn_b4c06b3218abd6b3fb46a1f6d67407cec902c758 },
+    ]
+  },
+  {
+    module: 'src/components/search-results/data',
+    exports: [
+      { name: 'brands', value: brands },
+      { name: 'categories', value: categories },
+      { name: 'contentTypes', value: contentTypes },
+      { name: 'getDefaultCardImage', value: getDefaultCardImage },
+      { name: 'SEARCH_CARD_IMAGE_URLS', value: SEARCH_CARD_IMAGE_URLS },
+      { name: 'itemMatchesQuery', value: itemMatchesQuery },
+      { name: 'itemMetadataLine', value: itemMetadataLine },
+      { name: 'itemVisibleForDemoUser', value: itemVisibleForDemoUser },
+      { name: 'normalizeQuery', value: normalizeQuery },
+      { name: 'parseDemoUserTaxonomy', value: parseDemoUserTaxonomy },
+      { name: 'popularSearches', value: popularSearches },
+      { name: 'relevanceScore', value: relevanceScore },
+      { name: 'RESULTS_PAGE_SIZE', value: RESULTS_PAGE_SIZE },
+      { name: 'searchCatalog', value: searchCatalog },
+      { name: 'searchFacetLabels', value: searchFacetLabels },
+      { name: 'selectAiSearchInsight', value: selectAiSearchInsight },
+      { name: 'supplementalResultsForDemoUserTaxonomy', value: supplementalResultsForDemoUserTaxonomy },
+    ]
+  },
+  {
+    module: 'next/navigation',
+    exports: [
+      { name: 'usePathname', value: usePathname },
+      { name: 'useRouter', value: useRouter_38d453563358e259e30871f8ef5a0334c186c57e },
+      { name: 'useSearchParams', value: useSearchParams },
+    ]
+  },
+  {
+    module: '@/lib/demo-taxonomy',
+    exports: [
+      { name: 'DEMO_TAXONOMY_CHANGE_EVENT', value: DEMO_TAXONOMY_CHANGE_EVENT_277736465aaa05b1f6df89a3f1b25537a2c74807 },
+      { name: 'DEMO_TAXONOMY_STORAGE_KEY', value: DEMO_TAXONOMY_STORAGE_KEY_277736465aaa05b1f6df89a3f1b25537a2c74807 },
     ]
   },
   {
