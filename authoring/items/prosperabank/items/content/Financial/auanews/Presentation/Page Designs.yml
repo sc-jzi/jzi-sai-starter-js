@@ -1,0 +1,37 @@
+﻿---
+ID: "68c4ff4f-283d-4de5-b2d5-d81fd98845ec"
+Parent: "e6b249dc-f09d-4d7e-93b8-9800ac78e64d"
+Template: "609a79ac-e186-41e2-a3fa-771e95c26815"
+Path: /sitecore/content/Financial/auanews/Presentation/Page Designs
+SharedFields:
+- ID: "ba1f60d6-3deb-40cc-bb61-eec772279ee1"
+  Hint: TemplatesMapping
+  Value: "%7b4AD644A8-7CDB-4574-8DF1-D01C3BB7B624%7d%3d%257B52213DCF-559D-4BAA-A92D-98C4E3039CA1%257D%26%7bF83CCEFD-FC41-4A60-9882-8F7EA5CF41A8%7d%3d%257B07D3AAD2-CF2E-4224-878E-224DDB09E33D%257D%26%7b1226C3C7-2D1F-48F5-87B4-C1DA459F05E5%7d%3d%257B5A6E0C3E-E479-4437-B06E-84C28B68C7F8%257D%26%7b5282D418-6C18-46EB-85AF-9116CDE9E6EB%7d%3d%257B52213DCF-559D-4BAA-A92D-98C4E3039CA1%257D%26%7b14431DCE-508D-4D54-9D04-C22ABBDC8F83%7d%3d%257B52213DCF-559D-4BAA-A92D-98C4E3039CA1%257D%26%7bAAD350F5-9331-4D71-A942-E3643653C028%7d%3d%257B3F3ADD7F-B5ED-4147-9C5C-ACA07C1F2E51%257D"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "ab474608-1003-4462-9717-ef34f50d8a11"
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{2EA756FA-AED6-4599-83B7-36FEFE229B31}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260605T163047Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d87b0ec6-2533-433b-96f2-64573551cd1d"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260605T163221Z

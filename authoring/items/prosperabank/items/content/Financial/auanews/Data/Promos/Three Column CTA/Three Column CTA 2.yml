@@ -1,0 +1,88 @@
+﻿---
+ID: "32b871ed-7f9d-4c00-bf06-4f54c7799956"
+Parent: "a7ce7284-d9e0-4122-8fdd-70429ac65c1a"
+Template: "148d07ba-f923-4fb2-8907-0bd440d5db44"
+Path: /sitecore/content/Financial/auanews/Data/Promos/Three Column CTA/Three Column CTA 2
+SharedFields:
+- ID: "39b3d592-0895-4f30-9c17-454b171f0b2e"
+  Hint: Image3
+  Value: |
+    <image mediaid="{E1531E69-693D-4CD9-901A-2090969D084E}" alt="Top view of a person writing in notebook" height="" width="" hspace="" vspace="" />
+- ID: "39fe4fb3-3794-4b9a-a584-ff877e93e33b"
+  Hint: Image2
+  Value: |
+    <image mediaid="{E648D01B-8523-4786-BC51-92FF8BD6D9ED}" alt="Woman standing in front of ATM" height="" width="" hspace="" vspace="" />
+- ID: "c511247c-fec1-4690-81d6-ce791da18d4a"
+  Hint: Image1
+  Value: |
+    <image mediaid="{A94FA9E0-BE44-4BF3-8841-5E43E23C5DA6}" alt="Woman ironing" height="" width="" hspace="" vspace="" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "8fdfd8fa-2b5b-43b0-bfec-7cd73d2a12a0"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "0a10d09c-166b-464e-99cb-4401b527f3f2"
+      Hint: Link2
+      Value: |
+        <link text="Find an office branch or ATM" linktype="anchor" url="#" anchor="#" title="" class="" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260605T163040Z
+    - ID: "277e3acc-b359-4c11-88b9-4016574419dc"
+      Hint: Link3
+      Value: |
+        <link text="Learn more" linktype="anchor" url="#" anchor="#" title="" class="" />
+    - ID: "34f6d379-9a96-4cb8-839f-0d224a4f6db1"
+      Hint: Text2
+      Value: Branch Network
+    - ID: "5264d7eb-64cd-4203-98e5-a4d0380f57e6"
+      Hint: Text1
+      Value: Our products and services
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5eb6058f-3f45-4dd4-8153-8c74390859f4"
+      Hint: Text3
+      Value: Media Center
+    - ID: "63e1abec-67cb-4aea-ab72-8b5b60b69473"
+      Hint: Link1
+      Value: |
+        <link text="Contact Us" linktype="anchor" url="#" anchor="#" title="" class="" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "059ab86c-f4d2-4557-8c8b-2a1c3f28cb8e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260605T163325Z
+- Language: "fr-CA"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260605T163325Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f54ed12b-0e5a-468f-b3ee-0a397f246b8e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260605T163325Z

@@ -304,12 +304,50 @@ Languages:
                 name="ds" />
             </r>
             <r
+              uid="{124106DE-FB02-4B43-A521-A309FC75A5BC}">
+              <p:d />
+            </r>
+            <r
+              uid="{9981CDD9-4EB3-4374-B609-9641507DFF15}"
+              p:after="r[@uid='{36E87C5B-94DF-4C70-827E-E88DCCD07907}']"
+              s:id="{15CABDFF-FFD9-48F4-826D-A4C3D7868D3A}"
+              s:par="ColumnWidth1=%7B89647981-C99C-44E3-A55E-65BFF555E4C3%7D%7C%7B7D865A50-F089-421E-ACDC-620DB03BC49D%7D&amp;ColumnWidth2=%7B89647981-C99C-44E3-A55E-65BFF555E4C3%7D%7C%7BB3F7B9AE-DDBD-4D67-8666-12779DE2E368%7D&amp;ColumnWidth3=%7B89647981-C99C-44E3-A55E-65BFF555E4C3%7D%7C%7BA146032A-C690-4911-97DD-A3D3C3159AB8%7D&amp;ColumnWidth4&amp;ColumnWidth5&amp;ColumnWidth6&amp;ColumnWidth7&amp;ColumnWidth8&amp;GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;SplitterSize=3&amp;EnabledPlaceholders=1%2C2%2C3&amp;FieldNames&amp;Styles1&amp;Styles2&amp;Styles3&amp;Styles4&amp;Styles5&amp;Styles6&amp;Styles7&amp;Styles&amp;Styles8&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=31"
+              s:ph="headless-main" />
+            <r
               uid="{D49A8931-F041-4988-9CC3-F2400E6422D0}"
-              p:after="r[@uid='{124106DE-FB02-4B43-A521-A309FC75A5BC}']"
+              p:after="r[@uid='{9981CDD9-4EB3-4374-B609-9641507DFF15}']"
               s:ds="local:/Data/Promo CTA 1"
               s:id="{1A375FAC-6CC1-4A5A-A159-9BC6DBC66B80}"
               s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7BE7077939-8F32-4C4F-AAAD-A7C53F623CE0%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=30"
               s:ph="headless-main" />
+            <r
+              uid="{22719B65-F0E9-4EC9-BC27-42860E5FEC7C}"
+              p:after="r[@uid='{7EBE6F29-1C6F-4138-8BF9-287ACF0CD530}']"
+              s:ds="fc414674-ef09-455a-941b-e41b1aecaf59"
+              s:id="{4AA92107-3C0F-4D14-9050-9CA55410CFEE}"
+              s:par="CSSStyles"
+              s:ph="/headless-main/column-1-31" />
+            <r
+              uid="{9543757E-DCAE-414F-90C1-75F5F4473CE1}"
+              p:after="r[@uid='{22719B65-F0E9-4EC9-BC27-42860E5FEC7C}']"
+              s:ds="51aea0d8-fd02-49bb-a874-b2970ff70a64"
+              s:id="{4AA92107-3C0F-4D14-9050-9CA55410CFEE}"
+              s:par="CSSStyles&amp;FieldNames=%7BBEFCB856-8BDF-4EC1-A0A2-D1F92501875F%7D"
+              s:ph="/headless-main/column-2-31" />
+            <r
+              uid="{13473CBB-8D64-49AB-B296-923F68BE02E5}"
+              p:after="r[@uid='{9543757E-DCAE-414F-90C1-75F5F4473CE1}']"
+              s:ds="1795627f-c99d-44e3-ae3a-abfd6482d748"
+              s:id="{4AA92107-3C0F-4D14-9050-9CA55410CFEE}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7BB2293C4A-CEEC-478B-B557-C29C0EF2E5B1%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=32"
+              s:ph="/headless-main/column-2-31" />
+            <r
+              uid="{AED07265-CDC7-4EE1-A754-0399FC80B0B4}"
+              p:after="*[1=2]"
+              s:ds="bcb61c81-460f-4b12-a792-666c73528127"
+              s:id="{C38343B8-21B5-4A4A-BB4F-6465A44C03A3}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7BCD8FA85B-F663-49B1-8541-C5878058B7B9%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=33"
+              s:ph="/headless-main/column-3-31" />
           </d>
         </r>
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
@@ -327,7 +365,7 @@ Languages:
         sitecore\kaitlyn.folsom@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "123b0017-ad98-4caf-84f0-43940bf4de6b"
+      Value: "b99f056a-4062-4c87-a8f4-f41f3b6f4cd4"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
@@ -337,7 +375,7 @@ Languages:
       Value: "PLAY! Financial"
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251030T165635Z
+      Value: 20260606T191307Z
 - Language: "fr-CA"
   Versions:
   - Version: 1

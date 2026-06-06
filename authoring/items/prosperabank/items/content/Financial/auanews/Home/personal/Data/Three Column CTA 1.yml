@@ -1,0 +1,181 @@
+﻿---
+ID: "6eb43578-23e2-4a07-8b51-a0761bdb717e"
+Parent: "288858da-68de-4260-8468-35a8fd35147e"
+Template: "148d07ba-f923-4fb2-8907-0bd440d5db44"
+Path: /sitecore/content/Financial/auanews/Home/personal/Data/Three Column CTA 1
+SharedFields:
+- ID: "39b3d592-0895-4f30-9c17-454b171f0b2e"
+  Hint: Image3
+  Value: |
+    <image mediaid="1255D250-199B-4865-8200-7396A97C7A91" />
+- ID: "39fe4fb3-3794-4b9a-a584-ff877e93e33b"
+  Hint: Image2
+  Value: |
+    <image mediaid="97E8D377-F9ED-460B-BC13-82A6C68454FB" />
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 250
+- ID: "c511247c-fec1-4690-81d6-ce791da18d4a"
+  Hint: Image1
+  Value: |
+    <image mediaid="2321BF8D-EDA9-4D1D-9FD0-63210C6277E1" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "78469c4a-859c-4d7e-8ba6-c68c6442dca7"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "0a10d09c-166b-464e-99cb-4401b527f3f2"
+      Hint: Link2
+      Value: |
+        <link class="" id="9F41CA0A-AA98-4C60-B377-D3C3E7E54DE3" querystring="" anchor="" target="" title="" linktype="internal" text="Get started" url="/Financial/ProsperaBank/Home/personal/investing" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251030T165629Z
+    - ID: "2731b4d6-b866-466a-9731-5161788d662b"
+      Hint: SubText2
+      Value: Let our experts help you get started with low fee investing to power your future.
+    - ID: "277e3acc-b359-4c11-88b9-4016574419dc"
+      Hint: Link3
+      Value: |
+        <link class="" id="62E98361-F5D5-4551-9E16-EF7AC5BD3C79" querystring="" anchor="" target="" title="" linktype="internal" text="Get started" url="/Financial/ProsperaBank/Home/personal/borrowing" />
+    - ID: "34f6d379-9a96-4cb8-839f-0d224a4f6db1"
+      Hint: Text2
+      Value: Investing
+    - ID: "4c50be2f-021e-4846-abb0-50feb2df5eed"
+      Hint: SubText1
+      Value: Read testimonials from everyday people who leveled up with everyday banking.
+    - ID: "5264d7eb-64cd-4203-98e5-a4d0380f57e6"
+      Hint: Text1
+      Value: Everyday banking
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5eb6058f-3f45-4dd4-8153-8c74390859f4"
+      Hint: Text3
+      Value: Borrowing
+    - ID: "63e1abec-67cb-4aea-ab72-8b5b60b69473"
+      Hint: Link1
+      Value: |
+        <link class="" id="45AF1191-0EEA-45DF-B3E4-80129258FFDB" querystring="" anchor="" target="" title="" linktype="internal" text="Get started" url="/Financial/ProsperaBank/Home/personal/everyday-banking" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "35b4c7ba-5ea8-4ea5-8dd8-e4958aa9d8f2"
+    - ID: "a3a36b2d-a20b-4344-9f1d-ad867cb99aa4"
+      Hint: SubText3
+      Value: "Don't let debt scare you - no-fee credit cards and your personal line of credit are here."
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260605T163257Z
+- Language: "fr-CA"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0a10d09c-166b-464e-99cb-4401b527f3f2"
+      Hint: Link2
+      Value: |
+        <link class="" id="9F41CA0A-AA98-4C60-B377-D3C3E7E54DE3" querystring="" anchor="" target="" title="" linktype="internal" text="Commencez" url="/Financial/ProsperaBank/Home/personal/investing" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251030T165629Z
+    - ID: "2731b4d6-b866-466a-9731-5161788d662b"
+      Hint: SubText2
+      Value: Laissez nos experts vous aider à démarrer avec des investissements à faibles frais pour propulser votre avenir.
+    - ID: "277e3acc-b359-4c11-88b9-4016574419dc"
+      Hint: Link3
+      Value: |
+        <link class="" id="62E98361-F5D5-4551-9E16-EF7AC5BD3C79" querystring="" anchor="" target="" title="" linktype="internal" text="Commencez" url="/Financial/ProsperaBank/Home/personal/borrowing" />
+    - ID: "34f6d379-9a96-4cb8-839f-0d224a4f6db1"
+      Hint: Text2
+      Value: Investir
+    - ID: "4c50be2f-021e-4846-abb0-50feb2df5eed"
+      Hint: SubText1
+      Value: Lisez les témoignages de personnes ordinaires qui ont progressé dans les opérations bancaires courantes.
+    - ID: "5264d7eb-64cd-4203-98e5-a4d0380f57e6"
+      Hint: Text1
+      Value: banque au quotidien
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5eb6058f-3f45-4dd4-8153-8c74390859f4"
+      Hint: Text3
+      Value: Emprunter
+    - ID: "63e1abec-67cb-4aea-ab72-8b5b60b69473"
+      Hint: Link1
+      Value: |
+        <link class="" id="45AF1191-0EEA-45DF-B3E4-80129258FFDB" querystring="" anchor="" target="" title="" linktype="internal" text="Commencez" url="/Financial/ProsperaBank/Home/personal/everyday-banking" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "94989444-0578-4418-9678-4875260e6737"
+    - ID: "a3a36b2d-a20b-4344-9f1d-ad867cb99aa4"
+      Hint: SubText3
+      Value: "Ne laissez pas la dette vous effrayer - des cartes de crédit sans frais et votre ligne de crédit personnelle sont là."
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260605T163257Z
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0a10d09c-166b-464e-99cb-4401b527f3f2"
+      Hint: Link2
+      Value: |
+        <link class="" querystring="" id="{9F41CA0A-AA98-4C60-B377-D3C3E7E54DE3}" anchor="" target="" title="" linktype="internal" text="はじめる" url="/Financial/ProsperaBank/Home/personal/investing" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251030T165629Z
+    - ID: "2731b4d6-b866-466a-9731-5161788d662b"
+      Hint: SubText2
+      Value: 低手数料の投資で、あなたの未来にパワーを。
+    - ID: "277e3acc-b359-4c11-88b9-4016574419dc"
+      Hint: Link3
+      Value: |
+        <link class="" querystring="" id="{62E98361-F5D5-4551-9E16-EF7AC5BD3C79}" anchor="" target="" title="" linktype="internal" text="はじめる" url="/Financial/ProsperaBank/Home/personal/borrowing" />
+    - ID: "34f6d379-9a96-4cb8-839f-0d224a4f6db1"
+      Hint: Text2
+      Value: 投資
+    - ID: "4c50be2f-021e-4846-abb0-50feb2df5eed"
+      Hint: SubText1
+      Value: 日常的なバンキングでレベルアップした人々の声を知る
+    - ID: "5264d7eb-64cd-4203-98e5-a4d0380f57e6"
+      Hint: Text1
+      Value: デイリーバンキング
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5eb6058f-3f45-4dd4-8153-8c74390859f4"
+      Hint: Text3
+      Value: 借入金
+    - ID: "63e1abec-67cb-4aea-ab72-8b5b60b69473"
+      Hint: Link1
+      Value: |
+        <link class="" querystring="" id="{45AF1191-0EEA-45DF-B3E4-80129258FFDB}" anchor="" target="" title="" linktype="internal" text="はじめる" url="/Financial/ProsperaBank/Home/personal/everyday-banking" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "fe73ba24-21cd-4ce6-a482-2087aecd2f58"
+    - ID: "a3a36b2d-a20b-4344-9f1d-ad867cb99aa4"
+      Hint: SubText3
+      Value: 借金に怯える必要はありません。手数料無料のクレジットカードと個人信用枠がここにあります。
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260605T163257Z

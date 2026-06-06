@@ -1,0 +1,64 @@
+﻿---
+ID: "946c6937-cbb7-484c-8887-3f4ec92ce3e7"
+Parent: "b30f8b19-236d-4813-9643-685da851140e"
+Template: "2dc7a13e-6753-47ef-805a-1cde39012eec"
+Path: /sitecore/content/Financial/auanews/Home/business/Data/Questions 1/Question 4
+BranchID: "bba2c8f4-b940-4820-bf71-1b089bc5f86a"
+SharedFields:
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{42F8779C-8AB1-4D2D-9119-9AE9AC43F286}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260605T163023Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "7daea546-ae89-484b-83ae-d6f9bc4edfb2"
+    - ID: "93ba0221-aa2a-4a04-b8f6-39c2ab65c694"
+      Hint: Question
+      Value: "Can I open both a personal and business account?"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260605T163023Z
+    - ID: "ef205dfd-6af2-4514-b694-77efa748f951"
+      Hint: Answer
+      Value: "You betcha! As an existing or new customer, you will have access to our tools and services for for both types of account. And even better - we make it easy to transfer funds between your personal and business accounts."
+- Language: "fr-CA"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "e74ef821-a9e0-4fb6-90f0-249a90fd4e6a"
+    - ID: "93ba0221-aa2a-4a04-b8f6-39c2ab65c694"
+      Hint: Question
+      Value: "Puis-je ouvrir à la fois un compte personnel et un compte professionnel ?"
+    - ID: "ef205dfd-6af2-4514-b694-77efa748f951"
+      Hint: Answer
+      Value: "Absolument ! En tant que client existant ou nouveau, vous aurez accès à nos outils et services pour les deux types de comptes. Et encore mieux, nous facilitons le transfert de fonds entre vos comptes personnels et professionnels."
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "bf65324c-101c-4b76-ac1c-33fbb0fff734"
+    - ID: "93ba0221-aa2a-4a04-b8f6-39c2ab65c694"
+      Hint: Question
+      Value: 個人口座とビジネス口座の両方を開設できますか？
+    - ID: "ef205dfd-6af2-4514-b694-77efa748f951"
+      Hint: Answer
+      Value: もちろんです！ 既存のお客様も新規のお客様も、どちらのタイプのアカウントでも当社のツールやサービスをご利用いただけます。 さらに、個人口座とビジネス口座間の資金移動も簡単に行えます。

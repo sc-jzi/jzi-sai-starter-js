@@ -1,0 +1,127 @@
+﻿---
+ID: "f98274de-9a87-4328-984b-264f0526fb7d"
+Parent: "288858da-68de-4260-8468-35a8fd35147e"
+Template: "28b7f396-dc4a-4116-8c93-3b7909cbeb0e"
+Path: /sitecore/content/Financial/auanews/Home/personal/Data/Parallax Banner 1
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 700
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "143cb4dc-b0b5-46ae-98b1-b16900ec79f6"
+      Hint: Text
+      Value: Whether you're saving for a major life event, planning for retirement, or simply looking to build a robust financial cushion, our expert advisors are here to guide you every step of the way.
+    - ID: "1fbdde82-0dd2-46ad-a636-0d5e714dd086"
+      Hint: ForegroundImage
+      Value: |
+        <image mediaid="{48C9FF94-9064-4BD0-83BE-60B5F2ED2F80}" alt="Plant on counter" height="" width="" hspace="" vspace="" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251030T165635Z
+    - ID: "5ba03d3f-ffbc-412e-80ff-6dd0fe312042"
+      Hint: Link
+      Value: |
+        <link class="" querystring="" id="{932EF270-16B4-4483-8BC6-1960D64321D2}" anchor="" target="" title="" linktype="internal" text="Learn more" url="/Financial/ProsperaBank/Home/articles" />
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "6a0cd840-38e2-42ad-a84b-91a2d038c00e"
+    - ID: "a54476a3-eb25-4a1a-a521-e702f1372b8f"
+      Hint: BackgroundImage
+      Value: |
+        <image mediaid="{B4EF02C4-2680-4BBC-9453-094B7A843512}" alt="Background texture" height="" width="" hspace="" vspace="" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260605T163258Z
+    - ID: "f34c6976-7e76-490b-a91e-5977db4a2208"
+      Hint: Title
+      Value: "Grow your savings with us!"
+- Language: "fr-CA"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "143cb4dc-b0b5-46ae-98b1-b16900ec79f6"
+      Hint: Text
+      Value: Que vous économisiez pour un événement majeur de la vie
+    - ID: "1fbdde82-0dd2-46ad-a636-0d5e714dd086"
+      Hint: ForegroundImage
+      Value: |
+        <image mediaid="{48C9FF94-9064-4BD0-83BE-60B5F2ED2F80}" alt="Plante sur comptoir" height="" width="" hspace="" vspace="" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251030T165635Z
+    - ID: "5ba03d3f-ffbc-412e-80ff-6dd0fe312042"
+      Hint: Link
+      Value: |
+        <link class="" querystring="" id="{932EF270-16B4-4483-8BC6-1960D64321D2}" anchor="" target="" title="" linktype="internal" text="En savoir plus" url="/Financial/ProsperaBank/Home/articles" />
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "17988950-0234-43b3-acc3-272b429f6e1d"
+    - ID: "a54476a3-eb25-4a1a-a521-e702f1372b8f"
+      Hint: BackgroundImage
+      Value: |
+        <image mediaid="{B4EF02C4-2680-4BBC-9453-094B7A843512}" alt="Background texture" height="" width="" hspace="" vspace="" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260605T163258Z
+    - ID: "f34c6976-7e76-490b-a91e-5977db4a2208"
+      Hint: Title
+      Value: banque au quotidien
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "143cb4dc-b0b5-46ae-98b1-b16900ec79f6"
+      Hint: Text
+      Value: 人生の一大イベントのための貯蓄、退職後の生活設計、あるいは単に経済的な余裕を築きたいなど、どのような場合でも、私どもの専門アドバイザーがあらゆるステップでお客様をご案内いたします。
+    - ID: "1fbdde82-0dd2-46ad-a636-0d5e714dd086"
+      Hint: ForegroundImage
+      Value: |
+        <image mediaid="{48C9FF94-9064-4BD0-83BE-60B5F2ED2F80}" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251030T165635Z
+    - ID: "5ba03d3f-ffbc-412e-80ff-6dd0fe312042"
+      Hint: Link
+      Value: |
+        <link class="" querystring="" id="{932EF270-16B4-4483-8BC6-1960D64321D2}" anchor="" target="" title="" linktype="internal" text="さらに詳しく" url="/Financial/ProsperaBank/Home/articles" />
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "6b5083d8-438f-455b-aee8-2c06cc337231"
+    - ID: "a54476a3-eb25-4a1a-a521-e702f1372b8f"
+      Hint: BackgroundImage
+      Value: |
+        <image mediaid="{B4EF02C4-2680-4BBC-9453-094B7A843512}" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260605T163258Z
+    - ID: "f34c6976-7e76-490b-a91e-5977db4a2208"
+      Hint: Title
+      Value: 私たちと一緒に貯蓄を増やしましょう！

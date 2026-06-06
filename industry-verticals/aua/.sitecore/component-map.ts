@@ -53,6 +53,7 @@ import * as AuthorDetails from 'src/components/PageContent/AuthorDetails';
 import * as ArticleList from 'src/components/PageContent/ArticleList';
 import * as ArticleDetails from 'src/components/PageContent/ArticleDetails';
 import * as AppPromo from 'src/components/PageContent/AppPromo';
+import * as Advert from 'src/components/PageContent/Advert';
 import * as Accordion from 'src/components/PageContent/Accordion';
 import * as ParallaxBackgroundImage from 'src/components/NonSitecore/ParallaxBackgroundImage';
 import * as IconAccent from 'src/components/NonSitecore/IconAccent';
@@ -116,6 +117,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ArticleList', { ...ArticleList }],
   ['ArticleDetails', { ...ArticleDetails }],
   ['AppPromo', { ...AppPromo }],
+  ['Advert', { ...Advert, componentType: 'client' }],
   ['Accordion', { ...Accordion }],
   ['ParallaxBackgroundImage', { ...ParallaxBackgroundImage }],
   ['IconAccent', { ...IconAccent }],

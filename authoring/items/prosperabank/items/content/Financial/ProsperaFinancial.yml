@@ -32,10 +32,13 @@ SharedFields:
   Value: "{EEE2C54E-1BC8-4B72-BB26-1EA80C093A30}"
 - ID: "85a7501a-86d9-4243-9075-0b727c3a6db4"
   Hint: Name
-  Value: AUA
+  Value: AUANet
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 0
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "c077f1b3-b47f-4566-83be-2341e995f89d"
+  Value: "e1eafec7-373f-4d3b-aea5-054fde026c59"
 - ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
   Hint: __Originator
   Value: "{A0EECF65-09AD-4A10-AE46-7DF70106CFE6}"
@@ -44,10 +47,10 @@ Languages:
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
     Hint: __Unversioned revision
-    Value: "f656e044-8c98-4bb1-a36b-4d27939a32a6"
+    Value: "9d2dcc25-c7b3-46aa-8b36-4c3e9bd319d9"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: Prospera Bank
+    Value: AUANet
   Versions:
   - Version: 1
     Fields:
@@ -60,11 +63,11 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "03ba61de-0474-4219-ac87-4e3b4ab4e133"
+      Value: "cfbdd71b-b286-4210-8751-1658c9db420e"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260525T202822Z
+      Value: 20260605T164858Z

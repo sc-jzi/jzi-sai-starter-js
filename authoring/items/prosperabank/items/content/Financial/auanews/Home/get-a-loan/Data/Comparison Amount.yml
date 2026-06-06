@@ -1,0 +1,89 @@
+﻿---
+ID: "51a80da1-f4a4-47ca-8003-e57fdd2a7a50"
+Parent: "2bf56a69-dea7-4aaa-8bb3-d86c8436bb0f"
+Template: "32f00428-21ac-4dc0-aa2b-f2e31ca3e97e"
+Path: "/sitecore/content/Financial/auanews/Home/get-a-loan/Data/Comparison Amount"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "139b10e3-2363-40f9-8351-59a724c1a135"
+      Hint: Amount1
+      Value: 1000
+    - ID: "22ea3b6c-7d16-47dc-b1d7-9e6686c6bd9b"
+      Hint: Amount2
+      Value: 80000
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260605T163031Z
+    - ID: "55199a29-334d-41c9-b133-7163c9e82a7c"
+      Hint: Currency2
+      Value: eur
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "97c4bbd3-06d5-4d6b-93b1-7f4ea90b0acb"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260605T163031Z
+    - ID: "ef3b1e0a-490d-4340-8ebc-5612d6be5e74"
+      Hint: Currency1
+      Value: eur
+- Language: "fr-CA"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "139b10e3-2363-40f9-8351-59a724c1a135"
+      Hint: Amount1
+      Value: 1000
+    - ID: "22ea3b6c-7d16-47dc-b1d7-9e6686c6bd9b"
+      Hint: Amount2
+      Value: 80000
+    - ID: "55199a29-334d-41c9-b133-7163c9e82a7c"
+      Hint: Currency2
+      Value: eur
+    - ID: "811c52c9-9a0d-4c2b-88c5-817193be5c7d"
+      Hint: Title1
+      Value: Montant
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "aa6a9ee5-ab9a-4592-8721-26cb91b24c6a"
+    - ID: "ef3b1e0a-490d-4340-8ebc-5612d6be5e74"
+      Hint: Currency1
+      Value: eur
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "139b10e3-2363-40f9-8351-59a724c1a135"
+      Hint: Amount1
+      Value: 1000
+    - ID: "22ea3b6c-7d16-47dc-b1d7-9e6686c6bd9b"
+      Hint: Amount2
+      Value: 80000
+    - ID: "55199a29-334d-41c9-b133-7163c9e82a7c"
+      Hint: Currency2
+      Value: eur
+    - ID: "620c2827-7248-4310-8de3-7c55ab40a5e3"
+      Hint: Subtitle1
+      Value: 最小
+    - ID: "811c52c9-9a0d-4c2b-88c5-817193be5c7d"
+      Hint: Title1
+      Value: 金額
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "04146bff-fecd-4729-bdda-dd1fa5308ba4"
+    - ID: "bd2c7af4-8f8f-4518-8d5d-2c1006bce654"
+      Hint: Subtitle2
+      Value: 最大

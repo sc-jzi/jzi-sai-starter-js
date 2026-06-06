@@ -1,0 +1,37 @@
+﻿---
+ID: "51aea0d8-fd02-49bb-a874-b2970ff70a64"
+Parent: "6a1f3519-edc3-4864-b048-9faea685c760"
+Template: "9321207b-65d8-4e70-9f85-ee3506a218ed"
+Path: /sitecore/content/Financial/ProsperaFinancial/Data/Cards/2026 Holtgrewe Legislative Fellowship
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "00d661d1-959d-46de-8946-c4f0a58dd1b2"
+      Hint: Title
+      Value: 2026 Holtgrewe Legislative Fellowship
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260605T183550Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "789f7c67-08ea-4d96-9115-e2284971f185"
+      Hint: Text
+      Value: <p>Complete an 8 week residency with a Legislative office in DC. The Fellowship provides several exclusive opportunities to be involved on Capitol Hill with the important policy issues affecting urologists and their practices.</p>
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "381912b6-1477-4a4f-879b-60f144641a87"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260605T183625Z
