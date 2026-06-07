@@ -7,6 +7,7 @@ import { Default as ThemeSwitcher } from '../Utilities/ThemeSwitcher';
 import { isSearchSDKEnabled } from 'src/services/SearchSDKService';
 import ClickOutside from '../../hooks/ClickOutside';
 import { useRouter } from 'next/router';
+import { DemoUserSwitcher } from '../NonSitecore/DemoUserSwitcher';
 
 type EyebrowLink = {
   label: string;
@@ -130,6 +131,9 @@ export const Default = (props: ComponentProps): JSX.Element => {
               <div className="eyebrow-right">
                 <nav className="eyebrow-utility-nav" aria-label="Utility navigation">
                   <ul>
+                    <li>
+                      <DemoUserSwitcher />
+                    </li>
                     {UTILITY_LINKS.map((link) => (
                       <li key={link.label}>
                         <a href={link.href} className="text-white">{link.label}</a>
@@ -140,14 +144,6 @@ export const Default = (props: ComponentProps): JSX.Element => {
 
                 <div className="eyebrow-actions">
                   <ThemeSwitcher />
-                  <button
-                    type="button"
-                    className="eyebrow-search-button"
-                    onClick={onSearchOpen}
-                    aria-label="Search"
-                  >
-                    <SearchIcon />
-                  </button>
                 </div>
               </div>
             </div>

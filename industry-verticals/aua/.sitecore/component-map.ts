@@ -109,6 +109,7 @@ import * as Accordion from 'src/components/PageContent/Accordion';
 import * as ParallaxBackgroundImage from 'src/components/NonSitecore/ParallaxBackgroundImage';
 import * as IconAccent from 'src/components/NonSitecore/IconAccent';
 import * as DottedAccent from 'src/components/NonSitecore/DottedAccent';
+import * as DemoUserSwitcher from 'src/components/NonSitecore/DemoUserSwitcher';
 import * as CountUp from 'src/components/NonSitecore/CountUp';
 import * as Header from 'src/components/Navigation/Header';
 import * as Footer from 'src/components/Navigation/Footer';
@@ -224,6 +225,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ParallaxBackgroundImage', { ...ParallaxBackgroundImage }],
   ['IconAccent', { ...IconAccent }],
   ['DottedAccent', { ...DottedAccent }],
+  ['DemoUserSwitcher', { ...DemoUserSwitcher, componentType: 'client' }],
   ['CountUp', { ...CountUp }],
   ['Header', { ...Header }],
   ['Footer', { ...Footer }],

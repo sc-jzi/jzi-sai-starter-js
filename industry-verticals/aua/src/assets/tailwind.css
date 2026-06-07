@@ -1,5 +1,25 @@
 @layer theme, utilities;
 
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #333333;
+  --color-card: #ffffff;
+  --color-card-foreground: #333333;
+  --color-popover: #ffffff;
+  --color-popover-foreground: #333333;
+  --color-primary: #0077b5;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f0f5f9;
+  --color-secondary-foreground: #003d5b;
+  --color-muted: #f0f5f9;
+  --color-muted-foreground: #5a6770;
+  --color-accent: #e8f2f8;
+  --color-accent-foreground: #003d5b;
+  --color-border: #d2d2d2;
+  --color-input: #d2d2d2;
+  --color-ring: #0077b5;
+}
+
 @import 'tailwindcss/theme.css' layer(theme);
 @import 'tailwindcss/utilities.css' layer(utilities);
 
