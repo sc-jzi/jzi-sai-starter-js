@@ -2,7 +2,7 @@
   padding: 0 !important;
 
   .parallax-banner-inner {
-    min-height: 80vh;
+    min-height: 60vh;
   }
 
   .parallax-banner-foreground {
@@ -10,9 +10,7 @@
   }
 
   .parallax-banner-background {
-    /* stylelint-disable */
-    mask-image: radial-gradient(ellipse, rgba(255, 255, 255, 0.7) 10%, rgba(255, 255, 255, 1) 100%);
-    /* stylelint-enable */
+    mask-image: none;
   }
 
   .parallax-banner-content {
@@ -20,13 +18,16 @@
     inset: 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 5%;
 
     &-inner {
-      max-width: 50%;
+      max-width: 40rem;
+      color: $text-white;
 
       @include respond-to(mobile-large) {
-        max-width: 80%;
+        max-width: 90%;
+        padding: 0 1rem;
       }
     }
   }

@@ -6,14 +6,13 @@ html {
 }
 
 body {
-  @include opensans-font-stack;
-
+  font-family: var(--font-family, 'Inter', Helvetica, Arial, sans-serif);
   position: relative;
   overflow: auto;
   overflow-x: hidden;
   color: $text-basic;
-  font-size: inherit;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.6;
   background: $page-bg;
   -webkit-tap-highlight-color: rgb(0 0 0 / 0%);
   height: auto !important;
@@ -28,11 +27,14 @@ main {
 }
 
 a {
-  color: $text-basic;
+  color: var(--text-colored);
   cursor: pointer;
+  text-decoration: none;
+  transition: color 0.2s ease;
 
   &:hover {
-    color: $text-basic-active;
+    color: #0052a3;
+    text-decoration: none;
   }
 }
 
@@ -42,31 +44,48 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: bold;
+  font-weight: 700;
+  color: $text-heading-color;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 3rem;
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 2.25rem;
 }
 
 h3 {
-  font-size: 1.2em;
+  font-size: 1.75rem;
 }
 
 h4 {
-  font-size: 1em;
+  font-size: 1.375rem;
 }
 
 h5 {
-  font-size: 0.83em;
+  font-size: 1.125rem;
 }
 
 h6 {
-  font-size: 0.67em;
+  font-size: 1rem;
+}
+
+@include respond-to(mobile-large) {
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
 }
 
 ul li {

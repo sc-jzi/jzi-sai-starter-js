@@ -4,14 +4,18 @@
 .sitecore-preview-search-input {
   width: 800px;
   box-sizing: border-box;
-  padding: .6rem 2rem .6rem 3rem;
+  padding: 0.625rem 1.5rem 0.625rem 2.5rem;
   text-align: left !important;
   color: var(--text-body);
   background: var(--bg-body);
-  border-width: 1px;
+  border: 1px solid var(--border-color);
+  border-radius: 9999px;
+  font-size: 0.9375rem;
 
   &:focus {
-    outline: 1px solid var(--sdc-palette-grey-800);
+    outline: none;
+    border-color: var(--bg-saturated);
+    box-shadow: 0 0 0 3px rgb(0 102 204 / 10%);
   }
 }
 

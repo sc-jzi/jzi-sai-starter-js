@@ -33,7 +33,10 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
       <Head>
         <title>{fields?.Title?.value?.toString() || 'Page'}</title>
         <link rel="icon" href={`/favicon.ico`} />
-        <meta name="description" content="A Verticals demo site."></meta>
+        <meta
+          name="description"
+          content="Illumina | Sequencing and array solutions to fuel genomic discoveries"
+        ></meta>
       </Head>
 
       {/* root placeholder for the app, which we add components to using route data */}

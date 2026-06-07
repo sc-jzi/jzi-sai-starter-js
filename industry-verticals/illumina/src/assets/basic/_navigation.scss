@@ -1,8 +1,8 @@
 @import 'src/assets/sass/abstracts/vars';
 @import 'variables';
 
-$hamburger-width: 32px;
-$hamburger-height: 25px;
+$hamburger-width: 28px;
+$hamburger-height: 20px;
 $border-size: 6px;
 $hamburger-margin: 18px;
 
@@ -29,12 +29,13 @@ $hamburger-margin: 18px;
     ul {
       list-style: none;
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
       align-items: center;
       margin-bottom: 0;
 
       @include respond-to(mobile-large) {
         flex-direction: column;
+        gap: 1.5rem;
       }
     }
 
@@ -47,7 +48,14 @@ $hamburger-margin: 18px;
       > .navigation-title {
         > a {
           border-width: 0;
-          font-weight: bold;
+          font-weight: 500;
+          color: var(--text-body);
+          font-size: 1rem;
+          transition: color 0.2s ease;
+
+          &:hover {
+            color: var(--text-colored);
+          }
         }
       }
     }
@@ -58,7 +66,7 @@ $hamburger-margin: 18px;
       display: none;
       position: fixed;
       inset: 0;
-      background-color: var(--bg-main);
+      background-color: var(--bg-body);
       z-index: 3;
 
       * {
@@ -67,11 +75,11 @@ $hamburger-margin: 18px;
 
       .dark & {
         .button-nav-item a {
-          background-color: var(--text-body);
-          color: var(--bg-body);
+          background-color: var(--bg-saturated);
+          color: var(--button-main-color);
 
           &:hover {
-            filter: brightness(85%);
+            background-color: #0052a3;
           }
         }
       }
@@ -91,7 +99,8 @@ $hamburger-margin: 18px;
       .level1 {
         > .navigation-title {
           > a {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
+            font-weight: 600;
           }
         }
       }
@@ -111,14 +120,14 @@ $hamburger-margin: 18px;
 
         &:checked {
           position: fixed;
-          top: 2rem;
-          right: 2rem;
+          top: 1.5rem;
+          right: 1.5rem;
 
           ~ {
             .menu-humburger {
               position: fixed;
-              top: 2rem;
-              right: 2rem;
+              top: 1.5rem;
+              right: 1.5rem;
               z-index: 5;
 
               span:nth-child(1) {
@@ -154,9 +163,9 @@ $hamburger-margin: 18px;
         height: $hamburger-height;
 
         span {
-          height: calc($hamburger-height / 5);
+          height: 2px;
           background-color: var(--text-body);
-          border-radius: var(--roundness);
+          border-radius: 1px;
           transition: transform 0.3s ease-in-out;
         }
       }

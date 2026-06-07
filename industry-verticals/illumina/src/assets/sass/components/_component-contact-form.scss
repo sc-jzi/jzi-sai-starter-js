@@ -8,11 +8,11 @@
     position: relative;
     border-radius: var(--roundness);
     overflow: hidden;
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
 
     @include respond-to(mobile-large) {
-      padding: 4rem 1rem;
+      padding: 3rem 1rem;
     }
   }
 
@@ -27,11 +27,13 @@
 
   &-inner {
     position: relative;
-    padding: 3rem;
-    max-width: 30rem;
+    padding: 2.5rem;
+    max-width: 32rem;
     border-radius: var(--roundness);
     background-color: var(--bg-body);
     z-index: 2;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
   }
 
   form {
@@ -43,11 +45,19 @@
       border: 1px solid var(--border-color);
       border-radius: var(--roundness);
       margin-bottom: 1rem;
-      padding: 1rem 1rem 0.75rem;
+      padding: 0.875rem 1rem;
+      font-size: 1rem;
+      transition: border-color 0.2s ease;
+
+      &:focus {
+        outline: none;
+        border-color: var(--bg-saturated);
+        box-shadow: 0 0 0 3px rgb(0 102 204 / 10%);
+      }
     }
 
     input[type='submit'] {
-      align-self: flex-end;
+      align-self: flex-start;
     }
   }
 }

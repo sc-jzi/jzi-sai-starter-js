@@ -1,10 +1,14 @@
 @import 'src/assets/sass/abstracts/vars';
 
+$eyebrow-utility-color: #616161;
+
 .eyebrow {
-  color: var(--text-footer);
-  background-color: var(--bg-footer);
+  color: $eyebrow-utility-color;
+  background-color: #fff;
   width: 100%;
   transition: 0.4s;
+  font-size: 0.8125rem;
+  border-bottom: 1px solid var(--border-color);
 
   @include respond-to(mobile-large) {
     padding: 0 $size-padding;
@@ -14,10 +18,51 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 2rem;
+    gap: 1.5rem;
+    min-height: 2.5rem;
+  }
+
+  &-utility-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  &-utility-link {
+    color: $eyebrow-utility-color;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--text-colored);
+      text-decoration: none;
+    }
+  }
+
+  &-utility-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $eyebrow-utility-color;
+    text-decoration: none;
+    line-height: 1;
+    transition: color 0.2s ease;
+
+    i {
+      font-size: 1.125rem;
+    }
+
+    &:hover {
+      color: var(--text-colored);
+      text-decoration: none;
+    }
   }
 }
 
+.site-financial .eyebrow .container,
 .site-services .eyebrow .container {
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: none;
 }

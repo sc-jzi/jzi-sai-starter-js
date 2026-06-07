@@ -10,13 +10,14 @@ footer {
   }
 
   a {
-    color: var(--text-footer);
+    color: var(--text-colored);
     text-decoration: none;
     opacity: 1;
-    transition: all 0.3s;
+    transition: color 0.2s ease;
 
     &:hover {
-      opacity: 0.8;
+      color: #0052a3;
+      opacity: 1;
     }
   }
 }

@@ -4,9 +4,10 @@
 @import 'swiper/css/navigation';
 
 .site-services,
-.site-financial {
-  --swiper-pagination-bullet-size: 0.75rem;
-  --swiper-pagination-bullet-horizontal-gap: 0.5rem;
+.site-financial,
+.site-basic {
+  --swiper-pagination-bullet-size: 0.5rem;
+  --swiper-pagination-bullet-horizontal-gap: 0.375rem;
   --swiper-pagination-color: var(--bg-saturated);
   --swiper-pagination-bullet-inactive-color: var(--bg-body);
   --swiper-pagination-bullet-inactive-border-color: var(--border-color);
@@ -16,13 +17,14 @@
 
 .swiper-pagination {
   position: static;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 
   &-bullet {
     border: 2px solid var(--swiper-pagination-bullet-inactive-border-color);
 
     &.swiper-pagination-bullet-active {
       border: 2px solid var(--swiper-pagination-color);
+      background-color: var(--swiper-pagination-color);
     }
   }
 }
@@ -31,17 +33,27 @@
 .swiper-button-next {
   position: static;
   margin-top: 0;
-  width: 3rem;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border: 1px solid var(--border-color);
   border-radius: 100%;
-  margin-left: 1rem;
+  margin-left: 0.75rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    background-color: var(--bg-saturated);
+    border-color: var(--bg-saturated);
+
+    &::after {
+      background-color: #fff;
+    }
+  }
 
   &::after {
     content: '';
     display: block;
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
     background-color: var(--text-body);
     clip-path: polygon(
       99.977% 63.506%,
@@ -97,7 +109,6 @@
       0.371% 60.662%,
       0.813% 61.709%,
       1.406% 62.665%,
-      2.134% 63.514%,
       2.984% 64.243%,
       3.939% 64.835%,
       4.986% 65.277%,
@@ -129,6 +140,7 @@
       63.529% 100%,
       100% 63.529%
     );
+    transition: background-color 0.2s ease;
   }
 }
 

@@ -13,15 +13,9 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: 70vh;
+    height: 60vh;
     object-fit: cover;
-    /* stylelint-disable */
-    mask-image: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 20%) 0%,
-      rgba(255, 255, 255, 100%) 100%
-    );
-    /* stylelint-enable */
+    mask-image: none;
   }
 
   .rounded-corners {
@@ -30,6 +24,8 @@
 
   .background-content {
     background-color: var(--bg-main);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 
     > div > .row > .component:first-child {
       margin-top: 0;
@@ -38,7 +34,7 @@
 
   &.spaced-top {
     img + .container {
-      margin-top: 30vh;
+      margin-top: 25vh;
     }
   }
 }

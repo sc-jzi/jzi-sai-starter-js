@@ -6,7 +6,7 @@ Path: "/sitecore/content/Financial/ProsperaFinancial/Home/get-a-loan"
 SharedFields:
 - ID: "0d83e59a-c3f1-41be-81b2-762d35e0799f"
   Hint: NavigationClass
-  Value: "{367BA3F8-234E-4964-AD4F-63C46CD259A5}"
+  Value: 
 - ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
   Hint: __Masters
   Value: 
@@ -18,7 +18,11 @@ SharedFields:
   Value: 700
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
-  Value: 
+  Value: |
+    <image mediaid="{89FF3FD8-A862-42C9-8023-27232FE7F5DB}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "17138399-8152-427a-93ee-2466e3152da1"
 - ID: "df6dc0ca-f8ee-493a-a920-f2b710f08452"
   Hint: BackgroundImage
   Value: |
@@ -118,18 +122,24 @@ SharedFields:
 Languages:
 - Language: en
   Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "f889e285-546a-4bdf-9966-7fcc22068326"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: Get a loan
+    Value: Support
   Versions:
   - Version: 1
     Fields:
     - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
       Hint: __Lock
-      Value: 
+      Value: <r />
     - ID: "247be607-394a-4bf2-8c8a-509b07025dd9"
       Hint: Title
-      Value: Consumer Loan Online
+      Value: Support
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260607T195729Z
     - ID: "3d30539f-d403-496a-a512-ac885b1a2f8b"
       Hint: Content
       Value: For all your wishes – we have the right solution
@@ -138,10 +148,21 @@ Languages:
       Value: "{171CCFD4-8543-428E-9A9B-8E6557E63B6D}"
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: Get a loan
+      Value: Support
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "5f3a9bbc-2e4e-4d1c-a0a6-9bfaf84a3505"
+      Value: "5364090b-c133-446c-b72f-647ab27365e5"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260607T195743Z
 - Language: "fr-CA"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"

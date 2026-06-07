@@ -42,7 +42,7 @@ $break-mobile-large: 992px;
 }
 
 @mixin opensans-font-stack() {
-  font-family: 'Open Sans', Helvetica, Verdana, Tahoma, sans-serif;
+  font-family: var(--font-family, 'Inter', Helvetica, Arial, sans-serif);
 }
 
 @mixin loading-gif() {

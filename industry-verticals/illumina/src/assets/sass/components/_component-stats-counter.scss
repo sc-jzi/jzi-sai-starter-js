@@ -1,8 +1,8 @@
 .stats-counter {
   .container-wide-fluid {
     position: relative;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   .container {
@@ -17,9 +17,18 @@
       border-radius: var(--roundness);
       background-color: var(--bg-body);
       z-index: 2;
+      box-shadow: var(--shadow-sm);
 
       > div {
-        padding: 3em;
+        padding: 2.5rem;
+        text-align: center;
+
+        .count {
+          font-size: 2.5rem;
+          font-weight: 700;
+          color: var(--text-colored);
+          letter-spacing: -0.02em;
+        }
 
         &:nth-child(2) {
           border-left: 1px solid var(--border-color);
@@ -41,16 +50,17 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 17rem;
+    width: 14rem;
     aspect-ratio: 1 / 1;
     border-radius: var(--roundness);
     object-fit: cover;
+    box-shadow: var(--shadow-md);
 
     @include respond-to(mobile-large) {
       position: static;
       transform: none;
       width: 100%;
-      height: 17rem;
+      height: 14rem;
       aspect-ratio: unset;
     }
   }
@@ -59,7 +69,7 @@
     left: 0;
 
     @include respond-to(mobile-large) {
-      margin-bottom: -3rem;
+      margin-bottom: -2rem;
     }
   }
 
@@ -67,36 +77,13 @@
     right: 0;
 
     @include respond-to(mobile-large) {
-      margin-top: -3rem;
+      margin-top: -2rem;
     }
   }
 
   &.with-dotted-accents {
     .dotted-accent {
-      position: absolute;
-      z-index: 1;
-
-      &-top {
-        top: -3rem;
-        left: 19rem;
-
-        @include respond-to(mobile-large) {
-          top: 0;
-          right: 0;
-          left: unset;
-        }
-      }
-
-      &-bottom {
-        bottom: -3rem;
-        right: 19rem;
-
-        @include respond-to(mobile-large) {
-          bottom: 0;
-          left: 0;
-          right: unset;
-        }
-      }
+      display: none;
     }
   }
 

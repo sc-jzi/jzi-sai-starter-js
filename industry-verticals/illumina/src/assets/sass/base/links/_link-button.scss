@@ -1,27 +1,20 @@
 @import 'src/assets/sass/abstracts/vars/colors';
 @import 'src/assets/sass/abstracts/mixins';
 
-.site-financial {
+.site-financial,
+.site-services,
+.site-basic {
   --button-main-color: #fff;
   --button-main-bg-color: var(--bg-saturated);
-  --button-secondary-color: var(--text-colored);
+  --button-secondary-color: var(--bg-saturated);
+  --button-secondary-bg-color: transparent;
   --button-simple-color: var(--text-colored);
-  --button-padding: 10px 50px;
-  --button-roundness: 40px;
-  --button-font-weight: 500;
-  --button-font-size: 1.125rem;
-}
-
-.site-services {
-  --button-main-color: #fff;
-  --button-main-bg-color: var(--bg-saturated);
-  --button-secondary-color: var(--text-body);
-  --button-simple-color: var(--text-body);
-  --button-padding: 1rem 1.5rem 0.75rem;
-  --button-roundness: var(--roundness);
-  --button-font-weight: 800;
-  --button-font-size: 0.875rem;
-  --button-text-transform: uppercase;
+  --button-padding: 0.75rem 2rem;
+  --button-roundness: 9999px;
+  --button-font-weight: 600;
+  --button-font-size: 1rem;
+  --button-text-transform: none;
+  --button-shadow: 0 2px 4px rgb(0 102 204 / 15%);
 }
 
 .button {
@@ -32,6 +25,7 @@
   border-radius: var(--button-roundness);
   padding: var(--button-padding);
   transition: all 0.2s ease-in-out;
+  letter-spacing: 0.01em;
 }
 
 .button-main {
@@ -39,6 +33,7 @@
   color: var(--button-main-color);
   text-transform: var(--button-text-transform);
   border: none;
+  box-shadow: var(--button-shadow);
 
   a {
     color: var(--button-main-color);
@@ -47,13 +42,15 @@
 
   &:hover {
     color: var(--button-main-color);
-    filter: brightness(125%);
+    background-color: #0052a3;
+    box-shadow: 0 4px 12px rgb(0 102 204 / 25%);
   }
 }
 
 .button-secondary {
   border: 2px solid var(--button-secondary-color);
   color: var(--button-secondary-color);
+  background-color: var(--button-secondary-bg-color);
   text-transform: var(--button-text-transform);
 
   a {
@@ -62,18 +59,26 @@
   }
 
   &:hover {
-    color: var(--button-secondary-color);
-    filter: brightness(125%);
+    color: var(--button-main-color);
+    background-color: var(--button-secondary-color);
+    border-color: var(--button-secondary-color);
+
+    a {
+      color: var(--button-main-color);
+    }
   }
 }
 
 .button-accent {
   background-color: var(--bg-accent);
   color: var(--button-main-color);
+  border: none;
+  box-shadow: 0 2px 4px rgb(232 119 34 / 20%);
 
   &:hover {
     color: var(--button-main-color);
-    filter: brightness(85%);
+    background-color: #c45f10;
+    box-shadow: 0 4px 12px rgb(232 119 34 / 30%);
   }
 }
 
@@ -85,6 +90,22 @@
   text-decoration: none;
   color: var(--button-simple-color);
   font-weight: var(--button-font-weight);
+  position: relative;
+
+  &::after {
+    content: '›';
+    margin-left: 0.35em;
+    font-size: 1.1em;
+    transition: transform 0.2s ease;
+  }
+
+  &:hover {
+    color: #0052a3;
+
+    &::after {
+      transform: translateX(3px);
+    }
+  }
 }
 
 // Sort of a style reset for <a> when we want to use it as a wrapper element
@@ -103,8 +124,9 @@
 .default {
   @include default-link-button;
 
-  background: #f6f6f6;
+  background: $illumina-gray-100;
   color: $text-basic;
+  border-radius: 9999px;
 }
 
 .button-success,
@@ -113,6 +135,7 @@
 
   background: $btn-green-light;
   color: $text-white;
+  border-radius: 9999px;
 
   &:hover {
     color: $text-white;
@@ -126,6 +149,7 @@
 
   background: $btn-red;
   color: $text-white;
+  border-radius: 9999px;
 
   &:hover {
     color: $text-white;

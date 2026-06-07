@@ -1,27 +1,54 @@
-.site-financial {
+.site-financial,
+.site-services {
   --heading-cta-text-opacity: 1;
 }
 
-.site-services {
-  --heading-cta-text-opacity: 0.65;
-}
-
 .heading-cta {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
   @include respond-to(mobile-large) {
-    padding: 0 $size-padding;
+    padding: 2rem $size-padding;
   }
 
   .heading-content-wrapper {
-    max-width: 33rem;
+    max-width: 40rem;
   }
 
   p {
     opacity: var(--heading-cta-text-opacity);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--text-body);
   }
 
   &.compact {
     .heading-content-wrapper {
-      max-width: 27rem;
+      max-width: 32rem;
+    }
+  }
+
+  &.page-heading {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    h1,
+    h2 {
+      font-size: 2.75rem;
+      letter-spacing: -0.03em;
+
+      @include respond-to(mobile-large) {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  &.centered {
+    text-align: center;
+
+    .heading-content-wrapper {
+      max-width: 48rem;
+      margin: 0 auto;
     }
   }
 }

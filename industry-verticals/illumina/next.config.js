@@ -62,6 +62,11 @@ const nextConfig = {
         hostname: 'starter-*.**',
         port: '',
       },
+      {
+        protocol: 'https',
+        hostname: '*.**',
+        port: '',
+      }
     ],
   },
 

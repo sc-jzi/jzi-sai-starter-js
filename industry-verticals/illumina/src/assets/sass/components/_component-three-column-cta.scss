@@ -1,12 +1,12 @@
-.site-financial {
+.site-financial,
+.site-services {
   --promo-cta-text-opacity: 1;
 }
 
-.site-services {
-  --promo-cta-text-opacity: 0.65;
-}
-
 .three-column-cta {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
   @include respond-to(mobile-large) {
     padding: 0 $size-padding;
   }
@@ -21,7 +21,7 @@
 
   .row {
     @include respond-to(mobile-large) {
-      gap: 3em;
+      gap: 2.5rem;
     }
   }
 
@@ -30,11 +30,23 @@
     flex-direction: column;
     align-items: flex-start;
     height: 100%;
+    background-color: var(--bg-body);
+    border-radius: var(--roundness);
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
   }
 
   p {
     margin-bottom: 1.5rem;
     opacity: var(--promo-cta-text-opacity);
+    line-height: 1.6;
   }
 
   .button {
@@ -47,8 +59,8 @@
       overflow: hidden;
       align-items: center;
       text-align: center;
-      border: 5px solid var(--border-color);
-      padding-bottom: 1em;
+      border: 1px solid var(--border-color);
+      padding-bottom: 1.5rem;
     }
 
     h2,
@@ -58,7 +70,7 @@
     }
 
     img {
-      border-radius: 0;
+      border-radius: var(--roundness) var(--roundness) 0 0;
     }
   }
 
@@ -69,27 +81,28 @@
     }
 
     .content-wrapper {
-      background-color: var(--bg-main);
-      border-radius: var(--roundness);
+      background: var(--gradient-card);
+      border: none;
+      color: $text-white;
       overflow: hidden;
       align-items: center;
       text-align: center;
-      padding-bottom: 1em;
-    }
+      padding-bottom: 2rem;
 
-    h2,
-    p {
-      padding-left: 1rem;
-      padding-right: 1rem;
+      h2,
+      p {
+        color: $text-white;
+      }
     }
 
     .dark & {
       .button {
-        background-color: var(--text-body);
-        color: var(--bg-body);
+        background-color: $illumina-white;
+        color: var(--bg-saturated);
 
         &:hover {
-          filter: brightness(85%);
+          background-color: $illumina-white;
+          color: #0052a3;
         }
       }
     }
@@ -97,61 +110,66 @@
 
   &.with-icons {
     .row {
-      border: 1px solid var(--border-color);
-      border-radius: var(--roundness);
-      gap: 0;
+      border: none;
+      border-radius: 0;
+      gap: 1.5rem;
 
       > div:nth-child(2) {
-        border-left: 1px solid var(--border-color);
-        border-right: 1px solid var(--border-color);
+        border: none;
 
         @include respond-to(mobile-large) {
-          border-left: none;
-          border-right: none;
-          border-top: 1px solid var(--border-color);
-          border-bottom: 1px solid var(--border-color);
+          border: none;
         }
       }
     }
 
     .wrapper-link {
       display: block;
-      padding: 3rem;
+      padding: 2rem;
+      border: 1px solid var(--border-color);
+      border-radius: var(--roundness);
+      background-color: var(--bg-body);
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
 
       &:hover {
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
+
         .image-wrapper img {
-          transform: scale(1.2);
+          transform: none;
         }
       }
     }
 
     .image-wrapper {
-      width: 5rem;
-      height: 5rem;
+      width: 4rem;
+      height: 4rem;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: var(--bg-saturated);
+      background: var(--gradient-card);
       border-radius: 100%;
+      margin-bottom: 1rem;
 
       img {
-        width: 2rem;
+        width: 1.75rem;
         height: auto;
         margin: 0;
         border-radius: 0;
-        transition: all 0.3s ease-in-out;
+        transition: none;
       }
     }
   }
 
   &.with-icons-compact {
     .wrapper-link {
-      padding: 2rem 3rem 1rem;
+      padding: 1.5rem 2rem 1rem;
     }
 
     .image-wrapper {
-      width: 4rem;
-      height: 4rem;
+      width: 3.5rem;
+      height: 3.5rem;
 
       img {
         width: 1.5rem;

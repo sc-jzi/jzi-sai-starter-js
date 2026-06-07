@@ -5,11 +5,12 @@ a {
   background-color: transparent;
   text-decoration: none;
   font-size: 1em;
-  color: $text-basic;
-  border-bottom: 1px solid $border-basic-color;
+  color: var(--text-colored);
+  border-bottom: none;
+  transition: color 0.2s ease;
 
   &:hover {
-    color: $text-basic-active;
+    color: #0052a3;
     text-decoration: none;
   }
 }

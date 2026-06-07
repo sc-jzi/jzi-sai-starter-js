@@ -1,108 +1,150 @@
-// Financial
+// Illumina brand palette
+$illumina-blue: #0066cc;
+$illumina-blue-dark: #004b99;
+$illumina-blue-light: #e8f4fc;
+$illumina-orange: #e87722;
+$illumina-orange-dark: #c45f10;
+$illumina-purple: #6b2d8e;
+$illumina-gray-900: #1a1a1a;
+$illumina-gray-700: #333;
+$illumina-gray-500: #6b6b6b;
+$illumina-gray-300: #d9d9d9;
+$illumina-gray-200: #e8e8e8;
+$illumina-gray-100: #f5f7fa;
+$illumina-white: #fff;
+
+// Primary Illumina site theme (financial)
 .site-financial {
-  --text-body: #333;
-  --text-body-inverted: #fff;
-  --text-colored: #034c81;
-  --text-footer: #fff;
-  --text-accent: #a82a39;
-  --bg-body: #fff;
-  --bg-footer: #333;
-  --bg-main: #f0f5f7;
-  --bg-main-alt: #f0f5f7;
-  --bg-color: #c5e4f3;
-  --bg-saturated: #034c81;
-  --bg-accent: #c03021;
-  --border-color: #f0f5f7;
-  --hr-color: #fff;
-  --roundness: 1rem;
+  --text-body: #{$illumina-gray-700};
+  --text-body-inverted: #{$illumina-white};
+  --text-colored: #{$illumina-blue};
+  --text-footer: #{$illumina-gray-700};
+  --text-accent: #{$illumina-orange};
+  --bg-body: #{$illumina-white};
+  --bg-footer: #{$illumina-gray-100};
+  --bg-main: #{$illumina-gray-100};
+  --bg-main-alt: #{$illumina-gray-100};
+  --bg-color: #{$illumina-blue-light};
+  --bg-saturated: #{$illumina-blue};
+  --bg-accent: #{$illumina-orange};
+  --border-color: #{$illumina-gray-200};
+  --hr-color: #{$illumina-gray-300};
+  --roundness: 0.625rem;
+  --shadow-sm: 0 2px 8px rgb(0 0 0 / 6%);
+  --shadow-md: 0 4px 16px rgb(0 0 0 / 8%);
+  --gradient-hero: linear-gradient(135deg, #e87722 0%, #6b2d8e 50%, #0066cc 100%);
+  --gradient-card: linear-gradient(180deg, #0066cc 0%, #6b2d8e 100%);
 
   .dark & {
-    --text-body: #fff;
-    --text-body-inverted: #333;
-    --text-colored: #c5e4f3;
-    --text-footer: #fff;
-    --text-accent: #a82a39;
-    --bg-body: #031827;
-    --bg-footer: #333;
-    --bg-main: #034c81;
-    --bg-main-alt: #031827;
-    --bg-color: #034c81;
-    --bg-saturated: #034c81;
-    --bg-accent: #c03021;
-    --border-color: #034c81;
-    --hr-color: #fff;
-    --roundness: 1rem;
+    --text-body: #{$illumina-white};
+    --text-body-inverted: #{$illumina-gray-700};
+    --text-colored: #{$illumina-blue-light};
+    --text-footer: #{$illumina-white};
+    --text-accent: #{$illumina-orange};
+    --bg-body: #{$illumina-gray-900};
+    --bg-footer: #0d0d0d;
+    --bg-main: #2a2a2a;
+    --bg-main-alt: #1f1f1f;
+    --bg-color: #{$illumina-blue-dark};
+    --bg-saturated: #{$illumina-blue};
+    --bg-accent: #{$illumina-orange};
+    --border-color: #3d3d3d;
+    --hr-color: #4a4a4a;
+    --roundness: 0.625rem;
+    --shadow-sm: 0 2px 8px rgb(0 0 0 / 20%);
+    --shadow-md: 0 4px 16px rgb(0 0 0 / 30%);
   }
 }
 
-// Services
+// Secondary Illumina site theme (services) — same brand, warmer accent emphasis
 .site-services {
-  --text-body: #391400;
-  --text-body-inverted: #fff;
-  --text-colored: #ff7145;
-  --text-footer: #391400;
-  --text-accent: #ff7145;
-  --bg-body: #fdf0e9;
-  --bg-footer: #fdf0e9;
-  --bg-main: #fdf0e9;
-  --bg-color: #ff7145;
-  --bg-saturated: #ff7145;
-  --bg-accent: #ff7145;
-  --border-color: #a99185;
-  --hr-color: #fff;
-  --roundness: 0.375rem;
+  --text-body: #{$illumina-gray-700};
+  --text-body-inverted: #{$illumina-white};
+  --text-colored: #{$illumina-blue};
+  --text-footer: #{$illumina-gray-700};
+  --text-accent: #{$illumina-orange};
+  --bg-body: #{$illumina-white};
+  --bg-footer: #{$illumina-gray-100};
+  --bg-main: #{$illumina-gray-100};
+  --bg-main-alt: #faf6f2;
+  --bg-color: #{$illumina-blue-light};
+  --bg-saturated: #{$illumina-blue};
+  --bg-accent: #{$illumina-orange};
+  --border-color: #{$illumina-gray-200};
+  --hr-color: #{$illumina-gray-300};
+  --roundness: 0.625rem;
+  --shadow-sm: 0 2px 8px rgb(0 0 0 / 6%);
+  --shadow-md: 0 4px 16px rgb(0 0 0 / 8%);
+  --gradient-hero: linear-gradient(135deg, #e87722 0%, #6b2d8e 50%, #0066cc 100%);
+  --gradient-card: linear-gradient(180deg, #0066cc 0%, #6b2d8e 100%);
 
   .dark & {
-    --text-body: #fff;
-    --text-body-inverted: #391400;
-    --text-colored: #ff7145;
-    --text-footer: #fff;
-    --text-accent: #ff7145;
-    --bg-body: #29314f;
-    --bg-footer: #29314f;
-    --bg-main: #29314f;
-    --bg-color: #ff7145;
-    --bg-saturated: #ff7145;
-    --bg-accent: #ff7145;
-    --border-color: #5d5f7f;
-    --hr-color: #fff;
-    --roundness: 0.375rem;
+    --text-body: #{$illumina-white};
+    --text-body-inverted: #{$illumina-gray-700};
+    --text-colored: #{$illumina-blue-light};
+    --text-footer: #{$illumina-white};
+    --text-accent: #{$illumina-orange};
+    --bg-body: #{$illumina-gray-900};
+    --bg-footer: #0d0d0d;
+    --bg-main: #2a2a2a;
+    --bg-main-alt: #1f1f1f;
+    --bg-color: #{$illumina-blue-dark};
+    --bg-saturated: #{$illumina-blue};
+    --bg-accent: #{$illumina-orange};
+    --border-color: #3d3d3d;
+    --hr-color: #4a4a4a;
+    --roundness: 0.625rem;
+    --shadow-sm: 0 2px 8px rgb(0 0 0 / 20%);
+    --shadow-md: 0 4px 16px rgb(0 0 0 / 30%);
   }
+}
+
+// Basic site — Illumina defaults
+.site-basic {
+  --text-body: #{$illumina-gray-700};
+  --text-colored: #{$illumina-blue};
+  --text-accent: #{$illumina-orange};
+  --bg-body: #{$illumina-white};
+  --bg-main: #{$illumina-gray-100};
+  --bg-saturated: #{$illumina-blue};
+  --bg-accent: #{$illumina-orange};
+  --border-color: #{$illumina-gray-200};
+  --roundness: 0.625rem;
 }
 
 // Backgrounds colors
 $bg-transparent: transparent !default;
 $bg-basic-color: var(--bg-body) !default;
 $bg-basic-color-active: var(--bg-main) !default;
-$bg-light-gray: #f7f7f7 !default;
-$bg-light-gray-active: #dadada !default;
+$bg-light-gray: $illumina-gray-100 !default;
+$bg-light-gray-active: $illumina-gray-200 !default;
 $bg-blue: var(--bg-color);
 $bg-blue-active: var(--bg-saturated) !default;
-$bg-submenu: #edebeb !default;
-$bg-submenu-active: #f6f6f6 !default;
+$bg-submenu: $illumina-gray-100 !default;
+$bg-submenu-active: $illumina-white !default;
 $bg-black: #000;
 $bg-black-active: #3d3d3d;
-$bg-dark-gray: #262626;
+$bg-dark-gray: $illumina-gray-900;
 
 // Text colors
 $text-white: #fff !default;
-$text-heading-color: var(--text-body) !default;
+$text-heading-color: $illumina-gray-900 !default;
 $text-basic: var(--text-body) !default;
-$text-basic-active: #878787 !default;
-$text-blue: var(--bg-color) !default;
-$text-blue-active: var(--bg-saturated) !default;
-$text-submenu-active: #222 !default;
+$text-basic-active: $illumina-gray-500 !default;
+$text-blue: var(--text-colored) !default;
+$text-blue-active: $illumina-blue-dark !default;
+$text-submenu-active: $illumina-gray-900 !default;
 $text-disabled: #aaa !default;
-$text-black: #000 !default;
+$text-black: $illumina-gray-900 !default;
 $text-red: var(--text-accent);
-$text-gray: #262626;
+$text-gray: $illumina-gray-700;
 
 // Border colors
-$border-gray: #d2d2d2 !default;
+$border-gray: $illumina-gray-300 !default;
 $border-white: #fff !default;
-$border-basic-color: var(--bg-color) !default;
+$border-basic-color: var(--border-color) !default;
 $border-basic-active: var(--bg-saturated) !default;
-$border-nav-submenu: #e1e1e1;
+$border-nav-submenu: $illumina-gray-200;
 
 // Styles for each component separately
 // Accordion
@@ -120,9 +162,9 @@ $breadcrumb-color: $text-basic;
 $breadcrumb-color-active: $text-blue-active;
 
 // Buttons colors
-$btn-green-light: #a0ce4e;
-$btn-green: #92be43;
-$btn-red-active: var(--text-accent);
+$btn-green-light: $illumina-blue;
+$btn-green: $illumina-blue-dark;
+$btn-red-active: $illumina-orange-dark;
 $btn-red: var(--bg-accent);
 
 // Carousel
@@ -175,7 +217,7 @@ $file-list-link-btn-bg-active: $bg-blue;
 // Flip
 $flip-bg: transparent;
 $flip-slides-bg: $bg-basic-color;
-$flip-slides0-bg: #f6f6f6;
+$flip-slides0-bg: $illumina-gray-100;
 $flip-slides1-bg: $bg-blue-active;
 $flip-slides1-color: $text-white;
 $flip-border: $border-gray;
@@ -205,7 +247,7 @@ $link-list-header-border: $border-basic-color;
 $link-list-items-bg: transparent;
 $link-list-item-bg: transparent;
 $link-list-item-color: $text-basic;
-$link-list-item-color-active: $text-basic-active;
+$link-list-item-color-active: $text-blue-active;
 $link-list-item-border-active: $border-basic-color;
 
 // Login
@@ -257,8 +299,8 @@ $promo-shadow-border: $border-basic-color;
 $rich-content-bg: transparent;
 $rich-content-color: $text-basic;
 $rich-content-border: transparent;
-$rich-content-link-color: $text-red;
-$rich-content-link-color-active: $text-basic-active;
+$rich-content-link-color: $text-blue;
+$rich-content-link-color-active: $text-blue-active;
 
 // Search
 $search-filter: $text-basic;
@@ -271,11 +313,11 @@ $menu-active-color: var(--text-colored);
 // Navigation
 $nav-bg: transparent;
 $nav-color-root: $text-basic;
-$nav-color-root-active: $text-basic;
+$nav-color-root-active: $text-blue;
 $nav-border-root: $border-basic-color;
 $nav-border-root-active: $border-basic-color;
 $nav-color-submenu: $text-submenu-active;
-$nav-color-submenu-active: $text-submenu-active;
+$nav-color-submenu-active: $text-blue;
 $nav-bg-root: $bg-submenu-active;
 $nav-bg-submenu: $bg-submenu-active;
 $nav-bg-submenu-active: $bg-submenu-active;
@@ -306,8 +348,8 @@ $toggle-show-color: $text-basic-active;
 
 // Search Components
 $search-btn-bg: transparent;
-$search-btn-active-bg: #e0e0e0;
-$search-btn-active-border: #adadad;
+$search-btn-active-bg: $illumina-gray-200;
+$search-btn-active-border: $illumina-gray-300;
 
 // Image component
 $image-caption-color: $text-basic;
@@ -329,7 +371,7 @@ $tag-link-color: $text-white;
 // Link Component
 $link-bg: transparent;
 $link-text-color: $text-basic;
-$link-text-color-active: $text-basic-active;
+$link-text-color-active: $text-blue-active;
 $link-border: $border-basic-color;
 
 // Overlay

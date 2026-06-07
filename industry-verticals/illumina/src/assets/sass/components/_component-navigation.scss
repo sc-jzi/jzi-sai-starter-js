@@ -5,6 +5,8 @@
   .button-nav-item a {
     @extend .button;
     @extend .button-main;
+    font-size: 0.875rem;
+    padding: 0.625rem 1.5rem;
   }
 
   ul {
@@ -16,9 +18,12 @@
     &:not(.button-nav-item) {
       > .navigation-title > a {
         font-size: $navigation-font-basic;
+        font-weight: 500;
+        color: var(--text-body);
 
         &:hover {
           text-decoration: none;
+          color: var(--text-colored);
         }
       }
     }
@@ -46,7 +51,7 @@
 
   &.navigation-centered {
     .component-content ul li.level1:not(.button-nav-item) > .navigation-title > a {
-      font-weight: normal;
+      font-weight: 500;
     }
 
     @media (width > 992px) {

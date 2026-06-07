@@ -1,23 +1,24 @@
-.site-financial .loan-calculator {
-  --range-slider-color-active: #034c81;
-  --range-slider-color-inactive: #929292;
+.site-financial .loan-calculator,
+.site-services .loan-calculator {
+  --range-slider-color-active: #0066cc;
+  --range-slider-color-inactive: #d9d9d9;
   --calc-bg-main: var(--bg-main);
   --calc-bg-box: var(--bg-body);
 
   .dark & {
-    --range-slider-color-active: #031827;
-    --range-slider-color-inactive: #707070;
+    --range-slider-color-active: #0066cc;
+    --range-slider-color-inactive: #4a4a4a;
   }
 
   &.colored {
-    --range-slider-color-active: #034c81;
-    --range-slider-color-inactive: #929292;
+    --range-slider-color-active: #0066cc;
+    --range-slider-color-inactive: #d9d9d9;
     --calc-bg-main: var(--bg-body);
     --calc-bg-box: var(--bg-main-alt);
 
     .dark & {
-      --range-slider-color-active: #fff;
-      --range-slider-color-inactive: #707070;
+      --range-slider-color-active: #0066cc;
+      --range-slider-color-inactive: #4a4a4a;
       --calc-bg-main: var(--bg-saturated);
     }
   }
@@ -28,17 +29,17 @@
     margin-bottom: 2rem;
 
     label {
-      font-size: 1.5rem;
-      font-weight: bold;
+      font-size: 1.125rem;
+      font-weight: 600;
     }
   }
 
   input[type='range'] {
     width: 100%;
     appearance: none;
-    height: 3px;
+    height: 4px;
     background-color: var(--range-slider-color-inactive);
-    border-radius: var(--roundness);
+    border-radius: 2px;
     background-image: linear-gradient(
       var(--range-slider-color-active),
       var(--range-slider-color-active)
@@ -47,14 +48,15 @@
 
     &::-webkit-slider-thumb {
       appearance: none;
-      height: 40px;
-      width: 40px;
+      height: 36px;
+      width: 36px;
       border-radius: 50%;
       background: var(--range-slider-color-active);
       cursor: pointer;
       background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 30 24" fill="%23fff" ><path d="M13.479,20.178L5.531,12.04L13.446,3.899L10.582,1L0,12.042L10.602,23L13.479,20.178ZM16.52,3.832L24.489,12L16.574,20.131L19.418,23L30,11.958L19.398,1L16.52,3.832Z" /></svg>');
       background-repeat: no-repeat;
       background-position: center;
+      box-shadow: 0 2px 6px rgb(0 102 204 / 25%);
     }
 
     &::-webkit-slider-runnable-track {
@@ -67,9 +69,10 @@
 
   &-input-wrapper {
     position: relative;
-    padding: 0.25rem 1rem;
+    padding: 0.5rem 1rem;
     background-color: var(--calc-bg-box);
-    border-radius: calc(var(--roundness) * 2);
+    border-radius: var(--roundness);
+    border: 1px solid var(--border-color);
 
     svg {
       position: absolute;
@@ -109,40 +112,34 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     background-color: var(--calc-bg-box);
     border-radius: var(--roundness);
     padding: 2rem 1rem 1rem;
-    clip-path: polygon(
-      0 0,
-      calc(50% - 20px) 0,
-      50% 20px,
-      calc(50% + 20px) 0,
-      100% 0,
-      100% 100%,
-      0 100%
-    );
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
 
     > .row {
       align-self: stretch;
     }
 
     .fw-bold {
-      font-size: 1.5rem;
+      font-size: 1.375rem;
+      color: var(--text-colored);
     }
   }
 
   &-monthly-payment {
-    padding: 0.25rem 1.25rem;
+    padding: 0.5rem 1.25rem;
     margin: 1rem 0 0.75rem;
-    border-radius: calc(var(--roundness) * 2);
+    border-radius: var(--roundness);
     background-color: var(--calc-bg-main);
   }
 
   .dark & {
     &.colored {
       ::-webkit-slider-thumb {
-        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 30 24" fill="%23034c81" ><path d="M13.479,20.178L5.531,12.04L13.446,3.899L10.582,1L0,12.042L10.602,23L13.479,20.178ZM16.52,3.832L24.489,12L16.574,20.131L19.418,23L30,11.958L19.398,1L16.52,3.832Z" /></svg>');
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 30 24" fill="%23fff" ><path d="M13.479,20.178L5.531,12.04L13.446,3.899L10.582,1L0,12.042L10.602,23L13.479,20.178ZM16.52,3.832L24.489,12L16.574,20.131L19.418,23L30,11.958L19.398,1L16.52,3.832Z" /></svg>');
       }
     }
   }

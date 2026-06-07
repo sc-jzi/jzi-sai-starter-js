@@ -1,9 +1,6 @@
-.site-financial {
-  --author-position-opacity: 1;
-}
-
+.site-financial,
 .site-services {
-  --author-position-opacity: 0.65;
+  --author-position-opacity: 1;
 }
 
 .author-widget {
@@ -22,28 +19,31 @@
       font-size: 1rem;
       color: var(--text-colored);
       margin-bottom: 0;
+      font-weight: 600;
     }
 
     .author-position {
-      font-weight: bold;
+      font-weight: 500;
       margin-bottom: 0;
+      font-size: 0.875rem;
     }
   }
 
   &.with-socials {
     .author-img {
-      width: 5rem;
-      height: 5rem;
+      width: 4.5rem;
+      height: 4.5rem;
     }
 
     .author-name {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       color: var(--text-body);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
+      font-weight: 700;
     }
 
     .author-position {
-      font-weight: normal;
+      font-weight: 400;
       font-size: 0.875rem;
       opacity: var(--author-position-opacity);
       margin-bottom: 0;
@@ -58,10 +58,15 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 3rem;
-        height: 3rem;
+        width: 2.5rem;
+        height: 2.5rem;
         background-color: var(--bg-saturated);
         border-radius: 100%;
+        transition: background-color 0.2s ease;
+
+        &:hover {
+          background-color: #0052a3;
+        }
 
         > img {
           height: 1rem;

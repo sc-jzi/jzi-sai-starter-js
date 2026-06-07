@@ -1,19 +1,14 @@
-.site-financial {
-  --promo-cta-img-ratio: 3/2;
-  --promo-cta-text-opacity: 1;
-  --promo-cta-text-size: 1.25rem;
-}
-
+.site-financial,
 .site-services {
-  --promo-cta-img-ratio: 1/1;
-  --promo-cta-text-opacity: 0.65;
-  --promo-cta-text-size: 1rem;
+  --promo-cta-img-ratio: 4/3;
+  --promo-cta-text-opacity: 1;
+  --promo-cta-text-size: 1.0625rem;
 }
 
 .promo-cta {
   background-color: var(--bg-main-alt);
-  padding-top: $component-margin * 2;
-  padding-bottom: $component-margin * 2;
+  padding-top: $component-margin * 1.5;
+  padding-bottom: $component-margin * 1.5;
 
   @include respond-to(mobile-large) {
     padding-left: $size-padding;
@@ -22,35 +17,10 @@
 
   &.with-dotted-accents {
     .image-wrapper {
-      margin: 3.5rem;
+      margin: 2rem;
 
       .dotted-accent {
-        position: absolute;
-        z-index: 2;
-
-        &-top {
-          top: -70px;
-          left: -70px;
-        }
-
-        &-bottom {
-          bottom: -70px;
-          right: -70px;
-        }
-      }
-    }
-
-    &.reverse {
-      .dotted-accent {
-        &-top {
-          right: -70px;
-          left: unset;
-        }
-
-        &-bottom {
-          left: -70px;
-          right: unset;
-        }
+        display: none;
       }
     }
   }
@@ -63,18 +33,20 @@
 
   &.bordered {
     .image-wrapper img {
-      border-radius: 0;
+      border-radius: var(--roundness);
       border: 1px solid var(--border-color);
     }
   }
 
   .main-content {
-    --bs-gutter-x: 8rem;
-    --bs-gutter-y: 3rem;
+    --bs-gutter-x: 5rem;
+    --bs-gutter-y: 2rem;
+    align-items: center;
   }
 
   .text-content {
     opacity: var(--promo-cta-text-opacity);
+    line-height: 1.7;
   }
 
   .promo-cta-text {
@@ -90,6 +62,7 @@
       object-fit: cover;
       border-radius: var(--roundness);
       overflow: hidden;
+      box-shadow: var(--shadow-md);
     }
   }
 
@@ -106,7 +79,7 @@
     display: flex;
     align-items: center;
     background-color: $bg-transparent !important;
-    min-height: 70vh;
+    min-height: 60vh;
 
     .container {
       position: relative;
@@ -118,13 +91,7 @@
       position: absolute !important;
       inset: 0;
       z-index: 1;
-      /* stylelint-disable */
-      mask-image: radial-gradient(
-        ellipse,
-        rgba(255, 255, 255, 0.2) 10%,
-        rgba(255, 255, 255, 0.7) 100%
-      );
-      /* stylelint-enable */
+      mask-image: none;
     }
   }
 
@@ -141,6 +108,8 @@
         border: 1px solid var(--border-color);
         background-color: var(--bg-body);
         padding: 2rem 3rem;
+        border-radius: var(--roundness);
+        box-shadow: var(--shadow-md);
       }
 
       .styled-list ol {
@@ -149,8 +118,7 @@
     }
 
     .dotted-accent {
-      left: -141px !important;
-      right: unset;
+      display: none;
     }
   }
 }
