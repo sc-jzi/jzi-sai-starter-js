@@ -99,7 +99,9 @@ import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import { FacebookIcon, FacebookShareButton, LinkedinIcon, LinkedinShareButton, TwitterIcon, TwitterShareButton } from 'react-share';
 import { ParallaxBanner, useParallax, Parallax } from 'react-scroll-parallax';
 import { IconAccent } from 'components/NonSitecore/IconAccent';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Default } from 'src/components/Utilities/ThemeSwitcher';
+import { DemoUserSwitcher } from 'src/components/NonSitecore/DemoUserSwitcher';
 
 const importMap = [
   {
@@ -731,9 +733,25 @@ const importMap = [
     ]
   },
   {
+    module: '@/components/ui/select',
+    exports: [
+      { name: 'Select', value: Select },
+      { name: 'SelectContent', value: SelectContent },
+      { name: 'SelectItem', value: SelectItem },
+      { name: 'SelectTrigger', value: SelectTrigger },
+      { name: 'SelectValue', value: SelectValue },
+    ]
+  },
+  {
     module: 'src/components/Utilities/ThemeSwitcher',
     exports: [
       { name: 'Default', value: Default },
+    ]
+  },
+  {
+    module: 'src/components/NonSitecore/DemoUserSwitcher',
+    exports: [
+      { name: 'DemoUserSwitcher', value: DemoUserSwitcher },
     ]
   }
 ] as ImportEntry[];
