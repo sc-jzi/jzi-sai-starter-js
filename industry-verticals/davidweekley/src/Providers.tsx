@@ -3,6 +3,7 @@ import React from 'react';
 import { Page, SitecoreProvider } from '@sitecore-content-sdk/nextjs';
 import scConfig from 'sitecore.config';
 import components from '.sitecore/component-map.client';
+import { SiteTheme } from 'components/utilities/SiteTheme';
 
 export default function Providers({ children, page }: { children: React.ReactNode; page: Page }) {
   return (
@@ -12,6 +13,7 @@ export default function Providers({ children, page }: { children: React.ReactNod
       page={page}
       loadImportMap={() => import('.sitecore/import-map.client')}
     >
+      <SiteTheme siteName={page.siteName} />
       {children}
     </SitecoreProvider>
   );

@@ -3,6 +3,7 @@ import { AppPlaceholder, DesignLibraryApp, Field, Page } from '@sitecore-content
 import Scripts from 'src/Scripts';
 import SitecoreStyles from 'components/content-sdk/SitecoreStyles';
 import componentMap from '.sitecore/component-map';
+import { getSiteThemeClass } from 'lib/site-theme';
 
 interface LayoutProps {
   page: Page;
@@ -17,12 +18,13 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
   const { layout, mode } = page;
   const { route } = layout.sitecore;
   const mainClassPageEditing = mode.isEditing ? 'editing-mode' : 'prod-mode';
+  const siteThemeClass = getSiteThemeClass(page.siteName);
   return (
     <>
       <Scripts />
       <SitecoreStyles layoutData={layout} />
       {/* root placeholder for the app, which we add components to using route data */}
-      <div className={mainClassPageEditing}>
+      <div className={`${mainClassPageEditing} ${siteThemeClass}`}>
         {mode.isDesignLibrary ? (
           route && (
             <DesignLibraryApp

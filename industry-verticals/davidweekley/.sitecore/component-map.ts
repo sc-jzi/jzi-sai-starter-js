@@ -5,6 +5,7 @@ import { Form } from '@sitecore-content-sdk/nextjs';
 
 // end of built-in components
 import * as ThemeSwitcher from 'src/components/utilities/ThemeSwitcher';
+import * as SiteTheme from 'src/components/utilities/SiteTheme';
 import * as LoanCalculator from 'src/components/utilities/LoanCalculator';
 import * as LanguageSwitcher from 'src/components/utilities/LanguageSwitcher';
 import * as ContactForm from 'src/components/utilities/ContactForm';
@@ -56,6 +57,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['FEaaSWrapper', FEaaSServerWrapper],
   ['Form', { ...Form, componentType: 'client' }],
   ['ThemeSwitcher', { ...ThemeSwitcher, componentType: 'client' }],
+  ['SiteTheme', { ...SiteTheme, componentType: 'client' }],
   ['LoanCalculator', { ...LoanCalculator, componentType: 'client' }],
   ['LanguageSwitcher', { ...LanguageSwitcher, componentType: 'client' }],
   ['ContactForm', { ...ContactForm, componentType: 'client' }],

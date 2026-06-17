@@ -11,6 +11,7 @@ import {
 import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
 import { useEffect, useState, Suspense, useCallback, useMemo, useRef } from 'react';
 import React from 'react';
+import { getSiteThemeClass } from 'lib/site-theme';
 import { Text, useSitecore, NextImage, Link, RichText, Placeholder, withDatasourceCheck, Image, AppPlaceholder, CdpHelper } from '@sitecore-content-sdk/nextjs';
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import useVisibility from 'src/hooks/useVisibility';
@@ -47,6 +48,12 @@ const importMap = [
       { name: 'useMemo', value: useMemo },
       { name: 'useRef', value: useRef },
       { name: 'default', value: React },
+    ]
+  },
+  {
+    module: 'lib/site-theme',
+    exports: [
+      { name: 'getSiteThemeClass', value: getSiteThemeClass },
     ]
   },
   {

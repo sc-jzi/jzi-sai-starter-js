@@ -4,6 +4,7 @@ import { BYOCClientWrapper, NextjsContentSdkComponent, FEaaSClientWrapper } from
 import { Form } from '@sitecore-content-sdk/nextjs';
 
 import * as ThemeSwitcher from 'src/components/utilities/ThemeSwitcher';
+import * as SiteTheme from 'src/components/utilities/SiteTheme';
 import * as LoanCalculator from 'src/components/utilities/LoanCalculator';
 import * as LanguageSwitcher from 'src/components/utilities/LanguageSwitcher';
 import * as ContactForm from 'src/components/utilities/ContactForm';
@@ -54,6 +55,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['FEaaSWrapper', FEaaSClientWrapper],
   ['Form', Form],
   ['ThemeSwitcher', { ...ThemeSwitcher }],
+  ['SiteTheme', { ...SiteTheme }],
   ['LoanCalculator', { ...LoanCalculator }],
   ['LanguageSwitcher', { ...LanguageSwitcher }],
   ['ContactForm', { ...ContactForm }],

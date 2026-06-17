@@ -1,18 +1,22 @@
 .language-switcher {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   color: inherit;
   border: none;
   margin: 10px 0;
   cursor: pointer;
+  white-space: nowrap;
 
   .selected-language {
-    margin-right: 1.25rem;
+    margin-right: 0;
   }
 
   .chevron-icon {
-    position: relative;
-    top: -2px;
+    flex-shrink: 0;
+    position: static;
+    top: auto;
     transition: transform 0.3s ease-in-out;
   }
 
