@@ -1,0 +1,105 @@
+.hero-banner {
+  margin-top: var(--section-padding, 5rem);
+  margin-bottom: var(--section-padding, 5rem);
+
+  @include respond-to(mobile-large) {
+    margin-top: $component-margin;
+    margin-bottom: $component-margin;
+    padding-left: $size-padding;
+    padding-right: $size-padding;
+  }
+
+  &.with-dotted-accents {
+    .dotted-accent {
+      display: none;
+    }
+  }
+
+  &:not(.with-dotted-accents) {
+    .dotted-accent {
+      display: none;
+    }
+  }
+
+  &:not(.with-icon-accent) {
+    .icon-accent {
+      display: none;
+    }
+  }
+
+  &.bordered {
+    .img-column img {
+      border-radius: 0;
+      border: 1px solid var(--border-color);
+    }
+  }
+
+  .hero-row {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+
+    @include respond-to(mobile-large) {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+
+  .content-column {
+    position: relative;
+    flex-basis: 45%;
+    max-width: 564px;
+
+    @include respond-to(mobile-large) {
+      flex-basis: 100%;
+      max-width: 100%;
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .rich-content {
+      opacity: 0.85;
+      line-height: 1.7;
+    }
+  }
+
+  .img-column {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-left: auto;
+    flex-basis: 50%;
+    padding-left: $size-padding;
+
+    @include respond-to(mobile-large) {
+      margin-right: auto;
+      padding-left: 0;
+      width: 100%;
+    }
+
+    .img-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+      max-height: 445px;
+      object-fit: cover;
+      border-radius: 0;
+    }
+  }
+
+  .icon-accent {
+    display: none;
+  }
+
+  .dotted-accent {
+    display: none;
+  }
+}

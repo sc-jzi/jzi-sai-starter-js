@@ -1,0 +1,31 @@
+@import 'src/assets/sass/abstracts/vars';
+
+.eyebrow {
+  color: var(--text-footer);
+  background-color: var(--bg-header, #1a1a1a);
+  width: 100%;
+  transition: 0.4s;
+  font-size: 0.8125rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+
+  @include respond-to(mobile-large) {
+    padding: 0 $size-padding;
+  }
+
+  .col-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+  }
+}
+
+.site-financial,
+.site-services,
+.site-excelitas,
+.site-excelitas-alt {
+  .eyebrow .container {
+    border-bottom: none;
+  }
+}

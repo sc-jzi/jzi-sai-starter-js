@@ -1,0 +1,10 @@
+/* stylelint-disable value-keyword-case */
+@import 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap';
+
+.site-basic,
+.site-financial,
+.site-services,
+.site-excelitas,
+.site-excelitas-alt {
+  --font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
