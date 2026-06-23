@@ -2,7 +2,7 @@
 
 .header {
   width: 100%;
-  background-color: var(--bg-header, #fff);
+  background-color: var(--bg-main, #{$hhc-gray-light});
   color: var(--text-body);
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -44,6 +44,6 @@
 .site-excelitas,
 .site-excelitas-alt {
   .header {
-    background-color: var(--bg-header, #fff);
+    background-color: var(--bg-main, #{$hhc-gray-light});
   }
 }

@@ -2,7 +2,7 @@
 
 .eyebrow {
   color: var(--text-body);
-  background-color: var(--bg-main);
+  background-color: var(--bg-body, #fff);
   width: 100%;
   transition: 0.4s;
   font-size: 0.8125rem;
@@ -19,13 +19,87 @@
     align-items: center;
     justify-content: flex-end;
     gap: 1.5rem;
+    width: 100%;
+  }
 
-    a {
-      color: var(--text-colored);
+  .eyebrow-nav {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+    margin-right: auto;
+
+    &__system {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.35rem 0.75rem;
       font-size: 0.8125rem;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    &__right {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+
+    &__links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      li {
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child)::after {
+          content: '|';
+          color: var(--border-color);
+          margin: 0 0.5rem;
+        }
+      }
+
+      a {
+        color: var(--text-colored);
+        font-size: 0.8125rem;
+        text-decoration: none;
+        white-space: nowrap;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__donate {
+      margin-left: 1rem;
+      padding: 0.35rem 1rem;
+      font-size: 0.8125rem;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    &__events {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-left: 0.75rem;
+      padding: 0.35rem 0.75rem;
+      font-size: 0.8125rem;
+      line-height: 1.2;
+      white-space: nowrap;
+      text-decoration: none;
+      color: var(--text-colored);
+      background-color: var(--bg-body, #fff);
+      border: 1px solid var(--border-color);
 
       &:hover {
-        text-decoration: underline;
+        text-decoration: none;
+        border-color: var(--text-colored);
       }
     }
   }
