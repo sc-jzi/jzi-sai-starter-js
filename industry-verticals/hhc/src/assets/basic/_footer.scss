@@ -1,0 +1,25 @@
+@import 'src/assets/sass/abstracts/vars/colors';
+@import 'src/assets/sass/abstracts/mixins';
+@import 'variables';
+
+footer {
+  background-color: var(--bg-footer);
+  color: var(--text-footer);
+  border-top: 1px solid var(--border-color);
+
+  @include respond-to(mobile-large) {
+    padding: 0 $size-padding;
+  }
+
+  a {
+    color: var(--text-colored);
+    text-decoration: none;
+    opacity: 1;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #{$hhc-blue-dark};
+      opacity: 1;
+    }
+  }
+}

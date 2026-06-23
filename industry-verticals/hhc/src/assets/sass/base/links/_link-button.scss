@@ -1,0 +1,151 @@
+@import 'src/assets/sass/abstracts/vars/colors';
+@import 'src/assets/sass/abstracts/mixins';
+
+// Hartford HealthCare button system — square CTAs with HHC Blue primary
+.site-hhc,
+.site-hhc-alt,
+.site-financial,
+.site-services,
+.site-excelitas,
+.site-excelitas-alt {
+  --button-main-color: #fff;
+  --button-main-bg-color: #{$hhc-blue};
+  --button-secondary-color: #{$hhc-blue};
+  --button-simple-color: #{$hhc-blue};
+  --button-padding: 0.75rem 1.5rem;
+  --button-roundness: 0;
+  --button-font-weight: 700;
+  --button-font-size: 0.875rem;
+  --button-text-transform: none;
+  --button-letter-spacing: 0;
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: var(--button-font-weight);
+  font-size: var(--button-font-size);
+  letter-spacing: var(--button-letter-spacing);
+  border-radius: var(--button-roundness);
+  padding: var(--button-padding);
+  transition: all 0.2s ease-in-out;
+}
+
+.button-main {
+  background-color: var(--button-main-bg-color);
+  color: var(--button-main-color);
+  text-transform: var(--button-text-transform);
+  border: 2px solid var(--button-main-bg-color);
+
+  a {
+    color: var(--button-main-color);
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: var(--button-main-color);
+    background-color: #{$hhc-blue-dark};
+    border-color: #{$hhc-blue-dark};
+    filter: none;
+  }
+}
+
+.button-secondary {
+  border: 2px solid var(--button-secondary-color);
+  color: var(--button-secondary-color);
+  text-transform: var(--button-text-transform);
+  background: transparent;
+
+  a {
+    color: var(--button-secondary-color);
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: var(--button-main-color);
+    background-color: var(--button-secondary-color);
+    border-color: var(--button-secondary-color);
+  }
+}
+
+.button-accent {
+  background-color: var(--bg-saturated);
+  color: var(--button-main-color);
+  text-transform: var(--button-text-transform);
+  border: 2px solid var(--bg-saturated);
+
+  &:hover {
+    color: var(--button-main-color);
+    background-color: #{$hhc-blue-dark};
+    border-color: #{$hhc-blue-dark};
+    filter: none;
+  }
+}
+
+.button-simple {
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  background-color: unset;
+  text-decoration: none;
+  color: var(--button-simple-color);
+  font-weight: var(--button-font-weight);
+  text-transform: none;
+  font-size: var(--button-font-size);
+  letter-spacing: var(--button-letter-spacing);
+
+  &:hover {
+    color: #{$hhc-blue-dark};
+    text-decoration: underline;
+  }
+}
+
+// Sort of a style reset for <a> when we want to use it as a wrapper element
+.wrapper-link {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.button-default,
+.default {
+  @include default-link-button;
+
+  background: var(--bg-main);
+  color: $text-basic;
+  border-radius: var(--button-roundness, 0);
+}
+
+.button-success,
+.success {
+  @include default-link-button;
+
+  background: $btn-green;
+  color: $text-white;
+  border-radius: var(--button-roundness, 0);
+  border: none;
+
+  &:hover {
+    color: $text-white;
+    background: $btn-green-light;
+  }
+}
+
+.button-warning,
+.warning {
+  @include default-link-button;
+
+  background: var(--bg-saturated);
+  color: $text-white;
+  border-radius: var(--button-roundness, 0);
+  border: none;
+
+  &:hover {
+    color: $text-white;
+    background: #{$hhc-blue-dark};
+  }
+}

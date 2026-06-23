@@ -1,0 +1,40 @@
+.site-hhc,
+.site-hhc-alt,
+.site-financial,
+.site-services,
+.site-excelitas,
+.site-excelitas-alt {
+  --heading-cta-text-opacity: 1;
+}
+
+.heading-cta {
+  padding-top: var(--section-padding, 4.5rem);
+  padding-bottom: var(--section-padding, 4.5rem);
+
+  @include respond-to(mobile-large) {
+    padding: $component-margin $size-padding;
+  }
+
+  .heading-content-wrapper {
+    max-width: 40rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    opacity: var(--heading-cta-text-opacity);
+    line-height: 1.7;
+  }
+
+  &.compact {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+
+    .heading-content-wrapper {
+      max-width: 30rem;
+    }
+  }
+}

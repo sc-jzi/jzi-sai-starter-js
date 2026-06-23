@@ -1,0 +1,49 @@
+@import 'src/assets/sass/abstracts/vars';
+
+.header {
+  width: 100%;
+  background-color: var(--bg-header, #fff);
+  color: var(--text-body);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color);
+
+  @include respond-to(mobile-large) {
+    padding: 0.75rem $size-padding;
+  }
+
+  .rich-text,
+  .navigation {
+    padding: 0 !important;
+  }
+
+  // Logo / title styling
+  h1,
+  h2,
+  .field-title {
+    font-size: 1.25rem !important;
+    line-height: 1.2 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: var(--text-body);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  img {
+    max-height: 48px;
+    width: auto;
+  }
+}
+
+.site-hhc,
+.site-hhc-alt,
+.site-financial,
+.site-services,
+.site-excelitas,
+.site-excelitas-alt {
+  .header {
+    background-color: var(--bg-header, #fff);
+  }
+}

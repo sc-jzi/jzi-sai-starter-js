@@ -1,0 +1,46 @@
+@import 'src/assets/sass/abstracts/vars';
+
+.dark {
+  body {
+    background: var(--bg-body, #333);
+    color: var(--text-body, #fff);
+  }
+
+  a {
+    color: var(--text-colored, #0098c3);
+
+    &:hover {
+      color: var(--bg-accent, #0098c3);
+    }
+  }
+
+  .header {
+    background-color: var(--bg-header, #333);
+  }
+
+  .eyebrow {
+    background-color: var(--bg-header, #333);
+    color: var(--text-footer, #ccc);
+  }
+
+  .footer {
+    background-color: var(--bg-footer, #333);
+    color: var(--text-footer, #ccc);
+  }
+
+  .page-background {
+    .background-content {
+      background-color: var(--bg-main-alt, #333);
+    }
+  }
+
+  .rich-text {
+    color: var(--text-body, #fff);
+  }
+
+  .navigation.navigation-horizontal {
+    .menu-humburger span {
+      background-color: #fff;
+    }
+  }
+}
