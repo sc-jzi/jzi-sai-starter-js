@@ -10,6 +10,13 @@ const nextConfig: NextConfig = {
     turbopackFileSystemCacheForDev: true,
   },
 
+  turbopack: {
+    resolveAlias: {
+      '@sitecore-content-sdk/nextjs/route-handler':
+        '@sitecore-content-sdk/nextjs/dist/esm/route-handler/index.js',
+    },
+  },
+
   // use this configuration to ensure that only images from the whitelisted domains
   // can be served from the Next.js Image Optimization API
   // see https://nextjs.org/docs/app/api-reference/components/image#remotepatterns

@@ -1,4 +1,12 @@
 .dark .five-column-cta {
+  &.colored-blocks {
+    .card-link,
+    .card-title,
+    .card-description {
+      color: #fff;
+    }
+  }
+
   .image-container {
     img {
       filter: brightness(0) saturate(100%) invert(99%) sepia(100%) saturate(2%) hue-rotate(199deg)

@@ -40,6 +40,10 @@ body.site-excelitas,
   --hhc-block-2: #{$hhc-green};
   --hhc-block-3: #{$hhc-orange};
   --hhc-block-4: #{$hhc-magenta};
+  --text-nav: #00708f;
+  --text-nav-hover: #{$hhc-blue};
+  --text-eyebrow-link: #{$hhc-blue};
+  --text-eyebrow-link-hover: #{$hhc-blue-dark};
 }
 
 body.site-hhc.dark,
@@ -66,6 +70,10 @@ body.site-excelitas.dark,
   --hr-color: #555;
   --roundness: 0;
   --section-padding: 4.5rem;
+  --text-nav: #fff;
+  --text-nav-hover: #{$hhc-blue};
+  --text-eyebrow-link: #fff;
+  --text-eyebrow-link-hover: #{$hhc-blue};
 }
 
 // Secondary site theme — green-forward accent blocks
@@ -97,6 +105,10 @@ body.site-excelitas-alt,
   --hhc-block-2: #{$hhc-green};
   --hhc-block-3: #{$hhc-orange};
   --hhc-block-4: #{$hhc-magenta};
+  --text-nav: #00708f;
+  --text-nav-hover: #{$hhc-blue};
+  --text-eyebrow-link: #{$hhc-blue};
+  --text-eyebrow-link-hover: #{$hhc-blue-dark};
 }
 
 body.site-hhc-alt.dark,
@@ -123,6 +135,10 @@ body.site-excelitas-alt.dark,
   --hr-color: #555;
   --roundness: 0;
   --section-padding: 4.5rem;
+  --text-nav: #fff;
+  --text-nav-hover: #{$hhc-blue};
+  --text-eyebrow-link: #fff;
+  --text-eyebrow-link-hover: #{$hhc-blue};
 }
 
 // Backgrounds colors

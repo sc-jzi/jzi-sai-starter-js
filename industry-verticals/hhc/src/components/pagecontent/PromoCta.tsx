@@ -245,3 +245,40 @@ export const WithBackgroundImage = (props: PromoCtaProps): JSX.Element => {
     </div>
   );
 };
+
+export const ImageTop = (props: PromoCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component promo-cta image-top ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="mx-auto flex max-w-5xl flex-col items-center gap-6 text-center">
+          <h1 className="mb-0 text-3xl font-bold text-[#53565a] md:text-4xl">
+            <Text field={props.fields.Title} />
+          </h1>
+
+          <NextImage
+            field={props.fields.Image}
+            className="aspect-video w-full border border-[#53565a] object-cover"
+            width={1200}
+            height={675}
+          />
+
+          <h3 className="mb-0 text-xl font-normal text-[#53565a] md:text-2xl">
+            <Text field={props.fields.Subtitle} />
+          </h3>
+
+          {(isPageEditing || props.fields?.Link?.value?.href) && (
+            <Link
+              field={props.fields.Link}
+              className="button inline-block border-2 border-[#00708f] bg-transparent px-6 py-2 text-[#00708f] no-underline transition-colors hover:bg-[#00708f] hover:text-white"
+            />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};

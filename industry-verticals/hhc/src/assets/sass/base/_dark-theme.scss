@@ -14,13 +14,32 @@
     }
   }
 
-  .header {
-    background-color: var(--bg-main, #444);
+  .button-main,
+  .button-success,
+  .button-accent,
+  .button-warning {
+    &,
+    &:hover {
+      color: #fff;
+    }
   }
 
   .eyebrow {
     background-color: var(--bg-body, #333);
     color: var(--text-footer, #ccc);
+
+    .eyebrow-nav__events {
+      background-color: transparent;
+    }
+
+    .language-switcher {
+      color: var(--text-body, #fff);
+    }
+  }
+
+  .header {
+    background-color: var(--bg-main, #444);
+    color: var(--text-body, #fff);
   }
 
   .footer {

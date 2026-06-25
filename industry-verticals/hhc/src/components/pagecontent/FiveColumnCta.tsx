@@ -3,30 +3,28 @@
 import { JSX } from 'react';
 import {
   Field,
-  ImageField,
   LinkField,
   Link,
   Text,
   useSitecore,
-  NextImage,
 } from '@sitecore-content-sdk/nextjs';
 import useVisibility from 'src/hooks/useVisibility';
 
 interface Fields {
   Text1: Field<string>;
-  Image1: ImageField;
+  Description1: Field<string>;
   Link1: LinkField;
   Text2: Field<string>;
-  Image2: ImageField;
+  Description2: Field<string>;
   Link2: LinkField;
   Text3: Field<string>;
-  Image3: ImageField;
+  Description3: Field<string>;
   Link3: LinkField;
   Text4: Field<string>;
-  Image4: ImageField;
+  Description4: Field<string>;
   Link4: LinkField;
   Text5: Field<string>;
-  Image5: ImageField;
+  Description5: Field<string>;
   Link5: LinkField;
 }
 
@@ -42,66 +40,81 @@ export const Default = (props: FiveColumnCtaProps): JSX.Element => {
   const sxaStyles = `${props.params?.styles || ''}`;
 
   const Column = ({
-    image,
-    text,
+    title,
+    description,
     link,
     delay,
   }: {
-    image: ImageField;
-    text: Field<string>;
+    title: Field<string>;
+    description: Field<string>;
     link: LinkField;
     delay?: number;
   }) => {
     const [isVisible, domRef] = useVisibility(delay);
+    const hasContent =
+      isPageEditing ||
+      title?.value ||
+      description?.value ||
+      link?.value?.href;
+
+    if (!hasContent) {
+      return null;
+    }
+
     return (
       <div
-        className={`col ${!isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''} `}
+        className={`col ${!isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''}`}
         ref={domRef}
       >
-        <Link field={link}>
-          <div className="image-container">
-            <NextImage field={image} className="d-block w-100 h-100" width={200} height={200} />
+        <Link field={link} className="card-link">
+          <div className="card-content">
+            {(isPageEditing || title?.value) && (
+              <h2 className="card-title">
+                <Text field={title} />
+              </h2>
+            )}
+            {(isPageEditing || description?.value) && (
+              <p className="card-description">
+                <Text field={description} />
+              </p>
+            )}
           </div>
         </Link>
-        <div className="text-container">
-          <Text field={text} />
-        </div>
       </div>
     );
   };
 
   return (
     <div
-      className={`component component-spaced five-column-cta ${sxaStyles}`}
+      className={`component component-spaced five-column-cta colored-blocks ${sxaStyles}`}
       id={id ? id : undefined}
     >
-      <div className="container">
-        <div className="row row-cols-2 row-cols-sm-3 row-cols-lg-5 row-gap-3 gx-5 justify-content-center">
-          <Column image={props.fields.Image1} text={props.fields.Text1} link={props.fields.Link1} />
+      <div className="container-fluid px-0">
+        <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
           <Column
-            image={props.fields.Image2}
-            text={props.fields.Text2}
+            title={props.fields.Text1}
+            description={props.fields.Description1}
+            link={props.fields.Link1}
+          />
+          <Column
+            title={props.fields.Text2}
+            description={props.fields.Description2}
             link={props.fields.Link2}
             delay={500}
           />
           <Column
-            image={props.fields.Image3}
-            text={props.fields.Text3}
+            title={props.fields.Text3}
+            description={props.fields.Description3}
             link={props.fields.Link3}
             delay={1000}
           />
           <Column
-            image={props.fields.Image4}
-            text={props.fields.Text4}
+            title={props.fields.Text4}
+            description={props.fields.Description4}
             link={props.fields.Link4}
             delay={1500}
           />
-          <Column
-            image={props.fields.Image5}
-            text={props.fields.Text5}
-            link={props.fields.Link5}
-            delay={2000}
-          />
+
         </div>
       </div>
     </div>

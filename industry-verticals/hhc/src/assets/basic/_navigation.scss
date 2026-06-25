@@ -52,12 +52,12 @@ $hamburger-margin: 18px;
           font-size: 0.9375rem;
           letter-spacing: 0;
           text-transform: none;
-          color: var(--text-body, #53565a);
+          color: var(--text-nav, #00708f);
           text-decoration: none;
           transition: color 0.2s ease;
 
           &:hover {
-            color: var(--text-colored);
+            color: var(--text-nav-hover, var(--text-colored));
           }
         }
       }
@@ -103,7 +103,7 @@ $hamburger-margin: 18px;
         > .navigation-title {
           > a {
             font-size: 1.25rem;
-            color: var(--text-body, #53565a);
+            color: var(--text-nav, #00708f);
           }
         }
       }

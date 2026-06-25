@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, JSX } from 'react';
+import { useEffect, useRef, useState, JSX } from 'react';
 import {
   ComponentParams,
   ComponentRendering,
@@ -20,7 +20,6 @@ interface Fields {
   Text: RichTextField;
   Image: ImageField;
   Link: LinkField;
-  Video: ImageField;
 }
 
 export type CarouselItemProps = {
@@ -36,11 +35,45 @@ interface CarouselComponentProps {
   };
 }
 
+function getVideoMimeType(src: string): string {
+  const path = src.split('?')[0].toLowerCase();
+
+  if (path.endsWith('.webm')) {
+    return 'video/webm';
+  }
+
+  if (path.endsWith('.ogg')) {
+    return 'video/ogg';
+  }
+
+  if (path.endsWith('.mov')) {
+    return 'video/quicktime';
+  }
+
+  return 'video/mp4';
+}
+
 export const Default = (props: CarouselComponentProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const [index, setIndex] = useState(0);
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
+  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+
+  useEffect(() => {
+    videoRefs.current.forEach((video, i) => {
+      if (!video) {
+        return;
+      }
+
+      if (i === index) {
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  }, [index]);
 
   const handleNext = () => {
     setIndex((prevIndex) => (prevIndex < props.fields.items.length - 1 ? prevIndex + 1 : 0));
@@ -55,44 +88,50 @@ export const Default = (props: CarouselComponentProps): JSX.Element => {
   return (
     <section className={`component carousel ${sxaStyles}`} id={id ? id : undefined}>
       <div className="carousel-inner">
-        {props.fields.items.map((item, i) => (
-          <div key={i} className={'carousel-item ' + (i == index ? 'active' : '')}>
-            {!isPageEditing && item.fields?.Video?.value?.src ? (
-              <video
-                className="object-fit-cover d-block w-100 h-100"
-                key={item.id}
-                autoPlay={true}
-                loop={true}
-                muted
-                playsInline
-                poster={item.fields.Image?.value?.src}
-              >
-                <source src={item.fields.Video.value.src} type="video/webm" />
-              </video>
-            ) : (
-              <NextImage
-                field={item.fields.Image}
-                className="object-fit-cover d-block w-100 h-100"
-                width={1920}
-                height={800}
-              />
-            )}
+        {props.fields.items.map((item, i) => {
+          const mediaSrc = item.fields.Image?.value?.src;
 
-            <div className="side-content">
-              <div className="container">
-                <div className="col-lg-5 col-md-6 offset-md-6 offset-lg-7">
-                  <h1 className="display-6 fw-bold">
-                    <Text field={item.fields.Title}></Text>
-                  </h1>
-                  <RichText field={item.fields.Text}></RichText>
-                  {!isPageEditing && item.fields?.Link?.value?.href && (
-                    <Link field={item.fields.Link} className="button button-accent"></Link>
-                  )}
+          return (
+            <div key={i} className={'carousel-item ' + (i == index ? 'active' : '')}>
+              {mediaSrc ? (
+                <video
+                  className="object-fit-cover d-block w-100 h-100"
+                  ref={(element) => {
+                    videoRefs.current[i] = element;
+                  }}
+                  autoPlay={i === index}
+                  loop
+                  muted
+                  playsInline
+                  aria-hidden="true"
+                >
+                  <source src={mediaSrc} type={getVideoMimeType(mediaSrc)} />
+                </video>
+              ) : (
+                <NextImage
+                  field={item.fields.Image}
+                  className="object-fit-cover d-block w-100 h-100"
+                  width={1920}
+                  height={800}
+                />
+              )}
+
+              <div className="side-content">
+                <div className="container">
+                  <div className="col-lg-5 col-md-6 offset-md-6 offset-lg-7">
+                    <h1 className="display-6 fw-bold">
+                      <Text field={item.fields.Title}></Text>
+                    </h1>
+                    <RichText field={item.fields.Text}></RichText>
+                    {!isPageEditing && item.fields?.Link?.value?.href && (
+                      <Link field={item.fields.Link} className="button button-accent"></Link>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
       <ol className="carousel-indicators">
         {props.fields.items.map((_item, i) => (

@@ -117,4 +117,21 @@
       }
     }
   }
+
+  &.image-top {
+    background-color: var(--bg-body, #fff);
+
+    h1,
+    h3 {
+      font-family: var(--font-family);
+    }
+
+    .button {
+      font-weight: 700;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
 }

@@ -64,12 +64,13 @@
       }
 
       a {
-        color: var(--text-colored);
+        color: var(--text-eyebrow-link, var(--text-colored));
         font-size: 0.8125rem;
         text-decoration: none;
         white-space: nowrap;
 
         &:hover {
+          color: var(--text-eyebrow-link-hover, var(--text-colored));
           text-decoration: underline;
         }
       }
@@ -93,13 +94,14 @@
       line-height: 1.2;
       white-space: nowrap;
       text-decoration: none;
-      color: var(--text-colored);
+      color: var(--text-eyebrow-link, var(--text-colored));
       background-color: var(--bg-body, #fff);
       border: 1px solid var(--border-color);
 
       &:hover {
         text-decoration: none;
-        border-color: var(--text-colored);
+        color: var(--text-eyebrow-link-hover, var(--text-colored));
+        border-color: var(--text-eyebrow-link-hover, var(--text-colored));
       }
     }
   }

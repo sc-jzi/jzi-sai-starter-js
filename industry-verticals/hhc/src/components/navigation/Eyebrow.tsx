@@ -12,7 +12,6 @@ export type EyebrowProps = ComponentProps & {
 };
 
 const EYEBROW_LINKS = [
-  { label: 'Español', href: '#' },
   { label: 'About Us', href: '#' },
   { label: 'Health Professionals', href: '#' },
   { label: 'MyChart', href: '#' },
