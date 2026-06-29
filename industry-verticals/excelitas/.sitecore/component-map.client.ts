@@ -9,6 +9,10 @@ import * as LoanCalculator from 'src/components/utilities/LoanCalculator';
 import * as LanguageSwitcher from 'src/components/utilities/LanguageSwitcher';
 import * as ContactForm from 'src/components/utilities/ContactForm';
 import * as ApplicationForm from 'src/components/utilities/ApplicationForm';
+import * as SuggestionBlock from 'src/components/search/SuggestionBlock';
+import * as SearchProvider from 'src/components/search/SearchProvider';
+import * as PreviewSearch from 'src/components/search/PreviewSearch';
+import * as ArticleCard from 'src/components/search/ArticleCard';
 import * as ColumnSplitter from 'src/components/pagestructure/ColumnSplitter';
 import * as TwoColumnCta from 'src/components/pagecontent/TwoColumnCta';
 import * as ThreeColumnCta from 'src/components/pagecontent/ThreeColumnCta';
@@ -60,6 +64,10 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['LanguageSwitcher', { ...LanguageSwitcher }],
   ['ContactForm', { ...ContactForm }],
   ['ApplicationForm', { ...ApplicationForm }],
+  ['SuggestionBlock', { ...SuggestionBlock }],
+  ['SearchProvider', { ...SearchProvider }],
+  ['PreviewSearch', { ...PreviewSearch }],
+  ['ArticleCard', { ...ArticleCard }],
   ['ColumnSplitter', { ...ColumnSplitter }],
   ['TwoColumnCta', { ...TwoColumnCta }],
   ['ThreeColumnCta', { ...ThreeColumnCta }],
