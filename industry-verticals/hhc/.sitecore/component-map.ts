@@ -10,6 +10,34 @@ import * as LoanCalculator from 'src/components/utilities/LoanCalculator';
 import * as LanguageSwitcher from 'src/components/utilities/LanguageSwitcher';
 import * as ContactForm from 'src/components/utilities/ContactForm';
 import * as ApplicationForm from 'src/components/utilities/ApplicationForm';
+import * as tabs from 'src/components/ui/tabs';
+import * as separator from 'src/components/ui/separator';
+import * as select from 'src/components/ui/select';
+import * as popover from 'src/components/ui/popover';
+import * as input from 'src/components/ui/input';
+import * as card from 'src/components/ui/card';
+import * as calendar from 'src/components/ui/calendar';
+import * as button from 'src/components/ui/button';
+import * as badge from 'src/components/ui/badge';
+import * as SuggestionBlock from 'src/components/search/SuggestionBlock';
+import * as Spinner from 'src/components/search/Spinner';
+import * as SortOrder from 'src/components/search/SortOrder';
+import * as SearchResultsComponent from 'src/components/search/SearchResultsComponent';
+import * as SearchResults from 'src/components/search/SearchResults';
+import * as SearchPagination from 'src/components/search/SearchPagination';
+import * as SearchFacets from 'src/components/search/SearchFacets';
+import * as ResultsPerPage from 'src/components/search/ResultsPerPage';
+import * as QuestionsAnswers from 'src/components/search/QuestionsAnswers';
+import * as QueryResultsSummary from 'src/components/search/QueryResultsSummary';
+import * as PreviewSearch from 'src/components/search/PreviewSearch';
+import * as HomeHighlighted from 'src/components/search/HomeHighlighted';
+import * as HighlightedArticles from 'src/components/search/HighlightedArticles';
+import * as Filter from 'src/components/search/Filter';
+import * as DestinationSearch from 'src/components/search/DestinationSearch';
+import * as CardViewSwitcher from 'src/components/search/CardViewSwitcher';
+import * as BlogSearch from 'src/components/search/BlogSearch';
+import * as ArticleHorizontalCard from 'src/components/search/ArticleHorizontalCard';
+import * as ArticleCard from 'src/components/search/ArticleCard';
 import * as ColumnSplitter from 'src/components/pagestructure/ColumnSplitter';
 import * as TwoColumnCta from 'src/components/pagecontent/TwoColumnCta';
 import * as ThreeColumnCta from 'src/components/pagecontent/ThreeColumnCta';
@@ -25,6 +53,7 @@ import * as PartialDesignDynamicPlaceholder from 'src/components/pagecontent/Par
 import * as ParallaxBanner from 'src/components/pagecontent/ParallaxBanner';
 import * as PageBackground from 'src/components/pagecontent/PageBackground';
 import * as ImageGallery from 'src/components/pagecontent/ImageGallery';
+import * as HHCHero from 'src/components/pagecontent/HHCHero';
 import * as HeroBanner from 'src/components/pagecontent/HeroBanner';
 import * as Hero from 'src/components/pagecontent/Hero';
 import * as HeadingCta from 'src/components/pagecontent/HeadingCta';
@@ -32,6 +61,8 @@ import * as FourColumnCta from 'src/components/pagecontent/FourColumnCta';
 import * as FiveColumnCta from 'src/components/pagecontent/FiveColumnCta';
 import * as Features from 'src/components/pagecontent/Features';
 import * as DocumentsList from 'src/components/pagecontent/DocumentsList';
+import * as DoctorDetails from 'src/components/pagecontent/DoctorDetails';
+import * as Demo from 'src/components/pagecontent/Demo';
 import * as CtaBanner from 'src/components/pagecontent/CtaBanner';
 import * as Comparison from 'src/components/pagecontent/Comparison';
 import * as Carousel from 'src/components/pagecontent/Carousel';
@@ -51,6 +82,7 @@ import * as Header from 'src/components/navigation/Header';
 import * as Footer from 'src/components/navigation/Footer';
 import * as Eyebrow from 'src/components/navigation/Eyebrow';
 import * as Breadcrumb from 'src/components/navigation/Breadcrumb';
+import * as utils from 'src/components/lib/utils';
 
 export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['BYOCWrapper', BYOCServerWrapper],
@@ -62,6 +94,34 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['LanguageSwitcher', { ...LanguageSwitcher, componentType: 'client' }],
   ['ContactForm', { ...ContactForm, componentType: 'client' }],
   ['ApplicationForm', { ...ApplicationForm, componentType: 'client' }],
+  ['tabs', { ...tabs, componentType: 'client' }],
+  ['separator', { ...separator, componentType: 'client' }],
+  ['select', { ...select, componentType: 'client' }],
+  ['popover', { ...popover, componentType: 'client' }],
+  ['input', { ...input, componentType: 'client' }],
+  ['card', { ...card, componentType: 'client' }],
+  ['calendar', { ...calendar, componentType: 'client' }],
+  ['button', { ...button, componentType: 'client' }],
+  ['badge', { ...badge, componentType: 'client' }],
+  ['SuggestionBlock', { ...SuggestionBlock, componentType: 'client' }],
+  ['Spinner', { ...Spinner, componentType: 'client' }],
+  ['SortOrder', { ...SortOrder, componentType: 'client' }],
+  ['SearchResultsComponent', { ...SearchResultsComponent, componentType: 'client' }],
+  ['SearchResults', { ...SearchResults, componentType: 'client' }],
+  ['SearchPagination', { ...SearchPagination, componentType: 'client' }],
+  ['SearchFacets', { ...SearchFacets, componentType: 'client' }],
+  ['ResultsPerPage', { ...ResultsPerPage, componentType: 'client' }],
+  ['QuestionsAnswers', { ...QuestionsAnswers, componentType: 'client' }],
+  ['QueryResultsSummary', { ...QueryResultsSummary }],
+  ['PreviewSearch', { ...PreviewSearch, componentType: 'client' }],
+  ['HomeHighlighted', { ...HomeHighlighted, componentType: 'client' }],
+  ['HighlightedArticles', { ...HighlightedArticles, componentType: 'client' }],
+  ['Filter', { ...Filter, componentType: 'client' }],
+  ['DestinationSearch', { ...DestinationSearch, componentType: 'client' }],
+  ['CardViewSwitcher', { ...CardViewSwitcher, componentType: 'client' }],
+  ['BlogSearch', { ...BlogSearch, componentType: 'client' }],
+  ['ArticleHorizontalCard', { ...ArticleHorizontalCard, componentType: 'client' }],
+  ['ArticleCard', { ...ArticleCard, componentType: 'client' }],
   ['ColumnSplitter', { ...ColumnSplitter, componentType: 'client' }],
   ['TwoColumnCta', { ...TwoColumnCta, componentType: 'client' }],
   ['ThreeColumnCta', { ...ThreeColumnCta, componentType: 'client' }],
@@ -77,6 +137,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ParallaxBanner', { ...ParallaxBanner, componentType: 'client' }],
   ['PageBackground', { ...PageBackground, componentType: 'client' }],
   ['ImageGallery', { ...ImageGallery, componentType: 'client' }],
+  ['HHCHero', { ...HHCHero, componentType: 'client' }],
   ['HeroBanner', { ...HeroBanner, componentType: 'client' }],
   ['Hero', { ...Hero, componentType: 'client' }],
   ['HeadingCta', { ...HeadingCta, componentType: 'client' }],
@@ -84,6 +145,8 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['FiveColumnCta', { ...FiveColumnCta, componentType: 'client' }],
   ['Features', { ...Features, componentType: 'client' }],
   ['DocumentsList', { ...DocumentsList, componentType: 'client' }],
+  ['DoctorDetails', { ...DoctorDetails, componentType: 'client' }],
+  ['Demo', { ...Demo, componentType: 'client' }],
   ['CtaBanner', { ...CtaBanner, componentType: 'client' }],
   ['Comparison', { ...Comparison, componentType: 'client' }],
   ['Carousel', { ...Carousel, componentType: 'client' }],
@@ -103,6 +166,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Footer', { ...Footer, componentType: 'client' }],
   ['Eyebrow', { ...Eyebrow, componentType: 'client' }],
   ['Breadcrumb', { ...Breadcrumb, componentType: 'client' }],
+  ['utils', { ...utils }],
 ]);
 
 export default componentMap;

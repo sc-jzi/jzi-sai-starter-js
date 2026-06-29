@@ -7,14 +7,17 @@ import {
 } from '@sitecore-content-sdk/nextjs/codegen';
 // end of built-in imports
 
-import { jsx } from 'react/jsx-runtime';
+import { jsxs, jsx } from 'react/jsx-runtime';
 import componentMap from '.sitecore/component-map';
 import { AppPlaceholder } from '@sitecore-content-sdk/nextjs';
+import { clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 const importMap = [
   {
     module: 'react/jsx-runtime',
     exports: [
+      { name: 'jsxs', value: jsxs },
       { name: 'jsx', value: jsx },
     ]
   },
@@ -28,6 +31,18 @@ const importMap = [
     module: '@sitecore-content-sdk/nextjs',
     exports: [
       { name: 'AppPlaceholder', value: AppPlaceholder },
+    ]
+  },
+  {
+    module: 'clsx',
+    exports: [
+      { name: 'clsx', value: clsx },
+    ]
+  },
+  {
+    module: 'tailwind-merge',
+    exports: [
+      { name: 'twMerge', value: twMerge },
     ]
   }
 ] as ImportEntry[];
