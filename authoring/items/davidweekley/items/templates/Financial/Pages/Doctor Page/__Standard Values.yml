@@ -1,0 +1,70 @@
+﻿---
+ID: "462fc55d-8719-4b62-a55c-3025c6aa9767"
+Parent: "12a13f14-f407-414c-8ff1-4a84d0fbb488"
+Template: "12a13f14-f407-414c-8ff1-4a84d0fbb488"
+Path: /sitecore/templates/Project/Financial/Pages/Doctor Page/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {1226C3C7-2D1F-48F5-87B4-C1DA459F05E5}
+    {F83CCEFD-FC41-4A60-9882-8F7EA5CF41A8}
+    {14431DCE-508D-4D54-9D04-C22ABBDC8F83}
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 400
+- ID: "ca9b9f52-4fb0-4f87-a79f-24dea62cda65"
+  Hint: __Default workflow
+  Value: "{E9B6C600-C6E8-4867-BCB7-8B0DC5F19840}"
+- ID: "f1af457f-510d-48bb-9d80-128f0db844fe"
+  Hint: BackgroundImage
+  Value: |
+    <image mediaid="{DC65B8CF-63A5-424E-A739-3B6345F75F92}" />
+- ID: "f7c684f9-431e-4a68-adbd-010652b07659"
+  Hint: Photo
+  Value: |
+    <image mediaid="{62F6A36E-BFB0-432D-8502-B8E7E9F1E90A}" alt="Olly Bio Image" height="" width="" hspace="" vspace="" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260626T144135Z
+    - ID: "5d42796f-dde2-4a03-8cdb-21e4cff5038d"
+      Hint: Name
+      Value: $name
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "6dc1d7c4-fde6-476f-b216-79e6652bfe7a"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "c5a46878-030b-4d2a-a069-636458993af0"
+      Hint: Position
+      Value: Product Specialist
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260626T144136Z
+- Language: "fr-CA"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: $name
+    - ID: "5d42796f-dde2-4a03-8cdb-21e4cff5038d"
+      Hint: Name
+      Value: $name
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "22dc588e-68b4-4aa1-a19f-23a5a6282378"
+    - ID: "c5a46878-030b-4d2a-a069-636458993af0"
+      Hint: Position
+      Value: Spécialiste Produit

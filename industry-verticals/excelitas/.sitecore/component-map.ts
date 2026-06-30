@@ -12,8 +12,20 @@ import * as ContactForm from 'src/components/utilities/ContactForm';
 import * as ApplicationForm from 'src/components/utilities/ApplicationForm';
 import * as SuggestionBlock from 'src/components/search/SuggestionBlock';
 import * as Spinner from 'src/components/search/Spinner';
+import * as SortOrder from 'src/components/search/SortOrder';
+import * as SearchResultsComponent from 'src/components/search/SearchResultsComponent';
+import * as SearchResults from 'src/components/search/SearchResults';
 import * as SearchProvider from 'src/components/search/SearchProvider';
+import * as SearchPagination from 'src/components/search/SearchPagination';
+import * as SearchFacets from 'src/components/search/SearchFacets';
+import * as ResultsPerPage from 'src/components/search/ResultsPerPage';
+import * as QuestionsAnswers from 'src/components/search/QuestionsAnswers';
+import * as QueryResultsSummary from 'src/components/search/QueryResultsSummary';
 import * as PreviewSearch from 'src/components/search/PreviewSearch';
+import * as HomeHighlighted from 'src/components/search/HomeHighlighted';
+import * as Filter from 'src/components/search/Filter';
+import * as CardViewSwitcher from 'src/components/search/CardViewSwitcher';
+import * as ArticleHorizontalCard from 'src/components/search/ArticleHorizontalCard';
 import * as ArticleCard from 'src/components/search/ArticleCard';
 import * as ColumnSplitter from 'src/components/pagestructure/ColumnSplitter';
 import * as TwoColumnCta from 'src/components/pagecontent/TwoColumnCta';
@@ -69,8 +81,20 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ApplicationForm', { ...ApplicationForm, componentType: 'client' }],
   ['SuggestionBlock', { ...SuggestionBlock, componentType: 'client' }],
   ['Spinner', { ...Spinner }],
+  ['SortOrder', { ...SortOrder, componentType: 'client' }],
+  ['SearchResultsComponent', { ...SearchResultsComponent, componentType: 'client' }],
+  ['SearchResults', { ...SearchResults, componentType: 'client' }],
   ['SearchProvider', { ...SearchProvider, componentType: 'client' }],
+  ['SearchPagination', { ...SearchPagination, componentType: 'client' }],
+  ['SearchFacets', { ...SearchFacets, componentType: 'client' }],
+  ['ResultsPerPage', { ...ResultsPerPage, componentType: 'client' }],
+  ['QuestionsAnswers', { ...QuestionsAnswers, componentType: 'client' }],
+  ['QueryResultsSummary', { ...QueryResultsSummary, componentType: 'client' }],
   ['PreviewSearch', { ...PreviewSearch, componentType: 'client' }],
+  ['HomeHighlighted', { ...HomeHighlighted, componentType: 'client' }],
+  ['Filter', { ...Filter, componentType: 'client' }],
+  ['CardViewSwitcher', { ...CardViewSwitcher, componentType: 'client' }],
+  ['ArticleHorizontalCard', { ...ArticleHorizontalCard, componentType: 'client' }],
   ['ArticleCard', { ...ArticleCard, componentType: 'client' }],
   ['ColumnSplitter', { ...ColumnSplitter, componentType: 'client' }],
   ['TwoColumnCta', { ...TwoColumnCta, componentType: 'client' }],
