@@ -1,20 +1,17 @@
 'use client';
 
-import { JSX } from 'react';
+import { JSX, Suspense } from 'react';
 import { ComponentProps } from 'lib/component-props';
-import SearchResultsWidget from './SearchResultsComponent';
 import { useSearchParams } from 'next/navigation';
+import SearchResultsWidget from './SearchResultsComponent';
 import QuestionsAnswers from './QuestionsAnswers';
 import { SEARCH_WIDGET_ID } from '../../_data/customizations';
-
-export const dynamic = 'force-dynamic';
-export const fetchCache = 'force-no-store';
 
 export type SearchResultsProps = ComponentProps & {
   params: { [key: string]: string };
 };
 
-export const SearchResults = (props: SearchResultsProps): JSX.Element => {
+const SearchResultsInner = (props: SearchResultsProps): JSX.Element => {
   const sxaStyles = `${props.params?.styles || ''}`;
   const searchParams = useSearchParams();
   const query = searchParams?.get('q') || '';
@@ -29,6 +26,14 @@ export const SearchResults = (props: SearchResultsProps): JSX.Element => {
       />
       <SearchResultsWidget rfkId={SEARCH_WIDGET_ID} defaultKeyphrase={query} />
     </div>
+  );
+};
+
+export const SearchResults = (props: SearchResultsProps): JSX.Element => {
+  return (
+    <Suspense fallback={null}>
+      <SearchResultsInner {...props} />
+    </Suspense>
   );
 };
 
