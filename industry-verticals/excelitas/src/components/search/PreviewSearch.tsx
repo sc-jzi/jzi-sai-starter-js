@@ -93,7 +93,7 @@ export const PreviewSearchComponent = ({
           className="w-full rounded-md border border-gray-300 px-4 py-3 text-lg focus:border-transparent focus:ring-2 focus:ring-blue-500 focus:outline-none"
           onChange={keyphraseHandler}
           autoComplete="off"
-          placeholder="Search content, grid status..."
+          placeholder="Ask me anything"
         />
       </form>
 
