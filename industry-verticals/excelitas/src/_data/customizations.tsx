@@ -31,6 +31,6 @@ export const HIGHLIGHTED_ARTICLES_CONTENT_TYPE = 'Blog';
 export const DEFAULT_IMG_URL = 'https://placehold.co/500x300?text=No Image';
 
 // Sym stuff
-export const PREVIEW_WIDGET_ID = 'gridwell_preview_search';
-export const SEARCH_WIDGET_ID = 'gridwell_search_results';
+export const PREVIEW_WIDGET_ID = 'excelitas_preview_search';
+export const SEARCH_WIDGET_ID = 'rfkid_7';
 export const HOMEHIGHLIGHTED_WIDGET_ID = 'gridwell_search_home_highlight_articles';
