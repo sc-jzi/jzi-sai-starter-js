@@ -84,6 +84,9 @@ export const SearchResultsComponent = ({
   const [dir, setDir] = useState(defaultCardView);
   const onToggle = (value = defaultCardView) => setDir(value);
 
+  console.log (`Source: ${SEARCH_CONFIG.source}`);
+  console.log (`Keyphrase: ${defaultKeyphrase}`);
+
   // ✅ Call the hook at the top level of the component
   const { handleSearch } = useSearchTracking();
 
