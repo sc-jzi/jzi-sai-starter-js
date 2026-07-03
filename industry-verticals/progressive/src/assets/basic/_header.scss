@@ -1,0 +1,59 @@
+@import 'src/assets/sass/abstracts/vars/colors';
+@import 'src/assets/sass/abstracts/mixins';
+@import 'variables';
+
+.prod-mode {
+  #header {
+    display: flex;
+    background-color: var(--bg-header, #1a1a1a);
+
+    @include respond-to(mobile-large) {
+      padding-bottom: 0;
+    }
+  }
+}
+
+header {
+  background-color: var(--bg-header, #1a1a1a);
+
+  #header {
+    .bs-title {
+      a {
+        text-decoration: none;
+      }
+
+      h1 {
+        font-size: $text-size-24;
+        font-weight: 400;
+        line-height: 1;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        margin: 0;
+        color: #fff;
+        text-transform: lowercase;
+      }
+    }
+
+    @include respond-to(mobile-large) {
+      padding-bottom: 0;
+
+      .bs-title {
+        padding-top: 0.5rem;
+        padding-left: 0;
+        text-align: left;
+        margin-top: 0;
+
+        h1 {
+          font-weight: 400;
+          line-height: 1;
+          padding-top: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .header a {
+      text-decoration: none;
+    }
+  }
+}

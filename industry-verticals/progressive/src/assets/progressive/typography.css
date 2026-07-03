@@ -1,0 +1,25 @@
+:root {
+  --font-heading: "96Sans", Georgia, 'Times New Roman', serif;
+  --font-body: '96 Sans', Arial, sans-serif;
+  --font-accent: var(--font-serif, var(--font-sans));
+  --font-code: var(--font-mono);
+  --font-sans: "96Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-mono: "96Sans Monospaced", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --text-3xs: 0.4rem;
+  --text-2xs: 0.5rem;
+  --text-xs: 0.5357rem;
+  --text-sm: 0.6rem;
+  --text-base: 0.625rem;
+  --text-md: 0.625rem;
+  --text-lg: 0.7143rem;
+  --text-xl: 0.8rem;
+  --text-2xl: 0.9rem;
+  --text-3xl: 1.1rem;
+  --text-4xl: 1.4rem;
+  --text-5xl: 1.6rem;
+  --text-6xl: 2.4rem;
+  --text-7xl: 2.6786rem;
+  --text-8xl: 3.6rem;
+  --text-9xl: 5.4rem;
+}

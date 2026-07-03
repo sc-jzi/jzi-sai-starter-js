@@ -1,0 +1,118 @@
+.site-financial,
+.site-services,
+.site-excelitas,
+.site-excelitas-alt {
+  --promo-cta-img-ratio: 4/3;
+  --promo-cta-text-opacity: 0.85;
+  --promo-cta-text-size: 1rem;
+}
+
+.promo-cta {
+  background-color: var(--bg-main-alt);
+  padding-top: var(--section-padding, 5rem);
+  padding-bottom: var(--section-padding, 5rem);
+
+  @include respond-to(mobile-large) {
+    padding: $component-margin $size-padding;
+  }
+
+  &.with-dotted-accents {
+    .dotted-accent {
+      display: none;
+    }
+  }
+
+  &:not(.with-dotted-accents) {
+    .dotted-accent {
+      display: none;
+    }
+  }
+
+  &.bordered {
+    .image-wrapper img {
+      border-radius: 0;
+      border: 1px solid var(--border-color);
+    }
+  }
+
+  .main-content {
+    --bs-gutter-x: 4rem;
+    --bs-gutter-y: 2rem;
+    align-items: center;
+  }
+
+  .text-content {
+    opacity: var(--promo-cta-text-opacity);
+    line-height: 1.7;
+  }
+
+  .promo-cta-text {
+    font-size: var(--promo-cta-text-size);
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .image-wrapper {
+    position: relative;
+
+    img {
+      aspect-ratio: var(--promo-cta-img-ratio);
+      width: 100%;
+      object-fit: cover;
+      border-radius: 0;
+      overflow: hidden;
+    }
+  }
+
+  &.no-background,
+  .page-background .background-content & {
+    background-color: $bg-transparent !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: $component-margin;
+    margin-bottom: $component-margin;
+  }
+
+  &.with-background-image {
+    display: flex;
+    align-items: center;
+    background-color: $bg-transparent !important;
+    min-height: 70vh;
+
+    .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .parallax-background-image,
+    .background-image {
+      position: absolute !important;
+      inset: 0;
+      z-index: 1;
+    }
+  }
+
+  &.with-placeholder-column {
+    .image-wrapper {
+      margin: 0;
+    }
+
+    .promo-cta-placeholder {
+      margin-right: -42%;
+      z-index: 3;
+
+      &-inner {
+        border: 1px solid var(--border-color);
+        background-color: var(--bg-body);
+        padding: 2rem 3rem;
+      }
+
+      .styled-list ol {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

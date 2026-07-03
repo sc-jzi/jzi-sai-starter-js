@@ -1,0 +1,75 @@
+:root {
+  --button-radius: var(--radius-4xl);
+  --button-icon-radius: 999px;
+  --button-letter-spacing: normal;
+  --button-text-transform: none;
+  --button-shadow: none;
+  --color-card: var(--color-primary-foreground);
+  --card-background: var(--color-background);
+  --card-muted-background: var(--color-muted-background);
+  --card-foreground: var(--color-foreground);
+  --card-description-color: var(--color-muted-foreground);
+  --card-border: var(--color-primary-background-active);
+  --card-radius: 0.75rem;
+  --card-shadow: none;
+  --card-title-weight: 600;
+  --card-title-tracking: normal;
+  --color-popover: #fafafa;
+  --color-popover-foreground: #1a1a1a;
+  --color-sidebar: var(--color-primary);
+  --color-sidebar-foreground: var(--color-primary-foreground);
+  --color-sidebar-primary: #003DA5;
+  --color-sidebar-primary-foreground: #ffffff;
+  --color-sidebar-accent: #ffff00;
+  --color-sidebar-accent-foreground: #0a0a0a;
+  --color-sidebar-border: rgb(45, 45, 45);
+  --color-sidebar-ring: #d8d8d8;
+  --color-border: var(--color-primary-200);
+  --color-border-a11y: var(--color-primary-foreground);
+  --input-border: var(--color-primary-background-active);
+  --input-border-width: 0.125rem;
+  --input-background: var(--color-primary-foreground);
+  --input-background-hover: var(--color-background);
+  --color-ring: var(--color-ring);
+  --color-placeholder: var(--color-primary-foreground);
+}
+
+.dark {
+  --button-radius: var(--radius-4xl);
+  --button-icon-radius: 999px;
+  --button-letter-spacing: normal;
+  --button-text-transform: none;
+  --button-shadow: none;
+  --color-card: #122a59;
+  --card-background: var(--color-background);
+  --card-muted-background: var(--color-muted);
+  --card-foreground: var(--color-foreground);
+  --card-description-color: var(--color-muted-foreground);
+  --card-border: var(--color-border);
+  --card-radius: 0.75rem;
+  --card-shadow: none;
+  --card-title-weight: 600;
+  --card-title-tracking: normal;
+  --color-popover: #122a59;
+  --color-popover-foreground: #ffffff;
+  --color-sidebar: #122a59;
+  --color-sidebar-foreground: #ffffff;
+  --color-sidebar-primary: #3366cc;
+  --color-sidebar-primary-foreground: #ffffff;
+  --color-sidebar-accent: #ffff33;
+  --color-sidebar-accent-foreground: #0a0a0a;
+  --color-sidebar-border: #364a72;
+  --color-sidebar-ring: #41557a;
+  --color-border: var(--color-whiteAlpha-200);
+  --color-border-a11y: var(--color-whiteAlpha-400);
+  --input-border: var(--color-border);
+  --input-border-width: 1px;
+  --input-background: color-mix(in srgb, var(--input-border) 30%, transparent);
+  --input-background-hover: color-mix(
+    in srgb,
+    var(--input-border) 50%,
+    transparent
+  );
+  --color-ring: #6987f9;
+  --color-placeholder: var(--color-muted-foreground);
+}

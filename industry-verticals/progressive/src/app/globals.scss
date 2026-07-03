@@ -1,0 +1,14 @@
+// Demo Base
+@import "tailwindcss";
+@import '../assets/basic/fonts';
+@import 'bootstrap/scss/bootstrap';
+@import '../assets/sass/main';
+@import '../assets/basic/main';
+
+// Progressive Base
+@import '../assets/progressive/border-radius';
+@import '../assets/progressive/colors';
+@import '../assets/progressive/primitives';
+@import '../assets/progressive/shadows';
+@import '../assets/progressive/spacing';
+@import '../assets/progressive/typography';

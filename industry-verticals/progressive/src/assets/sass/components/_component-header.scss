@@ -1,0 +1,47 @@
+@import 'src/assets/sass/abstracts/vars';
+
+.header {
+  width: 100%;
+  background-color: var(--bg-header, #1a1a1a);
+  color: #fff;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  @include respond-to(mobile-large) {
+    padding: 1rem $size-padding;
+  }
+
+  .rich-text,
+  .navigation {
+    padding: 0 !important;
+  }
+
+  // Logo / title styling
+  h1,
+  h2,
+  .field-title {
+    font-size: 1.5rem !important;
+    line-height: 1 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: #fff;
+    font-weight: 400;
+    text-transform: lowercase;
+    letter-spacing: -0.02em;
+  }
+
+  img {
+    max-height: 40px;
+    width: auto;
+  }
+}
+
+// Dark header persists in light mode — Excelitas brand standard
+.site-financial,
+.site-services,
+.site-excelitas,
+.site-excelitas-alt {
+  .header {
+    background-color: var(--bg-header, #1a1a1a);
+  }
+}

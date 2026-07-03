@@ -1,0 +1,21 @@
+.promo-cta.saturated {
+  background-color: var(--bg-saturated);
+  color: #fff;
+
+  h2,
+  h3,
+  p {
+    color: #fff;
+  }
+
+  .dark & {
+    .button-main {
+      background-color: var(--bg-accent);
+      color: #fff;
+
+      &:hover {
+        background-color: #669e1a;
+      }
+    }
+  }
+}
