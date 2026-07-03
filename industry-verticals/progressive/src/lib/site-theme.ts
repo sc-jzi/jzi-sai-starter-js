@@ -4,7 +4,7 @@ const SITE_THEME_CLASS_MAP: Record<string, string> = {
   Excelitas: 'site-excelitas',
 };
 
-const DEFAULT_SITE_THEME_CLASS = 'site-excelitas';
+const DEFAULT_SITE_THEME_CLASS = 'progressive';
 
 export function getSiteThemeClass(siteName: string | undefined): string {
   if (!siteName) {
