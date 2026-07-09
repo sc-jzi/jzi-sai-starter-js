@@ -1,0 +1,160 @@
+client:
+  name: "Quanex"
+  sourceUrl: "https://www.quanex.com/"
+  themeFile: "docs/ai/themes/quanex.theme.yaml"
+  analyzedAt: "2026-07-09T20:30:00Z"
+  environment: "Manufacturing/Quanex"
+  note: "Using Manufacturing starter kit components with Quanex demo variants"
+
+pageAnalysis:
+  screenshotFiles:
+    desktop: "docs/ai/themes/quanex/screenshot-desktop.png"
+  totalSections: 10
+  templateMatches: 9
+  customRequired: 1
+
+sections:
+  - position: 1
+    description: "Deep green header with Quanex logo, Products/Innovations/Service & Support nav, utility links"
+    matchedComponent:
+      componentName: "Header"
+      renderingId: "81317d3b-f929-426a-83ec-421982f8f1e6"
+      variant: "Quanex"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: false
+
+  - position: 2
+    description: "Full-width forest green hero with geometric overlay, 'A Part of Something Bigger' tagline and solution categories"
+    matchedComponent:
+      componentName: "Hero"
+      renderingId: "b7cdf75e-716a-4c59-b9b1-cd970ae0a4ae"
+      variant: "Quanex"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    datasourceItemId: "2c9041b3-b016-43c7-819f-d453a8981242"
+
+  - position: 3
+    description: "Centered intro 'Quanex Delivers Greater Value' with supporting copy and Learn More CTA"
+    matchedComponent:
+      componentName: "HeadingCta"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      variant: "Quanex"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    datasourceItemId: "5344bda8-cc38-4c11-b05d-5959f865a9ae"
+
+  - position: 4
+    description: "Three-column solutions grid — Fenestration, Cabinet Components, Custom Solutions"
+    matchedComponent:
+      componentName: "ThreeColumnCta"
+      renderingId: "ad385021-ce2b-4fc1-89aa-207d408034a8"
+      variant: "Quanex"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    datasourceItemId: "7ebfff8a-06d2-4e22-8427-cec76ea56a4b"
+
+  - position: 5
+    description: "Innovation section with R&D copy and large video/photo panel"
+    matchedComponent:
+      componentName: "TwoColumnCta"
+      renderingId: "3a9a9d22-c092-4b54-9511-eb202ceabe8d"
+      variant: "Quanex"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    datasourceItemId: "31ea6d7d-b5a4-4fc4-8b1d-c2ca81c4778b"
+
+  - position: 6
+    description: "Dark green careers block with Search Careers CTA and architectural background image"
+    matchedComponent:
+      componentName: "PromoCta"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      variant: "QuanexCareers"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    datasourceItemId: "53cdfe91-8281-45fe-b78a-6c0d5e3dc6bd"
+
+  - position: 7
+    description: "Facility locator with country/state/product dropdowns"
+    matchedComponent:
+      componentName: "HeadingCta"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      variant: "Quanex"
+      matchType: "template"
+      matchConfidence: "medium"
+      apiAddable: true
+    contentNotes: "Interactive dropdown form approximated with Heading CTA + Find a Facility link"
+    datasourceItemId: "287e48df-e831-4e67-bdec-22044511b1a2"
+
+  - position: 8
+    description: "Image mosaic with green overlay box — hardware and integrated solutions"
+    matchedComponent:
+      componentName: "PromoCta"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      variant: "QuanexHardware"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    datasourceItemId: "02d6d778-d9c0-4062-bc06-6a638fd682c7"
+
+  - position: 9
+    description: "Four news/featured content cards with images and headlines"
+    matchedComponent:
+      componentName: "FourColumnCta"
+      renderingId: "35075000-760e-4ff3-bd1c-f2eeba251dcb"
+      variant: "Quanex"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    datasourceItemId: "b6228ea0-628f-44d0-9399-923fb969e010"
+
+  - position: 10
+    description: "Dark green multi-column footer with links, social icons, newsletter CTA"
+    matchedComponent:
+      componentName: "Footer"
+      renderingId: "771a3f27-6448-44ac-add0-e5de311c6e3b"
+      variant: "Quanex"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: false
+
+customComponents:
+  - position: 7
+    name: "FacilityLocator"
+    description: "Country/State/Product Family dropdown search form"
+    reason: "No starter kit component supports multi-dropdown facility search"
+    recommendation: "Approximated with Heading CTA; full fidelity needs custom component"
+
+buildOrder:
+  phase1_sitecore:
+    - position: 2
+      componentName: "Hero"
+      datasourceName: "Quanex - Hero"
+    - position: 3
+      componentName: "HeadingCta"
+      datasourceName: "Quanex - Value Intro"
+    - position: 4
+      componentName: "ThreeColumnCta"
+      datasourceName: "Three Column CTA 1"
+    - position: 5
+      componentName: "TwoColumnCta"
+      datasourceName: "Two Column CTA 1"
+    - position: 6
+      componentName: "PromoCta"
+      datasourceName: "Promo CTA 1"
+    - position: 7
+      componentName: "HeadingCta"
+      datasourceName: "Quanex - Facility Locator"
+    - position: 8
+      componentName: "PromoCta"
+      datasourceName: "Promo CTA 2"
+    - position: 9
+      componentName: "FourColumnCta"
+      datasourceName: "Progressive - Why Progressive"
+  phase2_theme: "src/assets/quanex/ + src/assets/sass/components/_quanex-demo.scss"
+  phase3_custom: []

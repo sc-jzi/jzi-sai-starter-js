@@ -1,0 +1,26 @@
+client:
+  name: "Quanex"
+  sourceUrl: "https://www.quanex.com/"
+  extractedAt: "2026-07-09T20:30:00Z"
+
+colors:
+  primary: "#00563f"
+  primaryDark: "#003d2b"
+  secondary: "#3d7a65"
+  background: "#ffffff"
+  muted: "#f2f4f3"
+  foreground: "#2d2d2d"
+  accent: "#8bc34a"
+  footer: "#003d2b"
+
+typography:
+  headingFont: "Montserrat"
+  bodyFont: "Open Sans"
+  headingStyle: "uppercase"
+  headingWeight: 700
+
+tone:
+  heroStyle: "full-bleed-image"
+  navStyle: "solid-bar"
+  cardStyle: "bordered"
+  colorMode: "light"

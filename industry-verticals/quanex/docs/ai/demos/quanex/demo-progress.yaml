@@ -1,0 +1,123 @@
+client:
+  name: "Quanex"
+  sourceUrl: "https://www.quanex.com/"
+  startedAt: "2026-07-09T20:00:00Z"
+  lastUpdatedAt: "2026-07-09T20:45:00Z"
+
+phases:
+  phase0_inputs:
+    status: "complete"
+    screenshot: true
+    url: "https://www.quanex.com/"
+
+  phase0_5_manifest:
+    status: "complete"
+    validationMode: "adapted"
+    notes: "Using Manufacturing/Quanex starter kit, not UIIM fmc-custom-demo"
+
+  phase1_theme:
+    status: "complete"
+    themeFile: "docs/ai/themes/quanex.theme.yaml"
+    userApproved: true
+
+  phase2_analysis:
+    status: "complete"
+    buildPlanFile: "docs/ai/demos/quanex/build-plan.yaml"
+    totalSections: 10
+    userApproved: true
+
+  phase2_5_content:
+    status: "partial"
+    contentSource: "screenshot"
+    notes: "Content extractor returned 0 sections from quanex.com — content from screenshot analysis"
+
+  phase3_content:
+    status: "complete"
+    completedSections: 8
+    totalSections: 8
+
+  phase4_theme:
+    status: "complete"
+    themeDelivery: "quanex-css"
+    cssWritten: true
+    fontsAdded: true
+
+  phase5_custom:
+    status: "skipped"
+    customComponentsNeeded: 1
+    customComponentsBuilt: 0
+    notes: "Facility locator approximated with Heading CTA"
+
+  phase5_5_variants:
+    status: "complete"
+    variantsNeeded: 8
+    variantsCreated: 8
+    notes: "Quanex, QuanexCareers, QuanexHardware variants in React + Sitecore Headless Variants"
+
+  phase6_assembly:
+    status: "failed"
+    componentsAdded: 0
+    datasourcesWired: 0
+    notes: "add_component_on_page and set_component_datasource API returned 500 — see manual-tasks.md"
+
+  phase7_summary:
+    status: "complete"
+
+sections:
+  - position: 2
+    componentName: "Hero"
+    phase3:
+      status: "populated"
+      itemId: "2c9041b3-b016-43c7-819f-d453a8981242"
+    phase6:
+      status: "pending"
+      error: "Page assembly API unavailable"
+
+  - position: 3
+    componentName: "HeadingCta"
+    phase3:
+      status: "populated"
+      itemId: "5344bda8-cc38-4c11-b05d-5959f865a9ae"
+    phase6:
+      status: "pending"
+
+  - position: 4
+    componentName: "ThreeColumnCta"
+    phase3:
+      status: "populated"
+      itemId: "7ebfff8a-06d2-4e22-8427-cec76ea56a4b"
+    phase6:
+      status: "partial"
+      notes: "Datasource updated; variant selection manual"
+
+  - position: 5
+    componentName: "TwoColumnCta"
+    phase3:
+      status: "populated"
+      itemId: "31ea6d7d-b5a4-4fc4-8b1d-c2ca81c4778b"
+    phase6:
+      status: "partial"
+
+  - position: 6
+    componentName: "PromoCta"
+    phase3:
+      status: "populated"
+      itemId: "53cdfe91-8281-45fe-b78a-6c0d5e3dc6bd"
+    phase6:
+      status: "partial"
+
+  - position: 8
+    componentName: "PromoCta"
+    phase3:
+      status: "populated"
+      itemId: "02d6d778-d9c0-4062-bc06-6a638fd682c7"
+    phase6:
+      status: "partial"
+
+  - position: 9
+    componentName: "FourColumnCta"
+    phase3:
+      status: "populated"
+      itemId: "b6228ea0-628f-44d0-9399-923fb969e010"
+    phase6:
+      status: "pending"

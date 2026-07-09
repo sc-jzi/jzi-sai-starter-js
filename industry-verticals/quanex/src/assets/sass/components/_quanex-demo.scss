@@ -1,0 +1,383 @@
+@import 'src/assets/sass/abstracts/vars';
+@import 'src/assets/sass/abstracts/mixins';
+
+// Quanex Manufacturing homepage demo
+
+.site-quanex {
+  font-family: var(--font-body, 'Open Sans', Arial, sans-serif);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .display-6 {
+    font-family: var(--font-heading, 'Montserrat', Arial, sans-serif);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .button-main {
+    background-color: var(--color-primary, #00563f);
+    border-color: var(--color-primary, #00563f);
+    border-radius: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+
+    &:hover {
+      background-color: var(--color-primary-hover, #004832);
+      border-color: var(--color-primary-hover, #004832);
+    }
+  }
+
+  .button-simple {
+    border-color: var(--color-primary, #00563f);
+    color: var(--color-primary, #00563f);
+    border-radius: 0;
+    text-transform: uppercase;
+  }
+}
+
+// Header
+.header.quanex,
+header .header.quanex,
+.site-quanex .header {
+  background-color: var(--color-primary, #00563f);
+  color: #fff;
+  border-bottom: none;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+
+  a,
+  h1,
+  h2,
+  .field-title {
+    color: #fff !important;
+    text-transform: uppercase;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+}
+
+// Hero
+.hero.quanex,
+.site-quanex .hero {
+  position: relative;
+  min-height: 32rem;
+  margin-bottom: 0;
+  padding: 0;
+  color: #fff;
+  background: linear-gradient(135deg, #00563f 0%, #003d2b 55%, #002a1e 100%);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(125deg, rgb(255 255 255 / 6%) 0 18%, transparent 18% 36%),
+      linear-gradient(245deg, rgb(255 255 255 / 4%) 0 22%, transparent 22% 44%);
+    pointer-events: none;
+  }
+
+  .hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.35;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    min-height: 32rem;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgb(0 61 43 / 55%) 0%, rgb(0 86 63 / 85%) 100%);
+  }
+
+  .content-container {
+    position: relative;
+    z-index: 1;
+    min-height: 32rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 1rem;
+  }
+
+  .hero-copy {
+    max-width: 56rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+    color: #fff;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    margin-top: 1.25rem;
+    opacity: 0.95;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+// Value intro
+.heading-cta.quanex,
+.site-quanex .heading-cta {
+  background: #fff;
+  padding: 4rem 0;
+  text-align: center;
+
+  .heading-content-wrapper {
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  .quanex-eyebrow,
+  .eyebrow-accent {
+    color: var(--color-primary, #00563f);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.8125rem;
+    font-weight: 700;
+  }
+
+  .quanex-heading,
+  h2 {
+    color: var(--color-primary, #00563f);
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+  }
+
+  .quanex-body,
+  p {
+    color: var(--color-muted-foreground, #5c6662);
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+}
+
+// Three column solutions
+.three-column-cta.quanex,
+.site-quanex .three-column-cta {
+  background: var(--color-muted, #f2f4f3);
+  padding: 4rem 0;
+
+  .section-heading {
+    text-align: center;
+    margin-bottom: 2.5rem;
+
+    h2 {
+      color: var(--color-primary, #00563f);
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    }
+  }
+
+  .content-wrapper {
+    background: #fff;
+    padding: 0;
+    height: 100%;
+    border: 1px solid var(--border-color, #d8e0dc);
+
+    img {
+      width: 100%;
+      height: 14rem;
+      object-fit: cover;
+    }
+
+    h2 {
+      font-size: 1rem;
+      padding: 1.25rem 1.25rem 0;
+      color: var(--color-primary, #00563f);
+    }
+
+    p {
+      padding: 0.75rem 1.25rem 1.25rem;
+      color: var(--color-muted-foreground, #5c6662);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    .button {
+      margin: 0 1.25rem 1.5rem;
+    }
+  }
+}
+
+// Innovation / two column
+.two-column-cta.quanex,
+.site-quanex .two-column-cta {
+  padding: 4rem 0;
+  background: #fff;
+
+  h2,
+  .title {
+    color: var(--color-primary, #00563f);
+    text-transform: uppercase;
+  }
+
+  p {
+    color: var(--color-muted-foreground, #5c6662);
+    line-height: 1.7;
+  }
+}
+
+// Careers & hardware promos
+.promo-cta.quanex-careers,
+.site-quanex .promo-cta.quanex-careers {
+  background: var(--color-primary, #00563f);
+  color: #fff;
+  padding: 0;
+
+  .main-content {
+    min-height: 22rem;
+    align-items: stretch !important;
+  }
+
+  .col-lg-5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem 2rem;
+    background: var(--color-primary, #00563f);
+  }
+
+  h1,
+  h6,
+  p,
+  .eyebrow-accent {
+    color: #fff !important;
+  }
+
+  .button-main {
+    background: #fff;
+    color: var(--color-primary, #00563f) !important;
+    border-color: #fff;
+  }
+
+  .image-wrapper img {
+    min-height: 22rem;
+    object-fit: cover;
+    opacity: 0.85;
+  }
+}
+
+.promo-cta.quanex-hardware,
+.site-quanex .promo-cta.quanex-hardware {
+  position: relative;
+  padding: 0;
+  min-height: 24rem;
+  color: #fff;
+
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  .main-content {
+    min-height: 24rem;
+    align-items: center !important;
+  }
+
+  .col-lg-5 {
+    background: rgb(0 61 43 / 92%);
+    padding: 3rem 2rem;
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1,
+  p,
+  .eyebrow-accent {
+    color: #fff !important;
+  }
+}
+
+// News tiles
+.four-column-cta.quanex-news,
+.site-quanex .four-column-cta {
+  padding: 4rem 0;
+  background: #fff;
+
+  .content-wrapper {
+    img {
+      width: 100%;
+      height: 11rem;
+      object-fit: cover;
+    }
+
+    h3,
+    h2 {
+      font-size: 0.9375rem;
+      margin-top: 1rem;
+      color: var(--color-primary, #00563f);
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    p {
+      color: var(--color-muted-foreground, #5c6662);
+      font-size: 0.875rem;
+    }
+
+    a {
+      color: var(--color-primary, #00563f);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+    }
+  }
+}
+
+// Footer
+.footer.quanex,
+.site-quanex .footer {
+  background: var(--color-footer-bg, #003d2b);
+  color: var(--color-footer-fg, #fff);
+
+  .title,
+  h3,
+  h4 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 0.8125rem;
+    letter-spacing: 0.1em;
+  }
+
+  p,
+  a,
+  .rich-text {
+    color: rgb(255 255 255 / 85%) !important;
+    font-size: 0.875rem;
+  }
+
+  a:hover {
+    color: #fff !important;
+  }
+
+  .button-main {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff !important;
+  }
+}

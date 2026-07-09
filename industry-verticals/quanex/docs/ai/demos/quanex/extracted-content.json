@@ -1,0 +1,19 @@
+{
+  "url": "https://www.quanex.com/",
+  "extractedAt": "2026-07-09T20:30:30.965Z",
+  "detectedLanguage": "en-US",
+  "targetLanguage": "en",
+  "translationNeeded": false,
+  "totalSections": 0,
+  "totalImages": 0,
+  "totalVideos": 0,
+  "interactionStats": {
+    "lazySourcesResolved": 0,
+    "tabsClicked": 0,
+    "accordionsExpanded": 0,
+    "carouselDotsClicked": 0,
+    "carouselArrowSlides": 12,
+    "backgroundImagesCollected": 7
+  },
+  "sections": []
+}
