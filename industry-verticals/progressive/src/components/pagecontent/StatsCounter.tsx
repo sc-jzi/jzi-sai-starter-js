@@ -24,6 +24,72 @@ export type StatsCounterProps = {
   fields: Fields;
 };
 
+const STAT_LABELS = ['SAVINGS', 'CUSTOMERS', 'SUPPORT'];
+
+/* Progressive variant — three blue-bordered stat boxes */
+export const Progressive = (props: StatsCounterProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const stats = [
+    {
+      label: STAT_LABELS[0],
+      value: props.fields?.Value1,
+      symbol: props.fields?.Symbol1,
+      caption: props.fields?.Caption1,
+    },
+    {
+      label: STAT_LABELS[1],
+      value: props.fields?.Value2,
+      symbol: props.fields?.Symbol2,
+      caption: props.fields?.Caption2,
+    },
+    {
+      label: STAT_LABELS[2],
+      value: props.fields?.Value3,
+      symbol: props.fields?.Symbol3,
+      caption: props.fields?.Caption3,
+    },
+  ];
+
+  return (
+    <div
+      className={`component stats-counter progressive ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="row g-0 progressive-stats-row">
+          {stats.map((stat, index) => (
+            <div className="col-lg-4" key={index}>
+              <div className="progressive-stat-box">
+                <p className="progressive-stat-label">{stat.label}</p>
+                <p className="progressive-stat-value">
+                  {index === 0 && <span className="progressive-stat-prefix">Over </span>}
+                  <span>
+                    {isPageEditing ? (
+                      <Text field={stat.value} />
+                    ) : (
+                      <CountUp value={parseInt(stat.value?.value || '0')} />
+                    )}
+                  </span>
+                  <span>
+                    <Text field={stat.symbol} />
+                  </span>
+                </p>
+                <p className="progressive-stat-caption">
+                  <Text field={stat.caption} />
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: StatsCounterProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

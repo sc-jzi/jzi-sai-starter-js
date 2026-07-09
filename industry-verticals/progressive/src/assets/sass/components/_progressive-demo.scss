@@ -1,0 +1,562 @@
+@import 'src/assets/sass/abstracts/vars';
+@import 'src/assets/sass/abstracts/mixins';
+
+// Progressive Insurance homepage — pixel-perfect demo variants
+
+// ─── Header ───────────────────────────────────────────────────────────────────
+.header.progressive,
+header .header.progressive {
+  background-color: var(--color-background, #fff);
+  color: var(--color-foreground, #2d2d2d);
+  border-bottom: 1px solid var(--color-secondary-background, #d1e2e5);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+
+  h1,
+  h2,
+  .field-title,
+  a {
+    color: var(--color-foreground, #2d2d2d) !important;
+    text-transform: none;
+    font-weight: 400;
+  }
+
+  .navigation a {
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+}
+
+// ─── Hero ─────────────────────────────────────────────────────────────────────
+.hero.progressive {
+  position: relative;
+  height: auto;
+  min-height: 28rem;
+  margin-bottom: -4.5rem;
+  padding: 0;
+  color: #fff;
+  overflow: visible;
+
+  .hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    min-height: 28rem;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgb(0 0 0 / 35%) 0%,
+      rgb(0 0 0 / 10%) 45%,
+      rgb(0 0 0 / 0%) 100%
+    );
+  }
+
+  .content-container {
+    position: relative;
+    z-index: 1;
+    transform: none;
+    left: auto;
+    top: auto;
+    height: auto;
+    min-height: 28rem;
+    justify-content: flex-start;
+    padding-top: 4.5rem;
+    padding-bottom: 7rem;
+  }
+
+  .hero-copy {
+    max-width: 52rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-family: var(--font-heading, '96 Sans', Arial, sans-serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin: 0;
+    color: #fff;
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
+    font-weight: 300;
+    line-height: 1.3;
+    margin-top: 0.75rem;
+    opacity: 1;
+    max-width: none;
+
+    p {
+      margin: 0;
+      color: #fff;
+    }
+  }
+}
+
+// ─── Quote card (Four Column CTA) ─────────────────────────────────────────────
+.four-column-cta.progressive-quote {
+  position: relative;
+  z-index: 2;
+  padding-top: 0;
+  padding-bottom: 2rem;
+
+  .quote-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    background: var(--color-background, #fff);
+    border: 1px solid var(--color-secondary-background, #d1e2e5);
+    border-radius: var(--radius-md, 8px);
+    box-shadow: 0 4px 24px rgb(0 0 0 / 8%);
+    padding: 2rem 2.5rem;
+
+    @include respond-to(mobile-large) {
+      grid-template-columns: 1fr;
+      padding: 1.5rem;
+    }
+  }
+
+  .quote-card-heading {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-foreground, #2d2d2d);
+    margin-bottom: 0.5rem;
+  }
+
+  .quote-card-subtext {
+    font-size: 0.75rem;
+    color: var(--color-muted-foreground, #6b6b6b);
+    margin-bottom: 1.25rem;
+    line-height: 1.5;
+  }
+
+  .quote-zip-label {
+    display: block;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-foreground, #2d2d2d);
+    margin-bottom: 0.35rem;
+  }
+
+  .quote-zip-row {
+    display: flex;
+    gap: 0.75rem;
+    align-items: stretch;
+
+    @include respond-to(mobile-large) {
+      flex-direction: column;
+    }
+  }
+
+  .quote-zip-input {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid var(--color-secondary, #0077b3);
+    border-radius: var(--radius-sm, 5px);
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    color: var(--color-foreground, #2d2d2d);
+    background: #fff;
+  }
+
+  .quote-submit {
+    white-space: nowrap;
+    min-width: 9rem;
+    border-radius: var(--radius-sm, 5px) !important;
+    background-color: var(--color-secondary, #0077b3) !important;
+    border-color: var(--color-secondary, #0077b3) !important;
+  }
+
+  .quote-card-eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-muted-foreground, #6b6b6b);
+    margin-bottom: 1rem;
+  }
+
+  .quote-product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .quote-product-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem 0.5rem;
+    border: 1px solid var(--color-secondary-background, #d1e2e5);
+    border-radius: var(--radius-sm, 5px);
+    text-align: center;
+    text-decoration: none;
+    color: var(--color-secondary, #0077b3);
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: border-color 0.2s, background-color 0.2s;
+
+    &:hover {
+      border-color: var(--color-secondary, #0077b3);
+      background-color: var(--color-secondary-background, #ebf4f9);
+      color: var(--color-secondary, #0077b3);
+    }
+
+    img {
+      width: 3.5rem !important;
+      height: 3.5rem !important;
+      object-fit: contain;
+    }
+  }
+}
+
+// ─── Heading CTA ──────────────────────────────────────────────────────────────
+.heading-cta.progressive {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+
+  .heading-content-wrapper {
+    max-width: 48rem;
+  }
+
+  .progressive-eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-muted-foreground, #6b6b6b);
+    margin-bottom: 0.75rem;
+  }
+
+  .progressive-heading {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--color-foreground, #2d2d2d);
+    margin-bottom: 1rem;
+    line-height: 1.25;
+  }
+
+  .progressive-body {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--color-muted-foreground, #6b6b6b);
+    opacity: 1;
+    margin-bottom: 0;
+  }
+
+  .button-main {
+    margin-top: 1.5rem;
+    border-radius: var(--radius-sm, 5px);
+  }
+}
+
+// ─── Stats Counter ────────────────────────────────────────────────────────────
+.stats-counter.progressive {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+
+  .progressive-stats-row {
+    border: none;
+    background: transparent;
+  }
+
+  .progressive-stat-box {
+    border: 2px solid var(--color-secondary, #0077b3);
+    border-radius: var(--radius-md, 8px);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    height: 100%;
+    background: var(--color-background, #fff);
+
+    @include respond-to(mobile-large) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .progressive-stat-label {
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-secondary, #0077b3);
+    margin-bottom: 0.75rem;
+  }
+
+  .progressive-stat-value {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 700;
+    color: var(--color-foreground, #2d2d2d);
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+  }
+
+  .progressive-stat-prefix {
+    font-weight: 400;
+    font-size: 0.85em;
+  }
+
+  .progressive-stat-caption {
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    color: var(--color-muted-foreground, #6b6b6b);
+    margin: 0;
+  }
+}
+
+// ─── Features / Products ──────────────────────────────────────────────────────
+.features.progressive {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  .progressive-products-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+
+    @include respond-to(mobile-large) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  .progressive-products-visual img {
+    width: 100%;
+    height: auto;
+    max-width: 36rem;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .progressive-products-intro {
+    margin-bottom: 1.5rem;
+
+    h2,
+    p,
+    strong {
+      color: var(--color-foreground, #2d2d2d);
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: var(--color-muted-foreground, #6b6b6b);
+    }
+  }
+
+  .progressive-products-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+
+    li {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--color-secondary-background, #d1e2e5);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    h3,
+    h3 a {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-secondary, #0077b3);
+      margin-bottom: 0.35rem;
+      text-decoration: none;
+    }
+
+    h3::after,
+    h3 a::after {
+      content: ' ›';
+    }
+
+    h3 a:hover {
+      color: var(--color-secondary-hover, #006da5);
+    }
+
+    p {
+      font-size: 0.8125rem;
+      color: var(--color-muted-foreground, #6b6b6b);
+      margin: 0;
+      line-height: 1.5;
+    }
+  }
+
+  .progressive-extra-products {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.5rem;
+
+    li {
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--color-secondary-background, #d1e2e5);
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+
+      a {
+        color: var(--color-secondary, #0077b3);
+        text-decoration: none;
+
+        &:hover {
+          color: var(--color-secondary-hover, #006da5);
+        }
+
+        &::after {
+          content: ' ›';
+        }
+      }
+    }
+
+    p {
+      font-size: 0.8125rem;
+      color: var(--color-muted-foreground, #6b6b6b);
+      margin: 0;
+      line-height: 1.5;
+    }
+  }
+
+  .progressive-products-cta {
+    border-radius: var(--radius-sm, 5px);
+    background: transparent !important;
+    color: var(--color-secondary, #0077b3) !important;
+    border: 2px solid var(--color-secondary, #0077b3) !important;
+
+    &:hover {
+      background: var(--color-secondary-background, #ebf4f9) !important;
+    }
+  }
+}
+
+// ─── Photo tiles (Four Column CTA) ────────────────────────────────────────────
+.four-column-cta.progressive-tiles {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+
+  .tile-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+    border: 1px solid var(--color-secondary-background, #d1e2e5);
+    border-radius: var(--radius-md, 8px);
+    overflow: hidden;
+    background: var(--color-background, #fff);
+    transition: box-shadow 0.2s;
+
+    &:hover {
+      box-shadow: 0 4px 16px rgb(0 0 0 / 10%);
+      color: inherit;
+    }
+  }
+
+  .tile-image {
+    width: 100%;
+    height: 12rem;
+    object-fit: cover;
+    border-radius: 0;
+  }
+
+  .tile-body {
+    padding: 1rem 1.25rem 1.25rem;
+
+    h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-secondary, #0077b3);
+      margin-bottom: 0.5rem;
+
+      &::after {
+        content: ' ›';
+      }
+    }
+
+    p {
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      color: var(--color-muted-foreground, #6b6b6b);
+      margin: 0;
+    }
+  }
+}
+
+// ─── Footer ───────────────────────────────────────────────────────────────────
+.footer.progressive {
+  background-color: var(--color-background, #fff);
+  color: var(--color-foreground, #2d2d2d);
+  border-top: 1px solid var(--color-secondary-background, #d1e2e5);
+  font-size: 0.8125rem;
+
+  a,
+  .links a,
+  .privacy-links a {
+    color: var(--color-secondary, #0077b3);
+
+    &:hover {
+      color: var(--color-secondary-hover, #006da5);
+    }
+  }
+
+  .content {
+    margin: 2.5rem 0;
+    gap: 0;
+  }
+
+  .title {
+    color: var(--color-foreground, #2d2d2d);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: normal;
+    margin-bottom: 1rem;
+  }
+
+  .links {
+    line-height: 1.8;
+
+    a {
+      display: block;
+      text-decoration: none;
+    }
+  }
+
+  hr {
+    border-color: var(--color-secondary-background, #d1e2e5);
+  }
+
+  .footnote {
+    color: var(--color-muted-foreground, #6b6b6b);
+    font-size: 0.75rem;
+  }
+}

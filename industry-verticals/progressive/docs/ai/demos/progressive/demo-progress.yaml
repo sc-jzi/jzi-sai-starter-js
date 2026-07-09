@@ -1,0 +1,147 @@
+client:
+  name: "Progressive"
+  sourceUrl: "https://www.progressive.com/"
+  startedAt: "2026-07-07T19:40:00Z"
+  lastUpdatedAt: "2026-07-07T20:45:00Z"
+
+phases:
+  phase0_inputs:
+    status: "complete"
+    screenshot: true
+    url: "https://www.progressive.com/"
+
+  phase0_5_manifest:
+    status: "complete"
+    validationMode: "quick"
+    result: "adapted"
+    notes: "UIIM fmc-custom-demo not in environment. Using Financial/ProsperaFinancial starter kit."
+
+  phase1_theme:
+    status: "complete"
+    themeFile: "docs/ai/themes/progressive.theme.yaml"
+    userApproved: true
+
+  phase2_analysis:
+    status: "complete"
+    buildPlanFile: "docs/ai/demos/progressive/build-plan.yaml"
+    totalSections: 8
+    userApproved: true
+
+  phase2_5_content:
+    status: "complete"
+    contentMapFile: "docs/ai/demos/progressive/content-map.yaml"
+    extractorUsed: true
+
+  phase3_content:
+    status: "complete"
+    completedSections: 7
+    totalSections: 7
+
+  phase4_theme:
+    status: "complete"
+    themeDelivery: "progressive-css"
+    cssWritten: true
+    fontsAdded: true
+    notes: "Theme pre-existed in src/assets/progressive/"
+
+  phase5_custom:
+    status: "skipped"
+    customComponentsNeeded: 0
+    customComponentsBuilt: 0
+
+  phase5_5_variants:
+    status: "complete"
+    variantsNeeded: 8
+    variantsCreated: 8
+    variantSpecsFile: "docs/ai/demos/progressive/variant-specs.yaml"
+    notes: "Progressive, ProgressiveQuote, ProgressiveTiles variants across 7 components + Header/Footer"
+
+  phase6_assembly:
+    status: "failed"
+    componentsAdded: 0
+    datasourcesWired: 0
+    totalComponents: 7
+    notes: "add_component_on_page API unavailable for this site — manual assembly required"
+
+  phase7_summary:
+    status: "complete"
+
+sections:
+  - position: 2
+    componentName: "Hero"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "861e5eb4-9c95-4f3a-be43-1e0a2417bf14"
+      fieldsPopulated: true
+      imagesUploaded: 1
+      imagesExpected: 1
+    phase6:
+      status: "failed"
+      error: "Page assembly API unavailable"
+
+  - position: 3
+    componentName: "FourColumnCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "d1703687-3676-40b9-b512-f578b1aa6123"
+      fieldsPopulated: true
+      imagesUploaded: 4
+      imagesExpected: 4
+    phase6:
+      status: "failed"
+
+  - position: 4
+    componentName: "HeadingCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "1839ea62-2260-4174-92e4-365a57e070d3"
+      fieldsPopulated: true
+    phase6:
+      status: "failed"
+
+  - position: 5
+    componentName: "StatsCounter"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "eb886cee-49c9-48a4-9fad-b6cab5ffd1d1"
+      fieldsPopulated: true
+    phase6:
+      status: "failed"
+
+  - position: 6
+    componentName: "Features"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "430e4eb5-9901-437d-8740-e7788438c0cc"
+      fieldsPopulated: true
+      imagesUploaded: 1
+      imagesExpected: 1
+    phase6:
+      status: "failed"
+
+  - position: 7
+    componentName: "HeadingCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "40fc447a-a84c-4d06-8a5a-71350a86de9a"
+      fieldsPopulated: true
+    phase6:
+      status: "failed"
+
+  - position: 8
+    componentName: "FourColumnCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "b41325d6-9188-4705-b671-1dcb538b8670"
+      fieldsPopulated: true
+      imagesUploaded: 4
+      imagesExpected: 4
+    phase6:
+      status: "failed"

@@ -1,0 +1,23 @@
+{
+  "title": "Wake Forest University",
+  "themeColor": null,
+  "msColor": null,
+  "ogTitle": "Wake Forest University",
+  "ogDescription": "Founded in 1834, Wake Forest University is a private university located in Winston-Salem, N.C. We are a vibrant and diverse academic community where our students study in one or more of the 45 majors and programs we offer within our seven colleges and schools.",
+  "ogImage": "https://prod.wp.cdn.aws.wfu.edu/2023/06/20211109campus7359-f.jpg",
+  "ogSiteName": "Wake Forest University",
+  "favicon": "https://prod.wp.cdn.aws.wfu.edu/wfu-gutenberg-quarantheme/favicon.ico",
+  "googleFontsLinks": [],
+  "fontFaces": [
+    {
+      "family": "weathericons",
+      "src": "url(\"https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/font/weathericons-regular-webfont.ttf\")",
+      "weight": ""
+    }
+  ],
+  "logoCandidates": [
+    "https://static.secure.wfu.edu/images/_heater/wfu-logo.svg",
+    "https://static.secure.wfu.edu/images/_heater/_footer/wfu-footer-logo.svg"
+  ],
+  "heroBgImage": null
+}

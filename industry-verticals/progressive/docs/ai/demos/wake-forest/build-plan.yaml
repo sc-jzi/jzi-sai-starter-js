@@ -1,0 +1,353 @@
+# Demo Build Plan — Wake Forest University
+client:
+  name: "Wake Forest University"
+  sourceUrl: "https://www.wfu.edu/"
+  themeFile: "docs/ai/themes/wake-forest.theme.yaml"
+  analyzedAt: "2026-07-07T19:20:00Z"
+
+pageAnalysis:
+  screenshotFiles:
+    desktop: "docs/ai/themes/wake-forest/screenshot-desktop.png"
+    mobile: "docs/ai/themes/wake-forest/screenshot-mobile.png"
+    hero: "docs/ai/themes/wake-forest/screenshot-hero.png"
+  totalSections: 12
+  templateMatches: 11
+  customRequired: 1
+
+sections:
+  - position: 1
+    description: "Dark top bar with WFU wordmark logo, MENU and SEARCH icons on the right, overlaying the hero image"
+    matchedComponent:
+      registryId: "navigation-header"
+      manifestName: "NavigationHeader"
+      variant: "Transparent"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: false
+    sectionBackground: "dark"
+    content:
+      BrandLogo: "WFU logo (white wordmark)"
+      CtaLabel: ""
+      CtaLink: ""
+    contentNotes: "Context-only component in header partial design. Minimal nav with hamburger menu and search — no traditional link row visible."
+    variantReason: "tone.navStyle is transparent-overlay — logo and icons float over the hero image"
+    variantMatch: "partial"
+    customVariantNeeded:
+      name: "WakeForest"
+      description: "Black bar with white serif wordmark, MENU hamburger and SEARCH icon only — no CTA button"
+      parentComponent: "NavigationHeader"
+
+  - position: 2
+    description: "Full-bleed aerial campus photo with centered serif headline 'Welcome to Wake Forest'"
+    matchedComponent:
+      registryId: "hero-banner"
+      manifestName: "HeroBanner"
+      variant: "BackgroundImage"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "dark"
+    content:
+      Title: "Welcome to Wake Forest"
+      Subtitle: ""
+      PrimaryLink: ""
+      SecondaryLink: ""
+      HeroImage: "Aerial campus view with chapel spire and city skyline"
+    contentNotes: "Headline is centered white serif text over full-bleed photography. No subtitle or inline CTAs in the hero image itself."
+    variantReason: "tone.heroStyle is full-bleed-image — large photo with text overlay"
+    variantMatch: "exact"
+
+  - position: 3
+    description: "Beige band below hero with three horizontal gold rectangular buttons: Majors & Minors, Schedule a Visit, Apply Now"
+    matchedComponent:
+      registryId: "tab-navigation"
+      manifestName: "TabNavigationSection"
+      variant: "Boxed"
+      matchType: "template"
+      matchConfidence: "medium"
+      apiAddable: true
+    sectionBackground: "muted"
+    content:
+      Title: ""
+    contentNotes: "Three equal-width gold CTA buttons in a row. Live site uses link-styled buttons, not traditional tabs — Phase 5.5 may restyle Boxed tabs as gold button blocks."
+    variantReason: "Horizontal row of boxed rectangular controls best approximates the three gold CTA buttons"
+    variantMatch: "partial"
+    customVariantNeeded:
+      name: "WakeForest"
+      description: "Three equal gold (#9e7e38) rectangular buttons with white text and arrow, full-width row on beige background"
+      parentComponent: "TabNavigationSection"
+    children:
+      - LinkText: "Majors & Minors"
+        LinkUrl: "https://www.wfu.edu/academics/majors-and-minors/"
+      - LinkText: "Schedule a Visit"
+        LinkUrl: "https://www.wfu.edu/admissions/visit/"
+      - LinkText: "Apply Now"
+        LinkUrl: "https://www.wfu.edu/admissions/apply/"
+
+  - position: 4
+    description: "Split 'Wake Up' impact section — colorful student lab photo left with bold 'WAKE UP to what's possible' overlay, dark panel right with mission text and ghost CTA"
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "FeatureHighlight"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "dark"
+    content:
+      Title: "Wake Up to what's possible."
+      Description: "Through interdisciplinary collaboration and community engagement, Wake Forest students and faculty generate meaningful impact that reaches far beyond our campus. Our commitment to academic excellence establishes Wake Forest as a global leader in developing solutions that benefit society."
+      PrimaryLink: "See the impact"
+      Image: "Students in green-lit laboratory with WAKE UP graphic overlay"
+    contentNotes: "Left half is a dramatic photo with stylized yellow/white text overlay. Right half is dark charcoal with white body text and outlined ghost button."
+    variantReason: "Default split layout — image on one side, text and CTA on the other"
+    variantMatch: "partial"
+    customVariantNeeded:
+      name: "WakeForest"
+      description: "Full-bleed split with image overlay typography on left, dark panel with ghost-outline button on right"
+      parentComponent: "FeatureHighlight"
+
+  - position: 5
+    description: "News section with large featured story (Peter Rodriguez portrait) on the left and two smaller stacked stories on the right, plus footer links row"
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "FeatureCardsGrid"
+      variant: "WithImages"
+      matchType: "template"
+      matchConfidence: "medium"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Title: "News"
+      Description: ""
+    contentNotes: "Asymmetric news layout — one large featured card (2/3 width) plus two smaller cards stacked on the right. Template grid is symmetric; Phase 5.5 custom variant needed for featured+sidebar layout. Footer links: Wake Forest News, Wake Forest Magazine, Photos and video."
+    variantReason: "WithImages variant supports image cards; asymmetric sizing needs custom variant"
+    variantMatch: "partial"
+    customVariantNeeded:
+      name: "WakeForest"
+      description: "Asymmetric news grid — one large featured article card (image + headline + excerpt) left, two compact story cards stacked right, link row below"
+      parentComponent: "FeatureCardsGrid"
+    children:
+      - CardTitle: "Peter Rodriguez named 15th president of Wake Forest"
+        CardDescription: "Wake Forest welcomes Peter Rodriguez as the University's 15th President. A distinguished economist and transformative academic leader, Rodriguez formerly served as the dean of Rice University's School of Business."
+        CardImage: "Portrait of Peter Rodriguez in suit"
+        CardLink: "https://news.wfu.edu/"
+      - CardTitle: "Grant expands leadership and character in the law"
+        CardDescription: "The School of Law and the Program for Leadership and Character announced a $5 million grant from the Kern Family Foundation."
+        CardImage: "Campus building exterior"
+        CardLink: "https://news.wfu.edu/"
+      - CardTitle: "Legacy of opportunity"
+        CardDescription: "The North Carolina Gateway to Wake Forest extends a longstanding tradition of financial support for worthy students."
+        CardImage: "Hands holding shield graphic"
+        CardLink: "https://magazine.wfu.edu/"
+
+  - position: 6
+    description: "Motto section — large stone seal photo left, 'Our motto means more' heading and Pro Humanitate text right with learn-more link"
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "FeatureHighlight"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Title: "Our motto means more."
+      Description: "Pro Humanitate (for humanity) invites us to use our ideas, knowledge, talents and compassion on behalf of all humanity."
+      PrimaryLink: "Learn more about our motto"
+      Image: "Close-up of Wake Forest circular stone seal carved in wall"
+    contentNotes: "Clean white background, 50/50 split with high-contrast seal photograph and serif heading."
+    variantReason: "Standard split image+text layout on white background"
+    variantMatch: "exact"
+
+  - position: 7
+    description: "Why Wake Forest split section — dark left panel with gold headings (Affordability, Our Hometown, Facts & Figures) and descriptions, campus autumn photo right"
+    matchedComponent:
+      registryId: "value-proposition-grid"
+      manifestName: "ValuePropositionGrid"
+      variant: "Horizontal"
+      matchType: "template"
+      matchConfidence: "medium"
+      apiAddable: true
+    sectionBackground: "dark"
+    content:
+      Title: "Why Wake Forest?"
+      Description: ""
+    contentNotes: "Compound layout — value props on dark left half with large campus photo on right half. Template renders value props only; pair with ImageGallery or custom split variant in Phase 5.5."
+    variantReason: "Horizontal variant — icon/text rows with heading on left; campus photo is adjacent in live site"
+    variantMatch: "partial"
+    customVariantNeeded:
+      name: "WakeForest"
+      description: "Dark left panel with gold serif sub-headings and arrow links, full-height campus photo on right half"
+      parentComponent: "ValuePropositionGrid"
+    children:
+      - ItemTitle: "Affordability"
+        ItemDescription: "Wake Forest is committed to meeting 100% of demonstrated financial need through grants, scholarships, work-study, and subsidized loans."
+        ItemLink: "https://www.wfu.edu/admissions/affordability/"
+      - ItemTitle: "Our Hometown"
+        ItemDescription: "Within driving distance of both the Blue Ridge Mountains and Atlantic Coast, Winston-Salem offers the amenities of a larger city with the vibrant culture of an engaged community."
+        ItemLink: "https://www.wfu.edu/about/campus-information/"
+      - ItemTitle: "Facts & Figures"
+        ItemDescription: "Get to know Wake Forest better by browsing a collection of quick facts, figures and rankings."
+        ItemLink: "https://www.wfu.edu/admissions/quick-facts/"
+
+  - position: 8
+    description: "By the Numbers stats carousel — large serif heading with rotating stat slides (250+ orgs, 11:1 ratio, 72+% study abroad, 97+% employed)"
+    matchedComponent:
+      registryId: "trust-stats"
+      manifestName: "TrustStatsRow"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Title: "By the Numbers"
+      Description: ""
+    contentNotes: "Live site uses a carousel with dot indicators. Template renders static row — Phase 5.5 can add carousel behavior or SE sets manually."
+    variantReason: "Big numbers with descriptive labels below each stat"
+    variantMatch: "partial"
+    customVariantNeeded:
+      name: "WakeForest"
+      description: "Single-stat carousel with dot navigation, large number, descriptive paragraph, and gold explore link"
+      parentComponent: "TrustStatsRow"
+    children:
+      - StatValue: "250+"
+        StatLabel: "is the number of student organizations that you can explore (or we'll help you find a match) in order to discover your passion."
+        StatLink: "Explore Student Life"
+      - StatValue: "11:1"
+        StatLabel: "is our student-to-faculty ratio. More than half of our undergraduate classes have fewer than 20 students."
+        StatLink: "Explore Academics"
+      - StatValue: "72+%"
+        StatLabel: "of undergraduates have an academic study-abroad experience, many of them in our academic-residential houses in London, Vienna and Venice."
+        StatLink: "Explore Study Abroad"
+      - StatValue: "97+%"
+        StatLabel: "of 2024 graduates are employed or enrolled in graduate programs. WFU students consistently land spots in top organizations and prestigious graduate schools."
+        StatLink: "Explore Future Outcomes"
+
+  - position: 9
+    description: "Colleges & Schools link grid — Undergraduate, Graduate, Business, Divinity, Law, Medicine, Professional Studies"
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "FeatureCardsGrid"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "muted"
+    content:
+      Title: "Colleges & Schools"
+      Description: ""
+    contentNotes: "Simple text-link cards for each college/school. Below fold on live site."
+    variantReason: "Multi-column card grid with title links"
+    variantMatch: "exact"
+    children:
+      - CardTitle: "Undergraduate"
+        CardLink: "https://www.wfu.edu/academics/undergraduate/"
+      - CardTitle: "Graduate"
+        CardLink: "https://www.wfu.edu/academics/graduate/"
+      - CardTitle: "Business"
+        CardLink: "https://business.wfu.edu/"
+      - CardTitle: "Divinity"
+        CardLink: "https://divinity.wfu.edu/"
+      - CardTitle: "Law"
+        CardLink: "https://law.wfu.edu/"
+      - CardTitle: "Medicine"
+        CardLink: "https://school.wakehealth.edu/"
+      - CardTitle: "Professional Studies"
+        CardLink: "https://professional.wfu.edu/"
+
+  - position: 10
+    description: "Around Campus Instagram social feed embed — scrolling grid of @wfuniversity posts"
+    matchedComponent:
+      registryId: ""
+      manifestName: ""
+      variant: ""
+      matchType: "custom"
+      matchConfidence: "low"
+      apiAddable: false
+    sectionBackground: "default"
+    content:
+      Title: "Around Campus"
+      Description: "Instagram feed from @wfuniversity"
+    contentNotes: "Live site embeds a third-party Instagram widget. No template component supports social feed embeds. Recommend skipping or substituting ImageGallery with campus photos for demo purposes."
+    variantReason: "Social media embed requires custom component or manual iframe"
+    variantMatch: "none"
+
+  - position: 11
+    description: "Athletics CTA banner — 'Welcome to Deactown' with dark background, black and gold branding, Visit Athletics button"
+    matchedComponent:
+      registryId: "cta-banner"
+      manifestName: "CTABanner"
+      variant: "WithImage"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "dark"
+    content:
+      Title: "Welcome to Deactown"
+      Description: "Whether cheering or playing, we all bleed Black and Gold"
+      PrimaryLink: "Visit Athletics"
+      BackgroundImage: "Athletics/stadium imagery"
+    contentNotes: "Below fold. Dark banner with gold accent text and athletics CTA."
+    variantReason: "Background image with overlay text and prominent CTA button"
+    variantMatch: "exact"
+
+  - position: 12
+    description: "Multi-column site footer with Where to start, Get to know WFU, Resources link groups, support/giving CTAs, address, and social links"
+    matchedComponent:
+      registryId: "footer"
+      manifestName: "SiteFooter"
+      variant: "MegaFooter"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: false
+    sectionBackground: "dark"
+    content:
+      BrandLogo: "WFU footer logo"
+    contentNotes: "Context-only component in footer partial design. MegaFooter variant for multi-column link groups and giving CTAs."
+    variantReason: "Extensive footer with multiple link sections, giving society promos, and contact info"
+    variantMatch: "partial"
+    customVariantNeeded:
+      name: "WakeForest"
+      description: "Dark footer with three link columns, library cupola image, giving society promos, and Winston-Salem address"
+      parentComponent: "SiteFooter"
+
+customComponents:
+  - position: 10
+    name: "SocialFeedEmbed"
+    description: "Instagram/social media feed embed section"
+    reason: "No template supports third-party social feed widgets"
+    recommendation: "Skip for demo, or substitute ImageGallery with campus photo grid"
+
+buildOrder:
+  phase1_sitecore:
+    - position: 2
+      manifestName: "HeroBanner"
+      matchType: "template"
+    - position: 3
+      manifestName: "TabNavigationSection"
+      matchType: "template"
+    - position: 4
+      manifestName: "FeatureHighlight"
+      matchType: "template"
+    - position: 5
+      manifestName: "FeatureCardsGrid"
+      matchType: "template"
+    - position: 6
+      manifestName: "FeatureHighlight"
+      matchType: "template"
+    - position: 7
+      manifestName: "ValuePropositionGrid"
+      matchType: "template"
+    - position: 8
+      manifestName: "TrustStatsRow"
+      matchType: "template"
+    - position: 9
+      manifestName: "FeatureCardsGrid"
+      matchType: "template"
+    - position: 11
+      manifestName: "CTABanner"
+      matchType: "template"
+  phase2_theme: "docs/ai/themes/wake-forest.theme.yaml"
+  phase3_custom: []

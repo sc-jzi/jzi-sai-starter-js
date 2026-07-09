@@ -1,0 +1,1049 @@
+{
+  "url": "https://www.wfu.edu/",
+  "extractedAt": "2026-07-07T19:27:24.343Z",
+  "detectedLanguage": "en",
+  "targetLanguage": "en",
+  "translationNeeded": false,
+  "totalSections": 12,
+  "totalImages": 26,
+  "totalVideos": 1,
+  "interactionStats": {
+    "lazySourcesResolved": 0,
+    "tabsClicked": 0,
+    "accordionsExpanded": 1,
+    "carouselDotsClicked": 0,
+    "carouselArrowSlides": 0,
+    "backgroundImagesCollected": 1
+  },
+  "sections": [
+    {
+      "position": 1,
+      "tagName": "div",
+      "classHint": "wfu-block-homepage-video-hero alignfull",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Welcome to Wake Forest"
+        }
+      ],
+      "paragraphs": [
+        "Welcome to Wake Forest"
+      ],
+      "links": [],
+      "images": [
+        {
+          "src": "https://prod.wp.cdn.aws.wfu.edu/2021/06/076.2_HomepageHeaderRefresh_FinalFirstFrame.jpg",
+          "alt": "",
+          "type": "background",
+          "width": null,
+          "height": null
+        }
+      ],
+      "videos": [
+        {
+          "type": "iframe-video",
+          "src": "https://player.vimeo.com/video/1065974899?autopause=0&dnt=1&loop=0&background=1&quality=720p&app_id=122963",
+          "provider": "vimeo"
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "tagName": "div",
+      "classHint": "wp-block-group alignfull home-button-bar has-pale-gold-background-color has-background has-global-pa",
+      "backgroundHint": "light",
+      "headings": [],
+      "paragraphs": [],
+      "links": [
+        {
+          "text": "Majors & Minors »",
+          "href": "https://admissions.wfu.edu/academics/majors-minors/",
+          "target": ""
+        },
+        {
+          "text": "Schedule a Visit »",
+          "href": "https://admissions.wfu.edu/visit/schedule-a-visit/",
+          "target": ""
+        },
+        {
+          "text": "Apply Now »",
+          "href": "https://admissions.wfu.edu/apply/applynow/",
+          "target": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "position": 3,
+      "tagName": "div",
+      "classHint": "wp-block-group alignfull wakeup2 has-black-background-color has-background has-global-padding is-lay",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Wake Up to what’s possible."
+        }
+      ],
+      "paragraphs": [
+        "Through interdisciplinary collaboration and community engagement, Wake Forest students and faculty generate meaningful impact that reaches far beyond our campus. Our commitment to academic excellence establishes Wake Forest as a global leader in developing solutions that benefit society."
+      ],
+      "links": [
+        {
+          "text": "See the impact »",
+          "href": "http://wake.wfu.edu/",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://prod.wp.cdn.aws.wfu.edu/2026/05/wakeup-home.webp",
+          "alt": "",
+          "type": "img",
+          "width": 1439,
+          "height": 959
+        }
+      ],
+      "listItems": [
+        {
+          "image": {
+            "src": "https://prod.wp.cdn.aws.wfu.edu/2026/05/wakeup-home.webp",
+            "alt": ""
+          }
+        },
+        {
+          "title": "Wake Up to what’s possible.",
+          "description": "Wake Up to what’s possible.",
+          "link": {
+            "text": "See the impact »",
+            "href": "http://wake.wfu.edu/"
+          }
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "tagName": "div",
+      "classHint": "wp-block-group alignfull has-global-padding is-layout-constrained wp-block-group-is-layout-constrain",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "News"
+        },
+        {
+          "tag": "h3",
+          "text": "Peter Rodriguez named 15th president of Wake Forest"
+        },
+        {
+          "tag": "h3",
+          "text": "Grant expands leadership and character in the law"
+        },
+        {
+          "tag": "h3",
+          "text": "Legacy of opportunity"
+        },
+        {
+          "tag": "h2",
+          "text": "Our motto means more."
+        }
+      ],
+      "paragraphs": [
+        "Wake Forest welcomes Peter Rodriguez as the University’s 15th President. A distinguished economist and transformative academic leader, Rodriguez formerly served as the dean of Rice University’s School of Business. He began his presidency at Wake Forest on July 1, 2026.",
+        "The School of Law and the Program for Leadership and Character announced a $5 million grant from the Kern Family Foundation to continue and expand the role of character in legal education.",
+        "The North Carolina Gateway to Wake Forest extends a longstanding tradition of financial support for worthy students.",
+        "Pro Humanitate (for humanity) invites us to use our ideas, knowledge, talents and compassion on behalf of all humanity."
+      ],
+      "links": [
+        {
+          "text": "News Peter Rodriguez named 15th president of Wake Forest",
+          "href": "https://news.wfu.edu/2026/05/20/peter-rodriguez-named-15th-president-of-wake-forest-university/",
+          "target": ""
+        },
+        {
+          "text": "News Grant expands leadership and character in the law",
+          "href": "https://news.wfu.edu/2026/04/30/wake-forest-receives-5-million-to-expand-the-role-of-character-based-leadership-in-legal-education/",
+          "target": ""
+        },
+        {
+          "text": "Wake Forest Magazine Legacy of opportunity",
+          "href": "https://magazine.wfu.edu/2026/06/10/timeline-wake-forest-scholarships/",
+          "target": ""
+        },
+        {
+          "text": "Wake Forest News",
+          "href": "https://news.wfu.edu/",
+          "target": ""
+        },
+        {
+          "text": "Wake Forest Magazine",
+          "href": "https://magazine.wfu.edu/",
+          "target": ""
+        },
+        {
+          "text": "Photos and video",
+          "href": "https://about.wfu.edu/visiting/forest-view/",
+          "target": ""
+        },
+        {
+          "text": "Learn more about our motto",
+          "href": "https://ourmottomeansmore.wfu.edu/",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://prod.wp.cdn.aws.wfu.edu/2026/05/2026-05-hp-news-rodriguez.webp",
+          "alt": "",
+          "type": "img",
+          "width": 760,
+          "height": 560
+        },
+        {
+          "src": "https://prod.wp.cdn.aws.wfu.edu/2026/05/20230228springworrell_49-3.webp",
+          "alt": "",
+          "type": "img",
+          "width": 2500,
+          "height": 1374
+        },
+        {
+          "src": "https://prod.wp.cdn.aws.wfu.edu/2026/07/wf-mag-scholarships.webp",
+          "alt": "",
+          "type": "img",
+          "width": 800,
+          "height": 566
+        },
+        {
+          "src": "https://prod.wp.cdn.aws.wfu.edu/2025/06/cropped.webp",
+          "alt": "",
+          "type": "img",
+          "width": 873,
+          "height": 432
+        }
+      ],
+      "listItems": [
+        {
+          "title": "Grant expands leadership and character in the law",
+          "description": "The School of Law and the Program for Leadership and Character announced a $5 million grant from the Kern Family Foundation to continue and expand the role of character in legal education.",
+          "link": {
+            "text": "News Grant expands leadership and character in the law",
+            "href": "https://news.wfu.edu/2026/04/30/wake-forest-receives-5-million-to-expand-the-role-of-character-based-leadership-in-legal-education/"
+          },
+          "image": {
+            "src": "https://prod.wp.cdn.aws.wfu.edu/2026/05/20230228springworrell_49-3.webp",
+            "alt": ""
+          }
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "tagName": "div",
+      "classHint": "wp-block-columns alignwide social_row is-layout-flex wp-container-core-columns-is-layout-9d6595d7 wp",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Around Campus"
+        }
+      ],
+      "paragraphs": [],
+      "links": [
+        {
+          "text": "Instagram (opens in a new tab)",
+          "href": "https://instagram.com/wfuniversity",
+          "target": "_blank"
+        },
+        {
+          "text": "Facebook (opens in a new tab)",
+          "href": "https://www.facebook.com/wfuniversity",
+          "target": "_blank"
+        },
+        {
+          "text": "X (opens in a new tab)",
+          "href": "https://twitter.com/WakeForest",
+          "target": "_blank"
+        }
+      ],
+      "images": [],
+      "listItems": [
+        {
+          "description": "Instagram",
+          "badge": "Instagram",
+          "link": {
+            "text": "Instagram (opens in a new tab)",
+            "href": "https://instagram.com/wfuniversity"
+          }
+        },
+        {
+          "description": "Facebook",
+          "badge": "Facebook",
+          "link": {
+            "text": "Facebook (opens in a new tab)",
+            "href": "https://www.facebook.com/wfuniversity"
+          }
+        },
+        {
+          "description": "X",
+          "badge": "X",
+          "link": {
+            "text": "X (opens in a new tab)",
+            "href": "https://twitter.com/WakeForest"
+          }
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "tagName": "div",
+      "classHint": "wp-block-group alignfull is-layout-flow wp-block-group-is-layout-flow",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h3",
+          "text": "wfuniversity"
+        }
+      ],
+      "paragraphs": [
+        "3,534 63,466",
+        "Respected private university located in Winston-Salem, North Carolina. Recognized for our outstanding academic reputation & liberal arts curriculum.",
+        "wfuniversity (opens in a new tab)",
+        "Have you seen our Deacs? We’ve been looking...",
+        "A lot can happen in one year.New friends....",
+        "It’s here, and it’s glorious. ☀️",
+        "Happy Father’s Day to all of the Deacon Dads and...",
+        "A tip of the top hat to the best-dressed mascot in...",
+        "Before her first year even began, Eliza Hinshaw...",
+        "With 48 international soccer teams visiting U.S....",
+        "Wake Forest’s new Charlotte Campus is officially...",
+        "WFU x DFB ⚽️🇩🇪A beautiful night at Spry...",
+        "Before her first year even began, Kiera Blunt..."
+      ],
+      "links": [
+        {
+          "text": "wfuniversity (opens in a new tab)",
+          "href": "https://www.instagram.com/wfuniversity/",
+          "target": "_blank"
+        },
+        {
+          "text": "View Instagram post by wfuniversity (opens in a new tab)",
+          "href": "https://www.instagram.com/p/DaDsbQeEW8L/",
+          "target": "_blank"
+        },
+        {
+          "text": "Open post by wfuniversity with ID 18107519701898922",
+          "href": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/730992649_18591849577031280_5343220418367085010_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=DRfxa3OfAvcQ7kNvwEFPQAY&_nc_oc=AdoZoLu_9OinZ075XYWsmN-mOBC24sGl529XimCKgC-RozOKDzFDGXgispg6PtcmEy8&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQEu-b4y_MPkpjxzKHm4tDdbh_Y7P-N2I-vqP7HCegAyE8NLXtTZXp26mn-wlWcfggDP5OpXwQApWA&oh=00_AQAuIVoMkw9fAQtEau1rd7CeWWwBuHim745QwPrPVWFNrQ&oe=6A49265F",
+          "target": ""
+        },
+        {
+          "text": "(opens in a new tab)",
+          "href": "https://www.instagram.com/p/DaDsbQeEW8L/",
+          "target": "_blank"
+        },
+        {
+          "text": "View Instagram post by wfuniversity (opens in a new tab)",
+          "href": "https://www.instagram.com/reel/DaA216Ix5K2/",
+          "target": "_blank"
+        },
+        {
+          "text": "Open post by wfuniversity with ID 18077516228656814",
+          "href": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/729896801_18591856786031280_1625726783763379386_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=h21VW59clFUQ7kNvwGzaa_f&_nc_oc=Adr7-1bEEuO7cPcF-RDC2X4RK28UGaELptZMtUixGkutaMyDKOYobIoBMLyf2dTtstc&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQEHVFDc9dUpe0cONq3JTh6xsWtAMZvVUoxvpLCeSIoFyQ4-ABolkhYCrtBU9JaxvjwLoeyJbq6-XA&oh=00_AQDsE_Dk0MpUQTP68dDT9wqeXGYfZhX3jq0dWCBANs-QMA&oe=6A491C9F",
+          "target": ""
+        },
+        {
+          "text": "(opens in a new tab)",
+          "href": "https://www.instagram.com/reel/DaA216Ix5K2/",
+          "target": "_blank"
+        },
+        {
+          "text": "View Instagram post by wfuniversity (opens in a new tab)",
+          "href": "https://www.instagram.com/p/DZ-M1OQgGwt/",
+          "target": "_blank"
+        },
+        {
+          "text": "Open post by wfuniversity with ID 18088410032529290",
+          "href": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/730640161_18591157384031280_854690922783761568_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=-m_aC5je6moQ7kNvwHWG7tr&_nc_oc=AdpWsQ8Hv5T-i7ORUJe9K48zM5JzGHm5b5hRy7Q5n5c1fpCLyBD_EkVR-_NQjPrGfew&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQG6P-E-s7wQLQzEOamLcOxDkm08BS3ffxXpT_swMHrQYn8AAcdXxNDUIQC1oTVHeS0nvOIR9qAAJA&oh=00_AQBxggGLuit3ebBtvg4F3w0qbXszFc_JU7eckaEnMURADw&oe=6A49236B",
+          "target": ""
+        },
+        {
+          "text": "(opens in a new tab)",
+          "href": "https://www.instagram.com/p/DZ-M1OQgGwt/",
+          "target": "_blank"
+        },
+        {
+          "text": "View Instagram post by wfuniversity (opens in a new tab)",
+          "href": "https://www.instagram.com/p/DZ2cMZgkV5Z/",
+          "target": "_blank"
+        },
+        {
+          "text": "Open post by wfuniversity with ID 17896203822524927",
+          "href": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/728930013_18590185414031280_8383026772275035079_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=VRKZVKE1SXAQ7kNvwEJCxB-&_nc_oc=AdrOQga7IdOylQ2cYVWX1Fs9vwSE0EvXxalfOasUNa2rOuV5qESoBC2wyshvPXSzKKg&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQHL5_Juc3DKB-ACLgg_rIjtKRZ9VEoeBbVYdvd6q3NqwxhnVaM29KACtg5y8QlvQ-gI6gjnxw2VMg&oh=00_AQBbtvpRDDNvrEtOSXQaWEnZlsJg5iUzI7AvWJMOPvjxZw&oe=6A491E67",
+          "target": ""
+        },
+        {
+          "text": "(opens in a new tab)",
+          "href": "https://www.instagram.com/p/DZ2cMZgkV5Z/",
+          "target": "_blank"
+        },
+        {
+          "text": "View Instagram post by wfuniversity (opens in a new tab)",
+          "href": "https://www.instagram.com/reel/DZse-PFROno/",
+          "target": "_blank"
+        },
+        {
+          "text": "Open post by wfuniversity with ID 17926797759128039",
+          "href": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/726768075_18588905182031280_5934322748878179597_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=VHX_uwr1xU0Q7kNvwEj2LPf&_nc_oc=AdotlHSBHy08ema6Xcb2F9iJjEbxnK42uQuhy6YJQJMa3G3bgujl4wzYeeuAnIMJjLs&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQFi_iUrkV3AiIRAkg1I5h4Ucv2sWIRPxDp_iNruY4pgLD0zUv0JKMdTH9VKSqUw5luUZKQDXuJgRA&oh=00_AQAnXHWN41WIg5UZvAkyaiQodLbsAfRWMqfNlzjpPBPgQg&oe=6A4923CE",
+          "target": ""
+        },
+        {
+          "text": "(opens in a new tab)",
+          "href": "https://www.instagram.com/reel/DZse-PFROno/",
+          "target": "_blank"
+        },
+        {
+          "text": "View Instagram post by wfuniversity (opens in a new tab)",
+          "href": "https://www.instagram.com/reel/DZp2hm_RGiE/",
+          "target": "_blank"
+        },
+        {
+          "text": "Open post by wfuniversity with ID 17998475390986231",
+          "href": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/725113084_18588603025031280_354030122390991427_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=nvVGl5LuqOoQ7kNvwGLVQuB&_nc_oc=Adr8nJn6aPmsL6nWI9PHJkKav4ZA-K_bsh9O-kOxhbOZ8jwaV25Qbyo0hU2fgRX_Tr8&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQFnc820aqqJC36MVKFEBEaO11sWqysxYHJl7Bhwj0YvlUOw0rCctPPO0WlX_MRVPoiGyCK22qWpbQ&oh=00_AQDrMji-depM3qpDlj5OMH_x80H1pb6O84d3Lx4rMIppeg&oe=6A490560",
+          "target": ""
+        },
+        {
+          "text": "(opens in a new tab)",
+          "href": "https://www.instagram.com/reel/DZp2hm_RGiE/",
+          "target": "_blank"
+        },
+        {
+          "text": "View Instagram post by wfuniversity (opens in a new tab)",
+          "href": "https://www.instagram.com/reel/DZfX108O6YF/",
+          "target": "_blank"
+        },
+        {
+          "text": "Open post by wfuniversity with ID 17953132551152709",
+          "href": "https://scontent-iad3-1.cdninstagram.com/v/t51.71878-15/723852883_1529060772039292_3387969269572600477_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=iu-N-m8WUywQ7kNvwEJxPi_&_nc_oc=Adq6U4ukRRkp5os_8TtRhegxERLphhZ3lyBg7ymGiGZQnelvGikRC-uUfbkQc4NUBWM&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQGs4RJl5E7Zrf5yBkVTTfR5V-NT0lrfi88unxxu37_fIBkiTyFkOQgeVzagGVHYpSayGZgrXpzOFQ&oh=00_AQDM86_3T4FdKtrNvikErtN638kKYLw1nF82_ByImYO5Zw&oe=6A491EA6",
+          "target": ""
+        },
+        {
+          "text": "(opens in a new tab)",
+          "href": "https://www.instagram.com/reel/DZfX108O6YF/",
+          "target": "_blank"
+        },
+        {
+          "text": "View Instagram post by wfuniversity (opens in a new tab)",
+          "href": "https://www.instagram.com/p/DZdmNFhkacw/",
+          "target": "_blank"
+        },
+        {
+          "text": "Open post by wfuniversity with ID 18103927162834211",
+          "href": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/722666690_18587262058031280_3457270109161500289_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=_swP8sBzPdQQ7kNvwGrHIoB&_nc_oc=AdpO5Bc--5oKJcGkI_DxKF-M5LUZss73jvchykFLMgudpy8fRSyM2Aewz9BJlPdfQUk&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQGy9HQGci3QasDJBp9TAk6t727xN_2BDK4YgJF_mhqBNyPhqVa_8euF0pdGNvb0hLfDUqLfzkCi-w&oh=00_AQAd8AcxHr4M9JzrrxRHm48cDb4UX4oK4UJDL_3fvI-6jQ&oe=6A491B14",
+          "target": ""
+        },
+        {
+          "text": "(opens in a new tab)",
+          "href": "https://www.instagram.com/p/DZdmNFhkacw/",
+          "target": "_blank"
+        },
+        {
+          "text": "View Instagram post by wfuniversity (opens in a new tab)",
+          "href": "https://www.instagram.com/reel/DZYIFCcACKS/",
+          "target": "_blank"
+        },
+        {
+          "text": "Open post by wfuniversity with ID 17899055433308052",
+          "href": "https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/719908315_1679353703323117_7298908353436485125_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=3cfebv9NqmwQ7kNvwF9_iX9&_nc_oc=AdpINE_9ym8qD836Q_aNT3OzfHwjxF2c440gKogxwmn1GbErCWwRXFwjKRlcRpyAaxw&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQGhU1yqwsOLRnoZJJVNNO8PpYVSt6Gu1I-45m7QQtuNX36OHiQyolf3i0UffdUIx4_JLFViDVXxWA&oh=00_AQCj6A4MZrev3liS4oix4BTnMQci8y612dnJaUAwBhzLBQ&oe=6A493014",
+          "target": ""
+        },
+        {
+          "text": "(opens in a new tab)",
+          "href": "https://www.instagram.com/reel/DZYIFCcACKS/",
+          "target": "_blank"
+        },
+        {
+          "text": "View Instagram post by wfuniversity (opens in a new tab)",
+          "href": "https://www.instagram.com/reel/DZXxCnfxcOF/",
+          "target": "_blank"
+        },
+        {
+          "text": "Open post by wfuniversity with ID 17880206754664160",
+          "href": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/720603130_18586614139031280_1820514497256279216_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=saS08IfFARQQ7kNvwHfpUen&_nc_oc=AdpuShxvGmjj5u4H3PCXkfjDgU6WwdbODheFLG0kXoRYPDa2CohVe-g-5a6l8hUebCo&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQHwVYPmo-aDnnZV9xBRzBd4fw2YCWNZ5-fFRXeIltIk1YNNgrI5pqohr_orRXtZUJyHuvbYUCvesw&oh=00_AQCW6o3txB4FL8ukg667z42rhTybKIbVBwIKWx1KEEvOwg&oe=6A49216B",
+          "target": ""
+        },
+        {
+          "text": "(opens in a new tab)",
+          "href": "https://www.instagram.com/reel/DZXxCnfxcOF/",
+          "target": "_blank"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://prod.wp.cdn.aws.wfu.edu/2025/05/wfu-insta.jpg",
+          "alt": "",
+          "type": "img",
+          "width": 150,
+          "height": 150
+        },
+        {
+          "src": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/730992649_18591849577031280_5343220418367085010_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=DRfxa3OfAvcQ7kNvwEFPQAY&_nc_oc=AdoZoLu_9OinZ075XYWsmN-mOBC24sGl529XimCKgC-RozOKDzFDGXgispg6PtcmEy8&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQEu-b4y_MPkpjxzKHm4tDdbh_Y7P-N2I-vqP7HCegAyE8NLXtTZXp26mn-wlWcfggDP5OpXwQApWA&oh=00_AQAuIVoMkw9fAQtEau1rd7CeWWwBuHim745QwPrPVWFNrQ&oe=6A49265F",
+          "alt": "Have you seen our Deacs? We’ve been looking everywhere. 👀 We miss you, and campus does too.",
+          "type": "img",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/729896801_18591856786031280_1625726783763379386_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=h21VW59clFUQ7kNvwGzaa_f&_nc_oc=Adr7-1bEEuO7cPcF-RDC2X4RK28UGaELptZMtUixGkutaMyDKOYobIoBMLyf2dTtstc&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQEHVFDc9dUpe0cONq3JTh6xsWtAMZvVUoxvpLCeSIoFyQ4-ABolkhYCrtBU9JaxvjwLoeyJbq6-XA&oh=00_AQDsE_Dk0MpUQTP68dDT9wqeXGYfZhX3jq0dWCBANs-QMA&oe=6A491C9F",
+          "alt": "A lot can happen in one year.\n\nNew friends. New experiences. A community that makes you feel like you belong.\n\nHere’s how Campbell and Carolyn will remember their first year at Wake Forest. 🎩💛 #GoDeacs",
+          "type": "img",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/730640161_18591157384031280_854690922783761568_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=-m_aC5je6moQ7kNvwHWG7tr&_nc_oc=AdpWsQ8Hv5T-i7ORUJe9K48zM5JzGHm5b5hRy7Q5n5c1fpCLyBD_EkVR-_NQjPrGfew&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQG6P-E-s7wQLQzEOamLcOxDkm08BS3ffxXpT_swMHrQYn8AAcdXxNDUIQC1oTVHeS0nvOIR9qAAJA&oh=00_AQBxggGLuit3ebBtvg4F3w0qbXszFc_JU7eckaEnMURADw&oe=6A49236B",
+          "alt": "It’s here, and it’s glorious. ☀️",
+          "type": "img",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/728930013_18590185414031280_8383026772275035079_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=VRKZVKE1SXAQ7kNvwEJCxB-&_nc_oc=AdrOQga7IdOylQ2cYVWX1Fs9vwSE0EvXxalfOasUNa2rOuV5qESoBC2wyshvPXSzKKg&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQHL5_Juc3DKB-ACLgg_rIjtKRZ9VEoeBbVYdvd6q3NqwxhnVaM29KACtg5y8QlvQ-gI6gjnxw2VMg&oh=00_AQBbtvpRDDNvrEtOSXQaWEnZlsJg5iUzI7AvWJMOPvjxZw&oe=6A491E67",
+          "alt": "Happy Father’s Day to all of the Deacon Dads and father figures who show up, look sharp, beam with pride, give big hugs and document the whole thing! 🎩📸",
+          "type": "img",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/726768075_18588905182031280_5934322748878179597_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=VHX_uwr1xU0Q7kNvwEj2LPf&_nc_oc=AdotlHSBHy08ema6Xcb2F9iJjEbxnK42uQuhy6YJQJMa3G3bgujl4wzYeeuAnIMJjLs&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQFi_iUrkV3AiIRAkg1I5h4Ucv2sWIRPxDp_iNruY4pgLD0zUv0JKMdTH9VKSqUw5luUZKQDXuJgRA&oh=00_AQAnXHWN41WIg5UZvAkyaiQodLbsAfRWMqfNlzjpPBPgQg&oe=6A4923CE",
+          "alt": "A tip of the top hat to the best-dressed mascot in the game. 🎩💛 #NationalMascotDay",
+          "type": "img",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/725113084_18588603025031280_354030122390991427_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=nvVGl5LuqOoQ7kNvwGLVQuB&_nc_oc=Adr8nJn6aPmsL6nWI9PHJkKav4ZA-K_bsh9O-kOxhbOZ8jwaV25Qbyo0hU2fgRX_Tr8&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQFnc820aqqJC36MVKFEBEaO11sWqysxYHJl7Bhwj0YvlUOw0rCctPPO0WlX_MRVPoiGyCK22qWpbQ&oh=00_AQDrMji-depM3qpDlj5OMH_x80H1pb6O84d3Lx4rMIppeg&oe=6A490560",
+          "alt": "Before her first year even began, Eliza Hinshaw (’26) wrote a letter to herself. Four years later, she opened it again. 💛🖤 #WFU26",
+          "type": "img",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://scontent-iad3-1.cdninstagram.com/v/t51.71878-15/723852883_1529060772039292_3387969269572600477_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=iu-N-m8WUywQ7kNvwEJxPi_&_nc_oc=Adq6U4ukRRkp5os_8TtRhegxERLphhZ3lyBg7ymGiGZQnelvGikRC-uUfbkQc4NUBWM&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQGs4RJl5E7Zrf5yBkVTTfR5V-NT0lrfi88unxxu37_fIBkiTyFkOQgeVzagGVHYpSayGZgrXpzOFQ&oh=00_AQDM86_3T4FdKtrNvikErtN638kKYLw1nF82_ByImYO5Zw&oe=6A491EA6",
+          "alt": "With 48 international soccer teams visiting U.S. cities for pre-World Cup training – including the German Men’s National Team in Winston-Salem – Abbie Wrights, a Wake Forest University Health and Exercise Science professor sees an exciting opportunity for pro players to influence the health and wellbeing of local youth for years to come. \n\n#WFUExpert #WFUResearch #ProHumanitate",
+          "type": "img",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/722666690_18587262058031280_3457270109161500289_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=_swP8sBzPdQQ7kNvwGrHIoB&_nc_oc=AdpO5Bc--5oKJcGkI_DxKF-M5LUZss73jvchykFLMgudpy8fRSyM2Aewz9BJlPdfQUk&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQGy9HQGci3QasDJBp9TAk6t727xN_2BDK4YgJF_mhqBNyPhqVa_8euF0pdGNvb0hLfDUqLfzkCi-w&oh=00_AQAd8AcxHr4M9JzrrxRHm48cDb4UX4oK4UJDL_3fvI-6jQ&oe=6A491B14",
+          "alt": "Wake Forest’s new Charlotte Campus is officially open at The Pearl.\n\nBringing together education, innovation, healthcare and industry, the new space expands opportunities for students while strengthening Wake Forest’s connection to one of the nation’s fastest-growing cities.\n\nSwipe to learn more about our new home in Charlotte. #WakeForestCLT",
+          "type": "img",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/719908315_1679353703323117_7298908353436485125_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=3cfebv9NqmwQ7kNvwF9_iX9&_nc_oc=AdpINE_9ym8qD836Q_aNT3OzfHwjxF2c440gKogxwmn1GbErCWwRXFwjKRlcRpyAaxw&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQGhU1yqwsOLRnoZJJVNNO8PpYVSt6Gu1I-45m7QQtuNX36OHiQyolf3i0UffdUIx4_JLFViDVXxWA&oh=00_AQCj6A4MZrev3liS4oix4BTnMQci8y612dnJaUAwBhzLBQ&oe=6A493014",
+          "alt": "WFU x DFB ⚽️🇩🇪\n\nA beautiful night at Spry Stadium as thousands from across our community joined @germanfootball_dfb for a special Community Training Session! #FIFAWorldCup #GoDeacs",
+          "type": "img",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/720603130_18586614139031280_1820514497256279216_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=saS08IfFARQQ7kNvwHfpUen&_nc_oc=AdpuShxvGmjj5u4H3PCXkfjDgU6WwdbODheFLG0kXoRYPDa2CohVe-g-5a6l8hUebCo&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQHwVYPmo-aDnnZV9xBRzBd4fw2YCWNZ5-fFRXeIltIk1YNNgrI5pqohr_orRXtZUJyHuvbYUCvesw&oh=00_AQCW6o3txB4FL8ukg667z42rhTybKIbVBwIKWx1KEEvOwg&oe=6A49216B",
+          "alt": "Before her first year even began, Kiera Blunt (’26) wrote a letter to herself. Four years later, she opened it again. 💛🖤 #WFU26",
+          "type": "img",
+          "width": null,
+          "height": null
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "tagName": "div",
+      "classHint": "wp-block-group alignwide schools_list is-layout-flow wp-block-group-is-layout-flow",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Colleges & Schools"
+        }
+      ],
+      "paragraphs": [],
+      "links": [
+        {
+          "text": "Undergraduate",
+          "href": "https://college.wfu.edu/",
+          "target": ""
+        },
+        {
+          "text": "Graduate",
+          "href": "https://graduate.wfu.edu/",
+          "target": ""
+        },
+        {
+          "text": "Business",
+          "href": "https://business.wfu.edu/",
+          "target": ""
+        },
+        {
+          "text": "Divinity",
+          "href": "https://divinity.wfu.edu/",
+          "target": ""
+        },
+        {
+          "text": "Law",
+          "href": "https://law.wfu.edu/",
+          "target": ""
+        },
+        {
+          "text": "Medicine",
+          "href": "https://school.wakehealth.edu/",
+          "target": ""
+        },
+        {
+          "text": "Professional Studies",
+          "href": "https://sps.wfu.edu/",
+          "target": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "position": 8,
+      "tagName": "div",
+      "classHint": "wfu_block_heading_image_hover alignfull",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h3",
+          "text": "Why Wake Forest?"
+        },
+        {
+          "tag": "h4",
+          "text": "Affordability"
+        },
+        {
+          "tag": "h4",
+          "text": "Our Hometown"
+        },
+        {
+          "tag": "h4",
+          "text": "Facts & Figures"
+        }
+      ],
+      "paragraphs": [
+        "Wake Forest is committed to meeting 100% of demonstrated financial need through grants, scholarships, work-study, and subsidized loans.",
+        "Within driving distance of both the Blue Ridge Mountains and Atlantic Coast, Winston-Salem offers the amenities of a larger city with the vibrant culture of an engaged community.",
+        "Get to know Wake Forest better by browsing a collection of quick facts, figures and rankings."
+      ],
+      "links": [
+        {
+          "text": "Affordability",
+          "href": "https://admissions.wfu.edu/affordability/",
+          "target": ""
+        },
+        {
+          "text": "Our Hometown",
+          "href": "https://admissions.wfu.edu/visit/winston-salem/",
+          "target": ""
+        },
+        {
+          "text": "Facts & Figures",
+          "href": "https://admissions.wfu.edu/facts/",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://prod.wp.cdn.aws.wfu.edu/2023/06/20211109campus7359-1.jpg",
+          "alt": "",
+          "type": "img",
+          "width": 1716,
+          "height": 686
+        },
+        {
+          "src": "https://prod.wp.cdn.aws.wfu.edu/2023/07/20200909downtown5286-crop2.jpg",
+          "alt": "",
+          "type": "img",
+          "width": 1400,
+          "height": 600
+        },
+        {
+          "src": "https://prod.wp.cdn.aws.wfu.edu/2023/06/20190410chemistry1630-2.jpg",
+          "alt": "",
+          "type": "img",
+          "width": 1400,
+          "height": 600
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "tagName": "div",
+      "classHint": "wp-block-group alignwide has-global-padding is-layout-constrained wp-container-core-group-is-layout-",
+      "backgroundHint": "dark",
+      "headings": [],
+      "paragraphs": [
+        "is the number of student organizations that you can explore (or we’ll help you find a match) in order to discover your passion. Don’t find it? Apply to charter one!",
+        "Explore Student Life »",
+        "is our student-to-faculty ratio. More than half of our undergraduate classes have fewer than 20 students. Only 1% have more than 50 students.",
+        "Explore Academics »",
+        "of undergraduates have an academic study-abroad experience, many of them in our academic-residential houses in London, Vienna and Venice.",
+        "Explore Study Abroad »",
+        "of 2024 graduates are employed or enrolled in graduate programs. WFU students consistently land spots in top organizations and prestigious graduate schools.",
+        "Explore Future Outcomes »"
+      ],
+      "links": [
+        {
+          "text": "Explore Student Life",
+          "href": "https://admissions.wfu.edu/experience-wake-forest/student-life/",
+          "target": ""
+        },
+        {
+          "text": "Explore Academics",
+          "href": "https://admissions.wfu.edu/academics/",
+          "target": ""
+        },
+        {
+          "text": "Explore Study Abroad",
+          "href": "https://studyabroad.wfu.edu/about-us/study-abroad-at-wfu/",
+          "target": ""
+        },
+        {
+          "text": "Explore Future Outcomes",
+          "href": "https://opcd.wfu.edu/the-wake-forest-advantage/",
+          "target": ""
+        }
+      ],
+      "images": [],
+      "listItems": [
+        {
+          "title": "Explore Student Life »",
+          "description": "250+",
+          "link": {
+            "text": "Explore Student Life",
+            "href": "https://admissions.wfu.edu/experience-wake-forest/student-life/"
+          }
+        },
+        {
+          "title": "Explore Academics »",
+          "description": "11:1",
+          "link": {
+            "text": "Explore Academics",
+            "href": "https://admissions.wfu.edu/academics/"
+          }
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "tagName": "div",
+      "classHint": "wp-block-media-text alignwide is-stacked-on-mobile has-black-background-color has-background has-nor",
+      "backgroundHint": "dark",
+      "headings": [],
+      "paragraphs": [
+        "Whether cheering or playing, we all bleed Black and Gold"
+      ],
+      "links": [
+        {
+          "text": "VISIT ATHLETICS »",
+          "href": "https://godeacs.com/",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://prod.wp.cdn.aws.wfu.edu/2023/05/Deactown_homepage_media.webp",
+          "alt": "",
+          "type": "img",
+          "width": 637,
+          "height": 576
+        },
+        {
+          "src": "https://prod.wp.cdn.aws.wfu.edu/2021/10/Homepage_footer_WelcometoDeactown.webp",
+          "alt": "Welcome to Deactown",
+          "type": "img",
+          "width": 570,
+          "height": 185
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "tagName": "div",
+      "classHint": "wp-block-group alignfull intro_call_to_action is-style-intro_call_to_action has-global-padding is-la",
+      "backgroundHint": "light",
+      "headings": [],
+      "paragraphs": [
+        "Our Winston-Salem, N.C., campus houses an academic community of almost 9,000 students, with more studying at Wake Forest locations in Charlotte, Washington, D.C., and around the world. Our undergraduate liberal arts curriculum inspires a holistic approach to preparing graduate and professional school students. We graduate leaders with integrity and courage who use their success to make an impact on society."
+      ],
+      "links": [
+        {
+          "text": "Majors & Minors »",
+          "href": "https://admissions.wfu.edu/academics/majors-minors/",
+          "target": ""
+        },
+        {
+          "text": "Schedule a Visit »",
+          "href": "https://admissions.wfu.edu/visit/schedule-a-visit/",
+          "target": ""
+        },
+        {
+          "text": "Apply Now »",
+          "href": "https://admissions.wfu.edu/apply/applynow/",
+          "target": ""
+        }
+      ],
+      "images": [],
+      "listItems": [
+        {
+          "description": "Our Winston-Salem, N.C., campus houses an academic community of almost 9,000 students, with more studying at Wake Forest locations in Charlotte, Washington, D.C., and around the world. Our undergraduate liberal arts curriculum inspires a holistic approach to preparing graduate and professional school students. We graduate leaders with integrity and courage who use their success to make an impact on society."
+        }
+      ]
+    },
+    {
+      "position": 12,
+      "tagName": "footer",
+      "classHint": "",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Where to start"
+        },
+        {
+          "tag": "h2",
+          "text": "Get to know WFU"
+        },
+        {
+          "tag": "h2",
+          "text": "Resources"
+        },
+        {
+          "tag": "h3",
+          "text": "Support Wake Forest"
+        },
+        {
+          "tag": "h3",
+          "text": "Wake Forest Giving Societies"
+        }
+      ],
+      "paragraphs": [
+        "A Private Liberal Arts University in Winston-Salem, NC / Founded 1834 / Motto: Pro Humanitate",
+        "Is information on this page out of date or incorrect? Let us know. Back to Top",
+        "A gift to the Wake Forest Fund supports student needs immediately.",
+        "Where the most loyal Wake Forest supporters belong.",
+        "1834 Wake Forest Road, Winston-Salem, NC 27109"
+      ],
+      "links": [
+        {
+          "text": "Pro Humanitate",
+          "href": "https://ourmottomeansmore.wfu.edu/",
+          "target": ""
+        },
+        {
+          "text": "92°",
+          "href": "https://wfu.edu/weather/",
+          "target": ""
+        },
+        {
+          "text": "Let us know",
+          "href": "https://about.wfu.edu/contact-us/feedback/?feedback_type=out-of-date&current_page=https%3A%2F%2Fwww.wfu.edu%2F",
+          "target": ""
+        },
+        {
+          "text": "Back to Top",
+          "href": "https://www.wfu.edu/#top",
+          "target": ""
+        },
+        {
+          "text": "Admissions",
+          "href": "https://admissions.wfu.edu/",
+          "target": ""
+        },
+        {
+          "text": "Majors & Minors",
+          "href": "https://admissions.wfu.edu/academics/majors-minors/",
+          "target": ""
+        },
+        {
+          "text": "Schedule a Visit",
+          "href": "https://admissions.wfu.edu/visit/schedule-a-visit/",
+          "target": ""
+        },
+        {
+          "text": "Affordability",
+          "href": "https://admissions.wfu.edu/affordability/",
+          "target": ""
+        },
+        {
+          "text": "Apply to WFU",
+          "href": "https://admissions.wfu.edu/apply/",
+          "target": ""
+        },
+        {
+          "text": "College & Schools",
+          "href": "https://about.wfu.edu/academics/schools/",
+          "target": ""
+        },
+        {
+          "text": "About Wake Forest",
+          "href": "https://about.wfu.edu/",
+          "target": ""
+        },
+        {
+          "text": "Campus Life",
+          "href": "https://admissions.wfu.edu/experience-wake-forest/",
+          "target": ""
+        },
+        {
+          "text": "Athletics",
+          "href": "https://about.wfu.edu/athletics/",
+          "target": ""
+        },
+        {
+          "text": "Visitor Information",
+          "href": "https://about.wfu.edu/visiting/",
+          "target": ""
+        },
+        {
+          "text": "Wake Downtown",
+          "href": "https://wakedowntown.wfu.edu/",
+          "target": ""
+        },
+        {
+          "text": "Experience Winston-Salem",
+          "href": "https://admissions.wfu.edu/visit/winston-salem/",
+          "target": ""
+        },
+        {
+          "text": "Human Resources",
+          "href": "https://hr.wfu.edu/",
+          "target": ""
+        },
+        {
+          "text": "Event Calendar",
+          "href": "https://events.wfu.edu/",
+          "target": ""
+        },
+        {
+          "text": "Libraries",
+          "href": "https://about.wfu.edu/academics/libraries/",
+          "target": ""
+        },
+        {
+          "text": "Wellbeing",
+          "href": "https://thrive.wfu.edu/",
+          "target": ""
+        },
+        {
+          "text": "Campus Map",
+          "href": "https://map.wfu.edu/",
+          "target": ""
+        },
+        {
+          "text": "News & Media",
+          "href": "https://news.wfu.edu/",
+          "target": ""
+        },
+        {
+          "text": "Work at Wake",
+          "href": "https://hr.wfu.edu/careers/",
+          "target": ""
+        },
+        {
+          "text": "Directories",
+          "href": "https://about.wfu.edu/directories/",
+          "target": ""
+        },
+        {
+          "text": "Contact",
+          "href": "https://about.wfu.edu/contact-us/",
+          "target": ""
+        },
+        {
+          "text": "Give now",
+          "href": "https://forms.secure.wfu.edu/giving",
+          "target": ""
+        },
+        {
+          "text": "Join today",
+          "href": "https://giving.wfu.edu/giving-societies/",
+          "target": ""
+        },
+        {
+          "text": "Affiliates",
+          "href": "https://about.wfu.edu/visiting/affiliates/",
+          "target": ""
+        },
+        {
+          "text": "Privacy",
+          "href": "https://about.wfu.edu/privacy-policy",
+          "target": ""
+        },
+        {
+          "text": "Emergency",
+          "href": "https://wakealert.wfu.edu/",
+          "target": ""
+        },
+        {
+          "text": "Non‑Discrimination",
+          "href": "https://policy.wfu.edu/non-discrimination-statement/",
+          "target": ""
+        },
+        {
+          "text": "Ethics Hotline",
+          "href": "https://secure.ethicspoint.com/domain/media/en/gui/83858/index.html",
+          "target": ""
+        },
+        {
+          "text": "social.wfu.edu",
+          "href": "https://social.wfu.edu/",
+          "target": "_blank"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://prod.wp.cdn.aws.wfu.edu/assets/images/Winston-Salem-footer.png",
+          "alt": "Winston-Salem, NC",
+          "type": "img",
+          "width": 120,
+          "height": 67
+        },
+        {
+          "src": "https://prod.wp.cdn.aws.wfu.edu/assets/images/cupola_2.jpg",
+          "alt": "ZSR library cupola at sunset",
+          "type": "img",
+          "width": 600,
+          "height": 401
+        },
+        {
+          "src": "https://prod.wp.cdn.aws.wfu.edu/assets/images/giving-society.jpg",
+          "alt": "Giving Society logo",
+          "type": "img",
+          "width": 600,
+          "height": 401
+        },
+        {
+          "src": "https://static.secure.wfu.edu/images/_heater/_footer/wfu-footer-logo.svg",
+          "alt": "Wake Forest Logo",
+          "type": "img",
+          "width": 472,
+          "height": 93
+        }
+      ],
+      "listItems": [
+        {
+          "description": "A Private Liberal Arts University in Winston-Salem, NC / Founded 1834 / Motto: Pro Humanitate",
+          "link": {
+            "text": "Pro Humanitate",
+            "href": "https://ourmottomeansmore.wfu.edu/"
+          },
+          "image": {
+            "src": "https://prod.wp.cdn.aws.wfu.edu/assets/images/Winston-Salem-footer.png",
+            "alt": "Winston-Salem, NC"
+          }
+        }
+      ]
+    }
+  ]
+}

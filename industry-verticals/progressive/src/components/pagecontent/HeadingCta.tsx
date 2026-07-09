@@ -16,6 +16,36 @@ export type HeadingCtaProps = {
   fields: Fields;
 };
 
+/* Progressive variant — centered intro copy, optional CTA */
+export const Progressive = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const showLink = isPageEditing || (props.fields?.Link?.value?.href && props.fields.Link.value.href !== '#');
+
+  return (
+    <div className={`component heading-cta progressive ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="heading-content-wrapper mx-auto text-center">
+          {(isPageEditing || props.fields?.Eyebrow?.value) && (
+            <h6 className="progressive-eyebrow">
+              <Text field={props.fields?.Eyebrow} />
+            </h6>
+          )}
+          <h2 className="progressive-heading">
+            <Text field={props.fields?.Heading} />
+          </h2>
+          <p className="progressive-body">
+            <Text field={props.fields?.Text} />
+          </p>
+          {showLink && <Link field={props.fields.Link} className="button button-main" />}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: HeadingCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

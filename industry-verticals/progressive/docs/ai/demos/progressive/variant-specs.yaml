@@ -1,0 +1,93 @@
+variantSpecs:
+  - position: 1
+    componentName: "Header"
+    variantName: "Progressive"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "white header bar, logo left, nav center-right, utility links right"
+      spacing: "compact vertical padding, subtle bottom border"
+      typography: "14px nav links, no uppercase, regular weight"
+      background: "white with #d1e2e5 border-bottom"
+      distinctive: "Progressive navy logo, phone + Log in + Español utilities"
+
+  - position: 2
+    componentName: "Hero"
+    variantName: "Progressive"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "full-bleed background image, centered headline overlay"
+      spacing: "min-height 28rem, negative margin to overlap quote card"
+      typography: "large white centered h1, seasonal subcopy"
+      background: "photo with top gradient overlay"
+      distinctive: "summer campaign hero with s'mores tagline"
+
+  - position: 3
+    componentName: "FourColumnCta"
+    variantName: "ProgressiveQuote"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "two-column white card overlapping hero bottom"
+      spacing: "ZIP input + CTA left, 2x2 product icon grid right"
+      typography: "quote heading 24px bold, eyebrow uppercase on right column"
+      background: "white card with light border and shadow"
+      buttons: "navy filled Get a quote button, 5px radius"
+      distinctive: "auto quote widget with product shortcut tiles"
+
+  - position: 4
+    componentName: "HeadingCta"
+    variantName: "Progressive"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "centered intro copy, max-width ~48rem"
+      spacing: "py-12, eyebrow above heading"
+      typography: "uppercase eyebrow, bold h2, muted body copy"
+      distinctive: "trust section intro — no CTA on first instance"
+
+  - position: 5
+    componentName: "StatsCounter"
+    variantName: "Progressive"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "three equal columns"
+      spacing: "2rem internal padding per box"
+      card: "2px action-blue border, 8px radius, no shadow"
+      typography: "uppercase blue label, large bold stat value"
+      distinctive: "savings / customers / support stat boxes"
+
+  - position: 6
+    componentName: "Features"
+    variantName: "Progressive"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "50/50 grid — illustration left, product list right"
+      spacing: "3rem gap, bordered list items"
+      typography: "blue linked product titles with chevron, muted descriptions"
+      distinctive: "5 insurance products with Explore our products outline CTA"
+
+  - position: 7
+    componentName: "HeadingCta"
+    variantName: "Progressive"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "centered section intro for Why Progressive"
+      distinctive: "eyebrow + heading only, leads into photo tiles"
+
+  - position: 8
+    componentName: "FourColumnCta"
+    variantName: "ProgressiveTiles"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "four portrait photo cards in a row"
+      spacing: "image top, text bottom, 8px card radius"
+      typography: "blue linked titles with chevron"
+      distinctive: "See why we're Progressive lifestyle tiles"
+
+  - position: 9
+    componentName: "Footer"
+    variantName: "Progressive"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "multi-column link grid, light background"
+      typography: "blue links, compact 13px body"
+      background: "white with top border"
+      distinctive: "Progressive footer link columns and social icons"

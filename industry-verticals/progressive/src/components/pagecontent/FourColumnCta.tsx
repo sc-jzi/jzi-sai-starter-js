@@ -36,6 +36,130 @@ export type FourColumnCtaProps = {
   fields: Fields;
 };
 
+/* Progressive quote widget — white card overlapping hero with product shortcuts */
+export const ProgressiveQuote = (props: FourColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const products = [
+    { image: props.fields.Image1, title: props.fields.Title1, link: props.fields.Link1 },
+    { image: props.fields.Image2, title: props.fields.Title2, link: props.fields.Link2 },
+    { image: props.fields.Image3, title: props.fields.Title3, link: props.fields.Link3 },
+    { image: props.fields.Image4, title: props.fields.Title4, link: props.fields.Link4 },
+  ];
+
+  return (
+    <div
+      className={`component four-column-cta progressive-quote ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="quote-card">
+          <div className="quote-card-left">
+            <h2 className="quote-card-heading">Quote auto insurance</h2>
+            <p className="quote-card-subtext">
+              Average savings of over $900 for drivers who switch and save*
+            </p>
+            <div className="quote-card-form">
+              <label className="quote-zip-label" htmlFor="progressive-zip">
+                ZIP Code
+              </label>
+              <div className="quote-zip-row">
+                <input
+                  id="progressive-zip"
+                  className="quote-zip-input"
+                  type="text"
+                  placeholder="ZIP Code"
+                  readOnly
+                  aria-label="ZIP Code"
+                />
+                {(isPageEditing || props.fields.Link1?.value?.href) && (
+                  <Link field={props.fields.Link1} className="button button-main quote-submit" />
+                )}
+              </div>
+            </div>
+          </div>
+          <div className="quote-card-right">
+            <p className="quote-card-eyebrow">Or, select a bundle or other product</p>
+            <div className="quote-product-grid">
+              {products.map((product, index) => (
+                <Link field={product.link} key={index} className="quote-product-item">
+                  <NextImage field={product.image} width={80} height={80} />
+                  <span>
+                    <Text field={product.title} />
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* Progressive tiles — portrait photo cards for "See why we're Progressive" */
+export const ProgressiveTiles = (props: FourColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const tiles = [
+    {
+      image: props.fields.Image1,
+      title: props.fields.Title1,
+      text: props.fields.Text1,
+      link: props.fields.Link1,
+    },
+    {
+      image: props.fields.Image2,
+      title: props.fields.Title2,
+      text: props.fields.Text2,
+      link: props.fields.Link2,
+    },
+    {
+      image: props.fields.Image3,
+      title: props.fields.Title3,
+      text: props.fields.Text3,
+      link: props.fields.Link3,
+    },
+    {
+      image: props.fields.Image4,
+      title: props.fields.Title4,
+      text: props.fields.Text4,
+      link: props.fields.Link4,
+    },
+  ];
+
+  return (
+    <div
+      className={`component component-spaced four-column-cta progressive-tiles ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="row g-4">
+          {tiles.map((tile, index) => (
+            <div className="col-12 col-md-6 col-xl-3" key={index}>
+              <Link field={tile.link} className="tile-card">
+                <NextImage field={tile.image} width={280} height={320} className="tile-image" />
+                <div className="tile-body">
+                  <h3>
+                    <Text field={tile.title} />
+                  </h3>
+                  <p>
+                    <Text field={tile.text} />
+                  </p>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: FourColumnCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

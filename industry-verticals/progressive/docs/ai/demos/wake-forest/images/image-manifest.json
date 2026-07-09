@@ -1,0 +1,252 @@
+[
+  {
+    "src": "https://prod.wp.cdn.aws.wfu.edu/2021/06/076.2_HomepageHeaderRefresh_FinalFirstFrame.jpg",
+    "alt": "",
+    "localFile": "section1-img1.jpg",
+    "extension": "jpg",
+    "sectionPosition": 1,
+    "type": "background",
+    "fileSize": 276615,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://prod.wp.cdn.aws.wfu.edu/2026/05/wakeup-home.webp",
+    "alt": "",
+    "localFile": "section3-img2.webp",
+    "extension": "webp",
+    "sectionPosition": 3,
+    "type": "img",
+    "fileSize": 291324,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://prod.wp.cdn.aws.wfu.edu/2026/05/2026-05-hp-news-rodriguez.webp",
+    "alt": "",
+    "localFile": "section4-img3.webp",
+    "extension": "webp",
+    "sectionPosition": 4,
+    "type": "img",
+    "fileSize": 34380,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://prod.wp.cdn.aws.wfu.edu/2026/05/20230228springworrell_49-3.webp",
+    "alt": "",
+    "localFile": "section4-img4.webp",
+    "extension": "webp",
+    "sectionPosition": 4,
+    "type": "img",
+    "fileSize": 657368,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://prod.wp.cdn.aws.wfu.edu/2026/07/wf-mag-scholarships.webp",
+    "alt": "",
+    "localFile": "section4-img5.webp",
+    "extension": "webp",
+    "sectionPosition": 4,
+    "type": "img",
+    "fileSize": 38802,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://prod.wp.cdn.aws.wfu.edu/2025/06/cropped.webp",
+    "alt": "",
+    "localFile": "section4-img6.webp",
+    "extension": "webp",
+    "sectionPosition": 4,
+    "type": "img",
+    "fileSize": 52034,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://prod.wp.cdn.aws.wfu.edu/2025/05/wfu-insta.jpg",
+    "alt": "",
+    "localFile": "section6-img7.jpg",
+    "extension": "jpg",
+    "sectionPosition": 6,
+    "type": "img",
+    "fileSize": 4253,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/730992649_18591849577031280_5343220418367085010_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=DRfxa3OfAvcQ7kNvwEFPQAY&_nc_oc=AdoZoLu_9OinZ075XYWsmN-mOBC24sGl529XimCKgC-RozOKDzFDGXgispg6PtcmEy8&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQEu-b4y_MPkpjxzKHm4tDdbh_Y7P-N2I-vqP7HCegAyE8NLXtTZXp26mn-wlWcfggDP5OpXwQApWA&oh=00_AQAuIVoMkw9fAQtEau1rd7CeWWwBuHim745QwPrPVWFNrQ&oe=6A49265F",
+    "alt": "Have you seen our Deacs? We’ve been looking everywhere. 👀 We miss you, and campus does too.",
+    "localFile": null,
+    "sectionPosition": 6,
+    "type": "img",
+    "status": "failed",
+    "error": "HTTP 403"
+  },
+  {
+    "src": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/729896801_18591856786031280_1625726783763379386_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=h21VW59clFUQ7kNvwGzaa_f&_nc_oc=Adr7-1bEEuO7cPcF-RDC2X4RK28UGaELptZMtUixGkutaMyDKOYobIoBMLyf2dTtstc&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQEHVFDc9dUpe0cONq3JTh6xsWtAMZvVUoxvpLCeSIoFyQ4-ABolkhYCrtBU9JaxvjwLoeyJbq6-XA&oh=00_AQDsE_Dk0MpUQTP68dDT9wqeXGYfZhX3jq0dWCBANs-QMA&oe=6A491C9F",
+    "alt": "A lot can happen in one year.\n\nNew friends. New experiences. A community that makes you feel like you belong.\n\nHere’s how Campbell and Carolyn will remember their first year at Wake Forest. 🎩💛 #GoDeacs",
+    "localFile": null,
+    "sectionPosition": 6,
+    "type": "img",
+    "status": "failed",
+    "error": "HTTP 403"
+  },
+  {
+    "src": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/730640161_18591157384031280_854690922783761568_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=-m_aC5je6moQ7kNvwHWG7tr&_nc_oc=AdpWsQ8Hv5T-i7ORUJe9K48zM5JzGHm5b5hRy7Q5n5c1fpCLyBD_EkVR-_NQjPrGfew&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQG6P-E-s7wQLQzEOamLcOxDkm08BS3ffxXpT_swMHrQYn8AAcdXxNDUIQC1oTVHeS0nvOIR9qAAJA&oh=00_AQBxggGLuit3ebBtvg4F3w0qbXszFc_JU7eckaEnMURADw&oe=6A49236B",
+    "alt": "It’s here, and it’s glorious. ☀️",
+    "localFile": null,
+    "sectionPosition": 6,
+    "type": "img",
+    "status": "failed",
+    "error": "HTTP 403"
+  },
+  {
+    "src": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/728930013_18590185414031280_8383026772275035079_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=VRKZVKE1SXAQ7kNvwEJCxB-&_nc_oc=AdrOQga7IdOylQ2cYVWX1Fs9vwSE0EvXxalfOasUNa2rOuV5qESoBC2wyshvPXSzKKg&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQHL5_Juc3DKB-ACLgg_rIjtKRZ9VEoeBbVYdvd6q3NqwxhnVaM29KACtg5y8QlvQ-gI6gjnxw2VMg&oh=00_AQBbtvpRDDNvrEtOSXQaWEnZlsJg5iUzI7AvWJMOPvjxZw&oe=6A491E67",
+    "alt": "Happy Father’s Day to all of the Deacon Dads and father figures who show up, look sharp, beam with pride, give big hugs and document the whole thing! 🎩📸",
+    "localFile": null,
+    "sectionPosition": 6,
+    "type": "img",
+    "status": "failed",
+    "error": "HTTP 403"
+  },
+  {
+    "src": "https://scontent-iad3-1.cdninstagram.com/v/t51.82787-15/726768075_18588905182031280_5934322748878179597_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=VHX_uwr1xU0Q7kNvwEj2LPf&_nc_oc=AdotlHSBHy08ema6Xcb2F9iJjEbxnK42uQuhy6YJQJMa3G3bgujl4wzYeeuAnIMJjLs&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQFi_iUrkV3AiIRAkg1I5h4Ucv2sWIRPxDp_iNruY4pgLD0zUv0JKMdTH9VKSqUw5luUZKQDXuJgRA&oh=00_AQAnXHWN41WIg5UZvAkyaiQodLbsAfRWMqfNlzjpPBPgQg&oe=6A4923CE",
+    "alt": "A tip of the top hat to the best-dressed mascot in the game. 🎩💛 #NationalMascotDay",
+    "localFile": null,
+    "sectionPosition": 6,
+    "type": "img",
+    "status": "failed",
+    "error": "HTTP 403"
+  },
+  {
+    "src": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/725113084_18588603025031280_354030122390991427_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=nvVGl5LuqOoQ7kNvwGLVQuB&_nc_oc=Adr8nJn6aPmsL6nWI9PHJkKav4ZA-K_bsh9O-kOxhbOZ8jwaV25Qbyo0hU2fgRX_Tr8&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQFnc820aqqJC36MVKFEBEaO11sWqysxYHJl7Bhwj0YvlUOw0rCctPPO0WlX_MRVPoiGyCK22qWpbQ&oh=00_AQDrMji-depM3qpDlj5OMH_x80H1pb6O84d3Lx4rMIppeg&oe=6A490560",
+    "alt": "Before her first year even began, Eliza Hinshaw (’26) wrote a letter to herself. Four years later, she opened it again. 💛🖤 #WFU26",
+    "localFile": null,
+    "sectionPosition": 6,
+    "type": "img",
+    "status": "failed",
+    "error": "HTTP 403"
+  },
+  {
+    "src": "https://scontent-iad3-1.cdninstagram.com/v/t51.71878-15/723852883_1529060772039292_3387969269572600477_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=iu-N-m8WUywQ7kNvwEJxPi_&_nc_oc=Adq6U4ukRRkp5os_8TtRhegxERLphhZ3lyBg7ymGiGZQnelvGikRC-uUfbkQc4NUBWM&_nc_zt=23&_nc_ht=scontent-iad3-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQGs4RJl5E7Zrf5yBkVTTfR5V-NT0lrfi88unxxu37_fIBkiTyFkOQgeVzagGVHYpSayGZgrXpzOFQ&oh=00_AQDM86_3T4FdKtrNvikErtN638kKYLw1nF82_ByImYO5Zw&oe=6A491EA6",
+    "alt": "With 48 international soccer teams visiting U.S. cities for pre-World Cup training – including the German Men’s National Team in Winston-Salem – Abbie Wrights, a Wake Forest University Health and Exercise Science professor sees an exciting opportunity for pro players to influence the health and wellbeing of local youth for years to come. \n\n#WFUExpert #WFUResearch #ProHumanitate",
+    "localFile": null,
+    "sectionPosition": 6,
+    "type": "img",
+    "status": "failed",
+    "error": "HTTP 403"
+  },
+  {
+    "src": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/722666690_18587262058031280_3457270109161500289_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0FST1VTRUxfSVRFTS5iZXN0X2ltYWdlX3VybGdlbi5DMyJ9&_nc_ohc=_swP8sBzPdQQ7kNvwGrHIoB&_nc_oc=AdpO5Bc--5oKJcGkI_DxKF-M5LUZss73jvchykFLMgudpy8fRSyM2Aewz9BJlPdfQUk&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQGy9HQGci3QasDJBp9TAk6t727xN_2BDK4YgJF_mhqBNyPhqVa_8euF0pdGNvb0hLfDUqLfzkCi-w&oh=00_AQAd8AcxHr4M9JzrrxRHm48cDb4UX4oK4UJDL_3fvI-6jQ&oe=6A491B14",
+    "alt": "Wake Forest’s new Charlotte Campus is officially open at The Pearl.\n\nBringing together education, innovation, healthcare and industry, the new space expands opportunities for students while strengthening Wake Forest’s connection to one of the nation’s fastest-growing cities.\n\nSwipe to learn more about our new home in Charlotte. #WakeForestCLT",
+    "localFile": null,
+    "sectionPosition": 6,
+    "type": "img",
+    "status": "failed",
+    "error": "HTTP 403"
+  },
+  {
+    "src": "https://scontent-iad6-1.cdninstagram.com/v/t51.71878-15/719908315_1679353703323117_7298908353436485125_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=3cfebv9NqmwQ7kNvwF9_iX9&_nc_oc=AdpINE_9ym8qD836Q_aNT3OzfHwjxF2c440gKogxwmn1GbErCWwRXFwjKRlcRpyAaxw&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQGhU1yqwsOLRnoZJJVNNO8PpYVSt6Gu1I-45m7QQtuNX36OHiQyolf3i0UffdUIx4_JLFViDVXxWA&oh=00_AQCj6A4MZrev3liS4oix4BTnMQci8y612dnJaUAwBhzLBQ&oe=6A493014",
+    "alt": "WFU x DFB ⚽️🇩🇪\n\nA beautiful night at Spry Stadium as thousands from across our community joined @germanfootball_dfb for a special Community Training Session! #FIFAWorldCup #GoDeacs",
+    "localFile": null,
+    "sectionPosition": 6,
+    "type": "img",
+    "status": "failed",
+    "error": "HTTP 403"
+  },
+  {
+    "src": "https://scontent-iad6-1.cdninstagram.com/v/t51.82787-15/720603130_18586614139031280_1820514497256279216_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=106&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=saS08IfFARQQ7kNvwHfpUen&_nc_oc=AdpuShxvGmjj5u4H3PCXkfjDgU6WwdbODheFLG0kXoRYPDa2CohVe-g-5a6l8hUebCo&_nc_zt=23&_nc_ht=scontent-iad6-1.cdninstagram.com&edm=ANo9K5cEAAAA&_nc_gid=DRVb4ZZR6Hb9htXnFek8mw&_nc_tpa=Q5bMBQHwVYPmo-aDnnZV9xBRzBd4fw2YCWNZ5-fFRXeIltIk1YNNgrI5pqohr_orRXtZUJyHuvbYUCvesw&oh=00_AQCW6o3txB4FL8ukg667z42rhTybKIbVBwIKWx1KEEvOwg&oe=6A49216B",
+    "alt": "Before her first year even began, Kiera Blunt (’26) wrote a letter to herself. Four years later, she opened it again. 💛🖤 #WFU26",
+    "localFile": null,
+    "sectionPosition": 6,
+    "type": "img",
+    "status": "failed",
+    "error": "HTTP 403"
+  },
+  {
+    "src": "https://prod.wp.cdn.aws.wfu.edu/2023/06/20211109campus7359-1.jpg",
+    "alt": "",
+    "localFile": "section8-img18.jpg",
+    "extension": "jpg",
+    "sectionPosition": 8,
+    "type": "img",
+    "fileSize": 566463,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://prod.wp.cdn.aws.wfu.edu/2023/07/20200909downtown5286-crop2.jpg",
+    "alt": "",
+    "localFile": "section8-img19.jpg",
+    "extension": "jpg",
+    "sectionPosition": 8,
+    "type": "img",
+    "fileSize": 350800,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://prod.wp.cdn.aws.wfu.edu/2023/06/20190410chemistry1630-2.jpg",
+    "alt": "",
+    "localFile": "section8-img20.jpg",
+    "extension": "jpg",
+    "sectionPosition": 8,
+    "type": "img",
+    "fileSize": 128199,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://prod.wp.cdn.aws.wfu.edu/2023/05/Deactown_homepage_media.webp",
+    "alt": "",
+    "localFile": "section10-img21.webp",
+    "extension": "webp",
+    "sectionPosition": 10,
+    "type": "img",
+    "fileSize": 77022,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://prod.wp.cdn.aws.wfu.edu/2021/10/Homepage_footer_WelcometoDeactown.webp",
+    "alt": "Welcome to Deactown",
+    "localFile": "section10-img22.webp",
+    "extension": "webp",
+    "sectionPosition": 10,
+    "type": "img",
+    "fileSize": 22560,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://prod.wp.cdn.aws.wfu.edu/assets/images/Winston-Salem-footer.png",
+    "alt": "Winston-Salem, NC",
+    "localFile": "section12-img23.png",
+    "extension": "png",
+    "sectionPosition": 12,
+    "type": "img",
+    "fileSize": 2777,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://prod.wp.cdn.aws.wfu.edu/assets/images/cupola_2.jpg",
+    "alt": "ZSR library cupola at sunset",
+    "localFile": "section12-img24.jpg",
+    "extension": "jpg",
+    "sectionPosition": 12,
+    "type": "img",
+    "fileSize": 286864,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://prod.wp.cdn.aws.wfu.edu/assets/images/giving-society.jpg",
+    "alt": "Giving Society logo",
+    "localFile": "section12-img25.jpg",
+    "extension": "jpg",
+    "sectionPosition": 12,
+    "type": "img",
+    "fileSize": 119011,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://static.secure.wfu.edu/images/_heater/_footer/wfu-footer-logo.svg",
+    "alt": "Wake Forest Logo",
+    "localFile": "section12-img26.svg",
+    "extension": "svg",
+    "sectionPosition": 12,
+    "type": "img",
+    "fileSize": 10320,
+    "status": "downloaded"
+  }
+]

@@ -1,0 +1,138 @@
+client:
+  name: "Wake Forest University"
+  sourceUrl: "https://www.wfu.edu/"
+  startedAt: "2026-07-07T19:15:00Z"
+  lastUpdatedAt: "2026-07-07T19:45:00Z"
+
+phases:
+  phase0_inputs:
+    status: "complete"
+    screenshot: true
+    url: "https://www.wfu.edu/"
+
+  phase0_5_manifest:
+    status: "complete"
+    validationMode: "quick"
+    result: "pass"
+    notes: "Updated to Financial/ProsperaFinancial. uiim fmc-custom-demo renderings not in environment — adapted to Financial vertical."
+
+  phase1_theme:
+    status: "complete"
+    themeFile: "docs/ai/themes/wake-forest.theme.yaml"
+    userApproved: true
+
+  phase2_analysis:
+    status: "complete"
+    buildPlanFile: "docs/ai/demos/wake-forest/build-plan.yaml"
+    totalSections: 12
+    userApproved: true
+
+  phase2_5_content:
+    status: "complete"
+    contentMapFile: "docs/ai/demos/wake-forest/extracted-content.json"
+    extractorUsed: true
+
+  phase3_content:
+    status: "partial"
+    completedSections: 4
+    totalSections: 9
+
+  phase4_theme:
+    status: "complete"
+    themeDelivery: "progressive-css"
+    cssWritten: true
+    fontsAdded: true
+
+  phase5_custom:
+    status: "skipped"
+    customComponentsNeeded: 0
+    customComponentsBuilt: 0
+
+  phase5_5_variants:
+    status: "partial"
+    variantsNeeded: 6
+    variantsCreated: 4
+    variantSpecsFile: ""
+    skippedReason: ""
+
+  phase6_assembly:
+    status: "failed"
+    componentsAdded: 0
+    datasourcesWired: 0
+    totalComponents: 9
+    notes: "add_component_on_page returned 500; manual assembly required"
+
+  phase7_summary:
+    status: "complete"
+
+sections:
+  - position: 2
+    componentName: "Hero"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "{6fe837e5-0fed-439d-8df5-15fa04745518}"
+      fieldsPopulated: true
+      childrenCreated: 0
+      childrenExpected: 0
+      imagesUploaded: 0
+      imagesExpected: 1
+      imagesFailed: 1
+      error: ""
+    phase5_5:
+      status: "created"
+      variantName: "WakeForest"
+      exportAdded: true
+    phase6:
+      status: "failed"
+      error: "Page assembly API 500"
+
+  - position: 3
+    componentName: "ThreeColumnCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "{adeabf81-2ac9-4f96-8fa4-700a78534ba4}"
+      fieldsPopulated: true
+      imagesUploaded: 0
+      imagesExpected: 0
+    phase5_5:
+      status: "created"
+      variantName: "WakeForest"
+      exportAdded: true
+    phase6:
+      status: "failed"
+
+  - position: 4
+    componentName: "TwoColumnCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "{9237fb3a-b67c-4b1d-b7fd-abc6ac9b0f06}"
+      fieldsPopulated: true
+      imagesUploaded: 0
+      imagesExpected: 1
+      imagesFailed: 1
+    phase5_5:
+      status: "created"
+      variantName: "WakeForest"
+      exportAdded: true
+    phase6:
+      status: "failed"
+
+  - position: 6
+    componentName: "TwoColumnCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "{d79ec09a-0390-4800-b930-43df8f355a69}"
+      fieldsPopulated: true
+      imagesUploaded: 0
+      imagesExpected: 1
+      imagesFailed: 1
+    phase5_5:
+      status: "created"
+      variantName: "WakeForestMotto"
+      exportAdded: true
+    phase6:
+      status: "failed"

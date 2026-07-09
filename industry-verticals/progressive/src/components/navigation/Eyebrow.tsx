@@ -19,7 +19,7 @@ export const Default = (props: EyebrowProps): JSX.Element => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
   return (
-    <div className={`component eyebrow	${props.params.styles?.trimEnd()}`} id={id ? id : undefined}>
+    <div className={`component eyebrow bg-white	${props.params.styles?.trimEnd()}`} id={id ? id : undefined}>
       <div className={`container container-${props.params?.ContainerWidth?.toLowerCase()}-fluid`}>
         <div className="row">
           <div className="col col-placeholder">

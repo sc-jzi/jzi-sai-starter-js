@@ -1,0 +1,55 @@
+{
+  "title": "An Insurance Company You Can Rely On | Progressive",
+  "themeColor": null,
+  "msColor": null,
+  "ogTitle": "An Insurance Company You Can Rely On",
+  "ogDescription": "Get an insurance quote in minutes from a top-rated company. Find 24/7 support and insurance for you, your family, and your belongings.",
+  "ogImage": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/blt72c5ebc95e884f8c/6855bffe9cb943e408f3cc9a/PROG-update-logo-OG-image_Facebook.png",
+  "ogSiteName": null,
+  "favicon": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/blt4a6e0a9548045e84/favicon.svg",
+  "googleFontsLinks": [],
+  "fontFaces": [
+    {
+      "family": "96 Sans",
+      "src": "url(\"/content/fonts/96sans/96Sans-Light.woff2\") format(\"woff2\"), url(\"/content/fonts/96sans/96Sans-Light.woff\") format(\"woff\")",
+      "weight": "300"
+    },
+    {
+      "family": "96 Sans Icons",
+      "src": "url(\"/content/fonts/96sans/96Sans.woff2\") format(\"woff2\"), url(\"/content/fonts/96sans/96Sans.woff\") format(\"woff\")",
+      "weight": ""
+    },
+    {
+      "family": "96 Sans",
+      "src": "url(\"/content/fonts/96sans/96Sans.woff2\") format(\"woff2\"), url(\"/content/fonts/96sans/96Sans.woff\") format(\"woff\")",
+      "weight": "400"
+    },
+    {
+      "family": "96 Sans",
+      "src": "url(\"/content/fonts/96sans/96Sans-Medium.woff2\") format(\"woff2\"), url(\"/content/fonts/96sans/96Sans-Medium.woff\") format(\"woff\")",
+      "weight": "600"
+    },
+    {
+      "family": "96 Sans",
+      "src": "url(\"/content/fonts/96sans/96Sans-Bold.woff2\") format(\"woff2\"), url(\"/content/fonts/96sans/96Sans-Bold.woff\") format(\"woff\")",
+      "weight": "700"
+    },
+    {
+      "family": "96 Sans Condensed",
+      "src": "url(\"/content/fonts/96sans/96Sans-BoldCondensed.woff2\") format(\"woff2\"), url(\"/content/fonts/96sans/96Sans-BoldCondensed.woff\") format(\"woff\")",
+      "weight": "700"
+    },
+    {
+      "family": "96 Sans Monospaced",
+      "src": "url(\"/content/fonts/96sans/96Sans-Monospaced.woff2\") format(\"woff2\"), url(\"/content/fonts/96sans/96Sans-Monospaced.woff\") format(\"woff\")",
+      "weight": "400"
+    }
+  ],
+  "logoCandidates": [
+    "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/blt483e097d64d66a25/66476d224ac76ee67740f2d5/logo-progressive.svg",
+    "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/blt5c7aae1afc1c1c0a/68f8077d3017c232999098ad/see-all-products.svg",
+    "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/bltfe6c4f5701b0935b/68f8077d17cde4c7d6f50f81/report-a-claim.svg",
+    "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/bltff51a7b7111829cc/68f8077dc42a3d6bf95cb0d8/chat-with-flo.svg"
+  ],
+  "heroBgImage": null
+}

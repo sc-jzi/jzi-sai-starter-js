@@ -1,0 +1,147 @@
+# Demo Build Plan — Progressive Insurance
+# Adapted for Financial vertical starter kit (ProsperaFinancial site)
+
+client:
+  name: "Progressive"
+  sourceUrl: "https://www.progressive.com/"
+  themeFile: "docs/ai/themes/progressive.theme.yaml"
+  analyzedAt: "2026-07-07T20:00:00Z"
+  environment: "Financial/ProsperaFinancial"
+  note: "UIIM fmc-custom-demo manifest not deployed — using Financial starter kit components"
+
+pageAnalysis:
+  screenshotFiles:
+    desktop: "docs/ai/themes/progressive/screenshot-desktop.png"
+    mobile: "docs/ai/themes/progressive/screenshot-mobile.png"
+    hero: "docs/ai/themes/progressive/screenshot-hero.png"
+  totalSections: 8
+  templateMatches: 7
+  customRequired: 1
+
+sections:
+  - position: 1
+    description: "White header bar with Progressive logo, nav links (Insurance & more, Claims, Resources, About us), phone, Log in, Español"
+    matchedComponent:
+      componentName: "Header"
+      renderingId: "81317d3b-f929-426a-83ec-421982f8f1e6"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: false
+    sectionBackground: "default"
+    contentNotes: "Context-only — lives in header partial design. Update nav links in Content Editor."
+
+  - position: 2
+    description: "Full-bleed family campfire photo with white headline 'Welcome to Progressive Insurance®' and summer savings subtext"
+    matchedComponent:
+      componentName: "Hero"
+      renderingId: "b7cdf75e-716a-4c59-b9b1-cd970ae0a4ae"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "dark"
+    content:
+      Title: "Welcome to Progressive Insurance®"
+      Text: "Find s'more ways to save this summer"
+      Link: "Get a quote"
+    contentNotes: "Hero image is family roasting marshmallows at campsite. Quote widget overlay not replicated — see position 3."
+
+  - position: 3
+    description: "White quote card with ZIP code field and four product quick-select icons (Bundle, Property, Recreational, See all products)"
+    matchedComponent:
+      componentName: "FourColumnCta"
+      renderingId: "35075000-760e-4ff3-bd1c-f2eeba251dcb"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "medium"
+      apiAddable: true
+    sectionBackground: "default"
+    contentNotes: "Live site has interactive ZIP quote form — template approximates with four product icon cards. ZIP input not replicated."
+
+  - position: 4
+    description: "Centered intro heading 'A leading insurance company, trusted since 1937' with supporting paragraph"
+    matchedComponent:
+      componentName: "HeadingCta"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+
+  - position: 5
+    description: "Three blue-bordered stat boxes: Over $900 savings, 43 million+ customers, 24/7/365 support"
+    matchedComponent:
+      componentName: "StatsCounter"
+      renderingId: "316889fa-fdd4-42a6-a034-201124fe54e8"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "muted"
+
+  - position: 6
+    description: "Products section — house/car illustration left, insurance product list right with Explore our products CTA"
+    matchedComponent:
+      componentName: "Features"
+      renderingId: "b7efffdb-2f0c-4c5e-a8be-d9f8677f01da"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "medium"
+      apiAddable: true
+    contentNotes: "Features component supports 2 product items; live site has 5. First two shown; remaining in rich text intro."
+
+  - position: 7
+    description: "'See why we're Progressive' — four photo cards: Bundling, Diversity & Inclusion, Resources, Careers"
+    matchedComponent:
+      componentName: "FourColumnCta"
+      renderingId: "35075000-760e-4ff3-bd1c-f2eeba251dcb"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+
+  - position: 8
+    description: "Multi-column footer with Insurance, Our Company, Quick Links, Connect columns, search, social icons, legal disclaimers"
+    matchedComponent:
+      componentName: "Footer"
+      renderingId: "771a3f27-6448-44ac-add0-e5de311c6e3b"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: false
+    contentNotes: "Context-only — lives in footer partial design."
+
+customComponents:
+  - position: 3
+    name: "QuoteWidget"
+    description: "Interactive ZIP code quote form with product selector grid"
+    reason: "No starter kit component supports form inputs overlaid on hero"
+    recommendation: "Approximated with FourColumnCta product icons; full fidelity needs custom component"
+
+buildOrder:
+  phase1_sitecore:
+    - position: 2
+      componentName: "Hero"
+    - position: 3
+      componentName: "FourColumnCta"
+      datasourceName: "Progressive - Quote Products"
+    - position: 4
+      componentName: "HeadingCta"
+      datasourceName: "Progressive - Trust Intro"
+    - position: 5
+      componentName: "StatsCounter"
+      datasourceName: "Progressive - Stats"
+    - position: 6
+      componentName: "Features"
+      datasourceName: "Progressive - Products"
+    - position: 7
+      componentName: "HeadingCta"
+      datasourceName: "Progressive - Why Intro"
+    - position: 7
+      componentName: "FourColumnCta"
+      datasourceName: "Progressive - Why Progressive"
+  phase2_theme: "src/assets/progressive/ (already applied)"
+  phase3_custom: []

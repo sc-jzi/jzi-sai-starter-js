@@ -1,0 +1,152 @@
+// Wake Forest University demo — pixel-perfect variant styles
+
+.hero.wake-forest {
+  height: 70vh;
+  min-height: 480px;
+  color: #fff;
+
+  img {
+    object-fit: cover;
+  }
+
+  .content-container {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 0;
+
+    .title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 600;
+      line-height: 1.1;
+      letter-spacing: 0.02em;
+    }
+
+    .subtitle,
+    .bottom-layout {
+      display: none;
+    }
+  }
+}
+
+.three-column-cta.wake-forest {
+  background-color: #f5f0e8;
+  padding: 0;
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .row {
+    margin: 0;
+
+    > [class*='col-'] {
+      padding: 0;
+    }
+  }
+
+  img {
+    display: none;
+  }
+
+  h2,
+  p {
+    display: none;
+  }
+
+  .content-wrapper {
+    align-items: stretch;
+    height: auto;
+  }
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 1.25rem 1.5rem;
+    border-radius: 0;
+    background-color: #9e7e38;
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: none;
+    text-transform: none;
+
+    &:hover {
+      background-color: #8c6d2c;
+      color: #fff;
+    }
+
+    &::after {
+      content: ' »';
+    }
+  }
+}
+
+.two-column-cta.wake-forest {
+  padding: 0;
+
+  .row {
+    margin: 0;
+    min-height: 420px;
+  }
+
+  > .container > .row > [class*='col-']:first-child {
+    background-color: #111;
+    color: #fff;
+    padding: 3rem;
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+
+    .button {
+      border: 1px solid #fff;
+      background: transparent;
+      color: #fff;
+      border-radius: 0;
+
+      &:hover {
+        background: #fff;
+        color: #111;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+  }
+}
+
+.two-column-cta.wake-forest-motto {
+  background: #fff;
+  padding: 4rem 0;
+
+  img {
+    border-radius: 0;
+    filter: grayscale(1) contrast(1.1);
+  }
+
+  h2 {
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    font-weight: 600;
+  }
+}

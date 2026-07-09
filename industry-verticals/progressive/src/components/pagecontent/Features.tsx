@@ -10,6 +10,7 @@ import {
   RichText,
   RichTextField,
   Text,
+  useSitecore,
 } from '@sitecore-content-sdk/nextjs';
 
 interface Fields {
@@ -26,6 +27,54 @@ interface Fields {
 export type FeaturesProps = {
   params: { [key: string]: string };
   fields: Fields;
+};
+
+/* Progressive variant — illustration left, product list right */
+export const Progressive = (props: FeaturesProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component features progressive ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="progressive-products-layout">
+          <div className="progressive-products-visual">
+            <NextImage field={props.fields?.Image1} width={624} height={545} />
+          </div>
+          <div className="progressive-products-content">
+            <RichText field={props.fields?.Text} className="progressive-products-intro" />
+            <ul className="progressive-products-list">
+              <li>
+                <h3>
+                  <a href="https://www.progressive.com/auto/">
+                    <Text field={props.fields?.Title1} />
+                  </a>
+                </h3>
+                <p>
+                  <Text field={props.fields?.Text1} />
+                </p>
+              </li>
+              <li>
+                <h3>
+                  <a href="https://www.progressive.com/insurance/bundling/">
+                    <Text field={props.fields?.Title2} />
+                  </a>
+                </h3>
+                <p>
+                  <Text field={props.fields?.Text2} />
+                </p>
+              </li>
+            </ul>
+            {(isPageEditing || props.fields?.Link?.value?.href) && (
+              <Link field={props.fields?.Link} className="button button-main progressive-products-cta" />
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export const Default = (props: FeaturesProps): JSX.Element => {

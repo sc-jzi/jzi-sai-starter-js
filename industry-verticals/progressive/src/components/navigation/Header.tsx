@@ -11,6 +11,28 @@ export type HeaderProps = ComponentProps & {
   componentMap: ComponentMap;
 };
 
+
+/* Progressive variant — white header bar with logo */
+export const Progressive = (props: HeaderProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+
+  return (
+    <div className={`component header progressive ${props.params.styles?.trimEnd()}`} id={id ? id : undefined}>
+      <div className={`container container-${props.params?.ContainerWidth?.toLowerCase()}-fluid`}>
+        <div className="row align-items-center">
+          <div className="col-auto">
+            <AppPlaceholder name="header-left" rendering={props.rendering} page={page} componentMap={props.componentMap} />
+          </div>
+          <div className="col">
+            <AppPlaceholder name="header-right" rendering={props.rendering} page={page} componentMap={props.componentMap} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: HeaderProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

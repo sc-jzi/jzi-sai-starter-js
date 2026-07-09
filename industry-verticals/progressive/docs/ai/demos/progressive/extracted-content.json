@@ -1,0 +1,658 @@
+{
+  "url": "https://www.progressive.com/",
+  "extractedAt": "2026-07-07T19:47:16.009Z",
+  "detectedLanguage": "en",
+  "targetLanguage": "en",
+  "translationNeeded": false,
+  "totalSections": 8,
+  "totalImages": 17,
+  "totalVideos": 0,
+  "interactionStats": {
+    "lazySourcesResolved": 0,
+    "tabsClicked": 0,
+    "accordionsExpanded": 0,
+    "carouselDotsClicked": 0,
+    "carouselArrowSlides": 0,
+    "backgroundImagesCollected": 0
+  },
+  "sections": [
+    {
+      "position": 1,
+      "tagName": "div",
+      "classHint": "hp-mma-2025-concept-c",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Welcome to Progressive Insurance®"
+        },
+        {
+          "tag": "h2",
+          "text": "Quote auto insurance"
+        },
+        {
+          "tag": "h2",
+          "text": "Or, select a bundle or other product"
+        }
+      ],
+      "paragraphs": [
+        "Find s'more ways to save this summer",
+        "Average savings of over $900 for drivers who switch and save*Read the associated disclosure for this savings claim.",
+        "Want more information before you quote? Explore auto insurance.",
+        "Bundle and save!›",
+        "Recreational›",
+        "See all 30+ products›",
+        "Other ways to buy"
+      ],
+      "links": [
+        {
+          "text": "*Read the associated disclosure for this savings claim.",
+          "href": "https://www.progressive.com/#ToolTipDialog",
+          "target": ""
+        },
+        {
+          "text": "auto insurance",
+          "href": "https://www.progressive.com/auto/",
+          "target": ""
+        },
+        {
+          "text": "Bundle and save!›",
+          "href": "https://www.progressive.com/#s",
+          "target": ""
+        },
+        {
+          "text": "Property›",
+          "href": "https://www.progressive.com/#s",
+          "target": ""
+        },
+        {
+          "text": "Recreational›",
+          "href": "https://www.progressive.com/#s",
+          "target": ""
+        },
+        {
+          "text": "See all 30+ products›",
+          "href": "https://www.progressive.com/#p",
+          "target": ""
+        },
+        {
+          "text": "Continue previous quote›",
+          "href": "https://www.progressive.com/home-retrieve/",
+          "target": ""
+        },
+        {
+          "text": "Find an agent›",
+          "href": "https://www.progressive.com/rp/agent",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/blt53b9744b2da4caad/64edf8d41cee17446ddb5c1a/au-h-moto.svg",
+          "alt": "",
+          "type": "img",
+          "width": 150,
+          "height": 150
+        },
+        {
+          "src": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/blt2b7f8246e7bd5fc2/5f3d431829a49b740ae68942/h.svg",
+          "alt": "",
+          "type": "img",
+          "width": 150,
+          "height": 150
+        },
+        {
+          "src": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/blta4c800d8078b6fdb/67e70a4c0ebeb90eec7b1b0a/mc-filled.svg",
+          "alt": "",
+          "type": "img",
+          "width": 150,
+          "height": 150
+        },
+        {
+          "src": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/blt44c2470f28c8c963/67360e5c910ead5694592ac5/more-choices-blue.svg",
+          "alt": "",
+          "type": "img",
+          "width": 150,
+          "height": 150
+        },
+        {
+          "src": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/blt6760f69765ea4b54/6a1ee88264b2d2febc45ed65/PROG_HP-Summer-Seasonal-Smores_670_@2x.jpg?auto=avif&width=1340",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/blt1dc688ba4d38c657/6a1ee883069054616320fd21/PROG_HP-Summer-Seasonal-Smores_1700_@2x.jpg?auto=avif&width=3400",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "tagName": "div",
+      "classHint": "content clearfix centered",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "A leading insurance company, trusted since 1937"
+        }
+      ],
+      "paragraphs": [
+        "From customized insurance to superior claims service, our people and technology will support you every step of the way. Join us today and experience why we're one of the best insurance companies."
+      ],
+      "links": [],
+      "images": []
+    },
+    {
+      "position": 3,
+      "tagName": "div",
+      "classHint": "brackets wrap small-spacing",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h3",
+          "text": "SAVINGS"
+        },
+        {
+          "tag": "h3",
+          "text": "CUSTOMERS"
+        },
+        {
+          "tag": "h3",
+          "text": "SUPPORT"
+        }
+      ],
+      "paragraphs": [
+        "Over $900*Read the associated disclosure for this savings claim.",
+        "Average annual savings for drivers who switch to Progressive and save.",
+        "43 million+",
+        "People trust us to insure what's important to them.",
+        "Day or night customer support for all your questions and concerns."
+      ],
+      "links": [
+        {
+          "text": "*Read the associated disclosure for this savings claim.",
+          "href": "https://www.progressive.com/#ToolTipDialog",
+          "target": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "position": 4,
+      "tagName": "div",
+      "classHint": "content clearfix centered mt5 pt5",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Learn more about our insurance products and coverages"
+        }
+      ],
+      "paragraphs": [
+        "At Progressive, we've built our business around understanding what you need and what's important for you to protect. That's why we offer a wide range of insurance products to meet your specific needs, including customized coverages."
+      ],
+      "links": [],
+      "images": []
+    },
+    {
+      "position": 5,
+      "tagName": "div",
+      "classHint": "content is-homepage small-spacing",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h3",
+          "text": "Auto insurance›"
+        },
+        {
+          "tag": "h3",
+          "text": "Bundle auto and property insurance›"
+        },
+        {
+          "tag": "h3",
+          "text": "Motorcycle insurance›"
+        },
+        {
+          "tag": "h3",
+          "text": "RV insurance›"
+        },
+        {
+          "tag": "h3",
+          "text": "Life insurance›"
+        }
+      ],
+      "paragraphs": [
+        "Buckle up with protection you can rely on.",
+        "Bundle with Progressive and save more — it's that easy!",
+        "Hop on — we're the #1 motorcycle insurance company in the U.S.",
+        "Hit the highway with the coverage you need for peace of mind.",
+        "Give your family protection and long-lasting financial security."
+      ],
+      "links": [
+        {
+          "text": "Auto insurance›",
+          "href": "https://www.progressive.com/auto/",
+          "target": "_self"
+        },
+        {
+          "text": "Bundle auto and property insurance›",
+          "href": "https://www.progressive.com/insurance/bundling/",
+          "target": "_self"
+        },
+        {
+          "text": "Motorcycle insurance›",
+          "href": "https://www.progressive.com/motorcycle/",
+          "target": "_self"
+        },
+        {
+          "text": "RV insurance›",
+          "href": "https://www.progressive.com/rv-insurance/",
+          "target": "_self"
+        },
+        {
+          "text": "Life insurance›",
+          "href": "https://www.progressive.com/life-insurance/",
+          "target": "_self"
+        },
+        {
+          "text": "Explore our products",
+          "href": "https://www.progressive.com/insurance/",
+          "target": "_self"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/blt090e66a7c5d1292c/5d9b3430b517f10ef0a91d4d/content-image_homepage-products.svg",
+          "alt": "",
+          "type": "img",
+          "width": 624,
+          "height": 545
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "tagName": "div",
+      "classHint": "content clearfix centered mt5 pt5",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "See why we're Progressive"
+        }
+      ],
+      "paragraphs": [
+        "Yes, we're an insurance company, but find out what makes us stand out."
+      ],
+      "links": [],
+      "images": []
+    },
+    {
+      "position": 7,
+      "tagName": "div",
+      "classHint": "tiles wrap five",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h3",
+          "text": "Bundling›"
+        },
+        {
+          "tag": "h3",
+          "text": "Diversity & Inclusion›"
+        },
+        {
+          "tag": "h3",
+          "text": "Resources›"
+        },
+        {
+          "tag": "h3",
+          "text": "Careers›"
+        }
+      ],
+      "paragraphs": [
+        "Combine home and auto insurance for more savings.",
+        "Progress – it’s in our name and in our approach.",
+        "Explore tools for navigating insurance and life.",
+        "Join one of Fortune's 100 Best Companies to Work For."
+      ],
+      "links": [
+        {
+          "text": "Bundling› Combine home and auto insurance for more savings.",
+          "href": "https://www.progressive.com/insurance/bundling/",
+          "target": ""
+        },
+        {
+          "text": "Diversity & Inclusion› Progress – it’s in our name and in our approach.",
+          "href": "https://www.progressive.com/about/",
+          "target": ""
+        },
+        {
+          "text": "Resources› Explore tools for navigating insurance and life.",
+          "href": "https://www.progressive.com/resources/",
+          "target": ""
+        },
+        {
+          "text": "Careers› Join one of Fortune's 100 Best Companies to Work For.",
+          "href": "https://careers.progressive.com/",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/bltdc3d2e21f09bca78/61e19ba7a1a3da10d297bf08/tiles_homepage_bundle_280@2x.jpg?auto=avif",
+          "alt": "",
+          "type": "list-item-img",
+          "width": 280,
+          "height": 320
+        },
+        {
+          "src": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/blt46f00dd26ebf0193/5ec4254052c5395e0f2dc1c1/tiles_homepage_careers_280@2x.jpg?auto=avif",
+          "alt": "",
+          "type": "list-item-img",
+          "width": 280,
+          "height": 320
+        },
+        {
+          "src": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/blt6412540557d521cd/67363dfb8a260c1449a5da0b/tiles_resources_280@2x.jpg?auto=avif",
+          "alt": "",
+          "type": "list-item-img",
+          "width": 280,
+          "height": 320
+        },
+        {
+          "src": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/blt46e46a805f3e77c0/5ee7d3551c3f04391d819287/tiles_teams-legal_280@2x.jpg?auto=avif",
+          "alt": "",
+          "type": "list-item-img",
+          "width": 280,
+          "height": 320
+        }
+      ],
+      "listItems": [
+        {
+          "title": "Bundling›",
+          "description": "Combine home and auto insurance for more savings.",
+          "link": {
+            "text": "Bundling› Combine home and auto insurance for more savings.",
+            "href": "https://www.progressive.com/insurance/bundling/"
+          },
+          "image": {
+            "src": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/bltdc3d2e21f09bca78/61e19ba7a1a3da10d297bf08/tiles_homepage_bundle_280@2x.jpg?auto=avif",
+            "alt": ""
+          }
+        },
+        {
+          "title": "Diversity & Inclusion›",
+          "description": "Progress – it’s in our name and in our approach.",
+          "link": {
+            "text": "Diversity & Inclusion› Progress – it’s in our name and in our approach.",
+            "href": "https://www.progressive.com/about/"
+          },
+          "image": {
+            "src": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/blt46f00dd26ebf0193/5ec4254052c5395e0f2dc1c1/tiles_homepage_careers_280@2x.jpg?auto=avif",
+            "alt": ""
+          }
+        },
+        {
+          "title": "Resources›",
+          "description": "Explore tools for navigating insurance and life.",
+          "link": {
+            "text": "Resources› Explore tools for navigating insurance and life.",
+            "href": "https://www.progressive.com/resources/"
+          },
+          "image": {
+            "src": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/blt6412540557d521cd/67363dfb8a260c1449a5da0b/tiles_resources_280@2x.jpg?auto=avif",
+            "alt": ""
+          }
+        },
+        {
+          "title": "Careers›",
+          "description": "Join one of Fortune's 100 Best Companies to Work For.",
+          "link": {
+            "text": "Careers› Join one of Fortune's 100 Best Companies to Work For.",
+            "href": "https://careers.progressive.com/"
+          },
+          "image": {
+            "src": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/blt46e46a805f3e77c0/5ee7d3551c3f04391d819287/tiles_teams-legal_280@2x.jpg?auto=avif",
+            "alt": ""
+          }
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "tagName": "footer",
+      "classHint": "footer",
+      "backgroundHint": "dark",
+      "headings": [],
+      "paragraphs": [
+        "THE #1 INSURANCE WEBSITE",
+        "We offer insurance by phone, online and through independent agents. Prices vary based on how you buy.",
+        "ΔAverage savings based on 6-month term and not available in all states.",
+        "++Discount is applied to auto policy and is not available in all states and situations.",
+        "*National average 12-month savings (auto = $946, bundle = $1,086) by new customers surveyed who saved with Progressive between June 2024 and May 2025. Potential savings will vary.",
+        "†Average savings apply to the auto policy and are based on 6-month term and not available in all states.",
+        "**Annual premium for a basic liability policy. Not available in D.C.",
+        "§Liability coverage for one motorcycle, excluding state fees and taxes. Not available in DC.",
+        "††Annual premium for a basic liability policy excludes travel trailer and is not available in all states.",
+        "‡‡Average premium cost based on Progressive Home data from 2025. Product and prices may vary by state.",
+        "Insurance carrier website ranking by Keynova Group – Q4 2025 Online Insurance Scorecard.",
+        "Learn more about comparing car insurance rates, which are available through Progressive Direct® in most states and situations. Rate comparisons provided here are based on our Progressive Direct auto insurance price and product, and do not include prices and products available from Progressive agents.",
+        "Name Your Price® is available in most states for new policies. Price and coverage match limited by state law. Amounts entered outside of our range of coverage prices will be shown the closest available coverage package.",
+        "Progressive Home® policies are placed through Progressive Advantage Agency, Inc. with insurers affiliated with Progressive and with unaffiliated insurers. Each insurer is solely responsible for the claims on its policies and pays PAA for policies sold. Prices, coverages and privacy policies vary among these insurers, who may share information about you with us. PAA's compensation from these insurers may vary between the insurers and based on the policy you buy, sales volume and/or profitability of policies sold. See a list of all the insurers that write Progressive Home policies, or contact us for more details.",
+        "How you buy your Progressive Home policy — directly through us (online, by mobile device or by phone) or through an independent agent/broker rather than PAA — determines which insurers are available to you. Use the Get a Quote link to get a rate from one of the insurers. Or contact us to see if we can get you a rate from any of the other insurers. Policies sold through agents and brokers are available from them and through https://www.progressiveagent.com.",
+        "Coverage and discounts not available in all states and situations. All coverage is subject to policy terms and conditions.",
+        "PAA and Progressive are not responsible for the content or operation of others' websites or how others handle or use your information.",
+        "Progressive Advantage Agency, Inc. (CA Lic #0F50053, TX Lic #1394132) is domiciled in Ohio, has its principal place of business at 300 North Commons Blvd., Mayfield Village, Ohio 44143, and does business in CA as Progressive Advantage Insurance Agency, Inc.",
+        "Commercial auto policies are underwritten by Progressive Casualty Ins. Co. & affiliates.",
+        "Some Business Owners policies are underwritten by Progressive. Others Business Owners, and all General Liability, Professional Liability and Workers' Compensation, policies are underwritten by third-party insurers that are not affiliated with Progressive and are solely responsible for claims. Progressive Advantage Agency, Inc. attempts to quote each applicant contacting us for a quote with at least one of these insurers by using its Business Owners, General Liability, Professional Liability and Workers' Compensation quoting guidelines for the applicant's state. These guidelines will determine the company quoted, which may vary by state. The company quoted may not be the one with the lowest-priced policy available for the applicant. Certain Progressive companies may be compensated as licensed agencies for performing services on behalf of the Business Owners, General Liability, Professional Liability and Workers' Compensation insurers. Progressive assumes no responsibility for the content or operation of the insurers' websites. Information provided by an applicant or insured to a Business Owners, General Liability, Professional Liability or Workers' Compensation insurer is subject to its terms of use and privacy policy, and may be shared with us. Prices, coverages, privacy policies and compensation rates may vary among the insurers. Not available in all states and situations. Coverage subject to policy terms and conditions."
+      ],
+      "links": [
+        {
+          "text": "Car Insurance",
+          "href": "https://www.progressive.com/auto/",
+          "target": ""
+        },
+        {
+          "text": "Home Insurance",
+          "href": "https://www.progressive.com/homeowners/",
+          "target": ""
+        },
+        {
+          "text": "Progressive Answers",
+          "href": "https://www.progressive.com/answers/",
+          "target": ""
+        },
+        {
+          "text": "Explore All Products",
+          "href": "https://www.progressive.com/insurance/",
+          "target": ""
+        },
+        {
+          "text": "About Us",
+          "href": "https://www.progressive.com/about/",
+          "target": ""
+        },
+        {
+          "text": "Careers",
+          "href": "https://careers.progressive.com/",
+          "target": ""
+        },
+        {
+          "text": "Investors",
+          "href": "https://investors.progressive.com/",
+          "target": ""
+        },
+        {
+          "text": "Newsroom",
+          "href": "https://progressive.mediaroom.com/",
+          "target": ""
+        },
+        {
+          "text": "Continue Previous Quote",
+          "href": "https://www.progressive.com/home-retrieve/",
+          "target": ""
+        },
+        {
+          "text": "Report a Claim",
+          "href": "https://www.progressive.com/claims/",
+          "target": ""
+        },
+        {
+          "text": "Make a Payment",
+          "href": "https://www.progressive.com/rp/ezpay/",
+          "target": ""
+        },
+        {
+          "text": "PerkShare",
+          "href": "https://www.progressive.com/perkshare/",
+          "target": ""
+        },
+        {
+          "text": "1-833-876-5052",
+          "href": "tel:1-833-876-5052",
+          "target": ""
+        },
+        {
+          "text": "Contact Us",
+          "href": "https://www.progressive.com/contact-us/",
+          "target": ""
+        },
+        {
+          "text": "Progressive App",
+          "href": "https://www.progressive.com/mobile-app/",
+          "target": ""
+        },
+        {
+          "text": "Partner With Us",
+          "href": "https://www.progressive.com/partners/",
+          "target": ""
+        },
+        {
+          "text": "Site Map",
+          "href": "https://www.progressive.com/sitemap/",
+          "target": ""
+        },
+        {
+          "text": "Accessibility Services",
+          "href": "https://www.progressive.com/web-site-accessibility/",
+          "target": ""
+        },
+        {
+          "text": "Technical Help",
+          "href": "https://www.progressive.com/help/",
+          "target": ""
+        },
+        {
+          "text": "Privacy & Security",
+          "href": "https://www.progressive.com/privacy/",
+          "target": ""
+        },
+        {
+          "text": "Terms of Use",
+          "href": "https://www.progressive.com/copyright/",
+          "target": ""
+        },
+        {
+          "text": "CA Notice at Collection",
+          "href": "https://www.progressive.com/privacy/privacy-data-request/",
+          "target": ""
+        },
+        {
+          "text": "Insurance Resources",
+          "href": "https://www.progressive.com/resources/",
+          "target": ""
+        },
+        {
+          "text": "Do Not Sell or Share My Personal Information (CA Residents Only)",
+          "href": "https://www.progressive.com/privacy/do-not-sell-my-information/",
+          "target": "_blank"
+        },
+        {
+          "text": "Prices vary based on how you buy",
+          "href": "https://www.progressive.com/shop/car-insurance-rates-differ/",
+          "target": "_self"
+        },
+        {
+          "text": "about comparing car insurance rates,",
+          "href": "https://www.progressive.com/auto/discounts/compare-car-insurance-rates/",
+          "target": "_self"
+        },
+        {
+          "text": "See a list of all the insurers",
+          "href": "https://www.progressive.com/homeowners/homeowners-companies/",
+          "target": "_self"
+        },
+        {
+          "text": "contact us",
+          "href": "https://www.progressive.com/contact-us/",
+          "target": "_self"
+        },
+        {
+          "text": "https://www.progressiveagent.com",
+          "href": "https://www.progressive.com/rp/agent",
+          "target": "_self"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.progressive.com/content/images/domainprogressive/wh3/base/icons/monotone/search.svg",
+          "alt": "",
+          "type": "img",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "src": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/blt70ffcb3929ecd23d/65d01b3c0ba017cc15012d24/facebook.svg",
+          "alt": "Facebook",
+          "type": "img",
+          "width": 20,
+          "height": 20
+        },
+        {
+          "src": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/bltf77f99387dbe17a3/65d01b3b8d55b0465b61458e/instagram.svg",
+          "alt": "Instagram",
+          "type": "img",
+          "width": 20,
+          "height": 20
+        },
+        {
+          "src": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/bltb34101e9c0036193/65d01b3bbdb22a33a8c226fe/youtube.svg",
+          "alt": "YouTube",
+          "type": "img",
+          "width": 20,
+          "height": 20
+        },
+        {
+          "src": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/blt0081d421c1d5499a/65d37b8b21be608c5f0194bb/tiktok.svg",
+          "alt": "TikTok",
+          "type": "img",
+          "width": 20,
+          "height": 20
+        },
+        {
+          "src": "https://images.contentstack.io/v3/assets/blt62d40591b3650da3/blt9f1a0a21e3213494/65d37ba3d677b6499a6a28d6/x.svg",
+          "alt": "X, Formerly Twitter",
+          "type": "img",
+          "width": 20,
+          "height": 20
+        }
+      ],
+      "listItems": [
+        {
+          "title": "Insurance",
+          "link": {
+            "text": "Car Insurance",
+            "href": "https://www.progressive.com/auto/"
+          }
+        }
+      ]
+    }
+  ]
+}

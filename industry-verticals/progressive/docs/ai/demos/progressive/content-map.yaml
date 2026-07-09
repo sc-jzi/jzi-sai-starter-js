@@ -1,0 +1,124 @@
+client:
+  name: "Progressive"
+  createdAt: "2026-07-07T20:05:00Z"
+  sourceUrl: "https://www.progressive.com/"
+
+datasourceItems:
+  - componentName: "Hero"
+    itemName: "Progressive - Hero"
+    itemId: "861e5eb4-9c95-4f3a-be43-1e0a2417bf14"
+    parentFolder: "e80b2eb2-f3c4-4c86-b76c-041808116d0e"
+    fieldsPopulated: ["Title", "Text", "Image", "Link"]
+    imageFieldsPending: []
+    children: []
+
+  - componentName: "FourColumnCta"
+    itemName: "Progressive - Quote Products"
+    itemId: "d1703687-3676-40b9-b512-f578b1aa6123"
+    parentFolder: "c252a182-50c2-4e48-8515-e86bd96cb5ce"
+    fieldsPopulated: ["Title1-4", "Text1-4", "Image1-4", "Link1-4"]
+    imageFieldsPending: []
+    children: []
+
+  - componentName: "HeadingCta"
+    itemName: "Progressive - Trust Intro"
+    itemId: "1839ea62-2260-4174-92e4-365a57e070d3"
+    parentFolder: "bb81a942-713a-4da1-ab8e-e6d504899ed3"
+    fieldsPopulated: ["Eyebrow", "Heading", "Text", "Link"]
+    imageFieldsPending: []
+    children: []
+
+  - componentName: "StatsCounter"
+    itemName: "Progressive - Stats"
+    itemId: "eb886cee-49c9-48a4-9fad-b6cab5ffd1d1"
+    parentFolder: "e80b2eb2-f3c4-4c86-b76c-041808116d0e"
+    fieldsPopulated: ["Value1-3", "Symbol1-3", "Caption1-3"]
+    imageFieldsPending: []
+    children: []
+
+  - componentName: "Features"
+    itemName: "Progressive - Products"
+    itemId: "430e4eb5-9901-437d-8740-e7788438c0cc"
+    parentFolder: "e80b2eb2-f3c4-4c86-b76c-041808116d0e"
+    fieldsPopulated: ["Eyebrow", "Text", "Link", "Image1", "Title1", "Text1", "Title2", "Text2"]
+    imageFieldsPending: []
+    children: []
+
+  - componentName: "HeadingCta"
+    itemName: "Progressive - Why Intro"
+    itemId: "40fc447a-a84c-4d06-8a5a-71350a86de9a"
+    parentFolder: "bb81a942-713a-4da1-ab8e-e6d504899ed3"
+    fieldsPopulated: ["Eyebrow", "Heading", "Text"]
+    imageFieldsPending: []
+    children: []
+
+  - componentName: "FourColumnCta"
+    itemName: "Progressive - Why Progressive"
+    itemId: "b41325d6-9188-4705-b671-1dcb538b8670"
+    parentFolder: "c252a182-50c2-4e48-8515-e86bd96cb5ce"
+    fieldsPopulated: ["Title1-4", "Text1-4", "Image1-4", "Link1-4"]
+    imageFieldsPending: []
+    children: []
+
+sections:
+  - position: 2
+    componentName: "Hero"
+    manifestName: "Hero"
+    kind: "simple"
+    datasourceItemName: "Progressive - Hero"
+    fields:
+      Title: "Welcome to Progressive Insurance®"
+      Text: "<p>Find s'more ways to save this summer</p>"
+      Link:
+        text: "Get a quote"
+        href: "https://www.progressive.com/auto/"
+        target: ""
+    imageFields:
+      - field: "Image"
+        src: "section1-img6.jpg"
+    children: []
+
+  - position: 3
+    componentName: "FourColumnCta"
+    manifestName: "FourColumnCta"
+    kind: "simple"
+    datasourceItemName: "Progressive - Quote Products"
+    fields: {}
+    imageFields: []
+    children: []
+
+  - position: 4
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Progressive - Trust Intro"
+    fields: {}
+    imageFields: []
+    children: []
+
+  - position: 5
+    componentName: "StatsCounter"
+    manifestName: "StatsCounter"
+    kind: "simple"
+    datasourceItemName: "Progressive - Stats"
+    fields: {}
+    imageFields: []
+    children: []
+
+  - position: 6
+    componentName: "Features"
+    manifestName: "Features"
+    kind: "simple"
+    datasourceItemName: "Progressive - Products"
+    fields: {}
+    imageFields: []
+    children: []
+
+  - position: 7
+    componentName: "FourColumnCta"
+    manifestName: "FourColumnCta"
+    kind: "simple"
+    datasourceItemName: "Progressive - Why Progressive"
+    fields: {}
+    imageFields: []
+    children: []

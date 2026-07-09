@@ -1,0 +1,119 @@
+# Client Brand Theme — Progressive Insurance
+# Extracted from: https://www.progressive.com/
+
+client:
+  name: "Progressive"
+  sourceUrl: "https://www.progressive.com/"
+  extractedAt: "2026-07-07T19:50:00Z"
+  extractedBy: "cursor"
+
+colors:
+  primary: "#003DA5"
+  primaryForeground: "#ffffff"
+  secondary: "#0077B3"
+  secondaryForeground: "#ffffff"
+  accent: "#FFFF00"
+  accentForeground: "#0a0a0a"
+  background: "#ffffff"
+  foreground: "#2d2d2d"
+  muted: "#f2f2f2"
+  mutedForeground: "#6b6b6b"
+  headerBackground: "#ffffff"
+  headerForeground: "#2d2d2d"
+  footerBackground: "#ffffff"
+  footerForeground: "#2d2d2d"
+  border: "#D1E2E5"
+  ring: "#0077B3"
+  extra:
+    - { name: "progressive-blue", value: "#0077B3" }
+    - { name: "progressive-navy", value: "#003DA5" }
+
+typography:
+  headingFamily: "'96 Sans', Arial, sans-serif"
+  headingWeight: "300"
+  bodyFamily: "'96 Sans', Arial, sans-serif"
+  bodyWeight: "400"
+  monoFamily: "'96 Sans Monospaced', ui-monospace, monospace"
+  googleFontsUrl: ""
+  scale:
+    hero: "3rem"
+    h1: "2.4rem"
+    h2: "1.125rem"
+    h3: "0.75rem"
+    body: "0.625rem"
+    small: "0.5357rem"
+  headingTransform: "none"
+  letterSpacing: "normal"
+  lineHeight: "normal"
+
+spacing:
+  density: "normal"
+  sectionGap: "3.75rem"
+  containerMaxWidth: "1058px"
+  containerPadding: "1rem"
+
+shape:
+  borderRadius: "8px"
+  buttonRadius: "5px"
+  cardRadius: "8px"
+  imageRadius: "0px"
+  shadowStyle: "none"
+  borderStyle: "bordered"
+
+tone:
+  overall: "friendly-corporate"
+  colorMode: "light"
+  contrast: "medium"
+  imagery: "photography"
+  heroStyle: "full-bleed-image"
+  cardStyle: "bordered"
+  navStyle: "solid-bar"
+
+tailwind:
+  colors:
+    brand:
+      primary: "#003DA5"
+      secondary: "#0077B3"
+      accent: "#FFFF00"
+  fontFamily:
+    heading: ["96 Sans", "Arial", "sans-serif"]
+    body: ["96 Sans", "Arial", "sans-serif"]
+  borderRadius:
+    DEFAULT: "8px"
+    button: "5px"
+    card: "8px"
+
+cssVariables: |
+  :root {
+    --brand-primary: #003DA5;
+    --brand-primary-foreground: #ffffff;
+    --brand-secondary: #0077B3;
+    --brand-secondary-foreground: #ffffff;
+    --brand-accent: #FFFF00;
+    --brand-accent-foreground: #0a0a0a;
+    --brand-bg: #ffffff;
+    --brand-fg: #2d2d2d;
+    --brand-muted: #f2f2f2;
+    --brand-muted-fg: #6b6b6b;
+    --brand-header-bg: #ffffff;
+    --brand-header-fg: #2d2d2d;
+    --brand-footer-bg: #ffffff;
+    --brand-footer-fg: #2d2d2d;
+    --brand-border: #D1E2E5;
+    --brand-ring: #0077B3;
+    --brand-heading-font: '96 Sans', Arial, sans-serif;
+    --brand-body-font: '96 Sans', Arial, sans-serif;
+    --brand-radius: 8px;
+    --brand-button-radius: 5px;
+    --brand-card-radius: 8px;
+  }
+
+extraction:
+  confidence: "high"
+  method: "playwright-full"
+  notes:
+    - "Progressive uses proprietary '96 Sans' font family — substituted with Arial fallback."
+    - "Primary navy (#003DA5) in logo; action blue (#0077B3) on buttons and links."
+    - "Cards use light blue borders (#D1E2E5), no drop shadows."
+    - "Hero is full-bleed lifestyle photography with white headline overlay."
+    - "Progressive brand SCSS already exists in src/assets/progressive/ — theme applied via existing design tokens."
