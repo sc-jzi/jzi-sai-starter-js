@@ -36,6 +36,91 @@ export type FourColumnCtaProps = {
   fields: Fields;
 };
 
+/* Huron variant — mint→teal transformation pillars */
+export const HuronTransformation = (props: FourColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const Column = ({
+    image,
+    title,
+    text,
+    link,
+    delay,
+  }: {
+    image: ImageField;
+    title: Field<string>;
+    text: Field<string>;
+    link: LinkField;
+    delay?: number;
+  }) => {
+    const [isVisible, domRef] = useVisibility(delay);
+    return (
+      <div
+        className={`col-sm-12 col-lg-3 ${
+          !isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
+        }`}
+        ref={domRef}
+      >
+        <Link field={link}>
+          <div className="content-wrapper">
+            <NextImage field={image} width={400} height={300} />
+            <div className="text-wrapper">
+              <h2>
+                <Text field={title} />
+              </h2>
+              <p>
+                <Text field={text} />
+              </p>
+            </div>
+          </div>
+        </Link>
+      </div>
+    );
+  };
+
+  return (
+    <div
+      className={`component component-spaced four-column-cta huron-transformation ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="row">
+          <Column
+            image={props.fields.Image1}
+            title={props.fields.Title1}
+            text={props.fields.Text1}
+            link={props.fields.Link1}
+          />
+          <Column
+            image={props.fields.Image2}
+            title={props.fields.Title2}
+            text={props.fields.Text2}
+            link={props.fields.Link2}
+            delay={150}
+          />
+          <Column
+            image={props.fields.Image3}
+            title={props.fields.Title3}
+            text={props.fields.Text3}
+            link={props.fields.Link3}
+            delay={300}
+          />
+          <Column
+            image={props.fields.Image4}
+            title={props.fields.Title4}
+            text={props.fields.Text4}
+            link={props.fields.Link4}
+            delay={450}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: FourColumnCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

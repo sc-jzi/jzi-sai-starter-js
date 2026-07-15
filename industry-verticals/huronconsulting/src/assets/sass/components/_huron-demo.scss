@@ -1,0 +1,443 @@
+// Huron Consulting Group homepage demo
+
+.site-huron {
+  font-family: var(--font-body, 'Roboto', system-ui, sans-serif);
+  color: var(--brand-fg, #1a1a1a);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .display-2,
+  .display-4,
+  .display-6 {
+    font-family: var(--font-heading, 'Bricolage Grotesque', system-ui, sans-serif);
+    font-weight: 600;
+  }
+
+  .button-main {
+    background-color: var(--brand-accent, #db354d);
+    border-color: var(--brand-accent, #db354d);
+    border-radius: var(--brand-button-radius, 0.5rem);
+    color: #fff;
+    font-weight: 500;
+    padding: 0.65rem 1.25rem;
+
+    &:hover {
+      background-color: #c42e44;
+      border-color: #c42e44;
+      color: #fff;
+    }
+  }
+
+  .button-simple {
+    border-radius: var(--brand-button-radius, 0.5rem);
+    color: var(--brand-accent, #db354d);
+    border-color: transparent;
+  }
+}
+
+// Header
+.header.huron,
+.site-huron .header {
+  background-color: var(--brand-header-bg, #370022);
+  color: #fff;
+  border-bottom: none;
+  padding: 0.75rem 0;
+
+  a,
+  .field-title,
+  h1,
+  h2 {
+    color: #fff !important;
+    font-weight: 500;
+  }
+}
+
+// Hero — full-bleed photo with left type stack
+.hero.huron,
+.site-huron .hero.huron {
+  position: relative;
+  min-height: 36rem;
+  margin-bottom: 0;
+  padding: 0;
+  color: #fff;
+  background: var(--brand-primary, #370022);
+  overflow: hidden;
+
+  .hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero-image {
+    width: 100%;
+    height: 100%;
+    min-height: 36rem;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgb(55 0 34 / 88%) 0%,
+      rgb(55 0 34 / 55%) 48%,
+      rgb(55 0 34 / 25%) 100%
+    );
+  }
+
+  .content-container {
+    position: relative;
+    z-index: 1;
+    min-height: 36rem;
+    display: flex;
+    align-items: center;
+    padding: 5rem 1.5rem;
+  }
+
+  .hero-copy {
+    max-width: 40rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.25rem, 5vw, 3.75rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--brand-cream, #ebe9e4);
+    margin-bottom: 1.5rem;
+
+    p {
+      margin: 0;
+    }
+  }
+}
+
+// Challenges — centered aubergine band
+.heading-cta.huron-challenges,
+.site-huron .heading-cta.huron-challenges {
+  background: var(--brand-primary, #370022);
+  color: #fff;
+  padding: 4rem 1rem;
+  text-align: center;
+
+  .heading-content-wrapper {
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+
+  .huron-heading {
+    color: #fff;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .huron-body {
+    color: var(--brand-cream, #ebe9e4);
+    font-size: 1.125rem;
+    margin-bottom: 0;
+  }
+
+  .button-main {
+    margin-top: 1.5rem;
+  }
+}
+
+// Standard dark heading for Transformation / Insights intros
+.heading-cta.huron,
+.site-huron .heading-cta.huron {
+  padding: 3rem 0 1.5rem;
+
+  .huron-heading {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    color: var(--brand-primary, #370022);
+  }
+
+  .huron-body {
+    font-size: 1.05rem;
+    color: var(--brand-muted-fg, #5a5a5a);
+    max-width: 40rem;
+  }
+}
+
+// Meet the moment — aubergine split with video card
+.promo-cta.huron,
+.site-huron .promo-cta.huron {
+  background: var(--brand-primary, #370022);
+  color: #fff;
+  padding: 4rem 0;
+
+  .main-content {
+    align-items: center;
+  }
+
+  h1,
+  .display-6 {
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+
+  .promo-cta-text,
+  .text-content {
+    color: var(--brand-cream, #ebe9e4);
+  }
+
+  .button-main,
+  .button-simple {
+    background: transparent;
+    border: none;
+    color: #fff;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    padding-left: 0;
+
+    &:hover {
+      color: var(--brand-accent, #db354d);
+      background: transparent;
+    }
+  }
+
+  .image-wrapper {
+    background: #f0eeea;
+    border-radius: var(--brand-card-radius, 1rem);
+    overflow: hidden;
+    position: relative;
+
+    img {
+      border-radius: var(--brand-card-radius, 1rem);
+    }
+  }
+
+  .dotted-accent-top,
+  .dotted-accent-bottom {
+    display: none;
+  }
+}
+
+// Transformation pillars — mint→teal columns
+.four-column-cta.huron-transformation,
+.site-huron .four-column-cta.huron-transformation {
+  padding: 2rem 0 4rem;
+
+  .row {
+    --bs-gutter-x: 0.75rem;
+  }
+
+  .col-lg-3 {
+    &:nth-child(1) .content-wrapper {
+      background: var(--brand-mint-light, #e8f5f0);
+    }
+    &:nth-child(2) .content-wrapper {
+      background: var(--brand-mint, #b8d9ce);
+    }
+    &:nth-child(3) .content-wrapper {
+      background: var(--brand-teal, #7eb8a8);
+    }
+    &:nth-child(4) .content-wrapper {
+      background: var(--brand-teal-deep, #4a9b8c);
+      color: #fff;
+
+      h2,
+      h3,
+      p {
+        color: #fff;
+      }
+    }
+  }
+
+  .content-wrapper {
+    border-radius: var(--brand-card-radius, 1rem);
+    padding: 1.5rem 1.25rem 2rem;
+    height: 100%;
+    min-height: 18rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+    }
+
+    img {
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+      object-fit: cover;
+      max-height: 10rem;
+      width: 100%;
+    }
+
+    h2,
+    h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--brand-primary, #370022);
+    }
+
+    p {
+      font-size: 0.95rem;
+      color: var(--brand-fg, #1a1a1a);
+      margin-bottom: 0;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+// Event CTA — white card over photo
+.cta-banner.huron,
+.site-huron .cta-banner.huron {
+  position: relative;
+  padding: 4rem 0;
+  background: var(--brand-muted, #f5f3f0);
+
+  .container-widest-fluid,
+  .container {
+    position: relative;
+  }
+
+  .image-wrapper {
+    border-radius: var(--brand-card-radius, 1rem);
+    overflow: hidden;
+  }
+
+  .content-wrapper {
+    background: #fff;
+    border-radius: var(--brand-card-radius, 1rem);
+    padding: 2rem 2.25rem;
+    box-shadow: 0 8px 32px rgb(55 0 34 / 12%);
+  }
+
+  .eyebrow-accent {
+    color: var(--brand-accent, #db354d);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.75rem;
+  }
+
+  h1 {
+    color: var(--brand-primary, #370022);
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+  }
+
+  .dotted-accent-top,
+  .dotted-accent-bottom {
+    display: none;
+  }
+}
+
+// Let's connect — centered white card on aubergine
+.cta-banner.huron-connect,
+.site-huron .cta-banner.huron-connect {
+  background: var(--brand-primary, #370022);
+  padding: 4rem 1rem;
+
+  .main-content {
+    justify-content: center;
+  }
+
+  .col-lg-6 {
+    max-width: 48rem;
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .content-wrapper {
+    background: #fff;
+    border-radius: var(--brand-card-radius, 1rem);
+    padding: 2.5rem 2.75rem;
+    text-align: left;
+  }
+
+  h1 {
+    color: var(--brand-primary, #370022);
+  }
+
+  .image-wrapper {
+    display: none;
+  }
+
+  .dotted-accent-top,
+  .dotted-accent-bottom {
+    display: none;
+  }
+}
+
+// Insights grid
+.three-column-cta.huron-insights,
+.site-huron .three-column-cta.huron-insights {
+  background: var(--brand-muted, #f5f3f0);
+  padding: 2rem 0 4rem;
+
+  .content-wrapper {
+    background: #fff;
+    border-radius: var(--brand-card-radius, 1rem);
+    overflow: hidden;
+    height: 100%;
+    padding-bottom: 1.25rem;
+    box-shadow: 0 2px 12px rgb(55 0 34 / 6%);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-3px);
+    }
+
+    img {
+      width: 100%;
+      height: 12rem;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.15rem;
+      padding: 0 1.25rem;
+      color: var(--brand-primary, #370022);
+    }
+
+    p {
+      padding: 0 1.25rem;
+      color: var(--brand-muted-fg, #5a5a5a);
+      font-size: 0.95rem;
+    }
+
+    .button {
+      margin: 0 1.25rem;
+      background: transparent;
+      border: none;
+      color: var(--brand-accent, #db354d);
+      padding-left: 0;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+}
+
+// Footer
+.footer.huron,
+.site-huron .footer {
+  background: var(--brand-footer-bg, #370022);
+  color: var(--brand-footer-fg, #ebe9e4);
+
+  .title,
+  a,
+  p,
+  .copyright {
+    color: var(--brand-footer-fg, #ebe9e4) !important;
+  }
+
+  .button-main {
+    margin-top: 1rem;
+  }
+}

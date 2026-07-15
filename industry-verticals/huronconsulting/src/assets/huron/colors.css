@@ -1,0 +1,42 @@
+:root {
+  --brand-primary: #370022;
+  --brand-primary-foreground: #ffffff;
+  --brand-secondary: #5c1a3a;
+  --brand-secondary-foreground: #ffffff;
+  --brand-accent: #db354d;
+  --brand-accent-foreground: #ffffff;
+  --brand-bg: #ffffff;
+  --brand-fg: #1a1a1a;
+  --brand-muted: #f5f3f0;
+  --brand-muted-fg: #5a5a5a;
+  --brand-header-bg: #370022;
+  --brand-header-fg: #ffffff;
+  --brand-footer-bg: #370022;
+  --brand-footer-fg: #ebe9e4;
+  --brand-border: #e5e1db;
+  --brand-ring: #db354d;
+  --brand-mint-light: #e8f5f0;
+  --brand-mint: #b8d9ce;
+  --brand-teal: #7eb8a8;
+  --brand-teal-deep: #4a9b8c;
+  --brand-cream: #ebe9e4;
+  --brand-radius: 0.75rem;
+  --brand-button-radius: 0.5rem;
+  --brand-card-radius: 1rem;
+
+  --color-background: var(--brand-bg);
+  --color-foreground: var(--brand-fg);
+  --color-primary: var(--brand-primary);
+  --color-primary-foreground: var(--brand-primary-foreground);
+  --color-primary-background: var(--brand-muted);
+  --color-primary-hover: #4a0a30;
+  --color-primary-active: #2a001a;
+  --color-secondary: var(--brand-secondary);
+  --color-secondary-foreground: var(--brand-secondary-foreground);
+  --color-muted: var(--brand-muted);
+  --color-muted-foreground: var(--brand-muted-fg);
+  --color-accent: var(--brand-accent);
+  --color-accent-foreground: var(--brand-accent-foreground);
+  --color-footer-bg: var(--brand-footer-bg);
+  --color-footer-fg: var(--brand-footer-fg);
+}

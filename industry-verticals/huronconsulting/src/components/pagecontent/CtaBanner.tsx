@@ -31,6 +31,91 @@ export type CtaBannerProps = ComponentProps & {
   fields: Fields;
 };
 
+/* Huron event banner — white card beside photo */
+export const Huron = (props: CtaBannerProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const [isVisible, domRef] = useVisibility();
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div
+      className={`component cta-banner component-spaced huron ${sxaStyles}`}
+      id={id ? id : undefined}
+      ref={domRef}
+    >
+      <div className="container container-widest-fluid">
+        <div className="container">
+          <div className="row row-gap-4 main-content align-items-center">
+            <div className="col-lg-6">
+              <div className="content-wrapper">
+                <h6 className="eyebrow-accent">
+                  <Text field={props.fields.Eyebrow} />
+                </h6>
+                <h1 className="display-4 fw-bold mb-3">
+                  <Text field={props.fields.Title} />
+                </h1>
+                <div className="fs-5">
+                  <RichText field={props.fields.Text} className="text-content" />
+                  {(isPageEditing || props.fields?.Link?.value?.href) && (
+                    <Link field={props.fields.Link} className="button button-main mt-3" />
+                  )}
+                </div>
+              </div>
+            </div>
+            <div className="col-md-10 mx-auto col-lg-6 mx-lg-0">
+              <div className="image-wrapper">
+                <NextImage
+                  field={props.fields.Image}
+                  className={`d-block mx-lg-auto img-fluid ${
+                    !isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
+                  }`}
+                  width={800}
+                  height={520}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* Huron connect — centered white card on aubergine */
+export const HuronConnect = (props: CtaBannerProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div
+      className={`component cta-banner component-spaced huron-connect ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="row main-content">
+          <div className="col-lg-6 mx-auto">
+            <div className="content-wrapper">
+              <h1 className="display-4 fw-bold mb-3">
+                <Text field={props.fields.Title} />
+              </h1>
+              <div className="fs-5">
+                <RichText field={props.fields.Text} className="text-content" />
+                {(isPageEditing || props.fields?.Link?.value?.href) && (
+                  <Link field={props.fields.Link} className="button button-main mt-3" />
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: CtaBannerProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

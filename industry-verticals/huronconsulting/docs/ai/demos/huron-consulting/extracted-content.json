@@ -1,0 +1,429 @@
+{
+  "url": "https://www.huronconsultinggroup.com/en",
+  "extractedAt": "2026-07-15T16:12:18.474Z",
+  "detectedLanguage": "en",
+  "targetLanguage": "en",
+  "translationNeeded": false,
+  "totalSections": 7,
+  "totalImages": 9,
+  "totalVideos": 0,
+  "interactionStats": {
+    "lazySourcesResolved": 0,
+    "tabsClicked": 0,
+    "accordionsExpanded": 6,
+    "carouselDotsClicked": 0,
+    "carouselArrowSlides": 0,
+    "backgroundImagesCollected": 0
+  },
+  "sections": [
+    {
+      "position": 1,
+      "tagName": "section",
+      "classHint": "component relative HCGHeroBannerHomePageHomePageBannerv2 huron-dark basis-full bg-background",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Power enterprise growth with Huron +AI"
+        },
+        {
+          "tag": "h4",
+          "text": "Reliable, scalable AI that moves your business forward"
+        }
+      ],
+      "paragraphs": [
+        "Power enterprise growth with Huron +AI",
+        "Reliable, scalable AI that moves your business forward"
+      ],
+      "links": [
+        {
+          "text": "Explore",
+          "href": "https://www.huronconsultinggroup.com/en/technology/artificial-intelligence",
+          "target": "_self"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.huronconsultinggroup.com/_next/image?url=https%3A%2F%2Fhcg-p-001.sitecorecontenthub.cloud%2Fapi%2Fpublic%2Fcontent%2F52750893b8f349f2baf026b33b201087%3Fv%3D564db0b6&w=1536&q=75",
+          "alt": "EnterpriseGrowth-AI-Hero-1600x900.png",
+          "type": "img",
+          "width": 1600,
+          "height": 900
+        }
+      ],
+      "listItems": [
+        {
+          "image": {
+            "src": "https://www.huronconsultinggroup.com/_next/image?url=https%3A%2F%2Fhcg-p-001.sitecorecontenthub.cloud%2Fapi%2Fpublic%2Fcontent%2F52750893b8f349f2baf026b33b201087%3Fv%3D564db0b6&w=1536&q=75",
+            "alt": "EnterpriseGrowth-AI-Hero-1600x900.png"
+          }
+        },
+        {
+          "title": "Power enterprise growth with Huron +AI",
+          "description": "Power enterprise growth with Huron +AI",
+          "link": {
+            "text": "Explore",
+            "href": "https://www.huronconsultinggroup.com/en/technology/artificial-intelligence"
+          }
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "tagName": "section",
+      "classHint": "component relative HCGDropdownSelectorDefault huron-dark basis-full bg-background component dropdown",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h3",
+          "text": "Your challenges, our priorities"
+        }
+      ],
+      "paragraphs": [
+        "Explore how our industry expertise and our capabilities can power your organization."
+      ],
+      "links": [],
+      "images": [],
+      "listItems": [
+        {
+          "description": "Industry expertise"
+        },
+        {
+          "description": "Capabilities"
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "tagName": "section",
+      "classHint": "component relative HCGVideoBannerBannerWithSplitVideo huron-dark basis-full bg-background",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Meet the moment."
+        },
+        {
+          "tag": "h2",
+          "text": "Own the future."
+        }
+      ],
+      "paragraphs": [
+        "Together, we bring the perspective, expertise, and commitment to turn your ambition into lasting results."
+      ],
+      "links": [
+        {
+          "text": "See what's next at Huron",
+          "href": "https://www.huronconsultinggroup.com/en/about-us/meet-the-moment-own-the-future",
+          "target": "_self"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.huronconsultinggroup.com/_next/image?url=https%3A%2F%2Fhcg-p-001.sitecorecontenthub.cloud%2Fapi%2Fpublic%2Fcontent%2F81d11d0670964016bcb03af45e6da24a%3Fv%3D87fb68ef&w=1536&q=75",
+          "alt": "HuronVideoThumbnails_Huron-BrandVideo-Thumbnail-1280x720 copy (1).png",
+          "type": "img",
+          "width": 1066,
+          "height": 600
+        },
+        {
+          "src": "https://edge.sitecorecloud.io/huronconsule9d4-hurone7d4-prod317d-47fe/media/project/hcg/shared/pagetemplates/play-button-container.svg?iar=0",
+          "alt": "play button",
+          "type": "img",
+          "width": 80,
+          "height": 80
+        }
+      ],
+      "listItems": [
+        {
+          "title": "Meet the moment.",
+          "description": "Meet the moment. Own the future.Together, we bring the perspective, expertise, and commitment to turn your ambition into lasting results.",
+          "link": {
+            "text": "See what's next at Huron",
+            "href": "https://www.huronconsultinggroup.com/en/about-us/meet-the-moment-own-the-future"
+          },
+          "image": {
+            "src": "https://www.huronconsultinggroup.com/_next/image?url=https%3A%2F%2Fhcg-p-001.sitecorecontenthub.cloud%2Fapi%2Fpublic%2Fcontent%2F81d11d0670964016bcb03af45e6da24a%3Fv%3D87fb68ef&w=1536&q=75",
+            "alt": "HuronVideoThumbnails_Huron-BrandVideo-Thumbnail-1280x720 copy (1).png"
+          }
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "tagName": "section",
+      "classHint": "component relative HCGTabAccordianDefault huron-light basis-full bg-background",
+      "backgroundHint": "light",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "T⁠r⁠a⁠n⁠s⁠f⁠o⁠r⁠m⁠a­t⁠i⁠o⁠n that sticks"
+        },
+        {
+          "tag": "h3",
+          "text": "S⁠t⁠r⁠a­t⁠e⁠g⁠y"
+        },
+        {
+          "tag": "h2",
+          "text": "S⁠t⁠r⁠a­t⁠e⁠g⁠y"
+        },
+        {
+          "tag": "h3",
+          "text": "O⁠p⁠e⁠r⁠a⁠t­i⁠o⁠n⁠s"
+        },
+        {
+          "tag": "h2",
+          "text": "O⁠p⁠e⁠r⁠a⁠t­i⁠o⁠n⁠s"
+        },
+        {
+          "tag": "h3",
+          "text": "Tech"
+        },
+        {
+          "tag": "h2",
+          "text": "Tech"
+        },
+        {
+          "tag": "h2",
+          "text": "People"
+        }
+      ],
+      "paragraphs": [
+        "Today’s strategic mandate: meet short-term imperatives while building for what’s next. We work alongside your teams to turn ambition into lasting performance across key dimensions.",
+        "Turn ambition into action.",
+        "Create bold, actionable growth strategies and define a clear path to move your organization forward.",
+        "Drive revenue through execution.",
+        "Streamline processes, reduce friction, and help your teams perform at their best to accelerate growth and improve margins.",
+        "Power performance across your business.",
+        "Harness AI and automation, modernize core systems, and enable faster, data-driven decisions.",
+        "Build capabilities for what’s next.",
+        "We work side by side with your teams to create alignment and momentum that turns change into results."
+      ],
+      "links": [
+        {
+          "text": "See how",
+          "href": "https://www.huronconsultinggroup.com/en/services/change-management",
+          "target": "_blank"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.huronconsultinggroup.com/_next/image?url=https%3A%2F%2Fhcg-p-001.sitecorecontenthub.cloud%2Fapi%2Fpublic%2Fcontent%2F1c959cadeaeb4179afe3c818509fec7e%3Fv%3D77e898ea&w=1536&q=75",
+          "alt": "HPAccordion_Transformation-Accordion-Strategy-1000x1000.png",
+          "type": "img",
+          "width": 937,
+          "height": 937
+        },
+        {
+          "src": "https://www.huronconsultinggroup.com/_next/image?url=https%3A%2F%2Fhcg-p-001.sitecorecontenthub.cloud%2Fapi%2Fpublic%2Fcontent%2F5209fbde498041369460b763cc2b9d2b%3Fv%3D0ce092f4&w=1536&q=75",
+          "alt": "HPAccordion_Transformation-Accordion-Operations-1000x1000.png",
+          "type": "img",
+          "width": 937,
+          "height": 937
+        },
+        {
+          "src": "https://www.huronconsultinggroup.com/_next/image?url=https%3A%2F%2Fhcg-p-001.sitecorecontenthub.cloud%2Fapi%2Fpublic%2Fcontent%2Fa1c8d7f3ab18491f9f024e90e80e141f%3Fv%3Dede34a75&w=1536&q=75",
+          "alt": "HPAccordion_Transformation-Accordion-Tech-1000x1000.png",
+          "type": "img",
+          "width": 937,
+          "height": 937
+        },
+        {
+          "src": "https://www.huronconsultinggroup.com/_next/image?url=https%3A%2F%2Fhcg-p-001.sitecorecontenthub.cloud%2Fapi%2Fpublic%2Fcontent%2F597783bdcb8847378354d82872d6a14a%3Fv%3D82262be1&w=1536&q=75",
+          "alt": "HPAccordion_Transformation-Accordion-People-1000x1000.png",
+          "type": "img",
+          "width": 937,
+          "height": 937
+        }
+      ],
+      "listItems": [
+        {
+          "title": "T⁠r⁠a⁠n⁠s⁠f⁠o⁠r⁠m⁠a­t⁠i⁠o⁠n that sticks",
+          "description": "T⁠r⁠a⁠n⁠s⁠f⁠o⁠r⁠m⁠a­t⁠i⁠o⁠n that sticks"
+        },
+        {
+          "title": "S⁠t⁠r⁠a­t⁠e⁠g⁠y",
+          "description": "S⁠t⁠r⁠a­t⁠e⁠g⁠y",
+          "image": {
+            "src": "https://www.huronconsultinggroup.com/_next/image?url=https%3A%2F%2Fhcg-p-001.sitecorecontenthub.cloud%2Fapi%2Fpublic%2Fcontent%2F1c959cadeaeb4179afe3c818509fec7e%3Fv%3D77e898ea&w=1536&q=75",
+            "alt": "HPAccordion_Transformation-Accordion-Strategy-1000x1000.png"
+          }
+        },
+        {
+          "title": "O⁠p⁠e⁠r⁠a⁠t­i⁠o⁠n⁠s",
+          "description": "O⁠p⁠e⁠r⁠a⁠t­i⁠o⁠n⁠s",
+          "image": {
+            "src": "https://www.huronconsultinggroup.com/_next/image?url=https%3A%2F%2Fhcg-p-001.sitecorecontenthub.cloud%2Fapi%2Fpublic%2Fcontent%2F5209fbde498041369460b763cc2b9d2b%3Fv%3D0ce092f4&w=1536&q=75",
+            "alt": "HPAccordion_Transformation-Accordion-Operations-1000x1000.png"
+          }
+        },
+        {
+          "title": "Tech",
+          "description": "Tech",
+          "image": {
+            "src": "https://www.huronconsultinggroup.com/_next/image?url=https%3A%2F%2Fhcg-p-001.sitecorecontenthub.cloud%2Fapi%2Fpublic%2Fcontent%2Fa1c8d7f3ab18491f9f024e90e80e141f%3Fv%3Dede34a75&w=1536&q=75",
+            "alt": "HPAccordion_Transformation-Accordion-Tech-1000x1000.png"
+          }
+        },
+        {
+          "title": "People",
+          "description": "People",
+          "link": {
+            "text": "See how",
+            "href": "https://www.huronconsultinggroup.com/en/services/change-management"
+          },
+          "image": {
+            "src": "https://www.huronconsultinggroup.com/_next/image?url=https%3A%2F%2Fhcg-p-001.sitecorecontenthub.cloud%2Fapi%2Fpublic%2Fcontent%2F597783bdcb8847378354d82872d6a14a%3Fv%3D82262be1&w=1536&q=75",
+            "alt": "HPAccordion_Transformation-Accordion-People-1000x1000.png"
+          }
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "tagName": "section",
+      "classHint": "component relative HCGBannerWithCardDefault huron-light basis-full bg-transparent overflow-hidden",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Join us this August at What’s Right in Health Care®"
+        }
+      ],
+      "paragraphs": [
+        "How can healthcare organizations move from pressure to progress? Join leaders and changemakers to exchange ideas, challenge thinking, and drive real results."
+      ],
+      "links": [
+        {
+          "text": "Learn more",
+          "href": "https://www.huronconsultinggroup.com/en/events/whats-right-in-health-care",
+          "target": "_self"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.huronconsultinggroup.com/_next/image?url=https%3A%2F%2Fhcg-p-001.sitecorecontenthub.cloud%2Fapi%2Fpublic%2Fcontent%2F3fd176824f544bd59ad7ab2de850ed43%3Fv%3Dcf73e6e2&w=1536&q=75",
+          "alt": "GettyImages-2203359867.jpg",
+          "type": "img",
+          "width": 1224,
+          "height": 816
+        }
+      ],
+      "listItems": [
+        {
+          "image": {
+            "src": "https://www.huronconsultinggroup.com/_next/image?url=https%3A%2F%2Fhcg-p-001.sitecorecontenthub.cloud%2Fapi%2Fpublic%2Fcontent%2F3fd176824f544bd59ad7ab2de850ed43%3Fv%3Dcf73e6e2&w=1536&q=75",
+            "alt": "GettyImages-2203359867.jpg"
+          }
+        },
+        {
+          "title": "Join us this August at What’s Right in Health Care®",
+          "description": "Join us this August at What’s Right in Health Care®",
+          "link": {
+            "text": "Learn more",
+            "href": "https://www.huronconsultinggroup.com/en/events/whats-right-in-health-care"
+          }
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "tagName": "section",
+      "classHint": "component relative HCGCardsGridDefault huron-light basis-full bg-background",
+      "backgroundHint": "light",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Insights and client impact"
+        },
+        {
+          "tag": "h4",
+          "text": "Responsible AI for higher education and research"
+        },
+        {
+          "tag": "h4",
+          "text": "Tampa General Hospital improves intensive care unit (ICU) operations using an intensivist-led model"
+        },
+        {
+          "tag": "h4",
+          "text": "The Hidden Cost of Complexity—and How to Eliminate It"
+        },
+        {
+          "tag": "h4",
+          "text": "From compliance to differentiation: Rethinking surveillance in financial services"
+        }
+      ],
+      "paragraphs": [],
+      "links": [
+        {
+          "text": "View all insights",
+          "href": "https://www.huronconsultinggroup.com/en/insights",
+          "target": "_self"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.huronconsultinggroup.com/_next/image?url=https%3A%2F%2Fhcg-p-001.sitecorecontenthub.cloud%2Fapi%2Fpublic%2Fcontent%2F48be0121135f4b4999017038e0cdd2bf%3Fv%3D780fa61f&w=1536&q=75",
+          "alt": "insights-keybank-relationships-oracle-financial-services-analytics-1600x900.jpg",
+          "type": "img",
+          "width": 1600,
+          "height": 900
+        }
+      ],
+      "listItems": [
+        {
+          "title": "Insights and client impact",
+          "description": "Insights and client impact",
+          "link": {
+            "text": "View all insights",
+            "href": "https://www.huronconsultinggroup.com/en/insights"
+          }
+        },
+        {
+          "title": "Responsible AI for higher education and research",
+          "description": "Artificial Intelligence|Chat Bots|Digital",
+          "image": {
+            "src": "https://www.huronconsultinggroup.com/_next/image?url=https%3A%2F%2Fhcg-p-001.sitecorecontenthub.cloud%2Fapi%2Fpublic%2Fcontent%2F48be0121135f4b4999017038e0cdd2bf%3Fv%3D780fa61f&w=1536&q=75",
+            "alt": "insights-keybank-relationships-oracle-financial-services-analytics-1600x900.jpg"
+          }
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "tagName": "section",
+      "classHint": "component relative HCGLeftTitleRightDescriptionBannerDefault huron-light basis-full bg-sidebar-prima",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Let's connect"
+        }
+      ],
+      "paragraphs": [
+        "Tell us a little about what you’re working on. We’ll connect you with the right experts to help you move forward."
+      ],
+      "links": [
+        {
+          "text": "Start the conversation",
+          "href": "https://www.huronconsultinggroup.com/en/contact-us",
+          "target": "_self"
+        }
+      ],
+      "images": [],
+      "listItems": [
+        {
+          "title": "Let's connect",
+          "description": "Let's connect"
+        },
+        {
+          "description": "Tell us a little about what you’re working on. We’ll connect you with the right experts to help you move forward.",
+          "link": {
+            "text": "Start the conversation",
+            "href": "https://www.huronconsultinggroup.com/en/contact-us"
+          }
+        }
+      ]
+    }
+  ]
+}

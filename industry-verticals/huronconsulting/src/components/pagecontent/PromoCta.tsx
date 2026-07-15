@@ -32,6 +32,47 @@ export type PromoCtaProps = ComponentProps & {
   fields: Fields;
 };
 
+/* Huron variant — aubergine split with video thumbnail card */
+export const Huron = (props: PromoCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const [isVisible, domRef] = useVisibility();
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component promo-cta huron ${sxaStyles}`} id={id ? id : undefined} ref={domRef}>
+      <div className="container">
+        <div className="row row-gap-4 main-content align-items-center">
+          <div className="col-lg-5 text-center text-lg-start">
+            <h1 className="display-6 fw-bold mb-3">
+              <Text field={props.fields.Title} />
+            </h1>
+            <div className="promo-cta-text">
+              <RichText field={props.fields.Text} className="text-content" />
+              {(isPageEditing || props.fields?.Link?.value?.href) && (
+                <Link field={props.fields.Link} className="button button-simple mt-3" />
+              )}
+            </div>
+          </div>
+          <div className="col-md-10 mx-auto col-lg-7 mx-lg-0">
+            <div className="image-wrapper">
+              <NextImage
+                field={props.fields.Image}
+                className={`d-block mx-lg-auto img-fluid ${
+                  !isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
+                }`}
+                width={900}
+                height={520}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: PromoCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

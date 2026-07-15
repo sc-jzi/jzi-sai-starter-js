@@ -32,6 +32,84 @@ export type ThreeColumnCtaProps = {
   fields: Fields;
 };
 
+/* Huron variant — insights cards */
+export const HuronInsights = (props: ThreeColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const Column = ({
+    image,
+    text,
+    subText,
+    link,
+    delay,
+  }: {
+    image: ImageField;
+    text: Field<string>;
+    subText: Field<string>;
+    link: LinkField;
+    delay?: number;
+  }) => {
+    const [isVisible, domRef] = useVisibility(delay);
+
+    return (
+      <div
+        className={`col-sm-12 col-lg-4 ${
+          !isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
+        } `}
+        ref={domRef}
+      >
+        <div className="content-wrapper">
+          <NextImage field={image} width={480} height={280} />
+          <h2>
+            <Text field={text} />
+          </h2>
+          <p>
+            <Text field={subText} />
+          </p>
+          {(isPageEditing || link?.value?.href) && (
+            <Link field={link} className="button button-simple" />
+          )}
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <div
+      className={`component component-spaced three-column-cta huron-insights ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="row">
+          <Column
+            image={props.fields.Image1}
+            text={props.fields.Text1}
+            subText={props.fields.SubText1}
+            link={props.fields.Link1}
+          />
+          <Column
+            image={props.fields.Image2}
+            text={props.fields.Text2}
+            subText={props.fields.SubText2}
+            link={props.fields.Link2}
+            delay={200}
+          />
+          <Column
+            image={props.fields.Image3}
+            text={props.fields.Text3}
+            subText={props.fields.SubText3}
+            link={props.fields.Link3}
+            delay={400}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: ThreeColumnCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

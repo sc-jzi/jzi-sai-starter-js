@@ -4,67 +4,206 @@ client:
   name: "Huron Consulting Group"
   sourceUrl: "https://www.huronconsultinggroup.com/en"
   startedAt: "2026-07-15T16:00:00Z"
-  lastUpdatedAt: "2026-07-15T16:15:00Z"
+  lastUpdatedAt: "2026-07-15T16:45:00Z"
 
 phases:
   phase0_inputs:
     status: "complete"
     screenshot: true
     url: "https://www.huronconsultinggroup.com/en"
-    notes: "User-provided full-page screenshot + Playwright scrape screenshots"
 
   phase0_5_manifest:
     status: "complete"
     validationMode: "quick"
     result: "adapted"
-    notes: "UIIM fmc-custom-demo not in environment. Using consulting/huronconsulting starter kit (same pattern as Progressive demo)."
+    notes: "UIIM fmc-custom-demo not in environment. Using consulting/huronconsulting starter kit."
 
   phase1_theme:
-    status: "pending"
+    status: "complete"
     themeFile: "docs/ai/themes/huron-consulting.theme.yaml"
-    userApproved: false
+    userApproved: true
 
   phase2_analysis:
-    status: "pending"
+    status: "complete"
     buildPlanFile: "docs/ai/demos/huron-consulting/build-plan.yaml"
     totalSections: 9
-    userApproved: false
+    userApproved: true
 
   phase2_5_content:
-    status: "pending"
-    contentMapFile: ""
-    extractorUsed: false
+    status: "complete"
+    contentMapFile: "docs/ai/demos/huron-consulting/content-map.yaml"
+    extractorUsed: true
+    notes: "Content Hub skipped per user — images manual"
 
   phase3_content:
-    status: "pending"
-    completedSections: 0
-    totalSections: 0
+    status: "complete"
+    completedSections: 9
+    totalSections: 9
+    notes: "9 datasources created under Data/Promos; images left empty"
 
   phase4_theme:
-    status: "pending"
-    themeDelivery: ""
-    cssWritten: false
-    fontsAdded: false
+    status: "complete"
+    themeDelivery: "huron-css"
+    cssWritten: true
+    fontsAdded: true
+    notes: "src/assets/huron/ + _huron-demo.scss + site-huron class"
 
   phase5_custom:
-    status: "pending"
+    status: "skipped"
     customComponentsNeeded: 1
     customComponentsBuilt: 0
+    notes: "Challenges dropdowns approximated with HeadingCta HuronChallenges"
 
   phase5_5_variants:
-    status: "pending"
-    variantsNeeded: 0
-    variantsCreated: 0
+    status: "complete"
+    variantsNeeded: 10
+    variantsCreated: 10
     variantSpecsFile: ""
     skippedReason: ""
 
   phase6_assembly:
-    status: "pending"
+    status: "failed"
     componentsAdded: 0
     datasourcesWired: 0
-    totalComponents: 0
+    totalComponents: 9
+    notes: "add_component_on_page returned conflict/errors — manual assembly required (manual-tasks.md)"
 
   phase7_summary:
-    status: "pending"
+    status: "complete"
 
-sections: []
+sections:
+  - position: 2
+    componentName: "Hero"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "5d3180c7-be49-4495-ae02-c6c23861d227"
+      fieldsPopulated: true
+      imagesExpected: 1
+      imagesUploaded: 0
+    phase5_5:
+      status: "created"
+      variantName: "Huron"
+      variantDefinitionId: "4d1fe21d-ac2d-4ba0-b165-c81f52c24e06"
+    phase6:
+      status: "failed"
+      error: "API assembly unavailable"
+
+  - position: 3
+    componentName: "HeadingCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "b4408e53-22fc-4907-9510-ae9af0d33754"
+      fieldsPopulated: true
+    phase5_5:
+      status: "created"
+      variantName: "HuronChallenges"
+      variantDefinitionId: "756b8de7-bc8a-4056-95ea-cbb9b022f3b6"
+    phase6:
+      status: "failed"
+
+  - position: 4
+    componentName: "PromoCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "2e2cd2f3-a8c2-49b1-be81-0aee1e0bd54c"
+      fieldsPopulated: true
+      imagesExpected: 1
+      imagesUploaded: 0
+    phase5_5:
+      status: "created"
+      variantName: "Huron"
+      variantDefinitionId: "b829f9b7-7b6c-43a1-a78f-b1344385b3c7"
+    phase6:
+      status: "failed"
+
+  - position: 5
+    componentName: "HeadingCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "87aeec6a-c2c1-4fa2-a2a9-ca331b0d3534"
+      fieldsPopulated: true
+    phase5_5:
+      status: "created"
+      variantName: "Huron"
+      variantDefinitionId: "f672df61-260c-48ad-a2ea-c450eba29bfb"
+    phase6:
+      status: "failed"
+
+  - position: 5
+    componentName: "FourColumnCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "584b21ad-5565-4914-9828-d3db8f0d6b12"
+      fieldsPopulated: true
+      imagesExpected: 4
+      imagesUploaded: 0
+    phase5_5:
+      status: "created"
+      variantName: "HuronTransformation"
+      variantDefinitionId: "a5898ae8-bb71-4679-92b2-46768aa6c8d9"
+    phase6:
+      status: "failed"
+
+  - position: 6
+    componentName: "CtaBanner"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "158f058e-b0f5-4aac-beb7-91140da5e43c"
+      fieldsPopulated: true
+      imagesExpected: 1
+      imagesUploaded: 0
+    phase5_5:
+      status: "created"
+      variantName: "Huron"
+      variantDefinitionId: "bbd13e5b-fdd6-4692-8c75-2626996353ab"
+    phase6:
+      status: "failed"
+
+  - position: 7
+    componentName: "HeadingCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "20a00891-98a8-4caf-a232-a813f4e40b7e"
+      fieldsPopulated: true
+    phase5_5:
+      status: "created"
+      variantName: "Huron"
+    phase6:
+      status: "failed"
+
+  - position: 7
+    componentName: "ThreeColumnCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "01fab6e1-145c-46e4-ae3b-257a84859c11"
+      fieldsPopulated: true
+      imagesExpected: 1
+      imagesUploaded: 0
+    phase5_5:
+      status: "created"
+      variantName: "HuronInsights"
+      variantDefinitionId: "ad5805ad-348c-4650-8391-f65091bdbb05"
+    phase6:
+      status: "failed"
+
+  - position: 8
+    componentName: "CtaBanner"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "66be5a82-378c-4917-9760-1b5e3f7f5fd3"
+      fieldsPopulated: true
+    phase5_5:
+      status: "created"
+      variantName: "HuronConnect"
+      variantDefinitionId: "42f45117-96d0-4151-a026-9aab9bcd3334"
+    phase6:
+      status: "failed"

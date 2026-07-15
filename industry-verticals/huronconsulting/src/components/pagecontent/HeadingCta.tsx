@@ -16,6 +16,68 @@ export type HeadingCtaProps = {
   fields: Fields;
 };
 
+/* Huron variant — section intro for Transformation / Insights */
+export const Huron = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component heading-cta huron ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="heading-content-wrapper">
+          {(isPageEditing || props.fields?.Eyebrow?.value) && (
+            <h6 className="eyebrow-accent">
+              <Text field={props.fields?.Eyebrow} />
+            </h6>
+          )}
+          <h2 className="huron-heading">
+            <Text field={props.fields?.Heading} />
+          </h2>
+          {(isPageEditing || props.fields?.Text?.value) && (
+            <p className="huron-body">
+              <Text field={props.fields?.Text} />
+            </p>
+          )}
+          {(isPageEditing || props.fields?.Link?.value?.href) && (
+            <Link field={props.fields.Link} className="button button-simple mt-3" />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* Huron Challenges — centered aubergine band */
+export const HuronChallenges = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div
+      className={`component heading-cta huron-challenges ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="heading-content-wrapper">
+          <h2 className="huron-heading">
+            <Text field={props.fields?.Heading} />
+          </h2>
+          <p className="huron-body">
+            <Text field={props.fields?.Text} />
+          </p>
+          {(isPageEditing || props.fields?.Link?.value?.href) && (
+            <Link field={props.fields.Link} className="button button-main" />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: HeadingCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

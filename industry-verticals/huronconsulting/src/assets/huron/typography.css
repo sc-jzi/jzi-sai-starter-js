@@ -1,0 +1,6 @@
+:root {
+  --brand-heading-font: 'Bricolage Grotesque', system-ui, sans-serif;
+  --brand-body-font: 'Roboto', system-ui, sans-serif;
+  --font-heading: var(--brand-heading-font);
+  --font-body: var(--brand-body-font);
+}

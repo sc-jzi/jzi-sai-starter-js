@@ -1,0 +1,285 @@
+client:
+  name: "Huron"
+  createdAt: "2026-07-15T16:20:00Z"
+  sourceUrl: "https://www.huronconsultinggroup.com/en"
+  contentSource: "extractor"
+
+summary:
+  totalSections: 9
+  simple: 7
+  list: 0
+  contextOnly: 2
+  imagesPending: 9
+  contentHubSkipped: true
+
+datasourceItems: []
+
+sections:
+  - position: 1
+    componentName: "Header"
+    manifestName: "Header"
+    kind: "context-only"
+    datasourceItemName: ""
+    apiAddable: false
+    fields: {}
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 2
+    componentName: "Hero"
+    manifestName: "Hero"
+    kind: "simple"
+    datasourceItemName: "Huron - Hero"
+    parentFolder: "e4f65454-59d3-4107-a385-f8baf1bf4033"
+    templateId: "90d315e8-aa42-4b23-a7eb-4491396453f8"
+    apiAddable: true
+    fields:
+      Title: "Power enterprise growth with Huron +AI"
+      Text: "<p>Reliable, scalable AI that moves your business forward.</p>"
+      Link:
+        text: "Explore"
+        href: "https://www.huronconsultinggroup.com/en/technology/artificial-intelligence"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image"
+        src: "section1-img1.jpg"
+        alt: "Enterprise growth with Huron +AI"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 3
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Huron - Challenges"
+    parentFolder: "2a93c370-dc70-49ea-985b-310c80cd36f3"
+    templateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Heading: "Your challenges, our priorities"
+      Text: "Explore how our industry expertise and our capabilities can power your organization."
+      Link:
+        text: "Industry expertise"
+        href: "https://www.huronconsultinggroup.com/en"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "medium"
+    contentSource: "extractor"
+
+  - position: 4
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    kind: "simple"
+    datasourceItemName: "Huron - Meet the Moment"
+    parentFolder: "2a93c370-dc70-49ea-985b-310c80cd36f3"
+    templateId: "c0943942-ae0f-4205-86fa-84884cce4a53"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Title: "Meet the moment. Own the future."
+      Subtitle: ""
+      Text: "<p>Together, we bring the perspective, expertise, and commitment to turn your ambition into lasting results.</p>"
+      Link:
+        text: "See what's next at Huron"
+        href: "https://www.huronconsultinggroup.com/en/about-us/meet-the-moment-own-the-future"
+        target: ""
+      Link2:
+        text: ""
+        href: "#"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image"
+        src: "section3-img2.jpg"
+        alt: "Huron brand video thumbnail"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 5
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Huron - Transformation Intro"
+    parentFolder: "2a93c370-dc70-49ea-985b-310c80cd36f3"
+    templateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Heading: "Transformation that sticks"
+      Text: "Today's strategic mandate: meet short-term imperatives while building for what's next. We work alongside your teams to turn ambition into lasting performance across key dimensions."
+      Link:
+        text: "See how"
+        href: "https://www.huronconsultinggroup.com/en/services/change-management"
+        target: "_blank"
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 5
+    componentName: "FourColumnCta"
+    manifestName: "FourColumnCta"
+    kind: "simple"
+    datasourceItemName: "Huron - Transformation Pillars"
+    parentFolder: "69fb385c-57c7-4895-a39a-dd8c037eb867"
+    templateId: "1b694ef9-154d-429a-9c3f-d7774cd4a852"
+    apiAddable: true
+    fields:
+      Title1: "Strategy"
+      Text1: "Turn ambition into action. Create bold, actionable growth strategies and define a clear path to move your organization forward."
+      Link1:
+        text: "Strategy"
+        href: "https://www.huronconsultinggroup.com/en"
+        target: ""
+      Title2: "Operations"
+      Text2: "Drive revenue through execution. Streamline processes, reduce friction, and help your teams perform at their best."
+      Link2:
+        text: "Operations"
+        href: "https://www.huronconsultinggroup.com/en"
+        target: ""
+      Title3: "Tech"
+      Text3: "Power performance across your business. Harness AI and automation, modernize core systems, and enable faster, data-driven decisions."
+      Link3:
+        text: "Tech"
+        href: "https://www.huronconsultinggroup.com/en"
+        target: ""
+      Title4: "People"
+      Text4: "Build capabilities for what's next. We work side by side with your teams to create alignment and momentum that turns change into results."
+      Link4:
+        text: "People"
+        href: "https://www.huronconsultinggroup.com/en/services/change-management"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image1"
+        src: "section4-img4.jpg"
+        alt: "Strategy"
+      - field: "Image2"
+        src: "section4-img5.jpg"
+        alt: "Operations"
+      - field: "Image3"
+        src: "section4-img6.jpg"
+        alt: "Tech"
+      - field: "Image4"
+        src: "section4-img7.jpg"
+        alt: "People"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 6
+    componentName: "CtaBanner"
+    manifestName: "CtaBanner"
+    kind: "simple"
+    datasourceItemName: "Huron - Health Care Event"
+    parentFolder: "e4f65454-59d3-4107-a385-f8baf1bf4033"
+    templateId: "4900d7e5-61b0-483a-a9d6-69419d4d5982"
+    apiAddable: true
+    fields:
+      Eyebrow: "Event"
+      Title: "Join us this August at What's Right in Health Care®"
+      Text: "<p>How can healthcare organizations move from pressure to progress? Join leaders and changemakers to exchange ideas, challenge thinking, and drive real results.</p>"
+      Link:
+        text: "Learn more"
+        href: "https://www.huronconsultinggroup.com/en/events/whats-right-in-health-care"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image"
+        src: "section5-img8.jpg"
+        alt: "What's Right in Health Care event"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 7
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Huron - Insights Intro"
+    parentFolder: "2a93c370-dc70-49ea-985b-310c80cd36f3"
+    templateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Heading: "Insights and client impact"
+      Text: ""
+      Link:
+        text: "View all insights"
+        href: "https://www.huronconsultinggroup.com/en/insights"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 7
+    componentName: "ThreeColumnCta"
+    manifestName: "ThreeColumnCta"
+    kind: "simple"
+    datasourceItemName: "Huron - Insights"
+    parentFolder: "7d7ba6ad-5264-4150-81ac-1bfa6ab0fba1"
+    templateId: "148d07ba-f923-4fb2-8907-0bd440d5db44"
+    apiAddable: true
+    fields:
+      Text1: "Responsible AI for higher education and research"
+      SubText1: "Use Huron's seven guiding principles for implementing responsible AI for higher ed and research and explore sample use cases."
+      Link1:
+        text: "Read more"
+        href: "https://www.huronconsultinggroup.com/en/insights"
+        target: ""
+      Text2: "Tampa General Hospital improves ICU operations using an intensivist-led model"
+      SubText2: "Learn how Tampa General implemented an intensivist-led ICU model and optimized operations to achieve $27M in ROI."
+      Link2:
+        text: "Read more"
+        href: "https://www.huronconsultinggroup.com/en/insights"
+        target: ""
+      Text3: "The Hidden Cost of Complexity—and How to Eliminate It"
+      SubText3: "Complexity can quietly erode profitability as businesses grow — leaders must simplify and focus on what drives performance."
+      Link3:
+        text: "Read more"
+        href: "https://www.huronconsultinggroup.com/en/insights"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image1"
+        src: "section6-img9.jpg"
+        alt: "Responsible AI for higher education"
+    matchConfidence: "medium"
+    contentSource: "extractor"
+
+  - position: 8
+    componentName: "CtaBanner"
+    manifestName: "CtaBanner"
+    kind: "simple"
+    datasourceItemName: "Huron - Lets Connect"
+    parentFolder: "e4f65454-59d3-4107-a385-f8baf1bf4033"
+    templateId: "4900d7e5-61b0-483a-a9d6-69419d4d5982"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Title: "Let's connect"
+      Text: "<p>Tell us a little about what you're working on. We'll connect you with the right experts to help you move forward.</p>"
+      Link:
+        text: "Start the conversation"
+        href: "https://www.huronconsultinggroup.com/en/contact-us"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 9
+    componentName: "Footer"
+    manifestName: "Footer"
+    kind: "context-only"
+    datasourceItemName: ""
+    apiAddable: false
+    fields: {}
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"

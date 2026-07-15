@@ -39,6 +39,73 @@ export type FooterProps = {
   fields: Fields;
 };
 
+/* Huron variant — aubergine mega footer styling */
+export const Huron = (props: FooterProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component component-spaced footer huron ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="content">
+          <div className="logo">
+            <NextImage
+              field={props.fields?.Image1}
+              width={200}
+              height={200}
+              className="img-fluid"
+            />
+          </div>
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-xl-4 row-gap-5 gx-5">
+            <div className="col">
+              <div className="title">
+                <Text field={props.fields?.Title1} />
+              </div>
+              <div className="links">
+                <RichText field={props.fields?.Text1} />
+              </div>
+            </div>
+            <div className="col">
+              <div className="title">
+                <Text field={props.fields?.Title2} />
+              </div>
+              <div className="links">
+                <RichText field={props.fields?.Text2} />
+              </div>
+            </div>
+            <div className="col">
+              <div className="title">
+                <Text field={props.fields?.Title3} />
+              </div>
+              <div className="links">
+                <RichText field={props.fields?.Text3} />
+              </div>
+            </div>
+            <div className="col">
+              <div className="title">
+                <Text field={props.fields?.Title4} />
+              </div>
+              <div className="links">
+                <RichText field={props.fields?.Text4} />
+              </div>
+              {(props.fields?.Link1?.value?.href || props.fields?.Link2?.value?.href) && (
+                <div className="mt-3">
+                  {props.fields?.Link1?.value?.href && (
+                    <Link field={props.fields.Link1} className="button button-main" />
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+          <div className="copyright">
+            <Text field={props.fields?.Copyright} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: FooterProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const sxaStyles = `${props.params?.styles || ''}`;
