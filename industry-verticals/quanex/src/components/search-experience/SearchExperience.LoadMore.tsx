@@ -1,5 +1,5 @@
 'use client';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { Suspense, useCallback, useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 import { useSitecore } from '@sitecore-content-sdk/nextjs';
@@ -13,11 +13,11 @@ import { SearchSkeletonItem } from './search-components/SearchSkeletonItem';
 import { SearchInput } from './search-components/SearchInput';
 import { useEvent } from './search-components/useEvent';
 import { useSearchField } from './search-components/useSearchField';
-import { DICTIONARY_KEYS, gridColsClass } from './search-components/constants';
+import { gridColsClass } from './search-components/constants';
 import { useParams } from './search-components/useParams';
 import { useRouter } from './search-components/useRouter';
 
-export const LoadMore = (props: SearchExperienceProps) => {
+const SearchExperienceLoadMoreInner = (props: SearchExperienceProps) => {
   const { page } = useSitecore();
   const { params } = props;
   const t = useTranslations();
@@ -93,7 +93,7 @@ export const LoadMore = (props: SearchExperienceProps) => {
             <SearchInput value={inputValue} onChange={(value) => onSearchChange(value, true)} />
 
             <p className="text-gray-600 mb-6">
-              {total} {t(DICTIONARY_KEYS.RESULTS_FOUND) || 'results found'}
+              {total} {'results found'}
             </p>
           </div>
 
@@ -139,7 +139,7 @@ export const LoadMore = (props: SearchExperienceProps) => {
                 disabled={isLoadingMore}
                 className="px-4 py-2 rounded-lg cursor-pointer bg-primary text-primary-foreground hover:bg-primary-hover disabled:opacity-50"
               >
-                {t(DICTIONARY_KEYS.LOAD_MORE) || 'Load more'}
+                { 'Load more'}
               </button>
             </div>
           )}
@@ -148,3 +148,9 @@ export const LoadMore = (props: SearchExperienceProps) => {
     </div>
   );
 };
+
+export const LoadMore = (props: SearchExperienceProps) => (
+  <Suspense fallback={null}>
+    <SearchExperienceLoadMoreInner {...props} />
+  </Suspense>
+);

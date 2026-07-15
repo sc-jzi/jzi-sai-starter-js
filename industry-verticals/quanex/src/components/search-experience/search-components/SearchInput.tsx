@@ -1,6 +1,5 @@
 'use client';
 import { useTranslations } from 'next-intl';
-import { DICTIONARY_KEYS } from './constants';
 
 interface SearchInputProps {
   value: string;
@@ -15,7 +14,7 @@ export const SearchInput = ({ value, onChange }: SearchInputProps) => {
       <div className="relative flex-1">
         <input
           type="text"
-          placeholder={t(DICTIONARY_KEYS.SEARCH_INPUT_PLACEHOLDER) || 'Search items...'}
+          placeholder={'Search items...'}
           value={value}
           onChange={(e) => onChange(e.target.value)}
           className="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"

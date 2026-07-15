@@ -1,6 +1,5 @@
 'use client';
 import { useTranslations } from 'next-intl';
-import { DICTIONARY_KEYS } from './constants';
 
 export const SearchError = ({ onTryAgain, error }: { onTryAgain: () => void; error: Error }) => {
   const t = useTranslations();
@@ -22,7 +21,7 @@ export const SearchError = ({ onTryAgain, error }: { onTryAgain: () => void; err
           />
         </svg>
         <h3 className="mt-4 text-lg font-semibold text-gray-900">
-          {t(DICTIONARY_KEYS.SOMETHING_WENT_WRONG) || 'Something went wrong'}
+          {'Something went wrong'}
         </h3>
         <p className="mt-2 text-gray-600">{error.message}</p>
         <div className="mt-6">
@@ -30,7 +29,7 @@ export const SearchError = ({ onTryAgain, error }: { onTryAgain: () => void; err
             onClick={onTryAgain}
             className="px-4 py-2 rounded-md bg-red-600 text-white cursor-pointer"
           >
-            {t(DICTIONARY_KEYS.TRY_AGAIN) || 'Try again'}
+            {'Try again'}
           </button>
         </div>
       </div>

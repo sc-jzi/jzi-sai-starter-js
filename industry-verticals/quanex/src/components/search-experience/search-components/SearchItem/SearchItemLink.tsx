@@ -4,7 +4,6 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@sitecore-content-sdk/nextjs';
 import { cn } from 'lib/utils';
 import { SearchItemFields } from './index';
-import { DICTIONARY_KEYS } from '../constants';
 
 type SearchItemLinkProps = {
   link: SearchItemFields['title'];
@@ -25,7 +24,7 @@ export const SearchItemLink = ({ className, link, onClick, ...props }: SearchIte
         onClick={onClick}
         {...props}
       >
-        {t(DICTIONARY_KEYS.READ_MORE) || 'Read More'}
+        {'Read More'}
         <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>

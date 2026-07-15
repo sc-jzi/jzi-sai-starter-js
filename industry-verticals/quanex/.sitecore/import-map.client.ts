@@ -26,7 +26,7 @@ import { SearchInput } from 'src/components/search-experience/search-components/
 import { useEvent } from 'src/components/search-experience/search-components/useEvent';
 import { useSearchField } from 'src/components/search-experience/search-components/useSearchField';
 import { useParams as useParams_8e40d23fed0f22fba70acbdfbd79e7011c185841 } from 'src/components/search-experience/search-components/useParams';
-import { DICTIONARY_KEYS, gridColsClass, DEFAULT_PAGE_SIZE, DEBOUNCE_TIME } from 'src/components/search-experience/search-components/constants';
+import { gridColsClass, DEFAULT_PAGE_SIZE, DEBOUNCE_TIME } from 'src/components/search-experience/search-components/constants';
 import { useRouter as useRouter_718da64eaca4c1615fa5f1603d6d6260be2e7c90 } from 'src/components/search-experience/search-components/useRouter';
 import { useDebouncedCallback } from 'src/components/search-experience/search-components/useDebounce';
 import { event, pageView } from '@sitecore-content-sdk/events';
@@ -201,7 +201,6 @@ const importMap = [
   {
     module: 'src/components/search-experience/search-components/constants',
     exports: [
-      { name: 'DICTIONARY_KEYS', value: DICTIONARY_KEYS },
       { name: 'gridColsClass', value: gridColsClass },
       { name: 'DEFAULT_PAGE_SIZE', value: DEFAULT_PAGE_SIZE },
       { name: 'DEBOUNCE_TIME', value: DEBOUNCE_TIME },

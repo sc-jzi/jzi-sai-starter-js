@@ -1,5 +1,5 @@
 'use client';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { Suspense, useCallback, useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import { useSearchParams } from 'next/navigation';
 import { useSitecore } from '@sitecore-content-sdk/nextjs';
@@ -15,10 +15,10 @@ import { SearchInput } from './search-components/SearchInput';
 import { useEvent } from './search-components/useEvent';
 import { useSearchField } from './search-components/useSearchField';
 import { useParams } from './search-components/useParams';
-import { DICTIONARY_KEYS, gridColsClass } from './search-components/constants';
+import { gridColsClass } from './search-components/constants';
 import { useRouter } from './search-components/useRouter';
 
-export const Default = (props: SearchExperienceProps) => {
+const SearchExperienceInner = (props: SearchExperienceProps) => {
   const { page } = useSitecore();
   const { params } = props;
   const t = useTranslations();
@@ -92,7 +92,7 @@ export const Default = (props: SearchExperienceProps) => {
             <SearchInput value={inputValue} onChange={(value) => onSearchChange(value, true)} />
 
             <p className="text-gray-600 mb-6">
-              {total} {t(DICTIONARY_KEYS.RESULTS_FOUND) || 'results found'}
+              {total} { 'results found'}
             </p>
           </div>
 
@@ -142,3 +142,9 @@ export const Default = (props: SearchExperienceProps) => {
     </div>
   );
 };
+
+export const Default = (props: SearchExperienceProps) => (
+  <Suspense fallback={null}>
+    <SearchExperienceInner {...props} />
+  </Suspense>
+);
