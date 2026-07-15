@@ -1,0 +1,46 @@
+{
+  "colors": {
+    "bodyBackground": "rgba(0, 0, 0, 0)",
+    "bodyColor": "rgb(0, 0, 0)",
+    "headerBackground": "rgba(0, 0, 0, 0)",
+    "headerColor": "rgb(0, 0, 0)",
+    "footerBackground": null,
+    "footerColor": "rgb(0, 0, 0)",
+    "heroBackground": "rgb(55, 0, 34)",
+    "primaryButtonBackground": "rgb(219, 53, 77)",
+    "primaryButtonColor": "rgb(0, 0, 0)",
+    "primaryButtonBorderRadius": "8px",
+    "linkColor": "rgb(235, 233, 228)"
+  },
+  "typography": {
+    "bodyFontFamily": "ui-sans-serif, system-ui, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+    "bodyFontSize": "16px",
+    "bodyFontWeight": "400",
+    "bodyLineHeight": "24px",
+    "h1FontFamily": "\"Bricolage Grotesque\", \"Bricolage Grotesque Fallback\", system-ui, -apple-system, \"Segoe UI\", Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+    "h1FontSize": "88px",
+    "h1FontWeight": "600",
+    "h1LetterSpacing": "normal",
+    "h1TextTransform": "none",
+    "h2FontFamily": "\"Bricolage Grotesque\", \"Bricolage Grotesque Fallback\", system-ui, -apple-system, \"Segoe UI\", Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+    "h2FontSize": "56px",
+    "h2FontWeight": "600",
+    "h3FontFamily": "\"Bricolage Grotesque\", \"Bricolage Grotesque Fallback\", system-ui, -apple-system, \"Segoe UI\", Helvetica, Arial, \"Apple Color Emoji\", \"Segoe UI Emoji\"",
+    "h3FontSize": "56px",
+    "h3FontWeight": "600",
+    "pFontSize": "20px",
+    "pLineHeight": "30px"
+  },
+  "shape": {
+    "cardBorderRadius": "0px",
+    "cardBoxShadow": "none",
+    "cardBorder": "0px solid rgb(229, 231, 235)",
+    "imgBorderRadius": "8px"
+  },
+  "spacing": {
+    "heroMinHeight": "auto",
+    "heroPadding": "0px",
+    "containerMaxWidth": "1536px"
+  },
+  "cssVariables": {}
+}

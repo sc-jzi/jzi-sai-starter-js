@@ -1,0 +1,126 @@
+# Client Brand Theme — Huron Consulting Group
+# Extracted from: https://www.huronconsultinggroup.com/en
+# Sources: Playwright scraper + full-page screenshot analysis
+
+client:
+  name: "Huron Consulting Group"
+  sourceUrl: "https://www.huronconsultinggroup.com/en"
+  extractedAt: "2026-07-15T16:10:00Z"
+  extractedBy: "cursor"
+
+colors:
+  primary: "#370022"
+  primaryForeground: "#ffffff"
+  secondary: "#5C1A3A"
+  secondaryForeground: "#ffffff"
+  accent: "#DB354D"
+  accentForeground: "#ffffff"
+  background: "#ffffff"
+  foreground: "#1a1a1a"
+  muted: "#F5F3F0"
+  mutedForeground: "#5a5a5a"
+  headerBackground: "#370022"
+  headerForeground: "#ffffff"
+  footerBackground: "#370022"
+  footerForeground: "#EBE9E4"
+  border: "#E5E1DB"
+  ring: "#DB354D"
+  extra:
+    - { name: "aubergine", value: "#370022" }
+    - { name: "huron-red", value: "#DB354D" }
+    - { name: "cream", value: "#EBE9E4" }
+    - { name: "mint-light", value: "#E8F5F0" }
+    - { name: "mint", value: "#B8D9CE" }
+    - { name: "teal", value: "#7EB8A8" }
+    - { name: "teal-deep", value: "#4A9B8C" }
+
+typography:
+  headingFamily: "'Bricolage Grotesque', system-ui, sans-serif"
+  headingWeight: "600"
+  bodyFamily: "'Roboto', system-ui, sans-serif"
+  bodyWeight: "400"
+  monoFamily: "ui-monospace, monospace"
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;700&family=Roboto:wght@400;500;700&display=swap"
+  scale:
+    hero: "3.5rem"
+    h1: "2.75rem"
+    h2: "2.25rem"
+    h3: "1.5rem"
+    body: "1.125rem"
+    small: "0.875rem"
+  headingTransform: "none"
+  letterSpacing: "normal"
+  lineHeight: "relaxed"
+
+spacing:
+  density: "comfortable"
+  sectionGap: "5rem"
+  containerMaxWidth: "1280px"
+  containerPadding: "1.5rem"
+
+shape:
+  borderRadius: "0.75rem"
+  buttonRadius: "0.5rem"
+  cardRadius: "1rem"
+  imageRadius: "0.5rem"
+  shadowStyle: "subtle"
+  borderStyle: "none"
+
+tone:
+  overall: "corporate-premium"
+  colorMode: "mixed"
+  contrast: "high"
+  imagery: "photography"
+  heroStyle: "full-bleed-image"
+  cardStyle: "soft-elevated"
+  navStyle: "solid-bar"
+
+tailwind:
+  colors:
+    brand:
+      primary: "#370022"
+      secondary: "#5C1A3A"
+      accent: "#DB354D"
+  fontFamily:
+    heading: ["Bricolage Grotesque", "system-ui", "sans-serif"]
+    body: ["Roboto", "system-ui", "sans-serif"]
+  borderRadius:
+    DEFAULT: "0.75rem"
+    button: "0.5rem"
+    card: "1rem"
+
+cssVariables: |
+  :root {
+    --brand-primary: #370022;
+    --brand-primary-foreground: #ffffff;
+    --brand-secondary: #5C1A3A;
+    --brand-secondary-foreground: #ffffff;
+    --brand-accent: #DB354D;
+    --brand-accent-foreground: #ffffff;
+    --brand-bg: #ffffff;
+    --brand-fg: #1a1a1a;
+    --brand-muted: #F5F3F0;
+    --brand-muted-fg: #5a5a5a;
+    --brand-header-bg: #370022;
+    --brand-header-fg: #ffffff;
+    --brand-footer-bg: #370022;
+    --brand-footer-fg: #EBE9E4;
+    --brand-border: #E5E1DB;
+    --brand-ring: #DB354D;
+    --brand-heading-font: 'Bricolage Grotesque', system-ui, sans-serif;
+    --brand-body-font: 'Roboto', system-ui, sans-serif;
+    --brand-radius: 0.75rem;
+    --brand-button-radius: 0.5rem;
+    --brand-card-radius: 1rem;
+  }
+
+extraction:
+  confidence: "high"
+  method: "playwright-full"
+  notes:
+    - "Primary aubergine #370022 from computed hero background (rgb(55, 0, 34))."
+    - "Accent CTA red #DB354D from primary button background (rgb(219, 53, 77))."
+    - "Headings use Bricolage Grotesque; body uses Roboto — both available via Google Fonts."
+    - "Transformation section uses a mint→teal column gradient (extra mint/teal tokens)."
+    - "Nav and footer are solid aubergine bars with white wordmark logo."
+    - "Buttons use 8px radius; cards use larger soft rounding (~16px)."

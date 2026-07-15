@@ -1,0 +1,317 @@
+{
+  "title": "Huron | Global Consulting for Healthcare, Education, Digital & More",
+  "themeColor": null,
+  "msColor": null,
+  "ogTitle": "Huron | Global Consulting for Healthcare, Education, Digital & More",
+  "ogDescription": "Businesses must be agile in their approach to understanding their customers — meeting today’s demands while also looking ahead to the future.",
+  "ogImage": "https://hcg-p-001.sitecorecontenthub.cloud/api/public/content/52750893b8f349f2baf026b33b201087?v=564db0b6",
+  "ogSiteName": null,
+  "favicon": "https://www.huronconsultinggroup.com/aubergine.ico",
+  "googleFontsLinks": [],
+  "fontFaces": [
+    {
+      "family": "Bricolage Grotesque",
+      "src": "url(\"/_next/static/media/93a6e477e1480c92-s.woff2\") format(\"woff2\")",
+      "weight": "200 800"
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "src": "url(\"/_next/static/media/c7e0cf6c760983e7-s.woff2\") format(\"woff2\")",
+      "weight": "200 800"
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "src": "url(\"/_next/static/media/9d5a263311222317-s.p.woff2\") format(\"woff2\")",
+      "weight": "200 800"
+    },
+    {
+      "family": "Bricolage Grotesque Fallback",
+      "src": "local(\"Arial\")",
+      "weight": ""
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/c105420a808404f9-s.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/3cbc75f5c018d32f-s.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/91c654c84b053f84-s.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/11162e2e78e50693-s.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/6cc3fdca981e5899-s.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/e1cbebb1360dabb8-s.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/c59220c5a9b01ae7-s.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/c9a21b8e54ee94b6-s.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/02743a8d10a3d186-s.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/c105420a808404f9-s.woff2\") format(\"woff2\")",
+      "weight": "500"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/3cbc75f5c018d32f-s.woff2\") format(\"woff2\")",
+      "weight": "500"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/91c654c84b053f84-s.woff2\") format(\"woff2\")",
+      "weight": "500"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/11162e2e78e50693-s.woff2\") format(\"woff2\")",
+      "weight": "500"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/6cc3fdca981e5899-s.woff2\") format(\"woff2\")",
+      "weight": "500"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/e1cbebb1360dabb8-s.woff2\") format(\"woff2\")",
+      "weight": "500"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/c59220c5a9b01ae7-s.woff2\") format(\"woff2\")",
+      "weight": "500"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/c9a21b8e54ee94b6-s.woff2\") format(\"woff2\")",
+      "weight": "500"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/02743a8d10a3d186-s.woff2\") format(\"woff2\")",
+      "weight": "500"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/c105420a808404f9-s.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/3cbc75f5c018d32f-s.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/91c654c84b053f84-s.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/11162e2e78e50693-s.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/6cc3fdca981e5899-s.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/e1cbebb1360dabb8-s.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/c59220c5a9b01ae7-s.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/c9a21b8e54ee94b6-s.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/02743a8d10a3d186-s.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/001f750b538f7a9e-s.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/80841ae24d03ed90-s.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/5eae37b69937655e-s.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/4f48fe9100901594-s.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/970d71e7dcbc144d-s.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/b3f718d64f9a6dea-s.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/4120b0a488381b31-s.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/1a634e73dfeff02c-s.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/1e41be92c43b3255-s.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/001f750b538f7a9e-s.woff2\") format(\"woff2\")",
+      "weight": "500"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/80841ae24d03ed90-s.woff2\") format(\"woff2\")",
+      "weight": "500"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/5eae37b69937655e-s.woff2\") format(\"woff2\")",
+      "weight": "500"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/4f48fe9100901594-s.woff2\") format(\"woff2\")",
+      "weight": "500"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/970d71e7dcbc144d-s.woff2\") format(\"woff2\")",
+      "weight": "500"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/b3f718d64f9a6dea-s.woff2\") format(\"woff2\")",
+      "weight": "500"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/4120b0a488381b31-s.woff2\") format(\"woff2\")",
+      "weight": "500"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/1a634e73dfeff02c-s.woff2\") format(\"woff2\")",
+      "weight": "500"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/1e41be92c43b3255-s.woff2\") format(\"woff2\")",
+      "weight": "500"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/001f750b538f7a9e-s.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/80841ae24d03ed90-s.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/5eae37b69937655e-s.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/4f48fe9100901594-s.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/970d71e7dcbc144d-s.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/b3f718d64f9a6dea-s.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/4120b0a488381b31-s.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/1a634e73dfeff02c-s.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto",
+      "src": "url(\"/_next/static/media/1e41be92c43b3255-s.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto Fallback",
+      "src": "local(\"Arial\")",
+      "weight": ""
+    },
+    {
+      "family": "slick",
+      "src": "url(\"/_next/static/media/slick.653a4cbb.woff\") format(\"woff\"), url(\"/_next/static/media/slick.6aa1ee46.ttf\") format(\"truetype\")",
+      "weight": "400"
+    }
+  ],
+  "logoCandidates": [
+    "https://edge.sitecorecloud.io/huronconsule9d4-hurone7d4-prod317d-47fe/media/project/hcg/shared/huron-light.svg?iar=0"
+  ],
+  "heroBgImage": null
+}

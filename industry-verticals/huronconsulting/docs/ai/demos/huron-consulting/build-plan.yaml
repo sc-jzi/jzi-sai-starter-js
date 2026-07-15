@@ -1,0 +1,236 @@
+# Demo Build Plan — Huron Consulting Group
+# Adapted for consulting/huronconsulting starter kit (UIIM fmc-custom-demo not deployed)
+
+client:
+  name: "Huron Consulting Group"
+  sourceUrl: "https://www.huronconsultinggroup.com/en"
+  themeFile: "docs/ai/themes/huron-consulting.theme.yaml"
+  analyzedAt: "2026-07-15T16:15:00Z"
+  environment: "consulting/huronconsulting"
+  note: "UIIM fmc-custom-demo manifest not deployed — using Financial-style starter kit components on huronconsulting site"
+
+pageAnalysis:
+  screenshotFiles:
+    desktop: "docs/ai/themes/huron-consulting/screenshot-desktop.png"
+    mobile: "docs/ai/themes/huron-consulting/screenshot-mobile.png"
+    hero: "docs/ai/themes/huron-consulting/screenshot-hero.png"
+    userProvided: "docs/ai/themes/huron-consulting/screenshot-desktop.png"
+  totalSections: 9
+  templateMatches: 8
+  customRequired: 1
+
+sections:
+  - position: 1
+    description: "Aubergine header with HURON wordmark, utility links (Investor Relations, Contact Us, Global), main nav (What We Do, How We Think, Who We Are, Careers), and red search button"
+    matchedComponent:
+      componentName: "Header"
+      renderingId: "81317d3b-f929-426a-83ec-421982f8f1e6"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: false
+      variantMatch: "partial"
+    sectionBackground: "primary"
+    contentNotes: "Context-only — lives in header partial design. Update logo + nav in Content Editor / Navigation items."
+
+  - position: 2
+    description: "Full-bleed hero photo (professional woman at computer) with white headline 'Power enterprise growth with Huron +AI', supporting line, and red Explore CTA"
+    matchedComponent:
+      componentName: "Hero"
+      renderingId: "b7cdf75e-716a-4c59-b9b1-cd970ae0a4ae"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+      variantMatch: "partial"
+      customVariantNeeded:
+        name: "Huron"
+        description: "Full-bleed dark photo background, left-aligned large Bricolage headline, cream/white subtext, compact red Explore button"
+        parentComponent: "Hero"
+    sectionBackground: "dark"
+    content:
+      Title: "Power enterprise growth with Huron +AI"
+      Text: "Reliable, scalable AI that moves your business forward."
+      Link: "Explore"
+
+  - position: 3
+    description: "Dark aubergine band — 'Your challenges, our priorities' with instructional text and two interactive dropdowns (Industry expertise / Capabilities)"
+    matchedComponent:
+      componentName: "HeadingCta"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "medium"
+      apiAddable: true
+      variantMatch: "none"
+      customVariantNeeded:
+        name: "HuronChallenges"
+        description: "Centered heading on aubergine background; optional dual dropdown strip below (static links if no JS form)"
+        parentComponent: "HeadingCta"
+    sectionBackground: "primary"
+    content:
+      Heading: "Your challenges, our priorities"
+      Text: "Explore how our industry expertise and our capabilities can power your organization."
+    contentNotes: "Live site has two cascading dropdown selectors — approximated with HeadingCta. Full interactivity flagged as custom."
+
+  - position: 4
+    description: "Split section on aubergine — left: 'Meet the moment. Own the future.' + copy + text link; right: light rounded video thumbnail card with HURON logo and red play button"
+    matchedComponent:
+      componentName: "PromoCta"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+      variantMatch: "partial"
+      customVariantNeeded:
+        name: "Huron"
+        description: "Text left on aubergine, soft grey video card right with play badge overlay"
+        parentComponent: "PromoCta"
+    sectionBackground: "primary"
+    content:
+      Title: "Meet the moment. Own the future."
+      Subtitle: "Together, we bring the perspective, expertise, and commitment to turn your ambition into lasting results."
+      Link: "See what's next at Huron"
+
+  - position: 5
+    description: "'Transformation that sticks' intro copy left; four vertical tinted columns — Strategy, Operations, Tech, People — in mint→teal progression"
+    matchedComponent:
+      componentName: "FourColumnCta"
+      renderingId: "35075000-760e-4ff3-bd1c-f2eeba251dcb"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+      variantMatch: "none"
+      customVariantNeeded:
+        name: "HuronTransformation"
+        description: "Intro heading overlaps / sits beside four full-height tinted columns (mint to teal) with capability titles"
+        parentComponent: "FourColumnCta"
+    sectionBackground: "default"
+    content:
+      Title1: "Strategy"
+      Text1: "Turn ambition into action. Create bold, actionable growth strategies and define a clear path forward."
+      Title2: "Operations"
+      Text2: "Drive revenue through execution. Streamline processes and help teams perform at their best."
+      Title3: "Tech"
+      Text3: "Power performance across your business. Harness AI and automation; modernize core systems."
+      Title4: "People"
+      Text4: "Build capabilities for what's next. Create alignment and momentum that turns change into results."
+    contentNotes: "Pair with a HeadingCta datasource for section intro 'Transformation that sticks' if needed, or fold intro into variant markup."
+
+  - position: 6
+    description: "Blurred office photo background with white content card — 'Join us this August at What's Right in Health Care®' + Learn more CTA"
+    matchedComponent:
+      componentName: "CtaBanner"
+      renderingId: "488b8ac0-0ef9-4f6f-8711-78ba182b2c4c"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+      variantMatch: "partial"
+      customVariantNeeded:
+        name: "Huron"
+        description: "Background image with left white rounded card overlay, maroon Learn more button"
+        parentComponent: "CtaBanner"
+    sectionBackground: "muted"
+    content:
+      Title: "Join us this August at What's Right in Health Care®"
+      Text: "How can healthcare organizations move from pressure to progress? Join leaders and changemakers to exchange ideas, challenge thinking, and drive real results."
+      Link: "Learn more"
+
+  - position: 7
+    description: "'Insights and client impact' — large featured card left (Responsible AI…) + three stacked text cards right; View all insights link"
+    matchedComponent:
+      componentName: "ThreeColumnCta"
+      renderingId: "ad385021-ce2b-4fc1-89aa-207d408034a8"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "medium"
+      apiAddable: true
+      variantMatch: "none"
+      customVariantNeeded:
+        name: "HuronInsights"
+        description: "Featured image card (span 2) + three stacked list cards; section heading with View all link"
+        parentComponent: "ThreeColumnCta"
+    sectionBackground: "muted"
+    contentNotes: "Starter ThreeColumnCta is a 3-up grid — Huron variant should recreate featured+list layout. Optionally add PromoCta as featured article if preferred."
+    content:
+      Title1: "Responsible AI for higher education and research"
+      Text1: "Use Huron's seven guiding principles for implementing responsible AI for higher ed and research."
+      Title2: "Tampa General Hospital improves ICU operations using an intensivist-led model"
+      Text2: "Learn how Tampa General achieved $27M in ROI and improved patient and provider experiences."
+      Title3: "The Hidden Cost of Complexity—and How to Eliminate It"
+      Text3: "Complexity quietly erodes profitability — leaders must simplify and focus on what drives performance."
+
+  - position: 8
+    description: "White rounded banner on aubergine — 'Let's connect' with supporting copy and red 'Start the conversation' button"
+    matchedComponent:
+      componentName: "CtaBanner"
+      renderingId: "488b8ac0-0ef9-4f6f-8711-78ba182b2c4c"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+      variantMatch: "partial"
+      customVariantNeeded:
+        name: "HuronConnect"
+        description: "Centered white card on aubergine ground, single red CTA"
+        parentComponent: "CtaBanner"
+    sectionBackground: "primary"
+    content:
+      Title: "Let's connect"
+      Text: "Tell us a little about what you're working on. We'll connect you with the right experts to help you move forward."
+      Link: "Start the conversation"
+
+  - position: 9
+    description: "Aubergine mega footer — HURON logo + mission, link columns, social icons, Our global presence CTA, legal bar"
+    matchedComponent:
+      componentName: "Footer"
+      renderingId: "771a3f27-6448-44ac-add0-e5de311c6e3b"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: false
+      variantMatch: "partial"
+    sectionBackground: "primary"
+    contentNotes: "Context-only — lives in footer partial design."
+
+customComponents:
+  - position: 3
+    name: "ChallengesSelector"
+    description: "Dual dropdown filter (Industry expertise × Capabilities) that drives navigation or recommendations"
+    reason: "No starter kit component supports cascading select filters"
+    recommendation: "Approximate with HeadingCta + static capability links; full fidelity needs custom component or BYOC"
+
+buildOrder:
+  phase1_sitecore:
+    - position: 2
+      componentName: "Hero"
+      datasourceName: "Huron - Hero"
+    - position: 3
+      componentName: "HeadingCta"
+      datasourceName: "Huron - Challenges"
+    - position: 4
+      componentName: "PromoCta"
+      datasourceName: "Huron - Meet the Moment"
+    - position: 5
+      componentName: "HeadingCta"
+      datasourceName: "Huron - Transformation Intro"
+    - position: 5
+      componentName: "FourColumnCta"
+      datasourceName: "Huron - Transformation Pillars"
+    - position: 6
+      componentName: "CtaBanner"
+      datasourceName: "Huron - Health Care Event"
+    - position: 7
+      componentName: "HeadingCta"
+      datasourceName: "Huron - Insights Intro"
+    - position: 7
+      componentName: "ThreeColumnCta"
+      datasourceName: "Huron - Insights"
+    - position: 8
+      componentName: "CtaBanner"
+      datasourceName: "Huron - Lets Connect"
+  phase2_theme: "Inline :root brand variables in globals.scss / brand CSS"
+  phase3_custom: []

@@ -1,0 +1,70 @@
+# Demo Progress Tracker — Huron Consulting Group
+
+client:
+  name: "Huron Consulting Group"
+  sourceUrl: "https://www.huronconsultinggroup.com/en"
+  startedAt: "2026-07-15T16:00:00Z"
+  lastUpdatedAt: "2026-07-15T16:15:00Z"
+
+phases:
+  phase0_inputs:
+    status: "complete"
+    screenshot: true
+    url: "https://www.huronconsultinggroup.com/en"
+    notes: "User-provided full-page screenshot + Playwright scrape screenshots"
+
+  phase0_5_manifest:
+    status: "complete"
+    validationMode: "quick"
+    result: "adapted"
+    notes: "UIIM fmc-custom-demo not in environment. Using consulting/huronconsulting starter kit (same pattern as Progressive demo)."
+
+  phase1_theme:
+    status: "pending"
+    themeFile: "docs/ai/themes/huron-consulting.theme.yaml"
+    userApproved: false
+
+  phase2_analysis:
+    status: "pending"
+    buildPlanFile: "docs/ai/demos/huron-consulting/build-plan.yaml"
+    totalSections: 9
+    userApproved: false
+
+  phase2_5_content:
+    status: "pending"
+    contentMapFile: ""
+    extractorUsed: false
+
+  phase3_content:
+    status: "pending"
+    completedSections: 0
+    totalSections: 0
+
+  phase4_theme:
+    status: "pending"
+    themeDelivery: ""
+    cssWritten: false
+    fontsAdded: false
+
+  phase5_custom:
+    status: "pending"
+    customComponentsNeeded: 1
+    customComponentsBuilt: 0
+
+  phase5_5_variants:
+    status: "pending"
+    variantsNeeded: 0
+    variantsCreated: 0
+    variantSpecsFile: ""
+    skippedReason: ""
+
+  phase6_assembly:
+    status: "pending"
+    componentsAdded: 0
+    datasourcesWired: 0
+    totalComponents: 0
+
+  phase7_summary:
+    status: "pending"
+
+sections: []
