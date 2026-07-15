@@ -1,6 +1,7 @@
 import { JSX } from 'react';
 import { AppPlaceholder, DesignLibraryApp, Field, Page } from '@sitecore-content-sdk/nextjs';
 import Scripts from 'src/Scripts';
+import Providers from 'src/Providers';
 import SitecoreStyles from 'components/content-sdk/SitecoreStyles';
 import componentMap from '.sitecore/component-map';
 import { getSiteThemeClass } from 'lib/site-theme';
@@ -23,58 +24,60 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
     <>
       <Scripts />
       <SitecoreStyles layoutData={layout} />
-      {/* root placeholder for the app, which we add components to using route data */}
-      <div className={`${mainClassPageEditing} ${siteThemeClass}`}>
-        {mode.isDesignLibrary ? (
-          route && (
-            <DesignLibraryApp
-              page={page}
-              rendering={route}
-              componentMap={componentMap}
-              loadServerImportMap={() => import('.sitecore/import-map.server')}
-            />
-          )
-        ) : (
-          <>
-            <header>
-              <div id="header">
-                {route && (
-                  <AppPlaceholder
-                    page={page}
-                    componentMap={componentMap}
-                    name="headless-header"
-                    rendering={route}
-                  />
-                )}
-              </div>
-            </header>
-            <main>
-              <div id="content">
-                {route && (
-                  <AppPlaceholder
-                    page={page}
-                    componentMap={componentMap}
-                    name="headless-main"
-                    rendering={route}
-                  />
-                )}
-              </div>
-            </main>
-            <footer>
-              <div id="footer">
-                {route && (
-                  <AppPlaceholder
-                    page={page}
-                    componentMap={componentMap}
-                    name="headless-footer"
-                    rendering={route}
-                  />
-                )}
-              </div>
-            </footer>
-          </>
-        )}
-      </div>
+      <Providers page={page}>
+        {/* root placeholder for the app, which we add components to using route data */}
+        <div className={`${mainClassPageEditing} ${siteThemeClass}`}>
+          {mode.isDesignLibrary ? (
+            route && (
+              <DesignLibraryApp
+                page={page}
+                rendering={route}
+                componentMap={componentMap}
+                loadServerImportMap={() => import('.sitecore/import-map.server')}
+              />
+            )
+          ) : (
+            <>
+              <header>
+                <div id="header">
+                  {route && (
+                    <AppPlaceholder
+                      page={page}
+                      componentMap={componentMap}
+                      name="headless-header"
+                      rendering={route}
+                    />
+                  )}
+                </div>
+              </header>
+              <main>
+                <div id="content">
+                  {route && (
+                    <AppPlaceholder
+                      page={page}
+                      componentMap={componentMap}
+                      name="headless-main"
+                      rendering={route}
+                    />
+                  )}
+                </div>
+              </main>
+              <footer>
+                <div id="footer">
+                  {route && (
+                    <AppPlaceholder
+                      page={page}
+                      componentMap={componentMap}
+                      name="headless-footer"
+                      rendering={route}
+                    />
+                  )}
+                </div>
+              </footer>
+            </>
+          )}
+        </div>
+      </Providers>
     </>
   );
 };

@@ -10,6 +10,46 @@ import * as LoanCalculator from 'src/components/utilities/LoanCalculator';
 import * as LanguageSwitcher from 'src/components/utilities/LanguageSwitcher';
 import * as ContactForm from 'src/components/utilities/ContactForm';
 import * as ApplicationForm from 'src/components/utilities/ApplicationForm';
+import * as SearchExperienceLoadMore from 'src/components/search-experience/SearchExperience.LoadMore';
+import * as SearchExperience from 'src/components/search-experience/SearchExperience';
+import * as useSearchField from 'src/components/search-experience/search-components/useSearchField';
+import * as useRouter from 'src/components/search-experience/search-components/useRouter';
+import * as useParams from 'src/components/search-experience/search-components/useParams';
+import * as useEvent from 'src/components/search-experience/search-components/useEvent';
+import * as useDebounce from 'src/components/search-experience/search-components/useDebounce';
+import * as SearchSkeletonItem from 'src/components/search-experience/search-components/SearchSkeletonItem';
+import * as SearchPagination from 'src/components/search-experience/search-components/SearchPagination';
+import * as SearchItemCommon from 'src/components/search-experience/search-components/SearchItemCommon';
+import * as SearchInput from 'src/components/search-experience/search-components/SearchInput';
+import * as SearchError from 'src/components/search-experience/search-components/SearchError';
+import * as SearchEmptyResults from 'src/components/search-experience/search-components/SearchEmptyResults';
+import * as models from 'src/components/search-experience/search-components/models';
+import * as constants from 'src/components/search-experience/search-components/constants';
+import * as SearchItemTitle from 'src/components/search-experience/search-components/SearchItem/SearchItemTitle';
+import * as SearchItemTags from 'src/components/search-experience/search-components/SearchItem/SearchItemTags';
+import * as SearchItemSummary from 'src/components/search-experience/search-components/SearchItem/SearchItemSummary';
+import * as SearchItemSubTitle from 'src/components/search-experience/search-components/SearchItem/SearchItemSubTitle';
+import * as SearchItemLink from 'src/components/search-experience/search-components/SearchItem/SearchItemLink';
+import * as SearchItemImage from 'src/components/search-experience/search-components/SearchItem/SearchItemImage';
+import * as SearchItemCategory from 'src/components/search-experience/search-components/SearchItem/SearchItemCategory';
+import * as index from 'src/components/search-experience/search-components/SearchItem/index';
+import * as SuggestionBlock from 'src/components/search/SuggestionBlock';
+import * as StandaloneSearchPagination from 'src/components/search/StandaloneSearchPagination';
+import * as Spinner from 'src/components/search/Spinner';
+import * as SortOrder from 'src/components/search/SortOrder';
+import * as SearchResultsComponent from 'src/components/search/SearchResultsComponent';
+import * as SearchResults from 'src/components/search/SearchResults';
+import * as SearchProvider from 'src/components/search/SearchProvider';
+import * as SearchFacets from 'src/components/search/SearchFacets';
+import * as ResultsPerPage from 'src/components/search/ResultsPerPage';
+import * as QuestionsAnswers from 'src/components/search/QuestionsAnswers';
+import * as QueryResultsSummary from 'src/components/search/QueryResultsSummary';
+import * as PreviewSearch from 'src/components/search/PreviewSearch';
+import * as HomeHighlighted from 'src/components/search/HomeHighlighted';
+import * as Filter from 'src/components/search/Filter';
+import * as CardViewSwitcher from 'src/components/search/CardViewSwitcher';
+import * as ArticleHorizontalCard from 'src/components/search/ArticleHorizontalCard';
+import * as ArticleCard from 'src/components/search/ArticleCard';
 import * as ColumnSplitter from 'src/components/pagestructure/ColumnSplitter';
 import * as TwoColumnCta from 'src/components/pagecontent/TwoColumnCta';
 import * as ThreeColumnCta from 'src/components/pagecontent/ThreeColumnCta';
@@ -62,6 +102,45 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['LanguageSwitcher', { ...LanguageSwitcher, componentType: 'client' }],
   ['ContactForm', { ...ContactForm, componentType: 'client' }],
   ['ApplicationForm', { ...ApplicationForm, componentType: 'client' }],
+  ['SearchExperience', { ...SearchExperienceLoadMore, ...SearchExperience, componentType: 'client' }],
+  ['useSearchField', { ...useSearchField, componentType: 'client' }],
+  ['useRouter', { ...useRouter, componentType: 'client' }],
+  ['useParams', { ...useParams, componentType: 'client' }],
+  ['useEvent', { ...useEvent, componentType: 'client' }],
+  ['useDebounce', { ...useDebounce, componentType: 'client' }],
+  ['SearchSkeletonItem', { ...SearchSkeletonItem, componentType: 'client' }],
+  ['SearchPagination', { ...SearchPagination, componentType: 'client' }],
+  ['SearchItemCommon', { ...SearchItemCommon, componentType: 'client' }],
+  ['SearchInput', { ...SearchInput, componentType: 'client' }],
+  ['SearchError', { ...SearchError, componentType: 'client' }],
+  ['SearchEmptyResults', { ...SearchEmptyResults, componentType: 'client' }],
+  ['models', { ...models }],
+  ['constants', { ...constants }],
+  ['SearchItemTitle', { ...SearchItemTitle, componentType: 'client' }],
+  ['SearchItemTags', { ...SearchItemTags, componentType: 'client' }],
+  ['SearchItemSummary', { ...SearchItemSummary, componentType: 'client' }],
+  ['SearchItemSubTitle', { ...SearchItemSubTitle, componentType: 'client' }],
+  ['SearchItemLink', { ...SearchItemLink, componentType: 'client' }],
+  ['SearchItemImage', { ...SearchItemImage, componentType: 'client' }],
+  ['SearchItemCategory', { ...SearchItemCategory, componentType: 'client' }],
+  ['index', { ...index, componentType: 'client' }],
+  ['SuggestionBlock', { ...SuggestionBlock, componentType: 'client' }],
+  ['StandaloneSearchPagination', { ...StandaloneSearchPagination, componentType: 'client' }],
+  ['Spinner', { ...Spinner }],
+  ['SortOrder', { ...SortOrder, componentType: 'client' }],
+  ['SearchResultsComponent', { ...SearchResultsComponent, componentType: 'client' }],
+  ['SearchResults', { ...SearchResults, componentType: 'client' }],
+  ['SearchProvider', { ...SearchProvider, componentType: 'client' }],
+  ['SearchFacets', { ...SearchFacets, componentType: 'client' }],
+  ['ResultsPerPage', { ...ResultsPerPage, componentType: 'client' }],
+  ['QuestionsAnswers', { ...QuestionsAnswers, componentType: 'client' }],
+  ['QueryResultsSummary', { ...QueryResultsSummary, componentType: 'client' }],
+  ['PreviewSearch', { ...PreviewSearch, componentType: 'client' }],
+  ['HomeHighlighted', { ...HomeHighlighted, componentType: 'client' }],
+  ['Filter', { ...Filter, componentType: 'client' }],
+  ['CardViewSwitcher', { ...CardViewSwitcher, componentType: 'client' }],
+  ['ArticleHorizontalCard', { ...ArticleHorizontalCard, componentType: 'client' }],
+  ['ArticleCard', { ...ArticleCard, componentType: 'client' }],
   ['ColumnSplitter', { ...ColumnSplitter, componentType: 'client' }],
   ['TwoColumnCta', { ...TwoColumnCta, componentType: 'client' }],
   ['ThreeColumnCta', { ...ThreeColumnCta, componentType: 'client' }],

@@ -11,7 +11,7 @@ import Spinner from './Spinner';
 import ArticleItemCard from './ArticleCard';
 import SortOrder from './SortOrder';
 import ArticleHorizontalItemCard from './ArticleHorizontalCard';
-import SearchPagination from './SearchPagination';
+import SearchPagination from './StandaloneSearchPagination';
 import SearchFacets from './SearchFacets';
 import ResultsPerPage from './ResultsPerPage';
 import QueryResultsSummary from './QueryResultsSummary';

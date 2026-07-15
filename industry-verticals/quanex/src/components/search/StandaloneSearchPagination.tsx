@@ -4,12 +4,12 @@ import { ArrowLeftIcon, ArrowRightIcon } from '@radix-ui/react-icons';
 import { useSearchResultsActions } from '@sitecore-search/react';
 import { Pagination } from '@sitecore-search/ui';
 
-type SearchPaginationProps = {
+type StandaloneSearchPaginationProps = {
   currentPage: number;
   totalPages: number;
 };
 
-const SearchPagination = ({ currentPage, totalPages }: SearchPaginationProps) => {
+const StandaloneSearchPagination = ({ currentPage, totalPages }: StandaloneSearchPaginationProps) => {
   const { onPageNumberChange } = useSearchResultsActions();
   return (
     <Pagination.Root
@@ -61,4 +61,4 @@ const SearchPagination = ({ currentPage, totalPages }: SearchPaginationProps) =>
   );
 };
 
-export default SearchPagination;
+export default StandaloneSearchPagination;
