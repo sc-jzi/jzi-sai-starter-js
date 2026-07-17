@@ -11,6 +11,7 @@ import * as ContactForm from 'src/components/utilities/ContactForm';
 import * as ApplicationForm from 'src/components/utilities/ApplicationForm';
 import * as SearchExperienceLoadMore from 'src/components/search-experience/SearchExperience.LoadMore';
 import * as SearchExperience from 'src/components/search-experience/SearchExperience';
+import * as PreviewSearch from 'src/components/search-experience/PreviewSearch';
 import * as useSearchField from 'src/components/search-experience/search-components/useSearchField';
 import * as useRouter from 'src/components/search-experience/search-components/useRouter';
 import * as useParams from 'src/components/search-experience/search-components/useParams';
@@ -32,6 +33,7 @@ import * as SearchItemCategory from 'src/components/search-experience/search-com
 import * as index from 'src/components/search-experience/search-components/SearchItem/index';
 import * as SuggestionBlock from 'src/components/search/SuggestionBlock';
 import * as StandaloneSearchPagination from 'src/components/search/StandaloneSearchPagination';
+import * as StandalonePreviewSearch from 'src/components/search/StandalonePreviewSearch';
 import * as SortOrder from 'src/components/search/SortOrder';
 import * as SearchResultsComponent from 'src/components/search/SearchResultsComponent';
 import * as SearchResults from 'src/components/search/SearchResults';
@@ -40,7 +42,6 @@ import * as SearchFacets from 'src/components/search/SearchFacets';
 import * as ResultsPerPage from 'src/components/search/ResultsPerPage';
 import * as QuestionsAnswers from 'src/components/search/QuestionsAnswers';
 import * as QueryResultsSummary from 'src/components/search/QueryResultsSummary';
-import * as PreviewSearch from 'src/components/search/PreviewSearch';
 import * as HomeHighlighted from 'src/components/search/HomeHighlighted';
 import * as Filter from 'src/components/search/Filter';
 import * as CardViewSwitcher from 'src/components/search/CardViewSwitcher';
@@ -98,6 +99,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ContactForm', { ...ContactForm }],
   ['ApplicationForm', { ...ApplicationForm }],
   ['SearchExperience', { ...SearchExperienceLoadMore, ...SearchExperience }],
+  ['PreviewSearch', { ...PreviewSearch }],
   ['useSearchField', { ...useSearchField }],
   ['useRouter', { ...useRouter }],
   ['useParams', { ...useParams }],
@@ -119,6 +121,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['index', { ...index }],
   ['SuggestionBlock', { ...SuggestionBlock }],
   ['StandaloneSearchPagination', { ...StandaloneSearchPagination }],
+  ['StandalonePreviewSearch', { ...StandalonePreviewSearch }],
   ['SortOrder', { ...SortOrder }],
   ['SearchResultsComponent', { ...SearchResultsComponent }],
   ['SearchResults', { ...SearchResults }],
@@ -127,7 +130,6 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ResultsPerPage', { ...ResultsPerPage }],
   ['QuestionsAnswers', { ...QuestionsAnswers }],
   ['QueryResultsSummary', { ...QueryResultsSummary }],
-  ['PreviewSearch', { ...PreviewSearch }],
   ['HomeHighlighted', { ...HomeHighlighted }],
   ['Filter', { ...Filter }],
   ['CardViewSwitcher', { ...CardViewSwitcher }],

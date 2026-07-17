@@ -41,12 +41,14 @@ import { SearchItemLink } from 'src/components/search-experience/search-componen
 import { SearchItemCategory } from 'src/components/search-experience/search-components/SearchItem/SearchItemCategory';
 import { SearchItemTags } from 'src/components/search-experience/search-components/SearchItem/SearchItemTags';
 import { SearchItemImage } from 'src/components/search-experience/search-components/SearchItem/SearchItemImage';
-import { usePreviewSearchActions, useSearchResultsActions, WidgetDataType, useSearchResults, widget, PageController, WidgetsProvider, useQuestions, usePreviewSearch, FilterEqual, useSearchResultsSelectedFilters } from '@sitecore-search/react';
-import { PreviewSearch, Pagination, SortSelect, AccordionFacets, FacetItem, RangeFacet, SearchResultsAccordionFacets, SearchResultsFacetValueRange, Select, ArticleCard, CardViewSwitcher as CardViewSwitcher_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7 } from '@sitecore-search/ui';
+import { usePreviewSearchActions, useSearchResultsActions, WidgetDataType, usePreviewSearch, widget, useSearchResults, PageController, WidgetsProvider, useQuestions, FilterEqual, useSearchResultsSelectedFilters } from '@sitecore-search/react';
+import { PreviewSearch, Pagination, ArticleCard, SortSelect, AccordionFacets, FacetItem, RangeFacet, SearchResultsAccordionFacets, SearchResultsFacetValueRange, Select, CardViewSwitcher as CardViewSwitcher_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7 } from '@sitecore-search/ui';
 import { ArrowLeftIcon, ArrowRightIcon, GridIcon, ListBulletIcon, CheckIcon, ChevronDownIcon } from '@radix-ui/react-icons';
-import { HIGHLIGHTED_ARTICLES_RFKID, SEARCH_WIDGET_ID, PREVIEW_WIDGET_ID, DEFAULT_IMG_URL, HOMEHIGHLIGHTED_WIDGET_ID } from 'src/_data/customizations';
-import HomeHighlighted from 'src/components/search/HomeHighlighted';
 import Spinner from 'src/components/search/Spinner';
+import SuggestionBlock from 'src/components/search/SuggestionBlock';
+import { PREVIEW_WIDGET_ID, HIGHLIGHTED_ARTICLES_RFKID, SEARCH_WIDGET_ID, DEFAULT_IMG_URL, HOMEHIGHLIGHTED_WIDGET_ID } from 'src/_data/customizations';
+import { useSearchTracking } from 'src/hooks/useSearchTracking';
+import HomeHighlighted from 'src/components/search/HomeHighlighted';
 import ArticleItemCard from 'src/components/search/ArticleCard';
 import SortOrder from 'src/components/search/SortOrder';
 import ArticleHorizontalItemCard from 'src/components/search/ArticleHorizontalCard';
@@ -55,11 +57,9 @@ import SearchFacets from 'src/components/search/SearchFacets';
 import ResultsPerPage from 'src/components/search/ResultsPerPage';
 import QueryResultsSummary from 'src/components/search/QueryResultsSummary';
 import CardViewSwitcher from 'src/components/search/CardViewSwitcher';
-import { useSearchTracking } from 'src/hooks/useSearchTracking';
 import SearchResultsWidget from 'src/components/search/SearchResultsComponent';
 import QuestionsAnswers from 'src/components/search/QuestionsAnswers';
 import { Accordion, Content, Header, Item, Trigger } from '@radix-ui/react-accordion';
-import SuggestionBlock from 'src/components/search/SuggestionBlock';
 import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import useVisibility from 'src/hooks/useVisibility';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -71,7 +71,7 @@ import Head from 'next/head';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import { ParallaxBackgroundImage } from 'components/non-sitecore/ParallaxBackgroundImage';
 import { IconAccent } from 'components/non-sitecore/IconAccent';
-import PreviewSearch_4de1a796917131c02c1d8f23d3df1bc9d5bbcf97 from 'src/components/search/PreviewSearch';
+import StandalonePreviewSearch from 'src/components/search/StandalonePreviewSearch';
 import client from 'src/lib/sitecore-client';
 import config from 'sitecore.config';
 
@@ -298,12 +298,12 @@ const importMap = [
       { name: 'usePreviewSearchActions', value: usePreviewSearchActions },
       { name: 'useSearchResultsActions', value: useSearchResultsActions },
       { name: 'WidgetDataType', value: WidgetDataType },
-      { name: 'useSearchResults', value: useSearchResults },
+      { name: 'usePreviewSearch', value: usePreviewSearch },
       { name: 'widget', value: widget },
+      { name: 'useSearchResults', value: useSearchResults },
       { name: 'PageController', value: PageController },
       { name: 'WidgetsProvider', value: WidgetsProvider },
       { name: 'useQuestions', value: useQuestions },
-      { name: 'usePreviewSearch', value: usePreviewSearch },
       { name: 'FilterEqual', value: FilterEqual },
       { name: 'useSearchResultsSelectedFilters', value: useSearchResultsSelectedFilters },
     ]
@@ -313,6 +313,7 @@ const importMap = [
     exports: [
       { name: 'PreviewSearch', value: PreviewSearch },
       { name: 'Pagination', value: Pagination },
+      { name: 'ArticleCard', value: ArticleCard },
       { name: 'SortSelect', value: SortSelect },
       { name: 'AccordionFacets', value: AccordionFacets },
       { name: 'FacetItem', value: FacetItem },
@@ -320,7 +321,6 @@ const importMap = [
       { name: 'SearchResultsAccordionFacets', value: SearchResultsAccordionFacets },
       { name: 'SearchResultsFacetValueRange', value: SearchResultsFacetValueRange },
       { name: 'Select', value: Select },
-      { name: 'ArticleCard', value: ArticleCard },
       { name: 'CardViewSwitcher', value: CardViewSwitcher_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7 },
     ]
   },
@@ -336,25 +336,37 @@ const importMap = [
     ]
   },
   {
+    module: 'src/components/search/Spinner',
+    exports: [
+      { name: 'default', value: Spinner },
+    ]
+  },
+  {
+    module: 'src/components/search/SuggestionBlock',
+    exports: [
+      { name: 'default', value: SuggestionBlock },
+    ]
+  },
+  {
     module: 'src/_data/customizations',
     exports: [
+      { name: 'PREVIEW_WIDGET_ID', value: PREVIEW_WIDGET_ID },
       { name: 'HIGHLIGHTED_ARTICLES_RFKID', value: HIGHLIGHTED_ARTICLES_RFKID },
       { name: 'SEARCH_WIDGET_ID', value: SEARCH_WIDGET_ID },
-      { name: 'PREVIEW_WIDGET_ID', value: PREVIEW_WIDGET_ID },
       { name: 'DEFAULT_IMG_URL', value: DEFAULT_IMG_URL },
       { name: 'HOMEHIGHLIGHTED_WIDGET_ID', value: HOMEHIGHLIGHTED_WIDGET_ID },
+    ]
+  },
+  {
+    module: 'src/hooks/useSearchTracking',
+    exports: [
+      { name: 'useSearchTracking', value: useSearchTracking },
     ]
   },
   {
     module: 'src/components/search/HomeHighlighted',
     exports: [
       { name: 'default', value: HomeHighlighted },
-    ]
-  },
-  {
-    module: 'src/components/search/Spinner',
-    exports: [
-      { name: 'default', value: Spinner },
     ]
   },
   {
@@ -406,12 +418,6 @@ const importMap = [
     ]
   },
   {
-    module: 'src/hooks/useSearchTracking',
-    exports: [
-      { name: 'useSearchTracking', value: useSearchTracking },
-    ]
-  },
-  {
     module: 'src/components/search/SearchResultsComponent',
     exports: [
       { name: 'default', value: SearchResultsWidget },
@@ -431,12 +437,6 @@ const importMap = [
       { name: 'Header', value: Header },
       { name: 'Item', value: Item },
       { name: 'Trigger', value: Trigger },
-    ]
-  },
-  {
-    module: 'src/components/search/SuggestionBlock',
-    exports: [
-      { name: 'default', value: SuggestionBlock },
     ]
   },
   {
@@ -515,9 +515,9 @@ const importMap = [
     ]
   },
   {
-    module: 'src/components/search/PreviewSearch',
+    module: 'src/components/search/StandalonePreviewSearch',
     exports: [
-      { name: 'default', value: PreviewSearch_4de1a796917131c02c1d8f23d3df1bc9d5bbcf97 },
+      { name: 'default', value: StandalonePreviewSearch },
     ]
   },
   {

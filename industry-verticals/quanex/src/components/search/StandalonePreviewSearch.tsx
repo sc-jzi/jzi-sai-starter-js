@@ -26,7 +26,7 @@ type ArticleModel = {
   name: string;
 };
 
-type PreviewSearchComponentProps = {
+type StandalonePreviewSearchComponentProps = {
   defaultItemsPerPage?: number;
   isOpen: boolean;
   setIsSearchOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -34,11 +34,11 @@ type PreviewSearchComponentProps = {
 
 type InitialState = PreviewSearchInitialState<'itemsPerPage' | 'suggestionsList'>;
 
-export const PreviewSearchComponent = ({
+export const StandalonePreviewSearchComponent = ({
   defaultItemsPerPage = 6,
   isOpen,
   setIsSearchOpen,
-}: PreviewSearchComponentProps) => {
+}: StandalonePreviewSearchComponentProps) => {
   const router = useRouter();
   const { handleSearch } = useSearchTracking();
 
@@ -165,9 +165,9 @@ export const PreviewSearchComponent = ({
   );
 };
 
-const PreviewSearchWidget = widget(
-  PreviewSearchComponent,
+const StandalonePreviewSearchWidget = widget(
+  StandalonePreviewSearchComponent,
   WidgetDataType.PREVIEW_SEARCH,
   'content'
 );
-export default PreviewSearchWidget;
+export default StandalonePreviewSearchWidget;

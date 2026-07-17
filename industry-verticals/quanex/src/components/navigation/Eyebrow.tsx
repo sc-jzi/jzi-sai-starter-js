@@ -3,7 +3,7 @@
 import { AppPlaceholder, ComponentMap, ImageField, useSitecore } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 import { JSX, useState } from 'react';
-import PreviewSearch from "../search/PreviewSearch"
+import StandalonePreviewSearch from "../search/StandalonePreviewSearch"
 import { PREVIEW_WIDGET_ID } from "../../_data/customizations";
 
 export type EyebrowProps = ComponentProps & {
@@ -27,7 +27,7 @@ export const Default = (props: EyebrowProps): JSX.Element => {
             <AppPlaceholder name="eyebrow-right" rendering={props.rendering} page={page} componentMap={props.componentMap} />
           </div>
           <div className="flex items-center gap-2">
-              <PreviewSearch rfkId={PREVIEW_WIDGET_ID} isOpen={isSearchOpen} setIsSearchOpen={setIsSearchOpen} />
+              <StandalonePreviewSearch rfkId={PREVIEW_WIDGET_ID} isOpen={isSearchOpen} setIsSearchOpen={setIsSearchOpen} />
 
               <button
                 onClick={() => setIsSearchOpen(false)}
