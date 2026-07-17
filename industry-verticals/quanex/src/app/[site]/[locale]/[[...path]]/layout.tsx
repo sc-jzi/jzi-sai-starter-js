@@ -11,5 +11,7 @@ export default async function SiteLayout({
 
   setCachedPageParams({ locale, site });
 
+  console.log(`locale: ${locale}`);
+
   return children;
 }
