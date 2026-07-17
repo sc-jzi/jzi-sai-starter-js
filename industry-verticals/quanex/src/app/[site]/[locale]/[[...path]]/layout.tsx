@@ -10,6 +10,8 @@ export default async function SiteLayout({
   const { site, locale } = await params;
 
   setCachedPageParams({ locale, site });
+  console.log('locale', locale);
+  console.log('site', site);
 
   return <>{children}</>;
 }
