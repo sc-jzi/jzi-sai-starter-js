@@ -71,7 +71,6 @@ import Head from 'next/head';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import { ParallaxBackgroundImage } from 'components/non-sitecore/ParallaxBackgroundImage';
 import { IconAccent } from 'components/non-sitecore/IconAccent';
-import StandalonePreviewSearch from 'src/components/search/StandalonePreviewSearch';
 import client from 'src/lib/sitecore-client';
 import config from 'sitecore.config';
 
@@ -512,12 +511,6 @@ const importMap = [
     module: 'components/non-sitecore/IconAccent',
     exports: [
       { name: 'IconAccent', value: IconAccent },
-    ]
-  },
-  {
-    module: 'src/components/search/StandalonePreviewSearch',
-    exports: [
-      { name: 'default', value: StandalonePreviewSearch },
     ]
   },
   {
