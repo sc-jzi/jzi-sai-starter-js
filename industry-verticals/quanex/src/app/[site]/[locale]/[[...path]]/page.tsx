@@ -17,6 +17,7 @@ type PageProps = {
 
 export default async function Page({ params }: PageProps) {
   const { site, locale, path } = await params;
+  console.log('locale (from page.tsx)', site);
 
   // Set site and locale to be available in src/i18n/request.ts for fetching the dictionary
   setRequestLocale(`${site}_${locale}`);
