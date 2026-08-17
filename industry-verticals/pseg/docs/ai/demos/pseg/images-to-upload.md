@@ -1,28 +1,23 @@
 # PSEG — Images to upload
 
-Content Hub (`https://jzi-verticals.sitecoresandbox.cloud`) returned **HTTP 503** during authenticate. Datasource Image fields use live `nj.pseg.com` URLs where accepted; variants also fall back to files in `public/pseg/`.
+All **13/13** images uploaded, approved, and public-linked in Content Hub. Datasource Image fields are set with DAM XML.
 
-When Content Hub is back:
+**Content Hub:** `https://jzi-verticals.sitecoresandbox.cloud`
 
-1. Upload each file from `docs/ai/demos/pseg/images/`
-2. Approve the asset
-3. Create a public link
-4. Set the Image field on the datasource below
+| File | Asset ID | Datasource | Field | Status |
+|------|----------|------------|-------|--------|
+| `logo.png` | 95515 | Header `LogoImage` + Footer `Image1` | LogoImage / Image1 | Uploaded |
+| `hero-jdp.jpg` | 95520 | PSEG - JD Power | Image | Uploaded |
+| `hero-bill.jpg` | 95525 | PSEG - Bill Help | Image | Uploaded |
+| `hero-gas.jpg` | 95530 | PSEG - Gas Safety | Image | Uploaded |
+| `myalerts.jpg` | 95543 | PSEG - Account Cards | Image1 | Uploaded |
+| `mymeter.jpg` | 95550 | PSEG - Account Cards | Image2 | Uploaded |
+| `business.jpg` | 95557 | PSEG - Business Needs | Image | Uploaded |
+| `worryfree-repair.jpg` | 95570 | PSEG - WorryFree Services | Image1 | Uploaded |
+| `worryfree-protect.jpg` | 95577 | PSEG - WorryFree Services | Image2 | Uploaded |
+| `worryfree-replace.jpg` | 95585 | PSEG - WorryFree Services | Image3 | Uploaded |
+| `appointment.jpg` | 95594 | PSEG - Make an Appointment | Image | Uploaded |
+| `community.jpg` | 95613 | PSEG - Powering the Future | Image | Uploaded |
+| `storm.jpg` | 95621 | PSEG - Storm Preparation | Image | Uploaded |
 
-| File | Section | Datasource | Field |
-|------|---------|------------|-------|
-| `logo.png` | Header / Footer | Header LogoImage / Footer Image1 | LogoImage / Image1 |
-| `hero-jdp.jpg` | Carousel slide 1 | PSEG - JD Power | Image |
-| `hero-bill.jpg` | Carousel slide 2 | PSEG - Bill Help | Image |
-| `hero-gas.jpg` | Carousel slide 3 | PSEG - Gas Safety | Image |
-| `myalerts.jpg` | Account cards | PSEG - Account Cards | Image1 |
-| `mymeter.jpg` | Account cards | PSEG - Account Cards | Image2 |
-| `business.jpg` | Business promo | PSEG - Business Needs | Image |
-| `worryfree-repair.jpg` | WorryFree | PSEG - WorryFree Services | Image1 |
-| `worryfree-protect.jpg` | WorryFree | PSEG - WorryFree Services | Image2 |
-| `worryfree-replace.jpg` | WorryFree | PSEG - WorryFree Services | Image3 |
-| `appointment.jpg` | Appointment | PSEG - Make an Appointment | Image |
-| `community.jpg` | Community | PSEG - Powering the Future | Image |
-| `storm.jpg` | Storm | PSEG - Storm Preparation | Image |
-
-Local copies also live in `public/pseg/` so the rendering host can show photography before DAM links are set.
+Public URLs and `imageFieldXml` are in `images/image-manifest.json`.

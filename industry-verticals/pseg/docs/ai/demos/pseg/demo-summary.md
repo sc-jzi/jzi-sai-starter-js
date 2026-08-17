@@ -16,7 +16,7 @@
 | Custom variants created | 12 |
 | Datasource items created | 10 parents + 3 carousel slides |
 | Fields populated | Text/links populated; images pending DAM |
-| Images uploaded | 0 / 13 (Content Hub HTTP 503) |
+| Images uploaded | 13 / 13 (Content Hub approved) |
 
 ---
 
@@ -61,15 +61,15 @@ Site name `pseg` maps to `site-pseg` in `src/lib/site-theme.ts`. Restart the ren
 
 ## Image Upload Summary
 
-**Content Hub:** `https://jzi-verticals.sitecoresandbox.cloud` — **503 Service Unavailable**
+**Content Hub:** `https://jzi-verticals.sitecoresandbox.cloud` — **13/13 uploaded and approved**
 
 | Result | Count |
 |--------|-------|
-| Uploaded + approved | 0 |
-| Failed | 13 (host 503) |
-| Local fallbacks | 13 in `public/pseg/` |
+| Uploaded + approved | 13 |
+| Failed | 0 |
+| Local fallbacks | 13 in `public/pseg/` (still used if DAM src is empty) |
 
-See `images-to-upload.md`. Variants use Sitecore Image fields when `src` is present, otherwise `/pseg/<file>.jpg`.
+See `images/image-manifest.json` for public URLs. Variants still fall back to `/pseg/<file>.jpg` if a field has no `src`.
 
 ---
 
@@ -82,7 +82,7 @@ Work through `manual-tasks.md` and `variant-checklist.md` in this order:
 3. Add Heading CTA, CTA Banner, and the Storm Promo CTA
 4. Select the Pseg* variants (including Header/Footer partials)
 5. Remove PLAY! leftovers (Comparison, Five Column CTA, Article List, Documents List, App Promo)
-6. Upload images to Content Hub when it is healthy
+6. Images are already in Content Hub — no DAM upload needed
 
 ---
 

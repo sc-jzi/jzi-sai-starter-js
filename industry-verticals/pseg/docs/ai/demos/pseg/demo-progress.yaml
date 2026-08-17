@@ -39,7 +39,7 @@ phases:
     status: "complete"
     completedSections: 10
     totalSections: 12
-    notes: "Header/Footer are context-only. Text and links populated. Images pending Content Hub (503). Local fallbacks in public/pseg."
+    notes: "Header/Footer are context-only. Text, links, and DAM images populated. Content Hub upload 13/13 approved."
 
   phase4_theme:
     status: "complete"

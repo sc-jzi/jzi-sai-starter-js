@@ -65,7 +65,7 @@ See `variant-checklist.md` for Pages editor steps.
 
 ## Images
 
-Content Hub is down (HTTP 503). Variants fall back to `public/pseg/*`. When DAM is available, follow `images-to-upload.md`.
+All 13 images are uploaded and approved in Content Hub. Datasource Image fields use DAM XML. See `images-to-upload.md` and `images/image-manifest.json`.
 
 ## Login card
 

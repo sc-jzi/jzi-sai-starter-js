@@ -32,15 +32,15 @@ datasourceItems:
       - name: "PSEG - JD Power"
         itemId: "85c6552a-90db-4414-9884-98f63592ef24"
         fieldsPopulated: ["Title", "Text", "Link", "Image"]
-        imageFieldsPending: ["Image"]
+        imageFieldsPending: []
       - name: "PSEG - Bill Help"
         itemId: "90fa3e9d-7984-44be-9ae2-8cd6a0637284"
         fieldsPopulated: ["Title", "Text", "Link", "Image"]
-        imageFieldsPending: ["Image"]
+        imageFieldsPending: []
       - name: "PSEG - Gas Safety"
         itemId: "f0e23cfb-eb3a-46e2-80ce-5e0de105e702"
         fieldsPopulated: ["Title", "Text", "Link", "Image"]
-        imageFieldsPending: ["Image"]
+        imageFieldsPending: []
   - componentName: "FourColumnCta"
     itemName: "PSEG - Quick Links"
     itemId: "5ae97e0b-ed18-4fc2-a649-ed70bcceb3e1"
@@ -53,14 +53,14 @@ datasourceItems:
     itemId: "77a67951-0b08-489e-b9fc-29e8a5a43d60"
     parentFolder: "acf32d82-37f9-42f3-a0a7-420d5631332c"
     fieldsPopulated: ["Title1", "Text1", "Link1", "Title2", "Text2", "Link2", "Image1", "Image2"]
-    imageFieldsPending: ["Image1", "Image2"]
+    imageFieldsPending: []
     children: []
   - componentName: "PromoCta"
     itemName: "PSEG - Business Needs"
     itemId: "012620db-7d2e-4526-a5b7-cc37fca67c81"
     parentFolder: "acf32d82-37f9-42f3-a0a7-420d5631332c"
     fieldsPopulated: ["Eyebrow", "Title", "Text", "Link", "Image"]
-    imageFieldsPending: ["Image"]
+    imageFieldsPending: []
     children: []
   - componentName: "HeadingCta"
     itemName: "PSEG - WorryFree Intro"
@@ -74,14 +74,14 @@ datasourceItems:
     itemId: "f4badaa8-dccb-4ddd-945f-7686e72c7b4b"
     parentFolder: "acf32d82-37f9-42f3-a0a7-420d5631332c"
     fieldsPopulated: ["Text1", "SubText1", "Link1", "Text2", "SubText2", "Link2", "Text3", "SubText3", "Link3", "Image1", "Image2", "Image3"]
-    imageFieldsPending: ["Image1", "Image2", "Image3"]
+    imageFieldsPending: []
     children: []
   - componentName: "CtaBanner"
     itemName: "PSEG - Make an Appointment"
     itemId: "9b11927b-af95-4d65-81ee-fd08a7a671d4"
     parentFolder: "acf32d82-37f9-42f3-a0a7-420d5631332c"
     fieldsPopulated: ["Title", "Text", "Link", "Image"]
-    imageFieldsPending: ["Image"]
+    imageFieldsPending: []
     children: []
   - componentName: "PromoCta"
     itemName: "PSEG - Energy Savings"
@@ -95,14 +95,14 @@ datasourceItems:
     itemId: "9063f9dc-5d8f-4510-b9e3-e90ace44dbbc"
     parentFolder: "acf32d82-37f9-42f3-a0a7-420d5631332c"
     fieldsPopulated: ["Eyebrow", "Title", "Text", "Link", "Image"]
-    imageFieldsPending: ["Image"]
+    imageFieldsPending: []
     children: []
   - componentName: "PromoCta"
     itemName: "PSEG - Storm Preparation"
     itemId: "64e6aa55-969c-4c00-bced-c62843fdd666"
     parentFolder: "acf32d82-37f9-42f3-a0a7-420d5631332c"
     fieldsPopulated: ["Eyebrow", "Title", "Text", "Link", "Image"]
-    imageFieldsPending: ["Image"]
+    imageFieldsPending: []
     children: []
 
 sections:
