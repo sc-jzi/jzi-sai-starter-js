@@ -1,9 +1,12 @@
 const SITE_THEME_CLASS_MAP: Record<string, string> = {
   Financial: 'site-financial',
   Services: 'site-services',
+  pseg: 'site-pseg',
+  PSEG: 'site-pseg',
+  Pseg: 'site-pseg',
 };
 
-const DEFAULT_SITE_THEME_CLASS = 'site-financial';
+const DEFAULT_SITE_THEME_CLASS = 'site-pseg';
 
 export function getSiteThemeClass(siteName: string | undefined): string {
   if (!siteName) {

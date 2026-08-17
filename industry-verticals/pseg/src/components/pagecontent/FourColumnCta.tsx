@@ -36,6 +36,40 @@ export type FourColumnCtaProps = {
   fields: Fields;
 };
 
+/* Pseg variant — horizontal quick-link bar with dividers */
+export const PsegQuickLinks = (props: FourColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const Item = ({ title, text, link }: { title: Field<string>; text: Field<string>; link: LinkField }) => (
+    <div className="pseg-quick-item">
+      <Link field={link}>
+        <Text field={title} />
+      </Link>
+      {(isPageEditing || text?.value) && (
+        <p>
+          <Text field={text} />
+        </p>
+      )}
+    </div>
+  );
+
+  return (
+    <div className={`component four-column-cta pseg-quick-links ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="pseg-quick-row">
+          <Item title={props.fields.Title1} text={props.fields.Text1} link={props.fields.Link1} />
+          <Item title={props.fields.Title2} text={props.fields.Text2} link={props.fields.Link2} />
+          <Item title={props.fields.Title3} text={props.fields.Text3} link={props.fields.Link3} />
+          <Item title={props.fields.Title4} text={props.fields.Text4} link={props.fields.Link4} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: FourColumnCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

@@ -13,6 +13,7 @@ import {
 } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 import useVisibility from 'src/hooks/useVisibility';
+import { PsegMedia, hasRealHref } from 'components/non-sitecore/PsegMedia';
 
 interface Fields {
   Title1: Field<string>;
@@ -28,6 +29,83 @@ interface Fields {
 export type TwoColumnCtaProps = ComponentProps & {
   params: { [key: string]: string };
   fields: Fields;
+};
+
+const PSEG_LOGIN = 'https://nj.myaccount.pseg.com/user/login';
+
+/* Pseg variant — MyAlerts / MyMeter account cards with dual CTAs */
+export const PsegAccountCards = (props: TwoColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const Card = ({
+    image,
+    title,
+    text,
+    link,
+    fallback,
+    alt,
+  }: {
+    image: ImageField;
+    title: Field<string>;
+    text: Field<string>;
+    link: LinkField;
+    fallback: string;
+    alt: string;
+  }) => (
+    <div className="col-sm-12 col-lg-6">
+      <div className="pseg-account-card">
+        <PsegMedia field={image} fallback={fallback} alt={alt} className="pseg-account-image" width={800} height={420} />
+        <div className="pseg-account-body">
+          {(isPageEditing || title?.value) && (
+            <h2>
+              <Text field={title} />
+            </h2>
+          )}
+          {(isPageEditing || text?.value) && (
+            <p>
+              <Text field={text} />
+            </p>
+          )}
+          <div className="pseg-account-actions">
+            {(isPageEditing || hasRealHref(link?.value?.href)) && (
+              <Link field={link} className="pseg-text-link" />
+            )}
+            <a className="pseg-text-link" href={PSEG_LOGIN}>
+              Login
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className={`component two-column-cta pseg-account-cards ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="row g-4">
+          <Card
+            image={props.fields.Image1}
+            title={props.fields.Title1}
+            text={props.fields.Text1}
+            link={props.fields.Link1}
+            fallback="/pseg/myalerts.jpg"
+            alt="Man using a smartphone"
+          />
+          <Card
+            image={props.fields.Image2}
+            title={props.fields.Title2}
+            text={props.fields.Text2}
+            link={props.fields.Link2}
+            fallback="/pseg/mymeter.jpg"
+            alt="Woman using a laptop computer"
+          />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export const Default = (props: TwoColumnCtaProps): JSX.Element => {

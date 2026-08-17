@@ -16,6 +16,7 @@ import { ComponentProps } from 'lib/component-props';
 import { DottedAccent } from 'components/non-sitecore/DottedAccent';
 import { IconAccent } from 'components/non-sitecore/IconAccent';
 import useVisibility from 'src/hooks/useVisibility';
+import { PsegMedia, hasRealHref } from 'components/non-sitecore/PsegMedia';
 
 interface Fields {
   Eyebrow: Field<string>;
@@ -29,6 +30,46 @@ interface Fields {
 export type CtaBannerProps = ComponentProps & {
   params: { [key: string]: string };
   fields: Fields;
+};
+
+/* Pseg variant — gray copy panel + appointment portrait */
+export const PsegAppointment = (props: CtaBannerProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component cta-banner pseg-appointment ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container-fluid px-0">
+        <div className="row g-0 pseg-appt-row">
+          <div className="col-lg-6 pseg-appt-copy">
+            {(isPageEditing || props.fields?.Eyebrow?.value) && (
+              <h6 className="eyebrow-accent">
+                <Text field={props.fields.Eyebrow} />
+              </h6>
+            )}
+            <h1>
+              <Text field={props.fields.Title} />
+            </h1>
+            <RichText field={props.fields.Text} className="text-content" />
+            {(isPageEditing || hasRealHref(props.fields?.Link?.value?.href)) && (
+              <Link field={props.fields.Link} className="button button-main" />
+            )}
+          </div>
+          <div className="col-lg-6 pseg-appt-media">
+            <PsegMedia
+              field={props.fields.Image}
+              fallback="/pseg/appointment.jpg"
+              alt="Customer service representative"
+              width={900}
+              height={560}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export const Default = (props: CtaBannerProps): JSX.Element => {

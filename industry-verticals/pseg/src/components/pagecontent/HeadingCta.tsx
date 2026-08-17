@@ -16,6 +16,37 @@ export type HeadingCtaProps = {
   fields: Fields;
 };
 
+/* Pseg variant — centered WorryFree intro, no leftover CTA */
+export const Pseg = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const href = props.fields?.Link?.value?.href;
+  const showLink = isPageEditing || (!!href && href !== '#' && !href.includes('example.com'));
+
+  return (
+    <div className={`component heading-cta pseg ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="heading-content-wrapper">
+          {(isPageEditing || props.fields?.Eyebrow?.value) && (
+            <h6 className="eyebrow-accent">
+              <Text field={props.fields?.Eyebrow} />
+            </h6>
+          )}
+          <h2>
+            <Text field={props.fields?.Heading} />
+          </h2>
+          <p>
+            <Text field={props.fields?.Text} />
+          </p>
+          {showLink && <Link field={props.fields.Link} className="button button-main" />}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: HeadingCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

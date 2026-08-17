@@ -1,0 +1,330 @@
+# Demo Build Plan — PSEG
+# Adapted for Utilities/pseg Financial starter kit (UIIM fmc-custom-demo not deployed)
+
+client:
+  name: "PSEG"
+  sourceUrl: "https://nj.pseg.com/"
+  themeFile: "docs/ai/themes/pseg.theme.yaml"
+  analyzedAt: "2026-08-17T16:05:00Z"
+  environment: "Utilities/pseg"
+  contentRoot: "/sitecore/content/Utilities/pseg"
+  codeRoot: "industry-verticals/pseg"
+  note: "UIIM fmc-custom-demo library is not deployed — using Financial starter kit components (same approach as Quanex / Huron / Progressive)."
+
+pageAnalysis:
+  screenshotFiles:
+    desktop: "docs/ai/themes/pseg/screenshot-desktop.png"
+    userProvided: "docs/ai/themes/pseg/screenshot-desktop.png"
+  totalSections: 12
+  templateMatches: 11
+  customRequired: 1
+
+sections:
+  - position: 1
+    description: "Navy utility bar (PSEG Corporate / PSE&G / PSEG Long Island / PSEG Power, Español, Contact Us, 800-436-7734) plus white header with orange PSEG logo, Pay Bill / Outage / Safety / Help icons, and navy text nav (My Account, Customer Support, Powering..., Save Energy & Money, Safety & Reliability, Business Resources, In the Community)"
+    matchedComponent:
+      componentName: "Header"
+      renderingId: "81317d3b-f929-426a-83ec-421982f8f1e6"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: false
+      variantMatch: "none"
+      customVariantNeeded:
+        name: "Pseg"
+        description: "Two-row header — navy utility bar + logo/quick-actions row + underlined nav links. Orange sunburst logo left, four icon shortcuts right of logo."
+        parentComponent: "Header"
+    sectionBackground: "default"
+    contentNotes: "Context-only — lives in header partial design. Update logo, Eyebrow/utility links, Navigation items, and icon shortcuts in Content Editor. Not addable via add_component_on_page."
+
+  - position: 2
+    description: "Full-width navy gradient hero carousel with J.D. Power trophy, '#1 for Large Electric Utility Residential Customer Satisfaction in the East Region', Learn more link, and a white Login to My Account card (LOGIN + REGISTER) on the right. Side arrows and dots."
+    matchedComponent:
+      componentName: "Carousel"
+      renderingId: "8094185b-4c72-40c8-b005-c6ed91708754"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+      variantMatch: "none"
+      customVariantNeeded:
+        name: "Pseg"
+        description: "Navy gradient slide with left headline, centered award image, and a static white login card on the right (visual only — no real auth). Arrows + dots retained."
+        parentComponent: "Carousel"
+    sectionBackground: "dark"
+    content:
+      SlideTitle: "#1 for Large Electric Utility Residential Customer Satisfaction in the East Region"
+      SlideSubtitle: "J.D. Power award"
+      PrimaryLink: "Learn more"
+    contentNotes: "Login card is visual chrome in the Pseg variant, not a real form. Existing Home Carousel instance can be rewired. Additional slides populated from live carousel if extracted in Phase 2.5."
+
+  - position: 3
+    description: "Four equal quick-link boxes under the hero — Welcome/Start Here, Report/View Outages, Billing, Special Offers & Programs"
+    matchedComponent:
+      componentName: "FourColumnCta"
+      renderingId: "35075000-760e-4ff3-bd1c-f2eeba251dcb"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+      variantMatch: "none"
+      customVariantNeeded:
+        name: "PsegQuickLinks"
+        description: "Compact equal-width text tiles with gray borders, no large images, navy labels"
+        parentComponent: "FourColumnCta"
+    sectionBackground: "default"
+    content:
+      Title1: "Welcome / Start Here"
+      Title2: "Report / View Outages"
+      Title3: "Billing"
+      Title4: "Special Offers & Programs"
+    contentNotes: "Live DOM also lists Moving, Submit Meter Reading, Energy Efficiency Programs under Welcome — Phase 2.5 will pick the four most prominent tiles from the screenshot."
+
+  - position: 4
+    description: "Two side-by-side photo cards — MyAlerts (man with phone, Register + Login) and MyMeter (woman with laptop, Learn More + Login)"
+    matchedComponent:
+      componentName: "TwoColumnCta"
+      renderingId: "3a9a9d22-c092-4b54-9511-eb202ceabe8d"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+      variantMatch: "partial"
+      customVariantNeeded:
+        name: "PsegAccountCards"
+        description: "Image-top cards with navy headline, body copy, and two buttons per card (primary filled + secondary outline)"
+        parentComponent: "TwoColumnCta"
+    sectionBackground: "default"
+    content:
+      Title1: "MyAlerts"
+      Text1: "By enrolling in MyAlerts, you can report power outages and receive outage updates, check your balance, receive payment reminders, and pay your bill – all by text and/or email!"
+      Link1: "Register"
+      Title2: "MyMeter"
+      Text2: "Take control of your electric use by setting usage thresholds in MyMeter and receiving alerts by email and/or text message when you exceed them. You can access MyMeter through My Account or our mobile app."
+      Link2: "Learn More"
+    contentNotes: "Default TwoColumnCta has one link per column. Dual CTAs (Register/Login, Learn More/Login) need the PsegAccountCards variant or a second link field. Existing Home Two Column CTA can be rewired."
+
+  - position: 5
+    description: "Full-width photo banner of a woman on the phone with a light-blue overlay — 'We Understand Your Needs' and FOR MY BUSINESS / Explore Business Resources CTA"
+    matchedComponent:
+      componentName: "PromoCta"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      variant: "WithBackgroundImage"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+      variantMatch: "partial"
+      customVariantNeeded:
+        name: "PsegBusiness"
+        description: "Full-bleed photo with left navy/blue translucent panel, white headline, white outline button"
+        parentComponent: "PromoCta"
+    sectionBackground: "primary"
+    content:
+      Title: "We Understand Your Needs"
+      Text: "If you're one of our business customers, we know that you sometimes have very specific needs. That's why we have a dedicated customer service phone line just for you (855-BIZ-PSEG or 855-249-7734). Check our Business Resource Center for money-saving tips and special programs to help your business stay energized."
+      Link: "Explore Business Resources"
+
+  - position: 6
+    description: "Centered navy headline 'WorryFree® Appliance Service' with intro copy about protection plans, repair, and replacements"
+    matchedComponent:
+      componentName: "HeadingCta"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      variant: "Centered"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+      variantMatch: "partial"
+      customVariantNeeded:
+        name: "Pseg"
+        description: "Centered navy heading + supporting paragraph, no side CTA button"
+        parentComponent: "HeadingCta"
+    sectionBackground: "default"
+    content:
+      Heading: "WorryFree® Appliance Service"
+      Text: "PSE&G WorryFree offers Protection Plans for most major home appliances. We also provide timely, reliable appliance repair services, as well as replacements for heating systems, cooling systems and water heaters."
+
+  - position: 7
+    description: "Three equal columns — Repair (HVAC tech), Protect (PSEG van), Replace (furnace tech) — each with photo, title, copy, and text link"
+    matchedComponent:
+      componentName: "ThreeColumnCta"
+      renderingId: "ad385021-ce2b-4fc1-89aa-207d408034a8"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+      variantMatch: "partial"
+      customVariantNeeded:
+        name: "PsegWorryFree"
+        description: "Image-top columns with navy titles, body copy, and text-style links (Get It Fixed / Explore Our Plans / Get Free Estimate) instead of large filled buttons"
+        parentComponent: "ThreeColumnCta"
+    sectionBackground: "default"
+    content:
+      Text1: "Repair"
+      SubText1: "PSE&G's team of highly skilled technicians are available to fix your heating and cooling systems, as well as your home appliances."
+      Link1: "Get It Fixed"
+      Text2: "Protect"
+      SubText2: "Enjoy the convenience of paying one low monthly fee to protect you from the cost of repairs (labor and covered parts) for your appliances or heating and cooling system."
+      Link2: "Explore Our Plans"
+      Text3: "Replace"
+      SubText3: "Need to replace your water heater or heating or cooling system? Call for a free estimate."
+      Link3: "Get Free Estimate"
+
+  - position: 8
+    description: "Light gray split banner — left 'Make an Appointment' copy + SCHEDULE AN APPOINTMENT button; right photo of a headset CSR"
+    matchedComponent:
+      componentName: "CtaBanner"
+      renderingId: "488b8ac0-0ef9-4f6f-8711-78ba182b2c4c"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+      variantMatch: "partial"
+      customVariantNeeded:
+        name: "PsegAppointment"
+        description: "Muted gray band, text left, cropped CSR photo right, navy filled button"
+        parentComponent: "CtaBanner"
+    sectionBackground: "muted"
+    content:
+      Title: "Make an Appointment"
+      Text: "Schedule an appointment for appliance or heating and cooling system repair with one of our PSE&G technicians."
+      Link: "Schedule an Appointment"
+
+  - position: 9
+    description: "Dark navy full-width band — left 'Save Energy and Money' / 'Little Changes Mean Big Savings' + Start Saving button; right list of Energy-Saving Tools, Rebate Programs, EnergyLink Newsletter"
+    matchedComponent:
+      componentName: "PromoCta"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "medium"
+      apiAddable: true
+      variantMatch: "none"
+      customVariantNeeded:
+        name: "PsegSavings"
+        description: "Navy background, white type left with outline button, stacked category links on the right instead of a photo"
+        parentComponent: "PromoCta"
+    sectionBackground: "dark"
+    content:
+      Eyebrow: "Save Energy and Money"
+      Title: "Little Changes Mean Big Savings"
+      Text: "Sometimes small changes, like sealing tiny air leaks around doors and windows, can make a big difference in energy use. Find out other ways you can save energy and money."
+      Link: "Start Saving"
+    contentNotes: "Right-side link list (Energy-Saving Tools, Rebate Programs, EnergyLink Newsletter) is not a PromoCta field — fold into Rich Text or the PsegSavings variant. Features is a weaker match (only two items)."
+
+  - position: 10
+    description: "Large photo of a diverse group giving thumbs-up; right stack with 'In the Community' eyebrow, 'PSE&G is Powering the Future', copy, and Empowering the Future link"
+    matchedComponent:
+      componentName: "PromoCta"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+      variantMatch: "partial"
+      customVariantNeeded:
+        name: "PsegCommunity"
+        description: "Photo left (large), navy eyebrow + headline + text link right. Hide dotted accents."
+        parentComponent: "PromoCta"
+    sectionBackground: "default"
+    content:
+      Eyebrow: "In the Community"
+      Title: "PSE&G is Powering the Future"
+      Text: "At PSE&G, we believe in energizing youth. Find out what our PSEG Foundation is doing to empower future generations in the communities we serve."
+      Link: "Empowering the Future"
+
+  - position: 11
+    description: "Text left — 'Safety and Preparedness' / 'Storm Preparation' + Be Storm-Ready link; emergency-kit photo on the right"
+    matchedComponent:
+      componentName: "PromoCta"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+      variantMatch: "partial"
+      customVariantNeeded:
+        name: "PsegStorm"
+        description: "Text left, photo right (PromoCta reverse), navy eyebrow, text-style CTA"
+        parentComponent: "PromoCta"
+    sectionBackground: "default"
+    content:
+      Eyebrow: "Safety and Preparedness"
+      Title: "Storm Preparation"
+      Text: "Before the next major storm hits, find out how you can prepare your home, family, and business. Build your emergency kit, and learn how to keep yourself and your loved ones safe from electrical hazards caused by storm damage."
+      Link: "Be Storm-Ready"
+
+  - position: 12
+    description: "Deep navy mega footer — energy alerts signup, Legal Information / Latest Press Releases / Links columns, social icons, search, copyright and Privacy / Terms / Accessibility"
+    matchedComponent:
+      componentName: "Footer"
+      renderingId: "771a3f27-6448-44ac-add0-e5de311c6e3b"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: false
+      variantMatch: "partial"
+      customVariantNeeded:
+        name: "Pseg"
+        description: "Deep navy mega footer with logo, multi-column links, social icons, and legal bar"
+        parentComponent: "Footer"
+    sectionBackground: "dark"
+    contentNotes: "Context-only — lives in footer partial design. Update copy, links, social, and logo in Content Editor."
+
+customComponents:
+  - position: 2
+    name: "AccountLoginCard"
+    description: "White Login to My Account card with username/password fields and LOGIN / REGISTER buttons overlaid on the hero"
+    reason: "No starter kit component renders an account login card inside a carousel slide"
+    recommendation: "Approximate as static chrome in the Carousel Pseg variant (no real authentication). Full fidelity would need a custom/BYOC form."
+
+existingHomeComponents:
+  note: "Home currently has PLAY! Financial starter content. Rewire matching components; flag the rest for manual cleanup."
+  rewire:
+    - { componentName: "Carousel", instanceId: "124106de-fb02-4b43-a521-a309fc75a5bc" }
+    - { componentName: "FourColumnCta", instanceId: "09cfd835-87f6-4d58-9681-9c6ea1a3228b" }
+    - { componentName: "TwoColumnCta", instanceId: "0ed2d2c2-e9ef-4e40-b040-6289cb174e03" }
+    - { componentName: "PromoCta", instanceId: "d49a8931-f041-4988-9cc3-f2400e6422d0" }
+    - { componentName: "ThreeColumnCta", instanceId: "d54d53b4-1aa4-4998-9bdf-eb934c32cfb6" }
+    - { componentName: "PromoCta", instanceId: "633506e7-54d0-4410-9051-72fb4c9fecb4" }
+    - { componentName: "PromoCta", instanceId: "1a516b9b-cc7b-49c9-a8eb-5be281a98612" }
+  cleanup:
+    - { componentName: "Comparison", count: 2 }
+    - { componentName: "FiveColumnCta", count: 1 }
+    - { componentName: "ArticleList", count: 1 }
+    - { componentName: "DocumentsList", count: 1 }
+    - { componentName: "AppPromo", count: 1 }
+
+buildOrder:
+  phase1_sitecore:
+    - position: 2
+      componentName: "Carousel"
+      datasourceName: "PSEG - Hero Carousel"
+    - position: 3
+      componentName: "FourColumnCta"
+      datasourceName: "PSEG - Quick Links"
+    - position: 4
+      componentName: "TwoColumnCta"
+      datasourceName: "PSEG - Account Cards"
+    - position: 5
+      componentName: "PromoCta"
+      datasourceName: "PSEG - Business Needs"
+    - position: 6
+      componentName: "HeadingCta"
+      datasourceName: "PSEG - WorryFree Intro"
+    - position: 7
+      componentName: "ThreeColumnCta"
+      datasourceName: "PSEG - WorryFree Services"
+    - position: 8
+      componentName: "CtaBanner"
+      datasourceName: "PSEG - Make an Appointment"
+    - position: 9
+      componentName: "PromoCta"
+      datasourceName: "PSEG - Energy Savings"
+    - position: 10
+      componentName: "PromoCta"
+      datasourceName: "PSEG - Powering the Future"
+    - position: 11
+      componentName: "PromoCta"
+      datasourceName: "PSEG - Storm Preparation"
+  phase2_theme: "src/assets/pseg/ + site-financial CSS variable overrides in _colors.scss"
+  phase3_custom: []
