@@ -1,9 +1,0 @@
-:root {
-  --font-heading: 'Source Sans 3', Helvetica, Arial, sans-serif;
-  --font-body: 'Source Sans 3', Helvetica, Arial, sans-serif;
-}
-
-body.site-pseg,
-.site-pseg {
-  font-family: var(--brand-body-font);
-}
