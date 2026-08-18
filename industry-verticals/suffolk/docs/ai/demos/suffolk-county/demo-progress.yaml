@@ -1,0 +1,152 @@
+# Demo Progress Tracker
+# Created automatically at the start of a demo build.
+# Updated after each MCP call or phase completion.
+
+client:
+  name: "Suffolk County"
+  sourceUrl: "https://suffolkcountyny.gov/"
+  startedAt: "2026-08-18T14:41:00Z"
+  lastUpdatedAt: "2026-08-18T16:20:00Z"
+
+phases:
+  phase0_inputs:
+    status: "complete"
+    screenshot: true
+    url: "https://suffolkcountyny.gov/"
+    contentRoot: "/sitecore/content/public-sector/suffolk-county"
+    codeRoot: "industry-verticals/suffolk"
+    contentHubAuth: "ok"
+    notes: "Screenshot provided by user. Content Hub credentials verified for jzi-verticals.sitecoresandbox.cloud."
+
+  phase0_5_manifest:
+    status: "complete"
+    validationMode: "quick"
+    result: "adapted"
+    notes: >
+      Site /sitecore/content/public-sector/suffolk-county exists (Home, Data, Presentation).
+      UIIM fmc-custom-demo is not deployed. Using starter-kit components.
+
+  phase1_theme:
+    status: "complete"
+    themeFile: "docs/ai/themes/suffolk-county.theme.yaml"
+    userApproved: true
+
+  phase2_analysis:
+    status: "complete"
+    buildPlanFile: "docs/ai/demos/suffolk-county/build-plan.yaml"
+    totalSections: 9
+    userApproved: true
+
+  phase2_5_content:
+    status: "complete"
+    contentMapFile: "docs/ai/demos/suffolk-county/content-map.yaml"
+    extractorUsed: true
+    notes: "Generic extractor returned 0 sections (DNN DOM). Live EasyDNNRotator scraped for all carousel slides."
+
+  phase3_content:
+    status: "complete"
+    completedSections: 9
+    totalSections: 9
+    notes: "13 images uploaded to Content Hub. Carousel parent + 6 slide children created."
+
+  phase4_theme:
+    status: "complete"
+    themeDelivery: "suffolk-css"
+    cssWritten: true
+    fontsAdded: true
+    notes: "src/assets/suffolk/ + _suffolk-demo.scss + site-suffolk class"
+
+  phase5_custom:
+    status: "skipped"
+    customComponentsNeeded: 0
+    customComponentsBuilt: 0
+    notes: "Carousel is an existing starter component."
+
+  phase5_5_variants:
+    status: "complete"
+    variantsNeeded: 11
+    variantsCreated: 11
+    variantSpecsFile: "docs/ai/demos/suffolk-county/variant-specs.yaml"
+    skippedReason: ""
+
+  phase6_assembly:
+    status: "failed"
+    componentsAdded: 0
+    datasourcesWired: 0
+    totalComponents: 10
+    notes: "add_component_on_page and get_components_on_page returned 500 / empty placeholders. Manual assembly required."
+
+  phase7_summary:
+    status: "complete"
+
+sections:
+  - position: 1
+    componentName: "HeadingCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "2663ced4-b68c-4080-9a22-fd7dc7bfe0e8"
+      fieldsPopulated: true
+      childrenCreated: 0
+      childrenExpected: 0
+      error: ""
+  - position: 3
+    componentName: "Hero"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "5caaeae3-e311-47db-92ce-34ba1b0304c2"
+      fieldsPopulated: true
+      childrenCreated: 0
+      childrenExpected: 0
+      error: ""
+  - position: 4
+    componentName: "ThreeColumnCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "8ac6540f-a0a6-4688-b4b0-17f0905ed679"
+      fieldsPopulated: true
+      childrenCreated: 0
+      childrenExpected: 0
+      error: ""
+  - position: 5
+    componentName: "Carousel"
+    kind: "list"
+    phase3:
+      status: "populated"
+      itemId: "99f0e1f7-d269-49a1-9e9c-25a46ee47eb0"
+      fieldsPopulated: true
+      childrenCreated: 6
+      childrenExpected: 6
+      error: ""
+  - position: 6
+    componentName: "FourColumnCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "59d97533-0b65-4517-9343-22ed351cdab4"
+      fieldsPopulated: true
+      childrenCreated: 0
+      childrenExpected: 0
+      error: ""
+  - position: 7
+    componentName: "TwoColumnCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "346181ab-c666-4e9c-900b-85778b18d74b"
+      fieldsPopulated: true
+      childrenCreated: 0
+      childrenExpected: 0
+      error: ""
+  - position: 8
+    componentName: "FiveColumnCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "36e2dc59-e379-46d7-bfbb-53fc526077a1"
+      fieldsPopulated: true
+      childrenCreated: 0
+      childrenExpected: 0
+      error: ""

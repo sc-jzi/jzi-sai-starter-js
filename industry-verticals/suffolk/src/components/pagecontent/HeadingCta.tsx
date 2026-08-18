@@ -124,6 +124,76 @@ export const PageHeading = (props: HeadingCtaProps): JSX.Element => {
   );
 };
 
+/* SuffolkAlert — compact civic alert strip */
+export const SuffolkAlert = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component heading-cta suffolk-alert ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="row align-items-center justify-content-center gx-2">
+          <div className="col-auto">
+            <div className="heading-content-wrapper">
+              <h2 className="display-4 fw-bold">
+                <Text field={props.fields?.Heading} />
+              </h2>
+              {(isPageEditing || props.fields?.Text?.value) && (
+                <p>
+                  <Text field={props.fields?.Text} />
+                </p>
+              )}
+            </div>
+          </div>
+          <div className="col-auto">
+            {(isPageEditing || props.fields?.Link?.value?.href) && (
+              <Link field={props.fields.Link} className="button button-main" />
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* SuffolkBand — solid blue section title */
+export const SuffolkBand = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component heading-cta suffolk-band ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="heading-content-wrapper">
+          <h2 className="display-4 fw-bold">
+            <Text field={props.fields?.Heading} />
+          </h2>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* SuffolkFeatured — centered featured heading with underline */
+export const SuffolkFeatured = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component heading-cta suffolk-featured ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="heading-content-wrapper mx-auto text-center">
+          <h2 className="display-4 fw-bold">
+            <Text field={props.fields?.Heading} />
+          </h2>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Centered = (props: HeadingCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

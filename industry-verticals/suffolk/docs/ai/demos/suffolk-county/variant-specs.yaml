@@ -1,0 +1,46 @@
+variantSpecs:
+  - position: 1
+    componentName: "HeadingCta"
+    variantName: "SuffolkAlert"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "full-width compact centered alert strip"
+      background: "alert red"
+      typography: "small white heading + inline Cooling Centers link"
+  - position: 3
+    componentName: "Hero"
+    variantName: "Suffolk"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "full-bleed lighthouse photo, centered question + search field"
+  - position: 4
+    componentName: "ThreeColumnCta"
+    variantName: "SuffolkQuickActions"
+    baseVariant: "WithIcons"
+    visualDifferences:
+      layout: "2x3 bordered cells, icon + blue link"
+  - position: 5
+    componentName: "Carousel"
+    variantName: "Suffolk"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "full-bleed campaign slides, navy overlay card, Get Started, dots"
+      distinctive: "six slides including Stop Bullying, Police Reform, Hazard Mitigation"
+  - position: 6
+    componentName: "FourColumnCta"
+    variantName: "SuffolkDirectory"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "text-only four-column civic directory, no images"
+  - position: 7
+    componentName: "TwoColumnCta"
+    variantName: "SuffolkNewsEvents"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "County News + County Events lists on muted background"
+  - position: 8
+    componentName: "FiveColumnCta"
+    variantName: "Suffolk"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "five bordered cards, image, title, Visit button"

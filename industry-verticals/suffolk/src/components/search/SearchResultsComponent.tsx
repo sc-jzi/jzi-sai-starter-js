@@ -17,6 +17,7 @@ import ResultsPerPage from './ResultsPerPage';
 import QueryResultsSummary from './QueryResultsSummary';
 import CardViewSwitcher from './CardViewSwitcher';
 import { useSearchTracking, type Events } from '../../hooks/useSearchTracking';
+import { isSitecoreSearchConfigured } from 'src/lib/sitecore-search';
 
 const SEARCH_CONFIG = {
   source: process.env.NEXT_PUBLIC_SEARCH_SOURCE as string,
@@ -204,4 +205,13 @@ const SearchResultsWidget = widget(
   WidgetDataType.SEARCH_RESULTS,
   'content'
 );
-export default SearchResultsWidget;
+
+const SearchResults = (props: React.ComponentProps<typeof SearchResultsWidget>) => {
+  if (!isSitecoreSearchConfigured()) {
+    return null;
+  }
+
+  return <SearchResultsWidget {...props} />;
+};
+
+export default SearchResults;

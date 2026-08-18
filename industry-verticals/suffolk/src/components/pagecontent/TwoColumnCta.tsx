@@ -30,6 +30,73 @@ export type TwoColumnCtaProps = ComponentProps & {
   fields: Fields;
 };
 
+/* SuffolkNewsEvents — news list + events list */
+export const SuffolkNewsEvents = (props: TwoColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const Column = ({
+    title,
+    text,
+    link,
+  }: {
+    title: Field<string>;
+    text: Field<string>;
+    link: LinkField;
+    placeholder: string;
+  }) => {
+    const buttonStyle = props.params?.ButtonStyle
+      ? `button-${props.params.ButtonStyle.toLowerCase()}`
+      : 'button-main';
+
+    return (
+      <div className="col-sm-12 col-lg-6">
+        <div className="content-wrapper">
+          {(isPageEditing || title?.value) && (
+            <h2>
+              <Text field={title} />
+            </h2>
+          )}
+          {(isPageEditing || text?.value) && (
+            <p>
+              <Text field={text} />
+            </p>
+          )}
+          {(isPageEditing || link?.value?.href) && (
+            <Link field={link} className={`button ${buttonStyle}`} />
+          )}
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <div
+      className={`component two-column-cta suffolk-news-events pb-5 ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="row">
+          <Column
+            title={props.fields.Title1}
+            text={props.fields.Text1}
+            link={props.fields.Link1}
+            placeholder="two-col-placeholder-left"
+          />
+          <Column
+            title={props.fields.Title2}
+            text={props.fields.Text2}
+            link={props.fields.Link2}
+            placeholder="two-col-placeholder-right"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: TwoColumnCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

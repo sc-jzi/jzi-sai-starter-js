@@ -36,6 +36,59 @@ export type FourColumnCtaProps = {
   fields: Fields;
 };
 
+/* SuffolkDirectory — text-only civic link columns */
+export const SuffolkDirectory = (props: FourColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const Column = ({
+    title,
+    text,
+    link,
+  }: {
+    title: Field<string>;
+    text: Field<string>;
+    link: LinkField;
+  }) => {
+    return (
+      <div className="col-sm-12 col-lg-3">
+        <Link field={link}>
+          <div className="content-wrapper">
+            <div className="text-wrapper">
+              <h2>
+                <Text field={title} />
+              </h2>
+              {(isPageEditing || text?.value) && (
+                <p>
+                  <Text field={text} />
+                </p>
+              )}
+            </div>
+          </div>
+        </Link>
+      </div>
+    );
+  };
+
+  return (
+    <div
+      className={`component component-spaced four-column-cta suffolk-directory ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="row">
+          <Column title={props.fields.Title1} text={props.fields.Text1} link={props.fields.Link1} />
+          <Column title={props.fields.Title2} text={props.fields.Text2} link={props.fields.Link2} />
+          <Column title={props.fields.Title3} text={props.fields.Text3} link={props.fields.Link3} />
+          <Column title={props.fields.Title4} text={props.fields.Text4} link={props.fields.Link4} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: FourColumnCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

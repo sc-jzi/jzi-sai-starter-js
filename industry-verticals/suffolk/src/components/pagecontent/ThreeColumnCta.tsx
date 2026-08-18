@@ -32,6 +32,56 @@ export type ThreeColumnCtaProps = {
   fields: Fields;
 };
 
+/* SuffolkQuickActions — bordered civic icon cells */
+export const SuffolkQuickActions = (props: ThreeColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const Column = ({
+    image,
+    text,
+    link,
+  }: {
+    image: ImageField;
+    text: Field<string>;
+    link: LinkField;
+  }) => {
+    return (
+      <div className="col-sm-12 col-lg-4">
+        <Link field={link} className="wrapper-link">
+          <div className="content-wrapper">
+            {(isPageEditing || image?.value?.src) && (
+              <div className="image-wrapper">
+                <NextImage field={image} width={40} height={40} />
+              </div>
+            )}
+            <h2>
+              <Text field={text} />
+            </h2>
+          </div>
+        </Link>
+      </div>
+    );
+  };
+
+  return (
+    <div
+      className={`component three-column-cta suffolk-quick-actions ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="row gx-0">
+          <Column image={props.fields.Image1} text={props.fields.Text1} link={props.fields.Link1} />
+          <Column image={props.fields.Image2} text={props.fields.Text2} link={props.fields.Link2} />
+          <Column image={props.fields.Image3} text={props.fields.Text3} link={props.fields.Link3} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: ThreeColumnCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

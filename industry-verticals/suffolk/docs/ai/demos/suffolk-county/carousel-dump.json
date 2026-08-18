@@ -1,0 +1,743 @@
+{
+  "dump": {
+    "mods": [
+      {
+        "sel": "[class*=\"slider\" i]",
+        "id": "EDR_ChameleonSlider_2903",
+        "className": "chameleon_slider NewsOne",
+        "text": "Activate your free identity protection services today Previous Next",
+        "imgs": [
+          {
+            "src": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/nt1debnw.jpg",
+            "alt": "Hurricane Preparedness Week"
+          },
+          {
+            "src": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/bu0pjgby.jpg",
+            "alt": "Activate your free identity protection services..."
+          }
+        ],
+        "links": [
+          {
+            "text": "Activate your free identity protection services today",
+            "href": "https://suffolkcountyny.gov/Identity-Protection-Service"
+          },
+          {
+            "text": "",
+            "href": "https://suffolkcountyny.gov/Identity-Protection-Service"
+          },
+          {
+            "text": "Previous",
+            "href": "https://suffolkcountyny.gov/#"
+          },
+          {
+            "text": "Next",
+            "href": "https://suffolkcountyny.gov/#"
+          }
+        ]
+      },
+      {
+        "sel": "[class*=\"rotator\" i]",
+        "id": "dnn_rotator",
+        "className": "rotator",
+        "text": "Activate your free identity protection services today Previous Next",
+        "imgs": [
+          {
+            "src": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/nt1debnw.jpg",
+            "alt": "Hurricane Preparedness Week"
+          },
+          {
+            "src": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/bu0pjgby.jpg",
+            "alt": "Activate your free identity protection services..."
+          }
+        ],
+        "links": [
+          {
+            "text": "",
+            "href": ""
+          },
+          {
+            "text": "Activate your free identity protection services today",
+            "href": "https://suffolkcountyny.gov/Identity-Protection-Service"
+          },
+          {
+            "text": "",
+            "href": "https://suffolkcountyny.gov/Identity-Protection-Service"
+          },
+          {
+            "text": "Previous",
+            "href": "https://suffolkcountyny.gov/#"
+          },
+          {
+            "text": "Next",
+            "href": "https://suffolkcountyny.gov/#"
+          }
+        ]
+      },
+      {
+        "sel": "[class*=\"rotator\" i]",
+        "id": "",
+        "className": "DnnModule DnnModule-EasyDNNrotator DnnModule-2903",
+        "text": "Activate your free identity protection services today Previous Next",
+        "imgs": [
+          {
+            "src": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/nt1debnw.jpg",
+            "alt": "Hurricane Preparedness Week"
+          },
+          {
+            "src": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/bu0pjgby.jpg",
+            "alt": "Activate your free identity protection services..."
+          }
+        ],
+        "links": [
+          {
+            "text": "",
+            "href": ""
+          },
+          {
+            "text": "Activate your free identity protection services today",
+            "href": "https://suffolkcountyny.gov/Identity-Protection-Service"
+          },
+          {
+            "text": "",
+            "href": "https://suffolkcountyny.gov/Identity-Protection-Service"
+          },
+          {
+            "text": "Previous",
+            "href": "https://suffolkcountyny.gov/#"
+          },
+          {
+            "text": "Next",
+            "href": "https://suffolkcountyny.gov/#"
+          }
+        ]
+      },
+      {
+        "sel": "[class*=\"rotator\" i]",
+        "id": "dnn_ctr2903_ModuleContent",
+        "className": "DNNModuleContent ModEasyDNNrotatorC",
+        "text": "Activate your free identity protection services today Previous Next",
+        "imgs": [
+          {
+            "src": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/nt1debnw.jpg",
+            "alt": "Hurricane Preparedness Week"
+          },
+          {
+            "src": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/bu0pjgby.jpg",
+            "alt": "Activate your free identity protection services..."
+          }
+        ],
+        "links": [
+          {
+            "text": "Activate your free identity protection services today",
+            "href": "https://suffolkcountyny.gov/Identity-Protection-Service"
+          },
+          {
+            "text": "",
+            "href": "https://suffolkcountyny.gov/Identity-Protection-Service"
+          },
+          {
+            "text": "Previous",
+            "href": "https://suffolkcountyny.gov/#"
+          },
+          {
+            "text": "Next",
+            "href": "https://suffolkcountyny.gov/#"
+          }
+        ]
+      },
+      {
+        "sel": "[class*=\"rotator\" i]",
+        "id": "2903_eds_rotatorWrapper",
+        "className": "eds_rotatorWrapper",
+        "text": "Activate your free identity protection services today Previous Next",
+        "imgs": [
+          {
+            "src": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/nt1debnw.jpg",
+            "alt": "Hurricane Preparedness Week"
+          },
+          {
+            "src": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/bu0pjgby.jpg",
+            "alt": "Activate your free identity protection services..."
+          }
+        ],
+        "links": [
+          {
+            "text": "Activate your free identity protection services today",
+            "href": "https://suffolkcountyny.gov/Identity-Protection-Service"
+          },
+          {
+            "text": "",
+            "href": "https://suffolkcountyny.gov/Identity-Protection-Service"
+          },
+          {
+            "text": "Previous",
+            "href": "https://suffolkcountyny.gov/#"
+          },
+          {
+            "text": "Next",
+            "href": "https://suffolkcountyny.gov/#"
+          }
+        ]
+      },
+      {
+        "sel": ".DNNModuleContent",
+        "id": "dnn_ctr2903_ModuleContent",
+        "className": "DNNModuleContent ModEasyDNNrotatorC",
+        "text": "Activate your free identity protection services today Previous Next",
+        "imgs": [
+          {
+            "src": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/nt1debnw.jpg",
+            "alt": "Hurricane Preparedness Week"
+          },
+          {
+            "src": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/bu0pjgby.jpg",
+            "alt": "Activate your free identity protection services..."
+          }
+        ],
+        "links": [
+          {
+            "text": "Activate your free identity protection services today",
+            "href": "https://suffolkcountyny.gov/Identity-Protection-Service"
+          },
+          {
+            "text": "",
+            "href": "https://suffolkcountyny.gov/Identity-Protection-Service"
+          },
+          {
+            "text": "Previous",
+            "href": "https://suffolkcountyny.gov/#"
+          },
+          {
+            "text": "Next",
+            "href": "https://suffolkcountyny.gov/#"
+          }
+        ]
+      },
+      {
+        "sel": ".DNNModuleContent",
+        "id": "dnn_ctr451_ModuleContent",
+        "className": "DNNModuleContent ModDNNHTMLC",
+        "text": "Suffolk County Department of Civil Service Exam e-FILING Suffolk County list of Available Exams Employment Examination Announcement Summary, Job Bank, Job Fair, On-Site Recruitment, One-Stop Employment Center, Job Title Search, More... People With Disabilities Transportation (SCAT), Children with Special Needs, Parking Permits, More... Laws, Standards, and Codes Sanitary Code, Human Rights, Red Light Camera, Purchasing, Consumer Protection, Tobacco, Hazardous Materials, More... Notifications and Alerts SMART911, Mosquito Spraying, Newsletters, NY-Alert, CodeRed, More... Youth Bureau Youth Development, Evaluating Youth Programs and Providing Assistance, More...",
+        "imgs": [],
+        "links": [
+          {
+            "text": "Suffolk County Department of Civil Service Exam e-FILING",
+            "href": "https://apps2.suffolkcountyny.gov/civilservice/efile/default.aspx"
+          },
+          {
+            "text": "Employment",
+            "href": "https://suffolkcountyny.gov/employment"
+          },
+          {
+            "text": "People With Disabilities",
+            "href": "https://suffolkcountyny.gov/people-with-disabilities"
+          },
+          {
+            "text": "Laws, Standards, and Codes",
+            "href": "https://suffolkcountyny.gov/laws-codes"
+          },
+          {
+            "text": "Notifications and Alerts",
+            "href": "https://suffolkcountyny.gov/alerts"
+          },
+          {
+            "text": "Youth Bureau",
+            "href": "https://suffolkcountyny.gov/Elected-Officials/County-Executive/Youth-Bureau"
+          }
+        ]
+      },
+      {
+        "sel": ".DNNModuleContent",
+        "id": "dnn_ctr452_ModuleContent",
+        "className": "DNNModuleContent ModDNNHTMLC",
+        "text": "Business and Commercial Starting a Business, Permits, Construction, Restaurants, Sewers, Bids, Proposals, RFP / RFQ, Licensing, Financial Assistance, More... Social Services Child Support, Service Centers, Services, Advocate Training, Benefits, Applications and Forms, Child Abuse, More... Health Services Children With Special Needs, Environment, Treatment, Health Centers, Food Control, Early Intervention, Diabetes Prevention, More... Forms and Reports Consumer Complaint, Application for Employment, Children With Special Needs, Food Establishment, SCAT / Paratransit, More... Public Works Building Design, Construction, and Facilities Engineering, Pay Your Sewer Bill, Transportation, Vector Control, More...",
+        "imgs": [],
+        "links": [
+          {
+            "text": "Business and Commercial",
+            "href": "https://suffolkcountyny.gov/businesses"
+          },
+          {
+            "text": "Social Services",
+            "href": "https://suffolkcountyny.gov/social-services"
+          },
+          {
+            "text": "Health Services",
+            "href": "https://suffolkcountyny.gov/health"
+          },
+          {
+            "text": "Forms and Reports",
+            "href": "https://suffolkcountyny.gov/forms-and-reports"
+          },
+          {
+            "text": "Public Works",
+            "href": "https://suffolkcountyny.gov/Departments/Public-Works"
+          }
+        ]
+      },
+      {
+        "sel": ".DNNModuleContent",
+        "id": "dnn_ctr453_ModuleContent",
+        "className": "DNNModuleContent ModDNNHTMLC",
+        "text": "Records and Data Land, Open Data, Businesses, Court Actions, Judgments, Marriage and Death, Liens, Record a Deed, SCARP E-Filing, Pistol Permit, Notary Public, Historic Documents, More... Recreation Parks, Golf, Marinas, Suffolk Parks History, Green Key Card, Parks Reservations, Discover Suffolk County, Things To Do, More... Public Safety Police, Sheriff, Probation, Fire Rescue and Emergency Services, Office of Emergency Management, Preparedness, Fire Marshall, EMS, More... Towns and Villages Babylon, Brookhaven, East Hampton, Huntington, Islip, Riverhead, Shelter Island, Smithtown, Southampton, Southold, Villages... Central Procurement Handles all purchasing for Suffolk County ensuring goods and services are acquired efficiently, transparently, and in line with County policies.",
+        "imgs": [],
+        "links": [
+          {
+            "text": "Records and Data",
+            "href": "https://suffolkcountyny.gov/records-and-data"
+          },
+          {
+            "text": "Recreation",
+            "href": "http://suffolkcountyny.gov/parks"
+          },
+          {
+            "text": "Public Safety",
+            "href": "https://suffolkcountyny.gov/public-safety"
+          },
+          {
+            "text": "Towns and Villages",
+            "href": "https://suffolkcountyny.gov/towns-and-villages"
+          },
+          {
+            "text": "Central Procurement",
+            "href": "https://suffolkcountyny.gov/Departments/Public-Works/Office-of-Central-Procurement"
+          }
+        ]
+      },
+      {
+        "sel": ".DNNModuleContent",
+        "id": "dnn_ctr454_ModuleContent",
+        "className": "DNNModuleContent ModDNNHTMLC",
+        "text": "Aging The Suffolk County Office for the Aging is the designated Area Agency on Aging under the Older American Act. For over 40 years, the Aging office has administered federal, state and county programs for persons 60 years of age and older. Veterans Benefits, Resources, Housing, Jobs, Education, Transportation, Discount Program Multicultural Affairs and Community Engagement Minority- and Women-Owned Business Enterprise and Service-Disabled Veteran-Owned Business certifications and resources, multicultural advisory boards, Suffolk County’s Non-Discrimination Policy. Women’s Services The Office of Women’s Services provides a focal point from which to address the needs of women in Suffolk County. Elected Officials County Executive, Comptroller, County Clerk, District Attorney, Legislature, S",
+        "imgs": [],
+        "links": [
+          {
+            "text": "Aging",
+            "href": "https://suffolkcountyny.gov/aging"
+          },
+          {
+            "text": "Veterans",
+            "href": "https://suffolkcountyny.gov/veterans"
+          },
+          {
+            "text": "Multicultural Affairs and Community Engagement",
+            "href": "https://suffolkcountyny.gov/Elected-Officials/County-Executive/Office-of-Multicultural-Affairs-and-Community-Engagement"
+          },
+          {
+            "text": "Women’s Services",
+            "href": "https://suffolkcountyny.gov/Elected-Officials/County-Executive/Womens-Services"
+          },
+          {
+            "text": "Elected Officials",
+            "href": "https://suffolkcountyny.gov/government"
+          },
+          {
+            "text": "FAQs and A – Z",
+            "href": "https://suffolkcountyny.gov/faqs-a-z"
+          }
+        ]
+      },
+      {
+        "sel": ".DNNModuleContent",
+        "id": "dnn_ctr4267_ModuleContent",
+        "className": "DNNModuleContent ModEasyDNNnewsC",
+        "text": "Twenty-Five Mosquito Samples Test Positive for West Nile Virus 13 August 2026 Number of views: 598 READ MORE Romaine & LaLota Announce $20 Million Air Traffic Control Tower Project at Gabreski Airport 12 August 2026 Number of views: 1762 READ MORE Department of Public Works Vector Mosquito Spraying 12 August 2026 Number of views: 1995 READ MORE Three Beaches Closed to Bathing 11 August 2026 Number of views: 922 READ MORE Department of Public Works Vector Mosquito Spraying 10 August 2026 Number of views: 656 READ MORE RSS 1 2 3 4 5 6 7 8 9 10 Next Last",
+        "imgs": [],
+        "links": [
+          {
+            "text": "Twenty-Five Mosquito Samples Test Positive for West Nile Virus",
+            "href": "https://suffolkcountyny.gov/News/ArtMID/583/ArticleID/15269"
+          },
+          {
+            "text": "Davis, Elijah",
+            "href": "https://suffolkcountyny.gov/News/PID/100/authorid/76/AuthorName/Davis-Elijah"
+          },
+          {
+            "text": "READ MORE",
+            "href": "https://suffolkcountyny.gov/News/ArtMID/583/ArticleID/15269"
+          },
+          {
+            "text": "Romaine & LaLota Announce $20 Million Air Traffic Control Tower Project at Gabreski Airport",
+            "href": "https://suffolkcountyny.gov/News/ArtMID/583/ArticleID/15265"
+          },
+          {
+            "text": "Monahan, Brian",
+            "href": "https://suffolkcountyny.gov/News/PID/100/authorid/71/AuthorName/Monahan-Brian"
+          },
+          {
+            "text": "READ MORE",
+            "href": "https://suffolkcountyny.gov/News/ArtMID/583/ArticleID/15265"
+          },
+          {
+            "text": "Department of Public Works Vector Mosquito Spraying",
+            "href": "https://suffolkcountyny.gov/News/ArtMID/583/ArticleID/15263"
+          },
+          {
+            "text": "Davis, Elijah",
+            "href": "https://suffolkcountyny.gov/News/PID/100/authorid/76/AuthorName/Davis-Elijah"
+          },
+          {
+            "text": "READ MORE",
+            "href": "https://suffolkcountyny.gov/News/ArtMID/583/ArticleID/15263"
+          },
+          {
+            "text": "Three Beaches Closed to Bathing",
+            "href": "https://suffolkcountyny.gov/News/ArtMID/583/ArticleID/15261"
+          },
+          {
+            "text": "Davis, Elijah",
+            "href": "https://suffolkcountyny.gov/News/PID/100/authorid/76/AuthorName/Davis-Elijah"
+          },
+          {
+            "text": "READ MORE",
+            "href": "https://suffolkcountyny.gov/News/ArtMID/583/ArticleID/15261"
+          }
+        ]
+      },
+      {
+        "sel": ".DNNModuleContent",
+        "id": "dnn_ctr584_ModuleContent",
+        "className": "DNNModuleContent ModEasyDNNnewsC",
+        "text": "UPCOMING EVENTS 19 AUG 2026 The Peconic Estuary Joint Technical Advisory & Natural Resources Sub- Committee Mtg. 8/19/2026 10:00 AM - 12:00 PM 19 AUG 2026 The Peconic Estuary Joint Technical Advisory & Natural Resources Sub-Committee Mtg. 8/19/2026 10:00 AM - 12:00 PM 19 AUG 2026 Public Notice of Special Meeting of Suffolk County RFP Waiver Committee 8/19/2026 11:00 AM - 12:00 PM 20 AUG 2026 Environmental Quality Board of Review 8/20/2026 9:30 AM - 11:30 AM 22 AUG 2026 Community Health Fair 8/22/2026 10:30 AM - 3:30 PM 2 SEP 2026 The Intellectual & Developmental Disabilities Subcommittee* of the Community Mental Hygiene Services Advisory Board 9/2/2026 10:30 AM - 12:00 PM 2 SEP 2026 Mental Health Subcommittee of the Community Mental Hygiene Services Advisory Board 9/2/2026 3:00 PM - 4:30 P",
+        "imgs": [],
+        "links": [
+          {
+            "text": "",
+            "href": "https://suffolkcountyny.gov/Home/ctl/rss/mid/584"
+          },
+          {
+            "text": "19\nAUG\n2026\n \nThe Peconic Estuary Joint Technical Advisory & Natural Resources Sub- Committee Mtg.\n8/19/2026 10:00 AM - ",
+            "href": "https://suffolkcountyny.gov/Events/ArtMID/585/ArticleID/15213"
+          },
+          {
+            "text": "19\nAUG\n2026\n \nThe Peconic Estuary Joint Technical Advisory & Natural Resources Sub-Committee Mtg.\n8/19/2026 10:00 AM - 1",
+            "href": "https://suffolkcountyny.gov/Events/ArtMID/585/ArticleID/15214"
+          },
+          {
+            "text": "19\nAUG\n2026\n \nPublic Notice of Special Meeting of Suffolk County RFP Waiver Committee\n8/19/2026 11:00 AM - 12:00 PM",
+            "href": "https://suffolkcountyny.gov/Events/ArtMID/585/ArticleID/14234"
+          },
+          {
+            "text": "20\nAUG\n2026\n \nEnvironmental Quality Board of Review\n8/20/2026 9:30 AM - 11:30 AM",
+            "href": "https://suffolkcountyny.gov/Events/ArtMID/585/ArticleID/15179"
+          },
+          {
+            "text": "22\nAUG\n2026\n \nCommunity Health Fair\n8/22/2026 10:30 AM - 3:30 PM",
+            "href": "https://suffolkcountyny.gov/Events/ArtMID/585/ArticleID/15262"
+          },
+          {
+            "text": "2\nSEP\n2026\n \nThe Intellectual & Developmental Disabilities Subcommittee* of the Community Mental Hygiene Services Adviso",
+            "href": "https://suffolkcountyny.gov/Events/ArtMID/585/ArticleID/15277"
+          },
+          {
+            "text": "2\nSEP\n2026\n \nMental Health Subcommittee of the Community Mental Hygiene Services Advisory Board\n9/2/2026 3:00 PM - 4:30 ",
+            "href": "https://suffolkcountyny.gov/Events/ArtMID/585/ArticleID/15278"
+          },
+          {
+            "text": "10\nSEP\n2026\n \nSC SWCD Board of Directors Meeting\n9/10/2026 3:00 PM - 4:00 PM",
+            "href": "https://suffolkcountyny.gov/Events/ArtMID/585/ArticleID/14418"
+          },
+          {
+            "text": "16\nSEP\n2026\n \nPublic Notice of Special Meeting of Suffolk County RFP Waiver Committee\n9/16/2026 11:00 AM - 12:00 PM",
+            "href": "https://suffolkcountyny.gov/Events/ArtMID/585/ArticleID/14235"
+          },
+          {
+            "text": "18\nSEP\n2026\n \nHispanic Heritage Celebration\n9/18/2026 6:00 PM - 8:00 PM",
+            "href": "https://suffolkcountyny.gov/Events/ArtMID/585/ArticleID/15239"
+          }
+        ]
+      },
+      {
+        "sel": ".DNNModuleContent",
+        "id": "dnn_ctr1563_ModuleContent",
+        "className": "DNNModuleContent ModDNNHTMLC",
+        "text": "Submission and Status Portal Visit Become a Volunteer Firefighter or EMS worker Visit Suffolk County Open Data Visit Sign up to receive SuffolkAlert Emergency Alerts and Notifications via Phone Call, Text Message and Email Visit 852-COPS Non-Emergency Visit",
+        "imgs": [
+          {
+            "src": "https://suffolkcountyny.gov/portals/0/images/home/services/sst.jpg",
+            "alt": "sst"
+          },
+          {
+            "src": "https://suffolkcountyny.gov/portals/0/images/home/services/fire_ems.jpg",
+            "alt": "Suffolks Bravest"
+          },
+          {
+            "src": "https://suffolkcountyny.gov/portals/0/images/home/services/opendata.jpg",
+            "alt": "Suffolk County Open Data"
+          },
+          {
+            "src": "https://suffolkcountyny.gov/portals/0/images/home/services/SC%20Emergency%20Alerts.png",
+            "alt": "Suffolk County Emergency Alerts"
+          },
+          {
+            "src": "https://suffolkcountyny.gov/portals/0/images/home/services/852cops.jpg",
+            "alt": "852-COPS Non-Emergency"
+          }
+        ],
+        "links": [
+          {
+            "text": "Visit",
+            "href": "https://apps2.suffolkcountyny.gov/health/sst/"
+          },
+          {
+            "text": "Visit",
+            "href": "https://suffolksbravest.com/"
+          },
+          {
+            "text": "Visit",
+            "href": "http://opendata.suffolkcountyny.gov/"
+          },
+          {
+            "text": "Visit",
+            "href": "https://www.smart911.com/smart911/ref/reg.action?pa=NotifySuffolk"
+          },
+          {
+            "text": "Visit",
+            "href": "https://suffolkpd.org/Contact-Us/852Cops"
+          }
+        ]
+      }
+    ],
+    "allImgs": [
+      {
+        "src": "https://suffolkcountyny.gov/portals/_default/skins/internet/img/elected-officials-483h.jpg",
+        "alt": "Card image cap",
+        "w": 483,
+        "h": 247
+      },
+      {
+        "src": "https://suffolkcountyny.gov/portals/_default/skins/internet/img/departments483h.jpg",
+        "alt": "Card image cap",
+        "w": 483,
+        "h": 238
+      },
+      {
+        "src": "https://suffolkcountyny.gov/portals/_default/skins/internet/img/citizen.jpg",
+        "alt": "Card image cap",
+        "w": 483,
+        "h": 323
+      },
+      {
+        "src": "https://suffolkcountyny.gov/portals/_default/skins/internet/img/business.jpg",
+        "alt": "Card image cap",
+        "w": 483,
+        "h": 323
+      },
+      {
+        "src": "https://suffolkcountyny.gov/portals/_default/skins/internet/img/online.jpg",
+        "alt": "Card image cap",
+        "w": 483,
+        "h": 323
+      },
+      {
+        "src": "https://suffolkcountyny.gov/portals/_default/skins/internet/img/img_doingbusiness.jpg",
+        "alt": "Card image cap",
+        "w": 483,
+        "h": 323
+      },
+      {
+        "src": "https://suffolkcountyny.gov/portals/_default/skins/internet/img/start.jpg",
+        "alt": "Card image cap",
+        "w": 483,
+        "h": 323
+      },
+      {
+        "src": "https://suffolkcountyny.gov/portals/_default/skins/internet/img/resources.jpg",
+        "alt": "Card image cap",
+        "w": 483,
+        "h": 323
+      },
+      {
+        "src": "https://suffolkcountyny.gov/portals/_default/skins/internet/img/img_discover.jpg",
+        "alt": "Card image cap",
+        "w": 355,
+        "h": 236
+      },
+      {
+        "src": "https://suffolkcountyny.gov/portals/_default/skins/internet/img/img_parks.jpg",
+        "alt": "Card image cap",
+        "w": 355,
+        "h": 236
+      },
+      {
+        "src": "https://suffolkcountyny.gov/portals/_default/skins/internet/img/img_film.jpg",
+        "alt": "Card image cap",
+        "w": 355,
+        "h": 236
+      },
+      {
+        "src": "https://suffolkcountyny.gov/portals/_default/skins/internet/img/img_rec.jpg",
+        "alt": "Card image cap",
+        "w": 355,
+        "h": 236
+      },
+      {
+        "src": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/nt1debnw.jpg",
+        "alt": "Hurricane Preparedness Week",
+        "w": 1501,
+        "h": 450
+      },
+      {
+        "src": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/bu0pjgby.jpg",
+        "alt": "Activate your free identity protection services...",
+        "w": 1280,
+        "h": 383
+      },
+      {
+        "src": "https://suffolkcountyny.gov/portals/0/images/home/services/sst.jpg",
+        "alt": "sst",
+        "w": 328,
+        "h": 220
+      },
+      {
+        "src": "https://suffolkcountyny.gov/portals/0/images/home/services/fire_ems.jpg",
+        "alt": "Suffolks Bravest",
+        "w": 328,
+        "h": 220
+      },
+      {
+        "src": "https://suffolkcountyny.gov/portals/0/images/home/services/opendata.jpg",
+        "alt": "Suffolk County Open Data",
+        "w": 328,
+        "h": 220
+      },
+      {
+        "src": "https://suffolkcountyny.gov/portals/0/images/home/services/SC%20Emergency%20Alerts.png",
+        "alt": "Suffolk County Emergency Alerts",
+        "w": 656,
+        "h": 440
+      },
+      {
+        "src": "https://suffolkcountyny.gov/portals/0/images/home/services/852cops.jpg",
+        "alt": "852-COPS Non-Emergency",
+        "w": 328,
+        "h": 220
+      }
+    ],
+    "titles": [
+      "Cooling Facilities in Suffolk County",
+      "Suffolk County Government",
+      "Edward P. Romaine, County Executive",
+      "What are you looking for?",
+      "What would you like to do?",
+      "Suffolk County Department of Civil Service Exam e-FILING",
+      "Employment",
+      "People With Disabilities",
+      "Laws, Standards, and Codes",
+      "Notifications and Alerts",
+      "Youth Bureau",
+      "Business and Commercial",
+      "Social Services",
+      "Health Services",
+      "Forms and Reports",
+      "Public Works",
+      "Records and Data",
+      "Recreation",
+      "Public Safety",
+      "Towns and Villages",
+      "Central Procurement",
+      "Aging",
+      "Veterans",
+      "Multicultural Affairs and Community Engagement",
+      "Women’s Services",
+      "Elected Officials",
+      "FAQs and A – Z",
+      "County News",
+      "Twenty-Five Mosquito Samples Test Positive for West Nile Virus",
+      "Romaine & LaLota Announce $20 Million Air Traffic Control Tower Project at Gabreski Airport",
+      "Department of Public Works Vector Mosquito Spraying",
+      "Three Beaches Closed to Bathing",
+      "Department of Public Works Vector Mosquito Spraying",
+      "County Events",
+      "UPCOMING EVENTS",
+      "Front Page Featured Services",
+      "Suffolk County Government",
+      "H. Lee Dennison Bldg",
+      "Riverhead County Center",
+      "Services",
+      "Elected Officials"
+    ]
+  },
+  "slides": [
+    {
+      "index": 0,
+      "text": "Activate your free identity protection services today Previous Next",
+      "img": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/nt1debnw.jpg",
+      "alt": "Hurricane Preparedness Week",
+      "bg": "",
+      "className": "chameleon_slider NewsOne"
+    },
+    {
+      "index": 1,
+      "text": "SuffolkAlert Emergency Notification System Activate your free identity protection services today Previous Next",
+      "img": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/t4aavcru.png",
+      "alt": "SuffolkAlert Emergency Notification System",
+      "bg": "",
+      "className": "chameleon_slider NewsOne"
+    },
+    {
+      "index": 2,
+      "text": "Skip to main content Skip to search box Cooling Facilities in Suffolk County Click the following link for a list of facilities that may be activated as Cooling Centers during extreme heat event as determined by the National Weather Service. Cooling Centers Suffolk County Government Edward P. Romaine, County Executive Select Language Chinese (Simplified) Haitian Creole Italian Polish Portuguese (Brazil) Spanish Powered by Translate Text Only Version Home (current) Government Residents Services Bu",
+      "img": "https://suffolkcountyny.gov/portals/_default/skins/internet/img/cntyseal_WHITE-100px.png",
+      "alt": "Suffolk County Government seal",
+      "bg": "",
+      "className": ""
+    },
+    {
+      "index": 3,
+      "text": "Suffolk Smart Start Suffolk Smart Start Previous Next",
+      "img": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/mjyyw0jt.jpg",
+      "alt": "Suffolk Smart Start",
+      "bg": "",
+      "className": "chameleon_slider NewsOne"
+    },
+    {
+      "index": 4,
+      "text": "SuffolkStopAddiction.org SuffolkStopAddiction.org A comprehensive website dedicated to resources related to addiction, mental health, substance use prevention, and rehabilitation services. Visit suffolkstopaddiction.org for more info. Previous Next",
+      "img": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/djfmgcto.jpg",
+      "alt": "SuffolkStopAddiction.org",
+      "bg": "",
+      "className": "chameleon_slider NewsOne"
+    },
+    {
+      "index": 5,
+      "text": "Skip to main content Skip to search box Cooling Facilities in Suffolk County Click the following link for a list of facilities that may be activated as Cooling Centers during extreme heat event as determined by the National Weather Service. Cooling Centers Suffolk County Government Edward P. Romaine, County Executive Select Language Chinese (Simplified) Haitian Creole Italian Polish Portuguese (Brazil) Spanish Powered by Translate Text Only Version Home (current) Government Residents Services Bu",
+      "img": "https://suffolkcountyny.gov/portals/_default/skins/internet/img/cntyseal_WHITE-100px.png",
+      "alt": "Suffolk County Government seal",
+      "bg": "",
+      "className": ""
+    },
+    {
+      "index": 6,
+      "text": "Skip to main content Skip to search box Cooling Facilities in Suffolk County Click the following link for a list of facilities that may be activated as Cooling Centers during extreme heat event as determined by the National Weather Service. Cooling Centers Suffolk County Government Edward P. Romaine, County Executive Select Language Chinese (Simplified) Haitian Creole Italian Polish Portuguese (Brazil) Spanish Powered by Translate Text Only Version Home (current) Government Residents Services Bu",
+      "img": "https://suffolkcountyny.gov/portals/_default/skins/internet/img/cntyseal_WHITE-100px.png",
+      "alt": "Suffolk County Government seal",
+      "bg": "",
+      "className": ""
+    },
+    {
+      "index": 7,
+      "text": "New Comprehensive Resource Guide At SuffolkStopBullying.org New Comprehensive Resource Guide At SuffolkStopBullying.org At SuffolkStopBullying.org, check out the new Comprehensive Resource Guide for aiding parents and children grades K-12 who are dealing with the mental and physical impacts associated with bullying. Previous Next",
+      "img": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/prrlkgrs.jpg",
+      "alt": "New Comprehensive Resource Guide...",
+      "bg": "",
+      "className": "chameleon_slider NewsOne"
+    },
+    {
+      "index": 8,
+      "text": "Suffolk County Coastal Resiliency Initiative Suffolk County Coastal Resiliency Initiative Construction of Historic Sewer Projects To Be Funded Completely With Federal and State Grant Funding. Click here for more info. Previous Next",
+      "img": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/rlrkyvka.jpg",
+      "alt": "Suffolk County Coastal Resiliency Initiative",
+      "bg": "",
+      "className": "chameleon_slider NewsOne"
+    },
+    {
+      "index": 9,
+      "text": "Suffolk311 Suffolk311 Suffolk County residents can dial 3-1-1 for non-emergency inquiries or government service requests. The Suffolk311 Call Center is open from 9am - 6pm M - F, 9am - 4pm weekends Previous Next",
+      "img": "https://suffolkcountyny.gov/Portals/0/EasyDNNRotator/2903/cdsjfpri.png",
+      "alt": "Suffolk311",
+      "bg": "",
+      "className": "chameleon_slider NewsOne"
+    }
+  ]
+}

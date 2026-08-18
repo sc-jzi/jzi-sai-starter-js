@@ -25,6 +25,46 @@ export type AppPromoProps = {
   fields: Fields;
 };
 
+/* Suffolk variant — full-bleed lighthouse photo with search chrome */
+export const Suffolk = (props: AppPromoProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const placeholder = props.fields?.Link?.value?.text || 'Search Suffolk County';
+
+  return (
+    <div className={`component hero suffolk ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="hero-media">
+        <NextImage field={props.fields.Image} className="hero-image" width={1920} height={720} />
+        <div className="hero-overlay" />
+      </div>
+      <div className="container content-container">
+        <div className="hero-copy">
+          <h1 className="hero-title">
+            <Text field={props.fields.Title} />
+          </h1>
+          <form className="suffolk-search" action="#" method="get" role="search">
+            <input
+              className="suffolk-search-input"
+              type="search"
+              name="q"
+              placeholder={placeholder}
+              aria-label={placeholder}
+              readOnly={!isPageEditing}
+            />
+            {(isPageEditing || props.fields?.Link?.value?.href) && (
+              <Link field={props.fields.Link} className="suffolk-search-button">
+                Search
+              </Link>
+            )}
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: AppPromoProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

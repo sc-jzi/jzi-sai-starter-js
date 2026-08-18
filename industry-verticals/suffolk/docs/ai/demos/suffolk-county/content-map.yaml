@@ -1,0 +1,236 @@
+client:
+  name: "Suffolk County"
+  sourceUrl: "https://suffolkcountyny.gov/"
+  sourceLanguage: "en"
+  targetLanguage: "en"
+  translationApplied: false
+  extractedAt: "2026-08-18T15:05:00Z"
+  mappedAt: "2026-08-18T16:10:00Z"
+  contentSource: "extractor+live-rotator"
+
+datasourceItems:
+  - componentName: "HeadingCta"
+    itemName: "Suffolk County - Alert Bar"
+    itemId: "2663ced4-b68c-4080-9a22-fd7dc7bfe0e8"
+  - componentName: "Hero"
+    itemName: "Suffolk County - Hero"
+    itemId: "5caaeae3-e311-47db-92ce-34ba1b0304c2"
+  - componentName: "HeadingCta"
+    itemName: "Suffolk County - Quick Actions Intro"
+    itemId: "c36f6d6a-3387-4f58-bfe4-625fdcf4e923"
+  - componentName: "ThreeColumnCta"
+    itemName: "Suffolk County - Quick Actions Row 1"
+    itemId: "8ac6540f-a0a6-4688-b4b0-17f0905ed679"
+  - componentName: "ThreeColumnCta"
+    itemName: "Suffolk County - Quick Actions Row 2"
+    itemId: "438f54c5-fc36-4367-93c2-51b1b93d72a0"
+  - componentName: "Carousel"
+    itemName: "Suffolk County - Promo Carousel"
+    itemId: "99f0e1f7-d269-49a1-9e9c-25a46ee47eb0"
+  - componentName: "FourColumnCta"
+    itemName: "Suffolk County - Service Directory"
+    itemId: "59d97533-0b65-4517-9343-22ed351cdab4"
+  - componentName: "TwoColumnCta"
+    itemName: "Suffolk County - News and Events"
+    itemId: "346181ab-c666-4e9c-900b-85778b18d74b"
+  - componentName: "HeadingCta"
+    itemName: "Suffolk County - Featured Intro"
+    itemId: "44d84274-0250-4763-bbb4-a1f378d9f7ed"
+  - componentName: "FiveColumnCta"
+    itemName: "Suffolk County - Featured Services"
+    itemId: "36e2dc59-e379-46d7-bfbb-53fc526077a1"
+
+sections:
+  - position: 1
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Suffolk County - Alert Bar"
+    apiAddable: true
+    fields:
+      Heading: "Cooling Facilities in Suffolk County"
+      Text: "Click the following link for a list of facilities that may be activated as Cooling Centers during extreme heat events as determined by the National Weather Service."
+      Link:
+        text: "Cooling Centers"
+        href: "https://suffolkcountyny.gov/"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 2
+    componentName: "Header"
+    manifestName: "Header"
+    kind: "context-only"
+    datasourceItemName: ""
+    apiAddable: false
+    fields: {}
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 3
+    componentName: "Hero"
+    manifestName: "Hero"
+    kind: "simple"
+    datasourceItemName: "Suffolk County - Hero"
+    apiAddable: true
+    fields:
+      Title: "What are you looking for?"
+      Text: ""
+      Link:
+        text: "Search Suffolk County"
+        href: "https://suffolkcountyny.gov/"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image"
+        src: "hero-lighthouse.png"
+        alt: "Montauk Point Lighthouse"
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 4
+    componentName: "ThreeColumnCta"
+    manifestName: "ThreeColumnCta"
+    kind: "simple"
+    datasourceItemName: "Suffolk County - Quick Actions Row 1"
+    apiAddable: true
+    fields:
+      Text1: "Suffolk County 311"
+      Text2: "Pay"
+      Text3: "Register Apply"
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 5
+    componentName: "Carousel"
+    manifestName: "Carousel"
+    kind: "list"
+    datasourceItemName: "Suffolk County - Promo Carousel"
+    apiAddable: true
+    fields: {}
+    children:
+      - name: "Suffolk County - Slide Emergency Preparedness"
+        fields:
+          Title: "Emergency Preparedness Tips for Families"
+          Text: "<p>Build a Kit — Help your family prepare today!</p>"
+        imageFields:
+          - field: "Image"
+            src: "slide-emergency.jpg"
+            alt: "Emergency Preparedness Tips for Families"
+      - name: "Suffolk County - Slide Stop Bullying"
+        fields:
+          Title: "Suffolk Stop Bullying"
+          Text: "<p>Comprehensive Resource Guide for parents and children grades K-12.</p>"
+        imageFields:
+          - field: "Image"
+            src: "slide-bullying.jpg"
+            alt: "Suffolk Stop Bullying"
+      - name: "Suffolk County - Slide Police Reform"
+        fields:
+          Title: "Suffolk County Police Reform and Reinvention Task Force"
+          Text: "<p>A County that supports safe, effective, and equitable policing.</p>"
+        imageFields:
+          - field: "Image"
+            src: "slide-police-reform.jpg"
+            alt: "Police Reform Task Force"
+      - name: "Suffolk County - Slide Hazard Mitigation"
+        fields:
+          Title: "Invest in your personal safety and protect your property - Hazard Mitigation"
+          Text: "<p>Suffolk County Coastal Resiliency Initiative.</p>"
+        imageFields:
+          - field: "Image"
+            src: "slide-hazard.jpg"
+            alt: "Hazard Mitigation"
+      - name: "Suffolk County - Slide SuffolkAlert"
+        fields:
+          Title: "SuffolkAlert Emergency Notification System"
+        imageFields:
+          - field: "Image"
+            src: "slide-alert.png"
+            alt: "SuffolkAlert"
+      - name: "Suffolk County - Slide Smart Start"
+        fields:
+          Title: "Suffolk Smart Start"
+        imageFields:
+          - field: "Image"
+            src: "slide-smart-start.jpg"
+            alt: "Suffolk Smart Start"
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 6
+    componentName: "FourColumnCta"
+    manifestName: "FourColumnCta"
+    kind: "simple"
+    datasourceItemName: "Suffolk County - Service Directory"
+    apiAddable: true
+    fields:
+      Title1: "Civil Service Exam e-FILING"
+      Title2: "Business and Commercial"
+      Title3: "Records and Data"
+      Title4: "Aging"
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 7
+    componentName: "TwoColumnCta"
+    manifestName: "TwoColumnCta"
+    kind: "simple"
+    datasourceItemName: "Suffolk County - News and Events"
+    apiAddable: true
+    fields:
+      Title1: "County News"
+      Title2: "County Events"
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 8
+    componentName: "FiveColumnCta"
+    manifestName: "FiveColumnCta"
+    kind: "simple"
+    datasourceItemName: "Suffolk County - Featured Services"
+    apiAddable: true
+    fields:
+      Text1: "Submission and Status Portal"
+      Text2: "Become a Volunteer Firefighter or EMS worker"
+      Text3: "Suffolk County Open Data"
+      Text4: "Sign up to receive SuffolkAlert Emergency Alerts"
+      Text5: "852-COPS Non-Emergency"
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 9
+    componentName: "Footer"
+    manifestName: "Footer"
+    kind: "context-only"
+    datasourceItemName: ""
+    apiAddable: false
+    fields: {}
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+summary:
+  totalSections: 9
+  sectionsWithContent: 9
+  contextOnlySkipped: 2
+  fieldsPopulated: 40
+  imageFieldsMapped: 13
+  imagesSkipped: 0
+  videosFound: 0
+  translationApplied: false
+  sourceLanguage: "en"

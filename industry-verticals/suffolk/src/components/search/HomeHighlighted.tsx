@@ -1,9 +1,10 @@
 'use client';
 
-import { JSX } from 'react';
+import type { ComponentProps, JSX } from 'react';
 import { FilterEqual, WidgetDataType, useSearchResults, widget } from '@sitecore-search/react';
 import ArticleCard from './ArticleCard';
 import { useSearchTracking, type Events } from '../../hooks/useSearchTracking';
+import { isSitecoreSearchConfigured } from 'src/lib/sitecore-search';
 
 type HomeHighlightedProps = {
   type: string;
@@ -64,4 +65,14 @@ export const HomeHighlightedComponent = ({ type = 'Article', source, widget }: H
   );
 };
 
-export default widget(HomeHighlightedComponent, WidgetDataType.SEARCH_RESULTS, 'content');
+const HomeHighlightedWidget = widget(HomeHighlightedComponent, WidgetDataType.SEARCH_RESULTS, 'content');
+
+const HomeHighlighted = (props: ComponentProps<typeof HomeHighlightedWidget>) => {
+  if (!isSitecoreSearchConfigured()) {
+    return null;
+  }
+
+  return <HomeHighlightedWidget {...props} />;
+};
+
+export default HomeHighlighted;

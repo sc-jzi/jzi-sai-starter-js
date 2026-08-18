@@ -1,0 +1,259 @@
+# Demo Build Plan — Suffolk County Government
+# Adapted for public-sector/suffolk-county starter kit (UIIM fmc-custom-demo not deployed)
+
+client:
+  name: "Suffolk County"
+  sourceUrl: "https://suffolkcountyny.gov/"
+  themeFile: "docs/ai/themes/suffolk-county.theme.yaml"
+  analyzedAt: "2026-08-18T15:10:00Z"
+  environment: "public-sector/suffolk-county"
+  note: "UIIM fmc-custom-demo not deployed — using starter kit components on suffolk-county site"
+
+pageAnalysis:
+  screenshotFiles:
+    desktop: "docs/ai/themes/suffolk-county/screenshot-desktop.png"
+    mobile: "docs/ai/themes/suffolk-county/screenshot-mobile.png"
+    hero: "docs/ai/themes/suffolk-county/screenshot-hero.png"
+    userProvided: "docs/ai/demos/suffolk-county/screenshot-desktop.png"
+  totalSections: 9
+  templateMatches: 9
+  customRequired: 0
+
+sections:
+  - position: 1
+    description: "Thin full-width alert bar — Cooling Facilities in Suffolk County with Cooling Centers link"
+    matchedComponent:
+      componentName: "HeadingCta"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+      variantMatch: "none"
+      customVariantNeeded:
+        name: "SuffolkAlert"
+        description: "Full-width compact red (or navy) bar, centered white heading + inline text link, no large display heading"
+        parentComponent: "HeadingCta"
+    sectionBackground: "accent"
+    content:
+      Eyebrow: ""
+      Heading: "Cooling Facilities in Suffolk County"
+      Text: "Click the following link for a list of facilities that may be activated as Cooling Centers during extreme heat events as determined by the National Weather Service."
+      Link: "Cooling Centers"
+    contentNotes: "Live bar is sometimes red, sometimes blue depending on alert type. Custom variant should look like a civic alert strip, not a marketing heading."
+
+  - position: 2
+    description: "Navy brand header with county seal, Suffolk County Government / Edward P. Romaine, social icons, language selector; solid blue nav (Home, Government, Residents, Services, Business, Visiting)"
+    matchedComponent:
+      componentName: "Header"
+      renderingId: "81317d3b-f929-426a-83ec-421982f8f1e6"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: false
+      variantMatch: "partial"
+      customVariantNeeded:
+        name: "Suffolk"
+        description: "Seal + stacked wordmark left; social + language right; full-width blue nav with icons"
+        parentComponent: "Header"
+    sectionBackground: "dark"
+    contentNotes: "Context-only — lives in header partial design. Update logo (county seal) and navigation items in Content Editor."
+
+  - position: 3
+    description: "Full-bleed Montauk Point Lighthouse photo with overlay 'What are you looking for?' and a large Search Suffolk County field"
+    matchedComponent:
+      componentName: "Hero"
+      renderingId: "b7cdf75e-716a-4c59-b9b1-cd970ae0a4ae"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+      variantMatch: "partial"
+      customVariantNeeded:
+        name: "Suffolk"
+        description: "Full-bleed coastal photo, centered display question, prominent white search input (visual chrome; search wiring optional)"
+        parentComponent: "Hero"
+    sectionBackground: "dark"
+    content:
+      Title: "What are you looking for?"
+      Text: ""
+      Link: "Search Suffolk County"
+    contentNotes: "Live site search is functional. Demo variant can render a search-styled input; wiring to Sitecore Search is out of scope unless requested."
+
+  - position: 4
+    description: "Blue band 'What would you like to do?' then a 2x3 bordered icon grid — 311, Pay, Register/Apply, Find Work, Land Search, Contact"
+    matchedComponent:
+      componentName: "ThreeColumnCta"
+      renderingId: "ad385021-ce2b-4fc1-89aa-207d408034a8"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+      variantMatch: "none"
+      customVariantNeeded:
+        name: "SuffolkQuickActions"
+        description: "Icon-left or icon-above bordered cells, blue links, 3-up wrapping to 2 rows; pair with HeadingCta for the blue band title"
+        parentComponent: "ThreeColumnCta"
+    sectionBackground: "default"
+    content:
+      Text1: "Suffolk County 311"
+      SubText1: ""
+      Link1: "Suffolk County 311"
+      Text2: "Pay"
+      SubText2: ""
+      Link2: "Pay"
+      Text3: "Register Apply"
+      SubText3: ""
+      Link3: "Register Apply"
+    contentNotes: "Six actions — use HeadingCta for the band title plus two ThreeColumnCta datasources (row 2: Find Work, Land Search, Contact)."
+
+  - position: 5
+    description: "Full-width promotional carousel of county campaigns with overlay headline and CTA (Emergency Preparedness, Stop Bullying, Police Reform, Hazard Mitigation, and additional live rotator slides)"
+    matchedComponent:
+      componentName: "Carousel"
+      renderingId: "8094185b-4c72-40c8-b005-c6ed91708754"
+      variant: "Suffolk"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+      variantMatch: "partial"
+      customVariantNeeded:
+        name: "Suffolk"
+        description: "Full-bleed photo slides with navy overlay card, headline, body, single button, and dot indicators"
+        parentComponent: "Carousel"
+    sectionBackground: "muted"
+    content:
+      Title: "Promo carousel"
+    contentNotes: "User-approved carousel includes Emergency Preparedness, Suffolk Stop Bullying, Police Reform & Reinvention Task Force, Hazard Mitigation, SuffolkAlert, and Suffolk Smart Start."
+
+  - position: 6
+    description: "Dense four-column department/service directory — blue category headings with short descriptions and More... links"
+    matchedComponent:
+      componentName: "FourColumnCta"
+      renderingId: "35075000-760e-4ff3-bd1c-f2eeba251dcb"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "medium"
+      apiAddable: true
+      variantMatch: "none"
+      customVariantNeeded:
+        name: "SuffolkDirectory"
+        description: "Four text columns: bold blue heading, 1-2 line description, stacked text links (not image cards)"
+        parentComponent: "FourColumnCta"
+    sectionBackground: "default"
+    content:
+      Title1: "Civil Service & Employment"
+      Text1: "Exams, job bank, people with disabilities, laws and codes, alerts, Youth Bureau."
+      Title2: "Business, Health & Services"
+      Text2: "Business and commercial, social services, health services, forms and reports, public works."
+      Title3: "Records, Recreation & Safety"
+      Text3: "Records and data, recreation, public safety, towns and villages, central procurement."
+      Title4: "Community & Officials"
+      Text4: "Aging, veterans, multicultural affairs, women's services, elected officials, FAQs and A–Z."
+    contentNotes: "Live site lists ~6 headings per column with nested links. Default FourColumnCta is image+title+text cards — custom variant should drop images and render as a civic link directory. Full link inventory extracted in Phase 2.5."
+
+  - position: 7
+    description: "Two columns — County News (article titles, dates, Read more) and County Events (calendar date boxes, titles, times)"
+    matchedComponent:
+      componentName: "TwoColumnCta"
+      renderingId: "3a9a9d22-c092-4b54-9511-eb202ceabe8d"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "medium"
+      apiAddable: true
+      variantMatch: "none"
+      customVariantNeeded:
+        name: "SuffolkNewsEvents"
+        description: "Left: stacked news rows with date + Read more. Right: calendar-style event rows with date box. Section headings County News / County Events."
+        parentComponent: "TwoColumnCta"
+    sectionBackground: "muted"
+    content:
+      Title1: "County News"
+      Text1: "Twenty-Five Mosquito Samples Test Positive for West Nile Virus. Romaine & LaLota Announce Air Traffic Control Tower Project. Three Beaches Closed to Bathing."
+      Link1: "Read more"
+      Title2: "County Events"
+      Text2: "Peconic Estuary Joint Technical Advisory meeting. Environmental Quality Board of Review. Community Health Fair."
+      Link2: "More Events"
+    contentNotes: "Default TwoColumnCta is two promo cards. Custom variant should look like a news list + event calendar. ArticleList exists but requires article items under the site tree — optional later if SE wants live article pages."
+
+  - position: 8
+    description: "Front Page Featured Services — five image cards with title and blue Visit button"
+    matchedComponent:
+      componentName: "FiveColumnCta"
+      renderingId: "333def3e-c272-4ad9-a493-8d5ccae08312"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+      variantMatch: "partial"
+      customVariantNeeded:
+        name: "Suffolk"
+        description: "Square image, title below, solid blue Visit button; pair with HeadingCta for section title"
+        parentComponent: "FiveColumnCta"
+    sectionBackground: "default"
+    content:
+      Text1: "Submission and Status Portal"
+      Link1: "Visit"
+      Text2: "Become a Volunteer Firefighter or EMS worker"
+      Link2: "Visit"
+      Text3: "Suffolk County Open Data"
+      Link3: "Visit"
+      Text4: "Sign up to receive SuffolkAlert Emergency Alerts"
+      Link4: "Visit"
+      Text5: "852-COPS Non-Emergency"
+      Link5: "Visit"
+    contentNotes: "Pair with HeadingCta 'Front Page Featured Services'."
+
+  - position: 9
+    description: "Dark navy mega footer with lighthouse watermark, county seal, Hauppauge and Riverhead addresses, Services and Elected Officials columns, legal bar"
+    matchedComponent:
+      componentName: "Footer"
+      renderingId: "771a3f27-6448-44ac-add0-e5de311c6e3b"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: false
+      variantMatch: "partial"
+      customVariantNeeded:
+        name: "Suffolk"
+        description: "Navy background, faint lighthouse, seal + two addresses, two link columns, copyright bar"
+        parentComponent: "Footer"
+    sectionBackground: "dark"
+    contentNotes: "Context-only — lives in footer partial design."
+
+customComponents: []
+
+buildOrder:
+  phase1_sitecore:
+    - position: 1
+      componentName: "HeadingCta"
+      datasourceName: "Suffolk County - Alert Bar"
+    - position: 3
+      componentName: "Hero"
+      datasourceName: "Suffolk County - Hero"
+    - position: 4
+      componentName: "HeadingCta"
+      datasourceName: "Suffolk County - Quick Actions Intro"
+    - position: 4
+      componentName: "ThreeColumnCta"
+      datasourceName: "Suffolk County - Quick Actions Row 1"
+    - position: 4
+      componentName: "ThreeColumnCta"
+      datasourceName: "Suffolk County - Quick Actions Row 2"
+    - position: 5
+      componentName: "Carousel"
+      datasourceName: "Suffolk County - Promo Carousel"
+    - position: 6
+      componentName: "FourColumnCta"
+      datasourceName: "Suffolk County - Service Directory"
+    - position: 7
+      componentName: "TwoColumnCta"
+      datasourceName: "Suffolk County - News and Events"
+    - position: 8
+      componentName: "HeadingCta"
+      datasourceName: "Suffolk County - Featured Intro"
+    - position: 8
+      componentName: "FiveColumnCta"
+      datasourceName: "Suffolk County - Featured Services"
+  phase2_theme: "Suffolk site theme class + brand CSS (navy/blue/red, Heebo/Arimo)"
+  phase3_custom: []

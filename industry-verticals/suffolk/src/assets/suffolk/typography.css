@@ -1,0 +1,7 @@
+:root {
+  --brand-heading-font: 'Heebo', sans-serif;
+  --brand-body-font: 'Arimo', sans-serif;
+  --brand-display-font: 'BenchNine', 'Heebo', sans-serif;
+  --font-heading: var(--brand-heading-font);
+  --font-body: var(--brand-body-font);
+}

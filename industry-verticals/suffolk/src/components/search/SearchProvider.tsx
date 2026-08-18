@@ -2,6 +2,7 @@
 
 import React, { useEffect } from 'react';
 import { PageController, WidgetsProvider } from '@sitecore-search/react';
+import { isSitecoreSearchConfigured } from 'src/lib/sitecore-search';
 
 const SEARCH_CONFIG = {
   env: process.env.NEXT_PUBLIC_SEARCH_ENV as any,
@@ -36,9 +37,19 @@ export function SearchProvider({
   children,
   locale,
 }: SearchProviderProps) {
+  const isConfigured = isSitecoreSearchConfigured();
+
   useEffect(() => {
+    if (!isConfigured) {
+      return;
+    }
+
     setSearchLocale(locale);
-  }, [locale]);
+  }, [locale, isConfigured]);
+
+  if (!isConfigured) {
+    return <>{children}</>;
+  }
 
   return (
     <WidgetsProvider

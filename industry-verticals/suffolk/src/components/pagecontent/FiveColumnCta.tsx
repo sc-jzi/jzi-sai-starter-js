@@ -35,6 +35,56 @@ export type FiveColumnCtaProps = {
   fields: Fields;
 };
 
+/* Suffolk variant — image card with Visit button */
+export const Suffolk = (props: FiveColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const Column = ({
+    image,
+    text,
+    link,
+  }: {
+    image: ImageField;
+    text: Field<string>;
+    link: LinkField;
+  }) => {
+    return (
+      <div className="col">
+        <div className="suffolk-card">
+          {(isPageEditing || image?.value?.src) && (
+            <div className="image-container">
+              <NextImage field={image} className="d-block w-100 h-100" width={200} height={200} />
+            </div>
+          )}
+          <div className="text-container">
+            <Text field={text} />
+          </div>
+          {(isPageEditing || link?.value?.href) && (
+            <Link field={link} className="button button-main" />
+          )}
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <div className={`component component-spaced five-column-cta suffolk ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="row row-cols-2 row-cols-sm-3 row-cols-lg-5 row-gap-3 gx-4 justify-content-center">
+          <Column image={props.fields.Image1} text={props.fields.Text1} link={props.fields.Link1} />
+          <Column image={props.fields.Image2} text={props.fields.Text2} link={props.fields.Link2} />
+          <Column image={props.fields.Image3} text={props.fields.Text3} link={props.fields.Link3} />
+          <Column image={props.fields.Image4} text={props.fields.Text4} link={props.fields.Link4} />
+          <Column image={props.fields.Image5} text={props.fields.Text5} link={props.fields.Link5} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: FiveColumnCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

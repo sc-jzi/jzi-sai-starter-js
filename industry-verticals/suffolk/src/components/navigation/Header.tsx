@@ -11,6 +11,32 @@ export type HeaderProps = ComponentProps & {
   componentMap: ComponentMap;
 };
 
+/* Suffolk variant — navy brand bar */
+export const Suffolk = (props: HeaderProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+
+  return (
+    <div className={`component header suffolk ${props.params.styles?.trimEnd()}`} id={id ? id : undefined}>
+      <div className={`container container-${props.params?.ContainerWidth?.toLowerCase()}-fluid`}>
+        <div className="row align-items-center">
+          <div className="col-auto">
+            <AppPlaceholder
+              name="header-left"
+              rendering={props.rendering}
+              page={page}
+              componentMap={props.componentMap}
+            />
+          </div>
+          <div className="col">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: HeaderProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

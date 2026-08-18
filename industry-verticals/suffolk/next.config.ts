@@ -1,7 +1,6 @@
 import type { NextConfig } from 'next';
 import createNextIntlPlugin from 'next-intl/plugin';
 const path = require('path');
-const SassAlias = require('sass-alias');
 
 const nextConfig: NextConfig = {
   // Enable Turbopack file system caching for faster dev startup (beta)
@@ -46,15 +45,9 @@ const nextConfig: NextConfig = {
   sassOptions: {
     loadPaths: [
       process.cwd(),
-      path.join(process.cwd(), 'node_modules'),
       path.join(process.cwd(), 'node_modules/bootstrap/scss'),
       path.join(process.cwd(), 'src/assets/sass/abstracts'),
     ],
-    importer: new SassAlias({
-      '@globals': path.join(process.cwd(), './src/assets', 'globals'),
-      '@fontawesome': path.join(process.cwd(), './node_modules', 'font-awesome'),
-      '@vars': path.join(process.cwd(), './src/assets/sass/abstracts'),
-    }).getImporter(),
     // temporary measure until new versions of bootstrap and font-awesome released
     quietDeps: true,
     silenceDeprecations: ['import', 'legacy-js-api'],

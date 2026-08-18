@@ -1,0 +1,40 @@
+:root {
+  --brand-primary: #006fe6;
+  --brand-primary-foreground: #ffffff;
+  --brand-secondary: #003366;
+  --brand-secondary-foreground: #ffffff;
+  --brand-accent: #d2232a;
+  --brand-accent-foreground: #ffffff;
+  --brand-bg: #ffffff;
+  --brand-fg: #212529;
+  --brand-muted: #f4f6f8;
+  --brand-muted-fg: #5a6570;
+  --brand-header-bg: #003366;
+  --brand-header-fg: #ffffff;
+  --brand-footer-bg: #003366;
+  --brand-footer-fg: #eeeeee;
+  --brand-border: #dee2e6;
+  --brand-ring: #006fe6;
+  --brand-link: #0056b3;
+  --brand-campaign: #f15a22;
+  --brand-icon-row: #e8f2fc;
+  --brand-radius: 0.25rem;
+  --brand-button-radius: 0px;
+  --brand-card-radius: 0.25rem;
+
+  --color-background: var(--brand-bg);
+  --color-foreground: var(--brand-fg);
+  --color-primary: var(--brand-primary);
+  --color-primary-foreground: var(--brand-primary-foreground);
+  --color-primary-background: var(--brand-muted);
+  --color-primary-hover: #0056b3;
+  --color-primary-active: #003366;
+  --color-secondary: var(--brand-secondary);
+  --color-secondary-foreground: var(--brand-secondary-foreground);
+  --color-muted: var(--brand-muted);
+  --color-muted-foreground: var(--brand-muted-fg);
+  --color-accent: var(--brand-accent);
+  --color-accent-foreground: var(--brand-accent-foreground);
+  --color-footer-bg: var(--brand-footer-bg);
+  --color-footer-fg: var(--brand-footer-fg);
+}

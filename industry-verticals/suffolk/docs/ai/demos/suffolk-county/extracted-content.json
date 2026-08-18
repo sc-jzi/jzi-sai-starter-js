@@ -1,0 +1,19 @@
+{
+  "url": "https://suffolkcountyny.gov/",
+  "extractedAt": "2026-08-18T15:05:17.030Z",
+  "detectedLanguage": "en-US",
+  "targetLanguage": "en",
+  "translationNeeded": false,
+  "totalSections": 0,
+  "totalImages": 0,
+  "totalVideos": 0,
+  "interactionStats": {
+    "lazySourcesResolved": 0,
+    "tabsClicked": 0,
+    "accordionsExpanded": 0,
+    "carouselDotsClicked": 1,
+    "carouselArrowSlides": 12,
+    "backgroundImagesCollected": 4
+  },
+  "sections": []
+}

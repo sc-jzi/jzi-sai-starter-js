@@ -1,8 +1,10 @@
 'use client';
 
+import type { ComponentProps } from 'react';
 import { Accordion, Content, Header, Item, Trigger } from '@radix-ui/react-accordion';
 import { ChevronDownIcon } from '@radix-ui/react-icons';
 import { WidgetDataType, useQuestions, widget } from '@sitecore-search/react';
+import { isSitecoreSearchConfigured } from 'src/lib/sitecore-search';
 
 const SEARCH_CONFIG = {
   source: process.env.NEXT_PUBLIC_SEARCH_SOURCE as string,
@@ -102,4 +104,12 @@ const QuestionsAnswersWidget = widget(
   'Articles'
 );
 
-export default QuestionsAnswersWidget;
+const QuestionsAnswers = (props: ComponentProps<typeof QuestionsAnswersWidget>) => {
+  if (!isSitecoreSearchConfigured()) {
+    return null;
+  }
+
+  return <QuestionsAnswersWidget {...props} />;
+};
+
+export default QuestionsAnswers;

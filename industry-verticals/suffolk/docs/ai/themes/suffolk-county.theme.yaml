@@ -1,0 +1,127 @@
+# Client Brand Theme — Suffolk County Government
+# Extracted from: https://suffolkcountyny.gov/
+# Sources: Playwright scraper + desktop/mobile/hero screenshots
+
+client:
+  name: "Suffolk County"
+  sourceUrl: "https://suffolkcountyny.gov/"
+  extractedAt: "2026-08-18T15:05:00Z"
+  extractedBy: "cursor"
+
+colors:
+  primary: "#006FE6"
+  primaryForeground: "#ffffff"
+  secondary: "#003366"
+  secondaryForeground: "#ffffff"
+  accent: "#D2232A"
+  accentForeground: "#ffffff"
+  background: "#ffffff"
+  foreground: "#212529"
+  muted: "#F4F6F8"
+  mutedForeground: "#5A6570"
+  headerBackground: "#003366"
+  headerForeground: "#ffffff"
+  footerBackground: "#003366"
+  footerForeground: "#EEEEEE"
+  border: "#DEE2E6"
+  ring: "#006FE6"
+  extra:
+    - { name: "nav-blue", value: "#006FE6" }
+    - { name: "link-blue", value: "#0056B3" }
+    - { name: "alert-red", value: "#D2232A" }
+    - { name: "campaign-orange", value: "#F15A22" }
+    - { name: "icon-row", value: "#E8F2FC" }
+
+typography:
+  headingFamily: "'Heebo', sans-serif"
+  headingWeight: "700"
+  bodyFamily: "'Arimo', sans-serif"
+  bodyWeight: "400"
+  monoFamily: "ui-monospace, monospace"
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Heebo:wght@400;500;700&family=BenchNine:wght@400;700&display=swap"
+  scale:
+    hero: "2.5rem"
+    h1: "1.75rem"
+    h2: "1.5rem"
+    h3: "1.25rem"
+    body: "1rem"
+    small: "0.875rem"
+  headingTransform: "none"
+  letterSpacing: "normal"
+  lineHeight: "normal"
+
+spacing:
+  density: "compact"
+  sectionGap: "2.5rem"
+  containerMaxWidth: "1140px"
+  containerPadding: "1rem"
+
+shape:
+  borderRadius: "0.25rem"
+  buttonRadius: "0px"
+  cardRadius: "0.25rem"
+  imageRadius: "0px"
+  shadowStyle: "none"
+  borderStyle: "subtle"
+
+tone:
+  overall: "civic"
+  colorMode: "light"
+  contrast: "high"
+  imagery: "photography"
+  heroStyle: "full-bleed-image"
+  cardStyle: "bordered"
+  navStyle: "solid-bar"
+
+tailwind:
+  colors:
+    brand:
+      primary: "#006FE6"
+      secondary: "#003366"
+      accent: "#D2232A"
+  fontFamily:
+    heading: ["Heebo", "sans-serif"]
+    body: ["Arimo", "sans-serif"]
+  borderRadius:
+    DEFAULT: "0.25rem"
+    button: "0px"
+    card: "0.25rem"
+
+cssVariables: |
+  :root {
+    --brand-primary: #006FE6;
+    --brand-primary-foreground: #ffffff;
+    --brand-secondary: #003366;
+    --brand-secondary-foreground: #ffffff;
+    --brand-accent: #D2232A;
+    --brand-accent-foreground: #ffffff;
+    --brand-bg: #ffffff;
+    --brand-fg: #212529;
+    --brand-muted: #F4F6F8;
+    --brand-muted-fg: #5A6570;
+    --brand-header-bg: #003366;
+    --brand-header-fg: #ffffff;
+    --brand-footer-bg: #003366;
+    --brand-footer-fg: #EEEEEE;
+    --brand-border: #DEE2E6;
+    --brand-ring: #006FE6;
+    --brand-heading-font: 'Heebo', sans-serif;
+    --brand-body-font: 'Arimo', sans-serif;
+    --brand-radius: 0.25rem;
+    --brand-button-radius: 0px;
+    --brand-card-radius: 0.25rem;
+  }
+
+extraction:
+  confidence: "high"
+  method: "playwright-full"
+  notes:
+    - "Nav/button blue #006FE6 from computed headerBackground and primaryButtonBackground (rgb(0, 111, 230))."
+    - "Link blue #0056B3 from computed linkColor (rgb(0, 86, 179))."
+    - "Navy #003366 is visual (brand header + dark lighthouse footer). Scraper footerBackground was a false white from a nested element."
+    - "Alert red #D2232A from the top Cooling Centers / facilities bar (visual)."
+    - "Campaign orange #F15A22 from the original homepage promotional banner (Stop Bullying); live scrape currently shows an Emergency Preparedness banner instead."
+    - "Headings: Heebo 700. Body: Arimo 400. BenchNine is also loaded (condensed display); used as optional display font."
+    - "Buttons are square (0px radius). Cards are 4px with a 1px border and no shadow — utilitarian civic UI."
+    - "County seal downloaded to docs/ai/themes/suffolk-county/images/logo.png."
+    - "Demo will use starter-kit components (Hero, Header, Footer, HeadingCta, column CTAs, Promo CTA) — UIIM library is not on this tenant."

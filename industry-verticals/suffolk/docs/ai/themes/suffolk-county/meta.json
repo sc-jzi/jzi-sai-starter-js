@@ -1,0 +1,277 @@
+{
+  "title": "Suffolk County Government",
+  "themeColor": null,
+  "msColor": null,
+  "ogTitle": null,
+  "ogDescription": null,
+  "ogImage": null,
+  "ogSiteName": null,
+  "googleFontsLinks": [],
+  "fontFaces": [
+    {
+      "family": "Font Awesome 7 Brands",
+      "src": "url(\"../webfonts/fa-brands-400.woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Font Awesome 7 Free",
+      "src": "url(\"../webfonts/fa-regular-400.woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Font Awesome 7 Free",
+      "src": "url(\"../webfonts/fa-solid-900.woff2\")",
+      "weight": "900"
+    },
+    {
+      "family": "Font Awesome 5 Brands",
+      "src": "url(\"../webfonts/fa-brands-400.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Font Awesome 5 Free",
+      "src": "url(\"../webfonts/fa-solid-900.woff2\") format(\"woff2\")",
+      "weight": "900"
+    },
+    {
+      "family": "Font Awesome 5 Free",
+      "src": "url(\"../webfonts/fa-regular-400.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "FontAwesome",
+      "src": "url(\"../webfonts/fa-solid-900.woff2\") format(\"woff2\")",
+      "weight": ""
+    },
+    {
+      "family": "FontAwesome",
+      "src": "url(\"../webfonts/fa-brands-400.woff2\") format(\"woff2\")",
+      "weight": ""
+    },
+    {
+      "family": "FontAwesome",
+      "src": "url(\"../webfonts/fa-regular-400.woff2\") format(\"woff2\")",
+      "weight": ""
+    },
+    {
+      "family": "FontAwesome",
+      "src": "url(\"../webfonts/fa-v4compatibility.woff2\") format(\"woff2\")",
+      "weight": ""
+    },
+    {
+      "family": "BenchNine",
+      "src": "local(\"BenchNine Regular\"), local(\"BenchNine-Regular\"), url(\"https://fonts.gstatic.com/s/benchnine/v5/AVs3lMmyGvSpQmMt6DeeRhJtnKITppOI_IvcXXDNrsc.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "BenchNine",
+      "src": "local(\"BenchNine Regular\"), local(\"BenchNine-Regular\"), url(\"https://fonts.gstatic.com/s/benchnine/v5/xmB9oJNpSFKa3qTF2JABPltXRa8TVwTICgirnJhmVJw.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "BenchNine",
+      "src": "local(\"BenchNine Bold\"), local(\"BenchNine-Bold\"), url(\"https://fonts.gstatic.com/s/benchnine/v5/qZpi6ZVZg3L2RL_xoBLxWT0LW-43aMEzIO6XUTLjad8.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "BenchNine",
+      "src": "local(\"BenchNine Bold\"), local(\"BenchNine-Bold\"), url(\"https://fonts.gstatic.com/s/benchnine/v5/qZpi6ZVZg3L2RL_xoBLxWegdm0LZdjqr5-oayXSOefg.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto Slab",
+      "src": "local(\"Roboto Slab Regular\"), local(\"RobotoSlab-Regular\"), url(\"https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37ZjTOQ_MqJVwkKsUn0wKzc2I.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto Slab",
+      "src": "local(\"Roboto Slab Regular\"), local(\"RobotoSlab-Regular\"), url(\"https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37ZjUj_cnvWIuuBMVgbX098Mw.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto Slab",
+      "src": "local(\"Roboto Slab Regular\"), local(\"RobotoSlab-Regular\"), url(\"https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37ZkbcKLIaa1LC45dFaAfauRA.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto Slab",
+      "src": "local(\"Roboto Slab Regular\"), local(\"RobotoSlab-Regular\"), url(\"https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37Zmo_sUJ8uO4YLWRInS22T3Y.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto Slab",
+      "src": "local(\"Roboto Slab Regular\"), local(\"RobotoSlab-Regular\"), url(\"https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37Zr6up8jxqWt8HVA3mDhkV_0.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto Slab",
+      "src": "local(\"Roboto Slab Regular\"), local(\"RobotoSlab-Regular\"), url(\"https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37ZiYE0-AqJ3nfInTTiDXDjU4.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto Slab",
+      "src": "local(\"Roboto Slab Regular\"), local(\"RobotoSlab-Regular\"), url(\"https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37Zo4P5ICox8Kq3LLUNMylGO4.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto Slab",
+      "src": "local(\"Roboto Slab Bold\"), local(\"RobotoSlab-Bold\"), url(\"https://fonts.gstatic.com/s/robotoslab/v6/dazS1PrQQuCxC3iOAJFEJZ6iIh_FvlUHQwED9Yt5Kbw.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto Slab",
+      "src": "local(\"Roboto Slab Bold\"), local(\"RobotoSlab-Bold\"), url(\"https://fonts.gstatic.com/s/robotoslab/v6/dazS1PrQQuCxC3iOAJFEJS_vZmeiCMnoWNN9rHBYaTc.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto Slab",
+      "src": "local(\"Roboto Slab Bold\"), local(\"RobotoSlab-Bold\"), url(\"https://fonts.gstatic.com/s/robotoslab/v6/dazS1PrQQuCxC3iOAJFEJSFaMxiho_5XQnyRZzQsrZs.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto Slab",
+      "src": "local(\"Roboto Slab Bold\"), local(\"RobotoSlab-Bold\"), url(\"https://fonts.gstatic.com/s/robotoslab/v6/dazS1PrQQuCxC3iOAJFEJQalQocB-__pDVGhF3uS2Ks.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto Slab",
+      "src": "local(\"Roboto Slab Bold\"), local(\"RobotoSlab-Bold\"), url(\"https://fonts.gstatic.com/s/robotoslab/v6/dazS1PrQQuCxC3iOAJFEJWhQUTDJGru-0vvUpABgH8I.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto Slab",
+      "src": "local(\"Roboto Slab Bold\"), local(\"RobotoSlab-Bold\"), url(\"https://fonts.gstatic.com/s/robotoslab/v6/dazS1PrQQuCxC3iOAJFEJejkDdvhIIFj_YMdgqpnSB0.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto Slab",
+      "src": "local(\"Roboto Slab Bold\"), local(\"RobotoSlab-Bold\"), url(\"https://fonts.gstatic.com/s/robotoslab/v6/dazS1PrQQuCxC3iOAJFEJYlIZu-HDpmDIZMigmsroc4.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "BenchNine",
+      "src": "local(\"BenchNine Regular\"), local(\"BenchNine-Regular\"), url(\"https://fonts.gstatic.com/s/benchnine/v5/AVs3lMmyGvSpQmMt6DeeRltXRa8TVwTICgirnJhmVJw.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "BenchNine",
+      "src": "local(\"BenchNine Bold\"), local(\"BenchNine-Bold\"), url(\"https://fonts.gstatic.com/s/benchnine/v5/qZpi6ZVZg3L2RL_xoBLxWRUOjZSKWg4xBWp_C_qQx0o.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto Slab",
+      "src": "local(\"Roboto Slab Regular\"), local(\"RobotoSlab-Regular\"), url(\"https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37Zqg5eI2G47JWe0-AuFtD150.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto Slab",
+      "src": "local(\"Roboto Slab Bold\"), local(\"RobotoSlab-Bold\"), url(\"https://fonts.gstatic.com/s/robotoslab/v6/dazS1PrQQuCxC3iOAJFEJasA81DAeuqoeYxDcSOJPMY.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "BenchNine",
+      "src": "local(\"BenchNine Regular\"), local(\"BenchNine-Regular\"), url(\"https://fonts.gstatic.com/s/benchnine/v5/AVs3lMmyGvSpQmMt6DeeRj8E0i7KZn-EPnyo3HZu7kw.woff\") format(\"woff\")",
+      "weight": "400"
+    },
+    {
+      "family": "BenchNine",
+      "src": "local(\"BenchNine Bold\"), local(\"BenchNine-Bold\"), url(\"https://fonts.gstatic.com/s/benchnine/v5/qZpi6ZVZg3L2RL_xoBLxWRa1RVmPjeKy21_GQJaLlJI.woff\") format(\"woff\")",
+      "weight": "700"
+    },
+    {
+      "family": "Roboto Slab",
+      "src": "local(\"Roboto Slab Regular\"), local(\"RobotoSlab-Regular\"), url(\"https://fonts.gstatic.com/s/robotoslab/v6/y7lebkjgREBJK96VQi37ZtIh4imgI8P11RFo6YPCPC0.woff\") format(\"woff\")",
+      "weight": "400"
+    },
+    {
+      "family": "Roboto Slab",
+      "src": "local(\"Roboto Slab Bold\"), local(\"RobotoSlab-Bold\"), url(\"https://fonts.gstatic.com/s/robotoslab/v6/dazS1PrQQuCxC3iOAJFEJYUt79146ZFaIJxILcpzmhI.woff\") format(\"woff\")",
+      "weight": "700"
+    },
+    {
+      "family": "BenchNine",
+      "src": "url(\"//fonts.gstatic.com/s/benchnine/v16/ahcev8612zF4jxrwMosT--thjGy9m0s.woff2\") format(\"woff2\")",
+      "weight": "300"
+    },
+    {
+      "family": "BenchNine",
+      "src": "url(\"//fonts.gstatic.com/s/benchnine/v16/ahcev8612zF4jxrwMosT--thgmy9.woff2\") format(\"woff2\")",
+      "weight": "300"
+    },
+    {
+      "family": "BenchNine",
+      "src": "url(\"//fonts.gstatic.com/s/benchnine/v16/ahcbv8612zF4jxrwMosbXsl0vU0.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "BenchNine",
+      "src": "url(\"//fonts.gstatic.com/s/benchnine/v16/ahcbv8612zF4jxrwMosbUMl0.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "BenchNine",
+      "src": "url(\"//fonts.gstatic.com/s/benchnine/v16/ahcev8612zF4jxrwMosT6-xhjGy9m0s.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "BenchNine",
+      "src": "url(\"//fonts.gstatic.com/s/benchnine/v16/ahcev8612zF4jxrwMosT6-xhgmy9.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "BenchNine",
+      "src": "url(\"//fonts.gstatic.com/s/benchnine/v16/ahcev8612zF4jxrwMosT--thjGy9.woff2\") format(\"woff2\")",
+      "weight": "300"
+    },
+    {
+      "family": "BenchNine",
+      "src": "url(\"//fonts.gstatic.com/s/benchnine/v16/ahcbv8612zF4jxrwMosbXsl0.woff2\") format(\"woff2\")",
+      "weight": "400"
+    },
+    {
+      "family": "BenchNine",
+      "src": "url(\"//fonts.gstatic.com/s/benchnine/v16/ahcev8612zF4jxrwMosT6-xhjGy9.woff2\") format(\"woff2\")",
+      "weight": "700"
+    },
+    {
+      "family": "BenchNine",
+      "src": "url(\"//fonts.gstatic.com/s/benchnine/v16/ahcev8612zF4jxrwMosT--thjGy7.woff\") format(\"woff\")",
+      "weight": "300"
+    },
+    {
+      "family": "BenchNine",
+      "src": "url(\"//fonts.gstatic.com/s/benchnine/v16/ahcbv8612zF4jxrwMosbXsly.woff\") format(\"woff\")",
+      "weight": "400"
+    },
+    {
+      "family": "BenchNine",
+      "src": "url(\"//fonts.gstatic.com/s/benchnine/v16/ahcev8612zF4jxrwMosT6-xhjGy7.woff\") format(\"woff\")",
+      "weight": "700"
+    },
+    {
+      "family": "fpicons",
+      "src": "url(\"fonts/fpicons.woff?yg5dv7\") format(\"woff\"), url(\"fonts/fpicons.ttf?yg5dv7\") format(\"truetype\")",
+      "weight": "normal"
+    }
+  ],
+  "logoCandidates": [
+    "https://suffolkcountyny.gov/portals/_default/skins/internet/img/cntyseal_WHITE-100px.png",
+    "https://suffolkcountyny.gov/portals/_default/skins/internet/img/facebook.png",
+    "https://suffolkcountyny.gov/portals/_default/skins/internet/img/twitter.png",
+    "https://suffolkcountyny.gov/portals/_default/skins/internet/img/youtube.png",
+    "https://www.gstatic.com/images/branding/googlelogo/1x/googlelogo_color_42x16dp.png",
+    "https://suffolkcountyny.gov/portals/_default/skins/internet/img/elected-officials-483h.jpg",
+    "https://suffolkcountyny.gov/portals/_default/skins/internet/img/departments483h.jpg",
+    "https://suffolkcountyny.gov/portals/_default/skins/internet/img/citizen.jpg",
+    "https://suffolkcountyny.gov/portals/_default/skins/internet/img/business.jpg",
+    "https://suffolkcountyny.gov/portals/_default/skins/internet/img/online.jpg",
+    "https://suffolkcountyny.gov/portals/_default/skins/internet/img/img_doingbusiness.jpg",
+    "https://suffolkcountyny.gov/portals/_default/skins/internet/img/start.jpg",
+    "https://suffolkcountyny.gov/portals/_default/skins/internet/img/resources.jpg",
+    "https://suffolkcountyny.gov/portals/_default/skins/internet/img/img_discover.jpg",
+    "https://suffolkcountyny.gov/portals/_default/skins/internet/img/img_parks.jpg",
+    "https://suffolkcountyny.gov/portals/_default/skins/internet/img/img_film.jpg",
+    "https://suffolkcountyny.gov/portals/_default/skins/internet/img/img_rec.jpg"
+  ],
+  "heroBgImage": null
+}

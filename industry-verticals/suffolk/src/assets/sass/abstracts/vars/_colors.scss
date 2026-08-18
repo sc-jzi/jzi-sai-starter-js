@@ -74,6 +74,45 @@ body.site-services.dark,
   --roundness: 0.375rem;
 }
 
+// Suffolk County Government
+body.site-suffolk,
+.site-suffolk {
+  --text-body: #212529;
+  --text-body-inverted: #fff;
+  --text-colored: #006fe6;
+  --text-footer: #eeeeee;
+  --text-accent: #d2232a;
+  --bg-body: #fff;
+  --bg-footer: #003366;
+  --bg-main: #f4f6f8;
+  --bg-main-alt: #f4f6f8;
+  --bg-color: #006fe6;
+  --bg-saturated: #003366;
+  --bg-accent: #d2232a;
+  --border-color: #dee2e6;
+  --hr-color: #fff;
+  --roundness: 0.25rem;
+}
+
+body.site-suffolk.dark,
+.dark .site-suffolk {
+  --text-body: #fff;
+  --text-body-inverted: #212529;
+  --text-colored: #5aa8ff;
+  --text-footer: #eeeeee;
+  --text-accent: #d2232a;
+  --bg-body: #001a33;
+  --bg-footer: #00152b;
+  --bg-main: #003366;
+  --bg-main-alt: #001a33;
+  --bg-color: #006fe6;
+  --bg-saturated: #0056b3;
+  --bg-accent: #d2232a;
+  --border-color: #003366;
+  --hr-color: #fff;
+  --roundness: 0.25rem;
+}
+
 // Backgrounds colors
 $bg-transparent: transparent !default;
 $bg-basic-color: var(--bg-body) !default;
