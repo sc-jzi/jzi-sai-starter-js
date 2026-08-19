@@ -12,7 +12,6 @@ import Spinner from './Spinner';
 import SuggestionBlock from './SuggestionBlock';
 import { PREVIEW_WIDGET_ID } from '../../_data/customizations';
 import { useSearchTracking, type Events } from '../../hooks/useSearchTracking';
-import { isSitecoreSearchConfigured } from 'src/lib/sitecore-search';
 
 const SEARCH_CONFIG = {
   source: process.env.NEXT_PUBLIC_SEARCH_SOURCE as string,
@@ -171,13 +170,4 @@ const PreviewSearchWidget = widget(
   WidgetDataType.PREVIEW_SEARCH,
   'content'
 );
-
-const PreviewSearchEntry = (props: React.ComponentProps<typeof PreviewSearchWidget>) => {
-  if (!isSitecoreSearchConfigured()) {
-    return null;
-  }
-
-  return <PreviewSearchWidget {...props} />;
-};
-
-export default PreviewSearchEntry;
+export default PreviewSearchWidget;

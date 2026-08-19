@@ -3,7 +3,7 @@
 import { AppPlaceholder, ComponentMap, ImageField, useSitecore } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 import { JSX, useState } from 'react';
-import PreviewSearch from "../search/PreviewSearch"
+import PreviewSearch from "../search/StandAlonePreviewSearch"
 import { PREVIEW_WIDGET_ID } from "../../_data/customizations";
 
 export type EyebrowProps = ComponentProps & {

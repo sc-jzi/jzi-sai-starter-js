@@ -9,17 +9,39 @@ import * as LoanCalculator from 'src/components/utilities/LoanCalculator';
 import * as LanguageSwitcher from 'src/components/utilities/LanguageSwitcher';
 import * as ContactForm from 'src/components/utilities/ContactForm';
 import * as ApplicationForm from 'src/components/utilities/ApplicationForm';
+import * as SearchExperienceLoadMore from 'src/components/search-experience/SearchExperience.LoadMore';
+import * as SearchExperience from 'src/components/search-experience/SearchExperience';
+import * as PreviewSearch from 'src/components/search-experience/PreviewSearch';
+import * as useSearchField from 'src/components/search-experience/search-components/useSearchField';
+import * as useRouter from 'src/components/search-experience/search-components/useRouter';
+import * as useParams from 'src/components/search-experience/search-components/useParams';
+import * as useEvent from 'src/components/search-experience/search-components/useEvent';
+import * as useDebounce from 'src/components/search-experience/search-components/useDebounce';
+import * as SearchSkeletonItem from 'src/components/search-experience/search-components/SearchSkeletonItem';
+import * as SearchPagination from 'src/components/search-experience/search-components/SearchPagination';
+import * as SearchItemCommon from 'src/components/search-experience/search-components/SearchItemCommon';
+import * as SearchInput from 'src/components/search-experience/search-components/SearchInput';
+import * as SearchError from 'src/components/search-experience/search-components/SearchError';
+import * as SearchEmptyResults from 'src/components/search-experience/search-components/SearchEmptyResults';
+import * as SearchItemTitle from 'src/components/search-experience/search-components/SearchItem/SearchItemTitle';
+import * as SearchItemTags from 'src/components/search-experience/search-components/SearchItem/SearchItemTags';
+import * as SearchItemSummary from 'src/components/search-experience/search-components/SearchItem/SearchItemSummary';
+import * as SearchItemSubTitle from 'src/components/search-experience/search-components/SearchItem/SearchItemSubTitle';
+import * as SearchItemLink from 'src/components/search-experience/search-components/SearchItem/SearchItemLink';
+import * as SearchItemImage from 'src/components/search-experience/search-components/SearchItem/SearchItemImage';
+import * as SearchItemCategory from 'src/components/search-experience/search-components/SearchItem/SearchItemCategory';
+import * as index from 'src/components/search-experience/search-components/SearchItem/index';
 import * as SuggestionBlock from 'src/components/search/SuggestionBlock';
+import * as StandAloneSearchPagination from 'src/components/search/StandAloneSearchPagination';
+import * as StandAlonePreviewSearch from 'src/components/search/StandAlonePreviewSearch';
 import * as SortOrder from 'src/components/search/SortOrder';
 import * as SearchResultsComponent from 'src/components/search/SearchResultsComponent';
 import * as SearchResults from 'src/components/search/SearchResults';
 import * as SearchProvider from 'src/components/search/SearchProvider';
-import * as SearchPagination from 'src/components/search/SearchPagination';
 import * as SearchFacets from 'src/components/search/SearchFacets';
 import * as ResultsPerPage from 'src/components/search/ResultsPerPage';
 import * as QuestionsAnswers from 'src/components/search/QuestionsAnswers';
 import * as QueryResultsSummary from 'src/components/search/QueryResultsSummary';
-import * as PreviewSearch from 'src/components/search/PreviewSearch';
 import * as HomeHighlighted from 'src/components/search/HomeHighlighted';
 import * as Filter from 'src/components/search/Filter';
 import * as CardViewSwitcher from 'src/components/search/CardViewSwitcher';
@@ -76,17 +98,38 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['LanguageSwitcher', { ...LanguageSwitcher }],
   ['ContactForm', { ...ContactForm }],
   ['ApplicationForm', { ...ApplicationForm }],
+  ['SearchExperience', { ...SearchExperienceLoadMore, ...SearchExperience }],
+  ['PreviewSearch', { ...PreviewSearch }],
+  ['useSearchField', { ...useSearchField }],
+  ['useRouter', { ...useRouter }],
+  ['useParams', { ...useParams }],
+  ['useEvent', { ...useEvent }],
+  ['useDebounce', { ...useDebounce }],
+  ['SearchSkeletonItem', { ...SearchSkeletonItem }],
+  ['SearchPagination', { ...SearchPagination }],
+  ['SearchItemCommon', { ...SearchItemCommon }],
+  ['SearchInput', { ...SearchInput }],
+  ['SearchError', { ...SearchError }],
+  ['SearchEmptyResults', { ...SearchEmptyResults }],
+  ['SearchItemTitle', { ...SearchItemTitle }],
+  ['SearchItemTags', { ...SearchItemTags }],
+  ['SearchItemSummary', { ...SearchItemSummary }],
+  ['SearchItemSubTitle', { ...SearchItemSubTitle }],
+  ['SearchItemLink', { ...SearchItemLink }],
+  ['SearchItemImage', { ...SearchItemImage }],
+  ['SearchItemCategory', { ...SearchItemCategory }],
+  ['index', { ...index }],
   ['SuggestionBlock', { ...SuggestionBlock }],
+  ['StandAloneSearchPagination', { ...StandAloneSearchPagination }],
+  ['StandAlonePreviewSearch', { ...StandAlonePreviewSearch }],
   ['SortOrder', { ...SortOrder }],
   ['SearchResultsComponent', { ...SearchResultsComponent }],
   ['SearchResults', { ...SearchResults }],
   ['SearchProvider', { ...SearchProvider }],
-  ['SearchPagination', { ...SearchPagination }],
   ['SearchFacets', { ...SearchFacets }],
   ['ResultsPerPage', { ...ResultsPerPage }],
   ['QuestionsAnswers', { ...QuestionsAnswers }],
   ['QueryResultsSummary', { ...QueryResultsSummary }],
-  ['PreviewSearch', { ...PreviewSearch }],
   ['HomeHighlighted', { ...HomeHighlighted }],
   ['Filter', { ...Filter }],
   ['CardViewSwitcher', { ...CardViewSwitcher }],
