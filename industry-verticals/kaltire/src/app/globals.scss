@@ -3,3 +3,29 @@
 @import 'bootstrap/scss/bootstrap';
 @import '../assets/sass/main';
 @import '../assets/basic/main';
+
+/* CLIENT THEME: Kal Tire */
+:root {
+  --brand-primary: #ff5a00;
+  --brand-primary-foreground: #ffffff;
+  --brand-secondary: #222222;
+  --brand-secondary-foreground: #ffffff;
+  --brand-accent: #ff5a00;
+  --brand-accent-foreground: #111111;
+  --brand-bg: #ffffff;
+  --brand-fg: #111111;
+  --brand-muted: #f2f2f2;
+  --brand-muted-fg: #666666;
+  --brand-header-bg: #ffffff;
+  --brand-header-fg: #111111;
+  --brand-footer-bg: #ffffff;
+  --brand-footer-fg: #222222;
+  --brand-border: #dedede;
+  --brand-ring: #ff5a00;
+  --brand-heading-font: var(--font-montserrat), Arial, sans-serif;
+  --brand-body-font: var(--font-montserrat), Arial, sans-serif;
+  --font-family: var(--brand-body-font);
+  --brand-radius: 0;
+  --brand-button-radius: 0;
+  --brand-card-radius: 0;
+}

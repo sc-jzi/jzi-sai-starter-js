@@ -9,6 +9,22 @@ import * as LoanCalculator from 'src/components/utilities/LoanCalculator';
 import * as LanguageSwitcher from 'src/components/utilities/LanguageSwitcher';
 import * as ContactForm from 'src/components/utilities/ContactForm';
 import * as ApplicationForm from 'src/components/utilities/ApplicationForm';
+import * as SuggestionBlock from 'src/components/search/SuggestionBlock';
+import * as SortOrder from 'src/components/search/SortOrder';
+import * as SearchResultsComponent from 'src/components/search/SearchResultsComponent';
+import * as SearchResults from 'src/components/search/SearchResults';
+import * as SearchProvider from 'src/components/search/SearchProvider';
+import * as SearchPagination from 'src/components/search/SearchPagination';
+import * as SearchFacets from 'src/components/search/SearchFacets';
+import * as ResultsPerPage from 'src/components/search/ResultsPerPage';
+import * as QuestionsAnswers from 'src/components/search/QuestionsAnswers';
+import * as QueryResultsSummary from 'src/components/search/QueryResultsSummary';
+import * as PreviewSearch from 'src/components/search/PreviewSearch';
+import * as HomeHighlighted from 'src/components/search/HomeHighlighted';
+import * as Filter from 'src/components/search/Filter';
+import * as CardViewSwitcher from 'src/components/search/CardViewSwitcher';
+import * as ArticleHorizontalCard from 'src/components/search/ArticleHorizontalCard';
+import * as ArticleCard from 'src/components/search/ArticleCard';
 import * as ColumnSplitter from 'src/components/pagestructure/ColumnSplitter';
 import * as TwoColumnCta from 'src/components/pagecontent/TwoColumnCta';
 import * as ThreeColumnCta from 'src/components/pagecontent/ThreeColumnCta';
@@ -22,6 +38,8 @@ import * as ProjectList from 'src/components/pagecontent/ProjectList';
 import * as ProjectDetails from 'src/components/pagecontent/ProjectDetails';
 import * as ParallaxBanner from 'src/components/pagecontent/ParallaxBanner';
 import * as PageBackground from 'src/components/pagecontent/PageBackground';
+import * as KalTirePromoMosaic from 'src/components/pagecontent/KalTirePromoMosaic';
+import * as KalTireFinderHero from 'src/components/pagecontent/KalTireFinderHero';
 import * as ImageGallery from 'src/components/pagecontent/ImageGallery';
 import * as HeroBanner from 'src/components/pagecontent/HeroBanner';
 import * as Hero from 'src/components/pagecontent/Hero';
@@ -60,6 +78,22 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['LanguageSwitcher', { ...LanguageSwitcher }],
   ['ContactForm', { ...ContactForm }],
   ['ApplicationForm', { ...ApplicationForm }],
+  ['SuggestionBlock', { ...SuggestionBlock }],
+  ['SortOrder', { ...SortOrder }],
+  ['SearchResultsComponent', { ...SearchResultsComponent }],
+  ['SearchResults', { ...SearchResults }],
+  ['SearchProvider', { ...SearchProvider }],
+  ['SearchPagination', { ...SearchPagination }],
+  ['SearchFacets', { ...SearchFacets }],
+  ['ResultsPerPage', { ...ResultsPerPage }],
+  ['QuestionsAnswers', { ...QuestionsAnswers }],
+  ['QueryResultsSummary', { ...QueryResultsSummary }],
+  ['PreviewSearch', { ...PreviewSearch }],
+  ['HomeHighlighted', { ...HomeHighlighted }],
+  ['Filter', { ...Filter }],
+  ['CardViewSwitcher', { ...CardViewSwitcher }],
+  ['ArticleHorizontalCard', { ...ArticleHorizontalCard }],
+  ['ArticleCard', { ...ArticleCard }],
   ['ColumnSplitter', { ...ColumnSplitter }],
   ['TwoColumnCta', { ...TwoColumnCta }],
   ['ThreeColumnCta', { ...ThreeColumnCta }],
@@ -73,6 +107,8 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ProjectDetails', { ...ProjectDetails }],
   ['ParallaxBanner', { ...ParallaxBanner }],
   ['PageBackground', { ...PageBackground }],
+  ['KalTirePromoMosaic', { ...KalTirePromoMosaic }],
+  ['KalTireFinderHero', { ...KalTireFinderHero }],
   ['ImageGallery', { ...ImageGallery }],
   ['HeroBanner', { ...HeroBanner }],
   ['Hero', { ...Hero }],

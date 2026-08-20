@@ -1,20 +1,20 @@
 generatedAt: "2026-03-20T09:00:00Z"
-lastUpdatedAt: "2026-06-09T00:00:00Z"
-lastUpdatedBy: "claude-agent"
+lastUpdatedAt: "2026-08-20T14:00:00Z"
+lastUpdatedBy: "cursor-agent"
 
 project:
-  siteCollection: "main"
-  siteName: "main-website"
+  siteCollection: "retail"
+  siteName: "kal-tire"
   sdk: "@sitecore-content-sdk/nextjs"
-  renderingsRoot: "/sitecore/layout/Renderings/Project/fmc-custom-demo"
-  projectTemplatesRoot: "/sitecore/templates/Project/fmc-custom-demo"
-  dataRoot: "/sitecore/content/main/main-website/Data"
-  projectFoldersRoot: "/sitecore/templates/Project/fmc-custom-demo/Folders"
-  renderingParamsRoot: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters"
-  headlessVariantsRoot: "/sitecore/content/main/main-website/Presentation/Headless Variants"
+  renderingsRoot: "sitecore/layout/Renderings/Project/Financial"
+  projectTemplatesRoot: "/sitecore/templates/Project/Financial"
+  dataRoot: "/sitecore/content/retail/kal-tire/Data"
+  projectFoldersRoot: "/sitecore/templates/Project/Financial/Components"
+  renderingParamsRoot: "/sitecore/templates/Project/Financial/Rendering Parameters"
+  headlessVariantsRoot: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants"
 
 availableRenderings:
-  itemId: "{2BF7E311-E3A5-4290-A043-AB97EA1DFB15}"
+  itemId: "{87F93A76-AC9A-4B30-A5FF-88DAF13CE511}"
   lastKnownValue: "{55790BFE-783E-4FF0-BD53-F81D3857DAD4}|{C5F905F8-FD1F-444E-A9E5-AC6B774FF0DE}|{2492BAC4-DA07-4C86-87F0-9873D40E2276}|{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{E97DCF2B-8011-41E0-A605-8A379F3DF1AA}|{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}|{EFE73752-6046-45A8-92F4-7A68430A0759}|{EAA7CC9B-4657-410E-9A25-CD33C700261B}|{58490557-5582-4B19-9E31-CE6A80F95D93}|{4281E3CD-2309-4427-9A3E-D69FDD32FCDA}|{E6D0C7C1-ACFF-4E85-8600-196649FEFFB9}|{90021266-66B3-47B6-9709-A070F56064A1}|{F6A1FA05-15FC-46C9-B921-98E79EFF5F4E}|{E194B962-0617-4A10-B4DB-2A4D19248C13}|{E1BCD607-51C4-4248-8EE2-B7F474D40B3E}|{A53006E8-C66B-419F-859D-7CFA92E7E26B}|{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}|{C739DB42-43E5-4DAC-B5FC-404EDDC9E37C}|{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}|{D008D5FE-B27E-419F-889C-115B3D48A114}|{85CC2A41-AC6F-4C10-9C2F-44308B48C453}|{4C5C1FA5-C077-491D-9686-40D0F68EF03E}|{83BD1231-A48F-4F54-A361-20904C69A641}|{0E64EDCA-06DD-469A-B3D1-93D8700A8F41}|{505B6BB0-DEEA-46F9-9AB2-7020E386F4F0}|{C9FFEF83-C928-4346-AA68-14B3EE0B0017}|{B92A0B89-790F-4D94-89C7-B361C8688765}|{9E525B59-B9BF-4EB7-B75D-10811EF6100D}|{66E80043-36E4-48AE-8CAF-EEF4A77690BE}|{5A8724FB-D6E6-4C9D-8A4A-EFD8750B0019}|{14FCB11C-364D-4BC2-9238-B29B4C6F8145}"
   lastUpdatedAt: "2026-06-09T00:00:00Z"
   renderingCount: 32
@@ -67,7 +67,7 @@ components:
 
     datasourceFolder:
       name: "AnnouncementBars"
-      path: "/sitecore/content/main/main-website/Data/AnnouncementBars"
+      path: "/sitecore/content/retail/kal-tire/Data/AnnouncementBars"
       itemId: "{93B0A4DC-4E8A-42DB-85A4-D54E7A64D737}"
       insertOptionsSet: true
       exampleItem:
@@ -87,7 +87,7 @@ components:
       registeredInAvailableRenderings: true
 
     headlessVariants:
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/AnnouncementBar"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/AnnouncementBar"
       containerId: "{6F2C4B0A-5592-4E3C-A1D1-DDA54BD90CC0}"
       variants:
         - { name: "Default", itemId: "{C443BF0E-5B40-4F84-98A2-F0825E83E345}" }
@@ -188,7 +188,7 @@ components:
 
     datasourceFolder:
       name: "NavigationHeaders"
-      path: "/sitecore/content/main/main-website/Data/NavigationHeaders"
+      path: "/sitecore/content/retail/kal-tire/Data/NavigationHeaders"
       itemId: "{A1055559-2113-4BAF-B3C3-05C38404DED2}"
       insertOptionsSet: true
       exampleItem:
@@ -212,7 +212,7 @@ components:
       registeredInAvailableRenderings: true
 
     headlessVariants:
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/NavigationHeader"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/NavigationHeader"
       containerId: "{C215D8ED-461E-4AE4-8D57-94CC5CDEC8DF}"
       variants:
         - { name: "Default", itemId: "{150B9AFE-2B9F-48AD-8F01-036666057814}" }
@@ -292,7 +292,7 @@ components:
 
     datasourceFolder:
       name: "HeroBanners"
-      path: "/sitecore/content/main/main-website/Data/HeroBanners"
+      path: "/sitecore/content/retail/kal-tire/Data/HeroBanners"
       itemId: "{79A9DFE3-D529-4ED3-8105-DCA4C0A3B25C}"
       insertOptionsSet: true
       exampleItem:
@@ -312,7 +312,7 @@ components:
       registeredInAvailableRenderings: true
 
     headlessVariants:
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/HeroBanner"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/HeroBanner"
       containerId: "{D28D8B6E-3030-4D49-9558-44B7EED789B8}"
       variants:
         - { name: "Default", itemId: "{51E32CC6-C761-4E8D-A9EB-03A11D358DC4}" }
@@ -409,7 +409,7 @@ components:
 
     datasourceFolder:
       name: "TabNavigationSections"
-      path: "/sitecore/content/main/main-website/Data/TabNavigationSections"
+      path: "/sitecore/content/retail/kal-tire/Data/TabNavigationSections"
       itemId: "{62A76B57-53E0-4F57-A793-E5CF0CC8ADA5}"
       insertOptionsSet: true
       exampleItem:
@@ -433,7 +433,7 @@ components:
       registeredInAvailableRenderings: true
 
     headlessVariants:
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/TabNavigationSection"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/TabNavigationSection"
       containerId: "{5DF30ECF-56D0-4599-BB2A-C6737C30C333}"
       variants:
         - { name: "Default", itemId: "{37CD0AB0-A6F4-4F5B-9032-666FA10925D4}" }
@@ -538,7 +538,7 @@ components:
 
     datasourceFolder:
       name: "ProductPricingCards"
-      path: "/sitecore/content/main/main-website/Data/ProductPricingCards"
+      path: "/sitecore/content/retail/kal-tire/Data/ProductPricingCards"
       itemId: "{B5C8AA4C-5B7D-4008-8945-68F7D909134F}"
       insertOptionsSet: true
       exampleItem:
@@ -563,7 +563,7 @@ components:
       registeredInAvailableRenderings: true
 
     headlessVariants:
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/ProductPricingCards"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/ProductPricingCards"
       containerId: "{2D0654D5-0BFB-4ABB-9B42-83278B8AEC42}"
       variants:
         - { name: "Default", itemId: "{8059925F-0667-437B-AD6F-450BAF663C08}" }
@@ -648,7 +648,7 @@ components:
 
     datasourceFolder:
       name: "LegalComplianceBanners"
-      path: "/sitecore/content/main/main-website/Data/LegalComplianceBanners"
+      path: "/sitecore/content/retail/kal-tire/Data/LegalComplianceBanners"
       itemId: "{6565D16E-5989-481B-AF40-CFFA4D58DF12}"
       insertOptionsSet: true
       exampleItem:
@@ -668,7 +668,7 @@ components:
       registeredInAvailableRenderings: true
 
     headlessVariants:
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/LegalComplianceBanner"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/LegalComplianceBanner"
       containerId: "{A5368715-1C3A-49CC-88A7-1FFB98645A93}"
       variants:
         - { name: "Default", itemId: "{E3E57B11-8697-4BC7-B56F-352091BDC6BC}" }
@@ -765,7 +765,7 @@ components:
 
     datasourceFolder:
       name: "ValuePropositionGrids"
-      path: "/sitecore/content/main/main-website/Data/ValuePropositionGrids"
+      path: "/sitecore/content/retail/kal-tire/Data/ValuePropositionGrids"
       itemId: "{BE69F95D-9D08-4C4B-ADF3-59007B2E0BB4}"
       insertOptionsSet: true
       exampleItem:
@@ -790,7 +790,7 @@ components:
       registeredInAvailableRenderings: true
 
     headlessVariants:
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/ValuePropositionGrid"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/ValuePropositionGrid"
       containerId: "{24A8E37E-7102-407A-9899-8CD940160F39}"
       variants:
         - { name: "Default", itemId: "{B2D75BE0-CE27-431F-BF59-9F49EEC5DF31}" }
@@ -887,7 +887,7 @@ components:
 
     datasourceFolder:
       name: "TrustStatsRows"
-      path: "/sitecore/content/main/main-website/Data/TrustStatsRows"
+      path: "/sitecore/content/retail/kal-tire/Data/TrustStatsRows"
       itemId: "{6A826E8E-4AB2-4F62-8605-40430028C64C}"
       insertOptionsSet: true
       exampleItem:
@@ -913,7 +913,7 @@ components:
       registeredInAvailableRenderings: true
 
     headlessVariants:
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/TrustStatsRow"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/TrustStatsRow"
       containerId: "{7AE37D15-B227-4274-809B-27023796BACD}"
       variants:
         - { name: "Default", itemId: "{71BDCB75-6061-460C-98BE-86C4E5E79B3A}" }
@@ -1007,7 +1007,7 @@ components:
 
     datasourceFolder:
       name: "TestimonialBlocks"
-      path: "/sitecore/content/main/main-website/Data/TestimonialBlocks"
+      path: "/sitecore/content/retail/kal-tire/Data/TestimonialBlocks"
       itemId: "{E5004E14-EA49-43B7-A093-006648A14A60}"
       insertOptionsSet: true
       exampleItem:
@@ -1031,7 +1031,7 @@ components:
       registeredInAvailableRenderings: true
 
     headlessVariants:
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/TestimonialBlock"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/TestimonialBlock"
       containerId: "{77FA9798-E911-41DC-804F-5A3649087CB4}"
       variants:
         - { name: "Default", itemId: "{7C588A0F-5720-4CA7-A50A-4AD02E272B62}" }
@@ -1111,7 +1111,7 @@ components:
 
     datasourceFolder:
       name: "CTABanners"
-      path: "/sitecore/content/main/main-website/Data/CTABanners"
+      path: "/sitecore/content/retail/kal-tire/Data/CTABanners"
       itemId: "{F86BE13D-2F5E-4D7E-B2E5-EF4C9637FC4C}"
       insertOptionsSet: true
       exampleItem:
@@ -1131,7 +1131,7 @@ components:
       registeredInAvailableRenderings: true
 
     headlessVariants:
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/CTABanner"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/CTABanner"
       containerId: "{A739A883-D5E1-4CAD-A8EE-5D3287D6B238}"
       variants:
         - { name: "Default", itemId: "{B526E0D8-C4F9-4A21-AFA9-B828119FA988}" }
@@ -1225,7 +1225,7 @@ components:
 
     datasourceFolder:
       name: "FeatureCardsGrids"
-      path: "/sitecore/content/main/main-website/Data/FeatureCardsGrids"
+      path: "/sitecore/content/retail/kal-tire/Data/FeatureCardsGrids"
       itemId: "{BAB76C01-9A6E-49D5-9F44-22D7EDBE13FE}"
       insertOptionsSet: true
       exampleItem:
@@ -1250,7 +1250,7 @@ components:
       registeredInAvailableRenderings: true
 
     headlessVariants:
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/FeatureCardsGrid"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/FeatureCardsGrid"
       containerId: "{72669095-6581-4595-9C9E-2F650BCA4404}"
       variants:
         - { name: "Default", itemId: "{495EF058-D306-4328-ABE4-261E7CFE8E9E}" }
@@ -1327,7 +1327,7 @@ components:
 
     datasourceFolder:
       name: "ImageGalleries"
-      path: "/sitecore/content/main/main-website/Data/ImageGalleries"
+      path: "/sitecore/content/retail/kal-tire/Data/ImageGalleries"
       itemId: "{98392731-3CBC-498C-888B-9669BA639B96}"
       insertOptionsSet: true
       exampleItem:
@@ -1347,7 +1347,7 @@ components:
       registeredInAvailableRenderings: true
 
     headlessVariants:
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/ImageGallery"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/ImageGallery"
       containerId: "{C022A2B3-EF0B-4035-9103-F752D98E0C6A}"
       variants:
         - { name: "Default", itemId: "{36325627-294D-44ED-BD63-2E622F782684}" }
@@ -1436,7 +1436,7 @@ components:
 
     datasourceFolder:
       name: "LogoClouds"
-      path: "/sitecore/content/main/main-website/Data/LogoClouds"
+      path: "/sitecore/content/retail/kal-tire/Data/LogoClouds"
       itemId: "{A0F83F36-4BFB-4C6A-9079-A01EC54A5276}"
       insertOptionsSet: true
       exampleItem:
@@ -1461,7 +1461,7 @@ components:
       registeredInAvailableRenderings: true
 
     headlessVariants:
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/LogoCloud"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/LogoCloud"
       containerId: "{0D58C38F-2601-444C-8981-6FB3DCA202EC}"
       variants:
         - { name: "Default", itemId: "{125C1A27-2F29-4A84-B45A-DD43279C23CE}" }
@@ -1536,7 +1536,7 @@ components:
 
     datasourceFolder:
       name: "SiteFooters"
-      path: "/sitecore/content/main/main-website/Data/SiteFooters"
+      path: "/sitecore/content/retail/kal-tire/Data/SiteFooters"
       itemId: "{79F4A73C-71D2-4959-8FDE-C7D9C8748990}"
       insertOptionsSet: true
       exampleItem:
@@ -1556,7 +1556,7 @@ components:
       registeredInAvailableRenderings: true
 
     headlessVariants:
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/SiteFooter"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/SiteFooter"
       containerId: "{613FAEEA-7FDC-453E-96DC-9B52337AC257}"
       variants:
         - { name: "Default", itemId: "{143CFE84-1E77-4961-975C-38564DC43DB9}" }
@@ -1628,7 +1628,7 @@ components:
 
     datasourceFolder:
       name: "NewsletterSignups"
-      path: "/sitecore/content/main/main-website/Data/NewsletterSignups"
+      path: "/sitecore/content/retail/kal-tire/Data/NewsletterSignups"
       itemId: "{4046B0A4-5F07-4F4B-8D6F-E04EDE1E1204}"
       insertOptionsSet: true
       exampleItem:
@@ -1648,7 +1648,7 @@ components:
       registeredInAvailableRenderings: true
 
     headlessVariants:
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/NewsletterSignup"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/NewsletterSignup"
       containerId: "{3DC77ED9-7155-4AE9-A658-D884E35D949A}"
       variants:
         - { name: "Default", itemId: "{F0F09912-52F5-4429-8CBF-F6FAA8AD2453}" }
@@ -1737,7 +1737,7 @@ components:
 
     datasourceFolder:
       name: "FAQAccordions"
-      path: "/sitecore/content/main/main-website/Data/FAQAccordions"
+      path: "/sitecore/content/retail/kal-tire/Data/FAQAccordions"
       itemId: "{547BF25D-1445-4C45-9C04-66FCB3FD339B}"
       insertOptionsSet: true
       exampleItem:
@@ -1762,7 +1762,7 @@ components:
       registeredInAvailableRenderings: true
 
     headlessVariants:
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/FAQAccordion"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/FAQAccordion"
       containerId: "{55FB6F57-5566-4CAF-ADDD-18BFB0152893}"
       variants:
         - { name: "Default", itemId: "{3D01B4ED-75E0-4AD3-A6F4-FA47606082CB}" }
@@ -1838,7 +1838,7 @@ components:
 
     datasourceFolder:
       name: "RichTextBlocks"
-      path: "/sitecore/content/main/main-website/Data/RichTextBlocks"
+      path: "/sitecore/content/retail/kal-tire/Data/RichTextBlocks"
       itemId: "{E94DA9F2-19A0-4EEB-9F1C-C5B53DF8D8ED}"
       insertOptionsSet: true
       exampleItem:
@@ -1858,7 +1858,7 @@ components:
       registeredInAvailableRenderings: true
 
     headlessVariants:
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/RichTextBlock"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/RichTextBlock"
       containerId: "{F11626A1-AE7B-46F7-AB3A-F9EB9779C5EC}"
       variants:
         - { name: "Default", itemId: "{68885D4E-9808-421D-AB93-30E9FF27D8F1}" }
@@ -1936,7 +1936,7 @@ components:
 
     datasourceFolder:
       name: "FeatureHighlights"
-      path: "/sitecore/content/main/main-website/Data/FeatureHighlights"
+      path: "/sitecore/content/retail/kal-tire/Data/FeatureHighlights"
       itemId: "{0A212E28-4EDE-45DE-8A8F-E1004E8AAD25}"
       insertOptionsSet: true
       exampleItem:
@@ -1956,7 +1956,7 @@ components:
       registeredInAvailableRenderings: true
 
     headlessVariants:
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/FeatureHighlight"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/FeatureHighlight"
       containerId: "{D3E5415A-9247-4572-B146-73E4AEF78195}"
       variants:
         - { name: "Default", itemId: "{0FDFE204-724E-4850-8891-ECC443607643}" }
@@ -2043,7 +2043,7 @@ components:
 
     datasourceFolder:
       name: "HeroBannerCarousels"
-      path: "/sitecore/content/main/main-website/Data/HeroBannerCarousels"
+      path: "/sitecore/content/retail/kal-tire/Data/HeroBannerCarousels"
       itemId: "{E4703202-A87E-4387-987C-6B69E67ACADC}"
       insertOptionsSet: true
       exampleItem:
@@ -2128,7 +2128,7 @@ components:
 
     headlessVariants:
       containerId: "{9894746a-f336-4856-bd1f-c1663374703c}"
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/ArticleHero"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/ArticleHero"
       definitions:
         - { name: "Default", itemId: "{71d4165d-543e-4b4f-8c88-da9d8d395163}" }
         - { name: "Minimal", itemId: "{fc567658-54d2-465e-80f4-85feb79c8598}" }
@@ -2184,7 +2184,7 @@ components:
 
     headlessVariants:
       containerId: "{2e05330b-e438-4006-9096-165a2c36e425}"
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/ArticleBody"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/ArticleBody"
       definitions:
         - { name: "Default", itemId: "{4ffc7bca-050e-4867-838d-f3bd19238f8c}" }
         - { name: "WithSidebar", itemId: "{bae365fb-8958-4b03-b494-1beccfd5d897}" }
@@ -2220,7 +2220,7 @@ components:
       registeredInAvailableRenderings: pendingManual
     headlessVariants:
       containerId: "{2571BE88-7763-4827-B661-1C6792B95847}"
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/LandingHero"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/LandingHero"
       definitions:
         - { name: "Default", itemId: "{D1B9E599-F9C5-416F-A204-16F8EBC1E10C}" }
         - { name: "SplitImage", itemId: "{E000909A-01DA-498C-BAB3-54EAC6E2C89F}" }
@@ -2264,7 +2264,7 @@ components:
       registeredInAvailableRenderings: pendingManual
     headlessVariants:
       containerId: "{5ADEF5CB-11B4-4743-AA96-4D7EFEE55C5D}"
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/LandingFeatures"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/LandingFeatures"
       definitions:
         - { name: "Default", itemId: "{31A214D5-7824-476C-8C63-4FB5F942DD28}" }
     verification:
@@ -2303,7 +2303,7 @@ components:
       registeredInAvailableRenderings: pendingManual
     headlessVariants:
       containerId: "{5619F2D9-B432-4A47-AA8A-911937AB991B}"
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/LandingStats"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/LandingStats"
       definitions:
         - { name: "Default", itemId: "{2623EBAE-BF3D-471A-8E7D-176BCF6E4BE6}" }
     verification:
@@ -2342,7 +2342,7 @@ components:
       registeredInAvailableRenderings: pendingManual
     headlessVariants:
       containerId: "{1077B0D2-420D-48E4-ADA2-853C6C0E880A}"
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/LandingSocialProof"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/LandingSocialProof"
       definitions:
         - { name: "Default", itemId: "{8ED8A4F7-10C3-4867-AC0E-B3F79BECC356}" }
     verification:
@@ -2382,7 +2382,7 @@ components:
       registeredInAvailableRenderings: pendingManual
     headlessVariants:
       containerId: "{4FC4C30A-8A86-43CD-AFF9-4D6C53CB0594}"
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/LandingFAQ"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/LandingFAQ"
       definitions:
         - { name: "Default", itemId: "{DCA2DB12-8D54-4AD6-8D43-082683AFA518}" }
     verification:
@@ -2421,7 +2421,7 @@ components:
       registeredInAvailableRenderings: pendingManual
     headlessVariants:
       containerId: "{C27474AD-EC5C-421E-AAAE-1DE43C9FC0D4}"
-      containerPath: "/sitecore/content/main/main-website/Presentation/Headless Variants/LandingFinalCTA"
+      containerPath: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants/LandingFinalCTA"
       definitions:
         - { name: "Default", itemId: "{2FFE0507-9D6D-4D93-BFFE-43504C63D10C}" }
     verification:
@@ -2473,7 +2473,7 @@ sharedDataTemplates:
 
     datasourceFolder:
       name: "People"
-      path: "/sitecore/content/main/main-website/Data/People"
+      path: "/sitecore/content/retail/kal-tire/Data/People"
       itemId: "{b4a7e448-2620-458e-9108-e6123c433660}"
       insertOptionsSet: true
       exampleItem:
@@ -2519,7 +2519,7 @@ pageTemplates:
         fields:
           - { name: "ArticleContent", type: "Rich Text", itemId: "{63471bba-943c-4d82-b7bf-d7ec82babbf7}" }
           - { name: "ArticleImage", type: "Image", itemId: "{bb96e156-f355-4cc6-894b-5e70a45d8f30}" }
-          - { name: "ArticleAuthor", type: "Droptree", itemId: "{068d4fa8-7b15-4b86-b38a-9e40a58c548b}", source: "/sitecore/content/main/main-website/Data/People" }
+          - { name: "ArticleAuthor", type: "Droptree", itemId: "{068d4fa8-7b15-4b86-b38a-9e40a58c548b}", source: "/sitecore/content/retail/kal-tire/Data/People" }
           - { name: "ArticlePublicationDate", type: "Date", itemId: "{2fecdae7-6f5d-46a8-a9c9-c128dc4f4d0c}" }
           - { name: "ArticleKeyTakeaways", type: "Rich Text", itemId: "{bfa05db5-8ccf-4ba2-b312-21194a8a5d75}" }
           - { name: "ArticleReadTime", type: "Single-Line Text", itemId: "{76c93dec-a8a6-4185-9fd9-8247ebfb2dd0}" }
@@ -2531,7 +2531,7 @@ pageTemplates:
     contentTree:
       articlesParent:
         name: "Articles"
-        path: "/sitecore/content/main/main-website/Home/Articles"
+        path: "/sitecore/content/retail/kal-tire/Home/Articles"
         itemId: "{d8b01498-2838-4388-a68f-86665d9c1c80}"
         insertOptionsSet: true
 
@@ -2552,14 +2552,14 @@ pageTemplates:
 
     partialDesign:
       name: "Article Layout"
-      path: "/sitecore/content/main/main-website/Presentation/Partial Designs/Article Layout"
+      path: "/sitecore/content/retail/kal-tire/Presentation/Partial Designs/Article Layout"
       itemId: "{4e09b734-6f98-4599-bc8d-9b15b07b291c}"
       components: ["ArticleHero", "ArticleBody"]
       placeholder: "headless-main"
 
     pageDesign:
       name: "Article"
-      path: "/sitecore/content/main/main-website/Presentation/Page Designs/Article"
+      path: "/sitecore/content/retail/kal-tire/Presentation/Page Designs/Article"
       itemId: "{ea8b44fc-b855-40ea-b8e5-b210119c9aab}"
 
     notes:
@@ -2647,7 +2647,7 @@ pageTemplates:
     contentTree:
       lpParent:
         name: "lp"
-        path: "/sitecore/content/main/main-website/Home/lp"
+        path: "/sitecore/content/retail/kal-tire/Home/lp"
         itemId: "{AF65681C-5C75-40D2-89A3-3779D5A47A27}"
         insertOptionsSet: pendingManual
 
@@ -2673,7 +2673,7 @@ pageTemplates:
 
     partialDesign:
       name: "Landing Page Layout"
-      path: "/sitecore/content/main/main-website/Presentation/Partial Designs/Landing Page Layout"
+      path: "/sitecore/content/retail/kal-tire/Presentation/Partial Designs/Landing Page Layout"
       itemId: "{BEF9B1FC-E7F6-4296-B60B-780728B557C0}"
       components: ["LandingHero", "LandingFeatures", "LandingStats", "LandingSocialProof", "LandingFAQ", "LandingFinalCTA"]
       placeholder: "headless-main"
@@ -2681,7 +2681,7 @@ pageTemplates:
 
     pageDesign:
       name: "Landing Page"
-      path: "/sitecore/content/main/main-website/Presentation/Page Designs/Landing Page"
+      path: "/sitecore/content/retail/kal-tire/Presentation/Page Designs/Landing Page"
       itemId: "{E38ABC20-C7EA-43C8-AAAF-22CA71342814}"
       partialDesignsLinked: pendingManual
       linkedToStandardValues: pendingManual
@@ -2734,7 +2734,7 @@ pageTemplates:
 
     datasourceFolder:
       name: "Search Experiences"
-      path: "/sitecore/content/main/main-website/Data/Search Experiences"
+      path: "/sitecore/content/retail/kal-tire/Data/Search Experiences"
       itemId: "{1E320CFC-62AD-4378-97F7-6BFF5875BB3A}"
 
     rendering:
@@ -2776,7 +2776,7 @@ pageTemplates:
 
     datasourceFolder:
       name: "PreviewSearches"
-      path: "/sitecore/content/main/main-website/Data/PreviewSearches"
+      path: "/sitecore/content/retail/kal-tire/Data/PreviewSearches"
       itemId: "{047DA76C-BF7A-4B53-A5EA-3A356A45B6F1}"
 
     rendering:
@@ -2816,7 +2816,7 @@ pageTemplates:
 
     datasourceFolder:
       name: "SearchResults"
-      path: "/sitecore/content/main/main-website/Data/SearchResults"
+      path: "/sitecore/content/retail/kal-tire/Data/SearchResults"
       itemId: "{A03B9129-4D08-435E-B038-29802CE6A603}"
 
     rendering:
@@ -2883,7 +2883,7 @@ pageTemplates:
 
     datasourceFolder:
       name: "Search Experiences V2"
-      path: "/sitecore/content/main/main-website/Data/Search Experiences V2"
+      path: "/sitecore/content/retail/kal-tire/Data/Search Experiences V2"
       itemId: "{D5C6A76F-1A01-4B05-8B62-337B1B684D45}"
       insertOptionsSet: true
       exampleItem:
@@ -2896,7 +2896,7 @@ pageTemplates:
       itemId: "{505B6BB0-DEEA-46F9-9AB2-7020E386F4F0}"
       componentName: "SearchExperienceV2"
       datasourceTemplate: "/sitecore/templates/Project/fmc-custom-demo/Components/Search/Search Experience V2"
-      datasourceLocation: "/sitecore/content/main/main-website/Data/Search Experiences V2"
+      datasourceLocation: "/sitecore/content/retail/kal-tire/Data/Search Experiences V2"
       parametersTemplate: "{8D097502-7D90-4690-822E-A1C9D3432F91}"
       addFieldEditorButton: true
       registeredInAvailableRenderings: true
@@ -2920,10 +2920,179 @@ pageTemplates:
       - "2026-05-20: Created SearchExperienceV2 (Issue #34). Replaces JSON config with 7 individual template fields. ADR 0004."
       - "2026-05-20: All 3 pendingManual items verified via get_component and get_allowed_comps_by_ph — datasource template, datasource location, and available renderings all confirmed."
 
+  - name: "KalTireFinderHero"
+    kind: "simple"
+    category: "Page Content"
+    status: "complete"
+    createdAt: "2026-08-20T14:00:00Z"
+    updatedAt: "2026-08-20T14:20:00Z"
+    react:
+      filePath: "src/components/pagecontent/KalTireFinderHero.tsx"
+      componentMapKey: "KalTireFinderHero"
+      variants: ["Default"]
+    templates:
+      datasource:
+        name: "KalTireFinderHero"
+        path: "/sitecore/templates/Project/Financial/Components/Page Content/KalTireFinderHero"
+        itemId: "{A4409B0D-3D05-4AFD-8E0E-3A15677FB6F9}"
+        sectionName: "Data"
+        fields:
+          - { name: "Title", type: "Single-Line Text" }
+          - { name: "Description", type: "Rich Text" }
+          - { name: "BackgroundImage", type: "Image" }
+          - { name: "VehicleTitle", type: "Single-Line Text" }
+          - { name: "VehicleDescription", type: "Single-Line Text" }
+          - { name: "VehicleImage", type: "Image" }
+          - { name: "VehicleLink", type: "General Link" }
+          - { name: "SizeTitle", type: "Single-Line Text" }
+          - { name: "SizeDescription", type: "Single-Line Text" }
+          - { name: "SizeImage", type: "Image" }
+          - { name: "SizeLink", type: "General Link" }
+          - { name: "PackagesLink", type: "General Link" }
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{11A6920E-A60A-4EFD-94C4-8196873FB45D}"
+          linked: true
+      renderingParams:
+        name: "KalTireFinderHero"
+        path: "/sitecore/templates/Project/Financial/Rendering Parameters/KalTireFinderHero"
+        itemId: "{07DE716D-0F02-450D-A106-8E72E24BF46D}"
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{BA28A25C-9F96-4789-AFD3-842240DB1C98}"
+          linked: true
+    datasourceFolder:
+      name: "Kal Tire Demo"
+      path: "/sitecore/content/retail/kal-tire/Data/Kal Tire Demo"
+      itemId: "{C3087DAD-B7D0-4082-A956-37622B398CD3}"
+      exampleItem:
+        name: "Kal Tire - Tire Finder Hero"
+        itemId: "{3D03F235-7035-4E6C-92DC-06323C33C29B}"
+    rendering:
+      name: "KalTireFinderHero"
+      path: "/sitecore/layout/Renderings/Project/Financial/Page Content/KalTireFinderHero"
+      itemId: "{C4748A66-22D2-4EA3-8353-BB55BE190944}"
+      componentName: "KalTireFinderHero"
+      datasourceTemplate: "/sitecore/templates/Project/Financial/Components/Page Content/KalTireFinderHero"
+      datasourceLocation: "/sitecore/content/retail/kal-tire/Data/Kal Tire Demo"
+      parametersTemplate: "{07DE716D-0F02-450D-A106-8E72E24BF46D}"
+      addFieldEditorButton: true
+      registeredInAvailableRenderings: true
+    headlessVariants:
+      folderId: "{284AF3BE-E007-4630-B955-0CE6F6F50D11}"
+      variants:
+        - { name: "Default", itemId: "{CF166782-B716-4019-BC5F-D4DE4A6D9985}" }
+    verification:
+      templateExists: true
+      templateFields: true
+      templateBaseTemplates: true
+      standardValuesLinked: true
+      datasourceFolderExists: true
+      renderingExists: true
+      registeredInAvailableRenderings: true
+
+  - name: "KalTirePromoMosaic"
+    kind: "list"
+    category: "Page Content"
+    status: "complete"
+    createdAt: "2026-08-20T14:00:00Z"
+    updatedAt: "2026-08-20T14:20:00Z"
+    react:
+      filePath: "src/components/pagecontent/KalTirePromoMosaic.tsx"
+      componentMapKey: "KalTirePromoMosaic"
+      variants: ["Default"]
+    templates:
+      datasource:
+        name: "KalTirePromoMosaic"
+        path: "/sitecore/templates/Project/Financial/Components/Page Content/KalTirePromoMosaic"
+        itemId: "{330DC6F5-77A6-413E-A0E6-D6BC87CEFC93}"
+        sectionName: "Data"
+        fields:
+          - { name: "Title", type: "Single-Line Text" }
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{8AD6465F-5DE1-4476-93B7-6431743BBBA1}"
+          linked: true
+      item:
+        name: "KalTirePromoMosaicItem"
+        path: "/sitecore/templates/Project/Financial/Components/Page Content/KalTirePromoMosaicItem"
+        itemId: "{5263B2CC-B63A-4BBC-A4EE-B1BFDC269590}"
+        sectionName: "Data"
+        fields:
+          - { name: "Title", type: "Single-Line Text" }
+          - { name: "Description", type: "Rich Text" }
+          - { name: "Image", type: "Image" }
+          - { name: "Link", type: "General Link" }
+          - { name: "Theme", type: "Single-Line Text" }
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{4A552C6F-2B9F-41A3-9FEF-8DA0F0FD5FCB}"
+          linked: true
+      renderingParams:
+        name: "KalTirePromoMosaic"
+        path: "/sitecore/templates/Project/Financial/Rendering Parameters/KalTirePromoMosaic"
+        itemId: "{1D6F2B81-B87A-44ED-B770-C324E0EEC7BC}"
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{55C8EE86-07B1-479B-9F71-05000A52F772}"
+          linked: true
+    datasourceFolder:
+      name: "Kal Tire Demo"
+      path: "/sitecore/content/retail/kal-tire/Data/Kal Tire Demo"
+      itemId: "{C3087DAD-B7D0-4082-A956-37622B398CD3}"
+      exampleItem:
+        name: "Kal Tire - Promotional Mosaic"
+        itemId: "{260999CC-DC4B-4727-997E-362C07CD2788}"
+        childItemIds:
+          - "{BCA2349A-2307-479A-B2F1-CF03AC58CCCB}"
+          - "{8FA1429D-468B-4F01-A61F-DDBCFCA9551A}"
+          - "{D7C9C431-524C-4B41-B290-B523A562A091}"
+    rendering:
+      name: "KalTirePromoMosaic"
+      path: "/sitecore/layout/Renderings/Project/Financial/Page Content/KalTirePromoMosaic"
+      itemId: "{63423595-A911-42BD-ACB6-C5CEFA4D1364}"
+      componentName: "KalTirePromoMosaic"
+      datasourceTemplate: "/sitecore/templates/Project/Financial/Components/Page Content/KalTirePromoMosaic"
+      datasourceLocation: "/sitecore/content/retail/kal-tire/Data/Kal Tire Demo"
+      parametersTemplate: "{1D6F2B81-B87A-44ED-B770-C324E0EEC7BC}"
+      componentQuery: "query KalTirePromoMosaic($datasource: String!, $language: String!) { datasource: item(path: $datasource, language: $language) { title: field(name: \"Title\") { jsonValue } children { results { id title: field(name: \"Title\") { jsonValue } description: field(name: \"Description\") { jsonValue } image: field(name: \"Image\") { jsonValue } link: field(name: \"Link\") { jsonValue } theme: field(name: \"Theme\") { jsonValue } } } } }"
+      addFieldEditorButton: true
+      registeredInAvailableRenderings: true
+    headlessVariants:
+      folderId: "{F49AA067-BA54-4D12-9673-4813AAE36CFD}"
+      variants:
+        - { name: "Default", itemId: "{7E683B3A-304D-4F9F-B80F-0E2D9EB107FB}" }
+    verification:
+      templateExists: true
+      templateFields: true
+      templateBaseTemplates: true
+      standardValuesLinked: true
+      datasourceFolderExists: true
+      childItemsVerified: true
+      renderingExists: true
+      registeredInAvailableRenderings: true
+
 lookups:
-  - path: "/sitecore/content/main/main-website/Data"
-    itemId: "{E6C852B5-B70D-412C-B5C6-E6502842F74E}"
-    lastReadAt: "2026-03-25T12:00:00Z"
+  - path: "/sitecore/content/retail/kal-tire/Data"
+    itemId: "{97A71D5A-3563-4129-8470-732C6FE3C08C}"
+    lastReadAt: "2026-08-20T14:00:00Z"
+  - path: "/sitecore/templates/Project/Financial/Components"
+    itemId: "{33429731-C234-4706-AF63-439AEB11D72B}"
+    lastReadAt: "2026-08-20T14:00:00Z"
+    note: "Financial starter stores component and folder templates under Components."
+  - path: "/sitecore/templates/Project/Financial/Rendering Parameters"
+    itemId: "{C253C8D5-7F4E-41AF-87E0-E7156C91A1BE}"
+    lastReadAt: "2026-08-20T14:00:00Z"
+  - path: "/sitecore/content/retail/kal-tire/Presentation/Headless Variants"
+    itemId: "{DDAB53C9-2F33-4416-B124-3553588EF291}"
+    lastReadAt: "2026-08-20T14:00:00Z"
+  - path: "/sitecore/content/retail/kal-tire/Presentation/Available Renderings/Page Content"
+    itemId: "{87F93A76-AC9A-4B30-A5FF-88DAF13CE511}"
+    lastReadAt: "2026-08-20T14:00:00Z"
+    note: "Available Renderings — NEVER replace, always concatenate"
+  - path: "/sitecore/layout/Renderings/Project/Financial"
+    itemId: "{6630C97B-F037-4F1F-87BC-907C43F167D1}"
+    lastReadAt: "2026-08-20T14:00:00Z"
   - path: "/sitecore/templates/Project/fmc-custom-demo/Components/Search"
     itemId: "{44092340-AF76-44F3-A6C3-AA7347CE9D8B}"
     lastReadAt: "2026-05-20T12:00:00Z"
@@ -2945,13 +3114,6 @@ lookups:
   - path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters"
     itemId: "{BEC41516-9F60-48E0-8E80-D515482B6BCC}"
     lastReadAt: "2026-03-25T12:00:00Z"
-  - path: "/sitecore/content/main/main-website/Presentation/Headless Variants"
-    itemId: "{7BC665DC-D7DA-418E-AEC6-124D6291E93F}"
-    lastReadAt: "2026-03-25T12:00:00Z"
-  - path: "/sitecore/content/main/main-website/Presentation/Available Renderings/Page Content"
-    itemId: "{2BF7E311-E3A5-4290-A043-AB97EA1DFB15}"
-    lastReadAt: "2026-03-25T12:00:00Z"
-    note: "Available Renderings — NEVER replace, always concatenate"
   - path: "/sitecore/layout/Renderings/Project/fmc-custom-demo"
     itemId: "{4A1F0B51-F3F3-43D2-B184-C7A9F549154D}"
     lastReadAt: "2026-03-25T12:00:00Z"
@@ -3025,7 +3187,7 @@ lookups:
   - path: "/sitecore/templates/Project/fmc-custom-demo/Data/Person"
     itemId: "{513c2b76-7415-48b7-84a5-e663d3bb9129}"
     lastReadAt: "2026-05-18T12:00:00Z"
-  - path: "/sitecore/content/main/main-website/Data/People"
+  - path: "/sitecore/content/retail/kal-tire/Data/People"
     itemId: "{b4a7e448-2620-458e-9108-e6123c433660}"
     lastReadAt: "2026-05-18T12:00:00Z"
   - path: "/sitecore/templates/Project/main/Page Types"
@@ -3034,10 +3196,10 @@ lookups:
   - path: "/sitecore/templates/Project/main/Page Types/Article Page"
     itemId: "{74360ad2-d3df-4fce-834c-2f5420488677}"
     lastReadAt: "2026-05-18T12:00:00Z"
-  - path: "/sitecore/content/main/main-website/Home/Articles"
+  - path: "/sitecore/content/retail/kal-tire/Home/Articles"
     itemId: "{d8b01498-2838-4388-a68f-86665d9c1c80}"
     lastReadAt: "2026-05-18T12:00:00Z"
-  - path: "/sitecore/content/main/main-website/Home"
+  - path: "/sitecore/content/retail/kal-tire/Home"
     itemId: "{e2124310-f817-4644-8671-bff8e72b66d7}"
     lastReadAt: "2026-05-18T12:00:00Z"
   - path: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters/Article"
@@ -3057,19 +3219,19 @@ lookups:
   - path: "/sitecore/layout/Renderings/Project/fmc-custom-demo/Landing"
     itemId: "{142E3FB6-A1D0-4D7A-8AF3-F0E7DD155024}"
     lastReadAt: "2026-06-09T00:00:00Z"
-  - path: "/sitecore/content/main/main-website/Home/lp"
+  - path: "/sitecore/content/retail/kal-tire/Home/lp"
     itemId: "{AF65681C-5C75-40D2-89A3-3779D5A47A27}"
     lastReadAt: "2026-06-09T00:00:00Z"
-  - path: "/sitecore/content/main/main-website/Presentation/Partial Designs"
+  - path: "/sitecore/content/retail/kal-tire/Presentation/Partial Designs"
     itemId: "{B9355266-E4F8-4352-8F64-2700D071D46A}"
     lastReadAt: "2026-06-09T00:00:00Z"
-  - path: "/sitecore/content/main/main-website/Presentation/Page Designs"
+  - path: "/sitecore/content/retail/kal-tire/Presentation/Page Designs"
     itemId: "{0E863278-EA75-48C0-82C0-762B566CC40E}"
     lastReadAt: "2026-06-09T00:00:00Z"
-  - path: "/sitecore/content/main/main-website/Presentation/Partial Designs/Landing Page Layout"
+  - path: "/sitecore/content/retail/kal-tire/Presentation/Partial Designs/Landing Page Layout"
     itemId: "{BEF9B1FC-E7F6-4296-B60B-780728B557C0}"
     lastReadAt: "2026-06-09T00:00:00Z"
-  - path: "/sitecore/content/main/main-website/Presentation/Page Designs/Landing Page"
+  - path: "/sitecore/content/retail/kal-tire/Presentation/Page Designs/Landing Page"
     itemId: "{E38ABC20-C7EA-43C8-AAAF-22CA71342814}"
     lastReadAt: "2026-06-09T00:00:00Z"
 

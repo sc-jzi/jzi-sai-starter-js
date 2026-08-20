@@ -1,0 +1,351 @@
+client:
+  name: "Kal Tire"
+  sourceUrl: "https://www.kaltire.com/"
+  sourceLanguage: "en"
+  targetLanguage: "en"
+  translationApplied: false
+  extractedAt: "2026-08-20T14:08:02Z"
+  mappedAt: "2026-08-20T14:20:00Z"
+
+sections:
+  - position: 1
+    componentName: "Header"
+    manifestName: "Header"
+    kind: "context-only"
+    datasourceItemName: ""
+    apiAddable: false
+    fields:
+      CtaLabel: "Book a Tire Change"
+      CtaLink:
+        text: "Book a Tire Change"
+        href: "https://www.kaltire.com/en/tire-change/"
+        target: ""
+      UtilityLinks:
+        - { text: "Commercial Tires & Services", href: "https://commercial.kaltire.com/en/", target: "" }
+        - { text: "Mining Tire Group", href: "https://www.kaltiremining.com/en/", target: "" }
+        - { text: "Contact Us", href: "https://www.kaltire.com/en/contact-us.html", target: "" }
+        - { text: "Sign in", href: "https://www.kaltire.com/en/login/", target: "" }
+      NavigationLinks:
+        - { text: "Tires", href: "https://www.kaltire.com/en/car-suv-and-truck-tires/", target: "" }
+        - { text: "Wheels", href: "https://www.kaltire.com/en/car-suv-and-truck-wheels/", target: "" }
+        - { text: "Services", href: "https://www.kaltire.com/en/tire-and-mechanical-services/", target: "" }
+        - { text: "Locations", href: "https://www.kaltire.com/en/locations/", target: "" }
+        - { text: "Promotions", href: "https://www.kaltire.com/en/promotions/tires/", target: "" }
+    children: []
+    imageFields:
+      - field: "LogoImage"
+        src: "https://www.kaltire.com/on/demandware.static/-/Library-Sites-KaltireShared/default/dw3b443458/logo/logo@2x.png"
+        alt: "Kal Tire Canada"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 2
+    componentName: "KalTireFinderHero"
+    manifestName: "KalTireFinderHero"
+    kind: "simple"
+    datasourceItemName: "Kal Tire - Tire Finder Hero"
+    apiAddable: true
+    fields:
+      Title: "CANADA'S TIRE EXPERTS."
+      Description: "<p>A proudly Canadian company since 1953.</p>"
+      VehicleTitle: "Shop Tires By Vehicle"
+      VehicleDescription: "Enter your make and model to find tires that fit."
+      VehicleLink:
+        text: "Shop Tires By Vehicle"
+        href: "https://www.kaltire.com/en/tires/tires-by-vehicle/"
+        target: ""
+      SizeTitle: "Shop Tires By Size"
+      SizeDescription: "Enter your tire size to find the best options."
+      SizeLink:
+        text: "Shop Tires By Size"
+        href: "https://www.kaltire.com/en/tires/tires-by-size/"
+        target: ""
+      PackagesLink:
+        text: "Packages"
+        href: "https://www.kaltire.com/en/wheel-and-tire-packages/"
+        target: ""
+    children: []
+    imageFields:
+      - field: "BackgroundImage"
+        src: "https://www.kaltire.com/on/demandware.static/-/Sites/default/dw9d3621d8/images/slot/homepage/Home-Spring-Tires-Hero-Large.jpg"
+        alt: "SUV beside a forest lake at sunrise"
+      - field: "VehicleImage"
+        src: "https://www.kaltire.com/on/demandware.static/-/Library-Sites-KaltireShared/default/dw3be59aeb/productselector/Car.jpg"
+        alt: "Shop tires by vehicle"
+      - field: "SizeImage"
+        src: "https://www.kaltire.com/on/demandware.static/-/Library-Sites-KaltireShared/default/dw10a58d11/productselector/Tire.jpg"
+        alt: "Shop tires by size"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 3
+    componentName: "KalTirePromoMosaic"
+    manifestName: "KalTirePromoMosaic"
+    kind: "list"
+    datasourceItemName: "Kal Tire - Promotional Mosaic"
+    apiAddable: true
+    fields:
+      Title: "Current offers"
+    children:
+      - name: "Kal Tire - Brake Inspection"
+        fields:
+          Title: "Been a while since you checked your brakes?"
+          Description: "<p>Book your free, expert brake inspection.</p>"
+          Link:
+            text: "Book now"
+            href: "https://www.kaltire.com/en/brakes/"
+            target: ""
+          Theme: "light"
+        imageFields:
+          - field: "Image"
+            src: "https://www.kaltire.com/on/demandware.static/-/Library-Sites-KaltireShared/default/dw896b5f10/homepage/Left-Home-Brake-Check.jpg"
+            alt: "Kal Tire technician promoting a free brake inspection"
+      - name: "Kal Tire - Trailer Tires"
+        fields:
+          Title: "Don't let your trailer hold you back."
+          Description: "<p>We stock quality tires for your boat, utility or travel trailer.</p>"
+          Link:
+            text: "Shop Trailer Tires"
+            href: "https://www.kaltire.com/en/trailer-tires/"
+            target: ""
+          Theme: "photo"
+        imageFields:
+          - field: "Image"
+            src: "https://www.kaltire.com/on/demandware.static/-/Library-Sites-KaltireShared/default/dw3a1e33fe/homepage/right-top-trailers.jpg"
+            alt: "Travel trailers in a wooded campsite"
+      - name: "Kal Tire - CAA Savings"
+        fields:
+          Title: "CAA Members save 5%."
+          Description: "<p>Scan your valid CAA membership card in-store to redeem savings.</p>"
+          Link:
+            text: "Learn more"
+            href: "https://www.kaltire.com/en/caa-rewards/"
+            target: ""
+          Theme: "orange"
+        imageFields:
+          - field: "Image"
+            src: "https://www.kaltire.com/on/demandware.static/-/Library-Sites-KaltireShared/default/dwfa793a5f/homepage/Home-Page-CAA.png"
+            alt: "Kal Tire team characters"
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 4
+    componentName: "ThreeColumnCta"
+    manifestName: "ThreeColumnCta"
+    kind: "simple"
+    datasourceItemName: "Kal Tire - Customer Promises"
+    apiAddable: true
+    fields:
+      Text1: "CUSTOMER CARE PLAN"
+      SubText1: "Enjoy peace of mind with FREE air, balancing, flat repairs, and more."
+      Link1:
+        text: "Learn more"
+        href: "https://www.kaltire.com/en/customer-care-plan/"
+        target: ""
+      Text2: "PRICE MATCH GUARANTEE"
+      SubText2: "We’ll match any eligible passenger or light truck tire price."
+      Link2:
+        text: "Learn more"
+        href: "https://www.kaltire.com/en/price-match/"
+        target: ""
+      Text3: "NO INTEREST PAYMENT PLANS"
+      SubText3: "With a variety of payment options, get the tires, wheels and services you want today."
+      Link3:
+        text: "Learn more"
+        href: "https://www.kaltire.com/en/financing/"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 5
+    componentName: "ArticleList"
+    manifestName: "ArticleList"
+    kind: "context-only"
+    datasourceItemName: ""
+    apiAddable: false
+    fields:
+      Title: "SUMMER RESOURCES"
+      Description: "Tips and tricks to keep you rolling this summer."
+      CtaLink:
+        text: "Visit our resource centre"
+        href: "https://www.kaltire.com/resource-centre/"
+        target: ""
+    children:
+      - name: "Kal Tire - When to Change Your Brakes"
+        fields:
+          Title: "When do you change your brakes?"
+          Category: "Services"
+          Link:
+            text: "Read More"
+            href: "https://www.kaltire.com/en/signs-you-may-need-new-brakes.html"
+            target: ""
+        imageFields:
+          - field: "Thumbnail"
+            src: "https://www.kaltire.com/on/demandware.static/-/Library-Sites-KaltireShared/default/dwe3cb8042/resourcecentre/6-signs-you-may-need-new-brakes-block.jpg"
+            alt: "Mechanic inspecting a vehicle brake"
+      - name: "Kal Tire - Best Trailer Tires"
+        fields:
+          Title: "Choosing the best trailer tires"
+          Category: "Trailer Tires"
+          Link:
+            text: "Read More"
+            href: "https://www.kaltire.com/en/choosing-the-best-trailer-tires.html"
+            target: ""
+        imageFields:
+          - field: "Thumbnail"
+            src: "https://www.kaltire.com/on/demandware.static/-/Library-Sites-KaltireShared/default/dw703ff023/resourcecentre/choosing-the-best-trailer-tires-block.jpg"
+            alt: "Travel trailer parked beside a house"
+      - name: "Kal Tire - Pothole Damage"
+        fields:
+          Title: "How can potholes damage your vehicle and tires?"
+          Category: "Maintenance"
+          Link:
+            text: "Read More"
+            href: "https://www.kaltire.com/en/how-can-potholes-damage-your-vehicle-and-tires.html"
+            target: ""
+        imageFields:
+          - field: "Thumbnail"
+            src: "https://www.kaltire.com/on/demandware.static/-/Library-Sites-KaltireShared/default/dw8e2993db/homepage/RC-What-Do-Drivers-Need.jpg"
+            alt: "Vehicle tire and wheel"
+      - name: "Kal Tire - Measure Tread Depth"
+        fields:
+          Title: "How do you measure tire tread depth?"
+          Category: "Tires"
+          Link:
+            text: "Read More"
+            href: "https://www.kaltire.com/en/how-do-you-measure-tread-depth-on-your-tires.html"
+            target: ""
+        imageFields:
+          - field: "Thumbnail"
+            src: "https://www.kaltire.com/on/demandware.static/-/Library-Sites-KaltireShared/default/dwbf270c03/homepage/RC-Summer-Tires-Worn-Out.jpg"
+            alt: "Measuring tire tread depth"
+      - name: "Kal Tire - Buying Wheels"
+        fields:
+          Title: "Buying wheels? What to know before upgrading your wheels"
+          Category: "Wheels"
+          Link:
+            text: "Read More"
+            href: "https://www.kaltire.com/en/buying-wheels.html"
+            target: ""
+        imageFields:
+          - field: "Thumbnail"
+            src: "https://www.kaltire.com/on/demandware.static/-/Library-Sites-KaltireShared/default/dwa799f4ae/resourcecentre/buying-wheels-block.jpg"
+            alt: "Red vehicle with aftermarket wheels"
+      - name: "Kal Tire - Tire Pressure"
+        fields:
+          Title: "All about tire pressure: what you need to know"
+          Category: "Tires"
+          Link:
+            text: "Read More"
+            href: "https://www.kaltire.com/en/about-tire-pressure.html"
+            target: ""
+        imageFields:
+          - field: "Thumbnail"
+            src: "https://www.kaltire.com/on/demandware.static/-/Library-Sites-KaltireShared/default/dw1c2c5697/resourcecentre/all-about-tire-pressure-block.jpg"
+            alt: "Close-up of tire pressure measurement"
+    imageFields: []
+    matchConfidence: "medium"
+    contentSource: "extractor"
+
+  - position: 6
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Kal Tire - Advice Signup"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Heading: "HELPFUL ADVICE AND SAVINGS, JUST FOR YOU"
+      Text: "Exclusive offers, service reminders and helpful automotive advice—straight to your inbox."
+      Link:
+        text: "Sign up"
+        href: "https://www.kaltire.com/"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 7
+    componentName: "Footer"
+    manifestName: "Footer"
+    kind: "simple"
+    datasourceItemName: "Kal Tire - Footer"
+    apiAddable: false
+    fields:
+      Title1: "SHOP"
+      Text1: "<p><a href=\"https://www.kaltire.com/en/tires/\">Tires</a><br><a href=\"https://www.kaltire.com/en/wheels/\">Wheels</a><br><a href=\"https://www.kaltire.com/en/tire-and-mechanical-services/\">Services</a><br><a href=\"https://www.kaltire.com/en/brake-service/\">Brake Service</a><br><a href=\"https://www.kaltire.com/en/resource-centre.html\">Resource Centre</a></p>"
+      Title2: "CAREERS & CORPORATE"
+      Text2: "<p><a href=\"https://jobs.jobvite.com/kaltire/jobs\">Current Openings</a><br><a href=\"https://www.kaltire.com/en/corporate/\">About Us</a><br><a href=\"https://www.kaltire.com/en/newsroom/\">Newsroom</a><br><a href=\"https://www.kaltire.com/en/responsibility/\">Responsibility</a><br><a href=\"https://www.kaltire.com/en/locations/\">Locations</a></p>"
+      Title3: "COMMERCIAL"
+      Text3: "<p><a href=\"https://commercial.kaltire.com/commercial-tire-products/\">Products</a><br><a href=\"https://commercial.kaltire.com/services/\">Services</a><br><a href=\"https://commercial.kaltire.com/programs/\">Programs</a><br><a href=\"https://commercial.kaltire.com/why-us/\">Why Us</a><br><a href=\"https://www.kaltiremining.com/en/\">Mining</a></p>"
+      Title4: "CONTACT US"
+      Text4: "<p><a href=\"tel:1-877-525-8473\">Phone Us (1-877-KAL-TIRE)</a><br><a href=\"mailto:webstoresupport@kaltire.com\">Email Web Store Support</a><br><a href=\"https://www.kaltire.com/en/selfservice/\">Change or Cancel My Appointment</a></p>"
+      SocialsTitle: "Follow Kal Tire"
+      SocialLink1: { text: "Facebook", href: "https://www.facebook.com/kaltire", target: "_blank" }
+      SocialLink2: { text: "LinkedIn", href: "https://www.linkedin.com/company/kal-tire/", target: "_blank" }
+      SocialLink3: { text: "YouTube", href: "https://www.youtube.com/user/KalTire", target: "_blank" }
+      Copyright: "© 2026 Kal Tire Ltd. | All rights reserved | PO Box 1240, Vernon BC V1T 6N6"
+      Link1: { text: "Privacy Policy", href: "https://www.kaltire.com/en/privacy-policy.html", target: "" }
+      Link2: { text: "Terms and Conditions", href: "https://www.kaltire.com/en/terms-and-conditions.html", target: "" }
+    children: []
+    imageFields:
+      - field: "Image1"
+        src: "https://www.kaltire.com/on/demandware.static/-/Library-Sites-KaltireShared/default/dw3b443458/logo/logo@2x.png"
+        alt: "Kal Tire Canada"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+summary:
+  totalSections: 7
+  sectionsWithContent: 7
+  contextOnlySkipped: 2
+  fieldsPopulated: 56
+  imageFieldsMapped: 14
+  imagesSkipped: 6
+  videosFound: 0
+  translationApplied: false
+  sourceLanguage: "en"
+
+datasourceItems:
+  - componentName: "KalTireFinderHero"
+    itemName: "Kal Tire - Tire Finder Hero"
+    itemId: "{3D03F235-7035-4E6C-92DC-06323C33C29B}"
+    parentFolder: "{C3087DAD-B7D0-4082-A956-37622B398CD3}"
+    fieldsPopulated: ["Title", "Description", "BackgroundImage", "VehicleTitle", "VehicleDescription", "VehicleImage", "VehicleLink", "SizeTitle", "SizeDescription", "SizeImage", "SizeLink", "PackagesLink"]
+    imageFieldsPending: []
+    children: []
+  - componentName: "KalTirePromoMosaic"
+    itemName: "Kal Tire - Promotional Mosaic"
+    itemId: "{260999CC-DC4B-4727-997E-362C07CD2788}"
+    parentFolder: "{C3087DAD-B7D0-4082-A956-37622B398CD3}"
+    fieldsPopulated: ["Title"]
+    imageFieldsPending: []
+    children:
+      - { name: "Kal Tire - Brake Inspection", itemId: "{BCA2349A-2307-479A-B2F1-CF03AC58CCCB}", fieldsPopulated: ["Title", "Description", "Image", "Link", "Theme"], imageFieldsPending: [] }
+      - { name: "Kal Tire - Trailer Tires", itemId: "{8FA1429D-468B-4F01-A61F-DDBCFCA9551A}", fieldsPopulated: ["Title", "Description", "Image", "Link", "Theme"], imageFieldsPending: [] }
+      - { name: "Kal Tire - CAA Savings", itemId: "{D7C9C431-524C-4B41-B290-B523A562A091}", fieldsPopulated: ["Title", "Description", "Image", "Link", "Theme"], imageFieldsPending: [] }
+  - componentName: "ThreeColumnCta"
+    itemName: "Kal Tire - Customer Promises"
+    itemId: "{6A38A030-4284-47B4-88CD-D31D45AC53A4}"
+    parentFolder: "{C3087DAD-B7D0-4082-A956-37622B398CD3}"
+    fieldsPopulated: ["Text1", "SubText1", "Link1", "Text2", "SubText2", "Link2", "Text3", "SubText3", "Link3"]
+    imageFieldsPending: ["Image1", "Image2", "Image3"]
+    children: []
+  - componentName: "HeadingCta"
+    itemName: "Kal Tire - Advice Signup"
+    itemId: "{4B3707BD-F34A-4784-8238-004F4E7E30B2}"
+    parentFolder: "{C3087DAD-B7D0-4082-A956-37622B398CD3}"
+    fieldsPopulated: ["Eyebrow", "Heading", "Text", "Link"]
+    imageFieldsPending: []
+    children: []
+  - componentName: "Footer"
+    itemName: "Kal Tire - Footer"
+    itemId: "{90DBFDC0-7306-4C71-BB55-ED9DA9FF07D5}"
+    parentFolder: "{C3087DAD-B7D0-4082-A956-37622B398CD3}"
+    fieldsPopulated: ["Image1", "Title1", "Text1", "Title2", "Text2", "Title3", "Text3", "Title4", "Text4", "SocialsTitle", "SocialLink1", "SocialLink2", "SocialLink3", "Copyright", "Link1", "Link2"]
+    imageFieldsPending: []
+    children: []

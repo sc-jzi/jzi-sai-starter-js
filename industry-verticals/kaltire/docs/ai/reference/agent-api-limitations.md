@@ -259,7 +259,64 @@ Phase 3 Step 3: Agent reads `imageFieldXml` from manifest, includes Image fields
 
 ---
 
-## References
+## 6. Site name is derived from the display name, not the item name
+
+**Date discovered:** 2026-08-20
+**Severity:** High — breaks all layout operations for affected sites
+**Status:** Confirmed; fixable by aligning the display name
+
+### The Problem
+
+The Agent API builds the `sc_site` query string parameter from the site's **display name** rather than the site item name. When the two differ by more than case, Sitecore cannot resolve the site and every layout request fails with a bare HTTP 500. The CM log shows:
+
+```
+System.InvalidOperationException: Site from query string was not found: Kal Tire
+   at Sitecore.Sites.SiteContextResolver.ResolveSiteContext(...)
+   at Sitecore.Pipelines.PreAuthenticateRequest.SiteResolver.Process(HttpRequestArgs args)
+```
+
+Most sites never hit this because Sitecore matches site names case-insensitively, so a display name of `Quanex` still resolves to the site `quanex`. A display name of `Kal Tire` cannot resolve to `kal-tire`, because a space is not a hyphen.
+
+### The Fix
+
+Set `__Display name` on the **site root item** (the Headless Site item, e.g. `/sitecore/content/retail/kal-tire`) to a value that differs from the site name by case only. Setting it on the Site Grouping site item has no effect.
+
+### Detection
+
+Call `get_page_preview_url` and inspect the `sc_site` parameter. If it does not match the site name modulo case, layout operations will fail.
+
+---
+
+## 7. All writes to pre-existing pages return HTTP 500
+
+**Date discovered:** 2026-08-20
+**Severity:** High — blocks automated page assembly entirely
+**Status:** Unresolved; no server-side exception logged
+
+### The Problem
+
+On an XM Cloud environment where site resolution is correct (see §6), reads of a **pre-existing** page succeed but writes to that page fail. The same write tools succeed on a page created in the same site via `create_page`. Datasource-item writes succeed in both cases.
+
+| Operation | Pre-existing page (Home, `/personal`) | New page (`create_page`) |
+|-----------|----------------------------------------|--------------------------|
+| `get_components_on_page` | works | works |
+| `get_allowed_comps_by_ph` | works | works |
+| `update_fields_on_item` on a **datasource** item | works | works |
+| `update_fields_on_item` on a **page** item | 500 | works |
+| `set_component_datasource` | 500 | works |
+| `add_component_on_page` | 500 | works |
+
+The three operations that fail on Home (`update_fields_on_item` against the page, `set_component_datasource`, `add_component_on_page`) all succeeded on the fresh page. That narrows the fault to pre-existing pages, not the site, the tools, or the renderings.
+
+Sitecore CM logs record **no exception** for the failing attempts — only `[OrcaBearerAuthentication] No configuration manager found for issuer 'https://auth.sitecorecloud.io'`, which also appears during calls that succeed and is therefore not the cause.
+
+### Implication
+
+Because the 500 surfaces no server-side detail, there is nothing actionable to diagnose from logs. Treat Phase 6 as manual for affected environments and generate a manual task checklist instead.
+
+### Side effect
+
+`add_component_on_page` creates its local datasource item *before* the write fails. A retry then errors with `a content item with the same name is already defined on this level`. Delete the orphan under the page's `Data` folder before retrying.
 
 - Agent API docs: https://api-docs.sitecore.com/ai-capabilities/agent-api
 - Asset API docs: https://api-docs.sitecore.com/sai/agent-api/assets

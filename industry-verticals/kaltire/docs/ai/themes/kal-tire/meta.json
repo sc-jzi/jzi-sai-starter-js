@@ -1,0 +1,35 @@
+{
+  "title": "Shop Tires, Wheels, Brakes and Alignments | Kal Tire",
+  "themeColor": null,
+  "msColor": null,
+  "ogTitle": "Kaltire",
+  "ogDescription": "'Kal Tire is Canada's largest independent tire dealer serving retail, commercial and mining. We carry 12 brands for car and light truck tires and offer the largest selection in the industry.'",
+  "ogImage": "'https://staging-store-kaltire.demandware.net/on/demandware.static/-/Library-Sites-KaltireShared/default/v8884aafc32528e2391c9be20a5b8819d0ab3214c/fbopengraphtags/Kal-Tire-FB-Homepage.jpg'",
+  "ogSiteName": null,
+  "favicon": "https://www.kaltire.com/on/demandware.static/Sites-Kaltire-Site/-/default/dw1f89ae9a/images/favicon.png",
+  "googleFontsLinks": [],
+  "fontFaces": [
+    {
+      "family": "fontawesome",
+      "src": "url(\"fonts/fontawesome/fontawesome-webfont.woff2?v=4.7.0\") format(\"woff2\"), url(\"fonts/fontawesome/fontawesome-webfont.woff?v=4.7.0\") format(\"woff\"), url(\"fonts/fontawesome/fontawesome-webfont.ttf?v=4.7.0\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "fontello",
+      "src": "url(\"fonts/fontello/fontello.woff2?49772686\") format(\"woff2\"), url(\"fonts/fontello/fontello.woff?49772686\") format(\"woff\"), url(\"fonts/fontello/fontello.ttf?49772686\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "slick",
+      "src": "url(\"./fonts/slick.woff\") format(\"woff\"), url(\"./fonts/slick.ttf\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "slick",
+      "src": "url(\"./fonts/slick.woff\") format(\"woff\"), url(\"./fonts/slick.ttf\") format(\"truetype\")",
+      "weight": "normal"
+    }
+  ],
+  "logoCandidates": [],
+  "heroBgImage": null
+}

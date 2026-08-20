@@ -1,0 +1,124 @@
+client:
+  name: "Kal Tire"
+  sourceUrl: "https://www.kaltire.com/"
+  startedAt: "2026-08-20T14:00:00Z"
+  lastUpdatedAt: "2026-08-20T14:20:00Z"
+
+phases:
+  phase0_inputs:
+    status: "complete"
+    screenshot: true
+    url: "https://www.kaltire.com/"
+
+  phase0_5_manifest:
+    status: "complete"
+    validationMode: "quick"
+    result: "pass-with-warnings"
+
+  phase1_theme:
+    status: "complete"
+    themeFile: "docs/ai/themes/kal-tire.theme.yaml"
+    userApproved: true
+
+  phase2_analysis:
+    status: "complete"
+    buildPlanFile: "docs/ai/demos/kal-tire/build-plan.yaml"
+    totalSections: 7
+    userApproved: true
+
+  phase2_5_content:
+    status: "complete"
+    contentMapFile: "docs/ai/demos/kal-tire/content-map.yaml"
+    extractorUsed: true
+
+  phase3_content:
+    status: "complete"
+    completedSections: 7
+    totalSections: 7
+
+  phase4_theme:
+    status: "complete"
+    themeDelivery: "global-css-variables"
+    cssWritten: true
+    fontsAdded: true
+
+  phase5_custom:
+    status: "complete"
+    customComponentsNeeded: 2
+    customComponentsBuilt: 2
+
+  phase5_5_variants:
+    status: "complete"
+    variantsNeeded: 5
+    variantsCreated: 5
+    variantSpecsFile: "docs/ai/demos/kal-tire/variant-specs.yaml"
+    skippedReason: ""
+    requestedScope: "pixel-perfect"
+
+  phase6_assembly:
+    status: "blocked"
+    componentsAdded: 0
+    datasourcesWired: 0
+    totalComponents: 5
+    targetPageId: "{74931444-58E3-4FFF-B9EE-654C83D8BD5F}"
+    error: "Every write to an existing page returns HTTP 500 with no CM exception logged. Assembly must be done manually in Pages; see manual-tasks.md."
+
+  phase7_summary:
+    status: "pending"
+
+sections:
+  - position: 1
+    componentName: "Header"
+    kind: "context-only"
+    phase3: { status: "populated", itemId: "", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, imagesUploaded: 1, imagesExpected: 1, imagesFailed: 0, error: "Context-only header; content recorded for partial-design implementation." }
+    phase5_5: { status: "complete", variantName: "KalTire", exportAdded: true, variantDefinitionId: "{B675B8EB-C5E7-447F-9B58-F2580E778999}", error: "" }
+    phase6: { status: "skipped", componentInstanceId: "", datasourceWired: false, error: "Context-only Header is supplied by the page's partial design; verify and select KalTire variant manually." }
+  - position: 2
+    componentName: "KalTireFinderHero"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "{3D03F235-7035-4E6C-92DC-06323C33C29B}", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, imagesUploaded: 3, imagesExpected: 3, imagesFailed: 0, error: "" }
+    phase5_5: { status: "complete", variantName: "Default", exportAdded: true, variantDefinitionId: "{CF166782-B716-4019-BC5F-D4DE4A6D9985}", error: "" }
+    phase6: { status: "failed", componentInstanceId: "", datasourceWired: false, error: "Agent API returned HTTP 500 on the page write; add manually in Pages." }
+  - position: 3
+    componentName: "KalTirePromoMosaic"
+    kind: "list"
+    phase3: { status: "populated", itemId: "{260999CC-DC4B-4727-997E-362C07CD2788}", fieldsPopulated: true, childrenCreated: 3, childrenExpected: 3, imagesUploaded: 3, imagesExpected: 3, imagesFailed: 0, error: "" }
+    phase5_5: { status: "complete", variantName: "Default", exportAdded: true, variantDefinitionId: "{7E683B3A-304D-4F9F-B80F-0E2D9EB107FB}", error: "" }
+    phase6: { status: "failed", componentInstanceId: "", datasourceWired: false, error: "Agent API returned HTTP 500 on the page write; add manually in Pages." }
+  - position: 4
+    componentName: "ThreeColumnCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "{6A38A030-4284-47B4-88CD-D31D45AC53A4}", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, imagesUploaded: 0, imagesExpected: 0, imagesFailed: 0, error: "" }
+    phase5_5: { status: "complete", variantName: "KalTire", exportAdded: true, variantDefinitionId: "{48461465-F9AF-4454-A001-D44678A7E97A}", error: "" }
+    phase6: { status: "failed", componentInstanceId: "d54d53b4-1aa4-4998-9bdf-eb934c32cfb6", datasourceWired: false, error: "Instance already on Home from the starter; Agent API cannot rewire it (HTTP 500). Change datasource manually in Pages." }
+  - position: 5
+    componentName: "ArticleList"
+    kind: "context-only"
+    phase3: { status: "populated", itemId: "", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 6, imagesUploaded: 6, imagesExpected: 6, imagesFailed: 0, error: "Article content recorded; ArticleList requires a content-tree datasource rather than component datasource items." }
+    phase5_5: { status: "complete", variantName: "KalTire", exportAdded: true, variantDefinitionId: "{BC8641AF-71C9-4589-B925-3406FEE8CE5E}", error: "" }
+    phase6: { status: "failed", componentInstanceId: "854de8ce-208f-494d-b7c8-c1162d00144f", datasourceWired: false, error: "Instance already on Home from the starter; Agent API cannot rewire it (HTTP 500). Set the content-tree source manually in Pages." }
+  - position: 6
+    componentName: "HeadingCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "{4B3707BD-F34A-4784-8238-004F4E7E30B2}", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, imagesUploaded: 0, imagesExpected: 0, imagesFailed: 0, error: "" }
+    phase5_5: { status: "complete", variantName: "KalTire", exportAdded: true, variantDefinitionId: "{260BA48B-D73B-409D-B16F-B682E1F1DAC4}", error: "" }
+    phase6: { status: "failed", componentInstanceId: "", datasourceWired: false, error: "Agent API returned HTTP 500 on the page write; add manually in Pages." }
+  - position: 7
+    componentName: "Footer"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "{90DBFDC0-7306-4C71-BB55-ED9DA9FF07D5}", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, imagesUploaded: 1, imagesExpected: 1, imagesFailed: 0, error: "" }
+    phase5_5: { status: "complete", variantName: "KalTire", exportAdded: true, variantDefinitionId: "{D8D1E235-1822-46D3-B3C3-B4B4CB7919CA}", error: "" }
+    phase6: { status: "skipped", componentInstanceId: "", datasourceWired: false, error: "Context-only Footer is supplied by the page's partial design; verify and select KalTire variant manually." }
+
+validationNotes:
+  - "projectTemplatesRoot corrected to /sitecore/templates/Project/Financial with user approval."
+  - "Financial starter stores component and folder templates under the Components root."
+  - "Legacy uiim manifest component definitions reference missing local React files; use the Financial starter component library for this demo."
+  - "The Content SDK component maps were regenerated and include KalTireFinderHero and KalTirePromoMosaic."
+  - "Custom components compile and pass TypeScript; production prerender is blocked by the existing missing discoverDomainId environment configuration."
+  - "Layout reads were failing because the Agent API derives sc_site from the site display name; 'Kal Tire' could not resolve to the site 'kal-tire'. Fixed by setting __Display name to 'kal-tire' on the site root item {51AE7E42-770D-48C3-88D2-8DD0CC16592E}."
+  - "Every Agent API write to an existing page returns HTTP 500 with no CM exception logged; confirmed on Home and /personal. Phase 6 must be completed manually in Pages."
+  - "A page created via create_page accepted the same writes, so the failure is scoped to pre-existing pages rather than the site or renderings. The temporary test page was deleted at the user's request."
+  - "OrcaBearerAuthentication issuer warning is Agent API log noise that also appears on successful calls; it is not the cause of the 500s."
+  - "add_component_on_page creates its local datasource before failing, leaving orphans under /Home/Data that block retries with a duplicate-name error."
+  - "Three Column CTA and Article List already exist on the Home page from the Financial starter and should be reused rather than re-added."

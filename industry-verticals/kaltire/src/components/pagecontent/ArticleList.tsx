@@ -201,7 +201,62 @@ const ArticleListGrid = (props: ArticleListComponentProps): JSX.Element => {
   );
 };
 
+const ArticleListKalTire = (props: ArticleListComponentProps): JSX.Element => {
+  const id = props.params?.RenderingIdentifier;
+  const newsItems = getNewsItems(props.fields?.items, 6);
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div
+      className={`component article-list kal-tire-resources bg-[var(--brand-secondary)] py-16 text-white ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="mx-auto max-w-[1100px] px-6">
+        <div className="mb-8 text-center">
+          <h2 className="m-0 text-2xl font-extrabold uppercase tracking-wide">Summer Resources</h2>
+          <p className="mb-0 mt-2 text-sm font-medium text-white/70">
+            Tips and tricks to keep you rolling this summer.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {newsItems?.map((item) => (
+            <Link
+              href={item.url}
+              key={item.url}
+              className="group relative min-h-52 overflow-hidden bg-black text-white no-underline"
+            >
+              <NextImage
+                field={item.fields.Thumbnail}
+                width={530}
+                height={300}
+                className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/15 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 border-b-[10px] border-[var(--brand-primary)] p-5">
+                <Text
+                  field={item.fields.Title}
+                  tag="h3"
+                  className="m-0 text-base font-extrabold leading-tight text-white"
+                />
+              </div>
+            </Link>
+          ))}
+        </div>
+        <div className="mt-9 text-center">
+          <Link
+            href="https://www.kaltire.com/resource-centre/"
+            className="inline-flex border-2 border-[var(--brand-primary)] px-7 py-3 text-xs font-extrabold uppercase tracking-wide text-white no-underline hover:bg-[var(--brand-primary)]"
+          >
+            Visit our resource centre
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = withDatasourceCheck()<ArticleListComponentProps>(ArticleListDefault);
 export const ThreeColumn = withDatasourceCheck()<ArticleListComponentProps>(ArticleListThreeColumn);
 export const Simplified = withDatasourceCheck()<ArticleListComponentProps>(ArticleListSimplified);
 export const Grid = withDatasourceCheck()<ArticleListComponentProps>(ArticleListGrid);
+export const KalTire = withDatasourceCheck()<ArticleListComponentProps>(ArticleListKalTire);

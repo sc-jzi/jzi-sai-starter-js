@@ -151,3 +151,39 @@ export const Centered = (props: HeadingCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* Kal Tire variant — slim horizontal advice and savings strip */
+export const KalTire = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div
+      className={`component heading-cta kal-tire-advice bg-[var(--brand-muted)] py-7 ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="mx-auto flex max-w-[1100px] flex-col items-center justify-between gap-5 px-6 text-center md:flex-row md:text-left">
+        <div>
+          <Text
+            field={props.fields?.Heading}
+            tag="h2"
+            className="m-0 text-sm font-extrabold uppercase tracking-wide text-[var(--brand-fg)]"
+          />
+          <Text
+            field={props.fields?.Text}
+            tag="p"
+            className="mb-0 mt-1 text-xs font-medium text-[var(--brand-muted-fg)]"
+          />
+        </div>
+        {(isPageEditing || props.fields?.Link?.value?.href) && (
+          <Link
+            field={props.fields.Link}
+            className="inline-flex border-2 border-[var(--brand-primary)] bg-white px-7 py-3 text-xs font-extrabold uppercase tracking-wide text-[var(--brand-fg)] no-underline hover:bg-[var(--brand-primary)] hover:text-white"
+          />
+        )}
+      </div>
+    </div>
+  );
+};

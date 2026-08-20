@@ -1,0 +1,117 @@
+# Client Brand Theme — Kal Tire
+
+client:
+  name: "Kal Tire"
+  sourceUrl: "https://www.kaltire.com/"
+  extractedAt: "2026-08-20T14:00:00Z"
+  extractedBy: "cursor"
+
+colors:
+  primary: "#ff5a00"
+  primaryForeground: "#ffffff"
+  secondary: "#222222"
+  secondaryForeground: "#ffffff"
+  accent: "#ff5a00"
+  accentForeground: "#111111"
+  background: "#ffffff"
+  foreground: "#111111"
+  muted: "#f2f2f2"
+  mutedForeground: "#666666"
+  headerBackground: "#ffffff"
+  headerForeground: "#111111"
+  footerBackground: "#ffffff"
+  footerForeground: "#222222"
+  border: "#dedede"
+  ring: "#ff5a00"
+  extra:
+    - { name: "resource-dark", value: "#242424" }
+    - { name: "utility-bar", value: "#f1f1f1" }
+
+typography:
+  headingFamily: "'Montserrat', Arial, sans-serif"
+  headingWeight: "700"
+  bodyFamily: "'Montserrat', Arial, sans-serif"
+  bodyWeight: "500"
+  monoFamily: "monospace"
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+  scale:
+    hero: "3rem"
+    h1: "2.625rem"
+    h2: "2rem"
+    h3: "1.625rem"
+    body: "1rem"
+    small: "0.875rem"
+  headingTransform: "none"
+  letterSpacing: "normal"
+  lineHeight: "1.4"
+
+spacing:
+  density: "compact"
+  sectionGap: "3rem"
+  containerMaxWidth: "1280px"
+  containerPadding: "1.5rem"
+
+shape:
+  borderRadius: "0"
+  buttonRadius: "0"
+  cardRadius: "0"
+  imageRadius: "0"
+  shadowStyle: "none"
+  borderStyle: "strong"
+
+tone:
+  overall: "bold, practical, retail"
+  colorMode: "mixed"
+  contrast: "high"
+  imagery: "automotive and outdoor photography with character illustration"
+  heroStyle: "full-bleed-image"
+  cardStyle: "flat, sharp-edged, image-led"
+  navStyle: "solid-bar"
+
+tailwind:
+  colors:
+    brand:
+      primary: "#ff5a00"
+      secondary: "#222222"
+      accent: "#ff5a00"
+  fontFamily:
+    heading: ["Montserrat", "Arial", "sans-serif"]
+    body: ["Montserrat", "Arial", "sans-serif"]
+  borderRadius:
+    DEFAULT: "0"
+    button: "0"
+    card: "0"
+
+cssVariables: |
+  :root {
+    --brand-primary: #ff5a00;
+    --brand-primary-foreground: #ffffff;
+    --brand-secondary: #222222;
+    --brand-secondary-foreground: #ffffff;
+    --brand-accent: #ff5a00;
+    --brand-accent-foreground: #111111;
+    --brand-bg: #ffffff;
+    --brand-fg: #111111;
+    --brand-muted: #f2f2f2;
+    --brand-muted-fg: #666666;
+    --brand-header-bg: #ffffff;
+    --brand-header-fg: #111111;
+    --brand-footer-bg: #ffffff;
+    --brand-footer-fg: #222222;
+    --brand-border: #dedede;
+    --brand-ring: #ff5a00;
+    --brand-heading-font: 'Montserrat', Arial, sans-serif;
+    --brand-body-font: 'Montserrat', Arial, sans-serif;
+    --brand-radius: 0;
+    --brand-button-radius: 0;
+    --brand-card-radius: 0;
+  }
+
+extraction:
+  confidence: "medium"
+  method: "playwright-partial"
+  notes:
+    - "The scraper captured the rendered desktop, mobile, and hero layouts, but the site exposes no useful CSS custom properties."
+    - "The source uses proprietary Gotham A/Gotham B; Montserrat is the closest practical Google Fonts substitute."
+    - "The orange token is visually sampled from calls to action and promotional bands; computed extraction selected a black button instead."
+    - "The design uses square corners, strong contrast, compact spacing, and alternating white, orange, and charcoal sections."

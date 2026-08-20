@@ -267,3 +267,67 @@ export const WithIconsCompact = (props: ThreeColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* Kal Tire variant — compact square customer-promise cards */
+export const KalTire = (props: ThreeColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const promises = [
+    {
+      image: props.fields.Image1,
+      title: props.fields.Text1,
+      description: props.fields.SubText1,
+      link: props.fields.Link1,
+    },
+    {
+      image: props.fields.Image2,
+      title: props.fields.Text2,
+      description: props.fields.SubText2,
+      link: props.fields.Link2,
+    },
+    {
+      image: props.fields.Image3,
+      title: props.fields.Text3,
+      description: props.fields.SubText3,
+      link: props.fields.Link3,
+    },
+  ];
+
+  return (
+    <div
+      className={`component three-column-cta kal-tire-promises bg-[var(--brand-bg)] py-12 ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="mx-auto grid max-w-[1100px] gap-4 px-6 md:grid-cols-3">
+        {promises.map((promise, index) => (
+          <Link
+            key={index}
+            field={promise.link}
+            className="group flex min-h-44 flex-col items-center justify-center border-[10px] border-[var(--brand-muted)] bg-white p-6 text-center text-[var(--brand-fg)] no-underline transition-transform hover:-translate-y-1"
+          >
+            {(promise.image?.value?.src || isPageEditing) && (
+              <NextImage
+                field={promise.image}
+                width={42}
+                height={42}
+                className="mb-4 h-10 w-10 object-contain"
+              />
+            )}
+            <Text
+              field={promise.title}
+              tag="h2"
+              className="m-0 text-sm font-extrabold uppercase leading-tight"
+            />
+            <Text
+              field={promise.description}
+              tag="p"
+              className="mb-0 mt-2 max-w-[15rem] text-xs font-medium leading-snug text-[var(--brand-muted-fg)]"
+            />
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+};

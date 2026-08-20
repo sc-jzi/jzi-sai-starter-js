@@ -1,0 +1,55 @@
+variantSpecs:
+  - position: 1
+    componentName: "Header"
+    variantName: "KalTire"
+    baseVariant: "WithLogoImage"
+    visualDifferences:
+      layout: "Two-tier header: compact utility row above logo and primary navigation."
+      spacing: "32px utility row, 80px primary row, 24px horizontal padding."
+      typography: "Compact uppercase navigation with bold booking CTA."
+      background: "White primary row and muted utility row."
+      distinctive: "Square controls, thin gray divider, wide 1280px container."
+
+  - position: 4
+    componentName: "ThreeColumnCta"
+    variantName: "KalTire"
+    baseVariant: "WithIconsCompact"
+    visualDifferences:
+      layout: "Three equal assurance cards centered in a narrow row."
+      spacing: "Compact 48px section padding and 16px card gaps."
+      typography: "Small uppercase titles and muted one-line descriptions."
+      background: "White section; cards framed with thick muted borders."
+      distinctive: "Square corners, no shadows, small orange icon treatment."
+
+  - position: 5
+    componentName: "ArticleList"
+    variantName: "KalTire"
+    baseVariant: "Grid"
+    visualDifferences:
+      layout: "Six cards in a 3x2 grid with centered section heading and CTA."
+      spacing: "64px vertical section padding and 16px card gaps."
+      typography: "White uppercase heading and bold overlaid card titles."
+      background: "Charcoal section with image gradients."
+      distinctive: "Orange 10px card rules and orange outline CTA."
+
+  - position: 6
+    componentName: "HeadingCta"
+    variantName: "KalTire"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "Compact horizontal copy-and-action strip."
+      spacing: "28px vertical padding with a 1100px content width."
+      typography: "Small uppercase heading and muted supporting copy."
+      background: "Light gray."
+      distinctive: "Square orange outline button."
+
+  - position: 7
+    componentName: "Footer"
+    variantName: "KalTire"
+    baseVariant: "WithSocials"
+    visualDifferences:
+      layout: "Four dense link columns, logo/social row, full-width legal band."
+      spacing: "48px content padding with compact links."
+      typography: "Small uppercase group headings and 12px links."
+      background: "White footer and orange legal band."
+      distinctive: "Square layout, muted links, orange hover accents."

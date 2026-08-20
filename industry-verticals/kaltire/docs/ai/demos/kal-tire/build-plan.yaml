@@ -1,0 +1,255 @@
+# Kal Tire Demo Build Plan
+client:
+  name: "Kal Tire"
+  sourceUrl: "https://www.kaltire.com/"
+  themeFile: "docs/ai/themes/kal-tire.theme.yaml"
+  analyzedAt: "2026-08-20T14:00:00Z"
+  implementationLibrary: "Financial starter components"
+
+pageAnalysis:
+  screenshotFiles:
+    desktop: "docs/ai/themes/kal-tire/screenshot-desktop.png"
+    mobile: "docs/ai/themes/kal-tire/screenshot-mobile.png"
+    hero: "docs/ai/themes/kal-tire/screenshot-hero.png"
+  totalSections: 7
+  templateMatches: 5
+  customRequired: 2
+  notes:
+    - "The duplicate navigation captured above Summer Resources is a sticky-header screenshot artifact, not a second page section."
+    - "The legacy uiim registry is used for visual semantics, but implementation maps to components that actually exist in the Financial starter."
+
+sections:
+  - position: 1
+    description: "Two-tier utility and primary navigation with Kal Tire logo, product links, search/cart icons, location, sign-in, and a bordered booking CTA."
+    matchedComponent:
+      registryId: "navigation-header"
+      manifestName: "Header"
+      displayName: "Header"
+      renderingId: "81317d3b-f929-426a-83ec-421982f8f1e6"
+      variant: "KalTire"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: false
+      customVariantNeeded:
+        name: "KalTire"
+        description: "Two-tier responsive header with logo, utility links, primary navigation, icons, and booking CTA."
+        parentComponent: "Header"
+    kind: "context-only"
+    sectionBackground: "default"
+    content:
+      UtilityLinks: ["Commercial Tires & Services", "Mining Tire Group", "Contact Us", "Sign in", "Location: Kanata"]
+      NavigationLinks: ["Tires", "Wheels", "Services", "Locations", "Promotions"]
+      CtaLabel: "Book a Tire Change"
+    contentNotes: "Header is supplied by the page design and must be styled/wired in the header partial design."
+    variantReason: "The existing Header structure is reusable, but the screenshot requires a dedicated two-tier Kal Tire layout."
+
+  - position: 2
+    description: "Full-bleed lake-and-SUV hero with large white headline and an overlaid tire finder containing Tires/Wheels/Packages tabs and two vehicle/size choices."
+    matchedComponent:
+      registryId: "hero-banner"
+      manifestName: "KalTireFinderHero"
+      displayName: "Tire Finder Hero"
+      variant: "Default"
+      matchType: "custom"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+    kind: "simple"
+    sectionBackground: "dark"
+    content:
+      Title: "CANADA'S TIRE EXPERTS."
+      Description: "A proudly Canadian company since 1953."
+      Tabs: ["Tires", "Wheels", "Packages"]
+      FinderOptions:
+        - title: "Shop tires by vehicle"
+          description: "Enter your make and model to find tires that fit."
+        - title: "Shop tires by size"
+          description: "Enter your tire size to find the best options."
+    contentNotes: "The finder interaction is tightly coupled to the hero and cannot be represented by HeroBanner fields without dropping key behavior."
+    variantReason: "A custom component preserves the overlaid tabbed tire finder and responsive mobile stack."
+
+  - position: 3
+    description: "Asymmetric promotional mosaic: a large brake-inspection character panel at left, trailer photography at upper right, and orange CAA membership panel below."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "KalTirePromoMosaic"
+      displayName: "Promotional Mosaic"
+      variant: "Default"
+      matchType: "custom"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+    kind: "list"
+    sectionBackground: "default"
+    content:
+      Title: "Current offers"
+      Cards:
+        - title: "Been a while since you checked your brakes?"
+          description: "Book your free, expert brake inspection."
+          cta: "Book now"
+        - title: "Don't let your trailer hold you back."
+          description: "We stock quality tires for your boat, utility or travel trailer."
+          cta: "Shop trailer tires"
+        - title: "CAA Members save 5%."
+          description: "Scan your valid CAA membership card in-store for redeem savings."
+          cta: "Learn more"
+    contentNotes: "The desktop 50/50 asymmetric mosaic becomes three stacked image-led panels on mobile."
+    variantReason: "No existing grid variant supports the large-left/two-right tile geometry and contrasting orange panel."
+
+  - position: 4
+    description: "Three compact white assurance cards with orange line icons for customer care, price match, and no-interest payments."
+    matchedComponent:
+      registryId: "value-proposition-grid"
+      manifestName: "ThreeColumnCta"
+      displayName: "Three Column CTA"
+      renderingId: "ad385021-ce2b-4fc1-89aa-207d408034a8"
+      variant: "KalTire"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+      datasourceTemplateId: "148d07ba-f923-4fb2-8907-0bd440d5db44"
+      customVariantNeeded:
+        name: "KalTire"
+        description: "Compact bordered assurance cards with small orange icons, centered uppercase titles, and subtle descriptions."
+        parentComponent: "ThreeColumnCta"
+    kind: "simple"
+    sectionBackground: "default"
+    content:
+      Items:
+        - title: "Customer Care Plan"
+          description: "Unbeatable customer care, including 30-day test drive."
+        - title: "Price Match Guarantee"
+          description: "We'll match any eligible competitor price, right here."
+        - title: "No Interest Payment Plans"
+          description: "With a variety of payment options, get the tires, wheels and services you want today."
+    contentNotes: "Maps directly to Image1/Text1/SubText1 through Image3/Text3/SubText3."
+    variantReason: "The data shape is exact; only the compact square-card treatment needs a Kal Tire variant."
+
+  - position: 5
+    description: "Charcoal Summer Resources section with a centered heading, six photography cards in a 3-by-2 grid, orange accents, and a centered browse CTA."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "ArticleList"
+      displayName: "Article List"
+      renderingId: "52733592-6f5d-4fb4-8003-9b8223c5bc76"
+      variant: "KalTire"
+      matchType: "template"
+      matchConfidence: "medium"
+      variantMatch: "partial"
+      apiAddable: false
+      customVariantNeeded:
+        name: "KalTire"
+        description: "Dark six-card resources grid with image overlays, orange rules, section heading, subtitle, and browse CTA."
+        parentComponent: "ArticleList"
+    kind: "context-only"
+    sectionBackground: "dark"
+    content:
+      Title: "SUMMER RESOURCES"
+      Description: "Tips and tricks to keep you rolling this summer."
+      CtaLabel: "Visit our resource centre"
+      Articles:
+        - "When do you change your brakes?"
+        - "Choosing the best trailer tires"
+        - "How can potholes damage your vehicle and tires?"
+        - "How do you measure tire tread depth?"
+        - "Buying wheels? What to know before upgrading your wheels"
+        - "All about tire pressure: what you need to know"
+    contentNotes: "Article List selects a content-tree datasource rather than creating a component datasource; its source page and six article children require manual/page-content setup."
+    variantReason: "The Grid variant provides the collection behavior, while the screenshot needs a dedicated dark visual treatment and heading/CTA chrome."
+
+  - position: 6
+    description: "Slim light-gray advice and savings signup strip with centered copy and a small orange outlined Sign Up button."
+    matchedComponent:
+      registryId: "cta-banner"
+      manifestName: "HeadingCta"
+      displayName: "Heading CTA"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      variant: "KalTire"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+      datasourceTemplateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+      customVariantNeeded:
+        name: "KalTire"
+        description: "Compact horizontal advice strip with copy at left and orange outline CTA at right."
+        parentComponent: "HeadingCta"
+    kind: "simple"
+    sectionBackground: "muted"
+    content:
+      Heading: "HELPFUL ADVICE AND SAVINGS, JUST FOR YOU"
+      Text: "Exclusive offers, service reminders and helpful automotive advice—straight to your inbox."
+      Link:
+        text: "Sign up"
+        href: "https://www.kaltire.com/"
+    contentNotes: "The datasource maps directly to Heading, Text, and Link."
+    variantReason: "Existing content fields are exact; the screenshot uses a slimmer horizontal arrangement than current variants."
+
+  - position: 7
+    description: "Large white multi-column footer with Shop, Careers, Commercial, and Contact Us groups, social icons, then a full-width orange legal bar."
+    matchedComponent:
+      registryId: "footer"
+      manifestName: "Footer"
+      displayName: "Footer"
+      renderingId: "771a3f27-6448-44ac-add0-e5de311c6e3b"
+      variant: "KalTire"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: false
+      datasourceTemplateId: "947db8f8-dc76-453f-aca1-a27babfe633b"
+      customVariantNeeded:
+        name: "KalTire"
+        description: "Dense white multi-column footer with social icons and orange copyright/legal band."
+        parentComponent: "Footer"
+    kind: "simple"
+    sectionBackground: "default"
+    content:
+      Groups: ["Shop", "Careers", "Commercial", "Contact Us"]
+      SocialNetworks: ["Facebook", "LinkedIn", "YouTube", "Instagram"]
+      Copyright: "© Kal Tire"
+    contentNotes: "Footer is expected in the footer partial design; create and assign a Kal Tire Footer datasource there."
+    variantReason: "WithSocials has the needed data fields, but the column density and orange legal strip require a Kal Tire variant."
+
+customComponents:
+  - name: "KalTireFinderHero"
+    category: "Page Content"
+    kind: "simple"
+    description: "Full-bleed hero with integrated tabbed tire finder."
+    fields:
+      - { name: "Title", type: "Single-Line Text" }
+      - { name: "Description", type: "Rich Text" }
+      - { name: "BackgroundImage", type: "Image" }
+      - { name: "VehicleImage", type: "Image" }
+      - { name: "SizeImage", type: "Image" }
+      - { name: "VehicleLink", type: "General Link" }
+      - { name: "SizeLink", type: "General Link" }
+    behavior: "Accessible tablist; tab content may use placeholder links for demo behavior."
+
+  - name: "KalTirePromoMosaic"
+    category: "Page Content"
+    kind: "list"
+    description: "Responsive asymmetric three-promotion mosaic."
+    parentFields:
+      - { name: "Title", type: "Single-Line Text" }
+    childFields:
+      - { name: "Title", type: "Single-Line Text" }
+      - { name: "Description", type: "Rich Text" }
+      - { name: "Image", type: "Image" }
+      - { name: "Link", type: "General Link" }
+      - { name: "Theme", type: "Single-Line Text" }
+
+buildOrder:
+  phase1_sitecore:
+    - { position: 4, componentName: "ThreeColumnCta", matchType: "template", apiAddable: true }
+    - { position: 6, componentName: "HeadingCta", matchType: "template", apiAddable: true }
+    - { position: 7, componentName: "Footer", matchType: "template", apiAddable: false }
+  phase2_theme: "Apply Kal Tire CSS variables and Montserrat font."
+  phase3_custom:
+    - "KalTireFinderHero"
+    - "KalTirePromoMosaic"
+  phase4_manual:
+    - "Set Header and Footer variants/datasources in their partial designs."
+    - "Create/select the Summer Resources content source for ArticleList."

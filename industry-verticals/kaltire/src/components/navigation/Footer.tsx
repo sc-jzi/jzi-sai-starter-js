@@ -169,3 +169,67 @@ export const WithSocials = (props: FooterProps): JSX.Element => {
     </div>
   );
 };
+
+/* Kal Tire variant — dense white columns with orange legal band */
+export const KalTire = (props: FooterProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const groups = [
+    { title: props.fields?.Title1, text: props.fields?.Text1 },
+    { title: props.fields?.Title2, text: props.fields?.Text2 },
+    { title: props.fields?.Title3, text: props.fields?.Text3 },
+    { title: props.fields?.Title4, text: props.fields?.Text4 },
+  ];
+
+  return (
+    <footer
+      className={`component footer kal-tire-footer bg-[var(--brand-footer-bg)] text-[var(--brand-footer-fg)] ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="mx-auto max-w-[1180px] px-6 py-12">
+        <div className="grid gap-9 sm:grid-cols-2 lg:grid-cols-4">
+          {groups.map((group, index) => (
+            <div key={index}>
+              <Text
+                field={group.title}
+                tag="h2"
+                className="mb-4 text-xs font-extrabold uppercase tracking-wide"
+              />
+              <RichText
+                field={group.text}
+                className="text-xs font-medium leading-6 text-[var(--brand-muted-fg)] [&_a]:text-inherit [&_a]:no-underline [&_a:hover]:text-[var(--brand-primary)]"
+              />
+            </div>
+          ))}
+        </div>
+        <div className="mt-9 flex flex-col items-start justify-between gap-5 border-t border-[var(--brand-border)] pt-7 sm:flex-row sm:items-center">
+          <NextImage
+            field={props.fields?.Image1}
+            width={150}
+            height={42}
+            className="h-auto w-32"
+          />
+          <div>
+            <Text
+              field={props.fields?.SocialsTitle}
+              tag="span"
+              className="mb-2 block text-xs font-extrabold uppercase"
+            />
+            <div className="flex gap-4 text-xs font-bold uppercase">
+              <Link field={props.fields?.SocialLink1} />
+              <Link field={props.fields?.SocialLink2} />
+              <Link field={props.fields?.SocialLink3} />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="bg-[var(--brand-primary)] px-6 py-5 text-center text-[0.7rem] font-semibold text-[var(--brand-primary-foreground)]">
+        <Text field={props.fields?.Copyright} tag="span" />
+        <span className="mx-2">|</span>
+        <Link field={props.fields?.Link1} className="text-inherit" />
+        <span className="mx-2">|</span>
+        <Link field={props.fields?.Link2} className="text-inherit" />
+      </div>
+    </footer>
+  );
+};
