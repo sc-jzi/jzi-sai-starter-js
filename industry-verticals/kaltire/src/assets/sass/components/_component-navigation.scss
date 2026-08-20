@@ -5,6 +5,20 @@
   .button-nav-item a {
     @extend .button;
     @extend .button-main;
+    background-color: var(--brand-primary);
+    color: var(--brand-primary-foreground);
+    border-radius: var(--brand-button-radius, 0);
+    font-size: 0.8125rem;
+    font-weight: 800;
+    padding: 0.7rem 1.35rem;
+    text-transform: none;
+
+    &:hover,
+    &:focus {
+      background-color: var(--brand-primary);
+      color: var(--brand-primary-foreground);
+      filter: brightness(110%);
+    }
   }
 
   ul {

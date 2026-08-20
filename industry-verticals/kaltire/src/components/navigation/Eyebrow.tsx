@@ -1,44 +1,73 @@
-'use client';
-
-import { AppPlaceholder, ComponentMap, ImageField, useSitecore } from '@sitecore-content-sdk/nextjs';
+import { JSX } from 'react';
 import { ComponentProps } from 'lib/component-props';
-import { JSX, useState } from 'react';
-import PreviewSearch from "../search/PreviewSearch"
-import { PREVIEW_WIDGET_ID } from "../../_data/customizations";
 
-export type EyebrowProps = ComponentProps & {
-  fields: {
-    LogoImage: ImageField;
-  };
-  componentMap: ComponentMap;
+type EyebrowLink = {
+  href: string;
+  label: string;
 };
+
+const LEFT_LINKS: EyebrowLink[] = [
+  { href: 'https://commercial.kaltire.com/en/', label: 'Commercial Tires & Services' },
+  { href: 'https://www.kaltiremining.com/en/', label: 'Mining Tire Group' },
+];
+
+const RIGHT_LINKS: EyebrowLink[] = [
+  { href: 'https://www.kaltire.com/en/contact-us.html', label: 'Contact Us' },
+  { href: 'https://www.kaltire.com/en/login/', label: 'Sign In' },
+];
+
+export type EyebrowProps = ComponentProps;
+
+const linkClassName =
+  'whitespace-nowrap text-[13px] font-bold text-[var(--brand-fg)] no-underline hover:text-[var(--brand-primary)]';
+
+const LocationPinIcon = (): JSX.Element => (
+  <svg
+    aria-hidden="true"
+    viewBox="0 0 16 16"
+    className="h-3.5 w-3.5 shrink-0 fill-current"
+  >
+    <path d="M8 1.5a4.6 4.6 0 0 0-4.6 4.6c0 3.4 4.6 8.4 4.6 8.4s4.6-5 4.6-8.4A4.6 4.6 0 0 0 8 1.5Zm0 6.3A1.7 1.7 0 1 1 8 4.4a1.7 1.7 0 0 1 0 3.4Z" />
+  </svg>
+);
 
 export const Default = (props: EyebrowProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
-  const { page } = useSitecore();
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const sxaStyles = `${props.params?.styles || ''}`.trim();
 
   return (
-    <div className={`component eyebrow	${props.params.styles?.trimEnd()}`} id={id ? id : undefined}>
-      <div className={`container container-${props.params?.ContainerWidth?.toLowerCase()}-fluid`}>
-        <div className="row">
-          <div className="col col-placeholder">
-            <AppPlaceholder name="eyebrow-left" rendering={props.rendering} page={page} componentMap={props.componentMap} />
-            <AppPlaceholder name="eyebrow-right" rendering={props.rendering} page={page} componentMap={props.componentMap} />
-          </div>
-          <div className="flex items-center gap-2">
-              <PreviewSearch rfkId={PREVIEW_WIDGET_ID} isOpen={isSearchOpen} setIsSearchOpen={setIsSearchOpen} />
-
-              <button
-                onClick={() => setIsSearchOpen(false)}
-                className="p-3 text-gray-500 hover:text-gray-700 transition-colors"
-              >
-                <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-        </div>
+    <div
+      className={`component eyebrow kal-tire-eyebrow hidden bg-[var(--brand-muted)] md:block ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="mx-auto flex min-h-8 max-w-[1280px] items-center justify-between gap-8 px-6 py-2">
+        <ul className="m-0 flex list-none items-center gap-8 p-0">
+          {LEFT_LINKS.map((link) => (
+            <li key={link.href}>
+              <a href={link.href} className={linkClassName}>
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <ul className="m-0 ml-auto flex list-none items-center gap-8 p-0">
+          {RIGHT_LINKS.map((link) => (
+            <li key={link.href}>
+              <a href={link.href} className={linkClassName}>
+                {link.label}
+              </a>
+            </li>
+          ))}
+          <li className="flex items-center gap-1.5 text-[13px] font-bold text-[var(--brand-fg)]">
+            <LocationPinIcon />
+            <span>
+              Location:{' '}
+              <a href="https://www.kaltire.com/en/stores/" className={linkClassName}>
+                Kanata
+              </a>
+            </span>
+          </li>
+        </ul>
       </div>
     </div>
   );

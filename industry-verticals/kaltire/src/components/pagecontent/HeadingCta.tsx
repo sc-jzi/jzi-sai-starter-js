@@ -161,10 +161,10 @@ export const KalTire = (props: HeadingCtaProps): JSX.Element => {
 
   return (
     <div
-      className={`component heading-cta kal-tire-advice bg-[var(--brand-muted)] py-7 ${sxaStyles}`}
+      className={`component heading-cta kal-tire-advice bg-[var(--brand-muted)] ${sxaStyles}`}
       id={id ? id : undefined}
     >
-      <div className="mx-auto flex max-w-[1100px] flex-col items-center justify-between gap-5 px-6 text-center md:flex-row md:text-left">
+      <div className="mx-auto flex max-w-[1100px] flex-col items-center justify-between gap-5 px-6 py-10 text-center md:flex-row md:text-left">
         <div>
           <Text
             field={props.fields?.Heading}

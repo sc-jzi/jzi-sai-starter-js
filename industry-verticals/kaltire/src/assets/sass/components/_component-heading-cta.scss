@@ -11,6 +11,16 @@
     padding: 0 $size-padding;
   }
 
+  &.kal-tire-advice {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+
+    @include respond-to(mobile-large) {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+  }
+
   .heading-content-wrapper {
     max-width: 33rem;
   }

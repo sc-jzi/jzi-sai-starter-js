@@ -65,16 +65,7 @@ export const KalTire = (props: HeaderProps): JSX.Element => {
       className={`component header kal-tire-header border-b border-[var(--brand-border)] bg-[var(--brand-header-bg)] text-[var(--brand-header-fg)] ${sxaStyles}`}
       id={id ? id : undefined}
     >
-      <div className="bg-[var(--brand-muted)]">
-        <div className="mx-auto flex min-h-8 max-w-[1280px] items-center justify-end px-6 text-[0.7rem] font-semibold uppercase">
-          <AppPlaceholder
-            name="header-left"
-            rendering={props.rendering}
-            page={page}
-            componentMap={props.componentMap}
-          />
-        </div>
-      </div>
+      
       <div className="mx-auto flex min-h-20 max-w-[1280px] items-center gap-7 px-6">
         <NextImage
           field={props.fields?.LogoImage}

@@ -16,6 +16,33 @@
     justify-content: flex-end;
     gap: 2rem;
   }
+
+  &.kal-tire-eyebrow {
+    color: var(--brand-fg);
+    background-color: var(--brand-muted);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    @include respond-to(mobile-large) {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--brand-primary);
+      }
+    }
+  }
 }
 
 .site-services .eyebrow .container {
