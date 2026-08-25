@@ -1,3 +1,63 @@
+// Pentair
+body.site-pentair,
+.site-pentair {
+  --text-body: #464747;
+  --text-body-inverted: #ffffff;
+  --text-colored: #09244f;
+  --text-footer: #ffffff;
+  --text-accent: #4f8309;
+  --bg-body: #ffffff;
+  --bg-footer: #09244f;
+  --bg-main: #f4f4f4;
+  --bg-main-alt: #ffffff;
+  --bg-color: #006e96;
+  --bg-saturated: #09244f;
+  --bg-accent: #4f8309;
+  --border-color: #d8dde3;
+  --hr-color: #ffffff;
+  --roundness: 0px;
+  --brand-primary: #09244f;
+  --brand-primary-foreground: #ffffff;
+  --brand-secondary: #006e96;
+  --brand-accent: #4f8309;
+  --brand-accent-foreground: #ffffff;
+  --brand-bg: #ffffff;
+  --brand-fg: #464747;
+  --brand-muted: #f4f4f4;
+  --brand-heading-font: 'Barlow Condensed', sans-serif;
+  --brand-body-font: 'Barlow', sans-serif;
+  --brand-button-radius: 0px;
+  --brand-card-radius: 0.375rem;
+  --brand-light-green: #6eb70b;
+  --brand-impact-yellow: #d0df00;
+  --brand-header-bg: #ffffff;
+  --brand-header-fg: #09244f;
+  --brand-footer-bg: #09244f;
+  --brand-footer-fg: #ffffff;
+  --brand-muted-fg: #8a8a8a;
+  --brand-secondary-foreground: #ffffff;
+  --brand-border: #d8dde3;
+}
+
+body.site-pentair.dark,
+.dark .site-pentair {
+  --text-body: #ffffff;
+  --text-body-inverted: #09244f;
+  --text-colored: #6eb70b;
+  --text-footer: #ffffff;
+  --text-accent: #6eb70b;
+  --bg-body: #09244f;
+  --bg-footer: #061833;
+  --bg-main: #0c3471;
+  --bg-main-alt: #09244f;
+  --bg-color: #006e96;
+  --bg-saturated: #006e96;
+  --bg-accent: #4f8309;
+  --border-color: #0c3471;
+  --hr-color: #ffffff;
+  --roundness: 0px;
+}
+
 // Financial
 body.site-financial,
 .site-financial {

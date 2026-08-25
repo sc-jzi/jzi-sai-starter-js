@@ -1,0 +1,344 @@
+# Demo Build Plan — Pentair
+# Mapped to Financial starter-kit components that exist on manufacturing/pentair.
+# The uiim template library is not deployed in this environment (same pattern as Quanex).
+
+client:
+  name: "Pentair"
+  sourceUrl: "https://www.pentair.com/"
+  themeFile: "docs/ai/themes/pentair.theme.yaml"
+  analyzedAt: "2026-08-25T19:45:00Z"
+  environment: "manufacturing/pentair"
+  contentRoot: "/sitecore/content/manufacturing/pentair"
+  codeRoot: "industry-verticals/pentair"
+  note: "Using Financial starter kit components with Pentair demo variants. uiim React files are not present in this app."
+
+pageAnalysis:
+  screenshotFiles:
+    desktop: "docs/ai/themes/pentair/screenshot-desktop.png"
+    mobile: "docs/ai/themes/pentair/screenshot-mobile.png"
+    hero: "docs/ai/themes/pentair/screenshot-hero.png"
+  userScreenshot: true
+  totalSections: 10
+  templateMatches: 10
+  customRequired: 0
+
+sections:
+  - position: 1
+    description: "White header with Pentair wordmark, utility icons (Blog, Brands, Careers, Contact, Find a Dealer, Partner Portal), mega-menu (Products, Solutions, Education & Support, Sustainability, About, Investors) and search."
+    matchedComponent:
+      registryId: "navigation-header"
+      manifestName: "Header"
+      componentName: "Header"
+      renderingId: "81317d3b-f929-426a-83ec-421982f8f1e6"
+      variant: "WithLogoImage"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: false
+    sectionBackground: "default"
+    content:
+      Logo: "Pentair wordmark (navy)"
+      UtilityLinks: "Blog, Brands, Careers, Contact Us, Find a Dealer, Partner Portal"
+      NavLinks: "Products, Solutions, Education & Support, Sustainability, About, Investors"
+    contentNotes: "Lives in the Header partial design. Mega-menu behavior needs a Pentair variant in Phase 5.5. Do not add via add_component_on_page."
+    variantReason: "Solid white bar above the hero (tone.navStyle: solid-bar). Closest existing export is WithLogoImage; mega-menu + utility row is custom."
+    customVariantNeeded:
+      name: "Pentair"
+      description: "Two-row header: utility icon links on top, logo + mega-menu + search on the bottom. White bar, navy text, no rounded corners."
+      parentComponent: "Header"
+    kind: "context-only"
+
+  - position: 2
+    description: "Full-bleed mountain lake hero with white uppercase overlay headline, green rectangular CTA, and blue/green triangle flourish in the bottom-right."
+    matchedComponent:
+      registryId: "hero-banner"
+      manifestName: "HeroBanner"
+      componentName: "HeroBanner"
+      renderingId: "0e8cc47e-32d6-4f55-a7bf-e713abd06323"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "dark"
+    content:
+      Tagline: "We help the world sustainably"
+      Title: "move, improve and enjoy water"
+      Text: "life's most essential resource"
+      Cta1:
+        text: "Learn More About Us"
+        href: "https://www.pentair.com/en/about-pentair.html"
+      Image: "Calm alpine lake with snow-capped mountains"
+    contentNotes: "HeroBanner fields (Tagline, Title, Text, Image, Cta1) map cleanly. Triangle graphic is CSS/variant-only, not a field. Live site copy matches the screenshot."
+    variantReason: "tone.heroStyle is full-bleed-image. Default HeroBanner is a split/accent layout; needs a Pentair overlay variant."
+    customVariantNeeded:
+      name: "Pentair"
+      description: "Full-bleed photo, left-aligned white Barlow Condensed overlay, sharp green CTA, decorative blue/green triangles bottom-right."
+      parentComponent: "HeroBanner"
+    kind: "simple"
+    imageFields:
+      - { field: "Image", src: "hero-lake" }
+
+  - position: 3
+    description: "Three equal full-bleed image tiles — MOVE WATER, IMPROVE WATER, ENJOY WATER — with white overlay titles, short subcopy, and a yellow/green arrow CTA."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "ThreeColumnCta"
+      componentName: "ThreeColumnCta"
+      renderingId: "ad385021-ce2b-4fc1-89aa-207d408034a8"
+      variant: "Default"
+      variantMatch: "none"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Text1: "Move Water"
+      SubText1: "Water Supply, Disposal & Industrial Filtration"
+      Link1: { text: "Learn More", href: "https://www.pentair.com/en/products.html" }
+      Text2: "Improve Water"
+      SubText2: "Discover Water & Ice"
+      Link2: { text: "Learn More", href: "https://www.pentair.com/en.html" }
+      Text3: "Enjoy Water"
+      SubText3: "Explore Pool & Spa"
+      Link3: { text: "Learn More", href: "https://www.pentair.com/en/products/residential/pool-spa-equipment.html" }
+    contentNotes: "Default ThreeColumnCta stacks image above title. Live site uses full-bleed photo tiles with overlaid type. Jump To labels (Pentair Flow / Water Solutions / Pool) can be omitted or used as Link text."
+    variantReason: "Three-column image tiles match ThreeColumnCta, but overlay typography + impact-yellow arrows need a custom variant."
+    customVariantNeeded:
+      name: "PentairPillars"
+      description: "Three full-bleed photo tiles, white condensed overlay titles, small subcopy, impact-yellow arrow affordance. No card chrome."
+      parentComponent: "ThreeColumnCta"
+    kind: "simple"
+    imageFields:
+      - { field: "Image1", src: "move-water" }
+      - { field: "Image2", src: "improve-water" }
+      - { field: "Image3", src: "enjoy-water" }
+
+  - position: 4
+    description: "SUSTAINABILITY SPOTLIGHT heading over a three-column card row (report cover, award badge, green graphic) each with a short blurb and text link."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "ThreeColumnCta"
+      componentName: "ThreeColumnCta"
+      renderingId: "ad385021-ce2b-4fc1-89aa-207d408034a8"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      SectionTitle: "Sustainability Spotlight"
+      Text1: "2025 Sustainability Report"
+      SubText1: "Our 2025 Sustainability Report captures our progress toward Making Better Essential."
+      Link1: { text: "Read the Report", href: "https://www.pentair.com/en/about-pentair/sustainability.html" }
+      Text2: "2026 Business Intelligence Group Innovation Awards"
+      SubText2: "Pentair received a 2026 BIG Innovation Award from Business Intelligence Group."
+      Link2: { text: "Get the Details", href: "https://www.pentair.com/" }
+      Text3: "2025 Investor's Business Daily Top 50 Sustainable Companies"
+      SubText3: "Pentair has been included on Investor's Business Daily's 50 Most Sustainable Companies for 2025."
+      Link3: { text: "Read More", href: "https://www.pentair.com/" }
+    contentNotes: "Screenshot showed 2023 assets; live site is 2025/2026. Phase 2.5 will lock current copy. ThreeColumnCta has no parent Title field — section heading may need a HeadingCta above it, or be hardcoded in the PentairSpotlight variant."
+    variantReason: "Image + title + blurb + link is close to Default ThreeColumnCta. Need top-image cards, gray condensed section heading, and green text links."
+    customVariantNeeded:
+      name: "PentairSpotlight"
+      description: "Optional gray uppercase section heading, three image-top cards, green arrow links, no shadows, 6px card radius."
+      parentComponent: "ThreeColumnCta"
+    kind: "simple"
+    imageFields:
+      - { field: "Image1", src: "sustainability-report" }
+      - { field: "Image2", src: "big-innovation-award" }
+      - { field: "Image3", src: "ibd-sustainable" }
+
+  - position: 5
+    description: "CAREERS split: gray eyebrow + navy 'A PURPOSE DRIVEN COMPANY' headline and body on the left, team photo on the right, green text link."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      componentName: "PromoCta"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "muted"
+    content:
+      Eyebrow: "Careers"
+      Title: "A Purpose Driven Company"
+      Text: "Grow with us. Explore how you can make an impact by helping create a better world for people and the planet through our smart, sustainable water solutions."
+      Link:
+        text: "Search for Jobs"
+        href: "https://www.pentair.com/en/about-pentair/careers.html"
+      Image: "Diverse group of employees smiling around a conference table"
+    contentNotes: "PromoCta Default is already image/text split. Screenshot link text was 'Explore Careers'; live site is 'Search for Jobs'."
+    variantReason: "Split layout matches PromoCta Default. Need light-gray band, condensed navy headline, green text link instead of a filled button."
+    customVariantNeeded:
+      name: "PentairCareers"
+      description: "Muted background, CAREERS eyebrow, condensed navy headline, body copy, green text link, rectangular team photo on the right."
+      parentComponent: "PromoCta"
+    kind: "simple"
+    imageFields:
+      - { field: "Image", src: "careers-team" }
+
+  - position: 6
+    description: "Innovation Spotlight item 1 — NEW MYSÜDMO APP PUTS CUSTOMERS FIRST. Text left, tablet app screenshot right."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      componentName: "PromoCta"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Eyebrow: "Innovation Spotlight"
+      Title: "New mySüdmo App Puts Customers First"
+      Text: "mySüdmo is a product configurator that helps you choose the right Pentair Südmo Hygienic Process Valve for your specific process requirements and needs. Easy & fast product selection — anytime, anywhere."
+      Link:
+        text: "Select Your Valve Now"
+        href: "https://www.pentair.com/"
+      Image: "Tablet showing mySüdmo app screenshots"
+    contentNotes: "First of three stacked PromoCta instances. Live site may present these as a carousel; screenshot shows all three stacked. Phase 5.5 can add optional arrows."
+    variantReason: "Text/image split matches PromoCta. Need condensed uppercase title and green text CTA."
+    customVariantNeeded:
+      name: "PentairInnovation"
+      description: "Text left / image right, condensed uppercase title, green text link. Optional section eyebrow on the first item only."
+      parentComponent: "PromoCta"
+    kind: "simple"
+    imageFields:
+      - { field: "Image", src: "mysudmo-app" }
+
+  - position: 7
+    description: "Innovation item 2 — Everpure and Manitowoc Ice honored with Kitchen Innovations Awards. Image left, text right."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      componentName: "PromoCta"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Title: "Everpure and Manitowoc Ice Honored with Kitchen Innovations Awards"
+      Text: "Everpure and Manitowoc Ice from Pentair Water Solutions have each won a 2025 Kitchen Innovations Award from the National Restaurant Association. Everpure's PFOA/PFOS Reduction Systems were awarded for their ability to reduce PFAS in water. Manitowoc Ice was recognized for its NEO ice machine with integrated water filtration."
+      Link:
+        text: "Get the Details"
+        href: "https://www.pentair.com/"
+      Image: "Everpure filtration canisters and Manitowoc ice machine"
+    contentNotes: "Same PromoCta as item 1, flipped (image left). Use PentairInnovationAlt or a rendering parameter."
+    variantReason: "Alternating image position vs item 1."
+    customVariantNeeded:
+      name: "PentairInnovationAlt"
+      description: "Image left / text right version of PentairInnovation."
+      parentComponent: "PromoCta"
+    kind: "simple"
+    imageFields:
+      - { field: "Image", src: "everpure-manitowoc" }
+
+  - position: 8
+    description: "Innovation item 3 — Driving pool innovation with an award-winning pump. Text left, IntelliFlo3 pump + award seal right."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      componentName: "PromoCta"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Title: "Driving Pool Innovation with an Award-Winning Pump"
+      Text: "From the brand that brought you variable speed and flow technology comes a new, energy-efficient, and award-winning pool pump. The IntelliFlo3 Variable Speed and Flow Pump is the Variable Speed Pump of the Year, as designated by the Pool Nation Awards."
+      Link:
+        text: "See the Pump of the Year"
+        href: "https://www.pentair.com/"
+      Image: "White IntelliFlo3 pool pump with Pool Nation award badge"
+    contentNotes: "Reuse PentairInnovation (text left / image right)."
+    variantReason: "Same layout as item 1."
+    kind: "simple"
+    imageFields:
+      - { field: "Image", src: "intelliflo3-pump" }
+
+  - position: 9
+    description: "Minimal NEWS RELEASES block: gray condensed heading, featured earnings headline, short excerpt, date, and View All."
+    matchedComponent:
+      registryId: "rich-text-block"
+      manifestName: "HeadingCta"
+      componentName: "HeadingCta"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "medium"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Eyebrow: "News Releases"
+      Heading: "Pentair Reports Second Quarter 2026 Results"
+      Text: "Sales of $933 million, down 17 percent compared to sales for the same period last year."
+      Link:
+        text: "View All"
+        href: "https://www.pentair.com/en/about-pentair/news-blog/news-releases.html"
+    contentNotes: "Live site has a small paginated list (2 items). HeadingCta covers the featured story + View All. A second item can be a second HeadingCta Compact if needed after Phase 2.5. Screenshot showed 2023 Q2; live copy is 2026."
+    variantReason: "No news-list component in the starter kit. HeadingCta Eyebrow/Heading/Text/Link is the closest. Custom variant for condensed gray eyebrow and minimal news typography."
+    customVariantNeeded:
+      name: "PentairNews"
+      description: "Gray uppercase NEWS RELEASES eyebrow, navy headline, muted excerpt, optional date, green View All link. No large button."
+      parentComponent: "HeadingCta"
+    kind: "simple"
+
+  - position: 10
+    description: "Deep navy mega-footer: white Pentair logo, mission copy, social icons, four link columns (About / Solutions / Support / Legal), copyright."
+    matchedComponent:
+      registryId: "footer"
+      manifestName: "Footer"
+      componentName: "Footer"
+      renderingId: "771a3f27-6448-44ac-add0-e5de311c6e3b"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: false
+    sectionBackground: "dark"
+    content:
+      Image1: "Pentair logo reversed white"
+      Text1: "From our residential and commercial water solutions, to industrial water management and everything in between, Pentair is focused on smart, sustainable water solutions that help our planet and people thrive."
+      Title1: "About Pentair"
+      Title2: "Solutions"
+      Title3: "Support"
+      Title4: "Legal"
+      Copyright: "©2026 Pentair. All rights reserved."
+    contentNotes: "Lives in the Footer partial design. Footer already supports logo + 4 columns + socials + copyright. Needs navy background and white type via theme + Pentair variant."
+    variantReason: "Multi-column footer matches Default. Theme sets --brand-footer-bg. Custom variant for mission blurb placement and social row."
+    customVariantNeeded:
+      name: "Pentair"
+      description: "Navy full-width footer, white logo, mission paragraph, four link columns, circular social icons, sharp corners."
+      parentComponent: "Footer"
+    kind: "context-only"
+
+customComponents: []
+
+buildOrder:
+  phase1_sitecore:
+    - { position: 2, componentName: "HeroBanner", datasourceName: "Pentair - Hero Banner", matchType: "template" }
+    - { position: 3, componentName: "ThreeColumnCta", datasourceName: "Pentair - Move Improve Enjoy", matchType: "template" }
+    - { position: 4, componentName: "ThreeColumnCta", datasourceName: "Pentair - Sustainability Spotlight", matchType: "template" }
+    - { position: 5, componentName: "PromoCta", datasourceName: "Pentair - Careers", matchType: "template" }
+    - { position: 6, componentName: "PromoCta", datasourceName: "Pentair - Innovation mySudmo", matchType: "template" }
+    - { position: 7, componentName: "PromoCta", datasourceName: "Pentair - Innovation Everpure", matchType: "template" }
+    - { position: 8, componentName: "PromoCta", datasourceName: "Pentair - Innovation IntelliFlo3", matchType: "template" }
+    - { position: 9, componentName: "HeadingCta", datasourceName: "Pentair - News Releases", matchType: "template" }
+  phase2_theme: "Inline :root brand variables in globals.scss (Pentair has no globals.css). Load Barlow + Barlow Condensed from Google Fonts."
+  phase3_custom: []
+  skipped_context_only:
+    - { position: 1, componentName: "Header", reason: "Partial design — cannot add via API" }
+    - { position: 10, componentName: "Footer", reason: "Partial design — cannot add via API" }

@@ -267,3 +267,145 @@ export const WithIconsCompact = (props: ThreeColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* Pentair variant — full-bleed photo tiles with overlay titles */
+export const Pentair = (props: ThreeColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const Column = ({
+    image,
+    text,
+    subText,
+    link,
+  }: {
+    image: ImageField;
+    text: Field<string>;
+    subText: Field<string>;
+    link: LinkField;
+  }) => {
+    return (
+      <div className="col-sm-12 col-lg-4 pentair-pillar">
+        <NextImage field={image} width={800} height={900} />
+        <div className="content-wrapper">
+          {(isPageEditing || text?.value) && (
+            <h2>
+              <Text field={text} />
+            </h2>
+          )}
+          {isPageEditing && (
+            <p>
+              <Text field={subText} />
+            </p>
+          )}
+          {(isPageEditing || link?.value?.href) && (
+            <Link field={link} className="pentair-pillar-link">
+              <Text field={subText} />
+            </Link>
+          )}
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <div className={`component three-column-cta pentair ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="row">
+          <Column
+            image={props.fields.Image1}
+            text={props.fields.Text1}
+            subText={props.fields.SubText1}
+            link={props.fields.Link1}
+          />
+          <Column
+            image={props.fields.Image2}
+            text={props.fields.Text2}
+            subText={props.fields.SubText2}
+            link={props.fields.Link2}
+          />
+          <Column
+            image={props.fields.Image3}
+            text={props.fields.Text3}
+            subText={props.fields.SubText3}
+            link={props.fields.Link3}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* PentairSpotlight variant — image-top cards with section heading */
+export const PentairSpotlight = (props: ThreeColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const Column = ({
+    image,
+    text,
+    subText,
+    link,
+  }: {
+    image: ImageField;
+    text: Field<string>;
+    subText: Field<string>;
+    link: LinkField;
+  }) => {
+    return (
+      <div className="col-sm-12 col-lg-4">
+        <div className="content-wrapper">
+          <NextImage field={image} width={600} height={400} />
+          {(isPageEditing || text?.value) && (
+            <h2>
+              <Text field={text} />
+            </h2>
+          )}
+          {(isPageEditing || subText?.value) && (
+            <p>
+              <Text field={subText} />
+            </p>
+          )}
+          {(isPageEditing || link?.value?.href) && (
+            <Link field={link} className="pentair-text-link" />
+          )}
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <div
+      className={`component component-spaced three-column-cta pentair-spotlight ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <h2 className="pentair-spotlight-heading">Sustainability Spotlight</h2>
+        <div className="row gx-4 gy-5">
+          <Column
+            image={props.fields.Image1}
+            text={props.fields.Text1}
+            subText={props.fields.SubText1}
+            link={props.fields.Link1}
+          />
+          <Column
+            image={props.fields.Image2}
+            text={props.fields.Text2}
+            subText={props.fields.SubText2}
+            link={props.fields.Link2}
+          />
+          <Column
+            image={props.fields.Image3}
+            text={props.fields.Text3}
+            subText={props.fields.SubText3}
+            link={props.fields.Link3}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};

@@ -1,0 +1,465 @@
+/* Pentair demo — pixel-perfect homepage variants */
+
+.site-pentair {
+  font-family: var(--brand-body-font, 'Barlow', sans-serif);
+  color: var(--brand-fg, #464747);
+  background: var(--brand-bg, #ffffff);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .title,
+  .eyebrow-accent {
+    font-family: var(--brand-heading-font, 'Barlow Condensed', sans-serif);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  .button,
+  .button-main,
+  a.button {
+    border-radius: var(--brand-button-radius, 0);
+    font-family: var(--brand-heading-font, 'Barlow Condensed', sans-serif);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+  }
+
+  .button-main,
+  a.button-main {
+    background: var(--brand-light-green, #6eb70b);
+    border-color: var(--brand-light-green, #6eb70b);
+    color: var(--brand-primary-foreground, #fff);
+  }
+
+  header,
+  .component.header {
+    background: var(--brand-header-bg, #fff);
+    color: var(--brand-header-fg, #09244f);
+  }
+
+  .component.footer {
+    background: var(--bg-footer, #09244f);
+    color: var(--brand-footer-fg, #fff);
+  }
+}
+
+/* Header — two-row white bar */
+.header.pentair {
+  background: var(--brand-header-bg, #fff);
+  color: var(--brand-header-fg, #09244f);
+  padding: 0;
+  border-bottom: 1px solid var(--brand-border, #d8dde3);
+
+  .pentair-utility-bar {
+    border-bottom: 1px solid var(--brand-border, #d8dde3);
+    font-size: 0.75rem;
+
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1.25rem;
+      list-style: none;
+      margin: 0;
+      padding: 0.4rem 0;
+    }
+
+    a {
+      color: var(--brand-primary, #09244f);
+      text-decoration: none;
+      font-weight: 500;
+
+      &:hover {
+        color: var(--brand-secondary, #006e96);
+      }
+    }
+  }
+
+  .pentair-header-main {
+    padding: 0.75rem 0;
+  }
+
+  img {
+    height: 36px;
+    width: auto;
+  }
+}
+
+/* Hero overlay — white CTA, green type, triangle flourish */
+.hero.pentair {
+  position: relative;
+  height: min(72vh, 640px);
+  color: var(--brand-primary-foreground, #fff);
+  overflow: hidden;
+
+  picture,
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 140px 210px;
+    border-color: transparent transparent var(--brand-accent, #4f8309) transparent;
+    z-index: 2;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: 56px;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 92px 140px;
+    border-color: transparent transparent var(--brand-primary, #09244f) transparent;
+    z-index: 3;
+  }
+
+  .content-container {
+    position: relative;
+    z-index: 1;
+    justify-content: center;
+    padding: 4.5rem 2rem 4rem clamp(2.5rem, 6vw, 5.5rem);
+    max-width: 54rem;
+    margin-left: 0;
+    transform: none;
+    left: 0;
+    width: auto;
+
+    .title {
+      font-family: var(--brand-heading-font, 'Barlow Condensed', sans-serif);
+      font-size: clamp(2.15rem, 4.4vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.12;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--brand-primary-foreground, #fff);
+      max-width: 18ch;
+    }
+
+    .subtitle {
+      font-family: var(--brand-heading-font, 'Barlow Condensed', sans-serif);
+      font-size: 1.35rem;
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.95;
+      color: var(--brand-primary-foreground, #fff);
+    }
+  }
+
+  .button,
+  a,
+  a.button-main {
+    position: relative;
+    display: inline-block;
+    background: var(--brand-primary-foreground, #fff);
+    border: 0;
+    border-radius: 0;
+    color: var(--brand-light-green, #6eb70b);
+    padding: 0.7rem 2.4rem 0.7rem 1.5rem;
+    font-weight: 600;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 0.9rem;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 5px 0 5px 8px;
+      border-color: transparent transparent transparent var(--brand-light-green, #6eb70b);
+    }
+  }
+}
+
+/* Move / Improve / Enjoy overlay tiles */
+.three-column-cta.pentair {
+  padding: 0;
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .row {
+    margin: 0;
+    --bs-gutter-x: 0;
+  }
+
+  .pentair-pillar {
+    position: relative;
+    min-height: 30rem;
+    padding: 0;
+    overflow: hidden;
+
+    img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      margin: 0;
+      border-radius: 0;
+    }
+
+    .content-wrapper {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      min-height: 30rem;
+      padding: 2.75rem 1.75rem 2.25rem;
+      background: linear-gradient(to top, rgb(9 36 79 / 78%) 0%, rgb(9 36 79 / 8%) 58%);
+      color: var(--brand-primary-foreground, #fff);
+    }
+
+    h2 {
+      color: var(--brand-primary-foreground, #fff);
+      font-size: clamp(2.25rem, 3.5vw, 3.25rem);
+      line-height: 0.95;
+      margin: auto 0 1.5rem;
+      font-weight: 300;
+    }
+
+    p {
+      display: none;
+    }
+
+    .pentair-pillar-link,
+    a.pentair-pillar-link {
+      color: var(--brand-impact-yellow, #d0df00);
+      background: transparent;
+      border: 0;
+      padding: 0;
+      text-decoration: none;
+      font-family: var(--brand-body-font, 'Barlow', sans-serif);
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-transform: none;
+
+      &::after {
+        content: ' →';
+        color: var(--brand-light-green, #6eb70b);
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+/* Sustainability cards */
+.three-column-cta.pentair-spotlight {
+  padding: 4.5rem 0 3.5rem;
+  background: var(--brand-bg, #fff);
+
+  .pentair-spotlight-heading {
+    font-family: var(--brand-heading-font, 'Barlow Condensed', sans-serif);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--brand-primary, #09244f);
+    font-size: 1.65rem;
+    font-weight: 300;
+    margin-bottom: 2.25rem;
+  }
+
+  img {
+    height: 14.5rem;
+    width: 100%;
+    object-fit: cover;
+    border-radius: var(--brand-card-radius, 6px);
+    margin-bottom: 1.25rem;
+  }
+
+  h2,
+  h2 a {
+    color: var(--brand-secondary, #006e96);
+    font-family: var(--brand-body-font, 'Barlow', sans-serif);
+    font-size: 1.2rem;
+    line-height: 1.35;
+    margin-bottom: 0.75rem;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  p {
+    color: var(--brand-fg, #464747);
+    opacity: 1;
+    font-size: 1rem;
+  }
+
+  .button,
+  a.button,
+  a.pentair-text-link {
+    background: transparent;
+    border: 0;
+    color: var(--brand-accent, #4f8309);
+    padding: 0;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: var(--brand-body-font, 'Barlow', sans-serif);
+
+    &::after {
+      content: ' →';
+      color: var(--brand-light-green, #6eb70b);
+    }
+  }
+}
+
+/* Careers + innovation splits */
+.promo-cta.pentair {
+  padding: 3.75rem 0;
+  background: var(--brand-bg, #fff);
+
+  &.pentair-muted {
+    background: var(--brand-muted, #f4f4f4);
+  }
+
+  .dotted-accent-top,
+  .dotted-accent-bottom {
+    display: none;
+  }
+
+  h6.eyebrow-accent {
+    color: var(--brand-muted-fg, #8a8a8a);
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  h1 {
+    color: var(--brand-primary, #09244f);
+    font-size: clamp(1.75rem, 3vw, 2.55rem);
+    font-weight: 300;
+    line-height: 1.15;
+  }
+
+  .promo-cta-text,
+  .text-content,
+  p {
+    color: var(--brand-fg, #464747);
+    font-size: 1.05rem;
+  }
+
+  .button-main,
+  a.button-main {
+    background: transparent;
+    border: 0;
+    color: var(--brand-secondary, #006e96);
+    padding: 0;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: var(--brand-body-font, 'Barlow', sans-serif);
+
+    &::after {
+      content: ' →';
+      color: var(--brand-light-green, #6eb70b);
+    }
+  }
+
+  img {
+    border-radius: 0;
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* News */
+.heading-cta.pentair {
+  padding: 3.25rem 0 4.25rem;
+  background: var(--brand-bg, #fff);
+
+  .eyebrow-accent {
+    color: var(--brand-muted-fg, #8a8a8a);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    color: var(--brand-secondary, #006e96);
+    font-size: 1.55rem;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: var(--brand-body-font, 'Barlow', sans-serif);
+    line-height: 1.3;
+  }
+
+  p {
+    color: var(--brand-fg, #464747);
+    max-width: 46rem;
+  }
+
+  .button-main,
+  a.button-main {
+    background: var(--brand-light-green, #6eb70b);
+    border: 0;
+    color: var(--brand-primary-foreground, #fff);
+    padding: 0.65rem 1.4rem;
+    font-weight: 600;
+
+    &::after {
+      content: none;
+    }
+  }
+}
+
+.footer.pentair {
+  background: var(--bg-footer, #09244f);
+  color: var(--brand-footer-fg, #fff);
+  border-radius: 0;
+  margin-top: 0;
+
+  .title,
+  a,
+  p,
+  li {
+    color: var(--brand-footer-fg, #fff);
+  }
+
+  .title {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  a:hover {
+    color: var(--brand-light-green, #6eb70b);
+  }
+
+  hr {
+    border-color: rgb(255 255 255 / 20%);
+  }
+
+  .links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .links li {
+    margin-bottom: 0.4rem;
+  }
+}

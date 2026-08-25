@@ -1,0 +1,89 @@
+variantSpecs:
+  - position: 1
+    componentName: "Header"
+    variantName: "Pentair"
+    baseVariant: "WithLogoImage"
+    visualDifferences:
+      layout: "Two-row white bar — utility links right-aligned on top, logo left + nav right on the bottom"
+      spacing: "Utility row ~32px, main row ~56px, 1.25rem gap between utility links"
+      typography: "Utility 12px navy; main nav uppercase condensed"
+      background: "Solid white with 1px #D8DDE3 dividers"
+      buttons: "None"
+      distinctive: "Utility links are demo chrome (Blog, Brands, Careers, Contact Us, Find a Dealer, Partner Portal). Existing header-left / header-right placeholders are preserved."
+  - position: 2
+    componentName: "Hero"
+    variantName: "Pentair"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "Full-bleed photo, left-aligned overlay, no split column"
+      spacing: "Height min(72vh, 640px), overlay padding 4.5rem, title max 18ch"
+      typography: "Barlow Condensed 300 uppercase white; subtitle condensed uppercase"
+      background: "Cover photograph"
+      buttons: "White fill, #6EB70B text, 0 radius, small green triangle on the button corner"
+      distinctive: "Navy + leaf-green triangle flourish on the bottom-right of the hero"
+  - position: 3
+    componentName: "ThreeColumnCta"
+    variantName: "Pentair"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "Three edge-to-edge photo tiles, no gutter"
+      spacing: "Min-height 30rem, title centered, link at the bottom"
+      typography: "White condensed titles ~3rem; subcopy as the link label"
+      background: "Full-bleed image with navy gradient overlay"
+      buttons: "Impact-yellow text link with green arrow, no filled button"
+      distinctive: "SubText is the visible CTA label (not the Link field text)"
+  - position: 4
+    componentName: "ThreeColumnCta"
+    variantName: "PentairSpotlight"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "Image-top cards in a padded container, section heading above"
+      spacing: "Section py 4.5rem, 6px image radius, 1.25rem below image"
+      typography: "Navy condensed section heading; teal body titles; regular body copy"
+      background: "White"
+      buttons: "Green text links with arrow"
+      distinctive: "Hardcoded 'Sustainability Spotlight' heading — Three Column CTA has no parent Title field"
+  - position: 5
+    componentName: "PromoCta"
+    variantName: "Pentair"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "Text left / image right, 5/7 split"
+      spacing: "Section py 3.75rem, no dotted accents"
+      typography: "Gray condensed eyebrow, navy condensed headline, Barlow body"
+      background: "Muted #F4F4F4 when Eyebrow is present, otherwise white"
+      buttons: "Teal text link with green arrow"
+      distinctive: "DottedAccent removed"
+  - position: 7
+    componentName: "PromoCta"
+    variantName: "PentairAlt"
+    baseVariant: "Pentair"
+    visualDifferences:
+      layout: "Image left / text right (Bootstrap order swap)"
+      spacing: "Same as Pentair"
+      typography: "Same as Pentair"
+      background: "White"
+      buttons: "Same teal text link"
+      distinctive: "Used for Everpure / Manitowoc innovation item"
+  - position: 9
+    componentName: "HeadingCta"
+    variantName: "Pentair"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "Stacked left-aligned news block, no side-by-side CTA column"
+      spacing: "Section py 3.25rem"
+      typography: "Gray NEWS RELEASES eyebrow; teal article headline in Barlow (not condensed)"
+      background: "White"
+      buttons: "Green fill View All, white type, 0 radius"
+      distinctive: "No large display heading"
+  - position: 10
+    componentName: "Footer"
+    variantName: "Pentair"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "Logo + four link columns + copyright row"
+      spacing: "Full-width navy band"
+      typography: "White condensed column titles, white body links"
+      background: "#09244F"
+      buttons: "None"
+      distinctive: "Sharp corners, hover to light green"

@@ -1,0 +1,244 @@
+# Demo Progress Tracker
+# Created automatically at the start of a demo build.
+# Updated after each MCP call or phase completion.
+
+client:
+  name: "Pentair"
+  sourceUrl: "https://www.pentair.com/"
+  startedAt: "2026-08-25T18:44:00Z"
+  lastUpdatedAt: "2026-08-25T20:15:00Z"
+
+phases:
+  phase0_inputs:
+    status: "complete"
+    screenshot: true
+    url: "https://www.pentair.com/"
+    contentHubVerified: true
+    contentHubHost: "https://jzi-verticals.sitecoresandbox.cloud/"
+
+  phase0_5_manifest:
+    status: "complete"
+    validationMode: "quick"
+    result: "pass-with-warnings"
+
+  phase1_theme:
+    status: "complete"
+    themeFile: "docs/ai/themes/pentair.theme.yaml"
+    userApproved: true
+
+  phase2_analysis:
+    status: "complete"
+    buildPlanFile: "docs/ai/demos/pentair/build-plan.yaml"
+    totalSections: 10
+    userApproved: true
+
+  phase2_5_content:
+    status: "complete"
+    contentMapFile: "docs/ai/demos/pentair/content-map.yaml"
+    extractorUsed: true
+
+  phase3_content:
+    status: "complete"
+    completedSections: 9
+    totalSections: 10
+    notes:
+      - "Header is context-only (no datasource)"
+      - "Footer datasource created as Pentair - Footer"
+
+  phase4_theme:
+    status: "complete"
+    themeDelivery: "site-class-tokens"
+    cssWritten: true
+    fontsAdded: true
+
+  phase5_custom:
+    status: "complete"
+    customComponentsNeeded: 0
+    customComponentsBuilt: 0
+
+  phase5_5_variants:
+    status: "complete"
+    variantsNeeded: 8
+    variantsCreated: 8
+    variantSpecsFile: "docs/ai/demos/pentair/variant-specs.yaml"
+    skippedReason: ""
+
+  phase6_assembly:
+    status: "failed"
+    componentsAdded: 0
+    datasourcesWired: 0
+    totalComponents: 10
+    error: "Agent API returned HTTP 500 for add_component_on_page and set_component_datasource. Local datasource items were created then cleaned up. Assembly must be completed in Pages — see manual-tasks.md."
+
+  phase7_summary:
+    status: "complete"
+
+sections:
+  - position: 1
+    componentName: "Header"
+    kind: "context-only"
+    phase3:
+      status: "skipped"
+      itemId: ""
+    phase5_5:
+      status: "created"
+      variantName: "Pentair"
+      exportAdded: true
+      variantDefinitionId: "74bad22a-5d1f-48c6-8dcc-2d050a6f3265"
+    phase6:
+      status: "skipped"
+      error: "Partial design"
+
+  - position: 2
+    componentName: "Hero"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "5501351d-509b-4ffb-9d27-b15c55da5520"
+      fieldsPopulated: true
+      imagesUploaded: 1
+      imagesExpected: 1
+    phase5_5:
+      status: "created"
+      variantName: "Pentair"
+      exportAdded: true
+      variantDefinitionId: "ec1e029e-da1a-4d5e-9e90-66e598af5a0a"
+    phase6:
+      status: "failed"
+      error: "add_component_on_page 500 after creating local DS (cleaned up)"
+
+  - position: 3
+    componentName: "ThreeColumnCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "847002a3-a38d-41c3-8ac8-479095d0c44a"
+      fieldsPopulated: true
+      imagesUploaded: 3
+      imagesExpected: 3
+    phase5_5:
+      status: "created"
+      variantName: "Pentair"
+      exportAdded: true
+      variantDefinitionId: "477ce45b-a3cc-455f-9e7f-4c04ef005ffe"
+    phase6:
+      status: "failed"
+      componentInstanceId: "d54d53b4-1aa4-4998-9bdf-eb934c32cfb6"
+      error: "set_component_datasource 500 — rewire in Pages"
+
+  - position: 4
+    componentName: "ThreeColumnCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "4f12a29b-4c18-426b-97e0-d7a0514c6b29"
+      fieldsPopulated: true
+      imagesUploaded: 3
+      imagesExpected: 3
+    phase5_5:
+      status: "created"
+      variantName: "PentairSpotlight"
+      exportAdded: true
+      variantDefinitionId: "da452b52-8a7a-4796-8d9e-68dac3b5a5a4"
+    phase6:
+      status: "failed"
+      error: "add_component_on_page 500"
+
+  - position: 5
+    componentName: "PromoCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "2007da69-3d69-415f-a60c-3a9efc691303"
+      fieldsPopulated: true
+      imagesUploaded: 1
+      imagesExpected: 1
+    phase5_5:
+      status: "created"
+      variantName: "Pentair"
+      exportAdded: true
+      variantDefinitionId: "e84755fd-9f1c-4c06-aefb-166980de39d8"
+    phase6:
+      status: "failed"
+      componentInstanceId: "633506e7-54d0-4410-9051-72fb4c9fecb4"
+      error: "set_component_datasource 500"
+
+  - position: 6
+    componentName: "PromoCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "89b4e519-4251-4bad-870d-e75abb4c068b"
+      fieldsPopulated: true
+    phase5_5:
+      status: "created"
+      variantName: "Pentair"
+      exportAdded: true
+      variantDefinitionId: "e84755fd-9f1c-4c06-aefb-166980de39d8"
+    phase6:
+      status: "failed"
+      componentInstanceId: "1a516b9b-cc7c-49c9-a8eb-5be281a98612"
+      error: "set_component_datasource 500"
+
+  - position: 7
+    componentName: "PromoCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "09a7a6b2-66e0-4e29-8269-0fa637ba164b"
+      fieldsPopulated: true
+    phase5_5:
+      status: "created"
+      variantName: "PentairAlt"
+      exportAdded: true
+      variantDefinitionId: "b0726039-541c-4371-9ada-27b0b1ed6c73"
+    phase6:
+      status: "failed"
+      error: "add_component_on_page 500"
+
+  - position: 8
+    componentName: "PromoCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "937026ff-2ce7-45f4-818b-cc35d4563888"
+      fieldsPopulated: true
+    phase5_5:
+      status: "created"
+      variantName: "Pentair"
+      exportAdded: true
+      variantDefinitionId: "e84755fd-9f1c-4c06-aefb-166980de39d8"
+    phase6:
+      status: "failed"
+      error: "add_component_on_page 500"
+
+  - position: 9
+    componentName: "HeadingCta"
+    kind: "simple"
+    phase3:
+      status: "populated"
+      itemId: "7957887f-2051-46d6-b30f-ce8cace7199b"
+      fieldsPopulated: true
+    phase5_5:
+      status: "created"
+      variantName: "Pentair"
+      exportAdded: true
+      variantDefinitionId: "a3604f1f-b6f0-4395-aa98-361063869ce5"
+    phase6:
+      status: "failed"
+      error: "Heading CTA not in Available Renderings for headless-main"
+
+  - position: 10
+    componentName: "Footer"
+    kind: "context-only"
+    phase3:
+      status: "populated"
+      itemId: "c47b0e77-c3b0-4c1b-83fa-acd5004137a9"
+    phase5_5:
+      status: "created"
+      variantName: "Pentair"
+      exportAdded: true
+      variantDefinitionId: "f5628da9-09e3-4f2b-b4f3-36347d5b8dcf"
+    phase6:
+      status: "skipped"
+      error: "Partial design"

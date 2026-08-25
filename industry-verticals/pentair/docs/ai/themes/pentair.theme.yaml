@@ -1,0 +1,128 @@
+# Client Brand Theme — Pentair
+# Extracted from: https://www.pentair.com/
+# Screenshot + Playwright scraper + official brand standards PDFs.
+
+client:
+  name: "Pentair"
+  sourceUrl: "https://www.pentair.com/"
+  extractedAt: "2026-08-25T19:10:00Z"
+  extractedBy: "cursor"
+
+colors:
+  primary: "#09244F"
+  primaryForeground: "#ffffff"
+  secondary: "#006E96"
+  secondaryForeground: "#ffffff"
+  accent: "#4F8309"
+  accentForeground: "#ffffff"
+  background: "#ffffff"
+  foreground: "#464747"
+  muted: "#F4F4F4"
+  mutedForeground: "#464747"
+  headerBackground: "#ffffff"
+  headerForeground: "#09244F"
+  footerBackground: "#09244F"
+  footerForeground: "#ffffff"
+  border: "#D8DDE3"
+  ring: "#4F8309"
+  extra:
+    - { name: "lightGreen", value: "#6EB70B" }
+    - { name: "impactYellow", value: "#D0DF00" }
+    - { name: "linkBlue", value: "#337AB7" }
+    - { name: "printBlue", value: "#0C3471" }
+    - { name: "printGreen", value: "#64A70B" }
+
+typography:
+  headingFamily: "'Barlow Condensed', sans-serif"
+  headingWeight: "300"
+  bodyFamily: "'Barlow', sans-serif"
+  bodyWeight: "400"
+  monoFamily: "'Barlow', monospace"
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@300;400;500;600;700&display=swap"
+  scale:
+    hero: "3.5rem"
+    h1: "3.125rem"
+    h2: "2.5rem"
+    h3: "1.75rem"
+    body: "1.25rem"
+    small: "0.875rem"
+  headingTransform: "uppercase"
+  letterSpacing: "0.04em"
+  lineHeight: "relaxed"
+
+spacing:
+  density: "spacious"
+  sectionGap: "4rem"
+  containerMaxWidth: "1440px"
+  containerPadding: "1.5rem"
+
+shape:
+  borderRadius: "0px"
+  buttonRadius: "0px"
+  cardRadius: "6px"
+  imageRadius: "0px"
+  shadowStyle: "none"
+  borderStyle: "none"
+
+tone:
+  overall: "corporate"
+  colorMode: "mixed"
+  contrast: "high"
+  imagery: "photography"
+  heroStyle: "full-bleed-image"
+  cardStyle: "image-top"
+  navStyle: "solid-bar"
+
+tailwind:
+  colors:
+    brand:
+      primary: "#09244F"
+      secondary: "#006E96"
+      accent: "#4F8309"
+  fontFamily:
+    heading: ["Barlow Condensed", "sans-serif"]
+    body: ["Barlow", "sans-serif"]
+  borderRadius:
+    DEFAULT: "0px"
+    button: "0px"
+    card: "0.375rem"
+
+cssVariables: |
+  :root {
+    --brand-primary: #09244F;
+    --brand-primary-foreground: #ffffff;
+    --brand-secondary: #006E96;
+    --brand-secondary-foreground: #ffffff;
+    --brand-accent: #4F8309;
+    --brand-accent-foreground: #ffffff;
+    --brand-bg: #ffffff;
+    --brand-fg: #464747;
+    --brand-muted: #F4F4F4;
+    --brand-muted-fg: #464747;
+    --brand-header-bg: #ffffff;
+    --brand-header-fg: #09244F;
+    --brand-footer-bg: #09244F;
+    --brand-footer-fg: #ffffff;
+    --brand-border: #D8DDE3;
+    --brand-ring: #4F8309;
+    --brand-heading-font: 'Barlow Condensed', sans-serif;
+    --brand-body-font: 'Barlow', sans-serif;
+    --brand-radius: 0px;
+    --brand-button-radius: 0px;
+    --brand-card-radius: 0.375rem;
+  }
+
+extraction:
+  confidence: "high"
+  method: "playwright-full"
+  notes:
+    - "Live site uses the web/ADA palette (Blue #09244F, Green #4F8309), not the print HEX values (#0C3471 / #64A70B)."
+    - "Scraper computed footer rgb(9,36,79) and CTA rgb(79,131,9) — matches brand PDF web colors exactly."
+    - "Headings use Barlow Condensed (often weight 300, uppercase). Body uses Barlow 400 at 20px."
+    - "Both families are on Google Fonts — no substitution needed (site self-hosts the same families)."
+    - "Buttons are sharp rectangles (0px radius). Hero CTA is white fill with green text; primary actions (View All, Go) are green fill with white text."
+    - "Header is a solid white bar above the hero (not a transparent overlay). Footer is navy."
+    - "Impact yellow #D0DF00 is used for small arrow CTAs on the Move/Improve/Enjoy cards — stored as extra.impactYellow."
+    - "Hero is full-bleed photography with white uppercase overlay and a blue/green triangle graphic in the bottom-right."
+    - "Card style is full-bleed image tiles (image-top), not bordered or elevated cards."
+    - "Nav is a two-row mega-menu: utility links + primary links. Closest registry match is solid-bar (Default); mega-menu behavior is a custom-variant candidate."

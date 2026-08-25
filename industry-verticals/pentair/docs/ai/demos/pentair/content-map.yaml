@@ -1,0 +1,148 @@
+client: "Pentair"
+sourceUrl: "https://www.pentair.com/"
+contentRoot: "/sitecore/content/manufacturing/pentair"
+dataRoot: "/sitecore/content/manufacturing/pentair/Data"
+promosFolder: "{B632AFEA-AF62-46F8-8A82-E5C8F6F29E0D}"
+kind: "simple"
+manualVideoTasks: []
+
+sections:
+  - position: 1
+    componentName: "Header"
+    kind: "context-only"
+    itemId: ""
+    itemPath: ""
+    children: []
+    imageFields: []
+    notes: "Partial design headless-header. Set variant Pentair ({74BAD22A-5D1F-48C6-8DCC-2D050A6F3265})."
+
+  - position: 2
+    componentName: "Hero"
+    kind: "simple"
+    itemId: "5501351d-509b-4ffb-9d27-b15c55da5520"
+    itemPath: "/sitecore/content/manufacturing/pentair/Data/Promos/Pentair - Hero"
+    fields:
+      Title: "We help the world sustainably move, improve and enjoy water"
+      Text: "life’s most essential resource"
+      Link: { text: "Learn More About Us", href: "https://www.pentair.com/en-us/about-pentair.html" }
+    imageFields:
+      - { field: "Image", damId: "3z_if-YYRJqstELcR8L97A", file: "section2-img2.png" }
+    children: []
+
+  - position: 3
+    componentName: "ThreeColumnCta"
+    kind: "simple"
+    itemId: "847002a3-a38d-41c3-8ac8-479095d0c44a"
+    itemPath: "/sitecore/content/manufacturing/pentair/Data/Promos/Three Column CTA/Pentair - Move Improve Enjoy"
+    variantName: "Pentair"
+    fields:
+      Text1: "Move Water"
+      SubText1: "Water Supply, Disposal & Industrial Filtration"
+      Link1: { text: "Learn More", href: "https://www.pentair.com/en-us/flow.html" }
+      Text2: "Improve Water"
+      SubText2: "Discover Water & Ice"
+      Link2: { text: "Learn More", href: "https://www.pentair.com/en-us/water-solutions.html" }
+      Text3: "Enjoy Water"
+      SubText3: "Explore Pool & Spa"
+      Link3: { text: "Learn More", href: "https://www.pentair.com/en-us/pool-spa.html" }
+    imageFields:
+      - { field: "Image1", damId: "7NmPWSteRZiRGqTVkThN2Q", file: "section3-img3.jpg" }
+      - { field: "Image2", damId: "TONNb7SuT-KgLJHxgeMpYw", file: "section3-img5.jpg" }
+      - { field: "Image3", damId: "6ZDsVA5CTC-BAUoBNMjszg", file: "section3-img7.jpg" }
+    children: []
+
+  - position: 4
+    componentName: "ThreeColumnCta"
+    kind: "simple"
+    itemId: "4f12a29b-4c18-426b-97e0-d7a0514c6b29"
+    itemPath: "/sitecore/content/manufacturing/pentair/Data/Promos/Three Column CTA/Pentair - Sustainability Spotlight"
+    variantName: "PentairSpotlight"
+    fields:
+      Text1: "2025 Sustainability Report"
+      SubText1: "Our 2025 Sustainability Report captures our progress toward Making Better Essential."
+      Link1: { text: "Read the Report", href: "https://www.pentair.com/content/dam/extranet/enterprise/digital/enterprise-pages/pentair-sustainability-report-2025.pdf" }
+      Text2: "2026 Business Intelligence Group Innovation Awards"
+      SubText2: "Pentair received a 2026 BIG Innovation Award from Business Intelligence Group."
+      Link2: { text: "Get the Details", href: "https://www.pentair.com/en-us/about-pentair/newsroom/blog/manitowoc-neo-ice-machine-receives-big-innovation-award.html" }
+      Text3: "2025 Investor's Business Daily Top 50 Sustainable Companies"
+      SubText3: "Pentair has been included on Investor's Business Daily's 50 Most Sustainable Companies for 2025."
+      Link3: { text: "Read More", href: "https://www.pentair.com/en-us/about-pentair/newsroom/blog/investors-business-daily-honors-pentair-as-sustainability-leader.html" }
+    imageFields:
+      - { field: "Image1", damId: "9O0SwUp2QqyQXFmSuQyLXA", file: "section3-img9.jpg" }
+      - { field: "Image2", damId: "Zu7VFQi5QKC49iUYPrppjQ", file: "section3-img10.jpg" }
+      - { field: "Image3", damId: "XkzNcPZUQxWr1uONOk-TNQ", file: "section3-img11.jpg" }
+    children: []
+
+  - position: 5
+    componentName: "PromoCta"
+    kind: "simple"
+    itemId: "2007da69-3d69-415f-a60c-3a9efc691303"
+    itemPath: "/sitecore/content/manufacturing/pentair/Data/Promos/Promo CTA/Pentair - Careers"
+    variantName: "Pentair"
+    fields:
+      Eyebrow: "Careers"
+      Title: "A Purpose Driven Company"
+      Text: "Grow with us. Explore how you can make an impact by helping create a better world for people and the planet through our smart, sustainable water solutions."
+      Link: { text: "Search for Jobs", href: "https://www.pentair.com/en-us/about-pentair/careers.html" }
+    imageFields:
+      - { field: "Image", damId: "c4bG6coBQcq8OpK5dBr9KQ", file: "section3-img12.jpg" }
+    children: []
+
+  - position: 6
+    componentName: "PromoCta"
+    kind: "simple"
+    itemId: "89b4e519-4251-4bad-870d-e75abb4c068b"
+    itemPath: "/sitecore/content/manufacturing/pentair/Data/Promos/Promo CTA/Pentair - Innovation mySudmo"
+    variantName: "Pentair"
+    fields:
+      Eyebrow: "Innovation Spotlight"
+      Title: "New mySüdmo App Puts Customers First"
+      Text: "mySüdmo is a product configurator that helps you choose the right Pentair Südmo Hygienic Process Valve for your specific process requirements and needs."
+      Link: { text: "Select Your Valve Now", href: "https://mysudmo.pentair.com/en/" }
+    imageFields:
+      - { field: "Image", damId: "s6R6evsXSbaMbPNxqzWCag", file: "section3-img13.jpg" }
+    children: []
+
+  - position: 7
+    componentName: "PromoCta"
+    kind: "simple"
+    itemId: "09a7a6b2-66e0-4e29-8269-0fa637ba164b"
+    itemPath: "/sitecore/content/manufacturing/pentair/Data/Promos/Promo CTA/Pentair - Innovation Everpure"
+    variantName: "PentairAlt"
+    children: []
+    imageFields:
+      - { field: "Image", file: "section3-img14.jpg" }
+
+  - position: 8
+    componentName: "PromoCta"
+    kind: "simple"
+    itemId: "937026ff-2ce7-45f4-818b-cc35d4563888"
+    itemPath: "/sitecore/content/manufacturing/pentair/Data/Promos/Promo CTA/Pentair - Innovation IntelliFlo3"
+    variantName: "Pentair"
+    children: []
+    imageFields:
+      - { field: "Image", file: "section3-img15.jpg" }
+
+  - position: 9
+    componentName: "HeadingCta"
+    kind: "simple"
+    itemId: "7957887f-2051-46d6-b30f-ce8cace7199b"
+    itemPath: "/sitecore/content/manufacturing/pentair/Data/Promos/Promo CTA/Pentair - News Releases"
+    variantName: "Pentair"
+    fields:
+      Eyebrow: "News Releases"
+      Heading: "Pentair Reports Second Quarter 2026 Results"
+      Text: "Sales of $933 million, down 17 percent compared to sales for the same period last year."
+      Link: { text: "View All", href: "https://www.pentair.com/en-us/about-pentair/newsroom/news-releases.html" }
+    imageFields: []
+    children: []
+
+  - position: 10
+    componentName: "Footer"
+    kind: "context-only"
+    itemId: "c47b0e77-c3b0-4c1b-83fa-acd5004137a9"
+    itemPath: "/sitecore/content/manufacturing/pentair/Data/Promos/Pentair - Footer"
+    variantName: "Pentair"
+    children: []
+    imageFields: []
+    notes: "Partial design headless-footer. Assign this datasource and the Pentair variant on the Footer rendering."

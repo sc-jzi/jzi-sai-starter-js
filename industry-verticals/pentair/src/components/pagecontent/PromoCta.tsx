@@ -190,3 +190,113 @@ export const WithBackgroundImage = (props: PromoCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* Pentair variant — text left / image right, no dotted accents, green text link */
+export const Pentair = (props: PromoCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const mutedClass = props.fields?.Eyebrow?.value ? 'pentair-muted' : '';
+
+  return (
+    <div
+      className={`component promo-cta pentair ${mutedClass} ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="row row-gap-4 main-content align-items-center">
+          <div className="col-lg-5 text-center text-lg-start">
+            {(isPageEditing || props.fields?.Eyebrow?.value) && (
+              <h6 className="eyebrow-accent">
+                <Text field={props.fields.Eyebrow} />
+              </h6>
+            )}
+            {(isPageEditing || props.fields?.Title?.value) && (
+              <h1 className="display-6 mb-3">
+                <Text field={props.fields.Title} />
+              </h1>
+            )}
+            <div className="promo-cta-text">
+              {(isPageEditing || props.fields?.Subtitle?.value) && (
+                <p className="fs-5">
+                  <Text field={props.fields.Subtitle} />
+                </p>
+              )}
+              <RichText field={props.fields.Text} className="text-content" />
+              {(isPageEditing || props.fields?.Link?.value?.href) && (
+                <Link field={props.fields.Link} className="button button-main mt-3 me-4" />
+              )}
+              {(isPageEditing || props.fields?.Link2?.value?.href) && (
+                <Link field={props.fields.Link2} className="button button-simple mt-3 " />
+              )}
+            </div>
+          </div>
+          <div className="col-md-10 mx-auto col-lg-7 mx-lg-0">
+            <div className="image-wrapper">
+              <NextImage
+                field={props.fields.Image}
+                className="d-block mx-lg-auto img-fluid"
+                width={900}
+                height={900}
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* PentairAlt variant — image left / text right */
+export const PentairAlt = (props: PromoCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component promo-cta pentair pentair-alt ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="row row-gap-4 main-content align-items-center">
+          <div className="col-md-10 mx-auto col-lg-7 mx-lg-0 order-lg-1">
+            <div className="image-wrapper">
+              <NextImage
+                field={props.fields.Image}
+                className="d-block mx-lg-auto img-fluid"
+                width={900}
+                height={900}
+              />
+            </div>
+          </div>
+          <div className="col-lg-5 text-center text-lg-start order-lg-2">
+            {(isPageEditing || props.fields?.Eyebrow?.value) && (
+              <h6 className="eyebrow-accent">
+                <Text field={props.fields.Eyebrow} />
+              </h6>
+            )}
+            {(isPageEditing || props.fields?.Title?.value) && (
+              <h1 className="display-6 mb-3">
+                <Text field={props.fields.Title} />
+              </h1>
+            )}
+            <div className="promo-cta-text">
+              {(isPageEditing || props.fields?.Subtitle?.value) && (
+                <p className="fs-5">
+                  <Text field={props.fields.Subtitle} />
+                </p>
+              )}
+              <RichText field={props.fields.Text} className="text-content" />
+              {(isPageEditing || props.fields?.Link?.value?.href) && (
+                <Link field={props.fields.Link} className="button button-main mt-3 me-4" />
+              )}
+              {(isPageEditing || props.fields?.Link2?.value?.href) && (
+                <Link field={props.fields.Link2} className="button button-simple mt-3 " />
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
