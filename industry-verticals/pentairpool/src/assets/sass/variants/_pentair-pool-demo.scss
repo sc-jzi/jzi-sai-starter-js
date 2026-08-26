@@ -1,0 +1,679 @@
+/* Pentair Pool demo — pixel-perfect homepage variants */
+
+.site-pentairpool {
+  font-family: var(--brand-body-font, 'Barlow', sans-serif);
+  color: var(--brand-fg, #464747);
+  background: var(--brand-bg, #ffffff);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .title,
+  .eyebrow-accent {
+    font-family: var(--brand-heading-font, 'Barlow Condensed', sans-serif);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-weight: 300;
+  }
+
+  .button,
+  .button-main,
+  a.button {
+    border-radius: var(--brand-button-radius, 0);
+    font-family: var(--brand-heading-font, 'Barlow Condensed', sans-serif);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-weight: 500;
+  }
+
+  .button-main,
+  a.button-main {
+    background: var(--brand-light-green, #6eb70b);
+    border-color: var(--brand-light-green, #6eb70b);
+    color: var(--brand-primary-foreground, #fff);
+  }
+
+  header,
+  .component.header {
+    background: var(--brand-header-bg, #fff);
+    color: var(--brand-header-fg, #09244f);
+  }
+
+  .component.footer {
+    background: var(--bg-footer, #09244f);
+    color: var(--brand-footer-fg, #fff);
+  }
+}
+
+/* Header — utility row + white nav bar */
+.header.pentair-pool {
+  background: var(--brand-header-bg, #fff);
+  color: var(--brand-header-fg, #09244f);
+  padding: 0;
+  border-bottom: 1px solid var(--brand-border, #d8dde3);
+
+  .pentair-pool-utility-bar {
+    background: var(--brand-muted, #f4f4f4);
+    border-bottom: 1px solid var(--brand-border, #d8dde3);
+    font-size: 0.75rem;
+
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1.25rem;
+      list-style: none;
+      margin: 0;
+      padding: 0.4rem 0;
+    }
+
+    a {
+      color: var(--brand-primary, #09244f);
+      text-decoration: none;
+      font-weight: 500;
+
+      &:hover {
+        color: var(--brand-secondary, #006e96);
+      }
+    }
+  }
+
+  .pentair-pool-header-main {
+    padding: 0.75rem 0;
+  }
+
+  img {
+    height: 36px;
+    width: auto;
+  }
+}
+
+/* Hero — full-bleed water overlay, centered white type */
+.hero.pentair-pool {
+  position: relative;
+  height: min(70vh, 620px);
+  color: var(--brand-primary-foreground, #fff);
+  overflow: hidden;
+
+  picture,
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgb(9 36 79 / 18%) 0%, rgb(9 36 79 / 42%) 100%);
+    z-index: 1;
+  }
+
+  .content-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+
+    .title {
+      font-family: var(--brand-heading-font, 'Barlow Condensed', sans-serif);
+      font-size: clamp(2.1rem, 4.6vw, 3.6rem);
+      font-weight: 300;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--brand-primary-foreground, #fff);
+    }
+
+    .subtitle {
+      font-family: var(--brand-body-font, 'Barlow', sans-serif);
+      font-size: 1.15rem;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      color: var(--brand-primary-foreground, #fff);
+      max-width: 40rem;
+      margin: 1rem auto 0;
+    }
+  }
+
+  .button,
+  a,
+  a.button-main {
+    background: var(--brand-light-green, #6eb70b);
+    border: 0;
+    border-radius: 0;
+    color: var(--brand-primary-foreground, #fff);
+    padding: 0.7rem 1.6rem;
+    font-weight: 500;
+  }
+}
+
+/* Intro — centered navy heading + body */
+.heading-cta.pentair-pool-intro {
+  padding: 4.5rem 0 3rem;
+  background: var(--brand-bg, #fff);
+  text-align: center;
+
+  .heading-content-wrapper {
+    max-width: 52rem;
+    margin: 0 auto;
+  }
+
+  h2 {
+    color: var(--brand-primary, #09244f);
+    font-size: clamp(1.85rem, 3.4vw, 2.75rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+
+  p {
+    color: var(--brand-fg, #464747);
+    font-size: 1.05rem;
+    line-height: 1.65;
+    text-transform: none;
+    letter-spacing: 0;
+    font-family: var(--brand-body-font, 'Barlow', sans-serif);
+  }
+}
+
+/* Pool Solutions — teal banner */
+.heading-cta.pentair-pool-solutions {
+  padding: 3.25rem 0;
+  background: var(--brand-secondary, #006e96);
+  color: var(--brand-primary-foreground, #fff);
+
+  h2 {
+    color: var(--brand-primary-foreground, #fff);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 300;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    color: var(--brand-primary-foreground, #fff);
+    max-width: 46rem;
+    font-size: 1.05rem;
+    font-family: var(--brand-body-font, 'Barlow', sans-serif);
+    text-transform: none;
+    letter-spacing: 0;
+    opacity: 0.95;
+  }
+}
+
+/* Featured products — image, title, body, green Learn More */
+.four-column-cta.pentair-pool-products {
+  padding: 2.5rem 0 4rem;
+  background: var(--brand-bg, #fff);
+
+  .pentair-pool-section-heading {
+    text-align: center;
+    color: var(--brand-primary, #09244f);
+    font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+    margin-bottom: 2.5rem;
+  }
+
+  .content-wrapper {
+    text-align: center;
+    padding: 0 0.5rem 1.5rem;
+  }
+
+  img {
+    width: 100%;
+    height: 14rem;
+    object-fit: contain;
+    margin-bottom: 1.25rem;
+  }
+
+  h2 {
+    color: var(--brand-primary, #09244f);
+    font-family: var(--brand-body-font, 'Barlow', sans-serif);
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
+    line-height: 1.3;
+    margin-bottom: 0.6rem;
+  }
+
+  p {
+    color: var(--brand-fg, #464747);
+    font-size: 0.95rem;
+    min-height: 3rem;
+  }
+
+  a,
+  .button,
+  a.button-main {
+    display: inline-block;
+    background: var(--brand-light-green, #6eb70b);
+    color: var(--brand-primary-foreground, #fff);
+    border: 0;
+    padding: 0.55rem 1.15rem;
+    margin-top: 0.75rem;
+    text-decoration: none;
+  }
+}
+
+/* More products — 4 icon tiles */
+.four-column-cta.pentair-pool-icons {
+  padding: 1.5rem 0 2.5rem;
+  background: var(--brand-bg, #fff);
+
+  .pentair-pool-section-heading {
+    text-align: center;
+    color: var(--brand-primary, #09244f);
+    font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+    margin-bottom: 2rem;
+  }
+
+  .content-wrapper {
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  img {
+    width: 7.5rem;
+    height: 5rem;
+    object-fit: contain;
+    margin: 0 auto 0.85rem;
+  }
+
+  h2 {
+    color: var(--brand-primary, #09244f);
+    font-family: var(--brand-body-font, 'Barlow', sans-serif);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-bottom: 0.35rem;
+  }
+
+  p {
+    display: none;
+  }
+
+  a {
+    color: var(--brand-secondary, #006e96);
+    background: transparent;
+    border: 0;
+    padding: 0;
+    text-decoration: none;
+    font-size: 0.9rem;
+
+    &::after {
+      content: ' →';
+      color: var(--brand-light-green, #6eb70b);
+    }
+  }
+}
+
+/* Personas — two navy-button tiles with a divider */
+.two-column-cta.pentair-pool-personas {
+  padding: 2.5rem 0 3.5rem;
+  background: var(--brand-bg, #fff);
+
+  .content-wrapper {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    border-right: 1px solid var(--brand-border, #d8dde3);
+  }
+
+  .col-lg-6:last-child .content-wrapper {
+    border-right: 0;
+  }
+
+  img {
+    display: none;
+  }
+
+  h2 {
+    color: var(--brand-primary, #09244f);
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+    margin-bottom: 1.25rem;
+  }
+
+  p {
+    display: none;
+  }
+
+  .button,
+  a.button-main {
+    background: var(--brand-light-green, #6eb70b);
+    color: var(--brand-primary-foreground, #fff);
+    border: 0;
+    padding: 0.7rem 1.4rem;
+  }
+
+  @media (max-width: 991px) {
+    .content-wrapper {
+      border-right: 0;
+      border-bottom: 1px solid var(--brand-border, #d8dde3);
+    }
+
+    .col-lg-6:last-child .content-wrapper {
+      border-bottom: 0;
+    }
+  }
+}
+
+/* Rebates — two illustrated cards */
+.two-column-cta.pentair-pool-partners {
+  padding: 3.5rem 0;
+  background: var(--brand-muted, #f4f4f4);
+
+  .content-wrapper {
+    background: var(--brand-bg, #fff);
+    padding: 2rem 1.75rem;
+    height: 100%;
+    text-align: left;
+  }
+
+  img {
+    width: 5.5rem;
+    height: auto;
+    margin-bottom: 1.25rem;
+  }
+
+  h2 {
+    color: var(--brand-primary, #09244f);
+    font-size: 1.65rem;
+    margin-bottom: 0.75rem;
+  }
+
+  p {
+    color: var(--brand-fg, #464747);
+    font-family: var(--brand-body-font, 'Barlow', sans-serif);
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 1rem;
+  }
+
+  .button,
+  a.button-main {
+    background: var(--brand-light-green, #6eb70b);
+    color: var(--brand-primary-foreground, #fff);
+    border: 0;
+    margin-top: 1rem;
+    padding: 0.65rem 1.25rem;
+  }
+}
+
+/* Resources — 5 teal icon + label links */
+.five-column-cta.pentair-pool-resources {
+  padding: 2.5rem 0 3.5rem;
+  background: var(--brand-bg, #fff);
+
+  .pentair-pool-section-heading {
+    text-align: center;
+    color: var(--brand-primary, #09244f);
+    font-size: clamp(1.6rem, 2.6vw, 2.1rem);
+    margin-bottom: 2rem;
+  }
+
+  .col {
+    text-align: center;
+  }
+
+  .image-container {
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 auto 0.75rem;
+    border: 2px solid var(--brand-secondary, #006e96);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--brand-secondary, #006e96);
+    font-size: 1.25rem;
+  }
+
+  .image-container img {
+    width: 1.75rem;
+    height: 1.75rem;
+    object-fit: contain;
+  }
+
+  .text-container {
+    color: var(--brand-secondary, #006e96);
+    font-family: var(--brand-body-font, 'Barlow', sans-serif);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+/* Category splits — image / copy zigzag */
+.promo-cta.pentair-pool-split {
+  padding: 3.5rem 0;
+  background: var(--brand-bg, #fff);
+
+  .dotted-accent-top,
+  .dotted-accent-bottom {
+    display: none;
+  }
+
+  h6.eyebrow-accent {
+    color: var(--brand-secondary, #006e96);
+    font-size: 1.05rem;
+    margin-bottom: 0.35rem;
+  }
+
+  h1 {
+    color: var(--brand-primary, #09244f);
+    font-size: clamp(1.75rem, 3vw, 2.55rem);
+    font-weight: 300;
+    line-height: 1.15;
+  }
+
+  .promo-cta-text,
+  .text-content,
+  p {
+    color: var(--brand-fg, #464747);
+    font-size: 1.05rem;
+  }
+
+  .button-main,
+  a.button-main,
+  .button-simple,
+  a.button-simple {
+    background: var(--brand-light-green, #6eb70b);
+    border: 0;
+    color: var(--brand-primary-foreground, #fff);
+    padding: 0.65rem 1.3rem;
+    font-weight: 500;
+  }
+
+  img {
+    border-radius: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.promo-cta.pentair-pool-split.pentair-pool-alt {
+  background: var(--brand-muted, #f4f4f4);
+}
+
+/* Understand equipment — lime banner */
+.cta-banner.pentair-pool-edu {
+  padding: 0;
+  background: var(--brand-light-green, #6eb70b);
+  color: var(--brand-primary-foreground, #fff);
+
+  .dotted-accent-top,
+  .dotted-accent-bottom,
+  .icon-accent {
+    display: none;
+  }
+
+  .container.container-widest-fluid,
+  .container {
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .main-content {
+    margin: 0;
+    --bs-gutter-x: 0;
+  }
+
+  .content-wrapper,
+  .col-lg-6 {
+    padding: 3.5rem 2.5rem;
+  }
+
+  h6.eyebrow-accent {
+    display: none;
+  }
+
+  h1 {
+    color: var(--brand-primary-foreground, #fff);
+    font-size: clamp(1.85rem, 3.2vw, 2.6rem);
+  }
+
+  .text-content,
+  p {
+    color: var(--brand-primary-foreground, #fff);
+  }
+
+  .button-main,
+  a.button-main {
+    background: transparent;
+    border: 2px solid var(--brand-primary-foreground, #fff);
+    color: var(--brand-primary-foreground, #fff);
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    min-height: 18rem;
+    object-fit: cover;
+  }
+}
+
+/* Find a dealer — navy centered banner */
+.cta-banner.pentair-pool-dealer {
+  padding: 4.5rem 1.5rem;
+  background: var(--brand-primary, #09244f);
+  color: var(--brand-primary-foreground, #fff);
+  text-align: center;
+
+  .dotted-accent-top,
+  .dotted-accent-bottom,
+  .icon-accent,
+  .image-wrapper {
+    display: none;
+  }
+
+  .content-wrapper {
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+
+  h1 {
+    color: var(--brand-primary-foreground, #fff);
+    font-size: clamp(1.85rem, 3.2vw, 2.6rem);
+  }
+
+  .text-content,
+  p {
+    color: var(--brand-primary-foreground, #fff);
+  }
+
+  .button-main,
+  a.button-main {
+    background: var(--brand-light-green, #6eb70b);
+    border: 0;
+    color: var(--brand-primary-foreground, #fff);
+  }
+}
+
+/* Pool app */
+.app-promo.pentair-pool-app {
+  padding: 4rem 0;
+  background: var(--brand-bg, #fff);
+
+  h1 {
+    color: var(--brand-primary, #09244f);
+    font-size: clamp(1.85rem, 3.2vw, 2.6rem);
+    font-weight: 300;
+  }
+
+  .fs-5,
+  p {
+    color: var(--brand-fg, #464747);
+    font-size: 1.05rem;
+  }
+
+  a {
+    display: inline-block;
+    background: var(--brand-light-green, #6eb70b);
+    color: var(--brand-primary-foreground, #fff);
+    padding: 0.65rem 1.3rem;
+    text-decoration: none;
+    margin-top: 1rem;
+  }
+
+  img {
+    max-height: 28rem;
+    width: auto;
+    margin: 0 auto;
+  }
+}
+
+.footer.pentair-pool {
+  background: var(--bg-footer, #09244f);
+  color: var(--brand-footer-fg, #fff);
+  border-radius: 0;
+  margin-top: 0;
+
+  .title,
+  a,
+  p,
+  li {
+    color: var(--brand-footer-fg, #fff);
+  }
+
+  .title {
+    font-size: 1.1rem;
+    margin-bottom: 0.75rem;
+  }
+
+  a:hover {
+    color: var(--brand-light-green, #6eb70b);
+  }
+
+  hr {
+    border-color: rgb(255 255 255 / 20%);
+  }
+
+  .links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .links li {
+    margin-bottom: 0.4rem;
+  }
+}

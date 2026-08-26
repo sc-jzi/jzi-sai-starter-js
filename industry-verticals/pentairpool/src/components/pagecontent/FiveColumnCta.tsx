@@ -35,6 +35,99 @@ export type FiveColumnCtaProps = {
   fields: Fields;
 };
 
+const RESOURCE_ICONS = ['fa-usd', 'fa-file-text-o', 'fa-pencil-square-o', 'fa-calculator', 'fa-map-marker'];
+
+/* PentairPoolResources variant — five teal icon + label links */
+export const PentairPoolResources = (props: FiveColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const Column = ({
+    image,
+    text,
+    link,
+    delay,
+    icon,
+  }: {
+    image: ImageField;
+    text: Field<string>;
+    link: LinkField;
+    delay?: number;
+    icon: string;
+  }) => {
+    const [isVisible, domRef] = useVisibility(delay);
+    const hasImage = Boolean(image?.value?.src);
+    return (
+      <div
+        className={`col ${!isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''} `}
+        ref={domRef}
+      >
+        <Link field={link}>
+          <div className="image-container">
+            {hasImage ? (
+              <NextImage field={image} className="d-block w-100 h-100" width={200} height={200} />
+            ) : (
+              <i className={`fa ${icon}`} aria-hidden="true" />
+            )}
+          </div>
+        </Link>
+        <div className="text-container">
+          <Text field={text} />
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <div
+      className={`component component-spaced five-column-cta pentair-pool-resources ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <h2 className="pentair-pool-section-heading">Pool Resources</h2>
+        <div className="row row-cols-2 row-cols-sm-3 row-cols-lg-5 row-gap-3 gx-5 justify-content-center">
+          <Column
+            image={props.fields.Image1}
+            text={props.fields.Text1}
+            link={props.fields.Link1}
+            icon={RESOURCE_ICONS[0]}
+          />
+          <Column
+            image={props.fields.Image2}
+            text={props.fields.Text2}
+            link={props.fields.Link2}
+            delay={500}
+            icon={RESOURCE_ICONS[1]}
+          />
+          <Column
+            image={props.fields.Image3}
+            text={props.fields.Text3}
+            link={props.fields.Link3}
+            delay={1000}
+            icon={RESOURCE_ICONS[2]}
+          />
+          <Column
+            image={props.fields.Image4}
+            text={props.fields.Text4}
+            link={props.fields.Link4}
+            delay={1500}
+            icon={RESOURCE_ICONS[3]}
+          />
+          <Column
+            image={props.fields.Image5}
+            text={props.fields.Text5}
+            link={props.fields.Link5}
+            delay={2000}
+            icon={RESOURCE_ICONS[4]}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: FiveColumnCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

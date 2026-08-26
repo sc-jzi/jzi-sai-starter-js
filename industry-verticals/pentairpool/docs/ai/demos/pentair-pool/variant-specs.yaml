@@ -1,0 +1,109 @@
+variantSpecs:
+  - position: 1
+    componentName: "Header"
+    variantName: "PentairPool"
+    variantId: "bcd2f504-eb31-444b-adae-b8fc9a619d92"
+    visualDifferences:
+      layout: "Thin gray utility bar above a white logo + nav row"
+      distinctive: "Homepage, Blog, Contact Us, Find a Dealer, Partner Portal"
+
+  - position: 2
+    componentName: "Hero"
+    variantName: "PentairPool"
+    variantId: "96155709-11c5-4b8d-acf6-1396b63beaa5"
+    visualDifferences:
+      layout: "Full-bleed water photo, centered white uppercase overlay"
+      distinctive: "No triangle flourish; navy wash over the image"
+
+  - position: 3
+    componentName: "HeadingCta"
+    variantName: "PentairPoolIntro"
+    variantId: "7b8f4a75-f490-457c-9c0b-4bde30adc6dd"
+    visualDifferences:
+      layout: "Centered navy condensed heading + body on white"
+
+  - position: 4
+    componentName: "FourColumnCta"
+    variantName: "PentairPoolProducts"
+    variantId: "f6dada37-95e5-4981-96b9-6954613224c0"
+    visualDifferences:
+      layout: "Four product cards with contain-fit images and green Learn More buttons"
+      distinctive: "Static heading 'Our Automated Family of Products'"
+
+  - position: 5
+    componentName: "TwoColumnCta"
+    variantName: "PentairPoolPersonas"
+    variantId: "e6f09c1a-dc11-4840-a5ed-90319dba1c72"
+    visualDifferences:
+      layout: "Two equal tiles split by a vertical divider, green CTAs, no images"
+
+  - position: 6
+    componentName: "FiveColumnCta"
+    variantName: "PentairPoolResources"
+    variantId: "7a56587a-6a29-492f-bac2-c6d979eee7a2"
+    visualDifferences:
+      layout: "Five teal outlined icon circles + labels"
+      distinctive: "Font Awesome fallback icons when no DAM image is set"
+
+  - position: 7
+    componentName: "HeadingCta"
+    variantName: "PentairPoolSolutionsHead"
+    variantId: "71e45bb5-c560-47d3-afdc-f1bd871ea68e"
+    visualDifferences:
+      layout: "Full-width teal banner, white uppercase heading"
+
+  - position: 8
+    componentName: "PromoCta"
+    variantName: "PentairPoolSplit"
+    variantId: "aea3ca1f-32c7-4b58-8952-0dab4dca3bbb"
+    visualDifferences:
+      layout: "Text left / lifestyle image right, teal eyebrow, green buttons"
+
+  - position: 9
+    componentName: "PromoCta"
+    variantName: "PentairPoolSplitAlt"
+    variantId: "9b64dd48-fa8c-4061-bdc9-6d6ba6931cbf"
+    visualDifferences:
+      layout: "Image left / text right on muted gray"
+
+  - position: 14
+    componentName: "FourColumnCta"
+    variantName: "PentairPoolIcons"
+    variantId: "22345c4b-83e5-44c6-a282-9432d38f9070"
+    visualDifferences:
+      layout: "Four icon tiles with teal Learn More arrows"
+
+  - position: 16
+    componentName: "TwoColumnCta"
+    variantName: "PentairPoolPartners"
+    variantId: "02b8c221-8867-4d75-af16-b6afe2944d01"
+    visualDifferences:
+      layout: "Two white cards on gray with rebate illustrations"
+
+  - position: 17
+    componentName: "CtaBanner"
+    variantName: "PentairPoolEdu"
+    variantId: "92c53245-e80d-404f-b22e-944b5453b86e"
+    visualDifferences:
+      layout: "Lime green banner, image left, white type, outlined CTA"
+
+  - position: 18
+    componentName: "CtaBanner"
+    variantName: "PentairPoolDealer"
+    variantId: "563fc2aa-9fb2-4e36-a3d0-b8e1fba2716a"
+    visualDifferences:
+      layout: "Navy full-width centered heading + green Find a Dealer"
+
+  - position: 19
+    componentName: "AppPromo"
+    variantName: "PentairPoolApp"
+    variantId: "549c9df0-eddc-4285-9239-0df3314624b4"
+    visualDifferences:
+      layout: "Copy left, phone mockup right"
+
+  - position: 20
+    componentName: "Footer"
+    variantName: "PentairPool"
+    variantId: "55adf8de-3f3a-4945-889a-f199a3f01155"
+    visualDifferences:
+      layout: "Navy mega-footer, four columns"

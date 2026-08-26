@@ -156,31 +156,40 @@
 .site-suffolk nav.component {
   background: var(--brand-primary, #006fe6);
   padding: 0.9rem 1rem !important;
-  text-align: center !important;
-
-  &.position-right,
-  &.position-right * {
-    text-align: center !important;
-  }
-
-  .menu-mobile-navigate-wrapper,
-  .component-content,
-  .component-content nav,
-  .component-content ul,
-  .component-content .level0 {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
-
-  .component-content {
-    display: flex;
-  }
 
   a {
     color: #fff !important;
     font-weight: 600;
     padding: 0.35rem 0.5rem;
+  }
+
+  .menu-humburger span {
+    background-color: #fff;
+  }
+
+  @media (min-width: 993px) {
+    text-align: center !important;
+
+    &.position-right,
+    &.position-right * {
+      text-align: center !important;
+    }
+
+    .menu-mobile-navigate-wrapper,
+    .component-content,
+    .component-content nav,
+    .component-content ul,
+    .component-content .level0 {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .component-content {
+      background-color: var(--brand-secondary, #003366);
+    }
   }
 }
 

@@ -1,0 +1,173 @@
+# Demo Progress Tracker
+# Created automatically at the start of a demo build.
+
+client:
+  name: "Pentair Pool"
+  sourceUrl: "https://www.pentair.com/en-us/pool-spa.html"
+  startedAt: "2026-08-25T21:35:00Z"
+  lastUpdatedAt: "2026-08-25T22:20:00Z"
+
+phases:
+  phase0_inputs:
+    status: "complete"
+    screenshot: true
+    url: "https://www.pentair.com/en-us/pool-spa.html"
+    contentHubVerified: true
+    contentHubHost: "https://jzi-verticals.sitecoresandbox.cloud/"
+
+  phase0_5_manifest:
+    status: "complete"
+    validationMode: "quick"
+    result: "pass-with-warnings"
+
+  phase1_theme:
+    status: "complete"
+    themeFile: "docs/ai/themes/pentair-pool.theme.yaml"
+    userApproved: true
+
+  phase2_analysis:
+    status: "complete"
+    buildPlanFile: "docs/ai/demos/pentair-pool/build-plan.yaml"
+    totalSections: 20
+    userApproved: true
+
+  phase2_5_content:
+    status: "complete"
+    contentMapFile: "docs/ai/demos/pentair-pool/content-map.yaml"
+    extractorUsed: true
+
+  phase3_content:
+    status: "complete"
+    completedSections: 19
+    totalSections: 20
+    imagesUploaded: 23
+    notes: "Header is context-only (no datasource). Footer created after correcting template ID 947db8f8-dc76-453f-aca1-a27babfe633b."
+
+  phase4_theme:
+    status: "complete"
+    themeDelivery: "site-class-scss"
+    cssWritten: true
+    fontsAdded: true
+
+  phase5_custom:
+    status: "complete"
+    customComponentsNeeded: 0
+    customComponentsBuilt: 0
+
+  phase5_5_variants:
+    status: "complete"
+    variantsNeeded: 14
+    variantsCreated: 14
+    variantSpecsFile: "docs/ai/demos/pentair-pool/variant-specs.yaml"
+
+  phase6_assembly:
+    status: "partial"
+    componentsAdded: 0
+    datasourcesWired: 0
+    totalComponents: 18
+    error: "Agent API get_components_on_page / add_component_on_page returned HTTP 500. Assembly documented in manual-tasks.md."
+
+  phase7_summary:
+    status: "complete"
+
+sections:
+  - position: 1
+    componentName: "Header"
+    kind: "context-only"
+    phase3: { status: "skipped", itemId: "", fieldsPopulated: false, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase6: { status: "skipped", componentInstanceId: "", error: "Partial design — set PentairPool variant manually" }
+  - position: 2
+    componentName: "Hero"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "bb6cdaa6-1135-4c62-b87e-5af8c218b76e", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase6: { status: "failed", componentInstanceId: "", error: "Agent API HTTP 500" }
+  - position: 3
+    componentName: "HeadingCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "e9dabd56-a2b4-4dd0-9e99-b08c05ea54ff", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase6: { status: "failed", componentInstanceId: "", error: "Agent API HTTP 500" }
+  - position: 4
+    componentName: "FourColumnCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "d00b6144-e6cc-4901-990c-1c72634c48c1", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase6: { status: "failed", componentInstanceId: "", error: "Agent API HTTP 500" }
+  - position: 5
+    componentName: "TwoColumnCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "d517c85a-9540-4fa5-ba0d-2206776d071e", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase6: { status: "failed", componentInstanceId: "", error: "Agent API HTTP 500" }
+  - position: 6
+    componentName: "FiveColumnCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "9761c217-72b3-4f0d-8486-9d53d6cab101", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase6: { status: "failed", componentInstanceId: "", error: "Agent API HTTP 500" }
+  - position: 7
+    componentName: "HeadingCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "f6e1f662-4ce3-400f-9502-1af97810a5c9", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase6: { status: "failed", componentInstanceId: "", error: "Agent API HTTP 500" }
+  - position: 8
+    componentName: "PromoCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "d3e27e6d-d9d9-4781-8301-2d528a966598", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase6: { status: "failed", componentInstanceId: "", error: "Agent API HTTP 500" }
+  - position: 9
+    componentName: "PromoCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "a3c72f19-7f64-4016-86ad-98b16a1d176b", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase6: { status: "failed", componentInstanceId: "", error: "Agent API HTTP 500" }
+  - position: 10
+    componentName: "PromoCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "2d779513-1abe-42a4-a1e1-0ed675e18e4a", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase6: { status: "failed", componentInstanceId: "", error: "Agent API HTTP 500" }
+  - position: 11
+    componentName: "PromoCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "b1cfdf96-469a-4b49-b325-25555c4773bf", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase6: { status: "failed", componentInstanceId: "", error: "Agent API HTTP 500" }
+  - position: 12
+    componentName: "PromoCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "553790b1-ab2c-4816-8b20-4a2163c53cd2", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase6: { status: "failed", componentInstanceId: "", error: "Agent API HTTP 500" }
+  - position: 13
+    componentName: "PromoCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "94ab0171-d35f-4384-8950-4cc13ac1144a", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase6: { status: "failed", componentInstanceId: "", error: "Agent API HTTP 500" }
+  - position: 14
+    componentName: "FourColumnCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "cde3370f-7fb7-45ee-b23e-13d582bf5bc6", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase6: { status: "failed", componentInstanceId: "", error: "Agent API HTTP 500" }
+  - position: 15
+    componentName: "FourColumnCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "c1351b94-843c-4f6d-91bc-f84821fcecb0", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase6: { status: "failed", componentInstanceId: "", error: "Agent API HTTP 500" }
+  - position: 16
+    componentName: "TwoColumnCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "07e1220b-a8e1-49a7-b7fe-8e35a855bbc7", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase6: { status: "failed", componentInstanceId: "", error: "Agent API HTTP 500" }
+  - position: 17
+    componentName: "CtaBanner"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "5fb65017-652e-481e-8b5c-6a061fe9b50f", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase6: { status: "failed", componentInstanceId: "", error: "Agent API HTTP 500" }
+  - position: 18
+    componentName: "CtaBanner"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "f7bc604f-c3c5-4347-96b0-4aed231653d6", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase6: { status: "failed", componentInstanceId: "", error: "Agent API HTTP 500" }
+  - position: 19
+    componentName: "AppPromo"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "b2241eaf-ecb6-4fa8-802f-b20cb78f6ab8", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase6: { status: "failed", componentInstanceId: "", error: "Agent API HTTP 500" }
+  - position: 20
+    componentName: "Footer"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "8084c099-5ba0-4347-8281-31a9596769ac", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase6: { status: "skipped", componentInstanceId: "", error: "Partial design — set PentairPool variant and datasource manually" }

@@ -1,0 +1,222 @@
+{
+  "title": "Pentair Pool | Pool & Spa Equipment | Safely and Sustainably Enjoy Water",
+  "themeColor": null,
+  "msColor": null,
+  "ogTitle": "Pool & Spa",
+  "ogDescription": "Whether you are planning a pool party for friends and family or prefer the serene sensation of a calm pool, Pentair has the pool and spa solutions just for you.",
+  "ogImage": "https://www.pentair.com/",
+  "ogSiteName": null,
+  "favicon": "https://www.pentair.com/etc.clientlibs/settings/wcm/designs/pentair/clientlib-site/resources/favicon.ico",
+  "googleFontsLinks": [],
+  "fontFaces": [
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-Thin.ttf\") format(\"truetype\")",
+      "weight": "100"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-ThinItalic.ttf\") format(\"truetype\")",
+      "weight": "100"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-ExtraLight.ttf\") format(\"truetype\")",
+      "weight": "200"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-ExtraLightItalic.ttf\") format(\"truetype\")",
+      "weight": "200"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-Light.ttf\") format(\"truetype\")",
+      "weight": "300"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-LightItalic.ttf\") format(\"truetype\")",
+      "weight": "300"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-Regular.ttf\") format(\"truetype\")",
+      "weight": "400"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-Italic.ttf\") format(\"truetype\")",
+      "weight": "400"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-Medium.ttf\") format(\"truetype\")",
+      "weight": "500"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-MediumItalic.ttf\") format(\"truetype\")",
+      "weight": "500"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-SemiBold.ttf\") format(\"truetype\")",
+      "weight": "600"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-SemiBoldItalic.ttf\") format(\"truetype\")",
+      "weight": "600"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-Bold.ttf\") format(\"truetype\")",
+      "weight": "700"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-BoldItalic.ttf\") format(\"truetype\")",
+      "weight": "700"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-ExtraBold.ttf\") format(\"truetype\")",
+      "weight": "800"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-ExtraBoldItalic.ttf\") format(\"truetype\")",
+      "weight": "800"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-Black.ttf\") format(\"truetype\")",
+      "weight": "900"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-BlackItalic.ttf\") format(\"truetype\")",
+      "weight": "900"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-Thin.ttf\") format(\"truetype\")",
+      "weight": "100"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-ThinItalic.ttf\") format(\"truetype\")",
+      "weight": "100"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-ExtraLight.ttf\") format(\"truetype\")",
+      "weight": "200"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-ExtraLightItalic.ttf\") format(\"truetype\")",
+      "weight": "200"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-Light.ttf\") format(\"truetype\")",
+      "weight": "300"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-LightItalic.ttf\") format(\"truetype\")",
+      "weight": "300"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-Regular.ttf\") format(\"truetype\")",
+      "weight": "400"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-Italic.ttf\") format(\"truetype\")",
+      "weight": "400"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-Medium.ttf\") format(\"truetype\")",
+      "weight": "500"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-MediumItalic.ttf\") format(\"truetype\")",
+      "weight": "500"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-SemiBold.ttf\") format(\"truetype\")",
+      "weight": "600"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-SemiBoldItalic.ttf\") format(\"truetype\")",
+      "weight": "600"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-Bold.ttf\") format(\"truetype\")",
+      "weight": "700"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-BoldItalic.ttf\") format(\"truetype\")",
+      "weight": "700"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-ExtraBold.ttf\") format(\"truetype\")",
+      "weight": "800"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-ExtraBoldItalic.ttf\") format(\"truetype\")",
+      "weight": "800"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-Black.ttf\") format(\"truetype\")",
+      "weight": "900"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-BlackItalic.ttf\") format(\"truetype\")",
+      "weight": "900"
+    },
+    {
+      "family": "icomoon",
+      "src": "url(\"clientlib-site/resources/fonts/icomoon.ttf?881zqz\") format(\"truetype\"), url(\"clientlib-site/resources/fonts/icomoon.woff?881zqz\") format(\"woff\")",
+      "weight": "normal"
+    }
+  ],
+  "logoCandidates": [
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/icons/About_Icon.svg",
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/icons/Pentair_MainNav_Blog_Icon.svg",
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/icons/Contact_Icon.svg",
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/icons/Pentair_MainNav_FindDealer_Icon.svg",
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/icons/Pentair_MainNav_PartnerPortal_Icon.svg",
+    "https://www.pentair.com/content/dam/extranet/nam/pentair-pool/pentair-pool-brand/logos/pentair-pool/digital/primary/Pentair-Pool-Primary-Logo-Digital.png",
+    "https://www.pentair.com/content/dam/extranet/nam/pentair-pool/residential/pumps/intelliflo3-vsf/if3---pdp/images-/if3-pdp-thumbnail-2hps.jpg.thumb.319.319.png",
+    "https://www.pentair.com/content/dam/extranet/nam/pentair-pool/residential/automation/intellicenter/upgrade-kit/images/upgrade-kit-home-app.png.thumb.319.319.png",
+    "https://www.pentair.com/content/dam/extranet/nam/pentair-pool/residential/sanitizers/intellichlor-plus-lt/images/intellichlor-plus-lt-both-bodies-white-background.jpg.thumb.319.319.png",
+    "https://www.pentair.com/content/dam/extranet/nam/pentair-pool/residential/sanitizers/intellichlor/intellichlor-images/intellichlor-product-image.png.thumb.319.319.png",
+    "https://www.pentair.com/content/dam/extranet/nam/pentair-pool/pentair-pool-brand/logos/pentair-pool/digital/primary/Pentair-Pool-Primary-Logo-Digital.png",
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/icons/About_Icon.svg",
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/icons/Pentair_MainNav_Blog_Icon.svg",
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/icons/Contact_Icon.svg",
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/icons/Pentair_MainNav_FindDealer_Icon.svg",
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/icons/Pentair_MainNav_PartnerPortal_Icon.svg",
+    "https://www.pentair.com/content/dam/extranet/nam/pentair-pool/residential/pumps/intelliflo3-vsf/if3---pdp/images-/if3-pdp-thumbnail-2hps.jpg.thumb.319.319.png",
+    "https://www.pentair.com/content/dam/extranet/nam/pentair-pool/residential/automation/intellicenter/upgrade-kit/images/upgrade-kit-home-app.png.thumb.319.319.png",
+    "https://www.pentair.com/content/dam/extranet/nam/pentair-pool/residential/sanitizers/intellichlor-plus-lt/images/intellichlor-plus-lt-both-bodies-white-background.jpg.thumb.319.319.png",
+    "https://www.pentair.com/content/dam/extranet/nam/pentair-pool/residential/sanitizers/intellichlor/intellichlor-images/intellichlor-product-image.png.thumb.319.319.png",
+    "https://www.pentair.com/content/dam/extranet/aquatics/other/pentair-logo-white-no-bkgd.png"
+  ],
+  "heroBgImage": null
+}

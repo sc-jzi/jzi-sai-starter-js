@@ -50,6 +50,72 @@ export const Default = (props: HeadingCtaProps): JSX.Element => {
   );
 };
 
+/* PentairPoolIntro variant — centered navy heading + body */
+export const PentairPoolIntro = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div
+      className={`component heading-cta pentair-pool-intro ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="heading-content-wrapper">
+          {(isPageEditing || props.fields?.Heading?.value) && (
+            <h2>
+              <Text field={props.fields?.Heading} />
+            </h2>
+          )}
+          {(isPageEditing || props.fields?.Text?.value) && (
+            <p>
+              <Text field={props.fields?.Text} />
+            </p>
+          )}
+          {(isPageEditing || props.fields?.Link?.value?.href) && (
+            <Link field={props.fields.Link} className="button button-main mt-3" />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* PentairPoolSolutionsHead variant — teal Pool Solutions banner */
+export const PentairPoolSolutionsHead = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div
+      className={`component heading-cta pentair-pool-solutions ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="heading-content-wrapper">
+          {(isPageEditing || props.fields?.Heading?.value) && (
+            <h2>
+              <Text field={props.fields?.Heading} />
+            </h2>
+          )}
+          {(isPageEditing || props.fields?.Text?.value) && (
+            <p>
+              <Text field={props.fields?.Text} />
+            </p>
+          )}
+          {(isPageEditing || props.fields?.Link?.value?.href) && (
+            <Link field={props.fields.Link} className="button button-main mt-3" />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Compact = (props: HeadingCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

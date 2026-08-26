@@ -1,0 +1,847 @@
+{
+  "url": "https://www.pentair.com/en-us/pool-spa.html",
+  "extractedAt": "2026-08-25T21:47:11.844Z",
+  "detectedLanguage": "en-US",
+  "targetLanguage": "en",
+  "translationNeeded": false,
+  "totalSections": 5,
+  "totalImages": 39,
+  "totalVideos": 1,
+  "interactionStats": {
+    "lazySourcesResolved": 0,
+    "tabsClicked": 0,
+    "accordionsExpanded": 0,
+    "carouselDotsClicked": 1,
+    "carouselArrowSlides": 0,
+    "backgroundImagesCollected": 6
+  },
+  "sections": [
+    {
+      "position": 1,
+      "tagName": "div",
+      "classHint": "",
+      "backgroundHint": "dark",
+      "headings": [],
+      "paragraphs": [],
+      "links": [],
+      "images": []
+    },
+    {
+      "position": 2,
+      "tagName": "div",
+      "classHint": "",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Your Trusted Source for All Things Pool"
+        },
+        {
+          "tag": "h1",
+          "text": "Your Trusted Source for All Things Pool"
+        }
+      ],
+      "paragraphs": [
+        "Discover how we help people more sustainably enjoy water with our innovative, energy-efficient pool solutions."
+      ],
+      "links": [],
+      "images": [
+        {
+          "src": "https://www.pentair.com/content/dam/extranet/nam/pentair-pool/pentair-partners/carousel/2024/pool-safety-carousel.gif",
+          "alt": "Carousel of moving water",
+          "type": "img",
+          "width": 1920,
+          "height": 280
+        }
+      ],
+      "listItems": [
+        {
+          "title": "Your Trusted Source for All Things Pool Discover how we help people more sustainably enjoy water with our innovative, energy-efficient pool solutions.",
+          "description": "Discover how we help people more sustainably enjoy water with our innovative, energy-efficient pool solutions.",
+          "badge": "Your Trusted Source for All Things Pool Discover how we help people more sustainably enjoy water with our innovative, energy-efficient pool solutions.",
+          "image": {
+            "src": "https://www.pentair.com/content/dam/extranet/nam/pentair-pool/pentair-partners/carousel/2024/pool-safety-carousel.gif",
+            "alt": "Carousel of moving water"
+          }
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "tagName": "div",
+      "classHint": "promo-bar-exp-frag bar-hide",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h6",
+          "text": "TRADE UP. CASH IN. now through Sept. 30, 2026. See Rebates"
+        }
+      ],
+      "paragraphs": [],
+      "links": [
+        {
+          "text": "See Rebates",
+          "href": "https://www.pentair.com/en-us/pool-spa/education-support/professional-support/dealer-rebates.html",
+          "target": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "position": 4,
+      "tagName": "section",
+      "classHint": "component section bread-section",
+      "backgroundHint": "light",
+      "headings": [],
+      "paragraphs": [],
+      "links": [
+        {
+          "text": "Share via Email",
+          "href": "mailto:?subject=Pool%20&%20Spa&body=https://www.pentair.com/en-us/pool-spa.html",
+          "target": ""
+        },
+        {
+          "text": "Share via Twitter",
+          "href": "http://twitter.com/intent/tweet?url=https://www.pentair.com/en-us/pool-spa.html&text=Pool%20&%20Spa",
+          "target": "_blank"
+        },
+        {
+          "text": "Share via Facebook",
+          "href": "http://www.facebook.com/sharer/sharer.php?u=https://www.pentair.com/en-us/pool-spa.html&title=Pool%20&%20Spa",
+          "target": "_blank"
+        },
+        {
+          "text": "Share via Linkedin",
+          "href": "http://www.linkedin.com/shareArticle?mini=true&url=https://www.pentair.com/en-us/pool-spa.html&title=Pool%20&%20Spa&source=http://www.pentair.com",
+          "target": "_blank"
+        },
+        {
+          "text": "Print",
+          "href": "javascript:window.print()",
+          "target": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "position": 5,
+      "tagName": "div",
+      "classHint": "main-content",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "We Help the World Safely and Sustainably Enjoy Water, Life's Most Essential Resource"
+        },
+        {
+          "tag": "h3",
+          "text": "Our Automated Family of Products"
+        },
+        {
+          "tag": "h3",
+          "text": "Are you a professional?"
+        },
+        {
+          "tag": "h3",
+          "text": "New pool owner?"
+        },
+        {
+          "tag": "h3",
+          "text": "Pool Resources"
+        },
+        {
+          "tag": "h2",
+          "text": "Pool Solutions"
+        },
+        {
+          "tag": "h2",
+          "text": "Pool Pumps"
+        },
+        {
+          "tag": "h3",
+          "text": "Pump up the Flow"
+        },
+        {
+          "tag": "h2",
+          "text": "Pool Automation"
+        },
+        {
+          "tag": "h3",
+          "text": "Control at Your Fingertips"
+        },
+        {
+          "tag": "h2",
+          "text": "Pool Lighting"
+        },
+        {
+          "tag": "h3",
+          "text": "Illuminated & Dazzling Ambience"
+        },
+        {
+          "tag": "h2",
+          "text": "Pool Filtration & Cleaning"
+        },
+        {
+          "tag": "h3",
+          "text": "Clearer and Dive-in Ready"
+        },
+        {
+          "tag": "h2",
+          "text": "Pool Heating Solutions"
+        },
+        {
+          "tag": "h3",
+          "text": "Heat It Up"
+        },
+        {
+          "tag": "h2",
+          "text": "Pool Water Treatment"
+        },
+        {
+          "tag": "h3",
+          "text": "Cleaner, Clearer, and Silkier Water"
+        },
+        {
+          "tag": "h3",
+          "text": "More Pool Products"
+        },
+        {
+          "tag": "h4",
+          "text": "Cha-ching for your backyard bling"
+        },
+        {
+          "tag": "h4",
+          "text": "Twice as nice"
+        },
+        {
+          "tag": "h3",
+          "text": "Understand Your Pool Equipment"
+        },
+        {
+          "tag": "h4",
+          "text": "How Your Pool Works"
+        },
+        {
+          "tag": "h3",
+          "text": "Need Equipment or Service for Your Pool?"
+        },
+        {
+          "tag": "h3",
+          "text": "Introducing the Pentair Pool App"
+        },
+        {
+          "tag": "h3",
+          "text": "Are you a Pool Professional?"
+        },
+        {
+          "tag": "h4",
+          "text": "Get in Touch"
+        },
+        {
+          "tag": "h4",
+          "text": "Support & Resources"
+        }
+      ],
+      "paragraphs": [
+        "At Pentair, we focus on innovating smart and sustainable pool solutions so you can spend less time worrying and more time enjoying your pool. Customer success is at the heart of our vision for a splash-tastic future, so we've crafted products like energy-efficient pool pumps, automation and lighting that puts full pool control and enjoyment in your hands. Smart. Innovative. Sustainable. Creating amazing poolside memories in the backyard is easy with Pentair.",
+        "More Lighting",
+        "More Controls",
+        "More in Treatment",
+        "Curate the dreamiest pool or spa with solutions engineered to filter, clean and condition water for ultimate pool enjoyment. With pool pumps and automation systems for convenient control in one place and lighting and heating to elevate your backyard ambiance under every starry night, we help pool pads become personal paradises.",
+        "Whisper-quiet, ENERGY STAR® rated and compliant with updated DOE regulations, products like the IntelliFlo3® Variable Speed and Flow Pool Pump keep pools dive-in ready. Not only did we bring variable speed and flow technology to the industry, but Pentair provides reliability, support and quality products to our customers!",
+        "Get the latest in Pentair automation innovation! Products like the IntelliCenter® Control System offer intuitive, effortless control of the features and functions of your pool or spa.",
+        "Elevate your pool's overall aesthetics, mood, and presentation with the latest in LED lighting technology. Create a colorful and dreamy ambience with products like the IntelliVibe™ Pool Lighting System.",
+        "Keep the pool dive-in ready with high-performing pool and spa filters, along with high-performing replacement cartridges and cleaning tablets to confidently make a splash.",
+        "Turn your pool into a wonderful – and warm – experience. With heaters like the ETi® 400 High-Efficiency Pool and Spa Heater, you'll get blazing-fast heat-up times.",
+        "Enjoy water that is well-treated. With products like the new and improved IntelliChlor® Plus & LT Salt Chlorine Generators, ordinary table salt can be transformed into chlorine that pools need to be swim-ready.",
+        "In-Floor Cleaning & Circulation",
+        "Pool Cleaners",
+        "Water Features",
+        "Pool Valves",
+        "White Goods",
+        "Pool Maintenance",
+        "Aboveground Systems",
+        "Replacement Parts",
+        "Save more than energy. Act fast to get up to a $200 rebate* on select Pentair pool products.",
+        "Many local utility companies offer rebates to pool owners who purchase energy-efficient pool pumps.",
+        "Discover each component of your pool pad and what each product does to keep your backyard oasis pool party ready!",
+        "Know Your Water. Own Your Water.",
+        "Stay smart, connected, and protected with the Pentair Pool app; offering a range of connected products that give you command of your home's water.",
+        "The Pentair Pool app and its range of connected products makes managing your pool easier than ever. Control your swimming pool system, monitor water chemistry, and access instant status updates from one easy-to-use dashboard on your smart device. Enjoy energy-efficient solutions and peace of mind with remote monitoring anytime, anywhere.",
+        "For Dealers, Distributors and Service Professionals",
+        "Partner Portal",
+        "We've got the tools and resources you need to do your job more efficiently. Visit the Pentair Portal to get started.",
+        "Commercial Pool Solutions",
+        "Looking to dip your toes into Pentair's leading solutions for public pools? We’ve got you covered.",
+        "We're here to help with any of your product inquiries.",
+        "*These TradeGrade products must be purchased from a brick-and-mortar retailer, pool builder, or pool service professional in order to qualify for rebate."
+      ],
+      "links": [
+        {
+          "text": "IntelliVibe™ Pool Lighting System",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/lighting/intellivibe.html?track=connected_Rec",
+          "target": "_self"
+        },
+        {
+          "text": "Learn More",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/lighting/intellivibe.html?track=connected_Rec",
+          "target": "_self"
+        },
+        {
+          "text": "More Lighting",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/lighting.html",
+          "target": "_self"
+        },
+        {
+          "text": "IntelliCenter® Pool Control System",
+          "href": "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-automation/intellicenter-control-system.html?track=connected_Rec",
+          "target": "_self"
+        },
+        {
+          "text": "Learn More",
+          "href": "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-automation/intellicenter-control-system.html?track=connected_Rec",
+          "target": "_self"
+        },
+        {
+          "text": "More Controls",
+          "href": "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-automation.html",
+          "target": "_self"
+        },
+        {
+          "text": "IntelliChem® Water Chemistry Controller",
+          "href": "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-automation/intellichem_waterchemistrycontroller.html?track=connected_Rec",
+          "target": "_self"
+        },
+        {
+          "text": "Learn More",
+          "href": "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-automation/intellichem_waterchemistrycontroller.html?track=connected_Rec",
+          "target": "_self"
+        },
+        {
+          "text": "More Pumps",
+          "href": "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-pumps.html",
+          "target": "_self"
+        },
+        {
+          "text": "ScreenLogic2® Interface for IntelliTouch® and EasyTouch® Control System",
+          "href": "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-automation/screenlogic2_interfaceforintellitouchandeasytouchautomationsystems.html?track=connected_Rec",
+          "target": "_self"
+        },
+        {
+          "text": "Learn More",
+          "href": "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-automation/screenlogic2_interfaceforintellitouchandeasytouchautomationsystems.html?track=connected_Rec",
+          "target": "_self"
+        },
+        {
+          "text": "More in Treatment",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/water-treatment.html",
+          "target": "_self"
+        },
+        {
+          "text": "Visit the Partner Portal",
+          "href": "https://partners.pentair.com/s/about-na-pool",
+          "target": "_blank"
+        },
+        {
+          "text": "Get Helpful Resources",
+          "href": "https://www.pentair.com/en-us/landing-pages/new-pool-campaign.html",
+          "target": "_self"
+        },
+        {
+          "text": "Rebate Center",
+          "href": "https://www.pentair.com/en-us/pool-spa/education-support/homeowner-support/pool-rebate-center.html",
+          "target": ""
+        },
+        {
+          "text": "product-warranties Product Warranties",
+          "href": "https://www.pentair.com/en-us/pool-spa/education-support/homeowner-support/pool-product-warranty-information.html",
+          "target": ""
+        },
+        {
+          "text": "Product Registration",
+          "href": "https://www.pentairpartners.com/register/default.aspx",
+          "target": ""
+        },
+        {
+          "text": "Pool Calculators",
+          "href": "https://www.pentair.com/en-us/education-support/residential/calculators-and-tools.html",
+          "target": ""
+        },
+        {
+          "text": "map-pin-green Find a Pool Professional",
+          "href": "https://www.pentair.com/en-us/find-a-dealer/pool-spa.html",
+          "target": ""
+        },
+        {
+          "text": "IntelliFlo3® Variable Speed and Flow Pool Pump",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/pumps/intelliflo3-vsf-pool-pump.html",
+          "target": "_self"
+        },
+        {
+          "text": "Explore Pool Pumps",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/pumps.html",
+          "target": "_self"
+        },
+        {
+          "text": "EXPLORE ENERGY STAR PUMPS",
+          "href": "https://www.pentair.com/en-us/education-support/water-education-center/pool-and-spa-education/pentair-energy-star-certified-products.html",
+          "target": "_self"
+        },
+        {
+          "text": "IntelliCenter® Control System",
+          "href": "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-automation/intellicenter-control-system.html",
+          "target": "_self"
+        },
+        {
+          "text": "Explore Smart Products",
+          "href": "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-automation.html",
+          "target": "_self"
+        },
+        {
+          "text": "IntelliVibe™ Pool Lighting System",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/lighting/intellivibe.html",
+          "target": "_self"
+        },
+        {
+          "text": "Explore Pool Lighting",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/lighting.html",
+          "target": "_self"
+        },
+        {
+          "text": "Explore Pleatco",
+          "href": "https://www.pentair.com/en-us/pool-spa/pleatco.html",
+          "target": "_self"
+        },
+        {
+          "text": "Pool Filters",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/filters.html",
+          "target": "_self"
+        },
+        {
+          "text": "ETi® 400 High-Efficiency Pool and Spa Heater",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/heaters-heat-pumps/eti-400-high-efficiency-heater.html",
+          "target": "_self"
+        },
+        {
+          "text": "EXPLORE POOL HEATERS",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/heaters-heat-pumps.html",
+          "target": "_self"
+        },
+        {
+          "text": "IntelliChlor® Plus & LT Salt Chlorine Generators",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/water-treatment/intellichlor-plus-lt-salt-chlorine-generators.html",
+          "target": "_self"
+        },
+        {
+          "text": "Explore Pool Treatment",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/water-treatment.html",
+          "target": "_self"
+        },
+        {
+          "text": "In-Floor Cleaning & Circulation",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/in-floor-pool-cleaning-systems.html",
+          "target": ""
+        },
+        {
+          "text": "Pool Cleaners",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/cleaners.html",
+          "target": "_self"
+        },
+        {
+          "text": "Water Features",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/water-features.html",
+          "target": ""
+        },
+        {
+          "text": "Pool Valves",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/valves.html",
+          "target": ""
+        },
+        {
+          "text": "White Goods",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/white-goods.html",
+          "target": ""
+        },
+        {
+          "text": "Pool Maintenance",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/maintenance-safety.html",
+          "target": ""
+        },
+        {
+          "text": "Aboveground Systems",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/aboveground-systems.html",
+          "target": ""
+        },
+        {
+          "text": "Replacement Parts",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/replacement-parts.html",
+          "target": ""
+        },
+        {
+          "text": "View Pentair Rebates",
+          "href": "https://www.pentair.com/en-us/pool-spa/education-support/homeowner-support/pool-rebate-center/pentair-product-rebates.html",
+          "target": "_self"
+        },
+        {
+          "text": "View Utility Rebates",
+          "href": "https://www.pentair.com/en-us/pool-spa/education-support/homeowner-support/pool-rebate-center/public-utility-rebates.html",
+          "target": "_self"
+        },
+        {
+          "text": "Learn More",
+          "href": "https://www.pentair.com/en-us/education-support/water-education-center/pool-and-spa-education/how-your-pool-works.html",
+          "target": "_self"
+        },
+        {
+          "text": "Learn More and Download",
+          "href": "https://www.pentair.com/en-us/pool-spa/education-support/homeowner-support/pentair-pool-app.html",
+          "target": "_self"
+        },
+        {
+          "text": "Visit The Partner Portal",
+          "href": "https://partners.pentair.com/s/about-na-pool",
+          "target": "_blank"
+        },
+        {
+          "text": "Commercial Pool Solutions",
+          "href": "https://www.pentair.com/en-us/products/business-industry/commercial-pool-products.html",
+          "target": "_self"
+        },
+        {
+          "text": "Contact Us",
+          "href": "https://www.pentair.com/en-us/education-support/contact-us/pool-spa-equipment-customer-service.html",
+          "target": "_self"
+        },
+        {
+          "text": "Product Warranty",
+          "href": "https://www.pentair.com/en-us/pool-spa/education-support/homeowner-support/pool-product-warranty-information.html",
+          "target": "_self"
+        },
+        {
+          "text": "Product Registration",
+          "href": "https://www.pentair.com/en-us/pool-spa/education-support/homeowner-support/product-registration.html",
+          "target": "_self"
+        },
+        {
+          "text": "Utility Rebates",
+          "href": "https://www.pentair.com/en-us/pool-spa/education-support/homeowner-support/pool-rebate-center/public-utility-rebates.html",
+          "target": "_self"
+        },
+        {
+          "text": "Dive Right In: Water Education Center",
+          "href": "https://www.pentair.com/en-us/education-support/water-education-center/pool-and-spa-education.html",
+          "target": "_self"
+        },
+        {
+          "text": "Pool Replacement Parts",
+          "href": "https://www.pentair.com/en-us/pool-spa/products/replacement-parts.html",
+          "target": "_self"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/education-support/homeowner-support/pentair-pool-app/jcr:content/par/section_1883936677_c_1984846382/col1/image.img.png/1733404854423.png",
+          "alt": "",
+          "type": "img",
+          "width": 195,
+          "height": 400
+        },
+        {
+          "src": "https://www.pentair.com/content/dam/extranet/nam/pentair-pool/residential/lighting/intellivibe/images/IntelliVibe-product-image-bundle-updated.png",
+          "alt": "",
+          "type": "img",
+          "width": 600,
+          "height": 600
+        },
+        {
+          "src": "https://www.pentair.com/content/dam/extranet/nam/pentair-pool/residential/automation/intellicenter/intellicenter-pdp/Pentair-IntelliCenter-PDP-Images-Intro%20Image.png",
+          "alt": "",
+          "type": "img",
+          "width": 560,
+          "height": 400
+        },
+        {
+          "src": "https://www.pentair.com/content/dam/extranet/nam/pentair-pool/residential/automation/intellichem/intellichem-images/intellichem.png",
+          "alt": "",
+          "type": "img",
+          "width": 800,
+          "height": 728
+        },
+        {
+          "src": "https://www.pentair.com/content/dam/extranet/nam/pentair-pool/residential/automation/screenlogic2/screenlogic2-images/ScreenLogic2-bannerNEW.png",
+          "alt": "",
+          "type": "img",
+          "width": 1064,
+          "height": 680
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_2013138708_c/image.img.jpg/1721843042579.jpg",
+          "alt": "young-boy-in-goggles-swimming-underwater-in-blue-pool-thumbs-up-horizontal-7360x4912-image-file-670950038",
+          "type": "img",
+          "width": 1280,
+          "height": 855
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_2013138708_c/col2/image.img.png/1720194708338.png",
+          "alt": "Pool Pumps",
+          "type": "img",
+          "width": 321,
+          "height": 300
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_2013138708_c_649800640/image.img.jpg/1685641693861.jpg",
+          "alt": " ",
+          "type": "img",
+          "width": 604,
+          "height": 315
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_2013138708_c_649800640/col1/image.img.png/1720192488088.png",
+          "alt": "Pool Automation",
+          "type": "img",
+          "width": 300,
+          "height": 300
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_183103816_co/image.img.jpg/1742491621371.jpg",
+          "alt": "Download the jpg of the pool lighting homepage image",
+          "type": "img",
+          "width": 748,
+          "height": 500
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_183103816_co/col2/image_copy.img.png/1742236874304.png",
+          "alt": "Pool Lighting",
+          "type": "img",
+          "width": 300,
+          "height": 300
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_2079997491_c/image.img.jpg/1690464081238.jpg",
+          "alt": "Backyard pool library shoot for Pentair in Encino, Califorrnia. September 22, 2021. Tracy &#43; David Stills and Motion",
+          "type": "img",
+          "width": 1280,
+          "height": 854
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_2079997491_c/col1/image_copy.img.png/1722998924367.png",
+          "alt": "Pleatco Cartridges, Grids &amp; Cleaning",
+          "type": "img",
+          "width": 122,
+          "height": 300
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_2013138708_c_1680244527/image.img.jpg/1721843054483.jpg",
+          "alt": "two little kids in goggles swimming in pool at vintage sunset",
+          "type": "img",
+          "width": 1280,
+          "height": 667
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_2013138708_c_1680244527/col2/image_copy_copy.img.png/1720192368772.png",
+          "alt": "Pool Heaters &amp; Heat Pumps",
+          "type": "img",
+          "width": 469,
+          "height": 300
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_2013138708_c_492017020/image.img.jpg/1720191914037.jpg",
+          "alt": "Underwater shot of the swimming pool with bubbles",
+          "type": "img",
+          "width": 1280,
+          "height": 854
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_2013138708_c_492017020/col1/image_copy_copy.img.png/1763134432254.png",
+          "alt": "Pool Water Treatment",
+          "type": "img",
+          "width": 436,
+          "height": 300
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_422826388_co_918403901/col1/section_434751107/col1/image_copy_copy.img.png/1724856533010.png",
+          "alt": "pool parts",
+          "type": "img",
+          "width": 400,
+          "height": 200
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_422826388_co_918403901/col1/section_434751107/col2/image_copy_copy.img.jpg/1776085816906.jpg",
+          "alt": "Pool Automatic Cleaners",
+          "type": "img",
+          "width": 493,
+          "height": 300
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_422826388_co_918403901/col1/section_434751107/col3/image_copy_copy_copy.img.png/1673978455863.png",
+          "alt": "pool water features",
+          "type": "img",
+          "width": 400,
+          "height": 200
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_422826388_co_918403901/col1/section_434751107/col4/image_copy_copy_copy.img.jpg/1672841682172.jpg",
+          "alt": "pool valves",
+          "type": "img",
+          "width": 400,
+          "height": 200
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_422826388_co_918403901/col1/section_434751107_co/col1/image_copy_copy_copy.img.jpg/1672841657941.jpg",
+          "alt": "White Goods",
+          "type": "img",
+          "width": 400,
+          "height": 200
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_422826388_co_918403901/col1/section_434751107_co/col2/image_copy_copy_copy.img.jpg/1672841697349.jpg",
+          "alt": "Pool Maintenance",
+          "type": "img",
+          "width": 400,
+          "height": 200
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_422826388_co_918403901/col1/section_434751107_co/col3/image_copy_1150009408.img.jpg/1672841709843.jpg",
+          "alt": "aboveground systems",
+          "type": "img",
+          "width": 400,
+          "height": 200
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_422826388_co_918403901/col1/section_434751107_co/col4/image_copy.img.jpg/1672841722056.jpg",
+          "alt": "pool parts",
+          "type": "img",
+          "width": 367,
+          "height": 200
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_858558808/col1/image_110258656.img.png/1742580898240.png",
+          "alt": "true",
+          "type": "img",
+          "width": 150,
+          "height": 145
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_858558808/col2/image_copy.img.png/1742580918869.png",
+          "alt": "true",
+          "type": "img",
+          "width": 140,
+          "height": 146
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section/col1/image_copy_copy.img.png/1742490960451.png",
+          "alt": "true",
+          "type": "img",
+          "width": 400,
+          "height": 300
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_copy_copy/image.img.%5Bobject%20Promise%5D%5Bobject%20Promise%5D",
+          "alt": " ",
+          "type": "img",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_111838593_co/image.img.%5Bobject%20Promise%5D%5Bobject%20Promise%5D",
+          "alt": " ",
+          "type": "img",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/jcr:content/par/section_111838593_co/col1/image.img.png/1759242514567.png",
+          "alt": "Pentair Pool App on Mobile Phone",
+          "type": "img",
+          "width": 236,
+          "height": 486
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/_jcr_content/par/section_2013138708_c/image.img.jpg/1721843042579.jpg",
+          "alt": "",
+          "type": "background",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/_jcr_content/par/section_2013138708_c_649800640/image.img.jpg/1685641693861.jpg",
+          "alt": "",
+          "type": "background",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/_jcr_content/par/section_183103816_co/image.img.jpg/1742491621371.jpg",
+          "alt": "",
+          "type": "background",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/_jcr_content/par/section_2079997491_c/image.img.jpg/1690464081238.jpg",
+          "alt": "",
+          "type": "background",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/_jcr_content/par/section_2013138708_c_1680244527/image.img.jpg/1721843054483.jpg",
+          "alt": "",
+          "type": "background",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.pentair.com/en-us/pool-spa/_jcr_content/par/section_2013138708_c_492017020/image.img.jpg/1720191914037.jpg",
+          "alt": "",
+          "type": "background",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.pentair.com/content/dam/Intranet/videos/branding/2024-anthem-videos/pool-anthem-video-thumbnail.jpg",
+          "alt": "Video poster",
+          "type": "video-poster",
+          "width": null,
+          "height": null
+        }
+      ],
+      "listItems": [
+        {
+          "title": "Are you a professional?",
+          "link": {
+            "text": "Visit the Partner Portal",
+            "href": "https://partners.pentair.com/s/about-na-pool"
+          }
+        },
+        {
+          "title": "New pool owner?",
+          "link": {
+            "text": "Get Helpful Resources",
+            "href": "https://www.pentair.com/en-us/landing-pages/new-pool-campaign.html"
+          }
+        }
+      ],
+      "videos": [
+        {
+          "type": "video",
+          "poster": "https://www.pentair.com/content/dam/Intranet/videos/branding/2024-anthem-videos/pool-anthem-video-thumbnail.jpg",
+          "sources": [
+            {
+              "src": "https://www.pentair.com/content/dam/Intranet/videos/branding/2024-anthem-videos/pentair-pool-anthem-video-2024.mp4",
+              "type": "video/mp4"
+            },
+            {
+              "src": "https://www.pentair.com/content/dam/Intranet/videos/branding/2024-anthem-videos/pentair-pool-anthem-video-2024.mp4",
+              "type": "video/webm"
+            },
+            {
+              "src": "https://www.pentair.com/content/dam/Intranet/videos/branding/2024-anthem-videos/pentair-pool-anthem-video-2024.mp4",
+              "type": "video/mp4"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

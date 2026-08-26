@@ -86,6 +86,75 @@ export const Default = (props: CtaBannerProps): JSX.Element => {
   );
 };
 
+/* PentairPoolEdu variant — lime understand-your-equipment banner */
+export const PentairPoolEdu = (props: CtaBannerProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div
+      className={`component cta-banner pentair-pool-edu ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container container-widest-fluid">
+        <div className="row row-gap-0 main-content align-items-center">
+          <div className="col-lg-6">
+            <NextImage field={props.fields.Image} className="d-block w-100" width={800} height={500} />
+          </div>
+          <div className="col-lg-6">
+            <div className="content-wrapper">
+              {(isPageEditing || props.fields?.Title?.value) && (
+                <h1 className="display-4 mb-3">
+                  <Text field={props.fields.Title} />
+                </h1>
+              )}
+              <div className="fs-5">
+                <RichText field={props.fields.Text} className="text-content" />
+                {(isPageEditing || props.fields?.Link?.value?.href) && (
+                  <Link field={props.fields.Link} className="button button-main mt-3" />
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* PentairPoolDealer variant — navy find-a-dealer banner */
+export const PentairPoolDealer = (props: CtaBannerProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div
+      className={`component cta-banner pentair-pool-dealer ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="content-wrapper">
+          {(isPageEditing || props.fields?.Title?.value) && (
+            <h1 className="display-4 mb-3">
+              <Text field={props.fields.Title} />
+            </h1>
+          )}
+          <div className="fs-5">
+            <RichText field={props.fields.Text} className="text-content" />
+            {(isPageEditing || props.fields?.Link?.value?.href) && (
+              <Link field={props.fields.Link} className="button button-main mt-3" />
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const LargeImage = (props: CtaBannerProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

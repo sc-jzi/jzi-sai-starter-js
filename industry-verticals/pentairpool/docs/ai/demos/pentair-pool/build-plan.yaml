@@ -1,0 +1,623 @@
+# Demo Build Plan — Pentair Pool
+# Mapped to Financial starter-kit components that exist on pentair/pentairpool.
+# The uiim template library is not deployed in this environment (same pattern as Quanex / corporate Pentair).
+
+client:
+  name: "Pentair Pool"
+  sourceUrl: "https://www.pentair.com/en-us/pool-spa.html"
+  themeFile: "docs/ai/themes/pentair-pool.theme.yaml"
+  analyzedAt: "2026-08-25T21:50:00Z"
+  environment: "pentair/pentairpool"
+  contentRoot: "/sitecore/content/pentair/pentairpool"
+  codeRoot: "industry-verticals/pentairpool"
+  note: "Using Financial starter kit components with Pentair Pool demo variants. uiim React files are not present in this app. Visual structure from the attached screenshot; live URL copy will be locked in Phase 2.5."
+
+pageAnalysis:
+  screenshotFiles:
+    desktop: "docs/ai/themes/pentair-pool/screenshot-desktop.png"
+    mobile: "docs/ai/themes/pentair-pool/screenshot-mobile.png"
+    hero: "docs/ai/themes/pentair-pool/screenshot-hero.png"
+  userScreenshot: true
+  totalSections: 20
+  templateMatches: 20
+  customRequired: 0
+
+sections:
+  - position: 1
+    description: "White header with Pentair Pool wordmark, utility icon links (Homepage, Blog, Contact, Find a Dealer, Partner Portal), primary nav (Products, Education, Support), and search."
+    matchedComponent:
+      registryId: "navigation-header"
+      manifestName: "Header"
+      componentName: "Header"
+      renderingId: "81317d3b-f929-426a-83ec-421982f8f1e6"
+      variant: "WithLogoImage"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: false
+    sectionBackground: "default"
+    content:
+      Logo: "Pentair Pool wordmark (navy)"
+      UtilityLinks: "Pentair.com Homepage, Blog, Contact Us, Find a Dealer, Partner Portal"
+      NavLinks: "Products, Education, Support"
+    contentNotes: "Lives in the Header partial design. Utility row + logo + three-item mega-menu + search. Do not add via add_component_on_page."
+    variantReason: "Solid white bar (tone.navStyle: solid-bar). Closest export is WithLogoImage; utility row + Pentair Pool lockup is custom."
+    customVariantNeeded:
+      name: "PentairPool"
+      description: "Two-row header: utility icon links on top, Pentair Pool logo + Products/Education/Support + search. White bar, navy text, sharp corners."
+      parentComponent: "Header"
+    kind: "context-only"
+
+  - position: 2
+    description: "Full-bleed rippling pool-water hero with centered white uppercase headline and supporting line. No filled CTA on the live hero."
+    matchedComponent:
+      registryId: "hero-banner"
+      manifestName: "HeroBanner"
+      componentName: "HeroBanner"
+      renderingId: "0e8cc47e-32d6-4f55-a7bf-e713abd06323"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "dark"
+    content:
+      Title: "Your Trusted Source for All Things Pool"
+      Text: "Discover how we help people more sustainably enjoy water with our innovative, energy-efficient pool solutions."
+      Image: "Clear rippling blue pool water"
+    contentNotes: "HeroBanner fields (Title, Text, Image, optional Cta1). Default is a split/accent layout; live is full-bleed overlay. Attached screenshot treated the headline as a top banner — live site uses it as the hero."
+    variantReason: "tone.heroStyle is full-bleed-image. Default HeroBanner is split; needs a Pentair Pool overlay variant."
+    customVariantNeeded:
+      name: "PentairPool"
+      description: "Full-bleed pool photo, centered white Barlow Condensed overlay, no card chrome, optional sharp green CTA."
+      parentComponent: "HeroBanner"
+    kind: "simple"
+    imageFields:
+      - { field: "Image", src: "hero-pool-water" }
+
+  - position: 3
+    description: "Centered navy condensed headline and body intro about smart, sustainable pool solutions."
+    matchedComponent:
+      registryId: "rich-text-block"
+      manifestName: "HeadingCta"
+      componentName: "HeadingCta"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      variant: "Centered"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Heading: "We Help the World Safely and Sustainably Enjoy Water, Life's Most Essential Resource"
+      Text: "At Pentair, we focus on innovating smart and sustainable pool solutions so you can spend less time worrying and more time enjoying your pool. Customer success is at the heart of our vision for a splash-tastic future, so we've crafted products like energy-efficient pool pumps, automation and lighting that puts full pool control and enjoyment in your hands. Smart. Innovative. Sustainable. Creating amazing poolside memories in the backyard is easy with Pentair."
+    contentNotes: "HeadingCta Centered exists (heading + body, no required link). Condensed uppercase navy type needs a custom variant."
+    variantReason: "Centered text intro matches HeadingCta Centered. Need condensed navy headline and spacious measure."
+    customVariantNeeded:
+      name: "PentairPoolIntro"
+      description: "Centered condensed navy uppercase headline, muted body, generous max-width, no button."
+      parentComponent: "HeadingCta"
+    kind: "simple"
+
+  - position: 4
+    description: "Four product cards in a row — product photo, title, Learn More — used for featured / automated family products."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "FourColumnCta"
+      componentName: "FourColumnCta"
+      renderingId: "35075000-760e-4ff3-bd1c-f2eeba251dcb"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Title1: "IntelliCenter Control System"
+      Text1: "Intuitive, effortless control of pool and spa features."
+      Link1: { text: "Learn More", href: "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-automation.html" }
+      Title2: "MasterTemp Heater"
+      Text2: "Reliable pool and spa heating to extend the swim season."
+      Link2: { text: "Learn More", href: "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-heaters-heat-pumps.html" }
+      Title3: "IntelliFlo3 VSF Pool Pump"
+      Text3: "Whisper-quiet variable speed and flow for energy-efficient circulation."
+      Link3: { text: "Learn More", href: "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-pumps.html" }
+      Title4: "IntelliConnect Control and Monitoring"
+      Text4: "Connected control and monitoring from a smart device."
+      Link4: { text: "Learn More", href: "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-automation.html" }
+    contentNotes: "Attached screenshot showed these four products. Live homepage may list a different automated-family set — Phase 2.5 will lock current titles, images, and links. FourColumnCta has no parent Title field; section heading can live in the variant or a HeadingCta above."
+    variantReason: "Four image-top cards match FourColumnCta Default. Need product-shot cards, condensed titles, and sharp green Learn More buttons."
+    customVariantNeeded:
+      name: "PentairPoolProducts"
+      description: "Optional uppercase section heading, four image-top product cards, green rectangular CTAs, 6px card radius, no drop shadow."
+      parentComponent: "FourColumnCta"
+    kind: "simple"
+    imageFields:
+      - { field: "Image1", src: "product-intellicenter" }
+      - { field: "Image2", src: "product-mastertemp" }
+      - { field: "Image3", src: "product-intelliflo3" }
+      - { field: "Image4", src: "product-intelliconnect" }
+
+  - position: 5
+    description: "Two side-by-side light-blue CTA tiles for homeowners vs professionals."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "TwoColumnCta"
+      componentName: "TwoColumnCta"
+      renderingId: "3a9a9d22-c092-4b54-9511-eb202ceabe8d"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "muted"
+    content:
+      Title1: "Are you a professional?"
+      Text1: "Visit the Partner Portal"
+      Link1: { text: "Visit the Partner Portal", href: "https://www.pentair.com/en-us/support/pool-spa-equipment.html" }
+      Title2: "New pool owner?"
+      Text2: "Get helpful resources"
+      Link2: { text: "Get Helpful Resources", href: "https://www.pentair.com/en-us/education.html" }
+    contentNotes: "Attached screenshot labeled these Pool Owner Resources / Pool Pro Resources. Live site uses professional vs new-owner copy. TwoColumnCta maps 1:1."
+    variantReason: "Two equal tiles match TwoColumnCta. Need light-blue panels and sharp green buttons."
+    customVariantNeeded:
+      name: "PentairPoolPersonas"
+      description: "Two equal light-blue panels, condensed navy titles, sharp green CTAs."
+      parentComponent: "TwoColumnCta"
+    kind: "simple"
+
+  - position: 6
+    description: "Horizontal row of five icon + label resource links."
+    matchedComponent:
+      registryId: "value-proposition-grid"
+      manifestName: "FiveColumnCta"
+      componentName: "FiveColumnCta"
+      renderingId: "333def3e-c272-4ad9-a493-8d5ccae08312"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Text1: "Rebate Center"
+      Link1: { text: "Rebate Center", href: "https://www.pentair.com/en-us/support.html" }
+      Text2: "Product Warranties"
+      Link2: { text: "Product Warranties", href: "https://www.pentair.com/en-us/support.html" }
+      Text3: "Product Registration"
+      Link3: { text: "Product Registration", href: "https://www.pentair.com/en-us/support.html" }
+      Text4: "Pool Calculators"
+      Link4: { text: "Pool Calculators", href: "https://www.pentair.com/en-us/support.html" }
+      Text5: "Find a Pool Professional"
+      Link5: { text: "Find a Pool Professional", href: "https://www.pentair.com/en-us/support.html" }
+    contentNotes: "Screenshot showed Support / Find a Dealer / Warranty / Pool Tips / Professional. Live site uses Rebate, Warranties, Registration, Calculators, Find a Professional. FiveColumnCta has Text/Image/Link per slot — ideal for an icon row."
+    variantReason: "Five-up icon row matches FiveColumnCta. Default is image-above-text columns; need outlined teal icons and compact labels."
+    customVariantNeeded:
+      name: "PentairPoolResources"
+      description: "Five compact icon+label links, teal outlined icons, no card chrome, optional POOL RESOURCES heading."
+      parentComponent: "FiveColumnCta"
+    kind: "simple"
+    imageFields:
+      - { field: "Image1", src: "icon-rebate" }
+      - { field: "Image2", src: "icon-warranty" }
+      - { field: "Image3", src: "icon-registration" }
+      - { field: "Image4", src: "icon-calculators" }
+      - { field: "Image5", src: "icon-find-pro" }
+
+  - position: 7
+    description: "Pool Solutions section intro — teal/navy band with heading and short supporting copy."
+    matchedComponent:
+      registryId: "rich-text-block"
+      manifestName: "HeadingCta"
+      componentName: "HeadingCta"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      variant: "Centered"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "medium"
+      apiAddable: true
+    sectionBackground: "secondary"
+    content:
+      Heading: "Pool Solutions"
+      Text: "Curate the dreamiest pool or spa with solutions engineered to filter, clean and condition water for ultimate pool enjoyment. With pool pumps and automation systems for convenient control in one place and lighting and heating to elevate your backyard ambiance, we help pool pads become personal paradises."
+    contentNotes: "Live site uses a teal diagonal band plus lifestyle crop. HeadingCta holds title + copy; the band/photo is variant CSS. Could also be CtaBanner if an image field is required after Phase 2.5."
+    variantReason: "Section heading + paragraph. Custom variant for teal band and condensed white/navy type."
+    customVariantNeeded:
+      name: "PentairPoolSolutionsHead"
+      description: "Teal/navy band, condensed uppercase POOL SOLUTIONS, supporting paragraph, optional lifestyle crop."
+      parentComponent: "HeadingCta"
+    kind: "simple"
+
+  - position: 8
+    description: "Pool Pumps split — lifestyle photo + pump product, 'Pump up the Flow' / whisper-quiet copy, two CTAs."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      componentName: "PromoCta"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Eyebrow: "Pool Pumps"
+      Title: "Pump up the Flow"
+      Text: "Whisper-quiet, ENERGY STAR rated and compliant with updated DOE regulations, products like the IntelliFlo3 Variable Speed and Flow Pool Pump keep pools dive-in ready."
+      Link: { text: "Explore Pool Pumps", href: "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-pumps.html" }
+      Link2: { text: "Explore ENERGY STAR Pumps", href: "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-pumps.html" }
+      Image: "Child in goggles underwater in a blue pool"
+    contentNotes: "PromoCta has Eyebrow, Title, Text, Image, Link, Link2 — maps cleanly. First of six alternating category blocks."
+    variantReason: "Text/image split matches PromoCta Default. Need condensed uppercase title and sharp green CTAs."
+    customVariantNeeded:
+      name: "PentairPoolSplit"
+      description: "Text left / image right, condensed uppercase title, green rectangular CTAs, no dotted accents."
+      parentComponent: "PromoCta"
+    kind: "simple"
+    imageFields:
+      - { field: "Image", src: "pumps-lifestyle" }
+
+  - position: 9
+    description: "Pool Automation split — child with phone / app overlay, 'Control at Your Fingertips'."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      componentName: "PromoCta"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Eyebrow: "Pool Automation"
+      Title: "Control at Your Fingertips"
+      Text: "Get the latest in Pentair automation innovation. Products like the IntelliCenter Control System offer intuitive, effortless control of the features and functions of your pool or spa."
+      Link: { text: "Explore Smart Products", href: "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-automation.html" }
+      Image: "Girl in an inner tube with a pool-control app overlay"
+    contentNotes: "Image-left / text-right vs pumps. Use PentairPoolSplitAlt."
+    variantReason: "Alternating image position."
+    customVariantNeeded:
+      name: "PentairPoolSplitAlt"
+      description: "Image left / text right version of PentairPoolSplit."
+      parentComponent: "PromoCta"
+    kind: "simple"
+    imageFields:
+      - { field: "Image", src: "automation-lifestyle" }
+
+  - position: 10
+    description: "Pool Lighting split — night pool / LED color scene, 'Illuminated & Dazzling Ambience'."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      componentName: "PromoCta"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Eyebrow: "Pool Lighting"
+      Title: "Illuminated & Dazzling Ambience"
+      Text: "Elevate your pool's overall aesthetics, mood, and presentation with the latest in LED lighting technology. Create a colorful and dreamy ambience with products like the IntelliVibe Pool Lighting System."
+      Link: { text: "Explore Pool Lighting", href: "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-lights.html" }
+      Image: "Night pool with deep blue LED lighting"
+    contentNotes: "Reuse PentairPoolSplit (text left / image right)."
+    variantReason: "Same layout as pumps."
+    kind: "simple"
+    imageFields:
+      - { field: "Image", src: "lighting-lifestyle" }
+
+  - position: 11
+    description: "Pool Filtration & Cleaning split — filters / cartridges, 'Clearer and Dive-in Ready'."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      componentName: "PromoCta"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Eyebrow: "Pool Filtration & Cleaning"
+      Title: "Clearer and Dive-in Ready"
+      Text: "Keep the pool dive-in ready with high-performing pool and spa filters, along with high-performing replacement cartridges and cleaning tablets."
+      Link: { text: "Explore Pleatco", href: "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-filters.html" }
+      Link2: { text: "Pool Filters", href: "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-filters.html" }
+      Image: "Pool filter equipment and lifestyle swim photo"
+    contentNotes: "Reuse PentairPoolSplitAlt."
+    variantReason: "Alternating image position."
+    kind: "simple"
+    imageFields:
+      - { field: "Image", src: "filtration-lifestyle" }
+
+  - position: 12
+    description: "Pool Heating split — heater + swim photo, 'Heat It Up'."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      componentName: "PromoCta"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Eyebrow: "Pool Heating Solutions"
+      Title: "Heat It Up"
+      Text: "Turn your pool into a wonderful — and warm — experience. With heaters like the ETi 400 High-Efficiency Pool and Spa Heater, you'll get blazing-fast heat-up times."
+      Link: { text: "Explore Pool Heaters", href: "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-heaters-heat-pumps.html" }
+      Image: "Pool heater and child swimming"
+    contentNotes: "Reuse PentairPoolSplit."
+    variantReason: "Same layout as pumps."
+    kind: "simple"
+    imageFields:
+      - { field: "Image", src: "heating-lifestyle" }
+
+  - position: 13
+    description: "Pool Water Treatment split — sanitizers / salt chlorine, 'Cleaner, Clearer, and Silkier Water'."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      componentName: "PromoCta"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Eyebrow: "Pool Water Treatment"
+      Title: "Cleaner, Clearer, and Silkier Water"
+      Text: "Enjoy water that is well-treated. With products like the IntelliChlor Plus & LT Salt Chlorine Generators, ordinary table salt can be transformed into chlorine that pools need to be swim-ready."
+      Link: { text: "Explore Pool Treatment", href: "https://www.pentair.com/en-us/products/residential/pool-spa-equipment/pool-water-treatment.html" }
+      Image: "IntelliChlor sanitizer equipment"
+    contentNotes: "Reuse PentairPoolSplitAlt. Attached screenshot labeled this White Goods / Dependable Performance — live site is water treatment. Phase 2.5 will lock the current block."
+    variantReason: "Alternating image position."
+    kind: "simple"
+    imageFields:
+      - { field: "Image", src: "treatment-product" }
+
+  - position: 14
+    description: "More Pool Products icon grid — first four categories."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "FourColumnCta"
+      componentName: "FourColumnCta"
+      renderingId: "35075000-760e-4ff3-bd1c-f2eeba251dcb"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Title1: "In-Floor Cleaning & Circulation"
+      Link1: { text: "In-Floor Cleaning", href: "https://www.pentair.com/en-us/products.html" }
+      Title2: "Pool Cleaners"
+      Link2: { text: "Pool Cleaners", href: "https://www.pentair.com/en-us/products.html" }
+      Title3: "Water Features"
+      Link3: { text: "Water Features", href: "https://www.pentair.com/en-us/products.html" }
+      Title4: "Pool Valves"
+      Link4: { text: "Pool Valves", href: "https://www.pentair.com/en-us/products.html" }
+    contentNotes: "Screenshot showed an 8-icon Build Your Pool grid (Pumps, Filters, Cleaners, Automation, Heaters, Sanitizers, Lighting, White Goods). Live site uses More Pool Products. Two FourColumnCta instances cover eight tiles. Section heading in variant."
+    variantReason: "Icon tiles, not product-photo cards — different variant from featured products."
+    customVariantNeeded:
+      name: "PentairPoolIcons"
+      description: "Optional MORE POOL PRODUCTS heading, four icon+label tiles, teal icons, text links, no shadows."
+      parentComponent: "FourColumnCta"
+    kind: "simple"
+    imageFields:
+      - { field: "Image1", src: "icon-infloor" }
+      - { field: "Image2", src: "icon-cleaners" }
+      - { field: "Image3", src: "icon-water-features" }
+      - { field: "Image4", src: "icon-valves" }
+
+  - position: 15
+    description: "More Pool Products icon grid — second four categories."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "FourColumnCta"
+      componentName: "FourColumnCta"
+      renderingId: "35075000-760e-4ff3-bd1c-f2eeba251dcb"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Title1: "White Goods"
+      Link1: { text: "White Goods", href: "https://www.pentair.com/en-us/products.html" }
+      Title2: "Pool Maintenance"
+      Link2: { text: "Pool Maintenance", href: "https://www.pentair.com/en-us/products.html" }
+      Title3: "Aboveground Systems"
+      Link3: { text: "Aboveground Systems", href: "https://www.pentair.com/en-us/products.html" }
+      Title4: "Replacement Parts"
+      Link4: { text: "Replacement Parts", href: "https://www.pentair.com/en-us/products.html" }
+    contentNotes: "Second row of the icon grid. Reuse PentairPoolIcons."
+    variantReason: "Same icon-tile treatment as position 14."
+    kind: "simple"
+    imageFields:
+      - { field: "Image1", src: "icon-white-goods" }
+      - { field: "Image2", src: "icon-maintenance" }
+      - { field: "Image3", src: "icon-aboveground" }
+      - { field: "Image4", src: "icon-parts" }
+
+  - position: 16
+    description: "Two promotional tiles — rebates / partner badges with green Learn More buttons."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "TwoColumnCta"
+      componentName: "TwoColumnCta"
+      renderingId: "3a9a9d22-c092-4b54-9511-eb202ceabe8d"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "medium"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Title1: "Cha-ching for your backyard bling"
+      Text1: "Save more than energy. Act fast to get up to a $200 rebate on select Pentair pool products."
+      Link1: { text: "View Pentair Rebates", href: "https://www.pentair.com/en-us/support.html" }
+      Title2: "Twice as nice"
+      Text2: "Many local utility companies offer rebates to pool owners who purchase energy-efficient pool pumps."
+      Link2: { text: "View Utility Rebates", href: "https://www.pentair.com/en-us/support.html" }
+    contentNotes: "Screenshot showed ENERGY STAR Partner + PoolPro badges. Live site currently uses two rebate tiles. Phase 2.5 will lock whichever pair is live."
+    variantReason: "Two editorial tiles match TwoColumnCta. Need badge/image-top cards and green CTAs — different from the persona tiles."
+    customVariantNeeded:
+      name: "PentairPoolPartners"
+      description: "Two image-or-badge tiles, condensed titles, body copy, sharp green Learn More buttons."
+      parentComponent: "TwoColumnCta"
+    kind: "simple"
+    imageFields:
+      - { field: "Image1", src: "rebate-pentair" }
+      - { field: "Image2", src: "rebate-utility" }
+
+  - position: 17
+    description: "Green educational banner — Understand Your Pool Equipment / How Your Pool Works, lifestyle photo, Learn More."
+    matchedComponent:
+      registryId: "cta-banner"
+      manifestName: "CtaBanner"
+      componentName: "CtaBanner"
+      renderingId: "488b8ac0-0ef9-4f6f-8711-78ba182b2c4c"
+      variant: "LargeImage"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "accent"
+    content:
+      Title: "Understand Your Pool Equipment"
+      Text: "Discover each component of your pool pad and what each product does to keep your backyard oasis pool-party ready."
+      Link: { text: "Learn More", href: "https://www.pentair.com/en-us/education.html" }
+      Image: "Two people enjoying a backyard pool"
+    contentNotes: "CtaBanner LargeImage has Title, Text, Link, Image. Green band is variant/theme, not a field."
+    variantReason: "Full-width conversion band with photo. LargeImage is closest; need green fill and condensed type."
+    customVariantNeeded:
+      name: "PentairPoolEdu"
+      description: "Green (#4F8309) band, condensed white headline, lifestyle photo, sharp green-on-white or white-on-green CTA."
+      parentComponent: "CtaBanner"
+    kind: "simple"
+    imageFields:
+      - { field: "Image", src: "understand-equipment" }
+
+  - position: 18
+    description: "Navy full-width CTA — Need equipment or service / find a dealer."
+    matchedComponent:
+      registryId: "cta-banner"
+      manifestName: "CtaBanner"
+      componentName: "CtaBanner"
+      renderingId: "488b8ac0-0ef9-4f6f-8711-78ba182b2c4c"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "dark"
+    content:
+      Title: "Need Equipment or Service for Your Pool?"
+      Text: "Buy local. Know your water. Own your water."
+      Link: { text: "Find a Dealer", href: "https://www.pentair.com/en-us/support.html" }
+    contentNotes: "Screenshot copy was Start Your Pool Construction or Remodel. Live is Need Equipment or Service / Buy Local. CtaBanner Default is centered text + button."
+    variantReason: "Centered navy conversion band. Need navy fill and sharp green CTA."
+    customVariantNeeded:
+      name: "PentairPoolDealer"
+      description: "Navy full-width band, condensed white headline, centered sharp green FIND A DEALER button."
+      parentComponent: "CtaBanner"
+    kind: "simple"
+
+  - position: 19
+    description: "Pentair Pool App — phone mockup plus 'Know Your Water. Own Your Water' copy and download CTA."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "AppPromo"
+      componentName: "AppPromo"
+      renderingId: "f9905f68-21e8-4c6f-8b89-56bb99020d31"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Title: "Introducing the Pentair Pool App"
+      Text: "Stay smart, connected, and protected with the Pentair Pool app. Control your swimming pool system, monitor water chemistry, and access instant status updates from one easy-to-use dashboard."
+      Image: "Smartphone showing the Pentair Pool app (temperature and alerts)"
+    contentNotes: "AppPromo fields are Title, Text, Image only — no Link. Put the download CTA in Rich Text or add a link in the PentairPoolApp variant. PromoCta is the fallback if a dedicated link field is required."
+    variantReason: "App + phone mockup is exactly AppPromo. Default needs Pentair condensed type and a green CTA."
+    customVariantNeeded:
+      name: "PentairPoolApp"
+      description: "Text left / large phone mockup right, condensed navy headline, green Learn More and Download button (CTA in rich text if needed)."
+      parentComponent: "AppPromo"
+    kind: "simple"
+    imageFields:
+      - { field: "Image", src: "pool-app-phone" }
+
+  - position: 20
+    description: "Deep navy mega-footer: Pentair / Pentair Pool logo, mission copy, social icons, link columns, copyright."
+    matchedComponent:
+      registryId: "footer"
+      manifestName: "Footer"
+      componentName: "Footer"
+      renderingId: "771a3f27-6448-44ac-add0-e5de311c6e3b"
+      variant: "Default"
+      variantMatch: "partial"
+      matchType: "template"
+      matchConfidence: "high"
+      apiAddable: false
+    sectionBackground: "dark"
+    content:
+      Image1: "Pentair logo reversed white"
+      Text1: "From our residential and commercial water solutions, to industrial water management and everything in between, Pentair is focused on smart, sustainable water solutions that help our planet and people thrive."
+      Title1: "About Pentair"
+      Title2: "Solutions"
+      Title3: "Support"
+      Title4: "Legal"
+      Copyright: "©2026 Pentair. All rights reserved."
+    contentNotes: "Lives in the Footer partial design. Footer supports logo + 4 columns + socials + copyright. Screenshot also had a Stay Up to Date / Product Registration bar above the footer — that can be a TwoColumnCta if you want it after approval; otherwise Footer + theme covers the legal block."
+    variantReason: "Multi-column footer matches Default. Theme sets --brand-footer-bg. Custom variant for mission blurb and social row."
+    customVariantNeeded:
+      name: "PentairPool"
+      description: "Navy full-width footer, white logo, mission paragraph, four link columns, circular social icons, sharp corners."
+      parentComponent: "Footer"
+    kind: "context-only"
+
+customComponents: []
+
+buildOrder:
+  phase1_sitecore:
+    - { position: 2, componentName: "HeroBanner", datasourceName: "Pentair Pool - Hero Banner", matchType: "template" }
+    - { position: 3, componentName: "HeadingCta", datasourceName: "Pentair Pool - Intro", matchType: "template" }
+    - { position: 4, componentName: "FourColumnCta", datasourceName: "Pentair Pool - Featured Products", matchType: "template" }
+    - { position: 5, componentName: "TwoColumnCta", datasourceName: "Pentair Pool - Personas", matchType: "template" }
+    - { position: 6, componentName: "FiveColumnCta", datasourceName: "Pentair Pool - Resources", matchType: "template" }
+    - { position: 7, componentName: "HeadingCta", datasourceName: "Pentair Pool - Solutions Heading", matchType: "template" }
+    - { position: 8, componentName: "PromoCta", datasourceName: "Pentair Pool - Pumps", matchType: "template" }
+    - { position: 9, componentName: "PromoCta", datasourceName: "Pentair Pool - Automation", matchType: "template" }
+    - { position: 10, componentName: "PromoCta", datasourceName: "Pentair Pool - Lighting", matchType: "template" }
+    - { position: 11, componentName: "PromoCta", datasourceName: "Pentair Pool - Filtration", matchType: "template" }
+    - { position: 12, componentName: "PromoCta", datasourceName: "Pentair Pool - Heating", matchType: "template" }
+    - { position: 13, componentName: "PromoCta", datasourceName: "Pentair Pool - Treatment", matchType: "template" }
+    - { position: 14, componentName: "FourColumnCta", datasourceName: "Pentair Pool - More Products 1", matchType: "template" }
+    - { position: 15, componentName: "FourColumnCta", datasourceName: "Pentair Pool - More Products 2", matchType: "template" }
+    - { position: 16, componentName: "TwoColumnCta", datasourceName: "Pentair Pool - Rebates", matchType: "template" }
+    - { position: 17, componentName: "CtaBanner", datasourceName: "Pentair Pool - Understand Equipment", matchType: "template" }
+    - { position: 18, componentName: "CtaBanner", datasourceName: "Pentair Pool - Find a Dealer", matchType: "template" }
+    - { position: 19, componentName: "AppPromo", datasourceName: "Pentair Pool - App", matchType: "template" }
+  phase2_theme: "Inline :root brand variables in globals.scss (this starter has no globals.css). Load Barlow + Barlow Condensed from Google Fonts. Add site-pentairpool class."
+  phase3_custom: []
+  skipped_context_only:
+    - { position: 1, componentName: "Header", reason: "Partial design — cannot add via API" }
+    - { position: 20, componentName: "Footer", reason: "Partial design — cannot add via API" }
