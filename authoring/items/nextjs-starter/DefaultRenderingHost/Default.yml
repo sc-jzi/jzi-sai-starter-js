@@ -68,14 +68,23 @@ Languages:
         sitecore\Admin
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "e70d8a05-b05f-4ddb-ac9d-926d7142afbb"
+      Value: "faf24233-7a85-404c-b513-21cdd3cbeb41"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\Anonymous
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260703T151210Z
+      Value: 20260827T201722Z
+- Language: "en-US"
+  Versions:
+  - Version: 1
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+- Language: "fr-CA"
+  Versions:
+  - Version: 1
 - Language: "ja-JP"
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"

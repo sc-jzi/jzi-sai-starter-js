@@ -36,7 +36,7 @@ SharedFields:
   Value: *
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "47448618-a2f2-4e36-b35a-51a3e20baee8"
+  Value: "f2a06cca-9596-4018-90af-7391843f140d"
 - ID: "e5b5ccb5-17a1-429d-bd3e-6122b3216e52"
   Hint: TargetHostName
   Value: prosperabank.dev
@@ -60,11 +60,11 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "ff54e5a5-8ea4-4f9d-8de0-da36075ed51a"
+      Value: "19ff8ea9-168c-42fe-a859-e75f98540d72"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260528T204335Z
+      Value: 20260708T180823Z
