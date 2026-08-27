@@ -27,6 +27,8 @@
     text-transform: uppercase;
     letter-spacing: 0.06em;
     font-weight: 500;
+    padding: 0.85rem 1.85rem;
+    line-height: 1.3;
   }
 
   .button-main,
@@ -513,11 +515,14 @@
   background: var(--brand-muted, #f4f4f4);
 }
 
-/* Understand equipment — lime banner */
+/* Understand equipment — lime banner only (override default navy inner band) */
 .cta-banner.pentair-pool-edu {
+  --bg-saturated: var(--brand-light-green, #6eb70b);
   padding: 0;
-  background: var(--brand-light-green, #6eb70b);
+  margin: 0;
+  background: var(--brand-light-green, #6eb70b) !important;
   color: var(--brand-primary-foreground, #fff);
+  overflow: hidden;
 
   .dotted-accent-top,
   .dotted-accent-bottom,
@@ -525,21 +530,26 @@
     display: none;
   }
 
-  .container.container-widest-fluid,
+  .container-widest-fluid,
   .container {
     max-width: 100%;
-    padding-left: 0;
-    padding-right: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border-radius: 0;
+    color: inherit;
   }
 
   .main-content {
     margin: 0;
     --bs-gutter-x: 0;
+    min-height: 0;
   }
 
-  .content-wrapper,
-  .col-lg-6 {
-    padding: 3.5rem 2.5rem;
+  .content-wrapper {
+    margin: 0;
+    padding: 1.75rem 2.25rem;
   }
 
   h6.eyebrow-accent {
@@ -548,26 +558,66 @@
 
   h1 {
     color: var(--brand-primary-foreground, #fff);
-    font-size: clamp(1.85rem, 3.2vw, 2.6rem);
+    font-size: clamp(1.35rem, 2.2vw, 1.75rem);
+    margin-bottom: 0.4rem;
+    line-height: 1.15;
   }
 
   .text-content,
   p {
     color: var(--brand-primary-foreground, #fff);
+    opacity: 1;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
   }
 
+  .button,
   .button-main,
+  a.button,
   a.button-main {
     background: transparent;
     border: 2px solid var(--brand-primary-foreground, #fff);
     color: var(--brand-primary-foreground, #fff);
+    padding: 0.9rem 2rem;
+    line-height: 1.3;
+  }
+
+  .pentair-pool-edu-media {
+    height: 17rem;
+    overflow: hidden;
+    align-self: stretch;
+
+    img,
+    picture,
+    span,
+    > * {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   img {
     width: 100%;
-    height: 100%;
-    min-height: 18rem;
+    height: 17rem;
     object-fit: cover;
+    min-height: 0;
+    max-height: 17rem;
+    aspect-ratio: auto !important;
+    border-radius: 0;
+  }
+
+  @media (max-width: 991px) {
+    .content-wrapper {
+      padding: 1.25rem;
+    }
+
+    .pentair-pool-edu-media,
+    img {
+      height: 10rem;
+      max-height: 10rem;
+    }
   }
 }
 
@@ -600,11 +650,15 @@
     color: var(--brand-primary-foreground, #fff);
   }
 
+  .button,
   .button-main,
+  a.button,
   a.button-main {
     background: var(--brand-light-green, #6eb70b);
     border: 0;
     color: var(--brand-primary-foreground, #fff);
+    padding: 0.9rem 2rem;
+    line-height: 1.3;
   }
 }
 

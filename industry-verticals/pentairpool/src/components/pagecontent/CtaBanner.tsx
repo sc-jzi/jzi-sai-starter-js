@@ -98,24 +98,22 @@ export const PentairPoolEdu = (props: CtaBannerProps): JSX.Element => {
       className={`component cta-banner pentair-pool-edu ${sxaStyles}`}
       id={id ? id : undefined}
     >
-      <div className="container container-widest-fluid">
-        <div className="row row-gap-0 main-content align-items-center">
-          <div className="col-lg-6">
-            <NextImage field={props.fields.Image} className="d-block w-100" width={800} height={500} />
-          </div>
-          <div className="col-lg-6">
-            <div className="content-wrapper">
-              {(isPageEditing || props.fields?.Title?.value) && (
-                <h1 className="display-4 mb-3">
-                  <Text field={props.fields.Title} />
-                </h1>
+      <div className="row g-0 main-content align-items-stretch">
+        <div className="col-lg-5 pentair-pool-edu-media">
+          <NextImage field={props.fields.Image} className="d-block w-100" width={640} height={220} />
+        </div>
+        <div className="col-lg-7 d-flex align-items-center">
+          <div className="content-wrapper">
+            {(isPageEditing || props.fields?.Title?.value) && (
+              <h1 className="mb-2">
+                <Text field={props.fields.Title} />
+              </h1>
+            )}
+            <div>
+              <RichText field={props.fields.Text} className="text-content" />
+              {(isPageEditing || props.fields?.Link?.value?.href) && (
+                <Link field={props.fields.Link} className="button button-main mt-2" />
               )}
-              <div className="fs-5">
-                <RichText field={props.fields.Text} className="text-content" />
-                {(isPageEditing || props.fields?.Link?.value?.href) && (
-                  <Link field={props.fields.Link} className="button button-main mt-3" />
-                )}
-              </div>
             </div>
           </div>
         </div>
