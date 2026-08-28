@@ -1,0 +1,69 @@
+﻿---
+ID: "327a8d8c-753a-44f3-b1aa-53c02d96e851"
+Parent: "a3825923-581d-459c-b4d6-a708efd248ed"
+Template: "947db8f8-dc76-453f-aca1-a27babfe633b"
+Path: "/sitecore/content/pentair/pentair-flow/Home/Data/Pentair Flow - Footer"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "24fe8274-d95f-439f-9aeb-6c240759ab6b"
+      Hint: Text1
+      Value: <p>From our residential and commercial water solutions, to industrial water management and everything in between, Pentair is focused on smart, sustainable water solutions that help our planet and people thrive.</p><ul><li>Careers</li><li>Brands</li><li>Investors</li><li>Media</li><li>Suppliers</li></ul>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260828T160352Z
+    - ID: "342fb66b-0e4b-419d-ba86-2355e33ee1bf"
+      Hint: Title1
+      Value: About Pentair
+    - ID: "4770eb87-8856-4251-b831-6c8522c39da1"
+      Hint: Copyright
+      Value: ©2026 Pentair. All rights reserved.
+    - ID: "4bf70960-7097-4f87-a67a-8a7e87d1cd01"
+      Hint: Text4
+      Value: <ul><li>Privacy Notice</li><li>Terms of Use</li><li>Website Accessibility Statement</li><li>Responsible Disclosure</li></ul>
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "63ec28c9-bceb-4180-ba86-5a6b3c975d52"
+      Hint: Link1
+      Value: |
+        <link text="Privacy Notice" anchor="" linktype="external" class="" title="" target="_blank" querystring="" url="https://www.pentair.com/en-us/legal/privacy-notice.html" />
+    - ID: "798d70ab-9044-4c10-8792-8879857b22ac"
+      Hint: Link2
+      Value: |
+        <link text="Terms of Use" anchor="" linktype="external" class="" title="" target="_blank" querystring="" url="https://www.pentair.com/en-us/legal/terms-of-use.html" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f066f0bf-74b0-409b-8f44-a6bd2a9e6f59"
+    - ID: "92612ddf-b3fd-4597-a655-de6da2eb553f"
+      Hint: Text3
+      Value: <ul><li>Contact Us</li><li>Residential Product Support</li><li>Business &amp; Industry Product Support</li><li>Download Center</li></ul>
+    - ID: "9bab16e3-3b9d-425e-8adc-06c0838f7706"
+      Hint: SocialsTitle
+      Value: Follow us
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "ca370d33-63e1-4e1b-986d-fe82ae23027c"
+      Hint: Text2
+      Value: <ul><li>Residential</li><li>Business &amp; Industry</li><li>Products</li><li>Find a Dealer</li><li>Partner Portal</li></ul>
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260828T160352Z
+    - ID: "e71e7e6c-29a7-4a9a-a7f8-a4e29609cb64"
+      Hint: Title2
+      Value: Solutions
+    - ID: "ee146d7d-5c17-47f9-acf4-1583573db084"
+      Hint: Title3
+      Value: Support
+    - ID: "f17614b2-487a-472c-a509-3e56df0930d4"
+      Hint: Title4
+      Value: Legal

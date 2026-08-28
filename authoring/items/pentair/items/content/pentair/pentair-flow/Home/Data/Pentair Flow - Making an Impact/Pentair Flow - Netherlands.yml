@@ -1,0 +1,48 @@
+﻿---
+ID: "306810eb-d9db-4ce2-8edb-8fc50a35eff7"
+Parent: "c4324abd-0ec5-4c85-94f1-eb8363b640f5"
+Template: "54db209d-cd0f-49d9-ae4e-ecb65d72cc4d"
+Path: "/sitecore/content/pentair/pentair-flow/Home/Data/Pentair Flow - Making an Impact/Pentair Flow - Netherlands"
+SharedFields:
+- ID: "ba78a3c0-7c60-40ba-8d42-6bf559d9ca72"
+  Hint: Image
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/efc157c94d51436c88c9945a8cf7850c?v=faa0c978" dam-id="agGQzMeTTOqC7-RDDz6sGw" width="1920" height="1080" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97048/thumbnail" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "c788c00b-2ad6-494e-8fd8-667b4dbfdc66"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260828T160357Z
+    - ID: "3351af3f-868e-47fc-b5c3-ad0446981faf"
+      Hint: Title
+      Value: New Orleans
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "9e5e9527-c600-4115-9271-3237146e351d"
+    - ID: "ad84ce04-c8f0-485e-bf12-9b321c6ff2fb"
+      Hint: Text
+      Value: <p>Big Black Pump</p>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260828T180216Z

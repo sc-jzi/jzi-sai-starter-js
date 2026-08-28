@@ -1,5 +1,5 @@
 /* stylelint-disable value-keyword-case */
-@import 'https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@300;400;600;700&family=Epilogue:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap';
 
 .site-basic {
   --font-family: 'Open Sans', Helvetica, Verdana, Tahoma, sans-serif;
@@ -11,4 +11,23 @@
 
 .site-services {
   --font-family: 'Epilogue', Helvetica, Arial, sans-serif;
+}
+
+.site-pentair {
+  --font-family: 'Barlow', Helvetica, Arial, sans-serif;
+  --font-heading: 'Barlow Condensed', Helvetica, Arial, sans-serif;
+
+  font-family: var(--font-family);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
 }

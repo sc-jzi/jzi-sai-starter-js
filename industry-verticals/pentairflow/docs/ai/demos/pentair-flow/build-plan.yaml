@@ -1,0 +1,369 @@
+# Demo Build Plan — Pentair Flow
+# Maps the live homepage to existing pentairflow PLAY! components.
+# UIIM registry IDs are recorded as analogs only — those templates are not
+# present in this starter or on /sitecore/content/pentair/pentair-flow.
+
+client:
+  name: "Pentair Flow"
+  sourceUrl: "https://www.pentair.com/en-us/flow.html"
+  themeFile: "docs/ai/themes/pentair-flow.theme.yaml"
+  analyzedAt: "2026-08-28T16:20:00Z"
+  contentRoot: "/sitecore/content/pentair/pentair-flow"
+  homePageId: "ea63609e-f963-4885-9459-b09be41395ee"
+  homePagePath: "/sitecore/content/pentair/pentair-flow/Home"
+  implementationLibrary: "pentairflow-play"
+
+pageAnalysis:
+  screenshotFiles:
+    desktop: "user-provided (Pentair Flow homepage)"
+    mobile: ""
+    hero: "user-provided (hero included in full-page shot)"
+  totalSections: 10
+  templateMatches: 9
+  customRequired: 1
+
+sections:
+  - position: 1
+    description: "Thin utility bar at the very top with corporate links (Pentair Homepage, Blogs, Careers, Contact Us, Find a Dealer, Partner Portal)."
+    matchedComponent:
+      registryId: "announcement-bar"
+      manifestName: "Eyebrow"
+      displayName: "Eyebrow / utility bar"
+      renderingId: "5f765231-1da9-467a-8b35-2171cce313c1"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: false
+      implementation: "existing-partial"
+    sectionBackground: "primary"
+    content:
+      Title: ""
+      Description: "Pentair Homepage · Blogs · Careers · Contact Us · Find a Dealer / Distributor · Partner Portal"
+    contentNotes: "Lives in the header partial design. Do not add via API. Update existing Eyebrow / Link List datasources."
+    variantReason: "Existing Eyebrow is a placeholder strip. Needs a PentairFlow variant: dark navy bar, small white uppercase links, no search icon in the utility row."
+    kind: "context-only"
+
+  - position: 2
+    description: "Solid white header with Pentair Flow wordmark on the left, primary nav (Brands, Products, Resources, Sustainability, About), and a search field on the right."
+    matchedComponent:
+      registryId: "navigation-header"
+      manifestName: "Header"
+      displayName: "Header + Navigation"
+      renderingId: "81317d3b-f929-426a-83ec-421982f8f1e6"
+      variant: "WithLogoImage"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: false
+      implementation: "existing-partial"
+    sectionBackground: "default"
+    content:
+      Title: "Pentair Flow"
+      Description: "Brands · Products · Resources · Sustainability · About"
+    contentNotes: "Header + Navigation already sit in the page design partials. Update logo and nav link datasources. Mega-menu under Brands/Products/Resources must be authored in the existing Navigation items."
+    variantReason: "tone.navStyle is solid-bar. Existing WithLogoImage is close; needs PentairFlow styling (navy text, green accent bullets on flyouts, search on the right)."
+    kind: "context-only"
+
+  - position: 3
+    description: "Full-bleed agricultural field photo with centered white all-caps headline and a short supporting sentence. No CTA button in the hero."
+    matchedComponent:
+      registryId: "hero-banner"
+      manifestName: "Hero"
+      displayName: "Hero"
+      renderingId: "b7cdf75e-716a-4c59-b9b1-cd970ae0a4ae"
+      variant: "PentairFlow"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+    customVariantNeeded:
+      name: "PentairFlow"
+      description: "Full-bleed background image, centered white uppercase headline, smaller white subhead, no dotted accents, optional hidden CTA."
+      parentComponent: "Hero"
+    sectionBackground: "dark"
+    content:
+      Title: "Moving Forward What's Essential"
+      Description: "We optimize the flow of essential resources to enhance communities and industries, while protecting people, property and the future of our planet."
+    imageFields:
+      - { field: "Image", src: "hero agricultural field" }
+    contentNotes: "Existing Hero Default is image-plus-stacked-text with a CTA. Live site is a cinematic overlay with no button."
+    variantReason: "tone.heroStyle is full-bleed-image with centered overlay. No existing export matches."
+    kind: "simple"
+
+  - position: 4
+    description: "Bright-blue band with a centered all-caps heading: For Homes, Communities, Industries and The Planet."
+    matchedComponent:
+      registryId: "rich-text-block"
+      manifestName: "HeadingCta"
+      displayName: "Heading CTA"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      variant: "Centered"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+    customVariantNeeded:
+      name: "PentairFlow"
+      description: "Centered uppercase heading on Bright Blue band, white type, no eyebrow, no CTA button."
+      parentComponent: "HeadingCta"
+    sectionBackground: "secondary"
+    content:
+      Title: "For Homes, Communities, Industries and The Planet"
+      Description: ""
+    contentNotes: "Pair with the Two Column CTA immediately below. Same visual band on the live site."
+    variantReason: "Centered variant exists but is PLAY! styled (eyebrow + display type + button)."
+    kind: "simple"
+
+  - position: 5
+    description: "Two landscape photo tiles on the blue band. Left tile has a green Watch CTA; right tile is an aerial industrial plant with a short caption."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "TwoColumnCta"
+      displayName: "Two Column CTA"
+      renderingId: "3a9a9d22-c092-4b54-9511-eb202ceabe8d"
+      variant: "PentairFlow"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+    customVariantNeeded:
+      name: "PentairFlow"
+      description: "Two equal image tiles, caption under right image, green rectangular CTA over/under left image, no fade/dotted accents."
+      parentComponent: "TwoColumnCta"
+    sectionBackground: "secondary"
+    content:
+      Title: ""
+      Description: "Watch how our smart, sustainable water solutions move water around the world."
+      LeftCta: "Watch how we build for the planet"
+      SecondaryCta: "Download Our Interactive Brochure"
+    imageFields:
+      - { field: "Image1", src: "circular water infrastructure / brochure visual" }
+      - { field: "Image2", src: "aerial industrial plant" }
+    contentNotes: "Live site also offers an interactive brochure download. Use Link1 for Watch and Link2 for the brochure if a second link is needed (Link2 lives on the right column)."
+    variantReason: "Existing Default is stacked image + heading + body + button per column. Live site is image-first tiles with one green CTA."
+    kind: "simple"
+
+  - position: 6
+    description: "Making an Impact — large video/image stage (skyscraper / Penn 1) with a thumbnail carousel underneath and previous/next arrows."
+    matchedComponent:
+      registryId: "hero-banner-carousel"
+      manifestName: "Carousel"
+      displayName: "Carousel"
+      renderingId: "8094185b-4c72-40c8-b005-c6ed91708754"
+      variant: "PentairFlow"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+    customVariantNeeded:
+      name: "PentairFlow"
+      description: "Large 16:9 stage, play affordance, thumbnail strip with labels under the stage, prev/next arrows. Use poster image; video URL is a manual task."
+      parentComponent: "Carousel"
+    sectionBackground: "default"
+    content:
+      Title: "Making an Impact"
+      Description: ""
+    children:
+      - { name: "Penn 1, New York City", label: "Skyscrapers" }
+      - { name: "Netherlands", label: "Big Black Pump" }
+      - { name: "Flood Control in New Orleans", label: "New Orleans" }
+      - { name: "Pumping Station, St. Louis", label: "St. Louis" }
+      - { name: "Food & Beverage", label: "Dr Magda in her research lab" }
+      - { name: "Wastewater Management", label: "Wastewater Plant" }
+      - { name: "Agriculture Spraying", label: "Spray nozzle spraying in farm" }
+    contentNotes: "Videos are not downloaded. Use poster images in Image; record video URLs in manualVideoTasks after extraction."
+    variantReason: "Existing Carousel is a full-bleed slide with overlaid title/text, not a stage-plus-thumbnail strip."
+    kind: "list"
+
+  - position: 7
+    description: "Who We Serve — centered gray all-caps section heading."
+    matchedComponent:
+      registryId: "rich-text-block"
+      manifestName: "HeadingCta"
+      displayName: "Heading CTA"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      variant: "Centered"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+    customVariantNeeded:
+      name: "PentairFlowMuted"
+      description: "Centered uppercase gray heading on white, no eyebrow, no button."
+      parentComponent: "HeadingCta"
+    sectionBackground: "default"
+    content:
+      Title: "Who We Serve"
+      Description: ""
+    contentNotes: "Second HeadingCta instance. Same component, different datasource."
+    variantReason: "Centered exists; needs muted gray all-caps treatment."
+    kind: "simple"
+
+  - position: 8
+    description: "Four repeating market blocks (Commercial & Infrastructure, Industrial, Residential, Agriculture). Each is image-left, heading + paragraph + check-bullets right, and a grid of slate-blue brand tag buttons below."
+    matchedComponent:
+      registryId: ""
+      manifestName: "MarketSegment"
+      displayName: "Market Segment (custom)"
+      renderingId: ""
+      variant: "Default"
+      matchType: "custom"
+      matchConfidence: "low"
+      variantMatch: "none"
+      apiAddable: false
+      implementation: "custom-new"
+    sectionBackground: "default"
+    content:
+      Title: "Who We Serve"
+      Description: "Four markets with brand tags"
+    children:
+      - name: "For Commercial & Infrastructure"
+        description: "Pentair helps support and remove water to protect commercial properties and communities from fire and flood hazards through its sophisticated utility water pump solutions for wastewater disposal, flood water disposal and fire suppression."
+        bullets:
+          - "Fire Suppression"
+          - "HVAC & Water Supply"
+          - "Municipal Wastewater"
+          - "Industrial Wastewater"
+        brands: ["Aurora", "Hydromatic", "Myers", "Fairbanks Nijhuis", "Southern Cross"]
+        image: "red industrial pump / piping"
+      - name: "For Industrial"
+        description: "Pentair provides filtration solutions and process technologies to help industrial customers achieve sustainability, productivity, efficiency and quality goals."
+        bullets:
+          - "Sustainable Gas Solutions"
+          - "Brewery Production"
+          - "Dairy and Food Production"
+          - "Oil and Gas Products"
+          - "Industrial Filtration"
+          - "Industrial Spraying"
+        brands: ["Codeline", "Goyen Mecair", "Haffmans", "Shurflo", "Südmo", "X-Flow", "Union Engineering"]
+        image: "industrial storage tanks"
+      - name: "For Residential"
+        description: "Pentair provides home water pros with reliable pump equipment that helps provide households with access to water in their homes for drinking, bathing and washing as well as disposal of household wastewater."
+        bullets:
+          - "Explore Water Supply Pumps"
+          - "Explore Water Disposal Pumps"
+          - "Explore RV Pumps"
+          - "Explore Marine Pumps"
+        brands: ["Berkeley", "Flotec", "Hydromatic", "Jung Pumpen", "Myers", "Onga", "Pentek", "Pro-Source", "Sta-Rite", "Shurflo", "Shurflo-Europe", "Simer", "Wellmate"]
+        image: "person washing produce at a kitchen sink"
+      - name: "For Agriculture"
+        description: "Pentair creates superior spray and pump systems for agriculture equipment manufacturers to help deliver spraying and irrigation accuracy and efficiency while helping to reduce drift and assist with safe chemical application."
+        bullets:
+          - "Irrigation"
+          - "Spray Pumps"
+          - "Spray Nozzles"
+        brands: ["Berkeley", "Pentek", "Hypro", "Shurflo"]
+        image: "green agricultural spray boom"
+    contentNotes: "No existing component has image + bullets + brand-tag grid. PromoCta can approximate image+text but cannot author the tag buttons cleanly. Recommended: one new list component (parent + 4 market children, each with BrandTag children)."
+    variantReason: "Unique repeating industrial layout. Do not force into PromoCta."
+    kind: "list"
+
+  - position: 9
+    description: "Resources & Portal — gray uppercase heading and a horizontal blue bar of audience / portal links (Distributor Portal, Find a Distributor, training, literature, pump selection tools)."
+    matchedComponent:
+      registryId: "tab-navigation"
+      manifestName: "FiveColumnCta"
+      displayName: "Five Column CTA"
+      renderingId: "333def3e-c272-4ad9-a493-8d5ccae08312"
+      variant: "PentairFlow"
+      matchType: "template"
+      matchConfidence: "medium"
+      variantMatch: "none"
+      apiAddable: true
+    customVariantNeeded:
+      name: "PentairFlow"
+      description: "Section heading plus a single-row Bright Blue link bar. Hide images. Uppercase white link labels. May need two stacked FiveColumnCta instances or a Link List if more than five links should show."
+      parentComponent: "FiveColumnCta"
+    sectionBackground: "muted"
+    content:
+      Title: "Resources & Portal"
+      Description: ""
+      links:
+        - "Distributor Portal"
+        - "Find a Distributor"
+        - "Residential Training"
+        - "Commercial Training"
+        - "Order Literature"
+        - "Download Center"
+        - "Encompass Pump Selection"
+        - "Parts & Service"
+    contentNotes: "Live site groups links by audience (Distributors, Specifiers, Dealers, Homeowners). FiveColumnCta only holds five items — either use two instances or fall back to Link List (4956263d-1195-4d6e-931b-800ea625ff6f) if the SE wants the full set."
+    variantReason: "Closest API-addable multi-link component on this site. Not a visual match without a custom variant."
+    kind: "simple"
+
+  - position: 10
+    description: "Navy footer with white Pentair logo, short mission copy, four link columns (About, Solutions, Support, Legal), circular social icons, and a copyright / legal strip."
+    matchedComponent:
+      registryId: "footer"
+      manifestName: "Footer"
+      displayName: "Footer"
+      renderingId: "771a3f27-6448-44ac-add0-e5de311c6e3b"
+      variant: "WithSocials"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: false
+      implementation: "existing-partial"
+    sectionBackground: "dark"
+    content:
+      Title: "About Pentair"
+      Description: "From our residential and commercial water solutions, to industrial water management and everything in between, Pentair is focused on smart, sustainable water solutions that help our planet and people thrive."
+    contentNotes: "Footer lives in the page-design partial. Update the existing Footer datasource. Existing component supports 4 columns + 3 socials + copyright — enough for the live layout."
+    variantReason: "WithSocials is the right structure. Needs PentairFlow navy background, white type, circular socials."
+    kind: "context-only"
+
+customComponents:
+  - name: "MarketSegment"
+    kind: "list"
+    reason: "Who We Serve repeating block: image + heading + paragraph + check bullets + brand tag button grid. No PLAY! or UIIM component covers this."
+    suggestedSkill: "sitecore-create-list-component"
+    parentFields:
+      - { name: "Title", type: "Single-Line Text" }
+    childFields:
+      - { name: "MarketTitle", type: "Single-Line Text" }
+      - { name: "MarketDescription", type: "Rich Text" }
+      - { name: "MarketImage", type: "Image" }
+      - { name: "Bullet1", type: "Single-Line Text" }
+      - { name: "Bullet2", type: "Single-Line Text" }
+      - { name: "Bullet3", type: "Single-Line Text" }
+      - { name: "Bullet4", type: "Single-Line Text" }
+      - { name: "Bullet5", type: "Single-Line Text" }
+      - { name: "Bullet6", type: "Single-Line Text" }
+    grandchildName: "BrandTag"
+    grandchildFields:
+      - { name: "LinkText", type: "Single-Line Text" }
+      - { name: "LinkUrl", type: "General Link" }
+    fallbackIfDeclined: "Four PromoCta instances with bullets in RichText and brand names as inline links. Faster, less pixel-accurate."
+
+buildOrder:
+  phase1_sitecore:
+    - "Hero (Pentair Flow - Hero)"
+    - "HeadingCta (Pentair Flow - Impact Heading)"
+    - "TwoColumnCta (Pentair Flow - Impact Tiles)"
+    - "Carousel (Pentair Flow - Making an Impact)"
+    - "HeadingCta (Pentair Flow - Who We Serve Heading)"
+    - "MarketSegment (custom — after Phase 5)"
+    - "FiveColumnCta (Pentair Flow - Resources)"
+  phase2_theme: "Apply Pentair :root tokens + Barlow fonts in src/assets/sass (this starter has no globals.css CLIENT THEME placeholder)."
+  phase3_custom:
+    - "MarketSegment list component"
+
+renderingIds:
+  Eyebrow: "5f765231-1da9-467a-8b35-2171cce313c1"
+  Header: "81317d3b-f929-426a-83ec-421982f8f1e6"
+  Navigation: "1deb067f-0bb1-405e-94f5-2abb537a6160"
+  Hero: "b7cdf75e-716a-4c59-b9b1-cd970ae0a4ae"
+  HeadingCta: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+  TwoColumnCta: "3a9a9d22-c092-4b54-9511-eb202ceabe8d"
+  Carousel: "8094185b-4c72-40c8-b005-c6ed91708754"
+  PromoCta: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+  FiveColumnCta: "333def3e-c272-4ad9-a493-8d5ccae08312"
+  LinkList: "4956263d-1195-4d6e-931b-800ea625ff6f"
+  Footer: "771a3f27-6448-44ac-add0-e5de311c6e3b"
+
+environmentNotes:
+  - "Home page Title is still 'PLAY! Financial' and child pages are leftover banking content. Phase 6 will reuse Home and note OOB cleanup."
+  - "get_components_on_page returned HTTP 500 for Home — layout read failed. Inventory will be retried at assembly time."
+  - "UIIM datasources (HeroBanners, FeatureCardsGrids, etc.) do not exist under pentair-flow/Data. New datasources will be created under the existing Data folders or new folders as needed."
+  - "project.yaml still listed main/main-website. Updated to pentair/pentair-flow to match the user-requested content root."

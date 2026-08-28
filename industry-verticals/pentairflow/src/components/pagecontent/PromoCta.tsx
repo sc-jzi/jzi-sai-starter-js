@@ -190,3 +190,47 @@ export const WithBackgroundImage = (props: PromoCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* PentairFlow variant — Who We Serve market block: image left, copy + brand tags */
+export const PentairFlow = (props: PromoCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const hasLink = Boolean(props.fields?.Link?.value?.href && props.fields.Link.value.href !== '#');
+  const hasLink2 = Boolean(props.fields?.Link2?.value?.href && props.fields.Link2.value.href !== '#');
+
+  return (
+    <div className={`component promo-cta pentair-flow-market ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="row align-items-center gy-4">
+          <div className="col-lg-6">
+            <NextImage field={props.fields.Image} className="img-fluid" width={800} height={560} />
+          </div>
+          <div className="col-lg-6">
+            {(isPageEditing || props.fields.Eyebrow?.value) && (
+              <h6 className="eyebrow-accent">
+                <Text field={props.fields.Eyebrow} />
+              </h6>
+            )}
+            <h2>
+              <Text field={props.fields.Title} />
+            </h2>
+            {(isPageEditing || props.fields.Subtitle?.value) && (
+              <p className="fs-5">
+                <Text field={props.fields.Subtitle} />
+              </p>
+            )}
+            <RichText field={props.fields.Text} className="pentair-flow-market__copy" />
+            {(isPageEditing || hasLink) && (
+              <Link field={props.fields.Link} className="button button-main mt-3 me-3" />
+            )}
+            {(isPageEditing || hasLink2) && (
+              <Link field={props.fields.Link2} className="button button-simple mt-3" />
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};

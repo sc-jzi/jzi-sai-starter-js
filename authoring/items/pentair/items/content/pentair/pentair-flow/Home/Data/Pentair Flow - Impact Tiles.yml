@@ -1,0 +1,53 @@
+﻿---
+ID: "c1d99c62-ef87-4604-8a2a-9b48393f261e"
+Parent: "a3825923-581d-459c-b4d6-a708efd248ed"
+Template: "1812bf3e-6bdd-466d-99b2-0d7cebb020fc"
+Path: "/sitecore/content/pentair/pentair-flow/Home/Data/Pentair Flow - Impact Tiles"
+SharedFields:
+- ID: "168fed07-0f41-44f5-a14e-f134e16b1477"
+  Hint: Image1
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/0ce8e12887ea433b823634b91c60990d?v=8be6b4b0" dam-id="K48EHjcETbOCxEszsaMpsA" width="1280" height="799" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97038/thumbnail" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "15c91895-093c-41ab-88e0-2b714da543b0"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260828T160330Z
+    - ID: "301fab64-5268-445d-8380-6b43861bb434"
+      Hint: Link1
+      Value: |
+        <link text="Watch how we build for the planet" anchor="" linktype="external" class="" title="" target="_blank" querystring="" url="https://www.pentair.com/en-us/flow.html" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "53845417-9058-4342-90a9-50783ffd8c25"
+      Hint: Link2
+      Value: |
+        <link text="Download Our Interactive Brochure" anchor="" linktype="external" class="" title="" target="_blank" querystring="" url="https://www.pentair.com/en-us/flow.html" />
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5eacc805-137b-41d5-a43c-67d981abf6f9"
+      Hint: Text1
+      Value: Watch how our smart, sustainable water solutions move water around the world.
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "398a26ad-baad-44b9-a886-66f481138608"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260828T175841Z

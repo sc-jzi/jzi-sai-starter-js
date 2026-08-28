@@ -80,6 +80,10 @@ Languages:
           <d
             id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
             <r
+              uid="{EA7CE71D-6802-4C62-879A-B9CE687E1C77}">
+              <p:d />
+            </r>
+            <r
               uid="{C494869C-A931-4F42-8BDF-ACA32462F2B3}"
               s:par="FieldNames=%7BE72B136D-18FA-4216-8C22-31EB9B5D48C2%7D&amp;RenderingIdentifier&amp;Styles&amp;CSSStyles&amp;GridParameters&amp;DynamicPlaceholderId=6&amp;ContainerWidth" />
             <r
@@ -89,11 +93,13 @@ Languages:
               uid="{7C9E1BAD-A136-4711-9220-AB61F227F432}"
               s:par="FieldNames=%7BFD9A88F5-C8C0-4435-8233-F469C660B751%7D&amp;Flattened&amp;RenderingIdentifier&amp;Styles&amp;AddRoot=0&amp;Filter=%7BD063E9D1-C7B5-4B1E-B31E-69886C9C59F5%7D&amp;LevelFrom=%7B1BB88840-5FB3-4353-AD8D-81136F6FF75A%7D&amp;CSSStyles&amp;SerializerFieldNames&amp;GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;LevelTo=%7B1BB88840-5FB3-4353-AD8D-81136F6FF75A%7D&amp;NavigationRoot=%7BEA63609E-F963-4885-9459-B09BE41395EE%7D" />
             <r
-              uid="{D0291F80-D41E-4573-9ABD-E186694B5C04}"
-              s:par="FieldNames&amp;RenderingIdentifier&amp;Styles&amp;CSSStyles&amp;GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;DynamicPlaceholderId=8" />
+              uid="{D0291F80-D41E-4573-9ABD-E186694B5C04}">
+              <p:d />
+            </r>
             <r
-              uid="{1F32BF4D-B8E0-45B6-88A5-06755C8AD3E5}"
-              s:par="FieldNames&amp;RenderingIdentifier&amp;Styles&amp;CSSStyles&amp;GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;DynamicPlaceholderId=9" />
+              uid="{1F32BF4D-B8E0-45B6-88A5-06755C8AD3E5}">
+              <p:d />
+            </r>
           </d>
         </r>
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
@@ -105,14 +111,14 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "59095c0a-d443-4f38-9b42-6614ff965288"
+      Value: "0dff75fb-35a7-4429-8b09-1e32d00927c6"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260828T133502Z
+      Value: 20260828T181321Z
 - Language: "fr-CA"
   Versions:
   - Version: 1

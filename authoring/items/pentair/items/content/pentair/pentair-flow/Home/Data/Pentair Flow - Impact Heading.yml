@@ -1,8 +1,8 @@
 ﻿---
-ID: "440659ac-5408-4860-ac89-978d13e77321"
-Parent: "9f77cc7c-a63b-4d18-a030-887dfad93d40"
-Template: "49c111d0-6867-4798-a724-1f103166e6e9"
-Path: "/sitecore/content/pentair/pentair-flow/Presentation/Headless Variants/HeadingCta"
+ID: "5ce4d272-30d6-40a0-a8c4-b7df6c6a7cbf"
+Parent: "a3825923-581d-459c-b4d6-a708efd248ed"
+Template: "fa136527-6302-471d-83ab-e66fc72bda99"
+Path: "/sitecore/content/pentair/pentair-flow/Home/Data/Pentair Flow - Impact Heading"
 Languages:
 - Language: en
   Versions:
@@ -10,7 +10,7 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20260707T195233Z
+      Value: 20260828T160329Z
     - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
       Hint: __Owner
       Value: |
@@ -21,11 +21,14 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "5e934696-3407-437a-8814-0bc78a22f17f"
+      Value: "7e4f4e4b-796f-4b25-bd2b-9a1da06ffc88"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
+    - ID: "cef85d28-d6bc-4204-a2e4-8706c80d8a3c"
+      Hint: Heading
+      Value: For Homes, Communities, Industries and The Planet
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260707T195233Z
+      Value: 20260828T160329Z

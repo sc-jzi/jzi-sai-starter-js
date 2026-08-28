@@ -32,14 +32,14 @@ Languages:
     - ID: "301fab64-5268-445d-8380-6b43861bb434"
       Hint: Link1
       Value: |
-        <link class="" querystring="" id="03E0885A-43C6-4DEC-9C9C-2E285B381BA5" anchor="" target="" title="" linktype="internal" text="Get a loan" url="/pentair/pentair-flow/Home/get-a-loan" />
+        <link class="" id="03E0885A-43C6-4DEC-9C9C-2E285B381BA5" querystring="" anchor="" target="" title="" linktype="internal" text="Get a loan" url="/pentair/pentair-flow/Home/get-a-loan" />
     - ID: "4e43fdc3-7a40-469c-a93a-231545ee01e9"
       Hint: Title1
       Value: Check out our loan calculator
     - ID: "53845417-9058-4342-90a9-50783ffd8c25"
       Hint: Link2
       Value: |
-        <link class="" querystring="" id="03E0885A-43C6-4DEC-9C9C-2E285B381BA5" anchor="" target="" title="" linktype="internal" text="Get a loan" url="/pentair/pentair-flow/Home/get-a-loan" />
+        <link class="" id="03E0885A-43C6-4DEC-9C9C-2E285B381BA5" querystring="" anchor="" target="" title="" linktype="internal" text="Get a loan" url="/pentair/pentair-flow/Home/get-a-loan" />
     - ID: "56a3b6a6-bd8b-4d2e-a86d-f791169ebe7b"
       Hint: Title2
       Value: Flexible payment options and timeframe
@@ -52,14 +52,14 @@ Languages:
       Value: "See all the details with our self-service loan calculator."
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "150720a8-f338-4bfc-acae-56d3bd692c2a"
+      Value: "22b39645-2eca-435c-abf4-91dac68c9319"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260828T135050Z
+      Value: 20260828T181539Z
     - ID: "eeb59bf3-72d2-4e49-9a37-3902b7a236a9"
       Hint: Text2
       Value: Find a loan duration that works for you with our loan calculator. 
@@ -73,14 +73,14 @@ Languages:
     - ID: "301fab64-5268-445d-8380-6b43861bb434"
       Hint: Link1
       Value: |
-        <link class="" querystring="" id="03E0885A-43C6-4DEC-9C9C-2E285B381BA5" anchor="" target="" title="" linktype="internal" text="Obtenez un prêt" url="/pentair/pentair-flow/Home/get-a-loan" />
+        <link class="" id="03E0885A-43C6-4DEC-9C9C-2E285B381BA5" querystring="" anchor="" target="" title="" linktype="internal" text="Obtenez un prêt" url="/pentair/pentair-flow/Home/get-a-loan" />
     - ID: "4e43fdc3-7a40-469c-a93a-231545ee01e9"
       Hint: Title1
       Value: Découvrez notre calculatrice de prêt
     - ID: "53845417-9058-4342-90a9-50783ffd8c25"
       Hint: Link2
       Value: |
-        <link class="" querystring="" id="03E0885A-43C6-4DEC-9C9C-2E285B381BA5" anchor="" target="" title="" linktype="internal" text="Obtenez un prêt" url="/pentair/pentair-flow/Home/get-a-loan" />
+        <link class="" id="03E0885A-43C6-4DEC-9C9C-2E285B381BA5" querystring="" anchor="" target="" title="" linktype="internal" text="Obtenez un prêt" url="/pentair/pentair-flow/Home/get-a-loan" />
     - ID: "56a3b6a6-bd8b-4d2e-a86d-f791169ebe7b"
       Hint: Title2
       Value: Options de paiement et échéancier flexibles
@@ -93,14 +93,14 @@ Languages:
       Value: "Découvrez tous les détails avec notre calculatrice de prêt en libre-service."
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "cd3d4dc7-3bc8-4cae-9ada-e0a2dfae18c1"
+      Value: "fdf2a9a6-f542-42af-9f3d-edde001999d9"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260828T135050Z
+      Value: 20260828T181539Z
     - ID: "eeb59bf3-72d2-4e49-9a37-3902b7a236a9"
       Hint: Text2
       Value: Trouvez une durée de prêt qui vous convient avec notre calculatrice de prêt.
@@ -114,14 +114,14 @@ Languages:
     - ID: "301fab64-5268-445d-8380-6b43861bb434"
       Hint: Link1
       Value: |
-        <link class="" id="{03E0885A-43C6-4DEC-9C9C-2E285B381BA5}" querystring="" anchor="" target="|Custom" title="" linktype="internal" text="" url="/pentair/pentair-flow/Home/get-a-loan" />
+        <link class="" querystring="" id="{03E0885A-43C6-4DEC-9C9C-2E285B381BA5}" anchor="" target="|Custom" title="" linktype="internal" text="" url="/pentair/pentair-flow/Home/get-a-loan" />
     - ID: "4e43fdc3-7a40-469c-a93a-231545ee01e9"
       Hint: Title1
       Value: ローン計算機をチェック
     - ID: "53845417-9058-4342-90a9-50783ffd8c25"
       Hint: Link2
       Value: |
-        <link class="" id="{03E0885A-43C6-4DEC-9C9C-2E285B381BA5}" querystring="" anchor="" target="" title="" linktype="internal" text="" url="/pentair/pentair-flow/Home/get-a-loan" />
+        <link class="" querystring="" id="{03E0885A-43C6-4DEC-9C9C-2E285B381BA5}" anchor="" target="" title="" linktype="internal" text="" url="/pentair/pentair-flow/Home/get-a-loan" />
     - ID: "56a3b6a6-bd8b-4d2e-a86d-f791169ebe7b"
       Hint: Title2
       Value: 柔軟な支払い方法と期間
@@ -134,14 +134,14 @@ Languages:
       Value: セルフサービスのローン計算機で詳細をご確認ください。
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "a3188767-eb3c-4a90-833c-7d1cebecd1d4"
+      Value: "d1d24688-d1f8-4e53-980e-506e52322755"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260828T135050Z
+      Value: 20260828T181539Z
     - ID: "eeb59bf3-72d2-4e49-9a37-3902b7a236a9"
       Hint: Text2
       Value: ローン計算機で自分に合ったローン期間を見つけよう。

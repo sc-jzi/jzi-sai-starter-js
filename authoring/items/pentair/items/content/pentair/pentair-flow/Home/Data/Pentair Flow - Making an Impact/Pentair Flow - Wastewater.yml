@@ -1,0 +1,48 @@
+﻿---
+ID: "38e75fed-22e2-4280-89a5-b6d57e63822c"
+Parent: "c4324abd-0ec5-4c85-94f1-eb8363b640f5"
+Template: "54db209d-cd0f-49d9-ae4e-ecb65d72cc4d"
+Path: "/sitecore/content/pentair/pentair-flow/Home/Data/Pentair Flow - Making an Impact/Pentair Flow - Wastewater"
+SharedFields:
+- ID: "ba78a3c0-7c60-40ba-8d42-6bf559d9ca72"
+  Hint: Image
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/4a416db7e8fb4a0693ab20661e83cf7c?v=ee7de1fa" dam-id="NtZ6NtiCQVe61Q0py6BGjg" width="1920" height="1080" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97054/thumbnail" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "7cc1a1c9-0f1b-4ffe-a1a4-014dd8945114"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260828T160400Z
+    - ID: "3351af3f-868e-47fc-b5c3-ad0446981faf"
+      Hint: Title
+      Value: Agriculture Spraying
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d20ec539-ed08-4a5a-8ee2-e9ba9e9ba500"
+    - ID: "ad84ce04-c8f0-485e-bf12-9b321c6ff2fb"
+      Hint: Text
+      Value: <p>Wastewater Plant</p>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260828T180550Z

@@ -56,14 +56,14 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "e977fd34-2d58-411b-acd2-03b418941d18"
+      Value: "f8cb7447-8a03-4763-84f6-5744bcfdb3fd"
     - ID: "8f49a654-7b7f-4c0b-b6df-d3ce2389c1bf"
       Hint: Text2
       Value: Line of Credit
     - ID: "b867909f-d20c-4c76-b82f-778d25239cd1"
       Hint: Link1
       Value: |
-        <link class="" id="{03E0885A-43C6-4DEC-9C9C-2E285B381BA5}" querystring="" anchor="" target="" title="" linktype="internal" text="" url="/pentair/pentair-flow/Home/get-a-loan" />
+        <link class="" querystring="" id="{03E0885A-43C6-4DEC-9C9C-2E285B381BA5}" anchor="" target="" title="" linktype="internal" text="" url="/pentair/pentair-flow/Home/get-a-loan" />
     - ID: "b8b8fa51-0c41-442e-8757-07b7a59d6d3f"
       Hint: Link4
       Value: |
@@ -74,7 +74,7 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260828T135050Z
+      Value: 20260828T181539Z
 - Language: "fr-CA"
   Versions:
   - Version: 1
@@ -103,7 +103,7 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "d3a5f88c-8b5b-4153-9600-094f81589f18"
+      Value: "9e2372ae-f834-4acf-8abe-551a0fa930e5"
     - ID: "8f49a654-7b7f-4c0b-b6df-d3ce2389c1bf"
       Hint: Text2
       Value: Ligne de crédit
@@ -116,7 +116,7 @@ Languages:
     - ID: "b867909f-d20c-4c76-b82f-778d25239cd1"
       Hint: Link1
       Value: |
-        <link class="" id="{03E0885A-43C6-4DEC-9C9C-2E285B381BA5}" querystring="" anchor="" target="" title="" linktype="internal" text="" url="/pentair/pentair-flow/Home/get-a-loan" />
+        <link class="" querystring="" id="{03E0885A-43C6-4DEC-9C9C-2E285B381BA5}" anchor="" target="" title="" linktype="internal" text="" url="/pentair/pentair-flow/Home/get-a-loan" />
     - ID: "b8b8fa51-0c41-442e-8757-07b7a59d6d3f"
       Hint: Link4
       Value: |
@@ -127,7 +127,7 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260828T135050Z
+      Value: 20260828T181539Z
     - ID: "f5e90981-3210-4316-bcf5-f083fe639e66"
       Hint: Text4
       Value: Petites entreprises
@@ -159,7 +159,7 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "5f54ad67-8335-42e0-91b6-677c7e324e86"
+      Value: "268beefb-1863-4ec2-8846-74e8544abfc1"
     - ID: "8f49a654-7b7f-4c0b-b6df-d3ce2389c1bf"
       Hint: Text2
       Value: 信用枠
@@ -172,7 +172,7 @@ Languages:
     - ID: "b867909f-d20c-4c76-b82f-778d25239cd1"
       Hint: Link1
       Value: |
-        <link class="" id="{03E0885A-43C6-4DEC-9C9C-2E285B381BA5}" querystring="" anchor="" target="" title="" linktype="internal" text="" url="/pentair/pentair-flow/Home/get-a-loan" />
+        <link class="" querystring="" id="{03E0885A-43C6-4DEC-9C9C-2E285B381BA5}" anchor="" target="" title="" linktype="internal" text="" url="/pentair/pentair-flow/Home/get-a-loan" />
     - ID: "b8b8fa51-0c41-442e-8757-07b7a59d6d3f"
       Hint: Link4
       Value: |
@@ -183,7 +183,7 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260828T135050Z
+      Value: 20260828T181539Z
     - ID: "f5e90981-3210-4316-bcf5-f083fe639e66"
       Hint: Text4
       Value: 中小企業

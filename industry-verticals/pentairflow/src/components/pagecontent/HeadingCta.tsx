@@ -151,3 +151,42 @@ export const Centered = (props: HeadingCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* PentairFlow variant — uppercase heading on Bright Blue band */
+export const PentairFlow = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component heading-cta pentair-flow-heading ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="heading-content-wrapper mx-auto text-center">
+          <h2>
+            <Text field={props.fields?.Heading} />
+          </h2>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* PentairFlowMuted variant — gray uppercase heading on white */
+export const PentairFlowMuted = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div
+      className={`component heading-cta pentair-flow-heading pentair-flow-heading--muted ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="heading-content-wrapper mx-auto text-center">
+          <h2>
+            <Text field={props.fields?.Heading} />
+          </h2>
+        </div>
+      </div>
+    </div>
+  );
+};

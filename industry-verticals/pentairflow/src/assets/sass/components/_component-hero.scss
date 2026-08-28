@@ -8,6 +8,9 @@
 
   a {
     @extend .button-main;
+
+    padding: var(--button-padding, 0.85rem 1.75rem);
+    line-height: 1.2;
   }
 
   &.dark {
@@ -15,6 +18,9 @@
 
     a {
       @extend .button-accent;
+
+      padding: var(--button-padding, 0.85rem 1.75rem);
+      line-height: 1.2;
     }
   }
 

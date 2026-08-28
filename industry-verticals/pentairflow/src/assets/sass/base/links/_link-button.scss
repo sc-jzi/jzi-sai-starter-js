@@ -24,6 +24,18 @@
   --button-text-transform: uppercase;
 }
 
+.site-pentair {
+  --button-main-color: #fff;
+  --button-main-bg-color: var(--bg-accent, #64a70b);
+  --button-secondary-color: var(--text-colored);
+  --button-simple-color: var(--text-colored);
+  --button-padding: 0.85rem 1.75rem;
+  --button-roundness: var(--roundness);
+  --button-font-weight: 600;
+  --button-font-size: 0.875rem;
+  --button-text-transform: uppercase;
+}
+
 .button {
   display: inline-block;
   text-decoration: none;

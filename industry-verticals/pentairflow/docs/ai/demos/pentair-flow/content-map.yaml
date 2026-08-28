@@ -1,0 +1,447 @@
+client:
+  name: "Pentair Flow"
+  sourceUrl: "https://www.pentair.com/en-us/flow.html"
+  sourceLanguage: "en"
+  targetLanguage: "en"
+  translationApplied: false
+  extractedAt: "2026-08-28T16:25:00Z"
+  mappedAt: "2026-08-28T16:25:00Z"
+  contentSourceNote: "Playwright extractor unavailable. Content from live page + screenshot."
+
+sections:
+  - position: 1
+    componentName: "Eyebrow"
+    manifestName: "Eyebrow"
+    kind: "context-only"
+    datasourceItemName: ""
+    apiAddable: false
+    fields: {}
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 2
+    componentName: "Header"
+    manifestName: "Header"
+    kind: "context-only"
+    datasourceItemName: ""
+    apiAddable: false
+    fields: {}
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 3
+    componentName: "Hero"
+    manifestName: "Hero"
+    kind: "simple"
+    datasourceItemName: "Pentair Flow - Hero"
+    apiAddable: true
+    fields:
+      Title: "Moving Forward What's Essential"
+      Text: "<p>We optimize the flow of essential resources to enhance communities and industries, while protecting people, property and the future of our planet.</p>"
+      Link:
+        text: ""
+        href: "#"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image"
+        src: ""
+        alt: "Agricultural field at golden hour"
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 4
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Pentair Flow - Impact Heading"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Heading: "For Homes, Communities, Industries and The Planet"
+      Text: ""
+      Link:
+        text: ""
+        href: "#"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 5
+    componentName: "TwoColumnCta"
+    manifestName: "TwoColumnCta"
+    kind: "simple"
+    datasourceItemName: "Pentair Flow - Impact Tiles"
+    apiAddable: true
+    fields:
+      Title1: ""
+      Text1: "Watch how our smart, sustainable water solutions move water around the world."
+      Link1:
+        text: "Watch how we build for the planet"
+        href: "https://www.pentair.com/en-us/flow.html"
+        target: "_blank"
+      Title2: ""
+      Text2: ""
+      Link2:
+        text: "Download Our Interactive Brochure"
+        href: "https://www.pentair.com/en-us/flow.html"
+        target: "_blank"
+    children: []
+    imageFields:
+      - field: "Image1"
+        src: ""
+        alt: "Water infrastructure brochure visual"
+      - field: "Image2"
+        src: ""
+        alt: "Aerial view of an industrial plant"
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 6
+    componentName: "Carousel"
+    manifestName: "Carousel"
+    kind: "list"
+    datasourceItemName: "Pentair Flow - Making an Impact"
+    apiAddable: true
+    fields: {}
+    children:
+      - name: "Pentair Flow - Penn 1 New York City"
+        fields:
+          Title: "Penn 1, New York City"
+          Text: "<p>Skyscrapers</p>"
+          Link:
+            text: "Penn 1, New York City"
+            href: "https://www.pentair.com/en-us/flow.html"
+            target: "_blank"
+        imageFields:
+          - field: "Image"
+            src: ""
+            alt: "Penn 1 New York City skyline"
+      - name: "Pentair Flow - Netherlands"
+        fields:
+          Title: "Netherlands"
+          Text: "<p>Big Black Pump</p>"
+          Link:
+            text: "Netherlands"
+            href: "https://www.pentair.com/en-us/flow.html"
+            target: "_blank"
+        imageFields:
+          - field: "Image"
+            src: ""
+            alt: "Netherlands flood pump"
+      - name: "Pentair Flow - New Orleans"
+        fields:
+          Title: "Flood Control in New Orleans"
+          Text: "<p>New Orleans</p>"
+          Link:
+            text: "Flood Control in New Orleans"
+            href: "https://www.pentair.com/en-us/flow.html"
+            target: "_blank"
+        imageFields:
+          - field: "Image"
+            src: ""
+            alt: "Flood control in New Orleans"
+      - name: "Pentair Flow - St Louis"
+        fields:
+          Title: "Pumping Station, St. Louis"
+          Text: "<p>St. Louis</p>"
+          Link:
+            text: "Pumping Station, St. Louis"
+            href: "https://www.pentair.com/en-us/flow.html"
+            target: "_blank"
+        imageFields:
+          - field: "Image"
+            src: ""
+            alt: "St. Louis pumping station"
+      - name: "Pentair Flow - Food and Beverage"
+        fields:
+          Title: "Food & Beverage"
+          Text: "<p>Research lab</p>"
+          Link:
+            text: "Food & Beverage"
+            href: "https://www.pentair.com/en-us/flow.html"
+            target: "_blank"
+        imageFields:
+          - field: "Image"
+            src: ""
+            alt: "Food and beverage research lab"
+      - name: "Pentair Flow - Wastewater"
+        fields:
+          Title: "Wastewater Management"
+          Text: "<p>Wastewater Plant</p>"
+          Link:
+            text: "Wastewater Management"
+            href: "https://www.pentair.com/en-us/flow.html"
+            target: "_blank"
+        imageFields:
+          - field: "Image"
+            src: ""
+            alt: "Wastewater treatment plant"
+      - name: "Pentair Flow - Agriculture Spraying"
+        fields:
+          Title: "Agriculture Spraying"
+          Text: "<p>Spray nozzle spraying in farm</p>"
+          Link:
+            text: "Agriculture Spraying"
+            href: "https://www.pentair.com/en-us/flow.html"
+            target: "_blank"
+        imageFields:
+          - field: "Image"
+            src: ""
+            alt: "Agricultural spray nozzle"
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 7
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Pentair Flow - Who We Serve Heading"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Heading: "Who We Serve"
+      Text: ""
+      Link:
+        text: ""
+        href: "#"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 8
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    kind: "simple"
+    datasourceItemName: "Pentair Flow - Commercial"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Title: "For Commercial & Infrastructure"
+      Subtitle: ""
+      Text: "<p>Pentair helps support and remove water to protect commercial properties and communities from fire and flood hazards through its sophisticated utility water pump solutions for wastewater disposal, flood water disposal and fire suppression.</p><ul><li>Fire Suppression</li><li>HVAC &amp; Water Supply</li><li>Municipal Wastewater</li><li>Industrial Wastewater</li></ul><p class=\"brand-tags\"><a href=\"https://www.pentair.com/en-us/flow.html\">Aurora</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Hydromatic</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Myers</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Fairbanks Nijhuis</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Southern Cross</a></p>"
+      Link:
+        text: ""
+        href: "#"
+        target: ""
+      Link2:
+        text: ""
+        href: "#"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image"
+        src: ""
+        alt: "Red industrial pump and piping"
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 9
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    kind: "simple"
+    datasourceItemName: "Pentair Flow - Industrial"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Title: "For Industrial"
+      Subtitle: ""
+      Text: "<p>Pentair provides filtration solutions and process technologies to help industrial customers achieve sustainability, productivity, efficiency and quality goals.</p><ul><li>Sustainable Gas Solutions</li><li>Brewery Production</li><li>Dairy and Food Production</li><li>Oil and Gas Products</li><li>Industrial Filtration</li><li>Industrial Spraying</li></ul><p class=\"brand-tags\"><a href=\"https://www.pentair.com/en-us/flow.html\">Codeline</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Goyen Mecair</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Haffmans</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Shurflo</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Südmo</a> <a href=\"https://www.pentair.com/en-us/flow.html\">X-Flow</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Union Engineering</a></p>"
+      Link:
+        text: ""
+        href: "#"
+        target: ""
+      Link2:
+        text: ""
+        href: "#"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image"
+        src: ""
+        alt: "Industrial storage tanks"
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 10
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    kind: "simple"
+    datasourceItemName: "Pentair Flow - Residential"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Title: "For Residential"
+      Subtitle: ""
+      Text: "<p>Pentair provides home water pros with reliable pump equipment that helps provide households with access to water in their homes for drinking, bathing and washing as well as disposal of household wastewater.</p><ul><li>Explore Water Supply Pumps</li><li>Explore Water Disposal Pumps</li><li>Explore RV Pumps</li><li>Explore Marine Pumps</li></ul><p class=\"brand-tags\"><a href=\"https://www.pentair.com/en-us/flow.html\">Berkeley</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Flotec</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Hydromatic</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Jung Pumpen</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Myers</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Onga</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Pentek</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Pro-Source</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Sta-Rite</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Shurflo</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Shurflo-Europe</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Simer</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Wellmate</a></p>"
+      Link:
+        text: ""
+        href: "#"
+        target: ""
+      Link2:
+        text: ""
+        href: "#"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image"
+        src: ""
+        alt: "Person washing produce at a kitchen sink"
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 11
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    kind: "simple"
+    datasourceItemName: "Pentair Flow - Agriculture"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Title: "For Agriculture"
+      Subtitle: ""
+      Text: "<p>Pentair creates superior spray and pump systems for agriculture equipment manufacturers to help deliver spraying and irrigation accuracy and efficiency while helping to reduce drift and assist with safe chemical application.</p><ul><li>Irrigation</li><li>Spray Pumps</li><li>Spray Nozzles</li></ul><p class=\"brand-tags\"><a href=\"https://www.pentair.com/en-us/flow.html\">Berkeley</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Pentek</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Hypro</a> <a href=\"https://www.pentair.com/en-us/flow.html\">Shurflo</a></p>"
+      Link:
+        text: ""
+        href: "#"
+        target: ""
+      Link2:
+        text: ""
+        href: "#"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image"
+        src: ""
+        alt: "Agricultural spray boom"
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 12
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Pentair Flow - Resources Heading"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Heading: "Resources & Portal"
+      Text: ""
+      Link:
+        text: ""
+        href: "#"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 13
+    componentName: "FiveColumnCta"
+    manifestName: "FiveColumnCta"
+    kind: "simple"
+    datasourceItemName: "Pentair Flow - Resources"
+    apiAddable: true
+    fields:
+      Text1: "Distributor Portal"
+      Link1:
+        text: "Distributor Portal"
+        href: "https://www.pentair.com/en-us/flow.html"
+        target: "_blank"
+      Text2: "Find a Distributor"
+      Link2:
+        text: "Find a Distributor"
+        href: "https://www.pentair.com/en-us/flow.html"
+        target: "_blank"
+      Text3: "Residential Training"
+      Link3:
+        text: "Residential Training"
+        href: "https://www.pentair.com/en-us/flow.html"
+        target: "_blank"
+      Text4: "Commercial Training"
+      Link4:
+        text: "Commercial Training"
+        href: "https://www.pentair.com/en-us/flow.html"
+        target: "_blank"
+      Text5: "Download Center"
+      Link5:
+        text: "Download Center"
+        href: "https://www.pentair.com/en-us/flow.html"
+        target: "_blank"
+    children: []
+    imageFields: []
+    matchConfidence: "medium"
+    contentSource: "screenshot"
+
+  - position: 14
+    componentName: "Footer"
+    manifestName: "Footer"
+    kind: "simple"
+    datasourceItemName: "Pentair Flow - Footer"
+    apiAddable: false
+    fields:
+      Title1: "About Pentair"
+      Text1: "<p>From our residential and commercial water solutions, to industrial water management and everything in between, Pentair is focused on smart, sustainable water solutions that help our planet and people thrive.</p><ul><li>Careers</li><li>Brands</li><li>Investors</li><li>Media</li><li>Suppliers</li></ul>"
+      Title2: "Solutions"
+      Text2: "<ul><li>Residential</li><li>Business &amp; Industry</li><li>Products</li><li>Find a Dealer</li><li>Partner Portal</li></ul>"
+      Title3: "Support"
+      Text3: "<ul><li>Contact Us</li><li>Residential Product Support</li><li>Business &amp; Industry Product Support</li><li>Download Center</li></ul>"
+      Title4: "Legal"
+      Text4: "<ul><li>Privacy Notice</li><li>Terms of Use</li><li>Website Accessibility Statement</li><li>Responsible Disclosure</li></ul>"
+      Copyright: "©2026 Pentair. All rights reserved."
+      Link1:
+        text: "Privacy Notice"
+        href: "https://www.pentair.com/en-us/legal/privacy-notice.html"
+        target: "_blank"
+      Link2:
+        text: "Terms of Use"
+        href: "https://www.pentair.com/en-us/legal/terms-of-use.html"
+        target: "_blank"
+      SocialsTitle: "Follow us"
+      SocialLink1:
+        text: "Instagram"
+        href: "https://www.instagram.com/pentair"
+        target: "_blank"
+      SocialLink2:
+        text: "Facebook"
+        href: "https://www.facebook.com/Pentair"
+        target: "_blank"
+      SocialLink3:
+        text: "LinkedIn"
+        href: "https://www.linkedin.com/company/pentair"
+        target: "_blank"
+    children: []
+    imageFields:
+      - field: "Image1"
+        src: ""
+        alt: "Pentair logo"
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+summary:
+  totalSections: 14
+  sectionsWithContent: 12
+  contextOnlySkipped: 2
+  fieldsPopulated: 48
+  imageFieldsMapped: 0
+  imagesSkipped: 0
+  videosFound: 1
+  translationApplied: false
+  sourceLanguage: "en"
+
+manualVideoTasks:
+  - position: 6
+    componentName: "Carousel"
+    variant: "PentairFlow"
+    posterImage: ""
+    videoSources: []
+    note: "Making an Impact uses poster images. Upload each story video to Content Hub and set the Video field on the matching Carousel Item."

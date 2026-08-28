@@ -1,0 +1,131 @@
+# Client Brand Theme — Pentair Flow
+# Extracted from screenshot + official Pentair Brand Standards
+# Source: https://www.pentair.com/en-us/flow.html
+
+client:
+  name: "Pentair Flow"
+  sourceUrl: "https://www.pentair.com/en-us/flow.html"
+  extractedAt: "2026-08-28T16:20:00Z"
+  extractedBy: "cursor"
+  contentRoot: "/sitecore/content/pentair/pentair-flow"
+  codeRoot: "/industry-verticals/pentairflow"
+
+colors:
+  primary: "#0c3471"
+  primaryForeground: "#ffffff"
+  secondary: "#008abc"
+  secondaryForeground: "#ffffff"
+  accent: "#64a70b"
+  accentForeground: "#ffffff"
+  background: "#ffffff"
+  foreground: "#2d3d48"
+  muted: "#f9f8f8"
+  mutedForeground: "#58595b"
+  headerBackground: "#ffffff"
+  headerForeground: "#0c3471"
+  footerBackground: "#0c3471"
+  footerForeground: "#ffffff"
+  border: "#c4bfb6"
+  ring: "#008abc"
+  extra:
+    - { name: "impactGreen", value: "#d0df00" }
+    - { name: "darkGold", value: "#d29f13" }
+    - { name: "navyDeep", value: "#09244F" }
+    - { name: "greenDark", value: "#4F8309" }
+    - { name: "slateBlue", value: "#006E96" }
+    - { name: "silverGray", value: "#2d3d48" }
+    - { name: "warmSand", value: "#d2ce9e" }
+
+typography:
+  headingFamily: "'Barlow Condensed', sans-serif"
+  headingWeight: "600"
+  bodyFamily: "'Barlow', sans-serif"
+  bodyWeight: "400"
+  monoFamily: "'Roboto Mono', monospace"
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@300;400;600;700&display=swap"
+  scale:
+    hero: "3.25rem"
+    h1: "2.25rem"
+    h2: "1.75rem"
+    h3: "1.25rem"
+    body: "1rem"
+    small: "0.875rem"
+  headingTransform: "uppercase"
+  letterSpacing: "0.04em"
+  lineHeight: "relaxed"
+
+spacing:
+  density: "spacious"
+  sectionGap: "4.5rem"
+  containerMaxWidth: "1280px"
+  containerPadding: "1.5rem"
+
+shape:
+  borderRadius: "0.125rem"
+  buttonRadius: "0.125rem"
+  cardRadius: "0.125rem"
+  imageRadius: "0"
+  shadowStyle: "none"
+  borderStyle: "none"
+
+tone:
+  overall: "corporate"
+  colorMode: "mixed"
+  contrast: "high"
+  imagery: "photography"
+  heroStyle: "full-bleed-image"
+  cardStyle: "flat"
+  navStyle: "solid-bar"
+
+tailwind:
+  colors:
+    brand:
+      primary: "#0c3471"
+      secondary: "#008abc"
+      accent: "#64a70b"
+  fontFamily:
+    heading: ["Barlow Condensed", "sans-serif"]
+    body: ["Barlow", "sans-serif"]
+  borderRadius:
+    DEFAULT: "0.125rem"
+    button: "0.125rem"
+    card: "0.125rem"
+
+cssVariables: |
+  :root {
+    --brand-primary: #0c3471;
+    --brand-primary-foreground: #ffffff;
+    --brand-secondary: #008abc;
+    --brand-secondary-foreground: #ffffff;
+    --brand-accent: #64a70b;
+    --brand-accent-foreground: #ffffff;
+    --brand-bg: #ffffff;
+    --brand-fg: #2d3d48;
+    --brand-muted: #f9f8f8;
+    --brand-muted-fg: #58595b;
+    --brand-header-bg: #ffffff;
+    --brand-header-fg: #0c3471;
+    --brand-footer-bg: #0c3471;
+    --brand-footer-fg: #ffffff;
+    --brand-border: #c4bfb6;
+    --brand-ring: #008abc;
+    --brand-heading-font: 'Barlow Condensed', sans-serif;
+    --brand-body-font: 'Barlow', sans-serif;
+    --brand-radius: 0.125rem;
+    --brand-button-radius: 0.125rem;
+    --brand-card-radius: 0.125rem;
+  }
+
+extraction:
+  confidence: "medium"
+  method: "screenshot-analysis"
+  notes:
+    - "Playwright scraper was not run — playwright is not installed in this starter. Theme extracted from the user screenshot plus official Pentair Brand Standards (https://www.pentair.com/content/dam/brand-standards-pdfs/pdf2-2.pdf)."
+    - "Primary #0c3471 (Pentair Blue) and accent #64a70b (Pentair Green) are official digital HEX values, not screenshot approximations."
+    - "Secondary #008abc is official Bright Blue, used for the 'For Homes...' band and brand-tag buttons."
+    - "Digital type is Barlow Condensed (headings) and Barlow (body). Arial is the fallback when Barlow is unavailable."
+    - "Homepage headings are almost exclusively uppercase with generous letter-spacing."
+    - "Buttons are sharp-cornered rectangles (near 0 radius), not pills. Primary CTA is Pentair Green; sector tags are Bright Blue."
+    - "Color mode is mixed: white content, bright-blue impact band, navy footer."
+    - "This starter currently uses PLAY! Financial tokens (Epilogue / Open Sans / Source Sans 3). Phase 4 will replace those with Barlow + Pentair colors in src/assets/sass."
+    - "User asked for 'Pentair Pool' but the URL, screenshot, and content path are Pentair Flow. Theme is named pentair-flow."

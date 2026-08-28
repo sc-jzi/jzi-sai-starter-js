@@ -1,3 +1,44 @@
+// Pentair Flow — official brand tokens + --brand-* contract
+body.site-pentair,
+.site-pentair {
+  --text-body: #2d3d48;
+  --text-body-inverted: #fff;
+  --text-colored: #0c3471;
+  --text-footer: #fff;
+  --text-accent: #64a70b;
+  --bg-body: #fff;
+  --bg-footer: #0c3471;
+  --bg-main: #f9f8f8;
+  --bg-main-alt: #008abc;
+  --bg-color: #008abc;
+  --bg-saturated: #0c3471;
+  --bg-accent: #64a70b;
+  --border-color: #c4bfb6;
+  --hr-color: #ffffff33;
+  --roundness: 0.125rem;
+  --brand-primary: #0c3471;
+  --brand-primary-foreground: #ffffff;
+  --brand-secondary: #008abc;
+  --brand-secondary-foreground: #ffffff;
+  --brand-accent: #64a70b;
+  --brand-accent-foreground: #ffffff;
+  --brand-bg: #ffffff;
+  --brand-fg: #2d3d48;
+  --brand-muted: #f9f8f8;
+  --brand-muted-fg: #58595b;
+  --brand-header-bg: #ffffff;
+  --brand-header-fg: #0c3471;
+  --brand-footer-bg: #0c3471;
+  --brand-footer-fg: #ffffff;
+  --brand-border: #c4bfb6;
+  --brand-ring: #008abc;
+  --brand-heading-font: 'Barlow Condensed', sans-serif;
+  --brand-body-font: 'Barlow', sans-serif;
+  --brand-radius: 0.125rem;
+  --brand-button-radius: 0.125rem;
+  --brand-card-radius: 0.125rem;
+}
+
 // Financial
 body.site-financial,
 .site-financial {

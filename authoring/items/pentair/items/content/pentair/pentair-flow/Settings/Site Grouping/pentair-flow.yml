@@ -6,10 +6,19 @@ Path: "/sitecore/content/pentair/pentair-flow/Settings/Site Grouping/pentair-flo
 SharedFields:
 - ID: "1ee576af-ba8e-4312-9fbd-2ccf8395baa1"
   Hint: StartItem
-  Value: "{EA63609E-F963-4885-9459-B09BE41395EE}"
+  Value: ea63609ef96348859459b09be41395ee
+- ID: "4e9e2ae5-36db-4955-9af1-5a1934a27c7d"
+  Hint: Language Embedding
+  Value: 0
 - ID: "6dd8a774-2ce5-4c9e-be7f-1eaf65789956"
   Hint: ThumbnailsRootPath
   Value: "{63B072FD-8829-4658-B88A-FB56293670B3}"
+- ID: "6e6da5b0-8d01-4514-b7dd-1940aff3e8cd"
+  Hint: FieldLanguageFallback
+  Value: 0
+- ID: "8c436235-b85d-4097-89cf-d5a4fa70cc0a"
+  Hint: ItemLanguageFallback
+  Value: 0
 - ID: "8e0dd914-9afb-4d45-bf8b-7ff5d6e5337e"
   Hint: HostName
   Value: *
@@ -21,10 +30,10 @@ SharedFields:
   Value: *
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "590e1ac1-c382-4efb-a6fc-9fa0ef1809c8"
+  Value: "ede9bbe7-ce8b-4ebd-9371-bddb22f84134"
 - ID: "f57099a3-526a-49f2-aebd-635453e48875"
   Hint: RenderingHost
-  Value: Default
+  Value: pentairflow
 Languages:
 - Language: en
   Versions:
@@ -43,11 +52,11 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "4773c4e5-c246-4408-bc34-3aa890d8be46"
+      Value: "21a5e800-b62c-4801-82e8-e59bf1dc6196"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260828T133503Z
+      Value: 20260828T154210Z

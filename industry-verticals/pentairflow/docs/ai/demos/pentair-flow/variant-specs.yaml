@@ -1,0 +1,80 @@
+variantSpecs:
+  - position: 3
+    componentName: "Hero"
+    variantName: "PentairFlow"
+    variantDefinitionId: "7ac7fdaa-8026-4cf4-b51c-988811d8487f"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "full-bleed image, centered overlay copy"
+      spacing: "min(70vh, 720px) stage, copy max-width 48rem"
+      typography: "uppercase Barlow Condensed headline, white body"
+      background: "photo with navy gradient overlay"
+      buttons: "hidden unless a real href is authored"
+      distinctive: "no dotted accents, no bottom CTA row"
+
+  - position: 4
+    componentName: "HeadingCta"
+    variantName: "PentairFlow"
+    variantDefinitionId: "a9c874d2-3ef6-4c62-ac1f-9264a459972a"
+    baseVariant: "Centered"
+    visualDifferences:
+      layout: "centered single heading"
+      spacing: "2.5rem vertical padding"
+      typography: "uppercase condensed"
+      background: "Bright Blue band"
+      buttons: "hidden"
+
+  - position: 5
+    componentName: "TwoColumnCta"
+    variantName: "PentairFlow"
+    variantDefinitionId: "ace67e23-3e6d-475e-8ddf-506568301aae"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "two equal image tiles"
+      spacing: "sits on the same blue band as the heading"
+      typography: "white captions"
+      buttons: "green rectangular Watch CTA"
+
+  - position: 6
+    componentName: "Carousel"
+    variantName: "PentairFlow"
+    variantDefinitionId: "b0a162cd-5913-4029-9691-57be7a571934"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "16:9 stage plus thumbnail strip"
+      distinctive: "labeled thumbs, prev/next chevrons"
+
+  - position: 7
+    componentName: "HeadingCta"
+    variantName: "PentairFlowMuted"
+    variantDefinitionId: "74c08287-2e03-4236-93ee-6241113337e8"
+    baseVariant: "Centered"
+    visualDifferences:
+      background: "white"
+      typography: "gray uppercase Who We Serve"
+
+  - position: 8
+    componentName: "PromoCta"
+    variantName: "PentairFlow"
+    variantDefinitionId: "704a2ae4-2fbc-4a01-8508-19e0f435614e"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "image left, copy right, brand-tag chip row"
+      distinctive: "Rich Text .brand-tags links render as blue chips"
+
+  - position: 13
+    componentName: "FiveColumnCta"
+    variantName: "PentairFlow"
+    variantDefinitionId: "ff8bf5eb-a0fd-423a-ae4f-97af63769618"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "single navy/blue link bar, images hidden"
+
+  - position: 14
+    componentName: "Footer"
+    variantName: "PentairFlow"
+    variantDefinitionId: "fd8fa2dc-f29e-4282-a4c5-a443229aa7e9"
+    baseVariant: "Default"
+    visualDifferences:
+      background: "Pentair Blue"
+      layout: "logo + four columns + socials + legal strip"

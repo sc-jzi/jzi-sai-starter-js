@@ -1,0 +1,48 @@
+﻿---
+ID: "09bc49a7-1db2-4c13-9284-44f60f5d5db0"
+Parent: "a3825923-581d-459c-b4d6-a708efd248ed"
+Template: "90d315e8-aa42-4b23-a7eb-4491396453f8"
+Path: "/sitecore/content/pentair/pentair-flow/Home/Data/Pentair Flow - Hero"
+SharedFields:
+- ID: "3ed91913-9018-4580-a112-9cb5b921fcca"
+  Hint: Image
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/47444c29a4b5465f8c57d59c707e0d51?v=d26b72e0" dam-id="GE2s7qLcSUGgKvosrUBT9A" width="1440" height="400" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97124/thumbnail" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "a9d4a5dc-de5e-42f5-9a79-5637a95cb26e"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260828T160329Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "15749929-535d-4484-b927-c3fbbe0a100d"
+    - ID: "a3cbbb91-442e-441c-a6e2-5896c19d8711"
+      Hint: Text
+      Value: <p>We optimize the flow of essential resources to enhance communities and industries, while protecting people, property and the future of our planet.</p>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260828T175726Z
+    - ID: "f44602f9-172c-4987-aaf6-1fb2ab0f75a1"
+      Hint: Title
+      Value: Moving Forward What's Essential

@@ -1,0 +1,49 @@
+﻿---
+ID: "2343941a-f30a-43f6-9a82-d442348b14ef"
+Parent: "a3825923-581d-459c-b4d6-a708efd248ed"
+Template: "c0943942-ae0f-4205-86fa-84884cce4a53"
+Path: "/sitecore/content/pentair/pentair-flow/Home/Data/Pentair Flow - Commercial"
+SharedFields:
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "a6a233f2-eed6-4c15-9cbb-cca6207b3149"
+- ID: "e495efd3-5c43-45fc-af43-796a6b503716"
+  Hint: Image
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/0f50f6342c7e4c2aad9e8f7f72f57cd7?v=803c5034" dam-id="tg-gcA1iRrib59BODQyL4g" width="1280" height="854" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97036/thumbnail" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "1f82a687-0683-426f-b12a-4b2100a6a481"
+      Hint: Title
+      Value: For Commercial & Infrastructure
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260828T160338Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "e310854c-bdfa-4164-bde8-ca668c01237f"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "cc0cb595-ce5c-413e-b413-3a7176347f28"
+      Hint: Text
+      Value: |
+        <p>Pentair helps support and remove water to protect commercial properties and communities from fire and flood hazards through its sophisticated utility water pump solutions for wastewater disposal, flood water disposal and fire suppression.</p><ul><li>Fire Suppression</li><li>HVAC &amp; Water Supply</li><li>Municipal Wastewater</li><li>Industrial Wastewater</li></ul><p class="brand-tags"><a href="https://www.pentair.com/en-us/flow.html">Aurora</a> <a href="https://www.pentair.com/en-us/flow.html">Hydromatic</a> <a href="https://www.pentair.com/en-us/flow.html">Myers</a> <a href="https://www.pentair.com/en-us/flow.html">Fairbanks Nijhuis</a> <a href="https://www.pentair.com/en-us/flow.html">Southern Cross</a></p>
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260828T180835Z

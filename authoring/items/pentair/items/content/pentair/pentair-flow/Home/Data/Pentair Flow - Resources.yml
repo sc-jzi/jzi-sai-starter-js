@@ -1,0 +1,66 @@
+﻿---
+ID: "33c4c701-1091-49dc-a0f2-e7a14c029f97"
+Parent: "a3825923-581d-459c-b4d6-a708efd248ed"
+Template: "3b41d9fc-0edf-48e1-966c-e260339ba815"
+Path: "/sitecore/content/pentair/pentair-flow/Home/Data/Pentair Flow - Resources"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "12ece9de-445a-42be-a483-9e8095ca3b8f"
+      Hint: Text5
+      Value: Download Center
+    - ID: "1d581533-1aa5-4679-9e2a-e7fe765218ba"
+      Hint: Link3
+      Value: |
+        <link text="Residential Training" anchor="" linktype="external" class="" title="" target="_blank" querystring="" url="https://www.pentair.com/en-us/flow.html" />
+    - ID: "2490d428-27e2-4daa-8337-4e34f37fc26b"
+      Hint: Link2
+      Value: |
+        <link text="Find a Distributor" anchor="" linktype="external" class="" title="" target="_blank" querystring="" url="https://www.pentair.com/en-us/flow.html" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260828T160349Z
+    - ID: "41910271-6970-45e7-8819-3d531826d4a6"
+      Hint: Link5
+      Value: |
+        <link text="Download Center" anchor="" linktype="external" class="" title="" target="_blank" querystring="" url="https://www.pentair.com/en-us/flow.html" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "0b9b6850-f2e6-4ce1-ba1a-653a07f21c14"
+    - ID: "8f49a654-7b7f-4c0b-b6df-d3ce2389c1bf"
+      Hint: Text2
+      Value: Find a Distributor
+    - ID: "91d94aff-4137-4702-93f7-8db4eacde4d5"
+      Hint: Text3
+      Value: Residential Training
+    - ID: "9ea34c36-7e22-4d12-b632-032361c3b17c"
+      Hint: Text1
+      Value: Distributor Portal
+    - ID: "b867909f-d20c-4c76-b82f-778d25239cd1"
+      Hint: Link1
+      Value: |
+        <link text="Distributor Portal" anchor="" linktype="external" class="" title="" target="_blank" querystring="" url="https://www.pentair.com/en-us/flow.html" />
+    - ID: "b8b8fa51-0c41-442e-8757-07b7a59d6d3f"
+      Hint: Link4
+      Value: |
+        <link text="Commercial Training" anchor="" linktype="external" class="" title="" target="_blank" querystring="" url="https://www.pentair.com/en-us/flow.html" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260828T160349Z
+    - ID: "f5e90981-3210-4316-bcf5-f083fe639e66"
+      Hint: Text4
+      Value: Commercial Training

@@ -135,3 +135,88 @@ export const Default = (props: CarouselComponentProps): JSX.Element => {
     </section>
   );
 };
+
+/* PentairFlow variant — stage plus labeled thumbnail strip */
+export const PentairFlow = (props: CarouselComponentProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const [index, setIndex] = useState(0);
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const items = props.fields?.items || [];
+  const active = items[index];
+
+  if (!items.length) {
+    return <Default {...props} />;
+  }
+
+  return (
+    <section className={`component carousel pentair-flow-carousel ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        {active && (
+          <div className="pentair-flow-carousel__stage">
+            {!isPageEditing && active.fields?.Video?.value?.src ? (
+              <video
+                className="object-fit-cover d-block w-100"
+                key={active.id}
+                autoPlay
+                loop
+                muted
+                playsInline
+                poster={active.fields.Image?.value?.src}
+              >
+                <source src={active.fields.Video.value.src} type="video/webm" />
+              </video>
+            ) : (
+              <NextImage
+                field={active.fields.Image}
+                className="object-fit-cover d-block w-100"
+                width={1280}
+                height={720}
+              />
+            )}
+            <div className="pentair-flow-carousel__caption">
+              <h3>
+                <Text field={active.fields.Title} />
+              </h3>
+              <RichText field={active.fields.Text} />
+            </div>
+          </div>
+        )}
+        <div className="pentair-flow-carousel__thumbs">
+          <button
+            type="button"
+            className="pentair-flow-carousel__nav"
+            aria-label="Previous"
+            onClick={() => setIndex((prev) => (prev > 0 ? prev - 1 : items.length - 1))}
+          >
+            ‹
+          </button>
+          <div className="pentair-flow-carousel__track">
+            {items.map((item, i) => (
+              <button
+                type="button"
+                key={item.id || i}
+                className={`pentair-flow-carousel__thumb ${i === index ? 'is-active' : ''}`}
+                onClick={() => setIndex(i)}
+              >
+                <NextImage field={item.fields.Image} width={160} height={90} />
+                <span>
+                  <Text field={item.fields.Title} />
+                </span>
+              </button>
+            ))}
+          </div>
+          <button
+            type="button"
+            className="pentair-flow-carousel__nav"
+            aria-label="Next"
+            onClick={() => setIndex((prev) => (prev < items.length - 1 ? prev + 1 : 0))}
+          >
+            ›
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};

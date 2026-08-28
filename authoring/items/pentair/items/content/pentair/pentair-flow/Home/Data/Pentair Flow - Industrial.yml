@@ -1,0 +1,49 @@
+﻿---
+ID: "75866f8f-3323-4af8-ab62-9b7cce8d34c0"
+Parent: "a3825923-581d-459c-b4d6-a708efd248ed"
+Template: "c0943942-ae0f-4205-86fa-84884cce4a53"
+Path: "/sitecore/content/pentair/pentair-flow/Home/Data/Pentair Flow - Industrial"
+SharedFields:
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "9e20409d-c939-4685-ac1e-ddaa6c321585"
+- ID: "e495efd3-5c43-45fc-af43-796a6b503716"
+  Hint: Image
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/18ac185103794160bbe5dd0881e74a94?v=04f5759e" dam-id="KlgHVVX1SJ6pB2TjOoLGqA" width="900" height="600" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97058/thumbnail" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "1f82a687-0683-426f-b12a-4b2100a6a481"
+      Hint: Title
+      Value: For Industrial
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260828T160341Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "3248eb56-661a-43c9-9bf6-a10e5e1577ec"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "cc0cb595-ce5c-413e-b413-3a7176347f28"
+      Hint: Text
+      Value: |
+        <p>Pentair provides filtration solutions and process technologies to help industrial customers achieve sustainability, productivity, efficiency and quality goals.</p><ul><li>Sustainable Gas Solutions</li><li>Brewery Production</li><li>Dairy and Food Production</li><li>Oil and Gas Products</li><li>Industrial Filtration</li><li>Industrial Spraying</li></ul><p class="brand-tags"><a href="https://www.pentair.com/en-us/flow.html">Codeline</a> <a href="https://www.pentair.com/en-us/flow.html">Goyen Mecair</a> <a href="https://www.pentair.com/en-us/flow.html">Haffmans</a> <a href="https://www.pentair.com/en-us/flow.html">Shurflo</a> <a href="https://www.pentair.com/en-us/flow.html">Südmo</a> <a href="https://www.pentair.com/en-us/flow.html">X-Flow</a> <a href="https://www.pentair.com/en-us/flow.html">Union Engineering</a></p>
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260828T180934Z

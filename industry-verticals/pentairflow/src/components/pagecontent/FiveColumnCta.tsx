@@ -107,3 +107,34 @@ export const Default = (props: FiveColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* PentairFlow variant — Bright Blue resource link bar, images hidden */
+export const PentairFlow = (props: FiveColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const links = [
+    { text: props.fields.Text1, link: props.fields.Link1 },
+    { text: props.fields.Text2, link: props.fields.Link2 },
+    { text: props.fields.Text3, link: props.fields.Link3 },
+    { text: props.fields.Text4, link: props.fields.Link4 },
+    { text: props.fields.Text5, link: props.fields.Link5 },
+  ];
+
+  return (
+    <div className={`component five-column-cta pentair-flow-resources ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container-fluid">
+        <div className="pentair-flow-resources__bar">
+          {links.map((item, i) => (
+            <Link key={i} field={item.link} className="pentair-flow-resources__link">
+              <Text field={item.text} />
+            </Link>
+          ))}
+          {isPageEditing && <span className="visually-hidden">Resources links</span>}
+        </div>
+      </div>
+    </div>
+  );
+};

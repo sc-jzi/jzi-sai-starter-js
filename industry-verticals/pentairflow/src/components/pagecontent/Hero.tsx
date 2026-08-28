@@ -56,3 +56,33 @@ export const Default = (props: AppPromoProps): JSX.Element => {
     </div>
   );
 };
+
+/* PentairFlow variant — full-bleed overlay, centered uppercase headline */
+export const PentairFlow = (props: AppPromoProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const hasLink = Boolean(props.fields?.Link?.value?.href && props.fields.Link.value.href !== '#');
+
+  return (
+    <div className={`component hero pentair-flow-hero ${sxaStyles}`} id={id ? id : undefined}>
+      <picture>
+        <NextImage field={props.fields.Image} className="" width={1920} height={640} />
+      </picture>
+      <div className="container content-container">
+        <div className="pentair-flow-hero__copy">
+          <div className="title">
+            <Text field={props.fields.Title} />
+          </div>
+          <div className="subtitle">
+            <RichText field={props.fields.Text} />
+          </div>
+          {(isPageEditing || hasLink) && (
+            <Link field={props.fields.Link} className="button button-main mt-3" />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
