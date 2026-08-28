@@ -49,3 +49,4 @@ packages/
 
 # VS Code settings
 .vscode/
+credentials.local.yaml
