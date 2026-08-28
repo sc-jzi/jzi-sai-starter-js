@@ -1,0 +1,58 @@
+﻿---
+ID: "937026ff-2ce7-45f4-818b-cc35d4563888"
+Parent: "06e32295-ef2e-44f8-851d-9c730bf2fa9b"
+Template: "c0943942-ae0f-4205-86fa-84884cce4a53"
+Path: "/sitecore/content/pentair/pentair/Data/Promos/Promo CTA/Pentair - Innovation IntelliFlo3"
+SharedFields:
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "74c1f2ff-b777-4901-8d2f-c8be3bb8ce99"
+- ID: "e495efd3-5c43-45fc-af43-796a6b503716"
+  Hint: Image
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/96475-section3-img15?v=263b45e3" dam-id="xKIRQMnJQhyp86pBICbb4A" width="428" height="300" alt="IF3 product and pool nation award badge" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/96475/thumbnail" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1f82a687-0683-426f-b12a-4b2100a6a481"
+      Hint: Title
+      Value: "Driving Pool Innovation with an Award-Winning Pump"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260825T195046Z
+    - ID: "2fbad11a-8129-4c7e-aacc-6973619327a1"
+      Hint: Eyebrow
+      Value: 
+    - ID: "32f3e9b1-c441-4285-a063-0897453f37e2"
+      Hint: Link2
+      Value: 
+    - ID: "507ba267-78fc-42f1-ac96-a1cb769b6de6"
+      Hint: Link
+      Value: |
+        <link text="See the Pump of the Year" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://www.pentair.com/en-us/pool-spa/products/pumps/intelliflo3-vsf-pool-pump.html" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "49ebe84f-d0e5-4094-b6a0-738040f60a8b"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "cc0cb595-ce5c-413e-b413-3a7176347f28"
+      Hint: Text
+      Value: "<p>From the brand that brought you variable speed and flow technology comes a new, energy-efficient, and award-winning pool pump. The IntelliFlo3 Variable Speed and Flow Pump is the Variable Speed Pump of the Year, as designated by the Pool Nation Awards.</p>"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260825T195046Z
+    - ID: "e4f11fe1-3b24-42e4-8cea-9ed7fda32bab"
+      Hint: Subtitle
+      Value: 

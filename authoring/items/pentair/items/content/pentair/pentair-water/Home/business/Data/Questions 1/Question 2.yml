@@ -1,0 +1,64 @@
+﻿---
+ID: "247e908d-4635-4efc-90c2-b8c1e552d11c"
+Parent: "2109950a-0025-4c66-97d9-c1b9e49a2421"
+Template: "2dc7a13e-6753-47ef-805a-1cde39012eec"
+Path: "/sitecore/content/pentair/pentair-water/Home/business/Data/Questions 1/Question 2"
+BranchID: "bba2c8f4-b940-4820-bf71-1b089bc5f86a"
+SharedFields:
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{1B3E2AF0-8A50-401D-B32C-5F3C293EFBCE}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260828T132845Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "5561ebbf-6da2-4039-88e2-090cf3994585"
+    - ID: "93ba0221-aa2a-4a04-b8f6-39c2ab65c694"
+      Hint: Question
+      Value: "What are the benefits of opening a business account?"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260828T132845Z
+    - ID: "ef205dfd-6af2-4514-b694-77efa748f951"
+      Hint: Answer
+      Value: Unlike other banks that charge high fees for business accounts, you will enjoy no monthly fees, no minimum balance, and unlimited transactions. You will also have access to our tools and services tailored to small businesses.
+- Language: "fr-CA"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "1e615912-6a2c-401a-85f1-9f9d253aa954"
+    - ID: "93ba0221-aa2a-4a04-b8f6-39c2ab65c694"
+      Hint: Question
+      Value: "Quels sont les avantages d'ouvrir une compte pour entreprises?"
+    - ID: "ef205dfd-6af2-4514-b694-77efa748f951"
+      Hint: Answer
+      Value: Contrairement aux autres banques qui facturent des frais élevés pour les comptes professionnels, vous bénéficierez de l'absence de frais mensuels, d'aucun solde minimum et de transactions illimitées. Vous aurez également accès à nos outils et services adaptés aux petites entreprises.
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "1b8ec269-8db8-4b8a-bf24-d6e3c81c66de"
+    - ID: "93ba0221-aa2a-4a04-b8f6-39c2ab65c694"
+      Hint: Question
+      Value: ビジネス口座を開設するメリットは何ですか？
+    - ID: "ef205dfd-6af2-4514-b694-77efa748f951"
+      Hint: Answer
+      Value: ビジネス口座に高額な手数料を課す他の銀行とは異なり、毎月の手数料は無料、最低残高もなく、取引回数も無制限です。 また、中小企業向けのツールやサービスもご利用いただけます。

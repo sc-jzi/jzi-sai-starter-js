@@ -1,0 +1,39 @@
+﻿---
+ID: "a621b93c-f2ec-45d0-bd69-3e71d72b7974"
+Parent: "d8525fa1-6972-463c-ba5e-9e31d12933b3"
+Template: "90d315e8-aa42-4b23-a7eb-4491396453f8"
+Path: /sitecore/content/pentair/pentairpool/Home/Data/Hero 1
+SharedFields:
+- ID: "3ed91913-9018-4580-a112-9cb5b921fcca"
+  Hint: Image
+  Value: |
+    <image mediaid="{73802ED7-82F3-4824-9343-A4D3342F6A5E}" alt="top-view-passport-money-with-copy-space" height="" width="" hspace="" vspace="" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "e95e2076-8e0a-4136-9196-a3103ed16623"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260707T205704Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "488be53e-b85d-4989-8469-5503e49ea8b7"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260825T212045Z

@@ -1,0 +1,40 @@
+﻿---
+ID: "b51e4fa6-4875-4da8-a693-44c96e4c0ce4"
+Parent: "ad8003c1-8198-4a54-ab52-ed47222858f8"
+Template: "6b8aabef-d650-46e0-97d0-c0b04f7f016b"
+Path: /sitecore/content/pentair/pentair/Presentation/Styles/Effects/Fade up
+SharedFields:
+- ID: "09147fb2-ebfb-4949-8c8e-26a424409d5e"
+  Hint: Value
+  Value: "with-fade-up"
+- ID: "69bb49f3-da64-4b0e-abd6-184b832ff6ab"
+  Hint: Allowed Renderings
+  Value: |
+    {3A9A9D22-C092-4B54-9511-EB202CEABE8D}
+    {AD385021-CE2B-4FC1-89AA-207D408034A8}
+    {35075000-760E-4FF3-BD1C-F2EEBA251DCB}
+    {333DEF3E-C272-4AD9-A493-8D5CCAE08312}
+    {1A375FAC-6CC1-4A5A-A159-9BC6DBC66B80}
+    {CCC3A815-5DE9-4529-BAD5-874548667D66}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260825T180131Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "e5dc18a7-1995-4d98-8795-c0dde71b107f"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260825T180131Z

@@ -1,0 +1,38 @@
+﻿---
+ID: "bc76ba38-cd20-4d1b-a24d-db58f0f5425d"
+Parent: "e1a712d7-95fc-4901-9ed8-a3a489894175"
+Template: "1105b8f8-1e00-426b-bf1f-c840742d827b"
+Path: /sitecore/content/pentair/pentairpool/Presentation/Page Designs/Article Page
+SharedFields:
+- ID: "0966b999-0d0e-4278-acc9-9da69d461fe6"
+  Hint: PartialDesigns
+  Value: "{CE50019B-85A5-46CE-AA1D-D0992D96DC60}|{12F44BA0-DCA9-4913-8B96-C73353C099BA}|{08CBDB7D-D7A4-412C-A8E3-D9C9C17FCA99}"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{51431259-197E-4CC1-99C6-EAD34E200B43}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "9356e201-900c-4bb1-81a5-ab4372c46374"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260825T211916Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "cf5f75cc-ab95-40b3-bc34-61f72ccf90cc"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260825T212104Z

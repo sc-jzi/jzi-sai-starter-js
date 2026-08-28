@@ -1,0 +1,135 @@
+﻿---
+ID: "0489f143-3c26-4c4f-9cec-de852fa867e5"
+Parent: "40b03029-ef85-4614-84dd-fe39982a2bd1"
+Template: "fbc802e5-4b9e-480f-93da-3f2a80cae5cb"
+Path: /sitecore/content/pentair/pentairpool/Presentation/Page Branches/Default Content Page
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+- ID: "bb3391dd-f8be-4b2e-ae9f-47bb63c166ce"
+  Hint: Rule
+  Value: |
+    <ruleset>
+      <rule
+        uid="{8C8DE469-540C-4410-B109-583B8951B468}">
+        <conditions>
+          <and
+            uid="F5CEC1E956A1482C90CA6ED0B7A33622">
+            <condition
+              id="{7D5DA661-BEF9-441C-B1F7-D80DE3E0972F}"
+              uid="2DEC1D095877488B92952D70064537E4"
+              itemid="{967820FE-3E91-4249-834A-1FB9EEDEC2EC}" />
+            <and
+              uid="391E23DE4F9640119366D39536A697D9">
+              <condition
+                id="{7D5DA661-BEF9-441C-B1F7-D80DE3E0972F}"
+                uid="1A54C42B142C478197BD59BD2F74F038"
+                except="true"
+                itemid="{2D3CCB68-768D-43F0-8492-E07E630C5255}" />
+              <and
+                uid="492C9A417DA0486283034F6AFB0970C2">
+                <condition
+                  id="{7D5DA661-BEF9-441C-B1F7-D80DE3E0972F}"
+                  uid="5E0B6418E58A400EAC85B8A58F5423CD"
+                  except="true"
+                  itemid="{FE975A06-6C14-42BD-8A80-2269AFF5FC34}" />
+                <and
+                  uid="FBE8FAE465074812932B210ED5437846">
+                  <condition
+                    id="{7D5DA661-BEF9-441C-B1F7-D80DE3E0972F}"
+                    uid="241C42921F804BDF9E7373544A79E9FB"
+                    except="true"
+                    itemid="{5F7DC8EC-D772-497C-AEF5-83444F33AAC7}" />
+                  <and
+                    uid="C8B8E46987DB4410967CC564F850B38B">
+                    <condition
+                      id="{7D5DA661-BEF9-441C-B1F7-D80DE3E0972F}"
+                      uid="F4E576622445425E954ED733A3E407AB"
+                      except="true" />
+                    <condition
+                      id="{7D5DA661-BEF9-441C-B1F7-D80DE3E0972F}"
+                      uid="96B170E9A8424F21A2EE397E6B597E9E"
+                      except="true"
+                      itemid="{DC575B89-DC2F-4B32-A9A0-3E1118E8730C}" />
+                  </and>
+                </and>
+              </and>
+            </and>
+          </and>
+        </conditions>
+        <actions>
+          <action
+            id="{D46EC8E5-7B46-47DE-B44A-4C5C30EF48D1}"
+            uid="5756E57FF81043F28781CB0228669C48"
+            PageBranchId="{2C72E5DA-321B-4D5F-BF83-192115DEC540}" />
+        </actions>
+      </rule>
+    </ruleset>
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "7dd6281c-3420-4036-86ec-d6726c290d4d"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260825T211915Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d313d083-a038-45cd-ab6b-0dfd114439b4"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260828T143653Z
+- Language: "fr-CA"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260825T212002Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f131c44d-2da9-4485-8680-b620fac08af8"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260825T212002Z
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260825T212002Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f4c5d866-6c43-487c-a060-6fc12f44553d"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260825T212002Z

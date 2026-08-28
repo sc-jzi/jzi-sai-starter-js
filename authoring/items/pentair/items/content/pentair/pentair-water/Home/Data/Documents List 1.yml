@@ -1,0 +1,132 @@
+﻿---
+ID: "4b9eedfd-392e-46e2-a1a8-0c3ea9addecf"
+Parent: "2df86d1a-3dcb-478d-8d68-b8e0e751b176"
+Template: "bc79b430-f5e0-4363-83f8-5fb8ccd79c61"
+Path: "/sitecore/content/pentair/pentair-water/Home/Data/Documents List 1"
+SharedFields:
+- ID: "0bba1dd8-0978-4359-b817-15b65886ba06"
+  Hint: Image2
+  Value: |
+    <image mediaid="{452D1BB5-38C4-49D4-8BDB-1E12D2688501}" alt="file_icon" height="" width="" hspace="" vspace="" />
+- ID: "1a120861-bc28-4699-adef-abbdfb67bf05"
+  Hint: Image1
+  Value: |
+    <image mediaid="{452D1BB5-38C4-49D4-8BDB-1E12D2688501}" alt="file_icon" height="" width="" hspace="" vspace="" />
+- ID: "8afcdc7d-211b-4136-94f5-f158a0fd0fd9"
+  Hint: Image3
+  Value: |
+    <image mediaid="{452D1BB5-38C4-49D4-8BDB-1E12D2688501}" alt="file_icon" height="" width="" hspace="" vspace="" />
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 1900
+- ID: "c6019204-c52e-4650-8875-b19e2482cd76"
+  Hint: Image4
+  Value: |
+    <image mediaid="{452D1BB5-38C4-49D4-8BDB-1E12D2688501}" alt="file_icon" height="" width="" hspace="" vspace="" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "4615b9c1-5057-4215-8729-aad6bf8bc231"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260828T132838Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "80339df8-a0a4-4f6e-86f0-335113529a0e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260828T133117Z
+- Language: "fr-CA"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "22ed4827-cc6b-4a00-a358-0ccfadbea4eb"
+      Hint: Link3
+      Value: |
+        <link text="Informations concernant le traitement des données personnelles des actionnaires de la DSK Bank" linktype="anchor" url="shareholders" anchor="shareholders" title="" class="" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260828T133117Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "67fdca76-8a62-4424-a499-236787bd226c"
+      Hint: Subtitle2
+      Value: Fichier PDF
+    - ID: "742e047d-3a1f-4643-ae1e-c78847a8b700"
+      Hint: Subtitle1
+      Value: Fichier PDF
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "16f5e6aa-0ce7-4bad-b554-784bb4ab16b6"
+    - ID: "926c0ca9-eaa5-468e-919e-de8c15876439"
+      Hint: Subtitle3
+      Value: Fichier PDF
+    - ID: "95989e20-ee37-47bf-bae1-1dedf4d57a1a"
+      Hint: Link4
+      Value: |
+        <link text=" Protection des données personnelles des particuliers chez Play! financier" linktype="anchor" url="data-protection" anchor="data-protection" title="" class="" />
+    - ID: "b2d03f41-06ad-4238-bcf2-7055674ea2a6"
+      Hint: Subtitle4
+      Value: Fichier PDF
+    - ID: "b39d2c2c-ff8b-49f4-9856-03c1d163decf"
+      Hint: Link2
+      Value: |
+        <link text="Référence bancaire - Modèle" linktype="anchor" url="bank" anchor="bank" title="" class="" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "be4d4a97-19b9-4d92-a28e-38e5b09c2bc4"
+      Hint: Link1
+      Value: |
+        <link text="Formulaire de demande d'exercice d'un droit en vertu du Règlement général sur la protection des données" linktype="anchor" url="gdpr" anchor="gdpr" title="" class="" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260828T133117Z
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260828T133117Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "67fdca76-8a62-4424-a499-236787bd226c"
+      Hint: Subtitle2
+      Value: PDF ファイル
+    - ID: "742e047d-3a1f-4643-ae1e-c78847a8b700"
+      Hint: Subtitle1
+      Value: PDF ファイル
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "7e78591d-274d-4bd7-8a62-b9ac4184299d"
+    - ID: "926c0ca9-eaa5-468e-919e-de8c15876439"
+      Hint: Subtitle3
+      Value: PDF ファイル
+    - ID: "b2d03f41-06ad-4238-bcf2-7055674ea2a6"
+      Hint: Subtitle4
+      Value: PDF ファイル
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260828T133117Z

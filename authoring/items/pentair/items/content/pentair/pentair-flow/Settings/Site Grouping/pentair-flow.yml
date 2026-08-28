@@ -1,0 +1,53 @@
+﻿---
+ID: "8d2b7f39-7b78-4a08-814e-436ee7ace491"
+Parent: "9cdf3b94-0fce-4945-a4b7-dc6dccd91106"
+Template: "e46f3af2-39fa-4866-a157-7017c4b2a40c"
+Path: "/sitecore/content/pentair/pentair-flow/Settings/Site Grouping/pentair-flow"
+SharedFields:
+- ID: "1ee576af-ba8e-4312-9fbd-2ccf8395baa1"
+  Hint: StartItem
+  Value: "{EA63609E-F963-4885-9459-B09BE41395EE}"
+- ID: "6dd8a774-2ce5-4c9e-be7f-1eaf65789956"
+  Hint: ThumbnailsRootPath
+  Value: "{63B072FD-8829-4658-B88A-FB56293670B3}"
+- ID: "8e0dd914-9afb-4d45-bf8b-7ff5d6e5337e"
+  Hint: HostName
+  Value: *
+- ID: "cb4e9e2e-2b66-43dc-ad3f-9caf363d28d3"
+  Hint: SiteName
+  Value: "pentair-flow"
+- ID: "da06d09e-02b6-464a-80fc-9d8d7fc875e3"
+  Hint: Environment
+  Value: *
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "590e1ac1-c382-4efb-a6fc-9fa0ef1809c8"
+- ID: "f57099a3-526a-49f2-aebd-635453e48875"
+  Hint: RenderingHost
+  Value: Default
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260828T133503Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "4773c4e5-c246-4408-bc34-3aa890d8be46"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260828T133503Z

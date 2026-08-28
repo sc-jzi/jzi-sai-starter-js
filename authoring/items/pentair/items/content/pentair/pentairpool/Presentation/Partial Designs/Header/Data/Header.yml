@@ -1,0 +1,34 @@
+﻿---
+ID: "5775bd34-5e3d-442f-8e59-0325e9b55540"
+Parent: "710f22dd-253d-4b87-9e73-dfe9a6406b0c"
+Template: "0da7aa52-0c24-4721-9b6c-f6d8d9faaaa0"
+Path: /sitecore/content/pentair/pentairpool/Presentation/Partial Designs/Header/Data/Header
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "0bf1334e-9153-4310-89f7-3cd8c5bbf927"
+      Hint: LogoImage
+      Value: |
+        <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/312c3d7449ba4793ac13bb2a426ca563?v=9e1be7fb" dam-id="JXi_tpWpTzysMx6yfhvLjg" width="1880" height="520" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97015/thumbnail" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260825T211917Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "1394d5e4-5e4b-408c-bd68-bdfa5717523c"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260827T144636Z

@@ -1,0 +1,79 @@
+﻿---
+ID: "c1351b94-843c-4f6d-91bc-f84821fcecb0"
+Parent: "05d469be-6eaf-4b8e-8d37-137f1313f32c"
+Template: "1b694ef9-154d-429a-9c3f-d7774cd4a852"
+Path: "/sitecore/content/pentair/pentairpool/Data/Promos/Four Column CTA/Pentair Pool - More Products 2"
+SharedFields:
+- ID: "23f621dd-d403-49df-93f6-391a1757feb3"
+  Hint: Image4
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/96769-section5-img26?v=47a6fb78" dam-id="E19w8hqWTR6SLAsuFPt_GQ" width="367" height="200" alt="Replacement parts" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/96769/thumbnail" />
+- ID: "84c2cd69-b897-4e4a-a336-66d3222fe1b5"
+  Hint: Image1
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/96735-section5-img23?v=1172a61a" dam-id="Z3knpwB2R0q6jvxH105h6g" width="400" height="200" alt="White goods" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/96735/thumbnail" />
+- ID: "954a7e15-cdad-4e9c-8949-ab0ee63200c6"
+  Hint: Image3
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/96760-section5-img25?v=7bf2f60f" dam-id="HnN-RfbCRnWpMkBflMESVQ" width="400" height="200" alt="Aboveground systems" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/96760/thumbnail" />
+- ID: "a98fc4bc-b088-4296-aa32-fba35f964ebd"
+  Hint: Image2
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/96751-section5-img24?v=085d3ac7" dam-id="U98P_FsvSGavaEK6ifgbpw" width="400" height="200" alt="Pool maintenance" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/96751/thumbnail" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "e2fdafbc-a376-4109-8d15-7ef221d6c070"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260825T215615Z
+    - ID: "34f50b54-e781-493a-85c0-8e9af1969d64"
+      Hint: Title3
+      Value: Aboveground Systems
+    - ID: "4e62adbe-4082-45fe-9e77-66ef0945fb18"
+      Hint: Title4
+      Value: Replacement Parts
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "8579ac6d-09f2-4155-98c1-577894c0e3ec"
+    - ID: "94e8b735-889e-44f3-a980-c7c8143bae19"
+      Hint: Title2
+      Value: Pool Maintenance
+    - ID: "b1b9e108-7c50-4a04-8e7a-37f30c6a784c"
+      Hint: Link3
+      Value: |
+        <link text="Aboveground Systems" linktype="external" url="https://www.pentair.com/en-us/pool-spa/products/aboveground-systems.html" anchor="" class="" title="" target="" querystring="" />
+    - ID: "b2befdd5-351d-4c5e-85fd-2402e3ff96bf"
+      Hint: Link1
+      Value: |
+        <link text="White Goods" linktype="external" url="https://www.pentair.com/en-us/pool-spa/products/white-goods.html" anchor="" class="" title="" target="" querystring="" />
+    - ID: "ba2af883-e3bb-43cf-8c97-ab5c97edc09d"
+      Hint: Link4
+      Value: |
+        <link text="Replacement Parts" linktype="external" url="https://www.pentair.com/en-us/pool-spa/products/replacement-parts.html" anchor="" class="" title="" target="" querystring="" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "be5597c5-a55d-4a6a-bf53-7fe1a7bf4bdc"
+      Hint: Title1
+      Value: White Goods
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260825T215615Z
+    - ID: "df548755-6a31-445f-bb84-c704698d6048"
+      Hint: Link2
+      Value: |
+        <link text="Pool Maintenance" linktype="external" url="https://www.pentair.com/en-us/pool-spa/products/maintenance-safety.html" anchor="" class="" title="" target="" querystring="" />

@@ -1,0 +1,38 @@
+﻿---
+ID: "bb3a5c10-1966-49a4-a3df-4b5c26ab53c6"
+Parent: "19c8d9bd-5232-4b98-a039-61be75ef88a4"
+Template: "1105b8f8-1e00-426b-bf1f-c840742d827b"
+Path: "/sitecore/content/pentair/pentair-water/Presentation/Page Designs/Article Page"
+SharedFields:
+- ID: "0966b999-0d0e-4278-acc9-9da69d461fe6"
+  Hint: PartialDesigns
+  Value: "{DAD8FE57-1261-4085-84DC-31C9E8B4FE18}|{F86096A8-69D7-42E9-B9B9-2BF732132C95}|{35AC93C3-02BC-4BB3-A66C-93B54B2C166A}"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{61C3B2F6-B91C-480D-8092-B214EEBD4BEC}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "95d1770f-f273-4d71-9d77-6cf79e9a079a"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260828T132909Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "7e8467b7-333d-4ccf-a5a7-e1e3cfc30798"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260828T133140Z

@@ -1,0 +1,37 @@
+﻿---
+ID: "6fe8c80b-4e35-4133-a588-a94bc0f1bb5f"
+Parent: "2b5af5fa-8c05-4eb9-b2be-9366a10c5da3"
+Template: "609a79ac-e186-41e2-a3fa-771e95c26815"
+Path: "/sitecore/content/pentair/pentair-flow/Presentation/Page Designs"
+SharedFields:
+- ID: "ba1f60d6-3deb-40cc-bb61-eec772279ee1"
+  Hint: TemplatesMapping
+  Value: "%7b4AD644A8-7CDB-4574-8DF1-D01C3BB7B624%7d%3d%257B3663AB1D-40B7-41C0-969F-5DBBDD2FF70C%257D%26%7bF83CCEFD-FC41-4A60-9882-8F7EA5CF41A8%7d%3d%257B9A12E1E6-22B7-43BD-9130-E0C6DF84D311%257D%26%7b1226C3C7-2D1F-48F5-87B4-C1DA459F05E5%7d%3d%257BB011FF6C-4CF9-4651-BB88-F66669568150%257D%26%7b5282D418-6C18-46EB-85AF-9116CDE9E6EB%7d%3d%257B3663AB1D-40B7-41C0-969F-5DBBDD2FF70C%257D%26%7b14431DCE-508D-4D54-9D04-C22ABBDC8F83%7d%3d%257B3663AB1D-40B7-41C0-969F-5DBBDD2FF70C%257D%26%7bAAD350F5-9331-4D71-A942-E3643653C028%7d%3d%257B967E7B81-FE44-44F0-8873-2527E5B2A489%257D"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "8e7a06c6-f2d7-4b53-aaed-f7f6e892f613"
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{2EA756FA-AED6-4599-83B7-36FEFE229B31}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260828T133221Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "e147687a-50bf-47ee-a93c-579ac5f5624e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260828T133332Z

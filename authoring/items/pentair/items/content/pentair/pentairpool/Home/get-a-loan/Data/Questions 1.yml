@@ -1,0 +1,27 @@
+﻿---
+ID: "d987bd5a-6ada-4d52-b408-2124112db93b"
+Parent: "a21e4343-bf97-4cee-9b32-86cfa2d56d6e"
+Template: "fae81bf9-1117-4f97-9133-00e752f41772"
+Path: "/sitecore/content/pentair/pentairpool/Home/get-a-loan/Data/Questions 1"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260825T211908Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "6bc59f2a-d796-48d2-b560-2d5c3af47fbd"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260825T211908Z

@@ -1,0 +1,45 @@
+﻿---
+ID: "a68962e1-2773-46cc-b648-edcb2a07fe39"
+Parent: "b632afea-af62-46f8-8a82-e5c8f6f29e0d"
+Template: "90d315e8-aa42-4b23-a7eb-4491396453f8"
+Path: "/sitecore/content/pentair/pentair/Data/Promos/Wake Forest - Hero"
+SharedFields:
+- ID: "3ed91913-9018-4580-a112-9cb5b921fcca"
+  Hint: Image
+  Value: |
+    <image mediaid="{825AA0C5-30D0-4904-A421-5962334A6CD5}" alt="top-view-passport-money-with-copy-space" height="" width="" hspace="" vspace="" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "d8aa3e39-4310-468b-bd1d-114015f8955b"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260707T193100Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "2bf1c325-01dc-4092-8ed0-3bd70d7e7fe0"
+    - ID: "a3cbbb91-442e-441c-a6e2-5896c19d8711"
+      Hint: Text
+      Value: 
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260825T180336Z
+    - ID: "f44602f9-172c-4987-aaf6-1fb2ab0f75a1"
+      Hint: Title
+      Value: Welcome to Wake Forest

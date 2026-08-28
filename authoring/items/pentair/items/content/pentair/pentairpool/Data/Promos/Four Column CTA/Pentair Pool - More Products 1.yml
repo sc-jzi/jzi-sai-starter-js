@@ -1,0 +1,79 @@
+﻿---
+ID: "cde3370f-7fb7-45ee-b23e-13d582bf5bc6"
+Parent: "05d469be-6eaf-4b8e-8d37-137f1313f32c"
+Template: "1b694ef9-154d-429a-9c3f-d7774cd4a852"
+Path: "/sitecore/content/pentair/pentairpool/Data/Promos/Four Column CTA/Pentair Pool - More Products 1"
+SharedFields:
+- ID: "23f621dd-d403-49df-93f6-391a1757feb3"
+  Hint: Image4
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/96726-section5-img22?v=ccacaaf9" dam-id="mocKDJSRS2CgNSH3TAxq-A" width="400" height="200" alt="Pool valves" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/96726/thumbnail" />
+- ID: "84c2cd69-b897-4e4a-a336-66d3222fe1b5"
+  Hint: Image1
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/96690-section5-img19?v=19bcf557" dam-id="Fhts3BeTRZqPh8nudivVFg" width="400" height="200" alt="In-floor cleaning" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/96690/thumbnail" />
+- ID: "954a7e15-cdad-4e9c-8949-ab0ee63200c6"
+  Hint: Image3
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/96719-section5-img21?v=1eb7708d" dam-id="4SXBKjVSTs6LrpxE9SGVtw" width="400" height="200" alt="Water features" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/96719/thumbnail" />
+- ID: "a98fc4bc-b088-4296-aa32-fba35f964ebd"
+  Hint: Image2
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/96705-section5-img20?v=b41d3f84" dam-id="4mMjVD_nR-6h6gFbBV1T6Q" width="493" height="300" alt="Pool cleaners" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/96705/thumbnail" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "44dd7af8-106d-4f4a-b069-20c979a61cfc"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260825T215604Z
+    - ID: "34f50b54-e781-493a-85c0-8e9af1969d64"
+      Hint: Title3
+      Value: Water Features
+    - ID: "4e62adbe-4082-45fe-9e77-66ef0945fb18"
+      Hint: Title4
+      Value: Pool Valves
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "73aae476-9e5f-40b6-8d75-c6be43af4ab6"
+    - ID: "94e8b735-889e-44f3-a980-c7c8143bae19"
+      Hint: Title2
+      Value: Pool Cleaners
+    - ID: "b1b9e108-7c50-4a04-8e7a-37f30c6a784c"
+      Hint: Link3
+      Value: |
+        <link text="Water Features" linktype="external" url="https://www.pentair.com/en-us/pool-spa/products/water-features.html" anchor="" class="" title="" target="" querystring="" />
+    - ID: "b2befdd5-351d-4c5e-85fd-2402e3ff96bf"
+      Hint: Link1
+      Value: |
+        <link text="In-Floor Cleaning" linktype="external" url="https://www.pentair.com/en-us/pool-spa/products/in-floor-pool-cleaning-systems.html" anchor="" class="" title="" target="" querystring="" />
+    - ID: "ba2af883-e3bb-43cf-8c97-ab5c97edc09d"
+      Hint: Link4
+      Value: |
+        <link text="Pool Valves" linktype="external" url="https://www.pentair.com/en-us/pool-spa/products/valves.html" anchor="" class="" title="" target="" querystring="" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "be5597c5-a55d-4a6a-bf53-7fe1a7bf4bdc"
+      Hint: Title1
+      Value: "In-Floor Cleaning & Circulation"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260825T215604Z
+    - ID: "df548755-6a31-445f-bb84-c704698d6048"
+      Hint: Link2
+      Value: |
+        <link text="Pool Cleaners" linktype="external" url="https://www.pentair.com/en-us/pool-spa/products/cleaners.html" anchor="" class="" title="" target="" querystring="" />

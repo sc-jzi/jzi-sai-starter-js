@@ -1,0 +1,68 @@
+﻿---
+ID: "19b2c396-2e5e-4217-8360-c6bbd432eeec"
+Parent: "2e0eb8f0-270f-4d95-81a6-964b6ae83ae4"
+Template: "148d07ba-f923-4fb2-8907-0bd440d5db44"
+Path: "/sitecore/content/pentair/pentair-water/Data/Promos/Three Column CTA/Wake Forest - Hero CTAs"
+SharedFields:
+- ID: "39b3d592-0895-4f30-9c17-454b171f0b2e"
+  Hint: Image3
+  Value: |
+    <image mediaid="{E8503116-A09C-4909-A57C-DCA03B1F0DAE}" alt="Woman looking at laptop" height="" width="" hspace="" vspace="" />
+- ID: "39fe4fb3-3794-4b9a-a584-ff877e93e33b"
+  Hint: Image2
+  Value: |
+    <image mediaid="{F7EC566B-095B-4B7E-89D5-E88DA43EDC89}" alt="People in a meeting room with two people shaking hands" height="" width="" hspace="" vspace="" />
+- ID: "c511247c-fec1-4690-81d6-ce791da18d4a"
+  Hint: Image1
+  Value: |
+    <image mediaid="{1D5E327D-EBC2-4C40-89EA-DA2973693EEA}" alt="Woman smiling in front of an ATM" height="" width="" hspace="" vspace="" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "43c5c673-dd8f-4aeb-8ab5-b46fc0b6e767"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0a10d09c-166b-464e-99cb-4401b527f3f2"
+      Hint: Link2
+      Value: |
+        <link text="Schedule a Visit" linktype="external" url="https://admissions.wfu.edu/visit/schedule-a-visit/" anchor="" class="" title="" target="" querystring="" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260707T193050Z
+    - ID: "277e3acc-b359-4c11-88b9-4016574419dc"
+      Hint: Link3
+      Value: |
+        <link text="Apply Now" linktype="external" url="https://admissions.wfu.edu/apply/applynow/" anchor="" class="" title="" target="" querystring="" />
+    - ID: "34f6d379-9a96-4cb8-839f-0d224a4f6db1"
+      Hint: Text2
+      Value: Schedule a Visit
+    - ID: "5264d7eb-64cd-4203-98e5-a4d0380f57e6"
+      Hint: Text1
+      Value: Majors & Minors
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5eb6058f-3f45-4dd4-8153-8c74390859f4"
+      Hint: Text3
+      Value: Apply Now
+    - ID: "63e1abec-67cb-4aea-ab72-8b5b60b69473"
+      Hint: Link1
+      Value: |
+        <link text="Majors & Minors" linktype="external" url="https://admissions.wfu.edu/academics/majors-minors/" anchor="" class="" title="" target="" querystring="" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c7ad61fc-8040-4eeb-bcc3-e29ee29cebbe"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260828T133137Z

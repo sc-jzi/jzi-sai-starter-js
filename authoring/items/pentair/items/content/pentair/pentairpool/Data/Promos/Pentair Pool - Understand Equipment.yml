@@ -1,0 +1,45 @@
+﻿---
+ID: "5fb65017-652e-481e-8b5c-6a061fe9b50f"
+Parent: "10e7664a-b8b3-4936-97cc-b57ef2d789ab"
+Template: "4900d7e5-61b0-483a-a9d6-69419d4d5982"
+Path: "/sitecore/content/pentair/pentairpool/Data/Promos/Pentair Pool - Understand Equipment"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260825T215624Z
+    - ID: "34c7ca9b-6c24-4133-bd83-b453b838eb0b"
+      Hint: Link
+      Value: |
+        <link text="Learn More" linktype="external" url="https://www.pentair.com/en-us/education-support/water-education-center/pool-and-spa-education/how-your-pool-works.html" anchor="" class="" title="" target="" querystring="" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "6f94c5b4-e2b4-41eb-899f-9a29904b8e18"
+      Hint: Image
+      Value: |
+        <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/96804-section5-img29?v=9e6a8c2d" dam-id="XlrAtBfqQVa1c9ULP8g-CA" width="400" height="300" alt="How your pool works" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/96804/thumbnail" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "23897694-4ae9-47b1-9f64-d7f1957877ff"
+    - ID: "b03c10d8-11a2-48ca-9822-3640768ed2b7"
+      Hint: Text
+      Value: "<p>Discover each component of your pool pad and what each product does to keep your backyard oasis pool-party ready.</p>"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260825T215624Z
+    - ID: "e62af488-48ce-4ae4-a2bb-37ad346981a4"
+      Hint: Title
+      Value: Understand Your Pool Equipment

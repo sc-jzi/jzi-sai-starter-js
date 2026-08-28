@@ -1,0 +1,62 @@
+﻿---
+ID: "d7b47cc1-73bb-43f0-9104-1b799d73d09d"
+Parent: "10e7664a-b8b3-4936-97cc-b57ef2d789ab"
+Template: "d3fdded9-44ae-4410-961c-3320cc82d638"
+Path: "/sitecore/content/pentair/pentairpool/Data/Promos/Progressive - Products"
+SharedFields:
+- ID: "3ead9061-0aaf-4743-9278-1206162fe9ac"
+  Hint: Image1
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/95155-section5-img7?v=c3117d4a" dam-id="CTnn5cFJS_ami9KVQdckrw" width="624" height="545" alt="Progressive insurance products illustration" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/95155/thumbnail" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "7504b046-6264-4208-98eb-16530d80b67e"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "07f9bc8b-d647-4c6f-a67f-dc3b813f93cc"
+      Hint: Text1
+      Value: Buckle up with protection you can rely on.
+    - ID: "188ab916-1cc0-4034-b57a-7d62bafcca30"
+      Hint: Title2
+      Value: Bundle auto and property insurance
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260707T194926Z
+    - ID: "2ea267e1-7e99-40db-b919-2ab9ade0658c"
+      Hint: Link
+      Value: |
+        <link text="Explore our products" linktype="external" url="https://www.progressive.com/insurance/" anchor="" class="" title="" target="" querystring="" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5d056c68-5c1a-4f1e-b5e1-55ff37357f95"
+      Hint: Eyebrow
+      Value: Products
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c904ccf2-91d8-46ea-b013-68a7bbb63bbd"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "c4e8a8a6-23ee-4204-a871-d7615b0ccd3e"
+      Hint: Text2
+      Value: "Bundle with Progressive and save more — it's that easy!"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260707T195259Z
+    - ID: "e325f933-a74c-4ab8-a40e-a6298391e093"
+      Hint: Title1
+      Value: Auto insurance
+    - ID: "ea0498ea-e265-4f30-a26d-0650429f5f56"
+      Hint: Text
+      Value: |
+        <h2>Learn more about our insurance products and coverages</h2><p>At Progressive, we've built our business around understanding what you need and what's important for you to protect. That's why we offer a wide range of insurance products to meet your specific needs, including customized coverages.</p><ul class="progressive-extra-products"><li><h3><a href="https://www.progressive.com/motorcycle/">Motorcycle insurance</a></h3><p>Hop on — we're the #1 motorcycle insurance company in the U.S.</p></li><li><h3><a href="https://www.progressive.com/rv-insurance/">RV insurance</a></h3><p>Hit the highway with the coverage you need for peace of mind.</p></li><li><h3><a href="https://www.progressive.com/life-insurance/">Life insurance</a></h3><p>Give your family protection and long-lasting financial security.</p></li></ul>

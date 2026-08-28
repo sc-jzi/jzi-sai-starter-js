@@ -1,0 +1,27 @@
+﻿---
+ID: "c9e384ea-58b0-4b46-9520-672758bc497f"
+Parent: "fc242efa-ae12-454f-83b5-f159626860a3"
+Template: "b762d567-87f5-493c-bb48-0c455d834457"
+Path: "/sitecore/content/pentair/pentair-water/Data/Texts"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260828T132902Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a7897b7f-2a94-4043-8adb-a68221cc488b"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260828T132902Z

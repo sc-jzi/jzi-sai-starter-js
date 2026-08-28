@@ -1,0 +1,77 @@
+﻿---
+ID: "4f12a29b-4c18-426b-97e0-d7a0514c6b29"
+Parent: "9591ba22-860c-48c0-9813-7e405c661b29"
+Template: "148d07ba-f923-4fb2-8907-0bd440d5db44"
+Path: "/sitecore/content/pentair/pentair/Data/Promos/Three Column CTA/Pentair - Sustainability Spotlight"
+SharedFields:
+- ID: "39b3d592-0895-4f30-9c17-454b171f0b2e"
+  Hint: Image3
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/96427-section3-img11?v=f5d2ddc1" dam-id="XkzNcPZUQxWr1uONOk-TNQ" width="900" height="600" alt="2025 IBD Top 50 Sustainable Companies" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/96427/thumbnail" />
+- ID: "39fe4fb3-3794-4b9a-a584-ff877e93e33b"
+  Hint: Image2
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/96417-section3-img10?v=bfa90bfd" dam-id="Zu7VFQi5QKC49iUYPrppjQ" width="900" height="600" alt="2026 BIG Innovation Awards" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/96417/thumbnail" />
+- ID: "c511247c-fec1-4690-81d6-ce791da18d4a"
+  Hint: Image1
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/96410-section3-img9?v=7b76e28e" dam-id="9O0SwUp2QqyQXFmSuQyLXA" width="900" height="600" alt="2025 Sustainability Report" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/96410/thumbnail" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "9e27d269-027d-4b7a-a58f-7c84d8378bbc"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0a10d09c-166b-464e-99cb-4401b527f3f2"
+      Hint: Link2
+      Value: |
+        <link text="Get the Details" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://www.pentair.com/en-us/about-pentair/newsroom/blog/manitowoc-neo-ice-machine-receives-big-innovation-award.html" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260825T195037Z
+    - ID: "2731b4d6-b866-466a-9731-5161788d662b"
+      Hint: SubText2
+      Value: Pentair received a 2026 BIG Innovation Award from Business Intelligence Group.
+    - ID: "277e3acc-b359-4c11-88b9-4016574419dc"
+      Hint: Link3
+      Value: |
+        <link text="Read More" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://www.pentair.com/en-us/about-pentair/newsroom/blog/investors-business-daily-honors-pentair-as-sustainability-leader.html" />
+    - ID: "34f6d379-9a96-4cb8-839f-0d224a4f6db1"
+      Hint: Text2
+      Value: 2026 Business Intelligence Group Innovation Awards
+    - ID: "4c50be2f-021e-4846-abb0-50feb2df5eed"
+      Hint: SubText1
+      Value: Our 2025 Sustainability Report captures our progress toward Making Better Essential.
+    - ID: "5264d7eb-64cd-4203-98e5-a4d0380f57e6"
+      Hint: Text1
+      Value: 2025 Sustainability Report
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5eb6058f-3f45-4dd4-8153-8c74390859f4"
+      Hint: Text3
+      Value: 2025 Investor's Business Daily Top 50 Sustainable Companies
+    - ID: "63e1abec-67cb-4aea-ab72-8b5b60b69473"
+      Hint: Link1
+      Value: |
+        <link text="Read the Report" anchor="" linktype="external" class="" title="" target="_blank" querystring="" url="https://www.pentair.com/content/dam/extranet/enterprise/digital/enterprise-pages/pentair-sustainability-report-2025.pdf" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "432d4304-1b9b-494b-aee1-6bea685ed1e8"
+    - ID: "a3a36b2d-a20b-4344-9f1d-ad867cb99aa4"
+      Hint: SubText3
+      Value: Pentair has been included on Investor's Business Daily's 50 Most Sustainable Companies for 2025.
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260825T195037Z

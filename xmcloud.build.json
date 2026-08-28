@@ -36,6 +36,24 @@
       "buildCommand": "build",
       "runCommand": "next:start"
     },
+    "pentairwater": {
+      "path": "./industry-verticals/pentairwater",
+      "nodeVersion": "24.14.1",
+      "jssDeploymentSecret": "110F1C44A496B45478640DD36F80C18C9",
+      "enabled": true,
+      "type": "sxa",
+      "buildCommand": "build",
+      "runCommand": "next:start"
+    },
+    "pentairflow": {
+      "path": "./industry-verticals/pentairflow",
+      "nodeVersion": "24.14.1",
+      "jssDeploymentSecret": "110F1C44A496B45478640DD36F80C18C9",
+      "enabled": true,
+      "type": "sxa",
+      "buildCommand": "build",
+      "runCommand": "next:start"
+    },
     "suffolk": {
       "path": "./industry-verticals/suffolk",
       "nodeVersion": "24.14.1",

@@ -1,0 +1,44 @@
+﻿---
+ID: "4bf4ae6c-e61d-45db-91a8-4d34c43b0147"
+Parent: "46f6b088-d7b6-4e09-83d1-dba714c7bd82"
+Template: "fa136527-6302-471d-83ab-e66fc72bda99"
+Path: "/sitecore/content/pentair/pentair-flow/Data/Promos/Promo CTA/Progressive - Trust Intro"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260707T194917Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b8e5e86a-23c3-4bdc-a74c-0c5389ccfb40"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "bbd90ce3-fdf4-425e-844b-63c5b3db8916"
+      Hint: Text
+      Value: From customized insurance to superior claims service, our people and technology will support you every step of the way. Join us today and experience why we're one of the best insurance companies.
+    - ID: "be9c7836-a932-4e3b-a4a0-c7d5aa869337"
+      Hint: Link
+      Value: |
+        <link text="Learn more" linktype="external" url="https://www.progressive.com/about/" anchor="" class="" title="" target="" querystring="" />
+    - ID: "cef85d28-d6bc-4204-a2e4-8706c80d8a3c"
+      Hint: Heading
+      Value: A leading insurance company, trusted since 1937
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260707T194917Z
+    - ID: "ee323ed7-4732-4a64-a008-18df97dc0737"
+      Hint: Eyebrow
+      Value: Trusted since 1937

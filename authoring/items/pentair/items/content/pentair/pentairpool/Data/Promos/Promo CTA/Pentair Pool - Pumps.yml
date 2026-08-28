@@ -1,0 +1,56 @@
+﻿---
+ID: "d3e27e6d-d9d9-4781-8301-2d528a966598"
+Parent: "291ad667-0ffb-44bd-b393-36a79fa21e33"
+Template: "c0943942-ae0f-4205-86fa-84884cce4a53"
+Path: "/sitecore/content/pentair/pentairpool/Data/Promos/Promo CTA/Pentair Pool - Pumps"
+SharedFields:
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "31911032-a223-4b00-96bc-e177e5ad93c8"
+- ID: "e495efd3-5c43-45fc-af43-796a6b503716"
+  Hint: Image
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/96636-section5-img7?v=47591cb8" dam-id="6P6lYZAQTJGKSKS2K4vFNg" width="1280" height="855" alt="Child swimming underwater" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/96636/thumbnail" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1f82a687-0683-426f-b12a-4b2100a6a481"
+      Hint: Title
+      Value: Pump up the Flow
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260825T215538Z
+    - ID: "2fbad11a-8129-4c7e-aacc-6973619327a1"
+      Hint: Eyebrow
+      Value: Pool Pumps
+    - ID: "32f3e9b1-c441-4285-a063-0897453f37e2"
+      Hint: Link2
+      Value: |
+        <link text="Explore ENERGY STAR Pumps" linktype="external" url="https://www.pentair.com/en-us/education-support/water-education-center/pool-and-spa-education/pentair-energy-star-certified-products.html" anchor="" class="" title="" target="" querystring="" />
+    - ID: "507ba267-78fc-42f1-ac96-a1cb769b6de6"
+      Hint: Link
+      Value: |
+        <link text="Explore Pool Pumps" linktype="external" url="https://www.pentair.com/en-us/pool-spa/products/pumps.html" anchor="" class="" title="" target="" querystring="" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "80966307-87fc-4833-be77-5fb12d213e42"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "cc0cb595-ce5c-413e-b413-3a7176347f28"
+      Hint: Text
+      Value: "<p>Whisper-quiet, ENERGY STAR rated and compliant with updated DOE regulations, products like the IntelliFlo3 Variable Speed and Flow Pool Pump keep pools dive-in ready.</p>"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260825T215538Z

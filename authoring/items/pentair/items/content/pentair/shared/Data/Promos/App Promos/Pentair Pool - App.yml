@@ -1,0 +1,46 @@
+﻿---
+ID: "b2241eaf-ecb6-4fa8-802f-b20cb78f6ab8"
+Parent: "ccdd11e1-1eab-49dd-b112-5a6032712869"
+Template: "bbcccd48-218c-4f19-a1d4-bb3dbf1f4d89"
+Path: "/sitecore/content/pentair/shared/Data/Promos/App Promos/Pentair Pool - App"
+SharedFields:
+- ID: "23fec4a6-1e53-4d30-8bb4-1a08632f3545"
+  Hint: Image
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/96824-section5-img32?v=330d532d" dam-id="NU3reMGkRY-FOiYVaJmoMQ" width="236" height="486" alt="Pentair Pool App on mobile phone" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/96824/thumbnail" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "ee31987f-74c5-4314-a5bb-748fe9ad4a4f"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "19611527-1e31-4490-8042-482e61e3ce84"
+      Hint: Text
+      Value: |
+        <p>Stay smart, connected, and protected with the Pentair Pool app. Control your swimming pool system, monitor water chemistry, and access instant status updates from one easy-to-use dashboard.</p><p><a href="https://www.pentair.com/en-us/pool-spa/education-support/homeowner-support/pentair-pool-app.html">Learn More and Download</a></p>
+    - ID: "1f0455dc-9254-4487-b94d-6c66f103e7bf"
+      Hint: Title
+      Value: Introducing the Pentair Pool App
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260825T215629Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "968b06e2-ff11-4fcb-bec7-77841407f6f2"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260825T215629Z

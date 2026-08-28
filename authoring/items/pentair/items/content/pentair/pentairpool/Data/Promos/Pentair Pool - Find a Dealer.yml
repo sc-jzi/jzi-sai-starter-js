@@ -1,0 +1,41 @@
+﻿---
+ID: "f7bc604f-c3c5-4347-96b0-4aed231653d6"
+Parent: "10e7664a-b8b3-4936-97cc-b57ef2d789ab"
+Template: "4900d7e5-61b0-483a-a9d6-69419d4d5982"
+Path: "/sitecore/content/pentair/pentairpool/Data/Promos/Pentair Pool - Find a Dealer"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260825T215626Z
+    - ID: "34c7ca9b-6c24-4133-bd83-b453b838eb0b"
+      Hint: Link
+      Value: |
+        <link text="Find a Dealer" linktype="external" url="https://www.pentair.com/en-us/find-a-dealer/pool-spa.html" anchor="" class="" title="" target="" querystring="" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "bf4cb379-0cea-4357-af16-c69039418a5a"
+    - ID: "b03c10d8-11a2-48ca-9822-3640768ed2b7"
+      Hint: Text
+      Value: <p>Buy local. Know your water. Own your water.</p>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260825T215626Z
+    - ID: "e62af488-48ce-4ae4-a2bb-37ad346981a4"
+      Hint: Title
+      Value: "Need Equipment or Service for Your Pool?"

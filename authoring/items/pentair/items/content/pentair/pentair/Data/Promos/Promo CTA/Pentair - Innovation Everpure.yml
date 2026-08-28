@@ -1,0 +1,58 @@
+﻿---
+ID: "09a7a6b2-66e0-4e29-8269-0fa637ba164b"
+Parent: "06e32295-ef2e-44f8-851d-9c730bf2fa9b"
+Template: "c0943942-ae0f-4205-86fa-84884cce4a53"
+Path: "/sitecore/content/pentair/pentair/Data/Promos/Promo CTA/Pentair - Innovation Everpure"
+SharedFields:
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "f56ff553-360d-4ed1-8ba0-8a91f7136e01"
+- ID: "e495efd3-5c43-45fc-af43-796a6b503716"
+  Hint: Image
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/96464-section3-img14?v=a59a265a" dam-id="O2P_4y1PTHu12dbM4HnMOA" width="900" height="600" alt="EZ-RO Product and Award" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/96464/thumbnail" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1f82a687-0683-426f-b12a-4b2100a6a481"
+      Hint: Title
+      Value: Everpure and Manitowoc Ice Honored with Kitchen Innovations Awards
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260825T195044Z
+    - ID: "2fbad11a-8129-4c7e-aacc-6973619327a1"
+      Hint: Eyebrow
+      Value: 
+    - ID: "32f3e9b1-c441-4285-a063-0897453f37e2"
+      Hint: Link2
+      Value: 
+    - ID: "507ba267-78fc-42f1-ac96-a1cb769b6de6"
+      Hint: Link
+      Value: |
+        <link text="Get the Details" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://www.pentair.com/en-us/about-pentair/newsroom/blog/pentair-receives-kitchen-innovations-awards-for-everpure-and-manitowoc.html" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "fb2c0dca-df7e-455b-8dc0-d9bcf3fb4336"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "cc0cb595-ce5c-413e-b413-3a7176347f28"
+      Hint: Text
+      Value: <p>Everpure and Manitowoc Ice from Pentair Water Solutions have each won a 2025 Kitchen Innovations Award from the National Restaurant Association.</p><p>Everpure’s PFOA/PFOS Reduction Systems were awarded for their ability to reduce PFAS in water. Manitowoc Ice was recognized for its innovative NEO ice machine, the industry’s pioneering commercial undercounter ice machine with an integrated water filtration system.</p>
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260825T195044Z
+    - ID: "e4f11fe1-3b24-42e4-8cea-9ed7fda32bab"
+      Hint: Subtitle
+      Value: 
