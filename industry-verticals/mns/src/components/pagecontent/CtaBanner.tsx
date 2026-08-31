@@ -140,3 +140,25 @@ export const LargeImage = (props: CtaBannerProps): JSX.Element => {
     </div>
   );
 };
+
+/* MnsSocials variant — cream FOLLOW / socials / CONNECT bar */
+export const MnsSocials = (props: CtaBannerProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component cta-banner mns-socials ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="mns-socials__row">
+          <h2 className="mns-socials__label">
+            <Text field={props.fields.Eyebrow} />
+          </h2>
+          <div className="mns-socials__networks">
+            <RichText field={props.fields.Text} />
+          </div>
+          <Link field={props.fields.Link} className="mns-socials__connect" />
+        </div>
+      </div>
+    </div>
+  );
+};

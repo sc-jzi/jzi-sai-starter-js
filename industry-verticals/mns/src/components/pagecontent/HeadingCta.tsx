@@ -151,3 +151,58 @@ export const Centered = (props: HeadingCtaProps): JSX.Element => {
     </div>
   );
 };
+
+function hasAuthoredLink(link?: LinkField): boolean {
+  const href = link?.value?.href;
+  return Boolean(href && href !== '#');
+}
+
+/* Mns variant — centered primary-blue heading only */
+export const Mns = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component heading-cta mns-heading ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="mns-heading__content">
+          {(isPageEditing || props.fields?.Eyebrow?.value) && (
+            <h6 className="mns-heading__eyebrow">
+              <Text field={props.fields?.Eyebrow} />
+            </h6>
+          )}
+          {(isPageEditing || props.fields?.Heading?.value) && (
+            <h2>
+              <Text field={props.fields?.Heading} />
+            </h2>
+          )}
+          {(isPageEditing || props.fields?.Text?.value) && (
+            <p>
+              <Text field={props.fields?.Text} />
+            </p>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* MnsTextLink variant — centered text link only */
+export const MnsTextLink = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component heading-cta mns-text-link ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        {(isPageEditing || hasAuthoredLink(props.fields?.Link)) && (
+          <Link field={props.fields.Link} className="mns-text-link__cta" />
+        )}
+      </div>
+    </div>
+  );
+};

@@ -1,0 +1,802 @@
+{
+  "url": "https://mns.ca",
+  "extractedAt": "2026-08-31T20:37:46.244Z",
+  "detectedLanguage": "en-ca",
+  "targetLanguage": "en",
+  "translationNeeded": false,
+  "totalSections": 7,
+  "totalImages": 20,
+  "totalVideos": 0,
+  "interactionStats": {
+    "lazySourcesResolved": 0,
+    "tabsClicked": 0,
+    "accordionsExpanded": 0,
+    "carouselDotsClicked": 9,
+    "carouselArrowSlides": 24,
+    "backgroundImagesCollected": 8
+  },
+  "sections": [
+    {
+      "position": 1,
+      "tagName": "nav",
+      "classHint": "skip-nav",
+      "backgroundHint": "dark",
+      "headings": [],
+      "paragraphs": [],
+      "links": [
+        {
+          "text": "Skip to Navigation",
+          "href": "https://mns.ca/#main-nav",
+          "target": ""
+        },
+        {
+          "text": "Skip to Content",
+          "href": "https://mns.ca/#content",
+          "target": ""
+        },
+        {
+          "text": "Skip to Footer",
+          "href": "https://mns.ca/#footer",
+          "target": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "position": 2,
+      "tagName": "div",
+      "classHint": "banners featured-banners slick full-width slick-initialized slick-slider accessible-slick slick-dott",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Legislative Library"
+        },
+        {
+          "tag": "h3",
+          "text": "Browse your government's history through our expanded library."
+        },
+        {
+          "tag": "h2",
+          "text": "Welcome to MN–S"
+        },
+        {
+          "tag": "h3",
+          "text": "Taanishi Tân'si Bonn Zhour Édlánet'é"
+        },
+        {
+          "tag": "h2",
+          "text": "Métis Rising"
+        },
+        {
+          "tag": "h3",
+          "text": "Become a Registered Métis Citizen in Saskatchewan"
+        },
+        {
+          "tag": "h2",
+          "text": "Citizen Questions"
+        },
+        {
+          "tag": "h3",
+          "text": "Ask your questions about MN–S programs, services, governance, or events"
+        },
+        {
+          "tag": "h2",
+          "text": "Legislative Library"
+        },
+        {
+          "tag": "h3",
+          "text": "Browse your government's history through our expanded library."
+        },
+        {
+          "tag": "h2",
+          "text": "Welcome to MN–S"
+        },
+        {
+          "tag": "h3",
+          "text": "Taanishi Tân'si Bonn Zhour Édlánet'é"
+        },
+        {
+          "tag": "h2",
+          "text": "Métis Rising"
+        },
+        {
+          "tag": "h3",
+          "text": "Become a Registered Métis Citizen in Saskatchewan"
+        },
+        {
+          "tag": "h2",
+          "text": "Citizen Questions"
+        },
+        {
+          "tag": "h3",
+          "text": "Ask your questions about MN–S programs, services, governance, or events"
+        },
+        {
+          "tag": "h2",
+          "text": "Legislative Library"
+        },
+        {
+          "tag": "h3",
+          "text": "Browse your government's history through our expanded library."
+        }
+      ],
+      "paragraphs": [
+        "Browse your government's history through our expanded library.",
+        "Taanishi Tân'si Bonn Zhour Édlánet'é",
+        "Message from the President",
+        "Become a Registered Métis Citizen in Saskatchewan",
+        "Ask your questions about MN–S programs, services, governance, or events"
+      ],
+      "links": [
+        {
+          "text": "Find Out More",
+          "href": "https://mns.ca/library/legislative-library",
+          "target": ""
+        },
+        {
+          "text": "Message from the President",
+          "href": "https://mns.ca/mns-government/departments-ministries/president",
+          "target": ""
+        },
+        {
+          "text": "Find Out More",
+          "href": "https://mns.ca/metis-citizens/citizenship-registry",
+          "target": ""
+        },
+        {
+          "text": "Find Out More",
+          "href": "https://mns.ca/metis-citizens/citizen-questions",
+          "target": "_blank"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://mns.ca/uploads/banners/banner-19.jpg?1772059215",
+          "alt": "Métis flag",
+          "type": "img",
+          "width": 1920,
+          "height": 800
+        },
+        {
+          "src": "https://mns.ca/uploads/banners/banner-6.jpg?1772059201",
+          "alt": "",
+          "type": "img",
+          "width": 1920,
+          "height": 800
+        },
+        {
+          "src": "https://mns.ca/uploads/banners/banner-5.jpg?1772059197",
+          "alt": "",
+          "type": "img",
+          "width": 1920,
+          "height": 800
+        },
+        {
+          "src": "https://mns.ca/uploads/banners/banner-18.jpg?1772059604",
+          "alt": "zoomed-in red and yellow métis beadwork",
+          "type": "img",
+          "width": 1920,
+          "height": 800
+        }
+      ],
+      "listItems": [
+        {
+          "title": "Legislative Library",
+          "description": "Legislative Library Browse your government's history through our expanded library. Find Out More",
+          "link": {
+            "text": "Find Out More",
+            "href": "https://mns.ca/library/legislative-library"
+          },
+          "image": {
+            "src": "https://mns.ca/uploads/banners/banner-19.jpg?1772059215",
+            "alt": "Métis flag"
+          }
+        },
+        {
+          "title": "Welcome to MN–S",
+          "description": "Welcome to MN–S Taanishi Tân'si Bonn Zhour Édlánet'é Message from the President",
+          "link": {
+            "text": "Message from the President",
+            "href": "https://mns.ca/mns-government/departments-ministries/president"
+          },
+          "image": {
+            "src": "https://mns.ca/uploads/banners/banner-6.jpg?1772059201",
+            "alt": ""
+          }
+        },
+        {
+          "title": "Métis Rising",
+          "description": "Métis Rising Become a Registered Métis Citizen in Saskatchewan Find Out More",
+          "link": {
+            "text": "Find Out More",
+            "href": "https://mns.ca/metis-citizens/citizenship-registry"
+          },
+          "image": {
+            "src": "https://mns.ca/uploads/banners/banner-5.jpg?1772059197",
+            "alt": ""
+          }
+        },
+        {
+          "title": "Citizen Questions",
+          "description": "Citizen Questions Ask your questions about MN–S programs, services, governance, or events Find Out More",
+          "link": {
+            "text": "Find Out More",
+            "href": "https://mns.ca/metis-citizens/citizen-questions"
+          },
+          "image": {
+            "src": "https://mns.ca/uploads/banners/banner-18.jpg?1772059604",
+            "alt": "zoomed-in red and yellow métis beadwork"
+          }
+        },
+        {
+          "title": "Legislative Library",
+          "description": "Legislative Library Browse your government's history through our expanded library. Find Out More",
+          "link": {
+            "text": "Find Out More",
+            "href": "https://mns.ca/library/legislative-library"
+          },
+          "image": {
+            "src": "https://mns.ca/uploads/banners/banner-19.jpg?1772059215",
+            "alt": "Métis flag"
+          }
+        },
+        {
+          "title": "Welcome to MN–S",
+          "description": "Welcome to MN–S Taanishi Tân'si Bonn Zhour Édlánet'é Message from the President",
+          "link": {
+            "text": "Message from the President",
+            "href": "https://mns.ca/mns-government/departments-ministries/president"
+          },
+          "image": {
+            "src": "https://mns.ca/uploads/banners/banner-6.jpg?1772059201",
+            "alt": ""
+          }
+        },
+        {
+          "title": "Métis Rising",
+          "description": "Métis Rising Become a Registered Métis Citizen in Saskatchewan Find Out More",
+          "link": {
+            "text": "Find Out More",
+            "href": "https://mns.ca/metis-citizens/citizenship-registry"
+          },
+          "image": {
+            "src": "https://mns.ca/uploads/banners/banner-5.jpg?1772059197",
+            "alt": ""
+          }
+        },
+        {
+          "title": "Citizen Questions",
+          "description": "Citizen Questions Ask your questions about MN–S programs, services, governance, or events Find Out More",
+          "link": {
+            "text": "Find Out More",
+            "href": "https://mns.ca/metis-citizens/citizen-questions"
+          },
+          "image": {
+            "src": "https://mns.ca/uploads/banners/banner-18.jpg?1772059604",
+            "alt": "zoomed-in red and yellow métis beadwork"
+          }
+        },
+        {
+          "title": "Legislative Library",
+          "description": "Legislative Library Browse your government's history through our expanded library. Find Out More",
+          "link": {
+            "text": "Find Out More",
+            "href": "https://mns.ca/library/legislative-library"
+          },
+          "image": {
+            "src": "https://mns.ca/uploads/banners/banner-19.jpg?1772059215",
+            "alt": "Métis flag"
+          }
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "tagName": "div",
+      "classHint": "banners quicklink-banners",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h3",
+          "text": "Provincial Métis Council"
+        },
+        {
+          "tag": "h3",
+          "text": "SaskMétis Works"
+        },
+        {
+          "tag": "h3",
+          "text": "Our Nation"
+        },
+        {
+          "tag": "h4",
+          "text": "Is your newsletter"
+        },
+        {
+          "tag": "h3",
+          "text": "MN–S Services & Programs"
+        },
+        {
+          "tag": "h4",
+          "text": "Find a program today!"
+        }
+      ],
+      "paragraphs": [
+        "Is your newsletter",
+        "Find a program today!"
+      ],
+      "links": [
+        {
+          "text": "Provincial Métis Council",
+          "href": "https://mns.ca/mns-government/provincial-metis-council",
+          "target": "_blank"
+        },
+        {
+          "text": "SaskMétis Works",
+          "href": "https://saskmetisworks.ca/",
+          "target": "_blank"
+        },
+        {
+          "text": "Our Nation Is your newsletter",
+          "href": "https://mns.ca/news/newsletter",
+          "target": ""
+        },
+        {
+          "text": "MN–S Services & Programs Find a program today!",
+          "href": "https://mns.ca/services-and-programs/applications",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://mns.ca/uploads/banners/banner-10.svg?1729834847",
+          "alt": "",
+          "type": "background",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://mns.ca/uploads/banners/banner-15.avif?1734124514",
+          "alt": "",
+          "type": "background",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://mns.ca/uploads/banners/banner-12.svg?1729834959",
+          "alt": "",
+          "type": "background",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://mns.ca/uploads/banners/banner-8.svg?1771043018",
+          "alt": "",
+          "type": "background",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://mns.ca/uploads/banners/banner-7.png?1772059204",
+          "alt": "",
+          "type": "background",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://mns.ca/uploads/banners/banner-20.png?1773688680",
+          "alt": "",
+          "type": "background",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://mns.ca/uploads/banners/banner-21.png?1772059220",
+          "alt": "",
+          "type": "background",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://mns.ca/uploads/banners/banner-22.png?1772059224",
+          "alt": "",
+          "type": "background",
+          "width": null,
+          "height": null
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "tagName": "div",
+      "classHint": "section type-5 events-block events-upcoming",
+      "backgroundHint": "light",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Featured MN–S Events"
+        },
+        {
+          "tag": "h3",
+          "text": "Youth Summer Gathering"
+        },
+        {
+          "tag": "h3",
+          "text": "Provincal Métis Council Meeting & Workshop"
+        },
+        {
+          "tag": "h3",
+          "text": "Constellations & Conservation at Batoche"
+        }
+      ],
+      "paragraphs": [
+        "Batoche, Saskatchewan",
+        "The Youth Summer Gathering: li zhenn moond toot aansaamb ( youth all together), is geared toward Métis youth to connect with their culture, community, and identity.",
+        "Sep 15 – 17",
+        "This is the official notice for the September 2026 Provincial Métis Council (PMC) meeting. The next regularly scheduled PMC meeting will occur in person on Tuesday, September 15, 2026, at Dumont Lodge in Batoche, SK. This will be followed by a Ministeria",
+        "Join us for an unforgettable evening under the stars at Batoche National Historic Site on Saturday, September 19, 2026.",
+        "View Full Calendar"
+      ],
+      "links": [
+        {
+          "text": "Youth Summer Gathering",
+          "href": "https://mns.ca/metis-citizens/events/event/68/youth-summer-gathering",
+          "target": ""
+        },
+        {
+          "text": "See more",
+          "href": "https://mns.ca/metis-citizens/events/event/68/youth-summer-gathering",
+          "target": ""
+        },
+        {
+          "text": "Provincal Métis Council Meeting & Workshop",
+          "href": "https://mns.ca/metis-citizens/events/event/72/provincal-metis-council-meeting-workshop",
+          "target": ""
+        },
+        {
+          "text": "See more",
+          "href": "https://mns.ca/metis-citizens/events/event/72/provincal-metis-council-meeting-workshop",
+          "target": ""
+        },
+        {
+          "text": "Constellations & Conservation at Batoche",
+          "href": "https://mns.ca/metis-citizens/events/event/69/constellations-conservation-at-batoche",
+          "target": ""
+        },
+        {
+          "text": "See more",
+          "href": "https://mns.ca/metis-citizens/events/event/69/constellations-conservation-at-batoche",
+          "target": ""
+        },
+        {
+          "text": "View Full Calendar",
+          "href": "https://mns.ca/metis-citizens/events",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://mns.ca/uploads/events/event-68-hero-thumb-large.png?1784575933",
+          "alt": "",
+          "type": "img",
+          "width": 1600,
+          "height": 800
+        },
+        {
+          "src": "https://mns.ca/uploads/events/event-72-hero-thumb-large.png?1788207130",
+          "alt": "",
+          "type": "img",
+          "width": 1600,
+          "height": 800
+        },
+        {
+          "src": "https://mns.ca/uploads/events/event-69-hero-thumb-large.jpg?1787067968",
+          "alt": "",
+          "type": "img",
+          "width": 1600,
+          "height": 800
+        }
+      ],
+      "listItems": [
+        {
+          "title": "Youth Summer Gathering",
+          "description": "Sep 4 – 6",
+          "link": {
+            "text": "",
+            "href": "https://mns.ca/metis-citizens/events/event/68/youth-summer-gathering"
+          },
+          "image": {
+            "src": "https://mns.ca/uploads/events/event-68-hero-thumb-large.png?1784575933",
+            "alt": ""
+          }
+        },
+        {
+          "title": "Provincal Métis Council Meeting & Workshop",
+          "description": "Sep 15 – 17",
+          "link": {
+            "text": "",
+            "href": "https://mns.ca/metis-citizens/events/event/72/provincal-metis-council-meeting-workshop"
+          },
+          "image": {
+            "src": "https://mns.ca/uploads/events/event-72-hero-thumb-large.png?1788207130",
+            "alt": ""
+          }
+        },
+        {
+          "title": "Constellations & Conservation at Batoche",
+          "description": "Sep 19",
+          "link": {
+            "text": "",
+            "href": "https://mns.ca/metis-citizens/events/event/69/constellations-conservation-at-batoche"
+          },
+          "image": {
+            "src": "https://mns.ca/uploads/events/event-69-hero-thumb-large.jpg?1787067968",
+            "alt": ""
+          }
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "tagName": "div",
+      "classHint": "section stories-block stories-latest",
+      "backgroundHint": "light",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Latest Stories"
+        },
+        {
+          "tag": "h3",
+          "text": "A Lifetime of Service, Honoured at Batoche"
+        },
+        {
+          "tag": "h3",
+          "text": "Taanishi aen Ishinihkaashooyen Li Pchi Bufloo? (What’s Your Name, Little Buffalo?)"
+        },
+        {
+          "tag": "h3",
+          "text": "People of the Horse"
+        },
+        {
+          "tag": "h3",
+          "text": "Economic Opportunities Expand with Federal Recognition"
+        }
+      ],
+      "paragraphs": [
+        "During the official opening of the 2026 Back to Batoche Days, Métis Nation–Saskatchewan (MN–S) introduced the President's Medal, a new honour recognizing exceptional service, leadership, and commitment to Métis citizens.",
+        "Meet our newest bison calves—now proudly named by Métis youth across Saskatchewan with names rooted in our languages and culture.",
+        "Métis people have always shared a deep respect and historical connection with horses. Their uncanny ability to tame a wild horse and train the animal for hunting and transportation, has earned them the title ‘People of the Horse’.",
+        "“It’s no secret that Indigenous people - there are very successful businesses here in Saskatchewan however what doors are open for them?” MN–S Minister of Economic Development Marg Friesen",
+        "All MNS Stories"
+      ],
+      "links": [
+        {
+          "text": "A Lifetime of Service, Honoured at Batoche",
+          "href": "https://mns.ca/news/newsroom/news/635/a-lifetime-of-service-honoured-at-batoche",
+          "target": ""
+        },
+        {
+          "text": "Read More",
+          "href": "https://mns.ca/news/newsroom/news/635/a-lifetime-of-service-honoured-at-batoche",
+          "target": ""
+        },
+        {
+          "text": "Taanishi aen Ishinihkaashooyen Li Pchi Bufloo? (What’s Your Name, Little Buffalo?)",
+          "href": "https://mns.ca/news/newsroom/news/633/taanishi-aen-ishinihkaashooyen-li-pchi-bufloo-what-s-your-name-little-buffalo",
+          "target": ""
+        },
+        {
+          "text": "Read More",
+          "href": "https://mns.ca/news/newsroom/news/633/taanishi-aen-ishinihkaashooyen-li-pchi-bufloo-what-s-your-name-little-buffalo",
+          "target": ""
+        },
+        {
+          "text": "People of the Horse",
+          "href": "https://mns.ca/news/newsroom/news/634/people-of-the-horse",
+          "target": ""
+        },
+        {
+          "text": "Read More",
+          "href": "https://mns.ca/news/newsroom/news/634/people-of-the-horse",
+          "target": ""
+        },
+        {
+          "text": "Economic Opportunities Expand with Federal Recognition",
+          "href": "https://mns.ca/news/newsroom/news/632/economic-opportunities-expand-with-federal-recognition",
+          "target": ""
+        },
+        {
+          "text": "Read More",
+          "href": "https://mns.ca/news/newsroom/news/632/economic-opportunities-expand-with-federal-recognition",
+          "target": ""
+        },
+        {
+          "text": "All MNS Stories",
+          "href": "https://mns.ca/news/newsroom",
+          "target": ""
+        },
+        {
+          "text": "< Prev",
+          "href": "#",
+          "target": ""
+        },
+        {
+          "text": "Next >",
+          "href": "https://mns.ca/home?story1%5Bpage%5D=2",
+          "target": ""
+        },
+        {
+          "text": "Last >>",
+          "href": "https://mns.ca/home?story1%5Bpage%5D=77",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://mns.ca/uploads/stories/article-635-thumb-med.jpg?1784319639",
+          "alt": "",
+          "type": "img",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://mns.ca/uploads/stories/article-633-thumb-med.jpg?1783015279",
+          "alt": "",
+          "type": "img",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://mns.ca/uploads/stories/article-634-thumb-med.jpg?1782500611",
+          "alt": "",
+          "type": "img",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://mns.ca/uploads/stories/article-632-thumb-med.jpg?1781215548",
+          "alt": "",
+          "type": "img",
+          "width": null,
+          "height": null
+        }
+      ],
+      "listItems": [
+        {
+          "title": "A Lifetime of Service, Honoured at Batoche",
+          "description": "During the official opening of the 2026 Back to Batoche Days, Métis Nation–Saskatchewan (MN–S) introduced the President's Medal, a new honour recognizing exceptional service, leadership, and commitment to Métis citizens.",
+          "link": {
+            "text": "",
+            "href": "https://mns.ca/news/newsroom/news/635/a-lifetime-of-service-honoured-at-batoche"
+          },
+          "image": {
+            "src": "https://mns.ca/uploads/stories/article-635-thumb-med.jpg?1784319639",
+            "alt": ""
+          }
+        },
+        {
+          "title": "Taanishi aen Ishinihkaashooyen Li Pchi Bufloo? (What’s Your Name, Little Buffalo?)",
+          "description": "Meet our newest bison calves—now proudly named by Métis youth across Saskatchewan with names rooted in our languages and culture.",
+          "link": {
+            "text": "",
+            "href": "https://mns.ca/news/newsroom/news/633/taanishi-aen-ishinihkaashooyen-li-pchi-bufloo-what-s-your-name-little-buffalo"
+          },
+          "image": {
+            "src": "https://mns.ca/uploads/stories/article-633-thumb-med.jpg?1783015279",
+            "alt": ""
+          }
+        },
+        {
+          "title": "People of the Horse",
+          "description": "Métis people have always shared a deep respect and historical connection with horses. Their uncanny ability to tame a wild horse and train the animal for hunting and transportation, has earned them the title ‘People of the Horse’.",
+          "link": {
+            "text": "",
+            "href": "https://mns.ca/news/newsroom/news/634/people-of-the-horse"
+          },
+          "image": {
+            "src": "https://mns.ca/uploads/stories/article-634-thumb-med.jpg?1782500611",
+            "alt": ""
+          }
+        },
+        {
+          "title": "Economic Opportunities Expand with Federal Recognition",
+          "description": "“It’s no secret that Indigenous people - there are very successful businesses here in Saskatchewan however what doors are open for them?” MN–S Minister of Economic Development Marg Friesen",
+          "link": {
+            "text": "",
+            "href": "https://mns.ca/news/newsroom/news/632/economic-opportunities-expand-with-federal-recognition"
+          },
+          "image": {
+            "src": "https://mns.ca/uploads/stories/article-632-thumb-med.jpg?1781215548",
+            "alt": ""
+          }
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "tagName": "section",
+      "classHint": "section type-2 social-block",
+      "backgroundHint": "light",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Follow"
+        }
+      ],
+      "paragraphs": [],
+      "links": [],
+      "images": []
+    },
+    {
+      "position": 7,
+      "tagName": "footer",
+      "classHint": "site-footer",
+      "backgroundHint": "dark",
+      "headings": [],
+      "paragraphs": [
+        "Métis Nation–Saskatchewan",
+        "310 20th Street EastSaskatoon, SK S7K 0A71-877-METISSK (638-4775)",
+        "All Contents ©2026 Métis Nation Saskatchewan"
+      ],
+      "links": [
+        {
+          "text": "1-877-METISSK (638-4775)",
+          "href": "tel:+1-306-343-8285",
+          "target": ""
+        },
+        {
+          "text": "Full Calendar",
+          "href": "https://mns.ca/metis-citizens/events",
+          "target": ""
+        },
+        {
+          "text": "Newsletter",
+          "href": "https://mns.ca/news/newsletter",
+          "target": ""
+        },
+        {
+          "text": "Privacy Policy",
+          "href": "https://mns.ca/privacy-policy",
+          "target": ""
+        },
+        {
+          "text": "Contact Us",
+          "href": "https://mns.ca/contact",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://mns.ca/img/logo-mns-artwork.svg?1771875289",
+          "alt": "Métis Nation Saskatchewan",
+          "type": "img",
+          "width": 210,
+          "height": 108
+        }
+      ],
+      "listItems": [
+        {
+          "title": "",
+          "link": {
+            "text": "",
+            "href": "https://mns.ca/"
+          },
+          "image": {
+            "src": "https://mns.ca/img/logo-mns-artwork.svg?1771875289",
+            "alt": "Métis Nation Saskatchewan"
+          }
+        },
+        {
+          "title": "Métis Nation–Saskatchewan",
+          "description": "Métis Nation–Saskatchewan",
+          "link": {
+            "text": "1-877-METISSK (638-4775)",
+            "href": "tel:+1-306-343-8285"
+          }
+        }
+      ]
+    }
+  ]
+}

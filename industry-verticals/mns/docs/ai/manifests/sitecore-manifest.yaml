@@ -3,15 +3,15 @@ lastUpdatedAt: "2026-06-09T00:00:00Z"
 lastUpdatedBy: "claude-agent"
 
 project:
-  siteCollection: "main"
-  siteName: "main-website"
+  siteCollection: "public-sector"
+  siteName: "mns"
   sdk: "@sitecore-content-sdk/nextjs"
-  renderingsRoot: "/sitecore/layout/Renderings/Project/fmc-custom-demo"
-  projectTemplatesRoot: "/sitecore/templates/Project/fmc-custom-demo"
-  dataRoot: "/sitecore/content/main/main-website/Data"
-  projectFoldersRoot: "/sitecore/templates/Project/fmc-custom-demo/Folders"
-  renderingParamsRoot: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters"
-  headlessVariantsRoot: "/sitecore/content/main/main-website/Presentation/Headless Variants"
+  renderingsRoot: "/sitecore/layout/Renderings/Project/Financial"
+  projectTemplatesRoot: "/sitecore/templates/Project/Financial"
+  dataRoot: "/sitecore/content/public-sector/mns/Data"
+  projectFoldersRoot: "/sitecore/templates/Project/Financial/Folders"
+  renderingParamsRoot: "/sitecore/templates/Project/Financial/Rendering Parameters"
+  headlessVariantsRoot: "/sitecore/content/public-sector/mns/Presentation/Headless Variants"
 
 availableRenderings:
   itemId: "{2BF7E311-E3A5-4290-A043-AB97EA1DFB15}"

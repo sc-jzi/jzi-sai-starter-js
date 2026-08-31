@@ -1,0 +1,136 @@
+# Client Brand Theme — Métis Nation–Saskatchewan
+# Extracted from Playwright scraper + homepage screenshots + logo SVG
+# Source: https://mns.ca
+
+client:
+  name: "Métis Nation–Saskatchewan"
+  sourceUrl: "https://mns.ca"
+  extractedAt: "2026-08-31T20:40:00Z"
+  extractedBy: "cursor"
+  contentRoot: "/sitecore/content/public-sector/mns"
+  codeRoot: "/industry-verticals/mns"
+
+colors:
+  primary: "#285d8e"
+  primaryForeground: "#ffffff"
+  secondary: "#03274e"
+  secondaryForeground: "#ffffff"
+  accent: "#d14900"
+  accentForeground: "#ffffff"
+  background: "#ffffff"
+  foreground: "#285d8e"
+  muted: "#e8f1f8"
+  mutedForeground: "#285d8e"
+  headerBackground: "#03274e"
+  headerForeground: "#ffffff"
+  footerBackground: "#03274e"
+  footerForeground: "#ffffff"
+  border: "#285d8e"
+  ring: "#d14900"
+  extra:
+    - { name: "logoBlue", value: "#02509d" }
+    - { name: "bisonNavy", value: "#162640" }
+    - { name: "heritageOrange", value: "#d14900" }
+    - { name: "navyDeep", value: "#03274e" }
+    - { name: "midBlue", value: "#285d8e" }
+    - { name: "eventsBg", value: "#e8f1f8" }
+    - { name: "socialBar", value: "#f3ead8" }
+    - { name: "tileCream", value: "#f7f1e6" }
+
+typography:
+  headingFamily: "'Open Sans', sans-serif"
+  headingWeight: "800"
+  bodyFamily: "'Open Sans', sans-serif"
+  bodyWeight: "400"
+  monoFamily: "'Roboto Mono', monospace"
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+  scale:
+    hero: "4.2rem"
+    h1: "4.2rem"
+    h2: "5rem"
+    h3: "1.4rem"
+    body: "1rem"
+    small: "0.875rem"
+  headingTransform: "none"
+  letterSpacing: "normal"
+  lineHeight: "normal"
+
+spacing:
+  density: "normal"
+  sectionGap: "3rem"
+  containerMaxWidth: "1600px"
+  containerPadding: "1.5rem"
+
+shape:
+  borderRadius: "0.375rem"
+  buttonRadius: "0.25rem"
+  cardRadius: "0.375rem"
+  imageRadius: "0.25rem"
+  shadowStyle: "none"
+  borderStyle: "thin"
+
+tone:
+  overall: "institutional"
+  colorMode: "mixed"
+  contrast: "high"
+  imagery: "photography"
+  heroStyle: "full-bleed-image"
+  cardStyle: "bordered"
+  navStyle: "solid-bar"
+
+tailwind:
+  colors:
+    brand:
+      primary: "#285d8e"
+      secondary: "#03274e"
+      accent: "#d14900"
+  fontFamily:
+    heading: ["Open Sans", "sans-serif"]
+    body: ["Open Sans", "sans-serif"]
+  borderRadius:
+    DEFAULT: "0.375rem"
+    button: "0.25rem"
+    card: "0.375rem"
+
+cssVariables: |
+  :root {
+    --brand-primary: #285d8e;
+    --brand-primary-foreground: #ffffff;
+    --brand-secondary: #03274e;
+    --brand-secondary-foreground: #ffffff;
+    --brand-accent: #d14900;
+    --brand-accent-foreground: #ffffff;
+    --brand-bg: #ffffff;
+    --brand-fg: #285d8e;
+    --brand-muted: #e8f1f8;
+    --brand-muted-fg: #285d8e;
+    --brand-header-bg: #03274e;
+    --brand-header-fg: #ffffff;
+    --brand-footer-bg: #03274e;
+    --brand-footer-fg: #ffffff;
+    --brand-border: #285d8e;
+    --brand-ring: #d14900;
+    --brand-heading-font: 'Open Sans', sans-serif;
+    --brand-body-font: 'Open Sans', sans-serif;
+    --brand-radius: 0.375rem;
+    --brand-button-radius: 0.25rem;
+    --brand-card-radius: 0.375rem;
+  }
+
+extraction:
+  confidence: "high"
+  method: "playwright-full"
+  notes:
+    - "Playwright scraper captured desktop/mobile/hero screenshots, computed styles, Open Sans Google Fonts link, and the MN-S logo SVG."
+    - "CSS token --primary is #285d8e (mid corporate blue). Used as brand primary and body text color."
+    - "Footer computed background is rgb(3, 39, 78) / #03274e. Nav bar visually matches this navy."
+    - "Primary button / search / announcement bar is rgb(209, 73, 0) / #d14900 heritage orange."
+    - "Logo SVG uses #02509d (flag blue) and #162640 (bison navy). Kept in extra[] — page chrome is darker than the logo flag."
+    - "Scraper headerBackground was transparent (logo sits above the navy nav). Visual nav is solid navy."
+    - "Scraper linkColor #1e90ff is a default/browser blue — not used. In-page links are primary blue or orange."
+    - "Scraper reported 0px card radius; tiles and story cards visually have a small radius (~6px)."
+    - "Hero is a full-bleed photo carousel with left-aligned white overlay text, arrows, and dots."
+    - "Quick-link tiles mix white, navy, orange, and mid-blue backgrounds with cultural motifs."
+    - "Events sit on a light-blue muted band. Social bar is cream. Affiliates sit on light blue."
+    - "This starter uses PLAY! Financial components (not the UIIM 18-component library). Phase 4 will apply tokens in src/assets/sass."
+    - "Content Hub credentials verified 200 OK against https://jzi-verticals.sitecoresandbox.cloud."

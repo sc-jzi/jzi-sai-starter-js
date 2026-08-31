@@ -1,0 +1,136 @@
+# Demo Progress Tracker — Métis Nation–Saskatchewan
+client:
+  name: "Métis Nation–Saskatchewan"
+  sourceUrl: "https://mns.ca"
+  startedAt: "2026-08-31T20:25:00Z"
+  lastUpdatedAt: "2026-08-31T21:20:00Z"
+  contentRoot: "/sitecore/content/public-sector/mns"
+  codeRoot: "/industry-verticals/mns"
+  homePageId: "58e0e383-4a67-43af-a83b-f9d8bdf57640"
+  siteId: "4fb08041-ee52-48cf-ade9-7b4ea4b2898a"
+  dataFolderId: "ca10aed5-5bbe-454c-9234-c010662f4a96"
+
+phases:
+  phase0_inputs:
+    status: "complete"
+    screenshot: true
+    url: "https://mns.ca"
+    contentHubAuth: "verified"
+
+  phase0_5_manifest:
+    status: "complete"
+    validationMode: "quick"
+    result: "pass-with-warnings"
+
+  phase1_theme:
+    status: "complete"
+    themeFile: "docs/ai/themes/mns.theme.yaml"
+    userApproved: true
+
+  phase2_analysis:
+    status: "complete"
+    buildPlanFile: "docs/ai/demos/mns/build-plan.yaml"
+    totalSections: 15
+    userApproved: true
+
+  phase2_5_content:
+    status: "complete"
+    contentMapFile: "docs/ai/demos/mns/content-map.yaml"
+    extractorUsed: true
+
+  phase3_content:
+    status: "complete"
+    completedSections: 12
+    totalSections: 15
+    notes: "12 API-addable datasources created and populated. Sections 1, 2, 15 are context-only partials."
+
+  phase4_theme:
+    status: "complete"
+    themeDelivery: "sass"
+    cssWritten: true
+    fontsAdded: true
+
+  phase5_custom:
+    status: "complete"
+    customComponentsNeeded: 0
+    customComponentsBuilt: 0
+
+  phase5_5_variants:
+    status: "complete"
+    variantsNeeded: 15
+    variantsCreated: 11
+    variantSpecsFile: "docs/ai/demos/mns/variant-specs.yaml"
+    skippedReason: ""
+
+  phase6_assembly:
+    status: "partial"
+    componentsAdded: 0
+    datasourcesWired: 0
+    totalComponents: 12
+    notes: "API blocked. Home Title updated. Assembly checklist in manual-tasks.md."
+
+  phase7_summary:
+    status: "complete"
+
+sections:
+  - position: 1
+    componentName: "Eyebrow"
+    status: "skipped"
+    kind: "context-only"
+  - position: 2
+    componentName: "Header"
+    status: "skipped"
+    kind: "context-only"
+  - position: 3
+    componentName: "Carousel"
+    status: "populated"
+    datasourceItemId: "57dbd733-f898-4f72-925f-ff1a3af6bd1f"
+    childrenCreated: 4
+  - position: 4
+    componentName: "FourColumnCta"
+    status: "populated"
+    datasourceItemId: "0e83a2a2-2133-4fc0-9fe0-3ca854c2b686"
+  - position: 5
+    componentName: "FourColumnCta"
+    status: "populated"
+    datasourceItemId: "ce253757-d6b5-46fc-90c5-9031a86bccd3"
+  - position: 6
+    componentName: "HeadingCta"
+    status: "populated"
+    datasourceItemId: "834e0e84-d3be-447a-aab9-f9c14f3b9625"
+  - position: 7
+    componentName: "ThreeColumnCta"
+    status: "populated"
+    datasourceItemId: "02e50dc5-3999-4420-8293-716373af7e1c"
+  - position: 8
+    componentName: "HeadingCta"
+    status: "populated"
+    datasourceItemId: "a3a10995-5799-4903-96ca-05130e29f9c5"
+  - position: 9
+    componentName: "HeadingCta"
+    status: "populated"
+    datasourceItemId: "a2d06774-5476-44df-a56b-f98dab23edbf"
+  - position: 10
+    componentName: "FourColumnCta"
+    status: "populated"
+    datasourceItemId: "232ac954-9d22-4139-b7d9-e01d7a2d8280"
+  - position: 11
+    componentName: "HeadingCta"
+    status: "populated"
+    datasourceItemId: "894d0d7d-ffa7-47ef-a179-c671ac83e840"
+  - position: 12
+    componentName: "CtaBanner"
+    status: "populated"
+    datasourceItemId: "98581111-7b25-43ad-be57-9820c9e2f343"
+  - position: 13
+    componentName: "HeadingCta"
+    status: "populated"
+    datasourceItemId: "3597ec5e-ed4d-4591-b02d-bf5135e605a8"
+  - position: 14
+    componentName: "FourColumnCta"
+    status: "populated"
+    datasourceItemId: "afb31318-bcc8-4246-8905-89497520934c"
+  - position: 15
+    componentName: "Footer"
+    status: "skipped"
+    kind: "context-only"

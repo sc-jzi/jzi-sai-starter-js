@@ -5,14 +5,14 @@
 # Required fields — agent will ask and create this file if it does not exist.
 
 # XM Cloud site identity
-siteCollection: "main"
-siteName: "main-website"
+siteCollection: "public-sector"
+siteName: "mns"
 
 # Sitecore SDK used by this repo's React components
 sdk: "@sitecore-content-sdk/nextjs"
 
 # Sitecore item root paths
-# Override these only if your project uses a non-standard structure.
-# If omitted, the agent derives them from siteCollection and siteName using defaults.
-renderingsRoot: "/sitecore/layout/Renderings/Project/fmc-custom-demo"
-projectTemplatesRoot: "/sitecore/templates/Project/fmc-custom-demo"
+# PLAY! Financial starter components are shared under Project/Financial.
+# Site content lives at /sitecore/content/public-sector/mns.
+renderingsRoot: "/sitecore/layout/Renderings/Project/Financial"
+projectTemplatesRoot: "/sitecore/templates/Project/Financial"

@@ -135,3 +135,92 @@ export const Default = (props: CarouselComponentProps): JSX.Element => {
     </section>
   );
 };
+
+/* Mns variant — full-bleed photo, left-aligned white overlay, italic text link */
+export const Mns = (props: CarouselComponentProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const [index, setIndex] = useState(0);
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const items = props.fields?.items || [];
+
+  const handleNext = () => {
+    setIndex((prevIndex) => (prevIndex < items.length - 1 ? prevIndex + 1 : 0));
+  };
+
+  const handlePrev = () => {
+    setIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : items.length - 1));
+  };
+
+  return (
+    <section className={`component carousel mns-carousel ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="carousel-inner">
+        {items.map((item, i) => (
+          <div key={item.id || i} className={'carousel-item ' + (i == index ? 'active' : '')}>
+            {!isPageEditing && item.fields?.Video?.value?.src ? (
+              <video
+                className="object-fit-cover d-block w-100 h-100"
+                key={item.id}
+                autoPlay={true}
+                loop={true}
+                muted
+                playsInline
+                poster={item.fields.Image?.value?.src}
+              >
+                <source src={item.fields.Video.value.src} type="video/webm" />
+              </video>
+            ) : (
+              <NextImage
+                field={item.fields.Image}
+                className="object-fit-cover d-block w-100 h-100"
+                width={1920}
+                height={800}
+              />
+            )}
+
+            <div className="side-content">
+              <div className="container">
+                <div className="mns-carousel__copy">
+                  <h1 className="mns-carousel__title">
+                    <Text field={item.fields.Title} />
+                  </h1>
+                  <RichText field={item.fields.Text} className="mns-carousel__text" />
+                  {(isPageEditing || item.fields?.Link?.value?.href) && (
+                    <Link field={item.fields.Link} className="mns-carousel__link" />
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <ol className="carousel-indicators">
+        {items.map((_item, i) => (
+          <li
+            key={i}
+            aria-label={`Slide ${i + 1}`}
+            className={i == index ? 'active' : ''}
+            onClick={() => setIndex(i)}
+          ></li>
+        ))}
+      </ol>
+      <button className="carousel-control-prev" type="button" onClick={handlePrev}>
+        <span className="carousel-control-prev-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+          </svg>
+        </span>
+        <span className="visually-hidden">Previous</span>
+      </button>
+      <button className="carousel-control-next" type="button" onClick={handleNext}>
+        <span className="carousel-control-next-icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+          </svg>
+        </span>
+        <span className="visually-hidden">Next</span>
+      </button>
+    </section>
+  );
+};

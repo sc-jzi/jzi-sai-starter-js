@@ -267,3 +267,77 @@ export const WithIconsCompact = (props: ThreeColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+function hasAuthoredLink(link?: LinkField): boolean {
+  const href = link?.value?.href;
+  return Boolean(href && href !== '#');
+}
+
+/* MnsEvents variant — three event cards on a muted band */
+export const MnsEvents = (props: ThreeColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const Column = ({
+    image,
+    text,
+    subText,
+    link,
+  }: {
+    image: ImageField;
+    text: Field<string>;
+    subText: Field<string>;
+    link: LinkField;
+  }) => (
+    <div className="col-sm-12 col-lg-4">
+      <div className="mns-event">
+        <div className="mns-event__media">
+          <NextImage field={image} width={540} height={270} />
+        </div>
+        <div className="mns-event__body">
+          <h3>
+            <Text field={text} />
+          </h3>
+          <p>
+            <Text field={subText} />
+          </p>
+          {(isPageEditing || hasAuthoredLink(link)) && (
+            <Link field={link} className="mns-event__cta" />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+
+  return (
+    <div
+      className={`component three-column-cta mns-events ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="row g-4">
+          <Column
+            image={props.fields.Image1}
+            text={props.fields.Text1}
+            subText={props.fields.SubText1}
+            link={props.fields.Link1}
+          />
+          <Column
+            image={props.fields.Image2}
+            text={props.fields.Text2}
+            subText={props.fields.SubText2}
+            link={props.fields.Link2}
+          />
+          <Column
+            image={props.fields.Image3}
+            text={props.fields.Text3}
+            subText={props.fields.SubText3}
+            link={props.fields.Link3}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};

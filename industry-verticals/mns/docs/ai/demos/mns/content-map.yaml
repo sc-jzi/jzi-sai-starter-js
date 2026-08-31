@@ -1,0 +1,468 @@
+client:
+  name: "Métis Nation–Saskatchewan"
+  sourceUrl: "https://mns.ca"
+  sourceLanguage: "en-ca"
+  targetLanguage: "en"
+  translationApplied: false
+  extractedAt: "2026-08-31T20:37:46.244Z"
+  mappedAt: "2026-08-31T20:50:00Z"
+  contentSourceNote: "DOM extractor returned 7 coarse sections. Mapped to 15 build-plan sections using headings, screenshots, and known mns.ca URLs."
+
+sections:
+  - position: 1
+    componentName: "Eyebrow"
+    manifestName: "Eyebrow"
+    kind: "context-only"
+    datasourceItemName: ""
+    apiAddable: false
+    fields:
+      Title: "Become an MN-S Citizen: Register today!"
+      Link:
+        text: "Register today!"
+        href: "https://mns.ca/metis-citizens/citizenship-registry"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 2
+    componentName: "Header"
+    manifestName: "Header"
+    kind: "context-only"
+    datasourceItemName: ""
+    apiAddable: false
+    fields:
+      Title: "Métis Nation–Saskatchewan"
+    children: []
+    imageFields:
+      - field: "LogoImage"
+        src: "https://mns.ca/img/logo-mns-artwork.svg?1771875289"
+        alt: "Métis Nation Saskatchewan"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 3
+    componentName: "Carousel"
+    manifestName: "Carousel"
+    kind: "list"
+    datasourceItemName: "MN-S - Hero Carousel"
+    datasourceItemId: "57dbd733-f898-4f72-925f-ff1a3af6bd1f"
+    apiAddable: true
+    fields: {}
+    children:
+      - name: "MN-S - Legislative Library"
+        fields:
+          Title: "Legislative Library"
+          Text: "<p>Browse your government's history through our expanded library.</p>"
+          Link:
+            text: "Find Out More"
+            href: "https://mns.ca/library/legislative-library"
+            target: ""
+        imageFields:
+          - field: "Image"
+            src: "https://mns.ca/uploads/banners/banner-19.jpg?1772059215"
+            alt: "Métis flag"
+      - name: "MN-S - Welcome to MN-S"
+        fields:
+          Title: "Welcome to MN–S"
+          Text: "<p>Taanishi Tân'si Bonn Zhour Édlánet'é</p>"
+          Link:
+            text: "Message from the President"
+            href: "https://mns.ca/mns-government/departments-ministries/president"
+            target: ""
+        imageFields:
+          - field: "Image"
+            src: "https://mns.ca/uploads/banners/banner-6.jpg?1772059201"
+            alt: "Welcome to Métis Nation–Saskatchewan"
+      - name: "MN-S - Metis Rising"
+        fields:
+          Title: "Métis Rising"
+          Text: "<p>Become a Registered Métis Citizen in Saskatchewan</p>"
+          Link:
+            text: "Find Out More"
+            href: "https://mns.ca/metis-citizens/citizenship-registry"
+            target: ""
+        imageFields:
+          - field: "Image"
+            src: "https://mns.ca/uploads/banners/banner-5.jpg?1772059197"
+            alt: "Métis Rising"
+      - name: "MN-S - Citizen Questions"
+        fields:
+          Title: "Citizen Questions"
+          Text: "<p>Ask your questions about MN–S programs, services, governance, or events</p>"
+          Link:
+            text: "Find Out More"
+            href: "https://mns.ca/metis-citizens/citizen-questions"
+            target: "_blank"
+        imageFields:
+          - field: "Image"
+            src: "https://mns.ca/uploads/banners/banner-18.jpg?1772059604"
+            alt: "zoomed-in red and yellow métis beadwork"
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 4
+    componentName: "FourColumnCta"
+    manifestName: "FourColumnCta"
+    kind: "simple"
+    datasourceItemName: "MN-S - Quick Links Row 1"
+    datasourceItemId: "0e83a2a2-2133-4fc0-9fe0-3ca854c2b686"
+    apiAddable: true
+    fields:
+      Title1: "Ma Faamii"
+      Text1: "Métis Citizens Services"
+      Link1:
+        text: "Ma Faamii"
+        href: "https://mns.ca/metis-citizens"
+        target: ""
+      Title2: "Provincial Métis Council"
+      Text2: ""
+      Link2:
+        text: "Provincial Métis Council"
+        href: "https://mns.ca/mns-government/provincial-metis-council"
+        target: "_blank"
+      Title3: "Métis Nation Legislative Assembly"
+      Text3: ""
+      Link3:
+        text: "Métis Nation Legislative Assembly"
+        href: "https://mns.ca/mns-government"
+        target: ""
+      Title4: "Métis Gathering"
+      Text4: "Language lessons, Our history, Culture education."
+      Link4:
+        text: "Métis Gathering"
+        href: "https://mns.ca"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image1"
+        src: "https://mns.ca/uploads/banners/banner-10.svg?1729834847"
+        alt: "Ma Faamii bead pattern"
+      - field: "Image2"
+        src: "https://mns.ca/uploads/banners/banner-15.avif?1734124514"
+        alt: "Provincial Métis Council"
+      - field: "Image3"
+        src: "https://mns.ca/uploads/banners/banner-12.svg?1729834959"
+        alt: "Métis Nation Legislative Assembly floral"
+      - field: "Image4"
+        src: "https://mns.ca/uploads/banners/banner-8.svg?1771043018"
+        alt: "Métis Gathering"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 5
+    componentName: "FourColumnCta"
+    manifestName: "FourColumnCta"
+    kind: "simple"
+    datasourceItemName: "MN-S - Quick Links Row 2"
+    datasourceItemId: "ce253757-d6b5-46fc-90c5-9031a86bccd3"
+    apiAddable: true
+    fields:
+      Title1: "Back to Batoche"
+      Text1: ""
+      Link1:
+        text: "Back to Batoche"
+        href: "https://mns.ca"
+        target: ""
+      Title2: "SaskMétis Works"
+      Text2: ""
+      Link2:
+        text: "SaskMétis Works"
+        href: "https://saskmetisworks.ca/"
+        target: "_blank"
+      Title3: "Our Nation"
+      Text3: "is your newsletter"
+      Link3:
+        text: "Our Nation"
+        href: "https://mns.ca/news/newsletter"
+        target: ""
+      Title4: "MN-S Services & Programs"
+      Text4: "Find a program today!"
+      Link4:
+        text: "MN-S Services & Programs"
+        href: "https://mns.ca/services-and-programs/applications"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image1"
+        src: "https://mns.ca/uploads/banners/banner-7.png?1772059204"
+        alt: "Back to Batoche"
+      - field: "Image2"
+        src: "https://mns.ca/uploads/banners/banner-20.png?1773688680"
+        alt: "SaskMétis Works"
+      - field: "Image3"
+        src: "https://mns.ca/uploads/banners/banner-21.png?1772059220"
+        alt: "Our Nation newsletter"
+      - field: "Image4"
+        src: "https://mns.ca/uploads/banners/banner-22.png?1772059224"
+        alt: "MN-S Services and Programs"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 6
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "MN-S - Featured Events Heading"
+    datasourceItemId: "834e0e84-d3be-447a-aab9-f9c14f3b9625"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Heading: "Featured MN–S Events"
+      Text: ""
+      Link:
+        text: ""
+        href: "#"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 7
+    componentName: "ThreeColumnCta"
+    manifestName: "ThreeColumnCta"
+    kind: "simple"
+    datasourceItemName: "MN-S - Featured Events"
+    datasourceItemId: "02e50dc5-3999-4420-8293-716373af7e1c"
+    apiAddable: true
+    fields:
+      Text1: "Youth Summer Gathering"
+      SubText1: "Sep 4 – 6 · Batoche, Saskatchewan. The Youth Summer Gathering: li zhenn moond toot aansaamb (youth all together), is geared toward Métis youth to connect with their culture, community, and identity."
+      Link1:
+        text: "See More"
+        href: "https://mns.ca/metis-citizens/events/event/68/youth-summer-gathering"
+        target: ""
+      Text2: "Provincial Métis Council Meeting & Workshop"
+      SubText2: "Sep 15 – 17 · Batoche, Saskatchewan. This is the official notice for the September 2026 Provincial Métis Council (PMC) meeting at Dumont Lodge in Batoche, SK."
+      Link2:
+        text: "See More"
+        href: "https://mns.ca/metis-citizens/events/event/72/provincal-metis-council-meeting-workshop"
+        target: ""
+      Text3: "Constellations & Conservation at Batoche"
+      SubText3: "Sep 19 · Batoche, Saskatchewan. Join us for an unforgettable evening under the stars at Batoche National Historic Site on Saturday, September 19, 2026."
+      Link3:
+        text: "See More"
+        href: "https://mns.ca/metis-citizens/events/event/69/constellations-conservation-at-batoche"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image1"
+        src: "https://mns.ca/uploads/events/event-68-hero-thumb-large.png?1784575933"
+        alt: "Youth Summer Gathering"
+      - field: "Image2"
+        src: "https://mns.ca/uploads/events/event-72-hero-thumb-large.png?1788207130"
+        alt: "Provincial Métis Council Meeting"
+      - field: "Image3"
+        src: "https://mns.ca/uploads/events/event-69-hero-thumb-large.jpg?1787067968"
+        alt: "Constellations and Conservation at Batoche"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 8
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "MN-S - View Full Calendar"
+    datasourceItemId: "a3a10995-5799-4903-96ca-05130e29f9c5"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Heading: ""
+      Text: ""
+      Link:
+        text: "View Full Calendar"
+        href: "https://mns.ca/metis-citizens/events"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 9
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "MN-S - Latest Stories Heading"
+    datasourceItemId: "a2d06774-5476-44df-a56b-f98dab23edbf"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Heading: "Latest Stories"
+      Text: ""
+      Link:
+        text: ""
+        href: "#"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 10
+    componentName: "FourColumnCta"
+    manifestName: "FourColumnCta"
+    kind: "simple"
+    datasourceItemName: "MN-S - Latest Stories"
+    datasourceItemId: "232ac954-9d22-4139-b7d9-e01d7a2d8280"
+    apiAddable: true
+    fields:
+      Title1: "A Lifetime of Service, Honoured at Batoche"
+      Text1: "Jul 17 — During the official opening of the 2026 Back to Batoche Days, Métis Nation–Saskatchewan introduced the President's Medal, a new honour recognizing exceptional service, leadership, and commitment to Métis citizens."
+      Link1:
+        text: "Read More"
+        href: "https://mns.ca/news/newsroom/news/635/a-lifetime-of-service-honoured-at-batoche"
+        target: ""
+      Title2: "Taanishi aen Ishinihkaashooyen Li Pchi Bufloo? (What's Your Name, Little Buffalo?)"
+      Text2: "Jul 6 — Meet our newest bison calves—now proudly named by Métis youth across Saskatchewan with names rooted in our languages and culture."
+      Link2:
+        text: "Read More"
+        href: "https://mns.ca/news/newsroom/news/633/taanishi-aen-ishinihkaashooyen-li-pchi-bufloo-what-s-your-name-little-buffalo"
+        target: ""
+      Title3: "People of the Horse"
+      Text3: "Jun 26 — Métis people have always shared a deep respect and historical connection with horses. Their uncanny ability to tame a wild horse and train the animal for hunting and transportation has earned them the title ‘People of the Horse’."
+      Link3:
+        text: "Read More"
+        href: "https://mns.ca/news/newsroom/news/634/people-of-the-horse"
+        target: ""
+      Title4: "Economic Opportunities Expand with Federal Recognition"
+      Text4: "Jun 15 — “It’s no secret that Indigenous people - there are very successful businesses here in Saskatchewan however what doors are open for them?” MN–S Minister of Economic Development Marg Friesen"
+      Link4:
+        text: "Read More"
+        href: "https://mns.ca/news/newsroom/news/632/economic-opportunities-expand-with-federal-recognition"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 11
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "MN-S - All Stories"
+    datasourceItemId: "894d0d7d-ffa7-47ef-a179-c671ac83e840"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Heading: ""
+      Text: ""
+      Link:
+        text: "All MN-S Stories"
+        href: "https://mns.ca/news/newsroom"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 12
+    componentName: "CtaBanner"
+    manifestName: "CtaBanner"
+    kind: "simple"
+    datasourceItemName: "MN-S - Follow Connect"
+    datasourceItemId: "98581111-7b25-43ad-be57-9820c9e2f343"
+    apiAddable: true
+    fields:
+      Eyebrow: "Follow"
+      Title: "Connect"
+      Text: "<p>Facebook · Instagram · LinkedIn</p>"
+      Link:
+        text: "Connect"
+        href: "https://mns.ca/contact"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "medium"
+    contentSource: "extractor"
+
+  - position: 13
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "MN-S - Affiliates Heading"
+    datasourceItemId: "3597ec5e-ed4d-4591-b02d-bf5135e605a8"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Heading: "Affiliates of MN-S"
+      Text: ""
+      Link:
+        text: ""
+        href: "#"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 14
+    componentName: "FourColumnCta"
+    manifestName: "FourColumnCta"
+    kind: "simple"
+    datasourceItemName: "MN-S - Affiliates"
+    datasourceItemId: "afb31318-bcc8-4246-8905-89497520934c"
+    apiAddable: true
+    fields:
+      Title1: "Gabriel Dumont Institute"
+      Text1: "GDI"
+      Link1:
+        text: "Gabriel Dumont Institute"
+        href: "https://gdins.org/"
+        target: "_blank"
+      Title2: "Saskatchewan Métis Economic Development Corporation"
+      Text2: "SMEDCO"
+      Link2:
+        text: "SMEDCO"
+        href: "https://smedco.ca/"
+        target: "_blank"
+      Title3: "Clarence Campeau Development Fund"
+      Text3: "CCDF"
+      Link3:
+        text: "CCDF"
+        href: "https://clarencecampeau.com/"
+        target: "_blank"
+      Title4: "Métis Addictions Council of Saskatchewan"
+      Text4: "MACSI"
+      Link4:
+        text: "MACSI"
+        href: "https://macsi.ca/"
+        target: "_blank"
+    children: []
+    imageFields: []
+    matchConfidence: "medium"
+    contentSource: "screenshot"
+
+  - position: 15
+    componentName: "Footer"
+    manifestName: "Footer"
+    kind: "context-only"
+    datasourceItemName: ""
+    apiAddable: false
+    fields:
+      Title1: "Métis Nation–Saskatchewan"
+      Text1: "<p>310 20th Street East<br />Saskatoon, SK S7K 0A7<br /><a href=\"tel:+1-306-343-8285\">1-877-METISSK (638-4775)</a></p>"
+      Title2: ""
+      Text2: "<p><a href=\"https://mns.ca/metis-citizens/events\">Full Calendar</a></p><p><a href=\"https://mns.ca/news/newsletter\">Newsletter</a></p>"
+      Title3: ""
+      Text3: "<p><a href=\"https://mns.ca/privacy-policy\">Privacy Policy</a></p><p><a href=\"https://mns.ca/contact\">Contact Us</a></p>"
+      Title4: ""
+      Text4: ""
+      Copyright: "All Contents ©2026 Métis Nation Saskatchewan"
+      Link1:
+        text: "Privacy Policy"
+        href: "https://mns.ca/privacy-policy"
+        target: ""
+      Link2:
+        text: "Contact Us"
+        href: "https://mns.ca/contact"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image1"
+        src: "https://mns.ca/img/logo-mns-artwork.svg?1771875289"
+        alt: "Métis Nation Saskatchewan"
+    matchConfidence: "high"
+    contentSource: "extractor"

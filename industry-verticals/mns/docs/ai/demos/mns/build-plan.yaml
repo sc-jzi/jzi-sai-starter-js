@@ -1,0 +1,531 @@
+# Demo Build Plan — Métis Nation–Saskatchewan
+# Maps the live mns.ca homepage to existing PLAY! Financial components.
+# UIIM registry IDs are analogs only — those templates are not present
+# on /sitecore/content/public-sector/mns.
+
+client:
+  name: "Métis Nation–Saskatchewan"
+  sourceUrl: "https://mns.ca"
+  themeFile: "docs/ai/themes/mns.theme.yaml"
+  analyzedAt: "2026-08-31T20:45:00Z"
+  contentRoot: "/sitecore/content/public-sector/mns"
+  homePageId: "58e0e383-4a67-43af-a83b-f9d8bdf57640"
+  homePagePath: "/sitecore/content/public-sector/mns/Home"
+  siteId: "4fb08041-ee52-48cf-ade9-7b4ea4b2898a"
+  dataFolderId: "ca10aed5-5bbe-454c-9234-c010662f4a96"
+  promosFolderId: "66586918-dbec-473f-9c23-e7b177ab679c"
+  implementationLibrary: "play-financial"
+
+pageAnalysis:
+  screenshotFiles:
+    desktop: "docs/ai/themes/mns/screenshot-desktop.png"
+    mobile: "docs/ai/themes/mns/screenshot-mobile.png"
+    hero: "docs/ai/themes/mns/screenshot-hero.png"
+  totalSections: 15
+  templateMatches: 15
+  customRequired: 0
+
+sections:
+  - position: 1
+    description: "Thin orange bar at the very top. White text: Become an MN-S Citizen: Register today! (Register today! is underlined)."
+    matchedComponent:
+      registryId: "announcement-bar"
+      manifestName: "Eyebrow"
+      displayName: "Eyebrow"
+      renderingId: "5f765231-1da9-467a-8b35-2171cce313c1"
+      variant: "Mns"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: false
+      implementation: "existing-partial"
+    customVariantNeeded:
+      name: "Mns"
+      description: "Full-width orange #d14900 bar, white 14px text, underlined register link, no search in this row."
+      parentComponent: "Eyebrow"
+    sectionBackground: "accent"
+    content:
+      Title: "Become an MN-S Citizen: Register today!"
+      Description: ""
+    contentNotes: "Lives in the header partial. Do not add via API. Update the existing Eyebrow / Link List. PLAY! Eyebrow currently hosts PreviewSearch — move search into the navy nav bar in Phase 5.5."
+    variantReason: "Default Eyebrow is a PLAY! placeholder strip with search. Live site is a solid orange citizenship CTA."
+    kind: "context-only"
+
+  - position: 2
+    description: "Logo (bison + infinity + prairie lily) on the left. Navy bar with uppercase nav: MN-S GOVERNMENT, MÉTIS CITIZENS, SERVICES & PROGRAMS, NEWS, LIBRARY, OPPORTUNITIES (all dropdowns). White search field + orange magnifying-glass button on the right."
+    matchedComponent:
+      registryId: "navigation-header"
+      manifestName: "Header"
+      displayName: "Header + Navigation"
+      renderingId: "81317d3b-f929-426a-83ec-421982f8f1e6"
+      variant: "WithLogoImage"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: false
+      implementation: "existing-partial"
+    customVariantNeeded:
+      name: "Mns"
+      description: "Logo above or left of a solid navy #03274e bar, white uppercase nav, search input + orange icon button on the right. No PLAY! CTA button."
+      parentComponent: "Header"
+    sectionBackground: "dark"
+    content:
+      Title: "Métis Nation–Saskatchewan"
+      Description: "MN-S Government · Métis Citizens · Services & Programs · News · Library · Opportunities"
+    contentNotes: "Header + Navigation already sit in the page-design partials. Swap LogoImage to the downloaded mns.ca SVG. Update nav labels. Mega-menus stay as existing Navigation children."
+    variantReason: "tone.navStyle is solid-bar. WithLogoImage is the right structure; needs navy bar + search, not PLAY! styling."
+    kind: "context-only"
+
+  - position: 3
+    description: "Full-bleed photo carousel with left-aligned white headline, subtitle, italic Find Out More link, side arrows, pause control, and 4 pagination dots."
+    matchedComponent:
+      registryId: "hero-banner-carousel"
+      manifestName: "Carousel"
+      displayName: "Carousel"
+      renderingId: "8094185b-4c72-40c8-b005-c6ed91708754"
+      datasourceTemplateId: "c7b8468f-4290-400f-93bb-d46c5f8db126"
+      childTemplateId: "54db209d-cd0f-49d9-ae4e-ecb65d72cc4d"
+      variant: "Mns"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+    customVariantNeeded:
+      name: "Mns"
+      description: "Full-bleed photo, left-aligned white overlay (not right-offset), italic text link instead of filled accent button, navy wash on the photo."
+      parentComponent: "Carousel"
+    sectionBackground: "dark"
+    content:
+      Title: "Hero carousel"
+      items:
+        - title: "Métis Rising"
+          text: "Become a Registered Métis Citizen in Saskatchewan"
+          cta: "Find Out More"
+        - title: "Citizen Questions"
+          text: "Ask your questions about MN-S programs, services, governance, or events."
+          cta: "Find Out More"
+        - title: "Welcome to MN-S"
+          text: "Taanishi Tân'si Bonn Zhour Édlánet'é — Mission: Self-determination"
+          cta: "Find Out More"
+    imageFields:
+      - { field: "Image", src: "smiling woman, Métis Rising slide" }
+      - { field: "Image", src: "traditional Métis beadwork, Citizen Questions slide" }
+      - { field: "Image", src: "man in cap and orange vest, Welcome slide" }
+    contentNotes: "Carousel is a list: parent + Carousel Item children. Desktop scrape showed 4 dots — Phase 2.5 should confirm the 4th slide. Default Carousel puts text in a right-offset column; live site is left-aligned."
+    variantReason: "Default already has arrows + dots + full-bleed image. Overlay alignment and CTA style need an Mns variant."
+    kind: "list"
+
+  - position: 4
+    description: "First row of the 4x2 quick-link tile grid: Ma Faamii (white + bead dots), Provincial Métis Council (navy + infinity), Métis Nation Legislative Assembly (cream + floral), Métis Gathering (blue + flower logo)."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "FourColumnCta"
+      displayName: "Four Column CTA"
+      renderingId: "35075000-760e-4ff3-bd1c-f2eeba251dcb"
+      datasourceTemplateId: "1b694ef9-154d-429a-9c3f-d7774cd4a852"
+      variant: "MnsTiles"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+    customVariantNeeded:
+      name: "MnsTiles"
+      description: "Equal-height colored tiles, per-tile background (white / navy / cream / blue), cultural motif instead of a photo, title + short subtitle, no PLAY! fade animation required."
+      parentComponent: "FourColumnCta"
+    sectionBackground: "default"
+    content:
+      Title: ""
+      items:
+        - title: "Ma Faamii"
+          text: "Métis Citizens Services"
+        - title: "Provincial Métis Council"
+          text: ""
+        - title: "Métis Nation Legislative Assembly"
+          text: ""
+        - title: "Métis Gathering"
+          text: "Language lessons, Our history, Culture education."
+    imageFields:
+      - { field: "Image1", src: "bead pattern / family motif" }
+      - { field: "Image2", src: "infinity symbol" }
+      - { field: "Image3", src: "floral illustration" }
+      - { field: "Image4", src: "Métis Gathering flower logo" }
+    contentNotes: "First of two FourColumnCta instances. Default always renders a photo above title — live tiles are color blocks with motifs. Tile background colors must be set in the MnsTiles variant (or as inline styles from extra brand colors)."
+    variantReason: "Default is a 4-up photo card row. Live site is a cultural color-tile grid."
+    kind: "simple"
+
+  - position: 5
+    description: "Second row of quick-link tiles: Back to Batoche (navy script + cart wheel), SaskMétis Works (orange + bison seal), Our Nation (blue gradient, is your newsletter), MN-S Services & Programs (blue, Find a program today!)."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "FourColumnCta"
+      displayName: "Four Column CTA"
+      renderingId: "35075000-760e-4ff3-bd1c-f2eeba251dcb"
+      datasourceTemplateId: "1b694ef9-154d-429a-9c3f-d7774cd4a852"
+      variant: "MnsTiles"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+    customVariantNeeded:
+      name: "MnsTiles"
+      description: "Same tile treatment as row 1. Reuse the MnsTiles variant."
+      parentComponent: "FourColumnCta"
+    sectionBackground: "default"
+    content:
+      Title: ""
+      items:
+        - title: "Back to Batoche"
+          text: ""
+        - title: "SaskMétis Works"
+          text: ""
+        - title: "Our Nation"
+          text: "is your newsletter"
+        - title: "MN-S Services & Programs"
+          text: "Find a program today!"
+    imageFields:
+      - { field: "Image1", src: "Back to Batoche script + cart wheel" }
+      - { field: "Image2", src: "SaskMétis Works bison seal" }
+      - { field: "Image3", src: "newsletter / Our Nation graphic" }
+      - { field: "Image4", src: "services tile background" }
+    contentNotes: "Second FourColumnCta instance. Same variant as row 1."
+    variantReason: "Same as row 1."
+    kind: "simple"
+
+  - position: 6
+    description: "Centered blue section heading: Featured MN–S Events."
+    matchedComponent:
+      registryId: "rich-text-block"
+      manifestName: "HeadingCta"
+      displayName: "Heading CTA"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      datasourceTemplateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+      variant: "Mns"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+    customVariantNeeded:
+      name: "Mns"
+      description: "Centered Open Sans heading in primary blue, no eyebrow, no body, no button."
+      parentComponent: "HeadingCta"
+    sectionBackground: "muted"
+    content:
+      Title: "Featured MN–S Events"
+      Description: ""
+    contentNotes: "Pairs with the Three Column CTA immediately below. Same light-blue band."
+    variantReason: "Centered exists but is PLAY! styled (eyebrow + display type + button)."
+    kind: "simple"
+
+  - position: 7
+    description: "Three event cards on a light-blue band: Youth Summer Gathering (Sep 4–6), Provincial Métis Council Meeting & Workshop (Sep 15–17), Constellations & Conservation at Batoche (Sep 19). Each has image, date, location, excerpt, light-blue SEE MORE button."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "ThreeColumnCta"
+      displayName: "Three Column CTA"
+      renderingId: "ad385021-ce2b-4fc1-89aa-207d408034a8"
+      datasourceTemplateId: "148d07ba-f923-4fb2-8907-0bd440d5db44"
+      variant: "MnsEvents"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+    customVariantNeeded:
+      name: "MnsEvents"
+      description: "Three vertical cards, image on top, title, date + location line, excerpt, light-blue SEE MORE button. Soft card border, no PLAY! fade required."
+      parentComponent: "ThreeColumnCta"
+    sectionBackground: "muted"
+    content:
+      Title: ""
+      items:
+        - title: "Youth Summer Gathering"
+          text: "Sep 4 – 6 · Batoche, Saskatchewan. The Youth Summer Gathering: li zhenn moond toot aansaamb (youth all together), is geared toward Métis youth to connect with their culture, community, and identity."
+          cta: "See More"
+        - title: "Provincial Métis Council Meeting & Workshop"
+          text: "Sep 15 – 17 · Batoche, Saskatchewan."
+          cta: "See More"
+        - title: "Constellations & Conservation at Batoche"
+          text: "Sep 19 · Batoche, Saskatchewan. Join us for an unforgettable evening under the stars at Batoche National Historic Site on Saturday, September 19, 2026."
+          cta: "See More"
+    imageFields:
+      - { field: "Image1", src: "tent and sunset illustration" }
+      - { field: "Image2", src: "MN-S logo / flag" }
+      - { field: "Image3", src: "church at night, JOIN US UNDER THE STARS" }
+    contentNotes: "User's earlier screenshot showed 2 cards; the live scrape now shows 3. Use the live 3-card layout. Date/location have no dedicated fields — fold into SubText."
+    variantReason: "Default already has image + heading + body + button. Needs event-card chrome (date line, bordered card, muted band)."
+    kind: "simple"
+
+  - position: 8
+    description: "Centered text link under the event cards: View Full Calendar."
+    matchedComponent:
+      registryId: "cta-banner"
+      manifestName: "HeadingCta"
+      displayName: "Heading CTA"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      datasourceTemplateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+      variant: "MnsTextLink"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+    customVariantNeeded:
+      name: "MnsTextLink"
+      description: "Centered primary-blue text link only. No heading, no eyebrow, no filled button."
+      parentComponent: "HeadingCta"
+    sectionBackground: "muted"
+    content:
+      Title: ""
+      Cta: "View Full Calendar"
+    contentNotes: "Second HeadingCta instance. Heading/Eyebrow/Text left empty; only Link is populated."
+    variantReason: "Centered always renders a heading. Need a link-only treatment."
+    kind: "simple"
+
+  - position: 9
+    description: "Centered blue section heading: Latest Stories."
+    matchedComponent:
+      registryId: "rich-text-block"
+      manifestName: "HeadingCta"
+      displayName: "Heading CTA"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      datasourceTemplateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+      variant: "Mns"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+    customVariantNeeded:
+      name: "Mns"
+      description: "Reuse the centered blue heading variant from Featured Events."
+      parentComponent: "HeadingCta"
+    sectionBackground: "default"
+    content:
+      Title: "Latest Stories"
+      Description: ""
+    contentNotes: "Third HeadingCta instance. Same Mns heading variant."
+    variantReason: "Same as Featured Events heading."
+    kind: "simple"
+
+  - position: 10
+    description: "2x2 grid of white story cards with thin blue borders. Each has a headline, date, excerpt, and blue Read More link. No photos."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "FourColumnCta"
+      displayName: "Four Column CTA"
+      renderingId: "35075000-760e-4ff3-bd1c-f2eeba251dcb"
+      datasourceTemplateId: "1b694ef9-154d-429a-9c3f-d7774cd4a852"
+      variant: "MnsStories"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+    customVariantNeeded:
+      name: "MnsStories"
+      description: "2x2 (or 4-up wrapping to 2x2) text cards, thin #285d8e border, no images, date line, excerpt, Read More text link."
+      parentComponent: "FourColumnCta"
+    sectionBackground: "default"
+    content:
+      Title: ""
+      items:
+        - title: "A Lifetime of Service, Honoured at Batoche"
+          text: "Jul 17 — During the official opening of the 2026 Back to Batoche Days, Métis Nation–Saskatchewan introduced the President's Medal."
+          cta: "Read More"
+        - title: "Taanishi aen Ishinihkaashooyen Li Pchi Bufloo? (What's Your Name, Little Buffalo?)"
+          text: "Jul 6 — Meet our newest bison calves—now proudly named by Métis youth across Saskatchewan."
+          cta: "Read More"
+        - title: "People of the Horse"
+          text: "Jun 26 — Métis people have always shared a deep respect and historical connection with horses."
+          cta: "Read More"
+        - title: "Economic Opportunities Expand with Federal Recognition"
+          text: "Jun 15 — MN–S Minister of Economic Development Marg Friesen on doors opening for Indigenous businesses."
+          cta: "Read More"
+    imageFields: []
+    contentNotes: "Third FourColumnCta instance. ArticleList Grid exists but requires article pages and always shows thumbnails. FourColumnCta in Data/Promos is the reliable pipeline path. Hide Image fields in the MnsStories variant."
+    variantReason: "Default FourColumnCta is photo-top cards. Live stories are text-only bordered cards."
+    kind: "simple"
+
+  - position: 11
+    description: "Centered text link under the stories: All MN-S Stories."
+    matchedComponent:
+      registryId: "cta-banner"
+      manifestName: "HeadingCta"
+      displayName: "Heading CTA"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      datasourceTemplateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+      variant: "MnsTextLink"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+    customVariantNeeded:
+      name: "MnsTextLink"
+      description: "Reuse the centered text-link variant from View Full Calendar."
+      parentComponent: "HeadingCta"
+    sectionBackground: "default"
+    content:
+      Title: ""
+      Cta: "All MN-S Stories"
+    contentNotes: "Fourth HeadingCta instance. Link only."
+    variantReason: "Same as View Full Calendar."
+    kind: "simple"
+
+  - position: 12
+    description: "Cream bar: FOLLOW, Facebook / Instagram / LinkedIn icons, CONNECT."
+    matchedComponent:
+      registryId: "cta-banner"
+      manifestName: "CtaBanner"
+      displayName: "CTA Banner"
+      renderingId: "488b8ac0-0ef9-4f6f-8711-78ba182b2c4c"
+      datasourceTemplateId: "4900d7e5-61b0-483a-a9d6-69419d4d5982"
+      variant: "MnsSocials"
+      matchType: "template"
+      matchConfidence: "medium"
+      variantMatch: "none"
+      apiAddable: true
+    customVariantNeeded:
+      name: "MnsSocials"
+      description: "Full-width cream #f3ead8 bar, FOLLOW + three social icons + CONNECT, no hero image, no dotted accents."
+      parentComponent: "CtaBanner"
+    sectionBackground: "muted"
+    content:
+      Title: "Follow Connect"
+      Description: "Facebook · Instagram · LinkedIn"
+    contentNotes: "CtaBanner has Title/Text/Link/Image/Icon — not dedicated social fields. Footer already has SocialLink1–3. Phase 5.5 can render three icon links from Link + Icon, or hardcode the three known networks. Confidence medium because the field fit is imperfect."
+    variantReason: "Default CtaBanner is a split conversion block with dotted accents. Live site is a thin social strip."
+    kind: "simple"
+
+  - position: 13
+    description: "Centered blue heading: AFFILIATES OF MNS."
+    matchedComponent:
+      registryId: "rich-text-block"
+      manifestName: "HeadingCta"
+      displayName: "Heading CTA"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      datasourceTemplateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+      variant: "Mns"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+    customVariantNeeded:
+      name: "Mns"
+      description: "Reuse the centered blue heading variant."
+      parentComponent: "HeadingCta"
+    sectionBackground: "muted"
+    content:
+      Title: "Affiliates of MN-S"
+      Description: ""
+    contentNotes: "Fifth HeadingCta instance."
+    variantReason: "Same heading treatment as Events and Stories."
+    kind: "simple"
+
+  - position: 14
+    description: "Four affiliate logos in a row: GDI, SMEDCO, CCDF, MACSI."
+    matchedComponent:
+      registryId: "logo-cloud"
+      manifestName: "FourColumnCta"
+      displayName: "Four Column CTA"
+      renderingId: "35075000-760e-4ff3-bd1c-f2eeba251dcb"
+      datasourceTemplateId: "1b694ef9-154d-429a-9c3f-d7774cd4a852"
+      variant: "MnsLogos"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+    customVariantNeeded:
+      name: "MnsLogos"
+      description: "Four centered logos, no titles, no buttons, light-blue band."
+      parentComponent: "FourColumnCta"
+    sectionBackground: "muted"
+    content:
+      Title: ""
+      items:
+        - title: "Gabriel Dumont Institute"
+          text: "GDI"
+        - title: "Saskatchewan Métis Economic Development Corporation"
+          text: "SMEDCO"
+        - title: "Clarence Campeau Development Fund"
+          text: "CCDF"
+        - title: "Métis Addictions Council of Saskatchewan"
+          text: "MACSI"
+    imageFields:
+      - { field: "Image1", src: "GDI logo" }
+      - { field: "Image2", src: "SMEDCO logo" }
+      - { field: "Image3", src: "CCDF logo" }
+      - { field: "Image4", src: "MACSI logo" }
+    contentNotes: "Fourth FourColumnCta instance. Titles can stay for accessibility/alt text; hide them visually in MnsLogos."
+    variantReason: "Default expects photo + heading + body. Live site is logos only."
+    kind: "simple"
+
+  - position: 15
+    description: "Navy footer: MN-S logo, 310 20th Street East Saskatoon SK, 1-877-METISSK, two link columns (Full Calendar, Newsletter, Privacy Policy, Contact Us), copyright."
+    matchedComponent:
+      registryId: "footer"
+      manifestName: "Footer"
+      displayName: "Footer"
+      renderingId: "771a3f27-6448-44ac-add0-e5de311c6e3b"
+      datasourceTemplateId: "947db8f8-dc76-453f-aca1-a27babfe633b"
+      variant: "WithSocials"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: false
+      implementation: "existing-partial"
+    customVariantNeeded:
+      name: "Mns"
+      description: "Navy #03274e background, inverted logo, address + phone on the left, two compact link columns, white type."
+      parentComponent: "Footer"
+    sectionBackground: "dark"
+    content:
+      Title: "Métis Nation–Saskatchewan"
+      Description: "310 20th Street East, Saskatoon, SK S7K 0A7 · 1-877-METISSK (638-4775)"
+      Cta: "Contact Us"
+    contentNotes: "Footer lives in the page-design partial. Update the existing Footer datasource. WithSocials supports logo + 4 columns + 3 socials + copyright. Live footer is simpler (address + 2 link columns) — extra columns can stay empty."
+    variantReason: "WithSocials is the closest structure. Needs navy restyle and MN-S content."
+    kind: "context-only"
+
+customComponents: []
+
+buildOrder:
+  phase1_sitecore:
+    - "Carousel (MN-S - Hero Carousel)"
+    - "FourColumnCta (MN-S - Quick Links Row 1)"
+    - "FourColumnCta (MN-S - Quick Links Row 2)"
+    - "HeadingCta (MN-S - Featured Events Heading)"
+    - "ThreeColumnCta (MN-S - Featured Events)"
+    - "HeadingCta (MN-S - View Full Calendar)"
+    - "HeadingCta (MN-S - Latest Stories Heading)"
+    - "FourColumnCta (MN-S - Latest Stories)"
+    - "HeadingCta (MN-S - All Stories)"
+    - "CtaBanner (MN-S - Follow Connect)"
+    - "HeadingCta (MN-S - Affiliates Heading)"
+    - "FourColumnCta (MN-S - Affiliates)"
+  phase2_theme: "Apply MN-S :root tokens + Open Sans in src/assets/sass (this starter has no globals.css CLIENT THEME placeholder)."
+  phase3_custom: []
+
+renderingIds:
+  Eyebrow: "5f765231-1da9-467a-8b35-2171cce313c1"
+  Header: "81317d3b-f929-426a-83ec-421982f8f1e6"
+  Navigation: "1deb067f-0bb1-405e-94f5-2abb537a6160"
+  Carousel: "8094185b-4c72-40c8-b005-c6ed91708754"
+  HeadingCta: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+  FourColumnCta: "35075000-760e-4ff3-bd1c-f2eeba251dcb"
+  ThreeColumnCta: "ad385021-ce2b-4fc1-89aa-207d408034a8"
+  CtaBanner: "488b8ac0-0ef9-4f6f-8711-78ba182b2c4c"
+  ArticleList: "52733592-6f5d-4fb4-8003-9b8223c5bc76"
+  Footer: "771a3f27-6448-44ac-add0-e5de311c6e3b"
+
+datasourceTemplates:
+  Carousel: "c7b8468f-4290-400f-93bb-d46c5f8db126"
+  CarouselItem: "54db209d-cd0f-49d9-ae4e-ecb65d72cc4d"
+  FourColumnCta: "1b694ef9-154d-429a-9c3f-d7774cd4a852"
+  ThreeColumnCta: "148d07ba-f923-4fb2-8907-0bd440d5db44"
+  HeadingCta: "fa136527-6302-471d-83ab-e66fc72bda99"
+  CtaBanner: "4900d7e5-61b0-483a-a9d6-69419d4d5982"
+  Footer: "947db8f8-dc76-453f-aca1-a27babfe633b"
+
+environmentNotes:
+  - "Home page Title is still 'PLAY! Financial'. Phase 6 will reuse Home and note leftover banking pages for cleanup."
+  - "PLAY! renderings live under /sitecore/layout/Renderings/Project/Financial. /sitecore/layout/Renderings/Project/public-sector has no children."
+  - "UIIM datasource folders do not exist under mns/Data. New datasources go in Data/Promos (itemId 66586918-dbec-473f-9c23-e7b177ab679c)."
+  - "Carousel is a list component (parent + Carousel Item children). Four/Three Column CTA are simple (fields 1–4 on one item)."
+  - "ArticleList was considered for Latest Stories but has no datasource template (page-as-datasource) and always shows thumbnails. FourColumnCta is the pipeline-safe match."
+  - "Content Hub host https://jzi-verticals.sitecoresandbox.cloud authenticated 200 OK."

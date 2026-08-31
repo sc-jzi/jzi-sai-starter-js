@@ -1,0 +1,51 @@
+{
+  "colors": {
+    "bodyBackground": "rgb(255, 255, 255)",
+    "bodyColor": "rgb(40, 93, 142)",
+    "headerBackground": "rgba(0, 0, 0, 0)",
+    "headerColor": "rgb(255, 255, 255)",
+    "footerBackground": "rgb(3, 39, 78)",
+    "footerColor": "rgb(255, 255, 255)",
+    "heroBackground": "rgb(255, 255, 255)",
+    "primaryButtonBackground": "rgb(209, 73, 0)",
+    "primaryButtonColor": "rgb(255, 255, 255)",
+    "primaryButtonBorderRadius": "0px",
+    "linkColor": "rgb(30, 144, 255)"
+  },
+  "typography": {
+    "bodyFontFamily": "sans-serif",
+    "bodyFontSize": "16px",
+    "bodyFontWeight": "400",
+    "bodyLineHeight": "24px",
+    "h1FontFamily": "\"Open Sans\", sans-serif",
+    "h1FontSize": "67.2px",
+    "h1FontWeight": "800",
+    "h1LetterSpacing": "normal",
+    "h1TextTransform": "none",
+    "h2FontFamily": "\"Open Sans\", sans-serif",
+    "h2FontSize": "80px",
+    "h2FontWeight": "800",
+    "h3FontFamily": "\"Open Sans\", sans-serif",
+    "h3FontSize": "22.4px",
+    "h3FontWeight": "700",
+    "pFontSize": "16px",
+    "pLineHeight": "24px"
+  },
+  "shape": {
+    "cardBorderRadius": "0px",
+    "cardBoxShadow": "none",
+    "cardBorder": "0px solid rgb(40, 93, 142)",
+    "imgBorderRadius": "0px"
+  },
+  "spacing": {
+    "heroMinHeight": "auto",
+    "heroPadding": "0px",
+    "containerMaxWidth": "1600px"
+  },
+  "cssVariables": {
+    "--primary": "#285d8e",
+    "--background": "#fff",
+    "--foreground": "#000",
+    "--font-sans": "-apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\",\n      \"Noto Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\",\n      \"Segoe UI Symbol\", \"Noto Color Emoji\""
+  }
+}

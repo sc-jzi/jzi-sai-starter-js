@@ -43,3 +43,20 @@ export const Default = (props: EyebrowProps): JSX.Element => {
     </div>
   );
 };
+
+/* Mns variant — orange citizenship bar, no search */
+export const Mns = (props: EyebrowProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+
+  return (
+    <div className={`component eyebrow mns-eyebrow ${props.params.styles?.trimEnd()}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="mns-eyebrow__row">
+          <AppPlaceholder name="eyebrow-left" rendering={props.rendering} page={page} componentMap={props.componentMap} />
+          <AppPlaceholder name="eyebrow-right" rendering={props.rendering} page={page} componentMap={props.componentMap} />
+        </div>
+      </div>
+    </div>
+  );
+};

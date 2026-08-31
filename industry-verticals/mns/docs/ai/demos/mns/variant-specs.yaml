@@ -1,0 +1,132 @@
+variantSpecs:
+  - position: 1
+    componentName: "Eyebrow"
+    variantName: "Mns"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "Full-bleed thin bar, centered citizenship CTA, placeholders only"
+      spacing: "py-2, no search row"
+      typography: "14px white text, underlined register link"
+      background: "solid accent orange"
+      buttons: "none"
+      distinctive: "Search removed from this row and left for the navy header"
+
+  - position: 2
+    componentName: "Header"
+    variantName: "Mns"
+    baseVariant: "WithLogoImage"
+    visualDifferences:
+      layout: "Logo left, nav fills remaining width"
+      spacing: "compact 0.65rem vertical padding"
+      typography: "uppercase 0.8rem bold white nav"
+      background: "solid navy header"
+      buttons: "none in this variant"
+      distinctive: "Logo at 4.25rem height, no PLAY! CTA"
+
+  - position: 3
+    componentName: "Carousel"
+    variantName: "Mns"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "Full-bleed photo, left-aligned overlay, no right offset column"
+      spacing: "28–36rem tall, copy max-width 36rem"
+      typography: "hero 4.2rem / 800, subtitle 1.25rem, italic text link"
+      background: "navy wash gradient over photo"
+      buttons: "italic text link instead of filled accent button"
+      distinctive: "Circular outlined dots, white chevron arrows"
+
+  - position: 4
+    componentName: "FourColumnCta"
+    variantName: "MnsTiles"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "4-up equal-height tiles, image on top, copy below"
+      spacing: "g-3, min-height 11.5rem"
+      typography: "1.15rem / 800 title, 0.9rem subtitle"
+      background: "white with thin primary border"
+      buttons: "whole tile is the link"
+      distinctive: "No PLAY! fade animation"
+
+  - position: 6
+    componentName: "HeadingCta"
+    variantName: "Mns"
+    baseVariant: "Centered"
+    visualDifferences:
+      layout: "centered heading only"
+      spacing: "2.5rem top, 0.75rem bottom"
+      typography: "2–2.75rem / 800 primary blue"
+      background: "transparent, muted when followed by events or logos"
+      buttons: "hidden unless authored"
+      distinctive: "Eyebrow and body hidden on live"
+
+  - position: 7
+    componentName: "ThreeColumnCta"
+    variantName: "MnsEvents"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "three white cards on muted band"
+      spacing: "image 11rem, body padding 1.15rem"
+      typography: "1.25rem / 800 title, 0.95rem excerpt"
+      background: "muted events band"
+      buttons: "light-blue SEE MORE chip, uppercase"
+      distinctive: "Soft card shadow, no fade"
+
+  - position: 8
+    componentName: "HeadingCta"
+    variantName: "MnsTextLink"
+    baseVariant: "Centered"
+    visualDifferences:
+      layout: "centered text link only"
+      spacing: "0.25–2.5rem"
+      typography: "1.05rem / 600 primary blue"
+      background: "inherits muted when after events"
+      buttons: "no filled button"
+      distinctive: "Link-only treatment"
+
+  - position: 10
+    componentName: "FourColumnCta"
+    variantName: "MnsStories"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "2x2 wrapping cards, no images"
+      spacing: "1.35rem internal padding, g-4"
+      typography: "1.2rem / 800 title, 0.95rem excerpt"
+      background: "white with thin primary border"
+      buttons: "Read More text link"
+      distinctive: "Images hidden"
+
+  - position: 12
+    componentName: "CtaBanner"
+    variantName: "MnsSocials"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "single cream row: FOLLOW | networks | CONNECT"
+      spacing: "1.35rem vertical, 2rem gaps"
+      typography: "uppercase 1.35rem / 800 navy labels"
+      background: "cream social bar"
+      buttons: "CONNECT is a text label/link"
+      distinctive: "No hero image, no dotted accents"
+
+  - position: 14
+    componentName: "FourColumnCta"
+    variantName: "MnsLogos"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "four centered logos, titles visually hidden"
+      spacing: "min-height 5rem, 3rem bottom padding"
+      typography: "fallback acronym 1.35rem / 800 if no image"
+      background: "muted light blue"
+      buttons: "none"
+      distinctive: "Text fallback until affiliate logos are uploaded"
+
+  - position: 15
+    componentName: "Footer"
+    variantName: "Mns"
+    baseVariant: "WithSocials"
+    visualDifferences:
+      layout: "logo + address left, two compact link columns right"
+      spacing: "2.5rem top, 1.5rem bottom"
+      typography: "white body, 0.8rem copyright"
+      background: "navy footer"
+      buttons: "none"
+      distinctive: "No four-column PLAY! grid"

@@ -1,3 +1,48 @@
+// Métis Nation–Saskatchewan — official brand tokens + --brand-* contract
+body.site-mns,
+.site-mns {
+  --text-body: #285d8e;
+  --text-body-inverted: #fff;
+  --text-colored: #285d8e;
+  --text-footer: #fff;
+  --text-accent: #d14900;
+  --bg-body: #fff;
+  --bg-footer: #03274e;
+  --bg-main: #e8f1f8;
+  --bg-main-alt: #f3ead8;
+  --bg-color: #285d8e;
+  --bg-saturated: #03274e;
+  --bg-accent: #d14900;
+  --border-color: #285d8e;
+  --hr-color: #ffffff33;
+  --roundness: 0.375rem;
+  --brand-primary: #285d8e;
+  --brand-primary-foreground: #ffffff;
+  --brand-secondary: #03274e;
+  --brand-secondary-foreground: #ffffff;
+  --brand-accent: #d14900;
+  --brand-accent-foreground: #ffffff;
+  --brand-bg: #ffffff;
+  --brand-fg: #285d8e;
+  --brand-muted: #e8f1f8;
+  --brand-muted-fg: #285d8e;
+  --brand-header-bg: #03274e;
+  --brand-header-fg: #ffffff;
+  --brand-footer-bg: #03274e;
+  --brand-footer-fg: #ffffff;
+  --brand-border: #285d8e;
+  --brand-ring: #d14900;
+  --brand-heading-font: 'Open Sans', sans-serif;
+  --brand-body-font: 'Open Sans', sans-serif;
+  --brand-radius: 0.375rem;
+  --brand-button-radius: 0.25rem;
+  --brand-card-radius: 0.375rem;
+  --brand-logo-blue: #02509d;
+  --brand-bison-navy: #162640;
+  --brand-social-bar: #f3ead8;
+  --brand-tile-cream: #f7f1e6;
+}
+
 // Financial
 body.site-financial,
 .site-financial {

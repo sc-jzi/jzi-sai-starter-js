@@ -169,3 +169,37 @@ export const WithSocials = (props: FooterProps): JSX.Element => {
     </div>
   );
 };
+
+/* Mns variant — single row: logo, contact text, links */
+export const Mns = (props: FooterProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component footer mns-footer ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="mns-footer__row">
+          <div className="mns-footer__logo">
+            <NextImage field={props.fields?.Image1} width={210} height={108} className="img-fluid" />
+          </div>
+          <div className="mns-footer__contact">
+            <div className="title">
+              <Text field={props.fields?.Title1} />
+            </div>
+            <div className="links">
+              <RichText field={props.fields?.Text1} />
+            </div>
+          </div>
+          <nav className="mns-footer__nav" aria-label="Footer">
+            <div className="links">
+              <RichText field={props.fields?.Text2} />
+            </div>
+            <div className="links">
+              <RichText field={props.fields?.Text3} />
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  );
+};

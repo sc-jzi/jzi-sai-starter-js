@@ -53,3 +53,25 @@ export const WithLogoImage = (props: HeaderProps): JSX.Element => {
     </div>
   );
 };
+
+/* Mns variant — logo + navy nav bar */
+export const Mns = (props: HeaderProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const { page } = useSitecore();
+
+  return (
+    <div className={`component header mns-header ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="mns-header__row">
+          <div className="mns-header__logo">
+            <NextImage field={props.fields.LogoImage} width={210} height={108} />
+          </div>
+          <div className="mns-header__nav">
+            <AppPlaceholder name="header-right" rendering={props.rendering} page={page} componentMap={props.componentMap} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
