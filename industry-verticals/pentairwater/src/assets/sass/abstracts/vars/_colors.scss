@@ -1,3 +1,44 @@
+// Pentair Water — official brand tokens + --brand-* contract
+body.site-pentair,
+.site-pentair {
+  --text-body: #464747;
+  --text-body-inverted: #fff;
+  --text-colored: #0c3471;
+  --text-footer: #fff;
+  --text-accent: #008abc;
+  --bg-body: #fff;
+  --bg-footer: #09244f;
+  --bg-main: #f5f7f8;
+  --bg-main-alt: #008abc;
+  --bg-color: #008abc;
+  --bg-saturated: #0c3471;
+  --bg-accent: #008abc;
+  --border-color: #d6d6d6;
+  --hr-color: #ffffff33;
+  --roundness: 0;
+  --brand-primary: #0c3471;
+  --brand-primary-foreground: #ffffff;
+  --brand-secondary: #008abc;
+  --brand-secondary-foreground: #ffffff;
+  --brand-accent: #008abc;
+  --brand-accent-foreground: #ffffff;
+  --brand-bg: #ffffff;
+  --brand-fg: #464747;
+  --brand-muted: #f5f7f8;
+  --brand-muted-fg: #58595b;
+  --brand-header-bg: #ffffff;
+  --brand-header-fg: #0c3471;
+  --brand-footer-bg: #09244f;
+  --brand-footer-fg: #ffffff;
+  --brand-border: #d6d6d6;
+  --brand-ring: #008abc;
+  --brand-heading-font: 'Barlow Condensed', sans-serif;
+  --brand-body-font: 'Barlow', sans-serif;
+  --brand-radius: 0;
+  --brand-button-radius: 0;
+  --brand-card-radius: 0;
+}
+
 // Financial
 body.site-financial,
 .site-financial {

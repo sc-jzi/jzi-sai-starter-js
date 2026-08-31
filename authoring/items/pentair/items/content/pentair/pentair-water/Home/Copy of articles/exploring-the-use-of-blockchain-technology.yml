@@ -10,47 +10,38 @@ SharedFields:
 - ID: "9c6106ea-7a5a-48e2-8cad-f0f693b1e2d4"
   Hint: __Read Only
   Value: 1
-- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
-  Hint: __Workflow
-  Value: "{63CC4D0D-63F1-4BFB-BF63-7EC9D231AFA8}"
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
   Value: |
     <image mediaid="{A3F71891-3458-48D1-AD4D-5055DD824B82}" />
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "9c4f271f-8f5b-46be-b3b7-43ae23781d25"
+  Value: "06f23cf0-e769-4fee-82d7-66f23e304f8c"
 Languages:
 - Language: en
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
     Hint: __Unversioned revision
-    Value: "a0308c73-7083-498b-af64-b4b0a29cfdd3"
+    Value: "778ee1a0-71d9-4d7e-8da3-af660620008b"
   Versions:
   - Version: 1
     Fields:
-    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
-      Hint: __Lock
-      Value: 
     - ID: "1b86697d-60ca-4d80-83fb-7555a2e6ce1c"
       Hint: __Source
       Value: "sitecore://master/{A7A1D95B-39A4-4692-9E3C-07A2D607EBC0}?lang=en&ver=2"
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20260828T141312Z
-    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
-      Hint: __Workflow state
-      Value: "{1B3D21A1-3E75-49D0-AF21-C4B2DE228760}"
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "1c482afd-5ee6-4003-8f3a-6f384fc2d6d7"
+      Value: "dece2b81-0be2-44d3-8f00-eab498a1f21b"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260828T141317Z
+      Value: 20260829T184238Z
 - Language: "fr-CA"
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"

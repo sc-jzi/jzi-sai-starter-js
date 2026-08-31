@@ -190,3 +190,42 @@ export const WithBackgroundImage = (props: PromoCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* PentairWaterVideo variant — centered heading + video poster with play overlay */
+export const PentairWaterVideo = (props: PromoCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component promo-cta pentair-water-video ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <h2>
+          <Text field={props.fields.Title} />
+        </h2>
+        <div className="pentair-water-video__stage">
+          <NextImage field={props.fields.Image} className="img-fluid" width={1280} height={673} />
+          <div className="pentair-water-video__play" aria-hidden="true">
+            <span className="pentair-water-video__play-icon" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* PentairWaterStatement variant — centered heading + rich-text body */
+export const PentairWaterStatement = (props: PromoCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component promo-cta pentair-water-statement ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <h2>
+          <Text field={props.fields.Title} />
+        </h2>
+        <RichText field={props.fields.Text} className="pentair-water-statement__copy" />
+      </div>
+    </div>
+  );
+};

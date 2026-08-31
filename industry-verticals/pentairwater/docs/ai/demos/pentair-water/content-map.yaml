@@ -1,0 +1,320 @@
+client:
+  name: "Pentair Water"
+  sourceUrl: "https://www.pentair.com/en-us/water-solutions.html"
+  sourceLanguage: "en"
+  targetLanguage: "en"
+  translationApplied: false
+  extractedAt: "2026-08-28T19:33:04.012Z"
+  mappedAt: "2026-08-28T19:40:00Z"
+  contentSourceNote: "DOM extractor returned 4 coarse sections. Mapped to build-plan sections using headings and screenshot."
+
+sections:
+  - position: 1
+    componentName: "Eyebrow"
+    manifestName: "Eyebrow"
+    kind: "context-only"
+    datasourceItemName: ""
+    apiAddable: false
+    fields: {}
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 2
+    componentName: "Header"
+    manifestName: "Header"
+    kind: "context-only"
+    datasourceItemName: ""
+    apiAddable: false
+    fields: {}
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 3
+    componentName: "Hero"
+    manifestName: "Hero"
+    kind: "simple"
+    datasourceItemName: "Pentair Water - Hero"
+    datasourceItemId: "087ff2a0-bbf0-4b30-afa6-4cd5a4386559"
+    apiAddable: true
+    fields:
+      Title: "You Deserve Water at its Best"
+      Text: "<p>Grow with confidence knowing your water and ice is cleaner, clearer, better tasting and more reliable.</p>"
+      Link:
+        text: "Explore Solutions"
+        href: "https://www.pentair.com/en-us/water-solutions.html#solutions"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image"
+        src: "https://www.pentair.com/content/dam/extranet/web/nam/pentair/images/banners/pouring-pitcher-into-ice-banner.jpg"
+        alt: "pouring ice water"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 4
+    componentName: "ThreeColumnCta"
+    manifestName: "ThreeColumnCta"
+    kind: "simple"
+    datasourceItemName: "Pentair Water - Benefits"
+    datasourceItemId: "98c5db17-0069-453e-a68f-3df4c0372653"
+    apiAddable: true
+    fields:
+      Text1: "Enjoy Great Tasting Higher Quality Water & Ice"
+      SubText1: "Peace of mind through tested and certified products to highest quality standards."
+      Link1:
+        text: ""
+        href: "#"
+        target: ""
+      Text2: "Protect Equipment, Home & Business"
+      SubText2: "Improved water helps expand the life of water-using equipment."
+      Link2:
+        text: ""
+        href: "#"
+        target: ""
+      Text3: "Improve Efficiency & Reliability"
+      SubText3: "Energy and water conserving solutions for home and business."
+      Link3:
+        text: ""
+        href: "#"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image1"
+        src: "https://www.pentair.com/en-us/water-solutions/jcr:content/par/section_copy/col1/section_copy_copy_co/col1/image.img.png/1701883471238.png"
+        alt: "Quality water and ice icon"
+      - field: "Image2"
+        src: "https://www.pentair.com/en-us/water-solutions/jcr:content/par/section_copy/col2/section_copy_copy_co/col1/image_copy.img.png/1701883322955.png"
+        alt: "Protect equipment icon"
+      - field: "Image3"
+        src: "https://www.pentair.com/en-us/water-solutions/jcr:content/par/section_copy/col3/section_copy_copy_co/col1/image.img.png/1701883476421.png"
+        alt: "Efficiency icon"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 5
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Pentair Water - Solutions Heading"
+    datasourceItemId: "4b47337c-05dc-4b9d-8068-2ad4dc7642f3"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Heading: "Solutions"
+      Text: ""
+      Link:
+        text: ""
+        href: "#"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 6
+    componentName: "ThreeColumnCta"
+    manifestName: "ThreeColumnCta"
+    kind: "simple"
+    datasourceItemName: "Pentair Water - Solutions"
+    datasourceItemId: "b15b268e-ef04-4bcd-a97c-94ce052de8ff"
+    apiAddable: true
+    fields:
+      Text1: "Home Water Treatment Solutions"
+      SubText1: "Grow confidence in your home water through our nationwide network of water partners offering professional installation or DIY solutions. Find an experienced expert who can test your water, guide you to a solution and install your selection. You can also buy filtration systems and replacements directly from our authorized online retailers."
+      Link1:
+        text: "Explore Home Water Treatment Solutions"
+        href: "https://www.pentair.com/en-us/home-water-treatment.html"
+        target: ""
+      Text2: "Foodservice Water Filtration"
+      SubText2: "Since 1933, Everpure, From Pentair Water Solutions, is the premier line of filtration systems designed to protect water-using equipment and create consistent, great-tasting filtered water. Everpure is trusted by coffee crafters, gourmet chefs, national foodservice operators, franchises and leaders in hospitality."
+      Link2:
+        text: "Explore Foodservice Water Filtration"
+        href: "https://www.pentair.com/en-us/commercial-filtration.html"
+        target: ""
+      Text3: "Commercial Ice Solutions"
+      SubText3: "Since 1964, Manitowoc Ice offers premier ice equipment, creating higher quality, great tasting ice trusted by national food service operators, franchisees, leaders in hospitality and medical professionals."
+      Link3:
+        text: "Explore Commercial Ice Solutions"
+        href: "https://www.manitowocice.com/"
+        target: "_blank"
+    children: []
+    imageFields:
+      - field: "Image1"
+        src: "https://www.pentair.com/en-us/water-solutions/jcr:content/par/section_810976265_co/col1/image_copy.img.jpg/1783441745458.jpg"
+        alt: "filling water glass under faucet"
+      - field: "Image2"
+        src: "https://www.pentair.com/en-us/water-solutions/jcr:content/par/section_810976265_co/col2/image_copy.img.jpg/1783442093946.jpg"
+        alt: "people in cafe, everpure brand"
+      - field: "Image3"
+        src: "https://www.pentair.com/en-us/water-solutions/jcr:content/par/section_810976265_co/col3/image_copy.img.jpg/1783442115067.jpg"
+        alt: "ice machine, manitowoc brand"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 7
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    kind: "simple"
+    datasourceItemName: "Pentair Water - Video"
+    datasourceItemId: "2b8c47f7-12bb-48ae-a086-cd91637b43a2"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Title: "Learn How We Improve Water"
+      Subtitle: ""
+      Text: ""
+      Link:
+        text: ""
+        href: "#"
+        target: ""
+      Link2:
+        text: ""
+        href: "#"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image"
+        src: "https://www.pentair.com/en-us/water-solutions/_jcr_content/par/section_207073422_co/col1/media_copy_copy/mainImage.img.png/1721320831190.png"
+        alt: "people working in foodservice"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 8
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Pentair Water - Partnerships Heading"
+    datasourceItemId: "7ff1fe36-f55d-49b9-9e25-a679f613aa05"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Heading: "Our Sustainable Water Partnerships"
+      Text: ""
+      Link:
+        text: ""
+        href: "#"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 9
+    componentName: "ThreeColumnCta"
+    manifestName: "ThreeColumnCta"
+    kind: "simple"
+    datasourceItemName: "Pentair Water - Partnerships"
+    datasourceItemId: "973752eb-c624-4c1f-990b-f64b0e25cc18"
+    apiAddable: true
+    fields:
+      Text1: ""
+      SubText1: "Pentair helps capture, conserve and reuse rain water for more sustainable irrigation."
+      Link1:
+        text: "Learn About Our Twins Partnership"
+        href: "https://www.pentair.com/en-us/water-solutions/partnerships/twins.html"
+        target: ""
+      Text2: ""
+      SubText2: "At Pentair, we're as ice-obsessed as fans, knowing great water makes great ice."
+      Link2:
+        text: "Learn About our Wild Partnership"
+        href: "https://www.pentair.com/en-us/water-solutions/partnerships/wild.html"
+        target: ""
+      Text3: ""
+      SubText3: "Pentair helps reduce waste by minimizing bottled water use at MSP airport."
+      Link3:
+        text: "Learn About Our MSP Partnership"
+        href: "https://www.pentair.com/en-us/water-solutions/partnerships/msp.html"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image1"
+        src: "https://www.pentair.com/content/experience-fragments/pentair/Filtration/partnerships/master/jcr:content/root/responsivegrid/section/col1/section/col1/image.img.png/1718131992049.png"
+        alt: "Minnesota Twins Logo"
+      - field: "Image2"
+        src: "https://www.pentair.com/content/experience-fragments/pentair/Filtration/partnerships/master/jcr:content/root/responsivegrid/section/col2/section/col1/image.img.png/1718132269932.png"
+        alt: "Minnesota Wild Logo"
+      - field: "Image3"
+        src: "https://www.pentair.com/content/experience-fragments/pentair/Filtration/partnerships/master/jcr:content/root/responsivegrid/section/col3/section/col1/image_copy.img.png/1719347939034.png"
+        alt: "Minneapolis-St. Paul International Airport logo"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 10
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Pentair Water - View All Partnerships"
+    datasourceItemId: "9ec46d82-0426-4d5a-999e-a333bed045b2"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Heading: ""
+      Text: ""
+      Link:
+        text: "View All Partnerships"
+        href: "https://www.pentair.com/en-us/water-solutions/partnerships.html"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 11
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    kind: "simple"
+    datasourceItemName: "Pentair Water - Commitment"
+    datasourceItemId: "de3bfb0a-2a20-4414-95d0-b22a9d893242"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Title: "Our Commitment to Water Improvement"
+      Subtitle: ""
+      Text: "<p>Pentair Water Solutions is committed to improving water, no matter the source. We work together, day in, day out, to provide trusted, great tasting, life sustaining water and ice. Through our water solutions, <strong>since 2021 over 23.7 billion single-use plastic</strong> water bottles were avoided by customers using Pentair residential water filtration systems. This is only the beginning. Join us in our journey to improve the world's water, eliminate waste and do our part to help people and planet thrive.</p>"
+      Link:
+        text: ""
+        href: "#"
+        target: ""
+      Link2:
+        text: ""
+        href: "#"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 12
+    componentName: "Footer"
+    manifestName: "Footer"
+    kind: "context-only"
+    datasourceItemName: ""
+    apiAddable: false
+    fields: {}
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+summary:
+  totalSections: 12
+  sectionsWithContent: 9
+  contextOnlySkipped: 3
+  fieldsPopulated: 42
+  imageFieldsMapped: 11
+  imagesSkipped: 1
+  videosFound: 1
+  translationApplied: false
+  sourceLanguage: "en"
+
+manualVideoTasks:
+  - position: 7
+    componentName: "PromoCta"
+    variant: "PentairWaterVideo"
+    posterImage: "https://www.pentair.com/en-us/water-solutions/_jcr_content/par/section_207073422_co/col1/media_copy_copy/mainImage.img.png/1721320831190.png"
+    videoSources: []
+    note: "Extractor did not capture a video file URL. Upload the kitchen video to Content Hub, create a public link, and wire it on the Promo CTA (Pentair Water - Video) after the poster is in place."

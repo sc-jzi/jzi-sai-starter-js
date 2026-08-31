@@ -151,3 +151,51 @@ export const Centered = (props: HeadingCtaProps): JSX.Element => {
     </div>
   );
 };
+
+function hasAuthoredLink(link?: LinkField): boolean {
+  const href = link?.value?.href;
+  return Boolean(href && href !== '#');
+}
+
+/* PentairWater variant — thin uppercase navy section heading */
+export const PentairWater = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component heading-cta pentair-water-heading ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="heading-content-wrapper mx-auto text-center">
+          {(isPageEditing || props.fields?.Heading?.value) && (
+            <h2>
+              <Text field={props.fields?.Heading} />
+            </h2>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* PentairWaterOutline variant — outlined Bright Blue button only */
+export const PentairWaterOutline = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div
+      className={`component heading-cta pentair-water-heading pentair-water-heading--outline ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container text-center">
+        {(isPageEditing || hasAuthoredLink(props.fields?.Link)) && (
+          <Link field={props.fields.Link} className="button" />
+        )}
+      </div>
+    </div>
+  );
+};

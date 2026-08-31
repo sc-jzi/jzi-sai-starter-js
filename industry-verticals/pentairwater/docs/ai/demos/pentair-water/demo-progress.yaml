@@ -1,0 +1,134 @@
+# Demo Progress Tracker — Pentair Water
+client:
+  name: "Pentair Water"
+  sourceUrl: "https://www.pentair.com/en-us/water-solutions.html"
+  startedAt: "2026-08-28T19:20:00Z"
+  lastUpdatedAt: "2026-08-28T20:15:00Z"
+  contentRoot: "/sitecore/content/pentair/pentair-water"
+  codeRoot: "/industry-verticals/pentairwater"
+  homePageId: "0fb75a4b-f18f-4f8a-9944-f0b48f786290"
+  siteId: "b11a6f9c-5ada-4769-afd6-75b2e23febaf"
+  dataFolderId: "fc242efa-ae12-454f-83b5-f159626860a3"
+  promosFolderId: "d1d1e5bb-d38f-4496-add8-5d87eda1dc9a"
+
+phases:
+  phase0_inputs:
+    status: "complete"
+    screenshot: true
+    url: "https://www.pentair.com/en-us/water-solutions.html"
+    contentHubAuth: "verified"
+
+  phase0_5_manifest:
+    status: "complete"
+    validationMode: "quick"
+    result: "pass-with-warnings"
+
+  phase1_theme:
+    status: "complete"
+    themeFile: "docs/ai/themes/pentair-water.theme.yaml"
+    userApproved: true
+
+  phase2_analysis:
+    status: "complete"
+    buildPlanFile: "docs/ai/demos/pentair-water/build-plan.yaml"
+    totalSections: 12
+    userApproved: true
+
+  phase2_5_content:
+    status: "complete"
+    contentMapFile: "docs/ai/demos/pentair-water/content-map.yaml"
+    extractorUsed: true
+
+  phase3_content:
+    status: "complete"
+    completedSections: 9
+    totalSections: 9
+
+  phase4_theme:
+    status: "complete"
+    themeDelivery: "sass"
+    cssWritten: true
+    fontsAdded: true
+
+  phase5_custom:
+    status: "skipped"
+    customComponentsNeeded: 0
+    customComponentsBuilt: 0
+
+  phase5_5_variants:
+    status: "complete"
+    variantsNeeded: 10
+    variantsCreated: 10
+    variantSpecsFile: "docs/ai/demos/pentair-water/variant-specs.yaml"
+    skippedReason: ""
+
+  phase6_assembly:
+    status: "blocked"
+    componentsAdded: 0
+    datasourcesWired: 0
+    totalComponents: 12
+    error: "Home layout API 500; editablePlaceholders empty"
+
+  phase7_summary:
+    status: "complete"
+
+sections:
+  - position: 1
+    name: "Eyebrow"
+    status: "wired"
+    note: "Baked into Header; OOB Eyebrow hidden via CSS"
+  - position: 2
+    name: "Header"
+    status: "wired"
+    note: "Partial; PentairWater variant + baked-in Default"
+    variantId: "486fabc1-521e-4601-badc-bef230e481ad"
+  - position: 3
+    name: "Hero"
+    status: "populated"
+    datasourceId: "087ff2a0-bbf0-4b30-afa6-4cd5a4386559"
+    variantId: "28e4a551-e3f8-4da5-a722-7e2734935ae5"
+  - position: 4
+    name: "Benefits"
+    status: "populated"
+    datasourceId: "98c5db17-0069-453e-a68f-3df4c0372653"
+    variantId: "df43c6e4-0995-4de3-8e0f-a9f6958529f0"
+  - position: 5
+    name: "Solutions Heading"
+    status: "populated"
+    datasourceId: "4b47337c-05dc-4b9d-8068-2ad4dc7642f3"
+    variantId: "30b136a3-37fb-4376-9bda-5ad78c994319"
+  - position: 6
+    name: "Solutions"
+    status: "populated"
+    datasourceId: "b15b268e-ef04-4bcd-a97c-94ce052de8ff"
+    variantId: "9dbe7f2a-843c-4e56-a9e0-83d39b4e4f34"
+  - position: 7
+    name: "Video"
+    status: "populated"
+    datasourceId: "2b8c47f7-12bb-48ae-a086-cd91637b43a2"
+    variantId: "3598895c-19a1-4c53-89ca-089ee9688733"
+  - position: 8
+    name: "Partnerships Heading"
+    status: "populated"
+    datasourceId: "7ff1fe36-f55d-49b9-9e25-a679f613aa05"
+    variantId: "30b136a3-37fb-4376-9bda-5ad78c994319"
+  - position: 9
+    name: "Partnerships"
+    status: "populated"
+    datasourceId: "973752eb-c624-4c1f-990b-f64b0e25cc18"
+    variantId: "f4f832b8-0b96-4037-aa5d-0da055157ff3"
+  - position: 10
+    name: "View All Partnerships"
+    status: "populated"
+    datasourceId: "9ec46d82-0426-4d5a-999e-a333bed045b2"
+    variantId: "14f6fb57-087c-45d9-9728-4afe07b8fbb4"
+  - position: 11
+    name: "Commitment"
+    status: "populated"
+    datasourceId: "de3bfb0a-2a20-4414-95d0-b22a9d893242"
+    variantId: "a5f1ba12-99e8-41c4-a531-78ff1f6a5540"
+  - position: 12
+    name: "Footer"
+    status: "wired"
+    note: "Partial; assign PentairWater variant"
+    variantId: "fe2f66cf-ae0a-41eb-b4bb-4dc1be71caca"

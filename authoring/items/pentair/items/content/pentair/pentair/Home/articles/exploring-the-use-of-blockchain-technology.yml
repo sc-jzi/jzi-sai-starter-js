@@ -6,7 +6,7 @@ Path: "/sitecore/content/pentair/pentair/Home/articles/exploring-the-use-of-bloc
 SharedFields:
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
-  Value: "{63CC4D0D-63F1-4BFB-BF63-7EC9D231AFA8}"
+  Value: "{A5BC37E7-ED96-4C1E-8590-A26E64DB55EA}"
 - ID: "ad26114f-29dd-4ef9-b5bf-1d64d558872d"
   Hint: BackgroundImage
   Value: |
@@ -14,10 +14,14 @@ SharedFields:
 - ID: "ba2b872d-f67d-40dc-be41-6366b7030144"
   Hint: Thumbnail
   Value: |
-    <image mediaid="{C1D8F1B0-431B-4C4B-BA15-33E6B31C3335}" alt="Design pattern that represents blockchain technology" height="" width="" hspace="" vspace="" />
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/0058cfc0b2e24084828c6f12c38a2cdb?v=92c77384" dam-id="nmE3Z4_3RXmbJCF-6TctHQ" width="900" height="600" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97072/thumbnail" />
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{10CD2A30-FF55-4108-84B5-A00A194F197D}" />
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "f26ff9b4-0719-4dad-bf19-43917dc75e31"
+  Value: "e98630f9-70d7-4585-bfd2-8ec3e0a50652"
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
   Value: |
@@ -40,9 +44,12 @@ SharedFields:
 Languages:
 - Language: en
   Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "0e1f3385-e57e-4564-80bf-eeece1d86a4d"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: Exploring the use of blockchain technology in banking
+    Value: Pentair Recognized By Newsweek FTSE Russell
   Versions:
   - Version: 1
     Fields:
@@ -88,6 +95,9 @@ Languages:
       Value: Exploring the use of blockchain technology in banking
   - Version: 2
     Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
     - ID: "03117268-f84f-4fd8-ad9e-5990b3a21fe6"
       Hint: Content
       Value: |
@@ -118,10 +128,10 @@ Languages:
       Value: 20260825T180117Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
-      Value: "{1B3D21A1-3E75-49D0-AF21-C4B2DE228760}"
+      Value: "{FCA998C5-0CC3-4F91-94D8-0A4E6CAECE88}"
     - ID: "3e700dce-26eb-4bf0-990f-9d9fe555990d"
       Hint: Excerpt
-      Value: Jump into the transformative potential of blockchain technology in banking, exploring its applications and benefits in revolutionizing financial services. Join our journey to embrace innovation and drive positive change in the financial landscape.
+      Value: "At Pentair, we’re proud of the work we do in partnership with our customers to address global water and energy challenges so that, together, we can build a more resilient future for business and the world. I’m happy to share that our efforts to support a more sustainable future were recently recognized with Pentair being named one of the World’s Greenest Companies by Newsweek and Plant-A Insights Group in collaboration with GIST Impact. I’m also proud to share that Pentair has been included in the 2026 FTSE4Good Index Series by FTSE Russell, which is designed to measure the performance of companies demonstrating strong Environmental, Social and Governance (ESG) practices. "
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
       Value: Exploring the use of blockchain technology in banking
@@ -131,7 +141,7 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "759c069f-ff3a-4613-9ec3-c172306c2977"
+      Value: "5de007ba-b496-4bd3-8341-3dffdf572871"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
@@ -141,10 +151,10 @@ Languages:
       Value: 20240614T135535Z
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260825T180326Z
+      Value: 20260829T184238Z
     - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
       Hint: Title
-      Value: Exploring blockchain technology in banking
+      Value: "Driving Sustainable Impact: Pentair Recognized by Newsweek and FTSE Russell"
 - Language: "fr-CA"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"

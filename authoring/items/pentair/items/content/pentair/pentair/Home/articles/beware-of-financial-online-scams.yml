@@ -6,7 +6,7 @@ Path: "/sitecore/content/pentair/pentair/Home/articles/beware-of-financial-onlin
 SharedFields:
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
-  Value: "{63CC4D0D-63F1-4BFB-BF63-7EC9D231AFA8}"
+  Value: "{A5BC37E7-ED96-4C1E-8590-A26E64DB55EA}"
 - ID: "ad26114f-29dd-4ef9-b5bf-1d64d558872d"
   Hint: BackgroundImage
   Value: |
@@ -14,10 +14,14 @@ SharedFields:
 - ID: "ba2b872d-f67d-40dc-be41-6366b7030144"
   Hint: Thumbnail
   Value: |
-    <image mediaid="{DC50E012-562B-4AE1-95D1-A66A28FE638E}" alt="Online scams - computer screen with code" height="" width="" hspace="" vspace="" />
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/c3f6b888324f4d6aa80a59f00b30101b?v=e8568512" dam-id="c8xni1FVTiSjyC5CQBVlzA" width="1280" height="854" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97098/thumbnail" />
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{54BE0383-7F4B-409C-B875-1E109155064F}" />
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "371ba615-8ac6-4dae-b9a6-dee08458dfe1"
+  Value: "fff7b9c3-201e-4a8d-9c31-71586acec32e"
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
   Value: |
@@ -48,9 +52,12 @@ SharedFields:
 Languages:
 - Language: en
   Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "acb66214-81fe-4da4-b36f-0641f024e521"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: Beware of financial online scams
+    Value: What is Alkaline Water
   Versions:
   - Version: 1
     Fields:
@@ -87,7 +94,7 @@ Languages:
       Value: 20260825T180116Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
-      Value: "{13D6CCE7-A6C3-4EE1-A1D9-8A8E34225ED7}"
+      Value: "{FCA998C5-0CC3-4F91-94D8-0A4E6CAECE88}"
     - ID: "3e700dce-26eb-4bf0-990f-9d9fe555990d"
       Hint: Excerpt
       Value: Online financial scams pose a significant threat to individuals' financial security, requiring heightened awareness and caution. Stay vigilant against phishing attempts, investment schemes, and online shopping fraud to protect yourself online.
@@ -100,17 +107,86 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "ac0c47cf-e04e-45d2-bc09-95d03d648534"
+      Value: "6826dcf1-b9b1-4d7b-991e-c104cabae7ed"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260825T180326Z
+      Value: 20260829T183158Z
     - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
       Hint: Title
       Value: "Protect yourself: Beware of financial online scams"
+  - Version: 2
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "03117268-f84f-4fd8-ad9e-5990b3a21fe6"
+      Hint: Content
+      Value: |
+        <p>In an increasingly digital world, the convenience of online financial transactions comes with a risk: the threat of scams and fraud. As technology advances, so do the tactics of cybercriminals, making it essential for individuals to stay vigilant and informed to protect their hard-earned money. Here are some common online financial scams to be aware of and tips on how to avoid falling victim to them.</p>
+        <p><strong>Phishing Scams</strong></p>
+        <p>Phishing scams involve fraudulent attempts to obtain sensitive information, such as usernames, passwords, and credit card details, by impersonating trusted entities. These scams often come in the form of deceptive emails, text messages, or websites that appear legitimate but are designed to trick individuals into disclosing their personal information.
+        </p>
+        <p style="margin-left: 40px;"><strong>Tip</strong>: Be cautious of unsolicited emails or messages requesting personal or financial information. Verify the legitimacy of the sender by contacting the organization directly through official channels, such as their website or customer service hotline.
+        </p>
+        <p><strong>Investment Scams</strong></p>
+        <p>Investment scams promise high returns with little to no risk, often targeting unsuspecting individuals looking to grow their wealth quickly. These scams may involve fraudulent schemes such as Ponzi schemes, pyramid schemes, or fake investment opportunities that promise unrealistic returns or guaranteed profits.
+        </p>
+        <p style="margin-left: 40px;"><strong>Tip</strong>: Exercise caution when approached with investment opportunities that sound too good to be true. Conduct thorough research and seek advice from reputable financial professionals before making any investment decisions.
+        </p>
+        <p><strong>Online Shopping Scams</strong></p>
+        <p>Online shopping scams involve fraudulent websites or sellers that offer counterfeit or non-existent products at attractive prices to lure in unsuspecting buyers. These scams may result in individuals paying for goods that they never receive or receiving inferior-quality products compared to what was advertised.
+        </p>
+        <p style="margin-left: 40px;"><strong>Tip</strong>: Only shop from reputable and trusted websites, and be wary of deals that seem too good to be true. Look for secure payment options and read reviews from other customers before making a purchase.
+        </p>
+        <p><strong>Romance Scams</strong></p>
+        <p>Romance scams involve individuals posing as potential romantic partners to establish trust and manipulate victims into sending them money or personal information. These scams often occur on social media platforms, dating websites, or online forums where cybercriminals target vulnerable individuals seeking companionship.
+        </p>
+        <p style="margin-left: 40px;"><strong>Tip</strong>: Be cautious when communicating with individuals online, especially if they request financial assistance or disclose personal information early in the relationship. Avoid sharing sensitive information with strangers and consider verifying their identity through other means before engaging further.
+        </p>
+        <p><strong>Conclusion</strong></p>
+        <p>Protecting yourself from financial online scams requires awareness, skepticism, and proactive measures to safeguard your personal and financial information. By staying informed and exercising caution when conducting online transactions, you can reduce the risk of falling victim to scams and enjoy a safer online experience.
+        </p>
+        <p>Remember, if something seems suspicious or too good to be true, it probably is. Stay vigilant, trust your instincts, and always prioritize your financial security.</p>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260829T183937Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{190B1C84-F1BE-47ED-AA41-F42193D9C8FC}"
+    - ID: "3e700dce-26eb-4bf0-990f-9d9fe555990d"
+      Hint: Excerpt
+      Value: "Alkaline water has become a popular trend over the past couple of years, but what exactly is it? Keep reading to learn more about alkaline water and how to make your own alkaline water at home."
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Beware of financial online scams
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\trayek@gmail.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\trayek@gmail.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "9245624f-0368-4ea1-8e81-e3ea44c26988"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "c8f93afe-bfd4-4e8f-9c61-152559854661"
+      Hint: __Valid from
+      Value: 20260829T183937Z
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260829T184118Z
+    - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
+      Hint: Title
+      Value: What is Alkaline Water 
 - Language: "fr-CA"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"

@@ -6,7 +6,7 @@ Path: "/sitecore/content/pentair/pentair/Home/articles/introducing-mobile-financ
 SharedFields:
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
-  Value: "{63CC4D0D-63F1-4BFB-BF63-7EC9D231AFA8}"
+  Value: "{A5BC37E7-ED96-4C1E-8590-A26E64DB55EA}"
 - ID: "ad26114f-29dd-4ef9-b5bf-1d64d558872d"
   Hint: BackgroundImage
   Value: |
@@ -14,7 +14,7 @@ SharedFields:
 - ID: "ba2b872d-f67d-40dc-be41-6366b7030144"
   Hint: Thumbnail
   Value: |
-    <image mediaid="{2B7B2047-0EFD-4A28-A6FD-70AF0E88E475}" alt="Mobile finance app" height="" width="" hspace="" vspace="" />
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/f3642e714ff44f6c936923f91ef0ca5f?v=64a3a534" dam-id="pTEsC3BrQmyHMhr1uQw-YA" width="1280" height="961" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97094/thumbnail" />
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 200
@@ -24,7 +24,7 @@ SharedFields:
     <image mediaid="{D8CA573F-4613-46C4-975C-9315A4FF1DCB}" />
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "2c6ecee9-7434-4011-97f4-40002c50f3e7"
+  Value: "f039f908-54c4-4d44-a452-8dea4840d0ba"
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
   Value: |
@@ -40,9 +40,12 @@ SharedFields:
 Languages:
 - Language: en
   Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "9e68d008-5bfb-4580-a523-e85c57cfe423"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: "Introducing MOBILE! Finance"
+    Value: PFAs in drinking water
   Versions:
   - Version: 1
     Fields:
@@ -52,22 +55,7 @@ Languages:
     - ID: "03117268-f84f-4fd8-ad9e-5990b3a21fe6"
       Hint: Content
       Value: |
-        <p><strong>The Power of MOBILE! Finance</strong></p>
-        <p>MOBILE! Finance is more than just a finance app&mdash;it's your ultimate financial companion, offering a comprehensive suite of features and tools to help you take control of your finances with ease and confidence. Whether you're tracking your spending, saving for a goal, or planning for retirement, MOBILE! Finance has everything you need to succeed.</p>
-        <p><a href="https://example.com" rel="noopener noreferrer" target="_blank" title="Opens in new window"><img src="-/media/FEAF65D3394846DAB95213780D61AADA.ashx?h=45&amp;w=149" alt="Download MOBILE! Finance from the App Store" style="height: 45px; width: 149px;" /></a>&nbsp;&nbsp;&nbsp;<a href="https://example.com" rel="noopener noreferrer" target="_blank" title="Opens in new window"><img src="-/media/DCDCD7A8F8DA4110BA4FD19FEFFD1465.ashx?h=45&amp;w=151" alt="Google Play" style="height: 45px; width: 151px;" /></a></p>
-        <p><strong><br />
-        Key Features</strong></p>
-        <ul>
-            <li><strong><em>Personalized Budgeting</em></strong>: Create customized budgets tailored to your unique financial situation and track your spending in real-time.</li>
-            <li><strong><em>Goal-Based Savings</em></strong>: Set savings goals for all your financial aspirations, from a dream vacation to a down payment on a home, and track your progress effortlessly.</li>
-            <li><strong><em>Smart Investing</em></strong>: Access a range of investment options and tools to help you grow your wealth and achieve your long-term financial goals.</li>
-            <li><strong><em>Bill Management</em></strong>: Never miss a bill payment again with automatic bill reminders and payment scheduling features.</li>
-            <li><strong><em>Security and Privacy</em></strong>: Rest assured knowing that your sensitive financial information is protected by state-of-the-art security measures and encryption protocols.</li>
-        </ul>
-        <p><strong>Why Choose MOBILE! Finance?</strong></p>
-        <p>As part of the trusted online banking platform, MOBILE! Finance offers seamless integration with your existing banking accounts, providing you with a holistic view of your finances in one convenient location. Plus, with our user-friendly interface and intuitive design, managing your money has never been easier or more enjoyable.</p>
-        <p><strong>Get Started Today</strong></p>
-        <p>Ready to take control of your finances and unlock your financial potential? Download the MOBILE! Finance app now and join thousands of satisfied users who are already experiencing the benefits of modern banking with PLAY! Finance.</p>
+        <div class="ck-content"><div><section><article><div><div><div><div><h2>What Are PFAS?</h2><p>PFAS are a series of thousands of laboratory-made chemicals that take a <a href="https://www.epa.gov/pfas/pfas-explained" target="_blank" rel="noopener noreferrer" title="long time to break down."><strong>long time to break down.</strong></a> They help make nonstick pans, grease-resistant food packaging, and waterproof clothing work. They also come from firefighting foam, cosmetics, and industrial manufacturing activities.</p><p>Because of their widespread use in numerous industrial and consumer products, it's not uncommon to find PFAS in drinking water, including public water systems and private water wells.&nbsp;</p><p><a href="https://www.pentair.com/en-us/home-water-treatment/resources/education/water-filtration-for-pfas.html"><strong>What are PFAS in water?</strong></a> Learn more in our comprehensive guide.</p></div></div><div><div><h2>Why Should You Avoid PFAS?</h2><p>According to the CDC Agency for Toxic Substances and Disease Registry, scientific studies have shown that exposure to some PFAS in the environment may be linked to harmful health effects in humans and animals. Several peer-reviewed scientific studies have found a link between PFAS and fertility, certain cancers, and hormonal issues. For many people, avoiding PFAS can bring peace of mind, especially since so much is still uncertain about their long-term effects.</p></div></div><div><div><h2>How to Address PFAS in Your Home Water?</h2><p>The U.S. Environmental Protection Agency has established drinking water standards for several PFAS compounds, helping utilities and communities address PFAS contamination over time.</p></div></div><div><div><h2>Effective Water Filtration Options</h2><p>When looking for filtration solutions, it’s helpful to choose products certified to meet recognized standards for contaminant reduction. Certification means the product has been tested and proven to reduce specific substances, including PFAS.</p><p>Here are some filtration options designed to help reduce PFAS in your home water:</p></div></div></div></div></article></section></div><div><section><article><div><div><div><div><h3>For Undersink filtration</h3></div></div></div></div></article></section></div><div><section><article><div><div><div><figure><p><a href="https://www.pentair.com/en-us/home-water-treatment/under-sink-filtration-systems/freshpoint-easy-flow-undercounter-filtration-system.html"><img src="https://pentair.scene7.com/is/image/pentair/pentair-easy-flow-front?wid=190&amp;hei=190&amp;fmt=webp&amp;fit=fit&amp;qlt=90,0&amp;resMode=sharp2&amp;bgc=F7F7F7" alt="Pentair Easy Flow Product Image Front" width="190" height="190" loading="lazy" /></a></p></figure><figure><p><a href="https://www.pentair.com/en-us/home-water-treatment/under-sink-filtration-systems/freshpoint-3-stage-undercounter-filtration-system.html"><img src="https://pentair.scene7.com/is/image/pentair/fp-f3000-b2b-faucet?wid=190&amp;hei=190&amp;fmt=webp&amp;fit=fit&amp;qlt=90,0&amp;resMode=sharp2&amp;bgc=F7F7F7" alt="FreshPoint F3000-B2B " width="190" height="190" /></a></p></figure><figure><p><a href="https://www.pentair.com/en-us/home-water-treatment/under-sink-filtration-systems/freshpoint-2-stage-undercounter-filtration-system.html"><img src="https://pentair.scene7.com/is/image/pentair/fp-f2000-b2b-faucet?wid=190&amp;hei=190&amp;fmt=webp&amp;fit=fit&amp;qlt=90,0&amp;resMode=sharp2&amp;bgc=F7F7F7" alt="FreshPoint F2000-B2B" width="190" height="190" /></a></p></figure></div></div><div><div><div><div><h4><a href="https://www.pentair.com/en-us/home-water-treatment/under-sink-filtration-systems/freshpoint-easy-flow-undercounter-filtration-system.html"><strong>Freshpoint Easy Flow</strong></a></h4><p>Certified for PFOA and PFOS (two common PFAS chemicals), this system offers a high capacity of 3,000 gallons and a practical flow rate, making it great for everyday use. Its fine 0.5-micron filter helps catch tiny particles for reliable filtration.</p></div></div><div><div><h4><a href="https://www.pentair.com/en-us/home-water-treatment/under-sink-filtration-systems/freshpoint-3-stage-undercounter-filtration-system.html"><span><strong>Freshpoint F3000 3-Stage</strong></span></a></h4><p>Certified for PFAS reduction, this multi-stage system also tackles other contaminants like microplastics. It balances capacity and flow rate well, making it a solid choice for comprehensive water care.</p></div></div><div><div><h4><a href="https://www.pentair.com/en-us/home-water-treatment/under-sink-filtration-systems/freshpoint-2-stage-undercounter-filtration-system.html"><strong>Freshpoint F2000 2-Stage</strong></a></h4><p>Also certified for PFAS reduction, this slightly smaller system is ideal if you want effective filtration with a compact setup. It also helps reduce other chemicals like atrazine.</p></div></div></div></div></div></article></section></div><div><section><article><div><div><div><div><h3>For whole-home filtration</h3></div></div></div></div></article></section></div><div><section><article><div><div><div><figure><p><a href="https://www.pentair.com/en-us/home-water-treatment/filter-replacements/floplus-protect-20bb-cartridge.html"><img src="https://pentair.scene7.com/is/image/pentair/floplus-protect-20bb-system?wid=200&amp;hei=200&amp;fmt=webp&amp;fit=fit&amp;qlt=90,0&amp;resMode=sharp2&amp;bgc=F7F7F7" alt="2000 x 2000 px FloPlus Protect 20 BB System" width="200" height="200" /></a></p></figure></div></div><div><div><div><div><h4><a href="https://www.pentair.com/en-us/home-water-treatment/filter-replacements/floplus-protect-20bb-cartridge.html"><strong>FloPlus Protect System 20BB</strong></a></h4><p>Certified for PFAS reduction, this system handles a large volume of water with a high flow rate, making it suitable for filtering water throughout your entire home.</p></div></div></div></div></div></article></section></div><div><section><article><div><div><div><div><h2>What you can do next</h2><p>Learn more about PFAS and next steps you can take in our other blog post, <a href="https://www.pentair.com/en-us/home-water-treatment/resources/education/water-filtration-for-pfas.html.html"><strong>PFAS in Drinking Water, What You Need to Know.&nbsp;</strong></a></p></div></div></div></div></article></section></div></div>
     - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
       Hint: __Final Renderings
       Value: |
@@ -76,9 +64,9 @@ Languages:
           <d
             id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
             <r
-              uid="{F6DF5786-E6D2-4A2D-ACA4-49A0F56A2CB3}"
+              uid="{0A3E4A5A-070E-44F6-9D31-D3346B032E80}"
               p:after="*[1=2]"
-              s:ds="local:/Data/Promo CTA 1"
+              s:ds="local:/Data/Promo CTA 2"
               s:id="{1A375FAC-6CC1-4A5A-A159-9BC6DBC66B80}"
               s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B039526C7-7709-4C54-8348-CC52C5655A78%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=2"
               s:ph="/headless-main/sxa-article-content/background-page-content-0-1" />
@@ -89,30 +77,34 @@ Languages:
       Value: 20260825T180116Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
-      Value: "{13D6CCE7-A6C3-4EE1-A1D9-8A8E34225ED7}"
+      Value: "{FCA998C5-0CC3-4F91-94D8-0A4E6CAECE88}"
     - ID: "3e700dce-26eb-4bf0-990f-9d9fe555990d"
       Hint: Excerpt
-      Value: "We're thrilled to introduce MOBILE! Finance, a groundbreaking new finance app designed to revolutionize the way you bank and manage your finances."
+      Value: |
+        The term per- and polyfluoroalkyl substances, also known as PFAS, is a mouthful — literally. These small, manmade chemicals are nearly everywhere — including our water. PFAS in drinking water are present in all 50 states. Yikes.
+        
+        If you're worried about these forever chemicals, use our guide to learn how to avoid PFAS in your home water.
+        
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
-      Value: "Introducing MOBILE! Finance"
+      Value: How To Avoid PFAs In Drinking Water
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "6d5f8b8d-0be4-4a57-b31d-3422e81f5606"
+      Value: "3e321209-d17a-409f-9f92-357c0c17331e"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260828T142107Z
+      Value: 20260831T173321Z
     - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
       Hint: Title
-      Value: "Introducing MOBILE! Finance: Your new financial companion app"
+      Value: Understanding PFAS in Drinking Water 
 - Language: "fr-CA"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"

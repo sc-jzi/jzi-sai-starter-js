@@ -1,0 +1,286 @@
+{
+  "url": "https://www.pentair.com/en-us/water-solutions.html",
+  "extractedAt": "2026-08-28T19:33:04.012Z",
+  "detectedLanguage": "en-US",
+  "targetLanguage": "en",
+  "translationNeeded": false,
+  "totalSections": 4,
+  "totalImages": 12,
+  "totalVideos": 0,
+  "interactionStats": {
+    "lazySourcesResolved": 0,
+    "tabsClicked": 0,
+    "accordionsExpanded": 0,
+    "carouselDotsClicked": 1,
+    "carouselArrowSlides": 0,
+    "backgroundImagesCollected": 0
+  },
+  "sections": [
+    {
+      "position": 1,
+      "tagName": "div",
+      "classHint": "",
+      "backgroundHint": "dark",
+      "headings": [],
+      "paragraphs": [],
+      "links": [],
+      "images": []
+    },
+    {
+      "position": 2,
+      "tagName": "div",
+      "classHint": "",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "You Deserve Water at its best"
+        },
+        {
+          "tag": "h2",
+          "text": "You Deserve Water at its best"
+        }
+      ],
+      "paragraphs": [
+        "Grow with confidence knowing your water and ice is cleaner, clearer, better tasting and more reliable."
+      ],
+      "links": [
+        {
+          "text": "Explore Solutions",
+          "href": "https://www.pentair.com/en-us/water-solutions.html#solutions",
+          "target": "_self"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.pentair.com/content/dam/extranet/web/nam/pentair/images/banners/pouring-over-ice-banner-mobile.jpg",
+          "alt": "pouring ice water",
+          "type": "img",
+          "width": 800,
+          "height": 800
+        },
+        {
+          "src": "https://www.pentair.com/content/dam/extranet/web/nam/pentair/images/banners/pouring-pitcher-into-ice-banner.jpg",
+          "alt": "pouring ice water",
+          "type": "img",
+          "width": 1440,
+          "height": 400
+        }
+      ],
+      "listItems": [
+        {
+          "title": "You Deserve Water at its best Grow with confidence knowing your water and ice is cleaner, clearer, better tasting and more reliable.",
+          "description": "Grow with confidence knowing your water and ice is cleaner, clearer, better tasting and more reliable.",
+          "badge": "You Deserve Water at its best Grow with confidence knowing your water and ice is cleaner, clearer, better tasting and more reliable. Explore Solutions",
+          "link": {
+            "text": "Explore Solutions",
+            "href": "https://www.pentair.com/en-us/water-solutions.html#solutions"
+          },
+          "image": {
+            "src": "https://www.pentair.com/content/dam/extranet/web/nam/pentair/images/banners/pouring-over-ice-banner-mobile.jpg",
+            "alt": "pouring ice water"
+          }
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "tagName": "section",
+      "classHint": "component section bread-section",
+      "backgroundHint": "light",
+      "headings": [],
+      "paragraphs": [],
+      "links": [],
+      "images": []
+    },
+    {
+      "position": 4,
+      "tagName": "div",
+      "classHint": "main-content",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Solutions"
+        },
+        {
+          "tag": "h2",
+          "text": "HOME WATER TREATMENT SOLUTIONS"
+        },
+        {
+          "tag": "h2",
+          "text": "FOODSERVICE WATER FILTRATION"
+        },
+        {
+          "tag": "h2",
+          "text": "COMMERCIAL ICE SOLUTIONS"
+        },
+        {
+          "tag": "h3",
+          "text": "Learn How We Improve Water"
+        },
+        {
+          "tag": "h3",
+          "text": "Our Sustainable Water Partnerships"
+        },
+        {
+          "tag": "h2",
+          "text": "Our Commitment to Water Improvement"
+        }
+      ],
+      "paragraphs": [
+        "Enjoy Great Tasting Higher Quality Water & Ice",
+        "Peace of mind through tested and certified products to highest quality standards.",
+        "Protect Equipment, Home & Business",
+        "Improved water helps expand the life of water-using equipment.",
+        "Improve Efficiency & Reliability",
+        "Energy and water conserving solutions for home and business.",
+        "Grow confidence in your home water through our nationwide network of water partners offering professional installation or DIY solutions. Find an experienced expert who can test your water, guide you to a solution and install your selection. You can also buy filtration systems and replacements directly from our authorized online retailers.",
+        "Explore Home Water Treatment Solutions",
+        "Since 1933, Everpure, From Pentair Water Solutions, is the premier line of filtration systems designed to protect water-using equipment and create consistent, great-tasting filtered water. Everpure is trusted by coffee crafters, gourmet chefs, national foodservice operators, franchises and leaders in hospitality.",
+        "Explore Foodservice Water Filtration",
+        "Since 1964, Manitowoc Ice offers premier ice equipment, creating higher quality, great tasting ice trusted by national food service operators, franchisees, leaders in hospitality and medical professionals.",
+        "Explore Commercial Ice Solutions",
+        "Pentair helps capture, conserve and reuse rain water for more sustainable irrigation.",
+        "Learn About Our Twins Partnership",
+        "At Pentair, we're as ice-obsessed as fans, knowing great water makes great ice.",
+        "Learn About our Wild Partnership",
+        "Pentair helps reduce waste by minimizing bottled water use at MSP airport.",
+        "Learn About Our MSP Partnership",
+        "Pentair Water Solutions is committed to improving water, no matter the source. We work together, day in, day out, to provide trusted, great tasting, life sustaining water and ice. Through our water solutions, since 2021 over 23.7 billion single-use plastic water bottles were avoided by customers using Pentair residential water filtration systems. This is only the beginning. Join us in our journey to improve the world's water, eliminate waste and do our part to help people and planet thrive."
+      ],
+      "links": [
+        {
+          "text": "Explore Home Water Treatment Solutions",
+          "href": "https://www.pentair.com/en-us/home-water-treatment.html",
+          "target": ""
+        },
+        {
+          "text": "Explore Foodservice Water Filtration",
+          "href": "https://www.pentair.com/en-us/commercial-filtration.html",
+          "target": ""
+        },
+        {
+          "text": "Explore Commercial Ice Solutions",
+          "href": "https://www.manitowocice.com/",
+          "target": "_blank"
+        },
+        {
+          "text": "Learn About Our Twins Partnership",
+          "href": "https://www.pentair.com/en-us/water-solutions/partnerships/twins.html",
+          "target": ""
+        },
+        {
+          "text": "Learn About our Wild Partnership",
+          "href": "https://www.pentair.com/en-us/water-solutions/partnerships/wild.html",
+          "target": ""
+        },
+        {
+          "text": "Learn About Our MSP Partnership",
+          "href": "https://www.pentair.com/en-us/water-solutions/partnerships/msp.html",
+          "target": ""
+        },
+        {
+          "text": "View All Partnerships",
+          "href": "https://www.pentair.com/en-us/water-solutions/partnerships.html",
+          "target": "_self"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.pentair.com/en-us/water-solutions/jcr:content/par/section_copy/col1/section_copy_copy_co/col1/image.img.png/1701883471238.png",
+          "alt": "true",
+          "type": "img",
+          "width": 75,
+          "height": 75
+        },
+        {
+          "src": "https://www.pentair.com/en-us/water-solutions/jcr:content/par/section_copy/col2/section_copy_copy_co/col1/image_copy.img.png/1701883322955.png",
+          "alt": "true",
+          "type": "img",
+          "width": 75,
+          "height": 75
+        },
+        {
+          "src": "https://www.pentair.com/en-us/water-solutions/jcr:content/par/section_copy/col3/section_copy_copy_co/col1/image.img.png/1701883476421.png",
+          "alt": "true",
+          "type": "img",
+          "width": 75,
+          "height": 75
+        },
+        {
+          "src": "https://www.pentair.com/en-us/water-solutions/jcr:content/par/section_810976265_co/col1/image_copy.img.jpg/1783441745458.jpg",
+          "alt": "filling water glass under faucet",
+          "type": "img",
+          "width": 539,
+          "height": 349
+        },
+        {
+          "src": "https://www.pentair.com/en-us/water-solutions/jcr:content/par/section_810976265_co/col2/image_copy.img.jpg/1783442093946.jpg",
+          "alt": "people in cafe, everpure brand",
+          "type": "img",
+          "width": 539,
+          "height": 349
+        },
+        {
+          "src": "https://www.pentair.com/en-us/water-solutions/jcr:content/par/section_810976265_co/col3/image_copy.img.jpg/1783442115067.jpg",
+          "alt": "ice machine, manitowoc brand",
+          "type": "img",
+          "width": 539,
+          "height": 349
+        },
+        {
+          "src": "https://www.pentair.com/en-us/water-solutions/_jcr_content/par/section_207073422_co/col1/media_copy_copy/mainImage.img.png/1721320831190.png",
+          "alt": "people working in foodservice",
+          "type": "img",
+          "width": 1280,
+          "height": 673
+        },
+        {
+          "src": "https://www.pentair.com/content/experience-fragments/pentair/Filtration/partnerships/master/jcr:content/root/responsivegrid/section/col1/section/col1/image.img.png/1718131992049.png",
+          "alt": "Minnesota Twins Logo",
+          "type": "img",
+          "width": 161,
+          "height": 137
+        },
+        {
+          "src": "https://www.pentair.com/content/experience-fragments/pentair/Filtration/partnerships/master/jcr:content/root/responsivegrid/section/col2/section/col1/image.img.png/1718132269932.png",
+          "alt": "Minnesota Wild Logo",
+          "type": "img",
+          "width": 204,
+          "height": 137
+        },
+        {
+          "src": "https://www.pentair.com/content/experience-fragments/pentair/Filtration/partnerships/master/jcr:content/root/responsivegrid/section/col3/section/col1/image_copy.img.png/1719347939034.png",
+          "alt": "Minnesota Vikings Logo",
+          "type": "img",
+          "width": 226,
+          "height": 137
+        }
+      ],
+      "listItems": [
+        {
+          "description": "Enjoy Great Tasting Higher Quality Water & Ice Peace of mind through tested and certified products to highest quality standards.",
+          "image": {
+            "src": "https://www.pentair.com/en-us/water-solutions/jcr:content/par/section_copy/col1/section_copy_copy_co/col1/image.img.png/1701883471238.png",
+            "alt": "true"
+          }
+        },
+        {
+          "description": "Protect Equipment, Home & Business Improved water helps expand the life of water-using equipment.",
+          "image": {
+            "src": "https://www.pentair.com/en-us/water-solutions/jcr:content/par/section_copy/col2/section_copy_copy_co/col1/image_copy.img.png/1701883322955.png",
+            "alt": "true"
+          }
+        },
+        {
+          "description": "Improve Efficiency & Reliability Energy and water conserving solutions for home and business.",
+          "image": {
+            "src": "https://www.pentair.com/en-us/water-solutions/jcr:content/par/section_copy/col3/section_copy_copy_co/col1/image.img.png/1701883476421.png",
+            "alt": "true"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -8,6 +8,13 @@ Languages:
   Versions:
   - Version: 1
     Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "0bf1334e-9153-4310-89f7-3cd8c5bbf927"
+      Hint: LogoImage
+      Value: |
+        <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/2c13acd36200404f8017410b8cd2cc30?v=04c37da9" dam-id="bMdR09RbSRS2g1U4kavmHQ" width="270" height="78" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97466/thumbnail" />
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20260828T132911Z
@@ -17,11 +24,11 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "ac50f8ad-4ad0-46c6-987d-b55c275528ba"
+      Value: "d54a6783-37e2-4bd2-837b-0a77938b61d7"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260828T132911Z
+      Value: 20260831T151825Z

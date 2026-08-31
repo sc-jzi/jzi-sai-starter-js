@@ -1,0 +1,411 @@
+# Demo Build Plan — Pentair Water
+# Maps the live Water Solutions homepage to existing pentairwater PLAY! components.
+# UIIM registry IDs are recorded as analogs only — those templates are not
+# present in this starter or on /sitecore/content/pentair/pentair-water.
+
+client:
+  name: "Pentair Water"
+  sourceUrl: "https://www.pentair.com/en-us/water-solutions.html"
+  themeFile: "docs/ai/themes/pentair-water.theme.yaml"
+  analyzedAt: "2026-08-28T19:35:00Z"
+  contentRoot: "/sitecore/content/pentair/pentair-water"
+  homePageId: "0fb75a4b-f18f-4f8a-9944-f0b48f786290"
+  homePagePath: "/sitecore/content/pentair/pentair-water/Home"
+  siteId: "b11a6f9c-5ada-4769-afd6-75b2e23febaf"
+  dataFolderId: "fc242efa-ae12-454f-83b5-f159626860a3"
+  promosFolderId: "d1d1e5bb-d38f-4496-add8-5d87eda1dc9a"
+  implementationLibrary: "pentairwater-play"
+
+pageAnalysis:
+  screenshotFiles:
+    desktop: "docs/ai/themes/pentair-water/screenshot-desktop.png"
+    mobile: "docs/ai/themes/pentair-water/screenshot-mobile.png"
+    hero: "docs/ai/themes/pentair-water/screenshot-hero.png"
+  totalSections: 12
+  templateMatches: 12
+  customRequired: 0
+
+sections:
+  - position: 1
+    description: "Thin utility bar at the very top. Left: Home Water, Foodservice. Right: Pentair.com Homepage, Contact Us, Find a Dealer, Partner Portal."
+    matchedComponent:
+      registryId: "announcement-bar"
+      manifestName: "Eyebrow"
+      displayName: "Eyebrow / utility bar"
+      renderingId: "5f765231-1da9-467a-8b35-2171cce313c1"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: false
+      implementation: "existing-partial"
+    customVariantNeeded:
+      name: "PentairWater"
+      description: "Light gray bar, small uppercase/sentence links, icons on the right cluster, no search in this row."
+      parentComponent: "Eyebrow"
+    sectionBackground: "muted"
+    content:
+      Title: ""
+      Description: "Home Water · Foodservice · Pentair.com Homepage · Contact Us · Find a Dealer · Partner Portal"
+    contentNotes: "Lives in the header partial design. Do not add via API. Update existing Eyebrow / Link List datasources."
+    variantReason: "Existing Eyebrow is a PLAY! placeholder strip. Needs a PentairWater restyle."
+    kind: "context-only"
+
+  - position: 2
+    description: "Solid white header with Pentair Water Solutions wordmark on the left, primary nav (Products, Top Brands, Our Impact, Investors) centered, search field on the right."
+    matchedComponent:
+      registryId: "navigation-header"
+      manifestName: "Header"
+      displayName: "Header + Navigation"
+      renderingId: "81317d3b-f929-426a-83ec-421982f8f1e6"
+      variant: "WithLogoImage"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: false
+      implementation: "existing-partial"
+    customVariantNeeded:
+      name: "PentairWater"
+      description: "White bar, navy wordmark, centered nav, search input on the right. No green CTA button."
+      parentComponent: "Header"
+    sectionBackground: "default"
+    content:
+      Title: "Pentair Water Solutions"
+      Description: "Products · Top Brands · Our Impact · Investors"
+    contentNotes: "Header + Navigation already sit in the page design partials. Update logo and nav link datasources. Mega-menu under Products/Top Brands must be authored in the existing Navigation items."
+    variantReason: "tone.navStyle is solid-bar. WithLogoImage is the right structure; needs Water wordmark + search, not PLAY! styling."
+    kind: "context-only"
+
+  - position: 3
+    description: "Split hero: navy uppercase headline and Bright Blue EXPLORE SOLUTIONS button on the left; lifestyle photo of water poured over ice on the right. Soft white-to-photo blend."
+    matchedComponent:
+      registryId: "hero-banner"
+      manifestName: "Hero"
+      displayName: "Hero"
+      renderingId: "b7cdf75e-716a-4c59-b9b1-cd970ae0a4ae"
+      datasourceTemplateId: "90d315e8-aa42-4b23-a7eb-4491396453f8"
+      variant: "PentairWater"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+    customVariantNeeded:
+      name: "PentairWater"
+      description: "50/50 split, text left / image right, two-tone uppercase headline (Bright Blue YOU DESERVE + navy WATER AT ITS BEST), gray body, sharp Bright Blue CTA. No dotted accents, no stacked full-width photo."
+      parentComponent: "Hero"
+    sectionBackground: "default"
+    content:
+      Title: "You Deserve Water at its Best"
+      Description: "Grow with confidence knowing your water and ice is cleaner, clearer, better tasting and more reliable."
+      Cta: "Explore Solutions"
+    imageFields:
+      - { field: "Image", src: "hand pouring water from pitcher into iced glass" }
+    contentNotes: "Existing Hero Default is a full-width photo with stacked text underneath. Live site is a split layout. PromoCta Default is already split — use that as a fallback if Phase 5.5 is skipped."
+    variantReason: "tone.heroStyle is split-image-text. No existing Hero export matches."
+    kind: "simple"
+
+  - position: 4
+    description: "Three circular Bright Blue outline icons in a row, each with an uppercase navy heading and a short gray sentence. No section title."
+    matchedComponent:
+      registryId: "value-proposition-grid"
+      manifestName: "ThreeColumnCta"
+      displayName: "Three Column CTA"
+      renderingId: "ad385021-ce2b-4fc1-89aa-207d408034a8"
+      datasourceTemplateId: "148d07ba-f923-4fb2-8907-0bd440d5db44"
+      variant: "PentairWaterIcons"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+    customVariantNeeded:
+      name: "PentairWaterIcons"
+      description: "Three centered columns, circular outlined Bright Blue icons (~80px), uppercase navy titles, gray body, no buttons, no photo images."
+      parentComponent: "ThreeColumnCta"
+    sectionBackground: "default"
+    content:
+      Title: ""
+      items:
+        - title: "Enjoy Great Tasting Higher Quality Water & Ice"
+          text: "Peace of mind through tested and certified products to highest quality standards."
+        - title: "Protect Equipment, Home & Business"
+          text: "Improved water helps expand the life of water-using equipment."
+        - title: "Improve Efficiency & Reliability"
+          text: "Energy and water conserving solutions for home and business."
+    imageFields:
+      - { field: "Image1", src: "circular icon — water drop with stars" }
+      - { field: "Image2", src: "circular icon — shield with checkmark" }
+      - { field: "Image3", src: "circular icon — efficiency / document with water drop" }
+    contentNotes: "WithIcons exists (32px image + heading + body as a wrapper link) but does not match the large outlined circular icons or the no-link treatment. Features was considered but only has two items."
+    variantReason: "Closest 3-up icon row. Needs a Water-specific icon treatment."
+    kind: "simple"
+
+  - position: 5
+    description: "Centered thin uppercase section heading: SOLUTIONS."
+    matchedComponent:
+      registryId: "rich-text-block"
+      manifestName: "HeadingCta"
+      displayName: "Heading CTA"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      datasourceTemplateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+      variant: "PentairWater"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+    customVariantNeeded:
+      name: "PentairWater"
+      description: "Centered Barlow Condensed weight 300 uppercase heading, navy, no eyebrow, no body, no button."
+      parentComponent: "HeadingCta"
+    sectionBackground: "default"
+    content:
+      Title: "Solutions"
+      Description: ""
+    contentNotes: "Pairs with the Three Column CTA immediately below. Same visual band on the live site."
+    variantReason: "Centered exists but is PLAY! styled (eyebrow + display type + button)."
+    kind: "simple"
+
+  - position: 6
+    description: "Three solution cards: photo, optional brand lockup overlay (Everpure / Manitowoc), uppercase title, short paragraph, Bright Blue text link with arrow."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "ThreeColumnCta"
+      displayName: "Three Column CTA"
+      renderingId: "ad385021-ce2b-4fc1-89aa-207d408034a8"
+      datasourceTemplateId: "148d07ba-f923-4fb2-8907-0bd440d5db44"
+      variant: "PentairWaterCards"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+    customVariantNeeded:
+      name: "PentairWaterCards"
+      description: "Three equal photo cards, optional logo overlay, uppercase navy title, gray body, text-arrow link (not a filled button). Square-corner images."
+      parentComponent: "ThreeColumnCta"
+    sectionBackground: "default"
+    content:
+      Title: ""
+      items:
+        - title: "Home Water Treatment Solutions"
+          text: "Grow confidence in your home water through our nationwide network of water partners offering professional installation or DIY solutions. Find an experienced expert who can test your water, guide you to a solution and install your selection. You can also buy filtration systems and replacements directly from our authorized online retailers."
+          cta: "Explore Home Water Treatment Solutions"
+        - title: "Foodservice Water Filtration"
+          text: "Since 1933, Everpure, From Pentair Water Solutions, is the premier line of filtration systems designed to protect water-using equipment and create consistent, great-tasting filtered water. Everpure is trusted by coffee crafters, gourmet chefs, national foodservice operators, franchises and leaders in hospitality."
+          cta: "Explore Foodservice Water Filtration"
+        - title: "Commercial Ice Solutions"
+          text: "Since 1964, Manitowoc Ice offers premier ice equipment, creating higher quality, great tasting ice trusted by national food service operators, franchisees, leaders in hospitality and medical professionals."
+          cta: "Explore Commercial Ice Solutions"
+    imageFields:
+      - { field: "Image1", src: "filling a water glass under a faucet" }
+      - { field: "Image2", src: "people in a cafe, Everpure brand overlay" }
+      - { field: "Image3", src: "commercial ice, Manitowoc brand overlay" }
+    contentNotes: "Second ThreeColumnCta instance. Default already has image + h2 + p + button per column — closest layout. Buttons must become text-arrow links."
+    variantReason: "Default is stacked cards with filled PLAY! buttons. Live site uses text links and brand lockups on the photos."
+    kind: "simple"
+
+  - position: 7
+    description: "Centered uppercase heading LEARN HOW WE IMPROVE WATER above a large 16:9 kitchen video thumbnail with a translucent Bright Blue play button."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      displayName: "Promo CTA"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      datasourceTemplateId: "c0943942-ae0f-4205-86fa-84884cce4a53"
+      variant: "PentairWaterVideo"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+    customVariantNeeded:
+      name: "PentairWaterVideo"
+      description: "Centered uppercase heading above a wide video poster with a circular Bright Blue play overlay. No dotted accents, no split text/image. Video file is a manual task."
+      parentComponent: "PromoCta"
+    sectionBackground: "default"
+    content:
+      Title: "Learn How We Improve Water"
+      Description: ""
+    imageFields:
+      - { field: "Image", src: "chefs working in a commercial kitchen (video poster)" }
+    contentNotes: "Videos are not downloaded. Use the poster as Image. Record the source video URL in manualVideoTasks after extraction. Link can point to the video or stay empty."
+    variantReason: "Existing PromoCta Default is a split text-left / image-right block with dotted accents. Live site is a centered title + video stage."
+    kind: "simple"
+
+  - position: 8
+    description: "Centered thin uppercase heading: OUR SUSTAINABLE WATER PARTNERSHIPS."
+    matchedComponent:
+      registryId: "rich-text-block"
+      manifestName: "HeadingCta"
+      displayName: "Heading CTA"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      datasourceTemplateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+      variant: "PentairWater"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+    customVariantNeeded:
+      name: "PentairWater"
+      description: "Same centered thin uppercase heading as Solutions. Reuse the PentairWater HeadingCta variant."
+      parentComponent: "HeadingCta"
+    sectionBackground: "default"
+    content:
+      Title: "Our Sustainable Water Partnerships"
+      Description: ""
+    contentNotes: "Second HeadingCta instance. Same variant as Solutions."
+    variantReason: "Centered exists; needs thin uppercase navy treatment."
+    kind: "simple"
+
+  - position: 9
+    description: "Three partner columns: logo on top, short paragraph, Bright Blue text-arrow link. Twins (rainwater irrigation), Wild (arena ice), MSP airport (plastic bottle reduction)."
+    matchedComponent:
+      registryId: "logo-cloud"
+      manifestName: "ThreeColumnCta"
+      displayName: "Three Column CTA"
+      renderingId: "ad385021-ce2b-4fc1-89aa-207d408034a8"
+      datasourceTemplateId: "148d07ba-f923-4fb2-8907-0bd440d5db44"
+      variant: "PentairWaterLogos"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+    customVariantNeeded:
+      name: "PentairWaterLogos"
+      description: "Three columns, partner logo on top (not a photo), gray body, text-arrow link. No filled buttons."
+      parentComponent: "ThreeColumnCta"
+    sectionBackground: "default"
+    content:
+      Title: ""
+      items:
+        - title: ""
+          text: "Pentair helps capture, conserve and reuse rain water for more sustainable irrigation."
+          cta: "Learn About Our Twins Partnership"
+        - title: ""
+          text: "At Pentair, we're as ice-obsessed as fans, knowing great water makes great ice."
+          cta: "Learn About our Wild Partnership"
+        - title: ""
+          text: "Pentair helps reduce waste by minimizing bottled water use at MSP airport."
+          cta: "Learn About Our MSP Partnership"
+    imageFields:
+      - { field: "Image1", src: "Minnesota Twins logo" }
+      - { field: "Image2", src: "Minnesota Wild logo" }
+      - { field: "Image3", src: "Minneapolis-St. Paul International Airport (MSP) logo" }
+    contentNotes: "Third ThreeColumnCta instance. Logos go in Image1/2/3. Live copy for MSP still mentions the airport even though one scrape listed Vikings — screenshot and live page show MSP."
+    variantReason: "Default expects photo cards with h2 titles. Live site is logo + body + text link."
+    kind: "simple"
+
+  - position: 10
+    description: "Centered outlined Bright Blue button: VIEW ALL PARTNERSHIPS."
+    matchedComponent:
+      registryId: "cta-banner"
+      manifestName: "HeadingCta"
+      displayName: "Heading CTA"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      datasourceTemplateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+      variant: "PentairWaterOutline"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+    customVariantNeeded:
+      name: "PentairWaterOutline"
+      description: "Centered outlined Bright Blue rectangular button, white fill, no heading, no eyebrow."
+      parentComponent: "HeadingCta"
+    sectionBackground: "default"
+    content:
+      Title: ""
+      Cta: "View All Partnerships"
+    contentNotes: "Third HeadingCta instance. Heading/Eyebrow/Text left empty; only Link is populated."
+    variantReason: "Centered always renders a heading. Need a button-only outlined treatment."
+    kind: "simple"
+
+  - position: 11
+    description: "Centered uppercase heading OUR COMMITMENT TO WATER IMPROVEMENT and a paragraph that bold-highlights the 23.7 billion bottles avoided since 2021."
+    matchedComponent:
+      registryId: "rich-text-block"
+      manifestName: "PromoCta"
+      displayName: "Promo CTA"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      datasourceTemplateId: "c0943942-ae0f-4205-86fa-84884cce4a53"
+      variant: "PentairWaterStatement"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+    customVariantNeeded:
+      name: "PentairWaterStatement"
+      description: "Narrow centered column, thin uppercase heading, rich-text body with a bold highlight. No image, no buttons, no dotted accents."
+      parentComponent: "PromoCta"
+    sectionBackground: "default"
+    content:
+      Title: "Our Commitment to Water Improvement"
+      Description: "Pentair Water Solutions is committed to improving water, no matter the source. We work together, day in, day out, to provide trusted, great tasting, life sustaining water and ice. Through our water solutions, since 2021 over 23.7 billion single-use plastic water bottles were avoided by customers using Pentair residential water filtration systems. This is only the beginning. Join us in our journey to improve the world's water, eliminate waste and do our part to help people and planet thrive."
+    contentNotes: "PromoCta.Text is Rich Text so the 23.7 billion phrase can be bold. HeadingCta.Text is single-line and cannot carry the highlight. Image and links stay empty."
+    variantReason: "Default PromoCta is a split image block. Live site is a centered statement with no image."
+    kind: "simple"
+
+  - position: 12
+    description: "Navy footer with white Pentair logo, short mission copy, Our Mission link, four link columns (About, Solutions, Support, Legal), circular social icons, copyright strip."
+    matchedComponent:
+      registryId: "footer"
+      manifestName: "Footer"
+      displayName: "Footer"
+      renderingId: "771a3f27-6448-44ac-add0-e5de311c6e3b"
+      variant: "WithSocials"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: false
+      implementation: "existing-partial"
+    customVariantNeeded:
+      name: "PentairWater"
+      description: "Navy #09244F background, white type, circular socials, four columns + mission block on the left."
+      parentComponent: "Footer"
+    sectionBackground: "dark"
+    content:
+      Title: "About Pentair"
+      Description: "From our residential and commercial water solutions, to industrial water management and everything in between, Pentair is focused on smart, sustainable water solutions that help our planet and people thrive."
+      Cta: "Our Mission"
+    contentNotes: "Footer lives in the page-design partial. Update the existing Footer datasource. Existing WithSocials supports 4 columns + 3 socials + copyright — enough for the live layout. A fourth social may need a manual note."
+    variantReason: "WithSocials is the right structure. Needs navy background and white type."
+    kind: "context-only"
+
+customComponents: []
+
+buildOrder:
+  phase1_sitecore:
+    - "Hero (Pentair Water - Hero)"
+    - "ThreeColumnCta (Pentair Water - Benefits)"
+    - "HeadingCta (Pentair Water - Solutions Heading)"
+    - "ThreeColumnCta (Pentair Water - Solutions)"
+    - "PromoCta (Pentair Water - Video)"
+    - "HeadingCta (Pentair Water - Partnerships Heading)"
+    - "ThreeColumnCta (Pentair Water - Partnerships)"
+    - "HeadingCta (Pentair Water - View All Partnerships)"
+    - "PromoCta (Pentair Water - Commitment)"
+  phase2_theme: "Apply Pentair :root tokens + Barlow fonts in src/assets/sass (this starter has no globals.css CLIENT THEME placeholder)."
+  phase3_custom: []
+
+renderingIds:
+  Eyebrow: "5f765231-1da9-467a-8b35-2171cce313c1"
+  Header: "81317d3b-f929-426a-83ec-421982f8f1e6"
+  Navigation: "1deb067f-0bb1-405e-94f5-2abb537a6160"
+  Hero: "b7cdf75e-716a-4c59-b9b1-cd970ae0a4ae"
+  HeadingCta: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+  ThreeColumnCta: "ad385021-ce2b-4fc1-89aa-207d408034a8"
+  PromoCta: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+  RichText: "9c6d53e3-fe57-4638-af7b-6d68304c7a94"
+  Footer: "771a3f27-6448-44ac-add0-e5de311c6e3b"
+
+datasourceTemplates:
+  Hero: "90d315e8-aa42-4b23-a7eb-4491396453f8"
+  ThreeColumnCta: "148d07ba-f923-4fb2-8907-0bd440d5db44"
+  PromoCta: "c0943942-ae0f-4205-86fa-84884cce4a53"
+  HeadingCta: "fa136527-6302-471d-83ab-e66fc72bda99"
+
+environmentNotes:
+  - "Home page Title is still 'PLAY! Financial' and child pages are leftover banking content. Phase 6 will reuse Home and note OOB cleanup."
+  - "PLAY! renderings live under /sitecore/layout/Renderings/Project/Financial/Page Content (GUIDs listed above). /sitecore/layout/Renderings/Project/pentair exists but has no children."
+  - "UIIM datasources (HeroBanners, FeatureCardsGrids, etc.) do not exist under pentair-water/Data. New datasources go in Data/Promos (itemId d1d1e5bb-d38f-4496-add8-5d87eda1dc9a)."
+  - "project.yaml was still main/main-website. Updated to pentair/pentair-water to match the user-requested content root."
+  - "Manifest project block updated. UIIM component entries remain (stale FMC IDs) — this starter uses PLAY! components, same as pentairflow."
+  - "Templates/Project/pentair/Components and Folders do not exist. PLAY! templates are under /sitecore/templates/Project/Financial/Components."
+  - "Content Hub host https://jzi-verticals.sitecoresandbox.cloud authenticated 200 OK."

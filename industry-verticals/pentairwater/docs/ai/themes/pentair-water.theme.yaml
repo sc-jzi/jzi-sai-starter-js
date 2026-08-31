@@ -1,0 +1,132 @@
+# Client Brand Theme — Pentair Water
+# Extracted from Playwright scraper + user screenshot + official Pentair Brand Standards
+# Source: https://www.pentair.com/en-us/water-solutions.html
+
+client:
+  name: "Pentair Water"
+  sourceUrl: "https://www.pentair.com/en-us/water-solutions.html"
+  extractedAt: "2026-08-28T19:30:00Z"
+  extractedBy: "cursor"
+  contentRoot: "/sitecore/content/pentair/pentair-water"
+  codeRoot: "/industry-verticals/pentairwater"
+
+colors:
+  primary: "#0c3471"
+  primaryForeground: "#ffffff"
+  secondary: "#008abc"
+  secondaryForeground: "#ffffff"
+  accent: "#008abc"
+  accentForeground: "#ffffff"
+  background: "#ffffff"
+  foreground: "#464747"
+  muted: "#f5f7f8"
+  mutedForeground: "#58595b"
+  headerBackground: "#ffffff"
+  headerForeground: "#0c3471"
+  footerBackground: "#09244F"
+  footerForeground: "#ffffff"
+  border: "#d6d6d6"
+  ring: "#008abc"
+  extra:
+    - { name: "brightBlue", value: "#008abc" }
+    - { name: "navyDeep", value: "#09244F" }
+    - { name: "pentairGreen", value: "#64a70b" }
+    - { name: "greenDark", value: "#4F8309" }
+    - { name: "silverGray", value: "#2d3d48" }
+    - { name: "bodyGray", value: "#464747" }
+
+typography:
+  headingFamily: "'Barlow Condensed', sans-serif"
+  headingWeight: "300"
+  bodyFamily: "'Barlow', sans-serif"
+  bodyWeight: "400"
+  monoFamily: "'Roboto Mono', monospace"
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@300;400;600;700&display=swap"
+  scale:
+    hero: "3.25rem"
+    h1: "2.5rem"
+    h2: "3.75rem"
+    h3: "1.35rem"
+    body: "1.25rem"
+    small: "0.875rem"
+  headingTransform: "uppercase"
+  letterSpacing: "0.02em"
+  lineHeight: "relaxed"
+
+spacing:
+  density: "spacious"
+  sectionGap: "4.5rem"
+  containerMaxWidth: "1440px"
+  containerPadding: "1.5rem"
+
+shape:
+  borderRadius: "0"
+  buttonRadius: "0"
+  cardRadius: "0"
+  imageRadius: "0"
+  shadowStyle: "none"
+  borderStyle: "none"
+
+tone:
+  overall: "corporate"
+  colorMode: "light"
+  contrast: "high"
+  imagery: "photography"
+  heroStyle: "split-image-text"
+  cardStyle: "flat"
+  navStyle: "solid-bar"
+
+tailwind:
+  colors:
+    brand:
+      primary: "#0c3471"
+      secondary: "#008abc"
+      accent: "#008abc"
+  fontFamily:
+    heading: ["Barlow Condensed", "sans-serif"]
+    body: ["Barlow", "sans-serif"]
+  borderRadius:
+    DEFAULT: "0"
+    button: "0"
+    card: "0"
+
+cssVariables: |
+  :root {
+    --brand-primary: #0c3471;
+    --brand-primary-foreground: #ffffff;
+    --brand-secondary: #008abc;
+    --brand-secondary-foreground: #ffffff;
+    --brand-accent: #008abc;
+    --brand-accent-foreground: #ffffff;
+    --brand-bg: #ffffff;
+    --brand-fg: #464747;
+    --brand-muted: #f5f7f8;
+    --brand-muted-fg: #58595b;
+    --brand-header-bg: #ffffff;
+    --brand-header-fg: #0c3471;
+    --brand-footer-bg: #09244F;
+    --brand-footer-fg: #ffffff;
+    --brand-border: #d6d6d6;
+    --brand-ring: #008abc;
+    --brand-heading-font: 'Barlow Condensed', sans-serif;
+    --brand-body-font: 'Barlow', sans-serif;
+    --brand-radius: 0;
+    --brand-button-radius: 0;
+    --brand-card-radius: 0;
+  }
+
+extraction:
+  confidence: "high"
+  method: "playwright-scraper + screenshot + brand-standards"
+  notes:
+    - "Playwright scraper captured desktop/mobile/hero screenshots, computed styles, and Barlow font-faces from pentair.com."
+    - "Scraper primaryButtonBackground was rgb(79, 131, 9) / #4F8309 (Pentair Green Dark) — that is a cookie/global button, not the Water homepage CTA. Screenshot CTA is Bright Blue."
+    - "Primary #0c3471 (Pentair Blue) and secondary/accent #008abc (Bright Blue) are official digital HEX values."
+    - "This Water homepage does not use Pentair Green for CTAs (unlike Pentair Flow). Green is kept in extra[] only."
+    - "Footer computed background is #09244F (navyDeep), not the mid Pentair Blue."
+    - "Digital type is Barlow Condensed (headings, often weight 300 for section titles) and Barlow (body, 20px)."
+    - "Homepage headings are uppercase. Hero headline is two-tone: lighter 'YOU DESERVE' + bold navy 'WATER AT ITS BEST'."
+    - "Buttons are sharp rectangles (0 radius). Primary CTA is filled Bright Blue; secondary is outlined Bright Blue on white."
+    - "Hero is split image-text, not full-bleed overlay (different from Pentair Flow)."
+    - "This starter currently uses PLAY! Financial tokens. Phase 4 will replace those with Barlow + Pentair colors in src/assets/sass."
+    - "Content Hub credentials verified 200 OK against https://jzi-verticals.sitecoresandbox.cloud."

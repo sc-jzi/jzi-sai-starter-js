@@ -1,0 +1,220 @@
+{
+  "title": "Pentair Water Solutions | Pentair",
+  "themeColor": null,
+  "msColor": null,
+  "ogTitle": "Pentair Water Solutions",
+  "ogDescription": "Grow with confidence knowing your water and ice is cleaner, clearer, better tasting and more reliable. Pentair Water Solutions helps improve water across homes, foodservice, commercial ice and water treatment components.",
+  "ogImage": "https://www.pentair.com/",
+  "ogSiteName": null,
+  "favicon": "https://www.pentair.com/etc.clientlibs/settings/wcm/designs/pentair/clientlib-site/resources/favicon.ico",
+  "googleFontsLinks": [],
+  "fontFaces": [
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-Thin.ttf\") format(\"truetype\")",
+      "weight": "100"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-ThinItalic.ttf\") format(\"truetype\")",
+      "weight": "100"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-ExtraLight.ttf\") format(\"truetype\")",
+      "weight": "200"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-ExtraLightItalic.ttf\") format(\"truetype\")",
+      "weight": "200"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-Light.ttf\") format(\"truetype\")",
+      "weight": "300"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-LightItalic.ttf\") format(\"truetype\")",
+      "weight": "300"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-Regular.ttf\") format(\"truetype\")",
+      "weight": "400"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-Italic.ttf\") format(\"truetype\")",
+      "weight": "400"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-Medium.ttf\") format(\"truetype\")",
+      "weight": "500"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-MediumItalic.ttf\") format(\"truetype\")",
+      "weight": "500"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-SemiBold.ttf\") format(\"truetype\")",
+      "weight": "600"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-SemiBoldItalic.ttf\") format(\"truetype\")",
+      "weight": "600"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-Bold.ttf\") format(\"truetype\")",
+      "weight": "700"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-BoldItalic.ttf\") format(\"truetype\")",
+      "weight": "700"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-ExtraBold.ttf\") format(\"truetype\")",
+      "weight": "800"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-ExtraBoldItalic.ttf\") format(\"truetype\")",
+      "weight": "800"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-Black.ttf\") format(\"truetype\")",
+      "weight": "900"
+    },
+    {
+      "family": "Barlow",
+      "src": "url(\"clientlib-site/resources/fonts/Barlow-BlackItalic.ttf\") format(\"truetype\")",
+      "weight": "900"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-Thin.ttf\") format(\"truetype\")",
+      "weight": "100"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-ThinItalic.ttf\") format(\"truetype\")",
+      "weight": "100"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-ExtraLight.ttf\") format(\"truetype\")",
+      "weight": "200"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-ExtraLightItalic.ttf\") format(\"truetype\")",
+      "weight": "200"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-Light.ttf\") format(\"truetype\")",
+      "weight": "300"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-LightItalic.ttf\") format(\"truetype\")",
+      "weight": "300"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-Regular.ttf\") format(\"truetype\")",
+      "weight": "400"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-Italic.ttf\") format(\"truetype\")",
+      "weight": "400"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-Medium.ttf\") format(\"truetype\")",
+      "weight": "500"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-MediumItalic.ttf\") format(\"truetype\")",
+      "weight": "500"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-SemiBold.ttf\") format(\"truetype\")",
+      "weight": "600"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-SemiBoldItalic.ttf\") format(\"truetype\")",
+      "weight": "600"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-Bold.ttf\") format(\"truetype\")",
+      "weight": "700"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-BoldItalic.ttf\") format(\"truetype\")",
+      "weight": "700"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-ExtraBold.ttf\") format(\"truetype\")",
+      "weight": "800"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-ExtraBoldItalic.ttf\") format(\"truetype\")",
+      "weight": "800"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-Black.ttf\") format(\"truetype\")",
+      "weight": "900"
+    },
+    {
+      "family": "Barlow Condensed",
+      "src": "url(\"clientlib-site/resources/fonts/BarlowCondensed-BlackItalic.ttf\") format(\"truetype\")",
+      "weight": "900"
+    },
+    {
+      "family": "icomoon",
+      "src": "url(\"clientlib-site/resources/fonts/icomoon.ttf?881zqz\") format(\"truetype\"), url(\"clientlib-site/resources/fonts/icomoon.woff?881zqz\") format(\"woff\")",
+      "weight": "normal"
+    }
+  ],
+  "logoCandidates": [
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/icons/About_Icon.svg",
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/icons/Contact_Icon.svg",
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/icons/WhereToBuy_Icon.svg",
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/icons/Pentair_MainNav_PartnerPortal_Icon.svg",
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/logos/pws/pentair-water-solutions-vertical-logo.png",
+    "https://www.pentair.com/content/dam/extranet/nam/product-related/product-photo/professional-water-treatment/Big%20Blue%20Group.png.thumb.319.319.png",
+    "https://www.pentair.com/content/dam/extranet/nam/filtration/everpure/commercial/images/product-images/high-performance-fc-systems/ev932832-qc7i-pf-twin-4fc.jpg.thumb.1280.1280.jpg.thumb.319.319.png",
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/campaigns/filtration/wholesale-valves/product-images/rotary-valve-softener_full.png.thumb.319.319.png",
+    "https://www.pentair.com/content/dam/extranet/nam/filtration/everpure/commercial/images/product-images/ez-ro-1000x1000/ev997567-ez-ro-375-atm-bl-connected-1000x1000.png.thumb.1280.1280.jpg.thumb.319.319.png",
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/logos/pws/pentair-water-solutions-vertical-logo.png",
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/icons/About_Icon.svg",
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/icons/Contact_Icon.svg",
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/icons/WhereToBuy_Icon.svg",
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/icons/Pentair_MainNav_PartnerPortal_Icon.svg",
+    "https://www.pentair.com/content/dam/extranet/nam/product-related/product-photo/professional-water-treatment/Big%20Blue%20Group.png.thumb.319.319.png",
+    "https://www.pentair.com/content/dam/extranet/nam/filtration/everpure/commercial/images/product-images/high-performance-fc-systems/ev932832-qc7i-pf-twin-4fc.jpg.thumb.1280.1280.jpg.thumb.319.319.png",
+    "https://www.pentair.com/content/dam/extranet/enterprise/images/campaigns/filtration/wholesale-valves/product-images/rotary-valve-softener_full.png.thumb.319.319.png",
+    "https://www.pentair.com/content/dam/extranet/nam/filtration/everpure/commercial/images/product-images/ez-ro-1000x1000/ev997567-ez-ro-375-atm-bl-connected-1000x1000.png.thumb.1280.1280.jpg.thumb.319.319.png",
+    "https://www.pentair.com/content/dam/extranet/aquatics/other/pentair-logo-white-no-bkgd.png"
+  ],
+  "heroBgImage": null
+}

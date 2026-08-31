@@ -1,0 +1,77 @@
+﻿---
+ID: "b15b268e-ef04-4bcd-a97c-94ce052de8ff"
+Parent: "d1d1e5bb-d38f-4496-add8-5d87eda1dc9a"
+Template: "148d07ba-f923-4fb2-8907-0bd440d5db44"
+Path: "/sitecore/content/pentair/pentair-water/Data/Promos/Pentair Water - Solutions"
+SharedFields:
+- ID: "39b3d592-0895-4f30-9c17-454b171f0b2e"
+  Hint: Image3
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/97335-section4-img8?v=1190c542" dam-id="rAy52uBESpqpldHObLMYZw" width="539" height="349" alt="ice machine, manitowoc brand" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97335/thumbnail" />
+- ID: "39fe4fb3-3794-4b9a-a584-ff877e93e33b"
+  Hint: Image2
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/97328-section4-img7?v=096325d4" dam-id="Lfufzt7hTW2-SwvgVH_mJw" width="539" height="349" alt="people in cafe, everpure brand" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97328/thumbnail" />
+- ID: "c511247c-fec1-4690-81d6-ce791da18d4a"
+  Hint: Image1
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/97316-section4-img6?v=5f9cd007" dam-id="jROntivqS6aleUoVyEZlmA" width="539" height="349" alt="filling water glass under faucet" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97316/thumbnail" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "e77445b9-eb08-4767-8264-93b04402c86a"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0a10d09c-166b-464e-99cb-4401b527f3f2"
+      Hint: Link2
+      Value: |
+        <link text="Explore Foodservice Water Filtration" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://www.pentair.com/en-us/commercial-filtration.html" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260828T193949Z
+    - ID: "2731b4d6-b866-466a-9731-5161788d662b"
+      Hint: SubText2
+      Value: "Since 1933, Everpure, From Pentair Water Solutions, is the premier line of filtration systems designed to protect water-using equipment and create consistent, great-tasting filtered water. Everpure is trusted by coffee crafters, gourmet chefs, national foodservice operators, franchises and leaders in hospitality."
+    - ID: "277e3acc-b359-4c11-88b9-4016574419dc"
+      Hint: Link3
+      Value: |
+        <link text="Explore Commercial Ice Solutions" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://www.manitowocice.com/" />
+    - ID: "34f6d379-9a96-4cb8-839f-0d224a4f6db1"
+      Hint: Text2
+      Value: Foodservice Water Filtration
+    - ID: "4c50be2f-021e-4846-abb0-50feb2df5eed"
+      Hint: SubText1
+      Value: Grow confidence in your home water through our nationwide network of water partners offering professional installation or DIY solutions. Find an experienced expert who can test your water, guide you to a solution and install your selection. You can also buy filtration systems and replacements directly from our authorized online retailers.
+    - ID: "5264d7eb-64cd-4203-98e5-a4d0380f57e6"
+      Hint: Text1
+      Value: Home Water Treatment Solutions
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5eb6058f-3f45-4dd4-8153-8c74390859f4"
+      Hint: Text3
+      Value: Commercial Ice Solutions
+    - ID: "63e1abec-67cb-4aea-ab72-8b5b60b69473"
+      Hint: Link1
+      Value: |
+        <link text="Explore Home Water Treatment Solutions" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://www.pentair.com/en-us/home-water-treatment.html" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "26a53565-8180-461d-b0fa-446ce86201db"
+    - ID: "a3a36b2d-a20b-4344-9f1d-ad867cb99aa4"
+      Hint: SubText3
+      Value: Since 1964, Manitowoc Ice offers premier ice equipment, creating higher quality, great tasting ice trusted by national food service operators, franchisees, leaders in hospitality and medical professionals.
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260828T193950Z

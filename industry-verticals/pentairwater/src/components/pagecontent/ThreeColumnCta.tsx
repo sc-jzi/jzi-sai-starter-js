@@ -267,3 +267,159 @@ export const WithIconsCompact = (props: ThreeColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+function hasAuthoredLink(link?: LinkField): boolean {
+  const href = link?.value?.href;
+  return Boolean(href && href !== '#');
+}
+
+/* PentairWaterIcons variant — circular outlined benefit icons */
+export const PentairWaterIcons = (props: ThreeColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const Column = ({
+    image,
+    text,
+    subText,
+  }: {
+    image: ImageField;
+    text: Field<string>;
+    subText: Field<string>;
+  }) => (
+    <div className="col-sm-12 col-lg-4">
+      <div className="content-wrapper">
+        <div className="image-wrapper">
+          <NextImage field={image} width={84} height={84} />
+        </div>
+        <h2>
+          <Text field={text} />
+        </h2>
+        <p>
+          <Text field={subText} />
+        </p>
+      </div>
+    </div>
+  );
+
+  return (
+    <div
+      className={`component component-spaced three-column-cta pentair-water-icons ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="row">
+          <Column image={props.fields.Image1} text={props.fields.Text1} subText={props.fields.SubText1} />
+          <Column image={props.fields.Image2} text={props.fields.Text2} subText={props.fields.SubText2} />
+          <Column image={props.fields.Image3} text={props.fields.Text3} subText={props.fields.SubText3} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* PentairWaterCards variant — photo cards with text-arrow links */
+export const PentairWaterCards = (props: ThreeColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const Column = ({
+    image,
+    text,
+    subText,
+    link,
+  }: {
+    image: ImageField;
+    text: Field<string>;
+    subText: Field<string>;
+    link: LinkField;
+  }) => (
+    <div className="col-sm-12 col-lg-4">
+      <div className="content-wrapper">
+        <NextImage field={image} width={540} height={350} />
+        <h2>
+          <Text field={text} />
+        </h2>
+        <p>
+          <Text field={subText} />
+        </p>
+        {(isPageEditing || hasAuthoredLink(link)) && <Link field={link} className="button" />}
+      </div>
+    </div>
+  );
+
+  return (
+    <div
+      className={`component component-spaced three-column-cta pentair-water-cards ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="row">
+          <Column
+            image={props.fields.Image1}
+            text={props.fields.Text1}
+            subText={props.fields.SubText1}
+            link={props.fields.Link1}
+          />
+          <Column
+            image={props.fields.Image2}
+            text={props.fields.Text2}
+            subText={props.fields.SubText2}
+            link={props.fields.Link2}
+          />
+          <Column
+            image={props.fields.Image3}
+            text={props.fields.Text3}
+            subText={props.fields.SubText3}
+            link={props.fields.Link3}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* PentairWaterLogos variant — partner logos + text-arrow links */
+export const PentairWaterLogos = (props: ThreeColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const Column = ({
+    image,
+    subText,
+    link,
+  }: {
+    image: ImageField;
+    subText: Field<string>;
+    link: LinkField;
+  }) => (
+    <div className="col-sm-12 col-lg-4">
+      <div className="content-wrapper">
+        <NextImage field={image} width={220} height={140} />
+        <p>
+          <Text field={subText} />
+        </p>
+        {(isPageEditing || hasAuthoredLink(link)) && <Link field={link} className="button" />}
+      </div>
+    </div>
+  );
+
+  return (
+    <div
+      className={`component component-spaced three-column-cta pentair-water-logos ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="row">
+          <Column image={props.fields.Image1} subText={props.fields.SubText1} link={props.fields.Link1} />
+          <Column image={props.fields.Image2} subText={props.fields.SubText2} link={props.fields.Link2} />
+          <Column image={props.fields.Image3} subText={props.fields.SubText3} link={props.fields.Link3} />
+        </div>
+      </div>
+    </div>
+  );
+};

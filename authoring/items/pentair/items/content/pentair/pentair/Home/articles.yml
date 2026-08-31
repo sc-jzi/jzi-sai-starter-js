@@ -19,7 +19,11 @@ SharedFields:
     <image mediaid="{8BE25864-4EE0-407C-A214-A4EE501B8C1D}" />
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "0dbeb894-e4c6-4b23-8de4-7a07615b978f"
+  Value: "a718c3b1-386b-4f7a-baf2-ad5c27a89901"
+- ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
+  Hint: __Security
+  Value: |
+    au|sitecore\trayek@gmail.com|pd|+item:write|+item:rename|+item:create|pe|+item:write|+item:rename|+item:create|
 - ID: "df6dc0ca-f8ee-493a-a920-f2b710f08452"
   Hint: BackgroundImage
   Value: |
@@ -83,14 +87,14 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "25c5ad46-6d28-4c2f-af44-2b65434e8d92"
+      Value: "5571a3e6-fd77-4643-9ab8-9cc100bfbba2"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260825T211522Z
+      Value: 20260829T183656Z
 - Language: "fr-CA"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"

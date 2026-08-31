@@ -1,0 +1,132 @@
+variantSpecs:
+  - position: 1
+    componentName: "Eyebrow"
+    variantName: "PentairWater"
+    variantDefinitionId: "baked into Header"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "split utility bar — product links left, icon links right"
+      spacing: "0.45rem vertical padding, pipe divider between left links"
+      typography: "12–13px Barlow, medium weight"
+      background: "light gray #f4f4f4"
+      distinctive: "OOB Eyebrow rendering is hidden; links are hardcoded in Header"
+
+  - position: 2
+    componentName: "Header"
+    variantName: "PentairWater"
+    variantDefinitionId: "486fabc1-521e-4601-badc-bef230e481ad"
+    baseVariant: "WithLogoImage"
+    visualDifferences:
+      layout: "utility bar above logo + nav + search placeholders"
+      spacing: "0.85rem logo row padding"
+      background: "white"
+      distinctive: "eyebrow is part of Header Default, WithLogoImage, and PentairWater"
+
+  - position: 3
+    componentName: "Hero"
+    variantName: "PentairWater"
+    variantDefinitionId: "28e4a551-e3f8-4da5-a722-7e2734935ae5"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "split text left / lifestyle photo right (~42/58)"
+      spacing: "copy padded 3.5rem/4rem, image min-height 28rem"
+      typography: "Barlow Condensed 300 YOU DESERVE + 700 WATER AT ITS BEST, both navy"
+      background: "white copy, photo with left-edge white fade"
+      buttons: "Bright Blue filled, radius 0, uppercase Explore Solutions"
+      distinctive: "no dotted accents, no overlay, two-tone title helper"
+
+  - position: 4
+    componentName: "ThreeColumnCta"
+    variantName: "PentairWaterIcons"
+    variantDefinitionId: "df43c6e4-0995-4de3-8e0f-a9f6958529f0"
+    baseVariant: "WithIcons"
+    visualDifferences:
+      layout: "three centered columns, circular line-art icons"
+      spacing: "1rem top / 3rem bottom"
+      typography: "uppercase navy headings, gray body max-width 18rem"
+      background: "white"
+      buttons: "hidden (href=#)"
+      distinctive: "no card chrome, icons ~84px"
+
+  - position: 5
+    componentName: "HeadingCta"
+    variantName: "PentairWater"
+    variantDefinitionId: "30b136a3-37fb-4376-9bda-5ad78c994319"
+    baseVariant: "Centered"
+    visualDifferences:
+      layout: "centered single heading"
+      spacing: "3.5rem top / 1.25rem bottom"
+      typography: "Barlow Condensed 300, large uppercase navy"
+      background: "white"
+      buttons: "hidden"
+
+  - position: 6
+    componentName: "ThreeColumnCta"
+    variantName: "PentairWaterCards"
+    variantDefinitionId: "9dbe7f2a-843c-4e56-a9e0-83d39b4e4f34"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "three photo cards, left-aligned copy"
+      spacing: "images 539/349 aspect, 3.5rem section bottom"
+      typography: "uppercase navy titles, gray body, Bright Blue text-arrow links"
+      buttons: "text links with → suffix, no fill"
+
+  - position: 7
+    componentName: "PromoCta"
+    variantName: "PentairWaterVideo"
+    variantDefinitionId: "3598895c-19a1-4c53-89ca-089ee9688733"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "centered heading + full-width poster"
+      typography: "thin uppercase navy heading"
+      distinctive: "Bright Blue circular play overlay; video file is a manual task"
+
+  - position: 8
+    componentName: "HeadingCta"
+    variantName: "PentairWater"
+    variantDefinitionId: "30b136a3-37fb-4376-9bda-5ad78c994319"
+    baseVariant: "Centered"
+    visualDifferences:
+      layout: "centered Our Sustainable Water Partnerships heading"
+      typography: "same as Solutions heading"
+
+  - position: 9
+    componentName: "ThreeColumnCta"
+    variantName: "PentairWaterLogos"
+    variantDefinitionId: "f4f832b8-0b96-4037-aa5d-0da055157ff3"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "three centered partner logos"
+      spacing: "logos 6.5rem tall, contain"
+      typography: "gray body, Bright Blue text-arrow links"
+      distinctive: "column titles hidden"
+
+  - position: 10
+    componentName: "HeadingCta"
+    variantName: "PentairWaterOutline"
+    variantDefinitionId: "14f6fb57-087c-45d9-9728-4afe07b8fbb4"
+    baseVariant: "Centered"
+    visualDifferences:
+      layout: "centered outlined button only"
+      buttons: "Bright Blue 2px outline, radius 0, uppercase View All Partnerships"
+      distinctive: "heading hidden"
+
+  - position: 11
+    componentName: "PromoCta"
+    variantName: "PentairWaterStatement"
+    variantDefinitionId: "a5f1ba12-99e8-41c4-a531-78ff1f6a5540"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "centered heading + max-width 46rem body"
+      typography: "thin uppercase heading, body with bold 23.7 billion phrase"
+      buttons: "hidden"
+
+  - position: 12
+    componentName: "Footer"
+    variantName: "PentairWater"
+    variantDefinitionId: "fe2f66cf-ae0a-41eb-b4bb-4dc1be71caca"
+    baseVariant: "WithSocials"
+    visualDifferences:
+      background: "navy #09244F"
+      layout: "logo + four columns (socials in column 1) + legal strip"
+      distinctive: "assign on Footer partial, not Home"
