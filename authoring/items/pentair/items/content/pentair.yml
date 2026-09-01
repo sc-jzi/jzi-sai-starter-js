@@ -42,13 +42,13 @@ SharedFields:
   Value: "{FA59E012-FA45-4422-A5CE-2EA8084258C3}"
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
-  Value: 0
+  Value: 10
 - ID: "c5dbb136-3299-4835-a8ce-bca8b49ba3fa"
   Hint: BranchesFolder
   Value: "{57180871-776C-4CA6-B1D6-87EBCB1E1AE6}"
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "02bf2147-504e-404f-84bf-579f8f833f03"
+  Value: "cd8a66f0-a1d4-4b03-b458-a2971eae9c8d"
 - ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
   Hint: __Security
   Value: |
@@ -77,11 +77,11 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "47894d17-0e92-4af8-9559-e48b4381e413"
+      Value: "5b5fe3e9-9749-460f-81f1-eac0460c1861"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260829T183628Z
+      Value: 20260901T215006Z

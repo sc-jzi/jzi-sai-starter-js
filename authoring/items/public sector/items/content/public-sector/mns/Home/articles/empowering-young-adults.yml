@@ -14,13 +14,17 @@ SharedFields:
 - ID: "ba2b872d-f67d-40dc-be41-6366b7030144"
   Hint: Thumbnail
   Value: |
-    <image mediaid="{67BD5B0D-B686-4CF0-881B-81C196F36A72}" alt="Grow finances" height="" width="" hspace="" vspace="" />
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/80daf534d00c48c68716e13809d00815?v=da665149" dam-id="WoJZWo2VT92p2M_lIYoKTQ" width="1600" height="800" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97927/thumbnail" />
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 400
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{E1B90825-F9C0-4A88-AA48-C1AF747E224B}" />
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "5ae550c7-91a6-48c6-882e-dfb28efc155f"
+  Value: "f852ad3e-3d9a-4100-9290-cbffef2140b5"
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
   Value: |
@@ -40,32 +44,22 @@ SharedFields:
 Languages:
 - Language: en
   Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "8be24355-b6f2-4729-b037-958bd618f712"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: Empowering young adults
+    Value: "The MN-S Government Effect Citizen Successes"
   Versions:
   - Version: 1
     Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
     - ID: "03117268-f84f-4fd8-ad9e-5990b3a21fe6"
       Hint: Content
       Value: |
-        <p>In a world where financial independence is crucial for success, young adults often find themselves navigating a complex maze of financial decisions without the necessary guidance and support. Recognizing this challenge, PLAY! Finance is proud to introduce a transformative initiative aimed at empowering young adults to take control of their finances and build a solid foundation for their future.&nbsp;</p>
-        <p>
-        <strong>Interactive Educational Workshops</strong></p>
-        <p>Our program includes a series of interactive workshops and seminars covering essential financial topics such as budgeting, saving, investing, and managing debt. Led by industry experts, these sessions are designed to be engaging, informative, and actionable, equipping participants with practical skills they can apply to their everyday lives.</p>
-        <p><strong>Digital Learning Resources</strong></p>
-        <p>In addition to in-person workshops, participants have access to a wealth of digital learning resources available on our platform. From articles and videos to interactive modules and quizzes, our online resources cover a wide range of financial literacy topics, allowing young adults to learn at their own pace and on their own schedule.</p>
-        <p><strong>Mentorship and Coaching</strong></p>
-        <p>We believe that mentorship is a powerful tool for personal and professional growth. That's why we offer mentorship and coaching opportunities, pairing young adults with experienced mentors who can provide guidance, support, and personalized advice tailored to their individual financial goals and circumstances.</p>
-        <p><strong>Community Engagement</strong></p>
-        <p>Building a supportive community is essential for success. Our program fosters connections among young adults, providing a platform where they can connect with peers, share experiences, and learn from one another's successes and challenges. Through collaboration and mutual support, we believe that young adults can achieve greater financial empowerment together.
-        </p>
-        <p>
-        <strong>Conclusion</strong></p>
-        <p>At PLAY! Finance, we're committed to empowering young adults to take control of their financial futures. By providing them with the knowledge, tools, and support they need to make informed decisions, we believe that we can help them achieve their goals and aspirations, setting them on a path toward long-term success and prosperity.
-        </p>
-        <p>
-        <em><strong>Are you ready to take control of your financial future? Join us at PLAY! Finance and embark on a journey toward financial empowerment today!</strong></em></p>
+        <div class="ck-content"><p>37-year-old Métis citizen Spenser Thibault is raising three, going on four, children in Warman. He’s able to do that more comfortably in the house he bought with the First Time Home Buyers program. He also just finished retrofitting his home with solar panels and new doors that keep the harsh Saskatchewan winters out with the Home Efficiency Initiative (HEI). He’s already seeing a return with electrical bills $70 less than they were a year ago.&nbsp;</p><figure><p><img src="https://mns.ca/uploads/public/Spenny.jpg" alt="Spenny.jpg (1.96 MB)" width="3507" height="4761" /></p></figure><p>Spenser said, “I can't believe I have solar power helping me cut down the cost of my monthly electric bill. It's unreal. You guys at the MN–S have done so much for me. Not just with this but with everything else. So thank you, really. You've helped me get into my home, keep it efficient and affordable, so that I can raise my kids in it and provide a loving environment for them. When I put my kids to bed at night, they don't tell me they love me in English - they tell me – ki shaakihitin. They say this to each other too. I want you to know your work and your programs have effectively resulted in providing us with a home in which we can raise our children with the bits of culture we have, and my oldest child proudly proclaims she is a Michif already.”</p><figure><p><img src="https://mns.ca/uploads/public/Adrienne%20HEI%2024972.aUUelee09VFNFpJprskI_height640.png" alt="Adrienne's home with retrofits from HEI" width="361" height="480" /></p></figure><p><i><em>Adrienne Reinson stands proudly in front of her retrofitted home in Regina</em></i></p><p>Adrienne Reinson and her family participated in the first round of the Home Efficiency Initiative (HEI), and she said, “The impact has been truly life changing.”</p><p>“My family would never have been able to afford solar or energy efficiency improvements. This opportunity has been incredible. We ended up making 3100 Kwh our first year, approximately 1200 kg of CO2 emissions saved.&nbsp; We just hit our first year with Solar on March 13th!”&nbsp;</p><p>With new windows, doors, and solar upgrades, Adrienne has noticed a considerable different in heating and cooling. She’s delighted to be using clean energy and hopes more families can access similar opportunities in the future.&nbsp;</p><p>A dedicated early childhood educator, Adrienne runs Little Lilies Childcare in Regina. In 2022, she was honored with the Métis Early Childhood Educator Certificate of Recognition for outstanding work in early learning and childcare.&nbsp;</p><p>“We are proud to be part of the Métis Nation and encourage everyone to look into the amazing programs offered. It’s inspiring to have a government that truly cares about its citizens and makes real change.”&nbsp;</p><p>The MN–S government offers several programs for new and existing Métis homeowners. Stay on top of what’s new and find out what's available to you now by visiting <a href="https://mns.ca/mns-government/departments-ministries/housing-and-homelessness">https://mns.ca/mns-government/departments-ministries/housing-and-homelessness.</a></p></div>
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20260831T193742Z
@@ -74,7 +68,9 @@ Languages:
       Value: "{13D6CCE7-A6C3-4EE1-A1D9-8A8E34225ED7}"
     - ID: "3e700dce-26eb-4bf0-990f-9d9fe555990d"
       Hint: Excerpt
-      Value: "Financial literacy is key to unlocking opportunities and achieving long-term goals. We've developed a comprehensive program designed specifically for young adults, providing them with the tools, resources, and knowledge they need to succeed."
+      Value: |
+        “My message is simple: I’m grateful for the programs provided by the MN–S government.”
+        
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
       Value: Empowering young adults
@@ -84,17 +80,17 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "e0d6cc4d-5f53-42f6-acaa-74d0f618bb0d"
+      Value: "3c7ee23a-1f0e-413b-9628-459858fe2b7c"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260831T193954Z
+      Value: 20260901T210124Z
     - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
       Hint: Title
-      Value: "Empowering young adults: Control of your financial future"
+      Value: The MN–S government effect; Citizen successes 
 - Language: "fr-CA"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"

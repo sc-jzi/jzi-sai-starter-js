@@ -54,7 +54,7 @@ export const WithLogoImage = (props: HeaderProps): JSX.Element => {
   );
 };
 
-/* Mns variant — logo + navy nav bar */
+/* Mns variant — logo + transparent header, outlined nav */
 export const Mns = (props: HeaderProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const sxaStyles = `${props.params?.styles || ''}`;

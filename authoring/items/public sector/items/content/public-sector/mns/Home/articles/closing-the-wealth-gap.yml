@@ -18,6 +18,10 @@ SharedFields:
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 500
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{94916BDE-A3F7-48F7-9792-7CC3FC0D9633}" />
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
   Value: "32d252d9-ac5e-4d79-91f3-537eebc44152"
@@ -43,12 +47,18 @@ SharedFields:
 Languages:
 - Language: en
   Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "e9ed3455-6ba4-4bb4-9820-c367fa9856e0"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: Bridging the wealth divide
+    Value: A Statement From The Spring 2026 Metis Nation Legislative Assembly
   Versions:
   - Version: 1
     Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
     - ID: "03117268-f84f-4fd8-ad9e-5990b3a21fe6"
       Hint: Content
       Value: |
@@ -77,7 +87,9 @@ Languages:
       Value: "{13D6CCE7-A6C3-4EE1-A1D9-8A8E34225ED7}"
     - ID: "3e700dce-26eb-4bf0-990f-9d9fe555990d"
       Hint: Excerpt
-      Value: Explore the complexities of the wealth gap and discover actionable steps towards a more equitable future. Join us in the commitment to closing the gap and building a world where everyone has the opportunity to thrive.
+      Value: |
+        Métis Nation–Saskatchewan (MN–S) President Glen McCallum has announced a significant cabinet suffle a the opening of the Spring 2026 Métis Nation Legislative Assembly (MNLA) in Saskatoon.
+        
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
       Value: Bridging the wealth divide
@@ -87,17 +99,17 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "1365c733-0e7a-4584-b9eb-d28b8831dcfc"
+      Value: "6318c31e-9afc-4d0d-b1de-09068c8408d9"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260831T193955Z
+      Value: 20260901T210244Z
     - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
       Hint: Title
-      Value: Bridging the wealth divide
+      Value: A Statement from the Spring 2026 Métis Nation Legislative Assembly 
 - Language: "fr-CA"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"

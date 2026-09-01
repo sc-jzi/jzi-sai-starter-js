@@ -18,6 +18,10 @@ SharedFields:
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 800
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{646F16ED-200C-4581-A0BF-A713A4F9C359}" />
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
   Value: "434cc197-fa17-4121-a75d-a9dc52f11b52"
@@ -43,9 +47,12 @@ SharedFields:
 Languages:
 - Language: en
   Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "6a59560d-9323-46a4-b653-8eac4cd430ba"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: Introducing innovative financial solutions for modern consumers
+    Value: Provincial Metis Council Announces CEO Restructuring
   Versions:
   - Version: 1
     Fields:
@@ -91,14 +98,14 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "3b29f1d4-ab1a-4caf-b765-3e46fbc0ce2c"
+      Value: "d2fe2b46-f4e1-4a37-9a4d-cc15f06a57a3"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260831T193955Z
+      Value: 20260901T210417Z
     - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
       Hint: Title
       Value: Introducing innovative financial solutions for modern consumers

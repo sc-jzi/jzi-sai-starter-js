@@ -14,13 +14,17 @@ SharedFields:
 - ID: "ba2b872d-f67d-40dc-be41-6366b7030144"
   Hint: Thumbnail
   Value: |
-    <image mediaid="{D3EB04B3-A389-4DD1-995F-FC52CCC29904}" alt="Mobile finance app" height="" width="" hspace="" vspace="" />
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/b7a792cb258d4f8891c8f2f47bf81ec8?v=b4289043" dam-id="uQOkEEx_Ro-MJ_ttXQAqyw" width="1600" height="800" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97918/thumbnail" />
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 200
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{BF257B8A-70A5-48BE-B192-EC924D2062DB}" />
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "09e9aa7b-896d-4de9-9caf-562a616076cf"
+  Value: "1d711942-643f-4fca-9599-a35c6cd74c83"
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
   Value: |
@@ -36,31 +40,22 @@ SharedFields:
 Languages:
 - Language: en
   Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "8ebde769-e319-4f0d-8dd7-d24c9d843527"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: "Introducing MOBILE! Finance"
+    Value: Taanishi Aen Ishinihkaashooyen Li Pchi Bufloo What's Your Name Little Buffalo
   Versions:
   - Version: 1
     Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
     - ID: "03117268-f84f-4fd8-ad9e-5990b3a21fe6"
       Hint: Content
       Value: |
-        <p><strong>The Power of MOBILE! Finance</strong></p>
-        <p>MOBILE! Finance is more than just a finance app&mdash;it's your ultimate financial companion, offering a comprehensive suite of features and tools to help you take control of your finances with ease and confidence. Whether you're tracking your spending, saving for a goal, or planning for retirement, MOBILE! Finance has everything you need to succeed.</p>
-        <p><a href="https://example.com" rel="noopener noreferrer" target="_blank" title="Opens in new window"><img src="-/media/FEAF65D3394846DAB95213780D61AADA.ashx?h=45&amp;w=149" alt="Download MOBILE! Finance from the App Store" style="height: 45px; width: 149px;" /></a>&nbsp;&nbsp;&nbsp;<a href="https://example.com" rel="noopener noreferrer" target="_blank" title="Opens in new window"><img src="-/media/DCDCD7A8F8DA4110BA4FD19FEFFD1465.ashx?h=45&amp;w=151" alt="Google Play" style="height: 45px; width: 151px;" /></a></p>
-        <p><strong><br />
-        Key Features</strong></p>
-        <ul>
-            <li><strong><em>Personalized Budgeting</em></strong>: Create customized budgets tailored to your unique financial situation and track your spending in real-time.</li>
-            <li><strong><em>Goal-Based Savings</em></strong>: Set savings goals for all your financial aspirations, from a dream vacation to a down payment on a home, and track your progress effortlessly.</li>
-            <li><strong><em>Smart Investing</em></strong>: Access a range of investment options and tools to help you grow your wealth and achieve your long-term financial goals.</li>
-            <li><strong><em>Bill Management</em></strong>: Never miss a bill payment again with automatic bill reminders and payment scheduling features.</li>
-            <li><strong><em>Security and Privacy</em></strong>: Rest assured knowing that your sensitive financial information is protected by state-of-the-art security measures and encryption protocols.</li>
-        </ul>
-        <p><strong>Why Choose MOBILE! Finance?</strong></p>
-        <p>As part of the trusted online banking platform, MOBILE! Finance offers seamless integration with your existing banking accounts, providing you with a holistic view of your finances in one convenient location. Plus, with our user-friendly interface and intuitive design, managing your money has never been easier or more enjoyable.</p>
-        <p><strong>Get Started Today</strong></p>
-        <p>Ready to take control of your finances and unlock your financial potential? Download the MOBILE! Finance app now and join thousands of satisfied users who are already experiencing the benefits of modern banking with PLAY! Finance.</p>
+        <div class="ck-content"><p>The Métis Nation–Saskatchewan (MN–S) Language and Identity Advisory Panel, made up of Métis Elders, Language Keepers, Kihtêyak and Li Vyeu Moond, has selected the winning names from hundreds of submissions in Northern, Heritage, and Michif French, Cree, and Dene. We extend our heartfelt congratulations to the youth whose names were chosen, and our gratitude to every young citizen who took part in the naming contest!</p><p>As part of a special series celebrating the herd at Batoche, we will be sharing photos and videos of each calf, along with the winning names and the youth who submitted them. These introductions will be featured on our social media channels.</p><p>Thank you to all Métis youth who participated. Your creativity, language knowledge, and pride in your culture help keep our stories and traditions strong, and now, they’ll live on with every step these young bison take.</p><p>&nbsp;</p><p><strong>Full list of winning names:</strong></p><div><figure><figure class="table"><table><tbody><tr><td><strong>Name</strong></td><td><strong>Translation</strong></td><td><strong>Language</strong></td><td><strong>Chosen By</strong></td></tr><tr><td>Yôtin&nbsp;</td><td>Windy</td><td>Northern Michif</td><td>Misha Hoffarth from South and Wells Knight from Saskatoon</td></tr><tr><td>Ci boy&nbsp;</td><td>Tiny boy</td><td>Northern Michif</td><td>Maya Lawrence from Meskanaw</td></tr><tr><td>Kôna</td><td>Snow</td><td>Northern Michif</td><td>Lucas Erickson from Prince Albert</td></tr><tr><td>Âyimisô&nbsp;</td><td>Rascal</td><td>Northern Michif</td><td>Mason Lawrence from Meskanaw</td></tr><tr><td>Okimâsis&nbsp;</td><td>Little boss</td><td>Northern Michif</td><td>Parker Iron from Saskatoon</td></tr><tr><td>&nbsp;</td></tr><tr><td>Li&nbsp;noovoo&nbsp;</td><td>Newcomer</td><td>Heritage&nbsp;Michif</td><td>Jade Kuyek from Yorkton</td></tr><tr><td>Li&nbsp;braav&nbsp;</td><td>The brave one</td><td>Heritage&nbsp;Michif</td><td>Calder Stewart from Walburg</td></tr><tr><td>Shakwala&nbsp;</td><td>Chocolate</td><td>Heritage&nbsp;Michif</td><td>Ty Charlie Nault from Regina</td></tr><tr><td>Li&nbsp;pchi</td><td>The little one</td><td>Heritage&nbsp;Michif</td><td>Weston Trotchie from Saskatoon</td></tr><tr><td>Paywapun&nbsp;</td><td>Sunrise</td><td>Heritage&nbsp;Michif</td><td>Maxon Kuyek from Yorkton</td></tr><tr><td>&nbsp;</td></tr><tr><td>Pchit&nbsp;pwelleu</td><td>Little Furry One</td><td>Michif&nbsp;French</td><td>Luka Lasnier from Saskatoon</td></tr><tr><td>Chiraan&nbsp;</td><td>Northern Lights</td><td>Michif&nbsp;French</td><td>Cadence LaRocque from Langenburg</td></tr><tr><td>Toneur&nbsp;</td><td>Thunder</td><td>Michif&nbsp;French</td><td>Roman Chitrenia from Crystal Springs and Deacon LaRocque from Langenburg</td></tr><tr><td>Groos&nbsp;tet</td><td>Big Head</td><td>Michif&nbsp;French</td><td>Taylor Lee Gaudet from Hoey</td></tr><tr><td>Rouille&nbsp;</td><td>Rusty</td><td>Michif&nbsp;French</td><td>Hunter Dean Christopherson from Willow Bunch</td></tr><tr><td>Boo&nbsp;</td><td>Beautiful</td><td>Michif&nbsp;French</td><td>Edie Blais from Saskatoon</td></tr></tbody></table></figure></figure></div></div>
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20260831T193741Z
@@ -69,7 +64,9 @@ Languages:
       Value: "{13D6CCE7-A6C3-4EE1-A1D9-8A8E34225ED7}"
     - ID: "3e700dce-26eb-4bf0-990f-9d9fe555990d"
       Hint: Excerpt
-      Value: "We're thrilled to introduce MOBILE! Finance, a groundbreaking new finance app designed to revolutionize the way you bank and manage your finances."
+      Value: |
+        Our new bison calves have arrived, and thanks to Métis youth from across Saskatchewan, they now have beautiful names rooted in our languages!
+        
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
       Value: "Introducing MOBILE! Finance"
@@ -79,17 +76,17 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "82a4b230-00ac-4c0b-8596-613fa79489f5"
+      Value: "6342d85e-8065-4733-a3ca-9c027d6b9284"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260831T193954Z
+      Value: 20260901T205430Z
     - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
       Hint: Title
-      Value: "Introducing MOBILE! Finance: Your new financial companion app"
+      Value: "Taanishi aen Ishinihkaashooyen Li Pchi Bufloo? (What’s Your Name, Little Buffalo?) "
 - Language: "fr-CA"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"

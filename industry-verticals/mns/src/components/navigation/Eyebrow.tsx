@@ -5,6 +5,8 @@ import { ComponentProps } from 'lib/component-props';
 import { JSX, useState } from 'react';
 import PreviewSearch from "../search/PreviewSearch"
 import { PREVIEW_WIDGET_ID } from "../../_data/customizations";
+import { Default as LanguageSwitcher } from 'components/utilities/LanguageSwitcher';
+import { Default as ThemeSwitcher } from 'components/utilities/ThemeSwitcher';
 
 export type EyebrowProps = ComponentProps & {
   fields: {
@@ -51,10 +53,17 @@ export const Mns = (props: EyebrowProps): JSX.Element => {
   return (
     <div className={`component eyebrow mns-eyebrow ${props.params.styles?.trimEnd()}`} id={id ? id : undefined}>
       <div className="container">
-        <p className="mns-eyebrow__copy">
-          <strong>Become an MN–S Citizen:</strong>{' '}
-          <a href="https://mns.ca/metis-citizens/citizenship-registry">Register today!</a>
-        </p>
+        <div className="mns-eyebrow__row">
+          <div className="mns-eyebrow__left" />
+          <p className="mns-eyebrow__copy">
+            <strong>Become an MN–S Citizen:</strong>{' '}
+            <a href="https://mns.ca/metis-citizens/citizenship-registry">Register today!</a>
+          </p>
+          <div className="mns-eyebrow__tools">
+            <LanguageSwitcher />
+            <ThemeSwitcher />
+          </div>
+        </div>
       </div>
     </div>
   );

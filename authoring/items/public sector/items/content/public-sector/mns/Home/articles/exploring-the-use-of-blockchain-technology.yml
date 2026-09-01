@@ -14,10 +14,14 @@ SharedFields:
 - ID: "ba2b872d-f67d-40dc-be41-6366b7030144"
   Hint: Thumbnail
   Value: |
-    <image mediaid="{569B6C5C-0115-416A-B65E-38F88E527EC3}" alt="Design pattern that represents blockchain technology" height="" width="" hspace="" vspace="" />
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/954fb2c3ee9844138f2e539f99c7bae9?v=25558a3a" dam-id="iuMRhdXbSjyoZrUbBTvcpw" width="1600" height="800" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97924/thumbnail" />
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{789FBA7D-45B9-46F6-B59E-C3E87E56A54F}" />
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "1219c6a8-5cfd-4a6a-bf55-ecca08dd49c4"
+  Value: "48b599e8-de64-4c17-b78a-fb79f4e9886f"
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
   Value: |
@@ -40,9 +44,12 @@ SharedFields:
 Languages:
 - Language: en
   Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "7fbaffdd-4383-4138-b593-acbd19c799f4"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: Exploring the use of blockchain technology in banking
+    Value: Economic Opportunities Expand With Federal Recognition
   Versions:
   - Version: 1
     Fields:
@@ -88,31 +95,13 @@ Languages:
       Value: Exploring the use of blockchain technology in banking
   - Version: 2
     Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
     - ID: "03117268-f84f-4fd8-ad9e-5990b3a21fe6"
       Hint: Content
       Value: |
-        <p>Blockchain technology has emerged as a game-changer in the world of finance, offering unprecedented opportunities for innovation, efficiency, and security. In this blog post, we'll delve into the transformative potential of blockchain in banking, exploring its applications, benefits, and implications for the future of financial services.</p>
-        <p><strong>Understanding Blockchain Technology</strong></p>
-        <p>Blockchain is a decentralized, distributed ledger technology that enables secure and transparent record-keeping of transactions across a network of computers. Each block in the blockchain contains a cryptographic hash of the previous block, creating a chain of blocks that is immutable, tamper-proof, and verifiable by all participants.</p>
-        <p><strong>Applications of Blockchain in Banking</strong></p>
-        <p>Blockchain technology offers a wide range of applications for banking and financial services, including:</p>
-        <ul>
-            <li><strong>Payments and Remittances</strong>: Blockchain enables faster, cheaper, and more secure cross-border payments and remittances by eliminating intermediaries and reducing settlement times.</li>
-            <li><strong>Smart Contracts</strong>: Smart contracts are self-executing contracts with the terms of the agreement written directly into code. Blockchain-based smart contracts automate and enforce the terms of agreements, reducing the need for intermediaries and streamlining processes such as loan origination, trade finance, and supply chain management.</li>
-            <li><strong>Identity Verification</strong>: Blockchain-based identity verification solutions provide secure and decentralized methods for verifying and managing digital identities, enhancing security and reducing the risk of identity theft and fraud.</li>
-            <li><strong>Asset Tokenization</strong>: Asset tokenization involves converting real-world assets, such as real estate, stocks, and commodities, into digital tokens on a blockchain. This enables fractional ownership, increased liquidity, and more efficient trading of assets.</li>
-        </ul>
-        <p><strong>Benefits of Blockchain in Banking</strong></p>
-        <p>The adoption of blockchain technology in banking offers several benefits, including:</p>
-        <ul>
-            <li><strong>Increased Efficiency</strong>: Blockchain streamlines processes, reduces costs, and eliminates intermediaries, leading to faster transaction settlement and improved operational efficiency.</li>
-            <li><strong>Enhanced Security</strong>: The cryptographic features of blockchain technology ensure tamper-proof and secure record-keeping, protecting against fraud, manipulation, and unauthorized access.</li>
-            <li><strong>Improved Transparency</strong>: Blockchain provides a transparent and immutable record of transactions, enhancing trust and accountability among participants.</li>
-        </ul>
-        <p><strong>Challenges and Considerations</strong></p>
-        <p>Despite its potential benefits, the adoption of blockchain in banking also presents challenges and considerations, including regulatory compliance, interoperability, scalability, and privacy concerns. Banks must navigate these challenges effectively to realize the full potential of blockchain technology while mitigating associated risks.</p>
-        <p><strong>Looking Ahead: The Future of Blockchain in Banking</strong></p>
-        <p>As blockchain technology continues to evolve and mature, banks are increasingly exploring ways to integrate it into their existing systems and processes. By embracing innovation, collaborating with industry stakeholders, and prioritizing security and compliance, banks can leverage the transformative power of blockchain to drive innovation, enhance efficiency, and deliver value to customers.</p>
+        <div class="ck-content"><figure><p><img src="https://mns.ca/uploads/public/Screenshot%202026-06-11%20at%203.57.35%E2%80%AFPM.png" alt="Screenshot 2026-06-11 at 3.57.35 PM.png (1.22 MB)" width="814" height="922" /></p></figure><p><i><em>Economic Development Minister Marg Friesen discusses the PSIB</em></i></p><p>Prior to 2019, the Métis Nation–Saskatchewan (MN–S) government didn’t have a dedicated Economic Development Ministry. That changed when MN–S and Canada signed the Métis Recognition and Self-Government (MRSG) agreement that June: Economic development was recognized as a priority.</p><p>“With our federal partners, we want to build out economic opportunities for Métis citizens in Saskatchewan in industry, technology, education and skills training, and culture, with the procurement strategy Canada has,” said MN–S Minister of Economic Development Marg Friesen.</p><p>Two years ago, MN–S introduced the SaskMétis Works registry for Métis business. Today, 328 are on the list. Applying businesses must pass the rigorous vetting process that’s been established by the MN–S Registry. In May, the Government of Canada officially recognized the MN–S business registry as a certified source of Saskatchewan businesses.</p><figure><p><img src="https://mns.ca/uploads/public/MNS%20EcDev-Seals-Certified.jpg" alt="MNS EcDev-Seals-Certified.jpg (765 KB)" width="2400" height="2400" /></p></figure><p><i><em>Official seal of the MN–S SaskMétis Works registry</em></i></p><p>Minister Friesen said the administrative barriers faced by Indigenous business are beginning to fade. “It creates a space specifically for Métis entrepreneurs removing those barriers of applying or bidding on opportunities or tenders that existed in the past. Now that they’ve registered with SaskMétis Works it enables them to skip that step and go right into identifying what tenders they can access directly with that procurement strategy nationally. The opportunities abound and we need to highlight those individuals, and they need to know who we are so that we can support them ideally and support them realistically in developing their business vision so they can be successful.”&nbsp;</p><p>The federal Procurement Strategy for Indigenous Businesses (PSIB) in 1996 and revised in 2021. It includes a minimum 5% Indigenous involvement in federal contracts which can have significant, positive impact in Saskatchewan. In the fiscal 2023-24 year, a total $1.24 billion in federal contracts was awarded to Indigenous businesses. The Indigenous Business Directory (IBD) supports this initiative by serving as a publicly accessible platform to determine whether Indigenous businesses meet the PSIB’s eligibility criteria, with businesses consenting to audits designed to preserve the program’s integrity.</p><p>The recognition unlocks the economic potential to build a brighter future for MN–S businesses by reducing systemic barriers, advancing reconciliation, and bringing expansion opportunities closer to reality for Métis business owners.&nbsp;</p><h3><strong>Prince Albert Security Services</strong></h3><p>Prince Albert Security Services employs well over 100 people and has operating since 2020. Owner Roger Reimer says, “The majority of the work we do is local, but we do travel across Saskatchewan, and we do a little work in Saskatoon as well with our sister company Stryke Protection Services Ltd. It too is on the registry too and we use that company to target more corporately and also give people options on pricing I like the idea of giving our clients options and realistically we can travel Canada wide.”</p><figure><p><img src="https://mns.ca/uploads/public/Screenshot%202026-06-12%20at%208.44.24%E2%80%AFAM.png" alt="Screenshot 2026-06-12 at 8.44.24 AM.png (5.30 MB)" width="2210" height="1512" /></p></figure><p><i><em>file courtesy - PA Security Services website</em></i></p><p>Reimer said being a part of the national registry removes an obstacle we may have faced previously because we’ve already been recognized as a certified Métis business. He believes the opportunities for expansion are now endless.</p><p>“Our small Saskatchewan business will be seen in a more professional light with this type of national recognition. There are some 900 security businesses in Saskatchewan alone and this federal recognition can help us stand out from the others. It’s a big deal for us. As a business owner, I’m providing for my family. Our employees are providing for theirs. We want to compete on federal contracts to provide opportunities for those who need work.”</p><p>Reimer knows because his business is on the SaskMétis Works registry, he’s already been certified Métis, meaning if a contractor or company is shopping for sub-contractors on the Indigenous Business Registry, they know the companies are cleared to bid on the work.</p><h3><strong>Synergy Construction</strong></h3><p>100% owned Synergy Construction is based in Regina. Mike Hansen says his company has already been vetted by the federal government but to have a distinct, Métis seal cuts out the middle person.</p><figure><p><img src="https://mns.ca/uploads/public/90e31a5c-1225-497c-9605-0ce18c5fa533.jpg.jpeg" alt="90e31a5c-1225-497c-9605-0ce18c5fa533.jpg.jpeg (123 KB)" width="640" height="481" /></p></figure><p><i><em>Synergy Construction build&nbsp;</em></i></p><p>“There was a time other companies wouldn’t take Métis businesses seriously,” Mike said. “We’re fortunate that we knew about the federal Indigenous Business Directory early on but there can be a lot of hurdles to jump over if you don’t know where to go.”</p><p>While SaskMétis Works provides a one-stop shop for owners looking for tender opportunities or who are available for subcontracting, some tweaks still need to be made to ensure the registered businesses still qualify for the seal down the line. MN–S Economic Development is working with the business community to assess the registry and make the necessary adjustments to align with the federal process.</p><h3><strong>Register your Métis-owned business</strong></h3><p>If you are a Métis-owned business in Saskatchewan not currently registered with SaskMétis Works, sign up today at https://saskmetisworks.ca/. &nbsp;If you would rather meet in person, the Economic Development team will be at Back to Batoche Days in July as well to help you out.&nbsp;</p><p>Listen to a conversation about the federal recognition of the MN–S business registry with Economic Development director Reagan Harding and MN–S Minister of Economic Development Marg Friesen&nbsp;<a href="https://youtu.be/CwfKpTBJL6Q">here.</a></p></div>
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20260831T193741Z
@@ -121,7 +110,9 @@ Languages:
       Value: "{1B3D21A1-3E75-49D0-AF21-C4B2DE228760}"
     - ID: "3e700dce-26eb-4bf0-990f-9d9fe555990d"
       Hint: Excerpt
-      Value: Jump into the transformative potential of blockchain technology in banking, exploring its applications and benefits in revolutionizing financial services. Join our journey to embrace innovation and drive positive change in the financial landscape.
+      Value: |
+        “It’s no secret that Indigenous people - there are very successful businesses here in Saskatchewan however what doors are open for them?” MN–S Minister of Economic Development Marg Friesen.
+        
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
       Value: Exploring the use of blockchain technology in banking
@@ -131,7 +122,7 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "58896db4-0de6-4106-8376-3211865d9645"
+      Value: "bacb85ca-322d-46fd-89c9-8168d5078dd3"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
@@ -141,10 +132,10 @@ Languages:
       Value: 20240614T135535Z
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260831T193954Z
+      Value: 20260901T205841Z
     - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
       Hint: Title
-      Value: Exploring blockchain technology in banking
+      Value: Economic Opportunities Expand with Federal Recognition 
 - Language: "fr-CA"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"

@@ -142,11 +142,13 @@ export const MnsTiles = (props: FourColumnCtaProps): JSX.Element => {
     title: Field<string>;
     text: Field<string>;
     link: LinkField;
-  }) => (
-    <div className="col-sm-12 col-md-6 col-lg-3">
-      <Link field={link} className="mns-tile">
+  }) => {
+    const hasImage = Boolean(image?.value?.src);
+    const hasLink = hasAuthoredLink(link);
+    const inner = (
+      <>
         <div className="mns-tile__media">
-          <NextImage field={image} width={400} height={220} />
+          {(isPageEditing || hasImage) && <NextImage field={image} width={400} height={220} />}
         </div>
         <div className="mns-tile__copy">
           <h2>
@@ -158,9 +160,24 @@ export const MnsTiles = (props: FourColumnCtaProps): JSX.Element => {
             </p>
           )}
         </div>
-      </Link>
-    </div>
-  );
+      </>
+    );
+
+    return (
+      <div className="col-sm-12 col-md-6 col-lg-3">
+        {hasLink && !isPageEditing ? (
+          <Link field={link} className="mns-tile">
+            {inner}
+          </Link>
+        ) : (
+          <div className="mns-tile">
+            {inner}
+            {isPageEditing && <Link field={link} className="mns-tile__link-editor" />}
+          </div>
+        )}
+      </div>
+    );
+  };
 
   return (
     <div

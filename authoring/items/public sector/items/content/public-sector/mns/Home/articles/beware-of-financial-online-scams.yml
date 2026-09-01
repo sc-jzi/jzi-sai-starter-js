@@ -14,10 +14,14 @@ SharedFields:
 - ID: "ba2b872d-f67d-40dc-be41-6366b7030144"
   Hint: Thumbnail
   Value: |
-    <image mediaid="{87D35B18-7C75-4D2D-BBC6-F181B75E81BE}" alt="Online scams - computer screen with code" height="" width="" hspace="" vspace="" />
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/fbf8c4e98ad946918c04f8836835e416?v=6d78a762" dam-id="VYJZrjeJQlilFTN7m0-kHg" width="1600" height="800" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97921/thumbnail" />
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{158FE888-559F-46CE-83E0-C8453BB58F24}" />
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "04832dc9-74ec-4818-8350-279c79ed8838"
+  Value: "f30cb197-818e-475a-b1c0-d11a89a932f9"
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
   Value: |
@@ -48,40 +52,22 @@ SharedFields:
 Languages:
 - Language: en
   Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "3c876fcc-ce52-4979-b4d8-5d41df18066c"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: Beware of financial online scams
+    Value: People of the Horse
   Versions:
   - Version: 1
     Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
     - ID: "03117268-f84f-4fd8-ad9e-5990b3a21fe6"
       Hint: Content
       Value: |
-        <p>In an increasingly digital world, the convenience of online financial transactions comes with a risk: the threat of scams and fraud. As technology advances, so do the tactics of cybercriminals, making it essential for individuals to stay vigilant and informed to protect their hard-earned money. Here are some common online financial scams to be aware of and tips on how to avoid falling victim to them.</p>
-        <p><strong>Phishing Scams</strong></p>
-        <p>Phishing scams involve fraudulent attempts to obtain sensitive information, such as usernames, passwords, and credit card details, by impersonating trusted entities. These scams often come in the form of deceptive emails, text messages, or websites that appear legitimate but are designed to trick individuals into disclosing their personal information.
-        </p>
-        <p style="margin-left: 40px;"><strong>Tip</strong>: Be cautious of unsolicited emails or messages requesting personal or financial information. Verify the legitimacy of the sender by contacting the organization directly through official channels, such as their website or customer service hotline.
-        </p>
-        <p><strong>Investment Scams</strong></p>
-        <p>Investment scams promise high returns with little to no risk, often targeting unsuspecting individuals looking to grow their wealth quickly. These scams may involve fraudulent schemes such as Ponzi schemes, pyramid schemes, or fake investment opportunities that promise unrealistic returns or guaranteed profits.
-        </p>
-        <p style="margin-left: 40px;"><strong>Tip</strong>: Exercise caution when approached with investment opportunities that sound too good to be true. Conduct thorough research and seek advice from reputable financial professionals before making any investment decisions.
-        </p>
-        <p><strong>Online Shopping Scams</strong></p>
-        <p>Online shopping scams involve fraudulent websites or sellers that offer counterfeit or non-existent products at attractive prices to lure in unsuspecting buyers. These scams may result in individuals paying for goods that they never receive or receiving inferior-quality products compared to what was advertised.
-        </p>
-        <p style="margin-left: 40px;"><strong>Tip</strong>: Only shop from reputable and trusted websites, and be wary of deals that seem too good to be true. Look for secure payment options and read reviews from other customers before making a purchase.
-        </p>
-        <p><strong>Romance Scams</strong></p>
-        <p>Romance scams involve individuals posing as potential romantic partners to establish trust and manipulate victims into sending them money or personal information. These scams often occur on social media platforms, dating websites, or online forums where cybercriminals target vulnerable individuals seeking companionship.
-        </p>
-        <p style="margin-left: 40px;"><strong>Tip</strong>: Be cautious when communicating with individuals online, especially if they request financial assistance or disclose personal information early in the relationship. Avoid sharing sensitive information with strangers and consider verifying their identity through other means before engaging further.
-        </p>
-        <p><strong>Conclusion</strong></p>
-        <p>Protecting yourself from financial online scams requires awareness, skepticism, and proactive measures to safeguard your personal and financial information. By staying informed and exercising caution when conducting online transactions, you can reduce the risk of falling victim to scams and enjoy a safer online experience.
-        </p>
-        <p>Remember, if something seems suspicious or too good to be true, it probably is. Stay vigilant, trust your instincts, and always prioritize your financial security.</p>
+        <div class="ck-content"><h3><strong>History carried forward</strong></h3><p>&nbsp;When horses were introduced to North America in the late 1600’s, Indigenous people quickly developed a profound connection to the animals. The Métis became incredibly adept riders, bareback marksmen, and hunters. The taming and training methods are still used today. That relationship to the horse is why Métis were bestowed with the title ‘People of the Horse’.</p><p>“In Cree, we call them mistatim…that means big dog. We used to use dogs for carrying goods around, teepees and stuff like that.”</p><figure><p><img src="https://mns.ca/uploads/public/Screenshot%202026-06-18%20at%2011.00.25%E2%80%AFAM.png" alt="Screenshot 2026-06-18 at 11.00.25 AM.png (763 KB)" width="748" height="830" /></p></figure><p>Elder Ivor Wayne Burns has almost a visceral response when he speaks of the magnificent animals. He’s been working with horses since he was six years old and says he learned his taming techniques from his father and grandfather.</p><p>“We didn’t buck them out, we broke them with kindness. We broke them with trust and loving. They have no trust for you, they have no loyalty for you. You have to earn that trust and that loyalty from a horse. When they got close enough to us, we breathed into their nostrils. They can smell trust, kindness, caring and sharing. When they trust you, then they’re easy to work with.”</p><p>At age 14, Elder Burns was wagon racing – then came his life-long passion for the Indian Relay. Having seen wins and losses over the span of his career, the now 71-year-old watches his grandsons heat up the track and bring home the buckles. He’s passed along what he learned so many years ago from his grandfather and is a mainstay at the annual Batoche festival.</p><h3><strong>New events bring more excitement to Batoche</strong></h3><p>Mounted shooting is a new addition to the cultural and sporting lineup, bringing time-honoured Métis horsemanship to modern-day competition. During the traditional buffalo hunt, Métis marksmen relied on their highly trained horses to run into a chaotic herd, leaving their hands free to load and shoot their long guns at a full gallop. That deep connection between man and horse can still be seen at Batoche.</p><figure><p><img src="https://mns.ca/uploads/public/Mounted%20shooting.jpg" alt="Mounted shooting.jpg (19 KB)" width="315" height="230" /></p></figure><p>“It’s fun to bring an old west tradition into a modern new building.”</p><p>President of the Saskatchewan Cowboy Mounted Shooting Association (SCMSA), Lucas Thiessen says mounted shooting dates back to the Batoche resistance and a fighting tactic of Gabrielle Dumont’s. Thiessen believes the tradition became sport in the 80’s.</p><p>“There was group of them in Arizona, and they started setting up bottles in cactuses in the desert and we use blank ammunition now but when they started, they were using live ammunition and they would run through the desert and shoot bottles out of cactuses…..I tried it and I went home and ordered a set of guns to use in it.”</p><p>Raised in a horse training family himself, Lucas started riding competitively 12 years ago. Today, he’s among the elite riders running the course in under nine seconds. Interestingly, the sport is dominated by women. Thiessen watches his 4-year-old daughter, Remi ride, shooting with her cap gun. Mounted shooting is on the decline in Canada, because Canadian gun laws ban the import and sale of six shooters, even without ammunition.</p><p><i><strong><em>Watch and listen as Lucas Thiessen describes Mounted Shooting</em></strong></i> <a href="https://youtu.be/R_j8Idz8LC0">here.&nbsp;</a></p><p>Both Indian Relay and Mounted Shooting showcase the traditional Métis “running start” technique, a practice that originated during the historic bison hunt. Métis hunters would wait for the official signal before charging at full gallop into the herd. Remove the bison, and the concept closely resembles flat racing – another new event featured at the Vermette Racetrack in Batoche. Flat racing typically relies on Thoroughbreds, horses renowned for their speed and stamina, while success also depends on the skill, strength, and strategy of their riders.</p><figure><p><img src="https://mns.ca/uploads/public/20230721_123611.jpg.jpeg" alt="20230721_123611.jpg.jpeg (4.04 MB)" width="4000" height="3000" /></p></figure><p><i><em>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;MN–S Environment Director and Batoche track lead w/family at Batoche 2025</em></i></p><p>Batoche track lead, Brent Laroque said, “After every festival, events are assessed and new events are considered for potential adds the next time. Flat racing and Mounted Shooting are based on Métis culture, not to mention the fact they’re action packed. So, it’s a great way to enhance the Batoche experience and grab the attention of the kids. They’re the next generation and it gives them a new appreciation of their history.”</p><p>With the excitement at the Vermette Raceway kicking up another notch, you won’t want to miss a minute of the action. See you at the track!</p><h3>Vermette Raceway Schedule – Back to Batoche Days 2026</h3><h3>(all times are weather reliant)</h3><p><br /><strong>Thursday July 16</strong></p><p>2pm - NWSCCA Chariots</p><p>4pm - NWSCCA Chuckwagons</p><p>6pm - CPCA Chuckwagons</p><p><strong>Friday July 17</strong></p><p>12:30pm - NWSCCA Chariots</p><p>2:30pm - NWSCCA Chuckwagons</p><p>4:30pm - Flat Races</p><p>5:00pm - Mounted Shooting</p><p>6:00pm - CPCA Chuckwagons</p><p>7:30pm - Indian Relay</p><p><strong>Saturday July 18</strong></p><p>12:30pm - NWSCCA Chariots</p><p>2:30pm - NWSCCA Chuckwagons</p><p>4:30pm - Flat Races</p><p>5:30pm - CPCA Chuckwagons</p><p>7:00pm - Indian Relay</p><p><strong>Sunday July 19</strong></p><p>1:00pm CPCA Chuckwagons</p><p>2:30pm CPCA Award Ceremony</p><p>3:00pm Flat Races</p><p>3:00pm Indian Relay</p><p>For complete Back to Batoche details, go to <a href="https://mns.ca/news/newsroom/news/634/backtobatoche.ca.">backtobatoche.ca.</a></p></div>
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
       Value: 20260831T193741Z
@@ -90,7 +76,7 @@ Languages:
       Value: "{13D6CCE7-A6C3-4EE1-A1D9-8A8E34225ED7}"
     - ID: "3e700dce-26eb-4bf0-990f-9d9fe555990d"
       Hint: Excerpt
-      Value: Online financial scams pose a significant threat to individuals' financial security, requiring heightened awareness and caution. Stay vigilant against phishing attempts, investment schemes, and online shopping fraud to protect yourself online.
+      Value: "A favorite at the Back to Batoche Days festival, the Indian Relay is among the events at the Vermette Raceway. And there’s some exciting new additions to the line-up this year, all bring Métis tradition to a new generation."
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
       Value: Beware of financial online scams
@@ -100,17 +86,17 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "3b07aaf5-dee3-447c-9127-09ff6126cfa5"
+      Value: "e57d8729-ee86-447e-97f0-64c296e3766a"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260831T193954Z
+      Value: 20260901T205353Z
     - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
       Hint: Title
-      Value: "Protect yourself: Beware of financial online scams"
+      Value: People of the Horse
 - Language: "fr-CA"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
