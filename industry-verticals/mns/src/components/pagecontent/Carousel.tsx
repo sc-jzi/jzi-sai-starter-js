@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, JSX } from 'react';
+import { useState, JSX, MouseEvent } from 'react';
 import {
   ComponentParams,
   ComponentRendering,
@@ -145,11 +145,15 @@ export const Mns = (props: CarouselComponentProps): JSX.Element => {
   const sxaStyles = `${props.params?.styles || ''}`;
   const items = props.fields?.items || [];
 
-  const handleNext = () => {
+  const handleNext = (event?: MouseEvent) => {
+    event?.preventDefault();
+    event?.stopPropagation();
     setIndex((prevIndex) => (prevIndex < items.length - 1 ? prevIndex + 1 : 0));
   };
 
-  const handlePrev = () => {
+  const handlePrev = (event?: MouseEvent) => {
+    event?.preventDefault();
+    event?.stopPropagation();
     setIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : items.length - 1));
   };
 
@@ -201,7 +205,11 @@ export const Mns = (props: CarouselComponentProps): JSX.Element => {
             key={i}
             aria-label={`Slide ${i + 1}`}
             className={i == index ? 'active' : ''}
-            onClick={() => setIndex(i)}
+            onClick={(event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              setIndex(i);
+            }}
           ></li>
         ))}
       </ol>
