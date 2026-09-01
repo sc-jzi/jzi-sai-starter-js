@@ -1,0 +1,94 @@
+﻿---
+ID: "afb31318-bcc8-4246-8905-89497520934c"
+Parent: "66586918-dbec-473f-9c23-e7b177ab679c"
+Template: "1b694ef9-154d-429a-9c3f-d7774cd4a852"
+Path: "/sitecore/content/public-sector/mns/Data/Promos/MN-S - Affiliates"
+SharedFields:
+- ID: "23f621dd-d403-49df-93f6-391a1757feb3"
+  Hint: Image4
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/ed24b8794e6743838bbdf6e87ea04128?v=e99f85ef" dam-id="pt8R0Ta9Q-yrKjhUjnuUvw" width="300" height="194" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97848/thumbnail" />
+- ID: "84c2cd69-b897-4e4a-a336-66d3222fe1b5"
+  Hint: Image1
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/bc5e88279bef43d38f6fc5b2ababb5a9?v=ac53af54" dam-id="_lUuyzcKQKWALzVhLnKCkA" width="100" height="100" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97839/thumbnail" />
+- ID: "954a7e15-cdad-4e9c-8949-ab0ee63200c6"
+  Hint: Image3
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/35a7fe3f15e04be08bc5d0d6c88ac08e?v=9d7f37da" dam-id="s1FwEHjMR_qe9MW31TcF-A" width="300" height="233" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97845/thumbnail" />
+- ID: "a98fc4bc-b088-4296-aa32-fba35f964ebd"
+  Hint: Image2
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/15eee5d1c409410c92672ccc3fb4bf1f?v=a239cb19" dam-id="mQGXUsNORmifu3i6pAhVJw" width="100" height="100" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97842/thumbnail" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "b2cf6452-1826-4719-991f-9602d5b140c8"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "07f3e30f-8075-4c1b-912e-e27fffeda904"
+      Hint: Text1
+      Value: GDI
+    - ID: "256528b0-4d93-44a1-85c9-0cd544091a3f"
+      Hint: Text4
+      Value: MACSI
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260831T204328Z
+    - ID: "34f50b54-e781-493a-85c0-8e9af1969d64"
+      Hint: Title3
+      Value: Clarence Campeau Development Fund
+    - ID: "4e62adbe-4082-45fe-9e77-66ef0945fb18"
+      Hint: Title4
+      Value: Métis Addictions Council of Saskatchewan
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "96e04b3b-a1fe-4bb5-9442-1041d2e7c951"
+    - ID: "8f23bb30-a050-47b3-bc66-6ca478213eef"
+      Hint: Text3
+      Value: CCDF
+    - ID: "94e8b735-889e-44f3-a980-c7c8143bae19"
+      Hint: Title2
+      Value: Saskatchewan Métis Economic Development Corporation
+    - ID: "b1b9e108-7c50-4a04-8e7a-37f30c6a784c"
+      Hint: Link3
+      Value: |
+        <link text="CCDF" anchor="" linktype="external" class="" title="" target="_blank" querystring="" url="https://clarencecampeau.com/" />
+    - ID: "b2befdd5-351d-4c5e-85fd-2402e3ff96bf"
+      Hint: Link1
+      Value: |
+        <link text="Gabriel Dumont Institute" anchor="" linktype="external" class="" title="" target="_blank" querystring="" url="https://gdins.org/" />
+    - ID: "ba2af883-e3bb-43cf-8c97-ab5c97edc09d"
+      Hint: Link4
+      Value: |
+        <link text="MACSI" anchor="" linktype="external" class="" title="" target="_blank" querystring="" url="https://macsi.ca/" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "be5597c5-a55d-4a6a-bf53-7fe1a7bf4bdc"
+      Hint: Title1
+      Value: Gabriel Dumont Institute
+    - ID: "c24d6ca7-49ab-4f08-9dae-e5a844d79139"
+      Hint: Text2
+      Value: SMEDCO
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260831T213247Z
+    - ID: "df548755-6a31-445f-bb84-c704698d6048"
+      Hint: Link2
+      Value: |
+        <link text="SMEDCO" anchor="" linktype="external" class="" title="" target="_blank" querystring="" url="https://smedco.ca/" />

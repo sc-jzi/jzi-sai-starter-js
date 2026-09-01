@@ -1,0 +1,139 @@
+﻿---
+ID: "59d97533-0b65-4517-9343-22ed351cdab4"
+Parent: "1e09b0aa-62d3-45d4-899e-cb54481bba9e"
+Template: "1b694ef9-154d-429a-9c3f-d7774cd4a852"
+Path: "/sitecore/content/public-sector/suffolk-county/Data/Promos/Four Column CTA/Suffolk County - Service Directory"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "07f3e30f-8075-4c1b-912e-e27fffeda904"
+      Hint: Text1
+      Value: Employment. People With Disabilities. Laws, Standards, and Codes. Notifications and Alerts. Youth Bureau.
+    - ID: "256528b0-4d93-44a1-85c9-0cd544091a3f"
+      Hint: Text4
+      Value: "Veterans. Multicultural Affairs and Community Engagement. Women's Services. Elected Officials. FAQs and A-Z."
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T151117Z
+    - ID: "34f50b54-e781-493a-85c0-8e9af1969d64"
+      Hint: Title3
+      Value: Records and Data
+    - ID: "4e62adbe-4082-45fe-9e77-66ef0945fb18"
+      Hint: Title4
+      Value: Aging
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "6f5fd0e8-406d-44fe-88c4-836a19254f83"
+    - ID: "8f23bb30-a050-47b3-bc66-6ca478213eef"
+      Hint: Text3
+      Value: Recreation. Public Safety. Towns and Villages. Central Procurement.
+    - ID: "94e8b735-889e-44f3-a980-c7c8143bae19"
+      Hint: Title2
+      Value: Business and Commercial
+    - ID: "b1b9e108-7c50-4a04-8e7a-37f30c6a784c"
+      Hint: Link3
+      Value: |
+        <link text="More..." linktype="external" url="https://suffolkcountyny.gov/records-and-data" anchor="" class="" title="" target="" querystring="" />
+    - ID: "b2befdd5-351d-4c5e-85fd-2402e3ff96bf"
+      Hint: Link1
+      Value: |
+        <link text="More..." linktype="external" url="https://apps2.suffolkcountyny.gov/civilservice/efile/default.aspx" anchor="" class="" title="" target="" querystring="" />
+    - ID: "ba2af883-e3bb-43cf-8c97-ab5c97edc09d"
+      Hint: Link4
+      Value: |
+        <link text="More..." linktype="external" url="https://suffolkcountyny.gov/aging" anchor="" class="" title="" target="" querystring="" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "be5597c5-a55d-4a6a-bf53-7fe1a7bf4bdc"
+      Hint: Title1
+      Value: "Civil Service Exam e-FILING"
+    - ID: "c24d6ca7-49ab-4f08-9dae-e5a844d79139"
+      Hint: Text2
+      Value: Social Services. Health Services. Forms and Reports. Public Works.
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T151117Z
+    - ID: "df548755-6a31-445f-bb84-c704698d6048"
+      Hint: Link2
+      Value: |
+        <link text="More..." linktype="external" url="https://suffolkcountyny.gov/businesses" anchor="" class="" title="" target="" querystring="" />
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "07f3e30f-8075-4c1b-912e-e27fffeda904"
+      Hint: Text1
+      Value: Empleo. Personas con discapacidad. Leyes, normas y códigos. Notificaciones y alertas. Oficina de juventud.
+    - ID: "256528b0-4d93-44a1-85c9-0cd544091a3f"
+      Hint: Text4
+      Value: Veteranos. Asuntos multiculturales y participación comunitaria. Servicios para mujeres. Cargos electos. Preguntas frecuentes y de la A a la Z.
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T151117Z
+    - ID: "34f50b54-e781-493a-85c0-8e9af1969d64"
+      Hint: Title3
+      Value: Registros y datos
+    - ID: "4e62adbe-4082-45fe-9e77-66ef0945fb18"
+      Hint: Title4
+      Value: Personas mayores
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "711524e8-9a17-4ca4-aefc-42cb68072c26"
+    - ID: "8f23bb30-a050-47b3-bc66-6ca478213eef"
+      Hint: Text3
+      Value: Ocio. Seguridad pública. Pueblos y aldeas. Contratación central.
+    - ID: "94e8b735-889e-44f3-a980-c7c8143bae19"
+      Hint: Title2
+      Value: Negocios y comercio
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "b1b9e108-7c50-4a04-8e7a-37f30c6a784c"
+      Hint: Link3
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="Más..." url="https://suffolkcountyny.gov/records-and-data" />
+    - ID: "b2befdd5-351d-4c5e-85fd-2402e3ff96bf"
+      Hint: Link1
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="Más..." url="https://apps2.suffolkcountyny.gov/civilservice/efile/default.aspx" />
+    - ID: "ba2af883-e3bb-43cf-8c97-ab5c97edc09d"
+      Hint: Link4
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="Más..." url="https://suffolkcountyny.gov/aging" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "be5597c5-a55d-4a6a-bf53-7fe1a7bf4bdc"
+      Hint: Title1
+      Value: Presentación electrónica de exámenes del servicio civil
+    - ID: "c24d6ca7-49ab-4f08-9dae-e5a844d79139"
+      Hint: Text2
+      Value: Servicios sociales. Servicios de salud. Formularios e informes. Obras públicas.
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T184413Z
+    - ID: "df548755-6a31-445f-bb84-c704698d6048"
+      Hint: Link2
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="Más..." url="https://suffolkcountyny.gov/businesses" />

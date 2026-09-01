@@ -1,0 +1,87 @@
+﻿---
+ID: "1d7bf14e-d713-4bd2-955a-be948f463fde"
+Parent: "99f0e1f7-d269-49a1-9e9c-25a46ee47eb0"
+Template: "90d315e8-aa42-4b23-a7eb-4491396453f8"
+Path: "/sitecore/content/public-sector/suffolk-county/Data/Promos/Suffolk County - Promo Carousel/Suffolk County - Slide Police Reform"
+SharedFields:
+- ID: "3ed91913-9018-4580-a112-9cb5b921fcca"
+  Hint: Image
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/95801-slide-police-reform?v=abe0a66a" dam-id="lEuNzb34SmGXI9vGEIkOKA" width="2766" height="2835" alt="Suffolk County Police Reform and Reinvention Task Force" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/95801/thumbnail" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "50b2a56c-1fa3-416a-881f-e7e92c277d57"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T151136Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "5a77cfde-b306-4e9c-ae7f-8f7352a9c802"
+    - ID: "8ff063ab-c9f1-4628-a0b1-2afb5e7f5560"
+      Hint: Link
+      Value: |
+        <link text="Get Started" linktype="external" url="https://suffolkcountyny.gov/police-reform" anchor="" class="" title="" target="" querystring="" />
+    - ID: "a3cbbb91-442e-441c-a6e2-5896c19d8711"
+      Hint: Text
+      Value: <p>A County that supports safe, effective, and equitable policing.</p>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T151136Z
+    - ID: "f44602f9-172c-4987-aaf6-1fb2ab0f75a1"
+      Hint: Title
+      Value: Suffolk County Police Reform and Reinvention Task Force
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T151136Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "0ee2eb4d-b270-4c4a-98f2-84b80258426c"
+    - ID: "8ff063ab-c9f1-4628-a0b1-2afb5e7f5560"
+      Hint: Link
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="Comenzar" url="https://suffolkcountyny.gov/police-reform" />
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "a3cbbb91-442e-441c-a6e2-5896c19d8711"
+      Hint: Text
+      Value: <p>Un condado que apoya una labor policial segura, eficaz y equitativa.</p>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T184419Z
+    - ID: "f44602f9-172c-4987-aaf6-1fb2ab0f75a1"
+      Hint: Title
+      Value: Grupo de Trabajo para la Reforma y Reinvención de la Policía del Condado de Suffolk

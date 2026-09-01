@@ -1,0 +1,77 @@
+﻿---
+ID: "02e50dc5-3999-4420-8293-716373af7e1c"
+Parent: "66586918-dbec-473f-9c23-e7b177ab679c"
+Template: "148d07ba-f923-4fb2-8907-0bd440d5db44"
+Path: "/sitecore/content/public-sector/mns/Data/Promos/MN-S - Featured Events"
+SharedFields:
+- ID: "39b3d592-0895-4f30-9c17-454b171f0b2e"
+  Hint: Image3
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/97712-section4-img15?v=aef1afa9" dam-id="0lFzxVEMTVmmod8Ubg6FuA" width="1600" height="800" alt="Constellations and Conservation at Batoche" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97712/thumbnail" />
+- ID: "39fe4fb3-3794-4b9a-a584-ff877e93e33b"
+  Hint: Image2
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/97699-section4-img14?v=966f7f05" dam-id="Vhi0fowrRFKvAFKL2A8g0w" width="1600" height="800" alt="Provincial Métis Council Meeting" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97699/thumbnail" />
+- ID: "c511247c-fec1-4690-81d6-ce791da18d4a"
+  Hint: Image1
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/97690-section4-img13?v=00b5bdfd" dam-id="IEbOAuajTKq7FHaxHgXoqA" width="1600" height="800" alt="Youth Summer Gathering" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97690/thumbnail" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "a2990b49-fac0-4e22-bc2b-95871a5918d5"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0a10d09c-166b-464e-99cb-4401b527f3f2"
+      Hint: Link2
+      Value: |
+        <link text="See More" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://mns.ca/metis-citizens/events/event/72/provincal-metis-council-meeting-workshop" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260831T204323Z
+    - ID: "2731b4d6-b866-466a-9731-5161788d662b"
+      Hint: SubText2
+      Value: Sep 15 – 17 · Batoche, Saskatchewan. This is the official notice for the September 2026 Provincial Métis Council (PMC) meeting at Dumont Lodge in Batoche, SK.
+    - ID: "277e3acc-b359-4c11-88b9-4016574419dc"
+      Hint: Link3
+      Value: |
+        <link text="See More" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://mns.ca/metis-citizens/events/event/69/constellations-conservation-at-batoche" />
+    - ID: "34f6d379-9a96-4cb8-839f-0d224a4f6db1"
+      Hint: Text2
+      Value: Provincial Métis Council Meeting & Workshop
+    - ID: "4c50be2f-021e-4846-abb0-50feb2df5eed"
+      Hint: SubText1
+      Value: "Sep 4 – 6 · Batoche, Saskatchewan. The Youth Summer Gathering: li zhenn moond toot aansaamb (youth all together), is geared toward Métis youth to connect with their culture, community, and identity."
+    - ID: "5264d7eb-64cd-4203-98e5-a4d0380f57e6"
+      Hint: Text1
+      Value: Youth Summer Gathering
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5eb6058f-3f45-4dd4-8153-8c74390859f4"
+      Hint: Text3
+      Value: Constellations & Conservation at Batoche
+    - ID: "63e1abec-67cb-4aea-ab72-8b5b60b69473"
+      Hint: Link1
+      Value: |
+        <link text="See More" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://mns.ca/metis-citizens/events/event/68/youth-summer-gathering" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "2b95edf0-b6ec-4923-843c-75deef23cd8b"
+    - ID: "a3a36b2d-a20b-4344-9f1d-ad867cb99aa4"
+      Hint: SubText3
+      Value: Sep 19 · Batoche, Saskatchewan. Join us for an unforgettable evening under the stars at Batoche National Historic Site on Saturday, September 19, 2026.
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260831T204444Z

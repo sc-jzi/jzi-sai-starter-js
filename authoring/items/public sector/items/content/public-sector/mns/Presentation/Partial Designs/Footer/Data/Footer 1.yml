@@ -1,0 +1,207 @@
+﻿---
+ID: "4d728dc9-ad43-4f50-8e9b-7b877b9b9668"
+Parent: "4c56221b-554e-4504-995d-4f3016bc8a34"
+Template: "947db8f8-dc76-453f-aca1-a27babfe633b"
+Path: "/sitecore/content/public-sector/mns/Presentation/Partial Designs/Footer/Data/Footer 1"
+SharedFields:
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "b39c19fc-e597-4888-bbe7-2d36df5504c7"
+- ID: "edf38721-e3f4-4a5f-b94b-44b9749ef0fb"
+  Hint: Image1
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/7dffc9b5608047af8590c5e3a9b2319e?v=8ae29407" dam-id="pE5bDo3ZRnON5gFHdKlwRw" width="210" height="108" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97764/thumbnail" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "24fe8274-d95f-439f-9aeb-6c240759ab6b"
+      Hint: Text1
+      Value: |
+        <div class="ck-content"><p><span>310 20th Street East</span></p><p><br /><span>Saskatoon, SK S7K 0A7</span></p><p><br /><a href="tel:+1-306-343-8285">1-877-METISSK (638-4775)</a></p></div>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260831T193754Z
+    - ID: "342fb66b-0e4b-419d-ba86-2355e33ee1bf"
+      Hint: Title1
+      Value: Métis Nation–Saskatchewan  
+    - ID: "4770eb87-8856-4251-b831-6c8522c39da1"
+      Hint: Copyright
+      Value: Copyright © Sitecore
+    - ID: "4bf70960-7097-4f87-a67a-8a7e87d1cd01"
+      Hint: Text4
+      Value: |
+        <p><a href="/?utm_campaign=business">Business campaign</a></p>
+        <p><a href="/?utm_campaign=retirement">Retirement campaign</a></p>
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "63ec28c9-bceb-4180-ba86-5a6b3c975d52"
+      Hint: Link1
+      Value: |
+        <link linktype="external" url="https://www.sitecore.com/legal/privacy-policy" target="" text="Privacy Policy" title="" class=""/>
+    - ID: "798d70ab-9044-4c10-8792-8879857b22ac"
+      Hint: Link2
+      Value: |
+        <link linktype="external" url="https://www.sitecore.com/legal" target="" text="Terms of Use" title="" class=""/>
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "44618a0a-9926-45f7-9591-7ce8dfb6ff05"
+    - ID: "92612ddf-b3fd-4597-a655-de6da2eb553f"
+      Hint: Text3
+      Value: |
+        <div class="ck-content"><p><a href="~/link.aspx?_id=C82CEFA63AFF4F78A9D4F45E754CA374&amp;_z=z">Privacy Policy</a></p><p><a href="~/link.aspx?_id=A7A1AA892C344E99984C8ABD91A9EF68&amp;_z=z">Contact Us</a></p></div>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "ca370d33-63e1-4e1b-986d-fe82ae23027c"
+      Hint: Text2
+      Value: |
+        <div class="ck-content"><p><a href="~/link.aspx?_id=1547C13842714136A7BF96A5B94CA005&amp;_z=z">Full Calendar</a></p><p><a href="~/link.aspx?_id=B89F250A580F44C2BEA08012FD65016B&amp;_z=z">Newsletter</a></p></div>
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260831T213008Z
+    - ID: "e71e7e6c-29a7-4a9a-a7f8-a4e29609cb64"
+      Hint: Title2
+      Value: Services
+    - ID: "ee146d7d-5c17-47f9-acf4-1583573db084"
+      Hint: Title3
+      Value: Resources
+    - ID: "f17614b2-487a-472c-a509-3e56df0930d4"
+      Hint: Title4
+      Value: Quick links
+- Language: "fr-CA"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "24fe8274-d95f-439f-9aeb-6c240759ab6b"
+      Hint: Text1
+      Value: |
+        <div class="ck-content"><p><a class="ck-link_selected" href="~/link.aspx?_id=FFC3908FB2964D638DF5BAD876BB3C13&amp;_z=z">À propos de nous</a></p><p><a href="~/link.aspx?_id=80813FB960E84528882676C4E973CC63&amp;_z=z">FAQs</a></p><p><a href="~/link.aspx?_id=41C94BB60FFA4D198F3DD1532A798B8A&amp;_z=z">Service à la clientèle</a></p></div>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260831T193856Z
+    - ID: "342fb66b-0e4b-419d-ba86-2355e33ee1bf"
+      Hint: Title1
+      Value: "PLAY! financier"
+    - ID: "4bf70960-7097-4f87-a67a-8a7e87d1cd01"
+      Hint: Text4
+      Value: |
+        <p><a href="/?utm_campaign=business">Campagne affaires</a></p>
+        <p><a href="/?utm_campaign=retirement">Campagne retraite</a></p>
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "63ec28c9-bceb-4180-ba86-5a6b3c975d52"
+      Hint: Link1
+      Value: |
+        <link linktype="external" url="https://www.sitecore.com/legal/privacy-policy" target="" text="Politique de confidentialité" title="" class=""/>
+    - ID: "798d70ab-9044-4c10-8792-8879857b22ac"
+      Hint: Link2
+      Value: |
+        <link linktype="external" url="https://www.sitecore.com/legal" target="" text="Conditions d'utilisation" title="" class=""/>
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "dda2e23c-b18c-42ee-9fa6-b54c630671a9"
+    - ID: "92612ddf-b3fd-4597-a655-de6da2eb553f"
+      Hint: Text3
+      Value: |
+        <p>
+        <a href="~/link.aspx?_id=C82CEFA63AFF4F78A9D4F45E754CA374&amp;_z=z">Obtenez un prêt</a>&nbsp;</p>
+        <p> <a href="~/link.aspx?_id=A7A1AA892C344E99984C8ABD91A9EF68&amp;_z=z">Articles</a></p>
+        <p> <a href="~/link.aspx?_id=10A52D435EF94B63BFDFBD6F56E5DA63&amp;_z=z">Auteurs</a></p>
+    - ID: "9bab16e3-3b9d-425e-8adc-06c0838f7706"
+      Hint: SocialsTitle
+      Value: Partagez
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "ca370d33-63e1-4e1b-986d-fe82ae23027c"
+      Hint: Text2
+      Value: |
+        <p><a href="~/link.aspx?_id=1547C13842714136A7BF96A5B94CA005&amp;_z=z">Personnel</a></p>
+        <p><a href="~/link.aspx?_id=B89F250A580F44C2BEA08012FD65016B&amp;_z=z">Petites entreprises</a></p>
+        <p><a href="~/link.aspx?_id=C28EC80ABD254E9B8F42610189FC8D23&amp;_z=z">Planification de la retraite</a></p>
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260831T194007Z
+    - ID: "e71e7e6c-29a7-4a9a-a7f8-a4e29609cb64"
+      Hint: Title2
+      Value: Services
+    - ID: "ee146d7d-5c17-47f9-acf4-1583573db084"
+      Hint: Title3
+      Value: Ressources
+    - ID: "f17614b2-487a-472c-a509-3e56df0930d4"
+      Hint: Title4
+      Value: Liens rapides
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "24fe8274-d95f-439f-9aeb-6c240759ab6b"
+      Hint: Text1
+      Value: |
+        <div class="ck-content"><p><a class="ck-link_selected" href="~/link.aspx?_id=FFC3908FB2964D638DF5BAD876BB3C13&amp;_z=z">会社概要</a></p><p><a href="~/link.aspx?_id=80813FB960E84528882676C4E973CC63&amp;_z=z">よくある質問と回答</a></p><p><a href="~/link.aspx?_id=41C94BB60FFA4D198F3DD1532A798B8A&amp;_z=z">カスタマーサポート</a></p></div>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260831T193856Z
+    - ID: "342fb66b-0e4b-419d-ba86-2355e33ee1bf"
+      Hint: Title1
+      Value: "PLAY! Finance"
+    - ID: "4bf70960-7097-4f87-a67a-8a7e87d1cd01"
+      Hint: Text4
+      Value: |
+        <p><a href="/ja-JP?utm_campaign=business">法人向けキャンペーン</a></p>
+        <p><a href="/ja-JP?utm_campaign=retirement">年金運用キャンペーン</a></p>
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "63ec28c9-bceb-4180-ba86-5a6b3c975d52"
+      Hint: Link1
+      Value: |
+        <link text="プライバシー" linktype="external" url="https://www.sitecore.com/legal/privacy-policy" anchor="" title="プライバシー" target="" />
+    - ID: "798d70ab-9044-4c10-8792-8879857b22ac"
+      Hint: Link2
+      Value: |
+        <link text="使用条件" linktype="external" url="https://www.sitecore.com/legal" anchor="" title="使用条件" target="" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "4a2ef747-b707-494c-9808-a3977a55ece3"
+    - ID: "92612ddf-b3fd-4597-a655-de6da2eb553f"
+      Hint: Text3
+      Value: |
+        <p>
+        <a href="~/link.aspx?_id=C82CEFA63AFF4F78A9D4F45E754CA374&amp;_z=z">ローンを組む</a>&nbsp;</p>
+        <p> <a href="~/link.aspx?_id=A7A1AA892C344E99984C8ABD91A9EF68&amp;_z=z">記事</a></p>
+        <p> <a href="~/link.aspx?_id=10A52D435EF94B63BFDFBD6F56E5DA63&amp;_z=z">著者</a></p>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "ca370d33-63e1-4e1b-986d-fe82ae23027c"
+      Hint: Text2
+      Value: |
+        <p><a href="~/link.aspx?_id=1547C13842714136A7BF96A5B94CA005&amp;_z=z">個人のお客さま</a></p>
+        <p><a href="~/link.aspx?_id=B89F250A580F44C2BEA08012FD65016B&amp;_z=z">企業のお客様</a></p>
+        <p><a href="~/link.aspx?_id=C28EC80ABD254E9B8F42610189FC8D23&amp;_z=z">年金運用プラン</a></p>
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260831T194007Z
+    - ID: "e71e7e6c-29a7-4a9a-a7f8-a4e29609cb64"
+      Hint: Title2
+      Value: サービス
+    - ID: "ee146d7d-5c17-47f9-acf4-1583573db084"
+      Hint: Title3
+      Value: リソース
+    - ID: "f17614b2-487a-472c-a509-3e56df0930d4"
+      Hint: Title4
+      Value: ヘルプ & サポート

@@ -1,0 +1,94 @@
+﻿---
+ID: "3a5fbd96-e841-4cd2-9b10-8f68b642000a"
+Parent: "de4b75b6-2e36-40ea-b2b5-eb952542956e"
+Template: "3b41d9fc-0edf-48e1-966c-e260339ba815"
+Path: "/sitecore/content/public-sector/suffolk-county/Home/Data/Five Column CTA 1"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T173504Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "eee097b1-d7ac-4379-8b31-275c0333dc6b"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T173504Z
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "12ece9de-445a-42be-a483-9e8095ca3b8f"
+      Hint: Text5
+      Value: Tarjetas de crédito
+    - ID: "1d581533-1aa5-4679-9e2a-e7fe765218ba"
+      Hint: Link3
+      Value: |
+        <link text=" " linktype="anchor" url="investing-options" anchor="investing-options" title="" class="" />
+    - ID: "2490d428-27e2-4daa-8337-4e34f37fc26b"
+      Hint: Link2
+      Value: |
+        <link text=" " linktype="anchor" url="mortgage" anchor="mortgage" title="" class="" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T173504Z
+    - ID: "41910271-6970-45e7-8819-3d531826d4a6"
+      Hint: Link5
+      Value: |
+        <link text=" " linktype="anchor" url="credit-cards" anchor="credit-cards" title="" class="" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "eb6fc8e3-4268-418f-8a66-7585c904d30d"
+    - ID: "8f49a654-7b7f-4c0b-b6df-d3ce2389c1bf"
+      Hint: Text2
+      Value: Hipoteca
+    - ID: "91d94aff-4137-4702-93f7-8db4eacde4d5"
+      Hint: Text3
+      Value: Opciones de inversión
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "9ea34c36-7e22-4d12-b632-032361c3b17c"
+      Hint: Text1
+      Value: Préstamo personal
+    - ID: "b867909f-d20c-4c76-b82f-778d25239cd1"
+      Hint: Link1
+      Value: |
+        <link text=" " linktype="anchor" url="get-a-loan" anchor="get-a-loan" title="" class="" />
+    - ID: "b8b8fa51-0c41-442e-8757-07b7a59d6d3f"
+      Hint: Link4
+      Value: |
+        <link text=" " linktype="anchor" url="small-businesses" anchor="small-businesses" title="" class="" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T184146Z
+    - ID: "f5e90981-3210-4316-bcf5-f083fe639e66"
+      Hint: Text4
+      Value: Pequeñas empresas

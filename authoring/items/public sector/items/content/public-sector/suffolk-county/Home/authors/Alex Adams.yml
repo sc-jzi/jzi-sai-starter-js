@@ -1,0 +1,205 @@
+﻿---
+ID: "e14d4a18-2f6f-46a6-b02f-add6ced0ca1f"
+Parent: "d57549fa-ee90-4779-8ee1-7b2f45cc2117"
+Template: "aad350f5-9331-4d71-a942-e3643653c028"
+Path: "/sitecore/content/public-sector/suffolk-county/Home/authors/Alex Adams"
+SharedFields:
+- ID: "2404bb97-b42a-439a-be76-de66213cb281"
+  Hint: BackgroundImage
+  Value: |
+    <image mediaid="{6CE63931-EDFF-4A3F-BA4C-CE1D4FC1DA81}" alt="Newspaper image" height="" width="" hspace="" vspace="" />
+- ID: "6be59cd8-74bd-4c67-b611-e81e140679b4"
+  Hint: Photo
+  Value: |
+    <image mediaid="{7446308C-3D93-426E-ADBE-904A06CC30BB}" alt="Alex Bio Image" height="" width="" hspace="" vspace="" />
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{E9B6C600-C6E8-4867-BCB7-8B0DC5F19840}"
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 700
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{9658D58C-FA3E-4724-B2FE-F2D60CEE293B}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "8aeccfc3-777b-4686-9f2a-7c0f4635aa46"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140049Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{171CCFD4-8543-428E-9A9B-8E6557E63B6D}"
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Alex Adams
+    - ID: "524c9c82-80d5-4d65-b7e3-4dd0e365b762"
+      Hint: Position
+      Value: Financial Advisor
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "642285dd-73ec-4782-90a7-f7583d94ee85"
+    - ID: "97b19c3f-9341-48ac-be54-22e1caaa1d48"
+      Hint: Bio
+      Value: |
+        <div class="ck-content"><p>Alex is dedicated to helping our clients achieve their financial goals and aspirations. With a passion for personalized service and a deep understanding of wealth management strategies, he works closely with clients to develop financial plans that align with their unique needs and objectives.</p></div>
+    - ID: "996749ca-6a47-463d-a759-7db65676f179"
+      Hint: Name
+      Value: Alex Adams
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140230Z
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "229e3024-997c-4fe7-9fcd-bfcc657da145"
+      Hint: SocialIcon3
+      Value: |
+        <image mediaid="{D7668912-4C04-4881-8C8B-3EEDBC4277A6}" alt="twitter" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140049Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{171CCFD4-8543-428E-9A9B-8E6557E63B6D}"
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Alex Adams
+    - ID: "524c9c82-80d5-4d65-b7e3-4dd0e365b762"
+      Hint: Position
+      Value: Asesor financiero
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "612e1483-8de4-4fa8-adc5-1a0663b4788f"
+      Hint: SocialIcon1
+      Value: |
+        <image mediaid="{37E8F17D-5AA1-4AF4-9CB1-45C4F07BDD4C}" alt="facebook" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "373da331-bee8-4774-b814-a911d75e7ab8"
+    - ID: "97b19c3f-9341-48ac-be54-22e1caaa1d48"
+      Hint: Bio
+      Value: |
+        <div class="ck-content"><p>Alex se dedica a ayudar a nuestros clientes a alcanzar sus metas y aspiraciones financieras. Con una pasión por el servicio personalizado y un profundo conocimiento de las estrategias de gestión patrimonial, trabaja estrechamente con los clientes para desarrollar planes financieros que se ajusten a sus necesidades y objetivos únicos.</p></div>
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "996749ca-6a47-463d-a759-7db65676f179"
+      Hint: Name
+      Value: Alex Adams
+    - ID: "a5c03008-537d-481f-834d-e1e89d12c304"
+      Hint: SocialLink1
+      Value: |
+        <link linktype="external" url="http://www.facebook.com" anchor="" target="" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "bdbbe5c9-d950-444c-90cd-a00674c10b0b"
+      Hint: SocialLink2
+      Value: |
+        <link linktype="external" url="http://www.instagram.com" anchor="" target="" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T184242Z
+    - ID: "e2e9b7ce-f57c-4752-99e5-b0d56e3c8864"
+      Hint: SocialIcon2
+      Value: |
+        <image mediaid="{B5E0C7F5-5693-4875-B68F-70B99E7F34EF}" alt="instagram" />
+    - ID: "f7c9be6b-b582-453b-a9f9-add8c74ac508"
+      Hint: SocialLink3
+      Value: |
+        <link linktype="external" url="http://www.twitter.com" anchor="" target="" />
+- Language: "fr-CA"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140230Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Alex Adams
+    - ID: "524c9c82-80d5-4d65-b7e3-4dd0e365b762"
+      Hint: Position
+      Value: Conseiller financier
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f2f1a677-0d0f-49a7-85b4-23a4fc575bd0"
+    - ID: "97b19c3f-9341-48ac-be54-22e1caaa1d48"
+      Hint: Bio
+      Value: |
+        Conseiller financier<div class="ck-content"><p>Alex se consacre à aider nos clients à atteindre leurs objectifs et leurs aspirations financiers. Avec une passion pour le service personnalisé et une compréhension approfondie des stratégies de gestion de patrimoine, il travaille en étroite collaboration avec les clients pour développer des plans financiers adaptés à leurs besoins et objectifs uniques.</p></div>
+    - ID: "996749ca-6a47-463d-a759-7db65676f179"
+      Hint: Name
+      Value: Alex Adams
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140230Z
+- Language: "ja-JP"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: アレックス・アダムス
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140230Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{171CCFD4-8543-428E-9A9B-8E6557E63B6D}"
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: アレックス・アダムス
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a671497b-e68a-48f3-9055-36d76314a2f4"
+    - ID: "97b19c3f-9341-48ac-be54-22e1caaa1d48"
+      Hint: Bio
+      Value: |
+        <div class="ck-content"><p>アレックスは、お客様の財務上の目標や希望を達成するための支援に専念しています。 個別サービスに対する情熱と資産管理戦略に対する深い理解を持ち、顧客と緊密に連携して、顧客固有のニーズと目的に沿ったファイナンシャル・プランを策定しています。</p></div>
+    - ID: "996749ca-6a47-463d-a759-7db65676f179"
+      Hint: Name
+      Value: アレックス・アダムス
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140230Z

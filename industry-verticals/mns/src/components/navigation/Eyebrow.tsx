@@ -47,15 +47,14 @@ export const Default = (props: EyebrowProps): JSX.Element => {
 /* Mns variant — orange citizenship bar, no search */
 export const Mns = (props: EyebrowProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
-  const { page } = useSitecore();
 
   return (
     <div className={`component eyebrow mns-eyebrow ${props.params.styles?.trimEnd()}`} id={id ? id : undefined}>
       <div className="container">
-        <div className="mns-eyebrow__row">
-          <AppPlaceholder name="eyebrow-left" rendering={props.rendering} page={page} componentMap={props.componentMap} />
-          <AppPlaceholder name="eyebrow-right" rendering={props.rendering} page={page} componentMap={props.componentMap} />
-        </div>
+        <p className="mns-eyebrow__copy">
+          <strong>Become an MN–S Citizen:</strong>{' '}
+          <a href="https://mns.ca/metis-citizens/citizenship-registry">Register today!</a>
+        </p>
       </div>
     </div>
   );

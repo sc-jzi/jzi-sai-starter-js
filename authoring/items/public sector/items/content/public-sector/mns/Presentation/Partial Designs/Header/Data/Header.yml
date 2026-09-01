@@ -1,0 +1,34 @@
+﻿---
+ID: "e7cace68-93de-48b6-9f75-59f730bcfce9"
+Parent: "8c2bae31-1f0a-455c-8889-161f244f4de8"
+Template: "0da7aa52-0c24-4721-9b6c-f6d8d9faaaa0"
+Path: "/sitecore/content/public-sector/mns/Presentation/Partial Designs/Header/Data/Header"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "0bf1334e-9153-4310-89f7-3cd8c5bbf927"
+      Hint: LogoImage
+      Value: |
+        <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/7dffc9b5608047af8590c5e3a9b2319e?v=8ae29407" dam-id="pE5bDo3ZRnON5gFHdKlwRw" width="210" height="108" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/97764/thumbnail" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260831T193754Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "cee56dfa-2c0e-4f55-bc42-0d51baa17fef"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260831T213422Z

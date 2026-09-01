@@ -1,0 +1,44 @@
+﻿---
+ID: "a2d06774-5476-44df-a56b-f98dab23edbf"
+Parent: "66586918-dbec-473f-9c23-e7b177ab679c"
+Template: "fa136527-6302-471d-83ab-e66fc72bda99"
+Path: "/sitecore/content/public-sector/mns/Data/Promos/MN-S - Latest Stories Heading"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260831T204324Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "cec72d77-2a99-4eaf-8a5b-3c21d472e53d"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "bbd90ce3-fdf4-425e-844b-63c5b3db8916"
+      Hint: Text
+      Value: 
+    - ID: "be9c7836-a932-4e3b-a4a0-c7d5aa869337"
+      Hint: Link
+      Value: |
+        <link text="" anchor="" linktype="external" class="" title="" target="" querystring="" url="#" />
+    - ID: "cef85d28-d6bc-4204-a2e4-8706c80d8a3c"
+      Hint: Heading
+      Value: Latest Stories
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260831T204421Z
+    - ID: "ee323ed7-4732-4a64-a008-18df97dc0737"
+      Hint: Eyebrow
+      Value: 

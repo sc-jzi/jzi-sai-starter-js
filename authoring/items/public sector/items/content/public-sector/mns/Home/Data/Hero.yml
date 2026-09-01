@@ -1,0 +1,39 @@
+﻿---
+ID: "d352a595-73ca-4ba7-b402-0fff25e92228"
+Parent: "4b891a84-fbeb-4049-9b99-c9c521773697"
+Template: "90d315e8-aa42-4b23-a7eb-4491396453f8"
+Path: "/sitecore/content/public-sector/mns/Home/Data/Hero"
+SharedFields:
+- ID: "3ed91913-9018-4580-a112-9cb5b921fcca"
+  Hint: Image
+  Value: |
+    <image mediaid="{3D453CDB-1FF4-4909-8E22-728CFD9A66F1}" alt="top-view-passport-money-with-copy-space" height="" width="" hspace="" vspace="" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "028b0fa4-99a0-44bd-be88-86df226510bf"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260707T193112Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "cf746494-1e08-44b3-860d-217f9006b25b"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260831T193942Z

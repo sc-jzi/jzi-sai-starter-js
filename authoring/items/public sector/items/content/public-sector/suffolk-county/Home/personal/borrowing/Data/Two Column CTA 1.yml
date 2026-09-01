@@ -1,0 +1,198 @@
+﻿---
+ID: "322619e7-4750-479a-9d04-716dbae19b9b"
+Parent: "38c657c6-1430-424a-add2-f2f8183df307"
+Template: "1812bf3e-6bdd-466d-99b2-0d7cebb020fc"
+Path: "/sitecore/content/public-sector/suffolk-county/Home/personal/borrowing/Data/Two Column CTA 1"
+SharedFields:
+- ID: "168fed07-0f41-44f5-a14e-f134e16b1477"
+  Hint: Image1
+  Value: |
+    <image mediaid="E935FC23-FBD8-4624-8F8B-68B978FE4E29" alt="Credit card on top of cash" height="" width="" hspace="" vspace="" />
+- ID: "41c85ac6-5f19-48ac-9dfb-e81d5f1450f6"
+  Hint: Image2
+  Value: |
+    <image mediaid="56172B57-DEA0-42CF-8C3B-5BA7C55DA6BC" />
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: "-100"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "2ac4a086-bb71-47e9-8620-230b8d51df15"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251030T165631Z
+    - ID: "301fab64-5268-445d-8380-6b43861bb434"
+      Hint: Link1
+      Value: |
+        <link class="" id="{4FCCD41E-82F8-48B4-9B77-6C6B497A8796}" querystring="" anchor="" target="" title="" linktype="internal" text="Sign up today" url="/public-sector/suffolk-county/Home/personal/borrowing/credit-cards" />
+    - ID: "4e43fdc3-7a40-469c-a93a-231545ee01e9"
+      Hint: Title1
+      Value: Credit cards
+    - ID: "53845417-9058-4342-90a9-50783ffd8c25"
+      Hint: Link2
+      Value: |
+        <link class="" id="{0E1DB560-60D6-4C66-BB05-EB34FAD73F3D}" querystring="" anchor="" target="" title="" linktype="internal" text="Apply now" url="/public-sector/suffolk-county/Home/personal/borrowing/line-of-credit" />
+    - ID: "56a3b6a6-bd8b-4d2e-a86d-f791169ebe7b"
+      Hint: Title2
+      Value: Line of credit
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5eacc805-137b-41d5-a43c-67d981abf6f9"
+      Hint: Text1
+      Value: Unlock a world of possibilities today with our premium credit card offerings.
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "0f44c54f-61a9-4e3d-af52-fe8aaf5f9fad"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140728Z
+    - ID: "eeb59bf3-72d2-4e49-9a37-3902b7a236a9"
+      Hint: Text2
+      Value: Gain access to funds whenever you need them with our versatile personal line of credit.
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251030T165631Z
+    - ID: "301fab64-5268-445d-8380-6b43861bb434"
+      Hint: Link1
+      Value: |
+        <link class="" querystring="" id="{4FCCD41E-82F8-48B4-9B77-6C6B497A8796}" anchor="" target="" title="" linktype="internal" text="Regístrate hoy" url="/public-sector/suffolk-county/Home/personal/borrowing/credit-cards" />
+    - ID: "4e43fdc3-7a40-469c-a93a-231545ee01e9"
+      Hint: Title1
+      Value: Tarjetas de crédito
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "53845417-9058-4342-90a9-50783ffd8c25"
+      Hint: Link2
+      Value: |
+        <link class="" querystring="" id="{0E1DB560-60D6-4C66-BB05-EB34FAD73F3D}" anchor="" target="" title="" linktype="internal" text="Solicítalo ahora" url="/public-sector/suffolk-county/Home/personal/borrowing/line-of-credit" />
+    - ID: "56a3b6a6-bd8b-4d2e-a86d-f791169ebe7b"
+      Hint: Title2
+      Value: Línea de crédito
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5eacc805-137b-41d5-a43c-67d981abf6f9"
+      Hint: Text1
+      Value: Descubre hoy un mundo de posibilidades con nuestra oferta premium de tarjetas de crédito.
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "6bcf676e-0f0b-4139-a768-fe0e392cd977"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T184509Z
+    - ID: "eeb59bf3-72d2-4e49-9a37-3902b7a236a9"
+      Hint: Text2
+      Value: Accede a fondos siempre que los necesites con nuestra versátil línea de crédito personal.
+- Language: "fr-CA"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251030T165631Z
+    - ID: "301fab64-5268-445d-8380-6b43861bb434"
+      Hint: Link1
+      Value: |
+        <link class="" id="{4FCCD41E-82F8-48B4-9B77-6C6B497A8796}" querystring="" anchor="" target="" title="" linktype="internal" text="Abonnez-vous" url="/public-sector/suffolk-county/Home/personal/borrowing/credit-cards" />
+    - ID: "4e43fdc3-7a40-469c-a93a-231545ee01e9"
+      Hint: Title1
+      Value: Cartes de crédit
+    - ID: "53845417-9058-4342-90a9-50783ffd8c25"
+      Hint: Link2
+      Value: |
+        <link class="" id="{0E1DB560-60D6-4C66-BB05-EB34FAD73F3D}" querystring="" anchor="" target="" title="" linktype="internal" text="Faites votre demande" url="/public-sector/suffolk-county/Home/personal/borrowing/line-of-credit" />
+    - ID: "56a3b6a6-bd8b-4d2e-a86d-f791169ebe7b"
+      Hint: Title2
+      Value: Ligne de crédit
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5eacc805-137b-41d5-a43c-67d981abf6f9"
+      Hint: Text1
+      Value: Débloquez un monde de possibilités dès aujourd'hui avec nos offres de cartes de crédit premium.
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ea632b82-964c-43c7-9d29-921fff6cffd6"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140728Z
+    - ID: "eeb59bf3-72d2-4e49-9a37-3902b7a236a9"
+      Hint: Text2
+      Value: Accédez à des fonds quand vous en avez besoin avec notre ligne de crédit personnelle polyvalente.
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251030T165631Z
+    - ID: "301fab64-5268-445d-8380-6b43861bb434"
+      Hint: Link1
+      Value: |
+        <link class="" id="{4FCCD41E-82F8-48B4-9B77-6C6B497A8796}" querystring="" anchor="" target="" title="" linktype="internal" text="今すぐ登録" url="/public-sector/suffolk-county/Home/personal/borrowing/credit-cards" />
+    - ID: "4e43fdc3-7a40-469c-a93a-231545ee01e9"
+      Hint: Title1
+      Value: クレジットカード
+    - ID: "53845417-9058-4342-90a9-50783ffd8c25"
+      Hint: Link2
+      Value: |
+        <link class="" id="{0E1DB560-60D6-4C66-BB05-EB34FAD73F3D}" querystring="" anchor="" target="" title="" linktype="internal" text="今すぐ申し込む" url="/public-sector/suffolk-county/Home/personal/borrowing/line-of-credit" />
+    - ID: "56a3b6a6-bd8b-4d2e-a86d-f791169ebe7b"
+      Hint: Title2
+      Value: 信用枠
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5eacc805-137b-41d5-a43c-67d981abf6f9"
+      Hint: Text1
+      Value: プレミアム・クレジットカードで、今すぐ可能性の扉を開きましょう。
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "5620b7fe-5cd2-4bed-8b9c-511730dd67c7"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140728Z
+    - ID: "eeb59bf3-72d2-4e49-9a37-3902b7a236a9"
+      Hint: Text2
+      Value: 多目的にご利用いただける個人向け融資枠で、必要なときにいつでも資金をご利用いただけます。

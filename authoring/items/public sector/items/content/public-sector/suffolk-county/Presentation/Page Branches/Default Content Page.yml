@@ -1,0 +1,161 @@
+﻿---
+ID: "67d5b340-5fd9-4cde-bbdc-1e69cf44ccb2"
+Parent: "ab4bc843-fd5e-4ae2-a57a-d31b7011a7e2"
+Template: "fbc802e5-4b9e-480f-93da-3f2a80cae5cb"
+Path: "/sitecore/content/public-sector/suffolk-county/Presentation/Page Branches/Default Content Page"
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+- ID: "bb3391dd-f8be-4b2e-ae9f-47bb63c166ce"
+  Hint: Rule
+  Value: |
+    <ruleset>
+      <rule
+        uid="{8C8DE469-540C-4410-B109-583B8951B468}">
+        <conditions>
+          <and
+            uid="F5CEC1E956A1482C90CA6ED0B7A33622">
+            <condition
+              id="{7D5DA661-BEF9-441C-B1F7-D80DE3E0972F}"
+              uid="2DEC1D095877488B92952D70064537E4"
+              itemid="{7C5E2AD1-8CD7-4C56-8F43-5A88030DD954}" />
+            <and
+              uid="391E23DE4F9640119366D39536A697D9">
+              <condition
+                id="{7D5DA661-BEF9-441C-B1F7-D80DE3E0972F}"
+                uid="1A54C42B142C478197BD59BD2F74F038"
+                except="true"
+                itemid="{0BB3CB38-B1B3-4B35-A098-EF2DBEFA76E1}" />
+              <and
+                uid="492C9A417DA0486283034F6AFB0970C2">
+                <condition
+                  id="{7D5DA661-BEF9-441C-B1F7-D80DE3E0972F}"
+                  uid="5E0B6418E58A400EAC85B8A58F5423CD"
+                  except="true"
+                  itemid="{DC49AABA-2F19-4046-8AD0-F2D76ED354BA}" />
+                <and
+                  uid="FBE8FAE465074812932B210ED5437846">
+                  <condition
+                    id="{7D5DA661-BEF9-441C-B1F7-D80DE3E0972F}"
+                    uid="241C42921F804BDF9E7373544A79E9FB"
+                    except="true"
+                    itemid="{D6752182-A82B-4EBA-87CB-324D4E881DA6}" />
+                  <and
+                    uid="C8B8E46987DB4410967CC564F850B38B">
+                    <condition
+                      id="{7D5DA661-BEF9-441C-B1F7-D80DE3E0972F}"
+                      uid="F4E576622445425E954ED733A3E407AB"
+                      except="true"
+                      itemid="{2A68EB56-D4B5-4003-A0C7-0E7DC498D1EE}" />
+                    <condition
+                      id="{7D5DA661-BEF9-441C-B1F7-D80DE3E0972F}"
+                      uid="96B170E9A8424F21A2EE397E6B597E9E"
+                      except="true"
+                      itemid="{D57549FA-EE90-4779-8EE1-7B2F45CC2117}" />
+                  </and>
+                </and>
+              </and>
+            </and>
+          </and>
+        </conditions>
+        <actions>
+          <action
+            id="{D46EC8E5-7B46-47DE-B44A-4C5C30EF48D1}"
+            uid="5756E57FF81043F28781CB0228669C48"
+            PageBranchId="{294035BA-FA3D-42EA-A781-F8F0F6C72C02}" />
+        </actions>
+      </rule>
+    </ruleset>
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "8dbb2911-2b2f-4c83-b0b8-028232285209"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140056Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "cb586b5f-47aa-4e6f-abd0-fe87f5ea2b27"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140141Z
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140056Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d3512920-91a5-47d8-b088-6d0905323cdc"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T184300Z
+- Language: "fr-CA"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140142Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "abbed4b2-ad88-4540-a8bc-c83b11f587d7"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140142Z
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140141Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "db4d15fc-b7b0-4445-8d64-f2658ea5d006"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140142Z

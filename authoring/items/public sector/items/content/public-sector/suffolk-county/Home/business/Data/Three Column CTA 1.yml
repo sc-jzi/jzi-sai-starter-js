@@ -1,0 +1,239 @@
+﻿---
+ID: "b7b23250-3362-4e5d-acf2-987dfefa0743"
+Parent: "ba36197d-a50a-4980-a9b6-154223e222c7"
+Template: "148d07ba-f923-4fb2-8907-0bd440d5db44"
+Path: "/sitecore/content/public-sector/suffolk-county/Home/business/Data/Three Column CTA 1"
+SharedFields:
+- ID: "39b3d592-0895-4f30-9c17-454b171f0b2e"
+  Hint: Image3
+  Value: |
+    <image mediaid="{677BC17E-E370-4F50-B63D-D6AEE850DA8D}" alt="Top view of a person writing in notebook" height="" width="" hspace="" vspace="" />
+- ID: "39fe4fb3-3794-4b9a-a584-ff877e93e33b"
+  Hint: Image2
+  Value: |
+    <image mediaid="{640EA830-DE57-4BBD-9BCB-3520D89E1231}" alt="Woman standing in front of ATM" height="" width="" hspace="" vspace="" />
+- ID: "c511247c-fec1-4690-81d6-ce791da18d4a"
+  Hint: Image1
+  Value: |
+    <image mediaid="{A184B4F7-3F50-40AB-AE5E-BCA8CCF8B704}" alt="Person holding mobile payment tablet" height="" width="" hspace="" vspace="" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "679de59e-12b8-4ea0-802f-cd2d04c4f112"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "0a10d09c-166b-464e-99cb-4401b527f3f2"
+      Hint: Link2
+      Value: |
+        <link class="" querystring="" id="49B84222-8160-47CD-B988-04F7909074C5" anchor="" target="" title="" linktype="internal" text="Get started" url="/public-sector/suffolk-county/Home/business/international-banking" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251030T165632Z
+    - ID: "2731b4d6-b866-466a-9731-5161788d662b"
+      Hint: SubText2
+      Value: Receive and make international payments from 70+ countries.
+    - ID: "277e3acc-b359-4c11-88b9-4016574419dc"
+      Hint: Link3
+      Value: |
+        <link class="" querystring="" id="C0B3B929-2146-489B-ABF8-2E852FF538A1" anchor="" target="" title="" linktype="internal" text="Get started" url="/public-sector/suffolk-county/Home/business/employee-management" />
+    - ID: "34f6d379-9a96-4cb8-839f-0d224a4f6db1"
+      Hint: Text2
+      Value: International banking
+    - ID: "4c50be2f-021e-4846-abb0-50feb2df5eed"
+      Hint: SubText1
+      Value: Loans for that make sense for your small business.
+    - ID: "5264d7eb-64cd-4203-98e5-a4d0380f57e6"
+      Hint: Text1
+      Value: Small business loans
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5eb6058f-3f45-4dd4-8153-8c74390859f4"
+      Hint: Text3
+      Value: Employee management
+    - ID: "63e1abec-67cb-4aea-ab72-8b5b60b69473"
+      Hint: Link1
+      Value: |
+        <link class="" querystring="" id="13805B3A-4A8C-4873-81B5-1CBBF163D977" anchor="" target="" title="" linktype="internal" text="Get started" url="/public-sector/suffolk-county/Home/business/small-business-loans" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "89e30f2d-d474-4e80-b052-276c724f051f"
+    - ID: "a3a36b2d-a20b-4344-9f1d-ad867cb99aa4"
+      Hint: SubText3
+      Value: Simplify payroll and focus on the success of your business.
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140729Z
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "0a10d09c-166b-464e-99cb-4401b527f3f2"
+      Hint: Link2
+      Value: |
+        <link class="" id="49B84222-8160-47CD-B988-04F7909074C5" querystring="" anchor="" target="" title="" linktype="internal" text="Comenzar" url="/public-sector/suffolk-county/Home/business/international-banking" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251030T165632Z
+    - ID: "2731b4d6-b866-466a-9731-5161788d662b"
+      Hint: SubText2
+      Value: Reciba y realice pagos internacionales desde más de 70 países.
+    - ID: "277e3acc-b359-4c11-88b9-4016574419dc"
+      Hint: Link3
+      Value: |
+        <link class="" id="C0B3B929-2146-489B-ABF8-2E852FF538A1" querystring="" anchor="" target="" title="" linktype="internal" text="Comenzar" url="/public-sector/suffolk-county/Home/business/employee-management" />
+    - ID: "34f6d379-9a96-4cb8-839f-0d224a4f6db1"
+      Hint: Text2
+      Value: Banca internacional
+    - ID: "4c50be2f-021e-4846-abb0-50feb2df5eed"
+      Hint: SubText1
+      Value: Préstamos que tienen sentido para su pequeña empresa.
+    - ID: "5264d7eb-64cd-4203-98e5-a4d0380f57e6"
+      Hint: Text1
+      Value: Préstamos para pequeñas empresas
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5eb6058f-3f45-4dd4-8153-8c74390859f4"
+      Hint: Text3
+      Value: Gestión de empleados
+    - ID: "63e1abec-67cb-4aea-ab72-8b5b60b69473"
+      Hint: Link1
+      Value: |
+        <link class="" id="13805B3A-4A8C-4873-81B5-1CBBF163D977" querystring="" anchor="" target="" title="" linktype="internal" text="Comenzar" url="/public-sector/suffolk-county/Home/business/small-business-loans" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "28beac13-87dd-45f3-b4e1-2c3beb4cfb2b"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "a3a36b2d-a20b-4344-9f1d-ad867cb99aa4"
+      Hint: SubText3
+      Value: Simplifique la gestión de nóminas y céntrese en el éxito de su empresa.
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T184324Z
+- Language: "fr-CA"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0a10d09c-166b-464e-99cb-4401b527f3f2"
+      Hint: Link2
+      Value: |
+        <link class="" querystring="" id="49B84222-8160-47CD-B988-04F7909074C5" anchor="" target="" title="" linktype="internal" text="Commencez" url="/public-sector/suffolk-county/Home/business/international-banking" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251030T165632Z
+    - ID: "2731b4d6-b866-466a-9731-5161788d662b"
+      Hint: SubText2
+      Value: Recevez et effectuez des paiements internationaux depuis plus de 70 pays.
+    - ID: "277e3acc-b359-4c11-88b9-4016574419dc"
+      Hint: Link3
+      Value: |
+        <link class="" querystring="" id="C0B3B929-2146-489B-ABF8-2E852FF538A1" anchor="" target="" title="" linktype="internal" text="Commencez" url="/public-sector/suffolk-county/Home/business/employee-management" />
+    - ID: "34f6d379-9a96-4cb8-839f-0d224a4f6db1"
+      Hint: Text2
+      Value: Services bancaires internationaux
+    - ID: "4c50be2f-021e-4846-abb0-50feb2df5eed"
+      Hint: SubText1
+      Value: Des prêts qui ont du sens pour votre petite entreprise.
+    - ID: "5264d7eb-64cd-4203-98e5-a4d0380f57e6"
+      Hint: Text1
+      Value: Prêts pour petites encreprises
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5eb6058f-3f45-4dd4-8153-8c74390859f4"
+      Hint: Text3
+      Value: Gestion des employés
+    - ID: "63e1abec-67cb-4aea-ab72-8b5b60b69473"
+      Hint: Link1
+      Value: |
+        <link class="" querystring="" id="13805B3A-4A8C-4873-81B5-1CBBF163D977" anchor="" target="" title="" linktype="internal" text="Commencez" url="/public-sector/suffolk-county/Home/business/small-business-loans" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ccb931e0-e7bf-470d-8e51-d469aada6b3c"
+    - ID: "a3a36b2d-a20b-4344-9f1d-ad867cb99aa4"
+      Hint: SubText3
+      Value: "Simplifiez la paie et concentrez-vous sur la réussite de votre entreprise."
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140730Z
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "0a10d09c-166b-464e-99cb-4401b527f3f2"
+      Hint: Link2
+      Value: |
+        <link class="" id="{49B84222-8160-47CD-B988-04F7909074C5}" querystring="" anchor="" target="" title="" linktype="internal" text="はじめる" url="/public-sector/suffolk-county/Home/business/international-banking" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251030T165632Z
+    - ID: "2731b4d6-b866-466a-9731-5161788d662b"
+      Hint: SubText2
+      Value: 70カ国以上からの国際的な支払いを受け取り、行うことができます。
+    - ID: "277e3acc-b359-4c11-88b9-4016574419dc"
+      Hint: Link3
+      Value: |
+        <link class="" id="{C0B3B929-2146-489B-ABF8-2E852FF538A1}" querystring="" anchor="" target="" title="" linktype="internal" text="はじめる" url="/public-sector/suffolk-county/Home/business/employee-management" />
+    - ID: "34f6d379-9a96-4cb8-839f-0d224a4f6db1"
+      Hint: Text2
+      Value: インターナショナル・バンキング
+    - ID: "4c50be2f-021e-4846-abb0-50feb2df5eed"
+      Hint: SubText1
+      Value: 中小企業にとって意味のある融資。
+    - ID: "5264d7eb-64cd-4203-98e5-a4d0380f57e6"
+      Hint: Text1
+      Value: 中小企業向けローン
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5eb6058f-3f45-4dd4-8153-8c74390859f4"
+      Hint: Text3
+      Value: 従業員管理
+    - ID: "63e1abec-67cb-4aea-ab72-8b5b60b69473"
+      Hint: Link1
+      Value: |
+        <link class="" id="{13805B3A-4A8C-4873-81B5-1CBBF163D977}" querystring="" anchor="" target="" title="" linktype="internal" text="はじめる" url="/public-sector/suffolk-county/Home/business/small-business-loans" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "9c365f1e-8e7d-43e8-825e-25c97124505a"
+    - ID: "a3a36b2d-a20b-4344-9f1d-ad867cb99aa4"
+      Hint: SubText3
+      Value: 給与計算を簡素化し、ビジネスの成功に集中しましょう。
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140730Z

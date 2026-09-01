@@ -1,0 +1,204 @@
+﻿---
+ID: "78524933-17c0-468c-b675-35472f37cd9f"
+Parent: "d57549fa-ee90-4779-8ee1-7b2f45cc2117"
+Template: "aad350f5-9331-4d71-a942-e3643653c028"
+Path: "/sitecore/content/public-sector/suffolk-county/Home/authors/Josephine Baxter"
+SharedFields:
+- ID: "2404bb97-b42a-439a-be76-de66213cb281"
+  Hint: BackgroundImage
+  Value: |
+    <image mediaid="{6CE63931-EDFF-4A3F-BA4C-CE1D4FC1DA81}" alt="Newspaper image" height="" width="" hspace="" vspace="" />
+- ID: "6be59cd8-74bd-4c67-b611-e81e140679b4"
+  Hint: Photo
+  Value: |
+    <image mediaid="{1719F573-C4DE-4B31-BA0D-96E7CDA58EF2}" alt="Josephine Author Bio" height="" width="" hspace="" vspace="" />
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{E9B6C600-C6E8-4867-BCB7-8B0DC5F19840}"
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{5526977E-3EC3-4E11-BC1C-81FC0FDA2EE3}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "fd4be19e-035d-422d-b80e-3da3f5b09296"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140049Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{171CCFD4-8543-428E-9A9B-8E6557E63B6D}"
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Josephine Baxter
+    - ID: "524c9c82-80d5-4d65-b7e3-4dd0e365b762"
+      Hint: Position
+      Value: Investment Specialist
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "40a23496-b5e8-47a8-8d09-850bfddc4253"
+    - ID: "97b19c3f-9341-48ac-be54-22e1caaa1d48"
+      Hint: Bio
+      Value: <p>Josephine specializes in helping clients grow and protect their wealth through strategic investment planning. With a background in asset management and financial advisory services, she provides clients with personalized investment strategies and guidance to navigate today's complex financial markets.</p>
+    - ID: "996749ca-6a47-463d-a759-7db65676f179"
+      Hint: Name
+      Value: Josephine Baxter
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140229Z
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "229e3024-997c-4fe7-9fcd-bfcc657da145"
+      Hint: SocialIcon3
+      Value: |
+        <image mediaid="{D7668912-4C04-4881-8C8B-3EEDBC4277A6}" alt="twitter" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140049Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{171CCFD4-8543-428E-9A9B-8E6557E63B6D}"
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Josephine Baxter
+    - ID: "524c9c82-80d5-4d65-b7e3-4dd0e365b762"
+      Hint: Position
+      Value: Especialista en inversiones
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "612e1483-8de4-4fa8-adc5-1a0663b4788f"
+      Hint: SocialIcon1
+      Value: |
+        <image mediaid="{37E8F17D-5AA1-4AF4-9CB1-45C4F07BDD4C}" alt="facebook" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "7232c9b4-b48a-4638-b122-20839f67f861"
+    - ID: "97b19c3f-9341-48ac-be54-22e1caaa1d48"
+      Hint: Bio
+      Value: <p>Josephine se especializa en ayudar a sus clientes a hacer crecer y proteger su patrimonio mediante una planificación estratégica de inversiones. Con experiencia en gestión de activos y servicios de asesoramiento financiero, ofrece a sus clientes estrategias de inversión personalizadas y orientación para desenvolverse en los complejos mercados financieros actuales.</p>
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "996749ca-6a47-463d-a759-7db65676f179"
+      Hint: Name
+      Value: Josephine Baxter
+    - ID: "a5c03008-537d-481f-834d-e1e89d12c304"
+      Hint: SocialLink1
+      Value: |
+        <link linktype="external" url="http://www.facebook.com" anchor="" target="" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "bdbbe5c9-d950-444c-90cd-a00674c10b0b"
+      Hint: SocialLink2
+      Value: |
+        <link linktype="external" url="http://www.instagram.com" anchor="" target="" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T184242Z
+    - ID: "e2e9b7ce-f57c-4752-99e5-b0d56e3c8864"
+      Hint: SocialIcon2
+      Value: |
+        <image mediaid="{B5E0C7F5-5693-4875-B68F-70B99E7F34EF}" alt="instagram" />
+    - ID: "f7c9be6b-b582-453b-a9f9-add8c74ac508"
+      Hint: SocialLink3
+      Value: |
+        <link linktype="external" url="http://www.twitter.com" anchor="" target="" />
+- Language: "fr-CA"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140229Z
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Josephine Baxter
+    - ID: "524c9c82-80d5-4d65-b7e3-4dd0e365b762"
+      Hint: Position
+      Value: Spécialiste en investissements
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "469887b2-c23a-467a-9589-7b69dbd4c5d0"
+    - ID: "97b19c3f-9341-48ac-be54-22e1caaa1d48"
+      Hint: Bio
+      Value: <p>Josephine est spécialisée dans l'aide aux clients pour la croissance et la protection de leur patrimoine grâce à une planification stratégique des investissements. Avec une expérience en gestion d'actifs et en services de conseil financier, elle offre aux clients des stratégies d'investissement personnalisées et des conseils pour naviguer dans les marchés financiers complexes d'aujourd'hui.</p>
+    - ID: "996749ca-6a47-463d-a759-7db65676f179"
+      Hint: Name
+      Value: Josephine Baxter
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140229Z
+- Language: "ja-JP"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: ジョセフィン・バクスター
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140229Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{171CCFD4-8543-428E-9A9B-8E6557E63B6D}"
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: ジョセフィン・バクスター
+    - ID: "524c9c82-80d5-4d65-b7e3-4dd0e365b762"
+      Hint: Position
+      Value: 製品スペシャリスト
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "75ccf7cd-0e4f-401f-a8b0-ae62b9f2b60c"
+    - ID: "97b19c3f-9341-48ac-be54-22e1caaa1d48"
+      Hint: Bio
+      Value: <p>ジョセフィンは、戦略的な投資計画を通じて、顧客の富の増大と保護を支援することを専門としている。 資産運用とファイナンシャル・アドバイザリー・サービスの経験を生かし、今日の複雑な金融市場をナビゲートするため、クライアントに個別の投資戦略とガイダンスを提供している。</p>
+    - ID: "996749ca-6a47-463d-a759-7db65676f179"
+      Hint: Name
+      Value: ジョセフィン・バクスター
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140229Z

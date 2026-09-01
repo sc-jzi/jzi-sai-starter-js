@@ -1,0 +1,38 @@
+﻿---
+ID: "cbd321bf-a892-4633-90e7-fdd340ec5392"
+Parent: "15d318bc-0bd0-4daa-b1d7-4eb17e918a66"
+Template: "1105b8f8-1e00-426b-bf1f-c840742d827b"
+Path: "/sitecore/content/public-sector/mns/Presentation/Page Designs/Article Page"
+SharedFields:
+- ID: "0966b999-0d0e-4278-acc9-9da69d461fe6"
+  Hint: PartialDesigns
+  Value: "{2D785F26-D5C7-40FC-9E0F-0833761AD649}|{1645F6E7-19C0-4729-9C87-3E807DC4C21E}|{F5DDDDB4-A3D8-4034-9E44-324EB88A5ED6}"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{C426F189-4D94-4D25-BCF8-80997C8C22A1}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "ccbe2d7a-cf18-4532-a76a-05982ad4f227"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260831T193753Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "1caaabf7-f413-4a9b-9e7e-2f686856f928"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260831T194006Z

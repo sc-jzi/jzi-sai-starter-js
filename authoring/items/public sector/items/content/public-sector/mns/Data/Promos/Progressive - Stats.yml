@@ -1,0 +1,58 @@
+﻿---
+ID: "21bb8822-be2b-4056-ad49-e880ffaf687c"
+Parent: "66586918-dbec-473f-9c23-e7b177ab679c"
+Template: "c24bfc74-c6e2-413a-aebd-903180dfaff7"
+Path: "/sitecore/content/public-sector/mns/Data/Promos/Progressive - Stats"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260707T194918Z
+    - ID: "375bdefa-68a4-4da9-aaa9-fe47bb5fb441"
+      Hint: Value1
+      Value: 900
+    - ID: "3d96d269-32ef-4ebb-b651-e7ec45497c93"
+      Hint: Caption1
+      Value: Average annual savings for drivers who switch to Progressive and save
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "56884586-c14f-4b35-83c8-e1c1650c7b36"
+      Hint: Value3
+      Value: 24
+    - ID: "5935d1eb-46d7-4a5f-936a-73d3235fe72a"
+      Hint: Symbol1
+      Value: $+
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "85a01e7b-ef09-4fe4-aa43-d7258be4ee38"
+    - ID: "a5f0268c-d355-4872-9411-c869ad9a1267"
+      Hint: Caption3
+      Value: Day or night customer support for all your questions and concerns
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "cc0eff80-a988-4cca-9dbc-5d0688781148"
+      Hint: Value2
+      Value: 43
+    - ID: "d12ed4b9-522e-42b3-b77c-ecd0e59e084f"
+      Hint: Symbol3
+      Value: /7/365
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260707T194918Z
+    - ID: "edf8ebc1-a19b-4a1b-b707-c4434c7e17bc"
+      Hint: Symbol2
+      Value: million+
+    - ID: "f3ee3553-9d93-4d8e-89e9-7a9050c97a5a"
+      Hint: Caption2
+      Value: People trust us to insure what's important to them

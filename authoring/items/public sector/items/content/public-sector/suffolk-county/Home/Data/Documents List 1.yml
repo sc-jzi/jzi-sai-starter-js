@@ -1,0 +1,191 @@
+﻿---
+ID: "a83728f2-2082-46cb-8ecb-ebb8c3e10337"
+Parent: "de4b75b6-2e36-40ea-b2b5-eb952542956e"
+Template: "bc79b430-f5e0-4363-83f8-5fb8ccd79c61"
+Path: "/sitecore/content/public-sector/suffolk-county/Home/Data/Documents List 1"
+SharedFields:
+- ID: "0bba1dd8-0978-4359-b817-15b65886ba06"
+  Hint: Image2
+  Value: |
+    <image mediaid="{941B5F75-A659-41D3-A43A-DC2B498A3838}" alt="file_icon" height="" width="" hspace="" vspace="" />
+- ID: "1a120861-bc28-4699-adef-abbdfb67bf05"
+  Hint: Image1
+  Value: |
+    <image mediaid="{941B5F75-A659-41D3-A43A-DC2B498A3838}" alt="file_icon" height="" width="" hspace="" vspace="" />
+- ID: "8afcdc7d-211b-4136-94f5-f158a0fd0fd9"
+  Hint: Image3
+  Value: |
+    <image mediaid="{941B5F75-A659-41D3-A43A-DC2B498A3838}" alt="file_icon" height="" width="" hspace="" vspace="" />
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 1900
+- ID: "c6019204-c52e-4650-8875-b19e2482cd76"
+  Hint: Image4
+  Value: |
+    <image mediaid="{941B5F75-A659-41D3-A43A-DC2B498A3838}" alt="file_icon" height="" width="" hspace="" vspace="" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "bde63311-e78d-4fec-8d77-91e4d1a505d2"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140040Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "672bdbf7-d6e3-4402-acb9-3f7dbff67e94"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140220Z
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "22ed4827-cc6b-4a00-a358-0ccfadbea4eb"
+      Hint: Link3
+      Value: |
+        <link class="" anchor="shareholders" title="" linktype="anchor" text="Información sobre el tratamiento de datos personales de los accionistas de DSK Bank" url="shareholders" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140040Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "67fdca76-8a62-4424-a499-236787bd226c"
+      Hint: Subtitle2
+      Value: Archivo PDF
+    - ID: "742e047d-3a1f-4643-ae1e-c78847a8b700"
+      Hint: Subtitle1
+      Value: Archivo PDF
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "7474cc58-a573-4dff-bc6b-45c4ddda7eb3"
+    - ID: "926c0ca9-eaa5-468e-919e-de8c15876439"
+      Hint: Subtitle3
+      Value: Archivo PDF
+    - ID: "95989e20-ee37-47bf-bae1-1dedf4d57a1a"
+      Hint: Link4
+      Value: |
+        <link class="" anchor="data-protection" title="" linktype="anchor" text="Protección de datos de personas físicas de Play! Finance" url="data-protection" />
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "b2d03f41-06ad-4238-bcf2-7055674ea2a6"
+      Hint: Subtitle4
+      Value: Archivo PDF
+    - ID: "b39d2c2c-ff8b-49f4-9856-03c1d163decf"
+      Hint: Link2
+      Value: |
+        <link class="" anchor="bank" title="" linktype="anchor" text="Plantilla de referencia bancaria" url="bank" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "be4d4a97-19b9-4d92-a28e-38e5b09c2bc4"
+      Hint: Link1
+      Value: |
+        <link class="" anchor="gdpr" title="" linktype="anchor" text="Formulario de solicitud para el ejercicio de un derecho en virtud del Reglamento General de Protección de Datos" url="gdpr" />
+    - ID: "c02be9a2-0c6f-47a8-b6c8-2c35f1946946"
+      Hint: Title1
+      Value: Documentos
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T184200Z
+- Language: "fr-CA"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "22ed4827-cc6b-4a00-a358-0ccfadbea4eb"
+      Hint: Link3
+      Value: |
+        <link text="Informations concernant le traitement des données personnelles des actionnaires de la DSK Bank" linktype="anchor" url="shareholders" anchor="shareholders" title="" class="" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140220Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "67fdca76-8a62-4424-a499-236787bd226c"
+      Hint: Subtitle2
+      Value: Fichier PDF
+    - ID: "742e047d-3a1f-4643-ae1e-c78847a8b700"
+      Hint: Subtitle1
+      Value: Fichier PDF
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "3d757fba-1af3-4aea-88c4-cecec20368d2"
+    - ID: "926c0ca9-eaa5-468e-919e-de8c15876439"
+      Hint: Subtitle3
+      Value: Fichier PDF
+    - ID: "95989e20-ee37-47bf-bae1-1dedf4d57a1a"
+      Hint: Link4
+      Value: |
+        <link text=" Protection des données personnelles des particuliers chez Play! financier" linktype="anchor" url="data-protection" anchor="data-protection" title="" class="" />
+    - ID: "b2d03f41-06ad-4238-bcf2-7055674ea2a6"
+      Hint: Subtitle4
+      Value: Fichier PDF
+    - ID: "b39d2c2c-ff8b-49f4-9856-03c1d163decf"
+      Hint: Link2
+      Value: |
+        <link text="Référence bancaire - Modèle" linktype="anchor" url="bank" anchor="bank" title="" class="" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "be4d4a97-19b9-4d92-a28e-38e5b09c2bc4"
+      Hint: Link1
+      Value: |
+        <link text="Formulaire de demande d'exercice d'un droit en vertu du Règlement général sur la protection des données" linktype="anchor" url="gdpr" anchor="gdpr" title="" class="" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140220Z
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140220Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "67fdca76-8a62-4424-a499-236787bd226c"
+      Hint: Subtitle2
+      Value: PDF ファイル
+    - ID: "742e047d-3a1f-4643-ae1e-c78847a8b700"
+      Hint: Subtitle1
+      Value: PDF ファイル
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a94dad1a-94c5-42db-a4bf-cdf94c872e6a"
+    - ID: "926c0ca9-eaa5-468e-919e-de8c15876439"
+      Hint: Subtitle3
+      Value: PDF ファイル
+    - ID: "b2d03f41-06ad-4238-bcf2-7055674ea2a6"
+      Hint: Subtitle4
+      Value: PDF ファイル
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140220Z

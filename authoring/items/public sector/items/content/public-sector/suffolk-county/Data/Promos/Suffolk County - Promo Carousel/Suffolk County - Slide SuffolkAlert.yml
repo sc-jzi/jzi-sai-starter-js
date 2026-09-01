@@ -1,0 +1,87 @@
+﻿---
+ID: "62bbcd5d-e074-43c0-ac3e-d2c87c1420bd"
+Parent: "99f0e1f7-d269-49a1-9e9c-25a46ee47eb0"
+Template: "90d315e8-aa42-4b23-a7eb-4491396453f8"
+Path: "/sitecore/content/public-sector/suffolk-county/Data/Promos/Suffolk County - Promo Carousel/Suffolk County - Slide SuffolkAlert"
+SharedFields:
+- ID: "3ed91913-9018-4580-a112-9cb5b921fcca"
+  Hint: Image
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/95821-slide-alert?v=dfc457f6" dam-id="8hdg3BwXTR22X1CeSh03gQ" width="1501" height="450" alt="SuffolkAlert Emergency Notification System" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/95821/thumbnail" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "6ef0b5db-38cc-4d23-a4a9-a9df22cf761f"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T151140Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "79539e6c-b1a6-4b0e-9995-ab273336f3e5"
+    - ID: "8ff063ab-c9f1-4628-a0b1-2afb5e7f5560"
+      Hint: Link
+      Value: |
+        <link text="Get Started" linktype="external" url="https://suffolkcountyny.gov/alerts" anchor="" class="" title="" target="" querystring="" />
+    - ID: "a3cbbb91-442e-441c-a6e2-5896c19d8711"
+      Hint: Text
+      Value: <p>Sign up to receive emergency alerts and notifications via phone call, text message, and email.</p>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T151140Z
+    - ID: "f44602f9-172c-4987-aaf6-1fb2ab0f75a1"
+      Hint: Title
+      Value: SuffolkAlert Emergency Notification System
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T151140Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "3e627d34-77f3-48a3-b05c-bc5f65928607"
+    - ID: "8ff063ab-c9f1-4628-a0b1-2afb5e7f5560"
+      Hint: Link
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="Comenzar" url="https://suffolkcountyny.gov/alerts" />
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "a3cbbb91-442e-441c-a6e2-5896c19d8711"
+      Hint: Text
+      Value: <p>Regístrese para recibir alertas y notificaciones de emergencia por llamada telefónica, mensaje de texto y correo electrónico.</p>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T184427Z
+    - ID: "f44602f9-172c-4987-aaf6-1fb2ab0f75a1"
+      Hint: Title
+      Value: Sistema de notificación de emergencias SuffolkAlert

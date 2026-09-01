@@ -1,0 +1,153 @@
+﻿---
+ID: "36e2dc59-e379-46d7-bfbb-53fc526077a1"
+Parent: "bed76211-4d10-4440-b09d-dd7c7d57c5f0"
+Template: "3b41d9fc-0edf-48e1-966c-e260339ba815"
+Path: "/sitecore/content/public-sector/suffolk-county/Data/Promos/Five Column CTA/Suffolk County - Featured Services"
+SharedFields:
+- ID: "3b0a6484-9ce0-4386-b2b3-5792c0db7b72"
+  Hint: Image3
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/95864-featured-opendata?v=f600d620" dam-id="CHHBHbYuQfq1pNazZ4tf8g" width="328" height="220" alt="Suffolk County Open Data" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/95864/thumbnail" />
+- ID: "4301130a-505e-4a6d-ba47-f783d47a1750"
+  Hint: Image2
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/95852-featured-fire?v=b77211ac" dam-id="2Av3ZnRFSu2OongBXGBZpw" width="328" height="220" alt="Volunteer Firefighter or EMS" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/95852/thumbnail" />
+- ID: "c5d0b517-0ed6-4cd4-9354-8adf7a04bc7d"
+  Hint: Image4
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/95874-featured-alert?v=10ff2be6" dam-id="-45ZSCgJSOWBrlvD9G3hqA" width="656" height="440" alt="SuffolkAlert" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/95874/thumbnail" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "2bc605de-f78c-49de-b00a-dfd3509f6ed9"
+- ID: "df3b6320-8a59-49d6-98a6-917ba4a400cf"
+  Hint: Image5
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/95881-featured-cops?v=289916a1" dam-id="6hAsK35HQpu_gG9o24gyDQ" width="328" height="220" alt="852-COPS Non-Emergency" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/95881/thumbnail" />
+- ID: "f762ad0b-e486-48ca-acb3-d8523551a990"
+  Hint: Image1
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/95845-featured-sst?v=2958c0b1" dam-id="C9IOXrktTUiv_KXIYr3H3Q" width="328" height="220" alt="Submission and Status Portal" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/95845/thumbnail" />
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "12ece9de-445a-42be-a483-9e8095ca3b8f"
+      Hint: Text5
+      Value: "852-COPS Non-Emergency"
+    - ID: "1d581533-1aa5-4679-9e2a-e7fe765218ba"
+      Hint: Link3
+      Value: |
+        <link text="Visit" linktype="external" url="http://opendata.suffolkcountyny.gov/" anchor="" class="" title="" target="" querystring="" />
+    - ID: "2490d428-27e2-4daa-8337-4e34f37fc26b"
+      Hint: Link2
+      Value: |
+        <link text="Visit" linktype="external" url="https://suffolksbravest.com/" anchor="" class="" title="" target="" querystring="" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T151125Z
+    - ID: "41910271-6970-45e7-8819-3d531826d4a6"
+      Hint: Link5
+      Value: |
+        <link text="Visit" linktype="external" url="https://suffolkpd.org/Contact-Us/852Cops" anchor="" class="" title="" target="" querystring="" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "8d61efb6-ab8b-4d2b-8477-0455db184d89"
+    - ID: "8f49a654-7b7f-4c0b-b6df-d3ce2389c1bf"
+      Hint: Text2
+      Value: Become a Volunteer Firefighter or EMS worker
+    - ID: "91d94aff-4137-4702-93f7-8db4eacde4d5"
+      Hint: Text3
+      Value: Suffolk County Open Data
+    - ID: "9ea34c36-7e22-4d12-b632-032361c3b17c"
+      Hint: Text1
+      Value: Submission and Status Portal
+    - ID: "b867909f-d20c-4c76-b82f-778d25239cd1"
+      Hint: Link1
+      Value: |
+        <link text="Visit" linktype="external" url="https://apps2.suffolkcountyny.gov/health/sst/" anchor="" class="" title="" target="" querystring="" />
+    - ID: "b8b8fa51-0c41-442e-8757-07b7a59d6d3f"
+      Hint: Link4
+      Value: |
+        <link text="Visit" linktype="external" url="https://suffolkcountyny.gov/alerts" anchor="" class="" title="" target="" querystring="" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T151125Z
+    - ID: "f5e90981-3210-4316-bcf5-f083fe639e66"
+      Hint: Text4
+      Value: Sign up to receive SuffolkAlert Emergency Alerts and Notifications via Phone Call, Text Message and Email
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "12ece9de-445a-42be-a483-9e8095ca3b8f"
+      Hint: Text5
+      Value: "852-COPS No Emergencia"
+    - ID: "1d581533-1aa5-4679-9e2a-e7fe765218ba"
+      Hint: Link3
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="Visitar" url="http://opendata.suffolkcountyny.gov/" />
+    - ID: "2490d428-27e2-4daa-8337-4e34f37fc26b"
+      Hint: Link2
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="Visitar" url="https://suffolksbravest.com/" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T151125Z
+    - ID: "41910271-6970-45e7-8819-3d531826d4a6"
+      Hint: Link5
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="Visitar" url="https://suffolkpd.org/Contact-Us/852Cops" />
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "686ff4ab-6193-4c3e-9a0f-88f10fdb9bec"
+    - ID: "8f49a654-7b7f-4c0b-b6df-d3ce2389c1bf"
+      Hint: Text2
+      Value: Conviértase en bombero voluntario o trabajador de EMS
+    - ID: "91d94aff-4137-4702-93f7-8db4eacde4d5"
+      Hint: Text3
+      Value: Datos Abiertos del Condado de Suffolk
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "9ea34c36-7e22-4d12-b632-032361c3b17c"
+      Hint: Text1
+      Value: Portal de Envío y Estado
+    - ID: "b867909f-d20c-4c76-b82f-778d25239cd1"
+      Hint: Link1
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="Visitar" url="https://apps2.suffolkcountyny.gov/health/sst/" />
+    - ID: "b8b8fa51-0c41-442e-8757-07b7a59d6d3f"
+      Hint: Link4
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="Visitar" url="https://suffolkcountyny.gov/alerts" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T184412Z
+    - ID: "f5e90981-3210-4316-bcf5-f083fe639e66"
+      Hint: Text4
+      Value: Regístrese para recibir alertas y notificaciones de emergencia de SuffolkAlert por llamada telefónica, mensaje de texto y correo electrónico

@@ -16,20 +16,22 @@
       max-width: 1600px;
     }
 
-    .mns-eyebrow__row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.35rem;
+    .mns-eyebrow__copy {
+      margin: 0;
       font-size: 0.875rem;
       line-height: 1.4;
-    }
-
-    a,
-    .link-list a,
-    .rich-text a {
       color: var(--brand-accent-foreground);
-      text-decoration: underline;
+      text-align: left;
+
+      strong {
+        font-weight: 700;
+      }
+
+      a {
+        color: var(--brand-accent-foreground);
+        text-decoration: underline;
+        font-weight: 400;
+      }
     }
   }
 

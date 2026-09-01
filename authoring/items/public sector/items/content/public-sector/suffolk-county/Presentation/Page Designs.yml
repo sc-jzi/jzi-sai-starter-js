@@ -1,0 +1,62 @@
+﻿---
+ID: "f630730a-246b-4de9-84dd-6786acd55d8e"
+Parent: "ba71642d-84a2-4fa9-ba01-752bfe50da9c"
+Template: "609a79ac-e186-41e2-a3fa-771e95c26815"
+Path: "/sitecore/content/public-sector/suffolk-county/Presentation/Page Designs"
+SharedFields:
+- ID: "ba1f60d6-3deb-40cc-bb61-eec772279ee1"
+  Hint: TemplatesMapping
+  Value: "%7b4AD644A8-7CDB-4574-8DF1-D01C3BB7B624%7d%3d%257BE38C2100-C5BF-4EC5-8702-7C7D88BFE336%257D%26%7bF83CCEFD-FC41-4A60-9882-8F7EA5CF41A8%7d%3d%257B1926737E-620E-4D9C-9AA6-AD4F637828FE%257D%26%7b1226C3C7-2D1F-48F5-87B4-C1DA459F05E5%7d%3d%257BC55732E2-3B94-4620-8393-7AF63720A349%257D%26%7b5282D418-6C18-46EB-85AF-9116CDE9E6EB%7d%3d%257BE38C2100-C5BF-4EC5-8702-7C7D88BFE336%257D%26%7b14431DCE-508D-4D54-9D04-C22ABBDC8F83%7d%3d%257BE38C2100-C5BF-4EC5-8702-7C7D88BFE336%257D%26%7bAAD350F5-9331-4D71-A942-E3643653C028%7d%3d%257B63348941-C55E-4E0C-AB52-304F06BBDA8A%257D"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "204d56e1-a621-42d3-a5d0-ec5fc2319ef5"
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{2EA756FA-AED6-4599-83B7-36FEFE229B31}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140058Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "45bff8ff-3aa2-4a90-bb4e-f0a18aa42b75"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140144Z
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140058Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "9162efb4-2d4c-4ffc-9f02-2206f3118a96"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T184138Z

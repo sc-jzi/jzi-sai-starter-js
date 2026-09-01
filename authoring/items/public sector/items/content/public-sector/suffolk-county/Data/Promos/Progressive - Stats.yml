@@ -1,0 +1,121 @@
+﻿---
+ID: "e46dc985-fdd8-49d8-887d-3ca0f5796875"
+Parent: "748ad622-339e-4a44-b9c2-73e59dc0a10b"
+Template: "c24bfc74-c6e2-413a-aebd-903180dfaff7"
+Path: "/sitecore/content/public-sector/suffolk-county/Data/Promos/Progressive - Stats"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260707T194918Z
+    - ID: "375bdefa-68a4-4da9-aaa9-fe47bb5fb441"
+      Hint: Value1
+      Value: 900
+    - ID: "3d96d269-32ef-4ebb-b651-e7ec45497c93"
+      Hint: Caption1
+      Value: Average annual savings for drivers who switch to Progressive and save
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "56884586-c14f-4b35-83c8-e1c1650c7b36"
+      Hint: Value3
+      Value: 24
+    - ID: "5935d1eb-46d7-4a5f-936a-73d3235fe72a"
+      Hint: Symbol1
+      Value: $+
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "85a01e7b-ef09-4fe4-aa43-d7258be4ee38"
+    - ID: "a5f0268c-d355-4872-9411-c869ad9a1267"
+      Hint: Caption3
+      Value: Day or night customer support for all your questions and concerns
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "cc0eff80-a988-4cca-9dbc-5d0688781148"
+      Hint: Value2
+      Value: 43
+    - ID: "d12ed4b9-522e-42b3-b77c-ecd0e59e084f"
+      Hint: Symbol3
+      Value: /7/365
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260707T194918Z
+    - ID: "edf8ebc1-a19b-4a1b-b707-c4434c7e17bc"
+      Hint: Symbol2
+      Value: million+
+    - ID: "f3ee3553-9d93-4d8e-89e9-7a9050c97a5a"
+      Hint: Caption2
+      Value: People trust us to insure what's important to them
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1f832359-8b54-46b9-9095-08efc28958e1"
+      Hint: Image1
+      Value: |
+        <image mediaid="{3CB083E8-E8CE-4DC5-B1FC-04B86AC4FD86}" />
+    - ID: "239a7f68-3d70-4c7a-81c3-c280e5283e02"
+      Hint: Image2
+      Value: |
+        <image mediaid="{3733A04C-D1B9-4AE4-90A1-29C773B1198F}" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260707T194918Z
+    - ID: "375bdefa-68a4-4da9-aaa9-fe47bb5fb441"
+      Hint: Value1
+      Value: 900
+    - ID: "3d96d269-32ef-4ebb-b651-e7ec45497c93"
+      Hint: Caption1
+      Value: Ahorro anual medio para los conductores que se cambian a Progressive y ahorran
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "56884586-c14f-4b35-83c8-e1c1650c7b36"
+      Hint: Value3
+      Value: 24
+    - ID: "5935d1eb-46d7-4a5f-936a-73d3235fe72a"
+      Hint: Symbol1
+      Value: $+
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "144da5d5-a3ad-480f-b948-25e197905287"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "a5f0268c-d355-4872-9411-c869ad9a1267"
+      Hint: Caption3
+      Value: Atención al cliente de día y de noche para todas sus preguntas y preocupaciones
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "cc0eff80-a988-4cca-9dbc-5d0688781148"
+      Hint: Value2
+      Value: 43
+    - ID: "d12ed4b9-522e-42b3-b77c-ecd0e59e084f"
+      Hint: Symbol3
+      Value: /7/365
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T184250Z
+    - ID: "edf8ebc1-a19b-4a1b-b707-c4434c7e17bc"
+      Hint: Symbol2
+      Value: millones+
+    - ID: "f3ee3553-9d93-4d8e-89e9-7a9050c97a5a"
+      Hint: Caption2
+      Value: Hay personas que confían en nosotros para asegurar lo que es importante para ellas

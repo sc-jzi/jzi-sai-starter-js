@@ -1,0 +1,143 @@
+﻿---
+ID: "4e28d389-3743-4210-9ded-9ebc294ef652"
+Parent: "f01ba56d-7e27-469f-9100-b69bcdfa3c02"
+Template: "0a7aa373-5ed1-4e9b-9678-22d3c5faf6df"
+Path: "/sitecore/content/public-sector/suffolk-county/Presentation/Partial Designs/Header/Data/Title"
+SharedFields:
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{89F92411-6F78-42D7-A789-5066D7092839}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140059Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "729034fc-24f3-40b7-8fa4-fb49d7de20dd"
+      Hint: Text
+      Value: |
+        <div class="ck-content"><p><a href="/"><img src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/95777-logo-seal?v=f5d7e0e4" alt="Suffolk County Seal" /></a></p><h1><a href="/">Suffolk County Government</a></h1><h2><a href="/">Edward P. Romaine, County Executive</a></h2></div>
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "71a6ddab-7d7d-46ff-b49b-d23f39d68dd9"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T174244Z
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140059Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "729034fc-24f3-40b7-8fa4-fb49d7de20dd"
+      Hint: Text
+      Value: |
+        <div class="ck-content"><p><a href="/"><img src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/95777-logo-seal?v=f5d7e0e4" alt="Suffolk County Seal" /></a></p><h1><a href="/">Gobierno del Condado de Suffolk</a></h1><h2><a href="/">Edward P. Romaine, ejecutivo del condado</a></h2></div>
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "bc296ef3-2147-47cd-a41e-c5ce46897c57"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T184556Z
+- Language: "fr-CA"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "729034fc-24f3-40b7-8fa4-fb49d7de20dd"
+      Hint: Text
+      Value: |
+        <a href="/fr-CA">
+        <h1>
+        <span class="play">
+        <?xml version="1.0" encoding="UTF-8" />
+        <svg id="p-sign" data-name="p-sign" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 20.42">
+          <defs>
+            <style>
+              .cls-1 {
+                fill: currentColor;
+              }
+        
+              .cls-2 {
+                fill: #ff3c28;
+              }
+            </style>
+          </defs>
+          <g id="Layer_1-2" data-name="Layer 1">
+            <g>
+              <path id="Path_88" data-name="Path 88" class="cls-1" d="M8.57,0H2.53C1.23,0,.09,.99,0,2.29c-.09,1.35,.93,2.53,2.28,2.62,.06,0,.11,0,.17,0H7.88c1.38,0,1.91,.72,1.91,1.79s-.53,1.8-1.91,1.8H2.42C1.08,8.51,0,9.6,0,10.94c0,1.33,1.08,2.41,2.41,2.41h6.15c4.92,0,7.43-3.01,7.43-6.63C16,2.76,13.49,0,8.57,0"></path>
+              <rect class="cls-2" x="0" y="14.31" width="6.12" height="6.12" rx="3.06" ry="3.06"></rect>
+            </g>
+          </g>
+        </svg>
+        <span>LAY!</span></span><span class="finance">financier</span></h1>
+        </a>
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "e017a2af-0439-4687-973c-c934adb6bff2"
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "729034fc-24f3-40b7-8fa4-fb49d7de20dd"
+      Hint: Text
+      Value: |
+        <a href="/ja-JP">
+        <h1>
+        <span class="play">
+        <?xml version="1.0" encoding="UTF-8" />
+        <svg id="p-sign" data-name="p-sign" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 20.42">
+          <defs>
+            <style>
+              .cls-1 {
+                fill: currentColor;
+              }
+        
+              .cls-2 {
+                fill: #ff3c28;
+              }
+            </style>
+          </defs>
+          <g id="Layer_1-2" data-name="Layer 1">
+            <g>
+              <path id="Path_88" data-name="Path 88" class="cls-1" d="M8.57,0H2.53C1.23,0,.09,.99,0,2.29c-.09,1.35,.93,2.53,2.28,2.62,.06,0,.11,0,.17,0H7.88c1.38,0,1.91,.72,1.91,1.79s-.53,1.8-1.91,1.8H2.42C1.08,8.51,0,9.6,0,10.94c0,1.33,1.08,2.41,2.41,2.41h6.15c4.92,0,7.43-3.01,7.43-6.63C16,2.76,13.49,0,8.57,0"></path>
+              <rect class="cls-2" x="0" y="14.31" width="6.12" height="6.12" rx="3.06" ry="3.06"></rect>
+            </g>
+          </g>
+        </svg>
+        <span>LAY!</span></span><span class="finance">finance</span></h1>
+        </a>
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "388cab5c-5764-4ac5-b6f5-3cf1fd0350a2"

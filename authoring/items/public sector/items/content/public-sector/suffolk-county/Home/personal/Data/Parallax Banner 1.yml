@@ -1,0 +1,173 @@
+﻿---
+ID: "cb1be1b2-70bc-4191-ae40-dc9c41381861"
+Parent: "e66011cc-9d78-4bf4-a250-3f3d149f13ec"
+Template: "28b7f396-dc4a-4116-8c93-3b7909cbeb0e"
+Path: "/sitecore/content/public-sector/suffolk-county/Home/personal/Data/Parallax Banner 1"
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 700
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "143cb4dc-b0b5-46ae-98b1-b16900ec79f6"
+      Hint: Text
+      Value: Whether you're saving for a major life event, planning for retirement, or simply looking to build a robust financial cushion, our expert advisors are here to guide you every step of the way.
+    - ID: "1fbdde82-0dd2-46ad-a636-0d5e714dd086"
+      Hint: ForegroundImage
+      Value: |
+        <image mediaid="{D73E52B3-696E-442D-A17F-1E5FD835E77E}" alt="Plant on counter" height="" width="" hspace="" vspace="" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251030T165635Z
+    - ID: "5ba03d3f-ffbc-412e-80ff-6dd0fe312042"
+      Hint: Link
+      Value: |
+        <link class="" querystring="" id="{2A68EB56-D4B5-4003-A0C7-0E7DC498D1EE}" anchor="" target="" title="" linktype="internal" text="Learn more" url="/public-sector/suffolk-county/Home/articles" />
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "bfd49587-f6fb-48c6-8da5-1d987262c520"
+    - ID: "a54476a3-eb25-4a1a-a521-e702f1372b8f"
+      Hint: BackgroundImage
+      Value: |
+        <image mediaid="{D1CAD63D-7FAF-4C7A-973A-E89095FD4A71}" alt="Background texture" height="" width="" hspace="" vspace="" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T175629Z
+    - ID: "f34c6976-7e76-490b-a91e-5977db4a2208"
+      Hint: Title
+      Value: "Grow your savings with us!"
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "143cb4dc-b0b5-46ae-98b1-b16900ec79f6"
+      Hint: Text
+      Value: Tanto si está ahorrando para un acontecimiento importante en su vida como si está planificando su jubilación o simplemente desea crear un sólido colchón financiero, nuestros asesores expertos están aquí para guiarle en cada paso del camino.
+    - ID: "1fbdde82-0dd2-46ad-a636-0d5e714dd086"
+      Hint: ForegroundImage
+      Value: |
+        <image height="" mediaid="{D73E52B3-696E-442D-A17F-1E5FD835E77E}" vspace="" hspace="" alt="Planta sobre la encimera" width="" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251030T165635Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5ba03d3f-ffbc-412e-80ff-6dd0fe312042"
+      Hint: Link
+      Value: |
+        <link class="" id="{2A68EB56-D4B5-4003-A0C7-0E7DC498D1EE}" querystring="" anchor="" target="" title="" linktype="internal" text="Más información" url="/public-sector/suffolk-county/Home/articles" />
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "29992b3f-91df-4a54-bbfe-889e005405a3"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "a54476a3-eb25-4a1a-a521-e702f1372b8f"
+      Hint: BackgroundImage
+      Value: |
+        <image height="" mediaid="{D1CAD63D-7FAF-4C7A-973A-E89095FD4A71}" vspace="" hspace="" alt="Textura de fondo" width="" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T184317Z
+    - ID: "f34c6976-7e76-490b-a91e-5977db4a2208"
+      Hint: Title
+      Value: "¡Haga crecer sus ahorros con nosotros!"
+- Language: "fr-CA"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "143cb4dc-b0b5-46ae-98b1-b16900ec79f6"
+      Hint: Text
+      Value: Que vous économisiez pour un événement majeur de la vie
+    - ID: "1fbdde82-0dd2-46ad-a636-0d5e714dd086"
+      Hint: ForegroundImage
+      Value: |
+        <image mediaid="{D73E52B3-696E-442D-A17F-1E5FD835E77E}" alt="Plante sur comptoir" height="" width="" hspace="" vspace="" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251030T165635Z
+    - ID: "5ba03d3f-ffbc-412e-80ff-6dd0fe312042"
+      Hint: Link
+      Value: |
+        <link class="" querystring="" id="{2A68EB56-D4B5-4003-A0C7-0E7DC498D1EE}" anchor="" target="" title="" linktype="internal" text="En savoir plus" url="/public-sector/suffolk-county/Home/articles" />
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "6d14a38e-9ec1-4b75-891d-a72ff130d00f"
+    - ID: "a54476a3-eb25-4a1a-a521-e702f1372b8f"
+      Hint: BackgroundImage
+      Value: |
+        <image mediaid="{D1CAD63D-7FAF-4C7A-973A-E89095FD4A71}" alt="Background texture" height="" width="" hspace="" vspace="" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T175629Z
+    - ID: "f34c6976-7e76-490b-a91e-5977db4a2208"
+      Hint: Title
+      Value: banque au quotidien
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "143cb4dc-b0b5-46ae-98b1-b16900ec79f6"
+      Hint: Text
+      Value: 人生の一大イベントのための貯蓄、退職後の生活設計、あるいは単に経済的な余裕を築きたいなど、どのような場合でも、私どもの専門アドバイザーがあらゆるステップでお客様をご案内いたします。
+    - ID: "1fbdde82-0dd2-46ad-a636-0d5e714dd086"
+      Hint: ForegroundImage
+      Value: |
+        <image mediaid="{D73E52B3-696E-442D-A17F-1E5FD835E77E}" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20251030T165635Z
+    - ID: "5ba03d3f-ffbc-412e-80ff-6dd0fe312042"
+      Hint: Link
+      Value: |
+        <link class="" querystring="" id="{2A68EB56-D4B5-4003-A0C7-0E7DC498D1EE}" anchor="" target="" title="" linktype="internal" text="さらに詳しく" url="/public-sector/suffolk-county/Home/articles" />
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "72bc15e2-10a9-4bb7-a7db-4cdb57fa8efc"
+    - ID: "a54476a3-eb25-4a1a-a521-e702f1372b8f"
+      Hint: BackgroundImage
+      Value: |
+        <image mediaid="{D1CAD63D-7FAF-4C7A-973A-E89095FD4A71}" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T175629Z
+    - ID: "f34c6976-7e76-490b-a91e-5977db4a2208"
+      Hint: Title
+      Value: 私たちと一緒に貯蓄を増やしましょう！

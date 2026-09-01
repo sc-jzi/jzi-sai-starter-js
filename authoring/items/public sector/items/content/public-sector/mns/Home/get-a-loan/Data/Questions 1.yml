@@ -1,0 +1,27 @@
+﻿---
+ID: "ff4b869d-a375-4552-ac71-5a6546163527"
+Parent: "df373599-9cf3-4a42-83b7-5dfc8b6e5e7e"
+Template: "fae81bf9-1117-4f97-9133-00e752f41772"
+Path: "/sitecore/content/public-sector/mns/Home/get-a-loan/Data/Questions 1"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260831T193744Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d40bc1c9-4a75-4c40-9575-ff2bd6785e19"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260831T193744Z

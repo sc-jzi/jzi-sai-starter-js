@@ -1,0 +1,93 @@
+﻿---
+ID: "732c9559-771a-4856-929d-36cdab6cc816"
+Parent: "72590381-66b1-41fc-a1b0-a1288086cd9f"
+Template: "2dc7a13e-6753-47ef-805a-1cde39012eec"
+Path: "/sitecore/content/public-sector/suffolk-county/Home/get-a-loan/Data/Questions 1/Question 1"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140050Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "1800d692-f527-4d83-b2ea-8b79338d2f79"
+    - ID: "93ba0221-aa2a-4a04-b8f6-39c2ab65c694"
+      Hint: Question
+      Value: "What types of loans do you offer?"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140050Z
+    - ID: "ef205dfd-6af2-4514-b694-77efa748f951"
+      Hint: Answer
+      Value: We offer a variety of loans to suit your needs, including personal loans, business loans, car loans, home loans, and more. Whether you need funds for personal expenses or business ventures, we have options available.
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140050Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ae320533-7d01-4e43-b997-95e1f7513bdd"
+    - ID: "93ba0221-aa2a-4a04-b8f6-39c2ab65c694"
+      Hint: Question
+      Value: "¿Qué tipos de préstamos ofrecen?"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T184542Z
+    - ID: "ef205dfd-6af2-4514-b694-77efa748f951"
+      Hint: Answer
+      Value: Ofrecemos una variedad de préstamos para adaptarnos a sus necesidades, incluidos préstamos personales, préstamos empresariales, préstamos para automóviles, préstamos hipotecarios y más. Tanto si necesita fondos para gastos personales como para proyectos empresariales, tenemos opciones disponibles.
+- Language: "fr-CA"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "578958f6-13e6-4f50-ba46-214f11dad96d"
+    - ID: "93ba0221-aa2a-4a04-b8f6-39c2ab65c694"
+      Hint: Question
+      Value: "Quels types de prêts offrez-vous?"
+    - ID: "ef205dfd-6af2-4514-b694-77efa748f951"
+      Hint: Answer
+      Value: Nous proposons une variété de prêts pour répondre à vos besoins, y compris des prêts personnels, des prêts pour entreprises, des prêts automobiles, des prêts immobiliers, et bien plus encore. Que vous ayez besoin de fonds pour des dépenses personnelles ou des projets commerciaux, nous avons des options disponibles.
+- Language: "ja-JP"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "bdd62419-0ece-41b4-9593-ea6ec0cd3efb"
+    - ID: "93ba0221-aa2a-4a04-b8f6-39c2ab65c694"
+      Hint: Question
+      Value: どのような種類のローンを提供していますか？
+    - ID: "ef205dfd-6af2-4514-b694-77efa748f951"
+      Hint: Answer
+      Value: 個人ローン、ビジネスローン、マイカーローン、住宅ローンなど、お客様のニーズに合った様々なローンをご用意しております。 個人的な出費のために資金が必要な場合も、ビジネス・ベンチャーのために資金が必要な場合も、私どもには選択肢があります。

@@ -1,0 +1,87 @@
+﻿---
+ID: "232ac954-9d22-4139-b7d9-e01d7a2d8280"
+Parent: "66586918-dbec-473f-9c23-e7b177ab679c"
+Template: "1b694ef9-154d-429a-9c3f-d7774cd4a852"
+Path: "/sitecore/content/public-sector/mns/Data/Promos/MN-S - Latest Stories"
+SharedFields:
+- ID: "23f621dd-d403-49df-93f6-391a1757feb3"
+  Hint: Image4
+  Value: 
+- ID: "84c2cd69-b897-4e4a-a336-66d3222fe1b5"
+  Hint: Image1
+  Value: 
+- ID: "954a7e15-cdad-4e9c-8949-ab0ee63200c6"
+  Hint: Image3
+  Value: 
+- ID: "a98fc4bc-b088-4296-aa32-fba35f964ebd"
+  Hint: Image2
+  Value: 
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "59b4fdc8-b377-4fe2-a2ae-e0ef7414a040"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "07f3e30f-8075-4c1b-912e-e27fffeda904"
+      Hint: Text1
+      Value: Jul 17 — During the official opening of the 2026 Back to Batoche Days, Métis Nation–Saskatchewan introduced the President's Medal, a new honour recognizing exceptional service, leadership, and commitment to Métis citizens.
+    - ID: "256528b0-4d93-44a1-85c9-0cd544091a3f"
+      Hint: Text4
+      Value: "Jun 15 — “It’s no secret that Indigenous people - there are very successful businesses here in Saskatchewan however what doors are open for them?” MN–S Minister of Economic Development Marg Friesen"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260831T204325Z
+    - ID: "34f50b54-e781-493a-85c0-8e9af1969d64"
+      Hint: Title3
+      Value: People of the Horse
+    - ID: "4e62adbe-4082-45fe-9e77-66ef0945fb18"
+      Hint: Title4
+      Value: Economic Opportunities Expand with Federal Recognition
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "829c8316-38b9-40a4-a070-5e8c66d154f8"
+    - ID: "8f23bb30-a050-47b3-bc66-6ca478213eef"
+      Hint: Text3
+      Value: Jun 26 — Métis people have always shared a deep respect and historical connection with horses. Their uncanny ability to tame a wild horse and train the animal for hunting and transportation has earned them the title ‘People of the Horse’.
+    - ID: "94e8b735-889e-44f3-a980-c7c8143bae19"
+      Hint: Title2
+      Value: "Taanishi aen Ishinihkaashooyen Li Pchi Bufloo? (What's Your Name, Little Buffalo?)"
+    - ID: "b1b9e108-7c50-4a04-8e7a-37f30c6a784c"
+      Hint: Link3
+      Value: |
+        <link text="Read More" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://mns.ca/news/newsroom/news/634/people-of-the-horse" />
+    - ID: "b2befdd5-351d-4c5e-85fd-2402e3ff96bf"
+      Hint: Link1
+      Value: |
+        <link text="Read More" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://mns.ca/news/newsroom/news/635/a-lifetime-of-service-honoured-at-batoche" />
+    - ID: "ba2af883-e3bb-43cf-8c97-ab5c97edc09d"
+      Hint: Link4
+      Value: |
+        <link text="Read More" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://mns.ca/news/newsroom/news/632/economic-opportunities-expand-with-federal-recognition" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "be5597c5-a55d-4a6a-bf53-7fe1a7bf4bdc"
+      Hint: Title1
+      Value: A Lifetime of Service, Honoured at Batoche
+    - ID: "c24d6ca7-49ab-4f08-9dae-e5a844d79139"
+      Hint: Text2
+      Value: Jul 6 — Meet our newest bison calves—now proudly named by Métis youth across Saskatchewan with names rooted in our languages and culture.
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260831T204506Z
+    - ID: "df548755-6a31-445f-bb84-c704698d6048"
+      Hint: Link2
+      Value: |
+        <link text="Read More" anchor="" linktype="external" class="" title="" target="" querystring="" url="https://mns.ca/news/newsroom/news/633/taanishi-aen-ishinihkaashooyen-li-pchi-bufloo-what-s-your-name-little-buffalo" />

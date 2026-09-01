@@ -1,0 +1,80 @@
+﻿---
+ID: "678f1743-e404-4c25-ba09-796d7efa4202"
+Parent: "259c30a0-36d6-4af8-88db-19eec15b1359"
+Template: "0a7aa373-5ed1-4e9b-9678-22d3c5faf6df"
+Path: "/sitecore/content/public-sector/suffolk-county/Presentation/Partial Designs/Footer/Data/Address"
+BranchID: "8204a950-cbaa-4d06-878b-11ced5ddc1ad"
+SharedFields:
+- ID: "f6d8a61c-2f84-4401-bd24-52d2068172bc"
+  Hint: __Originator
+  Value: "{4408DD99-867B-4A64-AD48-0914432251CB}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140059Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "729034fc-24f3-40b7-8fa4-fb49d7de20dd"
+      Hint: Text
+      Value: |
+        <span id="docs-internal-guid-17237c97-7fff-f61d-384b-b66bc74de880"></span>
+        <p><span>PLAY! Finance</span></p>
+        <p><span>12 Forever Street</span></p>
+        <p><span>A99 B44</span></p>
+        <p><span>The Nation of Skate</span></p>
+        <p><span>Made by <a href="https://www.sitecore.com/">Sitecore</a></span></p>
+        <div><span><br /></span></div>
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "822eca8f-29ab-4aed-b514-421b73aba0c3"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140059Z
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140059Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "729034fc-24f3-40b7-8fa4-fb49d7de20dd"
+      Hint: Text
+      Value: |
+        <span id="docs-internal-guid-17237c97-7fff-f61d-384b-b66bc74de880"></span>
+        <p><span>PLAY! Finance</span></p>
+        <p><span>12 Calle Forever</span></p>
+        <p><span>A99 B44</span></p>
+        <p><span>La Nación del Skate</span></p>
+        <p><span>Creado por <a href="https://www.sitecore.com/">Sitecore</a></span></p>
+        <div><span><br /></span></div>
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ae9ecba8-4dae-4d5e-9aa6-0497a9a7107c"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T184556Z

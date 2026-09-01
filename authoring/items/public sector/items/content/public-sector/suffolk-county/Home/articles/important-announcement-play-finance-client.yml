@@ -1,0 +1,280 @@
+﻿---
+ID: "c2245611-8fa2-4d04-9718-3eb17175d82d"
+Parent: "2a68eb56-d4b5-4003-a0c7-0e7dc498d1ee"
+Template: "f83ccefd-fc41-4a60-9882-8f7ea5cf41a8"
+Path: "/sitecore/content/public-sector/suffolk-county/Home/articles/important-announcement-play-finance-client"
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{A5BC37E7-ED96-4C1E-8590-A26E64DB55EA}"
+- ID: "ad26114f-29dd-4ef9-b5bf-1d64d558872d"
+  Hint: BackgroundImage
+  Value: |
+    <image mediaid="{AB582D87-F210-4BF3-8832-C6F9D1D53F79}" alt="Blurred background image - fountain pen on notebook" height="" width="" hspace="" vspace="" />
+- ID: "ba2b872d-f67d-40dc-be41-6366b7030144"
+  Hint: Thumbnail
+  Value: |
+    <image mediaid="{D3659909-A585-4821-991C-E3D2330D1C00}" />
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 700
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{62EA024B-A7E0-49B8-872B-95644D8798DB}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "175ae3d2-1bd5-4bdf-a411-614be85c9d81"
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Value: |
+    <r xmlns:p="p" xmlns:s="s"
+      p:p="1">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+        <r
+          uid="{1333C7A2-2A6C-4310-AE74-8D5DE936F8B3}">
+          <p:d />
+        </r>
+        <r
+          uid="{496CB0BE-20D1-48E1-A256-375D05D07129}"
+          s:ds="5C1B493E-FA23-48CB-93BF-F4039BB2455F"
+          s:id="{9D7DE58D-9DA4-43D8-8371-3C728A582ADC}"
+          s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=1"
+          s:ph="/headless-main/sxa-article-content/article-meta-0-1" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: An important announcement for our clients
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "03117268-f84f-4fd8-ad9e-5990b3a21fe6"
+      Hint: Content
+      Value: |
+        <p>PLAY! Finance, a leading provider of cutting-edge financial services, is pleased to share an exciting update with its valued clients.
+        <br />
+        <br />
+        Arthur Spannos, CEO at PLAY! Finance, expressed, "<strong><em>We're thrilled to announce a significant milestone in our ongoing commitment to empowering our clients to achieve financial wellness.</em></strong>"
+        Key highlights of the announcement include:</p>
+        <ul>
+            <li>
+            <strong>Enhanced User Experience:</strong> Introducing new features and improvements to streamline the user experience and make managing finances even more intuitive and convenient.</li>
+            <li><strong>Expanded Product Offerings:</strong> Introducing new financial products and services to address the evolving needs of our clients and provide them with even more ways to achieve their financial goals.</li>
+            <li><strong>Continued Focus on Security:</strong> Maintaining the highest standards of security and privacy to ensure that our clients can trust us with their sensitive financial information.</li>
+            <li><strong>Commitment to Customer Satisfaction:</strong> Redoubling our efforts to provide exceptional customer service and support, ensuring that our clients receive the assistance they need, whenever they need it.</li>
+        </ul>
+        <p>"<strong><em>We're dedicated to our clients' success, and this announcement represents our ongoing commitment to delivering innovative solutions that empower them to take control of their financial futures</em></strong>.", added Arthur Spannos.</p>
+        <p>For more information about these exciting updates and how they will benefit PLAY! Finance clients, visit the PLAY! Finance website or your local branch.</p>
+        <p><strong>About PLAY! Finance</strong><br />
+        PLAY! Finance is a leading provider of innovative financial solutions, dedicated to empowering individuals to achieve financial wellness. Through advanced technology and personalized tools, PLAY! Finance is redefining the way consumers engage with their finances, making financial management accessible, engaging, and rewarding for all.</p>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140048Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{FCA998C5-0CC3-4F91-94D8-0A4E6CAECE88}"
+    - ID: "3e700dce-26eb-4bf0-990f-9d9fe555990d"
+      Hint: Excerpt
+      Value: "PLAY! Finance announces a series of enhancements and expansions aimed at optimizing the client experience and furthering financial empowerment."
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: An important announcement for our clients
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "5ce3daa9-1d06-4655-8486-046444885664"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T180924Z
+    - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
+      Hint: Title
+      Value: An important announcement for our clients
+- Language: "es-ES"
+  Fields:
+  - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
+    Hint: __Unversioned revision
+    Value: "5b5c059c-f988-4359-a8ba-5ffa5bfe89e2"
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Un anuncio importante para nuestros clientes
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "03117268-f84f-4fd8-ad9e-5990b3a21fe6"
+      Hint: Content
+      Value: |
+        <p>PLAY! Finance, proveedor líder de servicios financieros de vanguardia, se complace en compartir una interesante actualización con sus valiosos clientes.
+        <br />
+        <br />
+        Arthur Spannos, director ejecutivo de PLAY! Finance, expresó: "<strong><em>Nos entusiasma anunciar un hito significativo en nuestro compromiso continuo de ayudar a nuestros clientes a alcanzar el bienestar financiero.</em></strong>"
+        Los aspectos más destacados del anuncio incluyen:</p>
+        <ul>
+            <li>
+            <strong>Experiencia de usuario mejorada:</strong> Presentamos nuevas funciones y mejoras para optimizar la experiencia del usuario y hacer que la gestión de las finanzas sea aún más intuitiva y cómoda.</li>
+            <li><strong>Ampliación de la oferta de productos:</strong> Presentamos nuevos productos y servicios financieros para responder a las necesidades cambiantes de nuestros clientes y ofrecerles aún más formas de alcanzar sus objetivos financieros.</li>
+            <li><strong>Enfoque continuo en la seguridad:</strong> Mantenemos los más altos estándares de seguridad y privacidad para garantizar que nuestros clientes puedan confiarnos su información financiera confidencial.</li>
+            <li><strong>Compromiso con la satisfacción del cliente:</strong> Redoblamos nuestros esfuerzos para ofrecer un servicio de atención al cliente y un soporte excepcionales, garantizando que nuestros clientes reciban la ayuda que necesitan, cuando la necesitan.</li>
+        </ul>
+        <p>"<strong><em>Estamos comprometidos con el éxito de nuestros clientes, y este anuncio representa nuestro compromiso continuo de ofrecer soluciones innovadoras que les permitan tomar el control de su futuro financiero</em></strong>", añadió Arthur Spannos.</p>
+        <p>Para obtener más información sobre estas interesantes actualizaciones y sobre cómo beneficiarán a los clientes de PLAY! Finance, visite el sitio web de PLAY! Finance o su sucursal local.</p>
+        <p><strong>Acerca de PLAY! Finance</strong><br />
+        PLAY! Finance es un proveedor líder de soluciones financieras innovadoras, dedicado a ayudar a las personas a alcanzar el bienestar financiero. A través de tecnología avanzada y herramientas personalizadas, PLAY! Finance está redefiniendo la forma en que los consumidores gestionan sus finanzas, haciendo que la gestión financiera sea accesible, atractiva y gratificante para todos.</p>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140048Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{FCA998C5-0CC3-4F91-94D8-0A4E6CAECE88}"
+    - ID: "3e700dce-26eb-4bf0-990f-9d9fe555990d"
+      Hint: Excerpt
+      Value: "PLAY! Finance anuncia una serie de mejoras y ampliaciones destinadas a optimizar la experiencia del cliente y fomentar aún más el empoderamiento financiero."
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Un anuncio importante para nuestros clientes
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f5c3f0ec-2d22-437b-bf4b-e1f7ea2441e9"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T184241Z
+    - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
+      Hint: Title
+      Value: Un anuncio importante para nuestros clientes
+- Language: "fr-CA"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Une annonce importante pour nos clients
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "03117268-f84f-4fd8-ad9e-5990b3a21fe6"
+      Hint: Content
+      Value: |
+        <p>PLAY! Finance, un fournisseur leader de services financiers de pointe, est heureux de partager une mise à jour excitante avec ses clients précieux.
+        <br />
+        <br />
+        Arthur Spannos, PDG de PLAY! Finance, a exprimé, "<strong><em>Nous sommes ravis d'annoncer une étape importante dans notre engagement continu à permettre à nos clients d'atteindre le bien-être financier.</em></strong>"
+        Les points forts de l'annonce incluent :</p>
+        <ul>
+            <li><strong>Expérience utilisateur améliorée :</strong> Introduction de nouvelles fonctionnalités et améliorations pour simplifier l'expérience utilisateur et rendre la gestion des finances encore plus intuitive et pratique.</li>
+            <li><strong>Offres de produits élargies :</strong> Introduction de nouveaux produits et services financiers pour répondre aux besoins évolutifs de nos clients et leur offrir encore plus de moyens d'atteindre leurs objectifs financiers.</li>
+            <li><strong>Concentration continue sur la sécurité :</strong> Maintien des normes les plus élevées en matière de sécurité et de confidentialité pour garantir que nos clients puissent nous faire confiance avec leurs informations financières sensibles.</li>
+            <li><strong>Engagement envers la satisfaction client :</strong> Redoublement d'efforts pour fournir un service client et un support exceptionnels, en veillant à ce que nos clients reçoivent l'assistance dont ils ont besoin, quand ils en ont besoin.</li>
+        </ul>
+        <p>"<strong><em>Nous sommes dédiés à la réussite de nos clients, et cette annonce représente notre engagement continu à offrir des solutions innovantes qui leur permettent de prendre le contrôle de leur avenir financier.</em></strong>", a ajouté Arthur Spannos.</p>
+        <p>Pour plus d'informations sur ces mises à jour passionnantes et comment elles bénéficieront aux clients de PLAY! Finance, visitez le site web de PLAY! Finance ou votre agence locale.</p>
+        <p><strong>À propos de PLAY! Finance</strong><br />
+        PLAY! Finance est un fournisseur leader de solutions financières innovantes, dédié à permettre aux individus d'atteindre le bien-être financier. Grâce à une technologie avancée et des outils personnalisés, PLAY! Finance redéfinit la façon dont les consommateurs interagissent avec leurs finances, rendant la gestion financière accessible, engageante et gratifiante pour tous.</p>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140133Z
+    - ID: "3e700dce-26eb-4bf0-990f-9d9fe555990d"
+      Hint: Excerpt
+      Value: "PLAY! Finance annonce une série d'améliorations et d'extensions visant à optimiser l'expérience client et à renforcer l'autonomisation financière."
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: Une annonce importante pour nos clients
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a6028c89-a56e-4a4a-acda-b230aff3576c"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140228Z
+    - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
+      Hint: Title
+      Value: Une annonce importante pour nos clients
+- Language: "ja-JP"
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: お客様へ重要なお知らせ
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "03117268-f84f-4fd8-ad9e-5990b3a21fe6"
+      Hint: Content
+      Value: |
+        <p>PLAY! Financeは、最先端の金融サービスを提供するリーディングプロバイダーとして、価値ある顧客の皆様にエキサイティングな最新情報をお届けいたします。</p>
+        <br />
+        <p>PLAY! FinanceのCEOであるアーサー・スパノス氏は、「<strong><em>お客様が財務的な健康を達成するための支援に向けた取り組みの一環として、重要なマイルストーンを達成できたことに興奮しています。</em></strong>」と述べています。</p>
+        
+        <p>今回の発表の主要なハイライトは以下の通りです:</p>
+        <ul>
+            <li><strong>ユーザーエクスペリエンスの強化:</strong> 新機能や改善により、ユーザーがより直感的で便利に資産管理を行えるようにします。</li>
+            <li><strong>製品ラインアップの拡充:</strong> 顧客のニーズに応えるために、新しい金融商品やサービスを提供し、財務目標達成の選択肢をさらに広げます。</li>
+            <li><strong>セキュリティへの継続的な注力:</strong> 高いセキュリティとプライバシーの基準を維持し、顧客の機密財務情報を安全に取り扱います。</li>
+            <li><strong>顧客満足度へのコミットメント:</strong> 卓越したカスタマーサービスとサポートを提供し、必要なときに適切な支援を受けられるよう努めます。</li>
+        </ul>
+        
+        <p>さらにアーサー・スパノス氏は、「<strong><em>私たちはお客様の成功に尽力しており、この発表はお客様が財務的未来を管理できるよう革新的なソリューションを提供し続けることへのコミットメントを表しています。</em></strong>」と述べています。</p>
+        
+        <p>これらのエキサイティングなアップデートやPLAY! Financeのお客様へのメリットについて、詳細はPLAY! Financeのウェブサイトまたはお近くの支店をご覧ください。</p>
+        
+        <p><strong>PLAY! Financeについて</strong><br />
+        PLAY! Financeは、革新的な金融ソリューションを提供するリーディングプロバイダーとして、個人が財務的な健康を達成できるよう支援しています。先端技術と個別対応のツールを通じて、PLAY! Financeは顧客が財務管理を身近に、魅力的に、そして有意義に感じられるよう再定義しています。</p>
+        
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T140133Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{13D6CCE7-A6C3-4EE1-A1D9-8A8E34225ED7}"
+    - ID: "3e700dce-26eb-4bf0-990f-9d9fe555990d"
+      Hint: Excerpt
+      Value: プレーする！ ファイナンスは、顧客体験の最適化と金融エンパワーメントの促進を目的とした一連の機能強化と拡張を発表した。
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: お客様へ重要なお知らせ
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "70d2f48b-a7d2-4bfb-af81-c3306ab0e42c"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T140228Z
+    - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
+      Hint: Title
+      Value: お客様へ重要なお知らせ

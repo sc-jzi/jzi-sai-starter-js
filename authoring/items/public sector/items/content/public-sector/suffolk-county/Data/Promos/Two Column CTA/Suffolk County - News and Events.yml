@@ -1,0 +1,115 @@
+﻿---
+ID: "346181ab-c666-4e9c-900b-85778b18d74b"
+Parent: "97fcf556-d57f-4dad-9cea-44165aa50338"
+Template: "1812bf3e-6bdd-466d-99b2-0d7cebb020fc"
+Path: "/sitecore/content/public-sector/suffolk-county/Data/Promos/Two Column CTA/Suffolk County - News and Events"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T151118Z
+    - ID: "301fab64-5268-445d-8380-6b43861bb434"
+      Hint: Link1
+      Value: |
+        <link text="Read more" linktype="external" url="https://suffolkcountyny.gov/News/ArtMID/583/ArticleID/15269" anchor="" class="" title="" target="" querystring="" />
+    - ID: "4e43fdc3-7a40-469c-a93a-231545ee01e9"
+      Hint: Title1
+      Value: County News
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "53845417-9058-4342-90a9-50783ffd8c25"
+      Hint: Link2
+      Value: |
+        <link text="More Events" linktype="external" url="https://suffolkcountyny.gov/Events/ArtMID/585/ArticleID/15213" anchor="" class="" title="" target="" querystring="" />
+    - ID: "56a3b6a6-bd8b-4d2e-a86d-f791169ebe7b"
+      Hint: Title2
+      Value: County Events
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5eacc805-137b-41d5-a43c-67d981abf6f9"
+      Hint: Text1
+      Value: |
+        13 August 2026 — Twenty-Five Mosquito Samples Test Positive for West Nile Virus
+        12 August 2026 — Romaine & LaLota Announce $20 Million Air Traffic Control Tower Project at Gabreski Airport
+        12 August 2026 — Department of Public Works Vector Mosquito Spraying
+        11 August 2026 — Three Beaches Closed to Bathing
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "66440f47-18f7-4e17-b13d-6b043cbbd1ef"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T151118Z
+    - ID: "eeb59bf3-72d2-4e49-9a37-3902b7a236a9"
+      Hint: Text2
+      Value: |
+        19 Aug 2026 — The Peconic Estuary Joint Technical Advisory & Natural Resources Sub-Committee Mtg.
+        20 Aug 2026 — Environmental Quality Board of Review
+        22 Aug 2026 — Community Health Fair
+        18 Sep 2026 — Hispanic Heritage Celebration
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T151118Z
+    - ID: "301fab64-5268-445d-8380-6b43861bb434"
+      Hint: Link1
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="Seguir leyendo" url="https://suffolkcountyny.gov/News/ArtMID/583/ArticleID/15269" />
+    - ID: "4e43fdc3-7a40-469c-a93a-231545ee01e9"
+      Hint: Title1
+      Value: Noticias del condado
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "53845417-9058-4342-90a9-50783ffd8c25"
+      Hint: Link2
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="Más eventos" url="https://suffolkcountyny.gov/Events/ArtMID/585/ArticleID/15213" />
+    - ID: "56a3b6a6-bd8b-4d2e-a86d-f791169ebe7b"
+      Hint: Title2
+      Value: Eventos del condado
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5eacc805-137b-41d5-a43c-67d981abf6f9"
+      Hint: Text1
+      Value: |
+        13 de agosto de 2026 — Veinticinco muestras de mosquitos dan positivo por el virus del Nilo Occidental
+        12 de agosto de 2026 — Romaine y LaLota anuncian un proyecto de torre de control del tráfico aéreo de 20 millones de dólares en el aeropuerto de Gabreski
+        12 de agosto de 2026 — Departamento de Obras Públicas: fumigación contra mosquitos vectores
+        11 de agosto de 2026 — Tres playas cerradas al baño
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "76a66375-56e6-44f0-a1d5-5f632254866e"
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T184428Z
+    - ID: "eeb59bf3-72d2-4e49-9a37-3902b7a236a9"
+      Hint: Text2
+      Value: |
+        19 ago 2026 — Reunión del Comité Asesor Técnico Conjunto y del Subcomité de Recursos Naturales del Estuario de Peconic
+        20 ago 2026 — Junta de Revisión de la Calidad Ambiental
+        22 ago 2026 — Feria comunitaria de salud
+        18 sept 2026 — Celebración de la Herencia Hispana

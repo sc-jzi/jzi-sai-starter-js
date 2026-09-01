@@ -1,0 +1,87 @@
+﻿---
+ID: "e3bbb6ce-e31c-4b7f-8b92-e4b193b78f4b"
+Parent: "99f0e1f7-d269-49a1-9e9c-25a46ee47eb0"
+Template: "90d315e8-aa42-4b23-a7eb-4491396453f8"
+Path: "/sitecore/content/public-sector/suffolk-county/Data/Promos/Suffolk County - Promo Carousel/Suffolk County - Slide Hazard Mitigation"
+SharedFields:
+- ID: "3ed91913-9018-4580-a112-9cb5b921fcca"
+  Hint: Image
+  Value: |
+    <Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/95813-slide-hazard?v=c99f1c48" dam-id="mx7up3AyQ06lEM26gFadDg" width="1501" height="450" alt="Hazard Mitigation and coastal resiliency" dam-content-type="Image" thumbnailsrc="https://jzi-verticals.sitecoresandbox.cloud/api/gateway/95813/thumbnail" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "82d07781-5371-422b-aac5-e489485a0e52"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T151138Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "669ea698-325b-4c24-8519-4a3cdd6ae0de"
+    - ID: "8ff063ab-c9f1-4628-a0b1-2afb5e7f5560"
+      Hint: Link
+      Value: |
+        <link text="Get Started" linktype="external" url="https://fres.suffolkcountyny.gov/respond/HazardMitigation.html" anchor="" class="" title="" target="" querystring="" />
+    - ID: "a3cbbb91-442e-441c-a6e2-5896c19d8711"
+      Hint: Text
+      Value: <p>Suffolk County Coastal Resiliency Initiative — construction of historic sewer projects funded with federal and state grant funding.</p>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260818T151138Z
+    - ID: "f44602f9-172c-4987-aaf6-1fb2ab0f75a1"
+      Hint: Title
+      Value: "Invest in your personal safety and protect your property - Hazard Mitigation"
+- Language: "es-ES"
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260818T151138Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "2d5614bd-7868-4bd6-af4e-1f7d4c148f9f"
+    - ID: "8ff063ab-c9f1-4628-a0b1-2afb5e7f5560"
+      Hint: Link
+      Value: |
+        <link class="" querystring="" anchor="" target="" title="" linktype="external" text="Comenzar" url="https://fres.suffolkcountyny.gov/respond/HazardMitigation.html" />
+    - ID: "9857f526-390f-48df-b6d1-1a97cc328e8f"
+      Hint: __Version Name
+      Value: AI translated
+    - ID: "a3cbbb91-442e-441c-a6e2-5896c19d8711"
+      Hint: Text
+      Value: <p>Iniciativa de Resiliencia Costera del Condado de Suffolk — construcción de proyectos históricos de alcantarillado financiados con subvenciones federales y estatales.</p>
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260826T184419Z
+    - ID: "f44602f9-172c-4987-aaf6-1fb2ab0f75a1"
+      Hint: Title
+      Value: "Invierta en su seguridad personal y proteja su propiedad - Mitigación de riesgos"
