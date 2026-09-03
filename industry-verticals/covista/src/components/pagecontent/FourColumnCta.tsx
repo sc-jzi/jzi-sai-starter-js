@@ -119,3 +119,86 @@ export const Default = (props: FourColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+const hasStoryLink = (link?: LinkField): boolean => Boolean(link?.value?.href && link.value.href !== '#');
+
+export const CovistaStories = (props: FourColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const Card = ({
+    image,
+    title,
+    text,
+    link,
+  }: {
+    image: ImageField;
+    title: Field<string>;
+    text: Field<string>;
+    link: LinkField;
+  }) => {
+    const inner = (
+      <>
+        <div className="cv-stories__media">
+          <NextImage field={image} width={480} height={260} />
+        </div>
+        {(isPageEditing || text?.value) && (
+          <p className="cv-stories__tag">
+            <Text field={text} />
+          </p>
+        )}
+        <h3 className="cv-stories__title">
+          <Text field={title} />
+        </h3>
+      </>
+    );
+
+    return (
+      <div className="cv-stories__card-wrap">
+        {hasStoryLink(link) && !isPageEditing ? (
+          <Link field={link} className="cv-stories__card">
+            {inner}
+          </Link>
+        ) : (
+          <div className="cv-stories__card">{inner}</div>
+        )}
+        {isPageEditing && <Link field={link} className="cv-stories__editor-link" />}
+      </div>
+    );
+  };
+
+  return (
+    <div className={`component four-column-cta cv-stories ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="cv-stories__grid">
+          <Card
+            image={props.fields.Image1}
+            title={props.fields.Title1}
+            text={props.fields.Text1}
+            link={props.fields.Link1}
+          />
+          <Card
+            image={props.fields.Image2}
+            title={props.fields.Title2}
+            text={props.fields.Text2}
+            link={props.fields.Link2}
+          />
+          <Card
+            image={props.fields.Image3}
+            title={props.fields.Title3}
+            text={props.fields.Text3}
+            link={props.fields.Link3}
+          />
+          <Card
+            image={props.fields.Image4}
+            title={props.fields.Title4}
+            text={props.fields.Text4}
+            link={props.fields.Link4}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};

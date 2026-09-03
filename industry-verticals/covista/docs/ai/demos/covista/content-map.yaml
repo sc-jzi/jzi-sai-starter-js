@@ -1,0 +1,373 @@
+client:
+  name: "Covista"
+  sourceUrl: "https://www.covista.com"
+  sourceLanguage: "en"
+  targetLanguage: "en"
+  translationApplied: false
+  extractedAt: "2026-09-03T01:22:23.189Z"
+  mappedAt: "2026-09-03T01:40:00Z"
+  contentSourceNote: "DOM extractor returned 11 sections (hero smashed words; news list duplicated). Mapped to 12 build-plan sections plus two HeadingCta button-only items for Learn more / More stories."
+
+sections:
+  - position: 1
+    componentName: "Header"
+    manifestName: "Header"
+    kind: "context-only"
+    datasourceItemName: ""
+    apiAddable: false
+    fields:
+      Title: "Covista"
+    children: []
+    imageFields:
+      - field: "LogoImage"
+        src: "https://www.covista.com/themes/custom/cv_base/images/svg/cv_logo.svg"
+        alt: "covista"
+        localFile: "covista-logo.svg"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 2
+    componentName: "Carousel"
+    manifestName: "Carousel"
+    kind: "list"
+    datasourceItemName: "Covista - Hero Carousel"
+    apiAddable: true
+    fields: {}
+    children:
+      - name: "Covista - Hero Slide 1"
+        fields:
+          Title: "The Talent to Transform Healthcare"
+          Text: ""
+          Link:
+            text: "Our story"
+            href: "https://www.covista.com/our-story"
+            target: ""
+        imageFields:
+          - field: "Image"
+            src: "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-02/homepage_hero.png?itok=Iv81DVUM"
+            alt: "A healthcare professional wearing green scrubs is standing outside a modern building."
+            localFile: "section1-img1.png"
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 3
+    componentName: "StatsCounter"
+    manifestName: "StatsCounter"
+    kind: "simple"
+    datasourceItemName: "Covista - Stats"
+    apiAddable: true
+    fields:
+      Value1: "5"
+      Symbol1: ""
+      Caption1: "post-secondary institutions"
+      Value2: "26"
+      Symbol2: "K"
+      Caption2: "healthcare graduates a year"
+      Value3: "300"
+      Symbol3: "K+"
+      Caption3: "healthcare alumni practicing worldwide"
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 4
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    kind: "simple"
+    datasourceItemName: "Covista - Research"
+    apiAddable: true
+    fields:
+      Title: "Covista Care Capacity Monitor Research"
+      Text: "<p>Where America's healthcare workforce gaps hit hardest—and why it matters for patient care.</p><p>Explore workforce dynamics across all 50 states and specialties. Uncover what's driving shortages in your region and where opportunities exist to expand care capacity.</p>"
+      Link:
+        text: "See the research"
+        href: "https://www.covista.com/research"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image"
+        src: "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-01/adtalem_projsterling_healthcare_stock_getty124205743.jpg?itok=Rm3si0kF"
+        alt: "Two medical professionals in green scrubs looking at patient board."
+        localFile: "section3-img5.jpg"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 5
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Covista - Institutions Heading"
+    apiAddable: true
+    fields:
+      Heading: "Our institutions"
+      Text: "Our five accredited institutions help open doors to healthcare careers for those who never thought it was possible."
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 6
+    componentName: "FiveColumnCta"
+    manifestName: "FiveColumnCta"
+    kind: "simple"
+    datasourceItemName: "Covista - Institutions"
+    apiAddable: true
+    fields:
+      Text1: "American University of the Caribbean School of Medicine"
+      Link1:
+        text: "American University of the Caribbean School of Medicine"
+        href: "https://www.aucmed.edu/"
+        target: "_blank"
+      Text2: "Chamberlain University"
+      Link2:
+        text: "Chamberlain University"
+        href: "https://www.chamberlain.edu/"
+        target: "_blank"
+      Text3: "Ross University School of Medicine"
+      Link3:
+        text: "Ross University School of Medicine"
+        href: "https://medical.rossu.edu/"
+        target: "_blank"
+      Text4: "Ross University School of Veterinary Medicine"
+      Link4:
+        text: "Ross University School of Veterinary Medicine"
+        href: "https://veterinary.rossu.edu/"
+        target: "_blank"
+      Text5: "Walden University"
+      Link5:
+        text: "Walden University"
+        href: "https://www.waldenu.edu/"
+        target: "_blank"
+    children: []
+    imageFields:
+      - field: "Image1"
+        src: "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/auc_vertical_logo.png?itok=fLJPSYz7"
+        alt: "American University of the Caribbean School of Medicine"
+        localFile: "section5-img11.png"
+      - field: "Image2"
+        src: "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/chamberlain_university_vertical_logo.png?itok=zbPl4F4X"
+        alt: "Chamberlain University"
+        localFile: "section5-img12.png"
+      - field: "Image3"
+        src: "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/rusm_vertical_logo.png?itok=WFhm_zzg"
+        alt: "Ross University School of Medicine"
+        localFile: "section5-img13.png"
+      - field: "Image4"
+        src: "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/rusvm_vertical_logo.png?itok=myRS60Dp"
+        alt: "Ross University School of Veterinary Medicine"
+        localFile: "section5-img14.png"
+      - field: "Image5"
+        src: "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/walden_logo_vertical_cyan_1.png?itok=vaRAymwV"
+        alt: "Walden University"
+        localFile: "section5-img15.png"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 13
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Covista - Institutions Learn More"
+    apiAddable: true
+    variant: "CovistaLink"
+    fields:
+      Link:
+        text: "Learn more"
+        href: "https://www.covista.com/our-institutions/institutions"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+    contentNotes: "Button-only Heading CTA inserted after the logo row."
+
+  - position: 7
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    kind: "simple"
+    datasourceItemName: "Covista - Support"
+    apiAddable: true
+    fields:
+      Title: "Supporting healthcare workers nationwide"
+      Text: "<p>America faces a healthcare workforce crisis that threatens access to care for millions. Through Covista Open Doors, our multi-year impact commitment to build and sustain the healthcare workforce, we're opening doors for current and future healthcare workers during the moments that matter most.</p>"
+      Link:
+        text: "Learn about our impact"
+        href: "https://www.covista.com/our-impact"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image"
+        src: "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_1_1_crop_md/public/2026-01/home_page_supporting_healthcare_workers_nationwide.jpg?itok=5-001bQG"
+        alt: "Male medical professional in green scrubs with patient"
+        localFile: "section7-img41.jpg"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 8
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    kind: "simple"
+    datasourceItemName: "Covista - Careers"
+    apiAddable: true
+    fields:
+      Title: "Careers that blend performance and purpose"
+      Text: "<p>We believe doing exceptional work and making a meaningful difference for students and society aren’t separate goals—they are one and the same.</p>"
+      Link:
+        text: "Explore opportunities"
+        href: "https://www.covista.com/join-us"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image"
+        src: "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/rectangle_4.png?itok=_kd8fITk"
+        alt: "Three people at a desk"
+        localFile: "section8-img45.png"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 9
+    componentName: "CtaBanner"
+    manifestName: "CtaBanner"
+    kind: "simple"
+    datasourceItemName: "Covista - Stock"
+    apiAddable: true
+    fields:
+      Eyebrow: "NYSE : CVSA"
+      Title: "134.16"
+      Text: "<p>See the story behind the numbers</p><p>Learn why investors are choosing Covista.</p>"
+      Link:
+        text: "View our financials"
+        href: "https://investors.covista.com/"
+        target: "_blank"
+    children: []
+    imageFields:
+      - field: "Image"
+        src: "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-01/home_page_stock_information.jpg?itok=jG9Ni_0n"
+        alt: "Man in tan sweater"
+        localFile: "section9-img51.jpg"
+    matchConfidence: "medium"
+    contentSource: "extractor"
+
+  - position: 10
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Covista - News Heading"
+    apiAddable: true
+    fields:
+      Heading: "News and stories"
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 11
+    componentName: "FourColumnCta"
+    manifestName: "FourColumnCta"
+    kind: "simple"
+    datasourceItemName: "Covista - News Stories"
+    apiAddable: true
+    fields:
+      Text1: "Covista Foundation"
+      Title1: "Covista Open Doors: Investing in America's Healthcare Workforce"
+      Link1:
+        text: "Read story"
+        href: "https://www.covista.com/news/covista-open-doors-investing-in-americas-healthcare-workforce"
+        target: ""
+      Text2: "Purpose at Scale"
+      Title2: "From the Desk of Steve Beard: Introducing Purpose at Scale"
+      Link2:
+        text: "Read story"
+        href: "https://www.covista.com/news/from-the-desk-of-steve-beard-introducing-purpose-at-scale"
+        target: ""
+      Text3: "Alumni"
+      Title3: "Covista Meets New Milestone with 400k Alumni, 100K Students and 28K Graduates in 2026"
+      Link3:
+        text: "Read story"
+        href: "https://www.covista.com/news/covista-meets-new-milestone-with-400k-alumni-100k-students-and-28k-graduates-in-2026"
+        target: ""
+      Text4: "Covista Care Capacity Monitor"
+      Title4: "Examining the Healthcare Salary Gap: Fixing It Will Take More Than a Bigger Paycheck"
+      Link4:
+        text: "Read story"
+        href: "https://www.covista.com/news/examining-the-healthcare-salary-gap-fixing-it-will-take-more-than-a-bigger-paycheck"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image1"
+        src: "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-07/covista-community-rounds-event-cropped.jpg?itok=RMCIt16J"
+        alt: "Covista Community Rounds"
+        localFile: "section11-img57.jpg"
+      - field: "Image2"
+        src: "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-07/web_sb_newsletter_1550x665.jpg?itok=TtwyBuif"
+        alt: "Steve Beard"
+        localFile: "section11-img58.jpg"
+      - field: "Image3"
+        src: "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-07/alumni_web.jpg?itok=-i5dyIv1"
+        alt: "400k alumni, 100k students, 28k graduates in FY 26"
+        localFile: "section11-img59.jpg"
+      - field: "Image4"
+        src: "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-07/cccm_header_nurse.jpg?itok=iikAHCz-"
+        alt: "Covista Care Capacity Monitor"
+        localFile: "section11-img60.jpg"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 14
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Covista - News More Stories"
+    apiAddable: true
+    variant: "CovistaLink"
+    fields:
+      Link:
+        text: "More stories"
+        href: "https://www.covista.com/news-insights"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+    contentNotes: "Button-only Heading CTA inserted after the story cards."
+
+  - position: 12
+    componentName: "Footer"
+    manifestName: "Footer"
+    kind: "context-only"
+    datasourceItemName: ""
+    apiAddable: false
+    fields:
+      Title1: "Our Story"
+      Text1: "<ul><li><a href=\"https://www.covista.com/our-story\">Our Story</a></li><li><a href=\"https://www.covista.com/join-us\">Join Us</a></li></ul>"
+      Title2: "Our Institutions"
+      Text2: "<ul><li><a href=\"https://www.covista.com/our-institutions/institutions\">Our Institutions</a></li><li><a href=\"https://investors.covista.com/\">Investors</a></li></ul>"
+      Title3: "Our Impact"
+      Text3: "<ul><li><a href=\"https://www.covista.com/our-impact\">Our Impact</a></li></ul>"
+      Title4: "News & Insights"
+      Text4: "<ul><li><a href=\"https://www.covista.com/news-insights\">News & Insights</a></li></ul>"
+      Copyright: "© 2026 Covista. 500 W Monroe Street, Suite 2800, Chicago, IL 60661"
+    children: []
+    imageFields:
+      - field: "Image1"
+        src: "https://www.covista.com/themes/custom/cv_base/images/svg/cv_logo.svg"
+        alt: "covista"
+        localFile: "covista-logo.svg"
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+summary:
+  totalSections: 14
+  mappedFromExtractor: 11
+  contextOnly: 2
+  listComponents: 1
+  simpleComponents: 11
+  imagesMapped: 15
+
+manualVideoTasks:
+  - section: 2
+    component: "Carousel"
+    source: "https://www.covista.com/sites/g/files/krcnkv471/files/2026-01/header_final.mp4"
+    note: "Hero background video. PLAY! Carousel Video field expects a media item; upload header_final.mp4 in Pages and assign it on Covista - Hero Slide 1 if video is required."

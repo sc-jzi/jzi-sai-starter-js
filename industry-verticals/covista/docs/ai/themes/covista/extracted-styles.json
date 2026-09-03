@@ -1,0 +1,46 @@
+{
+  "colors": {
+    "bodyBackground": "rgba(0, 0, 0, 0)",
+    "bodyColor": "rgb(0, 0, 0)",
+    "headerBackground": "rgba(0, 0, 0, 0)",
+    "headerColor": "rgb(0, 0, 0)",
+    "footerBackground": "rgb(27, 73, 41)",
+    "footerColor": "rgb(0, 0, 0)",
+    "heroBackground": null,
+    "primaryButtonBackground": "rgb(27, 73, 41)",
+    "primaryButtonColor": "rgb(255, 249, 245)",
+    "primaryButtonBorderRadius": "40px",
+    "linkColor": "rgb(217, 105, 65)"
+  },
+  "typography": {
+    "bodyFontFamily": "acumin-pro-wide-light, Helvetica, Arial, sans-serif",
+    "bodyFontSize": "18px",
+    "bodyFontWeight": "400",
+    "bodyLineHeight": "29.88px",
+    "h1FontFamily": "acumin-pro-wide-medium, Helvetica, Arial, sans-serif",
+    "h1FontSize": "48px",
+    "h1FontWeight": "500",
+    "h1LetterSpacing": "-0.72px",
+    "h1TextTransform": "none",
+    "h2FontFamily": "acumin-pro-wide-medium, Helvetica, Arial, sans-serif",
+    "h2FontSize": "40px",
+    "h2FontWeight": "500",
+    "h3FontFamily": "albiona-medium, Rockwell, \"Josefin Slab\", serif",
+    "h3FontSize": "18px",
+    "h3FontWeight": "300",
+    "pFontSize": "14px",
+    "pLineHeight": "21px"
+  },
+  "shape": {
+    "cardBorderRadius": "0px",
+    "cardBoxShadow": "none",
+    "cardBorder": "0px none rgb(0, 0, 0)",
+    "imgBorderRadius": "0px"
+  },
+  "spacing": {
+    "heroMinHeight": "0px",
+    "heroPadding": "0px",
+    "containerMaxWidth": "1400px"
+  },
+  "cssVariables": {}
+}

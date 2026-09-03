@@ -190,3 +190,76 @@ export const WithBackgroundImage = (props: PromoCtaProps): JSX.Element => {
     </div>
   );
 };
+
+const hasPromoLink = (link?: LinkField): boolean => Boolean(link?.value?.href && link.value.href !== '#');
+
+export const CovistaResearch = (props: PromoCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component promo-cta cv-research ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="cv-research__grid">
+          <div className="cv-research__media">
+            <NextImage field={props.fields.Image} width={960} height={720} />
+          </div>
+          <div className="cv-research__panel">
+            {(isPageEditing || props.fields?.Title?.value) && (
+              <h2 className="cv-research__title">
+                <Text field={props.fields.Title} />
+              </h2>
+            )}
+            <RichText field={props.fields.Text} className="cv-research__text" />
+            {(isPageEditing || hasPromoLink(props.fields?.Link)) && (
+              <Link field={props.fields.Link} className="cv-btn cv-btn--accent" />
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const CovistaSplitLayout = (
+  props: PromoCtaProps,
+  reversed: boolean
+): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div
+      className={`component promo-cta cv-split ${reversed ? 'cv-split--reverse' : ''} ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="cv-split__grid">
+          <div className="cv-split__media">
+            <NextImage field={props.fields.Image} width={900} height={700} />
+          </div>
+          <div className="cv-split__copy">
+            {(isPageEditing || props.fields?.Title?.value) && (
+              <h2 className="cv-split__title">
+                <Text field={props.fields.Title} />
+              </h2>
+            )}
+            <RichText field={props.fields.Text} className="cv-split__text" />
+            {(isPageEditing || hasPromoLink(props.fields?.Link)) && (
+              <Link field={props.fields.Link} className="cv-btn" />
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const CovistaSplit = (props: PromoCtaProps): JSX.Element => CovistaSplitLayout(props, false);
+
+export const CovistaSplitReverse = (props: PromoCtaProps): JSX.Element =>
+  CovistaSplitLayout(props, true);

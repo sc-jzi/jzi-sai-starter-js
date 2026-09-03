@@ -140,3 +140,42 @@ export const LargeImage = (props: CtaBannerProps): JSX.Element => {
     </div>
   );
 };
+
+export const CovistaStock = (props: CtaBannerProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component cta-banner cv-stock ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="cv-stock__grid">
+          <div className="cv-stock__quote">
+            <p className="cv-stock__kicker">Stock information</p>
+            {(isPageEditing || props.fields?.Eyebrow?.value) && (
+              <p className="cv-stock__ticker">
+                <Text field={props.fields.Eyebrow} />
+              </p>
+            )}
+            <p className="cv-stock__price">
+              <span>$</span>
+              <Text field={props.fields.Title} />
+            </p>
+          </div>
+          <div className="cv-stock__story">
+            <div className="cv-stock__media">
+              <NextImage field={props.fields.Image} width={640} height={720} />
+            </div>
+            <div className="cv-stock__card">
+              <RichText field={props.fields.Text} className="cv-stock__card-text" />
+              {(isPageEditing || props.fields?.Link?.value?.href) && (
+                <Link field={props.fields.Link} className="cv-btn cv-btn--accent" />
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};

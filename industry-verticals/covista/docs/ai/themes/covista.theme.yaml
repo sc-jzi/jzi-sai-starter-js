@@ -1,0 +1,134 @@
+# Client Brand Theme — Covista
+# Extracted from Playwright scraper + homepage screenshots
+# Source: https://www.covista.com
+
+client:
+  name: "Covista"
+  sourceUrl: "https://www.covista.com"
+  extractedAt: "2026-09-02T21:20:00Z"
+  extractedBy: "cursor"
+  contentRoot: "/sitecore/content/covista/covista"
+  codeRoot: "/industry-verticals/covista"
+
+colors:
+  primary: "#1B4929"
+  primaryForeground: "#FFF9F5"
+  secondary: "#14351E"
+  secondaryForeground: "#FFF9F5"
+  accent: "#D96941"
+  accentForeground: "#FFF9F5"
+  background: "#FFFFFF"
+  foreground: "#1A1A1A"
+  muted: "#F4EDE4"
+  mutedForeground: "#4A4A4A"
+  headerBackground: "#1B4929"
+  headerForeground: "#FFFFFF"
+  footerBackground: "#1B4929"
+  footerForeground: "#FFF9F5"
+  border: "#D4C8C0"
+  ring: "#D96941"
+  extra:
+    - { name: "forestGreen", value: "#1B4929" }
+    - { name: "forestDeep", value: "#14351E" }
+    - { name: "terracotta", value: "#D96941" }
+    - { name: "cream", value: "#F4EDE4" }
+    - { name: "researchRose", value: "#E8D4D0" }
+    - { name: "warmWhite", value: "#FFF9F5" }
+    - { name: "statCard", value: "#FFFFFF" }
+
+typography:
+  headingFamily: "'Josefin Slab', serif"
+  headingWeight: "600"
+  bodyFamily: "'Source Sans 3', sans-serif"
+  bodyWeight: "400"
+  monoFamily: "'Source Code Pro', monospace"
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+  scale:
+    hero: "3rem"
+    h1: "3rem"
+    h2: "2.5rem"
+    h3: "1.125rem"
+    body: "1.125rem"
+    small: "0.875rem"
+  headingTransform: "none"
+  letterSpacing: "-0.015em"
+  lineHeight: "relaxed"
+
+spacing:
+  density: "spacious"
+  sectionGap: "5rem"
+  containerMaxWidth: "1400px"
+  containerPadding: "1.5rem"
+
+shape:
+  borderRadius: "0"
+  buttonRadius: "2.5rem"
+  cardRadius: "0"
+  imageRadius: "0"
+  shadowStyle: "subtle"
+  borderStyle: "none"
+
+tone:
+  overall: "institutional"
+  colorMode: "mixed"
+  contrast: "high"
+  imagery: "photography"
+  heroStyle: "full-bleed-image"
+  cardStyle: "elevated"
+  navStyle: "solid-bar"
+
+tailwind:
+  colors:
+    brand:
+      primary: "#1B4929"
+      secondary: "#14351E"
+      accent: "#D96941"
+  fontFamily:
+    heading: ["Josefin Slab", "serif"]
+    body: ["Source Sans 3", "sans-serif"]
+  borderRadius:
+    DEFAULT: "0"
+    button: "2.5rem"
+    card: "0"
+
+cssVariables: |
+  :root {
+    --brand-primary: #1B4929;
+    --brand-primary-foreground: #FFF9F5;
+    --brand-secondary: #14351E;
+    --brand-secondary-foreground: #FFF9F5;
+    --brand-accent: #D96941;
+    --brand-accent-foreground: #FFF9F5;
+    --brand-bg: #ffffff;
+    --brand-fg: #1a1a1a;
+    --brand-muted: #F4EDE4;
+    --brand-muted-fg: #4a4a4a;
+    --brand-header-bg: #1B4929;
+    --brand-header-fg: #ffffff;
+    --brand-footer-bg: #1B4929;
+    --brand-footer-fg: #FFF9F5;
+    --brand-border: #D4C8C0;
+    --brand-ring: #D96941;
+    --brand-heading-font: 'Josefin Slab', serif;
+    --brand-body-font: 'Source Sans 3', sans-serif;
+    --brand-radius: 0;
+    --brand-button-radius: 2.5rem;
+    --brand-card-radius: 0;
+  }
+
+extraction:
+  confidence: "high"
+  method: "playwright-full"
+  notes:
+    - "Playwright scraper captured desktop/mobile/hero screenshots, computed styles, Typekit font faces, and the Covista logo SVG from https://www.covista.com."
+    - "Primary forest green is rgb(27, 73, 41) / #1B4929 — used for header, footer, and primary buttons."
+    - "Accent / link color is rgb(217, 105, 65) / #D96941 terracotta — used for section titles, stock price, and rose CTAs."
+    - "Button text is warm off-white rgb(255, 249, 245) / #FFF9F5."
+    - "Live site uses Adobe Typekit: Acumin Pro Wide (body/h1/h2) and Albiona (serif headings). Substituted Source Sans 3 and Josefin Slab (already in the scraper's own fallback list)."
+    - "Scraper headerBackground was transparent; visual desktop header is solid forest green. Mobile header is white with a green logo."
+    - "Buttons are pill-shaped (computed 40px radius) with a colored square arrow on the trailing edge."
+    - "Stat cards are white, sharp-cornered, and overlap the hero onto a cream band."
+    - "Research and stock sections use a dusty rose / cream band (#E8D4D0 / #F4EDE4)."
+    - "Hero is a full-bleed photo carousel with square pagination markers and a left-aligned white headline."
+    - "This starter uses PLAY! Financial components (not the UIIM 18-component library). Phase 4 will apply tokens in src/assets/sass, same pattern as the MN-S demo."
+    - "Content Hub credentials verified 200 OK against https://covista.sitecoresandbox.cloud."

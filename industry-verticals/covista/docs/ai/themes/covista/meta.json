@@ -1,0 +1,91 @@
+{
+  "title": "Home | Covista",
+  "themeColor": null,
+  "msColor": null,
+  "ogTitle": "Home",
+  "ogDescription": null,
+  "ogImage": null,
+  "ogSiteName": "Covista",
+  "favicon": "https://www.covista.com/themes/custom/cv_base/favicon.ico",
+  "googleFontsLinks": [],
+  "fontFaces": [
+    {
+      "family": "cv-icomoon",
+      "src": "url(\"/themes/custom/cv_base/fonts/cv-icomoon/fonts/cv-icomoon.ttf?yb6wtl\") format(\"truetype\"), url(\"/themes/custom/cv_base/fonts/cv-icomoon/fonts/cv-icomoon.woff?yb6wtl\") format(\"woff\")",
+      "weight": "normal"
+    },
+    {
+      "family": "cv-icomoon",
+      "src": "url(\"/themes/custom/cv_base/fonts/cv-icomoon/fonts/cv-icomoon.ttf?1om62n\") format(\"truetype\"), url(\"/themes/custom/cv_base/fonts/cv-icomoon/fonts/cv-icomoon.woff?1om62n\") format(\"woff\")",
+      "weight": "normal"
+    },
+    {
+      "family": "acumin-pro-wide-light",
+      "src": "url(\"https://use.typekit.net/af/8f5b77/00000000000000007735d429/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3\") format(\"woff2\"), url(\"https://use.typekit.net/af/8f5b77/00000000000000007735d429/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3\") format(\"woff\"), url(\"https://use.typekit.net/af/8f5b77/00000000000000007735d429/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3\") format(\"opentype\")",
+      "weight": "300"
+    },
+    {
+      "family": "acumin-pro-wide-reg",
+      "src": "url(\"https://use.typekit.net/af/717208/00000000000000007735d452/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3\") format(\"woff2\"), url(\"https://use.typekit.net/af/717208/00000000000000007735d452/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3\") format(\"woff\"), url(\"https://use.typekit.net/af/717208/00000000000000007735d452/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3\") format(\"opentype\")",
+      "weight": "400"
+    },
+    {
+      "family": "acumin-pro-wide-medium",
+      "src": "url(\"https://use.typekit.net/af/04bc3d/00000000000000007735d438/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3\") format(\"woff2\"), url(\"https://use.typekit.net/af/04bc3d/00000000000000007735d438/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3\") format(\"woff\"), url(\"https://use.typekit.net/af/04bc3d/00000000000000007735d438/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3\") format(\"opentype\")",
+      "weight": "500"
+    },
+    {
+      "family": "acumin-pro-wide-semi",
+      "src": "url(\"https://use.typekit.net/af/21a4cd/00000000000000007735d442/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3\") format(\"woff2\"), url(\"https://use.typekit.net/af/21a4cd/00000000000000007735d442/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3\") format(\"woff\"), url(\"https://use.typekit.net/af/21a4cd/00000000000000007735d442/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3\") format(\"opentype\")",
+      "weight": "600"
+    },
+    {
+      "family": "acumin-pro-wide-bold",
+      "src": "url(\"https://use.typekit.net/af/2cfac8/00000000000000007735d419/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3\") format(\"woff2\"), url(\"https://use.typekit.net/af/2cfac8/00000000000000007735d419/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3\") format(\"woff\"), url(\"https://use.typekit.net/af/2cfac8/00000000000000007735d419/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3\") format(\"opentype\")",
+      "weight": "700"
+    },
+    {
+      "family": "albiona-extra-light",
+      "src": "url(\"https://use.typekit.net/af/c7534a/00000000000000007735c0f1/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n2&v=3\") format(\"woff2\"), url(\"https://use.typekit.net/af/c7534a/00000000000000007735c0f1/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n2&v=3\") format(\"woff\"), url(\"https://use.typekit.net/af/c7534a/00000000000000007735c0f1/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n2&v=3\") format(\"opentype\")",
+      "weight": "200"
+    },
+    {
+      "family": "albiona-light",
+      "src": "url(\"https://use.typekit.net/af/a2d907/00000000000000007735c0fd/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3\") format(\"woff2\"), url(\"https://use.typekit.net/af/a2d907/00000000000000007735c0fd/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3\") format(\"woff\"), url(\"https://use.typekit.net/af/a2d907/00000000000000007735c0fd/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3\") format(\"opentype\")",
+      "weight": "300"
+    },
+    {
+      "family": "albiona-medium",
+      "src": "url(\"https://use.typekit.net/af/bb787b/00000000000000007735c0ff/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3\") format(\"woff2\"), url(\"https://use.typekit.net/af/bb787b/00000000000000007735c0ff/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3\") format(\"woff\"), url(\"https://use.typekit.net/af/bb787b/00000000000000007735c0ff/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3\") format(\"opentype\")",
+      "weight": "500"
+    },
+    {
+      "family": "albiona-bold",
+      "src": "url(\"https://use.typekit.net/af/596adc/00000000000000007735c0ea/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3\") format(\"woff2\"), url(\"https://use.typekit.net/af/596adc/00000000000000007735c0ea/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3\") format(\"woff\"), url(\"https://use.typekit.net/af/596adc/00000000000000007735c0ea/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3\") format(\"opentype\")",
+      "weight": "700"
+    },
+    {
+      "family": "albiona-heavy",
+      "src": "url(\"https://use.typekit.net/af/220526/00000000000000007735c0fa/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3\") format(\"woff2\"), url(\"https://use.typekit.net/af/220526/00000000000000007735c0fa/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3\") format(\"woff\"), url(\"https://use.typekit.net/af/220526/00000000000000007735c0fa/31/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3\") format(\"opentype\")",
+      "weight": "800"
+    },
+    {
+      "family": "Source Sans Pro",
+      "src": "url(\"https://consent.trustarc.com/get?name=SourceSansPro-Regular.ttf\") format(\"truetype\"), url(\"https://consent.trustarc.com/get?name=SourceSansPro-Regular.woff\") format(\"woff\"), url(\"https://consent.trustarc.com/get?name=SourceSansPro-Regular.otf\") format(\"opentype\")",
+      "weight": ""
+    }
+  ],
+  "logoCandidates": [
+    "https://www.covista.com/themes/custom/cv_base/images/svg/cv_logo.svg",
+    "https://www.covista.com/themes/custom/cv_base/cv-logo.png",
+    "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-11/logomark-color-rgb_12.png?itok=KCeWvQUj",
+    "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-11/logomark-color-rgb_12.png?itok=KCeWvQUj",
+    "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-11/logomark-color-rgb_12.png?itok=KCeWvQUj",
+    "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-11/logomark-color-rgb_12.png?itok=KCeWvQUj",
+    "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-11/logomark-color-rgb_12.png?itok=KCeWvQUj",
+    "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-11/logomark-color-rgb_12.png?itok=KCeWvQUj",
+    "https://www.covista.com/themes/custom/cv_base/cv-logo.png",
+    "https://www.covista.com/themes/custom/cv_base/images/svg/cv_logo_mark.svg"
+  ],
+  "heroBgImage": null
+}

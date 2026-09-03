@@ -107,3 +107,41 @@ export const Default = (props: FiveColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+export const CovistaLogos = (props: FiveColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const Logo = ({
+    image,
+    text,
+    link,
+  }: {
+    image: ImageField;
+    text: Field<string>;
+    link: LinkField;
+  }) => (
+    <Link field={link} className="cv-logos__item">
+      {(isPageEditing || image?.value?.src) && <NextImage field={image} width={220} height={140} />}
+      <span className="visually-hidden">
+        <Text field={text} />
+      </span>
+    </Link>
+  );
+
+  return (
+    <div className={`component five-column-cta cv-logos ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="cv-logos__row">
+          <Logo image={props.fields.Image1} text={props.fields.Text1} link={props.fields.Link1} />
+          <Logo image={props.fields.Image2} text={props.fields.Text2} link={props.fields.Link2} />
+          <Logo image={props.fields.Image3} text={props.fields.Text3} link={props.fields.Link3} />
+          <Logo image={props.fields.Image4} text={props.fields.Text4} link={props.fields.Link4} />
+          <Logo image={props.fields.Image5} text={props.fields.Text5} link={props.fields.Link5} />
+        </div>
+      </div>
+    </div>
+  );
+};

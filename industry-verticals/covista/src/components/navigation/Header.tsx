@@ -53,3 +53,29 @@ export const WithLogoImage = (props: HeaderProps): JSX.Element => {
     </div>
   );
 };
+
+export const Covista = (props: HeaderProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const { page } = useSitecore();
+
+  return (
+    <div className={`component header cv-header ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="cv-header__row">
+          <div className="cv-header__logo">
+            <NextImage field={props.fields.LogoImage} width={160} height={36} />
+          </div>
+          <div className="cv-header__nav">
+            <AppPlaceholder
+              name="header-right"
+              rendering={props.rendering}
+              page={page}
+              componentMap={props.componentMap}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};

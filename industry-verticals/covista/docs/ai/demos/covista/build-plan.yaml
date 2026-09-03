@@ -1,0 +1,460 @@
+# Demo Build Plan — Covista
+# Maps the live covista.com homepage to existing PLAY! Financial components.
+# UIIM registry IDs are analogs only — those templates are not present
+# on /sitecore/content/covista/covista.
+
+client:
+  name: "Covista"
+  sourceUrl: "https://www.covista.com"
+  themeFile: "docs/ai/themes/covista.theme.yaml"
+  analyzedAt: "2026-09-02T21:30:00Z"
+  contentRoot: "/sitecore/content/covista/covista"
+  homePageId: "03af45ba-75fe-4e13-aee4-bd4d0caffacb"
+  homePagePath: "/sitecore/content/covista/covista/Home"
+  siteId: "7ba8cdee-80e2-485c-ad6d-e6d465790160"
+  dataFolderId: "b9adc39e-d36e-4761-9538-67ec8b1a6234"
+  promosFolderId: "9a0b6c45-35d4-44a2-936e-331cb38ee37a"
+  implementationLibrary: "play-financial"
+
+pageAnalysis:
+  screenshotFiles:
+    desktop: "docs/ai/themes/covista/screenshot-desktop.png"
+    mobile: "docs/ai/themes/covista/screenshot-mobile.png"
+    hero: "docs/ai/themes/covista/screenshot-hero.png"
+  totalSections: 12
+  templateMatches: 12
+  customRequired: 0
+
+sections:
+  - position: 1
+    description: "Solid forest-green header. White lowercase covista logo on the left. Nav: Our Story, Our Institutions, Our Impact, Join Us, Investors, News & Insights. Search icon on the right. Auxiliary links Employer Partners and Media Resources sit in the header chrome."
+    matchedComponent:
+      registryId: "navigation-header"
+      manifestName: "Header"
+      displayName: "Header + Navigation"
+      renderingId: "81317d3b-f929-426a-83ec-421982f8f1e6"
+      variant: "WithLogoImage"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: false
+      implementation: "existing-partial"
+    customVariantNeeded:
+      name: "Covista"
+      description: "Solid #1B4929 bar, white wordmark, white nav, search icon. No PLAY! CTA button or dotted accents."
+      parentComponent: "Header"
+    sectionBackground: "dark"
+    content:
+      Title: "Covista"
+      Description: "Our Story · Our Institutions · Our Impact · Join Us · Investors · News & Insights"
+    contentNotes: "Header + Navigation already sit in the Header partial. Swap LogoImage to the downloaded covista SVG. Update nav labels. Do not add via API."
+    variantReason: "tone.navStyle is solid-bar. WithLogoImage is the right structure; needs forest-green restyle, not PLAY! banking chrome."
+    kind: "context-only"
+
+  - position: 2
+    description: "Full-bleed photo carousel of healthcare professionals. Left-aligned white headline The Talent to Transform Healthcare. Small Our story pill button with a square arrow. Five square pagination markers."
+    matchedComponent:
+      registryId: "hero-banner-carousel"
+      manifestName: "Carousel"
+      displayName: "Carousel"
+      renderingId: "8094185b-4c72-40c8-b005-c6ed91708754"
+      datasourceTemplateId: "c7b8468f-4290-400f-93bb-d46c5f8db126"
+      childTemplateId: "54db209d-cd0f-49d9-ae4e-ecb65d72cc4d"
+      variant: "Covista"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+      alreadyOnPage: true
+      existingInstanceId: "124106de-fb02-4b43-a521-a309fc75a5bc"
+    customVariantNeeded:
+      name: "Covista"
+      description: "Full-bleed photo, left-aligned white overlay headline, pill CTA with square arrow, square pagination markers. No PLAY! right-offset text column."
+      parentComponent: "Carousel"
+    sectionBackground: "dark"
+    content:
+      Title: "Hero carousel"
+      items:
+        - title: "The Talent to Transform Healthcare"
+          text: ""
+          cta: "Our story"
+    imageFields:
+      - { field: "Image", src: "healthcare professional in white coat with stethoscope" }
+    contentNotes: "Carousel already on Home. List component: parent + Carousel Item children. Desktop scrape showed 5 markers — Phase 2.5 should extract remaining slides. Default Carousel puts text in a right-offset column; live site is a left overlay."
+    variantReason: "Default already has slides + arrows. Overlay alignment, square markers, and pill+arrow CTA need a Covista variant."
+    kind: "list"
+
+  - position: 3
+    description: "Three white cards overlapping the hero onto a cream band. Each has a forest-green line icon, a large number, and a caption: 5 post-secondary institutions; 26K healthcare graduates a year; 300K+ healthcare alumni practicing worldwide."
+    matchedComponent:
+      registryId: "trust-stats"
+      manifestName: "StatsCounter"
+      displayName: "Stats Counter"
+      renderingId: "316889fa-fdd4-42a6-a034-201124fe54e8"
+      datasourceTemplateId: "c24bfc74-c6e2-413a-aebd-903180dfaff7"
+      variant: "CovistaCards"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+    customVariantNeeded:
+      name: "CovistaCards"
+      description: "Three equal white cards with subtle shadow, green line icon, large serif number, caption. Overlap the hero. No PLAY! dotted accents or side photos."
+      parentComponent: "StatsCounter"
+    sectionBackground: "muted"
+    content:
+      Title: ""
+      items:
+        - title: "5"
+          text: "post-secondary institutions"
+        - title: "26K"
+          text: "healthcare graduates a year"
+        - title: "300K+"
+          text: "healthcare alumni practicing worldwide"
+    imageFields:
+      - { field: "Image1", src: "building / institution icon" }
+      - { field: "Image2", src: "decorative — unused in CovistaCards if icons are CSS" }
+    contentNotes: "Value fields are Number. Use Value=26 Symbol=K and Value=300 Symbol=K+. Icon images can be uploaded or drawn in the variant. Datasource location expects a Stats Counter folder under Data — create it in Phase 3 if missing."
+    variantReason: "Default StatsCounter is a numbered row with dotted accents and side images. Live site is three overlapping white cards."
+    kind: "simple"
+
+  - position: 4
+    description: "Split feature: photo of two clinicians in green scrubs on the left. Dusty-rose card on the right with serif headline Covista Care Capacity Monitor Research, body copy about workforce gaps, and a terracotta See the research button."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      displayName: "Promo CTA"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      datasourceTemplateId: "c0943942-ae0f-4205-86fa-84884cce4a53"
+      variant: "CovistaResearch"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+      alreadyOnPage: true
+      existingInstanceId: "d49a8931-f041-4988-9cc3-f2400e6422d0"
+    customVariantNeeded:
+      name: "CovistaResearch"
+      description: "Photo left, overlapping #E8D4D0 rose panel right, Albiona-style serif title, pill CTA with square arrow. No PLAY! dotted accents."
+      parentComponent: "PromoCta"
+    sectionBackground: "default"
+    content:
+      Title: "Covista Care Capacity Monitor Research"
+      Description: "Where America's healthcare workforce gaps hit hardest—and why it matters for patient care."
+      Cta: "See the research"
+    imageFields:
+      - { field: "Image", src: "two healthcare professionals in green scrubs and caps" }
+    contentNotes: "First Promo CTA on Home will be rewired. Fields: Title, Text, Image, Link. Eyebrow/Link2 unused."
+    variantReason: "Default Promo CTA is a PLAY! split with dotted accents and banking type. Live research block is a rose overlapping card."
+    kind: "simple"
+
+  - position: 5
+    description: "Centered terracotta serif heading Our institutions plus a short sentence about accredited partners."
+    matchedComponent:
+      registryId: "rich-text-block"
+      manifestName: "HeadingCta"
+      displayName: "Heading CTA"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      datasourceTemplateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+      variant: "Covista"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+    customVariantNeeded:
+      name: "Covista"
+      description: "Centered Josefin Slab heading in terracotta, optional body, no PLAY! eyebrow or filled button unless Link is set."
+      parentComponent: "HeadingCta"
+    sectionBackground: "default"
+    content:
+      Title: "Our institutions"
+      Description: "Five accredited institutions preparing the next generation of healthcare professionals."
+    contentNotes: "Pairs with the Five Column CTA immediately below. Heading CTA folder may need to be created under Data."
+    variantReason: "Centered exists but is PLAY! styled (eyebrow + display type + button)."
+    kind: "simple"
+
+  - position: 6
+    description: "Horizontal row of five institution logos: American University of the Caribbean School of Medicine, Chamberlain University, Ross University School of Medicine, Ross University School of Veterinary Medicine, Walden University. Terracotta Learn more button below."
+    matchedComponent:
+      registryId: "logo-cloud"
+      manifestName: "FiveColumnCta"
+      displayName: "Five Column CTA"
+      renderingId: "333def3e-c272-4ad9-a493-8d5ccae08312"
+      datasourceTemplateId: "3b41d9fc-0edf-48e1-966c-e260339ba815"
+      variant: "CovistaLogos"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+      alreadyOnPage: true
+      existingInstanceId: "b882746c-c313-4283-8f58-b9402bcf9c6a"
+    customVariantNeeded:
+      name: "CovistaLogos"
+      description: "Five centered logos in one row, titles as alt text only, no photo cards or PLAY! fade. Learn more is the Heading CTA link above or a small button under the row."
+      parentComponent: "FiveColumnCta"
+    sectionBackground: "default"
+    content:
+      Title: ""
+      Cta: "Learn more"
+      items:
+        - title: "American University of the Caribbean School of Medicine"
+        - title: "Chamberlain University"
+        - title: "Ross University School of Medicine"
+        - title: "Ross University School of Veterinary Medicine"
+        - title: "Walden University"
+    imageFields:
+      - { field: "Image1", src: "AUC School of Medicine logo" }
+      - { field: "Image2", src: "Chamberlain University logo" }
+      - { field: "Image3", src: "Ross University School of Medicine logo" }
+      - { field: "Image4", src: "Ross University School of Veterinary Medicine logo" }
+      - { field: "Image5", src: "Walden University logo" }
+    contentNotes: "Five Column CTA already on Home. Text1–5 hold names for accessibility; hide them visually in CovistaLogos. Link on Heading CTA (section 5) is the Learn more control — FiveColumnCta has per-logo links only."
+    variantReason: "Default is five photo+title columns. Live site is logos only."
+    kind: "simple"
+
+  - position: 7
+    description: "Split section. Photo of a male nurse in green scrubs with a patient on the left. Heading Supporting healthcare workers nationwide, body copy, dark-green Learn about our impact button on the right."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      displayName: "Promo CTA"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      datasourceTemplateId: "c0943942-ae0f-4205-86fa-84884cce4a53"
+      variant: "CovistaSplit"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+      alreadyOnPage: true
+      existingInstanceId: "633506e7-54d0-4410-9051-72fb4c9fecb4"
+    customVariantNeeded:
+      name: "CovistaSplit"
+      description: "Image left, text right, serif heading, pill forest-green button with square arrow. No dotted accents."
+      parentComponent: "PromoCta"
+    sectionBackground: "default"
+    content:
+      Title: "Supporting healthcare workers nationwide"
+      Description: "Covista partners with hospitals and health systems to sustain the workforce that patients rely on every day."
+      Cta: "Learn about our impact"
+    imageFields:
+      - { field: "Image", src: "male nurse in green scrubs attending a patient" }
+    contentNotes: "Second Promo CTA on Home will be rewired. TwoColumnCta was considered but would place this and Careers side-by-side; live site stacks them as full-width alternating splits."
+    variantReason: "Default Promo CTA is already a split. Needs Covista type, button, and photo framing."
+    kind: "simple"
+
+  - position: 8
+    description: "Reversed split. Heading Careers that blend performance and purpose and Explore opportunities button on the left. Photo of professionals in a meeting on the right."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      displayName: "Promo CTA"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      datasourceTemplateId: "c0943942-ae0f-4205-86fa-84884cce4a53"
+      variant: "CovistaSplitReverse"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+      alreadyOnPage: true
+      existingInstanceId: "1a516b9b-cc7b-49c9-a8eb-5be281a98612"
+    customVariantNeeded:
+      name: "CovistaSplitReverse"
+      description: "Same as CovistaSplit with columns flipped — text left, image right."
+      parentComponent: "PromoCta"
+    sectionBackground: "default"
+    content:
+      Title: "Careers that blend performance and purpose"
+      Description: "Join a team whose work prepares clinicians and improves care in communities nationwide."
+      Cta: "Explore opportunities"
+    imageFields:
+      - { field: "Image", src: "diverse professionals collaborating around a table" }
+    contentNotes: "Third Promo CTA on Home will be rewired. Reuse CovistaSplit styles with a reverse modifier."
+    variantReason: "Live careers block is the mirror of the support block."
+    kind: "simple"
+
+  - position: 9
+    description: "Cream band. Left: Stock information heading, NYSE CVTA, large terracotta price, day change. Right: white card See the story behind the numbers overlapping a portrait, terracotta View our financials button."
+    matchedComponent:
+      registryId: "cta-banner"
+      manifestName: "CtaBanner"
+      displayName: "CTA Banner"
+      renderingId: "488b8ac0-0ef9-4f6f-8711-78ba182b2c4c"
+      datasourceTemplateId: "4900d7e5-61b0-483a-a9d6-69419d4d5982"
+      variant: "CovistaStock"
+      matchType: "template"
+      matchConfidence: "medium"
+      variantMatch: "none"
+      apiAddable: true
+    customVariantNeeded:
+      name: "CovistaStock"
+      description: "Cream band. Left stack: terracotta serif heading, ticker, oversized price, change line. Right: white story card overlapping a portrait photo."
+      parentComponent: "CtaBanner"
+    sectionBackground: "muted"
+    content:
+      Title: "$129.90"
+      Description: "See the story behind the numbers. Learn why investors are choosing Covista."
+      Cta: "View our financials"
+    imageFields:
+      - { field: "Image", src: "portrait of a smiling bearded man" }
+    contentNotes: "No dedicated price/ticker fields. Eyebrow = NYSE: CVTA, Title = $129.90, Text = story + change. Live scrape showed $129.90; user screenshot showed $134.16 — Phase 2.5 will take the live DOM value. Confidence medium because the field fit is imperfect."
+    variantReason: "Default CtaBanner is a PLAY! conversion split with dotted accents. Live site is a stock ticker + story card."
+    kind: "simple"
+
+  - position: 10
+    description: "Terracotta serif heading News and stories."
+    matchedComponent:
+      registryId: "rich-text-block"
+      manifestName: "HeadingCta"
+      displayName: "Heading CTA"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      datasourceTemplateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+      variant: "Covista"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+    customVariantNeeded:
+      name: "Covista"
+      description: "Reuse the centered terracotta heading variant from Our institutions. Link can be More stories."
+      parentComponent: "HeadingCta"
+    sectionBackground: "default"
+    content:
+      Title: "News and stories"
+      Description: ""
+      Cta: "More stories"
+    contentNotes: "Second Heading CTA instance. Same Covista heading variant. More stories maps to Link."
+    variantReason: "Same heading treatment as Our institutions."
+    kind: "simple"
+
+  - position: 11
+    description: "Four vertical story cards. Each has a photo, a category tag (Impact, Innovation, Careers), a serif headline, and a small arrow. Desktop is a 4-up grid; mobile is a slider."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "FourColumnCta"
+      displayName: "Four Column CTA"
+      renderingId: "35075000-760e-4ff3-bd1c-f2eeba251dcb"
+      datasourceTemplateId: "1b694ef9-154d-429a-9c3f-d7774cd4a852"
+      variant: "CovistaStories"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+    customVariantNeeded:
+      name: "CovistaStories"
+      description: "Four vertical cards: image on top, small category in Text, serif headline in Title, arrow link. No PLAY! fade required."
+      parentComponent: "FourColumnCta"
+    sectionBackground: "default"
+    content:
+      Title: ""
+      items:
+        - title: "Examining the Healthcare Salary Gap"
+          text: "Impact"
+          cta: "Read story"
+        - title: "Close the Gap: Cleveland's New Campus"
+          text: "Innovation"
+          cta: "Read story"
+        - title: "Chairman and CEO Marc Harrison on Modern Healthcare"
+          text: "Leadership"
+          cta: "Read story"
+        - title: "Covista Open Doors, Investing in the American Healthcare Workforce"
+          text: "Careers"
+          cta: "Read story"
+    imageFields:
+      - { field: "Image1", src: "story thumbnail 1" }
+      - { field: "Image2", src: "story thumbnail 2" }
+      - { field: "Image3", src: "story thumbnail 3" }
+      - { field: "Image4", src: "story thumbnail 4" }
+    contentNotes: "Article List is already on Home but is page-as-datasource (needs article pages and always shows PLAY! thumbnails). FourColumnCta in Data/Promos is the pipeline-safe match. Phase 2.5 will replace headlines with live DOM text."
+    variantReason: "Default FourColumnCta is photo+title+body banking cards. Live stories are editorial image+tag+headline cards."
+    kind: "simple"
+
+  - position: 12
+    description: "Forest-green mega footer. White covista wordmark, 4x4 square motif, address, four link columns (Our Story, Our Institutions, Our Impact, News & Insights), legal links, LinkedIn / Facebook / YouTube."
+    matchedComponent:
+      registryId: "footer"
+      manifestName: "Footer"
+      displayName: "Footer"
+      renderingId: "771a3f27-6448-44ac-add0-e5de311c6e3b"
+      datasourceTemplateId: "947db8f8-dc76-453f-aca1-a27babfe633b"
+      variant: "WithSocials"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: false
+      implementation: "existing-partial"
+    customVariantNeeded:
+      name: "Covista"
+      description: "Forest-green #1B4929 background, inverted wordmark, four compact link columns, white type, social icons. Optional 4x4 square motif."
+      parentComponent: "Footer"
+    sectionBackground: "dark"
+    content:
+      Title: "Covista"
+      Description: "500 W Monroe Street, Suite 2800, Chicago, IL 60661"
+      Cta: "Contact Us"
+    contentNotes: "Footer lives in the Footer partial. Update the existing Footer datasource. WithSocials supports logo + 4 columns + 3 socials + copyright."
+    variantReason: "WithSocials is the closest structure. Needs forest-green restyle and Covista content."
+    kind: "context-only"
+
+customComponents: []
+
+buildOrder:
+  phase1_sitecore:
+    - "Carousel (Covista - Hero Carousel)"
+    - "StatsCounter (Covista - Stats)"
+    - "PromoCta (Covista - Research)"
+    - "HeadingCta (Covista - Institutions Heading)"
+    - "FiveColumnCta (Covista - Institutions)"
+    - "PromoCta (Covista - Support)"
+    - "PromoCta (Covista - Careers)"
+    - "CtaBanner (Covista - Stock)"
+    - "HeadingCta (Covista - News Heading)"
+    - "FourColumnCta (Covista - News Stories)"
+  phase2_theme: "Apply Covista :root tokens + Josefin Slab / Source Sans 3 in src/assets/sass (this starter has no globals.css CLIENT THEME placeholder)."
+  phase3_custom: []
+
+renderingIds:
+  Header: "81317d3b-f929-426a-83ec-421982f8f1e6"
+  Navigation: "1deb067f-0bb1-405e-94f5-2abb537a6160"
+  Carousel: "8094185b-4c72-40c8-b005-c6ed91708754"
+  StatsCounter: "316889fa-fdd4-42a6-a034-201124fe54e8"
+  PromoCta: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+  HeadingCta: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+  FiveColumnCta: "333def3e-c272-4ad9-a493-8d5ccae08312"
+  CtaBanner: "488b8ac0-0ef9-4f6f-8711-78ba182b2c4c"
+  FourColumnCta: "35075000-760e-4ff3-bd1c-f2eeba251dcb"
+  ArticleList: "52733592-6f5d-4fb4-8003-9b8223c5bc76"
+  Footer: "771a3f27-6448-44ac-add0-e5de311c6e3b"
+
+datasourceTemplates:
+  Carousel: "c7b8468f-4290-400f-93bb-d46c5f8db126"
+  CarouselItem: "54db209d-cd0f-49d9-ae4e-ecb65d72cc4d"
+  StatsCounter: "c24bfc74-c6e2-413a-aebd-903180dfaff7"
+  PromoCta: "c0943942-ae0f-4205-86fa-84884cce4a53"
+  HeadingCta: "fa136527-6302-471d-83ab-e66fc72bda99"
+  FiveColumnCta: "3b41d9fc-0edf-48e1-966c-e260339ba815"
+  CtaBanner: "4900d7e5-61b0-483a-a9d6-69419d4d5982"
+  FourColumnCta: "1b694ef9-154d-429a-9c3f-d7774cd4a852"
+  Footer: "947db8f8-dc76-453f-aca1-a27babfe633b"
+
+existingOnPage:
+  - { componentName: "Carousel", instanceId: "124106de-fb02-4b43-a521-a309fc75a5bc", action: "rewire" }
+  - { componentName: "Promo CTA", instanceId: "d49a8931-f041-4988-9cc3-f2400e6422d0", action: "rewire", mapsTo: "Research" }
+  - { componentName: "Five Column CTA", instanceId: "b882746c-c313-4283-8f58-b9402bcf9c6a", action: "rewire" }
+  - { componentName: "Promo CTA", instanceId: "633506e7-54d0-4410-9051-72fb4c9fecb4", action: "rewire", mapsTo: "Support" }
+  - { componentName: "Promo CTA", instanceId: "1a516b9b-cc7b-49c9-a8eb-5be281a98612", action: "rewire", mapsTo: "Careers" }
+  - { componentName: "Four Column CTA", instanceId: "09cfd835-87f6-4d58-9681-9c6ea1a3228b", action: "cleanup", note: "empty datasource in nested row" }
+  - { componentName: "Comparison", instanceId: "654c4b49-b268-4ea3-a123-7a2162fa9ecc", action: "cleanup" }
+  - { componentName: "Comparison", instanceId: "36e87c5b-94df-4c70-827e-e88dccd07907", action: "cleanup" }
+  - { componentName: "Two Column CTA", instanceId: "0ed2d2c2-e9ef-4e40-b040-6289cb174e03", action: "cleanup" }
+  - { componentName: "Article List", instanceId: "854de8ce-208f-494d-b7c8-c1162d00144f", action: "cleanup" }
+  - { componentName: "Documents List", instanceId: "251b0936-4659-4127-9952-52ca5140d803", action: "cleanup" }
+  - { componentName: "App Promo", instanceId: "7ebe6f29-1c6f-4138-8bf9-287acf0cd530", action: "cleanup" }
+
+environmentNotes:
+  - "Home page Title is still 'PLAY! Financial'. Phase 6 will reuse Home and note leftover banking pages for cleanup."
+  - "PLAY! renderings live under /sitecore/layout/Renderings/Project/Financial. /sitecore/layout/Renderings/Project/covista has no children."
+  - "UIIM datasource folders do not exist under covista/Data. New datasources go in Data/Promos (itemId 9a0b6c45-35d4-44a2-936e-331cb38ee37a) unless the rendering query requires a named folder (Stats Counter, CTA Banner, Heading CTA)."
+  - "Carousel is a list component (parent + Carousel Item children). Promo/Five/Four Column CTA are simple (fields 1–N on one item)."
+  - "get_component for Carousel returns 404 on the Verticals branch — same limitation as MN-S. Template IDs resolved via path."
+  - "ArticleList was considered for News but has no Promo-folder datasource (page-as-datasource). FourColumnCta is the pipeline-safe match."
+  - "Content Hub host https://covista.sitecoresandbox.cloud authenticated 200 OK."

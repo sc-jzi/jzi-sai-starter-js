@@ -1,3 +1,46 @@
+// Covista
+body.site-covista,
+.site-covista {
+  --text-body: #1a1a1a;
+  --text-body-inverted: #fff9f5;
+  --text-colored: #1b4929;
+  --text-footer: #fff9f5;
+  --text-accent: #d96941;
+  --bg-body: #ffffff;
+  --bg-footer: #1b4929;
+  --bg-main: #f4ede4;
+  --bg-main-alt: #fff9f5;
+  --bg-color: #e8d4d0;
+  --bg-saturated: #1b4929;
+  --bg-accent: #d96941;
+  --border-color: #d4c8c0;
+  --hr-color: #ffffff33;
+  --roundness: 0;
+  --brand-primary: #1b4929;
+  --brand-primary-foreground: #fff9f5;
+  --brand-secondary: #14351e;
+  --brand-secondary-foreground: #fff9f5;
+  --brand-accent: #d96941;
+  --brand-accent-foreground: #fff9f5;
+  --brand-bg: #ffffff;
+  --brand-fg: #1a1a1a;
+  --brand-muted: #f4ede4;
+  --brand-muted-fg: #4a4a4a;
+  --brand-header-bg: #1b4929;
+  --brand-header-fg: #ffffff;
+  --brand-footer-bg: #1b4929;
+  --brand-footer-fg: #fff9f5;
+  --brand-border: #d4c8c0;
+  --brand-ring: #d96941;
+  --brand-heading-font: 'Josefin Slab', Georgia, serif;
+  --brand-body-font: 'Source Sans 3', Helvetica, Arial, sans-serif;
+  --brand-radius: 0;
+  --brand-button-radius: 2.5rem;
+  --brand-card-radius: 0;
+  --brand-research: #e8d4d0;
+  --brand-warm-white: #fff9f5;
+}
+
 // Financial
 body.site-financial,
 .site-financial {

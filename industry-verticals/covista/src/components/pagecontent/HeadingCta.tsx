@@ -151,3 +151,55 @@ export const Centered = (props: HeadingCtaProps): JSX.Element => {
     </div>
   );
 };
+
+function hasHeadingLink(link?: LinkField): boolean {
+  const href = link?.value?.href;
+  return Boolean(href && href !== '#');
+}
+
+export const Covista = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const isLeft = Boolean(props.fields?.Heading?.value && !props.fields?.Text?.value);
+
+  return (
+    <div
+      className={`component heading-cta cv-heading ${isLeft ? 'cv-heading--left' : ''} ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="cv-heading__content">
+          {(isPageEditing || props.fields?.Heading?.value) && (
+            <h2 className="cv-heading__title">
+              <Text field={props.fields?.Heading} />
+            </h2>
+          )}
+          {(isPageEditing || props.fields?.Text?.value) && (
+            <p className="cv-heading__text">
+              <Text field={props.fields?.Text} />
+            </p>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const CovistaLink = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component heading-cta cv-heading-link ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        {(isPageEditing || hasHeadingLink(props.fields?.Link)) && (
+          <Link field={props.fields.Link} className="cv-btn cv-btn--accent" />
+        )}
+      </div>
+    </div>
+  );
+};

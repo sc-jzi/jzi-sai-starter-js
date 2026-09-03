@@ -99,3 +99,101 @@ export const Default = (props: StatsCounterProps): JSX.Element => {
     </div>
   );
 };
+
+const StatIcon = ({ name }: { name: 'building' | 'graduates' | 'stethoscope' }) => {
+  if (name === 'building') {
+    return (
+      <svg className="cv-stats__icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path
+          d="M6 28V10l10-6 10 6v18H6z"
+          stroke="currentColor"
+          strokeWidth="1.6"
+        />
+        <path d="M13 28v-8h6v8" stroke="currentColor" strokeWidth="1.6" />
+        <path d="M12 14h2M18 14h2M12 18h2M18 18h2" stroke="currentColor" strokeWidth="1.6" />
+      </svg>
+    );
+  }
+  if (name === 'graduates') {
+    return (
+      <svg className="cv-stats__icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M4 14l12-6 12 6-12 6-12-6z" stroke="currentColor" strokeWidth="1.6" />
+        <path d="M10 16.5v6c3 2 9 2 12 0v-6" stroke="currentColor" strokeWidth="1.6" />
+      </svg>
+    );
+  }
+  return (
+    <svg className="cv-stats__icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      <path
+        d="M8 6h6v6H8zM18 6h6v6h-6z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+      />
+      <path d="M11 12v3a5 5 0 0 0 10 0v-3" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M21 20v4a3 3 0 0 1-3 3" stroke="currentColor" strokeWidth="1.6" />
+    </svg>
+  );
+};
+
+export const CovistaCards = (props: StatsCounterProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const Card = ({
+    value,
+    symbol,
+    caption,
+    icon,
+  }: {
+    value: Field<string>;
+    symbol: Field<string>;
+    caption: Field<string>;
+    icon: 'building' | 'graduates' | 'stethoscope';
+  }) => (
+    <div className="cv-stats__card">
+      <StatIcon name={icon} />
+      <p className="cv-stats__value">
+        <span>
+          {isPageEditing ? (
+            <Text field={value} />
+          ) : (
+            <CountUp value={parseInt(value?.value || '0', 10)} />
+          )}
+        </span>
+        <Text field={symbol} />
+      </p>
+      <p className="cv-stats__caption">
+        <Text field={caption} />
+      </p>
+    </div>
+  );
+
+  return (
+    <div className={`component stats-counter cv-stats ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="cv-stats__grid">
+          <Card
+            value={props.fields?.Value1}
+            symbol={props.fields?.Symbol1}
+            caption={props.fields?.Caption1}
+            icon="building"
+          />
+          <Card
+            value={props.fields?.Value2}
+            symbol={props.fields?.Symbol2}
+            caption={props.fields?.Caption2}
+            icon="graduates"
+          />
+          <Card
+            value={props.fields?.Value3}
+            symbol={props.fields?.Symbol3}
+            caption={props.fields?.Caption3}
+            icon="stethoscope"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};

@@ -1,0 +1,882 @@
+{
+  "url": "https://www.covista.com",
+  "extractedAt": "2026-09-03T01:22:23.189Z",
+  "detectedLanguage": "en",
+  "targetLanguage": "en",
+  "translationNeeded": false,
+  "totalSections": 11,
+  "totalImages": 62,
+  "totalVideos": 1,
+  "interactionStats": {
+    "lazySourcesResolved": 0,
+    "tabsClicked": 0,
+    "accordionsExpanded": 0,
+    "carouselDotsClicked": 15,
+    "carouselArrowSlides": 12,
+    "backgroundImagesCollected": 0
+  },
+  "sections": [
+    {
+      "position": 1,
+      "tagName": "div",
+      "classHint": "t-layout__one-column edge-to-edge no-padding no-max-width layout layout--atge-one-column",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "The Talentto TransformHealthcare"
+        }
+      ],
+      "paragraphs": [],
+      "links": [
+        {
+          "text": "Our story",
+          "href": "https://www.covista.com/our-story",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-02/homepage_hero.png?itok=Iv81DVUM",
+          "alt": "A healthcare professional wearing green scrubs is standing outside a modern building.",
+          "type": "img",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-02/homepage_hero.webp?itok=Iv81DVUM",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_sm/public/2026-02/homepage_hero.webp?itok=oTSpg1KM",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_sm/public/2026-02/homepage_hero.png?itok=oTSpg1KM",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        }
+      ],
+      "listItems": [
+        {
+          "image": {
+            "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-02/homepage_hero.png?itok=Iv81DVUM",
+            "alt": "A healthcare professional wearing green scrubs is standing outside a modern building."
+          }
+        },
+        {
+          "title": "The Talentto TransformHealthcare",
+          "description": "The Talentto TransformHealthcare Our story",
+          "link": {
+            "text": "Our story",
+            "href": "https://www.covista.com/our-story"
+          }
+        }
+      ],
+      "videos": [
+        {
+          "type": "video",
+          "sources": [
+            {
+              "src": "https://www.covista.com/sites/g/files/krcnkv471/files/2026-01/header_final.mp4",
+              "type": "video/mp4"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "tagName": "div",
+      "classHint": "t-layout__one-column standard-width p-universal-bg-color--none overlap pad-bottom-40-desktop cc-bg-s",
+      "backgroundHint": "dark",
+      "headings": [],
+      "paragraphs": [
+        "post-secondaryinstitutions",
+        "healthcaregraduates a year",
+        "healthcare alumnipracticing worldwide"
+      ],
+      "links": [],
+      "images": [],
+      "listItems": [
+        {
+          "title": "300K+",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "tagName": "div",
+      "classHint": "t-layout__one-column standard-width p-universal-bg-color--none pad-top-0 pad-bottom-0 p-section__ali",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Covista Care Capacity Monitor Research"
+        }
+      ],
+      "paragraphs": [
+        "Where America's healthcare workforce gaps hit hardest—and why it matters for patient care.",
+        "Explore workforce dynamics across all 50 states and specialties. Uncover what's driving shortages in your region and where opportunities exist to expand care capacity."
+      ],
+      "links": [
+        {
+          "text": "See the research",
+          "href": "https://www.covista.com/research",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-01/adtalem_projsterling_healthcare_stock_getty124205743.jpg?itok=Rm3si0kF",
+          "alt": "Two medical professionals in green scrubs looking at patient board.",
+          "type": "img",
+          "width": 1920,
+          "height": 1280
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_no_style_lg/public/2026-01/adtalem_projsterling_healthcare_stock_getty124205743.webp?itok=HQ7miaWm",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-01/adtalem_projsterling_healthcare_stock_getty124205743.webp?itok=Rm3si0kF",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_sm/public/2026-01/adtalem_projsterling_healthcare_stock_getty124205743.webp?itok=fu3iswgJ",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_no_style_lg/public/2026-01/adtalem_projsterling_healthcare_stock_getty124205743.jpg?itok=HQ7miaWm",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_sm/public/2026-01/adtalem_projsterling_healthcare_stock_getty124205743.jpg?itok=fu3iswgJ",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        }
+      ],
+      "listItems": [
+        {
+          "title": "Covista Care Capacity Monitor Research",
+          "description": "Where America's healthcare workforce gaps hit hardest—and why it matters for patient care."
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "tagName": "div",
+      "classHint": "t-layout__one-column optimized-width p-universal-bg-color--secondary pad-top-0 pad-bottom-0 p-sectio",
+      "backgroundHint": "light",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Our institutions"
+        }
+      ],
+      "paragraphs": [
+        "Our five accredited institutions help open doors to healthcare careers for those who never thought it was possible."
+      ],
+      "links": [],
+      "images": []
+    },
+    {
+      "position": 5,
+      "tagName": "div",
+      "classHint": "t-layout__one-column standard-width p-universal-bg-color--secondary pad-bottom-0 pad-top-0 p-section",
+      "backgroundHint": "light",
+      "headings": [],
+      "paragraphs": [],
+      "links": [],
+      "images": [
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/auc_vertical_logo.png?itok=fLJPSYz7",
+          "alt": "American University of the Caribbean School of Medicine",
+          "type": "img",
+          "width": 696,
+          "height": 633
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/chamberlain_university_vertical_logo.png?itok=zbPl4F4X",
+          "alt": "Chamberlain University",
+          "type": "img",
+          "width": 1800,
+          "height": 1127
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/rusm_vertical_logo.png?itok=WFhm_zzg",
+          "alt": "Ross University School of Medicine",
+          "type": "img",
+          "width": 900,
+          "height": 436
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/rusvm_vertical_logo.png?itok=myRS60Dp",
+          "alt": "Ross University School of Veterinary Medicine",
+          "type": "img",
+          "width": 900,
+          "height": 436
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/walden_logo_vertical_cyan_1.png?itok=vaRAymwV",
+          "alt": "Walden University",
+          "type": "img",
+          "width": 1953,
+          "height": 975
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_no_style_lg/public/2025-12/auc_vertical_logo.webp?itok=AKoE9qC5",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/auc_vertical_logo.webp?itok=fLJPSYz7",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_sm/public/2025-12/auc_vertical_logo.webp?itok=DeBNhJiF",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_no_style_lg/public/2025-12/auc_vertical_logo.png?itok=AKoE9qC5",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_sm/public/2025-12/auc_vertical_logo.png?itok=DeBNhJiF",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_no_style_lg/public/2025-12/chamberlain_university_vertical_logo.webp?itok=4RlvIdnL",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/chamberlain_university_vertical_logo.webp?itok=zbPl4F4X",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_sm/public/2025-12/chamberlain_university_vertical_logo.webp?itok=brhi6tiq",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_no_style_lg/public/2025-12/chamberlain_university_vertical_logo.png?itok=4RlvIdnL",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_sm/public/2025-12/chamberlain_university_vertical_logo.png?itok=brhi6tiq",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_no_style_lg/public/2025-12/rusm_vertical_logo.webp?itok=RnYY3tx3",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/rusm_vertical_logo.webp?itok=WFhm_zzg",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_sm/public/2025-12/rusm_vertical_logo.webp?itok=ymri8Sky",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_no_style_lg/public/2025-12/rusm_vertical_logo.png?itok=RnYY3tx3",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_sm/public/2025-12/rusm_vertical_logo.png?itok=ymri8Sky",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_no_style_lg/public/2025-12/rusvm_vertical_logo.webp?itok=UsHToh9n",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/rusvm_vertical_logo.webp?itok=myRS60Dp",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_sm/public/2025-12/rusvm_vertical_logo.webp?itok=lP-nr5sU",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_no_style_lg/public/2025-12/rusvm_vertical_logo.png?itok=UsHToh9n",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_sm/public/2025-12/rusvm_vertical_logo.png?itok=lP-nr5sU",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_no_style_lg/public/2025-12/walden_logo_vertical_cyan_1.webp?itok=d3iSbzyY",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/walden_logo_vertical_cyan_1.webp?itok=vaRAymwV",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_sm/public/2025-12/walden_logo_vertical_cyan_1.webp?itok=MUh3mQNe",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_no_style_lg/public/2025-12/walden_logo_vertical_cyan_1.png?itok=d3iSbzyY",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_sm/public/2025-12/walden_logo_vertical_cyan_1.png?itok=MUh3mQNe",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        }
+      ],
+      "listItems": [
+        {
+          "title": "",
+          "description": "",
+          "badge": "",
+          "link": {
+            "text": "",
+            "href": "https://www.aucmed.edu/"
+          },
+          "image": {
+            "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/auc_vertical_logo.png?itok=fLJPSYz7",
+            "alt": "American University of the Caribbean School of Medicine"
+          }
+        },
+        {
+          "title": "",
+          "description": "",
+          "badge": "",
+          "link": {
+            "text": "",
+            "href": "https://www.chamberlain.edu/"
+          },
+          "image": {
+            "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/chamberlain_university_vertical_logo.png?itok=zbPl4F4X",
+            "alt": "Chamberlain University"
+          }
+        },
+        {
+          "title": "",
+          "description": "",
+          "badge": "",
+          "link": {
+            "text": "",
+            "href": "https://medical.rossu.edu/"
+          },
+          "image": {
+            "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/rusm_vertical_logo.png?itok=WFhm_zzg",
+            "alt": "Ross University School of Medicine"
+          }
+        },
+        {
+          "title": "",
+          "description": "",
+          "badge": "",
+          "link": {
+            "text": "",
+            "href": "https://veterinary.rossu.edu/"
+          },
+          "image": {
+            "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/rusvm_vertical_logo.png?itok=myRS60Dp",
+            "alt": "Ross University School of Veterinary Medicine"
+          }
+        },
+        {
+          "title": "",
+          "description": "",
+          "badge": "",
+          "link": {
+            "text": "",
+            "href": "https://www.waldenu.edu/"
+          },
+          "image": {
+            "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/walden_logo_vertical_cyan_1.png?itok=vaRAymwV",
+            "alt": "Walden University"
+          }
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "tagName": "div",
+      "classHint": "t-layout__one-column optimized-width p-universal-bg-color--secondary pad-top-20 pad-bottom-40 p-sect",
+      "backgroundHint": "light",
+      "headings": [],
+      "paragraphs": [],
+      "links": [
+        {
+          "text": "Learn more",
+          "href": "https://www.covista.com/our-institutions/institutions",
+          "target": ""
+        }
+      ],
+      "images": []
+    },
+    {
+      "position": 7,
+      "tagName": "div",
+      "classHint": "t-layout__one-column edge-to-edge no-padding no-max-width p-universal-bg-color--none pad-top-20-desk",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Supporting healthcare workers nationwide"
+        }
+      ],
+      "paragraphs": [
+        "America faces a healthcare workforce crisis that threatens access to care for millions. Through Covista Open Doors, our multi-year impact commitment to build and sustain the healthcare workforce, we're opening doors for current and future healthcare workers during the moments that matter most."
+      ],
+      "links": [
+        {
+          "text": "Learn about our impact",
+          "href": "https://www.covista.com/our-impact",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_1_1_crop_md/public/2026-01/home_page_supporting_healthcare_workers_nationwide.jpg?itok=5-001bQG",
+          "alt": "Male medical professional in green scrubs with patient",
+          "type": "img",
+          "width": 584,
+          "height": 400
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_1_1_crop_md/public/2026-01/home_page_supporting_healthcare_workers_nationwide.webp?itok=5-001bQG",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_1_1_crop_sm/public/2026-01/home_page_supporting_healthcare_workers_nationwide.webp?itok=ylOQlM_e",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_1_1_crop_sm/public/2026-01/home_page_supporting_healthcare_workers_nationwide.jpg?itok=ylOQlM_e",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "tagName": "div",
+      "classHint": "t-layout__one-column edge-to-edge no-padding no-max-width p-universal-bg-color--none pad-y-0 pad-bot",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Careers that blend performance and purpose"
+        }
+      ],
+      "paragraphs": [
+        "We believe doing exceptional work and making a meaningful difference for students and society aren’t separate goals—they are one and the same."
+      ],
+      "links": [
+        {
+          "text": "Explore opportunities",
+          "href": "https://www.covista.com/join-us",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/rectangle_4.png?itok=_kd8fITk",
+          "alt": "Three people at a desk",
+          "type": "img",
+          "width": 582,
+          "height": 400
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_no_style_lg/public/2025-12/rectangle_4.webp?itok=nBsGbfWX",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2025-12/rectangle_4.webp?itok=_kd8fITk",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_sm/public/2025-12/rectangle_4.webp?itok=QBGs-GZX",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_no_style_lg/public/2025-12/rectangle_4.png?itok=nBsGbfWX",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_sm/public/2025-12/rectangle_4.png?itok=QBGs-GZX",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "tagName": "div",
+      "classHint": "t-layout__two-column edge-to-edge no-padding no-max-width layout__split--5050 sidebar-first sidebar-",
+      "backgroundHint": "light",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Stock information"
+        }
+      ],
+      "paragraphs": [
+        "NYSE : CVSA As of Sep. 02, 2026 9:21 PM Minimum 20 minute delay.",
+        "As of Sep. 02, 2026 9:21 PM",
+        "Minimum 20 minute delay.",
+        "See the story behind the numbers",
+        "Learn why investors are choosing Covista."
+      ],
+      "links": [
+        {
+          "text": "View our financials",
+          "href": "https://investors.covista.com/",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-01/home_page_stock_information.jpg?itok=jG9Ni_0n",
+          "alt": "Man in tan sweater",
+          "type": "img",
+          "width": 396,
+          "height": 509
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_no_style_lg/public/2026-01/home_page_stock_information.webp?itok=sTZlTOm3",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-01/home_page_stock_information.webp?itok=jG9Ni_0n",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_sm/public/2026-01/home_page_stock_information.webp?itok=HrQNgchH",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_no_style_lg/public/2026-01/home_page_stock_information.jpg?itok=sTZlTOm3",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_sm/public/2026-01/home_page_stock_information.jpg?itok=HrQNgchH",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        }
+      ],
+      "listItems": [
+        {
+          "title": "Stock information",
+          "description": "NYSE : CVSA As of Sep. 02, 2026 9:21 PM Minimum 20 minute delay.",
+          "badge": "Change (%)",
+          "price": "134.16"
+        },
+        {
+          "title": "See the story behind the numbers",
+          "description": "See the story behind the numbers",
+          "link": {
+            "text": "View our financials",
+            "href": "https://investors.covista.com/"
+          },
+          "image": {
+            "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-01/home_page_stock_information.jpg?itok=jG9Ni_0n",
+            "alt": "Man in tan sweater"
+          }
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "tagName": "div",
+      "classHint": "t-layout__one-column standard-width p-universal-bg-color--none pad-top-30 p-section__align--none lay",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "News and stories"
+        }
+      ],
+      "paragraphs": [],
+      "links": [],
+      "images": []
+    },
+    {
+      "position": 11,
+      "tagName": "div",
+      "classHint": "t-layout__one-column edge-to-edge no-padding no-max-width p-universal-bg-color--none carousel-view--",
+      "backgroundHint": "dark",
+      "headings": [],
+      "paragraphs": [],
+      "links": [
+        {
+          "text": "Covista",
+          "href": "https://www.covista.com/taxonomy/term/361",
+          "target": ""
+        },
+        {
+          "text": "Covista Foundation",
+          "href": "https://www.covista.com/taxonomy/term/381",
+          "target": ""
+        },
+        {
+          "text": "Covista Open Doors: Investing in America's Healthcare Workforce",
+          "href": "https://www.covista.com/news/covista-open-doors-investing-in-americas-healthcare-workforce",
+          "target": ""
+        },
+        {
+          "text": "AI",
+          "href": "https://www.covista.com/taxonomy/term/366",
+          "target": ""
+        },
+        {
+          "text": "Purpose at Scale",
+          "href": "https://www.covista.com/taxonomy/term/401",
+          "target": ""
+        },
+        {
+          "text": "From the Desk of Steve Beard: Introducing Purpose at Scale",
+          "href": "https://www.covista.com/news/from-the-desk-of-steve-beard-introducing-purpose-at-scale",
+          "target": ""
+        },
+        {
+          "text": "Alumni",
+          "href": "https://www.covista.com/taxonomy/term/396",
+          "target": ""
+        },
+        {
+          "text": "Covista Meets New Milestone with 400k Alumni, 100K Students and 28K Graduates in 2026",
+          "href": "https://www.covista.com/news/covista-meets-new-milestone-with-400k-alumni-100k-students-and-28k-graduates-in-2026",
+          "target": ""
+        },
+        {
+          "text": "Covista Care Capacity Monitor",
+          "href": "https://www.covista.com/taxonomy/term/411",
+          "target": ""
+        },
+        {
+          "text": "Examining the Healthcare Salary Gap: Fixing It Will Take More Than a Bigger Paycheck",
+          "href": "https://www.covista.com/news/examining-the-healthcare-salary-gap-fixing-it-will-take-more-than-a-bigger-paycheck",
+          "target": ""
+        },
+        {
+          "text": "Chamberlain",
+          "href": "https://www.covista.com/taxonomy/term/221",
+          "target": ""
+        },
+        {
+          "text": "Closing the Gap: Chamberlain’s New Campus Targets Utah's Nursing Shortage",
+          "href": "https://www.covista.com/news/closing-the-gap-chamberlains-new-campus-targets-utahs-nursing-shortage",
+          "target": ""
+        },
+        {
+          "text": "Impact",
+          "href": "https://www.covista.com/taxonomy/term/386",
+          "target": ""
+        },
+        {
+          "text": "More stories",
+          "href": "https://www.covista.com/news-insights",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-07/covista-community-rounds-event-cropped.jpg?itok=RMCIt16J",
+          "alt": "Covista Community Rounds",
+          "type": "img",
+          "width": 1400,
+          "height": 601
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-07/web_sb_newsletter_1550x665.jpg?itok=TtwyBuif",
+          "alt": "Steve Beard",
+          "type": "img",
+          "width": 1400,
+          "height": 601
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-07/alumni_web.jpg?itok=-i5dyIv1",
+          "alt": "400k alumni, 100k students, 28k graduates in FY 26",
+          "type": "img",
+          "width": 1400,
+          "height": 583
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-07/cccm_header_nurse.jpg?itok=iikAHCz-",
+          "alt": "Covista Care Capacity Monitor",
+          "type": "img",
+          "width": 1400,
+          "height": 601
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-07/doctor_and_two_nurses_with_patient.jpg?itok=1bE4jRkJ",
+          "alt": "doctor and two nurses with patient",
+          "type": "img",
+          "width": 1400,
+          "height": 601
+        },
+        {
+          "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-07/s.beard_mckinsey_inverview.jpg?itok=RiCoQV1P",
+          "alt": "Students standing outside building",
+          "type": "img",
+          "width": 1400,
+          "height": 601
+        }
+      ],
+      "listItems": [
+        {
+          "title": "Covista | Covista Foundation Covista Open Doors: Investing in America's Healthcare Workforce AI | Purpose at Scale From the Desk of Steve Beard: Introducing Purpose at Scale Covista | Alumni Covista Meets New Milestone with 400k Alumni, 100K Students and 28K Graduates in 2026 Covista | Covista Care Capacity Monitor Examining the Healthcare Salary Gap: Fixing It Will Take More Than a Bigger Paycheck Covista | Chamberlain Closing the Gap: Chamberlain’s New Campus Targets Utah's Nursing Shortage AI | Impact Chairman and CEO Steve Beard Interview with McKinsey: How Covista Is Changing Education For Healthcare Professionals Covista | Covista Foundation Covista Open Doors: Investing in America's Healthcare Workforce AI | Purpose at Scale From the Desk of Steve Beard: Introducing Purpose at Scale Covista | Alumni Covista Meets New Milestone with 400k Alumni, 100K Students and 28K Graduates in 2026 Covista | Covista Care Capacity Monitor Examining the Healthcare Salary Gap: Fixing It Will Take More Than a Bigger Paycheck Covista | Chamberlain Closing the Gap: Chamberlain’s New Campus Targets Utah's Nursing Shortage AI | Impact Chairman and CEO Steve Beard Interview with McKinsey: How Covista Is Changing Education For Healthcare Professionals Covista | Covista Foundation Covista Open Doors: Investing in America's Healthcare Workforce AI | Purpose at Scale From the Desk of Steve Beard: Introducing Purpose at Scale Covista | Alumni Covista Meets New Milestone with 400k Alumni, 100K Students and 28K Graduates in 2026",
+          "description": "Covista | Covista Foundation Covista Open Doors: Investing in America's Healthcare Workforce",
+          "badge": "Covista | Covista Foundation Covista Open Doors: Investing in America's Healthcare Workforce AI | Purpose at Scale From the Desk of Steve Beard: Introducing Purpose at Scale Covista | Alumni Covista Meets New Milestone with 400k Alumni, 100K Students and 28K Graduates in 2026 Covista | Covista Care Capacity Monitor Examining the Healthcare Salary Gap: Fixing It Will Take More Than a Bigger Paycheck Covista | Chamberlain Closing the Gap: Chamberlain’s New Campus Targets Utah's Nursing Shortage AI | Impact Chairman and CEO Steve Beard Interview with McKinsey: How Covista Is Changing Education For Healthcare Professionals Covista | Covista Foundation Covista Open Doors: Investing in America's Healthcare Workforce AI | Purpose at Scale From the Desk of Steve Beard: Introducing Purpose at Scale Covista | Alumni Covista Meets New Milestone with 400k Alumni, 100K Students and 28K Graduates in 2026 Covista | Covista Care Capacity Monitor Examining the Healthcare Salary Gap: Fixing It Will Take More Than a Bigger Paycheck Covista | Chamberlain Closing the Gap: Chamberlain’s New Campus Targets Utah's Nursing Shortage AI | Impact Chairman and CEO Steve Beard Interview with McKinsey: How Covista Is Changing Education For Healthcare Professionals Covista | Covista Foundation Covista Open Doors: Investing in America's Healthcare Workforce AI | Purpose at Scale From the Desk of Steve Beard: Introducing Purpose at Scale Covista | Alumni Covista Meets New Milestone with 400k Alumni, 100K Students and 28K Graduates in 2026",
+          "link": {
+            "text": "Covista",
+            "href": "https://www.covista.com/taxonomy/term/361"
+          },
+          "image": {
+            "src": "https://www.covista.com/sites/g/files/krcnkv471/files/styles/atge_default_md/public/2026-07/covista-community-rounds-event-cropped.jpg?itok=RMCIt16J",
+            "alt": "Covista Community Rounds"
+          }
+        },
+        {
+          "title": "More stories",
+          "description": "More stories",
+          "badge": "More stories",
+          "link": {
+            "text": "More stories",
+            "href": "https://www.covista.com/news-insights"
+          }
+        }
+      ]
+    }
+  ]
+}

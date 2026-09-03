@@ -135,3 +135,65 @@ export const Default = (props: CarouselComponentProps): JSX.Element => {
     </section>
   );
 };
+
+export const Covista = (props: CarouselComponentProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const [index, setIndex] = useState(0);
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const items = props.fields?.items || [];
+
+  return (
+    <section className={`component carousel cv-carousel ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="carousel-inner">
+        {items.map((item, i) => (
+          <div key={item.id || i} className={'carousel-item ' + (i == index ? 'active' : '')}>
+            {!isPageEditing && item.fields?.Video?.value?.src ? (
+              <video
+                className="object-fit-cover d-block w-100 h-100"
+                key={item.id}
+                autoPlay={true}
+                loop={true}
+                muted
+                playsInline
+                poster={item.fields.Image?.value?.src}
+              >
+                <source src={item.fields.Video.value.src} type="video/mp4" />
+              </video>
+            ) : (
+              <NextImage
+                field={item.fields.Image}
+                className="object-fit-cover d-block w-100 h-100"
+                width={1920}
+                height={800}
+              />
+            )}
+            <div className="side-content">
+              <div className="container">
+                <div className="cv-carousel__copy">
+                  <h1 className="cv-carousel__title">
+                    <Text field={item.fields.Title} />
+                  </h1>
+                  {(isPageEditing || item.fields?.Link?.value?.href) && (
+                    <Link field={item.fields.Link} className="cv-btn cv-btn--light" />
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <ol className="carousel-indicators">
+        {items.map((_item, i) => (
+          <li
+            key={i}
+            aria-label={`Slide ${i + 1}`}
+            className={i == index ? 'active' : ''}
+            onClick={() => setIndex(i)}
+          ></li>
+        ))}
+      </ol>
+    </section>
+  );
+};

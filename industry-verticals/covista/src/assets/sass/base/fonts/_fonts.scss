@@ -1,5 +1,5 @@
 /* stylelint-disable value-keyword-case */
-@import 'https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Josefin+Slab:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap';
 
 .site-basic {
   --font-family: 'Open Sans', Helvetica, Verdana, Tahoma, sans-serif;
@@ -11,4 +11,8 @@
 
 .site-services {
   --font-family: 'Epilogue', Helvetica, Arial, sans-serif;
+}
+
+.site-covista {
+  --font-family: 'Source Sans 3', Helvetica, Arial, sans-serif;
 }

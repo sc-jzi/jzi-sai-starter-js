@@ -1,0 +1,75 @@
+# Demo Progress Tracker — Covista
+client:
+  name: "Covista"
+  sourceUrl: "https://www.covista.com"
+  startedAt: "2026-09-02T21:04:00Z"
+  lastUpdatedAt: "2026-09-03T02:10:00Z"
+  contentRoot: "/sitecore/content/covista/covista"
+  codeRoot: "/industry-verticals/covista"
+  homePageId: "03af45ba-75fe-4e13-aee4-bd4d0caffacb"
+  siteId: "7ba8cdee-80e2-485c-ad6d-e6d465790160"
+  dataFolderId: "b9adc39e-d36e-4761-9538-67ec8b1a6234"
+  promosFolderId: "9a0b6c45-35d4-44a2-936e-331cb38ee37a"
+
+phases:
+  phase0_inputs:
+    status: "complete"
+    screenshot: true
+    url: "https://www.covista.com"
+    contentHubAuth: "verified"
+    contentHubHost: "https://covista.sitecoresandbox.cloud"
+
+  phase0_5_manifest:
+    status: "complete"
+    validationMode: "quick"
+    result: "pass-with-warnings"
+
+  phase1_theme:
+    status: "complete"
+    themeFile: "docs/ai/themes/covista.theme.yaml"
+    userApproved: true
+
+  phase2_analysis:
+    status: "complete"
+    buildPlanFile: "docs/ai/demos/covista/build-plan.yaml"
+    totalSections: 12
+    userApproved: true
+
+  phase2_5_content:
+    status: "complete"
+    contentMapFile: "docs/ai/demos/covista/content-map.yaml"
+    extractorUsed: true
+
+  phase3_content:
+    status: "complete"
+    completedSections: 12
+    totalSections: 12
+
+  phase4_theme:
+    status: "complete"
+    themeDelivery: "sass"
+    cssWritten: true
+    fontsAdded: true
+
+  phase5_custom:
+    status: "complete"
+    customComponentsNeeded: 0
+    customComponentsBuilt: 0
+
+  phase5_5_variants:
+    status: "complete"
+    variantsNeeded: 11
+    variantsCreated: 11
+    variantSpecsFile: "docs/ai/demos/covista/variant-checklist.md"
+
+  phase6_assembly:
+    status: "partial"
+    componentsAdded: 4
+    datasourcesWired: 6
+    totalComponents: 12
+    notes: "Carousel rewire blocked. Stats/headings datasources created; confirm canvas. Leftover PLAY! renderings remain."
+
+  phase7_summary:
+    status: "complete"
+
+sections: []
