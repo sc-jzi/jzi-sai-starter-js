@@ -250,7 +250,7 @@ const CovistaSplitLayout = (
             )}
             <RichText field={props.fields.Text} className="cv-split__text" />
             {(isPageEditing || hasPromoLink(props.fields?.Link)) && (
-              <Link field={props.fields.Link} className="cv-btn" />
+              <Link field={props.fields.Link} className="cv-btn cv-btn--primary" />
             )}
           </div>
         </div>

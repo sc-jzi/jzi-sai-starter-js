@@ -28,6 +28,56 @@ export type CarouselItemProps = {
   fields: Fields;
 };
 
+const getMediaSrc = (field?: ImageField): string => {
+  const value = field?.value as
+    | string
+    | { src?: string; href?: string; url?: string; mediaUrl?: string }
+    | undefined;
+
+  if (!value) {
+    return '';
+  }
+
+  if (typeof value === 'string') {
+    return value;
+  }
+
+  return value.src || value.href || value.url || value.mediaUrl || '';
+};
+
+const getVideoType = (src: string): string =>
+  /webm/i.test(src) ? 'video/webm' : 'video/mp4';
+
+const CarouselImage = ({ item }: { item: CarouselItemProps }): JSX.Element => (
+  <NextImage
+    field={item.fields.Image}
+    className="object-fit-cover d-block w-100 h-100"
+    width={1920}
+    height={800}
+  />
+);
+
+const CarouselVideo = ({ item }: { item: CarouselItemProps }): JSX.Element => {
+  const src = getMediaSrc(item.fields?.Video) || getMediaSrc(item.fields?.Image);
+
+  if (!src) {
+    return <CarouselImage item={item} />;
+  }
+
+  return (
+    <video
+      className="object-fit-cover d-block w-100 h-100"
+      key={src}
+      autoPlay
+      loop
+      muted
+      playsInline
+    >
+      <source src={src} type={getVideoType(src)} />
+    </video>
+  );
+};
+
 interface CarouselComponentProps {
   rendering: ComponentRendering & { params: ComponentParams };
   params: ComponentParams;
@@ -57,25 +107,10 @@ export const Default = (props: CarouselComponentProps): JSX.Element => {
       <div className="carousel-inner">
         {props.fields.items.map((item, i) => (
           <div key={i} className={'carousel-item ' + (i == index ? 'active' : '')}>
-            {!isPageEditing && item.fields?.Video?.value?.src ? (
-              <video
-                className="object-fit-cover d-block w-100 h-100"
-                key={item.id}
-                autoPlay={true}
-                loop={true}
-                muted
-                playsInline
-                poster={item.fields.Image?.value?.src}
-              >
-                <source src={item.fields.Video.value.src} type="video/webm" />
-              </video>
+            {getMediaSrc(item.fields?.Video) ? (
+              <CarouselVideo item={item} />
             ) : (
-              <NextImage
-                field={item.fields.Image}
-                className="object-fit-cover d-block w-100 h-100"
-                width={1920}
-                height={800}
-              />
+              <CarouselImage item={item} />
             )}
 
             <div className="side-content">
@@ -136,9 +171,15 @@ export const Default = (props: CarouselComponentProps): JSX.Element => {
   );
 };
 
-export const Covista = (props: CarouselComponentProps): JSX.Element => {
+const CovistaFrame = ({
+  props,
+  Media,
+}: {
+  props: CarouselComponentProps;
+  Media: (mediaProps: { item: CarouselItemProps }) => JSX.Element;
+}): JSX.Element => {
   const id = props.params.RenderingIdentifier;
-  const [index, setIndex] = useState(0);
+  const [index] = useState(0);
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
   const sxaStyles = `${props.params?.styles || ''}`;
@@ -149,26 +190,7 @@ export const Covista = (props: CarouselComponentProps): JSX.Element => {
       <div className="carousel-inner">
         {items.map((item, i) => (
           <div key={item.id || i} className={'carousel-item ' + (i == index ? 'active' : '')}>
-            {!isPageEditing && item.fields?.Video?.value?.src ? (
-              <video
-                className="object-fit-cover d-block w-100 h-100"
-                key={item.id}
-                autoPlay={true}
-                loop={true}
-                muted
-                playsInline
-                poster={item.fields.Image?.value?.src}
-              >
-                <source src={item.fields.Video.value.src} type="video/mp4" />
-              </video>
-            ) : (
-              <NextImage
-                field={item.fields.Image}
-                className="object-fit-cover d-block w-100 h-100"
-                width={1920}
-                height={800}
-              />
-            )}
+            <Media item={item} />
             <div className="side-content">
               <div className="container">
                 <div className="cv-carousel__copy">
@@ -187,3 +209,13 @@ export const Covista = (props: CarouselComponentProps): JSX.Element => {
     </section>
   );
 };
+
+export const CovistaImage = (props: CarouselComponentProps): JSX.Element => (
+  <CovistaFrame props={props} Media={CarouselImage} />
+);
+
+export const CovistaVideo = (props: CarouselComponentProps): JSX.Element => (
+  <CovistaFrame props={props} Media={CarouselVideo} />
+);
+
+export const Covista = CovistaVideo;

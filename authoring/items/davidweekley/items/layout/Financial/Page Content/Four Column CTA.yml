@@ -10,6 +10,10 @@ SharedFields:
 - ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
   Hint: __Icon
   Value: Office/32x32/keyboard_key_4.png
+- ID: "17bb046a-a32a-41b3-8315-81217947611b"
+  Hint: ComponentQuery
+  Value: |
+    query FourColumnCta($datasource: String!, $language: String!) { datasource: item(path: $datasource, language: $language) { title: field(name: "Title") { jsonValue } title1: field(name: "Title1") { jsonValue } text1: field(name: "Text1") { jsonValue } image1: field(name: "Image1") { jsonValue } link1: field(name: "Link1") { jsonValue } title2: field(name: "Title2") { jsonValue } text2: field(name: "Text2") { jsonValue } image2: field(name: "Image2") { jsonValue } link2: field(name: "Link2") { jsonValue } title3: field(name: "Title3") { jsonValue } text3: field(name: "Text3") { jsonValue } image3: field(name: "Image3") { jsonValue } link3: field(name: "Link3") { jsonValue } title4: field(name: "Title4") { jsonValue } text4: field(name: "Text4") { jsonValue } image4: field(name: "Image4") { jsonValue } link4: field(name: "Link4") { jsonValue } children(hasLayout: true, first: 20) { results { id name url { path } title: field(name: "Title") { jsonValue } excerpt: field(name: "Excerpt") { jsonValue } thumbnail: field(name: "Thumbnail") { jsonValue } created: field(name: "__Created") { value } } } } }
 - ID: "1a7c85e5-dc0b-490d-9187-bb1dbcb4c72f"
   Hint: Datasource Template
   Value: /sitecore/templates/Project/Financial/Components/Four Column CTA
@@ -19,6 +23,9 @@ SharedFields:
 - ID: "9c6106ea-7a5a-48e2-8cad-f0f693b1e2d4"
   Hint: __Read Only
   Value: 
+- ID: "a3411ff6-c978-40aa-b059-a49b9ca2209b"
+  Hint: Can select Page as a data source
+  Value: 1
 - ID: "a77e8568-1ab3-44f1-a664-b7c37ec7810d"
   Hint: Parameters Template
   Value: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
@@ -33,7 +40,7 @@ SharedFields:
   Value: 
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "611e70f6-b243-4d01-9626-290071b463dc"
+  Value: "b9c4d9b3-0455-4093-8d11-80b90d77d2a6"
 - ID: "e829c217-5e94-4306-9c48-2634b094fdc2"
   Hint: OtherProperties
   Value: IsAutoDatasourceRendering=true&IsRenderingsWithDynamicPlaceholders=true
@@ -66,14 +73,14 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "7b1a8bfd-fa1b-45e4-ab7b-1af151455109"
+      Value: "4c6fb963-9092-45a5-9f0a-f43384a6de8b"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251031T194306Z
+      Value: 20260903T200006Z
 - Language: "ja-JP"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"

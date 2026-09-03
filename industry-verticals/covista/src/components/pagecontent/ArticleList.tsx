@@ -1,6 +1,6 @@
 'use client';
 
-import React, { JSX } from 'react';
+import React, { JSX, useEffect, useState } from 'react';
 import {
   ComponentParams,
   ComponentRendering,
@@ -22,6 +22,8 @@ interface Fields {
   Name: Field<string>;
   Photo: ImageField;
   Position: Field<string>;
+  NavigationTitle?: Field<string>;
+  SxaTags?: Field<string>;
 }
 
 export type ArticleListItemProps = {
@@ -201,7 +203,95 @@ const ArticleListGrid = (props: ArticleListComponentProps): JSX.Element => {
   );
 };
 
+const COVISTA_STORY_COUNT = 6;
+
+const getStoryTag = (item: ArticleListItemProps): string => {
+  const tags = item.fields?.SxaTags?.value;
+  if (typeof tags === 'string' && tags.trim()) {
+    return tags
+      .split(/[|,]/)
+      .map((tag) => tag.trim())
+      .filter(Boolean)
+      .join(' | ');
+  }
+
+  return 'Covista | News & Insights';
+};
+
+const ArticleListCovista = (props: ArticleListComponentProps): JSX.Element => {
+  const id = props.params?.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const newsItems = getNewsItems(props.fields?.items, COVISTA_STORY_COUNT);
+  const [index, setIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(4);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 1023px)');
+    const syncVisibleCount = () => setVisibleCount(mediaQuery.matches ? 1 : 4);
+    syncVisibleCount();
+    mediaQuery.addEventListener('change', syncVisibleCount);
+    return () => mediaQuery.removeEventListener('change', syncVisibleCount);
+  }, []);
+
+  const maxIndex = Math.max(0, (newsItems?.length || 0) - visibleCount);
+
+  useEffect(() => {
+    setIndex((current) => Math.min(current, maxIndex));
+  }, [maxIndex]);
+
+  const handlePrev = () => setIndex((current) => (current <= 0 ? maxIndex : current - 1));
+  const handleNext = () => setIndex((current) => (current >= maxIndex ? 0 : current + 1));
+
+  return (
+    <div className={`component article-list cv-articles ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        {maxIndex > 0 && (
+          <div className="cv-articles__nav">
+            <button
+              type="button"
+              className="cv-articles__nav-btn"
+              onClick={handlePrev}
+              aria-label="Previous stories"
+            >
+              ‹
+            </button>
+            <button
+              type="button"
+              className="cv-articles__nav-btn"
+              onClick={handleNext}
+              aria-label="Next stories"
+            >
+              ›
+            </button>
+          </div>
+        )}
+        <div className="cv-articles__viewport">
+          <div
+            className="cv-articles__track"
+            style={{ transform: `translateX(calc(-${index} * (var(--cv-card-w) + var(--cv-gap))))` }}
+          >
+            {newsItems?.map((item) => (
+              <Link key={item.url} href={item.url} className="cv-articles__card">
+                <div className="cv-articles__media">
+                  <NextImage field={item.fields.Thumbnail} width={480} height={480} />
+                </div>
+                <div className="cv-articles__copy">
+                  <p className="cv-articles__tag">{getStoryTag(item)}</p>
+                  <h3 className="cv-articles__title">
+                    <Text field={item.fields.Title} tag="span" className="cv-articles__title-text" />
+                  </h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = withDatasourceCheck()<ArticleListComponentProps>(ArticleListDefault);
 export const ThreeColumn = withDatasourceCheck()<ArticleListComponentProps>(ArticleListThreeColumn);
 export const Simplified = withDatasourceCheck()<ArticleListComponentProps>(ArticleListSimplified);
 export const Grid = withDatasourceCheck()<ArticleListComponentProps>(ArticleListGrid);
+export const Covista = withDatasourceCheck()<ArticleListComponentProps>(ArticleListCovista);
