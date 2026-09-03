@@ -24,7 +24,7 @@ SharedFields:
   Value: *
 - ID: "9eaf6dc9-b811-4cda-9edd-9697faba628a"
   Hint: POS
-  Value: "en=suffolk-county"
+  Value: "en=suffolk-county&es-ES=suffolk-county"
 - ID: "cb4e9e2e-2b66-43dc-ad3f-9caf363d28d3"
   Hint: SiteName
   Value: "suffolk-county"
@@ -33,7 +33,7 @@ SharedFields:
   Value: *
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "31cd9808-402a-4007-989b-e85bb49e72e9"
+  Value: "20d1ef0c-a601-4198-8ded-f739b7b978b8"
 - ID: "e5b5ccb5-17a1-429d-bd3e-6122b3216e52"
   Hint: TargetHostName
   Value: *
@@ -58,14 +58,14 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "4f9629ce-5cb9-4ff6-a67d-6167eb51f929"
+      Value: "0b4aa122-f02b-4103-9899-83f20e4e7ee7"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260826T180432Z
+      Value: 20260902T135337Z
 - Language: "es-ES"
   Versions:
   - Version: 1

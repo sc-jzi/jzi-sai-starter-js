@@ -22,6 +22,9 @@ SharedFields:
 - ID: "8e0dd914-9afb-4d45-bf8b-7ff5d6e5337e"
   Hint: HostName
   Value: *
+- ID: "9eaf6dc9-b811-4cda-9edd-9697faba628a"
+  Hint: POS
+  Value: "en=metis-nation-saskatchewan"
 - ID: "cb4e9e2e-2b66-43dc-ad3f-9caf363d28d3"
   Hint: SiteName
   Value: mns
@@ -30,7 +33,7 @@ SharedFields:
   Value: *
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "b5462615-04d5-4547-b156-3512687916e6"
+  Value: "df9d2784-f84e-459d-abc0-47fd4b5205e0"
 - ID: "f57099a3-526a-49f2-aebd-635453e48875"
   Hint: RenderingHost
   Value: mns
@@ -52,11 +55,11 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "8bebb6f9-a89d-48b1-a3f7-36698c2c9f27"
+      Value: "c0af8d1a-1ee5-4ede-b069-83269012452d"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260831T201927Z
+      Value: 20260903T134043Z

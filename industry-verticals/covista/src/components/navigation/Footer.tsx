@@ -220,11 +220,21 @@ export const Covista = (props: FooterProps): JSX.Element => {
           </div>
         </div>
         <div className="cv-footer__legal">
-          <div className="privacy-links">
-            <Link field={props.fields?.Link1} />
-            <Link field={props.fields?.Link2} />
+          <div className="cv-footer__legal-copy">
+            <p>© 2026 Covista Inc. All Rights Reserved</p>
+            <p>
+              Covista™ is a trademark of Covista Inc. in the United States, European Union, United
+              Kingdom, as well as certain other jurisdictions.
+            </p>
           </div>
-          <div className="links-socials">
+          <nav className="cv-footer__utility" aria-label="Legal">
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/cookie-policy">Cookie Policy</a>
+            <a href="/cookie-preferences">Cookie Preferences</a>
+            <a href="/accessibility">Accessibility</a>
+            <a href="/governance">Governance</a>
+          </nav>
+          <div className="cv-footer__socials">
             <Link field={props.fields?.SocialLink1}>
               <NextImage field={props.fields?.SocialIcon1} width={16} height={16} />
             </Link>

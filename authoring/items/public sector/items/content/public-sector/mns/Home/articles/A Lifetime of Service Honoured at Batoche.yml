@@ -1,0 +1,82 @@
+﻿---
+ID: "6af0ae9a-7f40-4007-98b8-3d3cd0d8501e"
+Parent: "a7a1aa89-2c34-4e99-984c-8abd91a9ef68"
+Template: "f83ccefd-fc41-4a60-9882-8f7ea5cf41a8"
+Path: "/sitecore/content/public-sector/mns/Home/articles/A Lifetime of Service Honoured at Batoche"
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{A5BC37E7-ED96-4C1E-8590-A26E64DB55EA}"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{E127B704-90D9-4CDE-8C2C-B24D9FDD45A6}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "d4bec23b-74a2-4bf5-a144-1716f10931a6"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
+      Hint: __Lock
+      Value: <r />
+    - ID: "03117268-f84f-4fd8-ad9e-5990b3a21fe6"
+      Hint: Content
+      Value: |
+        <div class="ck-content"><h2>Elder Joanna Potiyondi and Gerald Morin receive the first-ever MN–S President's Medals&nbsp;<br />Some people shape our Nation through a single act. Others spend a lifetime doing it.</h2><p>During the official opening of the 2026 Back to Batoche Days, Métis Nation–Saskatchewan (MN–S) introduced the President's Medal, a new honour recognizing exceptional service, leadership, and commitment to Métis citizens.</p><p>In presenting the inaugural awards, MN–S President Glen McCallum said the President's Medal was created to celebrate those whose contributions reflect the strength, resilience, culture, values, and vision of the Métis Nation. The honour recognizes individuals whose life's work has left a lasting mark on the Nation and continues to inspire future generations.</p><p>The first-ever President's Medals, presented as Lifetime Achievement Awards, were awarded to Elder Joanna Potiyondi and Gerald Morin.</p><h3>Elder Joanna Potiyondi&nbsp;</h3><p><br />A respected Elder, Culture Keeper, poet, and community leader, Joanna Potiyondi has dedicated her life to preserving and sharing Métis culture, values, and traditions. Raised in Roche Percée, Saskatchewan, by grandparents born during the Métis Resistance, she carries a deep connection to Métis history, the land, and the horse culture that grew out of the buffalo hunt.</p><p><br />As President of Local 15 in Melville, she is marking an extraordinary 50 years of service in 2026. Through her leadership and storytelling, Elder Potiyondi continues to pass Métis knowledge to future generations and keep the spirit of the Métis Nation strong.</p><p>Gerald Morin&nbsp;<br />Gerald Morin has spent more than three decades advancing the rights and aspirations of the Métis Nation. Raised in the Métis community of Green Lake, Saskatchewan, he built a distinguished career as a lawyer, advocate, and leader, serving as President of both Métis Nation–Saskatchewan and the Métis National Council.</p><p><br />Among the earliest champions of Métis self-government and rights recognition, Morin helped shape important advances in Métis governance, harvesting rights, and Nation-building. His lifelong dedication has left a lasting impact on Métis citizens and continues to inspire current and future generations of leaders.&nbsp;</p></div>
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
+      Hint: __Final Renderings
+      Value: |
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r
+              uid="{0C24059F-F919-45F3-9AE0-1BB1D0DA2838}"
+              p:after="r[@uid='{1333C7A2-2A6C-4310-AE74-8D5DE936F8B3}']"
+              s:id="{62DD1639-9F28-4040-8738-C886480B2127}"
+              s:par="FormId=d81898c7252245e3b5111a0802a504cc-use&amp;GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles"
+              s:ph="/headless-main/sxa-article-content/background-page-content-0-1" />
+            <r
+              uid="{5FE02C1E-E688-4EE3-8C43-FA8963A41E8E}"
+              p:after="*[1=2]"
+              s:ds="local:/Data/Promo CTA 1"
+              s:id="{1A375FAC-6CC1-4A5A-A159-9BC6DBC66B80}"
+              s:par="GridParameters=%7B7465D855-992E-4DC2-9855-A03250DFA74B%7D&amp;FieldNames=%7B20A6246B-D48C-49E3-9B31-F5F68EF432A8%7D&amp;Styles&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=2"
+              s:ph="/headless-main/sxa-article-content/background-page-content-0-1" />
+          </d>
+        </r>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260902T194258Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{46DA5376-10DC-4B66-B464-AFDAA29DE84F}"
+    - ID: "3e700dce-26eb-4bf0-990f-9d9fe555990d"
+      Hint: Excerpt
+      Value: Some people shape our Nation through a single act. Others spend a lifetime doing it. 
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: A Lifetime of Service Honoured at Batoche
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b6d5d5da-41ec-4895-9323-795f59565f74"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "c8f93afe-bfd4-4e8f-9c61-152559854661"
+      Hint: __Valid from
+      Value: 20260915T155200Z
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260902T195240Z
+    - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
+      Hint: Title
+      Value: A Lifetime of Service, Honoured at Batoche

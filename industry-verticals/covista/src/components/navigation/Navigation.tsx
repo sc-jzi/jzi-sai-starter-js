@@ -113,6 +113,8 @@ export const Default = (props: NavigationProps): JSX.Element => {
       />
     ));
 
+  list.push(<HeaderSearch key="cv-header-search" />);
+
 //  if (isSearchSDKEnabled) {
   //  list.push(
     //  <li className="	d-none d-lg-block" key="search-icon">
@@ -195,6 +197,91 @@ const NavigationList = (props: NavigationProps) => {
         </Link>
       </div>
       {children.length > 0 ? <ul className="clearfix">{children}</ul> : null}
+    </li>
+  );
+};
+
+const HeaderSearch = (): JSX.Element => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [query, setQuery] = useState('');
+  const inputRef = useRef<HTMLInputElement>(null);
+  const rootRef = useRef<HTMLLIElement>(null);
+
+  const closeSearch = () => {
+    setIsOpen(false);
+    setQuery('');
+  };
+
+  const handleToggle = () => {
+    if (isOpen) {
+      closeSearch();
+      return;
+    }
+
+    setIsOpen(true);
+    setTimeout(() => inputRef.current?.focus(), 0);
+  };
+
+  const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+    const nextTarget = event.relatedTarget as Node | null;
+    if (rootRef.current?.contains(nextTarget)) {
+      return;
+    }
+
+    closeSearch();
+  };
+
+  const handleClear = () => {
+    setQuery('');
+    inputRef.current?.focus();
+  };
+
+  return (
+    <li ref={rootRef} className={`cv-header-search ${isOpen ? 'is-open' : ''}`}>
+      <button
+        type="button"
+        className="cv-header-search__toggle"
+        aria-expanded={isOpen}
+        aria-label={isOpen ? 'Close search' : 'Open search'}
+        onClick={handleToggle}
+      >
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" fill="none">
+          <circle cx="10.5" cy="10.5" r="6.25" stroke="currentColor" strokeWidth="1.75" />
+          <path d="M15.2 15.2 21 21" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+        </svg>
+      </button>
+      {isOpen && (
+        <form className="cv-header-search__form" role="search" onSubmit={(event) => event.preventDefault()}>
+          <div className="cv-header-search__field">
+            <input
+              ref={inputRef}
+              type="search"
+              className="cv-header-search__input"
+              placeholder="Search"
+              aria-label="Search"
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              onBlur={handleBlur}
+            />
+            <button
+              type="button"
+              className="cv-header-search__clear"
+              aria-label="Clear search"
+              onMouseDown={(event) => event.preventDefault()}
+              onClick={handleClear}
+            >
+              <svg viewBox="0 0 16 16" width="12" height="12" aria-hidden="true" fill="none">
+                <path
+                  d="M3.5 3.5 12.5 12.5M12.5 3.5 3.5 12.5"
+                  stroke="currentColor"
+                  strokeWidth="1.75"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </button>
+          </div>
+        </form>
+      )}
     </li>
   );
 };

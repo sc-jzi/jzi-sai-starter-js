@@ -184,16 +184,6 @@ export const Covista = (props: CarouselComponentProps): JSX.Element => {
           </div>
         ))}
       </div>
-      <ol className="carousel-indicators">
-        {items.map((_item, i) => (
-          <li
-            key={i}
-            aria-label={`Slide ${i + 1}`}
-            className={i == index ? 'active' : ''}
-            onClick={() => setIndex(i)}
-          ></li>
-        ))}
-      </ol>
     </section>
   );
 };

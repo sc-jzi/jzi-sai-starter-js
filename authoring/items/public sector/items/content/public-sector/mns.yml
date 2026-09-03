@@ -50,10 +50,10 @@ Languages:
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
     Hint: __Unversioned revision
-    Value: "52985e47-c900-4868-a304-8dd910ca7bab"
+    Value: "98474f3a-9df4-4bdd-bfc8-90a2660484eb"
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
     Hint: __Display name
-    Value: Métis Nation–Saskatchewan
+    Value: MNS
   Versions:
   - Version: 1
     Fields:
@@ -66,11 +66,11 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "4ab78584-b389-4eb5-983d-7d53867bb488"
+      Value: "fc8be692-6798-48d1-bffc-5ee92c0a2a1a"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260901T214956Z
+      Value: 20260901T224109Z
