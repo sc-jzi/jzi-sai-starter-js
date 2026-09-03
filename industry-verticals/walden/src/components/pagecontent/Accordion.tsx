@@ -61,6 +61,49 @@ const AccordionItem = ({ item }: { item: AccordionItemProps }): JSX.Element => {
   );
 };
 
+const WaldenAccordionItem = ({ item }: { item: AccordionItemProps }): JSX.Element => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <div className="walden-accordion__item">
+      <button
+        type="button"
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="walden-accordion__button"
+        aria-expanded={isExpanded}
+      >
+        <Text field={item.fields.Title} />
+        <span className="walden-accordion__icon" aria-hidden>
+          {isExpanded ? '–' : '+'}
+        </span>
+      </button>
+      {isExpanded && (
+        <div className="walden-accordion__content">
+          <RichText field={item.fields.Content} />
+        </div>
+      )}
+    </div>
+  );
+};
+
+/* Walden variant — dark navy FAQ with plus/minus rows */
+export const Walden = (props: AccordionProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const accordionItems = props.fields?.items;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component accordion walden-accordion ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <h2 className="walden-accordion__heading">FAQ about Walden&apos;s Online Programs</h2>
+        {accordionItems?.map((item) => (
+          <WaldenAccordionItem key={item.url} item={item} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: AccordionProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const accordionItems = props.fields?.items;

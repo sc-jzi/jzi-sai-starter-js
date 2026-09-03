@@ -1,0 +1,612 @@
+/* Walden University pixel-perfect variants */
+
+.walden-gold-arrow {
+  color: var(--brand-accent);
+  flex-shrink: 0;
+}
+
+.walden-link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--brand-body-font);
+  font-weight: 700;
+  color: var(--brand-primary);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--brand-secondary);
+  }
+}
+
+.component.eyebrow.walden-eyebrow {
+  background: var(--brand-primary);
+  color: var(--brand-primary-foreground);
+  padding: 0.35rem 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.02em;
+
+  a,
+  .field-link {
+    color: var(--brand-primary-foreground);
+    font-family: var(--brand-body-font);
+  }
+}
+
+.component.header.walden-header {
+  background: var(--brand-header-bg);
+  color: var(--brand-header-fg);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--brand-border);
+
+  img {
+    max-height: 48px;
+    width: auto;
+  }
+
+  a,
+  .navigation a {
+    font-family: var(--brand-body-font);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brand-header-fg);
+  }
+}
+
+.component.hero.walden-hero {
+  position: relative;
+  height: min(720px, 88vh);
+  color: #fff;
+  overflow: hidden;
+
+  picture,
+  picture img,
+  .walden-hero__media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .walden-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgb(0 51 76 / 72%) 0%, rgb(0 51 76 / 18%) 62%, transparent 100%);
+  }
+
+  .walden-hero__content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 720px;
+    padding: 4rem 0 6rem;
+  }
+
+  .walden-hero__ribbon {
+    display: inline-block;
+    width: fit-content;
+    background: var(--brand-accent);
+    color: var(--brand-accent-foreground);
+    font-family: var(--brand-body-font);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.4rem 1.15rem;
+    clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%);
+    margin-bottom: 1.25rem;
+  }
+
+  .walden-hero__title {
+    font-family: var(--brand-heading-font);
+    font-size: clamp(2.4rem, 5vw, 3.75rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .walden-hero__text {
+    font-family: var(--brand-body-font);
+    font-size: 1.125rem;
+    line-height: 1.55;
+    color: #fff;
+    max-width: 34rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .walden-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .walden-hero__select {
+    appearance: none;
+    min-width: 240px;
+    height: 52px;
+    border: 0;
+    border-radius: var(--brand-button-radius);
+    padding: 0 2.4rem 0 1.1rem;
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2300334C' d='M1 1l5 5 5-5'/%3E%3C/svg%3E") no-repeat right 1rem center;
+    color: var(--brand-primary);
+    font-family: var(--brand-body-font);
+    font-size: 0.95rem;
+  }
+
+  .button.button-main {
+    height: 52px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+.component.four-column-cta.walden-program-finder {
+  background: var(--brand-primary);
+  color: #fff;
+  padding: 1.75rem 0;
+  margin-top: -2.5rem;
+  position: relative;
+  z-index: 2;
+
+  .walden-finder__label {
+    font-family: var(--brand-body-font);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .walden-finder__search {
+    width: 100%;
+    height: 52px;
+    border: 0;
+    border-radius: 0.5rem;
+    padding: 0 1rem 0 2.6rem;
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='none' stroke='%2300334C' stroke-width='2' viewBox='0 0 24 24'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-3-3'/%3E%3C/svg%3E") no-repeat 0.85rem center;
+    font-family: var(--brand-body-font);
+    color: var(--brand-primary);
+  }
+
+  .walden-finder__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 56px;
+    background: var(--brand-secondary);
+    color: #fff;
+    border-radius: 0.5rem;
+    font-family: var(--brand-body-font);
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+
+    &:hover {
+      filter: brightness(1.1);
+      color: #fff;
+    }
+  }
+}
+
+.component.features.walden-features {
+  background: var(--brand-muted);
+  padding: 5rem 0;
+
+  .walden-features__heading {
+    font-family: var(--brand-heading-font);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 700;
+    color: var(--brand-primary);
+    margin-bottom: 1.25rem;
+  }
+
+  .walden-features__copy {
+    font-family: var(--brand-body-font);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--brand-fg);
+    margin-bottom: 1.5rem;
+  }
+
+  .walden-features__item {
+    display: flex;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid var(--brand-border);
+  }
+
+  .walden-features__icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    color: var(--brand-secondary);
+  }
+
+  .walden-features__item-title {
+    font-family: var(--brand-body-font);
+    font-weight: 800;
+    color: var(--brand-primary);
+    margin-bottom: 0.25rem;
+  }
+}
+
+.component.promo-cta.walden-promo,
+.component.promo-cta.walden-education,
+.component.promo-cta.walden-goals {
+  background: var(--brand-muted);
+  padding: 4.5rem 0;
+
+  .walden-promo__title,
+  .walden-education__title,
+  .walden-goals__title {
+    font-family: var(--brand-heading-font);
+    font-size: clamp(1.85rem, 3.4vw, 2.6rem);
+    font-weight: 700;
+    color: var(--brand-primary);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .walden-promo__eyebrow,
+  .walden-education__eyebrow,
+  .walden-goals__eyebrow {
+    font-family: var(--brand-body-font);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--brand-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .walden-promo__text,
+  .walden-education__text,
+  .walden-goals__text {
+    font-family: var(--brand-body-font);
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: var(--brand-card-radius);
+  }
+}
+
+.component.promo-cta.walden-education {
+  background: var(--brand-bg);
+
+  .walden-education__heading {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .walden-education__tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .walden-education__tab {
+    border: 1px solid var(--brand-border);
+    background: var(--brand-muted);
+    color: var(--brand-primary);
+    border-radius: var(--brand-button-radius);
+    padding: 0.55rem 1.4rem;
+    font-family: var(--brand-body-font);
+    font-weight: 700;
+    font-size: 0.9rem;
+
+    &.is-active {
+      background: var(--brand-primary);
+      color: #fff;
+      border-color: var(--brand-primary);
+    }
+  }
+}
+
+.component.heading-cta.walden-heading-cta {
+  background: var(--brand-primary);
+  color: #fff;
+  padding: 2.25rem 0;
+
+  .walden-heading-cta__eyebrow {
+    display: inline-block;
+    background: var(--brand-secondary);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  h2 {
+    font-family: var(--brand-heading-font);
+    font-size: clamp(1.6rem, 3vw, 2.15rem);
+    color: #fff;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: rgb(255 255 255 / 88%);
+    margin-bottom: 0;
+  }
+}
+
+.component.promo-cta.walden-quality {
+  background: var(--brand-bg);
+  padding: 4.5rem 0;
+
+  .walden-quality__title {
+    font-family: var(--brand-heading-font);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    color: var(--brand-primary);
+    margin-bottom: 1rem;
+  }
+
+  .walden-quality__card {
+    border: 1px solid var(--brand-border);
+    background: #fff;
+    padding: 2.5rem 2rem;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 8px 28px rgb(0 51 76 / 6%);
+  }
+
+  .walden-quality__subtitle {
+    font-family: var(--brand-heading-font);
+    font-size: 1.35rem;
+    color: var(--brand-primary);
+    margin-top: 1rem;
+  }
+}
+
+.component.four-column-cta.walden-interest-grid {
+  background: var(--brand-bg);
+  padding: 4.5rem 0;
+
+  .walden-interest__heading {
+    text-align: center;
+    font-family: var(--brand-heading-font);
+    font-size: clamp(2rem, 4vw, 2.6rem);
+    color: var(--brand-primary);
+    margin-bottom: 2.5rem;
+  }
+
+  .walden-interest__card {
+    padding: 0.5rem 0.25rem 1.5rem;
+  }
+
+  .walden-interest__title {
+    font-family: var(--brand-heading-font);
+    font-size: 1.35rem;
+    color: var(--brand-primary);
+    margin-bottom: 0.85rem;
+  }
+
+  .walden-interest__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--brand-border);
+    color: var(--brand-primary);
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--brand-secondary);
+    }
+  }
+}
+
+.component.quote.walden-quote {
+  background: var(--brand-muted);
+  padding: 4.5rem 0;
+
+  .walden-quote__media img {
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    object-fit: cover;
+  }
+
+  .walden-quote__card {
+    background: #fff;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 10px 30px rgb(0 51 76 / 8%);
+  }
+
+  blockquote {
+    font-family: var(--brand-heading-font);
+    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+    color: var(--brand-primary);
+    line-height: 1.4;
+    margin-bottom: 1.25rem;
+  }
+
+  .author-name {
+    font-weight: 800;
+    color: var(--brand-primary);
+  }
+}
+
+.component.promo-cta.walden-goals {
+  background: var(--brand-bg);
+
+  .walden-goals__stat {
+    font-family: var(--brand-heading-font);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--brand-primary);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.component.cta-banner.walden-trust {
+  background: var(--brand-primary);
+  color: #fff;
+  padding: 2.5rem 0;
+
+  .walden-trust__icon img {
+    max-height: 110px;
+    width: auto;
+  }
+
+  h1,
+  h2 {
+    font-family: var(--brand-heading-font);
+    font-size: 1.65rem;
+    color: #fff;
+    margin-bottom: 0.75rem;
+  }
+
+  .text-content,
+  p {
+    color: rgb(255 255 255 / 90%);
+  }
+}
+
+.component.promo-cta.walden-link-card {
+  background: var(--brand-muted);
+  padding: 4.5rem 0;
+
+  .walden-link-card__media img {
+    width: 100%;
+    min-height: 320px;
+    object-fit: cover;
+  }
+
+  .walden-link-card__card {
+    background: #fff;
+    padding: 2.25rem 2rem;
+    box-shadow: 0 12px 32px rgb(0 51 76 / 8%);
+  }
+
+  .walden-link-card__eyebrow {
+    font-family: var(--brand-body-font);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brand-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .walden-link-card__title {
+    font-family: var(--brand-heading-font);
+    font-size: 1.75rem;
+    color: var(--brand-primary);
+    margin-bottom: 1.25rem;
+  }
+
+  .walden-link-card__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid var(--brand-border);
+    color: var(--brand-primary);
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--brand-secondary);
+    }
+  }
+}
+
+.component.accordion.walden-accordion {
+  background: var(--brand-primary);
+  color: #fff;
+  padding: 4.5rem 0;
+
+  .walden-accordion__heading {
+    font-family: var(--brand-heading-font);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    color: #fff;
+    margin-bottom: 2rem;
+  }
+
+  .walden-accordion__item {
+    border-bottom: 1px solid rgb(255 255 255 / 22%);
+  }
+
+  .walden-accordion__button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background: none;
+    border: 0;
+    color: #fff;
+    text-align: left;
+    padding: 1.15rem 0;
+    font-family: var(--brand-body-font);
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+
+  .walden-accordion__icon {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .walden-accordion__content {
+    padding: 0 2.5rem 1.25rem 0;
+    color: rgb(255 255 255 / 88%);
+    font-family: var(--brand-body-font);
+  }
+}
+
+.component.footer.walden-footer {
+  background: var(--brand-footer-bg);
+  color: var(--brand-footer-fg);
+  padding: 3.5rem 0 2rem;
+
+  .title,
+  .eyebrow-accent {
+    font-family: var(--brand-body-font);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+  }
+
+  a,
+  .links,
+  .footnote {
+    color: rgb(255 255 255 / 86%);
+    font-family: var(--brand-body-font);
+  }
+
+  hr {
+    border-color: rgb(255 255 255 / 18%);
+  }
+}

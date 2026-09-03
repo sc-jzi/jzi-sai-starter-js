@@ -1,0 +1,125 @@
+# Client Brand Theme — Walden University
+# Extracted from: https://www.waldenu.edu/
+# Playwright scraper + user screenshot + official brand color research.
+
+client:
+  name: "Walden University"
+  sourceUrl: "https://www.waldenu.edu/"
+  extractedAt: "2026-09-03T22:40:00Z"
+  extractedBy: "cursor"
+
+colors:
+  primary: "#00334C"
+  primaryForeground: "#ffffff"
+  secondary: "#00467F"
+  secondaryForeground: "#ffffff"
+  accent: "#FFC72C"
+  accentForeground: "#00334C"
+  background: "#ffffff"
+  foreground: "#444444"
+  muted: "#F4F4F4"
+  mutedForeground: "#5A5A5A"
+  headerBackground: "#ffffff"
+  headerForeground: "#00334C"
+  footerBackground: "#00334C"
+  footerForeground: "#ffffff"
+  border: "#D8DDE3"
+  ring: "#00334C"
+  extra:
+    - { name: "utilityBar", value: "#00334C" }
+    - { name: "goldHover", value: "#E6B325" }
+    - { name: "officialWaldenBlue", value: "#00467F" }
+
+typography:
+  headingFamily: "'Noto Serif', serif"
+  headingWeight: "700"
+  bodyFamily: "'Mulish', sans-serif"
+  bodyWeight: "400"
+  monoFamily: "'Roboto Mono', monospace"
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap"
+  scale:
+    hero: "3.5rem"
+    h1: "3.5rem"
+    h2: "3rem"
+    h3: "2.625rem"
+    body: "1rem"
+    small: "0.875rem"
+  headingTransform: "none"
+  letterSpacing: "normal"
+  lineHeight: "relaxed"
+
+spacing:
+  density: "spacious"
+  sectionGap: "5rem"
+  containerMaxWidth: "1280px"
+  containerPadding: "1.5rem"
+
+shape:
+  borderRadius: "0.25rem"
+  buttonRadius: "2rem"
+  cardRadius: "0"
+  imageRadius: "0"
+  shadowStyle: "subtle"
+  borderStyle: "none"
+
+tone:
+  overall: "corporate"
+  colorMode: "mixed"
+  contrast: "high"
+  imagery: "photography"
+  heroStyle: "full-bleed-image"
+  cardStyle: "flat"
+  navStyle: "solid-bar"
+
+tailwind:
+  colors:
+    brand:
+      primary: "#00334C"
+      secondary: "#00467F"
+      accent: "#FFC72C"
+  fontFamily:
+    heading: ["Noto Serif", "serif"]
+    body: ["Mulish", "sans-serif"]
+  borderRadius:
+    DEFAULT: "0.25rem"
+    button: "2rem"
+    card: "0"
+
+cssVariables: |
+  :root {
+    --brand-primary: #00334C;
+    --brand-primary-foreground: #ffffff;
+    --brand-secondary: #00467F;
+    --brand-secondary-foreground: #ffffff;
+    --brand-accent: #FFC72C;
+    --brand-accent-foreground: #00334C;
+    --brand-bg: #ffffff;
+    --brand-fg: #444444;
+    --brand-muted: #F4F4F4;
+    --brand-muted-fg: #5A5A5A;
+    --brand-header-bg: #ffffff;
+    --brand-header-fg: #00334C;
+    --brand-footer-bg: #00334C;
+    --brand-footer-fg: #ffffff;
+    --brand-border: #D8DDE3;
+    --brand-ring: #00334C;
+    --brand-heading-font: 'Noto Serif', serif;
+    --brand-body-font: 'Mulish', sans-serif;
+    --brand-radius: 0.25rem;
+    --brand-button-radius: 2rem;
+    --brand-card-radius: 0;
+  }
+
+extraction:
+  confidence: "high"
+  method: "playwright-full"
+  notes:
+    - "Primary teal/navy #00334C is the computed link and UI color from the live site (rgb(0, 51, 76)). Official brand guide lists Walden Blue as #00467F — stored as secondary and extra.officialWaldenBlue."
+    - "Accent gold #FFC72C is the official Walden Gold. Used for Request Information, Get Started, Apply Now, and other primary CTAs. Button text on gold is dark navy, not white."
+    - "Headings use self-hosted Noto Serif Bold (56px hero). Demo substitute: Google Fonts Noto Serif 700."
+    - "Body uses self-hosted Muli Regular. Muli was renamed to Mulish on Google Fonts — same typeface family."
+    - "Nav is a white solid bar with teal text (not transparent overlay). A dark teal utility bar sits above it."
+    - "Hero is full-bleed photography with white serif headline and a gold ribbon/tag. Program finder is a dark teal bar overlapping the hero bottom."
+    - "Primary CTA buttons are pill-shaped (computed radius 48px). Cards and images are square (0 radius) with a subtle shadow."
+    - "Color mode is mixed: white/gray content sections, dark teal program finder / B Corp / FAQ / footer bands."
+    - "Scraper primaryButtonBackground returned white (it sampled a dropdown, not the gold CTA). Gold is confirmed from screenshots."

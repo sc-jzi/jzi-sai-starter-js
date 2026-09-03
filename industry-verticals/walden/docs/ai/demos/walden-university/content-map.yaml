@@ -1,0 +1,395 @@
+client:
+  name: "Walden University"
+  sourceUrl: "https://www.waldenu.edu/"
+  sourceLanguage: "en"
+  targetLanguage: "en"
+  translationApplied: false
+  extractedAt: "2026-09-03T22:46:09Z"
+  mappedAt: "2026-09-03T22:50:00Z"
+
+sections:
+  - position: 1
+    componentName: "Eyebrow"
+    manifestName: "Eyebrow"
+    kind: "context-only"
+    datasourceItemName: "Walden University - Eyebrow"
+    apiAddable: false
+    fields: {}
+    children: []
+    imageFields: []
+    matchConfidence: "medium"
+    contentSource: "screenshot"
+
+  - position: 2
+    componentName: "Header"
+    manifestName: "Header"
+    kind: "context-only"
+    datasourceItemName: "Walden University - Header"
+    apiAddable: false
+    fields: {}
+    children: []
+    imageFields:
+      - field: "LogoImage"
+        src: "https://www.waldenu.edu/themes/custom/wal_base_2024/images/svg/logo.svg"
+        alt: "Walden University"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 3
+    componentName: "Hero"
+    manifestName: "Hero"
+    kind: "simple"
+    datasourceItemName: "Walden University - Hero"
+    datasourceItemId: "253f5f3d-f173-41fe-b99e-552a11b26258"
+    apiAddable: true
+    fields:
+      Title: "Your Career Is Our Job"
+      Text: "<p>From enrollment to employment, Walden University is a college that works as hard as you do.</p>"
+      Link:
+        text: "Get Started"
+        href: "https://www.waldenu.edu/"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+    notes: "Hero source image was not in the DOM extract (lazy/background). Add image after upload or leave for Pages editor."
+
+  - position: 4
+    componentName: "FourColumnCta"
+    manifestName: "FourColumnCta"
+    kind: "simple"
+    datasourceItemName: "Walden University - Program Finder"
+    datasourceItemId: "6197fda9-2066-4b9b-b237-6e6ca231b2f8"
+    apiAddable: true
+    fields:
+      Title1: "Bachelor's"
+      Text1: "Find your online program"
+      Link1:
+        text: "Bachelor's"
+        href: "https://www.waldenu.edu/online-bachelors-programs"
+        target: ""
+      Title2: "Master's"
+      Text2: "Find your online program"
+      Link2:
+        text: "Master's"
+        href: "https://www.waldenu.edu/online-masters-programs"
+        target: ""
+      Title3: "Doctoral"
+      Text3: "Find your online program"
+      Link3:
+        text: "Doctoral"
+        href: "https://www.waldenu.edu/online-doctoral-programs"
+        target: ""
+      Title4: "Certificate"
+      Text4: "Find your online program"
+      Link4:
+        text: "Certificate"
+        href: "https://www.waldenu.edu/online-certificates-programs"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "medium"
+    contentSource: "screenshot"
+
+  - position: 5
+    componentName: "Features"
+    manifestName: "Features"
+    kind: "simple"
+    datasourceItemName: "Walden University - Foundation for Impact"
+    datasourceItemId: "70d9df64-0aac-4418-b4bf-4a3824ec7a35"
+    apiAddable: true
+    fields:
+      Eyebrow: "A Foundation for Impact"
+      Text: "<p>You want something better—for yourself, your family, and your community. As an HLC-accredited institution and certified B Corp, we don’t just educate changemakers; we drive positive impact. Start your transformation journey at Walden, an online university for working adults.</p>"
+      Link:
+        text: "Why Walden?"
+        href: "https://www.waldenu.edu/why-walden"
+        target: ""
+      Title1: "Tuition Savings"
+      Text1: "Save on tuition with grants, scholarships, and financial aid—many students qualify for up to 25% in savings."
+      Title2: "Hands-On Learning"
+      Text2: "Choose from flexible formats, including Tempo Learning® available in 25+ select programs and specializations, all designed to fit busy schedules."
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 6
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    kind: "simple"
+    datasourceItemName: "Walden University - AI Certificates"
+    datasourceItemId: "be906e8b-f93c-469f-9d27-215bc047ec94"
+    apiAddable: true
+    fields:
+      Eyebrow: "Walden University in partnership with Google Cloud"
+      Title: "New AI Certificates: Enhance Your Degree at No Extra Cost"
+      Subtitle: "Industry-recognized AI training"
+      Text: "<p>Discover our latest industry-recognized AI training certificates, including social work, business, and education. These certificates are designed for your field by Walden, in partnership with Google Cloud.</p>"
+      Link:
+        text: "Explore New AI Certificates"
+        href: "https://www.waldenu.edu/ai-certificate/google-partnership"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image"
+        src: "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_crop_freeform_md/public/2026-03/walden_google_cloud_module_image_2a.jpg?h=18ca2f3c&itok=TDItT-wG"
+        alt: "Walden University in Partnership with Google Cloud"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 7
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    kind: "simple"
+    datasourceItemName: "Walden University - Education Options"
+    datasourceItemId: "c2fda606-28c6-4614-81b1-c5b9e3ebbfb7"
+    apiAddable: true
+    fields:
+      Eyebrow: "Two ways to learn"
+      Title: "Education Options to Fit Your Needs"
+      Subtitle: "Flexible, Self-Paced Learning"
+      Text: "<p>Prefer to learn at your own pace? With Tempo Learning®, you get flexibility—without giving up support. Set your schedule, take assessments when you’re ready, and move through your program at your speed—with guidance from a personal academic coach and Walden’s expert faculty.</p>"
+      Link:
+        text: "Find my learning style"
+        href: "https://www.waldenu.edu/tempo-quiz"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image"
+        src: "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2025-12/final_wu_hp_cro_tempo_632x632.jpg?itok=FSGwh2_R"
+        alt: "Man on laptop with his son hugging him"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 8
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Walden University - Graduation Path"
+    datasourceItemId: "cd20051c-3bcb-410a-925b-fed161ebc46b"
+    apiAddable: true
+    fields:
+      Eyebrow: "3-Minute Quiz"
+      Heading: "Your Path to Graduation Starts Here"
+      Text: "Create and download your comprehensive plan with scholarships, financial aid, credit transfer, and more!"
+      Link:
+        text: "Build Your Education Plan"
+        href: "https://www.waldenu.edu/financial-aid/byep"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 9
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    kind: "simple"
+    datasourceItemName: "Walden University - Quality Matters"
+    datasourceItemId: "82346599-a6d6-4412-b0e5-e3d30f0fc1b8"
+    apiAddable: true
+    fields:
+      Eyebrow: "Accreditations"
+      Title: "Quality Matters"
+      Subtitle: "Higher Learning Commission"
+      Text: "<p>Walden University holds institutional accreditation from the Higher Learning Commission (HLC), a U.S.-recognized accreditor. This ensures that your degree is credible and respected, and demonstrates preparation for career advancement or further education.</p>"
+      Link:
+        text: "View All"
+        href: "https://www.waldenu.edu/about/accreditation"
+        target: ""
+      Link2:
+        text: "Higher Learning Commission"
+        href: "https://www.hlcommission.org/"
+        target: "_blank"
+    children: []
+    imageFields:
+      - field: "Image"
+        src: "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/Walden/Images/Newsroom/alumni-magazine/content-images/2020-vol-1/accreditation/ceph-logo-doctoral-masters-600x450.jpg?itok=UEhZawxX"
+        alt: "CEPH Accredited Master's Doctoral logo"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 10
+    componentName: "FourColumnCta"
+    manifestName: "FourColumnCta"
+    kind: "simple"
+    datasourceItemName: "Walden University - Areas of Interest"
+    datasourceItemId: "967bedb6-a5b7-4bc5-828e-eed8a3d8906a"
+    apiAddable: true
+    fields:
+      Title1: "Nursing"
+      Text1: "Bachelor’s, Master’s, and Doctoral programs"
+      Link1:
+        text: "Bachelor’s Programs"
+        href: "https://www.waldenu.edu/online-bachelors-programs/bachelor-of-science-in-nursing"
+        target: ""
+      Title2: "Health, Social & Public Services"
+      Text2: "Bachelor’s, Master’s, and Doctoral programs"
+      Link2:
+        text: "Master’s Programs"
+        href: "https://www.waldenu.edu/programs?f%5B0%5D=areas_of_study_v2%3A111&f%5B1%5D=degree_type_select_v2%3A56"
+        target: ""
+      Title3: "Psychology"
+      Text3: "Bachelor’s, Master’s, and Doctoral programs"
+      Link3:
+        text: "Bachelor’s Programs"
+        href: "https://www.waldenu.edu/online-bachelors-programs/bs-in-psychology"
+        target: ""
+      Title4: "Education"
+      Text4: "Bachelor’s, Master’s, and Doctoral programs"
+      Link4:
+        text: "Master’s Programs"
+        href: "https://www.waldenu.edu/programs?f%5B0%5D=areas_of_study_v2%3A86&f%5B1%5D=degree_type_select_v2%3A56"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "medium"
+    contentSource: "extractor"
+
+  - position: 11
+    componentName: "Quote"
+    manifestName: "Quote"
+    kind: "simple"
+    datasourceItemName: "Walden University - Alumni Quote"
+    datasourceItemId: "b54d5abf-8081-487d-982d-4e163c402626"
+    apiAddable: true
+    fields:
+      Quote: "I loved how flexible the online learning was … My hard work paid off and now today I have a better job with a better salary."
+      AuthorName: "Sheila Cameron"
+      AuthorPosition: "BS in Accounting ’24"
+    children: []
+    imageFields:
+      - field: "Image"
+        src: "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2026-02/Untitled-12.jpg?itok=PofZ-weT"
+        alt: "Sheila Cameron"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 12
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    kind: "simple"
+    datasourceItemName: "Walden University - Goals Within Reach"
+    datasourceItemId: "b3b0b0ed-7cfa-415f-add5-9a87fc641bf0"
+    apiAddable: true
+    fields:
+      Eyebrow: "Tuition savings opportunities"
+      Title: "Your Goals Within Reach"
+      Subtitle: "Up to 25%"
+      Text: "<p>As part of our commitment to improving access to higher education, our online college offers many options to help you manage the cost of your degree. For those who apply and qualify, this includes financial aid, grants, scholarships, and more.</p>"
+      Link:
+        text: "Learn more"
+        href: "https://www.waldenu.edu/financial-aid/grants-and-scholarships-details"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image"
+        src: "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-01/gettyimages-1192133706-632x632.jpg?itok=qYslrFQK"
+        alt: "Woman interacting with computer"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 13
+    componentName: "CtaBanner"
+    manifestName: "CtaBanner"
+    kind: "simple"
+    datasourceItemName: "Walden University - B Corp"
+    datasourceItemId: "3466899e-f2f1-40f6-b1e9-87b14a2dcfae"
+    apiAddable: true
+    fields:
+      Eyebrow: "Certified B Corporation"
+      Title: "Accountability and access in higher education"
+      Text: "<p>As a Certified B Corporation® and a Carnegie designated Opportunity University for undergraduate students, Walden University reflects a commitment to accountability and access in higher education.</p>"
+    children: []
+    imageFields:
+      - field: "Icon"
+        src: "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2026-05/B-Corp-Logo-White_572x754.png?itok=1s6GAH3G"
+        alt: "B corp logo"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 14
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    kind: "simple"
+    datasourceItemName: "Walden University - Whats Next"
+    datasourceItemId: "5b04e4f6-fde0-43da-a201-f35ead262b3e"
+    apiAddable: true
+    fields:
+      Eyebrow: "What’s next?"
+      Title: "Take the first step toward the change you want to see."
+      Subtitle: ""
+      Text: ""
+      Link:
+        text: "Talk to an Enrollment Specialist"
+        href: "https://www.waldenu.edu/request-info"
+        target: ""
+      Link2:
+        text: "Find the right program for you"
+        href: "https://www.waldenu.edu/programs"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image"
+        src: "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2025-12/final_wu_hp_cro_740x602.jpg?itok=pVCURIu_"
+        alt: "Man studying on laptop at home"
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 15
+    componentName: "Accordion"
+    manifestName: "Accordion"
+    kind: "list"
+    datasourceItemName: "Walden University - FAQ"
+    datasourceItemId: "bd22c25f-cd78-452f-8966-3aa7c1bb5d96"
+    apiAddable: true
+    fields: {}
+    children:
+      - name: "Walden University - FAQ Accredited"
+        fields:
+          Title: "Is Walden University accredited?"
+          Content: "<p>Walden University is accredited by the Higher Learning Commission (www.hlcommission.org), an institutional accreditation agency recognized by the U.S. Department of Education. Accreditation is a mark of quality. Walden has been accredited by the Higher Learning Commission (HLC) since 1990.</p>"
+        imageFields: []
+      - name: "Walden University - FAQ Online"
+        fields:
+          Title: "Does Walden offer fully online programs?"
+          Content: "<p>Yes. Since 1970, Walden has supported working professionals in achieving their academic goals, initially through distance education and later online. Our flexible online learning environment features an accessible platform that lets you log in when it’s convenient for you, from wherever you are in the world.</p>"
+        imageFields: []
+      - name: "Walden University - FAQ Support"
+        fields:
+          Title: "What student support does Walden offer?"
+          Content: "<p>When you enroll with us, you’re never alone. Walden’s student support services include Enrollment Specialists, a financial aid team, Academic Advisors, a career planning and development center, technical assistance, disability services, an online library, research support, an academic skills center, doctoral peer mentoring, and a writing center.</p>"
+        imageFields: []
+      - name: "Walden University - FAQ Transfer"
+        fields:
+          Title: "Can I transfer credits to Walden?"
+          Content: "<p>Yes, you can transfer credits from other institutions to Walden. Speak to an Enrollment Specialist for a free transfer-of-credit evaluation by calling 1-866-492-5336.</p>"
+        imageFields: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+
+  - position: 16
+    componentName: "Footer"
+    manifestName: "Footer"
+    kind: "context-only"
+    datasourceItemName: "Walden University - Footer"
+    apiAddable: false
+    fields: {}
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+summary:
+  totalSections: 16
+  sectionsWithContent: 13
+  contextOnlySkipped: 3
+  fieldsPopulated: 62
+  imageFieldsMapped: 7
+  imagesSkipped: 79
+  videosFound: 0
+  translationApplied: false
+  sourceLanguage: "en"

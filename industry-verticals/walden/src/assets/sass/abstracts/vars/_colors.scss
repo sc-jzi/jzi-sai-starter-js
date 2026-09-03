@@ -1,21 +1,21 @@
-// Financial
+// Financial — Walden University theme
 body.site-financial,
 .site-financial {
-  --text-body: #333;
+  --text-body: #444444;
   --text-body-inverted: #fff;
-  --text-colored: #034c81;
+  --text-colored: #00334C;
   --text-footer: #fff;
-  --text-accent: #a82a39;
+  --text-accent: #00334C;
   --bg-body: #fff;
-  --bg-footer: #333;
-  --bg-main: #f0f5f7;
-  --bg-main-alt: #f0f5f7;
-  --bg-color: #c5e4f3;
-  --bg-saturated: #034c81;
-  --bg-accent: #c03021;
-  --border-color: #f0f5f7;
+  --bg-footer: #00334C;
+  --bg-main: #F4F4F4;
+  --bg-main-alt: #F4F4F4;
+  --bg-color: #FFC72C;
+  --bg-saturated: #00334C;
+  --bg-accent: #FFC72C;
+  --border-color: #D8DDE3;
   --hr-color: #fff;
-  --roundness: 1rem;
+  --roundness: 0.25rem;
 }
 
 body.site-financial.dark,

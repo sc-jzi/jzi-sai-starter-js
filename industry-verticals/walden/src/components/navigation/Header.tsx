@@ -33,6 +33,28 @@ export const Default = (props: HeaderProps): JSX.Element => {
 
 
 
+/* Walden variant — white bar, serif logo, uppercase nav */
+export const Walden = (props: HeaderProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const { page } = useSitecore();
+
+  return (
+    <div className={`component header walden-header ${sxaStyles}`} id={id ? id : undefined}>
+      <div className={`container container-${props.params?.ContainerWidth?.toLowerCase()}-fluid`}>
+        <div className="row align-items-center">
+          <div className="col-auto">
+            <NextImage field={props.fields.LogoImage} width={210} height={48} />
+          </div>
+          <div className="col">
+            <AppPlaceholder name="header-right" rendering={props.rendering} page={page} componentMap={props.componentMap} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const WithLogoImage = (props: HeaderProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const sxaStyles = `${props.params?.styles || ''}`;

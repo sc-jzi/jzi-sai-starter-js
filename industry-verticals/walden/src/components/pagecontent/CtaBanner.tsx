@@ -86,6 +86,30 @@ export const Default = (props: CtaBannerProps): JSX.Element => {
   );
 };
 
+/* Walden variant — dark teal B Corp trust bar */
+export const WaldenTrust = (props: CtaBannerProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component cta-banner walden-trust ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="row align-items-center g-4">
+          <div className="col-auto walden-trust__icon">
+            <NextImage field={props.fields.Icon} width={96} height={126} />
+          </div>
+          <div className="col">
+            <h2>
+              <Text field={props.fields.Title} />
+            </h2>
+            <RichText field={props.fields.Text} className="text-content" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const LargeImage = (props: CtaBannerProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

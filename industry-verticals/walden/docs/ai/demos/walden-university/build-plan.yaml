@@ -1,0 +1,483 @@
+# Demo Build Plan — Walden University
+# Mapped to PLAY! Financial components that exist on /sitecore/content/covista/walden.
+# registryId is the conceptual uiim match; manifestName is the live rendering.
+
+client:
+  name: "Walden University"
+  sourceUrl: "https://www.waldenu.edu/"
+  themeFile: "docs/ai/themes/walden-university.theme.yaml"
+  analyzedAt: "2026-09-03T22:42:00Z"
+  contentRoot: "/sitecore/content/covista/walden"
+  codeRoot: "industry-verticals/walden"
+
+pageAnalysis:
+  screenshotFiles:
+    desktop: "docs/ai/themes/walden-university/screenshot-desktop.png"
+    mobile: "docs/ai/themes/walden-university/screenshot-mobile.png"
+    hero: "docs/ai/themes/walden-university/screenshot-hero.png"
+  totalSections: 16
+  templateMatches: 16
+  customRequired: 0
+
+sections:
+  - position: 1
+    description: "Dark teal utility bar with login, alumni, contact, phone, and Apply Now."
+    matchedComponent:
+      registryId: "announcement-bar"
+      manifestName: "Eyebrow"
+      componentName: "Eyebrow"
+      renderingId: "{5F765231-1DA9-467A-8B35-2171CCE313C1}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "medium"
+      kind: "context-only"
+      apiAddable: false
+      variantMatch: "partial"
+    sectionBackground: "primary"
+    content:
+      Title: ""
+      Description: "Login | Alumni | International | Contact Us | Help Center | News & Events | Call Us: 855-323-7977 | APPLY NOW"
+    contentNotes: "Lives in the header partial. Eyebrow uses placeholders (eyebrow-left / eyebrow-right), not a simple message field. Style as dark teal utility bar."
+    variantReason: "Default is the only Eyebrow export. Phase 5.5 can restyle to Walden's dark teal strip."
+    customVariantNeeded:
+      name: "Walden"
+      description: "Dark teal utility bar, small white links, gold or teal Apply Now pill on the right"
+      parentComponent: "Eyebrow"
+
+  - position: 2
+    description: "White header with Walden serif logo, all-caps nav, search, and gold Request Information."
+    matchedComponent:
+      registryId: "navigation-header"
+      manifestName: "Header"
+      componentName: "Header"
+      renderingId: "{81317D3B-F929-426A-83EC-421982F8F1E6}"
+      variant: "WithLogoImage"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "context-only"
+      apiAddable: false
+      variantMatch: "partial"
+    sectionBackground: "default"
+    content:
+      Title: "Walden University"
+      Description: "PROGRAMS | FINANCING | ADMISSIONS | WHY WALDEN"
+      CtaLabel: "Request Information"
+    contentNotes: "Lives in the header partial. Nav links come from placeholders, not a child list. Assign Walden logo to LogoImage."
+    variantReason: "WithLogoImage shows the brand mark on the left, matching the live header."
+    customVariantNeeded:
+      name: "Walden"
+      description: "White bar, teal Noto Serif logo, uppercase nav, gold pill Request Information CTA"
+      parentComponent: "Header"
+
+  - position: 3
+    description: "Full-bleed hero photo with gold ribbon, white serif headline, and program dropdowns plus Get Started."
+    matchedComponent:
+      registryId: "hero-banner"
+      manifestName: "Hero"
+      componentName: "Hero"
+      renderingId: "{B7CDF75E-716A-4C59-B9B1-CD970AE0A4AE}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "none"
+    sectionBackground: "dark"
+    content:
+      Title: "Your Career Is Our Job"
+      Description: "From enrollment to employment, Walden University is a college that works as hard as you do."
+      Tagline: "SET A COURSE FOR CHANGE®"
+      LinkText: "Get Started"
+      LinkHref: "https://www.waldenu.edu/"
+    contentNotes: "Hero image is a smiling professional woman indoors. Default Hero has Title/Text/Image/Link only — the two dropdowns (degree level + field of study) need a Walden variant. Do not drop the finder UI."
+    variantReason: "Theme tone.heroStyle is full-bleed-image. Financial Hero already overlays text on Image; HeroBanner is a split layout and would be wrong."
+    customVariantNeeded:
+      name: "Walden"
+      description: "Full-bleed photo, gold ribbon tag, white Noto Serif headline, two white dropdowns, gold Get Started pill"
+      parentComponent: "Hero"
+    imageFields:
+      - { field: "Image", description: "Smiling woman in professional/academic setting, badge or name tag visible" }
+
+  - position: 4
+    description: "Dark teal bar overlapping the hero with program search and four degree-level buttons."
+    matchedComponent:
+      registryId: "tab-navigation"
+      manifestName: "FourColumnCta"
+      componentName: "FourColumnCta"
+      renderingId: "{35075000-760E-4FF3-BD1C-F2EEBA251DCB}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "medium"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "none"
+    sectionBackground: "primary"
+    content:
+      Title: "Find your online program:"
+      Description: "SEARCH WALDEN PROGRAMS"
+    children:
+      - { Title: "Bachelor's", LinkHref: "https://www.waldenu.edu/online-bachelors-programs" }
+      - { Title: "Master's", LinkHref: "https://www.waldenu.edu/online-masters-programs" }
+      - { Title: "Doctoral", LinkHref: "https://www.waldenu.edu/online-doctoral-programs" }
+      - { Title: "Certificate", LinkHref: "https://www.waldenu.edu/online-certificates-programs" }
+    contentNotes: "Live site is a search field plus four teal buttons. FourColumnCta gives four linked columns; search input is not in the template. Phase 5.5 should restyle as a dark teal finder bar."
+    variantReason: "Four equal degree CTAs match FourColumnCta better than a single CTA Banner."
+    customVariantNeeded:
+      name: "WaldenProgramFinder"
+      description: "Dark teal full-width bar, search input on the left, four teal degree buttons on the right"
+      parentComponent: "FourColumnCta"
+
+  - position: 5
+    description: "Two-column mission block: heading and copy on the left, three icon highlights on the right."
+    matchedComponent:
+      registryId: "value-proposition-grid"
+      manifestName: "Features"
+      componentName: "Features"
+      renderingId: "{B7EFFFDB-2F0C-4C5E-A8BE-D9F8677F01DA}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "medium"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "partial"
+    sectionBackground: "default"
+    content:
+      Title: "A Foundation for Impact"
+      Description: "Walden University has a long history of preparing working professionals to create meaningful change in their communities and careers."
+      LinkText: "More About Us"
+      LinkHref: "https://www.waldenu.edu/about"
+      Title1: "Doctoral Graduates"
+      Text1: "Walden is a leading granter of doctoral degrees in the U.S."
+      Title2: "Graduating Champions"
+      Text2: "More than 170,000 alumni worldwide."
+    contentNotes: "Live site shows three icon items. Features only has two item slots (Title1/Text1, Title2/Text2). Third item (skills/credentials/certificates) needs a Walden variant or will be omitted in the generic layout."
+    variantReason: "Features is the closest existing split of intro copy + icon highlights."
+    customVariantNeeded:
+      name: "Walden"
+      description: "Left heading + body; right stacked list of three gold-icon highlights"
+      parentComponent: "Features"
+
+  - position: 6
+    description: "Split banner for Google Cloud AI certificates — lifestyle photo and logos on the left, offer copy and gold CTA on the right."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      componentName: "PromoCta"
+      renderingId: "{1A375FAC-6CC1-4A5A-A159-9BC6DBC66B80}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "partial"
+    sectionBackground: "muted"
+    content:
+      Eyebrow: "Walden University in partnership with Google Cloud"
+      Title: "New AI Certificates: Enhance Your Degree at No Extra Cost"
+      Description: "Add in-demand AI credentials to your degree at no extra cost."
+      LinkText: "Learn About AI Certificates"
+      LinkHref: "https://www.waldenu.edu/"
+    contentNotes: "Left image is a woman with a child, overlaid with Walden and Google Cloud logos."
+    variantReason: "PromoCta Default is a 50/50 image + text split with a primary CTA."
+    customVariantNeeded:
+      name: "Walden"
+      description: "Split card, logo overlay on photo, gold pill CTA, muted gray band"
+      parentComponent: "PromoCta"
+    imageFields:
+      - { field: "Image", description: "Woman with a child; Walden + Google Cloud logos overlay" }
+
+  - position: 7
+    description: "Education options section with centered heading and a lifestyle photo beside Tempo / flexibility copy."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      componentName: "PromoCta"
+      renderingId: "{1A375FAC-6CC1-4A5A-A159-9BC6DBC66B80}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "partial"
+    sectionBackground: "default"
+    content:
+      Eyebrow: "YOU WERE BORN TO LEARN"
+      Title: "Education Options to Fit Your Needs"
+      Subtitle: "TEMPO LEARNING®"
+      Description: "Flexible, self-paced options for working adults — including course-based and Tempo Learning® paths."
+      LinkText: "Learn about Tempo Learning®"
+      LinkHref: "https://www.waldenu.edu/"
+    contentNotes: "Live site has Course-Based / Tempo Learning pills. Generic PromoCta will show one path; pills need a Walden variant."
+    variantReason: "Same split-image-text pattern as the AI banner."
+    customVariantNeeded:
+      name: "WaldenEducation"
+      description: "Centered serif heading, photo of adult learner with child, gold CTA, optional path pills"
+      parentComponent: "PromoCta"
+    imageFields:
+      - { field: "Image", description: "Man with a child, emphasizing work-life balance" }
+
+  - position: 8
+    description: "Full-width dark teal conversion bar with a gold button."
+    matchedComponent:
+      registryId: "cta-banner"
+      manifestName: "HeadingCta"
+      componentName: "HeadingCta"
+      renderingId: "{89E1D547-7CD6-4EF0-9A27-1E99410797DD}"
+      variant: "Compact"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "partial"
+    sectionBackground: "primary"
+    content:
+      Title: "Great Walden Graduation Stories Start Here"
+      Description: "Call us today: 1-855-591-7858"
+      LinkText: "Request Information"
+      LinkHref: "https://www.waldenu.edu/"
+    contentNotes: "Screenshot variants show either a phone number or a graduation-stories line. Use the stories headline plus gold Request Information."
+    variantReason: "HeadingCta Compact is a horizontal heading + button, closer to a conversion strip than CtaBanner (which expects a large image)."
+    customVariantNeeded:
+      name: "Walden"
+      description: "Dark teal full-width bar, white serif text, gold pill button aligned right"
+      parentComponent: "HeadingCta"
+
+  - position: 9
+    description: "Quality Matters — mission copy on the left and a ranked/accreditation card (carousel) on the right."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      componentName: "PromoCta"
+      renderingId: "{1A375FAC-6CC1-4A5A-A159-9BC6DBC66B80}"
+      variant: "WithPlaceholderColumn"
+      matchType: "template"
+      matchConfidence: "medium"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "partial"
+    sectionBackground: "default"
+    content:
+      Title: "Quality Matters"
+      Description: "Walden is committed to high academic standards and a mission of positive social change."
+      Subtitle: "A top-ranked university"
+    contentNotes: "Right side is a card carousel with pagination dots. Generic PromoCta will show a single card, not a carousel."
+    variantReason: "WithPlaceholderColumn keeps a text column plus a card-sized second column."
+    customVariantNeeded:
+      name: "WaldenQuality"
+      description: "Left copy, right white card with ranking/accreditation statement and optional dots"
+      parentComponent: "PromoCta"
+
+  - position: 10
+    description: "Four-column Areas of Interest grid with program-level links under each field."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "FourColumnCta"
+      componentName: "FourColumnCta"
+      renderingId: "{35075000-760E-4FF3-BD1C-F2EEBA251DCB}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "medium"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "none"
+    sectionBackground: "default"
+    content:
+      Title: "Browse by Your Area of Interest"
+    children:
+      - { Title: "Nursing", Text: "Bachelor's, Master's, and Doctoral programs" }
+      - { Title: "Health, Social & Public Services", Text: "Bachelor's, Master's, and Doctoral programs" }
+      - { Title: "Psychology", Text: "Bachelor's, Master's, and Doctoral programs" }
+      - { Title: "Education", Text: "Bachelor's, Master's, and Doctoral programs" }
+    contentNotes: "Live cards are link lists with gold arrows, not image tiles. FourColumnCta Default renders image + title + text. Walden variant should drop large images and show stacked gold-arrow links. Section heading is not a FourColumnCta field — include via Phase 5.5 or a HeadingCta above."
+    variantReason: "Four equal columns is the only existing 4-up component."
+    customVariantNeeded:
+      name: "WaldenInterestGrid"
+      description: "Section heading plus 4 columns of field names with gold-arrow program links, no large photos"
+      parentComponent: "FourColumnCta"
+
+  - position: 11
+    description: "Alumni testimonial — portrait photo beside a large quote."
+    matchedComponent:
+      registryId: "testimonial-quote"
+      manifestName: "Quote"
+      componentName: "Quote"
+      renderingId: "{4B94B6D0-CA8E-4807-BB9A-4C3FBD21504C}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "partial"
+    sectionBackground: "default"
+    content:
+      Quote: "The flexibility of Walden's online programs made it possible to keep working while I earned my degree."
+      AuthorName: ""
+      AuthorPosition: "Walden graduate"
+    contentNotes: "Author name was not fully readable in the screenshot. Quote Default supports Image + Quote + AuthorName + AuthorPosition. Photo is a smiling alumna in a home setting."
+    variantReason: "Single large quote with photo — Quote is a better fit than the Testimonials carousel."
+    customVariantNeeded:
+      name: "Walden"
+      description: "Large photo left, navy serif quote right, gold accent"
+      parentComponent: "Quote"
+    imageFields:
+      - { field: "Image", description: "Smiling alumna / student in a home or informal setting" }
+
+  - position: 12
+    description: "Your Goals Within Reach — savings / support copy beside a lifestyle photo of two people studying."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      componentName: "PromoCta"
+      renderingId: "{1A375FAC-6CC1-4A5A-A159-9BC6DBC66B80}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "partial"
+    sectionBackground: "default"
+    content:
+      Title: "Your Goals Within Reach"
+      Description: "Tuition savings and support designed for working adults — including offers such as 25% off."
+      LinkText: "Learn more"
+      LinkHref: "https://www.waldenu.edu/"
+    contentNotes: "Exact offer copy should be confirmed in Phase 2.5 from the live DOM."
+    variantReason: "Standard 50/50 feature split."
+    customVariantNeeded:
+      name: "WaldenGoals"
+      description: "Text left, lifestyle photo right, gold text link"
+      parentComponent: "PromoCta"
+    imageFields:
+      - { field: "Image", description: "Two people collaborating at a computer" }
+
+  - position: 13
+    description: "Dark teal trust / B Corp / accreditation strip with a seal and a short statement."
+    matchedComponent:
+      registryId: "legal-compliance"
+      manifestName: "CtaBanner"
+      componentName: "CtaBanner"
+      renderingId: "{488B8AC0-0EF9-4F6F-8711-78BA182B2C4C}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "medium"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "partial"
+    sectionBackground: "primary"
+    content:
+      Title: "A leader in distance education for over 50 years"
+      Description: "Walden University is a Certified B Corporation committed to social change."
+    contentNotes: "Live treatment is a dark teal bar with a shield/B Corp/graduation seal. CtaBanner Default also expects a large Image — hide or replace with the seal via Walden variant."
+    variantReason: "CtaBanner has Icon + Title + Text, the closest match to a trust/compliance strip."
+    customVariantNeeded:
+      name: "WaldenTrust"
+      description: "Dark teal bar, white seal/logo left, short trust statement right, no large photo"
+      parentComponent: "CtaBanner"
+    imageFields:
+      - { field: "Icon", description: "B Corp or accreditation seal" }
+
+  - position: 14
+    description: "Lifestyle photo of a man at a laptop with a floating white card of gold-arrow links."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      componentName: "PromoCta"
+      renderingId: "{1A375FAC-6CC1-4A5A-A159-9BC6DBC66B80}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "medium"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "none"
+    sectionBackground: "default"
+    content:
+      Title: "Next steps"
+      Description: "Explore programs, admissions, and student resources."
+      LinkText: "Explore programs"
+      LinkHref: "https://www.waldenu.edu/"
+      Link2Text: "Admissions"
+      Link2Href: "https://www.waldenu.edu/"
+    contentNotes: "Live layout is an image with an overlapping link list. PromoCta has two links (Link, Link2) — a third link needs a Walden variant or Rich Text."
+    variantReason: "Closest existing image + CTA split."
+    customVariantNeeded:
+      name: "WaldenLinkCard"
+      description: "Photo left, overlapping white card with gold-arrow text links"
+      parentComponent: "PromoCta"
+    imageFields:
+      - { field: "Image", description: "Man in a yellow sweater working on a laptop" }
+
+  - position: 15
+    description: "Dark navy FAQ accordion about Walden online programs."
+    matchedComponent:
+      registryId: "faq-accordion"
+      manifestName: "Accordion"
+      componentName: "Accordion"
+      renderingId: "{5816F979-C8BB-46E9-8EC8-513C6CAF41E6}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "list"
+      apiAddable: true
+      variantMatch: "partial"
+    sectionBackground: "dark"
+    content:
+      Title: "FAQ about Walden's Online Programs"
+    children:
+      - { Title: "Is Walden University accredited?", Content: "" }
+      - { Title: "How long do Walden programs take?", Content: "" }
+    contentNotes: "Accordion has no parent Title field — heading must be added in a Walden variant or a HeadingCta placed above. Answers were not fully visible in the screenshot; Phase 2.5 will fill them. Accordion items use Title + Content + optional Icon."
+    variantReason: "Expandable Q&A is an exact Accordion match."
+    customVariantNeeded:
+      name: "Walden"
+      description: "Dark navy full-width FAQ, white serif heading, thin dividers, one-open accordion"
+      parentComponent: "Accordion"
+
+  - position: 16
+    description: "Mega footer with logo, gold Request Information, multi-column links, social icons, and accreditation logos."
+    matchedComponent:
+      registryId: "footer"
+      manifestName: "Footer"
+      componentName: "Footer"
+      renderingId: "{771A3F27-6448-44AC-ADD0-E5DE311C6E3B}"
+      variant: "WithSocials"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "context-only"
+      apiAddable: false
+      variantMatch: "partial"
+    sectionBackground: "primary"
+    content:
+      Title: "Walden University"
+      Copyright: "© 2026 Walden University LLC. All rights reserved."
+      LinkText: "Request Information"
+    contentNotes: "Lives in the footer partial. Financial Footer supports four text columns plus three social links — Walden has more columns. Accreditation logo row is extra."
+    variantReason: "WithSocials adds social icons, which the live footer uses."
+    customVariantNeeded:
+      name: "Walden"
+      description: "Dark teal mega footer, serif logo, gold CTA, multi-column links, socials, grayscale accreditation logos"
+      parentComponent: "Footer"
+
+customComponents: []
+
+buildOrder:
+  phase1_sitecore:
+    - { position: 3, componentName: "Hero", kind: "simple" }
+    - { position: 4, componentName: "FourColumnCta", kind: "simple", instance: "ProgramFinder" }
+    - { position: 5, componentName: "Features", kind: "simple" }
+    - { position: 6, componentName: "PromoCta", kind: "simple", instance: "AICertificates" }
+    - { position: 7, componentName: "PromoCta", kind: "simple", instance: "EducationOptions" }
+    - { position: 8, componentName: "HeadingCta", kind: "simple" }
+    - { position: 9, componentName: "PromoCta", kind: "simple", instance: "QualityMatters" }
+    - { position: 10, componentName: "FourColumnCta", kind: "simple", instance: "AreasOfInterest" }
+    - { position: 11, componentName: "Quote", kind: "simple" }
+    - { position: 12, componentName: "PromoCta", kind: "simple", instance: "Goals" }
+    - { position: 13, componentName: "CtaBanner", kind: "simple" }
+    - { position: 14, componentName: "PromoCta", kind: "simple", instance: "NextSteps" }
+    - { position: 15, componentName: "Accordion", kind: "list" }
+  phase2_theme: "Inline Walden :root variables in src/assets/app.css (or globals) and load Noto Serif + Mulish"
+  phase3_custom: []
+
+notes:
+  - "Header, Eyebrow, and Footer stay on the Home page partial designs — do not add via add_component_on_page."
+  - "Multiple PromoCta and FourColumnCta instances share one rendering; each gets its own datasource item."
+  - "Accordion renderingId is {5816F979-C8BB-46E9-8EC8-513C6CAF41E6}."

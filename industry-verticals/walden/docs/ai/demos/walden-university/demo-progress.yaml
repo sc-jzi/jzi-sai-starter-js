@@ -1,0 +1,195 @@
+# Demo Progress Tracker
+# Updated 2026-09-03 after Phase 5.5. Phase 6 blocked by Home layout API 500.
+
+client:
+  name: "Walden University"
+  sourceUrl: "https://www.waldenu.edu/"
+  startedAt: "2026-09-03T22:33:00Z"
+  lastUpdatedAt: "2026-09-04T00:15:00Z"
+
+phases:
+  phase0_inputs:
+    status: "complete"
+    screenshot: true
+    url: "https://www.waldenu.edu/"
+
+  phase0_5_manifest:
+    status: "complete"
+    validationMode: "quick"
+    result: "pass-with-warnings"
+
+  phase1_theme:
+    status: "complete"
+    themeFile: "docs/ai/themes/walden-university.theme.yaml"
+    userApproved: true
+
+  phase2_analysis:
+    status: "complete"
+    buildPlanFile: "docs/ai/demos/walden-university/build-plan.yaml"
+    totalSections: 16
+    userApproved: true
+
+  phase2_5_content:
+    status: "complete"
+    contentMapFile: "docs/ai/demos/walden-university/content-map.yaml"
+    extractorUsed: true
+
+  phase3_content:
+    status: "complete"
+    completedSections: 13
+    totalSections: 13
+
+  phase4_theme:
+    status: "complete"
+    themeDelivery: "globals-inlined"
+    cssWritten: true
+    fontsAdded: true
+
+  phase5_custom:
+    status: "skipped"
+    customComponentsNeeded: 0
+    customComponentsBuilt: 0
+
+  phase5_5_variants:
+    status: "complete"
+    variantsNeeded: 16
+    variantsCreated: 16
+    variantSpecsFile: "docs/ai/demos/walden-university/variant-specs.yaml"
+    skippedReason: ""
+
+  phase6_assembly:
+    status: "blocked"
+    componentsAdded: 0
+    datasourcesWired: 0
+    totalComponents: 13
+    error: "get_components_on_page / add_component_on_page / get_allowed_comps_by_ph return HTTP 500; get_page editablePlaceholders is empty"
+
+  phase7_summary:
+    status: "complete"
+
+sections:
+  - position: 1
+    componentName: "Eyebrow"
+    phase3:
+      status: "skipped"
+      itemId: ""
+    phase6:
+      status: "skipped"
+  - position: 2
+    componentName: "Header"
+    phase3:
+      status: "skipped"
+      itemId: ""
+    phase6:
+      status: "skipped"
+  - position: 3
+    componentName: "Hero"
+    phase3:
+      status: "complete"
+      itemId: "253f5f3d-f173-41fe-b99e-552a11b26258"
+    phase6:
+      status: "failed"
+      variantDefinitionId: "57525a40-795b-4a10-bde4-25165c058ad6"
+  - position: 4
+    componentName: "FourColumnCta"
+    phase3:
+      status: "complete"
+      itemId: "6197fda9-2066-4b9b-b237-6e6ca231b2f8"
+    phase6:
+      status: "failed"
+      variantDefinitionId: "0b2f1737-6a57-4340-bebc-636cd437f2bd"
+  - position: 5
+    componentName: "Features"
+    phase3:
+      status: "complete"
+      itemId: "70d9df64-0aac-4418-b4bf-4a3824ec7a35"
+    phase6:
+      status: "failed"
+      variantDefinitionId: "5f7d99c4-cd61-4a4e-9e84-727b50deb78f"
+  - position: 6
+    componentName: "PromoCta"
+    phase3:
+      status: "complete"
+      itemId: "be906e8b-f93c-469f-9d27-215bc047ec94"
+    phase6:
+      status: "failed"
+      variantDefinitionId: "618eb827-adeb-410e-8b31-ea1410a3d968"
+  - position: 7
+    componentName: "PromoCta"
+    phase3:
+      status: "complete"
+      itemId: "c2fda606-28c6-4614-81b1-c5b9e3ebbfb7"
+    phase6:
+      status: "failed"
+      variantDefinitionId: "55396667-c7a2-4ce9-903c-db750e987a43"
+  - position: 8
+    componentName: "HeadingCta"
+    phase3:
+      status: "complete"
+      itemId: "cd20051c-3bcb-410a-925b-fed161ebc46b"
+    phase6:
+      status: "failed"
+      variantDefinitionId: "cdb89139-fa91-4b1b-9efd-8adfb797bfcc"
+  - position: 9
+    componentName: "PromoCta"
+    phase3:
+      status: "complete"
+      itemId: "82346599-a6d6-4412-b0e5-e3d30f0fc1b8"
+    phase6:
+      status: "failed"
+      variantDefinitionId: "fdca1222-3ce2-4811-878a-958c40db96b8"
+  - position: 10
+    componentName: "FourColumnCta"
+    phase3:
+      status: "complete"
+      itemId: "967bedb6-a5b7-4bc5-828e-eed8a3d8906a"
+    phase6:
+      status: "failed"
+      variantDefinitionId: "3f9a83a6-ae27-4b1e-b259-a91de559e154"
+  - position: 11
+    componentName: "Quote"
+    phase3:
+      status: "complete"
+      itemId: "b54d5abf-8081-487d-982d-4e163c402626"
+    phase6:
+      status: "failed"
+      variantDefinitionId: "79bb5537-3881-461c-aafa-ff9e24b4bf92"
+  - position: 12
+    componentName: "PromoCta"
+    phase3:
+      status: "complete"
+      itemId: "b3b0b0ed-7cfa-415f-add5-9a87fc641bf0"
+    phase6:
+      status: "failed"
+      variantDefinitionId: "d355bb93-0990-45c4-9ef9-4d1ca841e15e"
+  - position: 13
+    componentName: "CtaBanner"
+    phase3:
+      status: "complete"
+      itemId: "3466899e-f2f1-40f6-b1e9-87b14a2dcfae"
+    phase6:
+      status: "failed"
+      variantDefinitionId: "d5d597e2-5d11-41f5-9101-11bfb011bc9d"
+  - position: 14
+    componentName: "PromoCta"
+    phase3:
+      status: "complete"
+      itemId: "5b04e4f6-fde0-43da-a201-f35ead262b3e"
+    phase6:
+      status: "failed"
+      variantDefinitionId: "4cbea5f7-708a-40f6-a920-a8619cba7c02"
+  - position: 15
+    componentName: "Accordion"
+    phase3:
+      status: "complete"
+      itemId: "bd22c25f-cd78-452f-8966-3aa7c1bb5d96"
+    phase6:
+      status: "failed"
+      variantDefinitionId: "9e7915bf-a5f8-4fa0-9a9d-89322f048530"
+  - position: 16
+    componentName: "Footer"
+    phase3:
+      status: "skipped"
+      itemId: ""
+    phase6:
+      status: "skipped"

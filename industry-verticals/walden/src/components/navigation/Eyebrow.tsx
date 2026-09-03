@@ -13,6 +13,38 @@ export type EyebrowProps = ComponentProps & {
   componentMap: ComponentMap;
 };
 
+/* Walden variant — dark teal utility bar */
+export const Walden = (props: EyebrowProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  return (
+    <div className={`component eyebrow walden-eyebrow ${props.params.styles?.trimEnd() || ''}`} id={id ? id : undefined}>
+      <div className={`container container-${props.params?.ContainerWidth?.toLowerCase()}-fluid`}>
+        <div className="row align-items-center">
+          <div className="col col-placeholder">
+            <AppPlaceholder name="eyebrow-left" rendering={props.rendering} page={page} componentMap={props.componentMap} />
+            <AppPlaceholder name="eyebrow-right" rendering={props.rendering} page={page} componentMap={props.componentMap} />
+          </div>
+          <div className="flex items-center gap-2">
+            <PreviewSearch rfkId={PREVIEW_WIDGET_ID} isOpen={isSearchOpen} setIsSearchOpen={setIsSearchOpen} />
+            <button
+              onClick={() => setIsSearchOpen(false)}
+              className="p-3 text-white hover:opacity-80 transition-colors"
+              aria-label="Close search"
+            >
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: EyebrowProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

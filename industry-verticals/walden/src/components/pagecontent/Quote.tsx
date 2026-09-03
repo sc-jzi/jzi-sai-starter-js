@@ -55,6 +55,37 @@ export const Default = (props: PromoCtaProps): JSX.Element => {
   );
 };
 
+/* Walden variant — portrait photo + overlapping serif quote card */
+export const Walden = (props: PromoCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component quote walden-quote ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="row align-items-center g-0">
+          <div className="col-lg-6 walden-quote__media">
+            <NextImage field={props.fields.Image} className="img-fluid" width={720} height={520} />
+          </div>
+          <div className="col-lg-6">
+            <div className="walden-quote__card">
+              <blockquote>
+                <Text field={props.fields.Quote} />
+              </blockquote>
+              <p className="author-name mb-1">
+                <Text field={props.fields.AuthorName} />
+              </p>
+              <p className="author-position mb-0">
+                <Text field={props.fields.AuthorPosition} />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Simple = (props: PromoCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const sxaStyles = `${props.params?.styles || ''}`;

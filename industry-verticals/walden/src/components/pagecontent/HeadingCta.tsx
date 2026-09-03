@@ -50,6 +50,41 @@ export const Default = (props: HeadingCtaProps): JSX.Element => {
   );
 };
 
+/* Walden variant — dark teal conversion bar */
+export const Walden = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component heading-cta walden-heading-cta ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="row align-items-center g-3">
+          <div className="col-lg-8">
+            {(props.fields?.Eyebrow?.value || isPageEditing) && (
+              <div className="walden-heading-cta__eyebrow">
+                <Text field={props.fields?.Eyebrow} />
+              </div>
+            )}
+            <h2>
+              <Text field={props.fields?.Heading} />
+            </h2>
+            <p>
+              <Text field={props.fields?.Text} />
+            </p>
+          </div>
+          <div className="col-lg-4 text-lg-end">
+            {(isPageEditing || props.fields?.Link?.value?.href) && (
+              <Link field={props.fields.Link} className="button button-main" />
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Compact = (props: HeadingCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

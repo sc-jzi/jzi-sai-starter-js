@@ -1,0 +1,145 @@
+client: "Walden University"
+variantNamePrefix: "Walden"
+
+variantSpecs:
+  - position: 1
+    componentName: "Eyebrow"
+    variantName: "Walden"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "full-width utility strip"
+      spacing: "tight vertical padding"
+      typography: "12px white links"
+      background: "dark teal --brand-primary"
+      distinctive: "Apply Now lives in the right placeholder"
+
+  - position: 2
+    componentName: "Header"
+    variantName: "Walden"
+    baseVariant: "WithLogoImage"
+    visualDifferences:
+      layout: "logo left, nav + gold CTA right"
+      typography: "uppercase 13px nav, Noto Serif logo"
+      background: "solid white"
+      buttons: "gold pill Request Information"
+
+  - position: 3
+    componentName: "Hero"
+    variantName: "Walden"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "full-bleed photo, left-aligned overlay"
+      typography: "white Noto Serif ~60px headline"
+      background: "photo + navy gradient overlay"
+      buttons: "two white pill dropdowns + gold Get Started"
+      distinctive: "gold parallelogram ribbon SET A COURSE FOR CHANGE"
+
+  - position: 4
+    componentName: "FourColumnCta"
+    variantName: "WaldenProgramFinder"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "search left, 2x2 degree buttons right"
+      background: "dark teal overlapping hero"
+      distinctive: "white search field, secondary-teal buttons"
+
+  - position: 5
+    componentName: "Features"
+    variantName: "Walden"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "50/50 mission + 3 stacked icon rows"
+      background: "muted gray"
+      distinctive: "third certificates row is decorative (template has 2 slots)"
+
+  - position: 6
+    componentName: "PromoCta"
+    variantName: "Walden"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "image left, copy + gold CTA right"
+      background: "muted gray"
+      distinctive: "no dotted accents"
+
+  - position: 7
+    componentName: "PromoCta"
+    variantName: "WaldenEducation"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "centered heading, Tempo/Guided Path pills, photo + copy"
+      background: "white"
+
+  - position: 8
+    componentName: "HeadingCta"
+    variantName: "Walden"
+    baseVariant: "Compact"
+    visualDifferences:
+      layout: "copy left, gold button right"
+      background: "dark teal full-width bar"
+      distinctive: "secondary teal eyebrow chip"
+
+  - position: 9
+    componentName: "PromoCta"
+    variantName: "WaldenQuality"
+    baseVariant: "WithPlaceholderColumn"
+    visualDifferences:
+      layout: "copy left, bordered accreditation card right"
+      background: "white"
+
+  - position: 10
+    componentName: "FourColumnCta"
+    variantName: "WaldenInterestGrid"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "4 text columns, no photos"
+      distinctive: "static Browse by Your Area of Interest heading + gold arrows"
+
+  - position: 11
+    componentName: "Quote"
+    variantName: "Walden"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "photo left, overlapping white quote card"
+      typography: "navy Noto Serif quote"
+
+  - position: 12
+    componentName: "PromoCta"
+    variantName: "WaldenGoals"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "copy + large stat left, photo right"
+      distinctive: "Subtitle rendered as oversized 25% stat"
+
+  - position: 13
+    componentName: "CtaBanner"
+    variantName: "WaldenTrust"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "B Corp seal left, statement right"
+      background: "dark teal"
+      distinctive: "no large lifestyle photo"
+
+  - position: 14
+    componentName: "PromoCta"
+    variantName: "WaldenLinkCard"
+    variantNameNote: "photo + overlapping gold-arrow link list"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "image left, white card with Link + Link2"
+
+  - position: 15
+    componentName: "Accordion"
+    variantName: "Walden"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "plus/minus FAQ rows"
+      background: "dark navy"
+      distinctive: "static FAQ heading (no parent Title field)"
+
+  - position: 16
+    componentName: "Footer"
+    variantName: "Walden"
+    baseVariant: "WithSocials"
+    visualDifferences:
+      layout: "logo + 4 columns + socials"
+      background: "dark teal"

@@ -1,0 +1,136 @@
+{
+  "title": "Accredited Online University | Walden University",
+  "themeColor": null,
+  "msColor": null,
+  "ogTitle": "Accredited Online University",
+  "ogDescription": "When considering online education, learn more about Walden University, an accredited online university with students from over 145 countries. Walden offers online degrees at the bachelor's, master's, and doctoral levels.",
+  "ogImage": null,
+  "ogSiteName": "Walden University",
+  "favicon": "https://www.waldenu.edu/themes/custom/wal_base_2024/favicon.ico",
+  "googleFontsLinks": [],
+  "fontFaces": [
+    {
+      "family": "slick",
+      "src": "url(\"/libraries/slick-carousel/slick/./fonts/slick.woff\") format(\"woff\"), url(\"/libraries/slick-carousel/slick/./fonts/slick.ttf\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "wal-icomoon",
+      "src": "url(\"/themes/custom/wal_base_2024/fonts/wal-icomoon/fonts/wal-icomoon.ttf?f43lzn=\") format(\"truetype\"), url(\"/themes/custom/wal_base_2024/fonts/wal-icomoon/fonts/wal-icomoon.woff?f43lzn=\") format(\"woff\")",
+      "weight": "normal"
+    },
+    {
+      "family": "Muli Extra Light",
+      "src": "url(\"/themes/custom/wal_base_2024/fonts/muli/muli-extralight.woff\") format(\"woff\"), url(\"/themes/custom/wal_base_2024/fonts/muli/muli-extralight.ttf\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "Muli Extra Light Italic",
+      "src": "url(\"/themes/custom/wal_base_2024/fonts/muli/muli-extralightitalic.woff\") format(\"woff\"), url(\"/themes/custom/wal_base_2024/fonts/muli/muli-extralightitalic.ttf\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "Muli Light",
+      "src": "url(\"/themes/custom/wal_base_2024/fonts/muli/muli-light.woff\") format(\"woff\"), url(\"/themes/custom/wal_base_2024/fonts/muli/muli-light.ttf\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "Muli Light Italic",
+      "src": "url(\"/themes/custom/wal_base_2024/fonts/muli/muli-lightitalic.woff\") format(\"woff\"), url(\"/themes/custom/wal_base_2024/fonts/muli/muli-lightitalic.ttf\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "Muli Regular",
+      "src": "url(\"/themes/custom/wal_base_2024/fonts/muli/muli.woff\") format(\"woff\"), url(\"/themes/custom/wal_base_2024/fonts/muli/muli.ttf\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "Muli Regular Italic",
+      "src": "url(\"/themes/custom/wal_base_2024/fonts/muli/muli-italic.woff\") format(\"woff\"), url(\"/themes/custom/wal_base_2024/fonts/muli/muli-italic.ttf\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "Muli Semibold",
+      "src": "url(\"/themes/custom/wal_base_2024/fonts/muli/muli-semibold.woff\") format(\"woff\"), url(\"/themes/custom/wal_base_2024/fonts/muli/muli-semibold.ttf\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "Muli Semibold Italic",
+      "src": "url(\"/themes/custom/wal_base_2024/fonts/muli/muli-semi-bolditalic.woff\") format(\"woff\"), url(\"/themes/custom/wal_base_2024/fonts/muli/muli-semi-bolditalic.ttf\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "Muli Bold",
+      "src": "url(\"/themes/custom/wal_base_2024/fonts/muli/muli-bold.woff\") format(\"woff\"), url(\"/themes/custom/wal_base_2024/fonts/muli/muli-bold.ttf\") format(\"truetype\")",
+      "weight": "bold"
+    },
+    {
+      "family": "Muli Bold Italic",
+      "src": "url(\"/themes/custom/wal_base_2024/fonts/muli/muli-bolditalic.woff\") format(\"woff\"), url(\"/themes/custom/wal_base_2024/fonts/muli/muli-bolditalic.ttf\") format(\"truetype\")",
+      "weight": "bold"
+    },
+    {
+      "family": "Muli Extrabold",
+      "src": "url(\"/themes/custom/wal_base_2024/fonts/muli/muli-black.woff\") format(\"woff\"), url(\"/themes/custom/wal_base_2024/fonts/muli/muli-black.ttf\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "Noto Serif Regular",
+      "src": "url(\"/themes/custom/wal_base_2024/fonts/noto/notoserif-regular.woff\") format(\"woff\"), url(\"/themes/custom/wal_base_2024/fonts/noto/notoserif-regular.ttf\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "Noto Serif Regular Italic",
+      "src": "url(\"/themes/custom/wal_base_2024/fonts/noto/notoserif-italic.woff\") format(\"woff\"), url(\"/themes/custom/wal_base_2024/fonts/noto/notoserif-italic.ttf\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "Noto Serif Medium",
+      "src": "url(\"/themes/custom/wal_base_2024/fonts/noto/notoserif-500.woff\") format(\"woff\"), url(\"/themes/custom/wal_base_2024/fonts/noto/notoserif-500.ttf\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "Noto Serif Semibold",
+      "src": "url(\"/themes/custom/wal_base_2024/fonts/noto/notoserif-semibold.woff2\") format(\"woff2\"), url(\"/themes/custom/wal_base_2024/fonts/noto/notoserif-semibold.ttf\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "Noto Serif Bold",
+      "src": "url(\"/themes/custom/wal_base_2024/fonts/noto/notoserif-bold.woff\") format(\"woff\"), url(\"/themes/custom/wal_base_2024/fonts/noto/notoserif-bold.ttf\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "Noto Serif Bold Italic",
+      "src": "url(\"/themes/custom/wal_base_2024/fonts/noto/notoserif-bolditalic.woff\") format(\"woff\"), url(\"/themes/custom/wal_base_2024/fonts/noto/notoserif-bolditalic.ttf\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "wal-icomoon",
+      "src": "url(\"/themes/custom/wal_base_2024/fonts/wal-icomoon/fonts/wal-icomoon.ttf?zggcta\") format(\"truetype\"), url(\"/themes/custom/wal_base_2024/fonts/wal-icomoon/fonts/wal-icomoon.woff?zggcta\") format(\"woff\")",
+      "weight": "normal"
+    },
+    {
+      "family": "AvaamoIcons",
+      "src": "url(\"https://c0.avaamo.com/assets/avaamo-wc-icons-5d9db74fa821183c5639c5cb13614ede323cfdc3e7c87f12a50740a547e2df95.woff?9crzcg\") format(\"woff\"), url(\"https://c0.avaamo.com/assets/avaamo-wc-icons-6a8e56c4ec25463739848429147a98351d610878fc3ba1a8a7bf016b654d306f.ttf?9crzcg\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "Source Sans Pro",
+      "src": "url(\"https://consent.trustarc.com/get?name=SourceSansPro-Regular.ttf\") format(\"truetype\"), url(\"https://consent.trustarc.com/get?name=SourceSansPro-Regular.woff\") format(\"woff\"), url(\"https://consent.trustarc.com/get?name=SourceSansPro-Regular.otf\") format(\"opentype\")",
+      "weight": ""
+    }
+  ],
+  "logoCandidates": [
+    "https://www.waldenu.edu/themes/custom/wal_base_2024/images/svg/logo.svg",
+    "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-02/programs-admission_graphic_1.png?itok=30C4sPl6",
+    "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-02/programs-admission_graphic_1.png?itok=30C4sPl6",
+    "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-12/tag.png?itok=zsFMGFc_",
+    "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-12/tag.png?itok=zsFMGFc_",
+    "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-11/BYEP%20Tag%20with%20Image.png?itok=DGSFirG_",
+    "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2025-02/3_steps.png?itok=TNX9t-px",
+    "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-02/programs-admission_graphic_1.png?itok=30C4sPl6",
+    "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-02/programs-admission_graphic_1.png?itok=30C4sPl6",
+    "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-11/Tag_0.png?itok=-amItuzY"
+  ],
+  "heroBgImage": null
+}

@@ -1,0 +1,1336 @@
+{
+  "url": "https://www.waldenu.edu/",
+  "extractedAt": "2026-09-03T22:46:09.216Z",
+  "detectedLanguage": "en",
+  "targetLanguage": "en",
+  "translationNeeded": false,
+  "totalSections": 13,
+  "totalImages": 86,
+  "totalVideos": 0,
+  "interactionStats": {
+    "lazySourcesResolved": 2,
+    "tabsClicked": 8,
+    "accordionsExpanded": 1,
+    "carouselDotsClicked": 12,
+    "carouselArrowSlides": 24,
+    "backgroundImagesCollected": 1
+  },
+  "sections": [
+    {
+      "position": 1,
+      "tagName": "div",
+      "classHint": "grid__container",
+      "backgroundHint": "dark",
+      "headings": [],
+      "paragraphs": [
+        "Find your online program:"
+      ],
+      "links": [],
+      "images": []
+    },
+    {
+      "position": 2,
+      "tagName": "div",
+      "classHint": "t-layout__two-column standard-width layout__split--5050 content-first sidebar-right p-universal-bg-c",
+      "backgroundHint": "light",
+      "headings": [],
+      "paragraphs": [
+        "TUITION SAVINGSSave on tuition with grants, scholarships, and financial aid—many students qualify for up to 25% in savings.",
+        "HANDS-ON LEARNINGChoose from flexible formats, including Tempo Learning® available in 25+ select programs and specializations, all designed to fit busy schedules.",
+        "100+ DEGREES AND CERTIFICATESGain real-world insights from respected scholars and industry leaders.",
+        "You want something better—for yourself, your family, and your community. As an HLC-accredited institution and certified B Corp, we don’t just educate changemakers; we drive positive impact. Start your transformation journey at Walden, an online university for working adults."
+      ],
+      "links": [
+        {
+          "text": "Why Walden?",
+          "href": "https://www.waldenu.edu/why-walden",
+          "target": ""
+        }
+      ],
+      "images": [],
+      "listItems": [
+        {
+          "title": "TUITION SAVINGS",
+          "description": "TUITION SAVINGSSave on tuition with grants, scholarships, and financial aid—many students qualify for up to 25% in savings."
+        },
+        {
+          "description": "You want something better—for yourself, your family, and your community. As an HLC-accredited institution and certified B Corp, we don’t just educate changemakers; we drive positive impact. Start your transformation journey at Walden, an online university for working adults.",
+          "link": {
+            "text": "Why Walden?",
+            "href": "https://www.waldenu.edu/why-walden"
+          }
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "tagName": "div",
+      "classHint": "t-layout__two-column standard-width layout__split--5050 sidebar-first sidebar-left p-universal-bg-co",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h3",
+          "text": "New AI Certificates: Enhance Your Degree at No Extra Cost"
+        }
+      ],
+      "paragraphs": [
+        "Discover our latest industry-recognized AI training certificates, including social work, business, and education. These certificates are designed for your field by Walden, in partnership with Google Cloud."
+      ],
+      "links": [
+        {
+          "text": "Explore New AI Certificates",
+          "href": "https://www.waldenu.edu/ai-certificate/google-partnership",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_crop_freeform_sm/public/2026-03/walden_google_cloud_module_image_2a.jpg?h=18ca2f3c&itok=UU2TU7Vg",
+          "alt": "\"Walden University in Partnership with Google Cloud\"",
+          "type": "img",
+          "width": 510,
+          "height": 542
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_crop_freeform_md/public/2026-03/walden_google_cloud_module_image_2a.webp?h=18ca2f3c&itok=TDItT-wG",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_crop_freeform_sm/public/2026-03/walden_google_cloud_module_image_2a.webp?h=18ca2f3c&itok=UU2TU7Vg",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_crop_freeform_md/public/2026-03/walden_google_cloud_module_image_2a.jpg?h=18ca2f3c&itok=TDItT-wG",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/media/21361/w-parallax",
+          "alt": "",
+          "type": "background-unmatched",
+          "width": null,
+          "height": null
+        }
+      ],
+      "listItems": [
+        {
+          "image": {
+            "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_crop_freeform_sm/public/2026-03/walden_google_cloud_module_image_2a.jpg?h=18ca2f3c&itok=UU2TU7Vg",
+            "alt": "\"Walden University in Partnership with Google Cloud\""
+          }
+        },
+        {
+          "title": "New AI Certificates: Enhance Your Degree at No Extra Cost",
+          "description": "New AI Certificates: Enhance Your Degree at No Extra CostDiscover our latest industry-recognized AI training certificates, including social work, business, and education. These certificates are designed for your field by Walden, in partnership with Google Cloud. Explore New AI Certificates",
+          "badge": "Explore New AI Certificates",
+          "link": {
+            "text": "Explore New AI Certificates",
+            "href": "https://www.waldenu.edu/ai-certificate/google-partnership"
+          }
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "tagName": "div",
+      "classHint": "t-layout__one-column standard-width p-universal-bg-color--none p-section__align--none layout layout-",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Education Options to Fit Your Needs"
+        }
+      ],
+      "paragraphs": [
+        "two ways to learn"
+      ],
+      "links": [],
+      "images": [],
+      "listItems": [
+        {
+          "title": "two ways to learn",
+          "description": "two ways to learnEducation Options to Fit Your Needs"
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "tagName": "div",
+      "classHint": "t-layout__two-column standard-width layout__split--5050 content-first sidebar-right p-universal-bg-c",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h4",
+          "text": "Flexible, Self-Paced Learning"
+        }
+      ],
+      "paragraphs": [
+        "Designed for students who enjoy setting their own schedule.",
+        "Prefer to learn at your own pace? With Tempo Learning®, you get flexibility—without giving up support. Set your schedule, take assessments when you’re ready, and move through your program at your speed—with guidance from a personal academic coach and Walden’s expert faculty."
+      ],
+      "links": [
+        {
+          "text": "Find my learning style",
+          "href": "https://www.waldenu.edu/tempo-quiz",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-03/Tag_1.png?itok=KF27KKqm",
+          "alt": "Tempo Learning",
+          "type": "img",
+          "width": 256,
+          "height": 48
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2025-12/final_wu_hp_cro_tempo_632x632.jpg?itok=FSGwh2_R",
+          "alt": "Man on laptop with his son hugging him",
+          "type": "img",
+          "width": 632,
+          "height": 632
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2024-03/Tag_1.webp?itok=8avK5Di5",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-03/Tag_1.webp?itok=KF27KKqm",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2024-03/Tag_1.webp?itok=JaTJ13cJ",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2024-03/Tag_1.png?itok=8avK5Di5",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2024-03/Tag_1.png?itok=JaTJ13cJ",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2025-12/final_wu_hp_cro_tempo_632x632.webp?itok=Lg_h6Ukm",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2025-12/final_wu_hp_cro_tempo_632x632.webp?itok=FSGwh2_R",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2025-12/final_wu_hp_cro_tempo_632x632.webp?itok=wxpVW0c6",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2025-12/final_wu_hp_cro_tempo_632x632.jpg?itok=Lg_h6Ukm",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2025-12/final_wu_hp_cro_tempo_632x632.jpg?itok=wxpVW0c6",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        }
+      ],
+      "listItems": [
+        {
+          "title": "",
+          "description": "Flexible, Self-Paced LearningDesigned for students who enjoy setting their own schedule. Prefer to learn at your own pace? With Tempo Learning®, you get flexibility—without giving up support. Set your schedule, take assessments when you’re ready, and move through your program at your speed—with guidance from a personal academic coach and Walden’s expert faculty. Enroll in unlimited classes in three-month subscription periods.Create a self-paced schedule that fits your lifestyle.Personal Academic Coach guides you through your program.Available for 25+ select programs and specializations. Find my learning style",
+          "badge": "",
+          "link": {
+            "text": "Find my learning style",
+            "href": "https://www.waldenu.edu/tempo-quiz"
+          },
+          "image": {
+            "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-03/Tag_1.png?itok=KF27KKqm",
+            "alt": "Tempo Learning"
+          }
+        },
+        {
+          "image": {
+            "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2025-12/final_wu_hp_cro_tempo_632x632.jpg?itok=FSGwh2_R",
+            "alt": "Man on laptop with his son hugging him"
+          }
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "tagName": "div",
+      "classHint": "t-layout__one-column standard-width p-universal-bg-color--none p-section__align--none layout layout-",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h3",
+          "text": "Your Path to Graduation Starts Here"
+        }
+      ],
+      "paragraphs": [
+        "3-Minute Quiz",
+        "Create and download your comprehensive plan with scholarships, financial aid, credit transfer, and more!"
+      ],
+      "links": [
+        {
+          "text": "Build Your Education Plan",
+          "href": "https://www.waldenu.edu/financial-aid/byep",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-11/Tag_0.png?itok=-amItuzY",
+          "alt": "3 MINUTE QUIZ",
+          "type": "img",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2024-11/Tag_0.webp?itok=wLK_GVGg",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-11/Tag_0.webp?itok=-amItuzY",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2024-11/Tag_0.webp?itok=Pv2b2pqf",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2024-11/Tag_0.png?itok=wLK_GVGg",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2024-11/Tag_0.png?itok=Pv2b2pqf",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        }
+      ],
+      "listItems": [
+        {
+          "title": "Your Path to Graduation Starts Here",
+          "description": "3-Minute QuizYour Path to Graduation Starts HereCreate and download your comprehensive plan with scholarships, financial aid, credit transfer, and more! Build Your Education Plan",
+          "badge": "Build Your Education Plan",
+          "link": {
+            "text": "Build Your Education Plan",
+            "href": "https://www.waldenu.edu/financial-aid/byep"
+          }
+        },
+        {
+          "title": "",
+          "description": "Your Path to Graduation Starts HereCreate and download your comprehensive plan with scholarships, financial aid, credit transfer, and more! Build Your Education Plan",
+          "badge": "",
+          "link": {
+            "text": "Build Your Education Plan",
+            "href": "https://www.waldenu.edu/financial-aid/byep"
+          },
+          "image": {
+            "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-11/Tag_0.png?itok=-amItuzY",
+            "alt": "3 MINUTE QUIZ"
+          }
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "tagName": "div",
+      "classHint": "t-layout__two-column standard-width layout__split--5050 content-first sidebar-right p-universal-bg-c",
+      "backgroundHint": "light",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Quality Matters"
+        }
+      ],
+      "paragraphs": [
+        "CEPH-accredited public health programs ensure quality education at the master’s and doctoral levels.",
+        "Accredited by HLC since 1990, Walden’s accreditation status ensures academic quality and institutional integrity.",
+        "Social work programs accredited by CSWE meet rigorous academic and professional standards.",
+        "CACREP-accredited counseling programs meet national standards for academic and professional excellence.",
+        "The baccalaureate degree program in nursing (BSN), master’s degree program in nursing (MSN), post-graduate APRN certificate program, and Doctor of Nursing Practice (DNP) program at Walden University are accredited by the Commission on Collegiate Nursing Education (www.ccneaccreditation.org).",
+        "accreditations",
+        "Walden University holds institutional accreditation from the Higher Learning Commission (HLC), a U.S.-recognized accreditor. This ensures that your degree is credible and respected, and demonstrates preparation for career advancement or further education."
+      ],
+      "links": [
+        {
+          "text": "HLC",
+          "href": "https://www.hlcommission.org/",
+          "target": "_blank"
+        },
+        {
+          "text": "Higher Learning Commission",
+          "href": "https://www.hlcommission.org/",
+          "target": "_blank"
+        },
+        {
+          "text": "View All",
+          "href": "https://www.waldenu.edu/about/accreditation",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/Walden/Images/Newsroom/alumni-magazine/content-images/2020-vol-1/accreditation/ceph-logo-doctoral-masters-600x450.jpg?itok=UEhZawxX",
+          "alt": "CEPH Accredited Master's Doctoral logo.",
+          "type": "img",
+          "width": 600,
+          "height": 450
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/Walden/Images/Newsroom/walden-news/2019/cswe-accred-300x-250.jpg?itok=K4whVHki",
+          "alt": "CSWE logo",
+          "type": "img",
+          "width": 300,
+          "height": 250
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/Walden/Images/Newsroom/walden-news/2014/cacrep-new-logo.gif?itok=Sk913TVS",
+          "alt": "Council for Accreditation of Counseling and Related Educational Programs (CACREP) accredited seal",
+          "type": "img",
+          "width": 150,
+          "height": 209
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2022-10/ccne_0.png?itok=lJDtRI3h",
+          "alt": "Commission on Collegiate Nursing Education (CCNE) accredited seal",
+          "type": "img",
+          "width": 80,
+          "height": 62
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/Walden/Images/Newsroom/alumni-magazine/content-images/2020-vol-1/accreditation/ceph-logo-doctoral-masters-600x450.webp?itok=I44DMBDr",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/Walden/Images/Newsroom/alumni-magazine/content-images/2020-vol-1/accreditation/ceph-logo-doctoral-masters-600x450.webp?itok=UEhZawxX",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/Walden/Images/Newsroom/alumni-magazine/content-images/2020-vol-1/accreditation/ceph-logo-doctoral-masters-600x450.webp?itok=3YiW5P3C",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/Walden/Images/Newsroom/alumni-magazine/content-images/2020-vol-1/accreditation/ceph-logo-doctoral-masters-600x450.jpg?itok=I44DMBDr",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/Walden/Images/Newsroom/alumni-magazine/content-images/2020-vol-1/accreditation/ceph-logo-doctoral-masters-600x450.jpg?itok=3YiW5P3C",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/Walden/Images/Newsroom/walden-news/2019/cswe-accred-300x-250.webp?itok=xSN7AvHr",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/Walden/Images/Newsroom/walden-news/2019/cswe-accred-300x-250.webp?itok=K4whVHki",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/Walden/Images/Newsroom/walden-news/2019/cswe-accred-300x-250.webp?itok=_dbd-QM_",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/Walden/Images/Newsroom/walden-news/2019/cswe-accred-300x-250.jpg?itok=xSN7AvHr",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/Walden/Images/Newsroom/walden-news/2019/cswe-accred-300x-250.jpg?itok=_dbd-QM_",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/Walden/Images/Newsroom/walden-news/2014/cacrep-new-logo.gif?itok=bQb80nUA",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/Walden/Images/Newsroom/walden-news/2014/cacrep-new-logo.gif?itok=Eixyuhg3",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2022-10/ccne_0.webp?itok=JZz4s_ps",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2022-10/ccne_0.webp?itok=lJDtRI3h",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2022-10/ccne_0.webp?itok=pD7psYcu",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2022-10/ccne_0.png?itok=JZz4s_ps",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2022-10/ccne_0.png?itok=pD7psYcu",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        }
+      ],
+      "listItems": [
+        {
+          "title": "",
+          "description": "CEPH-accredited public health programs ensure quality education at the master’s and doctoral levels.",
+          "badge": "",
+          "link": {
+            "text": "HLC",
+            "href": "https://www.hlcommission.org/"
+          },
+          "image": {
+            "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/Walden/Images/Newsroom/alumni-magazine/content-images/2020-vol-1/accreditation/ceph-logo-doctoral-masters-600x450.jpg?itok=UEhZawxX",
+            "alt": "CEPH Accredited Master's Doctoral logo."
+          }
+        },
+        {
+          "title": "Quality Matters",
+          "description": "accreditationsQuality MattersWalden University holds institutional accreditation from the Higher Learning Commission (HLC), a U.S.-recognized accreditor. This ensures that your degree is credible and respected, and demonstrates preparation for career advancement or further education. View All",
+          "badge": "View All",
+          "link": {
+            "text": "Higher Learning Commission",
+            "href": "https://www.hlcommission.org/"
+          }
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "tagName": "div",
+      "classHint": "t-layout__one-column standard-width p-universal-bg-color--quaternary p-section__align--none layout l",
+      "backgroundHint": "light",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Browse by Your Area of Interest"
+        }
+      ],
+      "paragraphs": [
+        "Social Work & Human Services"
+      ],
+      "links": [
+        {
+          "text": "Bachelor’s Programs",
+          "href": "https://www.waldenu.edu/online-bachelors-programs/bachelor-of-science-in-nursing",
+          "target": ""
+        },
+        {
+          "text": "Master’s Programs",
+          "href": "https://www.waldenu.edu/programs?f%5B0%5D=areas_of_study_v2%3A66&f%5B1%5D=degree_type_select_v2%3A56",
+          "target": ""
+        },
+        {
+          "text": "Doctoral Programs",
+          "href": "https://www.waldenu.edu/programs?f%5B0%5D=areas_of_study_v2%3A66&f%5B1%5D=degree_type_select_v2%3A16",
+          "target": ""
+        },
+        {
+          "text": "Bachelor’s Programs",
+          "href": "https://www.waldenu.edu/programs?f%5B0%5D=areas_of_study_v2%3A111&f%5B1%5D=degree_type_select_v2%3A61",
+          "target": ""
+        },
+        {
+          "text": "Master’s Programs",
+          "href": "https://www.waldenu.edu/programs?f%5B0%5D=areas_of_study_v2%3A111&f%5B1%5D=degree_type_select_v2%3A56",
+          "target": ""
+        },
+        {
+          "text": "Doctoral Programs",
+          "href": "https://www.waldenu.edu/programs?f%5B0%5D=areas_of_study_v2%3A111&f%5B1%5D=degree_type_select_v2%3A16",
+          "target": ""
+        },
+        {
+          "text": "Bachelor’s Programs",
+          "href": "https://www.waldenu.edu/online-bachelors-programs/bs-in-psychology",
+          "target": ""
+        },
+        {
+          "text": "Master’s Programs",
+          "href": "https://www.waldenu.edu/programs?f%5B0%5D=areas_of_study_v2%3A106&f%5B1%5D=degree_type_select_v2%3A56",
+          "target": ""
+        },
+        {
+          "text": "Doctoral Programs",
+          "href": "https://www.waldenu.edu/programs?f%5B0%5D=areas_of_study_v2%3A106&f%5B1%5D=degree_type_select_v2%3A16",
+          "target": ""
+        },
+        {
+          "text": "Bachelor’s Programs",
+          "href": "https://www.waldenu.edu/programs?f%5B0%5D=areas_of_study_v2%3A86&f%5B1%5D=degree_type_select_v2%3A61",
+          "target": ""
+        },
+        {
+          "text": "Master’s Programs",
+          "href": "https://www.waldenu.edu/programs?f%5B0%5D=areas_of_study_v2%3A86&f%5B1%5D=degree_type_select_v2%3A56",
+          "target": ""
+        },
+        {
+          "text": "Doctoral Programs",
+          "href": "https://www.waldenu.edu/programs?f%5B0%5D=areas_of_study_v2%3A86&f%5B1%5D=degree_type_select_v2%3A16",
+          "target": ""
+        }
+      ],
+      "images": [],
+      "listItems": [
+        {
+          "title": "Browse by Your Area of Interest"
+        },
+        {
+          "title": "Nursing",
+          "description": "",
+          "link": {
+            "text": "Bachelor’s Programs",
+            "href": "https://www.waldenu.edu/online-bachelors-programs/bachelor-of-science-in-nursing"
+          }
+        }
+      ]
+    },
+    {
+      "position": 9,
+      "tagName": "div",
+      "classHint": "t-layout__one-column standard-width p-universal-bg-color--quaternary pad-y-40 p-section__align--none",
+      "backgroundHint": "light",
+      "headings": [],
+      "paragraphs": [
+        "ALUMNI VOICES",
+        "\"I loved how flexible the online learning was … My hard work paid off and now today I have a better job with a better salary.”",
+        "Sheila Cameron, BS in Accounting ’24"
+      ],
+      "links": [],
+      "images": [
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2026-02/Untitled-12.jpg?itok=PofZ-weT",
+          "alt": "Sheila Cameron",
+          "type": "img",
+          "width": 632,
+          "height": 454
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2026-02/Untitled-12.webp?itok=pH6Z1Gkg",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2026-02/Untitled-12.webp?itok=PofZ-weT",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2026-02/Untitled-12.webp?itok=p7a4pRCK",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2026-02/Untitled-12.jpg?itok=pH6Z1Gkg",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2026-02/Untitled-12.jpg?itok=p7a4pRCK",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        }
+      ],
+      "listItems": [
+        {
+          "title": "Sheila Cameron,",
+          "description": "ALUMNI VOICES",
+          "image": {
+            "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2026-02/Untitled-12.jpg?itok=PofZ-weT",
+            "alt": "Sheila Cameron"
+          }
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "tagName": "div",
+      "classHint": "t-layout__one-column standard-width p-universal-bg-color--none p-section__align--none layout layout-",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h3",
+          "text": "Real-World Experiences"
+        },
+        {
+          "tag": "h5",
+          "text": "100+"
+        },
+        {
+          "tag": "h3",
+          "text": "Your Goals Within Reach"
+        },
+        {
+          "tag": "h5",
+          "text": "Up to 25%"
+        },
+        {
+          "tag": "h3",
+          "text": "Designed for Working Adults"
+        },
+        {
+          "tag": "h5",
+          "text": "50+ Years"
+        },
+        {
+          "tag": "h3",
+          "text": "Real-World Experiences"
+        },
+        {
+          "tag": "h5",
+          "text": "100+"
+        },
+        {
+          "tag": "h3",
+          "text": "Your Goals Within Reach"
+        },
+        {
+          "tag": "h5",
+          "text": "Up to 25%"
+        },
+        {
+          "tag": "h3",
+          "text": "Designed for Working Adults"
+        },
+        {
+          "tag": "h5",
+          "text": "50+ Years"
+        },
+        {
+          "tag": "h3",
+          "text": "Real-World Experiences"
+        },
+        {
+          "tag": "h5",
+          "text": "100+"
+        }
+      ],
+      "paragraphs": [
+        "WORKFORCE SKILLS VIA HANDS-ON LEARNING",
+        "Put your skills into practice with hands-on learning experiences in many of Walden’s online degree programs.",
+        "degrees and certificates offered",
+        "TUITION SAVINGS OPPORTUNITIES",
+        "As part of our commitment to improving access to higher education, our online college offers many options to help you manage the cost of your degree. For those who apply and qualify, this includes financial aid, grants, scholarships, and more.",
+        "Potential savings with Walden’s Believe & Achieve Scholarship®",
+        "Distance learning innovators for 50+ years",
+        "You have a busy schedule. That’s why Walden offers many start dates and a choice of learning formats. Our online college curriculum and support services are tailored to meet the needs—and ambitions—of busy working professionals.",
+        "providing access to transformative education"
+      ],
+      "links": [
+        {
+          "text": "Explore online programs",
+          "href": "https://www.waldenu.edu/programs",
+          "target": ""
+        },
+        {
+          "text": "Learn more",
+          "href": "https://www.waldenu.edu/financial-aid/grants-and-scholarships-details",
+          "target": ""
+        },
+        {
+          "text": "Why Walden",
+          "href": "https://www.waldenu.edu/why-walden",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-01/gettyimages-1320406886-632xx632.jpg?itok=ucKi3Q_L",
+          "alt": "Nurse chatting with her colleagues",
+          "type": "img",
+          "width": 632,
+          "height": 632
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-10/image2x.png?itok=ljo6BFOn",
+          "alt": "Career profile showing Helper, Persuader, and Creator traits with $45K–$105K pay and 19% growth",
+          "type": "img",
+          "width": 625,
+          "height": 625
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-01/gettyimages-1192133706-632x632.jpg?itok=qYslrFQK",
+          "alt": "Woman interacting with computer",
+          "type": "img",
+          "width": 632,
+          "height": 632
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2024-01/gettyimages-1320406886-632xx632.webp?itok=d1C1AuTZ",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-01/gettyimages-1320406886-632xx632.webp?itok=ucKi3Q_L",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2024-01/gettyimages-1320406886-632xx632.webp?itok=utKTwOz0",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2024-01/gettyimages-1320406886-632xx632.jpg?itok=d1C1AuTZ",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2024-01/gettyimages-1320406886-632xx632.jpg?itok=utKTwOz0",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2024-10/image2x.webp?itok=R4H9r0sQ",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-10/image2x.webp?itok=ljo6BFOn",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2024-10/image2x.webp?itok=OtBSptpO",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2024-10/image2x.png?itok=R4H9r0sQ",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2024-10/image2x.png?itok=OtBSptpO",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2024-01/gettyimages-1192133706-632x632.webp?itok=EdFDpvBK",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-01/gettyimages-1192133706-632x632.webp?itok=qYslrFQK",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2024-01/gettyimages-1192133706-632x632.webp?itok=gUxsenRU",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2024-01/gettyimages-1192133706-632x632.jpg?itok=EdFDpvBK",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2024-01/gettyimages-1192133706-632x632.jpg?itok=gUxsenRU",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        }
+      ],
+      "listItems": [
+        {
+          "title": "Real-World Experiences",
+          "description": "WORKFORCE SKILLS VIA HANDS-ON LEARNING",
+          "badge": "Explore online programs",
+          "link": {
+            "text": "Explore online programs",
+            "href": "https://www.waldenu.edu/programs"
+          },
+          "image": {
+            "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-01/gettyimages-1320406886-632xx632.jpg?itok=ucKi3Q_L",
+            "alt": "Nurse chatting with her colleagues"
+          }
+        },
+        {
+          "title": "Your Goals Within Reach",
+          "description": "TUITION SAVINGS OPPORTUNITIES",
+          "badge": "Learn more",
+          "link": {
+            "text": "Learn more",
+            "href": "https://www.waldenu.edu/financial-aid/grants-and-scholarships-details"
+          },
+          "image": {
+            "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-10/image2x.png?itok=ljo6BFOn",
+            "alt": "Career profile showing Helper, Persuader, and Creator traits with $45K–$105K pay and 19% growth"
+          }
+        },
+        {
+          "title": "Designed for Working Adults",
+          "description": "Distance learning innovators for 50+ years",
+          "badge": "Why Walden",
+          "link": {
+            "text": "Why Walden",
+            "href": "https://www.waldenu.edu/why-walden"
+          },
+          "image": {
+            "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-01/gettyimages-1192133706-632x632.jpg?itok=qYslrFQK",
+            "alt": "Woman interacting with computer"
+          }
+        },
+        {
+          "title": "Real-World Experiences",
+          "description": "WORKFORCE SKILLS VIA HANDS-ON LEARNING",
+          "badge": "Explore online programs",
+          "link": {
+            "text": "Explore online programs",
+            "href": "https://www.waldenu.edu/programs"
+          },
+          "image": {
+            "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-01/gettyimages-1320406886-632xx632.jpg?itok=ucKi3Q_L",
+            "alt": "Nurse chatting with her colleagues"
+          }
+        },
+        {
+          "title": "Your Goals Within Reach",
+          "description": "TUITION SAVINGS OPPORTUNITIES",
+          "badge": "Learn more",
+          "link": {
+            "text": "Learn more",
+            "href": "https://www.waldenu.edu/financial-aid/grants-and-scholarships-details"
+          },
+          "image": {
+            "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-10/image2x.png?itok=ljo6BFOn",
+            "alt": "Career profile showing Helper, Persuader, and Creator traits with $45K–$105K pay and 19% growth"
+          }
+        },
+        {
+          "title": "Designed for Working Adults",
+          "description": "Distance learning innovators for 50+ years",
+          "badge": "Why Walden",
+          "link": {
+            "text": "Why Walden",
+            "href": "https://www.waldenu.edu/why-walden"
+          },
+          "image": {
+            "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-01/gettyimages-1192133706-632x632.jpg?itok=qYslrFQK",
+            "alt": "Woman interacting with computer"
+          }
+        },
+        {
+          "title": "Real-World Experiences",
+          "description": "WORKFORCE SKILLS VIA HANDS-ON LEARNING",
+          "badge": "Explore online programs",
+          "link": {
+            "text": "Explore online programs",
+            "href": "https://www.waldenu.edu/programs"
+          },
+          "image": {
+            "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-01/gettyimages-1320406886-632xx632.jpg?itok=ucKi3Q_L",
+            "alt": "Nurse chatting with her colleagues"
+          }
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "tagName": "div",
+      "classHint": "t-layout__one-column standard-width p-universal-bg-color--primary 1 p-section__align--none edge-to-e",
+      "backgroundHint": "dark",
+      "headings": [],
+      "paragraphs": [
+        "As a Certified B Corporation® and a Carnegie designated Opportunity University for undergraduate students, Walden University reflects a commitment to accountability and access in higher education.*",
+        "*Carnegie designation per the 2025 Student Access and Earnings Classification; applies to undergraduate students."
+      ],
+      "links": [],
+      "images": [
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2026-05/B-Corp-Logo-White_572x754.png?itok=1s6GAH3G",
+          "alt": "B corp logo",
+          "type": "img",
+          "width": 572,
+          "height": 754
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2026-05/B-Corp-Logo-White_100x146_0.png?itok=3J5VHanD",
+          "alt": "B Corp Logo",
+          "type": "img",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2026-05/B-Corp-Logo-White_572x754.webp?itok=sFlElZQM",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2026-05/B-Corp-Logo-White_572x754.webp?itok=1s6GAH3G",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2026-05/B-Corp-Logo-White_572x754.webp?itok=8bDX6Gas",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2026-05/B-Corp-Logo-White_572x754.png?itok=sFlElZQM",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2026-05/B-Corp-Logo-White_572x754.png?itok=8bDX6Gas",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2026-05/B-Corp-Logo-White_100x146_0.webp?itok=Jy8HqCZg",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2026-05/B-Corp-Logo-White_100x146_0.webp?itok=3J5VHanD",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2026-05/B-Corp-Logo-White_100x146_0.webp?itok=mbylWkVk",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2026-05/B-Corp-Logo-White_100x146_0.png?itok=Jy8HqCZg",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2026-05/B-Corp-Logo-White_100x146_0.png?itok=mbylWkVk",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        }
+      ]
+    },
+    {
+      "position": 12,
+      "tagName": "div",
+      "classHint": "t-layout__one-column standard-width p-universal-bg-color--tertiary p-section__align--none layout lay",
+      "backgroundHint": "light",
+      "headings": [],
+      "paragraphs": [
+        "WHAT’S NEXT?",
+        "Take the first step toward the change you want to see."
+      ],
+      "links": [
+        {
+          "text": "Talk to an Enrollment Specialist",
+          "href": "https://www.waldenu.edu/request-info",
+          "target": ""
+        },
+        {
+          "text": "Find the right program for you",
+          "href": "https://www.waldenu.edu/programs",
+          "target": ""
+        },
+        {
+          "text": "Explore savings options",
+          "href": "https://www.waldenu.edu/financial-aid/grants-and-scholarships",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2025-12/final_wu_hp_cro_740x602.jpg?itok=pVCURIu_",
+          "alt": "Man studying on laptop at home",
+          "type": "img",
+          "width": 740,
+          "height": 602
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2025-12/final_wu_hp_cro_740x602.webp?itok=4gH6L6Gp",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2025-12/final_wu_hp_cro_740x602.webp?itok=pVCURIu_",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2025-12/final_wu_hp_cro_740x602.webp?itok=d6y8UrZA",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2025-12/final_wu_hp_cro_740x602.jpg?itok=4gH6L6Gp",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2025-12/final_wu_hp_cro_740x602.jpg?itok=d6y8UrZA",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        }
+      ]
+    },
+    {
+      "position": 13,
+      "tagName": "div",
+      "classHint": "t-layout__one-column standard-width p-universal-bg-color--primary st-all cro-homepage-refresh p-sect",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "FAQ about Walden’s Online Programs"
+        }
+      ],
+      "paragraphs": [
+        "Walden University is accredited by the Higher Learning Commission (www.hlcommission.org), an institutional accreditation agency recognized by the U.S. Department of Education. Accreditation is a mark of quality. Walden has been accredited by the Higher Learning Commission (HLC) since 1990.",
+        "Being accredited by the HLC validates that our institution lives its mission, operates with integrity, offers programs that focus on student learning, hires faculty that are academically qualified, and provides the resources and support necessary for our students to succeed. The Tempo Learning® platform is approved by HLC for each program where it is offered. Walden has also earned a number of programmatic accreditations from the following organizations:",
+        "Programmatic accreditation will help ensure a high-quality learning experience that meets rigorous accreditation standards set for a specific field, discipline, or profession.",
+        "As an HLC accredited institution, Walden University meets established standards for quality and institutional integrity as a fully online university. Walden’s commitment to accountability and access in higher education is further reflected in its recognition as a Carnegie designated Opportunity University for undergraduate students and its status as a Certified B Corporation®.*",
+        "Consider the following results of Walden’s 2023 Student and Alumni Surveys:",
+        "Yes. Since 1970, Walden has supported working professionals in achieving their academic goals, initially through distance education and later online. Our flexible online learning environment features an accessible platform that lets you log in when it’s convenient for you, from wherever you are in the world. Walden curricula also include interactive multimedia simulations woven into a number of programs. An accredited university, Walden has further distinguished itself as being the sixth institution approved by the U.S. government to offer direct assessment competency-based education, via Tempo Learning®. The university has won a total of six Effective Practice Awards (2016–2019) from the Online Learning Consortium, recognizing “efforts that help make quality online education accessible … for anyone, anywhere, at any time.” And in May 2023, the U.S. Distance Learning Association (USDLA) recognized Walden with silver awards in three categories: innovation, research, and training. The award-winning initiatives are Doctoral Degree Coach®; research into inclusive online learning models; and faculty training, development, and support. According to USDLA, the awards were created “to acknowledge major accomplishments in distance learning and to highlight those distance learning instructors, programs, and professionals who have achieved and demonstrated extraordinary achievements.\"",
+        "At Walden University, we take pride in our supportive environment and in our wide range of resources designed to help students succeed. When you enroll with us, you’re never alone. We’re dedicated to making sure you have everything you need to earn your degree and achieve your life and career goals. Walden’s student support services include Enrollment Specialists, financial aid team, and Academic Advisors), a career planning and development center, technical assistance, disability services, an online library, research support, an academic skills center, doctoral peer mentoring, and a writing center.",
+        "Yes, you can transfer credits from other institutions to Walden. Speak to an Enrollment Specialist for a free transfer-of-credit evaluation by calling 1-866-492-5336 or one of our international toll-free phone numbers for students outside the United States.",
+        "For transfer of credit into undergraduate programs,* you must have earned credit:",
+        "For transfer of credit into graduate programs,* you must have earned credit:",
+        "*There may be additional program-specific transfer of credit criteria. Students should check the Walden University catalog for program-specific transfer-of-credit requirements and restrictions.",
+        "Applying for federal financial assistance is a two-part process consisting of (1) completion of the Free Application for Federal Student Aid (FAFSA®) and notification of eligibility, and (2) acceptance of the financial aid offer and completion of the Master Promissory Note (MPN) and entrance counseling. This process takes approximately two to four weeks, from the initial application through the receipt of funds. New students are strongly encouraged to complete the FAFSA at the same time they are applying for admission. Continuing students are required to complete a renewal FAFSA for each award year they are enrolled. A good practice is to complete the renewal FAFSA when it becomes available in October, but at least eight weeks prior to each award year renewal date.",
+        "FAFSA® is a registered trademark of the U.S. Department of Education.",
+        "To receive any Federal Student Aid offerings administered through Walden University’s Office of Financial Aid, you must meet all of the following criteria:",
+        "Each of our programs has specific admission eligibility criteria. Reach out to your Enrollment Specialist to discuss the GPA requirement for your program of interest.",
+        "This is my first time signing in:If you’ve previously saved or submitted an application to Walden University, you should have received a verification email containing a link to set your password. Be sure to check your spam folder if you don’t see it in your inbox. To log in, use the verification link in that email to access your myWalden dashboard.",
+        "If you did not receive an email or need additional support, contact our help desk at 800-925-3368 or support@mail.waldenu.edu.",
+        "I need to rest my password:If you don’t have a Walden email address and are logging in with your personal email address, you can reset your password here",
+        "You can reset your password by clicking the “Go to Password Reset” button on the myWalden login page. If you continue to have problems, contact the Customer Care Team at support@mail.waldenu.edu or 800-925-3368.",
+        "I don’t know which email address to use as my username at login:",
+        "For first-time applicants, your login email is the one you used to save and/or submit your application.",
+        "If you’re a current or returning student, use your Walden email address to log in.",
+        "If you don’t remember your login email address, you can look it up here",
+        "Still need help? Contact our help desk at 855-218-0561",
+        "I’m having other technical issues:",
+        "Contact our technical help desk at support@mail.waldenu.edu or 800 925-3368."
+      ],
+      "links": [
+        {
+          "text": "www.hlcommission.org",
+          "href": "http://www.hlcommission.org/",
+          "target": "_blank"
+        },
+        {
+          "text": "Free Application for Federal Student Aid (FAFSA®)",
+          "href": "https://studentaid.gov/h/apply-for-aid/fafsa",
+          "target": "_blank"
+        },
+        {
+          "text": "eligible noncitizen",
+          "href": "https://studentaid.gov/understand-aid/eligibility/requirements/non-us-citizens",
+          "target": "_blank"
+        },
+        {
+          "text": "regular student",
+          "href": "https://studentaid.gov/help-center/answers/topic/glossary/search/regular%20student",
+          "target": "_blank"
+        },
+        {
+          "text": "Walden's financial aid policy",
+          "href": "https://academicguides.waldenu.edu/student-handbook/satisfactory-academic-progress",
+          "target": "_blank"
+        },
+        {
+          "text": "support@mail.waldenu.edu",
+          "href": "mailto:support@mail.waldenu.edu",
+          "target": ""
+        },
+        {
+          "text": "“Go to Password Reset”",
+          "href": "https://my.waldenu.edu/",
+          "target": ""
+        },
+        {
+          "text": "here",
+          "href": "https://myhomepage.waldenu.edu/WaldenCommunityPortal/s/login-help?_its=eJwljktqxDAQBe_y1jJMa1rW5wZZZJMLGH3aRODIICvZDOOzB88sX1FQ74G_WhAgzJZnz5NhJxNLslOarZ-okNar41s2DgrHiEMQ0LdxknWOrWHrzi22cuqFNPul1C55LPnO8eYSUfaS5lQMF6JsvLkLkY0rFOIYvabfUfeG8EDZf2JtCIBCl1V6l_5e-Tu2JttHQbgSCkfPn3u5jrxreKEvWS__qXDUIS_bkn7-AyeuQxc",
+          "target": ""
+        },
+        {
+          "text": "800 925-3368",
+          "href": "tel:800%20925-3368",
+          "target": "_blank"
+        }
+      ],
+      "images": [],
+      "listItems": [
+        {
+          "title": "FAQ about Walden’s Online Programs",
+          "description": "FAQ about Walden’s Online Programs",
+          "link": {
+            "text": "www.hlcommission.org",
+            "href": "http://www.hlcommission.org/"
+          }
+        }
+      ]
+    }
+  ]
+}

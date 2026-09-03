@@ -1,0 +1,861 @@
+[
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_crop_freeform_sm/public/2026-03/walden_google_cloud_module_image_2a.jpg?h=18ca2f3c&itok=UU2TU7Vg",
+    "alt": "\"Walden University in Partnership with Google Cloud\"",
+    "localFile": "section3-img1.jpg",
+    "extension": "jpg",
+    "sectionPosition": 3,
+    "type": "img",
+    "fileSize": 47035,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_crop_freeform_md/public/2026-03/walden_google_cloud_module_image_2a.webp?h=18ca2f3c&itok=TDItT-wG",
+    "alt": "",
+    "localFile": "section3-img2.webp",
+    "extension": "webp",
+    "sectionPosition": 3,
+    "type": "srcset",
+    "fileSize": 24566,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_crop_freeform_sm/public/2026-03/walden_google_cloud_module_image_2a.webp?h=18ca2f3c&itok=UU2TU7Vg",
+    "alt": "",
+    "localFile": "section3-img3.webp",
+    "extension": "webp",
+    "sectionPosition": 3,
+    "type": "srcset",
+    "fileSize": 24566,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_crop_freeform_md/public/2026-03/walden_google_cloud_module_image_2a.jpg?h=18ca2f3c&itok=TDItT-wG",
+    "alt": "",
+    "localFile": "section3-img4.jpg",
+    "extension": "jpg",
+    "sectionPosition": 3,
+    "type": "srcset",
+    "fileSize": 47035,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/media/21361/w-parallax",
+    "alt": "",
+    "localFile": null,
+    "sectionPosition": 3,
+    "type": "background-unmatched",
+    "status": "failed",
+    "error": "Parse Error: Header overflow"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-03/Tag_1.png?itok=KF27KKqm",
+    "alt": "Tempo Learning",
+    "localFile": "section5-img6.png",
+    "extension": "png",
+    "sectionPosition": 5,
+    "type": "img",
+    "fileSize": 2782,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2025-12/final_wu_hp_cro_tempo_632x632.jpg?itok=FSGwh2_R",
+    "alt": "Man on laptop with his son hugging him",
+    "localFile": "section5-img7.jpg",
+    "extension": "jpg",
+    "sectionPosition": 5,
+    "type": "img",
+    "fileSize": 73980,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2024-03/Tag_1.webp?itok=8avK5Di5",
+    "alt": "",
+    "localFile": "section5-img8.webp",
+    "extension": "webp",
+    "sectionPosition": 5,
+    "type": "srcset",
+    "fileSize": 2804,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-03/Tag_1.webp?itok=KF27KKqm",
+    "alt": "",
+    "localFile": "section5-img9.webp",
+    "extension": "webp",
+    "sectionPosition": 5,
+    "type": "srcset",
+    "fileSize": 2804,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2024-03/Tag_1.webp?itok=JaTJ13cJ",
+    "alt": "",
+    "localFile": "section5-img10.webp",
+    "extension": "webp",
+    "sectionPosition": 5,
+    "type": "srcset",
+    "fileSize": 2804,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2024-03/Tag_1.png?itok=8avK5Di5",
+    "alt": "",
+    "localFile": "section5-img11.png",
+    "extension": "png",
+    "sectionPosition": 5,
+    "type": "srcset",
+    "fileSize": 2782,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2024-03/Tag_1.png?itok=JaTJ13cJ",
+    "alt": "",
+    "localFile": "section5-img12.png",
+    "extension": "png",
+    "sectionPosition": 5,
+    "type": "srcset",
+    "fileSize": 2782,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2025-12/final_wu_hp_cro_tempo_632x632.webp?itok=Lg_h6Ukm",
+    "alt": "",
+    "localFile": "section5-img13.webp",
+    "extension": "webp",
+    "sectionPosition": 5,
+    "type": "srcset",
+    "fileSize": 44550,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2025-12/final_wu_hp_cro_tempo_632x632.webp?itok=FSGwh2_R",
+    "alt": "",
+    "localFile": "section5-img14.webp",
+    "extension": "webp",
+    "sectionPosition": 5,
+    "type": "srcset",
+    "fileSize": 44550,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2025-12/final_wu_hp_cro_tempo_632x632.webp?itok=wxpVW0c6",
+    "alt": "",
+    "localFile": "section5-img15.webp",
+    "extension": "webp",
+    "sectionPosition": 5,
+    "type": "srcset",
+    "fileSize": 44550,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2025-12/final_wu_hp_cro_tempo_632x632.jpg?itok=Lg_h6Ukm",
+    "alt": "",
+    "localFile": "section5-img16.jpg",
+    "extension": "jpg",
+    "sectionPosition": 5,
+    "type": "srcset",
+    "fileSize": 73980,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2025-12/final_wu_hp_cro_tempo_632x632.jpg?itok=wxpVW0c6",
+    "alt": "",
+    "localFile": "section5-img17.jpg",
+    "extension": "jpg",
+    "sectionPosition": 5,
+    "type": "srcset",
+    "fileSize": 73980,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-11/Tag_0.png?itok=-amItuzY",
+    "alt": "3 MINUTE QUIZ",
+    "localFile": "section6-img18.png",
+    "extension": "png",
+    "sectionPosition": 6,
+    "type": "img",
+    "fileSize": 2016,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2024-11/Tag_0.webp?itok=wLK_GVGg",
+    "alt": "",
+    "localFile": "section6-img19.webp",
+    "extension": "webp",
+    "sectionPosition": 6,
+    "type": "srcset",
+    "fileSize": 2080,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-11/Tag_0.webp?itok=-amItuzY",
+    "alt": "",
+    "localFile": "section6-img20.webp",
+    "extension": "webp",
+    "sectionPosition": 6,
+    "type": "srcset",
+    "fileSize": 2080,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2024-11/Tag_0.webp?itok=Pv2b2pqf",
+    "alt": "",
+    "localFile": "section6-img21.webp",
+    "extension": "webp",
+    "sectionPosition": 6,
+    "type": "srcset",
+    "fileSize": 2080,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2024-11/Tag_0.png?itok=wLK_GVGg",
+    "alt": "",
+    "localFile": "section6-img22.png",
+    "extension": "png",
+    "sectionPosition": 6,
+    "type": "srcset",
+    "fileSize": 2016,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2024-11/Tag_0.png?itok=Pv2b2pqf",
+    "alt": "",
+    "localFile": "section6-img23.png",
+    "extension": "png",
+    "sectionPosition": 6,
+    "type": "srcset",
+    "fileSize": 2016,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/Walden/Images/Newsroom/alumni-magazine/content-images/2020-vol-1/accreditation/ceph-logo-doctoral-masters-600x450.jpg?itok=UEhZawxX",
+    "alt": "CEPH Accredited Master's Doctoral logo.",
+    "localFile": "section7-img24.jpg",
+    "extension": "jpg",
+    "sectionPosition": 7,
+    "type": "img",
+    "fileSize": 30129,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/Walden/Images/Newsroom/walden-news/2019/cswe-accred-300x-250.jpg?itok=K4whVHki",
+    "alt": "CSWE logo",
+    "localFile": "section7-img25.jpg",
+    "extension": "jpg",
+    "sectionPosition": 7,
+    "type": "img",
+    "fileSize": 10129,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/Walden/Images/Newsroom/walden-news/2014/cacrep-new-logo.gif?itok=Sk913TVS",
+    "alt": "Council for Accreditation of Counseling and Related Educational Programs (CACREP) accredited seal",
+    "localFile": "section7-img26.gif",
+    "extension": "gif",
+    "sectionPosition": 7,
+    "type": "img",
+    "fileSize": 4979,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2022-10/ccne_0.png?itok=lJDtRI3h",
+    "alt": "Commission on Collegiate Nursing Education (CCNE) accredited seal",
+    "localFile": "section7-img27.png",
+    "extension": "png",
+    "sectionPosition": 7,
+    "type": "img",
+    "fileSize": 1909,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/Walden/Images/Newsroom/alumni-magazine/content-images/2020-vol-1/accreditation/ceph-logo-doctoral-masters-600x450.webp?itok=I44DMBDr",
+    "alt": "",
+    "localFile": "section7-img28.webp",
+    "extension": "webp",
+    "sectionPosition": 7,
+    "type": "srcset",
+    "fileSize": 11966,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/Walden/Images/Newsroom/alumni-magazine/content-images/2020-vol-1/accreditation/ceph-logo-doctoral-masters-600x450.webp?itok=UEhZawxX",
+    "alt": "",
+    "localFile": "section7-img29.webp",
+    "extension": "webp",
+    "sectionPosition": 7,
+    "type": "srcset",
+    "fileSize": 11966,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/Walden/Images/Newsroom/alumni-magazine/content-images/2020-vol-1/accreditation/ceph-logo-doctoral-masters-600x450.webp?itok=3YiW5P3C",
+    "alt": "",
+    "localFile": "section7-img30.webp",
+    "extension": "webp",
+    "sectionPosition": 7,
+    "type": "srcset",
+    "fileSize": 11966,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/Walden/Images/Newsroom/alumni-magazine/content-images/2020-vol-1/accreditation/ceph-logo-doctoral-masters-600x450.jpg?itok=I44DMBDr",
+    "alt": "",
+    "localFile": "section7-img31.jpg",
+    "extension": "jpg",
+    "sectionPosition": 7,
+    "type": "srcset",
+    "fileSize": 30129,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/Walden/Images/Newsroom/alumni-magazine/content-images/2020-vol-1/accreditation/ceph-logo-doctoral-masters-600x450.jpg?itok=3YiW5P3C",
+    "alt": "",
+    "localFile": "section7-img32.jpg",
+    "extension": "jpg",
+    "sectionPosition": 7,
+    "type": "srcset",
+    "fileSize": 30129,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/Walden/Images/Newsroom/walden-news/2019/cswe-accred-300x-250.webp?itok=xSN7AvHr",
+    "alt": "",
+    "localFile": "section7-img33.webp",
+    "extension": "webp",
+    "sectionPosition": 7,
+    "type": "srcset",
+    "fileSize": 5224,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/Walden/Images/Newsroom/walden-news/2019/cswe-accred-300x-250.webp?itok=K4whVHki",
+    "alt": "",
+    "localFile": "section7-img34.webp",
+    "extension": "webp",
+    "sectionPosition": 7,
+    "type": "srcset",
+    "fileSize": 5224,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/Walden/Images/Newsroom/walden-news/2019/cswe-accred-300x-250.webp?itok=_dbd-QM_",
+    "alt": "",
+    "localFile": "section7-img35.webp",
+    "extension": "webp",
+    "sectionPosition": 7,
+    "type": "srcset",
+    "fileSize": 5224,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/Walden/Images/Newsroom/walden-news/2019/cswe-accred-300x-250.jpg?itok=xSN7AvHr",
+    "alt": "",
+    "localFile": "section7-img36.jpg",
+    "extension": "jpg",
+    "sectionPosition": 7,
+    "type": "srcset",
+    "fileSize": 10129,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/Walden/Images/Newsroom/walden-news/2019/cswe-accred-300x-250.jpg?itok=_dbd-QM_",
+    "alt": "",
+    "localFile": "section7-img37.jpg",
+    "extension": "jpg",
+    "sectionPosition": 7,
+    "type": "srcset",
+    "fileSize": 10129,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/Walden/Images/Newsroom/walden-news/2014/cacrep-new-logo.gif?itok=bQb80nUA",
+    "alt": "",
+    "localFile": "section7-img38.gif",
+    "extension": "gif",
+    "sectionPosition": 7,
+    "type": "srcset",
+    "fileSize": 4979,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/Walden/Images/Newsroom/walden-news/2014/cacrep-new-logo.gif?itok=Eixyuhg3",
+    "alt": "",
+    "localFile": "section7-img39.gif",
+    "extension": "gif",
+    "sectionPosition": 7,
+    "type": "srcset",
+    "fileSize": 4979,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2022-10/ccne_0.webp?itok=JZz4s_ps",
+    "alt": "",
+    "localFile": "section7-img40.webp",
+    "extension": "webp",
+    "sectionPosition": 7,
+    "type": "srcset",
+    "fileSize": 2900,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2022-10/ccne_0.webp?itok=lJDtRI3h",
+    "alt": "",
+    "localFile": "section7-img41.webp",
+    "extension": "webp",
+    "sectionPosition": 7,
+    "type": "srcset",
+    "fileSize": 2900,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2022-10/ccne_0.webp?itok=pD7psYcu",
+    "alt": "",
+    "localFile": "section7-img42.webp",
+    "extension": "webp",
+    "sectionPosition": 7,
+    "type": "srcset",
+    "fileSize": 2900,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2022-10/ccne_0.png?itok=JZz4s_ps",
+    "alt": "",
+    "localFile": "section7-img43.png",
+    "extension": "png",
+    "sectionPosition": 7,
+    "type": "srcset",
+    "fileSize": 1909,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2022-10/ccne_0.png?itok=pD7psYcu",
+    "alt": "",
+    "localFile": "section7-img44.png",
+    "extension": "png",
+    "sectionPosition": 7,
+    "type": "srcset",
+    "fileSize": 1909,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2026-02/Untitled-12.jpg?itok=PofZ-weT",
+    "alt": "Sheila Cameron",
+    "localFile": "section9-img45.jpg",
+    "extension": "jpg",
+    "sectionPosition": 9,
+    "type": "img",
+    "fileSize": 44012,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2026-02/Untitled-12.webp?itok=pH6Z1Gkg",
+    "alt": "",
+    "localFile": "section9-img46.webp",
+    "extension": "webp",
+    "sectionPosition": 9,
+    "type": "srcset",
+    "fileSize": 19176,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2026-02/Untitled-12.webp?itok=PofZ-weT",
+    "alt": "",
+    "localFile": "section9-img47.webp",
+    "extension": "webp",
+    "sectionPosition": 9,
+    "type": "srcset",
+    "fileSize": 19176,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2026-02/Untitled-12.webp?itok=p7a4pRCK",
+    "alt": "",
+    "localFile": "section9-img48.webp",
+    "extension": "webp",
+    "sectionPosition": 9,
+    "type": "srcset",
+    "fileSize": 19176,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2026-02/Untitled-12.jpg?itok=pH6Z1Gkg",
+    "alt": "",
+    "localFile": "section9-img49.jpg",
+    "extension": "jpg",
+    "sectionPosition": 9,
+    "type": "srcset",
+    "fileSize": 44012,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2026-02/Untitled-12.jpg?itok=p7a4pRCK",
+    "alt": "",
+    "localFile": "section9-img50.jpg",
+    "extension": "jpg",
+    "sectionPosition": 9,
+    "type": "srcset",
+    "fileSize": 44012,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-01/gettyimages-1320406886-632xx632.jpg?itok=ucKi3Q_L",
+    "alt": "Nurse chatting with her colleagues",
+    "localFile": "section10-img51.jpg",
+    "extension": "jpg",
+    "sectionPosition": 10,
+    "type": "img",
+    "fileSize": 70879,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-10/image2x.png?itok=ljo6BFOn",
+    "alt": "Career profile showing Helper, Persuader, and Creator traits with $45K–$105K pay and 19% growth",
+    "localFile": "section10-img52.png",
+    "extension": "png",
+    "sectionPosition": 10,
+    "type": "img",
+    "fileSize": 474752,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-01/gettyimages-1192133706-632x632.jpg?itok=qYslrFQK",
+    "alt": "Woman interacting with computer",
+    "localFile": "section10-img53.jpg",
+    "extension": "jpg",
+    "sectionPosition": 10,
+    "type": "img",
+    "fileSize": 60099,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2024-01/gettyimages-1320406886-632xx632.webp?itok=d1C1AuTZ",
+    "alt": "",
+    "localFile": "section10-img54.webp",
+    "extension": "webp",
+    "sectionPosition": 10,
+    "type": "srcset",
+    "fileSize": 36256,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-01/gettyimages-1320406886-632xx632.webp?itok=ucKi3Q_L",
+    "alt": "",
+    "localFile": "section10-img55.webp",
+    "extension": "webp",
+    "sectionPosition": 10,
+    "type": "srcset",
+    "fileSize": 36256,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2024-01/gettyimages-1320406886-632xx632.webp?itok=utKTwOz0",
+    "alt": "",
+    "localFile": "section10-img56.webp",
+    "extension": "webp",
+    "sectionPosition": 10,
+    "type": "srcset",
+    "fileSize": 36256,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2024-01/gettyimages-1320406886-632xx632.jpg?itok=d1C1AuTZ",
+    "alt": "",
+    "localFile": "section10-img57.jpg",
+    "extension": "jpg",
+    "sectionPosition": 10,
+    "type": "srcset",
+    "fileSize": 70879,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2024-01/gettyimages-1320406886-632xx632.jpg?itok=utKTwOz0",
+    "alt": "",
+    "localFile": "section10-img58.jpg",
+    "extension": "jpg",
+    "sectionPosition": 10,
+    "type": "srcset",
+    "fileSize": 70879,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2024-10/image2x.webp?itok=R4H9r0sQ",
+    "alt": "",
+    "localFile": "section10-img59.webp",
+    "extension": "webp",
+    "sectionPosition": 10,
+    "type": "srcset",
+    "fileSize": 18692,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-10/image2x.webp?itok=ljo6BFOn",
+    "alt": "",
+    "localFile": "section10-img60.webp",
+    "extension": "webp",
+    "sectionPosition": 10,
+    "type": "srcset",
+    "fileSize": 18692,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2024-10/image2x.webp?itok=OtBSptpO",
+    "alt": "",
+    "localFile": "section10-img61.webp",
+    "extension": "webp",
+    "sectionPosition": 10,
+    "type": "srcset",
+    "fileSize": 18692,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2024-10/image2x.png?itok=R4H9r0sQ",
+    "alt": "",
+    "localFile": "section10-img62.png",
+    "extension": "png",
+    "sectionPosition": 10,
+    "type": "srcset",
+    "fileSize": 474752,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2024-10/image2x.png?itok=OtBSptpO",
+    "alt": "",
+    "localFile": "section10-img63.png",
+    "extension": "png",
+    "sectionPosition": 10,
+    "type": "srcset",
+    "fileSize": 474752,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2024-01/gettyimages-1192133706-632x632.webp?itok=EdFDpvBK",
+    "alt": "",
+    "localFile": "section10-img64.webp",
+    "extension": "webp",
+    "sectionPosition": 10,
+    "type": "srcset",
+    "fileSize": 32332,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2024-01/gettyimages-1192133706-632x632.webp?itok=qYslrFQK",
+    "alt": "",
+    "localFile": "section10-img65.webp",
+    "extension": "webp",
+    "sectionPosition": 10,
+    "type": "srcset",
+    "fileSize": 32332,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2024-01/gettyimages-1192133706-632x632.webp?itok=gUxsenRU",
+    "alt": "",
+    "localFile": "section10-img66.webp",
+    "extension": "webp",
+    "sectionPosition": 10,
+    "type": "srcset",
+    "fileSize": 32332,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2024-01/gettyimages-1192133706-632x632.jpg?itok=EdFDpvBK",
+    "alt": "",
+    "localFile": "section10-img67.jpg",
+    "extension": "jpg",
+    "sectionPosition": 10,
+    "type": "srcset",
+    "fileSize": 60099,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2024-01/gettyimages-1192133706-632x632.jpg?itok=gUxsenRU",
+    "alt": "",
+    "localFile": "section10-img68.jpg",
+    "extension": "jpg",
+    "sectionPosition": 10,
+    "type": "srcset",
+    "fileSize": 60099,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2026-05/B-Corp-Logo-White_572x754.png?itok=1s6GAH3G",
+    "alt": "B corp logo",
+    "localFile": "section11-img69.png",
+    "extension": "png",
+    "sectionPosition": 11,
+    "type": "img",
+    "fileSize": 17522,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2026-05/B-Corp-Logo-White_100x146_0.png?itok=3J5VHanD",
+    "alt": "B Corp Logo",
+    "localFile": "section11-img70.png",
+    "extension": "png",
+    "sectionPosition": 11,
+    "type": "img",
+    "fileSize": 3807,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2026-05/B-Corp-Logo-White_572x754.webp?itok=sFlElZQM",
+    "alt": "",
+    "localFile": "section11-img71.webp",
+    "extension": "webp",
+    "sectionPosition": 11,
+    "type": "srcset",
+    "fileSize": 21756,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2026-05/B-Corp-Logo-White_572x754.webp?itok=1s6GAH3G",
+    "alt": "",
+    "localFile": "section11-img72.webp",
+    "extension": "webp",
+    "sectionPosition": 11,
+    "type": "srcset",
+    "fileSize": 21756,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2026-05/B-Corp-Logo-White_572x754.webp?itok=8bDX6Gas",
+    "alt": "",
+    "localFile": "section11-img73.webp",
+    "extension": "webp",
+    "sectionPosition": 11,
+    "type": "srcset",
+    "fileSize": 21756,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2026-05/B-Corp-Logo-White_572x754.png?itok=sFlElZQM",
+    "alt": "",
+    "localFile": "section11-img74.png",
+    "extension": "png",
+    "sectionPosition": 11,
+    "type": "srcset",
+    "fileSize": 17522,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2026-05/B-Corp-Logo-White_572x754.png?itok=8bDX6Gas",
+    "alt": "",
+    "localFile": "section11-img75.png",
+    "extension": "png",
+    "sectionPosition": 11,
+    "type": "srcset",
+    "fileSize": 17522,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2026-05/B-Corp-Logo-White_100x146_0.webp?itok=Jy8HqCZg",
+    "alt": "",
+    "localFile": "section11-img76.webp",
+    "extension": "webp",
+    "sectionPosition": 11,
+    "type": "srcset",
+    "fileSize": 4642,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2026-05/B-Corp-Logo-White_100x146_0.webp?itok=3J5VHanD",
+    "alt": "",
+    "localFile": "section11-img77.webp",
+    "extension": "webp",
+    "sectionPosition": 11,
+    "type": "srcset",
+    "fileSize": 4642,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2026-05/B-Corp-Logo-White_100x146_0.webp?itok=mbylWkVk",
+    "alt": "",
+    "localFile": "section11-img78.webp",
+    "extension": "webp",
+    "sectionPosition": 11,
+    "type": "srcset",
+    "fileSize": 4642,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2026-05/B-Corp-Logo-White_100x146_0.png?itok=Jy8HqCZg",
+    "alt": "",
+    "localFile": "section11-img79.png",
+    "extension": "png",
+    "sectionPosition": 11,
+    "type": "srcset",
+    "fileSize": 3807,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2026-05/B-Corp-Logo-White_100x146_0.png?itok=mbylWkVk",
+    "alt": "",
+    "localFile": "section11-img80.png",
+    "extension": "png",
+    "sectionPosition": 11,
+    "type": "srcset",
+    "fileSize": 3807,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2025-12/final_wu_hp_cro_740x602.jpg?itok=pVCURIu_",
+    "alt": "Man studying on laptop at home",
+    "localFile": "section12-img81.jpg",
+    "extension": "jpg",
+    "sectionPosition": 12,
+    "type": "img",
+    "fileSize": 57723,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2025-12/final_wu_hp_cro_740x602.webp?itok=4gH6L6Gp",
+    "alt": "",
+    "localFile": "section12-img82.webp",
+    "extension": "webp",
+    "sectionPosition": 12,
+    "type": "srcset",
+    "fileSize": 27018,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2025-12/final_wu_hp_cro_740x602.webp?itok=pVCURIu_",
+    "alt": "",
+    "localFile": "section12-img83.webp",
+    "extension": "webp",
+    "sectionPosition": 12,
+    "type": "srcset",
+    "fileSize": 27018,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2025-12/final_wu_hp_cro_740x602.webp?itok=d6y8UrZA",
+    "alt": "",
+    "localFile": "section12-img84.webp",
+    "extension": "webp",
+    "sectionPosition": 12,
+    "type": "srcset",
+    "fileSize": 27018,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_no_style_lg/public/2025-12/final_wu_hp_cro_740x602.jpg?itok=4gH6L6Gp",
+    "alt": "",
+    "localFile": "section12-img85.jpg",
+    "extension": "jpg",
+    "sectionPosition": 12,
+    "type": "srcset",
+    "fileSize": 57723,
+    "status": "downloaded"
+  },
+  {
+    "src": "https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_sm/public/2025-12/final_wu_hp_cro_740x602.jpg?itok=d6y8UrZA",
+    "alt": "",
+    "localFile": "section12-img86.jpg",
+    "extension": "jpg",
+    "sectionPosition": 12,
+    "type": "srcset",
+    "fileSize": 57723,
+    "status": "downloaded"
+  }
+]

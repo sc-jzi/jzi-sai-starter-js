@@ -1,0 +1,46 @@
+{
+  "colors": {
+    "bodyBackground": "rgba(0, 0, 0, 0)",
+    "bodyColor": "rgb(68, 68, 68)",
+    "headerBackground": "rgba(0, 0, 0, 0)",
+    "headerColor": "rgb(68, 68, 68)",
+    "footerBackground": null,
+    "footerColor": "rgb(68, 68, 68)",
+    "heroBackground": null,
+    "primaryButtonBackground": "rgb(255, 255, 255)",
+    "primaryButtonColor": "rgb(0, 51, 76)",
+    "primaryButtonBorderRadius": "48px",
+    "linkColor": "rgb(0, 51, 76)"
+  },
+  "typography": {
+    "bodyFontFamily": "\"Muli Regular\", Helvetica, Arial, sans-serif",
+    "bodyFontSize": "16px",
+    "bodyFontWeight": "400",
+    "bodyLineHeight": "24px",
+    "h1FontFamily": "\"Noto Serif Bold\", Times, serif",
+    "h1FontSize": "56px",
+    "h1FontWeight": "400",
+    "h1LetterSpacing": "normal",
+    "h1TextTransform": "none",
+    "h2FontFamily": "\"Noto Serif Bold\", Times, serif",
+    "h2FontSize": "48px",
+    "h2FontWeight": "400",
+    "h3FontFamily": "\"Noto Serif Bold\", Times, serif",
+    "h3FontSize": "42px",
+    "h3FontWeight": "400",
+    "pFontSize": "16px",
+    "pLineHeight": "24px"
+  },
+  "shape": {
+    "cardBorderRadius": "0px",
+    "cardBoxShadow": "rgba(0, 0, 0, 0.16) 0px 4px 8px 0px",
+    "cardBorder": "0px none rgb(68, 68, 68)",
+    "imgBorderRadius": "0px"
+  },
+  "spacing": {
+    "heroMinHeight": "0px",
+    "heroPadding": "0px",
+    "containerMaxWidth": "1280px"
+  },
+  "cssVariables": {}
+}
