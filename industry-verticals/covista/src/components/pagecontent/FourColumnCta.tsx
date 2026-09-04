@@ -80,6 +80,10 @@ type StoryCard = {
   link?: LinkField;
 };
 
+const emptyText: Field<string> = { value: '' };
+const emptyImage: ImageField = { value: {} };
+const emptyLink: LinkField = { value: { href: '' } };
+
 const parseSitecoreDate = (value?: string): number => {
   if (!value) {
     return 0;
@@ -197,15 +201,15 @@ export const Default = (props: FourColumnCtaProps): JSX.Element => {
         }`}
         ref={domRef}
       >
-        <Link field={link}>
+        <Link field={link || emptyLink}>
           <div className="content-wrapper">
-            <NextImage field={image} width={300} height={300} />
+            <NextImage field={image || emptyImage} width={300} height={300} />
             <div className="text-wrapper">
               <h2>
-                <Text field={title} />
+                <Text field={title || emptyText} />
               </h2>
               <p>
-                <Text field={text} />
+                <Text field={text || emptyText} />
               </p>
             </div>
           </div>
@@ -248,29 +252,29 @@ export const CovistaStories = (props: FourColumnCtaProps): JSX.Element => {
     const inner = (
       <>
         <div className="cv-stories__media">
-          <NextImage field={image} width={480} height={260} />
+          <NextImage field={image || emptyImage} width={480} height={260} />
         </div>
         {(isPageEditing || text?.value) && (
           <p className="cv-stories__tag">
-            <Text field={text} />
+            <Text field={text || emptyText} />
           </p>
         )}
         <h3 className="cv-stories__title">
-          <Text field={title} />
+          <Text field={title || emptyText} />
         </h3>
       </>
     );
 
     return (
       <div className="cv-stories__card-wrap">
-        {hasStoryLink(link) && !isPageEditing ? (
+        {link && hasStoryLink(link) && !isPageEditing ? (
           <Link field={link} className="cv-stories__card">
             {inner}
           </Link>
         ) : (
           <div className="cv-stories__card">{inner}</div>
         )}
-        {isPageEditing && <Link field={link} className="cv-stories__editor-link" />}
+        {isPageEditing && link && <Link field={link} className="cv-stories__editor-link" />}
       </div>
     );
   };
