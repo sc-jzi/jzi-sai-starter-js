@@ -190,3 +190,107 @@ export const WithBackgroundImage = (props: PromoCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* Chamberlain variant — Google Cloud split */
+export const Chamberlain = (props: PromoCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component promo-cta chamberlain-promo ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="row align-items-center g-5">
+          <div className="col-lg-6">
+            {(props.fields.Eyebrow?.value || isPageEditing) && (
+              <h6 className="eyebrow-accent">
+                <Text field={props.fields.Eyebrow} />
+              </h6>
+            )}
+            <h2 className="chamberlain-promo__title">
+              <Text field={props.fields.Title} />
+            </h2>
+            <div className="promo-cta-text">
+              <RichText field={props.fields.Text} />
+              {(isPageEditing || props.fields?.Link?.value?.href) && (
+                <Link field={props.fields.Link} className="button button-accent mt-3 " />
+              )}
+            </div>
+          </div>
+          <div className="col-lg-6">
+            <NextImage field={props.fields.Image} className="img-fluid" width={900} height={720} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* Chamberlain variant — Completion Grant */
+export const ChamberlainGrant = (props: PromoCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component promo-cta chamberlain-grant ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="row align-items-center g-5">
+          <div className="col-lg-6">
+            {(props.fields.Eyebrow?.value || isPageEditing) && (
+              <h6 className="eyebrow-accent">
+                <Text field={props.fields.Eyebrow} />
+              </h6>
+            )}
+            <h2>
+              <Text field={props.fields.Title} />
+            </h2>
+            <RichText field={props.fields.Text} />
+            {(isPageEditing || props.fields?.Link?.value?.href) && (
+              <Link field={props.fields.Link} className="chamberlain-link-arrow" />
+            )}
+          </div>
+          <div className="col-lg-6">
+            <NextImage field={props.fields.Image} className="img-fluid" width={900} height={720} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* Chamberlain variant — DAISY / Uplifting Our Nurses */
+export const ChamberlainDaisy = (props: PromoCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component promo-cta chamberlain-daisy ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="row align-items-center g-5">
+          <div className="col-lg-6">
+            <NextImage field={props.fields.Image} className="img-fluid" width={900} height={720} />
+          </div>
+          <div className="col-lg-6">
+            {(props.fields.Eyebrow?.value || isPageEditing) && (
+              <h6 className="eyebrow-accent">
+                <Text field={props.fields.Eyebrow} />
+              </h6>
+            )}
+            <h2>
+              <Text field={props.fields.Title} />
+            </h2>
+            <RichText field={props.fields.Text} />
+            {(isPageEditing || props.fields?.Link?.value?.href) && (
+              <Link field={props.fields.Link} className="chamberlain-link-arrow" />
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};

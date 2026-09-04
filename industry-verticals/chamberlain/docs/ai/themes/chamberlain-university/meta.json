@@ -1,0 +1,129 @@
+{
+  "title": "Chamberlain University: College of Nursing & Public Health",
+  "themeColor": null,
+  "msColor": null,
+  "ogTitle": "Homepage",
+  "ogDescription": "Request information to connect with an Enrollment Representative today.",
+  "ogImage": "https://www.chamberlain.edu/themes/custom/chm_base/images/chm-footer-logo.png",
+  "ogSiteName": "Chamberlain University",
+  "favicon": "https://www.chamberlain.edu/themes/custom/chm_base_2025/favicon.ico",
+  "googleFontsLinks": [],
+  "fontFaces": [
+    {
+      "family": "slick",
+      "src": "url(\"/libraries/slick-carousel/slick/./fonts/slick.woff\") format(\"woff\"), url(\"/libraries/slick-carousel/slick/./fonts/slick.ttf\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "chm-icomoon",
+      "src": "url(\"/themes/custom/chm_base_2025/fonts/chm-icomoon/fonts/chm-icomoon.ttf?yp20c9\") format(\"truetype\"), url(\"/themes/custom/chm_base_2025/fonts/chm-icomoon/fonts/chm-icomoon.woff?yp20c9\") format(\"woff\")",
+      "weight": "normal"
+    },
+    {
+      "family": "chm-icomoon",
+      "src": "url(\"/themes/custom/chm_base_2025/fonts/chm-icomoon/fonts/chm-icomoon.ttf?q5nwy7\") format(\"truetype\"), url(\"/themes/custom/chm_base_2025/fonts/chm-icomoon/fonts/chm-icomoon.woff?q5nwy7\") format(\"woff\")",
+      "weight": "normal"
+    },
+    {
+      "family": "MuseoSans300Italic",
+      "src": "url(\"/themes/custom/chm_base_2025/fonts/museosans/MuseoSans_300_italic-webfont.woff\") format(\"woff\")",
+      "weight": ""
+    },
+    {
+      "family": "MuseoSans500Italic",
+      "src": "url(\"/themes/custom/chm_base_2025/fonts/museosans/MuseoSans_500_italic-webfont.woff\") format(\"woff\")",
+      "weight": ""
+    },
+    {
+      "family": "MuseoSans700Italic",
+      "src": "url(\"/themes/custom/chm_base_2025/fonts/museosans/MuseoSans_700_italic-webfont.woff\") format(\"woff\")",
+      "weight": ""
+    },
+    {
+      "family": "MuseoSans300",
+      "src": "url(\"/themes/custom/chm_base_2025/fonts/museosans/MuseoSansW05-300.woff2\") format(\"woff2\"), url(\"/themes/custom/chm_base_2025/fonts/museosans/MuseoSansW05-300.woff\") format(\"woff\")",
+      "weight": ""
+    },
+    {
+      "family": "MuseoSans500",
+      "src": "url(\"/themes/custom/chm_base_2025/fonts/museosans/MuseoSansW05-500.woff2\") format(\"woff2\"), url(\"/themes/custom/chm_base_2025/fonts/museosans/MuseoSansW05-500.woff\") format(\"woff\")",
+      "weight": ""
+    },
+    {
+      "family": "MuseoSans700",
+      "src": "url(\"/themes/custom/chm_base_2025/fonts/museosans/MuseoSansW05-700.woff2\") format(\"woff2\"), url(\"/themes/custom/chm_base_2025/fonts/museosans/MuseoSansW05-700.woff\") format(\"woff\")",
+      "weight": ""
+    },
+    {
+      "family": "MuseoSans900",
+      "src": "url(\"/themes/custom/chm_base_2025/fonts/museosans/MuseoSansW05-900.woff2\") format(\"woff2\"), url(\"/themes/custom/chm_base_2025/fonts/museosans/MuseoSansW05-900.woff\") format(\"woff\")",
+      "weight": ""
+    },
+    {
+      "family": "MuseoSansCondensed300",
+      "src": "url(\"/themes/custom/chm_base_2025/fonts/museosans/MuseoSans_Condensed_300-webfont.woff2\") format(\"woff2\"), url(\"/themes/custom/chm_base_2025/fonts/museosans/MuseoSans_Condensed_300-webfont.woff\") format(\"woff\")",
+      "weight": ""
+    },
+    {
+      "family": "MuseoSansCondensed500",
+      "src": "url(\"/themes/custom/chm_base_2025/fonts/museosans/MuseoSans_Condensed_500-webfont.woff2\") format(\"woff2\"), url(\"/themes/custom/chm_base_2025/fonts/museosans/MuseoSans_Condensed_500-webfont.woff\") format(\"woff\")",
+      "weight": ""
+    },
+    {
+      "family": "MuseoSansCondensed700",
+      "src": "url(\"/themes/custom/chm_base_2025/fonts/museosans/MuseoSansCondW05-700.woff2\") format(\"woff2\"), url(\"/themes/custom/chm_base_2025/fonts/museosans/MuseoSansCondW05-700.woff\") format(\"woff\")",
+      "weight": ""
+    },
+    {
+      "family": "MuseoSansCondensed900",
+      "src": "url(\"/themes/custom/chm_base_2025/fonts/museosans/MuseoSans_Condensed_900-webfont.woff2\") format(\"woff2\"), url(\"/themes/custom/chm_base_2025/fonts/museosans/MuseoSans_Condensed_900-webfont.woff\") format(\"woff\")",
+      "weight": ""
+    },
+    {
+      "family": "Garamond",
+      "src": "url(\"/themes/custom/chm_base_2025/fonts/garamond/Garamond.otf\") format(\"opentype\")",
+      "weight": ""
+    },
+    {
+      "family": "GaramondBoldItalic",
+      "src": "url(\"/themes/custom/chm_base_2025/fonts/garamond/Garamond_Bold_Italic.otf\") format(\"opentype\")",
+      "weight": ""
+    },
+    {
+      "family": "GaramondItalic",
+      "src": "url(\"/themes/custom/chm_base_2025/fonts/garamond/Garamond_Italic.otf\") format(\"opentype\")",
+      "weight": ""
+    },
+    {
+      "family": "GaramondSemiboldItalic",
+      "src": "url(\"/themes/custom/chm_base_2025/fonts/garamond/Garamond_Semibold_Italic.otf\") format(\"opentype\")",
+      "weight": ""
+    },
+    {
+      "family": "GaramondBold",
+      "src": "url(\"/themes/custom/chm_base_2025/fonts/garamond/Garamond_Bold.otf\") format(\"opentype\")",
+      "weight": ""
+    },
+    {
+      "family": "GaramondSemibold",
+      "src": "url(\"/themes/custom/chm_base_2025/fonts/garamond/Garamond_Semibold.otf\") format(\"opentype\")",
+      "weight": ""
+    },
+    {
+      "family": "Source Sans Pro",
+      "src": "url(\"https://consent.trustarc.com/get?name=SourceSansPro-Regular.ttf\") format(\"truetype\"), url(\"https://consent.trustarc.com/get?name=SourceSansPro-Regular.woff\") format(\"woff\"), url(\"https://consent.trustarc.com/get?name=SourceSansPro-Regular.otf\") format(\"opentype\")",
+      "weight": ""
+    }
+  ],
+  "logoCandidates": [
+    "https://www.chamberlain.edu/themes/custom/chm_base_2025/images/shield.svg",
+    "https://www.chamberlain.edu/themes/custom/chm_base_2025/images/blue-logo.svg",
+    "https://www.chamberlain.edu/themes/custom/chm_base_2025/images/white-logo.svg",
+    "https://www.chamberlain.edu/themes/custom/chm_base_2025/images/shield.svg",
+    "https://www.chamberlain.edu/themes/custom/chm_base_2025/images/blue-logo.svg",
+    "https://www.chamberlain.edu/themes/custom/chm_base_2025/images/white-logo.svg",
+    "https://www.chamberlain.edu/sites/g/files/krcnkv451/files/styles/atge_1_1_crop_md/public/images/default-source/locations-images/houston-texas-nursing-college-chamberlain-college-of-nursing.jpg?h=e13ba591&itok=b-Y2Zt0S",
+    "https://www.chamberlain.edu/themes/custom/chm_base_2025/images/chm-footer-logo.webp"
+  ],
+  "heroBgImage": null
+}

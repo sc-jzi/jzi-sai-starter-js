@@ -1,21 +1,21 @@
-// Financial
+// Financial — Chamberlain University theme
 body.site-financial,
 .site-financial {
-  --text-body: #333;
+  --text-body: #1A1A1A;
   --text-body-inverted: #fff;
-  --text-colored: #034c81;
+  --text-colored: #003A70;
   --text-footer: #fff;
-  --text-accent: #a82a39;
+  --text-accent: #003A70;
   --bg-body: #fff;
-  --bg-footer: #333;
-  --bg-main: #f0f5f7;
-  --bg-main-alt: #f0f5f7;
-  --bg-color: #c5e4f3;
-  --bg-saturated: #034c81;
-  --bg-accent: #c03021;
-  --border-color: #f0f5f7;
+  --bg-footer: #003A70;
+  --bg-main: #F4F7FA;
+  --bg-main-alt: #F4F7FA;
+  --bg-color: #FFC20E;
+  --bg-saturated: #013A81;
+  --bg-accent: #FFC20E;
+  --border-color: #D8DEE6;
   --hr-color: #fff;
-  --roundness: 1rem;
+  --roundness: 1.5rem;
 }
 
 body.site-financial.dark,

@@ -1,15 +1,34 @@
 // Below are built-in components that are available in the app, it's recommended to keep them as is
+import { NextjsContentSdkComponent } from '@sitecore-content-sdk/nextjs';
 
-import { BYOCServerWrapper, NextjsContentSdkComponent, FEaaSServerWrapper } from '@sitecore-content-sdk/nextjs';
+
+import { BYOCServerWrapper, FEaaSServerWrapper } from '@sitecore-content-sdk/nextjs';
 import { Form } from '@sitecore-content-sdk/nextjs';
 
-// end of built-in components
+// end of built-in import section
 import * as ThemeSwitcher from 'src/components/utilities/ThemeSwitcher';
 import * as SiteTheme from 'src/components/utilities/SiteTheme';
 import * as LoanCalculator from 'src/components/utilities/LoanCalculator';
 import * as LanguageSwitcher from 'src/components/utilities/LanguageSwitcher';
 import * as ContactForm from 'src/components/utilities/ContactForm';
 import * as ApplicationForm from 'src/components/utilities/ApplicationForm';
+import * as SuggestionBlock from 'src/components/search/SuggestionBlock';
+import * as Spinner from 'src/components/search/Spinner';
+import * as SortOrder from 'src/components/search/SortOrder';
+import * as SearchResultsComponent from 'src/components/search/SearchResultsComponent';
+import * as SearchResults from 'src/components/search/SearchResults';
+import * as SearchProvider from 'src/components/search/SearchProvider';
+import * as SearchPagination from 'src/components/search/SearchPagination';
+import * as SearchFacets from 'src/components/search/SearchFacets';
+import * as ResultsPerPage from 'src/components/search/ResultsPerPage';
+import * as QuestionsAnswers from 'src/components/search/QuestionsAnswers';
+import * as QueryResultsSummary from 'src/components/search/QueryResultsSummary';
+import * as PreviewSearch from 'src/components/search/PreviewSearch';
+import * as HomeHighlighted from 'src/components/search/HomeHighlighted';
+import * as Filter from 'src/components/search/Filter';
+import * as CardViewSwitcher from 'src/components/search/CardViewSwitcher';
+import * as ArticleHorizontalCard from 'src/components/search/ArticleHorizontalCard';
+import * as ArticleCard from 'src/components/search/ArticleCard';
 import * as ColumnSplitter from 'src/components/pagestructure/ColumnSplitter';
 import * as TwoColumnCta from 'src/components/pagecontent/TwoColumnCta';
 import * as ThreeColumnCta from 'src/components/pagecontent/ThreeColumnCta';
@@ -21,6 +40,7 @@ import * as Questions from 'src/components/pagecontent/Questions';
 import * as PromoCta from 'src/components/pagecontent/PromoCta';
 import * as ProjectList from 'src/components/pagecontent/ProjectList';
 import * as ProjectDetails from 'src/components/pagecontent/ProjectDetails';
+import * as ProgramCarousel from 'src/components/pagecontent/ProgramCarousel';
 import * as PartialDesignDynamicPlaceholder from 'src/components/pagecontent/PartialDesignDynamicPlaceholder';
 import * as ParallaxBanner from 'src/components/pagecontent/ParallaxBanner';
 import * as PageBackground from 'src/components/pagecontent/PageBackground';
@@ -62,6 +82,23 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['LanguageSwitcher', { ...LanguageSwitcher, componentType: 'client' }],
   ['ContactForm', { ...ContactForm, componentType: 'client' }],
   ['ApplicationForm', { ...ApplicationForm, componentType: 'client' }],
+  ['SuggestionBlock', { ...SuggestionBlock, componentType: 'client' }],
+  ['Spinner', { ...Spinner }],
+  ['SortOrder', { ...SortOrder, componentType: 'client' }],
+  ['SearchResultsComponent', { ...SearchResultsComponent, componentType: 'client' }],
+  ['SearchResults', { ...SearchResults, componentType: 'client' }],
+  ['SearchProvider', { ...SearchProvider, componentType: 'client' }],
+  ['SearchPagination', { ...SearchPagination, componentType: 'client' }],
+  ['SearchFacets', { ...SearchFacets, componentType: 'client' }],
+  ['ResultsPerPage', { ...ResultsPerPage, componentType: 'client' }],
+  ['QuestionsAnswers', { ...QuestionsAnswers, componentType: 'client' }],
+  ['QueryResultsSummary', { ...QueryResultsSummary, componentType: 'client' }],
+  ['PreviewSearch', { ...PreviewSearch, componentType: 'client' }],
+  ['HomeHighlighted', { ...HomeHighlighted, componentType: 'client' }],
+  ['Filter', { ...Filter, componentType: 'client' }],
+  ['CardViewSwitcher', { ...CardViewSwitcher, componentType: 'client' }],
+  ['ArticleHorizontalCard', { ...ArticleHorizontalCard, componentType: 'client' }],
+  ['ArticleCard', { ...ArticleCard, componentType: 'client' }],
   ['ColumnSplitter', { ...ColumnSplitter, componentType: 'client' }],
   ['TwoColumnCta', { ...TwoColumnCta, componentType: 'client' }],
   ['ThreeColumnCta', { ...ThreeColumnCta, componentType: 'client' }],
@@ -73,6 +110,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['PromoCta', { ...PromoCta, componentType: 'client' }],
   ['ProjectList', { ...ProjectList, componentType: 'client' }],
   ['ProjectDetails', { ...ProjectDetails, componentType: 'client' }],
+  ['ProgramCarousel', { ...ProgramCarousel, componentType: 'client' }],
   ['PartialDesignDynamicPlaceholder', { ...PartialDesignDynamicPlaceholder }],
   ['ParallaxBanner', { ...ParallaxBanner, componentType: 'client' }],
   ['PageBackground', { ...PageBackground, componentType: 'client' }],

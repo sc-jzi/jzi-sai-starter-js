@@ -1,0 +1,23 @@
+variantSpecs:
+  - position: 2
+    componentName: "Hero"
+    variantName: "Chamberlain"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "Full-bleed photo, overlay, left-aligned headline and dropdown"
+      typography: "Uppercase condensed PREPARING NURSES, italic Garamond subline"
+      buttons: "White RN dropdown + gold Get Started pill"
+  - position: 5
+    componentName: "ProgramCarousel"
+    variantName: "Chamberlain"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "Horizontal snap scroller, 0–n white cards"
+      distinctive: "Navy circular icons, arrow links, gray track + navy fill, circular prev/next"
+  - position: 10
+    componentName: "ThreeColumnCta"
+    variantName: "ChamberlainCare"
+    baseVariant: "WithIcons"
+    visualDifferences:
+      layout: "Three white rounded cards"
+      distinctive: "Renders VideoN when set, otherwise ImageN"

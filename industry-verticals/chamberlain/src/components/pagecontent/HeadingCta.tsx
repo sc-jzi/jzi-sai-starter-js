@@ -151,3 +151,86 @@ export const Centered = (props: HeadingCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* Chamberlain variant — navy #1 headline */
+export const Chamberlain = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component heading-cta chamberlain-heading ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="heading-content-wrapper" style={{ borderLeft: '8px solid #F5B611', paddingLeft: '1.5em' }}>
+          {(props.fields?.Eyebrow?.value || isPageEditing) && (
+            <h6 className="eyebrow-accent">
+              <Text field={props.fields?.Eyebrow} />
+            </h6>
+          )}
+          <h2>
+            <Text field={props.fields?.Heading} />
+          </h2>
+          <p>
+            <Text field={props.fields?.Text} />
+          </p>
+          {(isPageEditing || props.fields?.Link?.value?.href) && (
+            <Link field={props.fields.Link} className="chamberlain-link-arrow" style={{ color: '#0151b4' }} />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* Chamberlain variant — navy scholarship bar */
+export const ChamberlainBanner = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component heading-cta chamberlain-banner ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="chamberlain-banner__inner">
+          <h2>
+            <Text field={props.fields?.Heading} />
+          </h2>
+          {(isPageEditing || props.fields?.Link?.value?.href) && (
+            <Link field={props.fields.Link} className="button button-accent" />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* Chamberlain variant — navy partner search */
+export const ChamberlainSearch = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component heading-cta chamberlain-search ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <h2>
+          <Text field={props.fields?.Heading} />
+        </h2>
+        {(props.fields?.Text?.value || isPageEditing) && (
+          <p>
+            <Text field={props.fields?.Text} />
+          </p>
+        )}
+        <div className="chamberlain-search__field">
+          <input type="search" placeholder="Search employers or associations" aria-label="Search partners" />
+          {(isPageEditing || props.fields?.Link?.value?.href) && (
+            <Link field={props.fields.Link} className="button button-main" />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};

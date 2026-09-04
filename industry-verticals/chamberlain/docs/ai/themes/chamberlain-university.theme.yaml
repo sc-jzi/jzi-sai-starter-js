@@ -1,0 +1,128 @@
+# Client Brand Theme — Chamberlain University
+# Extracted from: https://www.chamberlain.edu/
+# Playwright scraper + user screenshot + computed CSS tokens.
+
+client:
+  name: "Chamberlain University"
+  sourceUrl: "https://www.chamberlain.edu/"
+  extractedAt: "2026-09-04T14:40:00Z"
+  extractedBy: "cursor"
+
+colors:
+  primary: "#003A70"
+  primaryForeground: "#ffffff"
+  secondary: "#013A81"
+  secondaryForeground: "#ffffff"
+  accent: "#FFC20E"
+  accentForeground: "#003A70"
+  background: "#ffffff"
+  foreground: "#1A1A1A"
+  muted: "#F4F7FA"
+  mutedForeground: "#5A6570"
+  headerBackground: "#ffffff"
+  headerForeground: "#003A70"
+  footerBackground: "#003A70"
+  footerForeground: "#ffffff"
+  border: "#D8DEE6"
+  ring: "#003A70"
+  extra:
+    - { name: "goldCta", value: "#FFC20E" }
+    - { name: "tealAccent", value: "#00A3AD" }
+    - { name: "navyDeep", value: "#012B54" }
+    - { name: "heroOverlay", value: "#003A70" }
+
+typography:
+  headingFamily: "'Barlow Condensed', sans-serif"
+  headingWeight: "700"
+  bodyFamily: "'Source Sans 3', sans-serif"
+  bodyWeight: "400"
+  monoFamily: "'Roboto Mono', monospace"
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+  scale:
+    hero: "3.4375rem"
+    h1: "3.4375rem"
+    h2: "1.875rem"
+    h3: "1.5rem"
+    body: "1rem"
+    small: "0.875rem"
+  headingTransform: "uppercase"
+  letterSpacing: "normal"
+  lineHeight: "relaxed"
+
+spacing:
+  density: "spacious"
+  sectionGap: "5rem"
+  containerMaxWidth: "1175px"
+  containerPadding: "1.5rem"
+
+shape:
+  borderRadius: "0.5rem"
+  buttonRadius: "2.5rem"
+  cardRadius: "1.5rem"
+  imageRadius: "0"
+  shadowStyle: "none"
+  borderStyle: "none"
+
+tone:
+  overall: "corporate"
+  colorMode: "mixed"
+  contrast: "high"
+  imagery: "photography"
+  heroStyle: "full-bleed-image"
+  cardStyle: "bordered"
+  navStyle: "transparent-overlay"
+
+tailwind:
+  colors:
+    brand:
+      primary: "#003A70"
+      secondary: "#013A81"
+      accent: "#FFC20E"
+  fontFamily:
+    heading: ["Barlow Condensed", "sans-serif"]
+    body: ["Source Sans 3", "sans-serif"]
+  borderRadius:
+    DEFAULT: "0.5rem"
+    button: "2.5rem"
+    card: "1.5rem"
+
+cssVariables: |
+  :root {
+    --brand-primary: #003A70;
+    --brand-primary-foreground: #ffffff;
+    --brand-secondary: #013A81;
+    --brand-secondary-foreground: #ffffff;
+    --brand-accent: #FFC20E;
+    --brand-accent-foreground: #003A70;
+    --brand-bg: #ffffff;
+    --brand-fg: #1A1A1A;
+    --brand-muted: #F4F7FA;
+    --brand-muted-fg: #5A6570;
+    --brand-header-bg: #ffffff;
+    --brand-header-fg: #003A70;
+    --brand-footer-bg: #003A70;
+    --brand-footer-fg: #ffffff;
+    --brand-border: #D8DEE6;
+    --brand-ring: #003A70;
+    --brand-heading-font: 'Barlow Condensed', sans-serif;
+    --brand-body-font: 'Source Sans 3', sans-serif;
+    --brand-radius: 0.5rem;
+    --brand-button-radius: 2.5rem;
+    --brand-card-radius: 1.5rem;
+  }
+
+extraction:
+  confidence: "high"
+  method: "playwright-full"
+  notes:
+    - "Primary navy #003A70 is computed primaryButtonBackground (rgb(0, 58, 112)). Link color #013A81 is stored as secondary."
+    - "Accent gold #FFC20E is the Get Started / Request Information pill. Scraper sampled a navy button, not the yellow CTA — gold confirmed from screenshots. Text on gold is navy, not white."
+    - "Teal #00A3AD is a decorative accent (diagonal slashes, section highlights). Stored as extra.tealAccent."
+    - "Headlines use proprietary Museo Sans Condensed 700 (uppercase, 55px). Demo substitute: Barlow Condensed 700."
+    - "Italic serif emphasis ('to Meet the Moment') uses licensed Garamond. Demo substitute: EB Garamond italic, loaded via googleFontsUrl."
+    - "Body uses proprietary Museo Sans 300. Demo substitute: Source Sans 3."
+    - "Nav is a transparent overlay on the hero (white wordmark). A navy start-dates bar sits at the hero bottom."
+    - "Hero is full-bleed photography with white condensed headline + Garamond italic subline, RN dropdown, and gold Get Started pill."
+    - "Primary CTAs are pills (computed radius 40px). Cards are 24px radius with no shadow."
+    - "Color mode is mixed: white content sections, navy hero bar / scholarship banner / footer, teal decorative accents."
+    - "Implementation library is PLAY! Financial (same as Walden), not the UIIM catalog. Content root: /sitecore/content/covista/Chamberlain."

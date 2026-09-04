@@ -1,0 +1,550 @@
+# Demo Build Plan — Chamberlain University
+# Mapped to PLAY! Financial components on /sitecore/content/covista/Chamberlain.
+# registryId is the conceptual uiim match; manifestName is the live rendering.
+
+client:
+  name: "Chamberlain University"
+  sourceUrl: "https://www.chamberlain.edu/"
+  themeFile: "docs/ai/themes/chamberlain-university.theme.yaml"
+  analyzedAt: "2026-09-04T14:45:00Z"
+  contentRoot: "/sitecore/content/covista/Chamberlain"
+  codeRoot: "industry-verticals/chamberlain"
+
+pageAnalysis:
+  screenshotFiles:
+    desktop: "docs/ai/themes/chamberlain-university/screenshot-desktop.png"
+    mobile: "docs/ai/themes/chamberlain-university/screenshot-mobile.png"
+    hero: "docs/ai/themes/chamberlain-university/screenshot-hero.png"
+    user: "docs/ai/demos/chamberlain-university/screenshot-user.jpg"
+  totalSections: 17
+  templateMatches: 16
+  customRequired: 1
+
+sections:
+  - position: 1
+    description: "Transparent header over the hero — white Chamberlain wordmark, nav, gold Request Information and navy Apply."
+    matchedComponent:
+      registryId: "navigation-header"
+      manifestName: "Header"
+      componentName: "Header"
+      renderingId: "{81317D3B-F929-426A-83EC-421982F8F1E6}"
+      variant: "WithLogoImage"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "context-only"
+      apiAddable: false
+      variantMatch: "partial"
+    sectionBackground: "dark"
+    content:
+      Title: "Chamberlain University"
+      Description: "Programs | Admissions | Financial Aid | About | Locations"
+      CtaLabel: "Request Information"
+    contentNotes: "Lives in the header partial. Nav links come from placeholders. Assign the white Chamberlain wordmark to LogoImage for the overlay treatment."
+    variantReason: "WithLogoImage shows the brand mark. Theme tone.navStyle is transparent-overlay — Phase 5.5 should restyle as white type on the hero photo."
+    customVariantNeeded:
+      name: "Chamberlain"
+      description: "Transparent overlay, white wordmark, gold Request Information pill and navy Apply pill"
+      parentComponent: "Header"
+
+  - position: 2
+    description: "Full-bleed photo of celebrating clinicians with white condensed headline, Garamond italic subline, RN dropdown, and gold Get Started."
+    matchedComponent:
+      registryId: "hero-banner"
+      manifestName: "Hero"
+      componentName: "Hero"
+      renderingId: "{B7CDF75E-716A-4C59-B9B1-CD970AE0A4AE}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "none"
+    sectionBackground: "dark"
+    content:
+      Title: "PREPARING NURSES to Meet the Moment"
+      Description: "Education built on care, community, and real-world experience."
+      LinkText: "Get Started"
+      LinkHref: "https://www.chamberlain.edu/"
+    contentNotes: "Hero image is a diverse group of clinicians in scrubs, smiling and clapping in a hospital hallway with balloons. Default Hero has Title/Text/Image/Link only — the RN dropdown needs a Chamberlain variant. Do not drop the finder UI."
+    variantReason: "Theme tone.heroStyle is full-bleed-image. Financial Hero overlays text on Image; HeroBanner is a split layout and would be wrong."
+    customVariantNeeded:
+      name: "Chamberlain"
+      description: "Full-bleed photo, white condensed PREPARING NURSES + italic Garamond subline, white RN dropdown, gold Get Started pill"
+      parentComponent: "Hero"
+    imageFields:
+      - { field: "Image", description: "Diverse clinicians in scrubs celebrating in a bright hospital hallway" }
+
+  - position: 3
+    description: "Navy bar overlapping the hero with three upcoming start-date columns."
+    matchedComponent:
+      registryId: "tab-navigation"
+      manifestName: "ThreeColumnCta"
+      componentName: "ThreeColumnCta"
+      renderingId: "{AD385021-CE2B-4FC1-89AA-207D408034A8}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "none"
+    sectionBackground: "primary"
+    content:
+      Title: "Upcoming Starting Dates"
+    children:
+      - { Title: "Next Start Date", Text: "Aug 31" }
+      - { Title: "Upcoming Start Dates", Text: "Oct 26, Jan 4" }
+      - { Title: "MPAS Campuses", Text: "Sept 2026" }
+    contentNotes: "Live bar is a semi-transparent navy strip on the hero. ThreeColumnCta Default expects images — Chamberlain variant should be text-only date columns on navy."
+    variantReason: "Three equal date columns match ThreeColumnCta better than a single HeadingCta."
+    customVariantNeeded:
+      name: "ChamberlainStartDates"
+      description: "Navy full-width bar, white labels, bold dates, no photos"
+      parentComponent: "ThreeColumnCta"
+
+  - position: 4
+    description: "White section intro — '#1 Largest School of Nursing in the US' with a short supporting paragraph."
+    matchedComponent:
+      registryId: "rich-text-block"
+      manifestName: "HeadingCta"
+      componentName: "HeadingCta"
+      renderingId: "{89E1D547-7CD6-4EF0-9A27-1E99410797DD}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "partial"
+    sectionBackground: "default"
+    content:
+      Heading: "#1 Largest School of Nursing in the US"
+      Text: "Join the nation’s largest nursing school. With online and campus options, find the degree that fits your calling."
+      LinkText: "View All Programs"
+      LinkHref: "https://www.chamberlain.edu/"
+    contentNotes: "FourColumnCta has no parent heading field, so this intro sits above the program cards. Hide or restyle the button if the live treatment is text-only."
+    variantReason: "HeadingCta is the existing heading + body + optional link block."
+    customVariantNeeded:
+      name: "Chamberlain"
+      description: "Navy serif/condensed #1 headline, short body, optional gold-arrow View All Programs"
+      parentComponent: "HeadingCta"
+
+  - position: 5
+    description: "Horizontal program cards carousel with 0–n cards, navy circular icons, program titles, arrow links, progress track, and prev/next controls."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "ProgramCarousel"
+      componentName: "ProgramCarousel"
+      renderingId: "{7C141802-DF99-4105-8063-08003B3B4656}"
+      variant: "Default"
+      matchType: "custom"
+      matchConfidence: "high"
+      kind: "custom"
+      apiAddable: true
+      variantMatch: "none"
+    sectionBackground: "muted"
+    content:
+      Title: "Find the degree that fits your calling"
+    datasource:
+      path: "/sitecore/content/covista/Chamberlain/Home/personal"
+      itemId: "{F16F03EA-196C-45BC-84CC-C876920F6C60}"
+      childTemplate: "Content Page"
+      childTemplateId: "{1226C3C7-2D1F-48F5-87B4-C1DA459F05E5}"
+    children: []
+    contentNotes: "NEW custom component. Datasource is a tree item, not a Data-folder list. Query children of /sitecore/content/covista/Chamberlain/Home/personal that use Content Page. Each card uses Title, BackgroundImage as the circular icon, and NavigationTitle (or grandchild Content Pages) as arrow links. Handle 0–n cards. Do not reuse Financial Carousel (full-bleed hero slider) or FourColumnCta (fixed 4 columns)."
+    variantReason: "No existing Financial component can render a variable-length card slider from page children."
+    customVariantNeeded:
+      name: "Chamberlain"
+      description: "Light-blue band with shield pattern, white rounded cards, navy circular icons, bold navy titles, medium-blue arrow links, gray progress track, two circular navy prev/next buttons"
+      parentComponent: "ProgramCarousel"
+    imageFields:
+      - { field: "BackgroundImage", description: "Program icon used inside the navy circle on each child Content Page" }
+
+  - position: 6
+    description: "Proudly Accredited — row of accreditation seals (HLC, CCNE, NLN CNEA, CSWE)."
+    matchedComponent:
+      registryId: "logo-cloud"
+      manifestName: "FiveColumnCta"
+      componentName: "FiveColumnCta"
+      renderingId: "{333DEF3E-C272-4AD9-A493-8D5CCAE08312}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "medium"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "partial"
+    sectionBackground: "default"
+    content:
+      Title: "Proudly Accredited"
+      Text1: "Higher Learning Commission"
+      Text2: "CCNE"
+      Text3: "NLN CNEA"
+      Text4: "CSWE"
+    contentNotes: "Fifth slot can stay empty or hold an additional seal from Phase 2.5. FiveColumnCta Default shows image + label — restyle as a quiet logo row."
+    variantReason: "Closest existing multi-logo strip. Financial has no LogoCloud."
+    customVariantNeeded:
+      name: "ChamberlainLogos"
+      description: "Centered Proudly Accredited heading, grayscale or color seals in a single row"
+      parentComponent: "FiveColumnCta"
+    imageFields:
+      - { field: "Image1", description: "HLC seal" }
+      - { field: "Image2", description: "CCNE seal" }
+      - { field: "Image3", description: "NLN CNEA seal" }
+      - { field: "Image4", description: "CSWE or COA seal" }
+
+  - position: 7
+    description: "Split banner announcing Healthcare AI Certificates with Google Cloud — logos, offer copy, gold CTA."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      componentName: "PromoCta"
+      renderingId: "{1A375FAC-6CC1-4A5A-A159-9BC6DBC66B80}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "partial"
+    sectionBackground: "muted"
+    content:
+      Eyebrow: "Chamberlain University in partnership with Google Cloud"
+      Title: "Announcing New Healthcare AI Certificates at Chamberlain"
+      Description: "Graduate with an industry-recognized AI credential from Chamberlain, in partnership with Google Cloud, tailored to your healthcare specialty."
+      LinkText: "Explore Certificate"
+      LinkHref: "https://www.chamberlain.edu/"
+    contentNotes: "Live treatment includes Chamberlain + Google Cloud logos beside the offer."
+    variantReason: "PromoCta Default is a 50/50 image + text split with a primary CTA."
+    customVariantNeeded:
+      name: "Chamberlain"
+      description: "Muted band, partner logos, navy headline, gold pill CTA"
+      parentComponent: "PromoCta"
+    imageFields:
+      - { field: "Image", description: "Chamberlain + Google Cloud partnership visual or lifestyle photo" }
+
+  - position: 8
+    description: "Solid navy conversion bar — $87M in scholarships and grants with a gold Request Information button."
+    matchedComponent:
+      registryId: "cta-banner"
+      manifestName: "HeadingCta"
+      componentName: "HeadingCta"
+      renderingId: "{89E1D547-7CD6-4EF0-9A27-1E99410797DD}"
+      variant: "Compact"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "partial"
+    sectionBackground: "primary"
+    content:
+      Heading: "Chamberlain awarded more than $87 million in scholarships and grants in 2025"
+      Text: ""
+      LinkText: "Request Information"
+      LinkHref: "https://www.chamberlain.edu/"
+    contentNotes: "Screenshot variants also show a recommend-to-a-colleague line. Use the $87M headline from the live site."
+    variantReason: "HeadingCta Compact is a horizontal heading + button, closer to a conversion strip than CtaBanner (which expects a large image)."
+    customVariantNeeded:
+      name: "ChamberlainBanner"
+      description: "Navy full-width bar, white condensed headline, gold pill on the right"
+      parentComponent: "HeadingCta"
+
+  - position: 9
+    description: "Navy 'Built To Lift Up Those Who Care' block with three vertical portrait video cards."
+    matchedComponent:
+      registryId: "testimonial-quote"
+      manifestName: "ThreeColumnCta"
+      componentName: "ThreeColumnCta"
+      renderingId: "{AD385021-CE2B-4FC1-89AA-207D408034A8}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "medium"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "none"
+    sectionBackground: "dark"
+    content:
+      Title: "Built To Lift Up Those Who Care"
+      Description: "With expert faculty to guide you, personalized coaching that keeps you on track, and generous scholarships that open doors, you’ll have peace of mind knowing that while you’ve got this, we’ve got you."
+    children:
+      - { Title: "Angela Majied, MSN '23, BSN '22", Text: "" }
+      - { Title: "Jackie Walker Rice, MSN '18, BSN '14", Text: "" }
+      - { Title: "Brett Dodd, MSN '17, BSN '15", Text: "" }
+    contentNotes: "Financial Testimonials is a quote/star carousel, not portrait videos. ThreeColumnCta with portrait images is the closer layout. Videos are metadata-only — use poster images. Section heading is not a ThreeColumnCta field — add in the Chamberlain variant or a HeadingCta above."
+    variantReason: "Three equal portrait cards. Do not use Testimonials Default (quote + stars)."
+    customVariantNeeded:
+      name: "ChamberlainVideos"
+      description: "Navy band, white serif heading, three tall portrait cards with play affordance"
+      parentComponent: "ThreeColumnCta"
+    imageFields:
+      - { field: "Image1", description: "Portrait / video poster of Angela Majied" }
+      - { field: "Image2", description: "Portrait / video poster of Jackie Walker Rice" }
+      - { field: "Image3", description: "Portrait / video poster of Brett Dodd" }
+
+  - position: 10
+    description: "Three white support cards — Chamberlain Care, nation’s largest nursing school, and 25+ campuses."
+    matchedComponent:
+      registryId: "value-proposition-grid"
+      manifestName: "ThreeColumnCta"
+      componentName: "ThreeColumnCta"
+      renderingId: "{AD385021-CE2B-4FC1-89AA-207D408034A8}"
+      variant: "WithIcons"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "partial"
+    sectionBackground: "default"
+    content: {}
+    children:
+      - { Title: "Comprehensive Support With Chamberlain Care", Text: "Chamberlain Care® promotes compassion at every level, from self to patient care.", LinkText: "Learn More", LinkHref: "https://www.chamberlain.edu/" }
+      - { Title: "No. 1: Nation’s Largest Nursing School", Text: "With our size comes strength. More guidance, more connections, more growth.", LinkText: "Learn More", LinkHref: "https://www.chamberlain.edu/" }
+      - { Title: "25+ Campuses, Flexible Online Options", Text: "Whatever your passion or schedule, there’s a program for you.", LinkText: "Explore Programs", LinkHref: "https://www.chamberlain.edu/" }
+    contentNotes: "Each card must support image OR video. Add optional Video1/Video2/Video3 File fields on the shared Financial Three Column CTA template. ChamberlainCare renders a video player when VideoN is set, otherwise ImageN. Unused optional fields are fine for Walden."
+    variantReason: "Three icon + title + body cards match ThreeColumnCta WithIcons, extended for media-or-video."
+    customVariantNeeded:
+      name: "ChamberlainCare"
+      description: "White rounded cards, image or video media, navy titles, gold-arrow links"
+      parentComponent: "ThreeColumnCta"
+    imageFields:
+      - { field: "Image1", description: "Chamberlain Care photo or video poster" }
+      - { field: "Image2", description: "Largest nursing school photo or video poster" }
+      - { field: "Image3", description: "Campus / online options photo or video poster" }
+
+  - position: 11
+    description: "Financial aid stats — 12,000+ partner locations and 90% of students receiving assistance."
+    matchedComponent:
+      registryId: "trust-stats"
+      manifestName: "StatsCounter"
+      componentName: "StatsCounter"
+      renderingId: "{316889FA-FDD4-42A6-A034-201124FE54E8}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "partial"
+    sectionBackground: "default"
+    content:
+      Value1: "12000"
+      Symbol1: "+"
+      Caption1: "healthcare partner locations with reduced tuition rates available"
+      Value2: "90"
+      Symbol2: "%"
+      Caption2: "of students receive some form of financial assistance"
+      Value3: "87"
+      Symbol3: "M"
+      Caption3: "in scholarships and grants awarded in 2025"
+    contentNotes: "StatsCounter supports three number slots plus optional side images. Live section often shows two stats — third slot can hold $87M or stay visually de-emphasized."
+    variantReason: "Animated big numbers with captions — exact StatsCounter pattern."
+    customVariantNeeded:
+      name: "Chamberlain"
+      description: "Large navy numerals, short captions, optional decorative side imagery"
+      parentComponent: "StatsCounter"
+
+  - position: 12
+    description: "Navy partner-tuition finder — 'See If You Qualify' with an employer/association search field."
+    matchedComponent:
+      registryId: "cta-banner"
+      manifestName: "HeadingCta"
+      componentName: "HeadingCta"
+      renderingId: "{89E1D547-7CD6-4EF0-9A27-1E99410797DD}"
+      variant: "Compact"
+      matchType: "template"
+      matchConfidence: "medium"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "none"
+    sectionBackground: "primary"
+    content:
+      Heading: "See If You Qualify for Partner Tuition Rates"
+      Text: "Chamberlain University has 12,000+ healthcare and educational institution, college and association partner locations across the country."
+      LinkText: "Search Partners"
+      LinkHref: "https://www.chamberlain.edu/"
+    contentNotes: "Live UI is a search input. HeadingCta only has a button — Chamberlain variant can add a fake search field or accept a Search Partners CTA."
+    variantReason: "Horizontal navy conversion strip is HeadingCta Compact."
+    customVariantNeeded:
+      name: "ChamberlainSearch"
+      description: "Navy bar, white heading, white search-style input or gold Search Partners pill"
+      parentComponent: "HeadingCta"
+
+  - position: 13
+    description: "Commitment to Completion Grant — save up to $11,000, including two courses at no cost."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      componentName: "PromoCta"
+      renderingId: "{1A375FAC-6CC1-4A5A-A159-9BC6DBC66B80}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "partial"
+    sectionBackground: "muted"
+    content:
+      Eyebrow: "Commitment to Completion Grant"
+      Title: "Save up to $11,000"
+      Description: "As the nation’s #1 largest nursing school, we’re making our biggest commitment yet with the Commitment to Completion Grant: up to $11,000 in total savings, including two courses at no cost, applied automatically."
+      LinkText: "Explore our grants"
+      LinkHref: "https://www.chamberlain.edu/"
+    contentNotes: "Screenshot also shows a light grey grant box. PromoCta Default is a split image + copy layout."
+    variantReason: "Offer + CTA + supporting image is PromoCta."
+    customVariantNeeded:
+      name: "ChamberlainGrant"
+      description: "Muted grant card, large $11,000 figure, gold-arrow Explore our grants"
+      parentComponent: "PromoCta"
+    imageFields:
+      - { field: "Image", description: "Students or grant graphic supporting Completion Grant" }
+
+  - position: 14
+    description: "Uplifting Our Nurses / DAISY Foundation — photo of a nurse with a child and Learn More."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      componentName: "PromoCta"
+      renderingId: "{1A375FAC-6CC1-4A5A-A159-9BC6DBC66B80}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "partial"
+    sectionBackground: "default"
+    content:
+      Eyebrow: "Chamberlain and The DAISY Foundation™"
+      Title: "Uplifting Our Nurses"
+      Description: "As The DAISY Foundation’s Founding Educational Partner, Chamberlain is proud to be the No. 1 awarder of student and educator DAISY Awards®, supporting nurses with scholarships, research opportunities, and career development."
+      LinkText: "Learn More"
+      LinkHref: "https://www.chamberlain.edu/"
+    contentNotes: "User screenshot labeled this Helping Our Nurses. Live heading is Uplifting Our Nurses."
+    variantReason: "Standard 50/50 photo + copy split."
+    customVariantNeeded:
+      name: "ChamberlainDaisy"
+      description: "Photo of a nurse with a child, navy headline, gold or navy Learn More"
+      parentComponent: "PromoCta"
+    imageFields:
+      - { field: "Image", description: "Nurse smiling with a young child" }
+
+  - position: 15
+    description: "Insights to Inspire — featured article plus two smaller story tiles."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "ThreeColumnCta"
+      componentName: "ThreeColumnCta"
+      renderingId: "{AD385021-CE2B-4FC1-89AA-207D408034A8}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "medium"
+      kind: "simple"
+      apiAddable: true
+      variantMatch: "none"
+    sectionBackground: "default"
+    content:
+      Title: "Insights to Inspire"
+      Description: "Explore topics that ignite passion and purpose in your healthcare journey."
+    children:
+      - { Title: "Why More Men Should Consider the Field of Nursing", Text: "If you’re a man drawn to a helping profession, you may want to consider joining the RN workforce." }
+      - { Title: "Why I Chose Chamberlain… Again", Text: "Choosing a college or university is a big decision. But choosing a university for a second degree…" }
+      - { Title: "8 Great Reasons to Earn Your Master of Physician Assistant Studies", Text: "You’ve decided to become a physician assistant. Congratulations!" }
+    contentNotes: "Live layout is one large featured card + two stacked tiles (asymmetric). ThreeColumnCta is a symmetric 3-up. Chamberlain variant can enlarge the first card. Section heading is not a parent field."
+    variantReason: "Three story tiles is the closest existing grid. Do not invent an ArticleList dependency unless already on the page."
+    customVariantNeeded:
+      name: "ChamberlainInsights"
+      description: "Section heading plus 1 large + 2 stacked article cards, or equal 3-up with top images"
+      parentComponent: "ThreeColumnCta"
+    imageFields:
+      - { field: "Image1", description: "Male nurse working on a laptop" }
+      - { field: "Image2", description: "Student or campus story photo" }
+      - { field: "Image3", description: "Physician assistant / clinical photo" }
+
+  - position: 16
+    description: "FAQ accordion — Answers at every level."
+    matchedComponent:
+      registryId: "faq-accordion"
+      manifestName: "Accordion"
+      componentName: "Accordion"
+      renderingId: "{5816F979-C8BB-46E9-8EC8-513C6CAF41E6}"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "list"
+      apiAddable: true
+      variantMatch: "partial"
+    sectionBackground: "default"
+    content:
+      Title: "Answers at every level"
+    children:
+      - { Title: "Are Chamberlain College of Nursing programs accredited?", Content: "The baccalaureate, master’s, DNP, and post-graduate APRN certificate programs at Chamberlain University are accredited by the Commission on Collegiate Nursing Education." }
+      - { Title: "What kind of support does Chamberlain offer its students?", Content: "Chamberlain offers comprehensive support through Chamberlain Care®, dedicated faculty, NCLEX preparation, and the Practicum Commitment®." }
+      - { Title: "Does Chamberlain accept transfer credits from other schools?", Content: "Yes. Transfer requirements vary by program." }
+      - { Title: "Does Chamberlain provide financial aid or scholarships?", Content: "Yes. Scholarships are available for new, current, and transfer students who apply and qualify." }
+    contentNotes: "Accordion has no parent Title field — heading must be added in a Chamberlain variant or a HeadingCta above. Teal/gold diagonal accent on the left is decorative CSS."
+    variantReason: "Expandable Q&A is an exact Accordion match."
+    customVariantNeeded:
+      name: "Chamberlain"
+      description: "Navy heading, teal/gold slash accent, one-open accordion"
+      parentComponent: "Accordion"
+
+  - position: 17
+    description: "Navy mega footer — logo, Request Information / Apply, link columns, socials, legal."
+    matchedComponent:
+      registryId: "footer"
+      manifestName: "Footer"
+      componentName: "Footer"
+      renderingId: "{771A3F27-6448-44AC-ADD0-E5DE311C6E3B}"
+      variant: "WithSocials"
+      matchType: "template"
+      matchConfidence: "high"
+      kind: "context-only"
+      apiAddable: false
+      variantMatch: "partial"
+    sectionBackground: "primary"
+    content:
+      Title: "Chamberlain University"
+      Copyright: "© 2026 Chamberlain University LLC. All rights reserved."
+      LinkText: "Request Information"
+    contentNotes: "Lives in the footer partial. Financial Footer supports four text columns plus three social links — Chamberlain has more columns and both gold and navy CTAs."
+    variantReason: "WithSocials adds social icons used on the live footer."
+    customVariantNeeded:
+      name: "Chamberlain"
+      description: "Navy mega footer, white wordmark, gold Request Information, navy Apply, multi-column links, socials"
+      parentComponent: "Footer"
+
+customComponents:
+  - name: "ProgramCarousel"
+    filePath: "src/components/pagecontent/ProgramCarousel.tsx"
+    kind: "query-against-page"
+    datasourceTemplate: "Content Page"
+    datasourceTemplateId: "{1226C3C7-2D1F-48F5-87B4-C1DA459F05E5}"
+    datasourcePath: "/sitecore/content/covista/Chamberlain/Home/personal"
+    datasourceId: "{F16F03EA-196C-45BC-84CC-C876920F6C60}"
+    childFilterTemplate: "Content Page"
+    childFilterTemplateId: "{1226C3C7-2D1F-48F5-87B4-C1DA459F05E5}"
+    notes: "Do not create a Data-folder datasource item. Wire the rendering to the personal page and query Content Page children."
+
+buildOrder:
+  phase1_sitecore:
+    - { position: 2, componentName: "Hero", kind: "simple" }
+    - { position: 3, componentName: "ThreeColumnCta", kind: "simple", instance: "StartDates" }
+    - { position: 4, componentName: "HeadingCta", kind: "simple", instance: "LargestSchool" }
+    - { position: 5, componentName: "ProgramCarousel", kind: "custom", instance: "Programs" }
+    - { position: 6, componentName: "FiveColumnCta", kind: "simple", instance: "Accreditation" }
+    - { position: 7, componentName: "PromoCta", kind: "simple", instance: "GoogleCloud" }
+    - { position: 8, componentName: "HeadingCta", kind: "simple", instance: "Scholarships" }
+    - { position: 9, componentName: "ThreeColumnCta", kind: "simple", instance: "Videos" }
+    - { position: 10, componentName: "ThreeColumnCta", kind: "simple", instance: "CareCards" }
+    - { position: 11, componentName: "StatsCounter", kind: "simple" }
+    - { position: 12, componentName: "HeadingCta", kind: "simple", instance: "PartnerSearch" }
+    - { position: 13, componentName: "PromoCta", kind: "simple", instance: "CompletionGrant" }
+    - { position: 14, componentName: "PromoCta", kind: "simple", instance: "Daisy" }
+    - { position: 15, componentName: "ThreeColumnCta", kind: "simple", instance: "Insights" }
+    - { position: 16, componentName: "Accordion", kind: "list" }
+  phase2_theme: "Inline Chamberlain :root variables and load Barlow Condensed, EB Garamond, and Source Sans 3"
+  phase3_custom:
+    - { position: 5, componentName: "ProgramCarousel", kind: "custom" }
+    - { action: "Add optional Video1/Video2/Video3 File fields on Three Column CTA for section 10 image-or-video cards" }
+
+notes:
+  - "Header and Footer stay on the Home page partial designs — do not add via add_component_on_page."
+  - "Multiple HeadingCta, PromoCta, and ThreeColumnCta instances share one rendering; each gets its own datasource item."
+  - "Accordion renderingId is {5816F979-C8BB-46E9-8EC8-513C6CAF41E6}."
+  - "Section 5 ProgramCarousel datasources to {F16F03EA-196C-45BC-84CC-C876920F6C60} and reads Content Page children."
+  - "Section 10 cards render VideoN when present, otherwise ImageN."
+  - "Chicago BSN campus block exists on the live site but was not a distinct section in the provided screenshot — omitted unless the SE asks to add it."

@@ -1,0 +1,896 @@
+/* Chamberlain University pixel-perfect variants */
+
+.chamberlain-gold-arrow {
+  color: var(--brand-accent);
+  flex-shrink: 0;
+}
+
+.chamberlain-link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--brand-body-font);
+  font-weight: 700;
+  color: #0151b4;
+  text-decoration: none;
+
+  &:hover {
+    color: #f5b611;
+    text-decoration: none;
+  }
+}
+
+.navigation .level1 a {
+  font-size: 16px !important;
+}
+
+a.button-accent,
+.button.button-accent,
+.chamberlain-hero__cta,
+.chamberlain-hero__cta.button,
+.chamberlain-hero__cta.button-main {
+  background-color: #f5b611 !important;
+  color: #0151b4 !important;
+  border: 2px solid #f5b611 !important;
+  text-decoration: none !important;
+
+  &:hover,
+  &:focus {
+    background-color: #ffffff !important;
+    border-color: #f5b611 !important;
+    color: #0151b4 !important;
+    filter: none !important;
+    text-decoration: none !important;
+  }
+}
+
+.navigation li.button-nav-item > .navigation-title > a,
+.navigation .button-nav-item a {
+  background-color: #0151b4 !important;
+  color: #ffffff !important;
+  border: 2px solid #0151b4 !important;
+
+  &:hover,
+  &:focus {
+    background-color: #ffffff !important;
+    border-color: #0151b4 !important;
+    color: #0151b4 !important;
+    filter: none !important;
+  }
+}
+
+main a,
+footer a,
+.component:not(.header):not(.eyebrow) a {
+  color: #0151b4;
+
+  &:hover {
+    color: #f5b611;
+  }
+}
+
+header:has(.chamberlain-eyebrow),
+#header:has(.chamberlain-eyebrow) {
+  min-height: var(--chamberlain-eyebrow-height, 2.75rem);
+}
+
+.component.eyebrow.chamberlain-eyebrow {
+  --chamberlain-eyebrow-height: 2.75rem;
+  --chamberlain-eyebrow-gold: #ffc20e;
+  --brand-primary: #003a70;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 110;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  background-color: #003a70;
+  background: var(--bg-footer, #003a70);
+  color: #fff;
+  overflow: visible;
+
+  .chamberlain-eyebrow__inner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    width: 100%;
+    min-height: var(--chamberlain-eyebrow-height);
+    padding: 0 1.5rem;
+  }
+
+  .chamberlain-eyebrow__nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.65rem;
+    width: 100%;
+  }
+
+  .chamberlain-eyebrow__icon {
+    width: 1.05rem;
+    height: 1.05rem;
+    flex-shrink: 0;
+  }
+
+  .chamberlain-eyebrow__chevron-icon {
+    width: 0.7rem;
+    height: 0.45rem;
+    flex-shrink: 0;
+    transition: transform 0.18s ease;
+  }
+
+  .chamberlain-eyebrow__menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+  }
+
+  .chamberlain-eyebrow__trigger,
+  .chamberlain-eyebrow__link,
+  .chamberlain-eyebrow__phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font-family: var(--brand-body-font);
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .chamberlain-eyebrow__trigger {
+    height: 100%;
+
+    &.is-open {
+      color: var(--chamberlain-eyebrow-gold);
+    }
+  }
+
+  .chamberlain-eyebrow__link:hover,
+  .chamberlain-eyebrow__phone:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .chamberlain-eyebrow__phone {
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .chamberlain-eyebrow__dropdown {
+    position: absolute;
+    top: calc(100% - 0.15rem);
+    left: 0;
+    min-width: 13.5rem;
+    padding: 1rem 1.15rem;
+    background: #fff;
+    border-radius: 0.55rem;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 16%);
+    z-index: 50;
+
+    a {
+      display: block;
+      padding: 0.4rem 0.15rem;
+      color: var(--brand-primary);
+      font-family: var(--brand-body-font);
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.3;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--brand-primary);
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+header:has(.chamberlain-eyebrow),
+#header:has(.chamberlain-eyebrow) {
+  min-height: var(--chamberlain-eyebrow-height, 2.75rem);
+  background: transparent;
+}
+
+.component.header.chamberlain-header {
+  position: fixed;
+  top: calc(var(--chamberlain-eyebrow-height, 2.75rem) - 1px);
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  z-index: 100;
+  background-color: transparent;
+  padding: 1rem 0;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  isolation: isolate;
+
+  img {
+    filter: brightness(0) invert(1);
+    max-height: 42px;
+    width: auto;
+    transition: filter 0.2s ease;
+  }
+
+  .navigation,
+  .navigation a,
+  .navigation-title {
+    color: #fff;
+    transition: color 0.2s ease;
+  }
+
+  .button-nav-item a {
+    color: #ffffff !important;
+
+    &:hover,
+    &:focus {
+      color: #0151b4 !important;
+    }
+  }
+
+  &.is-scrolled {
+    background: #fff !important;
+    background-color: #fff !important;
+    box-shadow: 0 2px 14px rgb(0 0 0 / 10%);
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #fff;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    img {
+      filter: brightness(0);
+    }
+
+    .navigation,
+    .navigation a,
+    .navigation-title {
+      color: #003a70;
+    }
+
+    .button-nav-item a {
+      color: #ffffff !important;
+
+      &:hover,
+      &:focus {
+        color: #0151b4 !important;
+      }
+    }
+  }
+}
+
+html.chamberlain-scrolled {
+  .component.header.chamberlain-header {
+    background: #fff !important;
+    background-color: #fff !important;
+    box-shadow: 0 2px 14px rgb(0 0 0 / 10%);
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #fff;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    img {
+      filter: brightness(0);
+    }
+
+    .navigation,
+    .navigation a,
+    .navigation-title {
+      color: #003a70;
+    }
+
+    .button-nav-item a {
+      color: #ffffff !important;
+
+      &:hover,
+      &:focus {
+        color: #0151b4 !important;
+      }
+    }
+  }
+}
+
+.component.hero.chamberlain-hero {
+  position: relative;
+  min-height: 640px;
+  color: #fff;
+  overflow: visible;
+  z-index: 5;
+
+  .chamberlain-hero__media {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .chamberlain-hero__media,
+  picture,
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .chamberlain-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(0, 58, 112, 0.45), rgba(0, 58, 112, 0.12));
+  }
+
+  .chamberlain-hero__content {
+    position: relative;
+    z-index: 2;
+    padding: 10rem 0 8rem;
+    max-width: 720px;
+  }
+
+  .chamberlain-hero__title {
+    font-family: var(--brand-heading-font);
+    font-size: clamp(2.6rem, 6vw, 3.6rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    line-height: 0.95;
+    margin-bottom: 1rem;
+  }
+
+  .chamberlain-hero__text {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-style: italic;
+    font-size: 1.65rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .chamberlain-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+
+  .chamberlain-hero__dropdown {
+    position: relative;
+    flex: 1 1 18rem;
+    max-width: 26rem;
+  }
+
+  .chamberlain-hero__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
+    min-height: 3.25rem;
+    margin: 0;
+    padding: 0 1.35rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    background: #fff;
+    color: #003a70;
+    font-family: var(--brand-body-font), 'Source Sans 3', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: left;
+    cursor: pointer;
+
+    &.is-open {
+      border-color: #003a70;
+    }
+  }
+
+  .chamberlain-hero__chevron {
+    width: 0.75rem;
+    height: 0.5rem;
+    flex-shrink: 0;
+    color: #003a70;
+  }
+
+  .chamberlain-hero__menu {
+    position: absolute;
+    top: calc(100% + 0.2rem);
+    left: 1.35rem;
+    right: 1.35rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: #fff;
+    border: 1px solid #003a70;
+    border-radius: 0;
+    box-shadow: 0 8px 18px rgb(0 0 0 / 12%);
+    z-index: 20;
+    overflow: hidden;
+  }
+
+  .chamberlain-hero__option {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0.7rem 0.9rem;
+    border: 0;
+    background: #fff;
+    color: #1a1a1a;
+    font-family: var(--brand-body-font), 'Source Sans 3', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+
+    &.is-active,
+    &:hover {
+      background: #2f6fad;
+      color: #fff;
+    }
+
+    &.is-active {
+      background: #2f6fad;
+      color: #fff;
+    }
+  }
+
+  .chamberlain-hero__cta,
+  .chamberlain-hero__cta.button,
+  .chamberlain-hero__cta.button-main {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.25rem;
+    padding: 0 1.7rem;
+    border: 2px solid #f5b611;
+    border-radius: 999px;
+    background: #f5b611 !important;
+    color: #0151b4 !important;
+    font-family: var(--brand-body-font), 'Source Sans 3', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-decoration: none !important;
+    white-space: nowrap;
+
+    &:hover,
+    &:focus {
+      background: #ffffff !important;
+      border-color: #f5b611;
+      color: #0151b4 !important;
+      text-decoration: none !important;
+      filter: none;
+    }
+  }
+}
+
+.component.three-column-cta.chamberlain-start-dates {
+  background: var(--brand-primary);
+  color: #fff;
+  margin-top: -3rem;
+  position: relative;
+  z-index: 3;
+  padding: 1.6rem 0;
+
+  h2,
+  p,
+  .chamberlain-start-dates__label,
+  .chamberlain-start-dates__value {
+    color: #fff;
+  }
+
+  .chamberlain-start-dates__label {
+    font-size: 0.95rem;
+    opacity: 0.85;
+    margin-bottom: 0.25rem;
+  }
+
+  .chamberlain-start-dates__value {
+    font-family: var(--brand-heading-font);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .content-wrapper {
+    padding: 0 1rem;
+  }
+
+  img {
+    display: none;
+  }
+}
+
+.component.heading-cta.chamberlain-heading {
+  padding: 4.5rem 0 1.5rem;
+
+  h2,
+  .display-4 {
+    font-family: var(--brand-heading-font);
+    color: var(--brand-primary);
+    font-size: 2.6rem;
+    text-transform: none;
+  }
+
+  p {
+    max-width: 46rem;
+    color: var(--brand-fg);
+  }
+
+  .button-main {
+    background: transparent;
+    color: var(--brand-secondary);
+    border: 0;
+    font-weight: 700;
+  }
+}
+
+.component.five-column-cta.chamberlain-logos {
+  padding: 2rem 0 4rem;
+  text-align: center;
+
+  .chamberlain-logos__heading {
+    font-family: var(--brand-heading-font);
+    color: var(--brand-primary);
+    font-size: 1.7rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .image-container img {
+    max-height: 72px;
+    width: auto;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+
+  .text-container {
+    font-size: 0.85rem;
+    color: var(--brand-muted-fg);
+    margin-top: 0.5rem;
+  }
+}
+
+.component.promo-cta.chamberlain-promo {
+  background: var(--brand-muted);
+  padding: 4rem 0;
+
+  h1,
+  .chamberlain-promo__title {
+    font-family: var(--brand-heading-font);
+    color: var(--brand-primary);
+    font-size: 2.2rem;
+  }
+
+  .button-main {
+    background: var(--brand-accent);
+    color: var(--brand-accent-foreground);
+    border-radius: var(--brand-button-radius);
+    border: 0;
+    font-weight: 700;
+  }
+}
+
+.component.heading-cta.chamberlain-banner {
+  background: transparent;
+  color: #fff;
+  padding: 1.5rem 0;
+
+  .chamberlain-banner__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    width: 100%;
+    background: #013a81;
+    border-radius: 8px;
+    padding: 1.15rem 1.75rem;
+  }
+
+  h2,
+  p,
+  .eyebrow-accent {
+    color: #fff;
+  }
+
+  h2 {
+    flex: 1 1 auto;
+    margin: 0;
+    font-family: var(--brand-body-font), 'Source Sans 3', sans-serif;
+    font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+    font-weight: 700;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+  .button-accent {
+    flex-shrink: 0;
+    border-radius: 999px !important;
+    padding: 0.7rem 1.25rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 991px) {
+    .chamberlain-banner__inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    h2 {
+      white-space: normal;
+    }
+  }
+}
+
+.component.three-column-cta.chamberlain-videos {
+  background: #013a81;
+  color: #fff;
+  padding: 4.5rem 0;
+
+  .chamberlain-videos__intro-wrapper {
+    border-left: 8px solid #f5b611;
+    padding-left: 1.5em;
+  }
+
+  .chamberlain-videos__heading {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 2.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .chamberlain-videos__intro {
+    max-width: 48rem;
+    margin-bottom: 2rem;
+    opacity: 0.92;
+  }
+
+  .content-wrapper {
+    background: transparent;
+  }
+
+  img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 1.25rem;
+  }
+
+  h2 {
+    color: #fff;
+    font-size: 1.15rem;
+    margin-top: 1rem;
+  }
+}
+
+.component.three-column-cta.chamberlain-care {
+  padding: 4rem 0;
+
+  .chamberlain-care__card {
+    background: #fff;
+    border-radius: var(--brand-card-radius);
+    box-shadow: 0 8px 24px rgba(1, 43, 84, 0.08);
+    padding: 1.5rem 1.4rem 1.7rem;
+    height: 100%;
+  }
+
+  .chamberlain-care__media {
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 1.1rem;
+    min-height: 180px;
+    background: var(--brand-muted);
+
+    img,
+    video {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  h2 {
+    font-family: var(--brand-heading-font);
+    color: var(--brand-primary);
+    font-size: 1.45rem;
+  }
+
+  p {
+    color: var(--brand-fg);
+  }
+}
+
+.component.stats-counter.chamberlain-stats {
+  padding: 3.5rem 0;
+
+  .display-6,
+  p.display-6 {
+    font-family: var(--brand-heading-font);
+    color: var(--brand-primary);
+    font-size: 3.2rem;
+  }
+
+  .fs-5 {
+    color: var(--brand-muted-fg);
+    max-width: 16rem;
+    margin-inline: auto;
+  }
+
+  .dotted-accent-top,
+  .dotted-accent-bottom,
+  .image-left,
+  .image-right {
+    display: none;
+  }
+}
+
+.component.heading-cta.chamberlain-search {
+  background: var(--brand-primary);
+  color: #fff;
+  padding: 2.6rem 0;
+
+  h2,
+  p,
+  .eyebrow-accent {
+    color: #fff;
+  }
+
+  .chamberlain-search__field {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  input {
+    flex: 1;
+    min-height: 48px;
+    border: 0;
+    border-radius: var(--brand-button-radius);
+    padding: 0 1.1rem;
+  }
+
+  .button-main {
+    background: var(--brand-accent);
+    color: var(--brand-accent-foreground);
+    border: 0;
+    border-radius: var(--brand-button-radius);
+    font-weight: 700;
+  }
+}
+
+.component.promo-cta.chamberlain-grant,
+.component.promo-cta.chamberlain-daisy {
+  padding: 4rem 0;
+
+  h1,
+  .display-6 {
+    font-family: var(--brand-heading-font);
+    color: var(--brand-primary);
+  }
+
+  .button-main {
+    background: var(--brand-accent);
+    color: var(--brand-accent-foreground);
+    border: 0;
+    border-radius: var(--brand-button-radius);
+    font-weight: 700;
+  }
+}
+
+.component.three-column-cta.chamberlain-insights {
+  padding: 4rem 0;
+
+  .chamberlain-insights__heading {
+    font-family: var(--brand-heading-font);
+    color: var(--brand-primary);
+    font-size: 2.2rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .chamberlain-insights__intro {
+    margin-bottom: 2rem;
+    color: var(--brand-muted-fg);
+  }
+
+  img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-family: var(--brand-heading-font);
+    color: var(--brand-primary);
+    font-size: 1.35rem;
+  }
+}
+
+.component.accordion.chamberlain-accordion {
+  padding: 4rem 0 5rem;
+
+  .chamberlain-accordion__heading {
+    font-family: var(--brand-heading-font);
+    color: var(--brand-primary);
+    font-size: 2.3rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-left: 1.1rem;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.2rem;
+      bottom: 0.2rem;
+      width: 6px;
+      background: linear-gradient(180deg, var(--brand-accent), #00a3ad);
+    }
+  }
+
+  .accordion-group button {
+    border-bottom: 1px solid var(--brand-border);
+    padding: 1.1rem 0;
+  }
+
+  h3 {
+    color: var(--brand-primary);
+    font-size: 1.15rem;
+  }
+}
+
+.component.footer.chamberlain-footer {
+  background: var(--brand-footer-bg);
+  color: var(--brand-footer-fg);
+  padding: 3.5rem 0 2rem;
+
+  .title,
+  .footnote,
+  p {
+    color: #fff;
+  }
+
+  a {
+    color: #0151b4;
+
+    &:hover {
+      color: #f5b611;
+    }
+  }
+
+  .title {
+    font-family: var(--brand-heading-font);
+    margin-bottom: 0.85rem;
+  }
+
+  hr {
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+}

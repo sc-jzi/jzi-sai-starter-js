@@ -1,3 +1,27 @@
+:root {
+  --brand-primary: #003A70;
+  --brand-primary-foreground: #ffffff;
+  --brand-secondary: #013A81;
+  --brand-secondary-foreground: #ffffff;
+  --brand-accent: #FFC20E;
+  --brand-accent-foreground: #003A70;
+  --brand-bg: #ffffff;
+  --brand-fg: #1A1A1A;
+  --brand-muted: #F4F7FA;
+  --brand-muted-fg: #5A6570;
+  --brand-header-bg: #ffffff;
+  --brand-header-fg: #003A70;
+  --brand-footer-bg: #003A70;
+  --brand-footer-fg: #ffffff;
+  --brand-border: #D8DEE6;
+  --brand-ring: #003A70;
+  --brand-heading-font: 'Barlow Condensed', sans-serif;
+  --brand-body-font: 'Source Sans 3', sans-serif;
+  --brand-radius: 0.5rem;
+  --brand-button-radius: 2.5rem;
+  --brand-card-radius: 1.5rem;
+}
+
 a[target='_blank']:after {
   content: '\1F5D7'
 }

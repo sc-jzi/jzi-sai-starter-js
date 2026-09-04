@@ -76,3 +76,21 @@ export const Default = (props: AccordionProps): JSX.Element => {
     </div>
   );
 };
+
+/* Chamberlain variant — Answers at every level */
+export const Chamberlain = (props: AccordionProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const accordionItems = props.fields?.items;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component accordion chamberlain-accordion ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <h2 className="chamberlain-accordion__heading">Answers at every level</h2>
+        {accordionItems?.map((item) => (
+          <AccordionItem key={item.url} item={item} />
+        ))}
+      </div>
+    </div>
+  );
+};

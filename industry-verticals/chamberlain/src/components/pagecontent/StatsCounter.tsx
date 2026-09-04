@@ -99,3 +99,44 @@ export const Default = (props: StatsCounterProps): JSX.Element => {
     </div>
   );
 };
+
+/* Chamberlain variant — large navy numerals */
+export const Chamberlain = (props: StatsCounterProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const stats = [
+    { value: props.fields?.Value1, symbol: props.fields?.Symbol1, caption: props.fields?.Caption1 },
+    { value: props.fields?.Value2, symbol: props.fields?.Symbol2, caption: props.fields?.Caption2 },
+    { value: props.fields?.Value3, symbol: props.fields?.Symbol3, caption: props.fields?.Caption3 },
+  ];
+
+  return (
+    <div className={`component stats-counter chamberlain-stats ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="container">
+        <div className="row gx-4 text-center">
+          {stats.map((stat, index) => (
+            <div className="col-lg-4" key={index}>
+              <p className="display-6 fw-bold">
+                <span>
+                  {isPageEditing ? (
+                    <Text field={stat.value} />
+                  ) : (
+                    <CountUp value={parseInt(stat.value?.value || '0')} />
+                  )}
+                </span>
+                <span>
+                  <Text field={stat.symbol} />
+                </span>
+              </p>
+              <p className="fs-5 mb-0">
+                <Text field={stat.caption} />
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};

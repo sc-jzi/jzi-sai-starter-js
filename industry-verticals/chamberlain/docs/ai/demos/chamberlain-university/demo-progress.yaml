@@ -1,0 +1,87 @@
+# Demo Progress Tracker
+# Created automatically at the start of a demo build.
+# Updated after each MCP call or phase completion.
+
+client:
+  name: "Chamberlain University"
+  sourceUrl: "https://www.chamberlain.edu/"
+  startedAt: "2026-09-04T14:24:00Z"
+  lastUpdatedAt: "2026-09-04T15:25:00Z"
+
+phases:
+  phase0_inputs:
+    status: "complete"
+    screenshot: true
+    url: "https://www.chamberlain.edu/"
+
+  phase0_5_manifest:
+    status: "complete"
+    validationMode: "quick"
+    result: "pass"
+
+  phase1_theme:
+    status: "complete"
+    themeFile: "docs/ai/themes/chamberlain-university.theme.yaml"
+    userApproved: true
+
+  phase2_analysis:
+    status: "complete"
+    buildPlanFile: "docs/ai/demos/chamberlain-university/build-plan.yaml"
+    totalSections: 17
+    userApproved: true
+
+  phase2_5_content:
+    status: "complete"
+    contentMapFile: "docs/ai/demos/chamberlain-university/content-map.yaml"
+    extractorUsed: true
+    extractorResult: "0 DOM sections — mapped from screenshot + approved plan"
+
+  phase3_content:
+    status: "complete"
+    completedSections: 15
+    totalSections: 15
+
+  phase4_theme:
+    status: "complete"
+    themeDelivery: "css-variables"
+    cssWritten: true
+    fontsAdded: true
+
+  phase5_custom:
+    status: "complete"
+    customComponentsNeeded: 1
+    customComponentsBuilt: 1
+
+  phase5_5_variants:
+    status: "complete"
+    variantsNeeded: 16
+    variantsCreated: 16
+    variantSpecsFile: "docs/ai/demos/chamberlain-university/variant-specs.yaml"
+    skippedReason: ""
+
+  phase6_assembly:
+    status: "partial"
+    componentsAdded: 14
+    datasourcesWired: 5
+    totalComponents: 15
+    notes: "Accordion add_component_on_page failed (missing Verticals/Accordion branch). Leftover Financial components remain on Home. Assign remaining variants in Pages."
+
+  phase7_summary:
+    status: "complete"
+
+sections:
+  - { position: 2, status: "wired", datasourceId: "f5e0faf5-961f-4e18-883a-8f6068e05c0d" }
+  - { position: 3, status: "created", datasourceId: "26742154-70b9-4ed2-b601-8af41f2bae76" }
+  - { position: 4, status: "created", datasourceId: "5b2a7e87-a9a9-463b-bb6b-e7bd6a4b5508" }
+  - { position: 5, status: "wired", datasourceId: "f16f03ea-196c-45bc-84cc-c876920f6c60" }
+  - { position: 6, status: "created", datasourceId: "44fd8973-8ef7-4c80-85d7-c6766d5fc1a5" }
+  - { position: 7, status: "created", datasourceId: "2ce9848d-b91b-4403-85df-b91a888af502" }
+  - { position: 8, status: "created", datasourceId: "490f5fe6-cb9e-4ce4-9ef3-56e5be0964b6" }
+  - { position: 9, status: "created", datasourceId: "f7e87c2e-4e66-45f3-8ae4-af4c3e4e27e8" }
+  - { position: 10, status: "wired", datasourceId: "9592ce05-fb46-4d5e-b038-343c0f96c47f" }
+  - { position: 11, status: "created", datasourceId: "38451893-1386-4cef-bd89-478635e5296e" }
+  - { position: 12, status: "wired", datasourceId: "d14d70b9-5f33-456f-9c74-c7e803f7dfc8" }
+  - { position: 13, status: "created", datasourceId: "b4ce7b6a-8a79-4cfe-94d7-fdc2f6bce24d" }
+  - { position: 14, status: "created", datasourceId: "e9170663-5eae-4d53-8749-dcd5111623b4" }
+  - { position: 15, status: "wired", datasourceId: "07c108f6-4075-400f-8890-eaf831bf681e" }
+  - { position: 16, status: "created", datasourceId: "05189e94-9bac-439c-9417-220f67140cbd" }

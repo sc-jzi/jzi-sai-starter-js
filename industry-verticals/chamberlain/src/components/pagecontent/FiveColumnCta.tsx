@@ -107,3 +107,43 @@ export const Default = (props: FiveColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* Chamberlain variant — Proudly Accredited logo row */
+export const ChamberlainLogos = (props: FiveColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const columns = [
+    { image: props.fields.Image1, text: props.fields.Text1, link: props.fields.Link1 },
+    { image: props.fields.Image2, text: props.fields.Text2, link: props.fields.Link2 },
+    { image: props.fields.Image3, text: props.fields.Text3, link: props.fields.Link3 },
+    { image: props.fields.Image4, text: props.fields.Text4, link: props.fields.Link4 },
+    { image: props.fields.Image5, text: props.fields.Text5, link: props.fields.Link5 },
+  ];
+
+  return (
+    <div
+      className={`component five-column-cta chamberlain-logos ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <h2 className="chamberlain-logos__heading">Proudly Accredited</h2>
+        <div className="row row-cols-2 row-cols-sm-3 row-cols-lg-5 row-gap-3 gx-5 justify-content-center">
+          {columns.map((column, index) =>
+            column.image?.value?.src || column.text?.value ? (
+              <div className="col" key={index}>
+                <Link field={column.link}>
+                  <div className="image-container">
+                    <NextImage field={column.image} className="d-block w-100 h-100" width={200} height={200} />
+                  </div>
+                </Link>
+                <div className="text-container">
+                  <Text field={column.text} />
+                </div>
+              </div>
+            ) : null
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};

@@ -1,0 +1,320 @@
+client:
+  name: "Chamberlain University"
+  sourceUrl: "https://www.chamberlain.edu/"
+  sourceLanguage: "en"
+  targetLanguage: "en"
+  translationApplied: false
+  extractedAt: "2026-09-04T14:50:34Z"
+  mappedAt: "2026-09-04T15:10:00Z"
+  contentSource: "screenshot"
+
+sections:
+  - position: 1
+    componentName: "Header"
+    manifestName: "Header"
+    kind: "context-only"
+    apiAddable: false
+    fields: {}
+    children: []
+    imageFields: []
+
+  - position: 2
+    componentName: "Hero"
+    manifestName: "Hero"
+    kind: "simple"
+    datasourceItemName: "Chamberlain - Hero"
+    apiAddable: true
+    variantName: "Chamberlain"
+    fields:
+      Title: "PREPARING NURSES to Meet the Moment"
+      Text: "<p>Education built on care, community, and real-world experience.</p>"
+      Link:
+        text: "Get Started"
+        href: "https://www.chamberlain.edu/"
+        target: ""
+    children: []
+    imageFields:
+      - { field: "Image", description: "Clinicians in scrubs celebrating in a hospital hallway" }
+
+  - position: 3
+    componentName: "ThreeColumnCta"
+    manifestName: "ThreeColumnCta"
+    kind: "simple"
+    datasourceItemName: "Chamberlain - Start Dates"
+    apiAddable: true
+    variantName: "ChamberlainStartDates"
+    fields:
+      Text1: "Next Start Date"
+      SubText1: "Aug 31"
+      Text2: "Upcoming Start Dates"
+      SubText2: "Oct 26, Jan 4"
+      Text3: "MPAS Campuses"
+      SubText3: "Sept 2026"
+    children: []
+    imageFields: []
+
+  - position: 4
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Chamberlain - Largest School"
+    apiAddable: true
+    variantName: "Chamberlain"
+    fields:
+      Heading: "#1 Largest School of Nursing in the US"
+      Text: "Join the nation’s largest nursing school. With online and campus options, find the degree that fits your calling."
+      Link:
+        text: "View All Programs"
+        href: "https://www.chamberlain.edu/"
+        target: ""
+    children: []
+    imageFields: []
+
+  - position: 5
+    componentName: "ProgramCarousel"
+    manifestName: "ProgramCarousel"
+    kind: "custom"
+    datasourceItemName: "personal"
+    datasourceItemId: "f16f03ea-196c-45bc-84cc-c876920f6c60"
+    apiAddable: true
+    variantName: "Chamberlain"
+    fields: {}
+    children: []
+    imageFields: []
+    notes: "Datasource is the personal Content Page. Cards come from Content Page children."
+
+  - position: 6
+    componentName: "FiveColumnCta"
+    manifestName: "FiveColumnCta"
+    kind: "simple"
+    datasourceItemName: "Chamberlain - Accreditation"
+    apiAddable: true
+    variantName: "ChamberlainLogos"
+    fields:
+      Text1: "Higher Learning Commission"
+      Text2: "CCNE"
+      Text3: "NLN CNEA"
+      Text4: "CSWE"
+    children: []
+    imageFields:
+      - { field: "Image1", description: "HLC seal" }
+      - { field: "Image2", description: "CCNE seal" }
+      - { field: "Image3", description: "NLN CNEA seal" }
+      - { field: "Image4", description: "CSWE seal" }
+
+  - position: 7
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    kind: "simple"
+    datasourceItemName: "Chamberlain - Google Cloud"
+    apiAddable: true
+    variantName: "Chamberlain"
+    fields:
+      Eyebrow: "Chamberlain University in partnership with Google Cloud"
+      Title: "Announcing New Healthcare AI Certificates at Chamberlain"
+      Text: "<p>Graduate with an industry-recognized AI credential from Chamberlain, in partnership with Google Cloud, tailored to your healthcare specialty.</p>"
+      Link:
+        text: "Explore Certificate"
+        href: "https://www.chamberlain.edu/"
+        target: ""
+    children: []
+    imageFields:
+      - { field: "Image", description: "Google Cloud partnership visual" }
+
+  - position: 8
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Chamberlain - Scholarships"
+    apiAddable: true
+    variantName: "ChamberlainBanner"
+    fields:
+      Heading: "Chamberlain awarded more than $87 million in scholarships and grants in 2025"
+      Text: ""
+      Link:
+        text: "Request Information"
+        href: "https://www.chamberlain.edu/"
+        target: ""
+    children: []
+    imageFields: []
+
+  - position: 9
+    componentName: "ThreeColumnCta"
+    manifestName: "ThreeColumnCta"
+    kind: "simple"
+    datasourceItemName: "Chamberlain - Videos"
+    apiAddable: true
+    variantName: "ChamberlainVideos"
+    fields:
+      Text1: "Angela Majied, MSN '23, BSN '22"
+      SubText1: ""
+      Text2: "Jackie Walker Rice, MSN '18, BSN '14"
+      SubText2: ""
+      Text3: "Brett Dodd, MSN '17, BSN '15"
+      SubText3: ""
+    children: []
+    imageFields:
+      - { field: "Image1", description: "Portrait of Angela Majied" }
+      - { field: "Image2", description: "Portrait of Jackie Walker Rice" }
+      - { field: "Image3", description: "Portrait of Brett Dodd" }
+
+  - position: 10
+    componentName: "ThreeColumnCta"
+    manifestName: "ThreeColumnCta"
+    kind: "simple"
+    datasourceItemName: "Chamberlain - Care Cards"
+    apiAddable: true
+    variantName: "ChamberlainCare"
+    fields:
+      Text1: "Comprehensive Support With Chamberlain Care"
+      SubText1: "Chamberlain Care® promotes compassion at every level, from self to patient care."
+      Link1:
+        text: "Learn More"
+        href: "https://www.chamberlain.edu/"
+        target: ""
+      Text2: "No. 1: Nation’s Largest Nursing School"
+      SubText2: "With our size comes strength. More guidance, more connections, more growth."
+      Link2:
+        text: "Learn More"
+        href: "https://www.chamberlain.edu/"
+        target: ""
+      Text3: "25+ Campuses, Flexible Online Options"
+      SubText3: "Whatever your passion or schedule, there’s a program for you."
+      Link3:
+        text: "Explore Programs"
+        href: "https://www.chamberlain.edu/"
+        target: ""
+    children: []
+    imageFields:
+      - { field: "Image1", description: "Chamberlain Care photo or video poster" }
+      - { field: "Image2", description: "Largest nursing school photo or video poster" }
+      - { field: "Image3", description: "Campus / online options photo or video poster" }
+    notes: "Video1/2/3 are optional File fields. If set, the card renders video instead of ImageN."
+
+  - position: 11
+    componentName: "StatsCounter"
+    manifestName: "StatsCounter"
+    kind: "simple"
+    datasourceItemName: "Chamberlain - Stats"
+    apiAddable: true
+    variantName: "Chamberlain"
+    fields:
+      Value1: "12000"
+      Symbol1: "+"
+      Caption1: "healthcare partner locations with reduced tuition rates available"
+      Value2: "90"
+      Symbol2: "%"
+      Caption2: "of students receive some form of financial assistance"
+      Value3: "87"
+      Symbol3: "M"
+      Caption3: "in scholarships and grants awarded in 2025"
+    children: []
+    imageFields: []
+
+  - position: 12
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Chamberlain - Partner Search"
+    apiAddable: true
+    variantName: "ChamberlainSearch"
+    fields:
+      Heading: "See If You Qualify for Partner Tuition Rates"
+      Text: "Chamberlain University has 12,000+ healthcare and educational institution, college and association partner locations across the country."
+      Link:
+        text: "Search Partners"
+        href: "https://www.chamberlain.edu/"
+        target: ""
+    children: []
+    imageFields: []
+
+  - position: 13
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    kind: "simple"
+    datasourceItemName: "Chamberlain - Completion Grant"
+    apiAddable: true
+    variantName: "ChamberlainGrant"
+    fields:
+      Eyebrow: "Commitment to Completion Grant"
+      Title: "Save up to $11,000"
+      Text: "<p>As the nation’s #1 largest nursing school, we’re making our biggest commitment yet with the Commitment to Completion Grant: up to $11,000 in total savings, including two courses at no cost, applied automatically.</p>"
+      Link:
+        text: "Explore our grants"
+        href: "https://www.chamberlain.edu/"
+        target: ""
+    children: []
+    imageFields:
+      - { field: "Image", description: "Completion Grant supporting photo" }
+
+  - position: 14
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    kind: "simple"
+    datasourceItemName: "Chamberlain - Daisy"
+    apiAddable: true
+    variantName: "ChamberlainDaisy"
+    fields:
+      Eyebrow: "Chamberlain and The DAISY Foundation™"
+      Title: "Uplifting Our Nurses"
+      Text: "<p>As The DAISY Foundation’s Founding Educational Partner, Chamberlain is proud to be the No. 1 awarder of student and educator DAISY Awards®, supporting nurses with scholarships, research opportunities, and career development.</p>"
+      Link:
+        text: "Learn More"
+        href: "https://www.chamberlain.edu/"
+        target: ""
+    children: []
+    imageFields:
+      - { field: "Image", description: "Nurse smiling with a young child" }
+
+  - position: 15
+    componentName: "ThreeColumnCta"
+    manifestName: "ThreeColumnCta"
+    kind: "simple"
+    datasourceItemName: "Chamberlain - Insights"
+    apiAddable: true
+    variantName: "ChamberlainInsights"
+    fields:
+      Text1: "Why More Men Should Consider the Field of Nursing"
+      SubText1: "If you’re a man drawn to a helping profession, you may want to consider joining the RN workforce."
+      Link1:
+        text: "Read more"
+        href: "https://www.chamberlain.edu/"
+        target: ""
+      Text2: "Why I Chose Chamberlain… Again"
+      SubText2: "Choosing a college or university is a big decision. But choosing a university for a second degree…"
+      Link2:
+        text: "Read more"
+        href: "https://www.chamberlain.edu/"
+        target: ""
+      Text3: "8 Great Reasons to Earn Your Master of Physician Assistant Studies"
+      SubText3: "You’ve decided to become a physician assistant. Congratulations!"
+      Link3:
+        text: "Read more"
+        href: "https://www.chamberlain.edu/"
+        target: ""
+    children: []
+    imageFields: []
+
+  - position: 16
+    componentName: "Accordion"
+    manifestName: "Accordion"
+    kind: "list"
+    datasourceItemName: "Chamberlain - FAQ"
+    apiAddable: true
+    variantName: "Chamberlain"
+    fields: {}
+    children:
+      - { Title: "Are Chamberlain College of Nursing programs accredited?", Content: "The baccalaureate, master’s, DNP, and post-graduate APRN certificate programs at Chamberlain University are accredited by the Commission on Collegiate Nursing Education." }
+      - { Title: "What kind of support does Chamberlain offer its students?", Content: "Chamberlain offers comprehensive support through Chamberlain Care®, dedicated faculty, NCLEX preparation, and the Practicum Commitment®." }
+      - { Title: "Does Chamberlain accept transfer credits from other schools?", Content: "Yes. Transfer requirements vary by program." }
+      - { Title: "Does Chamberlain provide financial aid or scholarships?", Content: "Yes. Scholarships are available for new, current, and transfer students who apply and qualify." }
+    imageFields: []
+
+  - position: 17
+    componentName: "Footer"
+    manifestName: "Footer"
+    kind: "context-only"
+    apiAddable: false
+    fields: {}
+    children: []
+    imageFields: []
