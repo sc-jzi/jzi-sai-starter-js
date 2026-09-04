@@ -74,7 +74,7 @@ const FinderButton = ({
     </>
   );
 
-  if (hasHref(link)) {
+  if (link && hasHref(link)) {
     return (
       <Link field={link} className="walden-finder__btn">
         {inner}
@@ -355,7 +355,7 @@ export const Default = (props: FourColumnCtaProps): JSX.Element => {
         }`}
         ref={domRef}
       >
-        {hasHref(link) ? <Link field={link}>{body}</Link> : body}
+        {link && hasHref(link) ? <Link field={link}>{body}</Link> : body}
       </div>
     );
   };
