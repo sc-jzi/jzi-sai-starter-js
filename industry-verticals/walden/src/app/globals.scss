@@ -1,21 +1,27 @@
+@import "tailwindcss";
+@import '../assets/basic/fonts';
+@import 'bootstrap/scss/bootstrap';
+@import '../assets/sass/main';
+@import '../assets/basic/main';
+
 /* CLIENT THEME — Walden University */
 :root {
-  --brand-primary: #00334C;
+  --brand-primary: #00334c;
   --brand-primary-foreground: #ffffff;
-  --brand-secondary: #00467F;
+  --brand-secondary: #00467f;
   --brand-secondary-foreground: #ffffff;
-  --brand-accent: #FFC72C;
-  --brand-accent-foreground: #00334C;
+  --brand-accent: #ffc72c;
+  --brand-accent-foreground: #00334c;
   --brand-bg: #ffffff;
   --brand-fg: #444444;
-  --brand-muted: #F4F4F4;
-  --brand-muted-fg: #5A5A5A;
+  --brand-muted: #f4f4f4;
+  --brand-muted-fg: #5a5a5a;
   --brand-header-bg: #ffffff;
-  --brand-header-fg: #00334C;
-  --brand-footer-bg: #00334C;
+  --brand-header-fg: #00334c;
+  --brand-footer-bg: #00334c;
   --brand-footer-fg: #ffffff;
-  --brand-border: #D8DDE3;
-  --brand-ring: #00334C;
+  --brand-border: #d8dde3;
+  --brand-ring: #00334c;
   --brand-heading-font: 'Noto Serif', serif;
   --brand-body-font: 'Mulish', sans-serif;
   --brand-radius: 0.25rem;
@@ -23,17 +29,16 @@
   --brand-card-radius: 0;
 }
 
-@import "tailwindcss";
-@import '../assets/basic/fonts';
-@import 'bootstrap/scss/bootstrap';
-@import '../assets/sass/main';
-@import '../assets/basic/main';
-
 body {
   font-family: var(--brand-body-font);
   color: var(--brand-fg);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--brand-heading-font);
 }

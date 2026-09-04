@@ -20,16 +20,130 @@
 }
 
 .component.eyebrow.walden-eyebrow {
-  background: var(--brand-primary);
-  color: var(--brand-primary-foreground);
-  padding: 0.35rem 0;
-  font-size: 0.75rem;
-  letter-spacing: 0.02em;
+  --walden-eyebrow-bg: #00677f;
+  --walden-eyebrow-apply: #008bb0;
+  --walden-eyebrow-lock: #71c5a1;
 
-  a,
-  .field-link {
-    color: var(--brand-primary-foreground);
+  background: var(--walden-eyebrow-bg);
+  color: #fff;
+  padding: 0;
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+  overflow: visible;
+  position: relative;
+  z-index: 30;
+
+  .walden-eyebrow__inner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    min-height: 44px;
+    width: 100%;
+  }
+
+  .walden-eyebrow__nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 1.35rem;
+    padding: 0 1.25rem;
+  }
+
+  .walden-eyebrow__link,
+  .walden-eyebrow__phone,
+  .walden-eyebrow__apply {
+    color: #fff;
     font-family: var(--brand-body-font);
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+
+  .walden-eyebrow__lock {
+    color: var(--walden-eyebrow-lock);
+    margin-right: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .walden-eyebrow__login {
+    position: relative;
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+
+    .walden-eyebrow__link {
+      display: inline-flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    &:hover .walden-eyebrow__dropdown,
+    &:focus-within .walden-eyebrow__dropdown {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .walden-eyebrow__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 11.5rem;
+    padding: 0.85rem 0 2.75rem;
+    background: var(--walden-eyebrow-bg);
+    border: 1px solid rgb(255 255 255 / 35%);
+    box-shadow: 0 10px 24px rgb(0 0 0 / 18%);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 40;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: auto 0 0;
+      height: 48%;
+      background: var(--walden-eyebrow-apply);
+      clip-path: polygon(0 38%, 100% 0, 100% 100%, 0 100%);
+      pointer-events: none;
+    }
+
+    a {
+      position: relative;
+      z-index: 1;
+      display: block;
+      padding: 0.4rem 1.15rem;
+      color: #fff;
+      font-family: var(--brand-body-font);
+      font-weight: 700;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .walden-eyebrow__apply {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.45rem;
+    background: var(--walden-eyebrow-apply);
+    border-left: 1px solid #fff;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+      filter: brightness(1.06);
+    }
   }
 }
 
@@ -152,9 +266,32 @@
   background: var(--brand-primary);
   color: #fff;
   padding: 1.75rem 0;
-  margin-top: -2.5rem;
+  margin-top: 0;
   position: relative;
   z-index: 2;
+
+  img {
+    height: auto;
+  }
+
+  .walden-finder {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem 1.5rem;
+  }
+
+  .walden-finder__search-col {
+    flex: 1 1 280px;
+    min-width: 240px;
+  }
+
+  .walden-finder__buttons {
+    flex: 1 1 360px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
 
   .walden-finder__label {
     font-family: var(--brand-body-font);
@@ -178,6 +315,7 @@
     align-items: center;
     justify-content: center;
     min-height: 56px;
+    width: 100%;
     background: var(--brand-secondary);
     color: #fff;
     border-radius: 0.5rem;
@@ -377,8 +515,19 @@
 }
 
 .component.four-column-cta.walden-interest-grid {
-  background: var(--brand-bg);
+  background: var(--brand-muted);
   padding: 4.5rem 0;
+
+  a:hover img {
+    transform: none;
+  }
+
+  img {
+    height: auto;
+    width: 2.25rem;
+    object-fit: contain;
+    border-radius: 0;
+  }
 
   .walden-interest__heading {
     text-align: center;
@@ -389,30 +538,93 @@
   }
 
   .walden-interest__card {
-    padding: 0.5rem 0.25rem 1.5rem;
+    background: #fff;
+    box-shadow: 0 10px 28px rgb(0 51 76 / 8%);
+    padding: 1.75rem 1.5rem 3rem;
+    min-height: 24rem;
+    height: 100%;
+  }
+
+  .walden-interest__icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    color: #1b8a8a;
+    min-height: 2.25rem;
+  }
+
+  .walden-interest__image-field {
+    display: inline-flex;
+    min-width: 2.25rem;
+    min-height: 2.25rem;
+
+    &.is-fallback img {
+      position: absolute;
+      width: 2.25rem;
+      height: 2.25rem;
+      opacity: 0;
+    }
+  }
+
+  .walden-interest__icon-fallback {
+    display: inline-flex;
+    color: #1b8a8a;
   }
 
   .walden-interest__title {
-    font-family: var(--brand-heading-font);
-    font-size: 1.35rem;
+    display: block;
+    font-family: var(--brand-body-font);
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     color: var(--brand-primary);
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.35rem;
+    line-height: 1.3;
+    min-height: 1.3em;
   }
 
-  .walden-interest__link {
+  .walden-interest__text {
+    font-family: var(--brand-body-font);
+    font-size: 0.8rem;
+    color: var(--brand-muted-fg);
+    margin-bottom: 0.85rem;
+    min-height: 1.2em;
+  }
+
+  .walden-interest__row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
-    padding: 0.65rem 0;
+    padding: 0.7rem 0;
     border-bottom: 1px solid var(--brand-border);
     color: var(--brand-primary);
+    font-family: var(--brand-body-font);
     font-weight: 600;
     text-decoration: none;
+    cursor: pointer;
+
+    span:first-child {
+      flex: 1;
+    }
 
     &:hover {
       color: var(--brand-secondary);
     }
+  }
+
+  .walden-interest__arrow {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--brand-accent);
+    color: var(--brand-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
   }
 }
 
@@ -585,9 +797,14 @@
 }
 
 .component.footer.walden-footer {
-  background: var(--brand-footer-bg);
+  background-color: var(--brand-footer-bg);
+  background-image: url('https://www.waldenu.edu/themes/custom/wal_base_2024/images/W.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto;
   color: var(--brand-footer-fg);
-  padding: 3.5rem 0 2rem;
+  font-size: 1rem;
+  padding: 3.5rem 0 2.5rem;
 
   .title,
   .eyebrow-accent {
@@ -601,12 +818,105 @@
 
   a,
   .links,
+  .links p,
+  .links li,
+  .links a,
   .footnote {
     color: rgb(255 255 255 / 86%);
     font-family: var(--brand-body-font);
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.7;
   }
 
   hr {
-    border-color: rgb(255 255 255 / 18%);
+    display: none;
+  }
+
+  .links-socials,
+  .walden-footer__socials {
+    display: flex !important;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.85rem;
+    position: relative;
+
+    a {
+      position: relative !important;
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      width: 1.75rem;
+      height: 1.75rem;
+      margin: 0;
+      background: none;
+      border-radius: 0;
+    }
+
+    img,
+    span,
+    picture {
+      position: static !important;
+      inset: auto !important;
+      width: 1.25rem !important;
+      height: 1.25rem !important;
+      max-width: 1.25rem;
+      object-fit: contain;
+      transform: none !important;
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  .walden-footer__bottom {
+    text-align: center;
+    padding: 3rem 0 1rem;
+    font-family: var(--brand-body-font);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: #fff;
+
+    p {
+      max-width: 52rem;
+      margin: 0 auto 0.85rem;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+
+  .walden-footer__marks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem 3.5rem;
+    margin-bottom: 2rem;
+
+    img {
+      height: 4.25rem;
+      width: auto;
+      max-width: 9rem;
+      object-fit: contain;
+    }
+
+    img.is-knockout {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  .walden-footer__legal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.65rem;
+    margin-top: 1.25rem !important;
+
+    span {
+      opacity: 0.7;
+    }
   }
 }

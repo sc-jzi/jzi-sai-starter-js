@@ -150,27 +150,66 @@ export const Walden = (props: FooterProps): JSX.Element => {
               <div className="title mt-4">
                 <Text field={props.fields?.SocialsTitle} />
               </div>
-              <div className="links links-socials">
+              <div className="links links-socials walden-footer__socials">
                 <Link field={props.fields?.SocialLink1}>
-                  <NextImage field={props.fields?.SocialIcon1} width={16} height={16} />
+                  <NextImage field={props.fields?.SocialIcon1} width={22} height={22} />
                 </Link>
                 <Link field={props.fields?.SocialLink2}>
-                  <NextImage field={props.fields?.SocialIcon2} width={16} height={16} />
+                  <NextImage field={props.fields?.SocialIcon2} width={22} height={22} />
                 </Link>
                 <Link field={props.fields?.SocialLink3}>
-                  <NextImage field={props.fields?.SocialIcon3} width={16} height={16} />
+                  <NextImage field={props.fields?.SocialIcon3} width={22} height={22} />
                 </Link>
               </div>
             </div>
           </div>
         </div>
-        <hr />
-        <div className="footnote">
-          <Text field={props.fields?.Copyright} />
-          <div className="privacy-links">
-            <Link field={props.fields?.Link1} />
-            <Link field={props.fields?.Link2} />
+        <div className="walden-footer__bottom">
+          <div className="walden-footer__marks">
+            <img
+              className="is-knockout"
+              src="https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/2022-10/ccne_0.png?itok=lJDtRI3h"
+              alt="CCNE Accredited"
+            />
+            <img
+              src="https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/Walden/Images/Newsroom/walden-news/2019/cswe-accred-300x-250.jpg?itok=K4whVHki"
+              alt="CSWE"
+            />
+            <img
+              src="https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/Walden/Images/Newsroom/walden-news/2014/cacrep-new-logo.gif?itok=Sk913TVS"
+              alt="CACREP Accredited"
+            />
+            <img
+              src="https://www.waldenu.edu/sites/g/files/krcnkv446/files/styles/atge_default_md/public/Walden/Images/Newsroom/alumni-magazine/content-images/2020-vol-1/accreditation/ceph-logo-doctoral-masters-600x450.jpg?itok=UEhZawxX"
+              alt="CEPH Accredited"
+            />
           </div>
+          <p>
+            Walden University is accredited by the Higher Learning Commission (
+            <a href="https://www.hlcommission.org" target="_blank" rel="noreferrer">
+              www.hlcommission.org
+            </a>
+            ), an institutional accreditation agency recognized by the U.S. Department of Education.
+          </p>
+          <p>
+            Walden University is a member of Covista{' '}
+            <a href="https://www.covista.com/" target="_blank" rel="noreferrer">
+              https://www.covista.com/
+            </a>{' '}
+            | Walden University is certified to operate by SCHEV
+          </p>
+          <p>© 2026 Walden University LLC. All rights reserved.</p>
+          <p className="walden-footer__legal">
+            <a href="https://www.waldenu.edu/legal">Legal &amp; Consumer Info</a>
+            <span aria-hidden>|</span>
+            <a href="https://www.waldenu.edu/legal/website-terms-and-conditions">
+              Website Terms and Conditions
+            </a>
+            <span aria-hidden>|</span>
+            <a href="https://www.waldenu.edu/legal/cookie-policy">Cookie Policy</a>
+            <span aria-hidden>|</span>
+            <a href="https://www.waldenu.edu/legal/cookie-preferences">Cookie Preferences</a>
+          </p>
         </div>
       </div>
     </div>
