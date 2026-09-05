@@ -23,7 +23,10 @@ SharedFields:
   Value: 400
 - ID: "ca9b9f52-4fb0-4f87-a79f-24dea62cda65"
   Hint: __Default workflow
-  Value: "{E9B6C600-C6E8-4867-BCB7-8B0DC5F19840}"
+  Value: "{A5BC37E7-ED96-4C1E-8590-A26E64DB55EA}"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "f6cd936e-eb45-47c5-9854-be92b2eb25f0"
 Languages:
 - Language: en
   Versions:
@@ -33,16 +36,23 @@ Languages:
       Hint: SocialIcon3
       Value: |
         <image mediaid="{D7668912-4C04-4881-8C8B-3EEDBC4277A6}" />
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260905T111412Z
     - ID: "524c9c82-80d5-4d65-b7e3-4dd0e365b762"
       Hint: Position
       Value: Product Specialist
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
     - ID: "612e1483-8de4-4fa8-adc5-1a0663b4788f"
       Hint: SocialIcon1
       Value: |
         <image mediaid="{37E8F17D-5AA1-4AF4-9CB1-45C4F07BDD4C}" />
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "2659c20e-3903-4db9-964a-5c1cb15fbb75"
+      Value: "582156fe-ff25-4a19-80e4-7fc6848680cb"
     - ID: "996749ca-6a47-463d-a759-7db65676f179"
       Hint: Name
       Value: $name
@@ -50,10 +60,17 @@ Languages:
       Hint: SocialLink1
       Value: |
         <link linktype="external" url="http://www.facebook.com" anchor="" target="" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
     - ID: "bdbbe5c9-d950-444c-90cd-a00674c10b0b"
       Hint: SocialLink2
       Value: |
         <link linktype="external" url="http://www.instagram.com" anchor="" target="" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260905T111412Z
     - ID: "e2e9b7ce-f57c-4752-99e5-b0d56e3c8864"
       Hint: SocialIcon2
       Value: |

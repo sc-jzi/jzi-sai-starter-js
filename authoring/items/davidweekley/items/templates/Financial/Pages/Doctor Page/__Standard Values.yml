@@ -15,7 +15,10 @@ SharedFields:
   Value: 400
 - ID: "ca9b9f52-4fb0-4f87-a79f-24dea62cda65"
   Hint: __Default workflow
-  Value: "{E9B6C600-C6E8-4867-BCB7-8B0DC5F19840}"
+  Value: "{A5BC37E7-ED96-4C1E-8590-A26E64DB55EA}"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "d4560d18-64f0-4540-b9e2-123a53e28f7f"
 - ID: "f1af457f-510d-48bb-9d80-128f0db844fe"
   Hint: BackgroundImage
   Value: |
@@ -41,7 +44,7 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "6dc1d7c4-fde6-476f-b216-79e6652bfe7a"
+      Value: "d49eefe9-80fd-4f4e-ac26-1bc8c51dd3e1"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
@@ -51,7 +54,7 @@ Languages:
       Value: Product Specialist
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260626T144136Z
+      Value: 20260905T111435Z
 - Language: "fr-CA"
   Versions:
   - Version: 1

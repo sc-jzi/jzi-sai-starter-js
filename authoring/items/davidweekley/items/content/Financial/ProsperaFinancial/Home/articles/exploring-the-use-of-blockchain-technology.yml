@@ -6,7 +6,7 @@ Path: "/sitecore/content/Financial/ProsperaFinancial/Home/articles/exploring-the
 SharedFields:
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
-  Value: "{63CC4D0D-63F1-4BFB-BF63-7EC9D231AFA8}"
+  Value: "{A5BC37E7-ED96-4C1E-8590-A26E64DB55EA}"
 - ID: "ad26114f-29dd-4ef9-b5bf-1d64d558872d"
   Hint: BackgroundImage
   Value: |
@@ -15,6 +15,13 @@ SharedFields:
   Hint: Thumbnail
   Value: |
     <image mediaid="{3BCF790B-6F34-4BE9-B544-61BC4750B936}" alt="Design pattern that represents blockchain technology" height="" width="" hspace="" vspace="" />
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{EC64AF99-2DB3-43F3-A714-65970A17D95E}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "c35ab81b-3e19-42f7-a7ea-deadaf48aa9e"
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
   Value: |
@@ -41,51 +48,6 @@ Languages:
     Hint: __Display name
     Value: Exploring the use of blockchain technology in banking
   Versions:
-  - Version: 1
-    Fields:
-    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
-      Hint: __Lock
-      Value: 
-    - ID: "03117268-f84f-4fd8-ad9e-5990b3a21fe6"
-      Hint: Content
-      Value: |
-        <p>Blockchain technology has emerged as a game-changer in the world of finance, offering unprecedented opportunities for innovation, efficiency, and security. In this blog post, we'll delve into the transformative potential of blockchain in banking, exploring its applications, benefits, and implications for the future of financial services.</p>
-        <p><strong>Understanding Blockchain Technology</strong></p>
-        <p>Blockchain is a decentralized, distributed ledger technology that enables secure and transparent record-keeping of transactions across a network of computers. Each block in the blockchain contains a cryptographic hash of the previous block, creating a chain of blocks that is immutable, tamper-proof, and verifiable by all participants.</p>
-        <p><strong>Applications of Blockchain in Banking</strong></p>
-        <p>Blockchain technology offers a wide range of applications for banking and financial services, including:</p>
-        <ul>
-            <li><strong>Payments and Remittances</strong>: Blockchain enables faster, cheaper, and more secure cross-border payments and remittances by eliminating intermediaries and reducing settlement times.</li>
-            <li><strong>Smart Contracts</strong>: Smart contracts are self-executing contracts with the terms of the agreement written directly into code. Blockchain-based smart contracts automate and enforce the terms of agreements, reducing the need for intermediaries and streamlining processes such as loan origination, trade finance, and supply chain management.</li>
-            <li><strong>Identity Verification</strong>: Blockchain-based identity verification solutions provide secure and decentralized methods for verifying and managing digital identities, enhancing security and reducing the risk of identity theft and fraud.</li>
-            <li><strong>Asset Tokenization</strong>: Asset tokenization involves converting real-world assets, such as real estate, stocks, and commodities, into digital tokens on a blockchain. This enables fractional ownership, increased liquidity, and more efficient trading of assets.</li>
-        </ul>
-        <p><strong>Benefits of Blockchain in Banking</strong></p>
-        <p>The adoption of blockchain technology in banking offers several benefits, including:</p>
-        <ul>
-            <li><strong>Increased Efficiency</strong>: Blockchain streamlines processes, reduces costs, and eliminates intermediaries, leading to faster transaction settlement and improved operational efficiency.</li>
-            <li><strong>Enhanced Security</strong>: The cryptographic features of blockchain technology ensure tamper-proof and secure record-keeping, protecting against fraud, manipulation, and unauthorized access.</li>
-            <li><strong>Improved Transparency</strong>: Blockchain provides a transparent and immutable record of transactions, enhancing trust and accountability among participants.</li>
-        </ul>
-        <p><strong>Challenges and Considerations</strong></p>
-        <p>Despite its potential benefits, the adoption of blockchain in banking also presents challenges and considerations, including regulatory compliance, interoperability, scalability, and privacy concerns. Banks must navigate these challenges effectively to realize the full potential of blockchain technology while mitigating associated risks.</p>
-        <p><strong>Looking Ahead: The Future of Blockchain in Banking</strong></p>
-        <p>As blockchain technology continues to evolve and mature, banks are increasingly exploring ways to integrate it into their existing systems and processes. By embracing innovation, collaborating with industry stakeholders, and prioritizing security and compliance, banks can leverage the transformative power of blockchain to drive innovation, enhance efficiency, and deliver value to customers.</p>
-    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
-      Hint: __Workflow state
-      Value: "{13D6CCE7-A6C3-4EE1-A1D9-8A8E34225ED7}"
-    - ID: "3e700dce-26eb-4bf0-990f-9d9fe555990d"
-      Hint: Excerpt
-      Value: Delve into the transformative potential of blockchain technology in banking, exploring its applications and benefits in revolutionizing financial services. Join us on a journey to embrace innovation and drive positive change in the financial landscape.
-    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
-      Hint: NavigationTitle
-      Value: Exploring the use of blockchain technology in banking
-    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
-      Hint: __Revision
-      Value: "51b502f3-1f8e-42a2-8ffb-31929afa606d"
-    - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
-      Hint: Title
-      Value: Exploring the use of blockchain technology in banking
   - Version: 2
     Fields:
     - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
@@ -116,21 +78,35 @@ Languages:
         <p>Despite its potential benefits, the adoption of blockchain in banking also presents challenges and considerations, including regulatory compliance, interoperability, scalability, and privacy concerns. Banks must navigate these challenges effectively to realize the full potential of blockchain technology while mitigating associated risks.</p>
         <p><strong>Looking Ahead: The Future of Blockchain in Banking</strong></p>
         <p>As blockchain technology continues to evolve and mature, banks are increasingly exploring ways to integrate it into their existing systems and processes. By embracing innovation, collaborating with industry stakeholders, and prioritizing security and compliance, banks can leverage the transformative power of blockchain to drive innovation, enhance efficiency, and deliver value to customers.</p>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260905T114225Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
-      Value: "{1B3D21A1-3E75-49D0-AF21-C4B2DE228760}"
+      Value: "{FCA998C5-0CC3-4F91-94D8-0A4E6CAECE88}"
     - ID: "3e700dce-26eb-4bf0-990f-9d9fe555990d"
       Hint: Excerpt
       Value: Jump into the transformative potential of blockchain technology in banking, exploring its applications and benefits in revolutionizing financial services. Join our journey to embrace innovation and drive positive change in the financial landscape.
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
       Value: Exploring the use of blockchain technology in banking
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "3d347962-6b20-4df2-9ac8-c54d754d21b3"
+      Value: "7753bfb7-ee42-43a4-9a63-0d5fb7c13a05"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
     - ID: "c8f93afe-bfd4-4e8f-9c61-152559854661"
       Hint: __Valid from
       Value: 20240614T135535Z
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260905T114225Z
     - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
       Hint: Title
       Value: Exploring blockchain technology in banking

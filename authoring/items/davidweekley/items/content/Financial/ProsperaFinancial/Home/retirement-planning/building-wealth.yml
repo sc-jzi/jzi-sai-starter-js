@@ -6,10 +6,17 @@ Path: "/sitecore/content/Financial/ProsperaFinancial/Home/retirement-planning/bu
 SharedFields:
 - ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
   Hint: __Workflow
-  Value: "{E9B6C600-C6E8-4867-BCB7-8B0DC5F19840}"
+  Value: "{A5BC37E7-ED96-4C1E-8590-A26E64DB55EA}"
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 400
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{590FEAB2-3892-47E9-9ACE-6C93E20D6C32}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "d62a1016-9b37-47f7-98f0-7a73b140dff3"
 - ID: "df6dc0ca-f8ee-493a-a920-f2b710f08452"
   Hint: BackgroundImage
   Value: |
@@ -69,18 +76,32 @@ Languages:
     - ID: "247be607-394a-4bf2-8c8a-509b07025dd9"
       Hint: Title
       Value: Building wealth
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260905T114133Z
     - ID: "3d30539f-d403-496a-a512-ac885b1a2f8b"
       Hint: Content
       Value: Build slow, build confidently.
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
-      Value: "{171CCFD4-8543-428E-9A9B-8E6557E63B6D}"
+      Value: "{FCA998C5-0CC3-4F91-94D8-0A4E6CAECE88}"
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
       Value: Building wealth
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "3cde2634-57c1-48b7-bfdf-b71a94793550"
+      Value: "6bf20530-b356-45e2-b629-0897970f5dde"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260905T114133Z
 - Language: "fr-CA"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
