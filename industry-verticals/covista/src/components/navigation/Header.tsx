@@ -64,7 +64,7 @@ export const Covista = (props: HeaderProps): JSX.Element => {
       <div className="container">
         <div className="cv-header__row">
           <div className="cv-header__logo">
-            <NextImage field={props.fields.LogoImage} width={160} height={36} />
+            <NextImage field={props.fields.LogoImage} width={160} height={36} unoptimized />
           </div>
           <div className="cv-header__nav">
             <AppPlaceholder

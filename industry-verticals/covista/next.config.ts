@@ -24,18 +24,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'edge*.**',
-        port: '',
-      },
-      {
-        protocol: 'https',
-        hostname: 'xmc-*.**',
-        port: '',
-      },
-      {
-        protocol: 'https',
-        hostname: '*.sitecoresandbox.cloud',
-        port: '',
+        hostname: '**',
       },
     ],
   },
