@@ -1,15 +1,8 @@
 ﻿---
-ID: "247be607-394a-4bf2-8c8a-509b07025dd9"
-Parent: "f82b1d56-7600-4ea4-be9f-f40333b54172"
-Template: "455a3e98-a627-4b40-8035-e683a0331ac7"
-Path: /sitecore/templates/Project/Financial/Pages/Content Page/Content/Title
-SharedFields:
-- ID: "ab162cc0-dc80-4abf-8871-998ee5d7ba32"
-  Hint: Type
-  Value: "Single-Line Text"
-- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
-  Hint: __Sortorder
-  Value: 100
+ID: "21f9e646-4700-48cf-b675-9ed31584df3a"
+Parent: "a2b11bd2-75c0-4f7b-9a12-b1822d461d65"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Project/Financial/Atoms/LLMO/LLMO Metadata
 Languages:
 - Language: en
   Versions:
@@ -17,18 +10,22 @@ Languages:
     Fields:
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20260905T121527Z
+      Value: 20260905T121420Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
     - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
       Hint: __Created by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "64dc0e18-c840-4289-b482-85f263c3883e"
+      Value: "4173782f-ef29-43f2-bb71-3835e5020931"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260905T121527Z
+      Value: 20260905T121431Z

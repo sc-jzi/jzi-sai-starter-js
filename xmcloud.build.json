@@ -208,6 +208,8 @@
       "runCommand": "next:start"
     }
   },
+  "deployItems": { "modules": ["Prospera"]
+  },
   "postActions": {
     "actions": {
       "warmUpCm": {
