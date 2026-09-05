@@ -208,7 +208,7 @@
       "runCommand": "next:start"
     }
   },
-  "deployItems": { "modules": ["Prospera"]
+  "deployItems": { "modules": ["prosperabank"]
   },
   "postActions": {
     "actions": {
