@@ -57,8 +57,22 @@
     }
 
     &:first-of-type {
+      position: relative;
+
       a {
-        display: none !important;
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        display: block !important;
+        overflow: hidden;
+        white-space: nowrap;
+        text-indent: 100%;
+        color: transparent !important;
+
+        &::before {
+          content: none !important;
+          display: none !important;
+        }
       }
     }
 

@@ -75,7 +75,7 @@ const Breadcrumb = (props: BreadcrumbProps): JSX.Element => {
 
   const breadcrumbListItems = breadcrumbs.reverse().map((bc, index) => (
     <li key={index} className={bc.className}>
-      <a title={bc.title} href={bc.url}>
+      <a title={bc.title} href={bc.url} {...(index === 0 ? { 'aria-label': 'Home' } : {})}>
         {bc.title}
       </a>
     </li>
