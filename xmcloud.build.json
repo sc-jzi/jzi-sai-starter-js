@@ -208,7 +208,7 @@
       "runCommand": "next:start"
     }
   },
-  "deployItems": { "modules": ["prosperabank"]
+  "deployItems": { "modules": ["Project.click-click-launch", "prosperabank"]
   },
   "postActions": {
     "actions": {
