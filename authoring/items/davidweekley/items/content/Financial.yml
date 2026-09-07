@@ -39,11 +39,11 @@ SharedFields:
   Value: 30
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "c7e2ac08-59c1-4dce-91b0-6703e3df4982"
+  Value: "703b3864-afb1-416c-a2cd-b55ea49e1ed2"
 - ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
   Hint: __Security
   Value: |
-    au|sitecore\trayek@gmail.com|pd|!*|pe|!*|ar|sitecore\Sitecore Client Site Managing|pd|+item:delete|+item:write|+item:rename|+item:create|pe|+item:delete|+item:write|+item:rename|+item:create|
+    au|sitecore\trayek@gmail.com|pd|!*|pe|!*|au|sitecore\sitecore.maya@gmail.com|pd|!*|pe|!*|ar|sitecore\Sitecore Client Site Managing|pd|+item:delete|+item:write|+item:rename|+item:create|pe|+item:delete|+item:write|+item:rename|+item:create|au|sitecore\sitecore.minnie@gmail.com|pd|!*|pe|!*|
 - ID: "e90a4413-c111-4951-9b6a-00c4ce7fb289"
   Hint: MediaLibrary
   Value: "{9630299A-F0C0-4B95-BB56-ADB394885D48}"
@@ -64,11 +64,11 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "d593a066-a1ff-467c-8b8a-bc5056cf3583"
+      Value: "1d3ad1a8-0bdf-41d8-83eb-17c78366a57d"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260903T144451Z
+      Value: 20260906T162048Z

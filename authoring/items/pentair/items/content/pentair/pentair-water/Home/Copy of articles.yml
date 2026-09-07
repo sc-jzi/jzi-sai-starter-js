@@ -10,16 +10,13 @@ SharedFields:
 - ID: "9c6106ea-7a5a-48e2-8cad-f0f693b1e2d4"
   Hint: __Read Only
   Value: 1
-- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
-  Hint: __Workflow
-  Value: "{E9B6C600-C6E8-4867-BCB7-8B0DC5F19840}"
 - ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
   Hint: __Thumbnail
   Value: |
     <image mediaid="{10E2137E-3F8E-4478-A8F0-EFBE270F1A24}" />
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "05a922b1-ca06-428a-8001-6ab5c475601e"
+  Value: "0620b110-af30-4bfb-af61-342ae6d23345"
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
   Value: |
@@ -48,13 +45,10 @@ Languages:
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
     Hint: __Unversioned revision
-    Value: "53e7ef38-1794-4487-a6ac-320a0c2747fd"
+    Value: "4c001572-f86c-4ac4-a3fd-1aad0ceb87b6"
   Versions:
   - Version: 1
     Fields:
-    - ID: "001dd393-96c5-490b-924a-b0f25cd9efd8"
-      Hint: __Lock
-      Value: 
     - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
       Hint: __Final Renderings
       Value: |
@@ -76,29 +70,22 @@ Languages:
       Value: "sitecore://master/{83BFD58F-FEB3-4AB3-8BB9-6BE6865A4CEF}?lang=en&ver=1"
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20260828T141309Z
-    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
-      Hint: __Workflow state
-      Value: "{171CCFD4-8543-428E-9A9B-8E6557E63B6D}"
-    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
-      Hint: __Created by
-      Value: |
-        sitecore\johannes.zijlstra@sitecore.com
+      Value: 20260905T174320Z
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "6482f62d-ac4d-4dc7-b17d-4f605c286456"
+      Value: "a2b07b36-75b4-42bb-ad15-22588bda34b2"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260829T183656Z
+      Value: 20260905T174532Z
 - Language: "fr-CA"
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
     Hint: __Unversioned revision
-    Value: "3d1315bc-fab0-48a6-850c-c3c2ff2dee50"
+    Value: "c57d898a-434f-44e7-b3ed-20d2e302b0b1"
   Versions:
   - Version: 1
     Fields:
@@ -126,29 +113,25 @@ Languages:
       Value: "sitecore://master/{83BFD58F-FEB3-4AB3-8BB9-6BE6865A4CEF}?lang=fr-CA&ver=1"
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20260828T141311Z
+      Value: 20260905T174323Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: 
-    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
-      Hint: __Created by
-      Value: |
-        sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "302ae583-7b7b-4fa4-ae8d-01a9007670e5"
+      Value: "86d91357-a34e-4c12-8ed2-1a685c0f81ce"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260828T141317Z
+      Value: 20260905T174532Z
 - Language: "ja-JP"
   Fields:
   - ID: "30e85e5d-e00a-4864-b358-7624d511deb4"
     Hint: __Unversioned revision
-    Value: "68c551bd-be85-4689-b117-869a2362298b"
+    Value: "a460a9cc-9857-4e27-ac60-1d9305b33ef6"
   Versions:
   - Version: 1
     Fields:
@@ -176,21 +159,14 @@ Languages:
       Value: "sitecore://master/{83BFD58F-FEB3-4AB3-8BB9-6BE6865A4CEF}?lang=ja-JP&ver=1"
     - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
       Hint: __Created
-      Value: 20260828T141311Z
-    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
-      Hint: __Workflow state
-      Value: "{171CCFD4-8543-428E-9A9B-8E6557E63B6D}"
-    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
-      Hint: __Created by
-      Value: |
-        sitecore\johannes.zijlstra@sitecore.com
+      Value: 20260905T174329Z
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "15cfc430-1c0d-4dfc-ae0d-3c71b44a6e56"
+      Value: "d52122fc-8621-4e6a-bb42-50e1cf873b4d"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260828T141317Z
+      Value: 20260905T174532Z

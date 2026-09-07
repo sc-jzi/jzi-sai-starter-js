@@ -44,7 +44,7 @@ export const Walden = (props: HeaderProps): JSX.Element => {
       <div className={`container container-${props.params?.ContainerWidth?.toLowerCase()}-fluid`}>
         <div className="row align-items-center">
           <div className="col-auto">
-            <NextImage field={props.fields.LogoImage} width={210} height={48} />
+            <a href="/"><NextImage field={props.fields.LogoImage} width={210} height={48} /></a>
           </div>
           <div className="col">
             <AppPlaceholder name="header-right" rendering={props.rendering} page={page} componentMap={props.componentMap} />
@@ -65,7 +65,7 @@ export const WithLogoImage = (props: HeaderProps): JSX.Element => {
       <div className={`container container-${props.params?.ContainerWidth?.toLowerCase()}-fluid`}>
         <div className="row align-items-center">
           <div className="col-auto">
-            <NextImage field={props.fields.LogoImage} width={200} height={50} />
+            <a href="/"><NextImage field={props.fields.LogoImage} width={200} height={50} /></a>
           </div>
           <div className="col">
             <AppPlaceholder name="header-right" rendering={props.rendering} page={page} componentMap={props.componentMap} />
