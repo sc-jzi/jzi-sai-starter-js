@@ -240,15 +240,7 @@ const ProgramCarouselView = (props: ProgramCarouselProps): JSX.Element => {
               })}
             </div>
             <div className="chamberlain-programs__controls">
-              <div className="chamberlain-programs__track" aria-hidden>
-                <span
-                  className="chamberlain-programs__fill"
-                  style={{
-                    width: `${thumbWidth}%`,
-                    left: `${thumbLeft}%`,
-                  }}
-                />
-              </div>
+              
               <div className="chamberlain-programs__buttons">
                 <button
                   type="button"

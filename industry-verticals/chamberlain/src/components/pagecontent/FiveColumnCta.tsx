@@ -108,17 +108,32 @@ export const Default = (props: FiveColumnCtaProps): JSX.Element => {
   );
 };
 
-/* Chamberlain variant — Proudly Accredited logo row */
+const ACCREDITATION_COPY =
+  'Chamberlain is accredited by the Higher Learning Commission and proudly holds programmatic accreditations, including CCNE, for many programs.';
+const ACCREDITATION_URL = 'https://www.chamberlain.edu/about/accreditation';
+
+const ViewAllArrow = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" aria-hidden>
+    <path
+      fill="currentColor"
+      d="M9.3 3.3a1 1 0 0 1 1.4 0l4 4a1 1 0 0 1 0 1.4l-4 4a1 1 0 1 1-1.4-1.4L11.6 9H2a1 1 0 1 1 0-2h9.6L9.3 4.7a1 1 0 0 1 0-1.4Z"
+    />
+  </svg>
+);
+
+/* Chamberlain variant — Proudly Accredited split layout with seal boxes */
 export const ChamberlainLogos = (props: FiveColumnCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
   const sxaStyles = `${props.params?.styles || ''}`;
-  const columns = [
-    { image: props.fields.Image1, text: props.fields.Text1, link: props.fields.Link1 },
-    { image: props.fields.Image2, text: props.fields.Text2, link: props.fields.Link2 },
-    { image: props.fields.Image3, text: props.fields.Text3, link: props.fields.Link3 },
-    { image: props.fields.Image4, text: props.fields.Text4, link: props.fields.Link4 },
-    { image: props.fields.Image5, text: props.fields.Text5, link: props.fields.Link5 },
-  ];
+  const fields = props.fields || {};
+  const seals = [
+    { image: fields.Image1, link: fields.Link1 },
+    { image: fields.Image2, link: fields.Link2 },
+    { image: fields.Image3, link: fields.Link3 },
+    { image: fields.Image4, link: fields.Link4 },
+  ].filter((seal) => isPageEditing || Boolean(seal.image?.value?.src));
 
   return (
     <div
@@ -126,22 +141,37 @@ export const ChamberlainLogos = (props: FiveColumnCtaProps): JSX.Element => {
       id={id ? id : undefined}
     >
       <div className="container">
-        <h2 className="chamberlain-logos__heading">Proudly Accredited</h2>
-        <div className="row row-cols-2 row-cols-sm-3 row-cols-lg-5 row-gap-3 gx-5 justify-content-center">
-          {columns.map((column, index) =>
-            column.image?.value?.src || column.text?.value ? (
-              <div className="col" key={index}>
-                <Link field={column.link}>
+        <div className="chamberlain-logos__layout">
+          <div className="chamberlain-logos__copy">
+            <h2 className="chamberlain-logos__heading">
+              <span className="chamberlain-logos__proudly">Proudly </span>
+              <span className="chamberlain-logos__accredited">Accredited</span>
+            </h2>
+            <p>{ACCREDITATION_COPY}</p>
+            <a href={ACCREDITATION_URL} className="chamberlain-link-arrow chamberlain-logos__all">
+              View All
+              <ViewAllArrow />
+            </a>
+          </div>
+          <div className="chamberlain-logos__seals-wrap">
+            <div className="chamberlain-logos__pattern" aria-hidden />
+            <div className="chamberlain-logos__seals">
+              {seals.map((seal, index) => {
+                const image = (
                   <div className="image-container">
-                    <NextImage field={column.image} className="d-block w-100 h-100" width={200} height={200} />
+                    <NextImage field={seal.image} className="d-block" width={220} height={120} />
                   </div>
-                </Link>
-                <div className="text-container">
-                  <Text field={column.text} />
-                </div>
-              </div>
-            ) : null
-          )}
+                );
+                const href = seal.link?.value?.href;
+
+                return (
+                  <div className="chamberlain-logos__seal" key={index}>
+                    {href ? <Link field={seal.link}>{image}</Link> : image}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </div>

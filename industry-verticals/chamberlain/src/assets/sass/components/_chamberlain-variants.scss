@@ -549,27 +549,132 @@ html.chamberlain-scrolled {
 }
 
 .component.five-column-cta.chamberlain-logos {
-  padding: 2rem 0 4rem;
-  text-align: center;
+  padding: 3.25rem 0 4rem;
+  text-align: left;
+  background: #fff;
+  overflow: hidden;
+
+  .chamberlain-logos__layout {
+    display: grid;
+    grid-template-columns: minmax(16rem, 0.82fr) minmax(0, 1.7fr);
+    gap: 2.5rem 3.25rem;
+    align-items: center;
+  }
 
   .chamberlain-logos__heading {
-    font-family: var(--brand-heading-font);
-    color: var(--brand-primary);
-    font-size: 1.7rem;
-    margin-bottom: 1.75rem;
+    font-size: clamp(2rem, 3.4vw, 2.7rem);
+    line-height: 1.15;
+    color: #0151b4;
+    margin: 0 0 0.85rem;
+    text-align: left;
+  }
+
+  .chamberlain-logos__proudly {
+    font-family: 'Open Sans', 'Source Sans 3', sans-serif;
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  .chamberlain-logos__accredited {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .chamberlain-logos__copy p {
+    color: #5c6670;
+    font-size: 1rem;
+    line-height: 1.55;
+    max-width: 22.5rem;
+    margin: 0 0 1.15rem;
+  }
+
+  .chamberlain-logos__all {
+    font-size: 1rem;
+  }
+
+  .chamberlain-logos__seals-wrap {
+    position: relative;
+  }
+
+  .chamberlain-logos__pattern {
+    position: absolute;
+    inset: -28% -6% -28% 8%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='64' viewBox='0 0 56 64'%3E%3Cpath fill='%23003A70' d='M28 4l18 8v16c0 14-8 24-18 32C18 52 10 42 10 28V12z'/%3E%3C/svg%3E");
+    background-size: 52px 60px;
+  }
+
+  .chamberlain-logos__seals {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+
+  .chamberlain-logos__seal {
+    background: #fff;
+    border: 1px solid #d5dce3;
+    min-height: 7.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 0.7rem;
+  }
+
+  .chamberlain-logos__seal a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .image-container {
+    aspect-ratio: auto;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .image-container img {
-    max-height: 72px;
+    max-height: 5.5rem;
     width: auto;
+    max-width: 100%;
+    height: auto;
     margin: 0 auto;
     object-fit: contain;
   }
 
   .text-container {
-    font-size: 0.85rem;
-    color: var(--brand-muted-fg);
-    margin-top: 0.5rem;
+    display: none;
+  }
+
+  @media (max-width: 991px) {
+    .chamberlain-logos__layout {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .chamberlain-logos__copy p {
+      max-width: none;
+    }
+
+    .chamberlain-logos__seals {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .chamberlain-logos__pattern {
+      inset: -12% 0 -12% 0;
+    }
   }
 }
 
