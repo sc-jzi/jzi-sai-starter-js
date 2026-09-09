@@ -39,10 +39,6 @@ export const Default = (props: ParallaxBannerProps) => {
       </h1>
       <div className="fs-5 text-center">
         <RichText field={props.fields.Text} />
-
-        {(isPageEditing || props.fields?.Link?.value?.href) && (
-          <Link field={props.fields.Link} className="button button-main mt-3" />
-        )}
       </div>
     </div>
   );
@@ -75,14 +71,13 @@ export const Default = (props: ParallaxBannerProps) => {
 
   return (
     <div
-      className={`component parallax-banner ${isPageEditing ? 'edit-mode' : ''} ${sxaStyles}`}
+      className={`text-white component parallax-banner ${isPageEditing ? 'edit-mode' : ''} ${sxaStyles}`}
       id={id ? id : undefined}
     >
       {isPageEditing ? (
         <div className="parallax-banner-inner">
           <Image field={props.fields.BackgroundImage} className="parallax-banner-background" />
           <div className="parallax-banner-content">{BannerContentBlock}</div>
-          <Image field={props.fields.ForegroundImage} className="parallax-banner-foreground" />
         </div>
       ) : (
         <ParallaxBanner
