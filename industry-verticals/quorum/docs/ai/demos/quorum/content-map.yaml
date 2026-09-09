@@ -1,0 +1,532 @@
+# Quorum Software — English Content Map
+# Source: https://www.quorumsoftware.com/  |  Target: /sitecore/content/utilities/quorum/Home
+# Field values are exact source copy. General Links are objects ({text, href, target}) and are
+# converted to Sitecore link XML at write time. Image fields carry source URLs and local files;
+# media XML is wired after upload.
+
+client:
+  name: 'Quorum Software'
+  sourceUrl: 'https://www.quorumsoftware.com/'
+  language: 'en'
+  detectedLanguage: 'en'
+  translationNeeded: false
+  targetPage: '/sitecore/content/utilities/quorum/Home'
+  targetPageId: 'ca1354be-b122-4a0f-a8f6-6907a7caa77d'
+  buildPlan: 'docs/ai/demos/quorum/build-plan.yaml'
+  extractedContent: 'docs/ai/demos/quorum/extracted-content.json'
+  imageManifest: 'docs/ai/demos/quorum/images/image-manifest.json'
+  totalSections: 12
+
+datasourcePolicy:
+  promosRoot: '/sitecore/content/utilities/quorum/Data/Promos'
+  promosRootId: '7bf8c6ea-f6fe-4e5b-80bc-7a918be201a8'
+  folderTemplateId: '8fe7f8dc-cb5d-42c2-99f8-76608c243f10'
+  rule: 'Every CTA-style datasource lives in its component-specific child folder under Promos.'
+  existingFolders:
+    - name: 'Three Column CTA'
+      id: '14a1c1e5-8c0b-4316-b96e-fa7326b0d5d0'
+    - name: 'Promo CTA'
+      id: 'cbff7791-a556-486f-aad3-4ddd3f5ebb94'
+    - name: 'App Promos'
+      id: '32cd43d5-6923-44e5-bbd3-a00a5771b9b4'
+  foldersToCreate:
+    - name: 'Hero'
+      path: '/sitecore/content/utilities/quorum/Data/Promos/Hero'
+      templateId: '8fe7f8dc-cb5d-42c2-99f8-76608c243f10'
+    - name: 'Heading CTA'
+      path: '/sitecore/content/utilities/quorum/Data/Promos/Heading CTA'
+      templateId: '8fe7f8dc-cb5d-42c2-99f8-76608c243f10'
+  articleQueryRoot: '/sitecore/content/utilities/quorum/Home/articles'
+  articleQueryRootId: '46c7b6eb-45b6-468b-965a-c7874cb70890'
+  imageXmlStatus: 'complete — 13/13 source assets uploaded and approved in Content Hub'
+
+sections:
+  - position: 1
+    description: 'Qnect 26 announcement strip and two-tier corporate navigation'
+    componentName: 'Header'
+    renderingId: '81317d3b-f929-426a-83ec-421982f8f1e6'
+    variant: 'Quorum'
+    kind: 'context-only'
+    datasourceItemName: 'Header'
+    datasourceItemId: '10e6be24-e55e-410f-ade3-6109b8298c32'
+    datasourceFolder: '/sitecore/content/utilities/quorum/Presentation/Partial Designs/Header/Data'
+    templateId: '0da7aa52-0c24-4721-9b6c-f6d8d9faaaa0'
+    templateName: 'Header'
+    sectionBackground: 'dark'
+    fields:
+      LogoImage: 'see imageFields — replace PLAY! Finance logo with the Quorum logo'
+    children: []
+    imageFields:
+      - field: 'LogoImage'
+        sourceUrl: 'https://www.quorumsoftware.com/images/QuorumLogo-1.svg'
+        localFile: 'docs/ai/demos/quorum/images/section1-img2.svg'
+        alt: 'Quorum Software'
+        usage: 'Header logo (desktop)'
+        action: 'replace existing media reference'
+      - field: 'LogoImage (mobile alternative)'
+        sourceUrl: 'https://www.quorumsoftware.com/images/mobilelogo-1.svg'
+        localFile: 'docs/ai/demos/quorum/images/section1-img1.svg'
+        alt: 'Quorum Software mobile mark'
+        usage: 'Optional mobile mark; the Header template exposes only one image field'
+        action: 'upload only'
+    contentNotes:
+      - 'The Header datasource template exposes only LogoImage. Announcement strip, utility links, primary CTA and the two-tier navigation are NOT fields on this item — do not invent fields for them.'
+      - 'Announcement strip source copy: "Don''t miss a Qnect 26 event near you" with a "Learn More" link; utility bar links are Training, Careers, Contact, Support, Login; primary CTA is "Request a Demo" -> https://www.quorumsoftware.com/request-a-demo/'
+      - 'Primary navigation labels (Software, Solutions, Services, Resources, Events, About) come from the Sitecore page tree and the Navigation rendering, not from this datasource.'
+      - 'Sibling item "Title" (id d935bd27-d15d-4da6-9556-34fe838f895b, Text template) holds the inline PLAY! Finance SVG logo markup rendered in header-left; it must be replaced or hidden when the Quorum logo is used.'
+    manualTasks:
+      - 'Update the Header partial design (25d8a12a-d24c-4715-a3fe-276c2fa9671b) to render the announcement strip and utility bar in the Quorum variant.'
+      - 'Replace or clear the header "Title" text item so the PLAY! Finance SVG wordmark is not shown.'
+      - 'Re-point navigation/utility links to the Quorum URLs listed in contentNotes.'
+
+  - position: 2
+    description: 'Full-width oilfield hero with blue overlay, headline, supporting copy, and orange CTA'
+    componentName: 'Hero'
+    renderingId: 'b7cdf75e-716a-4c59-b9b1-cd970ae0a4ae'
+    variant: 'Quorum'
+    kind: 'simple'
+    datasourceItemName: 'Hero - The AI Platform for Connected Energy Operations'
+    datasourceItemId: '6b50e8e2-d042-4286-87d7-d16637f77e32'
+    datasourceFolder: '/sitecore/content/utilities/quorum/Data/Promos/Hero'
+    datasourceFolderAction: 'create with Promo Folder template 8fe7f8dc-cb5d-42c2-99f8-76608c243f10'
+    templateId: '90d315e8-aa42-4b23-a7eb-4491396453f8'
+    templateName: 'Hero'
+    sectionBackground: 'primary'
+    fields:
+      Title: 'The AI Platform for Connected Energy Operations'
+      Text: '<p>Quorum Software connects critical energy workflows from the field to the boardroom, helping teams take control, make faster, smarter decisions, and close the loop for better performance.</p>'
+      Link:
+        text: 'See Solutions'
+        href: 'https://www.quorumsoftware.com/solutions/'
+        target: ''
+    children: []
+    imageFields:
+      - field: 'Image'
+        sourceUrl: 'https://www.quorumsoftware.com/media/rcnlcyki/quorum-software-hero-image.jpg?format=webp&v=1dc297b74a79c10'
+        localFile: 'docs/ai/demos/quorum/images/section2-img4.jpg'
+        alt: 'Purpose-Built Solutions for the Energy Industry'
+        usage: 'Full-bleed hero background (2700x843)'
+    contentNotes:
+      - 'Text is a Rich Text field; the single source paragraph is wrapped in <p>.'
+
+  - position: 3
+    description: 'Centered heading introducing the connected-decision capability cards'
+    componentName: 'HeadingCta'
+    renderingId: '89e1d547-7cd6-4ef0-9a27-1e99410797dd'
+    variant: 'QuorumSectionHeading'
+    kind: 'simple'
+    datasourceItemName: 'Heading CTA - Built for Connected Decisions'
+    datasourceItemId: 'bce0f622-9705-4dee-9325-6dccad49909f'
+    datasourceFolder: '/sitecore/content/utilities/quorum/Data/Promos/Heading CTA'
+    datasourceFolderAction: 'create with Promo Folder template 8fe7f8dc-cb5d-42c2-99f8-76608c243f10'
+    templateId: 'fa136527-6302-471d-83ab-e66fc72bda99'
+    templateName: 'Heading CTA'
+    sectionBackground: 'default'
+    fields:
+      Eyebrow: ''
+      Heading: 'Built for Connected Decisions'
+      Text: ''
+      Link: null
+    children: []
+    imageFields: []
+    contentNotes:
+      - 'The Heading CTA template field is named Heading (not Title). Eyebrow, Text and Link stay empty — the source section shows a heading only.'
+
+  - position: 4
+    description: 'First row of three compact capability cards with navy title bars'
+    componentName: 'ThreeColumnCta'
+    renderingId: 'ad385021-ce2b-4fc1-89aa-207d408034a8'
+    variant: 'QuorumDecisionCards'
+    kind: 'simple'
+    datasourceItemName: 'Three Column CTA - Connected Decisions Row 1'
+    datasourceItemId: '349fd0b9-9f22-47d2-a7b2-488436e4da4e'
+    datasourceFolder: '/sitecore/content/utilities/quorum/Data/Promos/Three Column CTA'
+    datasourceFolderAction: 'use existing folder'
+    templateId: '148d07ba-f923-4fb2-8907-0bd440d5db44'
+    templateName: 'Three Column CTA'
+    sectionBackground: 'default'
+    fields:
+      Text1: 'Agents at Work'
+      SubText1: 'Agents work inside your existing workflows, detecting anomalies and turning days of coordination into a ranked recommendation your team can act on immediately.'
+      Link1: null
+      Text2: 'Workflow Orchestration'
+      SubText2: 'Orchestration pulls subsurface, operations, commercial, and finance into one connected workflow, so a field event triggers the right response automatically.'
+      Link2: null
+      Text3: 'Context Not Chat'
+      SubText3: 'Every answer is grounded in your own operational data by solutions purpose-built for your distinct workflows, never from generic models or data outside your operations.'
+      Link3: null
+    children: []
+    imageFields: []
+    contentNotes:
+      - 'Decision cards use no imagery: leave Image1/Image2/Image3 empty so the variant renders the navy title bar treatment.'
+      - 'Source cards have no links; Link1-3 stay empty.'
+
+  - position: 5
+    description: 'Second row of three compact capability cards with navy title bars'
+    componentName: 'ThreeColumnCta'
+    renderingId: 'ad385021-ce2b-4fc1-89aa-207d408034a8'
+    variant: 'QuorumDecisionCards'
+    kind: 'simple'
+    datasourceItemName: 'Three Column CTA - Connected Decisions Row 2'
+    datasourceItemId: 'b0ae6bef-fdc6-4432-b2b6-382c70d17a99'
+    datasourceFolder: '/sitecore/content/utilities/quorum/Data/Promos/Three Column CTA'
+    datasourceFolderAction: 'use existing folder'
+    templateId: '148d07ba-f923-4fb2-8907-0bd440d5db44'
+    templateName: 'Three Column CTA'
+    sectionBackground: 'default'
+    fields:
+      Text1: 'Connected Data Foundation'
+      SubText1: 'Production, AFE status, contracts, scheduling, and financial exposure live in one shared operational picture, so every decision and every agent runs on trustworthy context.'
+      Link1: null
+      Text2: 'Governed AI'
+      SubText2: 'Every recommendation is fully explainable and defensible, so your team can approve, modify, or override with full visibility into how the system got there.'
+      Link2: null
+      Text3: 'Connected Field to Boardroom'
+      SubText3: 'Agents, orchestration, data, and governance tie into one foundation, closing the loop between the field and the boardroom so performance keeps improving.'
+      Link3: null
+    children: []
+    imageFields: []
+    contentNotes:
+      - 'Rendered directly beneath position 4 as the second half of the same visual section; no imagery.'
+
+  - position: 6
+    description: 'Three bordered customer-success cards for Tallgrass, Saturn Oil & Gas, and Woodside Energy'
+    componentName: 'ThreeColumnCta'
+    renderingId: 'ad385021-ce2b-4fc1-89aa-207d408034a8'
+    variant: 'QuorumCustomerStories'
+    kind: 'simple'
+    datasourceItemName: 'Three Column CTA - Customer Success Stories'
+    datasourceItemId: '4e491f5a-6673-4554-b2ed-2c967bd0d68e'
+    datasourceFolder: '/sitecore/content/utilities/quorum/Data/Promos/Three Column CTA'
+    datasourceFolderAction: 'use existing folder'
+    templateId: '148d07ba-f923-4fb2-8907-0bd440d5db44'
+    templateName: 'Three Column CTA'
+    sectionBackground: 'muted'
+    fields:
+      Text1: 'Tallgrass Resources'
+      SubText1: 'Managing 1,000 wells without adding resources—one operator scaled efficiently using Quorum’s Upstream On Demand Suite to streamline workflows, automate tasks, and deliver results.'
+      Link1:
+        text: 'Read Full Story'
+        href: 'https://resources.quorumsoftware.com/resource-center/col/resource/tallgrass-resources'
+        target: ''
+      Text2: 'Saturn Oil & Gas Inc.'
+      SubText2: 'One operator grew from 200 to 40,000 BOE/D in just 4 years—powered by better forecasting, planning, and reserves management with Val Nav.'
+      Link2:
+        text: 'Read Full Story'
+        href: 'https://resources.quorumsoftware.com/resource-center/col/resource/saturn-oil-gas-achieves-remarkable-growth'
+        target: ''
+      Text3: 'Woodside Energy'
+      SubText3: '"Partnering with Quorum has been a collaborative experience. The Energy Components system has provided us with a robust platform for standardizing and ensuring compliance."'
+      Link3:
+        text: 'Read Full Story'
+        href: 'https://resources.quorumsoftware.com/resource-center/col/resource/how-woodside-uses-quorum-energy-components-to-streamline-hydrocarbon-management-and-emissions-tracking'
+        target: ''
+    children: []
+    imageFields:
+      - field: 'Image1'
+        sourceUrl: 'https://www.quorumsoftware.com/media/imvhase3/tallgrassres-logo.webp'
+        localFile: 'docs/ai/demos/quorum/images/section5-img7.webp'
+        alt: 'Tallgrass Resources'
+        usage: 'Customer logo, card 1'
+      - field: 'Image2'
+        sourceUrl: 'https://www.quorumsoftware.com/media/2xdc3fag/saturn-oil-gas.webp'
+        localFile: 'docs/ai/demos/quorum/images/section5-img8.webp'
+        alt: 'Saturn Oil & Gas Inc.'
+        usage: 'Customer logo, card 2'
+      - field: 'Image3'
+        sourceUrl: 'https://www.quorumsoftware.com/media/450plwzj/woodside-energy.webp'
+        localFile: 'docs/ai/demos/quorum/images/section5-img9.webp'
+        alt: 'Woodside Energy'
+        usage: 'Customer logo, card 3'
+    contentNotes:
+      - 'The Three Column CTA template has no section-title field: the "Customer Success Stories" heading must come from the QuorumCustomerStories variant markup or a separate Heading CTA if the heading must stay editable.'
+      - 'Woodside attribution from source ("Juan Veldsman", "Production Allocation and Reporting Implementation Lead") has no matching field; carry it in the variant or append to SubText3 only if approved.'
+      - 'Source also shows a "See All Success Stories" link (https://resources.quorumsoftware.com/case-studies/) with no matching field — variant or manual task.'
+
+  - position: 7
+    description: 'Dark navy Qnect 26 event banner with left-aligned copy and orange CTA'
+    componentName: 'PromoCta'
+    renderingId: '1a375fac-6cc1-4a5a-a159-9bc6dbc66b80'
+    variant: 'QuorumDarkBanner'
+    kind: 'simple'
+    datasourceItemName: 'Promo CTA - Join Us at Qnect 26'
+    datasourceItemId: 'f498bbed-bbd9-4184-a0e2-e83d6a6627a5'
+    datasourceFolder: '/sitecore/content/utilities/quorum/Data/Promos/Promo CTA'
+    datasourceFolderAction: 'use existing folder'
+    templateId: 'c0943942-ae0f-4205-86fa-84884cce4a53'
+    templateName: 'Promo CTA'
+    sectionBackground: 'dark'
+    fields:
+      Eyebrow: ''
+      Title: 'Join Us at Qnect 26'
+      Subtitle: ''
+      Text: '<p>The Quorum Qnect 26 event series brings together our customers worldwide to help teams power their operations to perform at their best. Join one of our complimentary events either in Kuala Lumpur, Islamabad, Houston, Calgary, Brisbane, Stavanger, Aberdeen, or Abu Dhabi.</p>'
+      Link:
+        text: 'Learn More'
+        href: 'https://www.quorumsoftware.com/qnect-26-event-series/'
+        target: ''
+      Link2: null
+    children: []
+    imageFields: []
+    contentNotes:
+      - 'Text-led dark banner: the Image field stays empty and the variant must not require it.'
+
+  - position: 8
+    description: 'Compact white data-value statement with a cyan Request a Demo button'
+    componentName: 'HeadingCta'
+    renderingId: '89e1d547-7cd6-4ef0-9a27-1e99410797dd'
+    variant: 'QuorumInlineCta'
+    kind: 'simple'
+    datasourceItemName: 'Heading CTA - Unleash Your Data'
+    datasourceItemId: 'afb8b450-7f3d-4140-8ad3-30764774ca62'
+    datasourceFolder: '/sitecore/content/utilities/quorum/Data/Promos/Heading CTA'
+    datasourceFolderAction: 'create with Promo Folder template 8fe7f8dc-cb5d-42c2-99f8-76608c243f10'
+    templateId: 'fa136527-6302-471d-83ab-e66fc72bda99'
+    templateName: 'Heading CTA'
+    sectionBackground: 'default'
+    fields:
+      Eyebrow: ''
+      Heading: 'Unleash Your Data'
+      Text: 'We deliver decision-ready data and critical insights that maximize gains and de-risk your operations across the energy value chain.'
+      Link:
+        text: 'Request a Demo'
+        href: 'https://www.quorumsoftware.com/request-a-demo/'
+        target: ''
+    children: []
+    imageFields: []
+    contentNotes:
+      - 'Text is a Multi-Line Text field — plain text, no HTML.'
+
+  - position: 9
+    description: 'Three image-led editorial cards under Top Stories in Energy'
+    componentName: 'ThreeColumnCta'
+    renderingId: 'ad385021-ce2b-4fc1-89aa-207d408034a8'
+    variant: 'QuorumTopStories'
+    kind: 'simple'
+    datasourceItemName: 'Quorum - Three Column CTA - Top Stories'
+    datasourceItemId: 'd57a68f0-59df-46bb-99c6-2f1d59d9ea71'
+    datasourceFolder: '/sitecore/content/utilities/quorum/Data/Promos/Three Column CTA'
+    datasourceFolderAction: 'reuse existing folder'
+    templateId: '148d07ba-f923-4fb2-8907-0bd440d5db44'
+    templateName: 'Three Column CTA'
+    sectionBackground: 'default'
+    queryDriven: false
+    fields:
+      Text1: 'Four Building Blocks to Fuel the Increase in Energy Demand'
+      SubText1: 'Modern Energy Growth'
+      Text2: 'Quorum Software Becomes AWS Energy Competency Partner'
+      SubText2: 'Market & Technology Trends'
+      Text3: 'Smarter Support and Learning for Energy Teams'
+      SubText3: 'Elevating Customer Experience'
+    children: []
+    imageFields:
+      - { field: 'Image1', localFile: 'docs/ai/demos/quorum/images/section9-img10.webp' }
+      - { field: 'Image2', localFile: 'docs/ai/demos/quorum/images/section9-img11.webp' }
+      - { field: 'Image3', localFile: 'docs/ai/demos/quorum/images/section9-img12.webp' }
+    contentNotes:
+      - 'The ArticleList rendering is query-only and does not accept datasource assignment through the Agent API, so the visible row uses ThreeColumnCta.'
+      - 'The three Quorum article items remain beneath /sitecore/content/utilities/quorum/Home/articles for deeper navigation.'
+
+  - position: 10
+    description: 'Full-width planning-guide banner with offshore energy image, white copy, and orange CTA'
+    componentName: 'AppPromo'
+    renderingId: 'f9905f68-21e8-4c6f-8b89-56bb99020d31'
+    variant: 'QuorumGuide'
+    kind: 'simple'
+    datasourceItemName: 'App Promo - Practical Guide to Optimal Planning'
+    datasourceItemId: '63ddd66c-3ecc-4a86-a6d6-6cb9ca3f69ed'
+    datasourceFolder: '/sitecore/content/utilities/quorum/Data/Promos/App Promos'
+    datasourceFolderAction: 'use existing folder'
+    templateId: 'bbcccd48-218c-4f19-a1d4-bb3dbf1f4d89'
+    templateName: 'App Promo'
+    sectionBackground: 'primary'
+    fields:
+      Title: 'Practical Guide to Optimal Planning in Oil and Gas Firms'
+      Text: '<p>Find out how to turn disconnected data into decision-ready insight. See how evergreen inventories, shared fiscal models, and consistent corporate data connect field to finance. A single source of truth cuts manual work and accelerates planning. Unified systems and real-time visibility for scenario comparisons that make investing smarter, delivering confident decisions for measurable gains across every cycle.</p><p><a class="button button-main" href="https://resources.quorumsoftware.com/resource-center/col/resource/practical-guide-to-optimal-planning-in-oil-and-gas-firms">Access the Guide</a></p>'
+    children: []
+    imageFields:
+      - field: 'Image'
+        sourceUrl: 'https://www.quorumsoftware.com/media/pm4gaz5j/practical-guide-to-optimal-planning.webp?format=webp&v=1dc5a6200f20c70'
+        localFile: 'docs/ai/demos/quorum/images/section10-img13.webp'
+        alt: 'Practical Guide To Optimal Planning'
+        usage: 'Full-width banner background (2700x852)'
+    contentNotes:
+      - 'The App Promo template has only Title, Text and Image — there is no Link field, so the "Access the Guide" CTA is embedded as an <a> inside the Rich Text Text field.'
+
+  - position: 11
+    description: 'Minimal centered Ready to get started conversion prompt'
+    componentName: 'HeadingCta'
+    renderingId: '89e1d547-7cd6-4ef0-9a27-1e99410797dd'
+    variant: 'QuorumFinalCta'
+    kind: 'simple'
+    datasourceItemName: 'Heading CTA - Ready to get started'
+    datasourceItemId: '0ad4160c-49a7-4345-8d1e-8f28ac3f9cec'
+    datasourceFolder: '/sitecore/content/utilities/quorum/Data/Promos/Heading CTA'
+    datasourceFolderAction: 'create with Promo Folder template 8fe7f8dc-cb5d-42c2-99f8-76608c243f10'
+    templateId: 'fa136527-6302-471d-83ab-e66fc72bda99'
+    templateName: 'Heading CTA'
+    sectionBackground: 'default'
+    fields:
+      Eyebrow: ''
+      Heading: 'Ready to get started?'
+      Text: 'Fill out the form to request a demo or get in touch with one of our team members.'
+      Link: null
+    children: []
+    imageFields: []
+    contentNotes:
+      - 'No embedded form and no CTA link appear in the supplied reference; Link stays empty.'
+
+  - position: 12
+    description: 'Navy multi-column footer with Solutions, Services, Quick Links, Contact Us, legal links, and social icons'
+    componentName: 'Footer'
+    renderingId: '771a3f27-6448-44ac-add0-e5de311c6e3b'
+    variant: 'Quorum'
+    kind: 'context-only'
+    datasourceItemName: 'Footer 1'
+    datasourceItemId: '171445fa-968a-4070-aede-ee36354e60c5'
+    datasourceFolder: '/sitecore/content/utilities/quorum/Presentation/Partial Designs/Footer/Data'
+    templateId: '947db8f8-dc76-453f-aca1-a27babfe633b'
+    templateName: 'Footer'
+    sectionBackground: 'dark'
+    fields:
+      Title1: 'Solutions'
+      Text1: '<p>The Quorum Energy Suite delivers the path to success with its game-changing, decision-ready data, capabilities, integration, and automation.</p><p><a href="https://www.quorumsoftware.com/solutions/">Solutions</a></p>'
+      Title2: 'Services'
+      Text2: '<p>Tap into expertise, services and technical support that can help you achieve results faster and get the most of your software investment.</p><p><a href="https://www.quorumsoftware.com/services/">Services &amp; Support</a></p>'
+      Title3: 'Quick Links'
+      Text3: '<p><a href="https://www.quorumsoftware.com/about/press-releases/">News</a></p><p><a href="https://www.quorumsoftware.com/careers/">Careers</a></p><p><a href="https://resources.quorumsoftware.com/blog">Blog</a></p>'
+      Title4: 'Contact Us'
+      Text4: '<p><a href="https://www.quorumsoftware.com/contact/">Sales Inquiries</a></p><p><a href="https://community.quorumsoftware.com/s/login/">Customer Support</a></p>'
+      Copyright: '©2026 Quorum Business Solutions, Inc. All Rights Reserved'
+      Link1:
+        text: 'Terms & Conditions'
+        href: 'https://www.quorumsoftware.com/terms-and-conditions/'
+        target: '_blank'
+      Link2:
+        text: 'Privacy Policy'
+        href: 'https://www.quorumsoftware.com/privacy-policy/'
+        target: '_blank'
+      SocialsTitle: 'Follow Us'
+      SocialLink1:
+        text: 'LinkedIn'
+        href: 'https://www.linkedin.com/company/quorum-software'
+        target: '_blank'
+      SocialLink2:
+        text: 'YouTube'
+        href: 'https://www.youtube.com/channel/UCC_19kN5BSR0iKTpzymjvUg'
+        target: '_blank'
+      SocialLink3: null
+    children: []
+    imageFields:
+      - field: 'Image1'
+        sourceUrl: 'https://www.quorumsoftware.com/images/QuorumLogo-1.svg'
+        localFile: 'docs/ai/demos/quorum/images/section1-img2.svg'
+        alt: 'Quorum Software'
+        usage: 'Footer logo — replaces the PLAY! Finance logo currently referenced'
+      - field: 'SocialIcon1'
+        sourceUrl: ''
+        localFile: ''
+        alt: 'LinkedIn'
+        usage: 'Reuse the existing icon media item already wired to SocialIcon1'
+        action: 'keep existing media, verify it is a LinkedIn glyph'
+      - field: 'SocialIcon2'
+        sourceUrl: ''
+        localFile: ''
+        alt: 'YouTube'
+        usage: 'Reuse the existing icon media item already wired to SocialIcon2'
+        action: 'keep existing media, verify it is a YouTube glyph'
+      - field: 'SocialIcon3'
+        sourceUrl: ''
+        localFile: ''
+        alt: ''
+        usage: 'Source shows only two social channels'
+        action: 'clear so no third icon renders'
+    contentNotes:
+      - 'SocialsTitle has no direct source equivalent (the starter value is "Share on"); "Follow Us" is the approved label for the two Quorum social channels.'
+      - 'The Footer template exposes only Link1 and Link2. Additional source legal links have no fields: Qai Disclaimer (https://www.quorumsoftware.com/qai-disclaimer/), Cookie Policy (https://www.quorumsoftware.com/cookie-policy/), Transparency Act (https://resources.quorumsoftware.com/presentations/transparency-act), Equality & Anti-Discrimintation (https://resources.quorumsoftware.com/presentations/quality-anti-discrimination).'
+      - 'Sibling text items in the same folder still hold PLAY! Finance content: "Address" (b17a27b0-3161-49cc-bbd5-ea39646ac986) and "Contact info" (dfdb46d5-411e-4606-87c7-187f976eee6c).'
+    manualTasks:
+      - 'Decide whether the four extra legal links go into the Quorum footer variant markup or an additional rich-text item.'
+      - 'Update or clear the footer "Address" and "Contact info" text items so PLAY! Finance details are removed.'
+
+articleItems:
+  - name: 'four-building-blocks-to-fuel-the-increase-in-energy-demand'
+    itemId: 'e5e8f21c-d438-45d4-9776-d0555619bb6f'
+    parentPath: '/sitecore/content/utilities/quorum/Home/articles'
+    templateId: 'f83ccefd-fc41-4a60-9882-8f7ea5cf41a8'
+    templateName: 'Article Page'
+    sortOrder: 1
+    fields:
+      Title: 'Four Building Blocks to Fuel the Increase in Energy Demand'
+      NavigationTitle: 'Four Building Blocks to Fuel the Increase in Energy Demand'
+      Excerpt: 'Modern Energy Growth'
+      Content: '<p><a href="https://resources.quorumsoftware.com/resource-center/col/resource/the-4-digital-pillars-that-fuel-modern-energy-growth">Read the full story on quorumsoftware.com</a></p>'
+    children: []
+    imageFields:
+      - field: 'Thumbnail'
+        sourceUrl: 'https://www.quorumsoftware.com/media/r1bjmeut/modern-energy-growth-top-stories-q.webp'
+        localFile: 'docs/ai/demos/quorum/images/section9-img10.webp'
+        alt: 'Modern Energy Growth'
+        usage: 'Top Stories card image'
+      - field: 'BackgroundImage'
+        sourceUrl: 'https://www.quorumsoftware.com/media/r1bjmeut/modern-energy-growth-top-stories-q.webp'
+        localFile: 'docs/ai/demos/quorum/images/section9-img10.webp'
+        alt: 'Modern Energy Growth'
+        usage: 'Article page header background (reuses the card image)'
+    contentNotes:
+      - 'Source card shows the category eyebrow "Modern Energy Growth" above the title; the Article Page template has no eyebrow field, so it is mapped to Excerpt.'
+      - 'Source link: https://resources.quorumsoftware.com/resource-center/col/resource/the-4-digital-pillars-that-fuel-modern-energy-growth (no body copy is published on the homepage).'
+
+  - name: 'quorum-software-becomes-aws-energy-competency-partner'
+    itemId: '9c5d07d0-64f2-4f06-a38a-a9640118df01'
+    parentPath: '/sitecore/content/utilities/quorum/Home/articles'
+    templateId: 'f83ccefd-fc41-4a60-9882-8f7ea5cf41a8'
+    templateName: 'Article Page'
+    sortOrder: 2
+    fields:
+      Title: 'Quorum Software Becomes AWS Energy Competency Partner'
+      NavigationTitle: 'Quorum Software Becomes AWS Energy Competency Partner'
+      Excerpt: 'Market & Technology Trends'
+      Content: '<p><a href="https://www.quorumsoftware.com/about/partner-program/cloud-applications-purpose-built-for-energy/">Read the full story on quorumsoftware.com</a></p>'
+    children: []
+    imageFields:
+      - field: 'Thumbnail'
+        sourceUrl: 'https://www.quorumsoftware.com/media/ttgmpyqj/energy-transition-quorum-c3.webp'
+        localFile: 'docs/ai/demos/quorum/images/section9-img11.webp'
+        alt: 'Market & Technology Trends'
+        usage: 'Top Stories card image'
+      - field: 'BackgroundImage'
+        sourceUrl: 'https://www.quorumsoftware.com/media/ttgmpyqj/energy-transition-quorum-c3.webp'
+        localFile: 'docs/ai/demos/quorum/images/section9-img11.webp'
+        alt: 'Market & Technology Trends'
+        usage: 'Article page header background (reuses the card image)'
+    contentNotes:
+      - 'Category eyebrow "Market & Technology Trends" mapped to Excerpt.'
+      - 'Source link: https://www.quorumsoftware.com/about/partner-program/cloud-applications-purpose-built-for-energy/'
+
+  - name: 'smarter-support-and-learning-for-energy-teams'
+    itemId: '266072d3-d13a-4a4e-8e38-fd3821c2190a'
+    parentPath: '/sitecore/content/utilities/quorum/Home/articles'
+    templateId: 'f83ccefd-fc41-4a60-9882-8f7ea5cf41a8'
+    templateName: 'Article Page'
+    sortOrder: 3
+    fields:
+      Title: 'Smarter Support and Learning for Energy Teams'
+      NavigationTitle: 'Smarter Support and Learning for Energy Teams'
+      Excerpt: 'Elevating Customer Experience'
+      Content: '<p><a href="https://resources.quorumsoftware.com/resource-center/col/resource/elevating-customer-experience-with-qai-knowledge-base-and-communities">Read the full story on quorumsoftware.com</a></p>'
+    children: []
+    imageFields:
+      - field: 'Thumbnail'
+        sourceUrl: 'https://www.quorumsoftware.com/media/urzlxrit/elevating-customer-experience.webp'
+        localFile: 'docs/ai/demos/quorum/images/section9-img12.webp'
+        alt: 'Elevating Customer Experience'
+        usage: 'Top Stories card image'
+      - field: 'BackgroundImage'
+        sourceUrl: 'https://www.quorumsoftware.com/media/urzlxrit/elevating-customer-experience.webp'
+        localFile: 'docs/ai/demos/quorum/images/section9-img12.webp'
+        alt: 'Elevating Customer Experience'
+        usage: 'Article page header background (reuses the card image)'
+    contentNotes:
+      - 'Category eyebrow "Elevating Customer Experience" mapped to Excerpt.'
+      - 'Source link: https://resources.quorumsoftware.com/resource-center/col/resource/elevating-customer-experience-with-qai-knowledge-base-and-communities'

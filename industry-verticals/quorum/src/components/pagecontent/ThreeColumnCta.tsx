@@ -32,7 +32,20 @@ export type ThreeColumnCtaProps = {
   fields: Fields;
 };
 
-export const Default = (props: ThreeColumnCtaProps): JSX.Element => {
+type QuorumColumn = {
+  image: ImageField;
+  text: Field<string>;
+  subText: Field<string>;
+  link: LinkField;
+};
+
+const getQuorumColumns = (fields: Fields): QuorumColumn[] => [
+  { image: fields?.Image1, text: fields?.Text1, subText: fields?.SubText1, link: fields?.Link1 },
+  { image: fields?.Image2, text: fields?.Text2, subText: fields?.SubText2, link: fields?.Link2 },
+  { image: fields?.Image3, text: fields?.Text3, subText: fields?.SubText3, link: fields?.Link3 },
+];
+
+const ThreeColumnCtaDefault = (props: ThreeColumnCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
@@ -267,3 +280,108 @@ export const WithIconsCompact = (props: ThreeColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+export const QuorumDecisionCards = (props: ThreeColumnCtaProps): JSX.Element => {
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  return (
+    <section
+      className={`component quorum-decision-cards ${props.params?.styles || ''}`}
+      id={props.params.RenderingIdentifier || undefined}
+    >
+      <div className="quorum-container quorum-card-grid">
+        {getQuorumColumns(props.fields).map((column, index) => (
+          <article className="quorum-decision-card" key={index}>
+           
+            <Text field={column.text} tag="h3" className="quorum-decision-card__title" />
+            <div className="quorum-decision-card__body">
+              <Text field={column.subText} tag="p" />
+              {(isPageEditing || column.link?.value?.href) && (
+                <Link field={column.link} className="quorum-link-arrow" />
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export const Hidden = (): JSX.Element => {
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;  
+
+
+  return (
+    <>{(isPageEditing) && (<p>[This component is hidden]</p>)}</>
+  );
+}
+
+export const QuorumCustomerStories = (props: ThreeColumnCtaProps): JSX.Element => {
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  return (
+    <section
+      className={`component quorum-customer-stories ${props.params?.styles || ''}`}
+      id={props.params.RenderingIdentifier || undefined}
+    >
+      <div className="quorum-container quorum-card-grid">
+        {getQuorumColumns(props.fields).map((column, index) => (
+          <article className="quorum-customer-card" key={index}>
+            {(isPageEditing || column.image?.value?.src) && (
+              <div className="quorum-customer-card__logo">
+                <NextImage field={column.image} width={220} height={72} />
+              </div>
+            )}
+            <Text field={column.text} tag="h3" className="quorum-customer-card__title" />
+            <Text field={column.subText} tag="p" className="quorum-customer-card__body" />
+            {(isPageEditing || column.link?.value?.href) && (
+              <Link field={column.link} className="quorum-link-arrow quorum-customer-card__link" />
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export const QuorumTopStories = (props: ThreeColumnCtaProps): JSX.Element => {
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  return (
+    <section
+      className={`component quorum-top-stories ${props.params?.styles || ''}`}
+      id={props.params.RenderingIdentifier || undefined}
+    >
+      <div className="quorum-container quorum-top-stories__grid">
+        {getQuorumColumns(props.fields).map((column, index) => (
+          <article className="quorum-story-card" key={index}>
+            <Link field={column.link} className="quorum-story-card__link">
+              {(isPageEditing || column.image?.value?.src) && (
+                <NextImage
+                  field={column.image}
+                  width={520}
+                  height={292}
+                  className="quorum-story-card__image"
+                />
+              )}
+              <div className="quorum-story-card__content">
+                <Text
+                  field={column.subText}
+                  tag="p"
+                  className="quorum-story-card__category"
+                />
+                <Text field={column.text} tag="h3" className="quorum-story-card__title" />
+              </div>
+            </Link>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export const Default = ThreeColumnCtaDefault;

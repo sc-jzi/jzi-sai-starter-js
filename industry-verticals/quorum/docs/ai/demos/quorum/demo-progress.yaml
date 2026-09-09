@@ -1,0 +1,178 @@
+# Demo Progress Tracker
+
+client:
+  name: "Quorum Software"
+  sourceUrl: "https://www.quorumsoftware.com/"
+  startedAt: "2026-09-08T18:44:00-04:00"
+  lastUpdatedAt: "2026-09-08T20:31:00-04:00"
+
+phases:
+  phase0_inputs:
+    status: "complete"
+    screenshot: true
+    url: "https://www.quorumsoftware.com/"
+
+  phase0_5_manifest:
+    status: "skipped"
+    validationMode: "quick"
+    result: "existing-components-selected"
+
+  phase1_theme:
+    status: "complete"
+    themeFile: "docs/ai/themes/quorum.theme.yaml"
+    userApproved: true
+
+  phase2_analysis:
+    status: "complete"
+    buildPlanFile: "docs/ai/demos/quorum/build-plan.yaml"
+    totalSections: 12
+    userApproved: true
+
+  phase2_5_content:
+    status: "complete"
+    contentMapFile: "docs/ai/demos/quorum/content-map.yaml"
+    extractorUsed: true
+
+  phase3_content:
+    status: "complete"
+    completedSections: 12
+    totalSections: 12
+
+  phase4_theme:
+    status: "complete"
+    themeDelivery: "scss-variables-and-quorum-component-styles"
+    cssWritten: true
+    fontsAdded: true
+
+  phase5_custom:
+    status: "complete"
+    customComponentsNeeded: 0
+    customComponentsBuilt: 0
+
+  phase5_5_variants:
+    status: "complete"
+    variantsNeeded: 13
+    variantsCreated: 13
+    variantSpecsFile: ""
+    skippedReason: ""
+
+  phase6_assembly:
+    status: "complete"
+    componentsAdded: 13
+    datasourcesWired: 12
+    totalComponents: 13
+    pageId: "ca1354be-b122-4a0f-a8f6-6907a7caa77d"
+    note: "ArticleList is intentionally hidden; Top Stories uses a ThreeColumnCta datasource because the query-only ArticleList rendering does not accept datasource assignment through the Agent API."
+    datasourceRewireNote: "Parallel set_component_datasource calls report success but are lost to last-write-wins on the layout field, leaving components on the local:/Data/* lorem ipsum copies. Re-applied sequentially with brace-form GUIDs; all 12 verified against /Data/Promos."
+
+  phase7_summary:
+    status: "complete"
+    manualTasksFile: "docs/ai/demos/quorum/manual-tasks.md"
+
+validation:
+  configMismatch:
+    projectConfig: "utilities/quorum"
+    manifestConfig: "main/main-website"
+  passedRoots:
+    - "/sitecore/content/utilities/quorum/Data"
+    - "/sitecore/content/utilities/quorum/Presentation/Headless Variants"
+    - "/sitecore/content/utilities/quorum/Presentation/Available Renderings/Page Content"
+  missingRoots:
+    - "/sitecore/templates/Project/quorum/Components"
+    - "/sitecore/templates/Project/quorum/Folders"
+    - "/sitecore/templates/Project/quorum/Rendering Parameters"
+    - "/sitecore/layout/Renderings/Project/quorum"
+
+sections:
+  - position: 1
+    componentName: "Header"
+    kind: "context-only"
+    phase3:
+      status: "populated"
+      itemId: "10e6be24-e55e-410f-ade3-6109b8298c32"
+      fieldsPopulated: true
+      childrenCreated: 0
+      childrenExpected: 0
+      imagesUploaded: 1
+      imagesExpected: 1
+      imagesFailed: 0
+      error: ""
+    phase5_5: { status: "pending", variantName: "Quorum", exportAdded: false, variantDefinitionId: "", error: "" }
+    phase6: { status: "pending", componentInstanceId: "c494869c-a931-4f42-8bdf-aca32462f2b3", datasourceWired: true, error: "" }
+
+  - position: 2
+    componentName: "Hero"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "6b50e8e2-d042-4286-87d7-d16637f77e32", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, imagesUploaded: 1, imagesExpected: 1, imagesFailed: 0, error: "" }
+    phase5_5: { status: "pending", variantName: "Quorum", exportAdded: false, variantDefinitionId: "", error: "" }
+    phase6: { status: "pending", componentInstanceId: "", datasourceWired: false, error: "" }
+
+  - position: 3
+    componentName: "HeadingCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "bce0f622-9705-4dee-9325-6dccad49909f", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, imagesUploaded: 0, imagesExpected: 0, imagesFailed: 0, error: "" }
+    phase5_5: { status: "pending", variantName: "QuorumSectionHeading", exportAdded: false, variantDefinitionId: "", error: "" }
+    phase6: { status: "pending", componentInstanceId: "", datasourceWired: false, error: "" }
+
+  - position: 4
+    componentName: "ThreeColumnCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "349fd0b9-9f22-47d2-a7b2-488436e4da4e", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, imagesUploaded: 0, imagesExpected: 0, imagesFailed: 0, error: "" }
+    phase5_5: { status: "pending", variantName: "QuorumDecisionCards", exportAdded: false, variantDefinitionId: "", error: "" }
+    phase6: { status: "pending", componentInstanceId: "", datasourceWired: false, error: "" }
+
+  - position: 5
+    componentName: "ThreeColumnCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "b0ae6bef-fdc6-4432-b2b6-382c70d17a99", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, imagesUploaded: 0, imagesExpected: 0, imagesFailed: 0, error: "" }
+    phase5_5: { status: "pending", variantName: "QuorumDecisionCards", exportAdded: false, variantDefinitionId: "", error: "" }
+    phase6: { status: "pending", componentInstanceId: "", datasourceWired: false, error: "" }
+
+  - position: 6
+    componentName: "ThreeColumnCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "4e491f5a-6673-4554-b2ed-2c967bd0d68e", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, imagesUploaded: 3, imagesExpected: 3, imagesFailed: 0, error: "" }
+    phase5_5: { status: "pending", variantName: "QuorumCustomerStories", exportAdded: false, variantDefinitionId: "", error: "" }
+    phase6: { status: "pending", componentInstanceId: "", datasourceWired: false, error: "" }
+
+  - position: 7
+    componentName: "PromoCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "f498bbed-bbd9-4184-a0e2-e83d6a6627a5", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, imagesUploaded: 0, imagesExpected: 0, imagesFailed: 0, error: "" }
+    phase5_5: { status: "pending", variantName: "QuorumDarkBanner", exportAdded: false, variantDefinitionId: "", error: "" }
+    phase6: { status: "pending", componentInstanceId: "", datasourceWired: false, error: "" }
+
+  - position: 8
+    componentName: "HeadingCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "afb8b450-7f3d-4140-8ad3-30764774ca62", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, imagesUploaded: 0, imagesExpected: 0, imagesFailed: 0, error: "" }
+    phase5_5: { status: "pending", variantName: "QuorumInlineCta", exportAdded: false, variantDefinitionId: "", error: "" }
+    phase6: { status: "pending", componentInstanceId: "", datasourceWired: false, error: "" }
+
+  - position: 9
+    componentName: "ArticleList"
+    kind: "list"
+    phase3: { status: "populated", itemId: "46c7b6eb-45b6-468b-965a-c7874cb70890", fieldsPopulated: true, childrenCreated: 3, childrenExpected: 3, imagesUploaded: 3, imagesExpected: 3, imagesFailed: 0, error: "" }
+    phase5_5: { status: "pending", variantName: "QuorumTopStories", exportAdded: false, variantDefinitionId: "", error: "" }
+    phase6: { status: "pending", componentInstanceId: "", datasourceWired: false, error: "" }
+
+  - position: 10
+    componentName: "AppPromo"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "63ddd66c-3ecc-4a86-a6d6-6cb9ca3f69ed", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, imagesUploaded: 1, imagesExpected: 1, imagesFailed: 0, error: "" }
+    phase5_5: { status: "pending", variantName: "QuorumGuide", exportAdded: false, variantDefinitionId: "", error: "" }
+    phase6: { status: "pending", componentInstanceId: "", datasourceWired: false, error: "" }
+
+  - position: 11
+    componentName: "HeadingCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "0ad4160c-49a7-4345-8d1e-8f28ac3f9cec", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, imagesUploaded: 0, imagesExpected: 0, imagesFailed: 0, error: "" }
+    phase5_5: { status: "pending", variantName: "QuorumFinalCta", exportAdded: false, variantDefinitionId: "", error: "" }
+    phase6: { status: "pending", componentInstanceId: "", datasourceWired: false, error: "" }
+
+  - position: 12
+    componentName: "Footer"
+    kind: "context-only"
+    phase3: { status: "populated", itemId: "171445fa-968a-4070-aede-ee36354e60c5", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, imagesUploaded: 1, imagesExpected: 1, imagesFailed: 0, error: "" }
+    phase5_5: { status: "pending", variantName: "Quorum", exportAdded: false, variantDefinitionId: "", error: "" }
+    phase6: { status: "pending", componentInstanceId: "29758c1f-8daf-4d56-a212-eb734e2907ae", datasourceWired: true, error: "" }

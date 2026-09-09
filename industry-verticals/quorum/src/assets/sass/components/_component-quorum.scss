@@ -1,0 +1,903 @@
+.quorum-container {
+  width: min(100% - 3rem, 1320px);
+  margin-inline: auto;
+}
+
+.quorum-button {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.7rem;
+  border: 1px solid transparent;
+  border-radius: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+
+  &--primary {
+    background: #f8981d;
+    color: #fff;
+
+    &:hover,
+    &:focus-visible {
+      background: #fff;
+      color: #002554;
+    }
+  }
+
+  &--outline {
+    border-color: #fff;
+    color: #fff;
+
+    &:hover,
+    &:focus-visible {
+      background: #fff;
+      color: #002554;
+    }
+  }
+}
+
+.quorum-link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #f8981d;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &::after {
+    content: '\2192';
+    font-size: 1rem;
+  }
+}
+
+.quorum-announcement {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.4rem 1rem;
+  background: #fff;
+  color: #002554;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+
+  &__link {
+    padding: 0.65rem 2.2rem;
+    background: #f8981d;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+
+.quorum-eyebrow {
+  width: 100%;
+  padding: 0;
+  background: #002554;
+  font-family: 'Montserrat', sans-serif;
+
+  &__inner {
+    display: flex;
+    width: min(100% - 3rem, 1320px);
+    min-height: 56px;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1.25rem;
+    margin-inline: auto;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: flex;
+      align-items: center;
+
+      // Thin rule between each utility item, including before the search icon.
+      &::after {
+        width: 1px;
+        height: 14px;
+        margin-left: 0.9rem;
+        background: #2c5488;
+        content: '';
+      }
+    }
+
+    a {
+      color: #4a9fe0;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.2s ease;
+
+      &:hover,
+      &:focus-visible {
+        color: #fff;
+      }
+    }
+  }
+
+  &__search {
+    display: flex;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #4a9fe0;
+    cursor: pointer;
+    transition: color 0.2s ease;
+
+    svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      color: #fff;
+    }
+  }
+
+  &__cta {
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 2.2rem;
+    background: #0d9ddb;
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      background: #00a9e0;
+      color: #fff;
+    }
+  }
+
+  &__search-panel {
+    width: min(100% - 3rem, 1320px);
+    margin-inline: auto;
+    padding-bottom: 1rem;
+  }
+}
+
+.quorum-header {
+  min-height: 74px;
+  padding: 0;
+  background: #002554;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+
+  &__inner {
+    display: flex;
+    width: min(100% - 3rem, 1320px);
+    min-height: 74px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-inline: auto;
+  }
+
+  &__logo {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+
+    img {
+      width: auto;
+      max-width: 190px;
+      height: 48px;
+      object-fit: contain;
+    }
+  }
+
+  &__navigation {
+    min-width: 0;
+
+    a {
+      color: #fff;
+    }
+
+    .component {
+      padding-block: 0;
+    }
+  }
+}
+
+.quorum-hero {
+  position: relative;
+  display: grid;
+  min-height: 440px;
+  overflow: hidden;
+  background: #006a9f;
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  isolation: isolate;
+
+  &__image,
+  > picture {
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image {
+    object-fit: cover;
+  }
+
+  &__overlay {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(90deg, rgb(0 106 159 / 92%) 0%, rgb(0 106 159 / 72%) 48%, rgb(0 37 84 / 18%) 100%);
+  }
+
+  &__content {
+    align-self: center;
+    padding-block: 3.5rem;
+  }
+
+  &__title {
+    max-width: 600px;
+    margin: 0 0 1rem;
+    color: #fff;
+    font-size: clamp(2.15rem, 4vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.08;
+  }
+
+  &__text {
+    max-width: 620px;
+    margin-bottom: 1.6rem;
+    font-size: 0.95rem;
+    line-height: 1.65;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.quorum-section-heading,
+.quorum-inline-cta,
+.quorum-final-cta,
+.quorum-decision-cards,
+.quorum-customer-stories,
+.quorum-top-stories,
+.quorum-dark-banner,
+.quorum-guide,
+.quorum-footer {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.quorum-section-heading {
+  padding: 3.2rem 0 1.6rem;
+  text-align: center;
+
+  &__content {
+    max-width: 850px;
+    margin-inline: auto;
+  }
+
+  &__eyebrow {
+    margin-bottom: 0.45rem;
+    color: #006a9f;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &__heading {
+    margin: 0;
+    color: #006a9f;
+    font-size: clamp(1.7rem, 3vw, 2.55rem);
+    font-weight: 300;
+    line-height: 1.2;
+  }
+
+  &__text {
+    max-width: 720px;
+    margin: 0.8rem auto 0;
+    color: #5c6670;
+    line-height: 1.65;
+  }
+
+  .quorum-button {
+    margin-top: 1.25rem;
+  }
+}
+
+.quorum-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.quorum-decision-cards {
+  padding: 0.5rem 0 4.5rem;
+
+  &:has(+ .quorum-decision-cards) {
+    padding-bottom: 1.25rem;
+  }
+
+  .quorum-decision-card {
+    display: flex;
+    min-height: 220px;
+    flex-direction: column;
+    border: 1px solid #d9e2ea;
+    background: #fff;
+    box-shadow: 0 5px 14px rgb(0 37 84 / 7%);
+
+    &__image {
+      width: 100%;
+      height: 130px;
+      object-fit: cover;
+    }
+
+    &__title {
+      margin: 0;
+      padding: 0.9rem 1.2rem;
+      background: #002554;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.35;
+      text-align: center;
+    }
+
+    &__body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 1.15rem 1.25rem 1.35rem;
+      color: #5c6670;
+      font-size: 0.78rem;
+      line-height: 1.65;
+
+      p {
+        margin: 0 0 1rem;
+      }
+
+      .quorum-link-arrow {
+        margin-top: auto;
+      }
+    }
+  }
+}
+
+.quorum-customer-stories {
+  padding: 0.5rem 0 4.5rem;
+
+  .quorum-customer-card {
+    display: flex;
+    min-height: 365px;
+    flex-direction: column;
+    padding: 1.8rem 1.6rem 1.4rem;
+    border: 1px solid #00a9e0;
+    background: #fff;
+
+    &__logo {
+      display: flex;
+      min-height: 70px;
+      align-items: center;
+      margin-bottom: 0.8rem;
+
+      img {
+        width: auto;
+        max-width: 190px;
+        max-height: 62px;
+        object-fit: contain;
+      }
+    }
+
+    &__title {
+      margin: 0 0 0.8rem;
+      color: #002554;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    &__body {
+      margin-bottom: 1.5rem;
+      color: #5c6670;
+      font-size: 0.78rem;
+      line-height: 1.7;
+    }
+
+    &__link {
+      margin-top: auto;
+    }
+  }
+}
+
+.quorum-dark-banner {
+  padding: 4.5rem 0;
+  background: #002554;
+  color: #fff;
+
+  &__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+    align-items: center;
+    gap: 4rem;
+  }
+
+  &__copy {
+    max-width: 720px;
+  }
+
+  &__eyebrow {
+    color: #00a9e0;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin: 0 0 1rem;
+    color: #fff;
+    font-size: clamp(1.8rem, 3vw, 2.7rem);
+    font-weight: 300;
+    line-height: 1.15;
+  }
+
+  &__subtitle,
+  &__text {
+    max-width: 700px;
+    color: #fff;
+    font-size: 0.9rem;
+    line-height: 1.7;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+  }
+
+  &__image {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+  }
+}
+
+.quorum-inline-cta {
+  padding: 2.3rem 0;
+  background: #f4f6f8;
+
+  &__content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1rem 3rem;
+  }
+
+  &__eyebrow,
+  &__text {
+    grid-column: 1;
+  }
+
+  &__eyebrow {
+    margin: 0;
+    color: #006a9f;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__heading {
+    grid-column: 1;
+    margin: 0;
+    color: #006a9f;
+    font-size: clamp(1.45rem, 2.5vw, 2.1rem);
+    font-weight: 300;
+  }
+
+  &__text {
+    max-width: 780px;
+    margin: 0;
+    color: #5c6670;
+    font-size: 0.8rem;
+  }
+
+  .quorum-button {
+    grid-row: 1 / span 3;
+    grid-column: 2;
+  }
+}
+
+.quorum-top-stories {
+  padding: 1rem 0 4rem;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.35rem;
+  }
+}
+
+.quorum-story-card {
+  background: #fff;
+  box-shadow: 0 6px 18px rgb(0 37 84 / 14%);
+
+  &__link {
+    display: block;
+    height: 100%;
+    color: #002554;
+    text-decoration: none;
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  &__content {
+    padding: 1.15rem 1.2rem 1.35rem;
+  }
+
+  &__category {
+    margin: 0 0 0.45rem;
+    color: #00a9e0;
+    font-size: 0.67rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin: 0;
+    color: #002554;
+    font-size: 0.95rem;
+    font-weight: 500;
+    line-height: 1.45;
+  }
+}
+
+.quorum-guide {
+  position: relative;
+  display: grid;
+  min-height: 390px;
+  overflow: hidden;
+  background: #006a9f;
+  color: #fff;
+  isolation: isolate;
+
+  &__image {
+    position: absolute;
+    z-index: -2;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__overlay {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(90deg, rgb(0 106 159 / 96%) 0%, rgb(0 106 159 / 78%) 50%, rgb(0 37 84 / 12%) 100%);
+  }
+
+  &__content {
+    align-self: center;
+    padding-block: 3.5rem;
+  }
+
+  &__title {
+    max-width: 590px;
+    margin: 0 0 1rem;
+    color: #fff;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.1;
+  }
+
+  &__text {
+    max-width: 660px;
+    font-size: 0.85rem;
+    line-height: 1.65;
+
+    a {
+      @extend .quorum-button;
+      @extend .quorum-button--primary;
+      margin-top: 1rem;
+    }
+  }
+}
+
+.quorum-final-cta {
+  min-height: 250px;
+  padding: 3rem 0;
+  text-align: center;
+
+  &__content {
+    max-width: 800px;
+    margin-inline: auto;
+  }
+
+  &__eyebrow {
+    color: #006a9f;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &__heading {
+    margin: 0;
+    color: #5c6670;
+    font-size: clamp(1.45rem, 2.5vw, 2rem);
+    font-weight: 300;
+  }
+
+  &__text {
+    margin: 0.75rem 0 0;
+    color: #5c6670;
+    font-size: 0.78rem;
+  }
+
+  .quorum-button {
+    margin-top: 1.25rem;
+  }
+}
+
+.quorum-footer {
+  padding: 4rem 0 2rem;
+  background: #002554;
+  color: #fff;
+  font-size: 0.78rem;
+
+  &__main {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr);
+    gap: 4rem;
+  }
+
+  &__brand img {
+    width: auto;
+    max-width: 190px;
+    max-height: 74px;
+    object-fit: contain;
+  }
+
+  &__columns {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  &__title {
+    margin: 0 0 1rem;
+    color: #00a9e0;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  &__links {
+    color: #fff;
+    line-height: 1.75;
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    p {
+      margin-bottom: 0.45rem;
+    }
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      color: #00a9e0;
+    }
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin: 2rem 0;
+  }
+
+  &__social .quorum-footer__title {
+    margin: 0;
+  }
+
+  &__social-links {
+    display: flex;
+    gap: 0.7rem;
+  }
+
+  &__social-link {
+    display: inline-flex;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #00a9e0;
+
+    img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+    }
+  }
+
+  &__legal {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgb(255 255 255 / 30%);
+    color: rgb(255 255 255 / 78%);
+    font-size: 0.7rem;
+  }
+
+  &__legal-links {
+    display: flex;
+    gap: 1.3rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .quorum-header {
+    &__inner {
+      min-height: 66px;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding-block: 0.65rem;
+    }
+
+    &__navigation {
+      width: 100%;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+    }
+  }
+
+  .quorum-card-grid,
+  .quorum-top-stories__grid {
+    grid-template-columns: 1fr;
+    max-width: 650px;
+  }
+
+  .quorum-dark-banner__content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .quorum-inline-cta {
+    &__content {
+      display: block;
+      text-align: center;
+    }
+
+    &__text {
+      margin: 0.75rem auto 0;
+    }
+
+    .quorum-button {
+      margin-top: 1.25rem;
+    }
+  }
+
+  .quorum-footer {
+    &__main {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+
+    &__columns {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .quorum-container {
+    width: min(100% - 2rem, 1320px);
+  }
+
+  .quorum-hero {
+    min-height: 420px;
+
+    &__overlay {
+      background: rgb(0 106 159 / 84%);
+    }
+  }
+
+  .quorum-announcement {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+    text-align: center;
+
+    &__link {
+      margin-top: 0.35rem;
+    }
+  }
+
+  .quorum-eyebrow {
+    &__inner {
+      width: min(100% - 2rem, 1320px);
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      padding-block: 0.75rem;
+    }
+
+    &__cta {
+      width: 100%;
+    }
+  }
+
+  .quorum-decision-cards,
+  .quorum-customer-stories,
+  .quorum-top-stories {
+    padding-bottom: 3rem;
+  }
+
+  .quorum-customer-stories .quorum-customer-card {
+    min-height: 0;
+  }
+
+  .quorum-dark-banner {
+    padding: 3.5rem 0;
+
+    &__image {
+      max-height: 230px;
+    }
+  }
+
+  .quorum-footer {
+    &__columns {
+      grid-template-columns: 1fr;
+    }
+
+    &__legal {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    &__legal-links {
+      flex-wrap: wrap;
+    }
+  }
+}

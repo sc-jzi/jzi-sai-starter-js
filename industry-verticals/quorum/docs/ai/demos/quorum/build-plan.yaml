@@ -1,0 +1,283 @@
+# Quorum Software Demo Build Plan
+
+client:
+  name: "Quorum Software"
+  sourceUrl: "https://www.quorumsoftware.com/"
+  themeFile: "docs/ai/themes/quorum.theme.yaml"
+  analyzedAt: "2026-09-08T19:02:00-04:00"
+  targetPage: "/sitecore/content/utilities/quorum/Home"
+  componentModel: "existing-quorum-starter"
+
+pageAnalysis:
+  screenshotFiles:
+    desktop: "docs/ai/themes/quorum/screenshot-desktop.png"
+    mobile: "docs/ai/themes/quorum/screenshot-mobile.png"
+    hero: "docs/ai/themes/quorum/screenshot-hero.png"
+  totalSections: 12
+  existingComponentMatches: 12
+  customRenderingsRequired: 0
+  customVariantsRecommended: 12
+
+sections:
+  - position: 1
+    description: "Qnect 26 announcement strip and two-tier corporate navigation"
+    matchedComponent:
+      componentName: "Header"
+      renderingId: "81317d3b-f929-426a-83ec-421982f8f1e6"
+      variant: "Quorum"
+      matchType: "existing"
+      matchConfidence: "high"
+      apiAddable: false
+    sectionBackground: "dark"
+    content:
+      Announcement: "Don't miss a Qnect 26 event near you"
+      AnnouncementLink: "Learn More"
+      PrimaryCta: "Request a Demo"
+    contentNotes: "Header is supplied by the existing partial design. Navigation labels remain Sitecore-managed through the site's page tree."
+    variantReason: "A custom Header variant is needed for the announcement strip, utility links, and two-tier navigation."
+
+  - position: 2
+    description: "Full-width oilfield hero with blue overlay, headline, supporting copy, and orange CTA"
+    matchedComponent:
+      componentName: "Hero"
+      renderingId: "b7cdf75e-716a-4c59-b9b1-cd970ae0a4ae"
+      variant: "Quorum"
+      matchType: "existing"
+      matchConfidence: "high"
+      apiAddable: true
+    datasourceFolder: "/sitecore/content/utilities/quorum/Data/Promos/Hero"
+    datasourceFolderAction: "create with Promo Folder template if missing"
+    sectionBackground: "primary"
+    content:
+      Title: "The AI Platform for Connected Energy Operations"
+      Text: "Quorum Software connects critical energy workflows from the field to the boardroom, helping teams take control, make faster, smarter decisions, and close the loop for better performance."
+      Link: "See Solutions"
+    contentNotes: "Use the source hero photography downloaded during content extraction."
+    variantReason: "The existing Hero fields fit exactly; a custom visual variant provides the full-bleed treatment."
+
+  - position: 3
+    description: "Centered heading introducing the connected-decision capability cards"
+    matchedComponent:
+      componentName: "HeadingCta"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      variant: "QuorumSectionHeading"
+      matchType: "existing"
+      matchConfidence: "high"
+      apiAddable: true
+    datasourceFolder: "/sitecore/content/utilities/quorum/Data/Promos/Heading CTA"
+    datasourceFolderAction: "create with Promo Folder template if missing"
+    sectionBackground: "default"
+    content:
+      Title: "Built for Connected Decisions"
+    contentNotes: "Heading is separated from the grids so all six cards remain individually editable."
+    variantReason: "Centered, lightweight Quorum section heading."
+
+  - position: 4
+    description: "First row of three compact capability cards with navy title bars"
+    matchedComponent:
+      componentName: "ThreeColumnCta"
+      renderingId: "ad385021-ce2b-4fc1-89aa-207d408034a8"
+      variant: "QuorumDecisionCards"
+      matchType: "existing"
+      matchConfidence: "high"
+      apiAddable: true
+    datasourceFolder: "/sitecore/content/utilities/quorum/Data/Promos/Three Column CTA"
+    datasourceFolderAction: "use existing folder"
+    sectionBackground: "default"
+    content:
+      cards:
+        - "Agents at Work"
+        - "Workflow Orchestration"
+        - "Context Not Chat"
+    contentNotes: "Descriptions come directly from the Quorum homepage."
+    variantReason: "Three editable card fields map cleanly to one row."
+
+  - position: 5
+    description: "Second row of three compact capability cards with navy title bars"
+    matchedComponent:
+      componentName: "ThreeColumnCta"
+      renderingId: "ad385021-ce2b-4fc1-89aa-207d408034a8"
+      variant: "QuorumDecisionCards"
+      matchType: "existing"
+      matchConfidence: "high"
+      apiAddable: true
+    datasourceFolder: "/sitecore/content/utilities/quorum/Data/Promos/Three Column CTA"
+    datasourceFolderAction: "use existing folder"
+    sectionBackground: "default"
+    content:
+      cards:
+        - "Connected Data Foundation"
+        - "Governed AI"
+        - "Connected Field to Boardroom"
+    contentNotes: "Rendered as the second half of the same visual section."
+    variantReason: "A second Three Column CTA preserves all six editable capability cards."
+
+  - position: 6
+    description: "Three bordered customer-success cards for Tallgrass, Saturn Oil & Gas, and Woodside Energy"
+    matchedComponent:
+      componentName: "ThreeColumnCta"
+      renderingId: "ad385021-ce2b-4fc1-89aa-207d408034a8"
+      variant: "QuorumCustomerStories"
+      matchType: "existing"
+      matchConfidence: "high"
+      apiAddable: true
+    datasourceFolder: "/sitecore/content/utilities/quorum/Data/Promos/Three Column CTA"
+    datasourceFolderAction: "use existing folder"
+    sectionBackground: "muted"
+    content:
+      Title: "Customer Success Stories"
+      cards:
+        - "Tallgrass Resources"
+        - "Saturn Oil & Gas Inc."
+        - "Woodside Energy"
+    contentNotes: "Logo images and story links are managed in the component datasource."
+    variantReason: "The three-column field model matches the three customer stories."
+
+  - position: 7
+    description: "Dark navy Qnect 26 event banner with left-aligned copy and orange CTA"
+    matchedComponent:
+      componentName: "PromoCta"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      variant: "QuorumDarkBanner"
+      matchType: "existing"
+      matchConfidence: "high"
+      apiAddable: true
+    datasourceFolder: "/sitecore/content/utilities/quorum/Data/Promos/Promo CTA"
+    datasourceFolderAction: "use existing folder"
+    sectionBackground: "dark"
+    content:
+      Title: "Join Us at Qnect 26"
+      Link: "Learn More"
+    contentNotes: "The image field is optional for this text-led variant."
+    variantReason: "Promo CTA supplies the required title, rich text, and CTA."
+
+  - position: 8
+    description: "Compact white data-value statement with a cyan Request a Demo button"
+    matchedComponent:
+      componentName: "HeadingCta"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      variant: "QuorumInlineCta"
+      matchType: "existing"
+      matchConfidence: "high"
+      apiAddable: true
+    datasourceFolder: "/sitecore/content/utilities/quorum/Data/Promos/Heading CTA"
+    datasourceFolderAction: "create with Promo Folder template if missing"
+    sectionBackground: "default"
+    content:
+      Title: "Unleash Your Data"
+      Text: "We deliver decision-ready data and critical insights that maximize gains and de-risk your operations across the energy value chain."
+      Link: "Request a Demo"
+    contentNotes: "Desktop uses a horizontal title/copy/CTA layout and stacks on mobile."
+    variantReason: "Heading CTA fits this compact conversion strip."
+
+  - position: 9
+    description: "Three image-led editorial cards under Top Stories in Energy"
+    matchedComponent:
+      componentName: "ThreeColumnCta"
+      renderingId: "ad385021-ce2b-4fc1-89aa-207d408034a8"
+      variant: "QuorumTopStories"
+      matchType: "existing"
+      matchConfidence: "high"
+      apiAddable: true
+    datasourceFolder: "/sitecore/content/utilities/quorum/Data/Promos/Three Column CTA"
+    datasourceFolderAction: "use the CTA datasource; retain Quorum article items beneath the site for deeper navigation"
+    sectionBackground: "default"
+    content:
+      Title: "Top Stories in Energy"
+      stories:
+        - "Four Building Blocks to Fuel the Increase in Energy Demand"
+        - "Quorum Software Becomes AWS Energy Competency Partner"
+        - "Smarter Support and Learning for Energy Teams"
+    contentNotes: "Cards are Sitecore-managed in a Three Column CTA datasource because the Agent API cannot assign a query root to a newly added ArticleList instance."
+    variantReason: "The existing three-card field model provides editable images, categories, titles, and links."
+
+  - position: 10
+    description: "Full-width planning-guide banner with offshore energy image, white copy, and orange CTA"
+    matchedComponent:
+      componentName: "AppPromo"
+      renderingId: "f9905f68-21e8-4c6f-8b89-56bb99020d31"
+      variant: "QuorumGuide"
+      matchType: "existing"
+      matchConfidence: "high"
+      apiAddable: true
+    datasourceFolder: "/sitecore/content/utilities/quorum/Data/Promos/App Promos"
+    datasourceFolderAction: "use existing folder"
+    sectionBackground: "primary"
+    content:
+      Title: "Practical Guide to Optimal Planning in Oil and Gas Firms"
+      Link: "Access the Guide"
+    contentNotes: "Use the planning-guide source image as the full-width background."
+    variantReason: "App Promo already supports image, title, rich text, and one CTA."
+
+  - position: 11
+    description: "Minimal centered Ready to get started conversion prompt"
+    matchedComponent:
+      componentName: "HeadingCta"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      variant: "QuorumFinalCta"
+      matchType: "existing"
+      matchConfidence: "high"
+      apiAddable: true
+    datasourceFolder: "/sitecore/content/utilities/quorum/Data/Promos/Heading CTA"
+    datasourceFolderAction: "create with Promo Folder template if missing"
+    sectionBackground: "default"
+    content:
+      Title: "Ready to get started?"
+      Text: "Fill out the form to request a demo or get in touch with one of our team members."
+    contentNotes: "No embedded form is shown in the supplied reference."
+    variantReason: "The Heading CTA model provides a concise, editable closing statement."
+
+  - position: 12
+    description: "Navy multi-column footer with Solutions, Services, Quick Links, Contact Us, legal links, and social icons"
+    matchedComponent:
+      componentName: "Footer"
+      renderingId: "771a3f27-6448-44ac-add0-e5de311c6e3b"
+      variant: "Quorum"
+      matchType: "existing"
+      matchConfidence: "high"
+      apiAddable: false
+    sectionBackground: "dark"
+    content:
+      Copyright: "©2026 Quorum Business Solutions, Inc. All Rights Reserved"
+    contentNotes: "Footer is supplied by the existing footer partial design and remains fully Sitecore-managed."
+    variantReason: "The existing Footer field model supports four columns, legal links, and social links."
+
+customComponents: []
+
+buildOrder:
+  phase1_sitecore:
+    - "Header (partial design)"
+    - "Hero"
+    - "HeadingCta - Built for Connected Decisions"
+    - "ThreeColumnCta - Decisions Row 1"
+    - "ThreeColumnCta - Decisions Row 2"
+    - "ThreeColumnCta - Customer Success Stories"
+    - "PromoCta - Qnect 26"
+    - "HeadingCta - Unleash Your Data"
+    - "ThreeColumnCta - Top Stories"
+    - "AppPromo - Planning Guide"
+    - "HeadingCta - Final CTA"
+    - "Footer (partial design)"
+  phase2_theme: "Apply Quorum CSS variables and Montserrat"
+  phase3_custom: []
+  phase4_variants:
+    - "Header.Quorum"
+    - "Hero.Quorum"
+    - "HeadingCta.QuorumSectionHeading"
+    - "ThreeColumnCta.QuorumDecisionCards"
+    - "ThreeColumnCta.QuorumCustomerStories"
+    - "PromoCta.QuorumDarkBanner"
+    - "HeadingCta.QuorumInlineCta"
+    - "ThreeColumnCta.QuorumTopStories"
+    - "AppPromo.QuorumGuide"
+    - "HeadingCta.QuorumFinalCta"
+    - "Footer.Quorum"
+
+assembly:
+  strategy: "Add the approved sequence to Home, wire new Quorum datasources, and retire the existing starter composition from the visible page."
+  existingPageComponentCount: 10
+  note: "The Agent API has no delete-component operation; existing starter renderings may require manual removal if they cannot be safely reused."
+  datasourcePolicy:
+    promosRoot: "/sitecore/content/utilities/quorum/Data/Promos"
+    folderTemplateId: "8fe7f8dc-cb5d-42c2-99f8-76608c243f10"
+    rule: "Store every CTA-style datasource in its component-specific child folder under Promos; create missing component folders with the Promo Folder template."

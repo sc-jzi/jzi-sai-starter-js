@@ -16,7 +16,7 @@ export type HeadingCtaProps = {
   fields: Fields;
 };
 
-export const Default = (props: HeadingCtaProps): JSX.Element => {
+const HeadingCtaDefault = (props: HeadingCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
@@ -151,3 +151,59 @@ export const Centered = (props: HeadingCtaProps): JSX.Element => {
     </div>
   );
 };
+
+const QuorumHeadingContent = ({
+  props,
+  className,
+  showEyebrow = true,
+  showText = true,
+}: {
+  props: HeadingCtaProps;
+  className: string;
+  showEyebrow?: boolean;
+  showText?: boolean;
+}): JSX.Element => {
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  return (
+    <section
+      className={`component ${className} ${props.params?.styles || ''}`}
+      id={props.params.RenderingIdentifier || undefined}
+    >
+      <div className="quorum-container">
+        <div className={`${className}__content`}>
+          {showEyebrow && (isPageEditing || props.fields?.Eyebrow?.value) && (
+            <Text field={props.fields?.Eyebrow} tag="p" className={`${className}__eyebrow`} />
+          )}
+          <Text field={props.fields?.Heading} tag="h2" className={`${className}__heading`} />
+          {showText && (isPageEditing || props.fields?.Text?.value) && (
+            <Text field={props.fields?.Text} tag="p" className={`${className}__text`} />
+          )}
+          {(isPageEditing || props.fields?.Link?.value?.href) && (
+            <Link field={props.fields?.Link} className="quorum-button quorum-button--primary" />
+          )}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const QuorumSectionHeading = (props: HeadingCtaProps): JSX.Element => (
+  <QuorumHeadingContent
+    props={props}
+    className="quorum-section-heading"
+    showEyebrow={false}
+    showText={false}
+  />
+);
+
+export const QuorumInlineCta = (props: HeadingCtaProps): JSX.Element => (
+  <QuorumHeadingContent props={props} className="quorum-inline-cta" showEyebrow={false} />
+);
+
+export const QuorumFinalCta = (props: HeadingCtaProps): JSX.Element => (
+  <QuorumHeadingContent props={props} className="quorum-final-cta" showEyebrow={false} />
+);
+
+export const Default = HeadingCtaDefault;

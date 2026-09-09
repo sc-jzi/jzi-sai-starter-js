@@ -3,6 +3,7 @@
 import { AppPlaceholder, ComponentMap, ImageField, NextImage, useSitecore } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 import { JSX } from 'react';
+import Link from 'next/link';
 
 export type HeaderProps = ComponentProps & {
   fields: {
@@ -11,7 +12,7 @@ export type HeaderProps = ComponentProps & {
   componentMap: ComponentMap;
 };
 
-export const Default = (props: HeaderProps): JSX.Element => {
+const HeaderDefault = (props: HeaderProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();
 
@@ -31,7 +32,7 @@ export const Default = (props: HeaderProps): JSX.Element => {
   );
 };
 
-
+export const Default = HeaderDefault;
 
 export const WithLogoImage = (props: HeaderProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
@@ -43,7 +44,7 @@ export const WithLogoImage = (props: HeaderProps): JSX.Element => {
       <div className={`container container-${props.params?.ContainerWidth?.toLowerCase()}-fluid`}>
         <div className="row align-items-center">
           <div className="col-auto">
-            <a href="/"><NextImage field={props.fields.LogoImage} width={200} height={50} /></a>
+            <Link href="/"><NextImage field={props.fields.LogoImage} width={200} height={50} /></Link>
           </div>
           <div className="col">
             <AppPlaceholder name="header-right" rendering={props.rendering} page={page} componentMap={props.componentMap} />
@@ -51,5 +52,32 @@ export const WithLogoImage = (props: HeaderProps): JSX.Element => {
         </div>
       </div>
     </div>
+  );
+};
+
+export const Quorum = (props: HeaderProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const { page } = useSitecore();
+
+  return (
+    <header
+      className={`component header quorum-header ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="quorum-header__inner">
+        <Link className="quorum-header__logo" href="/" aria-label="Home">
+          <NextImage field={props.fields?.LogoImage} width={190} height={48} />
+        </Link>
+        <nav className="quorum-header__navigation" aria-label="Primary navigation">
+          <AppPlaceholder
+            name="header-right"
+            rendering={props.rendering}
+            page={page}
+            componentMap={props.componentMap}
+          />
+        </nav>
+      </div>
+    </header>
   );
 };

@@ -1,0 +1,119 @@
+# Client Brand Theme
+
+client:
+  name: "Quorum Software"
+  sourceUrl: "https://www.quorumsoftware.com/"
+  extractedAt: "2026-09-08T18:52:00-04:00"
+  extractedBy: "sitecore-extract-theme"
+
+colors:
+  primary: "#F8981D"
+  primaryForeground: "#FFFFFF"
+  secondary: "#002554"
+  secondaryForeground: "#FFFFFF"
+  accent: "#00A9E0"
+  accentForeground: "#FFFFFF"
+  background: "#FFFFFF"
+  foreground: "#212529"
+  muted: "#F4F6F8"
+  mutedForeground: "#5C6670"
+  headerBackground: "#002554"
+  headerForeground: "#FFFFFF"
+  footerBackground: "#002554"
+  footerForeground: "#FFFFFF"
+  border: "#D9E2EA"
+  ring: "#00A9E0"
+  extra:
+    - name: "heroBlue"
+      value: "#006A9F"
+    - name: "deepBlue"
+      value: "#003B70"
+
+typography:
+  headingFamily: "Montserrat"
+  headingWeight: "300"
+  bodyFamily: "Montserrat"
+  bodyWeight: "400"
+  monoFamily: "monospace"
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;600;700;800&display=swap"
+  scale:
+    hero: "3rem"
+    h1: "3rem"
+    h2: "2.75rem"
+    h3: "2.25rem"
+    body: "1rem"
+    small: "0.875rem"
+  headingTransform: "none"
+  letterSpacing: "normal"
+  lineHeight: "1.5"
+
+spacing:
+  density: "normal"
+  sectionGap: "5rem"
+  containerMaxWidth: "1320px"
+  containerPadding: "1.5rem"
+
+shape:
+  borderRadius: "0"
+  buttonRadius: "0"
+  cardRadius: "0.25rem 0.25rem 0 0"
+  imageRadius: "0"
+  shadowStyle: "subtle"
+  borderStyle: "thin"
+
+tone:
+  overall: "corporate, modern, technical, confident"
+  colorMode: "mixed"
+  contrast: "high"
+  imagery: "energy-industry photography with technical data overlays"
+  heroStyle: "full-bleed-image"
+  cardStyle: "flat bordered cards with navy title bars"
+  navStyle: "solid-bar"
+
+tailwind:
+  colors:
+    brand:
+      primary: "#F8981D"
+      secondary: "#002554"
+      accent: "#00A9E0"
+  fontFamily:
+    heading: ["Montserrat", "sans-serif"]
+    body: ["Montserrat", "sans-serif"]
+  borderRadius:
+    DEFAULT: "0"
+    button: "0"
+    card: "0.25rem 0.25rem 0 0"
+
+cssVariables: |
+  :root {
+    --brand-primary: #F8981D;
+    --brand-primary-foreground: #FFFFFF;
+    --brand-secondary: #002554;
+    --brand-secondary-foreground: #FFFFFF;
+    --brand-accent: #00A9E0;
+    --brand-accent-foreground: #FFFFFF;
+    --brand-bg: #FFFFFF;
+    --brand-fg: #212529;
+    --brand-muted: #F4F6F8;
+    --brand-muted-fg: #5C6670;
+    --brand-header-bg: #002554;
+    --brand-header-fg: #FFFFFF;
+    --brand-footer-bg: #002554;
+    --brand-footer-fg: #FFFFFF;
+    --brand-border: #D9E2EA;
+    --brand-ring: #00A9E0;
+    --brand-heading-font: 'Montserrat', sans-serif;
+    --brand-body-font: 'Montserrat', sans-serif;
+    --brand-radius: 0;
+    --brand-button-radius: 0;
+    --brand-card-radius: 0.25rem 0.25rem 0 0;
+  }
+
+extraction:
+  confidence: "high"
+  method: "playwright-full"
+  notes:
+    - "Computed styles confirm Montserrat, a #002554 navy header/footer, and #F8981D primary CTA buttons."
+    - "The hero uses energy-industry photography with a blue overlay and white technical dot graphics."
+    - "The site uses square buttons and predominantly square imagery; cards have only minimal top-corner rounding."
+    - "Navigation behaves as a solid two-tier corporate header with broad product categories."

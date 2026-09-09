@@ -10,6 +10,7 @@ import {
   RichTextField,
   withDatasourceCheck,
   NextImage,
+  useSitecore,
 } from '@sitecore-content-sdk/nextjs';
 import Link from 'next/link';
 
@@ -201,7 +202,48 @@ const ArticleListGrid = (props: ArticleListComponentProps): JSX.Element => {
   );
 };
 
+const ArticleListQuorumTopStories = (props: ArticleListComponentProps): JSX.Element => {
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const requestedItemCount = Number.parseInt(props.params?.NumberOfItems || '', 10);
+  const itemCount = Number.isFinite(requestedItemCount) ? requestedItemCount : 3;
+  const stories = (props.fields?.items || [])
+    .filter((item) => item.name?.startsWith('quorum-'))
+    .slice(0, itemCount);
+
+  return (
+    <section
+      className={`component quorum-top-stories ${props.params?.styles || ''}`}
+      id={props.params?.RenderingIdentifier || undefined}
+    >
+      <div className="quorum-container quorum-top-stories__grid">
+        {stories.map((item) => (
+          <article className="quorum-story-card" key={item.url || item.name}>
+            <Link href={item.url} className="quorum-story-card__link">
+              {(isPageEditing || item.fields?.Thumbnail?.value?.src) && (
+                <NextImage
+                  field={item.fields?.Thumbnail}
+                  width={440}
+                  height={250}
+                  className="quorum-story-card__image"
+                />
+              )}
+              <div className="quorum-story-card__content">
+                <Text field={item.fields?.Excerpt} tag="p" className="quorum-story-card__category" />
+                <Text field={item.fields?.Title} tag="h3" className="quorum-story-card__title" />
+              </div>
+            </Link>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+};
+
 export const Default = withDatasourceCheck()<ArticleListComponentProps>(ArticleListDefault);
 export const ThreeColumn = withDatasourceCheck()<ArticleListComponentProps>(ArticleListThreeColumn);
 export const Simplified = withDatasourceCheck()<ArticleListComponentProps>(ArticleListSimplified);
 export const Grid = withDatasourceCheck()<ArticleListComponentProps>(ArticleListGrid);
+export const QuorumTopStories =
+  withDatasourceCheck()<ArticleListComponentProps>(ArticleListQuorumTopStories);
+export const Hidden = (): JSX.Element => <></>;

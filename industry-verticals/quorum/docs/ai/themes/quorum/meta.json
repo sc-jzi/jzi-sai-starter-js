@@ -1,0 +1,111 @@
+{
+  "title": "Quorum Software - Oil and Gas Software Solutions Company",
+  "themeColor": null,
+  "msColor": null,
+  "ogTitle": "Quorum Software - Oil and Gas Software Solutions Company",
+  "ogDescription": "Quorum Energy Suite delivers innovative solutions for planning, operations, accounting, measurement, transportation, and logistics for oil and gas and renewable energy.",
+  "ogImage": null,
+  "ogSiteName": "quorumsoftware.com",
+  "favicon": "https://www.quorumsoftware.com/favicon.ico",
+  "googleFontsLinks": [
+    "https://fonts.googleapis.com/",
+    "https://fonts.gstatic.com/",
+    "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Roboto:wght@300;400;500&display=swap"
+  ],
+  "fontFaces": [
+    {
+      "family": "MontserratExtraBold",
+      "src": "url(\"https://cdn.pathfactory.com/assets/2/fonts/6397004b-514c-46f9-985e-1e61838606c7.ttf\") format(\"truetype\")",
+      "weight": ""
+    },
+    {
+      "family": "MontserratLightItalic",
+      "src": "url(\"https://cdn.pathfactory.com/assets/2/fonts/ee07780c-3916-4c52-9854-17feb141b716.ttf\") format(\"truetype\")",
+      "weight": ""
+    },
+    {
+      "family": "MontserratMedium",
+      "src": "url(\"https://cdn.pathfactory.com/assets/2/fonts/0e481da6-78dd-4b29-902b-acb574643422.ttf\") format(\"truetype\")",
+      "weight": ""
+    },
+    {
+      "family": "MontserratBoldItalic",
+      "src": "url(\"https://cdn.pathfactory.com/assets/2/fonts/92e6e1ce-5cc1-4589-b2af-ee5f9b002863.ttf\") format(\"truetype\")",
+      "weight": ""
+    },
+    {
+      "family": "MontserratLight",
+      "src": "url(\"https://cdn.pathfactory.com/assets/2/fonts/714e4a55-ecc3-45e2-9355-162f48a2f56e.ttf\") format(\"truetype\")",
+      "weight": ""
+    },
+    {
+      "family": "MontserratThinItalic",
+      "src": "url(\"https://cdn.pathfactory.com/assets/2/fonts/0de173fc-86e0-4127-8b59-382881f16fed.ttf\") format(\"truetype\")",
+      "weight": ""
+    },
+    {
+      "family": "MontserratExtraLight",
+      "src": "url(\"https://cdn.pathfactory.com/assets/2/fonts/971a5606-e29d-4fa5-8a81-72f6b9d576e3.ttf\") format(\"truetype\")",
+      "weight": ""
+    },
+    {
+      "family": "MontserratThin",
+      "src": "url(\"https://cdn.pathfactory.com/assets/2/fonts/21c97190-c9be-4a03-9665-a6764cf901d8.ttf\") format(\"truetype\")",
+      "weight": ""
+    },
+    {
+      "family": "MontserratBold",
+      "src": "url(\"https://cdn.pathfactory.com/assets/2/fonts/1a44168b-27ea-4f39-8d54-e9533ae261ce.ttf\") format(\"truetype\")",
+      "weight": ""
+    },
+    {
+      "family": "MontserratMediumItalic",
+      "src": "url(\"https://cdn.pathfactory.com/assets/2/fonts/c4ff63c8-7725-4a08-886f-02ae97e78e0c.ttf\") format(\"truetype\")",
+      "weight": ""
+    },
+    {
+      "family": "MontserratBlackItalic",
+      "src": "url(\"https://cdn.pathfactory.com/assets/2/fonts/49c57ff4-122e-4bb9-a049-c09aefd41f0c.ttf\") format(\"truetype\")",
+      "weight": ""
+    },
+    {
+      "family": "MontserratSemiBold",
+      "src": "url(\"https://cdn.pathfactory.com/assets/2/fonts/234cee44-65ab-4038-be6a-fb3e5d221ba0.ttf\") format(\"truetype\")",
+      "weight": ""
+    },
+    {
+      "family": "MontserratExtraLightItalic",
+      "src": "url(\"https://cdn.pathfactory.com/assets/2/fonts/389b1328-e004-477a-9a9d-17a915d1e089.ttf\") format(\"truetype\")",
+      "weight": ""
+    },
+    {
+      "family": "MontserratBlack",
+      "src": "url(\"https://cdn.pathfactory.com/assets/2/fonts/7b8d668d-e550-4aec-84dd-321f8b391169.ttf\") format(\"truetype\")",
+      "weight": ""
+    },
+    {
+      "family": "MontserratRegular",
+      "src": "url(\"https://cdn.pathfactory.com/assets/2/fonts/438c07a3-a2d5-4362-b94d-91b4ec9844f4.ttf\") format(\"truetype\")",
+      "weight": ""
+    },
+    {
+      "family": "MontserratItalic",
+      "src": "url(\"https://cdn.pathfactory.com/assets/2/fonts/142d1cd8-37af-4769-a698-962e066a689a.ttf\") format(\"truetype\")",
+      "weight": ""
+    },
+    {
+      "family": "MontserratSemiBoldItalic",
+      "src": "url(\"https://cdn.pathfactory.com/assets/2/fonts/5326577c-8122-4159-8aab-b75d82cb2e85.ttf\") format(\"truetype\")",
+      "weight": ""
+    },
+    {
+      "family": "MontserratExtraBoldItalic",
+      "src": "url(\"https://cdn.pathfactory.com/assets/2/fonts/df331cdb-bb67-4134-b698-8c0ee85f6da9.ttf\") format(\"truetype\")",
+      "weight": ""
+    }
+  ],
+  "logoCandidates": [
+    "https://www.quorumsoftware.com/images/mobilelogo-1.svg"
+  ],
+  "heroBgImage": null
+}

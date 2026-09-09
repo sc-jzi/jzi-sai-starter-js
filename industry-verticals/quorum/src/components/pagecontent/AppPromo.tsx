@@ -22,7 +22,7 @@ export type AppPromoProps = {
   fields: Fields;
 };
 
-export const Default = (props: AppPromoProps): JSX.Element => {
+const AppPromoDefault = (props: AppPromoProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
@@ -60,3 +60,37 @@ export const Default = (props: AppPromoProps): JSX.Element => {
     </div>
   );
 };
+
+export const Default = AppPromoDefault;
+
+export const QuorumGuide = (props: AppPromoProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const hasImage = Boolean(props.fields?.Image?.value?.src);
+
+  return (
+    <section
+      className={`component quorum-guide ${hasImage ? '' : 'quorum-guide--no-image'} ${
+        props.params?.styles || ''
+      }`}
+      id={id ? id : undefined}
+    >
+      {(hasImage || isPageEditing) && (
+        <NextImage
+          field={props.fields?.Image}
+          className="quorum-guide__image"
+          width={1920}
+          height={430}
+        />
+      )}
+      <div className="quorum-guide__overlay" aria-hidden="true" />
+      <div className="quorum-container quorum-guide__content">
+        <Text field={props.fields?.Title} tag="h2" className="quorum-guide__title" />
+        <RichText field={props.fields?.Text} className="quorum-guide__text" />
+      </div>
+    </section>
+  );
+};
+
+export const Hidden = (): JSX.Element => <></>;

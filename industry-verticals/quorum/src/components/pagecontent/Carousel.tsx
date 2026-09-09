@@ -135,3 +135,5 @@ export const Default = (props: CarouselComponentProps): JSX.Element => {
     </section>
   );
 };
+
+export const Hidden = (): JSX.Element => <></>;

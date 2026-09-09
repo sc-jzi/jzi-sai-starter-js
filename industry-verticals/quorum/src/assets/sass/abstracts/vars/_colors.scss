@@ -1,21 +1,42 @@
 // Financial
 body.site-financial,
 .site-financial {
-  --text-body: #333;
+  --text-body: #212529;
   --text-body-inverted: #fff;
-  --text-colored: #034c81;
+  --text-colored: #006a9f;
   --text-footer: #fff;
-  --text-accent: #a82a39;
+  --text-accent: #f8981d;
   --bg-body: #fff;
-  --bg-footer: #333;
-  --bg-main: #f0f5f7;
-  --bg-main-alt: #f0f5f7;
-  --bg-color: #c5e4f3;
-  --bg-saturated: #034c81;
-  --bg-accent: #c03021;
-  --border-color: #f0f5f7;
-  --hr-color: #fff;
-  --roundness: 1rem;
+  --bg-footer: #002554;
+  --bg-main: #f4f6f8;
+  --bg-main-alt: #fff;
+  --bg-color: #00a9e0;
+  --bg-saturated: #002554;
+  --bg-accent: #f8981d;
+  --border-color: #d9e2ea;
+  --hr-color: #d9e2ea;
+  --roundness: 0;
+  --brand-primary: #f8981d;
+  --brand-primary-foreground: #fff;
+  --brand-secondary: #002554;
+  --brand-secondary-foreground: #fff;
+  --brand-accent: #00a9e0;
+  --brand-accent-foreground: #fff;
+  --brand-bg: #fff;
+  --brand-fg: #212529;
+  --brand-muted: #f4f6f8;
+  --brand-muted-fg: #5c6670;
+  --brand-header-bg: #002554;
+  --brand-header-fg: #fff;
+  --brand-footer-bg: #002554;
+  --brand-footer-fg: #fff;
+  --brand-border: #d9e2ea;
+  --brand-ring: #00a9e0;
+  --brand-heading-font: 'Montserrat', sans-serif;
+  --brand-body-font: 'Montserrat', sans-serif;
+  --brand-radius: 0;
+  --brand-button-radius: 0;
+  --brand-card-radius: 0.25rem 0.25rem 0 0;
 }
 
 body.site-financial.dark,

@@ -1,0 +1,902 @@
+{
+  "url": "https://www.quorumsoftware.com/",
+  "extractedAt": "2026-09-08T22:56:12.280Z",
+  "detectedLanguage": "en",
+  "targetLanguage": "en",
+  "translationNeeded": false,
+  "totalSections": 12,
+  "totalImages": 13,
+  "totalVideos": 0,
+  "interactionStats": {
+    "lazySourcesResolved": 0,
+    "tabsClicked": 0,
+    "accordionsExpanded": 0,
+    "carouselDotsClicked": 0,
+    "carouselArrowSlides": 0,
+    "backgroundImagesCollected": 1
+  },
+  "sections": [
+    {
+      "position": 1,
+      "tagName": "nav",
+      "classHint": "navbar navbar-expand-lg navbar-default navigation-bar",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h5",
+          "text": "North America"
+        },
+        {
+          "tag": "h6",
+          "text": "Upstream"
+        },
+        {
+          "tag": "h6",
+          "text": "Midstream"
+        },
+        {
+          "tag": "h6",
+          "text": "Measurement"
+        },
+        {
+          "tag": "h5",
+          "text": "Global"
+        },
+        {
+          "tag": "h6",
+          "text": "Upstream"
+        },
+        {
+          "tag": "h6",
+          "text": "Midstream & LNG"
+        },
+        {
+          "tag": "h6",
+          "text": "Measurement"
+        }
+      ],
+      "paragraphs": [],
+      "links": [
+        {
+          "text": "Training",
+          "href": "https://resources.quorumsoftware.com/quorum-university/",
+          "target": ""
+        },
+        {
+          "text": "Careers",
+          "href": "https://www.quorumsoftware.com/careers/",
+          "target": ""
+        },
+        {
+          "text": "Contact",
+          "href": "https://www.quorumsoftware.com/contact/",
+          "target": ""
+        },
+        {
+          "text": "Support",
+          "href": "https://community.quorumsoftware.com/s/login/",
+          "target": ""
+        },
+        {
+          "text": "Login",
+          "href": "https://www.quorumsoftware.com/login/",
+          "target": ""
+        },
+        {
+          "text": "Request a Demo",
+          "href": "https://www.quorumsoftware.com/request-a-demo/",
+          "target": ""
+        },
+        {
+          "text": "Software",
+          "href": "#",
+          "target": ""
+        },
+        {
+          "text": "Planning Space Financials",
+          "href": "https://www.quorumsoftware.com/solutions/planning-economics-reserves/planning-space/financials/",
+          "target": ""
+        },
+        {
+          "text": "Planning Space Portfolio",
+          "href": "https://www.quorumsoftware.com/solutions/planning-economics-reserves/planning-space/portfolio/",
+          "target": ""
+        },
+        {
+          "text": "Enersight",
+          "href": "https://www.quorumsoftware.com/solutions/planning-economics-reserves/enersight/",
+          "target": ""
+        },
+        {
+          "text": "Val Nav",
+          "href": "https://www.quorumsoftware.com/solutions/planning-economics-reserves/val-nav/",
+          "target": ""
+        },
+        {
+          "text": "Execute Suite",
+          "href": "https://www.quorumsoftware.com/solutions/planning-economics-reserves/execute/",
+          "target": ""
+        },
+        {
+          "text": "Upstream On Demand Suite",
+          "href": "https://www.quorumsoftware.com/solutions/upstream-on-demand/",
+          "target": ""
+        },
+        {
+          "text": "Accounting",
+          "href": "https://www.quorumsoftware.com/solutions/upstream-on-demand/accounting/",
+          "target": ""
+        },
+        {
+          "text": "Land",
+          "href": "https://www.quorumsoftware.com/solutions/upstream-on-demand/land/",
+          "target": ""
+        },
+        {
+          "text": "Well Operations",
+          "href": "https://www.quorumsoftware.com/solutions/upstream-on-demand/well-operations/",
+          "target": ""
+        },
+        {
+          "text": "Production Operations",
+          "href": "https://www.quorumsoftware.com/solutions/upstream-on-demand/production-operations/",
+          "target": ""
+        },
+        {
+          "text": "zdSCADA",
+          "href": "https://www.quorumsoftware.com/solutions/zdscada/",
+          "target": ""
+        },
+        {
+          "text": "Dynamic Docs",
+          "href": "https://www.quorumsoftware.com/solutions/document-management/",
+          "target": ""
+        },
+        {
+          "text": "My Quorum Land",
+          "href": "https://www.quorumsoftware.com/solutions/my-quorum-land/",
+          "target": ""
+        },
+        {
+          "text": "My Quorum Accounting",
+          "href": "https://www.quorumsoftware.com/solutions/my-quorum-accounting/",
+          "target": ""
+        },
+        {
+          "text": "Renewable Development",
+          "href": "https://www.quorumsoftware.com/solutions/renewable-development/",
+          "target": ""
+        },
+        {
+          "text": "Previso",
+          "href": "https://www.quorumsoftware.com/solutions/planning-economics-reserves/previso/",
+          "target": ""
+        },
+        {
+          "text": "PetroVR",
+          "href": "https://www.quorumsoftware.com/solutions/planning-economics-reserves/petrovr/",
+          "target": ""
+        },
+        {
+          "text": "DaWinci",
+          "href": "https://www.quorumsoftware.com/solutions/dawinci/",
+          "target": ""
+        },
+        {
+          "text": "My Quorum TIPS",
+          "href": "https://www.quorumsoftware.com/solutions/my-quorum-tips/",
+          "target": ""
+        },
+        {
+          "text": "My Quorum Pipeline",
+          "href": "https://www.quorumsoftware.com/solutions/my-quorum-pipeline/",
+          "target": ""
+        },
+        {
+          "text": "My Quorum LDC Management",
+          "href": "https://www.quorumsoftware.com/solutions/utility-ldc-management/",
+          "target": ""
+        },
+        {
+          "text": "Right of Way & Land Management",
+          "href": "https://www.quorumsoftware.com/solutions/right-of-way-land-management/",
+          "target": ""
+        },
+        {
+          "text": "eONE Marketing",
+          "href": "https://www.quorumsoftware.com/solutions/eone-marketing/",
+          "target": ""
+        },
+        {
+          "text": "eONE Energy Operations and Accounting",
+          "href": "https://www.quorumsoftware.com/solutions/eone-energy-operations-and-accounting-software/",
+          "target": ""
+        },
+        {
+          "text": "Energy Components LNG",
+          "href": "https://www.quorumsoftware.com/solutions/energy-components-midstream/",
+          "target": ""
+        },
+        {
+          "text": "FLOWCAL",
+          "href": "https://www.quorumsoftware.com/solutions/flowcal/",
+          "target": ""
+        },
+        {
+          "text": "TESTit",
+          "href": "https://www.quorumsoftware.com/solutions/field-measurement-applications/",
+          "target": ""
+        },
+        {
+          "text": "PROVEit",
+          "href": "https://www.quorumsoftware.com/solutions/field-measurement-applications/",
+          "target": ""
+        },
+        {
+          "text": "PYCit",
+          "href": "https://www.quorumsoftware.com/solutions/field-measurement-applications/",
+          "target": ""
+        },
+        {
+          "text": "CALCit",
+          "href": "https://www.quorumsoftware.com/solutions/field-measurement-applications/",
+          "target": ""
+        },
+        {
+          "text": "Energy Components Upstream",
+          "href": "https://www.quorumsoftware.com/solutions/energy-components-upstream/",
+          "target": ""
+        },
+        {
+          "text": "Planning Space Suite",
+          "href": "https://www.quorumsoftware.com/solutions/planning-economics-reserves/planning-space/",
+          "target": ""
+        },
+        {
+          "text": "Dataflow",
+          "href": "https://www.quorumsoftware.com/solutions/planning-economics-reserves/petroleum-economics/planning-space-dataflow/",
+          "target": ""
+        },
+        {
+          "text": "Financials",
+          "href": "https://www.quorumsoftware.com/solutions/planning-economics-reserves/planning-space/financials/",
+          "target": ""
+        },
+        {
+          "text": "Economics",
+          "href": "https://www.quorumsoftware.com/solutions/planning-economics-reserves/planning-space/economics/",
+          "target": ""
+        },
+        {
+          "text": "Portfolio",
+          "href": "https://www.quorumsoftware.com/solutions/planning-economics-reserves/planning-space/portfolio/",
+          "target": ""
+        },
+        {
+          "text": "Reserves",
+          "href": "https://www.quorumsoftware.com/solutions/planning-economics-reserves/planning-space/reserves/",
+          "target": ""
+        },
+        {
+          "text": "Energy Components Midstream",
+          "href": "https://www.quorumsoftware.com/solutions/energy-components-midstream/",
+          "target": ""
+        },
+        {
+          "text": "Solutions",
+          "href": "https://www.quorumsoftware.com/solutions/",
+          "target": ""
+        },
+        {
+          "text": "Services",
+          "href": "#",
+          "target": ""
+        },
+        {
+          "text": "Services & Support",
+          "href": "https://www.quorumsoftware.com/services/",
+          "target": ""
+        },
+        {
+          "text": "Services Subscription",
+          "href": "https://www.quorumsoftware.com/services/managed-services/",
+          "target": ""
+        },
+        {
+          "text": "Resources",
+          "href": "https://resources.quorumsoftware.com/",
+          "target": ""
+        },
+        {
+          "text": "Events",
+          "href": "https://www.quorumsoftware.com/events/",
+          "target": ""
+        },
+        {
+          "text": "About",
+          "href": "#",
+          "target": ""
+        },
+        {
+          "text": "Company Overview",
+          "href": "https://www.quorumsoftware.com/about/",
+          "target": ""
+        },
+        {
+          "text": "Customer Advisory Board",
+          "href": "https://www.quorumsoftware.com/about/customer-advisory/",
+          "target": ""
+        },
+        {
+          "text": "Quorum Partner Program",
+          "href": "https://www.quorumsoftware.com/about/partner-program/",
+          "target": ""
+        },
+        {
+          "text": "Press Releases",
+          "href": "https://www.quorumsoftware.com/about/press-releases/",
+          "target": ""
+        },
+        {
+          "text": "Blog",
+          "href": "https://www.quorumsoftware.com/blog/",
+          "target": ""
+        },
+        {
+          "text": "Upstream",
+          "href": "#",
+          "target": ""
+        },
+        {
+          "text": "Midstream",
+          "href": "#",
+          "target": ""
+        },
+        {
+          "text": "Measurement",
+          "href": "#",
+          "target": ""
+        },
+        {
+          "text": "Midstream & LNG",
+          "href": "#",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.quorumsoftware.com/images/mobilelogo-1.svg",
+          "alt": "Mobile Image",
+          "type": "img",
+          "width": 39,
+          "height": 40
+        },
+        {
+          "src": "https://www.quorumsoftware.com/images/QuorumLogo-1.svg",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://cdn.cookielaw.org/logos/c2669800-8833-489b-a3d0-f033b13702f8/f7e12630-992c-483a-908a-52ee11f6f8c5/268b6761-be1b-45f9-9a5f-1f60bb1a8b7a/ot_persistent_cookie_transparent.png",
+          "alt": "",
+          "type": "background-unmatched",
+          "width": null,
+          "height": null
+        }
+      ],
+      "listItems": [
+        {
+          "title": "North America",
+          "link": {
+            "text": "Planning Space Financials",
+            "href": "https://www.quorumsoftware.com/solutions/planning-economics-reserves/planning-space/financials/"
+          }
+        },
+        {
+          "title": "Global",
+          "link": {
+            "text": "Energy Components Upstream",
+            "href": "https://www.quorumsoftware.com/solutions/energy-components-upstream/"
+          }
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "tagName": "div",
+      "classHint": "",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "The AI Platform for Connected Energy Operations"
+        }
+      ],
+      "paragraphs": [
+        "Quorum Software connects critical energy workflows from the field to the boardroom, helping teams take control, make faster, smarter decisions, and close the loop for better performance."
+      ],
+      "links": [
+        {
+          "text": "See Solutions",
+          "href": "https://www.quorumsoftware.com/solutions/",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.quorumsoftware.com/media/rcnlcyki/quorum-software-hero-image.jpg?format=webp&v=1dc297b74a79c10",
+          "alt": "Purpose-Built Solutions for the Energy Industry",
+          "type": "img",
+          "width": 2700,
+          "height": 843
+        }
+      ],
+      "listItems": [
+        {
+          "title": "The AI Platform for Connected Energy Operations",
+          "description": "Quorum Software connects critical energy workflows from the field to the boardroom, helping teams take control, make faster, smarter decisions, and close the loop for better performance.",
+          "link": {
+            "text": "See Solutions",
+            "href": "https://www.quorumsoftware.com/solutions/"
+          }
+        },
+        {
+          "image": {
+            "src": "https://www.quorumsoftware.com/media/rcnlcyki/quorum-software-hero-image.jpg?format=webp&v=1dc297b74a79c10",
+            "alt": "Purpose-Built Solutions for the Energy Industry"
+          }
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "tagName": "div",
+      "classHint": "",
+      "backgroundHint": "dark",
+      "headings": [],
+      "paragraphs": [
+        "Agents work inside your existing workflows, detecting anomalies and turning days of coordination into a ranked recommendation your team can act on immediately.",
+        "Orchestration pulls subsurface, operations, commercial, and finance into one connected workflow, so a field event triggers the right response automatically.",
+        "Every answer is grounded in your own operational data by solutions purpose-built for your distinct workflows, never from generic models or data outside your operations.",
+        "Production, AFE status, contracts, scheduling, and financial exposure live in one shared operational picture, so every decision and every agent runs on trustworthy context.",
+        "Every recommendation is fully explainable and defensible, so your team can approve, modify, or override with full visibility into how the system got there.",
+        "Agents, orchestration, data, and governance tie into one foundation, closing the loop between the field and the boardroom so performance keeps improving."
+      ],
+      "links": [],
+      "images": [],
+      "listItems": [
+        {
+          "description": "Agents work inside your existing workflows, detecting anomalies and turning days of coordination into a ranked recommendation your team can act on immediately."
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "tagName": "div",
+      "classHint": "",
+      "backgroundHint": "dark",
+      "headings": [],
+      "paragraphs": [],
+      "links": [],
+      "images": []
+    },
+    {
+      "position": 5,
+      "tagName": "div",
+      "classHint": "container-fluid",
+      "backgroundHint": "dark",
+      "headings": [],
+      "paragraphs": [
+        "Managing 1,000 wells without adding resources—one operator scaled efficiently using Quorum’s Upstream On Demand Suite to streamline workflows, automate tasks, and deliver results.",
+        "Tallgrass Resources",
+        "Adopts Quorum Software's Upstream On Demand Suite",
+        "Saturn Oil & Gas Inc",
+        "One operator grew from 200 to 40,000 BOE/D in just 4 years—powered by better forecasting, planning, and reserves management with Val Nav.",
+        "Saturn Oil and Gas Inc.",
+        "Transformed their Business with Val Nav",
+        "Woodside Energy",
+        "\"Partnering with Quorum has been a collaborative experience. The Energy Components system has provided us with a robust platform for standardizing and ensuring compliance.\"",
+        "Juan Veldsman",
+        "Production Allocation and Reporting Implementation Lead"
+      ],
+      "links": [
+        {
+          "text": "Read Full Story",
+          "href": "https://resources.quorumsoftware.com/resource-center/col/resource/tallgrass-resources",
+          "target": ""
+        },
+        {
+          "text": "Read Full Story",
+          "href": "https://resources.quorumsoftware.com/resource-center/col/resource/saturn-oil-gas-achieves-remarkable-growth",
+          "target": ""
+        },
+        {
+          "text": "Read Full Story",
+          "href": "https://resources.quorumsoftware.com/resource-center/col/resource/how-woodside-uses-quorum-energy-components-to-streamline-hydrocarbon-management-and-emissions-tracking",
+          "target": ""
+        },
+        {
+          "text": "See All Success Stories",
+          "href": "https://resources.quorumsoftware.com/case-studies/",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.quorumsoftware.com/images/Vector-5.jpg",
+          "alt": "vector 5",
+          "type": "img",
+          "width": 10,
+          "height": 32
+        },
+        {
+          "src": "https://www.quorumsoftware.com/images/Vector-4.jpg",
+          "alt": "vector 4",
+          "type": "img",
+          "width": 10,
+          "height": 32
+        },
+        {
+          "src": "https://www.quorumsoftware.com/media/imvhase3/tallgrassres-logo.webp",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.quorumsoftware.com/media/2xdc3fag/saturn-oil-gas.webp",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.quorumsoftware.com/media/450plwzj/woodside-energy.webp",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        }
+      ],
+      "listItems": [
+        {
+          "title": "Tallgrass",
+          "description": "Tallgrass",
+          "link": {
+            "text": "Read Full Story",
+            "href": "https://resources.quorumsoftware.com/resource-center/col/resource/tallgrass-resources"
+          },
+          "image": {
+            "src": "https://www.quorumsoftware.com/media/imvhase3/tallgrassres-logo.webp",
+            "alt": ""
+          }
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "tagName": "div",
+      "classHint": "",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Join Us at Qnect 26"
+        },
+        {
+          "tag": "h5",
+          "text": "The Quorum Qnect 26 event series brings together our customers worldwide to help teams power their operations to perform at their best. Join one of our complimentary events either in Kuala Lumpur, Islamabad, Houston, Calgary, Brisbane, Stavanger, Aberdeen, or Abu Dhabi."
+        }
+      ],
+      "paragraphs": [
+        "The Quorum Qnect 26 event series brings together our customers worldwide to help teams power their operations to perform at their best. Join one of our complimentary events either in Kuala Lumpur, Islamabad, Houston, Calgary, Brisbane, Stavanger, Aberdeen, or Abu Dhabi."
+      ],
+      "links": [
+        {
+          "text": "Learn More",
+          "href": "https://www.quorumsoftware.com/qnect-26-event-series/",
+          "target": ""
+        }
+      ],
+      "images": [],
+      "listItems": [
+        {
+          "title": "Join Us at Qnect 26",
+          "description": "Join Us at Qnect 26",
+          "link": {
+            "text": "Learn More",
+            "href": "https://www.quorumsoftware.com/qnect-26-event-series/"
+          }
+        }
+      ]
+    },
+    {
+      "position": 7,
+      "tagName": "div",
+      "classHint": "",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h3",
+          "text": "Unleash Your Data"
+        }
+      ],
+      "paragraphs": [
+        "We deliver decision-ready data and critical insights that maximize gains and de-risk your operations across the energy value chain."
+      ],
+      "links": [
+        {
+          "text": "Request a Demo",
+          "href": "https://www.quorumsoftware.com/request-a-demo/",
+          "target": ""
+        }
+      ],
+      "images": [],
+      "listItems": [
+        {
+          "title": "Unleash Your Data",
+          "description": "We deliver decision-ready data and critical insights that maximize gains and de-risk your operations across the energy value chain."
+        }
+      ]
+    },
+    {
+      "position": 8,
+      "tagName": "div",
+      "classHint": "",
+      "backgroundHint": "dark",
+      "headings": [],
+      "paragraphs": [],
+      "links": [],
+      "images": []
+    },
+    {
+      "position": 9,
+      "tagName": "div",
+      "classHint": "container-fluid",
+      "backgroundHint": "dark",
+      "headings": [],
+      "paragraphs": [
+        "Modern Energy Growth",
+        "Four Building Blocks to Fuel the Increase in Energy Demand",
+        "Market & Technology Trends",
+        "Quorum Software Becomes AWS Energy Competency Partner",
+        "Elevating Customer Experience",
+        "Smarter Support and Learning for Energy Teams"
+      ],
+      "links": [
+        {
+          "text": "Modern Energy Growth",
+          "href": "https://resources.quorumsoftware.com/resource-center/col/resource/the-4-digital-pillars-that-fuel-modern-energy-growth",
+          "target": ""
+        },
+        {
+          "text": "Market & Technology Trends",
+          "href": "https://www.quorumsoftware.com/about/partner-program/cloud-applications-purpose-built-for-energy/",
+          "target": ""
+        },
+        {
+          "text": "Elevating Customer Experience",
+          "href": "https://resources.quorumsoftware.com/resource-center/col/resource/elevating-customer-experience-with-qai-knowledge-base-and-communities",
+          "target": ""
+        },
+        {
+          "text": "Read All Stories",
+          "href": "https://www.quorumsoftware.com/blog/",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.quorumsoftware.com/media/r1bjmeut/modern-energy-growth-top-stories-q.webp",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.quorumsoftware.com/media/ttgmpyqj/energy-transition-quorum-c3.webp",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.quorumsoftware.com/media/urzlxrit/elevating-customer-experience.webp",
+          "alt": "",
+          "type": "srcset",
+          "width": null,
+          "height": null
+        }
+      ],
+      "listItems": [
+        {
+          "title": "Modern Energy Growth",
+          "description": "Modern Energy Growth",
+          "link": {
+            "text": "",
+            "href": "https://resources.quorumsoftware.com/resource-center/col/resource/the-4-digital-pillars-that-fuel-modern-energy-growth"
+          },
+          "image": {
+            "src": "https://www.quorumsoftware.com/media/r1bjmeut/modern-energy-growth-top-stories-q.webp",
+            "alt": ""
+          }
+        }
+      ]
+    },
+    {
+      "position": 10,
+      "tagName": "div",
+      "classHint": "",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Practical Guide to Optimal Planning in Oil and Gas Firms"
+        }
+      ],
+      "paragraphs": [
+        "Find out how to turn disconnected data into decision-ready insight. See how evergreen inventories, shared fiscal models, and consistent corporate data connect field to finance. A single source of truth cuts manual work and accelerates planning. Unified systems and real-time visibility for scenario comparisons that make investing smarter, delivering confident decisions for measurable gains across every cycle."
+      ],
+      "links": [
+        {
+          "text": "Access the Guide",
+          "href": "https://resources.quorumsoftware.com/resource-center/col/resource/practical-guide-to-optimal-planning-in-oil-and-gas-firms",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.quorumsoftware.com/media/pm4gaz5j/practical-guide-to-optimal-planning.webp?format=webp&v=1dc5a6200f20c70",
+          "alt": "Practical Guide To Optimal Planning",
+          "type": "img",
+          "width": 2700,
+          "height": 852
+        }
+      ],
+      "listItems": [
+        {
+          "title": "Practical Guide to Optimal Planning in Oil and Gas Firms",
+          "description": "Find out how to turn disconnected data into decision-ready insight. See how evergreen inventories, shared fiscal models, and consistent corporate data connect field to finance. A single source of truth cuts manual work and accelerates planning. Unified systems and real-time visibility for scenario comparisons that make investing smarter, delivering confident decisions for measurable gains across every cycle.",
+          "link": {
+            "text": "Access the Guide",
+            "href": "https://resources.quorumsoftware.com/resource-center/col/resource/practical-guide-to-optimal-planning-in-oil-and-gas-firms"
+          }
+        },
+        {
+          "image": {
+            "src": "https://www.quorumsoftware.com/media/pm4gaz5j/practical-guide-to-optimal-planning.webp?format=webp&v=1dc5a6200f20c70",
+            "alt": "Practical Guide To Optimal Planning"
+          }
+        }
+      ]
+    },
+    {
+      "position": 11,
+      "tagName": "div",
+      "classHint": "container-fluid",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h5",
+          "text": "Fill out the form to request a demo or get in touch with one of our team members."
+        }
+      ],
+      "paragraphs": [
+        "Ready to get started?"
+      ],
+      "links": [],
+      "images": []
+    },
+    {
+      "position": 12,
+      "tagName": "footer",
+      "classHint": "\n        ",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h3",
+          "text": "Solutions"
+        },
+        {
+          "tag": "h3",
+          "text": "Services"
+        },
+        {
+          "tag": "h3",
+          "text": "Quick Links"
+        },
+        {
+          "tag": "h3",
+          "text": "Contact Us"
+        }
+      ],
+      "paragraphs": [
+        "The Quorum Energy Suite delivers the path to success with its game-changing, decision-ready data, capabilities, integration, and automation.",
+        "Tap into expertise, services and technical support that can help you achieve results faster and get the most of your software investment.",
+        "©2026 Quorum Business Solutions, Inc. All Rights Reserved"
+      ],
+      "links": [
+        {
+          "text": "News",
+          "href": "https://www.quorumsoftware.com/about/press-releases/",
+          "target": ""
+        },
+        {
+          "text": "Careers",
+          "href": "https://www.quorumsoftware.com/careers/",
+          "target": ""
+        },
+        {
+          "text": "Blog",
+          "href": "https://resources.quorumsoftware.com/blog",
+          "target": ""
+        },
+        {
+          "text": "Sales Inquiries",
+          "href": "https://www.quorumsoftware.com/contact/",
+          "target": ""
+        },
+        {
+          "text": "Customer Support",
+          "href": "https://community.quorumsoftware.com/s/login/",
+          "target": ""
+        },
+        {
+          "text": "LinkedIn",
+          "href": "https://www.linkedin.com/company/quorum-software",
+          "target": "_blank"
+        },
+        {
+          "text": "YouTube",
+          "href": "https://www.youtube.com/channel/UCC_19kN5BSR0iKTpzymjvUg",
+          "target": "_blank"
+        },
+        {
+          "text": "Terms & Conditions",
+          "href": "https://www.quorumsoftware.com/terms-and-conditions/",
+          "target": "_blank"
+        },
+        {
+          "text": "Privacy Policy",
+          "href": "https://www.quorumsoftware.com/privacy-policy/",
+          "target": "_blank"
+        },
+        {
+          "text": "Qai Disclaimer",
+          "href": "https://www.quorumsoftware.com/qai-disclaimer/",
+          "target": ""
+        },
+        {
+          "text": "Cookie Policy",
+          "href": "https://www.quorumsoftware.com/cookie-policy/",
+          "target": "_blank"
+        },
+        {
+          "text": "Transparency Act",
+          "href": "https://resources.quorumsoftware.com/presentations/transparency-act",
+          "target": ""
+        },
+        {
+          "text": "Equality & Anti-Discrimintation",
+          "href": "https://resources.quorumsoftware.com/presentations/quality-anti-discrimination",
+          "target": ""
+        }
+      ],
+      "images": [],
+      "listItems": [
+        {
+          "description": "©2026 Quorum Business Solutions, Inc. All Rights Reserved"
+        },
+        {
+          "title": "Terms & Conditions",
+          "link": {
+            "text": "Terms & Conditions",
+            "href": "https://www.quorumsoftware.com/terms-and-conditions/"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -107,3 +107,5 @@ export const Default = (props: FiveColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+export const Hidden = (): JSX.Element => <></>;

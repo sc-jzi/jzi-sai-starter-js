@@ -110,3 +110,5 @@ export const Default = (props: DocumentsListProps): JSX.Element => {
     </div>
   );
 };
+
+export const Hidden = (): JSX.Element => <></>;

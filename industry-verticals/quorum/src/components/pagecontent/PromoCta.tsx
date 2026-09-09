@@ -32,7 +32,7 @@ export type PromoCtaProps = ComponentProps & {
   fields: Fields;
 };
 
-export const Default = (props: PromoCtaProps): JSX.Element => {
+const PromoCtaDefault = (props: PromoCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
@@ -88,6 +88,8 @@ export const Default = (props: PromoCtaProps): JSX.Element => {
     </div>
   );
 };
+
+export const Default = PromoCtaDefault;
 
 export const WithPlaceholderColumn = (props: PromoCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
@@ -190,3 +192,46 @@ export const WithBackgroundImage = (props: PromoCtaProps): JSX.Element => {
     </div>
   );
 };
+
+export const QuorumDarkBanner = (props: PromoCtaProps): JSX.Element => {
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  return (
+    <section
+      className={`component quorum-dark-banner ${props.params?.styles || ''}`}
+      id={props.params.RenderingIdentifier || undefined}
+    >
+      <div className="quorum-container quorum-dark-banner__content">
+        <div className="quorum-dark-banner__copy">
+          {(isPageEditing || props.fields?.Eyebrow?.value) && (
+            <Text field={props.fields?.Eyebrow} tag="p" className="quorum-dark-banner__eyebrow" />
+          )}
+          <Text field={props.fields?.Title} tag="h2" className="quorum-dark-banner__title" />
+          {(isPageEditing || props.fields?.Subtitle?.value) && (
+            <Text field={props.fields?.Subtitle} tag="p" className="quorum-dark-banner__subtitle" />
+          )}
+          <RichText field={props.fields?.Text} className="quorum-dark-banner__text" />
+          <div className="quorum-dark-banner__actions">
+            {(isPageEditing || props.fields?.Link?.value?.href) && (
+              <Link field={props.fields?.Link} className="quorum-button quorum-button--primary" />
+            )}
+            {(isPageEditing || props.fields?.Link2?.value?.href) && (
+              <Link field={props.fields?.Link2} className="quorum-button quorum-button--outline" />
+            )}
+          </div>
+        </div>
+        {(isPageEditing || props.fields?.Image?.value?.src) && (
+          <NextImage
+            field={props.fields?.Image}
+            width={560}
+            height={320}
+            className="quorum-dark-banner__image"
+          />
+        )}
+      </div>
+    </section>
+  );
+};
+
+export const Hidden = (): JSX.Element => <></>;
