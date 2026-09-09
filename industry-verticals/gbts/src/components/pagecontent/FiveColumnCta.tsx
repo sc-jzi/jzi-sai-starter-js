@@ -13,6 +13,7 @@ import {
 import useVisibility from 'src/hooks/useVisibility';
 
 interface Fields {
+  Description1?: Field<string>;
   Text1: Field<string>;
   Image1: ImageField;
   Link1: LinkField;
@@ -105,5 +106,47 @@ export const Default = (props: FiveColumnCtaProps): JSX.Element => {
         </div>
       </div>
     </div>
+  );
+};
+
+/* GBTS variant — raised enrollment panel with five text-only course offers. */
+export const GbtsEnrollmentPanel = (props: FiveColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const courses = [
+    { text: props.fields.Text1, link: props.fields.Link1 },
+    { text: props.fields.Text2, link: props.fields.Link2 },
+    { text: props.fields.Text3, link: props.fields.Link3 },
+    { text: props.fields.Text4, link: props.fields.Link4 },
+    { text: props.fields.Text5, link: props.fields.Link5 },
+  ];
+
+  return (
+    <section
+      className={`component five-column-cta gbts-enrollment-panel ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container gbts-enrollment-inner">
+        <h2>
+          <Text field={props.fields.Description1} />
+        </h2>
+        <div className="row justify-content-center g-4">
+          {courses.map((course, index) => (
+            <div className="col-12 col-md-6 col-lg-4" key={index}>
+              <article className="gbts-enrollment-course">
+                <h3>
+                  <Text field={course.text} />
+                </h3>
+                {(isPageEditing || course.link?.value?.href) && (
+                  <Link field={course.link} className="button button-main" />
+                )}
+              </article>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };

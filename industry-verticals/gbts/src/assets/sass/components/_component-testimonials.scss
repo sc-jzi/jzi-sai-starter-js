@@ -70,4 +70,38 @@
       }
     }
   }
+
+  &.gbts-two-up-navy {
+    padding: 2.75rem 1.5rem 3.25rem;
+    background: var(--brand-primary);
+    color: var(--brand-primary-foreground);
+    font-family: var(--brand-body-font);
+
+    h2 {
+      margin-bottom: 1.75rem;
+      font: 700 1.7rem / 1.2 var(--brand-heading-font);
+      text-align: center;
+    }
+
+    .gbts-testimonial-card {
+      height: 100%;
+      min-height: 190px;
+      padding: 1.75rem 2rem;
+      border-radius: var(--brand-card-radius);
+      background: var(--brand-testimonial);
+      box-shadow: 0 3px 12px rgb(0 0 0 / 18%);
+
+      blockquote {
+        margin-bottom: 1.25rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .gbts-testimonial-author {
+        margin: 0;
+        color: var(--brand-accent);
+        font-weight: 700;
+      }
+    }
+  }
 }

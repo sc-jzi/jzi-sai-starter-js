@@ -267,3 +267,62 @@ export const WithIconsCompact = (props: ThreeColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* GBTS variant — compact course category cards with colored round icons and chevrons. */
+export const GbtsCourseCategories = (props: ThreeColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const categories = [
+    {
+      text: props.fields.Text1,
+      subText: props.fields.SubText1,
+      link: props.fields.Link1,
+      icon: '▰',
+      tone: 'virtual',
+    },
+    {
+      text: props.fields.Text2,
+      subText: props.fields.SubText2,
+      link: props.fields.Link2,
+      icon: '♟',
+      tone: 'online',
+    },
+    {
+      text: props.fields.Text3,
+      subText: props.fields.SubText3,
+      link: props.fields.Link3,
+      icon: '▣',
+      tone: 'bundles',
+    },
+  ];
+
+  return (
+    <section
+      className={`component three-column-cta gbts-course-categories ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="row g-3">
+          {categories.map((category) => (
+            <div className="col-12 col-lg-4" key={category.tone}>
+              <Link field={category.link} className={`gbts-course-card ${category.tone}`}>
+                <div className="gbts-course-card-heading">
+                  <span className="gbts-course-icon" aria-hidden="true">
+                    {category.icon}
+                  </span>
+                  <h3>
+                    <Text field={category.text} />
+                  </h3>
+                </div>
+                <div className="gbts-course-card-summary">
+                  <Text field={category.subText} />
+                  <span aria-hidden="true">⌄</span>
+                </div>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};

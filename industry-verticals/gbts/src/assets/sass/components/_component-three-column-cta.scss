@@ -162,4 +162,76 @@
       opacity: 1;
     }
   }
+
+  &.gbts-course-categories {
+    margin: 1rem 0 1.5rem;
+    padding: 0 1.5rem;
+    font-family: var(--brand-body-font);
+
+    .gbts-course-card {
+      display: block;
+      height: 100%;
+      overflow: hidden;
+      border: 1px solid var(--brand-border);
+      border-radius: var(--brand-card-radius);
+      background: var(--brand-bg);
+      box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
+      color: var(--brand-fg);
+      text-decoration: none;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 14px rgb(0 0 0 / 16%);
+      }
+
+      &.virtual {
+        --gbts-course-color: var(--brand-accent);
+      }
+
+      &.online {
+        --gbts-course-color: var(--brand-course-online);
+      }
+
+      &.bundles {
+        --gbts-course-color: var(--brand-course-bundles);
+      }
+    }
+
+    .gbts-course-card-heading {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1rem 0.75rem;
+
+      h3 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 700;
+      }
+    }
+
+    .gbts-course-icon {
+      display: inline-flex;
+      width: 2.5rem;
+      height: 2.5rem;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--gbts-course-color);
+      color: var(--brand-primary-foreground);
+      font-size: 1rem;
+    }
+
+    .gbts-course-card-summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 1rem;
+      border-top: 1px solid var(--brand-border);
+      color: var(--gbts-course-color);
+      font-size: 0.78rem;
+    }
+  }
 }

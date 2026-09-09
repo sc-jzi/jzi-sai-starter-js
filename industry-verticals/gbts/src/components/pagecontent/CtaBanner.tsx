@@ -32,18 +32,13 @@ export type CtaBannerProps = ComponentProps & {
 };
 
 export const Default = (props: CtaBannerProps): JSX.Element => {
-  const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
-  const [isVisible, domRef] = useVisibility();
   const sxaStyles = `${props.params?.styles || ''}`;
 
   return (
     <div
-      className={`component cta-banner component-spaced ${sxaStyles}`}
-      id={id ? id : undefined}
-      ref={domRef}
-    >
+      className={`component cta-banner component-spaced ${sxaStyles}`}>
       <div className="container container-widest-fluid">
         <div className="container">
           <div className="row row-gap-4 main-content align-items-center">
@@ -71,7 +66,7 @@ export const Default = (props: CtaBannerProps): JSX.Element => {
                 <NextImage
                   field={props.fields.Image}
                   className={`d-block mx-lg-auto img-fluid ${
-                    !isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
+                    !isPageEditing ? `fade-section 'is-visible'` : ''
                   }`}
                   width={800}
                   height={800}
@@ -138,5 +133,37 @@ export const LargeImage = (props: CtaBannerProps): JSX.Element => {
         </div>
       </div>
     </div>
+  );
+};
+
+/* GBTS variant — compact blue split banner used by homepage training CTAs. */
+export const GbtsCompactSplit = (props: CtaBannerProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <section
+      className={`component cta-banner gbts-compact-split ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="row g-0 align-items-stretch">
+          <div className="col-lg-7 gbts-compact-split-copy">
+            <h2>
+              <Text field={props.fields.Title} />
+            </h2>
+            <RichText field={props.fields.Text} className="text-content" />
+            {(isPageEditing || props.fields?.Link?.value?.href) && (
+              <Link field={props.fields.Link} className="button button-accent" />
+            )}
+          </div>
+          <div className="col-lg-5 gbts-compact-split-image">
+            <NextImage field={props.fields.Image} width={900} height={360} />
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };

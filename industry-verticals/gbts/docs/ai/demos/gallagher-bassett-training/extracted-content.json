@@ -1,0 +1,676 @@
+{
+  "url": "https://www.gbtstraining.com/",
+  "extractedAt": "2026-09-09T02:00:10.597Z",
+  "detectedLanguage": "en",
+  "targetLanguage": "en",
+  "translationNeeded": false,
+  "totalSections": 7,
+  "totalImages": 5,
+  "totalVideos": 0,
+  "interactionStats": {
+    "lazySourcesResolved": 0,
+    "tabsClicked": 0,
+    "accordionsExpanded": 6,
+    "carouselDotsClicked": 0,
+    "carouselArrowSlides": 0,
+    "backgroundImagesCollected": 4
+  },
+  "sections": [
+    {
+      "position": 1,
+      "tagName": "header",
+      "classHint": "site-header",
+      "backgroundHint": "dark",
+      "headings": [],
+      "paragraphs": [],
+      "links": [
+        {
+          "text": "Courses",
+          "href": "https://www.gbtstraining.com/courses/",
+          "target": ""
+        },
+        {
+          "text": "NYC DOB Courses",
+          "href": "https://learn.gbtstraining.com/learn",
+          "target": ""
+        },
+        {
+          "text": "OSHA Courses",
+          "href": "https://gbts.learnshare.com/",
+          "target": ""
+        },
+        {
+          "text": "Virtual/Hybrid Courses",
+          "href": "https://www.gbtstraining.com/courses/",
+          "target": ""
+        },
+        {
+          "text": "Resources",
+          "href": "https://www.gbtstraining.com/resources/",
+          "target": ""
+        },
+        {
+          "text": "SST Card Issuance",
+          "href": "https://www.gbtstraining.com/sst-card-issuance/",
+          "target": ""
+        },
+        {
+          "text": "Worker Wallet is here!",
+          "href": "https://www.gbtstraining.com/wallet/",
+          "target": ""
+        },
+        {
+          "text": "Classroom Policies",
+          "href": "https://www.gbtstraining.com/classroom-policies/",
+          "target": ""
+        },
+        {
+          "text": "Registration & Cancellation Policies",
+          "href": "https://www.gbtstraining.com/registration-cancellation-policies/",
+          "target": ""
+        },
+        {
+          "text": "Refund and Credit Policy",
+          "href": "https://www.gbtstraining.com/refund-credit-policy/",
+          "target": ""
+        },
+        {
+          "text": "Promotions & Discounts",
+          "href": "https://www.gbtstraining.com/promotions-discounts/",
+          "target": ""
+        },
+        {
+          "text": "Hard Hat Happenings",
+          "href": "https://www.gbtstraining.com/gallagher-bassett-technical-services-news/",
+          "target": ""
+        },
+        {
+          "text": "Request Course Materials",
+          "href": "https://www.gbtstraining.com/course-materials/",
+          "target": ""
+        },
+        {
+          "text": "FAQs",
+          "href": "https://www.gbtstraining.com/faqs/",
+          "target": ""
+        },
+        {
+          "text": "Contact Us",
+          "href": "https://www.gbtstraining.com/contact-gbts/",
+          "target": ""
+        },
+        {
+          "text": "Login",
+          "href": "https://www.gbtstraining.com/login-menu-page/",
+          "target": ""
+        },
+        {
+          "text": "Login to NYC DOB Courses",
+          "href": "https://learn.gbtstraining.com/learn",
+          "target": ""
+        },
+        {
+          "text": "Log into OSHA Courses",
+          "href": "https://gbts.learnshare.com/",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.gbtstraining.com/wp-content/uploads/2026/03/GB_wordpress.webp",
+          "alt": "",
+          "type": "img",
+          "width": 240,
+          "height": 76
+        },
+        {
+          "src": "https://www.gbtstraining.com/wp-content/uploads/2024/12/tsc-trainingbenefits.webp",
+          "alt": "",
+          "type": "background-unmatched",
+          "width": null,
+          "height": null
+        }
+      ],
+      "listItems": [
+        {
+          "link": {
+            "text": "",
+            "href": "https://www.gbtstraining.com/"
+          },
+          "image": {
+            "src": "https://www.gbtstraining.com/wp-content/uploads/2026/03/GB_wordpress.webp",
+            "alt": ""
+          }
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "tagName": "div",
+      "classHint": "home-hero",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Your Training Leader Today and Tomorrow"
+        }
+      ],
+      "paragraphs": [
+        "GB Training Academy has evolved! We now offer a full suite of OSHA, online SST, select virtual and on-site course offerings.Get the training you need 24/7!. NYC DOB Courses OSHA Courses Virtual Courses",
+        "GB Training Academy has evolved! We now offer a full suite of OSHA, online SST, select virtual and on-site course offerings.Get the training you need 24/7!.",
+        "NYC DOB Courses OSHA Courses Virtual Courses"
+      ],
+      "links": [
+        {
+          "text": "NYC DOB Courses",
+          "href": "https://learn.gbtstraining.com/learn",
+          "target": "_blank"
+        },
+        {
+          "text": "OSHA Courses",
+          "href": "https://gbts.learnshare.com/",
+          "target": "_blank"
+        },
+        {
+          "text": "Virtual Courses",
+          "href": "https://www.gbtstraining.com/courses/",
+          "target": "_blank"
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.gbtstraining.com/wp-content/uploads/2025/03/AdobeStock_325328393_frontpage.webp",
+          "alt": "",
+          "type": "background",
+          "width": null,
+          "height": null
+        }
+      ],
+      "listItems": [
+        {
+          "title": "Your Training Leader Today and Tomorrow"
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "tagName": "div",
+      "classHint": "home-search",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Now Enrolling:"
+        },
+        {
+          "tag": "h4",
+          "text": "Virtual 4-Hour Supported Scaffold Course"
+        },
+        {
+          "tag": "h4",
+          "text": "Virtual 40-Hour Site Safety Manager Training"
+        },
+        {
+          "tag": "h4",
+          "text": "Virtual 8-Hour Site Safety Training"
+        },
+        {
+          "tag": "h4",
+          "text": "Virtual 4-Hour Mast Climber"
+        },
+        {
+          "tag": "h4",
+          "text": "Construction Site Fire Safety Manager"
+        }
+      ],
+      "paragraphs": [],
+      "links": [
+        {
+          "text": "View Class Details",
+          "href": "https://learn.gbtstraining.com/learn/courses/275/4-hour-supported-scaffold-user-and-refresher-scaffold-card-and-sst-sca-211",
+          "target": ""
+        },
+        {
+          "text": "View Class Details",
+          "href": "https://learn.gbtstraining.com/learn/courses/198/40-hour-site-safety-saf-102",
+          "target": ""
+        },
+        {
+          "text": "View Class Details",
+          "href": "https://learn.gbtstraining.com/learn/courses/215/8-hour-site-safety-license-requirement-and-sst-saf-202",
+          "target": ""
+        },
+        {
+          "text": "View Class Details",
+          "href": "https://learn.gbtstraining.com/learn/courses/39/4-hour-mast-climber-useroperator-and-refresher-cra-102",
+          "target": ""
+        },
+        {
+          "text": "View Class Details",
+          "href": "https://learn.gbtstraining.com/learn/courses/116/construction-site-fire-safety-manager-fdn-320",
+          "target": ""
+        }
+      ],
+      "images": [],
+      "listItems": [
+        {
+          "title": "Virtual 4-Hour Supported Scaffold Course",
+          "link": {
+            "text": "View Class Details",
+            "href": "https://learn.gbtstraining.com/learn/courses/275/4-hour-supported-scaffold-user-and-refresher-scaffold-card-and-sst-sca-211"
+          }
+        },
+        {
+          "title": "Virtual 40-Hour Site Safety Manager Training",
+          "link": {
+            "text": "View Class Details",
+            "href": "https://learn.gbtstraining.com/learn/courses/198/40-hour-site-safety-saf-102"
+          }
+        },
+        {
+          "title": "Virtual 8-Hour Site Safety Training",
+          "link": {
+            "text": "View Class Details",
+            "href": "https://learn.gbtstraining.com/learn/courses/215/8-hour-site-safety-license-requirement-and-sst-saf-202"
+          }
+        }
+      ]
+    },
+    {
+      "position": 4,
+      "tagName": "div",
+      "classHint": "home-main",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Need a Worker Wallet Card?"
+        },
+        {
+          "tag": "h2",
+          "text": "Training Courses"
+        },
+        {
+          "tag": "h2",
+          "text": "Virtual Classes"
+        },
+        {
+          "tag": "h2",
+          "text": "Online Classes"
+        },
+        {
+          "tag": "h2",
+          "text": "Course Bundles"
+        },
+        {
+          "tag": "h2",
+          "text": "Most Popular Training Courses"
+        },
+        {
+          "tag": "h2",
+          "text": "Virtual Classes"
+        },
+        {
+          "tag": "h2",
+          "text": "Online Classes"
+        },
+        {
+          "tag": "h2",
+          "text": "Course Bundles"
+        },
+        {
+          "tag": "h2",
+          "text": "Get The Training You Need"
+        }
+      ],
+      "paragraphs": [
+        "The July 1 deadline has passed. If you don't have a Worker Wallet Card, you may not be able to work!",
+        "Virtual 4-Hour Supported Scaffold User & Refresher Course",
+        "Virtual 40-Hour Site Safety Training",
+        "Virtual 8-Hour Site Safety Training",
+        "Virtual 4-Hour Mast Climber User/Operator & Refresher Training",
+        "Construction Site Fire Safety Manager Training",
+        "Asbestos Awareness",
+        "Hazard Communication Awareness Seminar",
+        "Online 8-Hour HAZWOPER Refresher",
+        "Online 8-Hour Site Safety Training",
+        "Online 8-Hour SST Worker Renewal Course Package 1",
+        "4-Hour SST Elective Courses Bundle",
+        "Online 8-Hour SST Elective Courses Bundle",
+        "8-Hour Prescribed SST Courses Bundle",
+        "Online 10-Hour Worker SST Courses Bundle",
+        "We offer courses to bring your skills to the next level.",
+        "View All Courses"
+      ],
+      "links": [
+        {
+          "text": "Apply Here",
+          "href": "https://www.gbtstraining.com/wallet/",
+          "target": "_blank"
+        },
+        {
+          "text": "Virtual 4-Hour Supported Scaffold User & Refresher Course",
+          "href": "https://www.gbtstraining.com/courses/distance-learning/virtual-4-hour-supported-scaffold-user-refresher-course/",
+          "target": ""
+        },
+        {
+          "text": "Virtual 40-Hour Site Safety Training",
+          "href": "https://www.gbtstraining.com/courses/distance-learning/virtual-40-hour-site-safety-manager-training/",
+          "target": ""
+        },
+        {
+          "text": "Virtual 8-Hour Site Safety Training",
+          "href": "https://www.gbtstraining.com/courses/distance-learning/virtual-8-hour-site-safety-manager-refresher-chapter-33-training/",
+          "target": ""
+        },
+        {
+          "text": "Virtual 4-Hour Mast Climber User/Operator & Refresher Training",
+          "href": "https://www.gbtstraining.com/courses/distance-learning/virtual-4-hour-mast-climber-user-and-operator-training/",
+          "target": ""
+        },
+        {
+          "text": "Construction Site Fire Safety Manager Training",
+          "href": "https://www.gbtstraining.com/courses/fdny-approved/construction-site-fire-safety-manager-training/",
+          "target": ""
+        },
+        {
+          "text": "Asbestos Awareness",
+          "href": "https://www.gbtstraining.com/courses/online-learning/asbestos-awareness/",
+          "target": ""
+        },
+        {
+          "text": "Hazard Communication Awareness Seminar",
+          "href": "https://www.gbtstraining.com/courses/online-learning/hazard-communication-awareness-seminar/",
+          "target": ""
+        },
+        {
+          "text": "Online 8-Hour HAZWOPER Refresher",
+          "href": "https://www.gbtstraining.com/courses/online-learning/online-8-hour-hazwoper-refresher/",
+          "target": ""
+        },
+        {
+          "text": "Online 8-Hour Site Safety Training",
+          "href": "https://www.gbtstraining.com/courses/online-learning/8-hour-site-safety-manager-refresher-chapter-33-review/",
+          "target": ""
+        },
+        {
+          "text": "Online 8-Hour SST Worker Renewal Course Package 1",
+          "href": "https://www.gbtstraining.com/courses/sst-online-bundles/online-8-hour-sst-worker-renewal-course-package-1/",
+          "target": ""
+        },
+        {
+          "text": "4-Hour SST Elective Courses Bundle",
+          "href": "https://www.gbtstraining.com/courses/sst/4-hour-sst-elective-courses-bundle/",
+          "target": ""
+        },
+        {
+          "text": "Online 8-Hour SST Elective Courses Bundle",
+          "href": "https://www.gbtstraining.com/courses/online-learning/8-hour-sst-elective-courses-bundle-2/",
+          "target": ""
+        },
+        {
+          "text": "8-Hour Prescribed SST Courses Bundle",
+          "href": "https://www.gbtstraining.com/courses/sst/8-hour-prescribed-sst-courses-bundle/",
+          "target": ""
+        },
+        {
+          "text": "Online 10-Hour Worker SST Courses Bundle",
+          "href": "https://www.gbtstraining.com/courses/sst-online-bundles/online-10-hour-worker-sst-courses-bundle/",
+          "target": ""
+        },
+        {
+          "text": "View All Courses",
+          "href": "https://www.gbtstraining.com/courses",
+          "target": ""
+        }
+      ],
+      "images": [
+        {
+          "src": "https://www.gbtstraining.com/wp-content/uploads/2025/05/online_training_2025_05-r1-c2-copy.webp",
+          "alt": "",
+          "type": "background",
+          "width": null,
+          "height": null
+        },
+        {
+          "src": "https://www.gbtstraining.com/wp-content/uploads/2024/12/training_you_need.webp",
+          "alt": "",
+          "type": "background",
+          "width": null,
+          "height": null
+        }
+      ],
+      "listItems": [
+        {
+          "title": "Need a Worker Wallet Card?",
+          "description": "Need a Worker Wallet Card? The July 1 deadline has passed. If you don't have a Worker Wallet Card, you may not be able to work! Apply Here",
+          "link": {
+            "text": "Apply Here",
+            "href": "https://www.gbtstraining.com/wallet/"
+          },
+          "image": {
+            "src": "https://www.gbtstraining.com/wp-content/uploads/2025/05/online_training_2025_05-r1-c2-copy.webp",
+            "alt": ""
+          }
+        },
+        {
+          "title": "Training Courses"
+        },
+        {
+          "title": "Virtual Classes",
+          "description": "The actively proctored courses you need Virtual 4-Hour Supported Scaffold User & Refresher Course Virtual 40-Hour Site Safety Training Virtual 8-Hour Site Safety Training Virtual 4-Hour Mast Climber User/Operator & Refresher Training Construction Site Fire Safety Manager Training",
+          "link": {
+            "text": "Virtual 4-Hour Supported Scaffold User & Refresher Course",
+            "href": "https://www.gbtstraining.com/courses/distance-learning/virtual-4-hour-supported-scaffold-user-refresher-course/"
+          }
+        },
+        {
+          "title": "Most Popular Training Courses"
+        },
+        {
+          "title": "Virtual Classes",
+          "description": "The actively proctored courses you need Virtual 4-Hour Supported Scaffold User & Refresher Course Virtual 40-Hour Site Safety Training Virtual 8-Hour Site Safety Training Virtual 4-Hour Mast Climber User/Operator & Refresher Training Construction Site Fire Safety Manager Training",
+          "link": {
+            "text": "Virtual 4-Hour Supported Scaffold User & Refresher Course",
+            "href": "https://www.gbtstraining.com/courses/distance-learning/virtual-4-hour-supported-scaffold-user-refresher-course/"
+          }
+        },
+        {
+          "title": "Get The Training You Need",
+          "description": "Get The Training You Need We offer courses to bring your skills to the next level. View All Courses",
+          "link": {
+            "text": "View All Courses",
+            "href": "https://www.gbtstraining.com/courses"
+          },
+          "image": {
+            "src": "https://www.gbtstraining.com/wp-content/uploads/2024/12/training_you_need.webp",
+            "alt": ""
+          }
+        }
+      ]
+    },
+    {
+      "position": 5,
+      "tagName": "div",
+      "classHint": "testimonials",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h2",
+          "text": "Testimonials"
+        }
+      ],
+      "paragraphs": [
+        "I highly recommend Gallagher Bassett Technical Services. The two instructors I had were extraordinary. They were clear, concise, and most of all professional. Thank you for the experience.",
+        "Giordano C.",
+        "Gallagher Bassett Technical Services is a top-notch establishment if you really want to learn safety. Be sure to go here for all your construction training needs."
+      ],
+      "links": [],
+      "images": []
+    },
+    {
+      "position": 6,
+      "tagName": "div",
+      "classHint": "training-benefits",
+      "backgroundHint": "dark",
+      "headings": [
+        {
+          "tag": "h1",
+          "text": "Benefits of Our Training"
+        }
+      ],
+      "paragraphs": [
+        "Flexible schedules with available evening and weekend courses",
+        "Safety courses offered in English, Spanish and Polish. Other languages available upon request.",
+        "Improve worker safety awareness",
+        "Hands-on training in rigging, inspection, fall protection and suspended scaffold operation and rescue.",
+        "Satisfy City and Federal requirements",
+        "Help control accident-related costs and minimize downtime",
+        "Project professionalism of your employees",
+        "OSHA Outreach courses are provided in partnership with UL PureSafety, an OSHA-authorized online outreach provider. Meets OSHA and NYC Department of Buildings guidelines when actively proctored."
+      ],
+      "links": [],
+      "images": []
+    },
+    {
+      "position": 7,
+      "tagName": "footer",
+      "classHint": "site-footer",
+      "backgroundHint": "dark",
+      "headings": [],
+      "paragraphs": [
+        "© Copyright Gallagher Bassett Technical Services 2026"
+      ],
+      "links": [
+        {
+          "text": "Courses",
+          "href": "https://www.gbtstraining.com/courses/",
+          "target": ""
+        },
+        {
+          "text": "NYC DOB Courses",
+          "href": "https://learn.gbtstraining.com/learn",
+          "target": ""
+        },
+        {
+          "text": "OSHA Courses",
+          "href": "https://gbts.learnshare.com/",
+          "target": ""
+        },
+        {
+          "text": "Virtual/Hybrid Courses",
+          "href": "https://www.gbtstraining.com/courses/",
+          "target": ""
+        },
+        {
+          "text": "Resources",
+          "href": "https://www.gbtstraining.com/resources/",
+          "target": ""
+        },
+        {
+          "text": "SST Card Issuance",
+          "href": "https://www.gbtstraining.com/sst-card-issuance/",
+          "target": ""
+        },
+        {
+          "text": "Worker Wallet is here!",
+          "href": "https://www.gbtstraining.com/wallet/",
+          "target": ""
+        },
+        {
+          "text": "Classroom Policies",
+          "href": "https://www.gbtstraining.com/classroom-policies/",
+          "target": ""
+        },
+        {
+          "text": "Registration & Cancellation Policies",
+          "href": "https://www.gbtstraining.com/registration-cancellation-policies/",
+          "target": ""
+        },
+        {
+          "text": "Refund and Credit Policy",
+          "href": "https://www.gbtstraining.com/refund-credit-policy/",
+          "target": ""
+        },
+        {
+          "text": "Promotions & Discounts",
+          "href": "https://www.gbtstraining.com/promotions-discounts/",
+          "target": ""
+        },
+        {
+          "text": "Hard Hat Happenings",
+          "href": "https://www.gbtstraining.com/gallagher-bassett-technical-services-news/",
+          "target": ""
+        },
+        {
+          "text": "Request Course Materials",
+          "href": "https://www.gbtstraining.com/course-materials/",
+          "target": ""
+        },
+        {
+          "text": "FAQs",
+          "href": "https://www.gbtstraining.com/faqs/",
+          "target": ""
+        },
+        {
+          "text": "Contact Us",
+          "href": "https://www.gbtstraining.com/contact-gbts/",
+          "target": ""
+        },
+        {
+          "text": "Login",
+          "href": "https://www.gbtstraining.com/login-menu-page/",
+          "target": ""
+        },
+        {
+          "text": "Login to NYC DOB Courses",
+          "href": "https://learn.gbtstraining.com/learn",
+          "target": ""
+        },
+        {
+          "text": "Log into OSHA Courses",
+          "href": "https://gbts.learnshare.com/",
+          "target": ""
+        },
+        {
+          "text": "Privacy Policy",
+          "href": "https://www.gallagherbassett.com/privacy-policy/",
+          "target": "_blank"
+        },
+        {
+          "text": "Non-Discrimination Policy",
+          "href": "https://www.gbtstraining.com/non-discrimination-policy/",
+          "target": ""
+        },
+        {
+          "text": "Proprietary Interest Policy",
+          "href": "https://www.gbtstraining.com/proprietary-interest-policy/",
+          "target": ""
+        },
+        {
+          "text": "Cookie Policy",
+          "href": "https://policy.cookiereports.com/%201179630f-en-gb.html",
+          "target": ""
+        },
+        {
+          "text": "Do Not Sell or Share My Personal Information - US Residents",
+          "href": "https://policy.cookiereports.com/%201179630f-en-gb.html",
+          "target": ""
+        }
+      ],
+      "images": [],
+      "listItems": [
+        {
+          "link": {
+            "text": "",
+            "href": "#"
+          },
+          "image": {
+            "src": "https://www.gbtstraining.com/wp-content/uploads/2026/03/GB_wordpress.webp",
+            "alt": ""
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -151,3 +151,22 @@ export const Centered = (props: HeadingCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* GBTS variant — standalone centered course action. */
+export const GbtsButtonOnly = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div
+      className={`component heading-cta gbts-button-only ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      {(isPageEditing || props.fields?.Link?.value?.href) && (
+        <Link field={props.fields.Link} className="button button-accent" />
+      )}
+    </div>
+  );
+};

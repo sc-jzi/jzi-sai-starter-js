@@ -1,0 +1,118 @@
+client:
+  name: "Gallagher Bassett Technical Services Training"
+  sourceUrl: "https://www.gbtstraining.com/"
+  extractedAt: "2026-09-09T01:49:00Z"
+  extractedBy: "sitecore-extract-theme"
+
+colors:
+  primary: "#00254c"
+  primaryForeground: "#ffffff"
+  secondary: "#2d6f99"
+  secondaryForeground: "#ffffff"
+  accent: "#13bce8"
+  accentForeground: "#00254c"
+  background: "#fbfbfb"
+  foreground: "#000000"
+  muted: "#f3f4f5"
+  mutedForeground: "#4f5964"
+  headerBackground: "#ffffff"
+  headerForeground: "#00254c"
+  footerBackground: "#ffffff"
+  footerForeground: "#28343f"
+  border: "#d6d9dc"
+  ring: "#13bce8"
+  extra:
+    - { name: "enrollmentAqua", value: "#99dee3" }
+    - { name: "alertRed", value: "#ff1717" }
+    - { name: "courseGold", value: "#f6a51c" }
+    - { name: "coursePurple", value: "#4b009c" }
+    - { name: "testimonialNavy", value: "#002f57" }
+
+typography:
+  headingFamily: "Open Sans"
+  headingWeight: "700"
+  bodyFamily: "Open Sans"
+  bodyWeight: "400"
+  monoFamily: "monospace"
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,700;1,800&display=swap"
+  scale:
+    hero: "40px"
+    h1: "40px"
+    h2: "32px"
+    h3: "22px"
+    body: "16px"
+    small: "14px"
+  headingTransform: "none"
+  letterSpacing: "normal"
+  lineHeight: "1.5"
+
+spacing:
+  density: "compact"
+  sectionGap: "48px"
+  containerMaxWidth: "1440px"
+  containerPadding: "24px"
+
+shape:
+  borderRadius: "4px"
+  buttonRadius: "4px"
+  cardRadius: "4px"
+  imageRadius: "2px"
+  shadowStyle: "subtle"
+  borderStyle: "1px solid #d6d9dc"
+
+tone:
+  overall: "corporate, practical, safety-focused, and approachable"
+  colorMode: "mixed"
+  contrast: "high"
+  imagery: "construction photography with dark technical network backgrounds"
+  heroStyle: "full-bleed-image"
+  cardStyle: "bordered-elevated"
+  navStyle: "solid-bar"
+
+tailwind:
+  colors:
+    brand:
+      primary: "#00254c"
+      secondary: "#2d6f99"
+      accent: "#13bce8"
+  fontFamily:
+    heading: ["Open Sans", "sans-serif"]
+    body: ["Open Sans", "sans-serif"]
+  borderRadius:
+    DEFAULT: "4px"
+    button: "4px"
+    card: "4px"
+
+cssVariables: |
+  :root {
+    --brand-primary: #00254c;
+    --brand-primary-foreground: #ffffff;
+    --brand-secondary: #2d6f99;
+    --brand-secondary-foreground: #ffffff;
+    --brand-accent: #13bce8;
+    --brand-accent-foreground: #00254c;
+    --brand-bg: #fbfbfb;
+    --brand-fg: #000000;
+    --brand-muted: #f3f4f5;
+    --brand-muted-fg: #4f5964;
+    --brand-header-bg: #ffffff;
+    --brand-header-fg: #00254c;
+    --brand-footer-bg: #ffffff;
+    --brand-footer-fg: #28343f;
+    --brand-border: #d6d9dc;
+    --brand-ring: #13bce8;
+    --brand-heading-font: 'Open Sans', sans-serif;
+    --brand-body-font: 'Open Sans', sans-serif;
+    --brand-radius: 4px;
+    --brand-button-radius: 4px;
+    --brand-card-radius: 4px;
+  }
+
+extraction:
+  confidence: "high"
+  method: "playwright-full"
+  notes:
+    - "Playwright captured desktop, mobile, and hero screenshots and extracted computed styles."
+    - "Primary #00254c, Open Sans, 4px radii, and subtle card shadows came directly from computed styles."
+    - "Secondary, aqua, red, gold, and purple were sampled from prominent screenshot sections and course-category accents."
+    - "The source uses a white navigation/footer shell with dark navy and photographic content bands."

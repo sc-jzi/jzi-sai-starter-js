@@ -1,0 +1,304 @@
+# Demo Build Plan
+client:
+  name: "Gallagher Bassett Technical Services Training"
+  sourceUrl: "https://www.gbtstraining.com/"
+  themeFile: "docs/ai/themes/gallagher-bassett-training.theme.yaml"
+  analyzedAt: "2026-09-09T02:08:00Z"
+
+pageAnalysis:
+  screenshotFiles:
+    desktop: "docs/ai/themes/gallagher-bassett-training/screenshot-desktop.png"
+    mobile: "docs/ai/themes/gallagher-bassett-training/screenshot-mobile.png"
+    hero: "docs/ai/themes/gallagher-bassett-training/screenshot-hero.png"
+  totalSections: 12
+  templateMatches: 12
+  customRequired: 0
+
+sections:
+  - position: 1
+    description: "Thin navy utility strip with provider copy at left and language/phone controls at right."
+    matchedComponent:
+      registryId: "eyebrow"
+      manifestName: "Eyebrow"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "exact"
+      apiAddable: false
+    sectionBackground: "primary"
+    content:
+      ProviderText: "Gallagher Bassett Technical Services LLC, NYC DOB PROVIDER NO. CP046"
+      Phone: "718-389-2103"
+    contentNotes: "Context component in the shared header; populate its left and right placeholders."
+    variantReason: "The existing utility-bar layout matches the screenshot."
+
+  - position: 2
+    description: "White logo and navigation row with Courses, Resources, Contact Us, and Login links."
+    matchedComponent:
+      registryId: "header"
+      manifestName: "Header"
+      variant: "WithLogoImage"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "exact"
+      apiAddable: false
+    sectionBackground: "default"
+    content:
+      LogoAlt: "Gallagher Bassett"
+      Navigation: ["Courses", "Resources", "Contact Us", "Login"]
+    contentNotes: "Context component in the shared header; navigation is composed in the header-right placeholder."
+    variantReason: "The reference uses an image logo rather than a text-only brand."
+
+  - position: 3
+    description: "Full-width dark technical-network image with centered white copy and three cyan course buttons."
+    matchedComponent:
+      registryId: "hero"
+      manifestName: "Hero"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+    sectionBackground: "dark"
+    content:
+      Title: "Your Training Leader Today and Tomorrow"
+      Text: "GB Training Academy has evolved! We now offer a full suite of OSHA, online SST, select virtual and on-site course offerings. Get the training you need 24/7!"
+      Links:
+        - { text: "NYC DOB Courses", href: "https://www.gbtstraining.com/nyc-dob-courses/" }
+        - { text: "OSHA Courses", href: "https://www.gbtstraining.com/osha-courses/" }
+        - { text: "Virtual Courses", href: "https://www.gbtstraining.com/virtual-hybrid-courses/" }
+    contentNotes: "Existing Hero has one Link field; the reference has three CTAs."
+    variantReason: "The existing full-bleed Hero is the correct base layout."
+    customVariantNeeded:
+      name: "GbtsMultiCta"
+      description: "Centered network-image hero with compact height and three CTA buttons."
+      parentComponent: "Hero"
+
+  - position: 4
+    description: "Raised aqua enrollment panel overlapping the hero, with a red heading and five course offers in a 3+2 layout."
+    matchedComponent:
+      registryId: "five-column-cta"
+      manifestName: "FiveColumnCta"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "medium"
+      variantMatch: "partial"
+      apiAddable: true
+    sectionBackground: "accent"
+    content:
+      Heading: "Now Enrolling:"
+      Items:
+        - { title: "Virtual 4-Hour Supported Scaffold Course", linkText: "View Class Details" }
+        - { title: "Virtual 40-Hour Site Safety Manager Training", linkText: "View Class Details" }
+        - { title: "Virtual 8-Hour Site Safety Training", linkText: "View Class Details" }
+        - { title: "Virtual 4-Hour Mast Climber", linkText: "View Class Details" }
+        - { title: "Construction Site Fire Safety Manager", linkText: "View Class Details" }
+    contentNotes: "The existing component is image-led and lacks a shared heading; an existing description field can supply the shared heading in the demo variant."
+    variantReason: "Five authorable offer slots match the content count."
+    customVariantNeeded:
+      name: "GbtsEnrollmentPanel"
+      description: "Aqua overlapping panel with a shared red heading, text-only offers, and responsive 3+2 placement."
+      parentComponent: "FiveColumnCta"
+
+  - position: 5
+    description: "Compact blue split banner promoting the Worker Wallet card, with construction workers at right."
+    matchedComponent:
+      registryId: "cta-banner"
+      manifestName: "CtaBanner"
+      variant: "LargeImage"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+    sectionBackground: "primary"
+    content:
+      Title: "Need a Worker Wallet Card?"
+      Text: "The July 1 deadline has passed. If you don't have a Worker Wallet Card, you may not be able to work!"
+      Link: { text: "Apply Here", href: "https://www.gbtstraining.com/worker-wallet-is-here/" }
+    contentNotes: "Fields match; spacing and image proportion need the compact demo treatment."
+    variantReason: "LargeImage supplies the required text/image split."
+    customVariantNeeded:
+      name: "GbtsCompactSplit"
+      description: "Compact blue text-left/image-right CTA with square cyan button."
+      parentComponent: "CtaBanner"
+
+  - position: 6
+    description: "Training Courses heading above three compact bordered cards for Virtual Classes, Online Classes, and Course Bundles."
+    matchedComponent:
+      registryId: "three-column-cta"
+      manifestName: "ThreeColumnCta"
+      variant: "WithIconsCompact"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Heading: "Training Courses"
+      Items:
+        - { title: "Virtual Classes", text: "The actively proctored courses you need", accent: "cyan" }
+        - { title: "Online Classes", text: "Set your training on your schedule", accent: "gold" }
+        - { title: "Course Bundles", text: "Get what you need in one convenient package", accent: "purple" }
+    contentNotes: "Use a separate compact HeadingCta for the authorable section title. The reference cards include chevrons."
+    variantReason: "WithIconsCompact is the closest existing dense card treatment."
+    customVariantNeeded:
+      name: "GbtsCourseCategories"
+      description: "Compact bordered icon cards with category colors and dropdown-style chevrons."
+      parentComponent: "ThreeColumnCta"
+
+  - position: 7
+    description: "Most Popular Training Courses heading above a second row of the same three course-category cards."
+    matchedComponent:
+      registryId: "three-column-cta"
+      manifestName: "ThreeColumnCta"
+      variant: "WithIconsCompact"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Heading: "Most Popular Training Courses"
+      Items:
+        - { title: "Virtual Classes", text: "The actively proctored courses you need", accent: "cyan" }
+        - { title: "Online Classes", text: "Set your training on your schedule", accent: "gold" }
+        - { title: "Course Bundles", text: "Get what you need in one convenient package", accent: "purple" }
+    contentNotes: "Reuse the course-category variant with a separate datasource and compact heading."
+    variantReason: "The visual structure repeats section 6."
+    customVariantNeeded:
+      name: "GbtsCourseCategories"
+      description: "Reuse the compact bordered category-card variant."
+      parentComponent: "ThreeColumnCta"
+
+  - position: 8
+    description: "Small centered cyan View All Courses button."
+    matchedComponent:
+      registryId: "heading-cta"
+      manifestName: "HeadingCta"
+      variant: "Compact"
+      matchType: "template"
+      matchConfidence: "medium"
+      variantMatch: "partial"
+      apiAddable: true
+    sectionBackground: "default"
+    content:
+      Link: { text: "View All Courses", href: "https://www.gbtstraining.com/courses/" }
+    contentNotes: "Populate only Link; a button-only demo variant avoids empty heading wrappers."
+    variantReason: "Compact is closest to the small standalone action."
+    customVariantNeeded:
+      name: "GbtsButtonOnly"
+      description: "Centered compact action that renders only the General Link field."
+      parentComponent: "HeadingCta"
+
+  - position: 9
+    description: "Blue split banner offering training, with an overhead construction-site photograph at right."
+    matchedComponent:
+      registryId: "cta-banner"
+      manifestName: "CtaBanner"
+      variant: "LargeImage"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+    sectionBackground: "primary"
+    content:
+      Title: "Get The Training You Need"
+      Text: "We offer courses to bring your skills to the next level."
+      Link: { text: "View All Courses", href: "https://www.gbtstraining.com/courses/" }
+    contentNotes: "Reuse the compact split variant from the Worker Wallet section."
+    variantReason: "The same text/image split pattern appears again."
+    customVariantNeeded:
+      name: "GbtsCompactSplit"
+      description: "Reuse the compact blue split CTA variant."
+      parentComponent: "CtaBanner"
+
+  - position: 10
+    description: "Full-width navy testimonials section with two dark-blue quote panels visible side by side."
+    matchedComponent:
+      registryId: "testimonials"
+      manifestName: "Testimonials"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+    sectionBackground: "dark"
+    content:
+      Title: "Testimonials"
+      Items:
+        - author: "Giordano C."
+          quote: "I highly recommend Gallagher Bassett Technical Services. The two instructors I had were extraordinary. They were clear, concise, and most of all professional. Thank you for the experience."
+        - author: "Benito P."
+          quote: "Gallagher Bassett Technical Services is a top-notch establishment if you really want to learn safety. Be sure to go here for all your construction training needs."
+    contentNotes: "Ignore the orange third-party feedback/language overlay. Existing carousel shows a different desktop count."
+    variantReason: "The datasource model and slider behavior are reusable."
+    customVariantNeeded:
+      name: "GbtsTwoUpNavy"
+      description: "Two visible testimonial panels on a navy background with compact typography."
+      parentComponent: "Testimonials"
+
+  - position: 11
+    description: "Darkened construction photograph with centered Benefits of Our Training heading and gold-marked benefit list."
+    matchedComponent:
+      registryId: "parallax-banner"
+      manifestName: "ParallaxBanner"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "exact"
+      apiAddable: true
+    sectionBackground: "dark"
+    content:
+      Title: "Benefits of Our Training"
+      Text: "<ul><li>Flexible schedules with available evening and weekend courses</li><li>Safety courses offered in English, Spanish and Polish. Other languages available upon request.</li><li>Improve worker safety awareness</li><li>Hands-on training in rigging, inspection, fall protection and suspended scaffold operation and rescue.</li><li>Satisfy City and Federal requirements</li><li>Help control accident-related costs and minimize downtime</li><li>Project professionalism of your employees</li></ul><p>OSHA Outreach courses are provided in partnership with UL PureSafety, an OSHA-authorized online outreach provider. Meets OSHA and NYC Department of Buildings guidelines when actively proctored.</p>"
+    contentNotes: "Use the source site content for all bullets and disclaimer."
+    variantReason: "The existing image-overlay parallax treatment matches the reference."
+
+  - position: 12
+    description: "Minimal white footer with brand identity, utility links, copyright, and legal policies."
+    matchedComponent:
+      registryId: "footer"
+      manifestName: "Footer"
+      variant: "Default"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: false
+    sectionBackground: "default"
+    content:
+      Navigation: ["Courses", "Resources", "Contact Us", "Login"]
+      Copyright: "© Copyright Gallagher Bassett Technical Services 2026"
+      LegalLinks: ["Privacy Policy", "Non-Discrimination Policy", "Proprietary Interest Policy", "Cookie Policy", "Do Not Sell or Share My Personal Information - US Residents"]
+    contentNotes: "Shared footer placement is manual; the source is much more compact than the existing four-column layout."
+    variantReason: "Default has the required legal and navigation fields."
+    customVariantNeeded:
+      name: "GbtsMinimalLegal"
+      description: "Compact white legal footer with logo, utility navigation, and inline policies."
+      parentComponent: "Footer"
+
+customComponents: []
+
+buildOrder:
+  phase1_sitecore:
+    - { position: 1, manifestName: "Eyebrow", kind: "context-only", matchType: "template" }
+    - { position: 2, manifestName: "Header", kind: "context-only", matchType: "template" }
+    - { position: 3, manifestName: "Hero", kind: "simple", matchType: "template" }
+    - { position: 4, manifestName: "FiveColumnCta", kind: "simple", matchType: "template" }
+    - { position: 5, manifestName: "CtaBanner", kind: "simple", matchType: "template" }
+    - { position: 6, manifestName: "ThreeColumnCta", kind: "simple", matchType: "template" }
+    - { position: 7, manifestName: "ThreeColumnCta", kind: "simple", matchType: "template" }
+    - { position: 8, manifestName: "HeadingCta", kind: "simple", matchType: "template" }
+    - { position: 9, manifestName: "CtaBanner", kind: "simple", matchType: "template" }
+    - { position: 10, manifestName: "Testimonials", kind: "list", matchType: "template" }
+    - { position: 11, manifestName: "ParallaxBanner", kind: "simple", matchType: "template" }
+    - { position: 12, manifestName: "Footer", kind: "simple", matchType: "template" }
+  phase2_theme: "Apply the approved GBTS navy/cyan/aqua theme and Open Sans typography."
+  phase3_custom: []
+  phase5_5_variants:
+    - "Hero.GbtsMultiCta"
+    - "FiveColumnCta.GbtsEnrollmentPanel"
+    - "CtaBanner.GbtsCompactSplit"
+    - "ThreeColumnCta.GbtsCourseCategories"
+    - "HeadingCta.GbtsButtonOnly"
+    - "Testimonials.GbtsTwoUpNavy"
+    - "Footer.GbtsMinimalLegal"

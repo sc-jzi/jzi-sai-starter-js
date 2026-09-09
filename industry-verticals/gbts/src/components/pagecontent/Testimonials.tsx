@@ -126,3 +126,35 @@ export const Default = (props: TestimonialsProps): JSX.Element => {
     </div>
   );
 };
+
+/* GBTS variant — two compact testimonial panels on a navy background. */
+export const GbtsTwoUpNavy = (props: TestimonialsProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const testimonials = props.fields?.items ?? [];
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <section
+      className={`component testimonials gbts-two-up-navy ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <h2>Testimonials</h2>
+        <div className="row g-4">
+          {testimonials.slice(0, 2).map((item, index) => (
+            <div className="col-12 col-lg-6" key={`${item.url}${index}`}>
+              <article className="gbts-testimonial-card">
+                <blockquote>
+                  <Text field={item.fields.Content} />
+                </blockquote>
+                <p className="gbts-testimonial-author">
+                  <Text field={item.fields.AuthorName} />
+                </p>
+              </article>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};

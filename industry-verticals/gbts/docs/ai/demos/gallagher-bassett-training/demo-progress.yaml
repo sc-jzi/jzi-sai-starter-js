@@ -1,0 +1,70 @@
+client:
+  name: "Gallagher Bassett Technical Services Training"
+  sourceUrl: "https://www.gbtstraining.com/"
+  startedAt: "2026-09-09T01:48:00Z"
+  lastUpdatedAt: "2026-09-09T02:00:00Z"
+
+phases:
+  phase0_inputs:
+    status: "complete"
+    screenshot: true
+    url: "https://www.gbtstraining.com/"
+
+  phase0_5_manifest:
+    status: "complete"
+    validationMode: "quick"
+    result: "pass"
+    notes:
+      - "Initial check found copied main/main-website fmc-custom-demo metadata."
+      - "User approved rebuilding metadata for the live education/gbts SXA component library."
+      - "Seven GBTS/Financial root paths, 18 React files, and 18 component-map entries validated."
+
+  phase1_theme:
+    status: "complete"
+    themeFile: "docs/ai/themes/gallagher-bassett-training.theme.yaml"
+    userApproved: true
+
+  phase2_analysis:
+    status: "complete"
+    buildPlanFile: "docs/ai/demos/gallagher-bassett-training/build-plan.yaml"
+    totalSections: 12
+    userApproved: true
+
+  phase2_5_content:
+    status: "complete"
+    contentMapFile: "docs/ai/demos/gallagher-bassett-training/content-map.yaml"
+    extractorUsed: true
+
+  phase3_content:
+    status: "pending"
+    completedSections: 0
+    totalSections: 0
+
+  phase4_theme:
+    status: "complete"
+    themeDelivery: "financial-theme-variables"
+    cssWritten: true
+    fontsAdded: false
+
+  phase5_custom:
+    status: "pending"
+    customComponentsNeeded: 0
+    customComponentsBuilt: 0
+
+  phase5_5_variants:
+    status: "partial"
+    variantsNeeded: 7
+    variantsCreated: 0
+    variantSpecsFile: "docs/ai/demos/gallagher-bassett-training/variant-specs.yaml"
+    skippedReason: ""
+
+  phase6_assembly:
+    status: "pending"
+    componentsAdded: 0
+    datasourcesWired: 0
+    totalComponents: 0
+
+  phase7_summary:
+    status: "pending"
+
+sections: []

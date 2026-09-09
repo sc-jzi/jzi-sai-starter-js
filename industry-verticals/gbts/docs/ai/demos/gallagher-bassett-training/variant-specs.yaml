@@ -1,0 +1,74 @@
+variantSpecs:
+  - componentName: "Hero"
+    variantName: "GbtsMultiCta"
+    baseVariant: "Default"
+    positions: [3]
+    visualDifferences:
+      layout: "Compact centered overlay with three horizontally grouped actions"
+      spacing: "340px desktop height with approximately 32px vertical padding"
+      typography: "40px Open Sans heading, 16px supporting copy"
+      background: "Dark technical network image with navy overlay"
+      buttons: "Square cyan buttons with navy text"
+
+  - componentName: "FiveColumnCta"
+    variantName: "GbtsEnrollmentPanel"
+    baseVariant: "Default"
+    positions: [4]
+    visualDifferences:
+      layout: "Raised aqua panel, shared heading, responsive 3+2 offer arrangement"
+      spacing: "Panel overlaps hero and uses compact course-card spacing"
+      typography: "Red 24px heading and regular-weight course titles"
+      background: "Aqua panel with subtle shadow"
+      buttons: "Small navy rectangular actions"
+
+  - componentName: "CtaBanner"
+    variantName: "GbtsCompactSplit"
+    baseVariant: "LargeImage"
+    positions: [5, 9]
+    visualDifferences:
+      layout: "Blue 7/5 text-image split without decorative accents"
+      spacing: "Approximately 220px tall with compact copy padding"
+      typography: "26px heading with small supporting copy"
+      background: "Medium blue copy panel"
+      buttons: "Small cyan rectangular action"
+
+  - componentName: "ThreeColumnCta"
+    variantName: "GbtsCourseCategories"
+    baseVariant: "WithIconsCompact"
+    positions: [6, 7]
+    visualDifferences:
+      layout: "Three bordered cards with colored circular icons and summary rows"
+      spacing: "Compact 16px card padding and 12px gutters"
+      typography: "16px card titles and 12px colored summaries"
+      background: "White cards on white page with subtle border and shadow"
+      distinctive: "Cyan, gold, and purple category treatments with chevrons"
+
+  - componentName: "HeadingCta"
+    variantName: "GbtsButtonOnly"
+    baseVariant: "Compact"
+    positions: [8]
+    visualDifferences:
+      layout: "Centered standalone action"
+      spacing: "Compact vertical spacing"
+      buttons: "Small cyan rectangular action"
+
+  - componentName: "Testimonials"
+    variantName: "GbtsTwoUpNavy"
+    baseVariant: "Default"
+    positions: [10]
+    visualDifferences:
+      layout: "Two equal testimonial panels at desktop widths"
+      spacing: "Compact quote-card padding"
+      typography: "Centered section title, readable small quote copy"
+      background: "Navy section with darker navy cards"
+      distinctive: "No rating or portrait when source content does not provide them"
+
+  - componentName: "Footer"
+    variantName: "GbtsMinimalLegal"
+    baseVariant: "Default"
+    positions: [12]
+    visualDifferences:
+      layout: "Compact logo/nav row and inline legal footnote"
+      spacing: "Reduced footer padding and gaps"
+      typography: "Small Open Sans legal and utility copy"
+      background: "White with thin divider"

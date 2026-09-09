@@ -55,4 +55,58 @@
       line-height: 32px;
     }
   }
+
+  &.gbts-multi-cta {
+    position: relative;
+    height: 340px;
+    color: var(--brand-primary-foreground);
+    background: var(--brand-primary);
+
+    picture::after {
+      position: absolute;
+      inset: 0;
+      content: '';
+      background: rgb(0 20 45 / 58%);
+    }
+
+    .content-container {
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .gbts-hero-copy {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+
+      h1 {
+        margin-bottom: 0.75rem;
+        font: 700 clamp(1.75rem, 3vw, 2.5rem) / 1.2 var(--brand-heading-font);
+      }
+
+      .subtitle {
+        font: 400 1rem / 1.5 var(--brand-body-font);
+      }
+    }
+
+    .gbts-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1.25rem;
+
+      .button {
+        border-radius: var(--brand-button-radius);
+        padding: 0.7rem 1.35rem;
+        background: var(--brand-accent);
+        color: var(--brand-primary);
+        font-size: 0.9rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+    }
+  }
 }

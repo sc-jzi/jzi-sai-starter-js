@@ -169,3 +169,65 @@ export const WithSocials = (props: FooterProps): JSX.Element => {
     </div>
   );
 };
+
+const GBTS_ADDITIONAL_LEGAL_LINKS = [
+  {
+    text: 'Proprietary Interest Policy',
+    href: 'https://www.gbtstraining.com/proprietary-interest-policy/',
+  },
+  {
+    text: 'Cookie Policy',
+    href: 'https://policy.cookiereports.com/%201179630f-en-gb.html',
+  },
+  {
+    text: 'Do Not Sell or Share My Personal Information - US Residents',
+    href: 'https://policy.cookiereports.com/%201179630f-en-gb.html',
+  },
+];
+
+/* GBTS variant — compact white footer with navigation and legal links. */
+export const GbtsMinimalLegal = (props: FooterProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const groups = [
+    { title: props.fields.Title1, text: props.fields.Text1 },
+    { title: props.fields.Title2, text: props.fields.Text2 },
+    { title: props.fields.Title3, text: props.fields.Text3 },
+    { title: props.fields.Title4, text: props.fields.Text4 },
+  ];
+
+  return (
+    <footer
+      className={`component footer gbts-minimal-legal ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="gbts-footer-top">
+          <NextImage field={props.fields.Image1} width={180} height={48} />
+          <div className="gbts-footer-groups">
+            {groups.map((group, index) => (
+              <div className="gbts-footer-group" key={index}>
+                <strong>
+                  <Text field={group.title} />
+                </strong>
+                <RichText field={group.text} />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="gbts-footer-bottom">
+          <Text field={props.fields.Copyright} />
+          <nav aria-label="Legal">
+            <Link field={props.fields.Link1} />
+            <Link field={props.fields.Link2} />
+            {GBTS_ADDITIONAL_LEGAL_LINKS.map((link) => (
+              <a key={link.text} href={link.href} target="_blank" rel="noreferrer">
+                {link.text}
+              </a>
+            ))}
+          </nav>
+        </div>
+      </div>
+    </footer>
+  );
+};

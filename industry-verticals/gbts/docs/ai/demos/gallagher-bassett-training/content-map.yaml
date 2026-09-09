@@ -1,0 +1,334 @@
+# Phase 2.5 content map — Gallagher Bassett Technical Services Training
+# Field names come from docs/ai/manifests/sitecore-manifest.yaml and the local React components.
+client:
+  name: "Gallagher Bassett Technical Services Training"
+  sourceUrl: "https://www.gbtstraining.com/"
+  sourceLanguage: "en"
+  targetLanguage: "en"
+  translationApplied: false
+  extractedAt: "2026-09-09T02:00:10.597Z"
+  mappedAt: "2026-09-09T02:20:00Z"
+
+sections:
+  - position: 1
+    componentName: "Eyebrow"
+    manifestName: "Eyebrow"
+    kind: "context-only"
+    datasourceItemName: ""
+    apiAddable: false
+    fields: {}
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "empty"
+    notes: "Context component in the shared header. Source utility strip text: 'Gallagher Bassett Technical Services LLC, NYC DOB PROVIDER NO. CP046' and phone '718-389-2103'. No datasource is created."
+
+  - position: 2
+    componentName: "Header"
+    manifestName: "Header"
+    kind: "context-only"
+    datasourceItemName: ""
+    apiAddable: false
+    fields: {}
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "empty"
+    notes: "Context component in the shared header. Source navigation: Courses, Resources, Contact Us, Login. Logo image is https://www.gbtstraining.com/wp-content/uploads/2026/03/GB_wordpress.webp (also mapped to the Footer Image1 field). No datasource is created."
+
+  - position: 3
+    componentName: "Hero"
+    manifestName: "Hero"
+    kind: "simple"
+    datasourceItemName: "GBTS - Hero"
+    apiAddable: true
+    fields:
+      Title: "Your Training Leader Today and Tomorrow"
+      Text: "<p>GB Training Academy has evolved! We now offer a full suite of OSHA, online SST, select virtual and on-site course offerings. Get the training you need 24/7!</p>"
+      Link:
+        text: "NYC DOB Courses"
+        href: "https://learn.gbtstraining.com/learn"
+        target: "_blank"
+    children: []
+    imageFields:
+      - field: "Image"
+        src: "https://www.gbtstraining.com/wp-content/uploads/2025/03/AdobeStock_325328393_frontpage.webp"
+        localFile: "section2-img3.webp"
+        alt: "Abstract technical network background"
+    matchConfidence: "high"
+    contentSource: "extractor"
+    notes: >-
+      The Hero template has a single Link field, so only the first CTA is mapped. The other two source CTAs are
+      preserved here for the Phase 5.5 GbtsMultiCta variant:
+      (2) 'OSHA Courses' -> https://gbts.learnshare.com/ target=_blank;
+      (3) 'Virtual Courses' -> https://www.gbtstraining.com/courses/ target=_blank.
+      Source DOM concatenated the body copy as 'offerings.Get the training you need 24/7!.' — a single missing space
+      was restored and the duplicated trailing period removed; wording is otherwise exact.
+
+  - position: 4
+    componentName: "FiveColumnCta"
+    manifestName: "FiveColumnCta"
+    kind: "simple"
+    datasourceItemName: "GBTS - Now Enrolling"
+    apiAddable: true
+    fields:
+      Text1: "Virtual 4-Hour Supported Scaffold Course"
+      Link1:
+        text: "View Class Details"
+        href: "https://learn.gbtstraining.com/learn/courses/275/4-hour-supported-scaffold-user-and-refresher-scaffold-card-and-sst-sca-211"
+        target: ""
+      Text2: "Virtual 40-Hour Site Safety Manager Training"
+      Link2:
+        text: "View Class Details"
+        href: "https://learn.gbtstraining.com/learn/courses/198/40-hour-site-safety-saf-102"
+        target: ""
+      Text3: "Virtual 8-Hour Site Safety Training"
+      Link3:
+        text: "View Class Details"
+        href: "https://learn.gbtstraining.com/learn/courses/215/8-hour-site-safety-license-requirement-and-sst-saf-202"
+        target: ""
+      Text4: "Virtual 4-Hour Mast Climber"
+      Link4:
+        text: "View Class Details"
+        href: "https://learn.gbtstraining.com/learn/courses/39/4-hour-mast-climber-useroperator-and-refresher-cra-102"
+        target: ""
+      Text5: "Construction Site Fire Safety Manager"
+      Link5:
+        text: "View Class Details"
+        href: "https://learn.gbtstraining.com/learn/courses/116/construction-site-fire-safety-manager-fdn-320"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+    notes: "The source section heading is 'Now Enrolling:'. The rendered component has no heading field, so the heading is unmapped and must be handled by the Phase 5.5 GbtsEnrollmentPanel variant (the template does expose Description1-5 if a variant chooses to source the heading from Description1). The source offers are text-only, so no column images are mapped."
+
+  - position: 5
+    componentName: "CtaBanner"
+    manifestName: "CtaBanner"
+    kind: "simple"
+    datasourceItemName: "GBTS - Worker Wallet CTA"
+    apiAddable: true
+    fields:
+      Title: "Need a Worker Wallet Card?"
+      Text: "<p>The July 1 deadline has passed. If you don't have a Worker Wallet Card, you may not be able to work!</p>"
+      Link:
+        text: "Apply Here"
+        href: "https://www.gbtstraining.com/wallet/"
+        target: "_blank"
+    children: []
+    imageFields:
+      - field: "Image"
+        src: "https://www.gbtstraining.com/wp-content/uploads/2025/05/online_training_2025_05-r1-c2-copy.webp"
+        localFile: "section4-img4.webp"
+        alt: "Construction workers on site"
+    matchConfidence: "high"
+    contentSource: "extractor"
+    notes: "The build plan listed the CTA href as /worker-wallet-is-here/; the extracted DOM href is https://www.gbtstraining.com/wallet/ and was used. Eyebrow and Icon have no source content and are left unmapped."
+
+  - position: 6
+    componentName: "ThreeColumnCta"
+    manifestName: "ThreeColumnCta"
+    kind: "simple"
+    datasourceItemName: "GBTS - Training Courses Categories"
+    apiAddable: true
+    fields:
+      Text1: "Virtual Classes"
+      SubText1: "The actively proctored courses you need"
+      Link1:
+        text: "Virtual 4-Hour Supported Scaffold User & Refresher Course"
+        href: "https://www.gbtstraining.com/courses/distance-learning/virtual-4-hour-supported-scaffold-user-refresher-course/"
+        target: ""
+      Text2: "Online Classes"
+      SubText2: "Set your training on your schedule"
+      Link2:
+        text: "Asbestos Awareness"
+        href: "https://www.gbtstraining.com/courses/online-learning/asbestos-awareness/"
+        target: ""
+      Text3: "Course Bundles"
+      SubText3: "Get what you need in one convenient package"
+      Link3:
+        text: "Online 8-Hour SST Worker Renewal Course Package 1"
+        href: "https://www.gbtstraining.com/courses/sst-online-bundles/online-8-hour-sst-worker-renewal-course-package-1/"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "medium"
+    contentSource: "extractor"
+    notes: >-
+      The source section heading 'Training Courses' is not part of this component; author it on a separate compact
+      HeadingCta as planned. The source cards are chevron dropdowns listing several courses each rather than a single
+      CTA, so Link1-3 use the first course link of each category exactly as extracted. Category icons are CSS chevrons,
+      not images, so Image1-3 are unmapped.
+
+  - position: 7
+    componentName: "ThreeColumnCta"
+    manifestName: "ThreeColumnCta"
+    kind: "simple"
+    datasourceItemName: "GBTS - Most Popular Training Courses"
+    apiAddable: true
+    fields:
+      Text1: "Virtual Classes"
+      SubText1: "The actively proctored courses you need"
+      Link1:
+        text: "Virtual 4-Hour Supported Scaffold User & Refresher Course"
+        href: "https://www.gbtstraining.com/courses/distance-learning/virtual-4-hour-supported-scaffold-user-refresher-course/"
+        target: ""
+      Text2: "Online Classes"
+      SubText2: "Set your training on your schedule"
+      Link2:
+        text: "Asbestos Awareness"
+        href: "https://www.gbtstraining.com/courses/online-learning/asbestos-awareness/"
+        target: ""
+      Text3: "Course Bundles"
+      SubText3: "Get what you need in one convenient package"
+      Link3:
+        text: "Online 8-Hour SST Worker Renewal Course Package 1"
+        href: "https://www.gbtstraining.com/courses/sst-online-bundles/online-8-hour-sst-worker-renewal-course-package-1/"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "medium"
+    contentSource: "extractor"
+    notes: "The source repeats the same three category cards under the heading 'Most Popular Training Courses'; that heading belongs to a separate compact HeadingCta. Content is identical to position 6 but uses its own datasource item."
+
+  - position: 8
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "GBTS - View All Courses Button"
+    apiAddable: true
+    fields:
+      Link:
+        text: "View All Courses"
+        href: "https://www.gbtstraining.com/courses"
+        target: ""
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+    notes: "Button-only section: Eyebrow, Heading and Text have no source content and are intentionally left unmapped for the Phase 5.5 GbtsButtonOnly variant."
+
+  - position: 9
+    componentName: "CtaBanner"
+    manifestName: "CtaBanner"
+    kind: "simple"
+    datasourceItemName: "GBTS - Get The Training You Need CTA"
+    apiAddable: true
+    fields:
+      Title: "Get The Training You Need"
+      Text: "<p>We offer courses to bring your skills to the next level.</p>"
+      Link:
+        text: "View All Courses"
+        href: "https://www.gbtstraining.com/courses"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image"
+        src: "https://www.gbtstraining.com/wp-content/uploads/2024/12/training_you_need.webp"
+        localFile: "section4-img5.webp"
+        alt: "Overhead view of a construction site"
+    matchConfidence: "high"
+    contentSource: "extractor"
+    notes: "Eyebrow and Icon have no source content and are left unmapped."
+
+  - position: 10
+    componentName: "Testimonials"
+    manifestName: "Testimonials"
+    kind: "list"
+    datasourceItemName: "GBTS - Testimonials"
+    apiAddable: true
+    fields: {}
+    children:
+      - name: "GBTS - Testimonial Giordano C"
+        fields:
+          Content: "I highly recommend Gallagher Bassett Technical Services. The two instructors I had were extraordinary. They were clear, concise, and most of all professional. Thank you for the experience."
+          AuthorName: "Giordano C."
+        imageFields: []
+      - name: "GBTS - Testimonial Benito P"
+        fields:
+          Content: "Gallagher Bassett Technical Services is a top-notch establishment if you really want to learn safety. Be sure to go here for all your construction training needs."
+          AuthorName: "Benito P."
+        imageFields: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "extractor"
+    notes: >-
+      The Testimonials parent template carries no fields; the component renders only child items of the Testimonial
+      template (Rating, Content, AuthorName, AuthorPosition, AuthorImage). The source section title 'Testimonials' has
+      no matching parent field and is left unmapped for the Phase 5.5 GbtsTwoUpNavy variant. Rating, AuthorPosition and
+      AuthorImage have no source content. The second author name comes from the build plan screenshot analysis; the
+      extractor captured only the first author. The orange third-party feedback overlay was ignored as planned.
+
+  - position: 11
+    componentName: "ParallaxBanner"
+    manifestName: "ParallaxBanner"
+    kind: "simple"
+    datasourceItemName: "GBTS - Benefits Of Our Training"
+    apiAddable: true
+    fields:
+      Title: "Benefits of Our Training"
+      Text: "<ul><li>Flexible schedules with available evening and weekend courses</li><li>Safety courses offered in English, Spanish and Polish. Other languages available upon request.</li><li>Improve worker safety awareness</li><li>Hands-on training in rigging, inspection, fall protection and suspended scaffold operation and rescue.</li><li>Satisfy City and Federal requirements</li><li>Help control accident-related costs and minimize downtime</li><li>Project professionalism of your employees</li></ul><p>OSHA Outreach courses are provided in partnership with UL PureSafety, an OSHA-authorized online outreach provider. Meets OSHA and NYC Department of Buildings guidelines when actively proctored.</p>"
+    children: []
+    imageFields:
+      - field: "BackgroundImage"
+        src: "https://www.gbtstraining.com/wp-content/uploads/2024/12/tsc-trainingbenefits.webp"
+        localFile: "section1-img2.webp"
+        alt: "Construction workers at a training site"
+    matchConfidence: "high"
+    contentSource: "extractor"
+    notes: "The benefits background image was captured as an unmatched background on the header wrapper (filename tsc-trainingbenefits) but belongs to this section. ForegroundImage and Link have no source content and are left unmapped."
+
+  - position: 12
+    componentName: "Footer"
+    manifestName: "Footer"
+    kind: "simple"
+    datasourceItemName: "GBTS - Footer"
+    apiAddable: false
+    fields:
+      Title1: "Courses"
+      Text1: "<ul><li><a href=\"https://www.gbtstraining.com/courses/\">Courses</a></li><li><a href=\"https://learn.gbtstraining.com/learn\">NYC DOB Courses</a></li><li><a href=\"https://gbts.learnshare.com/\">OSHA Courses</a></li><li><a href=\"https://www.gbtstraining.com/courses/\">Virtual/Hybrid Courses</a></li></ul>"
+      Title2: "Resources"
+      Text2: "<ul><li><a href=\"https://www.gbtstraining.com/resources/\">Resources</a></li><li><a href=\"https://www.gbtstraining.com/sst-card-issuance/\">SST Card Issuance</a></li><li><a href=\"https://www.gbtstraining.com/wallet/\">Worker Wallet is here!</a></li><li><a href=\"https://www.gbtstraining.com/classroom-policies/\">Classroom Policies</a></li><li><a href=\"https://www.gbtstraining.com/registration-cancellation-policies/\">Registration &amp; Cancellation Policies</a></li><li><a href=\"https://www.gbtstraining.com/refund-credit-policy/\">Refund and Credit Policy</a></li><li><a href=\"https://www.gbtstraining.com/promotions-discounts/\">Promotions &amp; Discounts</a></li><li><a href=\"https://www.gbtstraining.com/gallagher-bassett-technical-services-news/\">Hard Hat Happenings</a></li><li><a href=\"https://www.gbtstraining.com/course-materials/\">Request Course Materials</a></li><li><a href=\"https://www.gbtstraining.com/faqs/\">FAQs</a></li></ul>"
+      Title3: "Contact Us"
+      Text3: "<ul><li><a href=\"https://www.gbtstraining.com/contact-gbts/\">Contact Us</a></li></ul>"
+      Title4: "Login"
+      Text4: "<ul><li><a href=\"https://www.gbtstraining.com/login-menu-page/\">Login</a></li><li><a href=\"https://learn.gbtstraining.com/learn\">Login to NYC DOB Courses</a></li><li><a href=\"https://gbts.learnshare.com/\">Log into OSHA Courses</a></li></ul>"
+      Copyright: "© Copyright Gallagher Bassett Technical Services 2026"
+      Link1:
+        text: "Privacy Policy"
+        href: "https://www.gallagherbassett.com/privacy-policy/"
+        target: "_blank"
+      Link2:
+        text: "Non-Discrimination Policy"
+        href: "https://www.gbtstraining.com/non-discrimination-policy/"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image1"
+        src: "https://www.gbtstraining.com/wp-content/uploads/2026/03/GB_wordpress.webp"
+        localFile: "section1-img1.webp"
+        alt: "Gallagher Bassett"
+    matchConfidence: "medium"
+    contentSource: "extractor"
+    notes: >-
+      The Footer template exposes only two General Link fields, so three source legal links are unmapped and preserved
+      here for the Phase 5.5 GbtsMinimalLegal variant:
+      'Proprietary Interest Policy' -> https://www.gbtstraining.com/proprietary-interest-policy/;
+      'Cookie Policy' -> https://policy.cookiereports.com/%201179630f-en-gb.html;
+      'Do Not Sell or Share My Personal Information - US Residents' -> https://policy.cookiereports.com/%201179630f-en-gb.html
+      (both cookie URLs contain the literal %20 exactly as published).
+      The source footer link groups are unlabeled; Title1-4 use the source top-level navigation labels
+      (Courses, Resources, Contact Us, Login) that the grouped links sit under.
+      Socials fields are unmapped — the source footer has no social links.
+
+summary:
+  totalSections: 12
+  sectionsWithContent: 10
+  contextOnlySkipped: 2
+  fieldsPopulated: 55
+  imageFieldsMapped: 5
+  imagesSkipped: 0
+  videosFound: 0
+  translationApplied: false
+  sourceLanguage: "en"

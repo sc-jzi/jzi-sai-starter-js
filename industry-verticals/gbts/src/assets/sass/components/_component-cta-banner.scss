@@ -149,4 +149,58 @@
       }
     }
   }
+
+  &.gbts-compact-split {
+    margin: 2.5rem 0;
+    padding: 0 1.5rem;
+    font-family: var(--brand-body-font);
+
+    .container {
+      max-width: 1120px;
+      overflow: hidden;
+      padding: 0;
+      border-radius: var(--brand-card-radius);
+      background: var(--brand-secondary);
+      color: var(--brand-secondary-foreground);
+    }
+
+    .gbts-compact-split-copy {
+      display: flex;
+      min-height: 220px;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 2rem;
+
+      h2 {
+        margin-bottom: 0.5rem;
+        font: 700 1.65rem / 1.2 var(--brand-heading-font);
+      }
+
+      .text-content {
+        margin-bottom: 0.75rem;
+        font-size: 0.95rem;
+      }
+
+      .button {
+        border-radius: var(--brand-button-radius);
+        padding: 0.6rem 1rem;
+        background: var(--brand-accent);
+        color: var(--brand-accent-foreground);
+        font-size: 0.8rem;
+        font-weight: 700;
+      }
+    }
+
+    .gbts-compact-split-image {
+      min-height: 220px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        object-fit: cover;
+      }
+    }
+  }
 }

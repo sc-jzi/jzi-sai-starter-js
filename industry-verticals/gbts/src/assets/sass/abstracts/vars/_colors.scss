@@ -1,21 +1,43 @@
 // Financial
 body.site-financial,
 .site-financial {
-  --text-body: #333;
+  --brand-primary: #00254c;
+  --brand-primary-foreground: #fff;
+  --brand-secondary: #2d6f99;
+  --brand-secondary-foreground: #fff;
+  --brand-accent: #13bce8;
+  --brand-accent-foreground: #00254c;
+  --brand-bg: #fbfbfb;
+  --brand-fg: #000;
+  --brand-muted: #f3f4f5;
+  --brand-muted-fg: #4f5964;
+  --brand-border: #d6d9dc;
+  --brand-ring: #13bce8;
+  --brand-enrollment: #99dee3;
+  --brand-alert: #ff1717;
+  --brand-course-online: #f6a51c;
+  --brand-course-bundles: #4b009c;
+  --brand-testimonial: #002f57;
+  --brand-heading-font: 'Open Sans', sans-serif;
+  --brand-body-font: 'Open Sans', sans-serif;
+  --brand-radius: 4px;
+  --brand-button-radius: 4px;
+  --brand-card-radius: 4px;
+  --text-body: #000;
   --text-body-inverted: #fff;
-  --text-colored: #034c81;
-  --text-footer: #fff;
-  --text-accent: #a82a39;
-  --bg-body: #fff;
-  --bg-footer: #333;
-  --bg-main: #f0f5f7;
-  --bg-main-alt: #f0f5f7;
-  --bg-color: #c5e4f3;
-  --bg-saturated: #034c81;
-  --bg-accent: #c03021;
-  --border-color: #f0f5f7;
+  --text-colored: #00254c;
+  --text-footer: #28343f;
+  --text-accent: #ff1717;
+  --bg-body: #fbfbfb;
+  --bg-footer: #fff;
+  --bg-main: #f3f4f5;
+  --bg-main-alt: #99dee3;
+  --bg-color: #13bce8;
+  --bg-saturated: #00254c;
+  --bg-accent: #13bce8;
+  --border-color: #d6d9dc;
   --hr-color: #fff;
-  --roundness: 1rem;
+  --roundness: 4px;
 }
 
 body.site-financial.dark,
