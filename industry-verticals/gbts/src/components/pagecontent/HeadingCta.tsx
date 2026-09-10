@@ -170,3 +170,28 @@ export const GbtsButtonOnly = (props: HeadingCtaProps): JSX.Element => {
     </div>
   );
 };
+
+export const GbtsPageHeading = (props: HeadingCtaProps): JSX.Element => {
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <>
+      <Head>
+        <meta property="og:description" content={props.fields?.Text.value} />
+        <meta property="og:name" content={props.fields?.Heading?.value} />
+        <meta property="og:title" content={props.fields?.Heading?.value} />
+        <meta property="og:type" content="page" />
+      </Head>
+      <div className={`component heading-cta ${sxaStyles}`}>
+        <div className="container container-wide">
+          <h1 className="fw-bold">
+            <Text field={props.fields?.Heading} />
+          </h1>
+          <p>
+            <Text field={props.fields?.Text} />
+          </p>
+        </div>
+      </div>
+    </>
+  );
+};
