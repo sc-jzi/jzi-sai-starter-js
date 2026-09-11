@@ -11,7 +11,7 @@ export type RichTextProps = {
   params: { [key: string]: string };
   fields: Fields;
 };
-
+ 
 export const Default = (props: RichTextProps): JSX.Element => {
   const text = props.fields ? (
     <Text field={props.fields.Text} />
