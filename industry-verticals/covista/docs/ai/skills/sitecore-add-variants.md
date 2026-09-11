@@ -22,6 +22,7 @@ In Sitecore XM Cloud, a variant is a **named export** in the component TSX file 
 The name of the TSX export **must exactly match** the name of the Variant Definition item. Casing matters.
 
 Every component must have at least a `Default` variant. `Default` is always required — it is the fallback when no variant is selected by the author.
+Never create a hidden variant, or hide a variant using CSS or other mechanisms. 
 
 ---
 

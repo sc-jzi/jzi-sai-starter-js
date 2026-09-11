@@ -1,7 +1,7 @@
 'use client';
 
 import { JSX } from 'react';
-import { Field, ImageField, Text, NextImage } from '@sitecore-content-sdk/nextjs';
+import { Field, ImageField, Text } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 
 interface Fields {
@@ -51,29 +51,6 @@ export const Default = (props: PromoCtaProps): JSX.Element => {
       <p className="author-position">
         <Text field={props.fields.AuthorPosition} />
       </p>
-    </div>
-  );
-};
-
-export const Simple = (props: PromoCtaProps): JSX.Element => {
-  const id = props.params.RenderingIdentifier;
-  const sxaStyles = `${props.params?.styles || ''}`;
-
-  return (
-    <div className={`component quote simple ${sxaStyles}`} id={id ? id : undefined}>
-      <div className="row gx-0">
-        <div className="col-auto me-3">
-          <NextImage field={props.fields.Image} className="author-image" width={48} height={48} />
-        </div>
-        <div className="col">
-          <blockquote className="mb-0">
-            <Text field={props.fields.Quote} />
-          </blockquote>
-          <p className="author-name mb-0">
-            <Text field={props.fields.AuthorName} />
-          </p>
-        </div>
-      </div>
     </div>
   );
 };
