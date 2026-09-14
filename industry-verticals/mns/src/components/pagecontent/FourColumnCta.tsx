@@ -58,9 +58,8 @@ export const Default = (props: FourColumnCtaProps): JSX.Element => {
     const [isVisible, domRef] = useVisibility(delay);
     return (
       <div
-        className={`col-sm-12 col-lg-3 ${
-          !isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
-        }`}
+        className={`col-sm-12 col-lg-3 ${!isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
+          }`}
         ref={domRef}
       >
         <Link field={link}>
@@ -143,22 +142,19 @@ export const MnsTiles = (props: FourColumnCtaProps): JSX.Element => {
     text: Field<string>;
     link: LinkField;
   }) => {
-    const hasImage = Boolean(image?.value?.src);
     const hasLink = hasAuthoredLink(link);
     const inner = (
       <>
         <div className="mns-tile__media">
-          {(isPageEditing || hasImage) && <NextImage field={image} width={400} height={220} />}
+          <NextImage field={image} width={400} height={220} />
         </div>
         <div className="mns-tile__copy">
           <h2>
             <Text field={title} />
           </h2>
-          {(isPageEditing || text?.value) && (
-            <p>
-              <Text field={text} />
-            </p>
-          )}
+          <p>
+            <Text field={text} />
+          </p>
         </div>
       </>
     );
@@ -172,7 +168,7 @@ export const MnsTiles = (props: FourColumnCtaProps): JSX.Element => {
         ) : (
           <div className="mns-tile">
             {inner}
-            {isPageEditing && <Link field={link} className="mns-tile__link-editor" />}
+            <Link field={link} className="mns-tile__link-editor" />
           </div>
         )}
       </div>
