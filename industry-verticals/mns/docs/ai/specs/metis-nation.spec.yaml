@@ -1,0 +1,178 @@
+project:
+  reactComponentRoot: "src/components/uiim"
+  shadcnImportBase: "@/components/ui"
+  componentMapPath: ".sitecore/component-map.ts"
+  sitecoreJssPackage: "@sitecore-content-sdk/nextjs"
+  usesTailwind: true
+  usesShadcn: false
+
+tools:
+  marketerMcp:
+    preferred: true
+  documentationMcp:
+    allowed: true
+
+siteCollection: "public-sector"
+siteName: "mns"
+category: "Banners"
+
+component:
+  namePascal: "MetisNation"
+  nameKebab: "metis-nation"
+  kind: "simple"
+  filePath: "src/components/uiim/banners/MetisNation.tsx"
+  componentMapKey: "MetisNation"
+  componentMapImportAlias: "MetisNation"
+
+design:
+  references:
+    - "screenshot: Citizen Questions hero banner with beadwork background"
+  extractedLayout:
+    summary: "Full-bleed hero banner with background image, left-aligned white title, supporting text, and text link."
+    visibleElements:
+      - "Background image"
+      - "Title"
+      - "Supporting text"
+      - "Link"
+    inferredFields:
+      - "Title"
+      - "Text"
+      - "BackgroundImage"
+      - "Link"
+    repeatedItems: false
+    likelyVariantNames:
+      - "Default"
+    responsiveViews: []
+  assumptions:
+    - "Simple single-slide hero (not a multi-item carousel) despite carousel chrome in the reference screenshot"
+    - "Carousel arrows/dots/pause are not authorable fields; visual chrome omitted in v1"
+    - "Follow Financial project conventions: template under Components, rendering under Page Content, params under Components/Rendering Parameters"
+    - "No shadcn/ui in this app — Tailwind markup only"
+  openQuestions: []
+
+context:
+  usesRouteFields: false
+  routeTemplateName: ""
+  routeFields: []
+
+templates:
+  parent:
+    create: true
+    path: "/sitecore/templates/Project/Financial/Components/MetisNation"
+    name: "MetisNation"
+    sectionName: "Data"
+    fields:
+      - name: "Title"
+        type: "Single-Line Text"
+      - name: "Text"
+        type: "Single-Line Text"
+      - name: "BackgroundImage"
+        type: "Image"
+      - name: "Link"
+        type: "General Link"
+    baseTemplates:
+      - "{1930BBEB-7805-471A-A3BE-4858AC7CF696}"
+      - "{44A022DB-56D3-419A-B43B-E27E4D8E9C41}"
+    standardValues:
+      create: true
+      defaults:
+        Title: "$name"
+      masters: []
+      addHorizonDatasourceGrouping: false
+
+  child:
+    create: false
+    path: ""
+    name: ""
+    sectionName: "Data"
+    fields: []
+    baseTemplates: []
+    standardValues:
+      create: false
+      defaults: {}
+      masters: []
+
+folderTemplate:
+  create: true
+  path: "/sitecore/templates/Project/Financial/Folders/MetisNation Folder"
+  name: "MetisNation Folder"
+  standardValues:
+    create: true
+    masters:
+      - "MetisNation"
+
+datasourceFolder:
+  create: true
+  path: "/sitecore/content/public-sector/mns/Data/MetisNations"
+  name: "MetisNations"
+  insertOptions:
+    - "MetisNation"
+  exampleItem:
+    create: true
+    name: "MetisNation"
+    fields:
+      Title: "Citizen Questions"
+      Text: "Ask your questions about MN-S programs, services, governance, or events"
+      Link: "Find Out More"
+
+renderingParamsTemplate:
+  create: true
+  path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/MetisNation"
+  name: "MetisNation"
+  baseTemplates:
+    - "{4247AAD4-EBDE-4994-998F-E067A51B1FE4}"
+    - "{5C74E985-E055-43FF-B28C-DB6C6A6450A2}"
+    - "{44A022DB-56D3-419A-B43B-E27E4D8E9C41}"
+    - "{3DB3EB10-F8D0-4CC9-BE26-18CE7B139EC8}"
+
+headlessVariants:
+  create: true
+  containerPath: "/sitecore/content/public-sector/mns/Presentation/Headless Variants/MetisNation"
+  variants:
+    - "Default"
+
+availableRenderings:
+  register: true
+  targetPath: "/sitecore/content/public-sector/mns/Presentation/Available Renderings/Page Content"
+  targetItemId: "{477D94E8-788B-4465-BBD1-B79E60851887}"
+
+rendering:
+  create: true
+  path: "/sitecore/layout/Renderings/Project/Financial/Page Content/MetisNation"
+  name: "MetisNation"
+  componentName: "MetisNation"
+  datasourceRequired: true
+  datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/MetisNation"
+  datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='MetisNation Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='MetisNation Folder']"
+  dataSource: ""
+  addFieldEditorButton: "1"
+  parametersTemplateId: ""
+  useComponentQuery: false
+  componentQuery: ""
+
+react:
+  propsShape: "default-jss"
+  usesSitecoreJssHelpers: true
+  usesShadcn: false
+  usesTailwind: true
+  variants:
+    - "Default"
+
+mcp:
+  useMcp: true
+  planOnly: false
+
+verification:
+  checks:
+    - "Template exists with base templates"
+    - "__Standard Values linked"
+    - "Folder template + __Masters"
+    - "Datasource folder + insert options"
+    - "Example item with screenshot copy"
+    - "Rendering configured"
+    - "Available Renderings appended"
+    - "React under uiim/banners"
+    - "Component map updated"
+
+notes:
+  - "Reference screenshot carousel chrome intentionally omitted; simple datasource only."

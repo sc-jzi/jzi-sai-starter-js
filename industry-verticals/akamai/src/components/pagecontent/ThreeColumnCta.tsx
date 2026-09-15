@@ -267,3 +267,79 @@ export const WithIconsCompact = (props: ThreeColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* Akamai — three image-led capability cards with blue secondary CTAs */
+export const Akamai = (props: ThreeColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const columns = [
+    {
+      image: props.fields?.Image1,
+      title: props.fields?.Text1,
+      description: props.fields?.SubText1,
+      link: props.fields?.Link1,
+    },
+    {
+      image: props.fields?.Image2,
+      title: props.fields?.Text2,
+      description: props.fields?.SubText2,
+      link: props.fields?.Link2,
+    },
+    {
+      image: props.fields?.Image3,
+      title: props.fields?.Text3,
+      description: props.fields?.SubText3,
+      link: props.fields?.Link3,
+    },
+  ];
+
+  return (
+    <div
+      className={`component three-column-cta akamai-brand akamai-capabilities bg-[var(--brand-bg)] pb-16 ${sxaStyles}`}
+      id={id || undefined}
+      style={{ fontFamily: 'var(--brand-heading-font)' }}
+    >
+      <div className="mx-auto grid max-w-[1200px] gap-6 px-6 md:grid-cols-3">
+        {columns.map((column, index) => (
+          <div
+            key={index}
+            className="flex flex-col overflow-hidden rounded-[var(--akamai-card-radius)] bg-[var(--akamai-card-background)] shadow-[var(--akamai-card-shadow)]"
+          >
+            {(column.image?.value?.src || isPageEditing) && (
+              <NextImage
+                field={column.image}
+                width={480}
+                height={280}
+                className="h-52 w-full object-cover"
+              />
+            )}
+
+            <div className="flex flex-1 flex-col p-5">
+              <Text
+                field={column.title}
+                tag="h3"
+                className="m-0 text-xl font-bold text-black"
+              />
+
+              <Text
+                field={column.description}
+                tag="p"
+                className="mb-0 mt-3 flex-1 text-sm leading-relaxed text-black"
+              />
+
+              {(isPageEditing || column.link?.value?.href) && (
+                <Link
+                  field={column.link}
+                  className="akamai-button-primary mt-5"
+                />
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};

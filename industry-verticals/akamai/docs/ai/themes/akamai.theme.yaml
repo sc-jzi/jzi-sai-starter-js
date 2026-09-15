@@ -1,0 +1,125 @@
+# Client Brand Theme — Akamai
+# Extracted from user-provided full-page screenshot + brand color references.
+# Playwright scraper blocked by Akamai Edge (Access Denied) — screenshot is primary source.
+
+client:
+  name: "Akamai"
+  sourceUrl: "https://www.akamai.com/"
+  extractedAt: "2026-09-14T18:15:00Z"
+  extractedBy: "cursor"
+
+colors:
+  primary: "#002856"
+  primaryForeground: "#ffffff"
+  secondary: "#0099CC"
+  secondaryForeground: "#ffffff"
+  accent: "#FF6B00"
+  accentForeground: "#ffffff"
+  background: "#ffffff"
+  foreground: "#1a1a1a"
+  muted: "#F2F5F8"
+  mutedForeground: "#54565b"
+  headerBackground: "#ffffff"
+  headerForeground: "#002856"
+  footerBackground: "#002856"
+  footerForeground: "#c8d0d8"
+  border: "#d8dde3"
+  ring: "#0099CC"
+  extra:
+    - { name: "heroNavy", value: "#001A4D" }
+    - { name: "waveCyan", value: "#4FC3F7" }
+    - { name: "pacificBlue", value: "#0099CC" }
+    - { name: "brandOrangeGuide", value: "#FF9933" }
+    - { name: "tileNavy", value: "#0A2342" }
+
+typography:
+  headingFamily: "'Source Sans 3', sans-serif"
+  headingWeight: "700"
+  bodyFamily: "'Source Sans 3', sans-serif"
+  bodyWeight: "400"
+  monoFamily: "'Source Code Pro', monospace"
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&family=Source+Sans+3:wght@400;600;700&display=swap"
+  scale:
+    hero: "3rem"
+    h1: "2.25rem"
+    h2: "1.75rem"
+    h3: "1.25rem"
+    body: "1rem"
+    small: "0.875rem"
+  headingTransform: "none"
+  letterSpacing: "normal"
+  lineHeight: "relaxed"
+
+spacing:
+  density: "comfortable"
+  sectionGap: "4.5rem"
+  containerMaxWidth: "1200px"
+  containerPadding: "1.5rem"
+
+shape:
+  borderRadius: "0.25rem"
+  buttonRadius: "0.25rem"
+  cardRadius: "0.375rem"
+  imageRadius: "0.25rem"
+  shadowStyle: "subtle"
+  borderStyle: "subtle"
+
+tone:
+  overall: "corporate-tech"
+  colorMode: "mixed"
+  contrast: "high"
+  imagery: "abstract-plus-photography"
+  heroStyle: "gradient"
+  cardStyle: "bordered"
+  navStyle: "solid-bar"
+
+tailwind:
+  colors:
+    brand:
+      primary: "#002856"
+      secondary: "#0099CC"
+      accent: "#FF6B00"
+  fontFamily:
+    heading: ["Source Sans 3", "sans-serif"]
+    body: ["Source Sans 3", "sans-serif"]
+  borderRadius:
+    DEFAULT: "0.25rem"
+    button: "0.25rem"
+    card: "0.375rem"
+
+cssVariables: |
+  :root {
+    --brand-primary: #002856;
+    --brand-primary-foreground: #ffffff;
+    --brand-secondary: #0099CC;
+    --brand-secondary-foreground: #ffffff;
+    --brand-accent: #FF6B00;
+    --brand-accent-foreground: #ffffff;
+    --brand-bg: #ffffff;
+    --brand-fg: #1a1a1a;
+    --brand-muted: #F2F5F8;
+    --brand-muted-fg: #54565b;
+    --brand-header-bg: #ffffff;
+    --brand-header-fg: #002856;
+    --brand-footer-bg: #002856;
+    --brand-footer-fg: #c8d0d8;
+    --brand-border: #d8dde3;
+    --brand-ring: #0099CC;
+    --brand-heading-font: 'Source Sans 3', sans-serif;
+    --brand-body-font: 'Source Sans 3', sans-serif;
+    --brand-radius: 0.25rem;
+    --brand-button-radius: 0.25rem;
+    --brand-card-radius: 0.375rem;
+  }
+
+extraction:
+  confidence: "medium"
+  method: "screenshot-primary"
+  notes:
+    - "Playwright scraper received Access Denied from Akamai Edge; theme is from the SE-provided full-page screenshot plus published brand hex references."
+    - "Primary navy #002856 for brand/footer; hero uses deeper navy #001A4D with cyan abstract wave art."
+    - "Accent orange #FF6B00 matches marketing CTAs on the screenshot (Register today, Start building); brand guides also list #FF9933."
+    - "Secondary pacific blue #0099CC for Free trial / secondary CTAs and link buttons."
+    - "Header is white solid bar with dark nav text (not transparent overlay)."
+    - "Font substituted: proprietary Akamai UI type → Google Fonts Source Sans 3."
+    - "Content Hub credentials verified for https://jzi-verticals.sitecoresandbox.cloud/."

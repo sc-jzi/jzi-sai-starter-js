@@ -1,0 +1,132 @@
+variantSpecs:
+  - position: 1
+    componentName: "Header"
+    variantName: "Akamai"
+    baseVariant: "WithLogoImage"
+    visualDifferences:
+      layout: "White solid header bar with logo left and primary navigation + Contact sales CTA via header-right placeholder."
+      spacing: "72px min-height row, 1200px max width, 24px horizontal padding."
+      typography: "Source Sans 3 semibold navy nav links."
+      background: "White header with subtle bottom border."
+      distinctive: "Blue Contact sales CTA styling via nested button overrides."
+
+  - position: 2
+    componentName: "Hero"
+    variantName: "Akamai"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "Left-aligned copy stack over full-bleed navy hero; Image field used as CSS background."
+      spacing: "28–32rem min height, 1200px content width, generous vertical padding."
+      typography: "Large bold white headline (4xl/5xl) with relaxed supporting copy."
+      background: "Deep navy (#001A4D) with optional wave art background image."
+      distinctive: "Orange primary Register CTA; no banking photo frame."
+
+  - position: 3
+    componentName: "TwoColumnCta"
+    variantName: "AkamaiProductTiles"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "Two equal navy product tiles side-by-side; photography optional as tile background only."
+      spacing: "16px tile gap, 32px inner padding, ~14rem min tile height."
+      typography: "Large white tile titles with optional short support line."
+      background: "Tile navy (#0A2342) with cyan dotted-grid overlay."
+      distinctive: "Orange Start computing / Start cybersecurity CTAs at tile bottom."
+
+  - position: 4
+    componentName: "PromoCta"
+    variantName: "Akamai"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "Text left / framed logo card right (Forrester-style recognition)."
+      spacing: "56px section padding, 40px column gap, 1200px max width."
+      typography: "Bold navy headline; muted eyebrow/subtitle."
+      background: "White section; white bordered logo card with light shadow."
+      distinctive: "Pacific-blue secondary CTA (Read the report); no dotted banking accents."
+
+  - position: 5
+    componentName: "PromoCta"
+    variantName: "AkamaiImageLeft"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "Inverse of Akamai Promo: graphic tile left, headline/body/CTA right."
+      spacing: "Same two-column grid as Akamai Promo."
+      typography: "Subtitle overlays the left graphic tile as bold white caption."
+      background: "Left tile uses navy + dotted overlay and optional Image field art."
+      distinctive: "Blue Download the report CTA on the right copy column."
+
+  - position: 6
+    componentName: "HeadingCta"
+    variantName: "AkamaiSectionTitle"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "Title-only strip; CTA column intentionally omitted."
+      spacing: "Top-heavy section padding (56px/16px), left-aligned in 1200px container."
+      typography: "Large bold navy section title (What's new / Build applications…)."
+      background: "White."
+      distinctive: "No button chrome when Link is empty."
+
+  - position: 7
+    componentName: "FourColumnCta"
+    variantName: "AkamaiWhatsNew"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "Horizontal resource cards with image, title, excerpt, and visible CTA button."
+      spacing: "Card width ~17.5rem, 20px gaps, bordered rounded cards."
+      typography: "Navy card titles; muted excerpts; blue button labels."
+      background: "White section; white cards with subtle border."
+      distinctive: "CTA buttons (not whole-card links) plus circular prev/next scroll arrows."
+
+  - position: 8
+    componentName: "CtaBanner"
+    variantName: "AkamaiBrand"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "Full-bleed navy band: large logo/graphic left, headline + copy + CTA right."
+      spacing: "64–80px vertical padding, 1200px content grid."
+      typography: "Large white headline with softer supporting copy."
+      background: "Solid brand navy (#002856); no dotted banking accents."
+      distinctive: "Orange See how the internet works CTA."
+
+  - position: 9
+    componentName: "HeadingCta"
+    variantName: "AkamaiSectionTitle"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "Reuses AkamaiSectionTitle above Three Column capabilities."
+      spacing: "Same title-only strip as position 6."
+      typography: "Long multi-sentence capability headline allowed."
+      background: "White."
+      distinctive: "Shared variant with What's new title."
+
+  - position: 10
+    componentName: "ThreeColumnCta"
+    variantName: "Akamai"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "Three equal image-led capability columns."
+      spacing: "32px gaps, 192px image height, 1200px container."
+      typography: "Navy subheads with muted body copy."
+      background: "White."
+      distinctive: "Blue outline secondary CTAs (Read about computing / See all security / See delivery)."
+
+  - position: 11
+    componentName: "HeadingCta"
+    variantName: "AkamaiContact"
+    baseVariant: "Centered"
+    visualDifferences:
+      layout: "Centered contact strip with heading, optional support line, and CTA."
+      spacing: "64px vertical padding; ~720px content width."
+      typography: "Bold navy question headline; muted support text."
+      background: "Muted gray with subtle dotted pattern."
+      distinctive: "Blue Contact us button centered under copy."
+
+  - position: 12
+    componentName: "Footer"
+    variantName: "Akamai"
+    baseVariant: "WithSocials"
+    visualDifferences:
+      layout: "Five-column grid (four Title/Text groups + SocialsTitle/icons), logo and legal on bottom row."
+      spacing: "56px content padding; compact uppercase column headings."
+      typography: "Small uppercase white headings; muted footer link text."
+      background: "Navy footer (#002856) with light foreground links."
+      distinctive: "Social icons as fifth column; inverted logo treatment on bottom bar."

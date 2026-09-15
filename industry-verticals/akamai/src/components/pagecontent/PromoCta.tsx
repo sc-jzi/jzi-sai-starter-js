@@ -74,9 +74,8 @@ export const Default = (props: PromoCtaProps): JSX.Element => {
               <DottedAccent className="dotted-accent-top" />
               <NextImage
                 field={props.fields.Image}
-                className={`d-block mx-lg-auto img-fluid ${
-                  !isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
-                }`}
+                className={`d-block mx-lg-auto img-fluid ${!isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
+                  }`}
                 width={900}
                 height={900}
               />
@@ -141,9 +140,8 @@ export const WithPlaceholderColumn = (props: PromoCtaProps): JSX.Element => {
                 <DottedAccent className="dotted-accent-top" />
                 <NextImage
                   field={props.fields.Image}
-                  className={`d-block mx-lg-auto img-fluid ${
-                    !isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
-                  }`}
+                  className={`d-block mx-lg-auto img-fluid ${!isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
+                    }`}
                   width={900}
                   height={900}
                 />
@@ -185,6 +183,99 @@ export const WithBackgroundImage = (props: PromoCtaProps): JSX.Element => {
               )}
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* Akamai — text left / logo-card right recognition layout */
+export const Akamai = (props: PromoCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div
+      className={`component promo-cta akamai-brand akamai-promo py-10 ${sxaStyles}`}
+      id={id || undefined}
+      style={{ fontFamily: 'var(--brand-heading-font)' }}
+    >
+      <div className="mx-auto grid max-w-[1200px] items-center gap-10 px-6 md:grid-cols-[minmax(0,1fr)_384px] md:gap-16">
+        <div className="text-left">
+
+          <Text
+            field={props.fields.Title}
+            tag="h2"
+            className="m-0 text-3xl font-bold leading-tight text-black md:text-4xl"
+          />
+
+          <RichText
+            field={props.fields.Text}
+            className="mt-3 text-base leading-relaxed text-black [&_p]:mb-0"
+          />
+
+          <Link
+            field={props.fields.Link}
+            className="akamai-button-primary mt-6"
+          />
+        </div>
+
+        <div className="flex items-center justify-center">
+          <NextImage
+            field={props.fields.Image}
+            width={384}
+            height={216}
+            className="aspect-video h-auto w-full max-w-sm rounded-[var(--akamai-card-radius)] object-cover shadow-[var(--akamai-card-shadow)]"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* AkamaiImageLeft — graphic tile left, copy + blue CTA right */
+export const AkamaiImageLeft = (props: PromoCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div
+      className={`component promo-cta akamai-brand akamai-promo-image-left py-10 ${sxaStyles}`}
+      id={id || undefined}
+      style={{ fontFamily: 'var(--brand-heading-font)' }}
+    >
+      <div className="mx-auto grid max-w-[1200px] items-center gap-10 px-6 md:grid-cols-[384px_minmax(0,1fr)] md:gap-16">
+        <div className="w-full">
+          <NextImage
+            field={props.fields.Image}
+            width={384}
+            height={216}
+            className="aspect-video h-auto w-full rounded-[var(--akamai-card-radius)] object-cover shadow-[var(--akamai-card-shadow)]"
+          />
+        </div>
+
+        <div className="text-left">
+          <Text
+            field={props.fields.Eyebrow}
+            tag="p"
+            className="mb-2 text-sm font-semibold text-[var(--brand-muted-fg)]"
+          />
+
+          <Text
+            field={props.fields.Title}
+            tag="h2"
+            className="m-0 text-3xl font-bold leading-tight text-black md:text-4xl"
+          />
+
+          <RichText
+            field={props.fields.Text}
+            className="mt-4 text-base leading-relaxed text-black [&_p]:mb-0"
+          />
+
+          <Link
+            field={props.fields.Link}
+            className="akamai-button-primary mt-6"
+          />
         </div>
       </div>
     </div>

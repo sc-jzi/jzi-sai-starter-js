@@ -70,9 +70,8 @@ export const Default = (props: CtaBannerProps): JSX.Element => {
                 <DottedAccent className="dotted-accent-top" />
                 <NextImage
                   field={props.fields.Image}
-                  className={`d-block mx-lg-auto img-fluid ${
-                    !isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
-                  }`}
+                  className={`d-block mx-lg-auto img-fluid ${!isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
+                    }`}
                   width={800}
                   height={800}
                 />
@@ -126,15 +125,109 @@ export const LargeImage = (props: CtaBannerProps): JSX.Element => {
               <DottedAccent className="dotted-accent-top" />
               <NextImage
                 field={props.fields.Image}
-                className={`d-block mx-lg-auto img-fluid ${
-                  !isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
-                }`}
+                className={`d-block mx-lg-auto img-fluid ${!isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
+                  }`}
                 width={850}
                 height={850}
               />
               <DottedAccent className="dotted-accent-bottom" />
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* AkamaiBrand — full-bleed navy brand banner with graphic left + orange CTA */
+export const AkamaiBrand = (props: CtaBannerProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const imageField = props.fields?.Image?.value?.src
+    ? props.fields.Image
+    : props.fields.Icon;
+
+  return (
+    <div
+      className={`component cta-banner akamai-brand mx-auto mb-5 w-[calc(100%-2rem)] max-w-[1200px] overflow-hidden rounded-[var(--akamai-banner-radius)] bg-[var(--brand-primary)] text-[var(--brand-primary-foreground)] ${sxaStyles}`}
+      id={id || undefined}
+      style={{ fontFamily: 'var(--brand-heading-font)' }}
+    >
+      <div className="mx-auto grid min-h-[300px] items-center gap-8 px-6 py-10 md:grid-cols-2 md:px-10 md:pb-[10px]">
+        <div className="flex h-full items-end justify-center md:justify-start">
+          <NextImage
+            field={imageField}
+            width={520}
+            height={340}
+            className="h-auto max-h-[337px] w-full max-w-[520px] object-contain object-bottom"
+          />
+        </div>
+        <div className="text-left">
+          <Text
+            field={props.fields.Title}
+            tag="h2"
+            className="m-0 text-3xl font-bold leading-tight md:text-4xl"
+          />
+          <RichText
+            field={props.fields.Text}
+            className="mt-4 text-base text-white/85 [&_p]:mb-0"
+          />
+          <Link
+            field={props.fields.Link}
+            className="akamai-button-accent mt-7"
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const Contact = (props: CtaBannerProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const imageField = props.fields?.Image?.value?.src
+    ? props.fields.Image
+    : props.fields.Icon;
+
+  return (
+    <div
+      className={`component cta-banner akamai-brand relative mx-auto mb-5 w-[calc(100%-2rem)] max-w-[1200px] overflow-hidden rounded-[var(--akamai-banner-radius)] bg-[var(--cta-banner-background)] text-[var(--cta-banner-foreground)] shadow-[var(--akamai-card-shadow)] my-[20px] ${sxaStyles}`}
+      id={id || undefined}
+    >
+      <div className="pointer-events-none absolute inset-0">
+        <NextImage
+          field={imageField}
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      <div
+        className="relative z-10 mx-auto flex max-w-[1200px] items-center justify-center px-6 py-12 md:py-10"
+        style={{ fontFamily: 'var(--brand-heading-font)' }}
+      >
+        <div className="max-w-2xl text-center">
+          <Text
+            field={props.fields.Title}
+            tag="h2"
+            className="m-0 text-3xl font-bold leading-tight md:text-4xl"
+          />
+
+          <RichText
+            field={props.fields.Text}
+            className="mt-4 text-base text-[var(--cta-banner-foreground)] [&_p]:mb-0"
+          />
+
+          <Link
+            field={props.fields.Link}
+            className="akamai-button-primary mt-7"
+          />
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 generatedAt: "2026-03-20T09:00:00Z"
-lastUpdatedAt: "2026-06-09T00:00:00Z"
+lastUpdatedAt: "2026-09-14T16:30:00Z"
 lastUpdatedBy: "claude-agent"
 
 project:
@@ -14,13 +14,106 @@ project:
   headlessVariantsRoot: "/sitecore/content/public-sector/mns/Presentation/Headless Variants"
 
 availableRenderings:
-  itemId: "{2BF7E311-E3A5-4290-A043-AB97EA1DFB15}"
-  lastKnownValue: "{55790BFE-783E-4FF0-BD53-F81D3857DAD4}|{C5F905F8-FD1F-444E-A9E5-AC6B774FF0DE}|{2492BAC4-DA07-4C86-87F0-9873D40E2276}|{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{E97DCF2B-8011-41E0-A605-8A379F3DF1AA}|{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}|{EFE73752-6046-45A8-92F4-7A68430A0759}|{EAA7CC9B-4657-410E-9A25-CD33C700261B}|{58490557-5582-4B19-9E31-CE6A80F95D93}|{4281E3CD-2309-4427-9A3E-D69FDD32FCDA}|{E6D0C7C1-ACFF-4E85-8600-196649FEFFB9}|{90021266-66B3-47B6-9709-A070F56064A1}|{F6A1FA05-15FC-46C9-B921-98E79EFF5F4E}|{E194B962-0617-4A10-B4DB-2A4D19248C13}|{E1BCD607-51C4-4248-8EE2-B7F474D40B3E}|{A53006E8-C66B-419F-859D-7CFA92E7E26B}|{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}|{C739DB42-43E5-4DAC-B5FC-404EDDC9E37C}|{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}|{D008D5FE-B27E-419F-889C-115B3D48A114}|{85CC2A41-AC6F-4C10-9C2F-44308B48C453}|{4C5C1FA5-C077-491D-9686-40D0F68EF03E}|{83BD1231-A48F-4F54-A361-20904C69A641}|{0E64EDCA-06DD-469A-B3D1-93D8700A8F41}|{505B6BB0-DEEA-46F9-9AB2-7020E386F4F0}|{C9FFEF83-C928-4346-AA68-14B3EE0B0017}|{B92A0B89-790F-4D94-89C7-B361C8688765}|{9E525B59-B9BF-4EB7-B75D-10811EF6100D}|{66E80043-36E4-48AE-8CAF-EEF4A77690BE}|{5A8724FB-D6E6-4C9D-8A4A-EFD8750B0019}|{14FCB11C-364D-4BC2-9238-B29B4C6F8145}"
-  lastUpdatedAt: "2026-06-09T00:00:00Z"
-  renderingCount: 32
+  itemId: "{477D94E8-788B-4465-BBD1-B79E60851887}"
+  lastKnownValue: "{3836D951-BB14-43AC-9231-649B7F245DC5}|{8094185B-4C72-40C8-B005-C6ED91708754}|{CCC3A815-5DE9-4529-BAD5-874548667D66}|{AD385021-CE2B-4FC1-89AA-207D408034A8}|{35075000-760E-4FF3-BD1C-F2EEBA251DCB}|{333DEF3E-C272-4AD9-A493-8D5CCAE08312}|{1F52FB4E-FB4B-40ED-A5D8-F8F9784B36F2}|{20E5EA95-6B50-49CD-8852-433B7C565F06}|{3A9A9D22-C092-4B54-9511-EB202CEABE8D}|{75464A5E-CBB7-4F96-BBBC-104AFE57923A}|{B7CDF75E-716A-4C59-B9B1-CD970AE0A4AE}|{1A375FAC-6CC1-4A5A-A159-9BC6DBC66B80}|{200920AD-9645-4CB2-B72A-C7D8278E709F}|{9A636EA2-4B5C-4F85-8D16-CC43273ADA8E}"
+  lastUpdatedAt: "2026-09-14T16:30:00Z"
+  renderingCount: 14
   warning: "MCP cannot read this field â€” value may be stale if modified outside this session. Also: MCP write returned empty updatedFields â€” silent-write. Verify in Content Editor."
 
 components:
+
+  - name: "MetisNation"
+    kind: "simple"
+    category: "Banners"
+    status: "complete"
+    createdAt: "2026-09-14T16:30:00Z"
+    updatedAt: "2026-09-14T16:30:00Z"
+
+    react:
+      filePath: "src/components/uiim/banners/MetisNation.tsx"
+      componentMapKey: "MetisNation"
+      variants:
+        - "Default"
+
+    templates:
+      datasource:
+        name: "MetisNation"
+        path: "/sitecore/templates/Project/Financial/Components/MetisNation"
+        itemId: "{DF52EFB9-B415-457E-B911-681F33D219A8}"
+        sectionName: "Data"
+        fields:
+          - { name: "Title", type: "Single-Line Text", itemId: "{FC08AFBD-880D-4253-97C2-236182A0DAEA}" }
+          - { name: "Text", type: "Single-Line Text", itemId: "{77BE3F15-0F01-42D2-B13E-02609CDEF227}" }
+          - { name: "BackgroundImage", type: "Image", itemId: "{7A24B674-8748-4BAA-973A-142F0332B3D9}" }
+          - { name: "Link", type: "General Link", itemId: "{CA1A524C-7E01-412F-BE96-1208BAA92489}" }
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{F0DB6889-E6DD-4F2D-8F52-FEA5FD0F0F6C}"
+          linked: true
+
+      folder:
+        name: "MetisNation Folder"
+        path: "/sitecore/templates/Project/Financial/Folders/MetisNation Folder"
+        itemId: "{5C547C6C-BECA-4952-B4CD-6054CC9FD773}"
+        standardValues:
+          itemId: "{A7F72BDE-B4B9-40E9-A52B-467B9D1E119D}"
+          linked: true
+          masters: ["MetisNation"]
+
+      renderingParams:
+        name: "MetisNation"
+        path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/MetisNation"
+        itemId: "{EF540CD7-A77B-4F95-BB2E-C71167F4C898}"
+        baseTemplatesSet: true
+
+    datasourceFolder:
+      name: "MetisNations"
+      path: "/sitecore/content/public-sector/mns/Data/MetisNations"
+      itemId: "{CF9FFA6B-D839-4038-AB78-63847DB6AC0A}"
+      insertOptionsSet: true
+      exampleItem:
+        name: "MetisNation"
+        itemId: "{BACB480E-9EF6-4844-AD4F-2794C02921E3}"
+
+    rendering:
+      name: "MetisNation"
+      path: "/sitecore/layout/Renderings/Project/Financial/Page Content/MetisNation"
+      itemId: "{9A636EA2-4B5C-4F85-8D16-CC43273ADA8E}"
+      componentName: "MetisNation"
+      datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/MetisNation"
+      datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='MetisNation Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='MetisNation Folder']"
+      parametersTemplateId: "{EF540CD7-A77B-4F95-BB2E-C71167F4C898}"
+      componentQuery: ""
+      addFieldEditorButton: "1"
+      registeredInAvailableRenderings: true
+
+    headlessVariants:
+      containerPath: "/sitecore/content/public-sector/mns/Presentation/Headless Variants/MetisNation"
+      containerId: "{D43916A6-0365-4E75-B05D-E2741917559C}"
+      variants:
+        - { name: "Default", itemId: "{2E34A62B-5379-402B-A7F1-B6AE9A59E30D}" }
+
+    verification:
+      checkedAt: "2026-09-14T16:30:00Z"
+      passed:
+        - "Datasource template created with Standard + Grid Parameters base templates"
+        - "Fields Title/Text/BackgroundImage/Link created with explicit Types"
+        - "Template __Standard Values created (Title=$name)"
+        - "Folder template + SV + __Masters"
+        - "Datasource folder MetisNations with example item"
+        - "Rendering configured (componentName, Parameters Template, Datasource Template/Location)"
+        - "Default headless variant created"
+        - "Available Renderings appended with MetisNation rendering ID"
+        - "React component created under src/components/uiim/banners/MetisNation.tsx"
+        - "Component map updated"
+      failed: []
+      pendingManual:
+        - "__Standard values link on templates (silent-write — verify in Content Editor)"
+        - "__Masters on folder SV and MetisNations folder instance (silent-write)"
+        - "BackgroundImage on example item (no Content Hub credentials — author should upload image)"
+
+    notes:
+      - "2026-09-14: Created MetisNation simple hero banner for public-sector/mns under Project/Financial."
   - name: "AnnouncementBar"
     kind: "simple"
     category: "Navigation"
@@ -2949,7 +3042,7 @@ lookups:
     itemId: "{7BC665DC-D7DA-418E-AEC6-124D6291E93F}"
     lastReadAt: "2026-03-25T12:00:00Z"
   - path: "/sitecore/content/main/main-website/Presentation/Available Renderings/Page Content"
-    itemId: "{2BF7E311-E3A5-4290-A043-AB97EA1DFB15}"
+    itemId: "{477D94E8-788B-4465-BBD1-B79E60851887}"
     lastReadAt: "2026-03-25T12:00:00Z"
     note: "Available Renderings â€” NEVER replace, always concatenate"
   - path: "/sitecore/layout/Renderings/Project/fmc-custom-demo"

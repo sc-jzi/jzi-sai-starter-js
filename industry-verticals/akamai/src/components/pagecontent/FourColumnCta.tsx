@@ -1,6 +1,6 @@
 'use client';
 
-import { JSX } from 'react';
+import { JSX, useRef } from 'react';
 import {
   Field,
   ImageField,
@@ -58,9 +58,8 @@ export const Default = (props: FourColumnCtaProps): JSX.Element => {
     const [isVisible, domRef] = useVisibility(delay);
     return (
       <div
-        className={`col-sm-12 col-lg-3 ${
-          !isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
-        }`}
+        className={`col-sm-12 col-lg-3 ${!isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
+          }`}
         ref={domRef}
       >
         <Link field={link}>
@@ -114,6 +113,120 @@ export const Default = (props: FourColumnCtaProps): JSX.Element => {
             link={props.fields.Link4}
             delay={1500}
           />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* AkamaiWhatsNew — four resource cards with CTA buttons + scroll arrows */
+export const AkamaiWhatsNew = (props: FourColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const scrollerRef = useRef<HTMLDivElement>(null);
+
+  const cards = [
+    {
+      image: props.fields?.Image1,
+      title: props.fields?.Title1,
+      text: props.fields?.Text1,
+      link: props.fields?.Link1,
+    },
+    {
+      image: props.fields?.Image2,
+      title: props.fields?.Title2,
+      text: props.fields?.Text2,
+      link: props.fields?.Link2,
+    },
+    {
+      image: props.fields?.Image3,
+      title: props.fields?.Title3,
+      text: props.fields?.Text3,
+      link: props.fields?.Link3,
+    },
+    {
+      image: props.fields?.Image4,
+      title: props.fields?.Title4,
+      text: props.fields?.Text4,
+      link: props.fields?.Link4,
+    },
+  ];
+
+  const scrollBy = (direction: number) => {
+    const el = scrollerRef.current;
+    if (!el) return;
+
+    el.scrollBy({
+      left: direction * (el.clientWidth * 0.75),
+      behavior: 'smooth',
+    });
+  };
+
+  return (
+    <div
+      className={`component four-column-cta akamai-brand akamai-whats-new bg-[var(--brand-bg)] pb-14 ${sxaStyles}`}
+      id={id || undefined}
+      style={{ fontFamily: 'var(--brand-heading-font)' }}
+    >
+      <div className="mx-auto max-w-[1200px] px-6">
+        <div
+          ref={scrollerRef}
+          className="flex gap-6 overflow-x-auto scroll-smooth px-1 py-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
+          {cards.map((card, index) => (
+            <article
+              key={index}
+              className="flex w-[min(85vw,24rem)] shrink-0 flex-col overflow-hidden rounded-[var(--akamai-card-radius)] bg-[var(--akamai-card-background)] shadow-[var(--akamai-card-shadow)]"
+            >
+              <NextImage
+                field={card.image}
+                width={384}
+                height={216}
+                className="aspect-video w-full object-cover w-[384px] h-[216px]"
+              />
+
+              <div className="flex flex-1 flex-col p-5">
+                <Text
+                  field={card.title}
+                  tag="h3"
+                  className="m-0 text-xl font-bold leading-snug text-black"
+                />
+
+                <Text
+                  field={card.text}
+                  tag="p"
+                  className="mb-0 mt-3 flex-1 text-sm leading-relaxed text-black"
+                />
+
+                <Link
+                  field={card.link}
+                  className="akamai-button-primary mt-5"
+                />
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-5 flex justify-end gap-3 pb-[20px]">
+          <button
+            type="button"
+            aria-label="Previous cards"
+            onClick={() => scrollBy(-1)}
+            className="akamai-carousel-control akamai-carousel-control--previous"
+          >
+            ‹
+          </button>
+
+          <button
+            type="button"
+            aria-label="Next cards"
+            onClick={() => scrollBy(1)}
+            className="akamai-carousel-control akamai-carousel-control--next"
+          >
+            ›
+          </button>
         </div>
       </div>
     </div>

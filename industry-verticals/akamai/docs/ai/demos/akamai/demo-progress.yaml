@@ -1,0 +1,141 @@
+# Demo Progress Tracker — Akamai
+client:
+  name: "Akamai"
+  sourceUrl: "https://www.akamai.com/"
+  startedAt: "2026-09-14T18:10:00Z"
+  lastUpdatedAt: "2026-09-14T18:55:00Z"
+
+phases:
+  phase0_inputs:
+    status: "complete"
+    screenshot: true
+    url: "https://www.akamai.com/"
+
+  phase0_5_manifest:
+    status: "complete"
+    validationMode: "quick"
+    result: "pass-with-warnings"
+
+  phase1_theme:
+    status: "complete"
+    themeFile: "docs/ai/themes/akamai.theme.yaml"
+    userApproved: true
+
+  phase2_analysis:
+    status: "complete"
+    buildPlanFile: "docs/ai/demos/akamai/build-plan.yaml"
+    totalSections: 12
+    userApproved: true
+
+  phase2_5_content:
+    status: "complete"
+    contentMapFile: "docs/ai/demos/akamai/content-map.yaml"
+    extractorUsed: false
+
+  phase3_content:
+    status: "complete"
+    completedSections: 10
+    totalSections: 12
+
+  phase4_theme:
+    status: "complete"
+    themeDelivery: "globals-inlined"
+    cssWritten: true
+    fontsAdded: true
+
+  phase5_custom:
+    status: "skipped"
+    customComponentsNeeded: 0
+    customComponentsBuilt: 0
+
+  phase5_5_variants:
+    status: "complete"
+    variantsNeeded: 11
+    variantsCreated: 11
+    variantSpecsFile: "docs/ai/demos/akamai/variant-specs.yaml"
+    skippedReason: ""
+    decision: "pixel-perfect"
+
+  phase6_assembly:
+    status: "complete"
+    componentsAdded: 5
+    datasourcesWired: 8
+    totalComponents: 12
+    notes: "Leftover OOB components require manual delete. Variant FieldNames partially auto-applied on new adds."
+
+  phase7_summary:
+    status: "complete"
+
+sections:
+  - position: 1
+    componentName: "Header"
+    kind: "context-only"
+    phase3: { status: "skipped", itemId: "", fieldsPopulated: false, childrenCreated: 0, childrenExpected: 0, error: "context-only" }
+    phase5_5: { status: "complete", variantName: "Akamai", exportAdded: true, variantDefinitionId: "{B82925D7-1053-4876-86BE-77EF2868DFB0}", error: "" }
+    phase6: { status: "skipped", componentInstanceId: "", datasourceWired: false, error: "partial design" }
+  - position: 2
+    componentName: "Hero"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "{404A6B41-3296-483B-BF60-1CEDBE90AE7C}", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, imagesUploaded: 1, imagesExpected: 1, imagesFailed: 0, error: "" }
+    phase5_5: { status: "complete", variantName: "Akamai", exportAdded: true, variantDefinitionId: "{A046211C-5B10-4134-AD13-FB0FB7E58190}", error: "" }
+    phase6: { status: "wired", componentInstanceId: "0668ae5e-3558-4cdb-b0b1-d7b3335eb284", datasourceWired: true, error: "" }
+  - position: 3
+    componentName: "TwoColumnCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "{C810A892-B777-4EC7-BB88-23F5E1855BED}", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase5_5: { status: "complete", variantName: "AkamaiProductTiles", exportAdded: true, variantDefinitionId: "{9A3B1FF8-4A6C-4CC7-B7FE-ABEBC3450663}", error: "" }
+    phase6: { status: "wired", componentInstanceId: "0ed2d2c2-e9ef-4e40-b040-6289cb174e03", datasourceWired: true, error: "" }
+  - position: 4
+    componentName: "PromoCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "{308582F3-C0BB-454B-88F8-7BC5593C7649}", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase5_5: { status: "complete", variantName: "Akamai", exportAdded: true, variantDefinitionId: "{2C5DFBDC-5987-4F7C-8DEF-40F6A27EE011}", error: "" }
+    phase6: { status: "wired", componentInstanceId: "d49a8931-f041-4988-9cc3-f2400e6422d0", datasourceWired: true, error: "" }
+  - position: 5
+    componentName: "PromoCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "{B18DD3AE-4DB3-4FB2-BB36-1D1D26339B45}", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase5_5: { status: "complete", variantName: "AkamaiImageLeft", exportAdded: true, variantDefinitionId: "{D7F9AC0A-A918-4A0A-90D1-DB203F305466}", error: "" }
+    phase6: { status: "wired", componentInstanceId: "633506e7-54d0-4410-9051-72fb4c9fecb4", datasourceWired: true, error: "" }
+  - position: 6
+    componentName: "HeadingCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "{04B4BA19-35E9-4D3C-A045-CE454E4F49A1}", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase5_5: { status: "complete", variantName: "AkamaiSectionTitle", exportAdded: true, variantDefinitionId: "{FFE934BE-C234-4CA0-BE9E-3C3EC5CE0B8A}", error: "" }
+    phase6: { status: "wired", componentInstanceId: "22cf7d4c-0962-4d21-b704-e994a13e8bb8", datasourceWired: true, error: "needs AkamaiSectionTitle variant manually" }
+  - position: 7
+    componentName: "FourColumnCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "{EB8BD1F6-80E4-4543-BB66-6292947FC2F2}", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase5_5: { status: "complete", variantName: "AkamaiWhatsNew", exportAdded: true, variantDefinitionId: "{ABE923F4-6221-4D35-9C3B-C51C65E99068}", error: "" }
+    phase6: { status: "wired", componentInstanceId: "11f36ebb-2867-4b7e-b5d2-5cb42e1b2d2d", datasourceWired: true, error: "" }
+  - position: 8
+    componentName: "CtaBanner"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "{0AFD22D9-61DF-4AE1-9BDD-849F711083D4}", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase5_5: { status: "complete", variantName: "AkamaiBrand", exportAdded: true, variantDefinitionId: "{88FE9007-AA6B-42C7-A628-D135D2F44BF7}", error: "" }
+    phase6: { status: "wired", componentInstanceId: "e62140c3-0875-4a65-98c7-d0f73d8afea8", datasourceWired: true, error: "" }
+  - position: 9
+    componentName: "HeadingCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "{EB6213BD-4531-4DB5-9907-5A1C3BE7D298}", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase5_5: { status: "complete", variantName: "AkamaiSectionTitle", exportAdded: true, variantDefinitionId: "{FFE934BE-C234-4CA0-BE9E-3C3EC5CE0B8A}", error: "" }
+    phase6: { status: "wired", componentInstanceId: "e4aa7c23-1841-4547-b2d4-c08fde579df2", datasourceWired: true, error: "needs AkamaiSectionTitle variant manually" }
+  - position: 10
+    componentName: "ThreeColumnCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "{5EF5DD7C-3CD4-4268-9480-DC8EE7FAB4D4}", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase5_5: { status: "complete", variantName: "Akamai", exportAdded: true, variantDefinitionId: "{E172F7B2-8C38-44D7-827A-9F58FE469486}", error: "" }
+    phase6: { status: "wired", componentInstanceId: "d54d53b4-1aa4-4998-9bdf-eb934c32cfb6", datasourceWired: true, error: "" }
+  - position: 11
+    componentName: "HeadingCta"
+    kind: "simple"
+    phase3: { status: "populated", itemId: "{FBCD210D-6751-4DD5-B3B9-878C53667356}", fieldsPopulated: true, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase5_5: { status: "complete", variantName: "AkamaiContact", exportAdded: true, variantDefinitionId: "{D258C1A3-6DD4-453C-AA8E-781F0C4CDDCC}", error: "" }
+    phase6: { status: "wired", componentInstanceId: "de31dbf7-6f76-459d-8103-b8bf66121708", datasourceWired: true, error: "" }
+  - position: 12
+    componentName: "Footer"
+    kind: "context-only"
+    phase3: { status: "created", itemId: "{D229DF19-90F8-4580-9A4C-167FC22FB8CA}", fieldsPopulated: false, childrenCreated: 0, childrenExpected: 0, error: "" }
+    phase5_5: { status: "complete", variantName: "Akamai", exportAdded: true, variantDefinitionId: "{C552BFB1-3586-458E-934F-2E29E6269708}", error: "" }
+    phase6: { status: "skipped", componentInstanceId: "", datasourceWired: false, error: "partial design" }

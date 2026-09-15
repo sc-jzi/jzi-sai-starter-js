@@ -1,0 +1,107 @@
+.akamai-brand .akamai-button-primary {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: var(--akamai-button-primary-radius);
+  background-color: var(--akamai-button-primary-bg);
+  color: var(--akamai-button-primary-color);
+  padding: 0.75rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  text-decoration: none;
+  transition:
+    background-color 150ms ease,
+    box-shadow 150ms ease,
+    transform 150ms ease;
+}
+
+.akamai-brand .akamai-button-primary:hover,
+.akamai-brand .akamai-button-primary:focus {
+  background-color: var(--akamai-button-primary-hover-bg);
+  color: var(--akamai-button-primary-color);
+  text-decoration: none;
+}
+
+.akamai-brand .akamai-button-primary:focus-visible {
+  outline: 3px solid rgb(11 75 232 / 30%);
+  outline-offset: 3px;
+}
+
+.three-column-cta.akamai-brand {
+  padding: 20px 0;
+}
+
+.heading-cta.akamai-section-title {
+  padding: 20px 0;
+}
+
+.akamai-brand .akamai-button-accent {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: var(--akamai-button-accent-radius);
+  background-color: var(--akamai-button-accent-bg);
+  color: var(--akamai-button-accent-color);
+  padding: 0.75rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  text-decoration: none;
+  transition: background-color 150ms ease;
+}
+
+.akamai-brand .akamai-button-accent:hover,
+.akamai-brand .akamai-button-accent:focus {
+  background-color: var(--akamai-button-accent-hover-bg);
+  color: var(--akamai-button-accent-color);
+  text-decoration: none;
+}
+
+.akamai-brand .akamai-carousel-control {
+  display: inline-flex;
+  width: var(--akamai-carousel-control-size);
+  height: var(--akamai-carousel-control-size);
+  flex: 0 0 var(--akamai-carousel-control-size);
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 9999px;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.akamai-brand .akamai-carousel-control--previous {
+  border: 1px solid transparent;
+  background-color: var(--akamai-carousel-control-disabled-bg);
+  color: #666666;
+}
+
+.akamai-brand .akamai-carousel-control--next {
+  border: 1px solid var(--akamai-carousel-control-color);
+  background-color: #ffffff;
+  color: var(--akamai-carousel-control-color);
+}
+
+.akamai-brand .akamai-carousel-control--next:hover {
+  background-color: var(--akamai-carousel-control-color);
+  color: #ffffff;
+}
+
+.akamai-brand article img {
+  width: 384px;
+  height: 216px;
+}
+
+.promo-cta.akamai-promo-image-left {
+  background-color: #ffffff;
+}
+
+.promo-cta.akamai-promo {
+  background-color: #ffffff;
+}

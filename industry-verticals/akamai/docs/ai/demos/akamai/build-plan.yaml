@@ -1,0 +1,387 @@
+# Akamai Demo Build Plan
+client:
+  name: "Akamai"
+  sourceUrl: "https://www.akamai.com/"
+  themeFile: "docs/ai/themes/akamai.theme.yaml"
+  analyzedAt: "2026-09-14T18:25:00Z"
+  implementationLibrary: "Financial starter components"
+
+pageAnalysis:
+  screenshotFiles:
+    desktop: "docs/ai/demos/akamai/screenshot-desktop.jpg"
+    scraperDesktop: "docs/ai/themes/akamai/screenshot-desktop.png"
+    hero: "docs/ai/themes/akamai/screenshot-hero.png"
+  totalSections: 12
+  templateMatches: 12
+  customRequired: 0
+  notes:
+    - "Playwright scrape was Access Denied; analysis uses the SE-provided full-page screenshot."
+    - "Legacy uiim registry used for visual semantics; implementation maps to Financial starter components (same approach as Kal Tire)."
+    - "Home page already has Hero, Promo CTA, Two/Three Column CTA and other Financial components — Phase 6 will re-wire and reorder; OOB leftovers flagged for manual removal."
+
+sections:
+  - position: 1
+    description: "White header with Akamai logo, Products/Solutions/Pricing/Developers/Resources nav, utility links (English, Support, Partners, Login), search, and blue Contact sales CTA."
+    matchedComponent:
+      registryId: "navigation-header"
+      manifestName: "Header"
+      displayName: "Header"
+      renderingId: "81317d3b-f929-426a-83ec-421982f8f1e6"
+      variant: "Akamai"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: false
+      customVariantNeeded:
+        name: "Akamai"
+        description: "Two-tier utility + primary nav with logo left, centered product links, and blue Contact sales CTA."
+        parentComponent: "Header"
+    kind: "context-only"
+    sectionBackground: "default"
+    content:
+      NavigationLinks: ["Products", "Solutions", "Pricing", "Developers", "Resources"]
+      UtilityLinks: ["English", "Support", "Partners", "Login"]
+      CtaLabel: "Contact sales"
+    contentNotes: "Lives in header partial design; cannot add via add_component_on_page."
+    variantReason: "Existing Header variants do not match Akamai's utility row + centered mega-style primary nav."
+
+  - position: 2
+    description: "Full-width dark navy hero with cyan abstract wave art, AI Summit headline, San Francisco subhead, supporting line, and orange Register today CTA."
+    matchedComponent:
+      registryId: "hero-banner"
+      manifestName: "Hero"
+      displayName: "Hero"
+      renderingId: "b7cdf75e-716a-4c59-b9b1-cd970ae0a4ae"
+      datasourceTemplateId: "90d315e8-aa42-4b23-a7eb-4491396453f8"
+      variant: "Akamai"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+      customVariantNeeded:
+        name: "Akamai"
+        description: "Left-aligned white headline on navy gradient with abstract wave background image and orange primary CTA."
+        parentComponent: "Hero"
+    kind: "simple"
+    sectionBackground: "dark"
+    content:
+      Title: "Akamai AI Summit 2026"
+      Text: "Oracle Park, San Francisco. Your agents are only as good as the infrastructure they run on. Find out why November 18."
+      Link: { text: "Register today", href: "https://www.akamai.com/" }
+    contentNotes: "Hero already present on Home — re-wire datasource. Wave art goes in Image field."
+    variantReason: "Default Hero is photo-forward banking style; Akamai needs left copy + abstract tech background."
+
+  - position: 3
+    description: "Two equal dark-blue product tiles with dotted grid: Akamai Cloud and Akamai Security, each with an orange CTA."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "TwoColumnCta"
+      displayName: "Two Column CTA"
+      renderingId: "3a9a9d22-c092-4b54-9511-eb202ceabe8d"
+      datasourceTemplateId: "1812bf3e-6bdd-466d-99b2-0d7cebb020fc"
+      variant: "AkamaiProductTiles"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+      customVariantNeeded:
+        name: "AkamaiProductTiles"
+        description: "Side-by-side navy dotted tiles with large title and orange CTA; images optional/background only."
+        parentComponent: "TwoColumnCta"
+    kind: "simple"
+    sectionBackground: "dark"
+    content:
+      Title1: "Akamai Cloud"
+      Link1: { text: "Start computing", href: "https://www.akamai.com/cloud" }
+      Title2: "Akamai Security"
+      Link2: { text: "Start cybersecurity", href: "https://www.akamai.com/security" }
+    contentNotes: "Text1/Text2 can be short supporting lines if extracted; screenshot shows title + CTA primarily."
+    variantReason: "Default Two Column CTA expects photography above titles; screenshot is solid navy tiles."
+
+  - position: 4
+    description: "Forrester Leader recognition — text and Read the report CTA on the left, white framed FORRESTER logo card on the right."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      displayName: "Promo CTA"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      datasourceTemplateId: "c0943942-ae0f-4205-86fa-84884cce4a53"
+      variant: "Akamai"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+      customVariantNeeded:
+        name: "Akamai"
+        description: "Text-left / logo-card-right recognition layout with blue secondary CTA."
+        parentComponent: "PromoCta"
+    kind: "simple"
+    sectionBackground: "default"
+    content:
+      Title: "Akamai Named a Leader in Microsegmentation"
+      Eyebrow: "The Forrester Wave™: Microsegmentation"
+      Link: { text: "Read the report", href: "https://www.akamai.com/" }
+    contentNotes: "Promo CTA already on Home with related title — re-wire. FORRESTER mark in Image field."
+    variantReason: "Default Promo CTA uses dotted accents and banking styling; needs cleaner analyst-report layout."
+
+  - position: 5
+    description: "AI infrastructure insight — graphic tile 'What breaks next in your AI stack?' beside 'Understanding the 4 Stages of AI Infrastructure' copy and Download the report CTA."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      displayName: "Promo CTA"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      datasourceTemplateId: "c0943942-ae0f-4205-86fa-84884cce4a53"
+      variant: "AkamaiImageLeft"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+      customVariantNeeded:
+        name: "AkamaiImageLeft"
+        description: "Graphic tile left, headline/body/CTA right — inverse of recognition row."
+        parentComponent: "PromoCta"
+    kind: "simple"
+    sectionBackground: "default"
+    content:
+      Title: "Understanding the 4 Stages of AI Infrastructure"
+      Subtitle: "What breaks next in your AI stack?"
+      Link: { text: "Download the report", href: "https://www.akamai.com/" }
+    contentNotes: "Second Promo CTA instance. Graphic art in Image; Subtitle can carry the tile caption if variant uses it."
+    variantReason: "Screenshot flips image/text order vs the Forrester row."
+
+  - position: 6
+    description: "Section label 'What's new' above a four-card horizontal news/resources row with arrows."
+    matchedComponent:
+      registryId: "rich-text-block"
+      manifestName: "HeadingCta"
+      displayName: "Heading CTA"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      datasourceTemplateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+      variant: "AkamaiSectionTitle"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+      customVariantNeeded:
+        name: "AkamaiSectionTitle"
+        description: "Simple left-aligned section title without CTA column."
+        parentComponent: "HeadingCta"
+    kind: "simple"
+    sectionBackground: "default"
+    content:
+      Heading: "What's new"
+      Text: ""
+      Link: { text: "", href: "#" }
+    contentNotes: "Title-only strip preceding the four cards. Hide empty CTA in variant."
+    variantReason: "Centered/Compact Heading CTA still show CTA column chrome; need title-only."
+
+  - position: 7
+    description: "Four news/resource cards (Gartner VOC, SOTI report, search case study, segmentation white paper) with CTAs; live site uses carousel arrows."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "FourColumnCta"
+      displayName: "Four Column CTA"
+      renderingId: "35075000-760e-4ff3-bd1c-f2eeba251dcb"
+      datasourceTemplateId: "1b694ef9-154d-429a-9c3f-d7774cd4a852"
+      variant: "AkamaiWhatsNew"
+      matchType: "template"
+      matchConfidence: "medium"
+      variantMatch: "none"
+      apiAddable: true
+      customVariantNeeded:
+        name: "AkamaiWhatsNew"
+        description: "Four resource cards with image, title, excerpt, and visible CTA button; optional carousel controls."
+        parentComponent: "FourColumnCta"
+    kind: "simple"
+    sectionBackground: "default"
+    content:
+      Title1: "A Customers' Choice in the 2026 GPE VOC"
+      Text1: "Gartner Peer Insights Customers' Choice for network detection and response."
+      Link1: { text: "Read press release", href: "https://www.akamai.com/" }
+      Title2: "SOTI Enterprise AI Usage Risk Report 2026"
+      Text2: "Enterprise AI usage and risk findings."
+      Link2: { text: "Download report", href: "https://www.akamai.com/" }
+      Title3: "30% faster search, 20% lower costs"
+      Text3: "Customer story on Akamai Search performance and cost."
+      Link3: { text: "Read customer story", href: "https://www.akamai.com/" }
+      Title4: "Segmentation for the agentic era"
+      Text4: "White paper on microsegmentation for agentic workloads."
+      Link4: { text: "Read white paper", href: "https://www.akamai.com/" }
+    contentNotes: "Live site uses a carousel; Default Four Column is a static grid. Phase 5.5 can add arrow controls. Entire card is link-wrapped in Default — variant should surface CTA button chrome."
+    variantReason: "Need card chrome + optional carousel to match What's new."
+
+  - position: 8
+    description: "Dark brand banner with large Akamai wave/globe mark, 'Everywhere you do business, Akamai is there', supporting copy, and orange CTA."
+    matchedComponent:
+      registryId: "cta-banner"
+      manifestName: "CtaBanner"
+      displayName: "CTA Banner"
+      renderingId: "488b8ac0-0ef9-4f6f-8711-78ba182b2c4c"
+      datasourceTemplateId: "4900d7e5-61b0-483a-a9d6-69419d4d5982"
+      variant: "AkamaiBrand"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+      customVariantNeeded:
+        name: "AkamaiBrand"
+        description: "Full-bleed navy band with large logo/graphic left and headline + orange CTA right."
+        parentComponent: "CtaBanner"
+    kind: "simple"
+    sectionBackground: "dark"
+    content:
+      Title: "Everywhere you do business, Akamai is there"
+      Text: "Cloud computing, security, and content delivery on one distributed platform."
+      Link: { text: "See how the internet works", href: "https://www.akamai.com/" }
+    contentNotes: "Large wave/globe graphic in Image or Icon field."
+    variantReason: "Default CTA Banner uses dotted accents and light banking look."
+
+  - position: 9
+    description: "Section headline 'Build applications everywhere. Secure and scale them everywhere.' above the three capability columns."
+    matchedComponent:
+      registryId: "rich-text-block"
+      manifestName: "HeadingCta"
+      displayName: "Heading CTA"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      datasourceTemplateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+      variant: "AkamaiSectionTitle"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+      customVariantNeeded:
+        name: "AkamaiSectionTitle"
+        description: "Centered or left large section headline without CTA."
+        parentComponent: "HeadingCta"
+    kind: "simple"
+    sectionBackground: "default"
+    content:
+      Heading: "Build applications everywhere. Secure and scale them everywhere."
+      Text: ""
+      Link: { text: "", href: "#" }
+    contentNotes: "Reuses AkamaiSectionTitle variant from position 6."
+    variantReason: "Three Column CTA has no parent Title field."
+
+  - position: 10
+    description: "Three capability columns — Cloud computing, Security, Content delivery — each with photo, title, short copy, and blue CTA."
+    matchedComponent:
+      registryId: "value-proposition-grid"
+      manifestName: "ThreeColumnCta"
+      displayName: "Three Column CTA"
+      renderingId: "ad385021-ce2b-4fc1-89aa-207d408034a8"
+      datasourceTemplateId: "148d07ba-f923-4fb2-8907-0bd440d5db44"
+      variant: "Akamai"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+      customVariantNeeded:
+        name: "Akamai"
+        description: "Three image-led capability cards with blue outline/secondary CTAs."
+        parentComponent: "ThreeColumnCta"
+    kind: "simple"
+    sectionBackground: "default"
+    content:
+      Text1: "Cloud computing"
+      SubText1: "Build and run applications at the edge and in the cloud."
+      Link1: { text: "Read about computing", href: "https://www.akamai.com/cloud" }
+      Text2: "Security"
+      SubText2: "Protect apps, APIs, and infrastructure from modern threats."
+      Link2: { text: "See all security", href: "https://www.akamai.com/security" }
+      Text3: "Content delivery"
+      SubText3: "Deliver media and web experiences with global performance."
+      Link3: { text: "See delivery", href: "https://www.akamai.com/" }
+    contentNotes: "Three Column CTA already on Home — re-wire. Photography in Image1–3."
+    variantReason: "Match Akamai typography, CTA color, and spacing."
+
+  - position: 11
+    description: "Light final CTA band with dotted pattern — Ready to get started or have questions? — and blue Contact us button."
+    matchedComponent:
+      registryId: "cta-banner"
+      manifestName: "HeadingCta"
+      displayName: "Heading CTA"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      datasourceTemplateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+      variant: "AkamaiContact"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: true
+      customVariantNeeded:
+        name: "AkamaiContact"
+        description: "Centered contact strip with dotted accents and blue Contact us CTA."
+        parentComponent: "HeadingCta"
+    kind: "simple"
+    sectionBackground: "muted"
+    content:
+      Heading: "Ready to get started or have questions?"
+      Text: "Our experts are here to help."
+      Link: { text: "Contact us", href: "https://www.akamai.com/contact" }
+    contentNotes: "Centered variant exists but needs Akamai dotted-edge styling."
+    variantReason: "Screenshot is centered contact band, not Default split layout."
+
+  - position: 12
+    description: "Multi-column footer — PRODUCTS, COMPANY, CAREERS, LEGAL & COMPLIANCE, SUPPORT — plus social icons, legal links, and Akamai logo."
+    matchedComponent:
+      registryId: "footer"
+      manifestName: "Footer"
+      displayName: "Footer"
+      renderingId: "771a3f27-6448-44ac-add0-e5de311c6e3b"
+      datasourceTemplateId: "947db8f8-dc76-453f-aca1-a27babfe633b"
+      variant: "Akamai"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: false
+      customVariantNeeded:
+        name: "Akamai"
+        description: "Five link columns, social row, copyright bar, Akamai logo."
+        parentComponent: "Footer"
+    kind: "context-only"
+    sectionBackground: "dark"
+    content:
+      Columns: ["PRODUCTS", "COMPANY", "CAREERS", "LEGAL & COMPLIANCE", "SUPPORT"]
+    contentNotes: "Footer partial design; wire datasource and select Akamai variant manually. apiAddable false — Header/Footer pattern."
+    variantReason: "WithSocials is close but not Akamai column structure/colors."
+
+customComponents: []
+
+existingPageCleanup:
+  pageId: "05426c63-278e-456f-9e09-900d9f4e83a4"
+  pagePath: "/sitecore/content/technology/akamai/Home"
+  note: "MCP cannot remove components. Flag leftovers in manual-tasks.md."
+  componentsLikelyToRemoveManually:
+    - "Five Column CTA"
+    - "Documents List"
+    - "Article List"
+    - "App Promo"
+    - "Extra Promo CTA / Two Column CTA instances not re-wired"
+
+buildOrder:
+  phase1_sitecore:
+    - position: 2
+      component: "Hero"
+    - position: 3
+      component: "TwoColumnCta"
+    - position: 4
+      component: "PromoCta"
+    - position: 5
+      component: "PromoCta"
+    - position: 6
+      component: "HeadingCta"
+    - position: 7
+      component: "FourColumnCta"
+    - position: 8
+      component: "CtaBanner"
+    - position: 9
+      component: "HeadingCta"
+    - position: 10
+      component: "ThreeColumnCta"
+    - position: 11
+      component: "HeadingCta"
+    - position: 12
+      component: "Footer"
+      note: "context-only — content only if Footer datasource is used"
+  phase2_theme: "Inline Akamai :root brand variables into globals.css"
+  phase3_custom: []

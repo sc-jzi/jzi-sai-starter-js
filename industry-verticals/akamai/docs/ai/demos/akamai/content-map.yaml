@@ -1,0 +1,258 @@
+client:
+  name: "Akamai"
+  sourceUrl: "https://www.akamai.com/"
+  sourceLanguage: "en"
+  targetLanguage: "en"
+  translationApplied: false
+  extractedAt: "2026-09-14T18:30:00Z"
+  mappedAt: "2026-09-14T18:30:00Z"
+  contentSource: "screenshot"
+
+sections:
+  - position: 1
+    componentName: "Header"
+    manifestName: "Header"
+    kind: "context-only"
+    datasourceItemName: ""
+    apiAddable: false
+    fields:
+      CtaLabel: "Contact sales"
+      NavigationLinks:
+        - { text: "Products", href: "https://www.akamai.com/products", target: "" }
+        - { text: "Solutions", href: "https://www.akamai.com/solutions", target: "" }
+        - { text: "Pricing", href: "https://www.akamai.com/pricing", target: "" }
+        - { text: "Developers", href: "https://www.akamai.com/developers", target: "" }
+        - { text: "Resources", href: "https://www.akamai.com/resources", target: "" }
+      UtilityLinks:
+        - { text: "English", href: "#", target: "" }
+        - { text: "Support", href: "https://www.akamai.com/support", target: "" }
+        - { text: "Partners", href: "https://www.akamai.com/partners", target: "" }
+        - { text: "Login", href: "https://control.akamai.com/", target: "" }
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 2
+    componentName: "Hero"
+    manifestName: "Hero"
+    kind: "simple"
+    datasourceItemName: "Akamai - Hero"
+    apiAddable: true
+    fields:
+      Title: "Akamai AI Summit 2026"
+      Text: "<p>Oracle Park, San Francisco.<br/>Your agents are only as good as the infrastructure they run on. Find out why November 18.</p>"
+      Link:
+        text: "Register today"
+        href: "https://www.akamai.com/"
+        target: ""
+    children: []
+    imageFields:
+      - field: "Image"
+        src: ""
+        alt: "Akamai abstract cyan wave on navy background"
+        note: "Upload hero wave art manually — site blocked headless download"
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 3
+    componentName: "TwoColumnCta"
+    manifestName: "TwoColumnCta"
+    kind: "simple"
+    datasourceItemName: "Akamai - Product Tiles"
+    apiAddable: true
+    fields:
+      Title1: "Akamai Cloud"
+      Text1: "Build and run applications at the edge."
+      Link1: { text: "Start computing", href: "https://www.akamai.com/cloud", target: "" }
+      Title2: "Akamai Security"
+      Text2: "Protect apps, APIs, and infrastructure."
+      Link2: { text: "Start cybersecurity", href: "https://www.akamai.com/security", target: "" }
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 4
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    kind: "simple"
+    datasourceItemName: "Akamai - Forrester Leader"
+    apiAddable: true
+    fields:
+      Eyebrow: "The Forrester Wave™: Microsegmentation"
+      Title: "Akamai Named a Leader in Microsegmentation"
+      Subtitle: ""
+      Text: "<p>See why Forrester recognized Akamai as a Leader in The Forrester Wave™: Microsegmentation.</p>"
+      Link: { text: "Read the report", href: "https://www.akamai.com/", target: "" }
+      Link2: { text: "", href: "#", target: "" }
+    children: []
+    imageFields:
+      - field: "Image"
+        src: ""
+        alt: "Forrester logo"
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 5
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    kind: "simple"
+    datasourceItemName: "Akamai - AI Infrastructure"
+    apiAddable: true
+    fields:
+      Eyebrow: "AI Infrastructure"
+      Title: "Understanding the 4 Stages of AI Infrastructure"
+      Subtitle: "What breaks next in your AI stack?"
+      Text: "<p>Learn how AI infrastructure evolves — and where bottlenecks appear — across four stages of maturity.</p>"
+      Link: { text: "Download the report", href: "https://www.akamai.com/", target: "" }
+      Link2: { text: "", href: "#", target: "" }
+    children: []
+    imageFields:
+      - field: "Image"
+        src: ""
+        alt: "What breaks next in your AI stack graphic"
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 6
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Akamai - Whats New Title"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Heading: "What's new"
+      Text: ""
+      Link: { text: "", href: "#", target: "" }
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 7
+    componentName: "FourColumnCta"
+    manifestName: "FourColumnCta"
+    kind: "simple"
+    datasourceItemName: "Akamai - Whats New Cards"
+    apiAddable: true
+    fields:
+      Title1: "A Customers' Choice in the 2026 GPE VOC"
+      Text1: "Gartner Peer Insights Customers' Choice recognition."
+      Link1: { text: "Read press release", href: "https://www.akamai.com/", target: "" }
+      Title2: "SOTI Enterprise AI Usage Risk Report 2026"
+      Text2: "Findings on enterprise AI usage and risk."
+      Link2: { text: "Download report", href: "https://www.akamai.com/", target: "" }
+      Title3: "30% faster search, 20% lower costs"
+      Text3: "Customer story on Akamai Search performance."
+      Link3: { text: "Read customer story", href: "https://www.akamai.com/", target: "" }
+      Title4: "Segmentation for the agentic era"
+      Text4: "White paper on microsegmentation for agentic workloads."
+      Link4: { text: "Read white paper", href: "https://www.akamai.com/", target: "" }
+    children: []
+    imageFields:
+      - { field: "Image1", src: "", alt: "Gartner Customers Choice" }
+      - { field: "Image2", src: "", alt: "SOTI AI risk report" }
+      - { field: "Image3", src: "", alt: "Search performance case study" }
+      - { field: "Image4", src: "", alt: "Segmentation white paper" }
+    matchConfidence: "medium"
+    contentSource: "screenshot"
+
+  - position: 8
+    componentName: "CtaBanner"
+    manifestName: "CtaBanner"
+    kind: "simple"
+    datasourceItemName: "Akamai - Brand Banner"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Title: "Everywhere you do business, Akamai is there"
+      Text: "<p>Cloud computing, security, and content delivery on one distributed platform.</p>"
+      Link: { text: "See how the internet works", href: "https://www.akamai.com/", target: "" }
+    children: []
+    imageFields:
+      - field: "Image"
+        src: ""
+        alt: "Akamai wave globe graphic"
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 9
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Akamai - Capabilities Title"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Heading: "Build applications everywhere. Secure and scale them everywhere."
+      Text: ""
+      Link: { text: "", href: "#", target: "" }
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 10
+    componentName: "ThreeColumnCta"
+    manifestName: "ThreeColumnCta"
+    kind: "simple"
+    datasourceItemName: "Akamai - Capabilities"
+    apiAddable: true
+    fields:
+      Text1: "Cloud computing"
+      SubText1: "Build and run applications at the edge and in the cloud."
+      Link1: { text: "Read about computing", href: "https://www.akamai.com/cloud", target: "" }
+      Text2: "Security"
+      SubText2: "Protect apps, APIs, and infrastructure from modern threats."
+      Link2: { text: "See all security", href: "https://www.akamai.com/security", target: "" }
+      Text3: "Content delivery"
+      SubText3: "Deliver media and web experiences with global performance."
+      Link3: { text: "See delivery", href: "https://www.akamai.com/", target: "" }
+    children: []
+    imageFields:
+      - { field: "Image1", src: "", alt: "Developer working on laptop" }
+      - { field: "Image2", src: "", alt: "Security visualization on glasses" }
+      - { field: "Image3", src: "", alt: "Person with tablet outdoors" }
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 11
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    kind: "simple"
+    datasourceItemName: "Akamai - Contact CTA"
+    apiAddable: true
+    fields:
+      Eyebrow: ""
+      Heading: "Ready to get started or have questions?"
+      Text: "Our experts are here to help."
+      Link: { text: "Contact us", href: "https://www.akamai.com/contact", target: "" }
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+  - position: 12
+    componentName: "Footer"
+    manifestName: "Footer"
+    kind: "context-only"
+    datasourceItemName: "Akamai - Footer"
+    apiAddable: false
+    fields: {}
+    children: []
+    imageFields: []
+    matchConfidence: "high"
+    contentSource: "screenshot"
+
+summary:
+  totalSections: 12
+  simpleSections: 9
+  listSections: 0
+  contextOnlySections: 2
+  imageFieldsPending: 10
+  contentSource: "screenshot"
+  extractorBlocked: true
+
+datasourceItems: []

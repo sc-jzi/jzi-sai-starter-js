@@ -3,22 +3,25 @@ lastUpdatedAt: "2026-06-09T00:00:00Z"
 lastUpdatedBy: "claude-agent"
 
 project:
-  siteCollection: "main"
-  siteName: "main-website"
+  siteCollection: "technology"
+  siteName: "akamai"
   sdk: "@sitecore-content-sdk/nextjs"
-  renderingsRoot: "/sitecore/layout/Renderings/Project/fmc-custom-demo"
-  projectTemplatesRoot: "/sitecore/templates/Project/fmc-custom-demo"
-  dataRoot: "/sitecore/content/main/main-website/Data"
-  projectFoldersRoot: "/sitecore/templates/Project/fmc-custom-demo/Folders"
-  renderingParamsRoot: "/sitecore/templates/Project/fmc-custom-demo/Rendering Parameters"
-  headlessVariantsRoot: "/sitecore/content/main/main-website/Presentation/Headless Variants"
+  renderingsRoot: "/sitecore/layout/Renderings/Project/Financial"
+  projectTemplatesRoot: "/sitecore/templates/Project/Financial"
+  dataRoot: "/sitecore/content/technology/akamai/Data"
+  projectFoldersRoot: "/sitecore/templates/Project/Financial/Folders"
+  renderingParamsRoot: "/sitecore/templates/Project/Financial/Rendering Parameters"
+  headlessVariantsRoot: "/sitecore/content/technology/akamai/Presentation/Headless Variants"
+  # NOTE: UIIM registry entries below are legacy. This site implements the Financial
+  # starter component library (same approach as Kal Tire). Demo builds map registry
+  # semantics → Financial components that exist in Sitecore + React.
 
 availableRenderings:
-  itemId: "{2BF7E311-E3A5-4290-A043-AB97EA1DFB15}"
-  lastKnownValue: "{55790BFE-783E-4FF0-BD53-F81D3857DAD4}|{C5F905F8-FD1F-444E-A9E5-AC6B774FF0DE}|{2492BAC4-DA07-4C86-87F0-9873D40E2276}|{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{E97DCF2B-8011-41E0-A605-8A379F3DF1AA}|{A41A47A5-D305-4ADC-BFC8-CCB0F301DDCF}|{EFE73752-6046-45A8-92F4-7A68430A0759}|{EAA7CC9B-4657-410E-9A25-CD33C700261B}|{58490557-5582-4B19-9E31-CE6A80F95D93}|{4281E3CD-2309-4427-9A3E-D69FDD32FCDA}|{E6D0C7C1-ACFF-4E85-8600-196649FEFFB9}|{90021266-66B3-47B6-9709-A070F56064A1}|{F6A1FA05-15FC-46C9-B921-98E79EFF5F4E}|{E194B962-0617-4A10-B4DB-2A4D19248C13}|{E1BCD607-51C4-4248-8EE2-B7F474D40B3E}|{A53006E8-C66B-419F-859D-7CFA92E7E26B}|{4E7E77EF-529C-4C28-A5D8-94C5ACA065FF}|{C739DB42-43E5-4DAC-B5FC-404EDDC9E37C}|{0F7C27E2-B960-47E9-AB85-F8A9C45D0F9C}|{D008D5FE-B27E-419F-889C-115B3D48A114}|{85CC2A41-AC6F-4C10-9C2F-44308B48C453}|{4C5C1FA5-C077-491D-9686-40D0F68EF03E}|{83BD1231-A48F-4F54-A361-20904C69A641}|{0E64EDCA-06DD-469A-B3D1-93D8700A8F41}|{505B6BB0-DEEA-46F9-9AB2-7020E386F4F0}|{C9FFEF83-C928-4346-AA68-14B3EE0B0017}|{B92A0B89-790F-4D94-89C7-B361C8688765}|{9E525B59-B9BF-4EB7-B75D-10811EF6100D}|{66E80043-36E4-48AE-8CAF-EEF4A77690BE}|{5A8724FB-D6E6-4C9D-8A4A-EFD8750B0019}|{14FCB11C-364D-4BC2-9238-B29B4C6F8145}"
-  lastUpdatedAt: "2026-06-09T00:00:00Z"
-  renderingCount: 32
-  warning: "MCP cannot read this field — value may be stale if modified outside this session. Also: MCP write returned empty updatedFields — silent-write. Verify in Content Editor."
+  itemId: "{B8421DB0-45AC-42E0-A808-0A48F1061D13}"
+  lastKnownValue: "{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{8094185B-4C72-40C8-B005-C6ED91708754}|{F9905F68-21E8-4C6F-8B89-56BB99020D31}|{CCC3A815-5DE9-4529-BAD5-874548667D66}|{AD385021-CE2B-4FC1-89AA-207D408034A8}|{35075000-760E-4FF3-BD1C-F2EEBA251DCB}|{333DEF3E-C272-4AD9-A493-8D5CCAE08312}|{1F52FB4E-FB4B-40ED-A5D8-F8F9784B36F2}|{20E5EA95-6B50-49CD-8852-433B7C565F06}|{3A9A9D22-C092-4B54-9511-EB202CEABE8D}|{75464A5E-CBB7-4F96-BBBC-104AFE57923A}|{B7CDF75E-716A-4C59-B9B1-CD970AE0A4AE}|{1A375FAC-6CC1-4A5A-A159-9BC6DBC66B80}|{200920AD-9645-4CB2-B72A-C7D8278E709F}"
+  lastUpdatedAt: "2026-09-14T18:15:00Z"
+  renderingCount: 15
+  warning: "Refreshed from technology/akamai Available Renderings during Phase 0.5. Financial starter library in use."
 
 components:
   - name: "AnnouncementBar"

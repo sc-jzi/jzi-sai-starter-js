@@ -3,3 +3,71 @@
 @import 'bootstrap/scss/bootstrap';
 @import '../assets/sass/main';
 @import '../assets/basic/main';
+@import '../assets/akamai/main';
+
+/* CLIENT THEME: Akamai */
+:root {
+  --brand-primary: #00146b;
+  --brand-primary-foreground: #ffffff;
+  --brand-secondary: #0099CC;
+  --brand-secondary-foreground: #ffffff;
+  --brand-accent: #ff8b00;
+  --brand-accent-foreground: #ffffff;
+  --brand-bg: #ffffff;
+  --brand-fg: #1a1a1a;
+  --brand-muted: #F2F5F8;
+  --brand-muted-fg: #54565b;
+  --brand-header-bg: #ffffff;
+  --brand-header-fg: #002856;
+  --brand-footer-bg: #002856;
+  --brand-footer-fg: #c8d0d8;
+  --brand-border: #d8dde3;
+  --brand-ring: #0099CC;
+  --brand-heading-font: var(--font-source-sans-3), 'Source Sans 3', sans-serif;
+  --brand-body-font: var(--font-source-sans-3), 'Source Sans 3', sans-serif;
+  --font-family: var(--brand-body-font);
+  --brand-radius: 0.25rem;
+  --brand-button-radius: 0.25rem;
+  --brand-card-radius: 0.375rem;
+  --brand-hero-navy: #001A4D;
+  --brand-tile-navy: #0A2342;
+  --brand-wave-cyan: #4FC3F7;
+}
+
+.akamai-brand {
+  --cta-banner-background: transparent;
+  --cta-banner-foreground: #000000;
+
+  --cta-banner-button: #0b4be8;
+  --cta-banner-button-hover: #0035a9;
+  --cta-banner-button-foreground: #ffffff;
+  --cta-banner-button-radius: 9999px;
+
+  --cta-banner-radius: 24px;
+
+  --akamai-banner-radius: 20px;
+
+  --akamai-button-primary-bg: #0b4be8;
+  --akamai-button-primary-hover-bg: #0839b5;
+  --akamai-button-primary-color: #ffffff;
+  --akamai-button-primary-radius: 9999px;
+
+  --akamai-button-accent-bg: #ff8a00;
+  --akamai-button-accent-hover-bg: #e87900;
+  --akamai-button-accent-color: #000000;
+  --akamai-button-accent-radius: 9999px;
+
+  /* Capability cards */
+  --akamai-card-background: #ffffff;
+  --akamai-card-radius: 10px;
+  --akamai-card-shadow: 0 4px 18px rgb(0 0 0 / 10%);
+
+  --akamai-card-background: #ffffff;
+  --akamai-card-radius: 10px;
+  --akamai-card-shadow: 0 4px 18px rgb(0 0 0 / 10%);
+
+  --akamai-carousel-control-size: 48px;
+  --akamai-carousel-control-color: #0b4be8;
+  --akamai-carousel-control-disabled-bg: #f3f3f3;
+}
+
