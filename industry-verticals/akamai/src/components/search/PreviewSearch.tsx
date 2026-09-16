@@ -133,11 +133,24 @@ export const Default = (props: PreviewSearchProps) => {
   const hasTypedQuery = inputValue.trim().length > 0;
   const hasDebouncedQuery = debouncedQuery.trim().length > 0;
 
-  const { previewResults, isLoading, isSuccess, isError } = useSuggest<SearchDocument>({
-    searchIndexId,
+  // const { previewResults, isLoading, isSuccess, isError } = useSuggest<SearchDocument>({
+  //   searchIndexId,
+  //   query: debouncedQuery,
+  //   enabled: Boolean(searchIndexId) && hasDebouncedQuery,
+  //   keepPreviousData: true,
+  // });
+  console.log(`searching for: ${debouncedQuery}`);
+
+  const {
+    querySuggestions,
+    previewResults,
+    isLoading,
+    isSuccess,
+    isError,
+    error,
+  } = useSuggest({
+    searchIndexId: searchIndexId,
     query: debouncedQuery,
-    enabled: Boolean(searchIndexId) && hasDebouncedQuery,
-    keepPreviousData: true,
   });
 
   const results = useMemo(
