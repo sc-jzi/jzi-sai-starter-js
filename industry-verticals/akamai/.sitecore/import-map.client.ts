@@ -14,38 +14,39 @@ import React from 'react';
 import { getSiteThemeClass } from 'lib/site-theme';
 import { Text, useSitecore, NextImage, Link, RichText, Placeholder, withDatasourceCheck, Image as Image_8a80e63291fea86e0744df19113dc44bec187216, AppPlaceholder, CdpHelper } from '@sitecore-content-sdk/nextjs';
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
-import { usePreviewSearchActions, useSearchResultsActions, WidgetDataType, useSearchResults, widget, PageController, WidgetsProvider, useQuestions, usePreviewSearch, FilterEqual, useSearchResultsSelectedFilters } from '@sitecore-search/react';
-import { PreviewSearch, SortSelect, Pagination, AccordionFacets, FacetItem, RangeFacet, SearchResultsAccordionFacets, SearchResultsFacetValueRange, Select, ArticleCard, CardViewSwitcher as CardViewSwitcher_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7 } from '@sitecore-search/ui';
-import { GridIcon, ListBulletIcon, ArrowLeftIcon, ArrowRightIcon, CheckIcon, ChevronDownIcon } from '@radix-ui/react-icons';
-import { HIGHLIGHTED_ARTICLES_RFKID, SEARCH_WIDGET_ID, PREVIEW_WIDGET_ID, DEFAULT_IMG_URL, HOMEHIGHLIGHTED_WIDGET_ID } from 'src/_data/customizations';
-import HomeHighlighted from 'src/components/search/HomeHighlighted';
-import Spinner from 'src/components/search/Spinner';
-import ArticleItemCard from 'src/components/search/ArticleCard';
-import SortOrder from 'src/components/search/SortOrder';
-import ArticleHorizontalItemCard from 'src/components/search/ArticleHorizontalCard';
-import SearchPagination from 'src/components/search/SearchPagination';
-import SearchFacets from 'src/components/search/SearchFacets';
-import ResultsPerPage from 'src/components/search/ResultsPerPage';
-import QueryResultsSummary from 'src/components/search/QueryResultsSummary';
-import CardViewSwitcher from 'src/components/search/CardViewSwitcher';
-import { useSearchTracking } from 'src/hooks/useSearchTracking';
-import SearchResultsWidget from 'src/components/search/SearchResultsComponent';
-import QuestionsAnswers from 'src/components/search/QuestionsAnswers';
-import { Accordion, Content, Header, Item, Trigger } from '@radix-ui/react-accordion';
 import Image from 'next/image';
-import SuggestionBlock from 'src/components/search/SuggestionBlock';
-import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
+import { useSuggest } from '@sitecore-content-sdk/nextjs/search';
+import { DEFAULT_IMG_URL, HIGHLIGHTED_ARTICLES_RFKID, SEARCH_WIDGET_ID, PREVIEW_WIDGET_ID, HOMEHIGHLIGHTED_WIDGET_ID } from 'src/_data/customizations';
 import useVisibility from 'src/hooks/useVisibility';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, EffectCoverflow, Pagination as Pagination_8dba730cdca19ae0ff3cf106a6e16ccff9e9cae7, Navigation } from 'swiper/modules';
+import { Autoplay, EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import { CountUp } from 'components/non-sitecore/CountUp';
 import { DottedAccent } from 'components/non-sitecore/DottedAccent';
+import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import { FacebookIcon, FacebookShareButton, LinkedinIcon, LinkedinShareButton, TwitterIcon, TwitterShareButton } from 'react-share';
 import Head from 'next/head';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import { ParallaxBackgroundImage } from 'components/non-sitecore/ParallaxBackgroundImage';
 import { IconAccent } from 'components/non-sitecore/IconAccent';
-import PreviewSearch_4de1a796917131c02c1d8f23d3df1bc9d5bbcf97 from 'src/components/search/PreviewSearch';
+import PreviewSearch from 'src/components/search/PreviewSearch';
+import { usePreviewSearchActions, useSearchResultsActions, WidgetDataType, useSearchResults, widget, PageController, WidgetsProvider, useQuestions, usePreviewSearch, FilterEqual, useSearchResultsSelectedFilters } from '@sitecore-search/react';
+import { PreviewSearch as PreviewSearch_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7, SortSelect, Pagination as Pagination_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7, AccordionFacets, FacetItem, RangeFacet, SearchResultsAccordionFacets, SearchResultsFacetValueRange, Select, ArticleCard, CardViewSwitcher as CardViewSwitcher_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7 } from '@sitecore-search/ui';
+import { GridIcon, ListBulletIcon, ArrowLeftIcon, ArrowRightIcon, CheckIcon, ChevronDownIcon } from '@radix-ui/react-icons';
+import HomeHighlighted from 'src/components/legacysearch/HomeHighlighted';
+import Spinner from 'src/components/legacysearch/Spinner';
+import ArticleItemCard from 'src/components/legacysearch/ArticleCard';
+import SortOrder from 'src/components/legacysearch/SortOrder';
+import ArticleHorizontalItemCard from 'src/components/legacysearch/ArticleHorizontalCard';
+import SearchPagination from 'src/components/legacysearch/SearchPagination';
+import SearchFacets from 'src/components/legacysearch/SearchFacets';
+import ResultsPerPage from 'src/components/legacysearch/ResultsPerPage';
+import QueryResultsSummary from 'src/components/legacysearch/QueryResultsSummary';
+import CardViewSwitcher from 'src/components/legacysearch/CardViewSwitcher';
+import { useSearchTracking } from 'src/hooks/useSearchTracking';
+import SearchResultsWidget from 'src/components/legacysearch/SearchResultsComponent';
+import QuestionsAnswers from 'src/components/legacysearch/QuestionsAnswers';
+import { Accordion, Content, Header, Item, Trigger } from '@radix-ui/react-accordion';
+import SuggestionBlock from 'src/components/legacysearch/SuggestionBlock';
 import client from 'src/lib/sitecore-client';
 import { pageView } from '@sitecore-content-sdk/events';
 import config from 'sitecore.config';
@@ -101,162 +102,25 @@ const importMap = [
     ]
   },
   {
-    module: '@sitecore-search/react',
-    exports: [
-      { name: 'usePreviewSearchActions', value: usePreviewSearchActions },
-      { name: 'useSearchResultsActions', value: useSearchResultsActions },
-      { name: 'WidgetDataType', value: WidgetDataType },
-      { name: 'useSearchResults', value: useSearchResults },
-      { name: 'widget', value: widget },
-      { name: 'PageController', value: PageController },
-      { name: 'WidgetsProvider', value: WidgetsProvider },
-      { name: 'useQuestions', value: useQuestions },
-      { name: 'usePreviewSearch', value: usePreviewSearch },
-      { name: 'FilterEqual', value: FilterEqual },
-      { name: 'useSearchResultsSelectedFilters', value: useSearchResultsSelectedFilters },
-    ]
-  },
-  {
-    module: '@sitecore-search/ui',
-    exports: [
-      { name: 'PreviewSearch', value: PreviewSearch },
-      { name: 'SortSelect', value: SortSelect },
-      { name: 'Pagination', value: Pagination },
-      { name: 'AccordionFacets', value: AccordionFacets },
-      { name: 'FacetItem', value: FacetItem },
-      { name: 'RangeFacet', value: RangeFacet },
-      { name: 'SearchResultsAccordionFacets', value: SearchResultsAccordionFacets },
-      { name: 'SearchResultsFacetValueRange', value: SearchResultsFacetValueRange },
-      { name: 'Select', value: Select },
-      { name: 'ArticleCard', value: ArticleCard },
-      { name: 'CardViewSwitcher', value: CardViewSwitcher_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7 },
-    ]
-  },
-  {
-    module: '@radix-ui/react-icons',
-    exports: [
-      { name: 'GridIcon', value: GridIcon },
-      { name: 'ListBulletIcon', value: ListBulletIcon },
-      { name: 'ArrowLeftIcon', value: ArrowLeftIcon },
-      { name: 'ArrowRightIcon', value: ArrowRightIcon },
-      { name: 'CheckIcon', value: CheckIcon },
-      { name: 'ChevronDownIcon', value: ChevronDownIcon },
-    ]
-  },
-  {
-    module: 'src/_data/customizations',
-    exports: [
-      { name: 'HIGHLIGHTED_ARTICLES_RFKID', value: HIGHLIGHTED_ARTICLES_RFKID },
-      { name: 'SEARCH_WIDGET_ID', value: SEARCH_WIDGET_ID },
-      { name: 'PREVIEW_WIDGET_ID', value: PREVIEW_WIDGET_ID },
-      { name: 'DEFAULT_IMG_URL', value: DEFAULT_IMG_URL },
-      { name: 'HOMEHIGHLIGHTED_WIDGET_ID', value: HOMEHIGHLIGHTED_WIDGET_ID },
-    ]
-  },
-  {
-    module: 'src/components/search/HomeHighlighted',
-    exports: [
-      { name: 'default', value: HomeHighlighted },
-    ]
-  },
-  {
-    module: 'src/components/search/Spinner',
-    exports: [
-      { name: 'default', value: Spinner },
-    ]
-  },
-  {
-    module: 'src/components/search/ArticleCard',
-    exports: [
-      { name: 'default', value: ArticleItemCard },
-    ]
-  },
-  {
-    module: 'src/components/search/SortOrder',
-    exports: [
-      { name: 'default', value: SortOrder },
-    ]
-  },
-  {
-    module: 'src/components/search/ArticleHorizontalCard',
-    exports: [
-      { name: 'default', value: ArticleHorizontalItemCard },
-    ]
-  },
-  {
-    module: 'src/components/search/SearchPagination',
-    exports: [
-      { name: 'default', value: SearchPagination },
-    ]
-  },
-  {
-    module: 'src/components/search/SearchFacets',
-    exports: [
-      { name: 'default', value: SearchFacets },
-    ]
-  },
-  {
-    module: 'src/components/search/ResultsPerPage',
-    exports: [
-      { name: 'default', value: ResultsPerPage },
-    ]
-  },
-  {
-    module: 'src/components/search/QueryResultsSummary',
-    exports: [
-      { name: 'default', value: QueryResultsSummary },
-    ]
-  },
-  {
-    module: 'src/components/search/CardViewSwitcher',
-    exports: [
-      { name: 'default', value: CardViewSwitcher },
-    ]
-  },
-  {
-    module: 'src/hooks/useSearchTracking',
-    exports: [
-      { name: 'useSearchTracking', value: useSearchTracking },
-    ]
-  },
-  {
-    module: 'src/components/search/SearchResultsComponent',
-    exports: [
-      { name: 'default', value: SearchResultsWidget },
-    ]
-  },
-  {
-    module: 'src/components/search/QuestionsAnswers',
-    exports: [
-      { name: 'default', value: QuestionsAnswers },
-    ]
-  },
-  {
-    module: '@radix-ui/react-accordion',
-    exports: [
-      { name: 'Accordion', value: Accordion },
-      { name: 'Content', value: Content },
-      { name: 'Header', value: Header },
-      { name: 'Item', value: Item },
-      { name: 'Trigger', value: Trigger },
-    ]
-  },
-  {
     module: 'next/image',
     exports: [
       { name: 'default', value: Image },
     ]
   },
   {
-    module: 'src/components/search/SuggestionBlock',
+    module: '@sitecore-content-sdk/nextjs/search',
     exports: [
-      { name: 'default', value: SuggestionBlock },
+      { name: 'useSuggest', value: useSuggest },
     ]
   },
   {
-    module: 'next/link',
+    module: 'src/_data/customizations',
     exports: [
-      { name: 'default', value: Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 },
+      { name: 'DEFAULT_IMG_URL', value: DEFAULT_IMG_URL },
+      { name: 'HIGHLIGHTED_ARTICLES_RFKID', value: HIGHLIGHTED_ARTICLES_RFKID },
+      { name: 'SEARCH_WIDGET_ID', value: SEARCH_WIDGET_ID },
+      { name: 'PREVIEW_WIDGET_ID', value: PREVIEW_WIDGET_ID },
+      { name: 'HOMEHIGHLIGHTED_WIDGET_ID', value: HOMEHIGHLIGHTED_WIDGET_ID },
     ]
   },
   {
@@ -277,7 +141,7 @@ const importMap = [
     exports: [
       { name: 'Autoplay', value: Autoplay },
       { name: 'EffectCoverflow', value: EffectCoverflow },
-      { name: 'Pagination', value: Pagination_8dba730cdca19ae0ff3cf106a6e16ccff9e9cae7 },
+      { name: 'Pagination', value: Pagination },
       { name: 'Navigation', value: Navigation },
     ]
   },
@@ -291,6 +155,12 @@ const importMap = [
     module: 'components/non-sitecore/DottedAccent',
     exports: [
       { name: 'DottedAccent', value: DottedAccent },
+    ]
+  },
+  {
+    module: 'next/link',
+    exports: [
+      { name: 'default', value: Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 },
     ]
   },
   {
@@ -331,7 +201,144 @@ const importMap = [
   {
     module: 'src/components/search/PreviewSearch',
     exports: [
-      { name: 'default', value: PreviewSearch_4de1a796917131c02c1d8f23d3df1bc9d5bbcf97 },
+      { name: 'default', value: PreviewSearch },
+    ]
+  },
+  {
+    module: '@sitecore-search/react',
+    exports: [
+      { name: 'usePreviewSearchActions', value: usePreviewSearchActions },
+      { name: 'useSearchResultsActions', value: useSearchResultsActions },
+      { name: 'WidgetDataType', value: WidgetDataType },
+      { name: 'useSearchResults', value: useSearchResults },
+      { name: 'widget', value: widget },
+      { name: 'PageController', value: PageController },
+      { name: 'WidgetsProvider', value: WidgetsProvider },
+      { name: 'useQuestions', value: useQuestions },
+      { name: 'usePreviewSearch', value: usePreviewSearch },
+      { name: 'FilterEqual', value: FilterEqual },
+      { name: 'useSearchResultsSelectedFilters', value: useSearchResultsSelectedFilters },
+    ]
+  },
+  {
+    module: '@sitecore-search/ui',
+    exports: [
+      { name: 'PreviewSearch', value: PreviewSearch_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7 },
+      { name: 'SortSelect', value: SortSelect },
+      { name: 'Pagination', value: Pagination_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7 },
+      { name: 'AccordionFacets', value: AccordionFacets },
+      { name: 'FacetItem', value: FacetItem },
+      { name: 'RangeFacet', value: RangeFacet },
+      { name: 'SearchResultsAccordionFacets', value: SearchResultsAccordionFacets },
+      { name: 'SearchResultsFacetValueRange', value: SearchResultsFacetValueRange },
+      { name: 'Select', value: Select },
+      { name: 'ArticleCard', value: ArticleCard },
+      { name: 'CardViewSwitcher', value: CardViewSwitcher_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7 },
+    ]
+  },
+  {
+    module: '@radix-ui/react-icons',
+    exports: [
+      { name: 'GridIcon', value: GridIcon },
+      { name: 'ListBulletIcon', value: ListBulletIcon },
+      { name: 'ArrowLeftIcon', value: ArrowLeftIcon },
+      { name: 'ArrowRightIcon', value: ArrowRightIcon },
+      { name: 'CheckIcon', value: CheckIcon },
+      { name: 'ChevronDownIcon', value: ChevronDownIcon },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/HomeHighlighted',
+    exports: [
+      { name: 'default', value: HomeHighlighted },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/Spinner',
+    exports: [
+      { name: 'default', value: Spinner },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/ArticleCard',
+    exports: [
+      { name: 'default', value: ArticleItemCard },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/SortOrder',
+    exports: [
+      { name: 'default', value: SortOrder },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/ArticleHorizontalCard',
+    exports: [
+      { name: 'default', value: ArticleHorizontalItemCard },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/SearchPagination',
+    exports: [
+      { name: 'default', value: SearchPagination },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/SearchFacets',
+    exports: [
+      { name: 'default', value: SearchFacets },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/ResultsPerPage',
+    exports: [
+      { name: 'default', value: ResultsPerPage },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/QueryResultsSummary',
+    exports: [
+      { name: 'default', value: QueryResultsSummary },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/CardViewSwitcher',
+    exports: [
+      { name: 'default', value: CardViewSwitcher },
+    ]
+  },
+  {
+    module: 'src/hooks/useSearchTracking',
+    exports: [
+      { name: 'useSearchTracking', value: useSearchTracking },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/SearchResultsComponent',
+    exports: [
+      { name: 'default', value: SearchResultsWidget },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/QuestionsAnswers',
+    exports: [
+      { name: 'default', value: QuestionsAnswers },
+    ]
+  },
+  {
+    module: '@radix-ui/react-accordion',
+    exports: [
+      { name: 'Accordion', value: Accordion },
+      { name: 'Content', value: Content },
+      { name: 'Header', value: Header },
+      { name: 'Item', value: Item },
+      { name: 'Trigger', value: Trigger },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/SuggestionBlock',
+    exports: [
+      { name: 'default', value: SuggestionBlock },
     ]
   },
   {

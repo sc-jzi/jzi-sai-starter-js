@@ -12,22 +12,7 @@ import * as LoanCalculator from 'src/components/utilities/LoanCalculator';
 import * as LanguageSwitcher from 'src/components/utilities/LanguageSwitcher';
 import * as ContactForm from 'src/components/utilities/ContactForm';
 import * as ApplicationForm from 'src/components/utilities/ApplicationForm';
-import * as SuggestionBlock from 'src/components/search/SuggestionBlock';
-import * as SortOrder from 'src/components/search/SortOrder';
-import * as SearchResultsComponent from 'src/components/search/SearchResultsComponent';
-import * as SearchResults from 'src/components/search/SearchResults';
-import * as SearchProvider from 'src/components/search/SearchProvider';
-import * as SearchPagination from 'src/components/search/SearchPagination';
-import * as SearchFacets from 'src/components/search/SearchFacets';
-import * as ResultsPerPage from 'src/components/search/ResultsPerPage';
-import * as QuestionsAnswers from 'src/components/search/QuestionsAnswers';
-import * as QueryResultsSummary from 'src/components/search/QueryResultsSummary';
 import * as PreviewSearch from 'src/components/search/PreviewSearch';
-import * as HomeHighlighted from 'src/components/search/HomeHighlighted';
-import * as Filter from 'src/components/search/Filter';
-import * as CardViewSwitcher from 'src/components/search/CardViewSwitcher';
-import * as ArticleHorizontalCard from 'src/components/search/ArticleHorizontalCard';
-import * as ArticleCard from 'src/components/search/ArticleCard';
 import * as ColumnSplitter from 'src/components/pagestructure/ColumnSplitter';
 import * as TwoColumnCta from 'src/components/pagecontent/TwoColumnCta';
 import * as ThreeColumnCta from 'src/components/pagecontent/ThreeColumnCta';
@@ -68,6 +53,22 @@ import * as Header from 'src/components/navigation/Header';
 import * as Footer from 'src/components/navigation/Footer';
 import * as Eyebrow from 'src/components/navigation/Eyebrow';
 import * as Breadcrumb from 'src/components/navigation/Breadcrumb';
+import * as SuggestionBlock from 'src/components/legacysearch/SuggestionBlock';
+import * as SortOrder from 'src/components/legacysearch/SortOrder';
+import * as SearchResultsComponent from 'src/components/legacysearch/SearchResultsComponent';
+import * as SearchResults from 'src/components/legacysearch/SearchResults';
+import * as SearchProvider from 'src/components/legacysearch/SearchProvider';
+import * as SearchPagination from 'src/components/legacysearch/SearchPagination';
+import * as SearchFacets from 'src/components/legacysearch/SearchFacets';
+import * as ResultsPerPage from 'src/components/legacysearch/ResultsPerPage';
+import * as QuestionsAnswers from 'src/components/legacysearch/QuestionsAnswers';
+import * as QueryResultsSummary from 'src/components/legacysearch/QueryResultsSummary';
+import * as LegacyPreviewSearch from 'src/components/legacysearch/LegacyPreviewSearch';
+import * as HomeHighlighted from 'src/components/legacysearch/HomeHighlighted';
+import * as Filter from 'src/components/legacysearch/Filter';
+import * as CardViewSwitcher from 'src/components/legacysearch/CardViewSwitcher';
+import * as ArticleHorizontalCard from 'src/components/legacysearch/ArticleHorizontalCard';
+import * as ArticleCard from 'src/components/legacysearch/ArticleCard';
 
 export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['BYOCWrapper', BYOCClientWrapper],
@@ -79,22 +80,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['LanguageSwitcher', { ...LanguageSwitcher }],
   ['ContactForm', { ...ContactForm }],
   ['ApplicationForm', { ...ApplicationForm }],
-  ['SuggestionBlock', { ...SuggestionBlock }],
-  ['SortOrder', { ...SortOrder }],
-  ['SearchResultsComponent', { ...SearchResultsComponent }],
-  ['SearchResults', { ...SearchResults }],
-  ['SearchProvider', { ...SearchProvider }],
-  ['SearchPagination', { ...SearchPagination }],
-  ['SearchFacets', { ...SearchFacets }],
-  ['ResultsPerPage', { ...ResultsPerPage }],
-  ['QuestionsAnswers', { ...QuestionsAnswers }],
-  ['QueryResultsSummary', { ...QueryResultsSummary }],
   ['PreviewSearch', { ...PreviewSearch }],
-  ['HomeHighlighted', { ...HomeHighlighted }],
-  ['Filter', { ...Filter }],
-  ['CardViewSwitcher', { ...CardViewSwitcher }],
-  ['ArticleHorizontalCard', { ...ArticleHorizontalCard }],
-  ['ArticleCard', { ...ArticleCard }],
   ['ColumnSplitter', { ...ColumnSplitter }],
   ['TwoColumnCta', { ...TwoColumnCta }],
   ['ThreeColumnCta', { ...ThreeColumnCta }],
@@ -135,6 +121,22 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Footer', { ...Footer }],
   ['Eyebrow', { ...Eyebrow }],
   ['Breadcrumb', { ...Breadcrumb }],
+  ['SuggestionBlock', { ...SuggestionBlock }],
+  ['SortOrder', { ...SortOrder }],
+  ['SearchResultsComponent', { ...SearchResultsComponent }],
+  ['SearchResults', { ...SearchResults }],
+  ['SearchProvider', { ...SearchProvider }],
+  ['SearchPagination', { ...SearchPagination }],
+  ['SearchFacets', { ...SearchFacets }],
+  ['ResultsPerPage', { ...ResultsPerPage }],
+  ['QuestionsAnswers', { ...QuestionsAnswers }],
+  ['QueryResultsSummary', { ...QueryResultsSummary }],
+  ['LegacyPreviewSearch', { ...LegacyPreviewSearch }],
+  ['HomeHighlighted', { ...HomeHighlighted }],
+  ['Filter', { ...Filter }],
+  ['CardViewSwitcher', { ...CardViewSwitcher }],
+  ['ArticleHorizontalCard', { ...ArticleHorizontalCard }],
+  ['ArticleCard', { ...ArticleCard }],
 ]);
 
 export default componentMap;
