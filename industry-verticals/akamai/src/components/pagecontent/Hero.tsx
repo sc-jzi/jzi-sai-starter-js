@@ -60,47 +60,40 @@ export const Default = (props: AppPromoProps): JSX.Element => {
 /* Akamai variant — left-aligned navy hero with wave bg and orange CTA */
 export const Akamai = (props: AppPromoProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
-  const { page } = useSitecore();
-  const isPageEditing = page.mode.isEditing;
   const sxaStyles = `${props.params?.styles || ''}`;
-  const bgSrc = props.fields?.Image?.value?.src;
 
   return (
     <section
-      className={`component hero akamai-hero relative overflow-hidden bg-[var(--brand-hero-navy)] text-[var(--brand-primary-foreground)] ${sxaStyles}`}
-      id={id ? id : undefined}
-      style={{
-        fontFamily: 'var(--brand-heading-font)',
-        backgroundImage: bgSrc ? `url("${bgSrc}")` : undefined,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center right',
-      }}
+      className={`component hero akamai-brand akamai-hero relative h-[500px] max-h-[500px] overflow-hidden bg-[var(--brand-hero-navy)] text-white ${sxaStyles}`}
+      id={id || undefined}
+      style={{ fontFamily: 'var(--brand-heading-font)' }}
     >
-      <div className="relative z-10 mx-auto flex min-h-[28rem] max-w-[1200px] flex-col justify-center px-6 py-16 md:min-h-[32rem] md:py-24">
-        <div className="max-w-2xl text-left">
+      <NextImage
+        field={props.fields.Image}
+        width={1920}
+        height={800}
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
+
+      <div className="relative z-10 mx-auto flex h-full max-w-[1200px] flex-col items-center justify-center px-6 py-10 text-center">
+        <div className="mx-auto max-w-3xl text-center">
           <Text
             field={props.fields.Title}
             tag="h1"
-            className="m-0 text-4xl font-bold leading-tight tracking-tight md:text-5xl"
+            className="akamai-hero__title m-0 text-4xl font-bold leading-tight tracking-tight md:text-5xl"
           />
+
           <RichText
             field={props.fields.Text}
-            className="mt-5 max-w-xl text-base font-normal leading-relaxed text-white/90 md:text-lg [&_p]:mb-0"
+            className="akamai-hero__text mx-auto mt-6 max-w-2xl text-base font-semibold leading-relaxed md:text-lg [&_p]:mb-0"
           />
-          {(isPageEditing || props.fields?.Link?.value?.href) && (
-            <Link
-              field={props.fields.Link}
-              className="mt-8 inline-flex rounded-[var(--brand-button-radius)] bg-[var(--brand-accent)] px-6 py-3 text-sm font-semibold text-[var(--brand-accent-foreground)] no-underline hover:brightness-110"
-            />
-          )}
+
+          <Link
+            field={props.fields.Link}
+            className="akamai-button-accent mt-8"
+          />
         </div>
       </div>
-      {/* Keep Image field editable in Experience Editor */}
-      {isPageEditing && (
-        <div className="sr-only">
-          <NextImage field={props.fields.Image} width={1920} height={800} />
-        </div>
-      )}
     </section>
   );
 };

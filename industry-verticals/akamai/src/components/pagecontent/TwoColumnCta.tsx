@@ -58,9 +58,8 @@ export const Default = (props: TwoColumnCtaProps): JSX.Element => {
 
     return (
       <div
-        className={`col-sm-12 col-lg-6 ${
-          !isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
-        }`}
+        className={`col-sm-12 col-lg-6 ${!isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
+          }`}
         ref={domRef}
       >
         <div className="content-wrapper">
@@ -113,8 +112,6 @@ export const Default = (props: TwoColumnCtaProps): JSX.Element => {
 /* AkamaiProductTiles — side-by-side navy dotted tiles with orange CTAs */
 export const AkamaiProductTiles = (props: TwoColumnCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
-  const { page } = useSitecore();
-  const isPageEditing = page.mode.isEditing;
   const sxaStyles = `${props.params?.styles || ''}`;
 
   const tiles = [
@@ -134,8 +131,8 @@ export const AkamaiProductTiles = (props: TwoColumnCtaProps): JSX.Element => {
 
   return (
     <div
-      className={`component two-column-cta akamai-product-tiles bg-[var(--brand-bg)] py-4 ${sxaStyles}`}
-      id={id ? id : undefined}
+      className={`akamai-brand component two-column-cta akamai-product-tiles bg-[var(--brand-bg)] py-4 ${sxaStyles}`}
+      id={id || undefined}
       style={{ fontFamily: 'var(--brand-heading-font)' }}
     >
       <div className="mx-auto grid max-w-[1200px] gap-4 px-6 md:grid-cols-2">
@@ -143,44 +140,26 @@ export const AkamaiProductTiles = (props: TwoColumnCtaProps): JSX.Element => {
           <div
             key={index}
             className="relative min-h-[14rem] overflow-hidden rounded-[var(--brand-card-radius)] bg-[var(--brand-tile-navy)] p-8 text-[var(--brand-primary-foreground)]"
-            style={{
-              backgroundImage: [
-                'radial-gradient(circle, rgba(79,195,247,0.35) 1px, transparent 1px)',
-                tile.image?.value?.src ? `url("${tile.image.value.src}")` : undefined,
-              ]
-                .filter(Boolean)
-                .join(', '),
-              backgroundSize: tile.image?.value?.src ? '18px 18px, cover' : '18px 18px',
-              backgroundPosition: 'center',
-            }}
           >
+            <NextImage
+              field={tile.image}
+              width={800}
+              height={400}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+
             <div className="relative z-10 flex h-full min-h-[10rem] flex-col justify-end">
-              {(isPageEditing || tile.title?.value) && (
-                <Text
-                  field={tile.title}
-                  tag="h2"
-                  className="m-0 text-3xl font-bold leading-tight md:text-4xl"
-                />
-              )}
-              {(isPageEditing || tile.text?.value) && (
-                <Text
-                  field={tile.text}
-                  tag="p"
-                  className="mb-0 mt-3 max-w-md text-sm text-white/85"
-                />
-              )}
-              {(isPageEditing || tile.link?.value?.href) && (
-                <Link
-                  field={tile.link}
-                  className="mt-6 inline-flex w-fit rounded-[var(--brand-button-radius)] bg-[var(--brand-accent)] px-5 py-2.5 text-sm font-semibold text-[var(--brand-accent-foreground)] no-underline hover:brightness-110"
-                />
-              )}
+              <Text
+                field={tile.title}
+                tag="h2"
+                className="m-0 text-3xl font-bold leading-tight md:text-4xl"
+              />
+
+              <Link
+                field={tile.link}
+                className="akamai-button-accent mt-7"
+              />
             </div>
-            {isPageEditing && (
-              <div className="sr-only">
-                <NextImage field={tile.image} width={800} height={400} />
-              </div>
-            )}
           </div>
         ))}
       </div>
