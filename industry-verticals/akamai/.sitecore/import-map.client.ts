@@ -15,7 +15,7 @@ import { getSiteThemeClass } from 'lib/site-theme';
 import { Text, useSitecore, NextImage, Link, RichText, Placeholder, withDatasourceCheck, Image as Image_8a80e63291fea86e0744df19113dc44bec187216, AppPlaceholder, CdpHelper } from '@sitecore-content-sdk/nextjs';
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import Image from 'next/image';
-import { useSuggest } from '@sitecore-content-sdk/nextjs/search';
+import { useInfiniteSearch, useSuggest } from '@sitecore-content-sdk/nextjs/search';
 import { DEFAULT_IMG_URL, HIGHLIGHTED_ARTICLES_RFKID, SEARCH_WIDGET_ID, PREVIEW_WIDGET_ID, HOMEHIGHLIGHTED_WIDGET_ID } from 'src/_data/customizations';
 import useVisibility from 'src/hooks/useVisibility';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -43,9 +43,9 @@ import ResultsPerPage from 'src/components/legacysearch/ResultsPerPage';
 import QueryResultsSummary from 'src/components/legacysearch/QueryResultsSummary';
 import CardViewSwitcher from 'src/components/legacysearch/CardViewSwitcher';
 import { useSearchTracking } from 'src/hooks/useSearchTracking';
+import { Accordion, Content, Header, Item, Trigger } from '@radix-ui/react-accordion';
 import SearchResultsWidget from 'src/components/legacysearch/SearchResultsComponent';
 import QuestionsAnswers from 'src/components/legacysearch/QuestionsAnswers';
-import { Accordion, Content, Header, Item, Trigger } from '@radix-ui/react-accordion';
 import SuggestionBlock from 'src/components/legacysearch/SuggestionBlock';
 import client from 'src/lib/sitecore-client';
 import { pageView } from '@sitecore-content-sdk/events';
@@ -110,6 +110,7 @@ const importMap = [
   {
     module: '@sitecore-content-sdk/nextjs/search',
     exports: [
+      { name: 'useInfiniteSearch', value: useInfiniteSearch },
       { name: 'useSuggest', value: useSuggest },
     ]
   },
@@ -314,6 +315,16 @@ const importMap = [
     ]
   },
   {
+    module: '@radix-ui/react-accordion',
+    exports: [
+      { name: 'Accordion', value: Accordion },
+      { name: 'Content', value: Content },
+      { name: 'Header', value: Header },
+      { name: 'Item', value: Item },
+      { name: 'Trigger', value: Trigger },
+    ]
+  },
+  {
     module: 'src/components/legacysearch/SearchResultsComponent',
     exports: [
       { name: 'default', value: SearchResultsWidget },
@@ -323,16 +334,6 @@ const importMap = [
     module: 'src/components/legacysearch/QuestionsAnswers',
     exports: [
       { name: 'default', value: QuestionsAnswers },
-    ]
-  },
-  {
-    module: '@radix-ui/react-accordion',
-    exports: [
-      { name: 'Accordion', value: Accordion },
-      { name: 'Content', value: Content },
-      { name: 'Header', value: Header },
-      { name: 'Item', value: Item },
-      { name: 'Trigger', value: Trigger },
     ]
   },
   {

@@ -7,11 +7,11 @@ import SearchResultsWidget from './SearchResultsComponent';
 import QuestionsAnswers from './QuestionsAnswers';
 import { SEARCH_WIDGET_ID } from '../../_data/customizations';
 
-export type SearchResultsProps = ComponentProps & {
+export type LegacySearchResultsProps = ComponentProps & {
   params: { [key: string]: string };
 };
 
-const SearchResultsInner = (props: SearchResultsProps): JSX.Element => {
+const LegacySearchResultsInner = (props: LegacySearchResultsProps): JSX.Element => {
   const sxaStyles = `${props.params?.styles || ''}`;
   const searchParams = useSearchParams();
   const query = searchParams?.get('q') || '';
@@ -29,12 +29,12 @@ const SearchResultsInner = (props: SearchResultsProps): JSX.Element => {
   );
 };
 
-export const SearchResults = (props: SearchResultsProps): JSX.Element => {
+export const LegacySearchResults = (props: LegacySearchResultsProps): JSX.Element => {
   return (
     <Suspense fallback={null}>
-      <SearchResultsInner {...props} />
+      <LegacySearchResultsInner {...props} />
     </Suspense>
   );
 };
 
-export const Default = SearchResults;
+export const Default = LegacySearchResults;

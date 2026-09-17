@@ -12,6 +12,7 @@ import * as LoanCalculator from 'src/components/utilities/LoanCalculator';
 import * as LanguageSwitcher from 'src/components/utilities/LanguageSwitcher';
 import * as ContactForm from 'src/components/utilities/ContactForm';
 import * as ApplicationForm from 'src/components/utilities/ApplicationForm';
+import * as SearchResults from 'src/components/search/SearchResults';
 import * as PreviewSearch from 'src/components/search/PreviewSearch';
 import * as ColumnSplitter from 'src/components/pagestructure/ColumnSplitter';
 import * as TwoColumnCta from 'src/components/pagecontent/TwoColumnCta';
@@ -56,13 +57,13 @@ import * as Breadcrumb from 'src/components/navigation/Breadcrumb';
 import * as SuggestionBlock from 'src/components/legacysearch/SuggestionBlock';
 import * as SortOrder from 'src/components/legacysearch/SortOrder';
 import * as SearchResultsComponent from 'src/components/legacysearch/SearchResultsComponent';
-import * as SearchResults from 'src/components/legacysearch/SearchResults';
 import * as SearchProvider from 'src/components/legacysearch/SearchProvider';
 import * as SearchPagination from 'src/components/legacysearch/SearchPagination';
 import * as SearchFacets from 'src/components/legacysearch/SearchFacets';
 import * as ResultsPerPage from 'src/components/legacysearch/ResultsPerPage';
 import * as QuestionsAnswers from 'src/components/legacysearch/QuestionsAnswers';
 import * as QueryResultsSummary from 'src/components/legacysearch/QueryResultsSummary';
+import * as LegacySearchResults from 'src/components/legacysearch/LegacySearchResults';
 import * as LegacyPreviewSearch from 'src/components/legacysearch/LegacyPreviewSearch';
 import * as HomeHighlighted from 'src/components/legacysearch/HomeHighlighted';
 import * as Filter from 'src/components/legacysearch/Filter';
@@ -80,6 +81,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['LanguageSwitcher', { ...LanguageSwitcher }],
   ['ContactForm', { ...ContactForm }],
   ['ApplicationForm', { ...ApplicationForm }],
+  ['SearchResults', { ...SearchResults }],
   ['PreviewSearch', { ...PreviewSearch }],
   ['ColumnSplitter', { ...ColumnSplitter }],
   ['TwoColumnCta', { ...TwoColumnCta }],
@@ -124,13 +126,13 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['SuggestionBlock', { ...SuggestionBlock }],
   ['SortOrder', { ...SortOrder }],
   ['SearchResultsComponent', { ...SearchResultsComponent }],
-  ['SearchResults', { ...SearchResults }],
   ['SearchProvider', { ...SearchProvider }],
   ['SearchPagination', { ...SearchPagination }],
   ['SearchFacets', { ...SearchFacets }],
   ['ResultsPerPage', { ...ResultsPerPage }],
   ['QuestionsAnswers', { ...QuestionsAnswers }],
   ['QueryResultsSummary', { ...QueryResultsSummary }],
+  ['LegacySearchResults', { ...LegacySearchResults }],
   ['LegacyPreviewSearch', { ...LegacyPreviewSearch }],
   ['HomeHighlighted', { ...HomeHighlighted }],
   ['Filter', { ...Filter }],
