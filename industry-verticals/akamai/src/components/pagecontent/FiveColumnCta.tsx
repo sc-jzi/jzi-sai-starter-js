@@ -35,6 +35,45 @@ export type FiveColumnCtaProps = {
   fields: Fields;
 };
 
+/* AkamaiLogoBar — grayscale trust/logo strip */
+export const AkamaiLogoBar = (props: FiveColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const logos = [
+    { image: props.fields?.Image1, link: props.fields?.Link1, text: props.fields?.Text1 },
+    { image: props.fields?.Image2, link: props.fields?.Link2, text: props.fields?.Text2 },
+    { image: props.fields?.Image3, link: props.fields?.Link3, text: props.fields?.Text3 },
+    { image: props.fields?.Image4, link: props.fields?.Link4, text: props.fields?.Text4 },
+    { image: props.fields?.Image5, link: props.fields?.Link5, text: props.fields?.Text5 },
+  ];
+
+  return (
+    <div
+      className={`component five-column-cta akamai-brand akamai-logo-bar bg-[var(--brand-bg)] py-12 ${sxaStyles}`}
+      id={id || undefined}
+      style={{ fontFamily: 'var(--brand-heading-font)' }}
+    >
+      <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-center gap-x-10 gap-y-6 px-6">
+        {logos.map((logo, index) => (
+          <Link
+            key={index}
+            field={logo.link}
+            className="inline-flex max-w-[140px] items-center justify-center opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
+          >
+            <NextImage
+              field={logo.image}
+              width={140}
+              height={48}
+              className="h-10 w-auto max-w-full object-contain"
+            />
+          </Link>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 export const Default = (props: FiveColumnCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

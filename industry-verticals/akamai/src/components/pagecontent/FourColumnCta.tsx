@@ -232,3 +232,49 @@ export const AkamaiWhatsNew = (props: FourColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* AkamaiIconBar — full-bleed blue bar with four icon + title + short text columns */
+export const AkamaiIconBar = (props: FourColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const items = [
+    { image: props.fields?.Image1, title: props.fields?.Title1, text: props.fields?.Text1 },
+    { image: props.fields?.Image2, title: props.fields?.Title2, text: props.fields?.Text2 },
+    { image: props.fields?.Image3, title: props.fields?.Title3, text: props.fields?.Text3 },
+    { image: props.fields?.Image4, title: props.fields?.Title4, text: props.fields?.Text4 },
+  ];
+
+  return (
+    <div
+      className={`component four-column-cta akamai-brand akamai-icon-bar bg-[url('https://jzi-verticals.sitecoresandbox.cloud/api/public/content/d8dbed68352740428f7e93d66d847c8d?v=a7d27d89')] bg-[#0047e2] bg-blend-multiply py-10 my-[40px] text-white ${sxaStyles}`}
+      id={id || undefined}
+      style={{ fontFamily: 'var(--brand-heading-font)' }}
+    >
+      <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-8 px-6 sm:grid-cols-2 lg:grid-cols-4">
+        {items.map((item, index) => (
+          <div key={index} className="flex flex-col items-start gap-3 text-left">
+            <NextImage
+              field={item.image}
+              width={40}
+              height={40}
+              className="h-10 w-10 object-contain brightness-0 invert"
+            />
+            <Text
+              field={item.title}
+              tag="h3"
+              className="m-0 text-base font-semibold text-white"
+            />
+            {(item.text?.value) && (
+              <Text
+                field={item.text}
+                tag="p"
+                className="mb-0 text-sm leading-relaxed text-white/85"
+              />
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};

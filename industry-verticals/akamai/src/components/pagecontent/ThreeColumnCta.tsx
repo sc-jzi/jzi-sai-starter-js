@@ -58,9 +58,8 @@ export const Default = (props: ThreeColumnCtaProps): JSX.Element => {
 
     return (
       <div
-        className={`col-sm-12 col-lg-4 ${
-          !isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
-        } `}
+        className={`col-sm-12 col-lg-4 ${!isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
+          } `}
         ref={domRef}
       >
         <div className="content-wrapper">
@@ -134,9 +133,8 @@ export const WithIcons = (props: ThreeColumnCtaProps): JSX.Element => {
     const [isVisible, domRef] = useVisibility(delay);
     return (
       <div
-        className={`col-sm-12 col-lg-4 ${
-          !isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
-        } `}
+        className={`col-sm-12 col-lg-4 ${!isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
+          } `}
         ref={domRef}
       >
         <Link field={link} className="wrapper-link">
@@ -211,9 +209,8 @@ export const WithIconsCompact = (props: ThreeColumnCtaProps): JSX.Element => {
     const [isVisible, domRef] = useVisibility(delay);
     return (
       <div
-        className={`col-sm-12 col-lg-4 ${
-          !isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
-        } `}
+        className={`col-sm-12 col-lg-4 ${!isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
+          } `}
         ref={domRef}
       >
         <Link field={link} className="wrapper-link">
@@ -337,6 +334,156 @@ export const Akamai = (props: ThreeColumnCtaProps): JSX.Element => {
                 />
               )}
             </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+/* AkamaiValueProps — three icon + title + body columns (no cards) */
+export const AkamaiValueProps = (props: ThreeColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const columns = [
+    { image: props.fields?.Image1, title: props.fields?.Text1, description: props.fields?.SubText1 },
+    { image: props.fields?.Image2, title: props.fields?.Text2, description: props.fields?.SubText2 },
+    { image: props.fields?.Image3, title: props.fields?.Text3, description: props.fields?.SubText3 },
+  ];
+
+  return (
+    <div
+      className={`component three-column-cta akamai-brand akamai-value-props bg-[var(--brand-bg)] py-12 ${sxaStyles}`}
+      id={id || undefined}
+      style={{ fontFamily: 'var(--brand-heading-font)' }}
+    >
+      <div className="mx-auto grid max-w-[1200px] gap-10 px-6 md:grid-cols-3">
+        {columns.map((column, index) => (
+          <div key={index} className="flex flex-col items-start gap-3 text-left">
+            <Text
+              field={column.title}
+              tag="h3"
+              className="m-0 text-lg font-bold text-black"
+            />
+            <Text
+              field={column.description}
+              tag="p"
+              className="mb-0 text-sm leading-relaxed text-[var(--brand-muted-fg)]"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+/* AkamaiFeatureCards — bordered feature cards with icon + title + body */
+export const AkamaiFeatureCards = (props: ThreeColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const columns = [
+    { image: props.fields?.Image1, title: props.fields?.Text1, description: props.fields?.SubText1 },
+    { image: props.fields?.Image2, title: props.fields?.Text2, description: props.fields?.SubText2 },
+    { image: props.fields?.Image3, title: props.fields?.Text3, description: props.fields?.SubText3 },
+  ];
+
+  return (
+    <div
+      className={`component three-column-cta akamai-brand akamai-feature-cards bg-[var(--brand-bg)] py-4 ${sxaStyles}`}
+      id={id || undefined}
+      style={{ fontFamily: 'var(--brand-heading-font)' }}
+    >
+      <div className="mx-auto grid max-w-[1200px] gap-6 px-6 md:grid-cols-3">
+        {columns.map((column, index) => (
+          <div
+            key={index}
+            className="flex flex-col gap-3 rounded-[var(--akamai-card-radius)] border border-[rgba(0,40,86,0.12)] bg-white p-6"
+          >
+            <NextImage
+              field={column.image}
+              width={36}
+              height={36}
+              className="h-9 w-9 object-contain"
+            />
+            <Text
+              field={column.title}
+              tag="h3"
+              className="m-0 text-base font-bold text-black"
+            />
+            <Text
+              field={column.description}
+              tag="p"
+              className="mb-0 text-sm leading-relaxed text-[var(--brand-muted-fg)]"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+/* AkamaiStories — customer success cards (logo, summary, text link) */
+export const AkamaiStories = (props: ThreeColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const columns = [
+    {
+      image: props.fields?.Image1,
+      title: props.fields?.Text1,
+      description: props.fields?.SubText1,
+      link: props.fields?.Link1,
+    },
+    {
+      image: props.fields?.Image2,
+      title: props.fields?.Text2,
+      description: props.fields?.SubText2,
+      link: props.fields?.Link2,
+    },
+    {
+      image: props.fields?.Image3,
+      title: props.fields?.Text3,
+      description: props.fields?.SubText3,
+      link: props.fields?.Link3,
+    },
+  ];
+
+  return (
+    <div
+      className={`component three-column-cta akamai-brand akamai-stories bg-[var(--brand-bg)] pb-16 ${sxaStyles}`}
+      id={id || undefined}
+      style={{ fontFamily: 'var(--brand-heading-font)' }}
+    >
+      <div className="mx-auto grid max-w-[1200px] gap-6 px-6 md:grid-cols-3">
+        {columns.map((column, index) => (
+          <div
+            key={index}
+            className="flex flex-col rounded-[var(--akamai-card-radius)] bg-white p-6 shadow-[var(--akamai-card-shadow)]"
+          >
+            <NextImage
+              field={column.image}
+              width={384}
+              height={216}
+              className="mb-5 h-10 w-auto object-contain object-left"
+            />
+            <Text
+              field={column.title}
+              tag="h3"
+              className="mb-0 flex-1 text-sm leading-relaxed text-black"
+            />
+            <Text
+              field={column.description}
+              tag="p"
+              className="mb-0 flex-1 text-sm leading-relaxed text-black"
+            />
+            <Link
+              field={column.link}
+              className="mt-5 akamai-button-primary"
+            />
           </div>
         ))}
       </div>

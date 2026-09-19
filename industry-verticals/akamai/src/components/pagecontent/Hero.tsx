@@ -57,7 +57,7 @@ export const Default = (props: AppPromoProps): JSX.Element => {
   );
 };
 
-/* Akamai variant — left-aligned navy hero with wave bg and orange CTA */
+/* Akamai variant — centered navy hero with wave bg and orange CTA */
 export const Akamai = (props: AppPromoProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const sxaStyles = `${props.params?.styles || ''}`;
@@ -92,6 +92,44 @@ export const Akamai = (props: AppPromoProps): JSX.Element => {
             field={props.fields.Link}
             className="akamai-button-accent mt-8"
           />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* AkamaiProduct — left-aligned product-page hero (breadcrumb-friendly copy + orange CTA) */
+export const AkamaiProduct = (props: AppPromoProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <section
+      className={`component hero akamai-brand akamai-hero-product relative h-[388px] overflow-hidden bg-[var(--brand-hero-navy)] text-white ${sxaStyles}`}
+      id={id || undefined}
+      style={{ fontFamily: 'var(--brand-heading-font)' }}
+    >
+      <NextImage
+        field={props.fields.Image}
+        width={1910}
+        height={388}
+        className="absolute inset-0 h-[388px] w-full object-cover object-right"
+      />
+
+      <div className="relative z-10 mx-auto flex max-w-[1200px] items-center px-6 py-16">
+        <div className="max-w-2xl text-left">
+          <Text
+            field={props.fields.Title}
+            tag="h1"
+            className="m-0 text-4xl font-bold leading-tight tracking-tight md:text-5xl"
+          />
+
+          <RichText
+            field={props.fields.Text}
+            className="mt-5 max-w-xl text-base leading-relaxed text-white/90 md:text-lg [&_p]:mb-0"
+          />
+
+          <Link field={props.fields.Link} className="akamai-button-accent mt-8" />
         </div>
       </div>
     </section>

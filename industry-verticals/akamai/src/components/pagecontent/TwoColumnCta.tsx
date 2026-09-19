@@ -166,3 +166,49 @@ export const AkamaiProductTiles = (props: TwoColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* AkamaiSplitPromo — navy intro tile + white ebook CTA side-by-side */
+export const AkamaiSplitPromo = (props: TwoColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div
+      className={`component two-column-cta akamai-brand akamai-split-promo bg-[var(--brand-bg)] py-10 ${sxaStyles}`}
+      id={id || undefined}
+      style={{ fontFamily: 'var(--brand-heading-font)' }}
+    >
+      <div className="mx-auto grid max-w-[1200px] gap-4 px-6 md:grid-cols-2">
+        <div className="relative min-h-[16rem] overflow-hidden rounded-[var(--akamai-card-radius)] bg-[var(--brand-hero-navy)] p-8 text-white">
+          <NextImage
+            field={props.fields?.Image1}
+            width={800}
+            height={400}
+            className="absolute inset-0 h-full w-full object-cover opacity-80"
+          />
+          <div className="relative z-10 flex h-full min-h-[12rem] flex-col justify-end">
+            <Text
+              field={props.fields?.Title1}
+              tag="h2"
+              className="m-0 text-2xl font-bold leading-tight md:text-3xl"
+            />
+          </div>
+        </div>
+
+        <div className="flex min-h-[16rem] flex-col justify-center rounded-[var(--akamai-card-radius)] border border-[rgba(0,40,86,0.08)] bg-white p-8 shadow-[var(--akamai-card-shadow)]">
+          <Text
+            field={props.fields?.Title2}
+            tag="h3"
+            className="m-0 text-2xl font-bold leading-tight text-black"
+          />
+          <Text
+            field={props.fields?.Text2}
+            tag="p"
+            className="mb-0 mt-3 text-sm leading-relaxed text-[var(--brand-muted-fg)]"
+          />
+          <Link field={props.fields?.Link2} className="akamai-button-primary mt-6" />
+        </div>
+      </div>
+    </div>
+  );
+};

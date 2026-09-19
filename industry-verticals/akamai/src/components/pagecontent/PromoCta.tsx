@@ -202,6 +202,11 @@ export const Akamai = (props: PromoCtaProps): JSX.Element => {
     >
       <div className="mx-auto grid max-w-[1200px] items-center gap-10 px-6 md:grid-cols-[minmax(0,1fr)_384px] md:gap-16">
         <div className="text-left">
+          {(props.fields.Eyebrow?.value) && (
+            <span className="mb-3 inline-block rounded bg-[var(--brand-accent)] px-2 py-0.5 text-xs font-bold uppercase tracking-wide text-white">
+              <Text field={props.fields.Eyebrow} />
+            </span>
+          )}
 
           <Text
             field={props.fields.Title}
@@ -211,7 +216,7 @@ export const Akamai = (props: PromoCtaProps): JSX.Element => {
 
           <RichText
             field={props.fields.Text}
-            className="mt-3 text-base leading-relaxed text-black [&_p]:mb-0"
+            className="mt-3 text-base leading-relaxed text-black [&_p]:mb-0 [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:pl-5"
           />
 
           <Link
