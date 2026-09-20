@@ -1,0 +1,1 @@
+{"name":"How do GPUs differ","templateId":"2DC7A13E-6753-47EF-805A-1CDE39012EEC","fields":[{"name":"Question","value":"How do GPUs differ?"},{"name":"Answer","value":"<p>GPUs accelerate AI/ML and parallel workloads; CPU suits general apps.</p>"}],"op":"create_faq_child","key":"FAQ: How do GPUs differ","product":"CPU"}

@@ -1,0 +1,1 @@
+{"name":"Shared vs dedicated CPU","templateId":"2DC7A13E-6753-47EF-805A-1CDE39012EEC","fields":[{"name":"Question","value":"Shared vs dedicated CPU?"},{"name":"Answer","value":"<p>Shared maximizes value; dedicated guarantees CPU resources for noisier neighbors.</p>"}],"op":"create_faq_child","key":"FAQ: Shared vs dedicated CPU","product":"CPU"}

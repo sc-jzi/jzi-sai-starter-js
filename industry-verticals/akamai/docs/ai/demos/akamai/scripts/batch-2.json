@@ -1,0 +1,250 @@
+[
+  {
+    "product": "Backups",
+    "key": "FAQ",
+    "name": "Backups FAQ",
+    "templateId": "FAE81BF9-1117-4F97-9133-00E752F41772",
+    "parentId": "D8E44B11-8072-49FE-B6E2-8C6BB87C60CB",
+    "fields": [],
+    "faqChildren": [
+      {
+        "name": "What does Backups cover",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "What does Backups cover?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>Automated backups for supported Linode compute instances.</p>"
+          }
+        ]
+      },
+      {
+        "name": "How is this different from snapshots",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "How is this different from snapshots?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>Snapshots are point-in-time manual copies; Backups provide scheduled automated protection.</p>"
+          }
+        ]
+      },
+      {
+        "name": "Can I restore to a new instance",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "Can I restore to a new instance?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>Yes — restore workflows let you recover to a replacement instance.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Hero",
+    "name": "Block Storage Hero",
+    "templateId": "90D315E8-AA42-4B23-A7EB-4491396453F8",
+    "parentId": "4B0AD535-96E3-400F-94D3-DC0452238EE5",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Scale durable volumes with Akamai Block Storage"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Attach high-performance NVMe block volumes to Linode instances — grow capacity independently of compute.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/eb4e64b104634aafa4235c4739ff7465?v=3eac35b5\" dam-id=\"7qH3BpfRQ1WJdm02Ke0MlQ\" width=\"1440\" height=\"476\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Get started\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/block-storage\" />"
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Promo Comprehensive",
+    "name": "Block Storage Promo Comprehensive",
+    "templateId": "C0943942-AE0F-4205-86FA-84884CCE4A53",
+    "parentId": "16712A4D-2A46-4F41-B535-30E134893C1C",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Detachable, resizable block volumes"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Add persistent storage to your VMs, resize as you grow, and move volumes between instances.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/523ffd946e114ed188937fefff99003a?v=bd45c27f\" dam-id=\"Q5NywY0sTXCj57irhWCIOg\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Learn how it works\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/block-storage\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Subtitle",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Promo Discovery",
+    "name": "Block Storage Promo Discovery",
+    "templateId": "C0943942-AE0F-4205-86FA-84884CCE4A53",
+    "parentId": "16712A4D-2A46-4F41-B535-30E134893C1C",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Stateful workloads without local-disk lock-in"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Run databases, CMS, and analytics with volumes you control.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/4475e2a6ea5744d8b75a42548341a97e?v=7a4ff561\" dam-id=\"o6HjDHniTDOZrG7uwSe9jQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Watch overview\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/block-storage\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Subtitle",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Section Title",
+    "name": "Block Storage Section Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Storage that keeps pace with your apps"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "FAQ Title",
+    "name": "Block Storage FAQ Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Frequently asked questions"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Resources Title",
+    "name": "Block Storage Resources Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Resources"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Trusted",
+    "name": "Block Storage Trusted",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Trusted by the world's most innovative companies"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  }
+]

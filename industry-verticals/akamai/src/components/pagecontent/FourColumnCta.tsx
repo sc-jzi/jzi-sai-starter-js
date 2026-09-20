@@ -254,24 +254,19 @@ export const AkamaiIconBar = (props: FourColumnCtaProps): JSX.Element => {
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 gap-8 px-6 sm:grid-cols-2 lg:grid-cols-4">
         {items.map((item, index) => (
           <div key={index} className="flex flex-col items-start gap-3 text-left">
-            <NextImage
-              field={item.image}
-              width={40}
-              height={40}
-              className="h-10 w-10 object-contain brightness-0 invert"
-            />
+            <div className="relative h-10 w-10 shrink-0 overflow-hidden [&_img]:!h-10 [&_img]:!w-10 [&_img]:!max-h-10 [&_img]:!max-w-10 [&_img]:object-contain">
+              <NextImage field={item.image} width={40} height={40} />
+            </div>
             <Text
               field={item.title}
               tag="h3"
               className="m-0 text-base font-semibold text-white"
             />
-            {(item.text?.value) && (
-              <Text
-                field={item.text}
-                tag="p"
-                className="mb-0 text-sm leading-relaxed text-white/85"
-              />
-            )}
+            <Text
+              field={item.text}
+              tag="p"
+              className="mb-0 text-sm leading-relaxed text-white/85"
+            />
           </div>
         ))}
       </div>

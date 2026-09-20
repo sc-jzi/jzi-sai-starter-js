@@ -1,0 +1,527 @@
+# Product datasource content map (Akamai Cloud products)
+# Live pages blocked by Akamai bot protection; copy from public product docs + search.
+
+shared:
+  heroImage: '<Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/eb4e64b104634aafa4235c4739ff7465?v=3eac35b5" dam-id="7qH3BpfRQ1WJdm02Ke0MlQ" width="1440" height="476" dam-content-type="Image" />'
+  promoImage: '<Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/523ffd946e114ed188937fefff99003a?v=bd45c27f" dam-id="Q5NywY0sTXCj57irhWCIOg" width="1280" height="720" dam-content-type="Image" />'
+  cardImage: '<Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/4475e2a6ea5744d8b75a42548341a97e?v=7a4ff561" dam-id="o6HjDHniTDOZrG7uwSe9jQ" width="1280" height="720" dam-content-type="Image" />'
+  cardImage2: '<Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/cbc51ba1387348cf82e4b747a9f91f9e?v=48102d9b" dam-id="hpEEbmruRL2O-Ygj9wVKTQ" width="1280" height="720" dam-content-type="Image" />'
+  cardImage3: '<Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/73c12faf8b84484eb13d6907c61b118e?v=93fea706" dam-id="4G3qeznlT66jVoGoOWfJbw" width="1280" height="720" dam-content-type="Image" />'
+  storyImage1: '<Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/bd50562aecd24a78bcca4a5704725e49?v=cd4087e9" dam-id="GgddnJb_Tpij8fYolsoj8Q" width="1280" height="720" dam-content-type="Image" />'
+  storyImage2: '<Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/a17b886d156343c3a8ac17a61af5b642?v=06dde9a9" dam-id="EqQ9aUZHSXeczVAP-Ji4mw" width="1280" height="720" dam-content-type="Image" />'
+  storyImage3: '<Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/9f6207cd304f4c80bae642a14106b0d1?v=5ce99937" dam-id="LUitv03nRBKLyedV8u-2NQ" width="1280" height="720" dam-content-type="Image" />'
+  contactImage: '<Image src="https://jzi-verticals.sitecoresandbox.cloud/api/public/content/29d61b83511747dbb4bada3a63cda110?v=5fc11426" dam-id="DiN6UrZDRyCAVpFBgzRj4A" width="1280" height="720" dam-content-type="Image" />'
+
+folders:
+  Hero: "{4B0AD535-96E3-400F-94D3-DC0452238EE5}"
+  PromoCTA: "{16712A4D-2A46-4F41-B535-30E134893C1C}"
+  HeadingCTA: "{DD4CA9E9-D740-4CDE-A72E-4E047205767C}"
+  ThreeColumn: "{9452E48F-4BA3-4483-AB97-B40FF9AE3F03}"
+  FourColumn: "{D1B87644-6DD8-4CC9-BA2D-861839B5BCB4}"
+  TwoColumn: "{8D46D2C3-C71B-46E1-BA80-DBC4FE319F15}"
+  CtaBanner: "{6E161443-E85B-430F-B301-170B54A79BC4}"
+  Questions: "{D8E44B11-8072-49FE-B6E2-8C6BB87C60CB}"
+  ContactForm: "{09699ECB-5715-4AA1-81F2-90D273AECE92}"
+
+templates:
+  Hero: "{90D315E8-AA42-4B23-A7EB-4491396453F8}"
+  PromoCTA: "{C0943942-AE0F-4205-86FA-84884CCE4A53}"
+  HeadingCTA: "{FA136527-6302-471D-83AB-E66FC72BDA99}"
+  ThreeColumn: "{148D07BA-F923-4FB2-8907-0BD440D5DB44}"
+  FourColumn: "{1B694EF9-154D-429A-9C3F-D7774CD4A852}"
+  TwoColumn: "{1812BF3E-6BDD-466D-99B2-0D7CEBB020FC}"
+  CtaBanner: "{4900D7E5-61B0-483A-A9D6-69419D4D5982}"
+  Questions: "{FAE81BF9-1117-4F97-9133-00E752F41772}"
+  Question: "{2DC7A13E-6753-47EF-805A-1CDE39012EEC}"
+  ContactForm: "{6D166C16-D4CC-4BA9-B1E1-FE6378916533}"
+
+# Component UIDs (cloned layout — same on each product page)
+components:
+  hero: "fec08656-5603-4a7d-a11c-daffc624fabf"
+  promo1: "4db8943d-3ea7-47c3-9ddb-b887d1bd15ec"
+  heading1: "73db572a-dedb-4989-aa86-7b6733a0978c"
+  valueProps: "a2cc6af9-ff65-4a5b-b835-861302ba41a5"
+  promo2: "fc3275af-4a37-4500-b924-8aeee27ac238"
+  iconBar: "e1047e24-4a83-4a7e-b1ca-98fc38337202"
+  splitPromo: "74b1a7b2-7e96-4131-89d6-73e2dbaaa5ca"
+  banner1: "eebbb4e2-bc52-4c4d-8ad6-2194e0713a12"
+  features: "6cecded4-9b4d-41d7-8d46-c2f98c60f3a8"
+  banner2: "257a112e-d22e-43fb-8888-52a6a6395b71"
+  trusted: "b1597f15-fd2a-4a65-a394-049bc8fb2c71"
+  stories: "581890ad-2077-476a-ad4c-95e20c8d1a22"
+  faqTitle: "be10abbc-fc4d-40c7-a3c8-4b0659b9c353"
+  questions: "b3f66808-ddb3-4806-913a-7912d9129a3b"
+  banner3: "5d8a955b-3e2d-4069-8948-04d529e816cb"
+  resourcesTitle: "9cf461db-10c3-475c-95cc-bd58693fdbda"
+  resources: "98e405ef-d832-4041-bb89-1869b8154955"
+  contact: "75d2ba84-0d97-4903-9532-953354139596"
+
+# NOTE: set_component_datasource for Questions fails (missing branch template).
+# Create FAQ items under Data/Questions; wire Questions manually in Pages.
+
+products:
+  - id: "{CB27BCB0-96F7-4050-82CC-6A0CD7763604}"
+    slug: accelerated-compute
+    name: Accelerated Compute
+    url: https://www.akamai.com/products/accelerated-compute
+    status: wired
+    heroTitle: "Optimize media workloads with VPU-powered Accelerated Compute"
+    heroText: "Scale VOD and live streaming with NETINT VPUs on Akamai Cloud — free your CPUs and cut transcoding cost."
+    promo1Title: "Transcode more streams for less with dedicated VPUs"
+    promo1Text: "NETINT Quadra VPUs deliver high-density encoding for AV1, HEVC, and H.264 — up to 8K HDR — while leaving CPU capacity for packaging, SSAI, and app logic."
+    sectionHeading: "Built for live and on-demand media at cloud scale"
+    value1: ["High stream density", "Process dozens of concurrent live streams per VPU with ASIC efficiency."]
+    value2: ["Lower cost per stream", "Start from US$0.42/hour with egress as low as US$0.005 per GB."]
+    value3: ["Elastic VPU capacity", "Scale 1–8 dedicated VPUs on demand with no CapEx hardware buy-in."]
+    promo2Title: "Offload transcoding so your CPUs can do everything else"
+    promo2Text: "Keep dynamic packaging, captioning, and orchestration on CPU while VPUs handle encode/decode at wire speed."
+    icons: [["Discover", "Inventory media pipelines"], ["Encode", "Accelerate encode/decode"], ["Scale", "Right-size VPU plans"], ["Deliver", "Stream globally"]]
+    splitTitle: "Introducing Accelerated Compute"
+    splitRightTitle: "Get the Accelerated Compute overview"
+    splitRightText: "See how VPU instances compare to CPU- and GPU-based transcoding."
+    banner1Title: "Plans from 1 to 8 dedicated VPUs"
+    banner1Text: "Choose the density you need for live events, VOD libraries, and UGC platforms."
+    features: [["FFmpeg ready", "Use included SDKs and FFmpeg integrations out of the box."], ["HDR & modern codecs", "Native HDR with AV1, HEVC/H.265, and H.264 support."], ["Private networking", "Segment traffic with VPC, VLAN, and Cloud Firewall."]]
+    banner2Title: "Start building with Accelerated Compute today"
+    banner2Text: "Spin up VPU instances in minutes and move media encode off your CPUs."
+    banner3Title: "Learn from media and cloud experts"
+    banner3Text: "Explore how teams run high-density live and VOD workloads on Akamai Accelerated Compute."
+    contactTitle: "Talk with an Accelerated Compute specialist"
+    faq:
+      - ["What workloads fit Accelerated Compute?", "Live streaming, VOD transcoding, and other media encode/decode pipelines that benefit from ASIC VPUs."]
+      - ["How is this different from GPU instances?", "VPUs are purpose-built for video transcoding density and efficiency; GPUs suit broader AI and parallel compute."]
+      - ["Can I use Kubernetes?", "Yes — add Accelerated Compute worker nodes to managed Kubernetes clusters."]
+
+  - id: "{33954C2D-4895-49BF-9564-2C2FE89D293A}"
+    slug: akamai-functions
+    name: Akamai Functions
+    url: https://www.akamai.com/products/akamai-functions
+    heroTitle: "Build and run modern apps and AI with distributed serverless functions"
+    heroText: "Deploy WebAssembly functions globally on Akamai’s edge — ultra-fast startup, no servers to manage."
+    promo1Title: "Edge-native serverless with WebAssembly"
+    promo1Text: "Run Spin applications compiled to Wasm across Akamai’s distributed cloud with sub-millisecond cold starts and automatic geographic scale."
+    sectionHeading: "Serverless that runs everywhere by default"
+    value1: ["Global by default", "Deploy once and execute close to users across Akamai’s edge network."]
+    value2: ["Open Wasm runtime", "Build with Rust, Go, JavaScript/TypeScript, or Python using Spin."]
+    value3: ["Zero infra overhead", "No regions to wire, no servers to patch — just ship functions."]
+    promo2Title: "APIs, microservices, and AI pre/post-processing at the edge"
+    promo2Text: "Complement CPUs, GPUs, and containers with fast edge logic for request handling and agent workflows."
+    icons: [["Build", "Write in your language"], ["Deploy", "spin aka deploy"], ["Scale", "Auto geo scale"], ["Integrate", "CDN & security ready"]]
+    splitTitle: "Introducing Akamai Functions"
+    splitRightTitle: "Get the Functions overview"
+    splitRightText: "See how Wasm serverless differs from EdgeWorkers and regional FaaS."
+    banner1Title: "Key-value storage included"
+    banner1Text: "Persist data with a globally replicated, app-scoped key-value store."
+    features: [["Stable URLs", "Keep a persistent endpoint across deployments."], ["Property Manager ready", "Integrate with existing Akamai properties."], ["CI/CD friendly", "Deploy from GitHub Actions with spin aka."]]
+    banner2Title: "Start building with Akamai Functions"
+    banner2Text: "Deploy your first Wasm function in minutes with Spin and the Akamai CLI."
+    banner3Title: "Learn serverless on Akamai Cloud"
+    banner3Text: "Explore guides, samples, and webinars for edge-native functions."
+    contactTitle: "Talk with a Functions specialist"
+    faq:
+      - ["How is this different from EdgeWorkers?", "EdgeWorkers focus on lightweight JS CDN logic; Functions run richer Wasm app logic and AI workflows."]
+      - ["Which languages are supported?", "Rust, Go, JavaScript/TypeScript, and Python via Spin SDKs."]
+      - ["Do I manage regions?", "No — Functions replicate and route globally on Akamai Cloud."]
+
+  - id: "{C02B2BF5-7555-42C6-AC82-C1C9B0072FB8}"
+    slug: akamai-inference-cloud-platform
+    name: Akamai Inference Cloud Platform
+    url: https://www.akamai.com/products/akamai-inference-cloud-platform
+    heroTitle: "Run AI inference at the edge with Akamai Inference Cloud"
+    heroText: "Serve low-latency AI inference close to users on Akamai’s distributed cloud — GPUs, CPUs, and edge together."
+    promo1Title: "Inference where your users are"
+    promo1Text: "Place models near demand to cut latency and egress while keeping training and orchestration where they belong."
+    sectionHeading: "Built for production AI at global scale"
+    value1: ["Low-latency inference", "Respond in milliseconds by running models at the edge of Akamai’s network."]
+    value2: ["GPU + CPU flexibility", "Mix Accelerated Compute, GPUs, and CPUs for the right cost/performance mix."]
+    value3: ["Secure by design", "Protect model endpoints with Akamai security services."]
+    promo2Title: "From prototype to production without lock-in"
+    promo2Text: "Deploy open models and custom stacks on infrastructure you control — no opaque AI islands."
+    icons: [["Train", "Build models centrally"], ["Deploy", "Push to edge sites"], ["Serve", "Infer near users"], ["Observe", "Monitor & scale"]]
+    splitTitle: "Introducing Inference Cloud Platform"
+    splitRightTitle: "Get the Inference Cloud overview"
+    splitRightText: "See how distributed inference complements regional GPU clouds."
+    banner1Title: "GPU capacity where you need it"
+    banner1Text: "Access NVIDIA GPUs across Akamai’s distributed cloud footprint."
+    features: [["Open model support", "Run popular open-source and custom models."], ["Edge + core", "Combine edge sites with core regions."], ["Integrated networking", "Private networking and Cloud Firewall included."]]
+    banner2Title: "Start serving inference on Akamai"
+    banner2Text: "Stand up GPU instances and expose secure inference endpoints."
+    banner3Title: "AI infrastructure resources"
+    banner3Text: "Guides for model serving, GPUs, and edge AI architectures."
+    contactTitle: "Talk with an Inference Cloud specialist"
+    faq:
+      - ["What is Inference Cloud Platform?", "A distributed platform to deploy and serve AI inference close to end users on Akamai Cloud."]
+      - ["Do I need GPUs?", "Many workloads benefit from GPUs; lighter models can run on CPU or Accelerated Compute."]
+      - ["How does it relate to Functions?", "Functions handle Wasm edge logic; Inference Cloud focuses on model serving at scale."]
+
+  - id: "{CB70995C-0BDB-44D5-AAC1-1623A452C86A}"
+    slug: app-platform
+    name: App Platform
+    url: https://www.akamai.com/products/app-platform
+    heroTitle: "Build, deploy, and scale apps with Akamai App Platform"
+    heroText: "A Kubernetes-based application platform that streamlines CI/CD, observability, and multi-cluster operations on Akamai Cloud."
+    promo1Title: "Kubernetes without the operational drag"
+    promo1Text: "Get a curated platform experience — pipelines, policies, and tooling — on managed Kubernetes."
+    sectionHeading: "Ship faster with a consistent platform layer"
+    value1: ["Opinionated K8s", "Start from proven defaults for clusters, networking, and security."]
+    value2: ["Built-in DevOps", "CI/CD, GitOps, and observability patterns ready to adopt."]
+    value3: ["Multi-cluster ready", "Operate workloads across regions with consistent guardrails."]
+    promo2Title: "Focus on apps, not undifferentiated plumbing"
+    promo2Text: "Let App Platform handle the platform layer so product teams deliver features."
+    icons: [["Provision", "Create clusters"], ["Pipeline", "Ship with GitOps"], ["Secure", "Apply policies"], ["Observe", "Monitor apps"]]
+    splitTitle: "Introducing App Platform"
+    splitRightTitle: "Get the App Platform overview"
+    splitRightText: "See how App Platform accelerates Kubernetes application delivery."
+    banner1Title: "Enterprise-ready Kubernetes platform"
+    banner1Text: "Standardize how teams build and run containers on Akamai Cloud."
+    features: [["GitOps workflows", "Declarative delivery with industry-standard tools."], ["Policy & security", "Guardrails baked into the platform."], ["Works with Linode K8s", "Built on Akamai’s managed Kubernetes."]]
+    banner2Title: "Start with App Platform"
+    banner2Text: "Spin up a platform environment and onboard your first application."
+    banner3Title: "Platform engineering resources"
+    banner3Text: "Learn patterns for internal developer platforms on Akamai."
+    contactTitle: "Talk with an App Platform specialist"
+    faq:
+      - ["Is App Platform just Kubernetes?", "It adds a curated platform layer — tooling, pipelines, and policies — on managed Kubernetes."]
+      - ["Can I bring existing clusters?", "App Platform is designed around Akamai managed Kubernetes; check current integration options."]
+      - ["Who is it for?", "Platform and application teams that want faster, safer container delivery."]
+
+  - id: "{50563CDA-CBDB-4C84-A65F-DA1EDFBA9B64}"
+    slug: backups
+    name: Backups
+    url: https://www.akamai.com/products/backups
+    heroTitle: "Protect cloud workloads with Akamai Backups"
+    heroText: "Automated backups for Linode instances — restore quickly and meet recovery objectives without DIY scripts."
+    promo1Title: "Simple, reliable instance backups"
+    promo1Text: "Schedule backups for compute instances and recover when you need to roll back or rebuild."
+    sectionHeading: "Recovery you can count on"
+    value1: ["Automated schedules", "Set backup frequency that matches your RPO."]
+    value2: ["Fast restores", "Recover instances without rebuilding from scratch."]
+    value3: ["Cloud-native", "Integrated with Akamai Cloud compute."]
+    promo2Title: "Don’t leave recovery to chance"
+    promo2Text: "Pair Backups with snapshots and Object Storage for layered data protection."
+    icons: [["Schedule", "Set backup windows"], ["Store", "Keep restore points"], ["Restore", "Recover instances"], ["Verify", "Test your RTO"]]
+    splitTitle: "Introducing Akamai Backups"
+    splitRightTitle: "Get the Backups overview"
+    splitRightText: "See how automated backups protect Linode workloads."
+    banner1Title: "Enable backups in a few clicks"
+    banner1Text: "Turn on backups for new or existing compute instances."
+    features: [["Instance coverage", "Protect Linode compute instances."], ["Predictable pricing", "Add backups without complex licensing."], ["Works with snapshots", "Combine with manual snapshots when needed."]]
+    banner2Title: "Protect your workloads today"
+    banner2Text: "Enable Backups on your Akamai Cloud instances."
+    banner3Title: "Data protection resources"
+    banner3Text: "Best practices for backup, snapshot, and restore strategies."
+    contactTitle: "Talk with a Backups specialist"
+    faq:
+      - ["What does Backups cover?", "Automated backups for supported Linode compute instances."]
+      - ["How is this different from snapshots?", "Snapshots are point-in-time manual copies; Backups provide scheduled automated protection."]
+      - ["Can I restore to a new instance?", "Yes — restore workflows let you recover to a replacement instance."]
+
+  - id: "{1F08449A-D194-4C0A-B751-A18507571F79}"
+    slug: block-storage
+    name: Block Storage
+    url: https://www.akamai.com/products/block-storage
+    heroTitle: "Scale durable volumes with Akamai Block Storage"
+    heroText: "Attach high-performance NVMe block volumes to Linode instances — grow capacity independently of compute."
+    promo1Title: "Detachable, resizable block volumes"
+    promo1Text: "Add persistent storage to your VMs, resize as you grow, and move volumes between instances."
+    sectionHeading: "Storage that keeps pace with your apps"
+    value1: ["Independent scaling", "Grow storage without resizing the whole instance."]
+    value2: ["NVMe performance", "Low-latency volumes for databases and stateful apps."]
+    value3: ["Flexible attach", "Move volumes across compatible instances."]
+    promo2Title: "Stateful workloads without local-disk lock-in"
+    promo2Text: "Run databases, CMS, and analytics with volumes you control."
+    icons: [["Create", "Provision volumes"], ["Attach", "Mount to instances"], ["Grow", "Resize online"], ["Protect", "Snapshot volumes"]]
+    splitTitle: "Introducing Block Storage"
+    splitRightTitle: "Get the Block Storage overview"
+    splitRightText: "See how block volumes complement local instance disks."
+    banner1Title: "Pay for the capacity you need"
+    banner1Text: "Start small and expand volumes as applications grow."
+    features: [["Snapshots", "Capture volume state for recovery."], ["Multi-size plans", "Choose capacity tiers that fit your workload."], ["Region availability", "Deploy in supported Akamai Cloud regions."]]
+    banner2Title: "Add Block Storage to your stack"
+    banner2Text: "Create a volume and attach it to a running instance."
+    banner3Title: "Storage architecture resources"
+    banner3Text: "Patterns for databases, CMS, and stateful Kubernetes workloads."
+    contactTitle: "Talk with a Block Storage specialist"
+    faq:
+      - ["Can I resize a volume?", "Yes — expand capacity as needs grow (see current resize limits)."]
+      - ["Is Block Storage the same as Object Storage?", "No — Block Storage is attachable volumes; Object Storage is S3-compatible object buckets."]
+      - ["Does it work with Kubernetes?", "Use with PVC workflows on managed Kubernetes where supported."]
+
+  - id: "{8161E45E-FA0B-41A4-9DE0-A8CD41AC94E5}"
+    slug: cloud-firewall
+    name: Cloud Firewall
+    url: https://www.akamai.com/products/cloud-firewall
+    heroTitle: "Control network traffic with Akamai Cloud Firewall"
+    heroText: "Stateful firewall rules for Linode instances and NodeBalancers — allow, deny, and segment traffic at the network edge of your VPC."
+    promo1Title: "Network security without appliance sprawl"
+    promo1Text: "Define inbound and outbound rules once and apply them across compute and load balancers."
+    sectionHeading: "Segment and protect cloud workloads"
+    value1: ["Stateful filtering", "Track connections and enforce allow/deny policies."]
+    value2: ["Instance & LB coverage", "Protect Linodes and NodeBalancers with shared rules."]
+    value3: ["VPC friendly", "Works with private networking topologies."]
+    promo2Title: "Least-privilege networking by default"
+    promo2Text: "Lock down management ports and expose only what your apps need."
+    icons: [["Define", "Write firewall rules"], ["Apply", "Attach to resources"], ["Segment", "Isolate tiers"], ["Audit", "Review traffic policy"]]
+    splitTitle: "Introducing Cloud Firewall"
+    splitRightTitle: "Get the Cloud Firewall overview"
+    splitRightText: "See how firewall rules protect Akamai Cloud resources."
+    banner1Title: "Free with Akamai Cloud networking"
+    banner1Text: "Cloud Firewall is included to harden your cloud estate."
+    features: [["Rule groups", "Reuse policies across resources."], ["Inbound & outbound", "Control both directions of traffic."], ["Integrates with VPC", "Pair with private networking and VLANs."]]
+    banner2Title: "Harden your instances today"
+    banner2Text: "Create a firewall and attach it to production Linodes."
+    banner3Title: "Network security resources"
+    banner3Text: "Best practices for firewall rules and VPC segmentation."
+    contactTitle: "Talk with a Cloud Firewall specialist"
+    faq:
+      - ["What resources can Cloud Firewall protect?", "Linode instances and NodeBalancers."]
+      - ["Is it a WAF?", "No — Cloud Firewall is network-layer filtering; pair with WAAP/API Security for app-layer threats."]
+      - ["Does it cost extra?", "Cloud Firewall is included with Akamai Cloud networking."]
+
+  - id: "{EE05956B-B1E1-4F92-A1F5-1F14ACD7C1E2}"
+    slug: cpu
+    name: CPU
+    url: https://www.akamai.com/products/cpu
+    heroTitle: "General-purpose compute with Akamai CPU instances"
+    heroText: "Reliable, cost-efficient virtual machines for web apps, APIs, and backends — available across Akamai’s distributed cloud."
+    promo1Title: "Right-size CPU for every workload"
+    promo1Text: "Choose shared or dedicated CPU plans with predictable pricing and global regions."
+    sectionHeading: "Compute built for everyday production"
+    value1: ["Global regions", "Deploy close to customers on Akamai Cloud."]
+    value2: ["Flexible plans", "From lightweight to high-memory CPU shapes."]
+    value3: ["Simple ops", "API, CLI, and Terraform to automate fleets."]
+    promo2Title: "The foundation of your cloud stack"
+    promo2Text: "Pair CPU instances with Block Storage, NodeBalancers, and Kubernetes."
+    icons: [["Launch", "Create instances"], ["Configure", "Secure & network"], ["Scale", "Grow capacity"], ["Automate", "API & Terraform"]]
+    splitTitle: "Introducing Akamai CPU"
+    splitRightTitle: "Get the CPU compute overview"
+    splitRightText: "Compare shared and dedicated CPU plans for your apps."
+    banner1Title: "Predictable hourly pricing"
+    banner1Text: "No surprise egress traps — transparent compute pricing."
+    features: [["Shared & dedicated", "Pick the isolation level you need."], ["Images & stacks", "Boot from marketplace and custom images."], ["Private networking", "VPC, VLAN, and Cloud Firewall ready."]]
+    banner2Title: "Launch your first CPU instance"
+    banner2Text: "Create a Linode in minutes from Cloud Manager or the API."
+    banner3Title: "Compute resources"
+    banner3Text: "Guides for sizing, images, and high availability."
+    contactTitle: "Talk with a CPU compute specialist"
+    faq:
+      - ["Shared vs dedicated CPU?", "Shared maximizes value; dedicated guarantees CPU resources for noisier neighbors."]
+      - ["Can I run containers?", "Yes — run Docker directly or use managed Kubernetes."]
+      - ["How do GPUs differ?", "GPUs accelerate AI/ML and parallel workloads; CPU suits general apps."]
+
+  - id: "{52A474CD-07C3-4373-9BD0-9DA8EB74F9EB}"
+    slug: dns-manager
+    name: DNS Manager
+    url: https://www.akamai.com/products/dns-manager
+    heroTitle: "Authoritative DNS with Akamai DNS Manager"
+    heroText: "Host and manage DNS zones on Akamai Cloud — fast lookups, easy records, and integration with your Linode resources."
+    promo1Title: "DNS that stays out of your way"
+    promo1Text: "Create domains, manage records, and point traffic to Akamai Cloud services from one console."
+    sectionHeading: "Reliable name resolution for cloud apps"
+    value1: ["Authoritative hosting", "Host zones with Akamai’s DNS infrastructure."]
+    value2: ["Simple record management", "A, AAAA, CNAME, MX, TXT, and more."]
+    value3: ["Cloud integrated", "Works with Linodes, NodeBalancers, and Object Storage."]
+    promo2Title: "Connect users to the right endpoint"
+    promo2Text: "Use DNS Manager as the control plane for domain routing into your cloud."
+    icons: [["Add zone", "Create a domain"], ["Edit records", "Point to services"], ["Delegate", "Update registrars"], ["Monitor", "Validate resolution"]]
+    splitTitle: "Introducing DNS Manager"
+    splitRightTitle: "Get the DNS Manager overview"
+    splitRightText: "See how Akamai Cloud DNS fits with Edge DNS and enterprise offerings."
+    banner1Title: "Included with Akamai Cloud"
+    banner1Text: "Manage DNS alongside compute and storage."
+    features: [["API access", "Automate record changes."], ["Multi-record types", "Cover web, mail, and verification needs."], ["Pairs with CDN", "Point apex and www to Akamai delivery."]]
+    banner2Title: "Move a zone to DNS Manager"
+    banner2Text: "Create a domain and update nameservers at your registrar."
+    banner3Title: "DNS resources"
+    banner3Text: "Guides for records, migration, and troubleshooting."
+    contactTitle: "Talk with a DNS Manager specialist"
+    faq:
+      - ["Is this Edge DNS?", "DNS Manager is Akamai Cloud’s authoritative DNS for Linode domains; Edge DNS is part of the broader Akamai portfolio."]
+      - ["Can I use it with external hosts?", "Yes — records can point to any IP or hostname."]
+      - ["Does it support DNSSEC?", "Check current DNS Manager capabilities for DNSSEC support."]
+
+  - id: "{D4EC6A47-0E18-4713-9E39-B4A1DB5F2F45}"
+    slug: gpu
+    name: GPU
+    url: https://www.akamai.com/products/gpu
+    heroTitle: "Accelerate AI and graphics with Akamai GPU instances"
+    heroText: "NVIDIA GPU virtual machines for training, inference, rendering, and HPC — on Akamai’s distributed cloud."
+    promo1Title: "On-demand NVIDIA GPUs"
+    promo1Text: "Provision GPU instances when you need them and shut them down when you don’t."
+    sectionHeading: "Parallel compute without CapEx"
+    value1: ["AI & ML ready", "Train and serve models on NVIDIA GPUs."]
+    value2: ["Graphics & render", "Accelerate creative and visualization pipelines."]
+    value3: ["Elastic capacity", "Scale GPU count with demand."]
+    promo2Title: "Pair GPUs with CPUs, storage, and Kubernetes"
+    promo2Text: "Build full stacks — from data prep on CPU to training on GPU."
+    icons: [["Select", "Choose GPU plans"], ["Launch", "Boot GPU instances"], ["Train", "Run AI workloads"], ["Serve", "Deploy inference"]]
+    splitTitle: "Introducing Akamai GPU"
+    splitRightTitle: "Get the GPU overview"
+    splitRightText: "Compare GPU plans for AI, rendering, and scientific computing."
+    banner1Title: "GPU plans for modern AI"
+    banner1Text: "Access NVIDIA accelerators across supported regions."
+    features: [["CUDA ecosystem", "Use familiar NVIDIA toolchains."], ["Works with K8s", "Add GPU nodes to managed clusters."], ["Private networking", "Secure training data in VPC."]]
+    banner2Title: "Launch a GPU instance"
+    banner2Text: "Create a GPU Linode and install your ML stack."
+    banner3Title: "GPU & AI resources"
+    banner3Text: "Guides for inference, training, and GPU Kubernetes."
+    contactTitle: "Talk with a GPU specialist"
+    faq:
+      - ["Which GPUs are available?", "Akamai Cloud offers NVIDIA GPU plans; availability varies by region."]
+      - ["GPU vs Accelerated Compute?", "GPUs are general accelerators; Accelerated Compute VPUs target media encode density."]
+      - ["Can I use spot/preemptible?", "Check current plan options for interruptible capacity."]
+
+  - id: "{3DF64FFE-7600-4DD8-8B91-CA5BA15BDE83}"
+    slug: kubernetes
+    name: Kubernetes
+    url: https://www.akamai.com/products/kubernetes
+    heroTitle: "Managed Kubernetes on Akamai Cloud"
+    heroText: "Run production containers with Linode Kubernetes Engine (LKE) — control plane managed, workers you control."
+    promo1Title: "Kubernetes without the control-plane toil"
+    promo1Text: "Akamai manages the control plane so you focus on workloads, networking, and scaling node pools."
+    sectionHeading: "Containers at cloud scale"
+    value1: ["Managed control plane", "HA control plane operated by Akamai."]
+    value2: ["Flexible node pools", "Mix CPU, GPU, and Accelerated Compute workers."]
+    value3: ["CNCF aligned", "Standard Kubernetes APIs and tooling."]
+    promo2Title: "From first cluster to multi-region apps"
+    promo2Text: "Use LKE with NodeBalancers, Block Storage, and private networking."
+    icons: [["Create", "Spin up a cluster"], ["Deploy", "Apply manifests"], ["Scale", "Grow node pools"], ["Secure", "Network policies"]]
+    splitTitle: "Introducing Managed Kubernetes"
+    splitRightTitle: "Get the Kubernetes overview"
+    splitRightText: "See how LKE simplifies cluster operations on Akamai Cloud."
+    banner1Title: "Free control plane"
+    banner1Text: "Pay for worker nodes — the managed control plane is included."
+    features: [["Autoscaling", "Scale pools with demand."], ["CSI storage", "Persist data with Block Storage."], ["App Platform ready", "Layer App Platform for GitOps and policies."]]
+    banner2Title: "Create your first cluster"
+    banner2Text: "Launch LKE from Cloud Manager and deploy a sample app."
+    banner3Title: "Kubernetes resources"
+    banner3Text: "Tutorials for networking, storage, and production hardening."
+    contactTitle: "Talk with a Kubernetes specialist"
+    faq:
+      - ["Is the control plane free?", "Yes — you pay for worker nodes and related resources."]
+      - ["Can I add GPU nodes?", "Yes — create GPU node pools where GPU plans are available."]
+      - ["How does App Platform relate?", "App Platform builds on managed Kubernetes with extra platform tooling."]
+
+  - id: "{EB95FC5D-A0F7-4149-B076-2A4D334AEBE8}"
+    slug: databases
+    name: Databases
+    url: https://www.akamai.com/products/databases
+    heroTitle: "Managed databases on Akamai Cloud"
+    heroText: "Deploy MySQL, PostgreSQL, and more with automated backups, patching, and high availability options."
+    promo1Title: "Databases without DIY ops"
+    promo1Text: "Provision managed database clusters and connect from Linodes, Kubernetes, and apps."
+    sectionHeading: "Reliable data services for cloud apps"
+    value1: ["Managed engines", "Popular relational databases ready to launch."]
+    value2: ["Automated care", "Backups, updates, and monitoring built in."]
+    value3: ["Secure access", "Private networking and access controls."]
+    promo2Title: "Focus on schema and queries, not servers"
+    promo2Text: "Let Akamai operate the database layer while you ship features."
+    icons: [["Provision", "Create a cluster"], ["Connect", "Wire your apps"], ["Protect", "Backups & HA"], ["Scale", "Grow capacity"]]
+    splitTitle: "Introducing Managed Databases"
+    splitRightTitle: "Get the Databases overview"
+    splitRightText: "Compare managed database options on Akamai Cloud."
+    banner1Title: "Production-ready in minutes"
+    banner1Text: "Launch a managed database and grab connection details."
+    features: [["Multiple engines", "Choose the database that fits your stack."], ["HA options", "Architect for higher availability."], ["Works with VPC", "Keep traffic private."]]
+    banner2Title: "Launch a managed database"
+    banner2Text: "Create a cluster from Cloud Manager or the API."
+    banner3Title: "Database resources"
+    banner3Text: "Guides for migration, connection pooling, and HA."
+    contactTitle: "Talk with a Databases specialist"
+    faq:
+      - ["Which engines are supported?", "Managed offerings include popular engines such as MySQL and PostgreSQL — check current catalog."]
+      - ["Can I bring my own DB on a Linode?", "Yes — self-manage on CPU/GPU instances, or use managed Databases for less ops."]
+      - ["Are backups included?", "Managed Databases include automated backup capabilities."]
+
+  - id: "{F9A032BE-8FC2-4BEA-911D-24C762382561}"
+    slug: nodebalancers
+    name: NodeBalancers
+    url: https://www.akamai.com/products/nodebalancers
+    heroTitle: "Load balance traffic with Akamai NodeBalancers"
+    heroText: "Distribute requests across Linode instances — health checks, SSL termination, and high availability built in."
+    promo1Title: "Simple, reliable load balancing"
+    promo1Text: "Put a NodeBalancer in front of your app tier and scale horizontally with confidence."
+    sectionHeading: "Keep apps available as you grow"
+    value1: ["Health checks", "Route only to healthy backends."]
+    value2: ["SSL termination", "Offload TLS at the balancer."]
+    value3: ["Horizontal scale", "Add Linodes behind the same VIP."]
+    promo2Title: "HA networking for cloud apps"
+    promo2Text: "Pair NodeBalancers with Cloud Firewall and private networking."
+    icons: [["Create", "Add a NodeBalancer"], ["Attach", "Register backends"], ["Secure", "Terminate TLS"], ["Scale", "Grow the pool"]]
+    splitTitle: "Introducing NodeBalancers"
+    splitRightTitle: "Get the NodeBalancers overview"
+    splitRightText: "See how Layer-4 load balancing fits your architecture."
+    banner1Title: "Predictable load balancing pricing"
+    banner1Text: "Add HA without complex appliance licensing."
+    features: [["TCP & HTTP", "Balance common application protocols."], ["Sticky sessions", "Support session affinity when needed."], ["Firewall ready", "Protect balancers with Cloud Firewall."]]
+    banner2Title: "Add a NodeBalancer"
+    banner2Text: "Create a balancer and point DNS at its address."
+    banner3Title: "Load balancing resources"
+    banner3Text: "Patterns for HA web apps and microservices."
+    contactTitle: "Talk with a NodeBalancers specialist"
+    faq:
+      - ["Is this a global LB?", "NodeBalancers are regional cloud load balancers; pair with Akamai CDN for global delivery."]
+      - ["Can I terminate SSL?", "Yes — configure certificates on the NodeBalancer."]
+      - ["Does it work with Kubernetes?", "Expose services via NodeBalancer integrations on LKE."]
+
+  - id: "{E40F58DE-8BDD-4392-BD82-DFABF54EC644}"
+    slug: object-storage
+    name: Object Storage
+    url: https://www.akamai.com/products/object-storage
+    heroTitle: "S3-compatible Object Storage on Akamai Cloud"
+    heroText: "Store and serve unstructured data with durable object buckets — backups, assets, logs, and data lakes."
+    promo1Title: "Simple object storage, familiar APIs"
+    promo1Text: "Use S3-compatible tools and SDKs to create buckets, upload objects, and manage access keys."
+    sectionHeading: "Durable storage for any file workload"
+    value1: ["S3 compatible", "Works with existing S3 tooling and libraries."]
+    value2: ["Scalable capacity", "Grow without provisioning volumes."]
+    value3: ["CDN ready", "Origin content for Akamai delivery."]
+    promo2Title: "From backups to media libraries"
+    promo2Text: "Centralize artifacts, images, and archives in object buckets."
+    icons: [["Create", "Make a bucket"], ["Upload", "Put objects"], ["Secure", "Manage keys"], ["Deliver", "Serve via CDN"]]
+    splitTitle: "Introducing Object Storage"
+    splitRightTitle: "Get the Object Storage overview"
+    splitRightText: "See how object buckets complement Block Storage."
+    banner1Title: "Pay for what you store"
+    banner1Text: "Capacity and transfer pricing designed for cloud apps."
+    features: [["Access keys", "Scoped credentials for apps."], ["Multi-cluster regions", "Deploy buckets in supported locations."], ["Lifecycle friendly", "Build retention with your tooling."]]
+    banner2Title: "Create your first bucket"
+    banner2Text: "Provision Object Storage and upload with the CLI or SDK."
+    banner3Title: "Object storage resources"
+    banner3Text: "Guides for migration, CDN origins, and backup patterns."
+    contactTitle: "Talk with an Object Storage specialist"
+    faq:
+      - ["Is it S3 compatible?", "Yes — use S3-compatible APIs and tools."]
+      - ["Object vs Block Storage?", "Objects are accessed via API/URL; Block Storage attaches as a disk volume."]
+      - ["Can Akamai CDN pull from it?", "Yes — use Object Storage as an origin for delivery."]
+
+  - id: "{89650F9E-1AB4-4F97-B894-235CCC51CFA7}"
+    slug: private-networking
+    name: Private Networking
+    url: https://www.akamai.com/products/private-networking
+    heroTitle: "Secure private connectivity with Akamai Private Networking"
+    heroText: "Isolate workloads with VPC, VLAN, and private IPs — keep east-west traffic off the public internet."
+    promo1Title: "Build private cloud networks on Akamai"
+    promo1Text: "Segment tiers, peer resources, and control routing with VPC and related networking features."
+    sectionHeading: "Network isolation for modern architectures"
+    value1: ["VPC segmentation", "Place resources in private address spaces."]
+    value2: ["VLAN options", "Layer-2 adjacency when you need it."]
+    value3: ["Firewall integration", "Enforce least privilege with Cloud Firewall."]
+    promo2Title: "Public only where you choose"
+    promo2Text: "Expose load balancers and edge endpoints while keeping app tiers private."
+    icons: [["Design", "Plan subnets"], ["Deploy", "Create VPC"], ["Connect", "Attach instances"], ["Guard", "Apply firewalls"]]
+    splitTitle: "Introducing Private Networking"
+    splitRightTitle: "Get the Private Networking overview"
+    splitRightText: "See how VPC and VLAN protect Akamai Cloud workloads."
+    banner1Title: "Networking included with Akamai Cloud"
+    banner1Text: "Build private topologies without bolt-on SDN licensing."
+    features: [["Private IPs", "Communicate without public exposure."], ["Cross-service", "Works with compute, K8s, and databases."], ["Pairs with Firewall", "Cloud Firewall enforces policy."]]
+    banner2Title: "Create a VPC"
+    banner2Text: "Define a private network and attach your instances."
+    banner3Title: "Networking resources"
+    banner3Text: "Architectures for multi-tier and multi-region apps."
+    contactTitle: "Talk with a Private Networking specialist"
+    faq:
+      - ["What is included in Private Networking?", "VPC, VLAN, and related private connectivity features on Akamai Cloud."]
+      - ["Do I still need Cloud Firewall?", "Yes — Private Networking isolates; Cloud Firewall filters traffic."]
+      - ["Can Kubernetes use VPC?", "Managed Kubernetes integrates with private networking options."]

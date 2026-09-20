@@ -1,0 +1,626 @@
+[
+  {
+    "product": "Backups",
+    "key": "Promo Comprehensive",
+    "name": "Backups Promo Comprehensive",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Promo CTA/Backups Promo Comprehensive"
+  },
+  {
+    "product": "Backups",
+    "key": "Promo Discovery",
+    "name": "Backups Promo Discovery",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Promo CTA/Backups Promo Discovery"
+  },
+  {
+    "product": "Backups",
+    "key": "Section Title",
+    "name": "Backups Section Title",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Heading CTA/Backups Section Title"
+  },
+  {
+    "product": "Backups",
+    "key": "FAQ Title",
+    "name": "Backups FAQ Title",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Heading CTA/Backups FAQ Title"
+  },
+  {
+    "product": "Backups",
+    "key": "Resources Title",
+    "name": "Backups Resources Title",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Heading CTA/Backups Resources Title"
+  },
+  {
+    "product": "Backups",
+    "key": "Trusted",
+    "name": "Backups Trusted",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Heading CTA/Backups Trusted"
+  },
+  {
+    "product": "Backups",
+    "key": "Value Props",
+    "name": "Backups Value Props",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Three Column CTA/Backups Value Props"
+  },
+  {
+    "product": "Backups",
+    "key": "Features",
+    "name": "Backups Features",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Three Column CTA/Backups Features"
+  },
+  {
+    "product": "Backups",
+    "key": "Stories",
+    "name": "Backups Stories",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Three Column CTA/Backups Stories"
+  },
+  {
+    "product": "Backups",
+    "key": "Resources",
+    "name": "Backups Resources",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Three Column CTA/Backups Resources"
+  },
+  {
+    "product": "Backups",
+    "key": "Icon Bar",
+    "name": "Backups Icon Bar",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Four Column CTA/Backups Icon Bar"
+  },
+  {
+    "product": "Backups",
+    "key": "Split Promo",
+    "name": "Backups Split Promo",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Two Column CTA/Backups Split Promo"
+  },
+  {
+    "product": "Backups",
+    "key": "Banner Plans",
+    "name": "Backups Banner Plans",
+    "itemPath": "/sitecore/content/technology/akamai/Data/CTA Banner/Backups Banner Plans"
+  },
+  {
+    "product": "Backups",
+    "key": "Banner Start",
+    "name": "Backups Banner Start",
+    "itemPath": "/sitecore/content/technology/akamai/Data/CTA Banner/Backups Banner Start"
+  },
+  {
+    "product": "Backups",
+    "key": "Banner Learn",
+    "name": "Backups Banner Learn",
+    "itemPath": "/sitecore/content/technology/akamai/Data/CTA Banner/Backups Banner Learn"
+  },
+  {
+    "product": "Backups",
+    "key": "Contact",
+    "name": "Backups Contact",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Contact Form/Backups Contact"
+  },
+  {
+    "product": "Backups",
+    "key": "FAQ",
+    "name": "Backups FAQ",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Questions/Backups FAQ"
+  },
+  {
+    "product": "Backups",
+    "key": "FAQ: What does Backups cover",
+    "name": "What does Backups cover",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Questions/Backups FAQ/What does Backups cover"
+  },
+  {
+    "product": "Backups",
+    "key": "FAQ: How is this different from snapshots",
+    "name": "How is this different from snapshots",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Questions/Backups FAQ/How is this different from snapshots"
+  },
+  {
+    "product": "Backups",
+    "key": "FAQ: Can I restore to a new instance",
+    "name": "Can I restore to a new instance",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Questions/Backups FAQ/Can I restore to a new instance"
+  },
+  {
+    "product": "Block Storage",
+    "key": "Hero",
+    "name": "Block Storage Hero",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Hero/Block Storage Hero"
+  },
+  {
+    "product": "Block Storage",
+    "key": "Promo Comprehensive",
+    "name": "Block Storage Promo Comprehensive",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Promo CTA/Block Storage Promo Comprehensive"
+  },
+  {
+    "product": "Block Storage",
+    "key": "Promo Discovery",
+    "name": "Block Storage Promo Discovery",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Promo CTA/Block Storage Promo Discovery"
+  },
+  {
+    "product": "Block Storage",
+    "key": "Section Title",
+    "name": "Block Storage Section Title",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Heading CTA/Block Storage Section Title"
+  },
+  {
+    "product": "Block Storage",
+    "key": "FAQ Title",
+    "name": "Block Storage FAQ Title",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Heading CTA/Block Storage FAQ Title"
+  },
+  {
+    "product": "Block Storage",
+    "key": "Resources Title",
+    "name": "Block Storage Resources Title",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Heading CTA/Block Storage Resources Title"
+  },
+  {
+    "product": "Block Storage",
+    "key": "Trusted",
+    "name": "Block Storage Trusted",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Heading CTA/Block Storage Trusted"
+  },
+  {
+    "product": "Block Storage",
+    "key": "Value Props",
+    "name": "Block Storage Value Props",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Three Column CTA/Block Storage Value Props"
+  },
+  {
+    "product": "Block Storage",
+    "key": "Features",
+    "name": "Block Storage Features",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Three Column CTA/Block Storage Features"
+  },
+  {
+    "product": "Block Storage",
+    "key": "Stories",
+    "name": "Block Storage Stories",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Three Column CTA/Block Storage Stories"
+  },
+  {
+    "product": "Block Storage",
+    "key": "Resources",
+    "name": "Block Storage Resources",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Three Column CTA/Block Storage Resources"
+  },
+  {
+    "product": "Block Storage",
+    "key": "Icon Bar",
+    "name": "Block Storage Icon Bar",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Four Column CTA/Block Storage Icon Bar"
+  },
+  {
+    "product": "Block Storage",
+    "key": "Split Promo",
+    "name": "Block Storage Split Promo",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Two Column CTA/Block Storage Split Promo"
+  },
+  {
+    "product": "Block Storage",
+    "key": "Banner Plans",
+    "name": "Block Storage Banner Plans",
+    "itemPath": "/sitecore/content/technology/akamai/Data/CTA Banner/Block Storage Banner Plans"
+  },
+  {
+    "product": "Block Storage",
+    "key": "Banner Start",
+    "name": "Block Storage Banner Start",
+    "itemPath": "/sitecore/content/technology/akamai/Data/CTA Banner/Block Storage Banner Start"
+  },
+  {
+    "product": "Block Storage",
+    "key": "Banner Learn",
+    "name": "Block Storage Banner Learn",
+    "itemPath": "/sitecore/content/technology/akamai/Data/CTA Banner/Block Storage Banner Learn"
+  },
+  {
+    "product": "Block Storage",
+    "key": "Contact",
+    "name": "Block Storage Contact",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Contact Form/Block Storage Contact"
+  },
+  {
+    "product": "Block Storage",
+    "key": "FAQ",
+    "name": "Block Storage FAQ",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Questions/Block Storage FAQ"
+  },
+  {
+    "product": "Block Storage",
+    "key": "FAQ: Can I resize a volume",
+    "name": "Can I resize a volume",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Questions/Block Storage FAQ/Can I resize a volume"
+  },
+  {
+    "product": "Block Storage",
+    "key": "FAQ: Is Block Storage the same as Object Storage",
+    "name": "Is Block Storage the same as Object Storage",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Questions/Block Storage FAQ/Is Block Storage the same as Object Storage"
+  },
+  {
+    "product": "Block Storage",
+    "key": "FAQ: Does it work with Kubernetes",
+    "name": "Does it work with Kubernetes",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Questions/Block Storage FAQ/Does it work with Kubernetes"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Hero",
+    "name": "Cloud Firewall Hero",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Hero/Cloud Firewall Hero"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Promo Comprehensive",
+    "name": "Cloud Firewall Promo Comprehensive",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Promo CTA/Cloud Firewall Promo Comprehensive"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Promo Discovery",
+    "name": "Cloud Firewall Promo Discovery",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Promo CTA/Cloud Firewall Promo Discovery"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Section Title",
+    "name": "Cloud Firewall Section Title",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Heading CTA/Cloud Firewall Section Title"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "FAQ Title",
+    "name": "Cloud Firewall FAQ Title",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Heading CTA/Cloud Firewall FAQ Title"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Resources Title",
+    "name": "Cloud Firewall Resources Title",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Heading CTA/Cloud Firewall Resources Title"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Trusted",
+    "name": "Cloud Firewall Trusted",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Heading CTA/Cloud Firewall Trusted"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Value Props",
+    "name": "Cloud Firewall Value Props",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Three Column CTA/Cloud Firewall Value Props"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Features",
+    "name": "Cloud Firewall Features",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Three Column CTA/Cloud Firewall Features"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Stories",
+    "name": "Cloud Firewall Stories",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Three Column CTA/Cloud Firewall Stories"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Resources",
+    "name": "Cloud Firewall Resources",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Three Column CTA/Cloud Firewall Resources"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Icon Bar",
+    "name": "Cloud Firewall Icon Bar",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Four Column CTA/Cloud Firewall Icon Bar"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Split Promo",
+    "name": "Cloud Firewall Split Promo",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Two Column CTA/Cloud Firewall Split Promo"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Banner Plans",
+    "name": "Cloud Firewall Banner Plans",
+    "itemPath": "/sitecore/content/technology/akamai/Data/CTA Banner/Cloud Firewall Banner Plans"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Banner Start",
+    "name": "Cloud Firewall Banner Start",
+    "itemPath": "/sitecore/content/technology/akamai/Data/CTA Banner/Cloud Firewall Banner Start"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Banner Learn",
+    "name": "Cloud Firewall Banner Learn",
+    "itemPath": "/sitecore/content/technology/akamai/Data/CTA Banner/Cloud Firewall Banner Learn"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Contact",
+    "name": "Cloud Firewall Contact",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Contact Form/Cloud Firewall Contact"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "FAQ",
+    "name": "Cloud Firewall FAQ",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Questions/Cloud Firewall FAQ"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "FAQ: What resources can Cloud Firewall protect",
+    "name": "What resources can Cloud Firewall protect",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Questions/Cloud Firewall FAQ/What resources can Cloud Firewall protect"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "FAQ: Is it a WAF",
+    "name": "Is it a WAF",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Questions/Cloud Firewall FAQ/Is it a WAF"
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "FAQ: Does it cost extra",
+    "name": "Does it cost extra",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Questions/Cloud Firewall FAQ/Does it cost extra"
+  },
+  {
+    "product": "CPU",
+    "key": "Hero",
+    "name": "CPU Hero",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Hero/CPU Hero"
+  },
+  {
+    "product": "CPU",
+    "key": "Promo Comprehensive",
+    "name": "CPU Promo Comprehensive",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Promo CTA/CPU Promo Comprehensive"
+  },
+  {
+    "product": "CPU",
+    "key": "Promo Discovery",
+    "name": "CPU Promo Discovery",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Promo CTA/CPU Promo Discovery"
+  },
+  {
+    "product": "CPU",
+    "key": "Section Title",
+    "name": "CPU Section Title",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Heading CTA/CPU Section Title"
+  },
+  {
+    "product": "CPU",
+    "key": "FAQ Title",
+    "name": "CPU FAQ Title",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Heading CTA/CPU FAQ Title"
+  },
+  {
+    "product": "CPU",
+    "key": "Resources Title",
+    "name": "CPU Resources Title",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Heading CTA/CPU Resources Title"
+  },
+  {
+    "product": "CPU",
+    "key": "Trusted",
+    "name": "CPU Trusted",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Heading CTA/CPU Trusted"
+  },
+  {
+    "product": "CPU",
+    "key": "Value Props",
+    "name": "CPU Value Props",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Three Column CTA/CPU Value Props"
+  },
+  {
+    "product": "CPU",
+    "key": "Features",
+    "name": "CPU Features",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Three Column CTA/CPU Features"
+  },
+  {
+    "product": "CPU",
+    "key": "Stories",
+    "name": "CPU Stories",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Three Column CTA/CPU Stories"
+  },
+  {
+    "product": "CPU",
+    "key": "Resources",
+    "name": "CPU Resources",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Three Column CTA/CPU Resources"
+  },
+  {
+    "product": "CPU",
+    "key": "Icon Bar",
+    "name": "CPU Icon Bar",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Four Column CTA/CPU Icon Bar"
+  },
+  {
+    "product": "CPU",
+    "key": "Split Promo",
+    "name": "CPU Split Promo",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Two Column CTA/CPU Split Promo"
+  },
+  {
+    "product": "CPU",
+    "key": "Banner Plans",
+    "name": "CPU Banner Plans",
+    "itemPath": "/sitecore/content/technology/akamai/Data/CTA Banner/CPU Banner Plans"
+  },
+  {
+    "product": "CPU",
+    "key": "Banner Start",
+    "name": "CPU Banner Start",
+    "itemPath": "/sitecore/content/technology/akamai/Data/CTA Banner/CPU Banner Start"
+  },
+  {
+    "product": "CPU",
+    "key": "Banner Learn",
+    "name": "CPU Banner Learn",
+    "itemPath": "/sitecore/content/technology/akamai/Data/CTA Banner/CPU Banner Learn"
+  },
+  {
+    "product": "CPU",
+    "key": "Contact",
+    "name": "CPU Contact",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Contact Form/CPU Contact"
+  },
+  {
+    "product": "CPU",
+    "key": "FAQ",
+    "name": "CPU FAQ",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Questions/CPU FAQ"
+  },
+  {
+    "product": "CPU",
+    "key": "FAQ: Shared vs dedicated CPU",
+    "name": "Shared vs dedicated CPU",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Questions/CPU FAQ/Shared vs dedicated CPU"
+  },
+  {
+    "product": "CPU",
+    "key": "FAQ: Can I run containers",
+    "name": "Can I run containers",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Questions/CPU FAQ/Can I run containers"
+  },
+  {
+    "product": "CPU",
+    "key": "FAQ: How do GPUs differ",
+    "name": "How do GPUs differ",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Questions/CPU FAQ/How do GPUs differ"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Hero",
+    "name": "DNS Manager Hero",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Hero/DNS Manager Hero"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Promo Comprehensive",
+    "name": "DNS Manager Promo Comprehensive",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Promo CTA/DNS Manager Promo Comprehensive"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Promo Discovery",
+    "name": "DNS Manager Promo Discovery",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Promo CTA/DNS Manager Promo Discovery"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Section Title",
+    "name": "DNS Manager Section Title",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Heading CTA/DNS Manager Section Title"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "FAQ Title",
+    "name": "DNS Manager FAQ Title",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Heading CTA/DNS Manager FAQ Title"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Resources Title",
+    "name": "DNS Manager Resources Title",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Heading CTA/DNS Manager Resources Title"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Trusted",
+    "name": "DNS Manager Trusted",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Heading CTA/DNS Manager Trusted"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Value Props",
+    "name": "DNS Manager Value Props",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Three Column CTA/DNS Manager Value Props"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Features",
+    "name": "DNS Manager Features",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Three Column CTA/DNS Manager Features"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Stories",
+    "name": "DNS Manager Stories",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Three Column CTA/DNS Manager Stories"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Resources",
+    "name": "DNS Manager Resources",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Three Column CTA/DNS Manager Resources"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Icon Bar",
+    "name": "DNS Manager Icon Bar",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Four Column CTA/DNS Manager Icon Bar"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Split Promo",
+    "name": "DNS Manager Split Promo",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Two Column CTA/DNS Manager Split Promo"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Banner Plans",
+    "name": "DNS Manager Banner Plans",
+    "itemPath": "/sitecore/content/technology/akamai/Data/CTA Banner/DNS Manager Banner Plans"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Banner Start",
+    "name": "DNS Manager Banner Start",
+    "itemPath": "/sitecore/content/technology/akamai/Data/CTA Banner/DNS Manager Banner Start"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Banner Learn",
+    "name": "DNS Manager Banner Learn",
+    "itemPath": "/sitecore/content/technology/akamai/Data/CTA Banner/DNS Manager Banner Learn"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Contact",
+    "name": "DNS Manager Contact",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Contact Form/DNS Manager Contact"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "FAQ",
+    "name": "DNS Manager FAQ",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Questions/DNS Manager FAQ"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "FAQ: Is this Edge DNS",
+    "name": "Is this Edge DNS",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Questions/DNS Manager FAQ/Is this Edge DNS"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "FAQ: Can I use it with external hosts",
+    "name": "Can I use it with external hosts",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Questions/DNS Manager FAQ/Can I use it with external hosts"
+  },
+  {
+    "product": "DNS Manager",
+    "key": "FAQ: Does it support DNSSEC",
+    "name": "Does it support DNSSEC",
+    "itemPath": "/sitecore/content/technology/akamai/Data/Questions/DNS Manager FAQ/Does it support DNSSEC"
+  }
+]

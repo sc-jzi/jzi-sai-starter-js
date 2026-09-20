@@ -1,0 +1,1 @@
+{"name":"Can I use it with external hosts","templateId":"2DC7A13E-6753-47EF-805A-1CDE39012EEC","fields":[{"name":"Question","value":"Can I use it with external hosts?"},{"name":"Answer","value":"<p>Yes — records can point to any IP or hostname.</p>"}],"op":"create_faq_child","key":"FAQ: Can I use it with external hosts","product":"DNS Manager"}

@@ -1,0 +1,1 @@
+{"name":"Can I run containers","templateId":"2DC7A13E-6753-47EF-805A-1CDE39012EEC","fields":[{"name":"Question","value":"Can I run containers?"},{"name":"Answer","value":"<p>Yes — run Docker directly or use managed Kubernetes.</p>"}],"op":"create_faq_child","key":"FAQ: Can I run containers","product":"CPU"}

@@ -1,0 +1,314 @@
+[
+  {
+    "product": "DNS Manager",
+    "key": "Promo Comprehensive",
+    "name": "DNS Manager Promo Comprehensive",
+    "templateId": "C0943942-AE0F-4205-86FA-84884CCE4A53",
+    "parentId": "16712A4D-2A46-4F41-B535-30E134893C1C",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "DNS that stays out of your way"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Create domains, manage records, and point traffic to Akamai Cloud services from one console.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/523ffd946e114ed188937fefff99003a?v=bd45c27f\" dam-id=\"Q5NywY0sTXCj57irhWCIOg\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Learn how it works\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/dns-manager\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Subtitle",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Promo Discovery",
+    "name": "DNS Manager Promo Discovery",
+    "templateId": "C0943942-AE0F-4205-86FA-84884CCE4A53",
+    "parentId": "16712A4D-2A46-4F41-B535-30E134893C1C",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Connect users to the right endpoint"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Use DNS Manager as the control plane for domain routing into your cloud.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/4475e2a6ea5744d8b75a42548341a97e?v=7a4ff561\" dam-id=\"o6HjDHniTDOZrG7uwSe9jQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Watch overview\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/dns-manager\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Subtitle",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Section Title",
+    "name": "DNS Manager Section Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Reliable name resolution for cloud apps"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "FAQ Title",
+    "name": "DNS Manager FAQ Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Frequently asked questions"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Resources Title",
+    "name": "DNS Manager Resources Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Resources"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Trusted",
+    "name": "DNS Manager Trusted",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Trusted by the world's most innovative companies"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Value Props",
+    "name": "DNS Manager Value Props",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "Authoritative hosting"
+      },
+      {
+        "name": "SubText1",
+        "value": "Host zones with Akamai’s DNS infrastructure."
+      },
+      {
+        "name": "Image1",
+        "value": "<image mediaid=\"{A6E1E406-694C-41DB-8F9B-AE69C32CA47E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "Simple record management"
+      },
+      {
+        "name": "SubText2",
+        "value": "A, AAAA, CNAME, MX, TXT, and more."
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{D3A0CC0B-EAAE-4A88-AD26-E5DC28DCDEBF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Cloud integrated"
+      },
+      {
+        "name": "SubText3",
+        "value": "Works with Linodes, NodeBalancers, and Object Storage."
+      },
+      {
+        "name": "Image3",
+        "value": "<image mediaid=\"{CF40EE41-9D96-4764-9DCF-77684EE004AF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Features",
+    "name": "DNS Manager Features",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "API access"
+      },
+      {
+        "name": "SubText1",
+        "value": "Automate record changes."
+      },
+      {
+        "name": "Image1",
+        "value": "<image mediaid=\"{A6E1E406-694C-41DB-8F9B-AE69C32CA47E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "Multi-record types"
+      },
+      {
+        "name": "SubText2",
+        "value": "Cover web, mail, and verification needs."
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{D3A0CC0B-EAAE-4A88-AD26-E5DC28DCDEBF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Pairs with CDN"
+      },
+      {
+        "name": "SubText3",
+        "value": "Point apex and www to Akamai delivery."
+      },
+      {
+        "name": "Image3",
+        "value": "<image mediaid=\"{CF40EE41-9D96-4764-9DCF-77684EE004AF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,3827 @@
+[
+  {
+    "product": "Backups",
+    "key": "Promo Comprehensive",
+    "name": "Backups Promo Comprehensive",
+    "templateId": "C0943942-AE0F-4205-86FA-84884CCE4A53",
+    "parentId": "16712A4D-2A46-4F41-B535-30E134893C1C",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Simple, reliable instance backups"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Schedule backups for compute instances and recover when you need to roll back or rebuild.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/523ffd946e114ed188937fefff99003a?v=bd45c27f\" dam-id=\"Q5NywY0sTXCj57irhWCIOg\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Learn how it works\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/backups\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Subtitle",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Backups",
+    "key": "Promo Discovery",
+    "name": "Backups Promo Discovery",
+    "templateId": "C0943942-AE0F-4205-86FA-84884CCE4A53",
+    "parentId": "16712A4D-2A46-4F41-B535-30E134893C1C",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Don’t leave recovery to chance"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Pair Backups with snapshots and Object Storage for layered data protection.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/4475e2a6ea5744d8b75a42548341a97e?v=7a4ff561\" dam-id=\"o6HjDHniTDOZrG7uwSe9jQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Watch overview\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/backups\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Subtitle",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Backups",
+    "key": "Section Title",
+    "name": "Backups Section Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Recovery you can count on"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "Backups",
+    "key": "FAQ Title",
+    "name": "Backups FAQ Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Frequently asked questions"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "Backups",
+    "key": "Resources Title",
+    "name": "Backups Resources Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Resources"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "Backups",
+    "key": "Trusted",
+    "name": "Backups Trusted",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Trusted by the world's most innovative companies"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "Backups",
+    "key": "Value Props",
+    "name": "Backups Value Props",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "Automated schedules"
+      },
+      {
+        "name": "SubText1",
+        "value": "Set backup frequency that matches your RPO."
+      },
+      {
+        "name": "Image1",
+        "value": "<image mediaid=\"{A6E1E406-694C-41DB-8F9B-AE69C32CA47E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "Fast restores"
+      },
+      {
+        "name": "SubText2",
+        "value": "Recover instances without rebuilding from scratch."
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{D3A0CC0B-EAAE-4A88-AD26-E5DC28DCDEBF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Cloud-native"
+      },
+      {
+        "name": "SubText3",
+        "value": "Integrated with Akamai Cloud compute."
+      },
+      {
+        "name": "Image3",
+        "value": "<image mediaid=\"{CF40EE41-9D96-4764-9DCF-77684EE004AF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Backups",
+    "key": "Features",
+    "name": "Backups Features",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "Instance coverage"
+      },
+      {
+        "name": "SubText1",
+        "value": "Protect Linode compute instances."
+      },
+      {
+        "name": "Image1",
+        "value": "<image mediaid=\"{A6E1E406-694C-41DB-8F9B-AE69C32CA47E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "Predictable pricing"
+      },
+      {
+        "name": "SubText2",
+        "value": "Add backups without complex licensing."
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{D3A0CC0B-EAAE-4A88-AD26-E5DC28DCDEBF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Works with snapshots"
+      },
+      {
+        "name": "SubText3",
+        "value": "Combine with manual snapshots when needed."
+      },
+      {
+        "name": "Image3",
+        "value": "<image mediaid=\"{CF40EE41-9D96-4764-9DCF-77684EE004AF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Backups",
+    "key": "Stories",
+    "name": "Backups Stories",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "Godrej"
+      },
+      {
+        "name": "SubText1",
+        "value": "Modernized cyber defenses and achieved near-99.9% uptime with Akamai’s integrated portfolio."
+      },
+      {
+        "name": "Image1",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/bd50562aecd24a78bcca4a5704725e49?v=cd4087e9\" dam-id=\"GgddnJb_Tpij8fYolsoj8Q\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Read customer story\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "Novant Health"
+      },
+      {
+        "name": "SubText2",
+        "value": "Finds and mitigates risk with visibility, data protection, and shift-left testing on Akamai Cloud."
+      },
+      {
+        "name": "Image2",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/a17b886d156343c3a8ac17a61af5b642?v=06dde9a9\" dam-id=\"EqQ9aUZHSXeczVAP-Ji4mw\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Read customer story\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Commerzbank"
+      },
+      {
+        "name": "SubText3",
+        "value": "Secured billions of monthly calls through proactive detection and enhanced controls."
+      },
+      {
+        "name": "Image3",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/9f6207cd304f4c80bae642a14106b0d1?v=5ce99937\" dam-id=\"LUitv03nRBKLyedV8u-2NQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Read customer story\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Backups",
+    "key": "Resources",
+    "name": "Backups Resources",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "Get the Backups overview"
+      },
+      {
+        "name": "SubText1",
+        "value": "See how automated backups protect Linode workloads."
+      },
+      {
+        "name": "Image1",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/4475e2a6ea5744d8b75a42548341a97e?v=7a4ff561\" dam-id=\"o6HjDHniTDOZrG7uwSe9jQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Read more\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/backups\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "Data protection resources"
+      },
+      {
+        "name": "SubText2",
+        "value": "Best practices for backup, snapshot, and restore strategies."
+      },
+      {
+        "name": "Image2",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/cbc51ba1387348cf82e4b747a9f91f9e?v=48102d9b\" dam-id=\"hpEEbmruRL2O-Ygj9wVKTQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Read more\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/backups\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Enable backups in a few clicks"
+      },
+      {
+        "name": "SubText3",
+        "value": "Turn on backups for new or existing compute instances."
+      },
+      {
+        "name": "Image3",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/73c12faf8b84484eb13d6907c61b118e?v=93fea706\" dam-id=\"4G3qeznlT66jVoGoOWfJbw\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Read more\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/backups\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Backups",
+    "key": "Icon Bar",
+    "name": "Backups Icon Bar",
+    "templateId": "1B694EF9-154D-429A-9C3F-D7774CD4A852",
+    "parentId": "D1B87644-6DD8-4CC9-BA2D-861839B5BCB4",
+    "fields": [
+      {
+        "name": "Title1",
+        "value": "Schedule"
+      },
+      {
+        "name": "Text1",
+        "value": "Set backup windows"
+      },
+      {
+        "name": "Image1",
+        "value": "<image mediaid=\"{4986F57F-1293-4B48-86BB-1281B6A31573}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Title2",
+        "value": "Store"
+      },
+      {
+        "name": "Text2",
+        "value": "Keep restore points"
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{032B60ED-5AA8-4DA5-A142-C96693C88D17}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Title3",
+        "value": "Restore"
+      },
+      {
+        "name": "Text3",
+        "value": "Recover instances"
+      },
+      {
+        "name": "Image3",
+        "value": "<image mediaid=\"{A66B93B7-7A89-47A4-A44F-492C4381B75E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Title4",
+        "value": "Verify"
+      },
+      {
+        "name": "Text4",
+        "value": "Test your RTO"
+      },
+      {
+        "name": "Image4",
+        "value": "<image mediaid=\"{EF4C0417-CC75-4483-BA8E-1DBE32DD7487}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link4",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      }
+    ]
+  },
+  {
+    "product": "Backups",
+    "key": "Split Promo",
+    "name": "Backups Split Promo",
+    "templateId": "1812BF3E-6BDD-466D-99B2-0D7CEBB020FC",
+    "parentId": "8D46D2C3-C71B-46E1-BA80-DBC4FE319F15",
+    "fields": [
+      {
+        "name": "Title1",
+        "value": "Introducing Akamai Backups"
+      },
+      {
+        "name": "Text1",
+        "value": ""
+      },
+      {
+        "name": "Image1",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/eb4e64b104634aafa4235c4739ff7465?v=3eac35b5\" dam-id=\"7qH3BpfRQ1WJdm02Ke0MlQ\" width=\"1440\" height=\"476\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Title2",
+        "value": "Get the Backups overview"
+      },
+      {
+        "name": "Text2",
+        "value": "See how automated backups protect Linode workloads."
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{F64C8C16-8C71-44E1-A658-B3070574B89E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Read the brief\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/backups\" />"
+      }
+    ]
+  },
+  {
+    "product": "Backups",
+    "key": "Banner Plans",
+    "name": "Backups Banner Plans",
+    "templateId": "4900D7E5-61B0-483A-A9D6-69419D4D5982",
+    "parentId": "6E161443-E85B-430F-B301-170B54A79BC4",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Enable backups in a few clicks"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Turn on backups for new or existing compute instances.</p>"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"View plans\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/backups\" />"
+      },
+      {
+        "name": "Image",
+        "value": "<image mediaid=\"{4A120536-025E-42C8-8F24-8412246D7C26}\" />"
+      },
+      {
+        "name": "Icon",
+        "value": "<image mediaid=\"{23592312-2C5F-49EE-8517-2D9DF508280B}\" />"
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Backups",
+    "key": "Banner Start",
+    "name": "Backups Banner Start",
+    "templateId": "4900D7E5-61B0-483A-A9D6-69419D4D5982",
+    "parentId": "6E161443-E85B-430F-B301-170B54A79BC4",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Protect your workloads today"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Enable Backups on your Akamai Cloud instances.</p>"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Create an account\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/backups\" />"
+      },
+      {
+        "name": "Image",
+        "value": "<image mediaid=\"{4A120536-025E-42C8-8F24-8412246D7C26}\" />"
+      },
+      {
+        "name": "Icon",
+        "value": "<image mediaid=\"{23592312-2C5F-49EE-8517-2D9DF508280B}\" />"
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Backups",
+    "key": "Banner Learn",
+    "name": "Backups Banner Learn",
+    "templateId": "4900D7E5-61B0-483A-A9D6-69419D4D5982",
+    "parentId": "6E161443-E85B-430F-B301-170B54A79BC4",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Data protection resources"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Best practices for backup, snapshot, and restore strategies.</p>"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"See resources\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/backups\" />"
+      },
+      {
+        "name": "Image",
+        "value": "<image mediaid=\"{4A120536-025E-42C8-8F24-8412246D7C26}\" />"
+      },
+      {
+        "name": "Icon",
+        "value": "<image mediaid=\"{23592312-2C5F-49EE-8517-2D9DF508280B}\" />"
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Backups",
+    "key": "Contact",
+    "name": "Backups Contact",
+    "templateId": "6D166C16-D4CC-4BA9-B1E1-FE6378916533",
+    "parentId": "09699ECB-5715-4AA1-81F2-90D273AECE92",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Talk with a Backups specialist"
+      },
+      {
+        "name": "EmailLabel",
+        "value": "Business Email"
+      },
+      {
+        "name": "SubjectLabel",
+        "value": "Job Title"
+      },
+      {
+        "name": "MessageLabel",
+        "value": "How can we help?"
+      },
+      {
+        "name": "ButtonLabel",
+        "value": "Submit"
+      },
+      {
+        "name": "BackgroundImage",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/29d61b83511747dbb4bada3a63cda110?v=5fc11426\" dam-id=\"DiN6UrZDRyCAVpFBgzRj4A\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      }
+    ]
+  },
+  {
+    "product": "Backups",
+    "key": "FAQ",
+    "name": "Backups FAQ",
+    "templateId": "FAE81BF9-1117-4F97-9133-00E752F41772",
+    "parentId": "D8E44B11-8072-49FE-B6E2-8C6BB87C60CB",
+    "fields": [],
+    "faqChildren": [
+      {
+        "name": "What does Backups cover",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "What does Backups cover?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>Automated backups for supported Linode compute instances.</p>"
+          }
+        ]
+      },
+      {
+        "name": "How is this different from snapshots",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "How is this different from snapshots?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>Snapshots are point-in-time manual copies; Backups provide scheduled automated protection.</p>"
+          }
+        ]
+      },
+      {
+        "name": "Can I restore to a new instance",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "Can I restore to a new instance?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>Yes — restore workflows let you recover to a replacement instance.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Hero",
+    "name": "Block Storage Hero",
+    "templateId": "90D315E8-AA42-4B23-A7EB-4491396453F8",
+    "parentId": "4B0AD535-96E3-400F-94D3-DC0452238EE5",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Scale durable volumes with Akamai Block Storage"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Attach high-performance NVMe block volumes to Linode instances — grow capacity independently of compute.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/eb4e64b104634aafa4235c4739ff7465?v=3eac35b5\" dam-id=\"7qH3BpfRQ1WJdm02Ke0MlQ\" width=\"1440\" height=\"476\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Get started\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/block-storage\" />"
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Promo Comprehensive",
+    "name": "Block Storage Promo Comprehensive",
+    "templateId": "C0943942-AE0F-4205-86FA-84884CCE4A53",
+    "parentId": "16712A4D-2A46-4F41-B535-30E134893C1C",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Detachable, resizable block volumes"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Add persistent storage to your VMs, resize as you grow, and move volumes between instances.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/523ffd946e114ed188937fefff99003a?v=bd45c27f\" dam-id=\"Q5NywY0sTXCj57irhWCIOg\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Learn how it works\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/block-storage\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Subtitle",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Promo Discovery",
+    "name": "Block Storage Promo Discovery",
+    "templateId": "C0943942-AE0F-4205-86FA-84884CCE4A53",
+    "parentId": "16712A4D-2A46-4F41-B535-30E134893C1C",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Stateful workloads without local-disk lock-in"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Run databases, CMS, and analytics with volumes you control.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/4475e2a6ea5744d8b75a42548341a97e?v=7a4ff561\" dam-id=\"o6HjDHniTDOZrG7uwSe9jQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Watch overview\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/block-storage\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Subtitle",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Section Title",
+    "name": "Block Storage Section Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Storage that keeps pace with your apps"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "FAQ Title",
+    "name": "Block Storage FAQ Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Frequently asked questions"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Resources Title",
+    "name": "Block Storage Resources Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Resources"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Trusted",
+    "name": "Block Storage Trusted",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Trusted by the world's most innovative companies"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Value Props",
+    "name": "Block Storage Value Props",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "Independent scaling"
+      },
+      {
+        "name": "SubText1",
+        "value": "Grow storage without resizing the whole instance."
+      },
+      {
+        "name": "Image1",
+        "value": "<image mediaid=\"{A6E1E406-694C-41DB-8F9B-AE69C32CA47E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "NVMe performance"
+      },
+      {
+        "name": "SubText2",
+        "value": "Low-latency volumes for databases and stateful apps."
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{D3A0CC0B-EAAE-4A88-AD26-E5DC28DCDEBF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Flexible attach"
+      },
+      {
+        "name": "SubText3",
+        "value": "Move volumes across compatible instances."
+      },
+      {
+        "name": "Image3",
+        "value": "<image mediaid=\"{CF40EE41-9D96-4764-9DCF-77684EE004AF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Features",
+    "name": "Block Storage Features",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "Snapshots"
+      },
+      {
+        "name": "SubText1",
+        "value": "Capture volume state for recovery."
+      },
+      {
+        "name": "Image1",
+        "value": "<image mediaid=\"{A6E1E406-694C-41DB-8F9B-AE69C32CA47E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "Multi-size plans"
+      },
+      {
+        "name": "SubText2",
+        "value": "Choose capacity tiers that fit your workload."
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{D3A0CC0B-EAAE-4A88-AD26-E5DC28DCDEBF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Region availability"
+      },
+      {
+        "name": "SubText3",
+        "value": "Deploy in supported Akamai Cloud regions."
+      },
+      {
+        "name": "Image3",
+        "value": "<image mediaid=\"{CF40EE41-9D96-4764-9DCF-77684EE004AF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Stories",
+    "name": "Block Storage Stories",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "Godrej"
+      },
+      {
+        "name": "SubText1",
+        "value": "Modernized cyber defenses and achieved near-99.9% uptime with Akamai’s integrated portfolio."
+      },
+      {
+        "name": "Image1",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/bd50562aecd24a78bcca4a5704725e49?v=cd4087e9\" dam-id=\"GgddnJb_Tpij8fYolsoj8Q\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Read customer story\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "Novant Health"
+      },
+      {
+        "name": "SubText2",
+        "value": "Finds and mitigates risk with visibility, data protection, and shift-left testing on Akamai Cloud."
+      },
+      {
+        "name": "Image2",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/a17b886d156343c3a8ac17a61af5b642?v=06dde9a9\" dam-id=\"EqQ9aUZHSXeczVAP-Ji4mw\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Read customer story\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Commerzbank"
+      },
+      {
+        "name": "SubText3",
+        "value": "Secured billions of monthly calls through proactive detection and enhanced controls."
+      },
+      {
+        "name": "Image3",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/9f6207cd304f4c80bae642a14106b0d1?v=5ce99937\" dam-id=\"LUitv03nRBKLyedV8u-2NQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Read customer story\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Resources",
+    "name": "Block Storage Resources",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "Get the Block Storage overview"
+      },
+      {
+        "name": "SubText1",
+        "value": "See how block volumes complement local instance disks."
+      },
+      {
+        "name": "Image1",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/4475e2a6ea5744d8b75a42548341a97e?v=7a4ff561\" dam-id=\"o6HjDHniTDOZrG7uwSe9jQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Read more\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/block-storage\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "Storage architecture resources"
+      },
+      {
+        "name": "SubText2",
+        "value": "Patterns for databases, CMS, and stateful Kubernetes workloads."
+      },
+      {
+        "name": "Image2",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/cbc51ba1387348cf82e4b747a9f91f9e?v=48102d9b\" dam-id=\"hpEEbmruRL2O-Ygj9wVKTQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Read more\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/block-storage\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Pay for the capacity you need"
+      },
+      {
+        "name": "SubText3",
+        "value": "Start small and expand volumes as applications grow."
+      },
+      {
+        "name": "Image3",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/73c12faf8b84484eb13d6907c61b118e?v=93fea706\" dam-id=\"4G3qeznlT66jVoGoOWfJbw\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Read more\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/block-storage\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Icon Bar",
+    "name": "Block Storage Icon Bar",
+    "templateId": "1B694EF9-154D-429A-9C3F-D7774CD4A852",
+    "parentId": "D1B87644-6DD8-4CC9-BA2D-861839B5BCB4",
+    "fields": [
+      {
+        "name": "Title1",
+        "value": "Create"
+      },
+      {
+        "name": "Text1",
+        "value": "Provision volumes"
+      },
+      {
+        "name": "Image1",
+        "value": "<image mediaid=\"{4986F57F-1293-4B48-86BB-1281B6A31573}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Title2",
+        "value": "Attach"
+      },
+      {
+        "name": "Text2",
+        "value": "Mount to instances"
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{032B60ED-5AA8-4DA5-A142-C96693C88D17}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Title3",
+        "value": "Grow"
+      },
+      {
+        "name": "Text3",
+        "value": "Resize online"
+      },
+      {
+        "name": "Image3",
+        "value": "<image mediaid=\"{A66B93B7-7A89-47A4-A44F-492C4381B75E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Title4",
+        "value": "Protect"
+      },
+      {
+        "name": "Text4",
+        "value": "Snapshot volumes"
+      },
+      {
+        "name": "Image4",
+        "value": "<image mediaid=\"{EF4C0417-CC75-4483-BA8E-1DBE32DD7487}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link4",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Split Promo",
+    "name": "Block Storage Split Promo",
+    "templateId": "1812BF3E-6BDD-466D-99B2-0D7CEBB020FC",
+    "parentId": "8D46D2C3-C71B-46E1-BA80-DBC4FE319F15",
+    "fields": [
+      {
+        "name": "Title1",
+        "value": "Introducing Block Storage"
+      },
+      {
+        "name": "Text1",
+        "value": ""
+      },
+      {
+        "name": "Image1",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/eb4e64b104634aafa4235c4739ff7465?v=3eac35b5\" dam-id=\"7qH3BpfRQ1WJdm02Ke0MlQ\" width=\"1440\" height=\"476\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Title2",
+        "value": "Get the Block Storage overview"
+      },
+      {
+        "name": "Text2",
+        "value": "See how block volumes complement local instance disks."
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{F64C8C16-8C71-44E1-A658-B3070574B89E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Read the brief\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/block-storage\" />"
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Banner Plans",
+    "name": "Block Storage Banner Plans",
+    "templateId": "4900D7E5-61B0-483A-A9D6-69419D4D5982",
+    "parentId": "6E161443-E85B-430F-B301-170B54A79BC4",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Pay for the capacity you need"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Start small and expand volumes as applications grow.</p>"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"View plans\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/block-storage\" />"
+      },
+      {
+        "name": "Image",
+        "value": "<image mediaid=\"{4A120536-025E-42C8-8F24-8412246D7C26}\" />"
+      },
+      {
+        "name": "Icon",
+        "value": "<image mediaid=\"{23592312-2C5F-49EE-8517-2D9DF508280B}\" />"
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Banner Start",
+    "name": "Block Storage Banner Start",
+    "templateId": "4900D7E5-61B0-483A-A9D6-69419D4D5982",
+    "parentId": "6E161443-E85B-430F-B301-170B54A79BC4",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Add Block Storage to your stack"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Create a volume and attach it to a running instance.</p>"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Create an account\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/block-storage\" />"
+      },
+      {
+        "name": "Image",
+        "value": "<image mediaid=\"{4A120536-025E-42C8-8F24-8412246D7C26}\" />"
+      },
+      {
+        "name": "Icon",
+        "value": "<image mediaid=\"{23592312-2C5F-49EE-8517-2D9DF508280B}\" />"
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Banner Learn",
+    "name": "Block Storage Banner Learn",
+    "templateId": "4900D7E5-61B0-483A-A9D6-69419D4D5982",
+    "parentId": "6E161443-E85B-430F-B301-170B54A79BC4",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Storage architecture resources"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Patterns for databases, CMS, and stateful Kubernetes workloads.</p>"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"See resources\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/block-storage\" />"
+      },
+      {
+        "name": "Image",
+        "value": "<image mediaid=\"{4A120536-025E-42C8-8F24-8412246D7C26}\" />"
+      },
+      {
+        "name": "Icon",
+        "value": "<image mediaid=\"{23592312-2C5F-49EE-8517-2D9DF508280B}\" />"
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "Contact",
+    "name": "Block Storage Contact",
+    "templateId": "6D166C16-D4CC-4BA9-B1E1-FE6378916533",
+    "parentId": "09699ECB-5715-4AA1-81F2-90D273AECE92",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Talk with a Block Storage specialist"
+      },
+      {
+        "name": "EmailLabel",
+        "value": "Business Email"
+      },
+      {
+        "name": "SubjectLabel",
+        "value": "Job Title"
+      },
+      {
+        "name": "MessageLabel",
+        "value": "How can we help?"
+      },
+      {
+        "name": "ButtonLabel",
+        "value": "Submit"
+      },
+      {
+        "name": "BackgroundImage",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/29d61b83511747dbb4bada3a63cda110?v=5fc11426\" dam-id=\"DiN6UrZDRyCAVpFBgzRj4A\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      }
+    ]
+  },
+  {
+    "product": "Block Storage",
+    "key": "FAQ",
+    "name": "Block Storage FAQ",
+    "templateId": "FAE81BF9-1117-4F97-9133-00E752F41772",
+    "parentId": "D8E44B11-8072-49FE-B6E2-8C6BB87C60CB",
+    "fields": [],
+    "faqChildren": [
+      {
+        "name": "Can I resize a volume",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "Can I resize a volume?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>Yes — expand capacity as needs grow (see current resize limits).</p>"
+          }
+        ]
+      },
+      {
+        "name": "Is Block Storage the same as Object Storage",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "Is Block Storage the same as Object Storage?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>No — Block Storage is attachable volumes; Object Storage is S3-compatible object buckets.</p>"
+          }
+        ]
+      },
+      {
+        "name": "Does it work with Kubernetes",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "Does it work with Kubernetes?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>Use with PVC workflows on managed Kubernetes where supported.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Hero",
+    "name": "Cloud Firewall Hero",
+    "templateId": "90D315E8-AA42-4B23-A7EB-4491396453F8",
+    "parentId": "4B0AD535-96E3-400F-94D3-DC0452238EE5",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Control network traffic with Akamai Cloud Firewall"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Stateful firewall rules for Linode instances and NodeBalancers — allow, deny, and segment traffic at the network edge of your VPC.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/eb4e64b104634aafa4235c4739ff7465?v=3eac35b5\" dam-id=\"7qH3BpfRQ1WJdm02Ke0MlQ\" width=\"1440\" height=\"476\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Get started\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cloud-firewall\" />"
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Promo Comprehensive",
+    "name": "Cloud Firewall Promo Comprehensive",
+    "templateId": "C0943942-AE0F-4205-86FA-84884CCE4A53",
+    "parentId": "16712A4D-2A46-4F41-B535-30E134893C1C",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Network security without appliance sprawl"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Define inbound and outbound rules once and apply them across compute and load balancers.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/523ffd946e114ed188937fefff99003a?v=bd45c27f\" dam-id=\"Q5NywY0sTXCj57irhWCIOg\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Learn how it works\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cloud-firewall\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Subtitle",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Promo Discovery",
+    "name": "Cloud Firewall Promo Discovery",
+    "templateId": "C0943942-AE0F-4205-86FA-84884CCE4A53",
+    "parentId": "16712A4D-2A46-4F41-B535-30E134893C1C",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Least-privilege networking by default"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Lock down management ports and expose only what your apps need.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/4475e2a6ea5744d8b75a42548341a97e?v=7a4ff561\" dam-id=\"o6HjDHniTDOZrG7uwSe9jQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Watch overview\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cloud-firewall\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Subtitle",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Section Title",
+    "name": "Cloud Firewall Section Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Segment and protect cloud workloads"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "FAQ Title",
+    "name": "Cloud Firewall FAQ Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Frequently asked questions"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Resources Title",
+    "name": "Cloud Firewall Resources Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Resources"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Trusted",
+    "name": "Cloud Firewall Trusted",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Trusted by the world's most innovative companies"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Value Props",
+    "name": "Cloud Firewall Value Props",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "Stateful filtering"
+      },
+      {
+        "name": "SubText1",
+        "value": "Track connections and enforce allow/deny policies."
+      },
+      {
+        "name": "Image1",
+        "value": "<image mediaid=\"{A6E1E406-694C-41DB-8F9B-AE69C32CA47E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "Instance & LB coverage"
+      },
+      {
+        "name": "SubText2",
+        "value": "Protect Linodes and NodeBalancers with shared rules."
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{D3A0CC0B-EAAE-4A88-AD26-E5DC28DCDEBF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "VPC friendly"
+      },
+      {
+        "name": "SubText3",
+        "value": "Works with private networking topologies."
+      },
+      {
+        "name": "Image3",
+        "value": "<image mediaid=\"{CF40EE41-9D96-4764-9DCF-77684EE004AF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Features",
+    "name": "Cloud Firewall Features",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "Rule groups"
+      },
+      {
+        "name": "SubText1",
+        "value": "Reuse policies across resources."
+      },
+      {
+        "name": "Image1",
+        "value": "<image mediaid=\"{A6E1E406-694C-41DB-8F9B-AE69C32CA47E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "Inbound & outbound"
+      },
+      {
+        "name": "SubText2",
+        "value": "Control both directions of traffic."
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{D3A0CC0B-EAAE-4A88-AD26-E5DC28DCDEBF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Integrates with VPC"
+      },
+      {
+        "name": "SubText3",
+        "value": "Pair with private networking and VLANs."
+      },
+      {
+        "name": "Image3",
+        "value": "<image mediaid=\"{CF40EE41-9D96-4764-9DCF-77684EE004AF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Stories",
+    "name": "Cloud Firewall Stories",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "Godrej"
+      },
+      {
+        "name": "SubText1",
+        "value": "Modernized cyber defenses and achieved near-99.9% uptime with Akamai’s integrated portfolio."
+      },
+      {
+        "name": "Image1",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/bd50562aecd24a78bcca4a5704725e49?v=cd4087e9\" dam-id=\"GgddnJb_Tpij8fYolsoj8Q\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Read customer story\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "Novant Health"
+      },
+      {
+        "name": "SubText2",
+        "value": "Finds and mitigates risk with visibility, data protection, and shift-left testing on Akamai Cloud."
+      },
+      {
+        "name": "Image2",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/a17b886d156343c3a8ac17a61af5b642?v=06dde9a9\" dam-id=\"EqQ9aUZHSXeczVAP-Ji4mw\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Read customer story\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Commerzbank"
+      },
+      {
+        "name": "SubText3",
+        "value": "Secured billions of monthly calls through proactive detection and enhanced controls."
+      },
+      {
+        "name": "Image3",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/9f6207cd304f4c80bae642a14106b0d1?v=5ce99937\" dam-id=\"LUitv03nRBKLyedV8u-2NQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Read customer story\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Resources",
+    "name": "Cloud Firewall Resources",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "Get the Cloud Firewall overview"
+      },
+      {
+        "name": "SubText1",
+        "value": "See how firewall rules protect Akamai Cloud resources."
+      },
+      {
+        "name": "Image1",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/4475e2a6ea5744d8b75a42548341a97e?v=7a4ff561\" dam-id=\"o6HjDHniTDOZrG7uwSe9jQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Read more\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cloud-firewall\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "Network security resources"
+      },
+      {
+        "name": "SubText2",
+        "value": "Best practices for firewall rules and VPC segmentation."
+      },
+      {
+        "name": "Image2",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/cbc51ba1387348cf82e4b747a9f91f9e?v=48102d9b\" dam-id=\"hpEEbmruRL2O-Ygj9wVKTQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Read more\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cloud-firewall\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Free with Akamai Cloud networking"
+      },
+      {
+        "name": "SubText3",
+        "value": "Cloud Firewall is included to harden your cloud estate."
+      },
+      {
+        "name": "Image3",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/73c12faf8b84484eb13d6907c61b118e?v=93fea706\" dam-id=\"4G3qeznlT66jVoGoOWfJbw\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Read more\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cloud-firewall\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Icon Bar",
+    "name": "Cloud Firewall Icon Bar",
+    "templateId": "1B694EF9-154D-429A-9C3F-D7774CD4A852",
+    "parentId": "D1B87644-6DD8-4CC9-BA2D-861839B5BCB4",
+    "fields": [
+      {
+        "name": "Title1",
+        "value": "Define"
+      },
+      {
+        "name": "Text1",
+        "value": "Write firewall rules"
+      },
+      {
+        "name": "Image1",
+        "value": "<image mediaid=\"{4986F57F-1293-4B48-86BB-1281B6A31573}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Title2",
+        "value": "Apply"
+      },
+      {
+        "name": "Text2",
+        "value": "Attach to resources"
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{032B60ED-5AA8-4DA5-A142-C96693C88D17}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Title3",
+        "value": "Segment"
+      },
+      {
+        "name": "Text3",
+        "value": "Isolate tiers"
+      },
+      {
+        "name": "Image3",
+        "value": "<image mediaid=\"{A66B93B7-7A89-47A4-A44F-492C4381B75E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Title4",
+        "value": "Audit"
+      },
+      {
+        "name": "Text4",
+        "value": "Review traffic policy"
+      },
+      {
+        "name": "Image4",
+        "value": "<image mediaid=\"{EF4C0417-CC75-4483-BA8E-1DBE32DD7487}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link4",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Split Promo",
+    "name": "Cloud Firewall Split Promo",
+    "templateId": "1812BF3E-6BDD-466D-99B2-0D7CEBB020FC",
+    "parentId": "8D46D2C3-C71B-46E1-BA80-DBC4FE319F15",
+    "fields": [
+      {
+        "name": "Title1",
+        "value": "Introducing Cloud Firewall"
+      },
+      {
+        "name": "Text1",
+        "value": ""
+      },
+      {
+        "name": "Image1",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/eb4e64b104634aafa4235c4739ff7465?v=3eac35b5\" dam-id=\"7qH3BpfRQ1WJdm02Ke0MlQ\" width=\"1440\" height=\"476\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Title2",
+        "value": "Get the Cloud Firewall overview"
+      },
+      {
+        "name": "Text2",
+        "value": "See how firewall rules protect Akamai Cloud resources."
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{F64C8C16-8C71-44E1-A658-B3070574B89E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Read the brief\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cloud-firewall\" />"
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Banner Plans",
+    "name": "Cloud Firewall Banner Plans",
+    "templateId": "4900D7E5-61B0-483A-A9D6-69419D4D5982",
+    "parentId": "6E161443-E85B-430F-B301-170B54A79BC4",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Free with Akamai Cloud networking"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Cloud Firewall is included to harden your cloud estate.</p>"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"View plans\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cloud-firewall\" />"
+      },
+      {
+        "name": "Image",
+        "value": "<image mediaid=\"{4A120536-025E-42C8-8F24-8412246D7C26}\" />"
+      },
+      {
+        "name": "Icon",
+        "value": "<image mediaid=\"{23592312-2C5F-49EE-8517-2D9DF508280B}\" />"
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Banner Start",
+    "name": "Cloud Firewall Banner Start",
+    "templateId": "4900D7E5-61B0-483A-A9D6-69419D4D5982",
+    "parentId": "6E161443-E85B-430F-B301-170B54A79BC4",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Harden your instances today"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Create a firewall and attach it to production Linodes.</p>"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Create an account\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cloud-firewall\" />"
+      },
+      {
+        "name": "Image",
+        "value": "<image mediaid=\"{4A120536-025E-42C8-8F24-8412246D7C26}\" />"
+      },
+      {
+        "name": "Icon",
+        "value": "<image mediaid=\"{23592312-2C5F-49EE-8517-2D9DF508280B}\" />"
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Banner Learn",
+    "name": "Cloud Firewall Banner Learn",
+    "templateId": "4900D7E5-61B0-483A-A9D6-69419D4D5982",
+    "parentId": "6E161443-E85B-430F-B301-170B54A79BC4",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Network security resources"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Best practices for firewall rules and VPC segmentation.</p>"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"See resources\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cloud-firewall\" />"
+      },
+      {
+        "name": "Image",
+        "value": "<image mediaid=\"{4A120536-025E-42C8-8F24-8412246D7C26}\" />"
+      },
+      {
+        "name": "Icon",
+        "value": "<image mediaid=\"{23592312-2C5F-49EE-8517-2D9DF508280B}\" />"
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Contact",
+    "name": "Cloud Firewall Contact",
+    "templateId": "6D166C16-D4CC-4BA9-B1E1-FE6378916533",
+    "parentId": "09699ECB-5715-4AA1-81F2-90D273AECE92",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Talk with a Cloud Firewall specialist"
+      },
+      {
+        "name": "EmailLabel",
+        "value": "Business Email"
+      },
+      {
+        "name": "SubjectLabel",
+        "value": "Job Title"
+      },
+      {
+        "name": "MessageLabel",
+        "value": "How can we help?"
+      },
+      {
+        "name": "ButtonLabel",
+        "value": "Submit"
+      },
+      {
+        "name": "BackgroundImage",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/29d61b83511747dbb4bada3a63cda110?v=5fc11426\" dam-id=\"DiN6UrZDRyCAVpFBgzRj4A\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "FAQ",
+    "name": "Cloud Firewall FAQ",
+    "templateId": "FAE81BF9-1117-4F97-9133-00E752F41772",
+    "parentId": "D8E44B11-8072-49FE-B6E2-8C6BB87C60CB",
+    "fields": [],
+    "faqChildren": [
+      {
+        "name": "What resources can Cloud Firewall protect",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "What resources can Cloud Firewall protect?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>Linode instances and NodeBalancers.</p>"
+          }
+        ]
+      },
+      {
+        "name": "Is it a WAF",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "Is it a WAF?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>No — Cloud Firewall is network-layer filtering; pair with WAAP/API Security for app-layer threats.</p>"
+          }
+        ]
+      },
+      {
+        "name": "Does it cost extra",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "Does it cost extra?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>Cloud Firewall is included with Akamai Cloud networking.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "Hero",
+    "name": "CPU Hero",
+    "templateId": "90D315E8-AA42-4B23-A7EB-4491396453F8",
+    "parentId": "4B0AD535-96E3-400F-94D3-DC0452238EE5",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "General-purpose compute with Akamai CPU instances"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Reliable, cost-efficient virtual machines for web apps, APIs, and backends — available across Akamai’s distributed cloud.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/eb4e64b104634aafa4235c4739ff7465?v=3eac35b5\" dam-id=\"7qH3BpfRQ1WJdm02Ke0MlQ\" width=\"1440\" height=\"476\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Get started\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cpu\" />"
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "Promo Comprehensive",
+    "name": "CPU Promo Comprehensive",
+    "templateId": "C0943942-AE0F-4205-86FA-84884CCE4A53",
+    "parentId": "16712A4D-2A46-4F41-B535-30E134893C1C",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Right-size CPU for every workload"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Choose shared or dedicated CPU plans with predictable pricing and global regions.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/523ffd946e114ed188937fefff99003a?v=bd45c27f\" dam-id=\"Q5NywY0sTXCj57irhWCIOg\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Learn how it works\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cpu\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Subtitle",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "Promo Discovery",
+    "name": "CPU Promo Discovery",
+    "templateId": "C0943942-AE0F-4205-86FA-84884CCE4A53",
+    "parentId": "16712A4D-2A46-4F41-B535-30E134893C1C",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "The foundation of your cloud stack"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Pair CPU instances with Block Storage, NodeBalancers, and Kubernetes.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/4475e2a6ea5744d8b75a42548341a97e?v=7a4ff561\" dam-id=\"o6HjDHniTDOZrG7uwSe9jQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Watch overview\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cpu\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Subtitle",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "Section Title",
+    "name": "CPU Section Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Compute built for everyday production"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "FAQ Title",
+    "name": "CPU FAQ Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Frequently asked questions"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "Resources Title",
+    "name": "CPU Resources Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Resources"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "Trusted",
+    "name": "CPU Trusted",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Trusted by the world's most innovative companies"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "Value Props",
+    "name": "CPU Value Props",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "Global regions"
+      },
+      {
+        "name": "SubText1",
+        "value": "Deploy close to customers on Akamai Cloud."
+      },
+      {
+        "name": "Image1",
+        "value": "<image mediaid=\"{A6E1E406-694C-41DB-8F9B-AE69C32CA47E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "Flexible plans"
+      },
+      {
+        "name": "SubText2",
+        "value": "From lightweight to high-memory CPU shapes."
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{D3A0CC0B-EAAE-4A88-AD26-E5DC28DCDEBF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Simple ops"
+      },
+      {
+        "name": "SubText3",
+        "value": "API, CLI, and Terraform to automate fleets."
+      },
+      {
+        "name": "Image3",
+        "value": "<image mediaid=\"{CF40EE41-9D96-4764-9DCF-77684EE004AF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "Features",
+    "name": "CPU Features",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "Shared & dedicated"
+      },
+      {
+        "name": "SubText1",
+        "value": "Pick the isolation level you need."
+      },
+      {
+        "name": "Image1",
+        "value": "<image mediaid=\"{A6E1E406-694C-41DB-8F9B-AE69C32CA47E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "Images & stacks"
+      },
+      {
+        "name": "SubText2",
+        "value": "Boot from marketplace and custom images."
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{D3A0CC0B-EAAE-4A88-AD26-E5DC28DCDEBF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Private networking"
+      },
+      {
+        "name": "SubText3",
+        "value": "VPC, VLAN, and Cloud Firewall ready."
+      },
+      {
+        "name": "Image3",
+        "value": "<image mediaid=\"{CF40EE41-9D96-4764-9DCF-77684EE004AF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "Stories",
+    "name": "CPU Stories",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "Godrej"
+      },
+      {
+        "name": "SubText1",
+        "value": "Modernized cyber defenses and achieved near-99.9% uptime with Akamai’s integrated portfolio."
+      },
+      {
+        "name": "Image1",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/bd50562aecd24a78bcca4a5704725e49?v=cd4087e9\" dam-id=\"GgddnJb_Tpij8fYolsoj8Q\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Read customer story\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "Novant Health"
+      },
+      {
+        "name": "SubText2",
+        "value": "Finds and mitigates risk with visibility, data protection, and shift-left testing on Akamai Cloud."
+      },
+      {
+        "name": "Image2",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/a17b886d156343c3a8ac17a61af5b642?v=06dde9a9\" dam-id=\"EqQ9aUZHSXeczVAP-Ji4mw\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Read customer story\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Commerzbank"
+      },
+      {
+        "name": "SubText3",
+        "value": "Secured billions of monthly calls through proactive detection and enhanced controls."
+      },
+      {
+        "name": "Image3",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/9f6207cd304f4c80bae642a14106b0d1?v=5ce99937\" dam-id=\"LUitv03nRBKLyedV8u-2NQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Read customer story\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "Resources",
+    "name": "CPU Resources",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "Get the CPU compute overview"
+      },
+      {
+        "name": "SubText1",
+        "value": "Compare shared and dedicated CPU plans for your apps."
+      },
+      {
+        "name": "Image1",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/4475e2a6ea5744d8b75a42548341a97e?v=7a4ff561\" dam-id=\"o6HjDHniTDOZrG7uwSe9jQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Read more\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cpu\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "Compute resources"
+      },
+      {
+        "name": "SubText2",
+        "value": "Guides for sizing, images, and high availability."
+      },
+      {
+        "name": "Image2",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/cbc51ba1387348cf82e4b747a9f91f9e?v=48102d9b\" dam-id=\"hpEEbmruRL2O-Ygj9wVKTQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Read more\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cpu\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Predictable hourly pricing"
+      },
+      {
+        "name": "SubText3",
+        "value": "No surprise egress traps — transparent compute pricing."
+      },
+      {
+        "name": "Image3",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/73c12faf8b84484eb13d6907c61b118e?v=93fea706\" dam-id=\"4G3qeznlT66jVoGoOWfJbw\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Read more\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cpu\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "Icon Bar",
+    "name": "CPU Icon Bar",
+    "templateId": "1B694EF9-154D-429A-9C3F-D7774CD4A852",
+    "parentId": "D1B87644-6DD8-4CC9-BA2D-861839B5BCB4",
+    "fields": [
+      {
+        "name": "Title1",
+        "value": "Launch"
+      },
+      {
+        "name": "Text1",
+        "value": "Create instances"
+      },
+      {
+        "name": "Image1",
+        "value": "<image mediaid=\"{4986F57F-1293-4B48-86BB-1281B6A31573}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Title2",
+        "value": "Configure"
+      },
+      {
+        "name": "Text2",
+        "value": "Secure & network"
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{032B60ED-5AA8-4DA5-A142-C96693C88D17}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Title3",
+        "value": "Scale"
+      },
+      {
+        "name": "Text3",
+        "value": "Grow capacity"
+      },
+      {
+        "name": "Image3",
+        "value": "<image mediaid=\"{A66B93B7-7A89-47A4-A44F-492C4381B75E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Title4",
+        "value": "Automate"
+      },
+      {
+        "name": "Text4",
+        "value": "API & Terraform"
+      },
+      {
+        "name": "Image4",
+        "value": "<image mediaid=\"{EF4C0417-CC75-4483-BA8E-1DBE32DD7487}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link4",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "Split Promo",
+    "name": "CPU Split Promo",
+    "templateId": "1812BF3E-6BDD-466D-99B2-0D7CEBB020FC",
+    "parentId": "8D46D2C3-C71B-46E1-BA80-DBC4FE319F15",
+    "fields": [
+      {
+        "name": "Title1",
+        "value": "Introducing Akamai CPU"
+      },
+      {
+        "name": "Text1",
+        "value": ""
+      },
+      {
+        "name": "Image1",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/eb4e64b104634aafa4235c4739ff7465?v=3eac35b5\" dam-id=\"7qH3BpfRQ1WJdm02Ke0MlQ\" width=\"1440\" height=\"476\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Title2",
+        "value": "Get the CPU compute overview"
+      },
+      {
+        "name": "Text2",
+        "value": "Compare shared and dedicated CPU plans for your apps."
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{F64C8C16-8C71-44E1-A658-B3070574B89E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Read the brief\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cpu\" />"
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "Banner Plans",
+    "name": "CPU Banner Plans",
+    "templateId": "4900D7E5-61B0-483A-A9D6-69419D4D5982",
+    "parentId": "6E161443-E85B-430F-B301-170B54A79BC4",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Predictable hourly pricing"
+      },
+      {
+        "name": "Text",
+        "value": "<p>No surprise egress traps — transparent compute pricing.</p>"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"View plans\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cpu\" />"
+      },
+      {
+        "name": "Image",
+        "value": "<image mediaid=\"{4A120536-025E-42C8-8F24-8412246D7C26}\" />"
+      },
+      {
+        "name": "Icon",
+        "value": "<image mediaid=\"{23592312-2C5F-49EE-8517-2D9DF508280B}\" />"
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "Banner Start",
+    "name": "CPU Banner Start",
+    "templateId": "4900D7E5-61B0-483A-A9D6-69419D4D5982",
+    "parentId": "6E161443-E85B-430F-B301-170B54A79BC4",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Launch your first CPU instance"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Create a Linode in minutes from Cloud Manager or the API.</p>"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Create an account\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cpu\" />"
+      },
+      {
+        "name": "Image",
+        "value": "<image mediaid=\"{4A120536-025E-42C8-8F24-8412246D7C26}\" />"
+      },
+      {
+        "name": "Icon",
+        "value": "<image mediaid=\"{23592312-2C5F-49EE-8517-2D9DF508280B}\" />"
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "Banner Learn",
+    "name": "CPU Banner Learn",
+    "templateId": "4900D7E5-61B0-483A-A9D6-69419D4D5982",
+    "parentId": "6E161443-E85B-430F-B301-170B54A79BC4",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Compute resources"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Guides for sizing, images, and high availability.</p>"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"See resources\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cpu\" />"
+      },
+      {
+        "name": "Image",
+        "value": "<image mediaid=\"{4A120536-025E-42C8-8F24-8412246D7C26}\" />"
+      },
+      {
+        "name": "Icon",
+        "value": "<image mediaid=\"{23592312-2C5F-49EE-8517-2D9DF508280B}\" />"
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "Contact",
+    "name": "CPU Contact",
+    "templateId": "6D166C16-D4CC-4BA9-B1E1-FE6378916533",
+    "parentId": "09699ECB-5715-4AA1-81F2-90D273AECE92",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Talk with a CPU compute specialist"
+      },
+      {
+        "name": "EmailLabel",
+        "value": "Business Email"
+      },
+      {
+        "name": "SubjectLabel",
+        "value": "Job Title"
+      },
+      {
+        "name": "MessageLabel",
+        "value": "How can we help?"
+      },
+      {
+        "name": "ButtonLabel",
+        "value": "Submit"
+      },
+      {
+        "name": "BackgroundImage",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/29d61b83511747dbb4bada3a63cda110?v=5fc11426\" dam-id=\"DiN6UrZDRyCAVpFBgzRj4A\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "FAQ",
+    "name": "CPU FAQ",
+    "templateId": "FAE81BF9-1117-4F97-9133-00E752F41772",
+    "parentId": "D8E44B11-8072-49FE-B6E2-8C6BB87C60CB",
+    "fields": [],
+    "faqChildren": [
+      {
+        "name": "Shared vs dedicated CPU",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "Shared vs dedicated CPU?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>Shared maximizes value; dedicated guarantees CPU resources for noisier neighbors.</p>"
+          }
+        ]
+      },
+      {
+        "name": "Can I run containers",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "Can I run containers?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>Yes — run Docker directly or use managed Kubernetes.</p>"
+          }
+        ]
+      },
+      {
+        "name": "How do GPUs differ",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "How do GPUs differ?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>GPUs accelerate AI/ML and parallel workloads; CPU suits general apps.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Hero",
+    "name": "DNS Manager Hero",
+    "templateId": "90D315E8-AA42-4B23-A7EB-4491396453F8",
+    "parentId": "4B0AD535-96E3-400F-94D3-DC0452238EE5",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Authoritative DNS with Akamai DNS Manager"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Host and manage DNS zones on Akamai Cloud — fast lookups, easy records, and integration with your Linode resources.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/eb4e64b104634aafa4235c4739ff7465?v=3eac35b5\" dam-id=\"7qH3BpfRQ1WJdm02Ke0MlQ\" width=\"1440\" height=\"476\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Get started\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/dns-manager\" />"
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Promo Comprehensive",
+    "name": "DNS Manager Promo Comprehensive",
+    "templateId": "C0943942-AE0F-4205-86FA-84884CCE4A53",
+    "parentId": "16712A4D-2A46-4F41-B535-30E134893C1C",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "DNS that stays out of your way"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Create domains, manage records, and point traffic to Akamai Cloud services from one console.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/523ffd946e114ed188937fefff99003a?v=bd45c27f\" dam-id=\"Q5NywY0sTXCj57irhWCIOg\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Learn how it works\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/dns-manager\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Subtitle",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Promo Discovery",
+    "name": "DNS Manager Promo Discovery",
+    "templateId": "C0943942-AE0F-4205-86FA-84884CCE4A53",
+    "parentId": "16712A4D-2A46-4F41-B535-30E134893C1C",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Connect users to the right endpoint"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Use DNS Manager as the control plane for domain routing into your cloud.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/4475e2a6ea5744d8b75a42548341a97e?v=7a4ff561\" dam-id=\"o6HjDHniTDOZrG7uwSe9jQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Watch overview\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/dns-manager\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Subtitle",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Section Title",
+    "name": "DNS Manager Section Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Reliable name resolution for cloud apps"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "FAQ Title",
+    "name": "DNS Manager FAQ Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Frequently asked questions"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Resources Title",
+    "name": "DNS Manager Resources Title",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Resources"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Trusted",
+    "name": "DNS Manager Trusted",
+    "templateId": "FA136527-6302-471D-83AB-E66FC72BDA99",
+    "parentId": "DD4CA9E9-D740-4CDE-A72E-4E047205767C",
+    "fields": [
+      {
+        "name": "Heading",
+        "value": "Trusted by the world's most innovative companies"
+      },
+      {
+        "name": "Text",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"#\" />"
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Value Props",
+    "name": "DNS Manager Value Props",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "Authoritative hosting"
+      },
+      {
+        "name": "SubText1",
+        "value": "Host zones with Akamai’s DNS infrastructure."
+      },
+      {
+        "name": "Image1",
+        "value": "<image mediaid=\"{A6E1E406-694C-41DB-8F9B-AE69C32CA47E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "Simple record management"
+      },
+      {
+        "name": "SubText2",
+        "value": "A, AAAA, CNAME, MX, TXT, and more."
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{D3A0CC0B-EAAE-4A88-AD26-E5DC28DCDEBF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Cloud integrated"
+      },
+      {
+        "name": "SubText3",
+        "value": "Works with Linodes, NodeBalancers, and Object Storage."
+      },
+      {
+        "name": "Image3",
+        "value": "<image mediaid=\"{CF40EE41-9D96-4764-9DCF-77684EE004AF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Features",
+    "name": "DNS Manager Features",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "API access"
+      },
+      {
+        "name": "SubText1",
+        "value": "Automate record changes."
+      },
+      {
+        "name": "Image1",
+        "value": "<image mediaid=\"{A6E1E406-694C-41DB-8F9B-AE69C32CA47E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "Multi-record types"
+      },
+      {
+        "name": "SubText2",
+        "value": "Cover web, mail, and verification needs."
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{D3A0CC0B-EAAE-4A88-AD26-E5DC28DCDEBF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Pairs with CDN"
+      },
+      {
+        "name": "SubText3",
+        "value": "Point apex and www to Akamai delivery."
+      },
+      {
+        "name": "Image3",
+        "value": "<image mediaid=\"{CF40EE41-9D96-4764-9DCF-77684EE004AF}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Stories",
+    "name": "DNS Manager Stories",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "Godrej"
+      },
+      {
+        "name": "SubText1",
+        "value": "Modernized cyber defenses and achieved near-99.9% uptime with Akamai’s integrated portfolio."
+      },
+      {
+        "name": "Image1",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/bd50562aecd24a78bcca4a5704725e49?v=cd4087e9\" dam-id=\"GgddnJb_Tpij8fYolsoj8Q\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Read customer story\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "Novant Health"
+      },
+      {
+        "name": "SubText2",
+        "value": "Finds and mitigates risk with visibility, data protection, and shift-left testing on Akamai Cloud."
+      },
+      {
+        "name": "Image2",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/a17b886d156343c3a8ac17a61af5b642?v=06dde9a9\" dam-id=\"EqQ9aUZHSXeczVAP-Ji4mw\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Read customer story\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Commerzbank"
+      },
+      {
+        "name": "SubText3",
+        "value": "Secured billions of monthly calls through proactive detection and enhanced controls."
+      },
+      {
+        "name": "Image3",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/9f6207cd304f4c80bae642a14106b0d1?v=5ce99937\" dam-id=\"LUitv03nRBKLyedV8u-2NQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Read customer story\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Resources",
+    "name": "DNS Manager Resources",
+    "templateId": "148D07BA-F923-4FB2-8907-0BD440D5DB44",
+    "parentId": "9452E48F-4BA3-4483-AB97-B40FF9AE3F03",
+    "fields": [
+      {
+        "name": "Text1",
+        "value": "Get the DNS Manager overview"
+      },
+      {
+        "name": "SubText1",
+        "value": "See how Akamai Cloud DNS fits with Edge DNS and enterprise offerings."
+      },
+      {
+        "name": "Image1",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/4475e2a6ea5744d8b75a42548341a97e?v=7a4ff561\" dam-id=\"o6HjDHniTDOZrG7uwSe9jQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Read more\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/dns-manager\" />"
+      },
+      {
+        "name": "Video1",
+        "value": ""
+      },
+      {
+        "name": "Text2",
+        "value": "DNS resources"
+      },
+      {
+        "name": "SubText2",
+        "value": "Guides for records, migration, and troubleshooting."
+      },
+      {
+        "name": "Image2",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/cbc51ba1387348cf82e4b747a9f91f9e?v=48102d9b\" dam-id=\"hpEEbmruRL2O-Ygj9wVKTQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Read more\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/dns-manager\" />"
+      },
+      {
+        "name": "Video2",
+        "value": ""
+      },
+      {
+        "name": "Text3",
+        "value": "Included with Akamai Cloud"
+      },
+      {
+        "name": "SubText3",
+        "value": "Manage DNS alongside compute and storage."
+      },
+      {
+        "name": "Image3",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/73c12faf8b84484eb13d6907c61b118e?v=93fea706\" dam-id=\"4G3qeznlT66jVoGoOWfJbw\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Read more\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/dns-manager\" />"
+      },
+      {
+        "name": "Video3",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Icon Bar",
+    "name": "DNS Manager Icon Bar",
+    "templateId": "1B694EF9-154D-429A-9C3F-D7774CD4A852",
+    "parentId": "D1B87644-6DD8-4CC9-BA2D-861839B5BCB4",
+    "fields": [
+      {
+        "name": "Title1",
+        "value": "Add zone"
+      },
+      {
+        "name": "Text1",
+        "value": "Create a domain"
+      },
+      {
+        "name": "Image1",
+        "value": "<image mediaid=\"{4986F57F-1293-4B48-86BB-1281B6A31573}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Title2",
+        "value": "Edit records"
+      },
+      {
+        "name": "Text2",
+        "value": "Point to services"
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{032B60ED-5AA8-4DA5-A142-C96693C88D17}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Title3",
+        "value": "Delegate"
+      },
+      {
+        "name": "Text3",
+        "value": "Update registrars"
+      },
+      {
+        "name": "Image3",
+        "value": "<image mediaid=\"{A66B93B7-7A89-47A4-A44F-492C4381B75E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link3",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Title4",
+        "value": "Monitor"
+      },
+      {
+        "name": "Text4",
+        "value": "Validate resolution"
+      },
+      {
+        "name": "Image4",
+        "value": "<image mediaid=\"{EF4C0417-CC75-4483-BA8E-1DBE32DD7487}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link4",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Split Promo",
+    "name": "DNS Manager Split Promo",
+    "templateId": "1812BF3E-6BDD-466D-99B2-0D7CEBB020FC",
+    "parentId": "8D46D2C3-C71B-46E1-BA80-DBC4FE319F15",
+    "fields": [
+      {
+        "name": "Title1",
+        "value": "Introducing DNS Manager"
+      },
+      {
+        "name": "Text1",
+        "value": ""
+      },
+      {
+        "name": "Image1",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/eb4e64b104634aafa4235c4739ff7465?v=3eac35b5\" dam-id=\"7qH3BpfRQ1WJdm02Ke0MlQ\" width=\"1440\" height=\"476\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link1",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Title2",
+        "value": "Get the DNS Manager overview"
+      },
+      {
+        "name": "Text2",
+        "value": "See how Akamai Cloud DNS fits with Edge DNS and enterprise offerings."
+      },
+      {
+        "name": "Image2",
+        "value": "<image mediaid=\"{F64C8C16-8C71-44E1-A658-B3070574B89E}\" alt=\"\" height=\"\" width=\"\" hspace=\"\" vspace=\"\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Read the brief\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/dns-manager\" />"
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Banner Plans",
+    "name": "DNS Manager Banner Plans",
+    "templateId": "4900D7E5-61B0-483A-A9D6-69419D4D5982",
+    "parentId": "6E161443-E85B-430F-B301-170B54A79BC4",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Included with Akamai Cloud"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Manage DNS alongside compute and storage.</p>"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"View plans\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/dns-manager\" />"
+      },
+      {
+        "name": "Image",
+        "value": "<image mediaid=\"{4A120536-025E-42C8-8F24-8412246D7C26}\" />"
+      },
+      {
+        "name": "Icon",
+        "value": "<image mediaid=\"{23592312-2C5F-49EE-8517-2D9DF508280B}\" />"
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Banner Start",
+    "name": "DNS Manager Banner Start",
+    "templateId": "4900D7E5-61B0-483A-A9D6-69419D4D5982",
+    "parentId": "6E161443-E85B-430F-B301-170B54A79BC4",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Move a zone to DNS Manager"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Create a domain and update nameservers at your registrar.</p>"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Create an account\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/dns-manager\" />"
+      },
+      {
+        "name": "Image",
+        "value": "<image mediaid=\"{4A120536-025E-42C8-8F24-8412246D7C26}\" />"
+      },
+      {
+        "name": "Icon",
+        "value": "<image mediaid=\"{23592312-2C5F-49EE-8517-2D9DF508280B}\" />"
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Banner Learn",
+    "name": "DNS Manager Banner Learn",
+    "templateId": "4900D7E5-61B0-483A-A9D6-69419D4D5982",
+    "parentId": "6E161443-E85B-430F-B301-170B54A79BC4",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "DNS resources"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Guides for records, migration, and troubleshooting.</p>"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"See resources\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/dns-manager\" />"
+      },
+      {
+        "name": "Image",
+        "value": "<image mediaid=\"{4A120536-025E-42C8-8F24-8412246D7C26}\" />"
+      },
+      {
+        "name": "Icon",
+        "value": "<image mediaid=\"{23592312-2C5F-49EE-8517-2D9DF508280B}\" />"
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "Contact",
+    "name": "DNS Manager Contact",
+    "templateId": "6D166C16-D4CC-4BA9-B1E1-FE6378916533",
+    "parentId": "09699ECB-5715-4AA1-81F2-90D273AECE92",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Talk with a DNS Manager specialist"
+      },
+      {
+        "name": "EmailLabel",
+        "value": "Business Email"
+      },
+      {
+        "name": "SubjectLabel",
+        "value": "Job Title"
+      },
+      {
+        "name": "MessageLabel",
+        "value": "How can we help?"
+      },
+      {
+        "name": "ButtonLabel",
+        "value": "Submit"
+      },
+      {
+        "name": "BackgroundImage",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/29d61b83511747dbb4bada3a63cda110?v=5fc11426\" dam-id=\"DiN6UrZDRyCAVpFBgzRj4A\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      }
+    ]
+  },
+  {
+    "product": "DNS Manager",
+    "key": "FAQ",
+    "name": "DNS Manager FAQ",
+    "templateId": "FAE81BF9-1117-4F97-9133-00E752F41772",
+    "parentId": "D8E44B11-8072-49FE-B6E2-8C6BB87C60CB",
+    "fields": [],
+    "faqChildren": [
+      {
+        "name": "Is this Edge DNS",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "Is this Edge DNS?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>DNS Manager is Akamai Cloud’s authoritative DNS for Linode domains; Edge DNS is part of the broader Akamai portfolio.</p>"
+          }
+        ]
+      },
+      {
+        "name": "Can I use it with external hosts",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "Can I use it with external hosts?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>Yes — records can point to any IP or hostname.</p>"
+          }
+        ]
+      },
+      {
+        "name": "Does it support DNSSEC",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "Does it support DNSSEC?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>Check current DNS Manager capabilities for DNSSEC support.</p>"
+          }
+        ]
+      }
+    ]
+  }
+]

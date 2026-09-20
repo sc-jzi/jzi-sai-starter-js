@@ -1,0 +1,534 @@
+{
+  "products": {
+    "Backups": [
+      {
+        "key": "Banner Learn",
+        "name": "Backups Banner Learn",
+        "itemId": "a1415f81-1fe8-46a6-8273-e4802c5ab334"
+      },
+      {
+        "key": "Banner Plans",
+        "name": "Backups Banner Plans",
+        "itemId": "a4efb619-6138-432a-bbd9-ccd08c0a1096"
+      },
+      {
+        "key": "Banner Start",
+        "name": "Backups Banner Start",
+        "itemId": "9d899802-c2f7-4229-bc65-996b4c19af93"
+      },
+      {
+        "key": "Contact",
+        "name": "Backups Contact",
+        "itemId": "22085879-6cca-4e67-8492-248cf7ce20a6"
+      },
+      {
+        "key": "FAQ",
+        "name": "Backups FAQ",
+        "itemId": "dfe4e107-5856-421c-8d8f-5dd3d3953677"
+      },
+      {
+        "key": "FAQ Title",
+        "name": "Backups FAQ Title",
+        "itemId": "a2afc535-e638-4d4f-844d-270a4500e166"
+      },
+      {
+        "key": "FAQ: Can I restore to a new instance",
+        "name": "Can I restore to a new instance",
+        "itemId": "dd615868-b065-4999-b62f-623ab5775c2b"
+      },
+      {
+        "key": "FAQ: How is this different from snapshots",
+        "name": "How is this different from snapshots",
+        "itemId": "af748d63-0096-47d0-a22e-9d9fe100aef2"
+      },
+      {
+        "key": "FAQ: What does Backups cover",
+        "name": "What does Backups cover",
+        "itemId": "45f2718a-86f8-453f-9813-38e4cc775554"
+      },
+      {
+        "key": "Features",
+        "name": "Backups Features",
+        "itemId": "dcd0eea9-57f9-4bfc-9253-3f8425f76ed6"
+      },
+      {
+        "key": "Icon Bar",
+        "name": "Backups Icon Bar",
+        "itemId": "3e69d518-0ee4-4db1-9471-f2002a351181"
+      },
+      {
+        "key": "Promo Comprehensive",
+        "name": "Backups Promo Comprehensive",
+        "itemId": "65372446-f236-418d-b042-0a270ca1fa30"
+      },
+      {
+        "key": "Promo Discovery",
+        "name": "Backups Promo Discovery",
+        "itemId": "ad718c54-8d5f-44ca-a390-275f006627e9"
+      },
+      {
+        "key": "Resources",
+        "name": "Backups Resources",
+        "itemId": "10bf466f-7aef-467c-b655-b7e51da0aec7"
+      },
+      {
+        "key": "Resources Title",
+        "name": "Backups Resources Title",
+        "itemId": "c1609774-aebb-4655-8d23-473bd6a43d9d"
+      },
+      {
+        "key": "Section Title",
+        "name": "Backups Section Title",
+        "itemId": "8c07cdae-d9e0-4df9-bdcf-c0cbda620fe9"
+      },
+      {
+        "key": "Split Promo",
+        "name": "Backups Split Promo",
+        "itemId": "2cfdf8df-27a3-4acb-8e01-6852af81143d"
+      },
+      {
+        "key": "Stories",
+        "name": "Backups Stories",
+        "itemId": "5204d607-cc1a-40dc-80ca-d1ed98e52f0a"
+      },
+      {
+        "key": "Trusted",
+        "name": "Backups Trusted",
+        "itemId": "58f1a305-c5b9-43b2-91cd-7e4407adf15e"
+      },
+      {
+        "key": "Value Props",
+        "name": "Backups Value Props",
+        "itemId": "46bdfd5a-177c-4878-8d01-cd6a9ef9940f"
+      }
+    ],
+    "Block Storage": [
+      {
+        "key": "Banner Learn",
+        "name": "Block Storage Banner Learn",
+        "itemId": "2692713b-9283-4753-9ab7-e782690d1014"
+      },
+      {
+        "key": "Banner Plans",
+        "name": "Block Storage Banner Plans",
+        "itemId": "768fd4a8-c394-4594-b6cf-2b70b996f104"
+      },
+      {
+        "key": "Banner Start",
+        "name": "Block Storage Banner Start",
+        "itemId": "40890175-7846-484f-a104-7482c9e6ec43"
+      },
+      {
+        "key": "Contact",
+        "name": "Block Storage Contact",
+        "itemId": "baf18122-a813-4473-8f84-5d3f43975179"
+      },
+      {
+        "key": "FAQ",
+        "name": "Block Storage FAQ",
+        "itemId": "538ee574-1a5b-4572-83b9-6a6f50aaf59c"
+      },
+      {
+        "key": "FAQ Title",
+        "name": "Block Storage FAQ Title",
+        "itemId": "cefd9918-c61d-4a38-8570-abb4cd15fd7b"
+      },
+      {
+        "key": "FAQ: Can I resize a volume",
+        "name": "Can I resize a volume",
+        "itemId": "46e7b978-013e-4f01-8869-ef6f74352552"
+      },
+      {
+        "key": "FAQ: Does it work with Kubernetes",
+        "name": "Does it work with Kubernetes",
+        "itemId": "b44230c6-befb-47c8-84e6-db003acabb79"
+      },
+      {
+        "key": "FAQ: Is Block Storage the same as Object Storage",
+        "name": "Is Block Storage the same as Object Storage",
+        "itemId": "bdeb7f8f-e1d2-45a1-98d0-8a3bd39ce17e"
+      },
+      {
+        "key": "Features",
+        "name": "Block Storage Features",
+        "itemId": "dd830398-a535-4952-8032-357890df2b0b"
+      },
+      {
+        "key": "Hero",
+        "name": "Block Storage Hero",
+        "itemId": "25eb9eb4-6d56-48ab-82aa-5fe47e7c664c"
+      },
+      {
+        "key": "Icon Bar",
+        "name": "Block Storage Icon Bar",
+        "itemId": "6af2b1ae-02c6-4216-831f-94436fab01b0"
+      },
+      {
+        "key": "Promo Comprehensive",
+        "name": "Block Storage Promo Comprehensive",
+        "itemId": "1f63d53b-0ff3-4bd7-aed2-755db96efa2b"
+      },
+      {
+        "key": "Promo Discovery",
+        "name": "Block Storage Promo Discovery",
+        "itemId": "c063dd71-9b23-424d-99ec-0b268e7ba002"
+      },
+      {
+        "key": "Resources",
+        "name": "Block Storage Resources",
+        "itemId": "fefc0695-d26a-4730-926c-afe5b4fa541d"
+      },
+      {
+        "key": "Resources Title",
+        "name": "Block Storage Resources Title",
+        "itemId": "5b77e2e1-ba8e-4a48-957f-6b980956753b"
+      },
+      {
+        "key": "Section Title",
+        "name": "Block Storage Section Title",
+        "itemId": "913e0fed-b886-416c-b968-b241641896b1"
+      },
+      {
+        "key": "Split Promo",
+        "name": "Block Storage Split Promo",
+        "itemId": "8ff12492-aee1-45be-8a5f-58966d99b90c"
+      },
+      {
+        "key": "Stories",
+        "name": "Block Storage Stories",
+        "itemId": "e68d7713-762b-47cf-9934-e06961a18057"
+      },
+      {
+        "key": "Trusted",
+        "name": "Block Storage Trusted",
+        "itemId": "f86e323f-67f4-47d6-b253-e8322cb2a5f9"
+      },
+      {
+        "key": "Value Props",
+        "name": "Block Storage Value Props",
+        "itemId": "096fbd42-abc8-4805-b372-222dc5ccf2f2"
+      }
+    ],
+    "Cloud Firewall": [
+      {
+        "key": "Banner Learn",
+        "name": "Cloud Firewall Banner Learn",
+        "itemId": "c810a3b8-8116-473c-940a-0abbf32feaaf"
+      },
+      {
+        "key": "Banner Plans",
+        "name": "Cloud Firewall Banner Plans",
+        "itemId": "189db99d-2a29-4af7-8edf-ae2bbba02fd0"
+      },
+      {
+        "key": "Banner Start",
+        "name": "Cloud Firewall Banner Start",
+        "itemId": "36726d36-1fa8-4bae-b92d-be62a50aaca6"
+      },
+      {
+        "key": "Contact",
+        "name": "Cloud Firewall Contact",
+        "itemId": "8ea32320-bb0f-4394-bef8-7c41ad58cd8e"
+      },
+      {
+        "key": "FAQ",
+        "name": "Cloud Firewall FAQ",
+        "itemId": "6839d02a-b83d-4d20-bad5-886d530b8c23"
+      },
+      {
+        "key": "FAQ Title",
+        "name": "Cloud Firewall FAQ Title",
+        "itemId": "d59519a8-3e78-427b-aa9f-573064c4a0ff"
+      },
+      {
+        "key": "FAQ: Does it cost extra",
+        "name": "Does it cost extra",
+        "itemId": "ec695d61-5862-43af-9297-dd788c60c41a"
+      },
+      {
+        "key": "FAQ: Is it a WAF",
+        "name": "Is it a WAF",
+        "itemId": "28401831-7312-49ae-9fc1-d672013b9708"
+      },
+      {
+        "key": "FAQ: What resources can Cloud Firewall protect",
+        "name": "What resources can Cloud Firewall protect",
+        "itemId": "f42699ce-5cf4-462c-8c24-f0436a6b5833"
+      },
+      {
+        "key": "Features",
+        "name": "Cloud Firewall Features",
+        "itemId": "8d6afd48-76a3-41ac-bd00-cd764afc74d5"
+      },
+      {
+        "key": "Hero",
+        "name": "Cloud Firewall Hero",
+        "itemId": "9ea26ccd-480d-4120-b5f4-8fc19290fd85"
+      },
+      {
+        "key": "Icon Bar",
+        "name": "Cloud Firewall Icon Bar",
+        "itemId": "47c9c2fc-fc8b-4ded-a154-9b410786a900"
+      },
+      {
+        "key": "Promo Comprehensive",
+        "name": "Cloud Firewall Promo Comprehensive",
+        "itemId": "14366e96-dd17-4bca-b42e-125efa01e582"
+      },
+      {
+        "key": "Promo Discovery",
+        "name": "Cloud Firewall Promo Discovery",
+        "itemId": "f1896610-5d10-4d60-86ae-2b502c45fb08"
+      },
+      {
+        "key": "Resources",
+        "name": "Cloud Firewall Resources",
+        "itemId": "8417ec31-7bc0-42dd-99f4-244427e6cbbc"
+      },
+      {
+        "key": "Resources Title",
+        "name": "Cloud Firewall Resources Title",
+        "itemId": "c08b675c-dc0a-4e16-9fa5-b7b3f1772c23"
+      },
+      {
+        "key": "Section Title",
+        "name": "Cloud Firewall Section Title",
+        "itemId": "1459fa1e-0304-461a-9a73-65499909c904"
+      },
+      {
+        "key": "Split Promo",
+        "name": "Cloud Firewall Split Promo",
+        "itemId": "8bb7bf72-8443-46a1-8637-4ad43bdff872"
+      },
+      {
+        "key": "Stories",
+        "name": "Cloud Firewall Stories",
+        "itemId": "52d7a067-4204-4348-8fb3-a8d512992cb7"
+      },
+      {
+        "key": "Trusted",
+        "name": "Cloud Firewall Trusted",
+        "itemId": "8cf29cf5-0aa7-4451-9d74-b37de3e3ed94"
+      },
+      {
+        "key": "Value Props",
+        "name": "Cloud Firewall Value Props",
+        "itemId": "a05c6601-e1fd-4cb1-adf9-e3644ec92366"
+      }
+    ],
+    "CPU": [
+      {
+        "key": "Banner Learn",
+        "name": "CPU Banner Learn",
+        "itemId": "f88e4540-a82f-4d57-80c5-3a740405b3a3"
+      },
+      {
+        "key": "Banner Plans",
+        "name": "CPU Banner Plans",
+        "itemId": "8470c04d-f50b-476f-8827-74fd1c4cd5a2"
+      },
+      {
+        "key": "Banner Start",
+        "name": "CPU Banner Start",
+        "itemId": "36ca997b-cf8d-4353-95af-41c7def627be"
+      },
+      {
+        "key": "Contact",
+        "name": "CPU Contact",
+        "itemId": "4c2da36f-bdce-4784-afd7-a2954af9c24e"
+      },
+      {
+        "key": "FAQ",
+        "name": "CPU FAQ",
+        "itemId": "317270d8-60d2-4730-a331-3c865db26544"
+      },
+      {
+        "key": "FAQ Title",
+        "name": "CPU FAQ Title",
+        "itemId": "f91f4927-af18-4119-94a2-86ae61ee492c"
+      },
+      {
+        "key": "FAQ: Can I run containers",
+        "name": "Can I run containers",
+        "itemId": "f106e739-203d-414b-8cf9-76a14eb9a8a1"
+      },
+      {
+        "key": "FAQ: How do GPUs differ",
+        "name": "How do GPUs differ",
+        "itemId": "876158a4-d6fd-4d72-a417-ea53fd934087"
+      },
+      {
+        "key": "FAQ: Shared vs dedicated CPU",
+        "name": "Shared vs dedicated CPU",
+        "itemId": "4d36e3c0-1ac7-4b26-bc33-f53ca03d9a7b"
+      },
+      {
+        "key": "Features",
+        "name": "CPU Features",
+        "itemId": "46a5b9a1-09f1-4a99-8291-35dad0abd572"
+      },
+      {
+        "key": "Hero",
+        "name": "CPU Hero",
+        "itemId": "ccd09334-454d-47ac-b0eb-22d0a193e746"
+      },
+      {
+        "key": "Icon Bar",
+        "name": "CPU Icon Bar",
+        "itemId": "b262e19c-7426-4391-801b-0477aa390604"
+      },
+      {
+        "key": "Promo Comprehensive",
+        "name": "CPU Promo Comprehensive",
+        "itemId": "d63ef279-4bea-4060-b08e-7ec321222696"
+      },
+      {
+        "key": "Promo Discovery",
+        "name": "CPU Promo Discovery",
+        "itemId": "0fbec115-c9f1-4347-88b5-2bd17c62eb11"
+      },
+      {
+        "key": "Resources",
+        "name": "CPU Resources",
+        "itemId": "01e04042-672d-4fdf-a53b-a8775e9e0f02"
+      },
+      {
+        "key": "Resources Title",
+        "name": "CPU Resources Title",
+        "itemId": "cf726062-8140-4a17-8218-ed2d2e5979a6"
+      },
+      {
+        "key": "Section Title",
+        "name": "CPU Section Title",
+        "itemId": "eb947714-fa78-47b4-80ef-cbda5e2e9f5d"
+      },
+      {
+        "key": "Split Promo",
+        "name": "CPU Split Promo",
+        "itemId": "969ac801-9886-42f4-9466-0e1801e0b7f7"
+      },
+      {
+        "key": "Stories",
+        "name": "CPU Stories",
+        "itemId": "a29d0dc4-1d02-494f-89f7-8a5f02924c26"
+      },
+      {
+        "key": "Trusted",
+        "name": "CPU Trusted",
+        "itemId": "c3101ef6-1495-4546-b771-0357ebd42602"
+      },
+      {
+        "key": "Value Props",
+        "name": "CPU Value Props",
+        "itemId": "c5c566ef-f90c-4848-b94e-527e856b458f"
+      }
+    ],
+    "DNS Manager": [
+      {
+        "key": "Banner Learn",
+        "name": "DNS Manager Banner Learn",
+        "itemId": "d193b676-d780-47a0-b79a-970a66f16e1d"
+      },
+      {
+        "key": "Banner Plans",
+        "name": "DNS Manager Banner Plans",
+        "itemId": "8a510104-d05d-4284-96b4-a5f3626b5268"
+      },
+      {
+        "key": "Banner Start",
+        "name": "DNS Manager Banner Start",
+        "itemId": "bd860ba7-b629-4b7a-b71f-9fd0bcf9d1ba"
+      },
+      {
+        "key": "Contact",
+        "name": "DNS Manager Contact",
+        "itemId": "c79ff478-4897-4213-908f-3d1ee3fa86fa"
+      },
+      {
+        "key": "FAQ",
+        "name": "DNS Manager FAQ",
+        "itemId": "5d62d877-2e53-4938-bdef-2e723f2a6393"
+      },
+      {
+        "key": "FAQ Title",
+        "name": "DNS Manager FAQ Title",
+        "itemId": "aaed0bd3-37d8-4400-8a10-7e412b716e17"
+      },
+      {
+        "key": "FAQ: Can I use it with external hosts",
+        "name": "Can I use it with external hosts",
+        "itemId": "e9622a5e-ea3f-4bd9-8d62-71720bd94216"
+      },
+      {
+        "key": "FAQ: Does it support DNSSEC",
+        "name": "Does it support DNSSEC",
+        "itemId": "0afe85ab-16d1-404b-8cb8-17f4f2bf8219"
+      },
+      {
+        "key": "FAQ: Is this Edge DNS",
+        "name": "Is this Edge DNS",
+        "itemId": "9cc0f5d9-f7f8-4550-8c80-4b96ed2ea47a"
+      },
+      {
+        "key": "Features",
+        "name": "DNS Manager Features",
+        "itemId": "0f1349b8-d7c3-4ba9-b60c-ccd01715bd08"
+      },
+      {
+        "key": "Hero",
+        "name": "DNS Manager Hero",
+        "itemId": "2f86696c-95f3-4caf-a6d5-505028a4ee67"
+      },
+      {
+        "key": "Icon Bar",
+        "name": "DNS Manager Icon Bar",
+        "itemId": "3ba98e17-590d-4673-acfa-e904151e1109"
+      },
+      {
+        "key": "Promo Comprehensive",
+        "name": "DNS Manager Promo Comprehensive",
+        "itemId": "514e0434-7534-4e65-8fb8-c76eb14d5c0f"
+      },
+      {
+        "key": "Promo Discovery",
+        "name": "DNS Manager Promo Discovery",
+        "itemId": "2959cdf9-f6fc-4106-9407-4fa4440ffe86"
+      },
+      {
+        "key": "Resources",
+        "name": "DNS Manager Resources",
+        "itemId": "ab51b680-8228-4584-b636-3d8d876c7ba0"
+      },
+      {
+        "key": "Resources Title",
+        "name": "DNS Manager Resources Title",
+        "itemId": "5ca089db-7165-4a0b-9468-774910adcf21"
+      },
+      {
+        "key": "Section Title",
+        "name": "DNS Manager Section Title",
+        "itemId": "2ccb6ecd-b819-4187-9207-abb3feba3a67"
+      },
+      {
+        "key": "Split Promo",
+        "name": "DNS Manager Split Promo",
+        "itemId": "186f9b83-6f55-4468-9591-97f51fef6d6d"
+      },
+      {
+        "key": "Stories",
+        "name": "DNS Manager Stories",
+        "itemId": "9572c046-3ad1-4796-a2b2-ddf61e884d9a"
+      },
+      {
+        "key": "Trusted",
+        "name": "DNS Manager Trusted",
+        "itemId": "0ae9addb-5c31-4a42-a10a-7419196afc00"
+      },
+      {
+        "key": "Value Props",
+        "name": "DNS Manager Value Props",
+        "itemId": "41fd5b99-f83e-4eef-b8dc-b3fa983d4fac"
+      }
+    ]
+  }
+}

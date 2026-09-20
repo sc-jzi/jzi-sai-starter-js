@@ -1,0 +1,282 @@
+[
+  {
+    "product": "Cloud Firewall",
+    "key": "Banner Plans",
+    "name": "Cloud Firewall Banner Plans",
+    "templateId": "4900D7E5-61B0-483A-A9D6-69419D4D5982",
+    "parentId": "6E161443-E85B-430F-B301-170B54A79BC4",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Free with Akamai Cloud networking"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Cloud Firewall is included to harden your cloud estate.</p>"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"View plans\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cloud-firewall\" />"
+      },
+      {
+        "name": "Image",
+        "value": "<image mediaid=\"{4A120536-025E-42C8-8F24-8412246D7C26}\" />"
+      },
+      {
+        "name": "Icon",
+        "value": "<image mediaid=\"{23592312-2C5F-49EE-8517-2D9DF508280B}\" />"
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Banner Start",
+    "name": "Cloud Firewall Banner Start",
+    "templateId": "4900D7E5-61B0-483A-A9D6-69419D4D5982",
+    "parentId": "6E161443-E85B-430F-B301-170B54A79BC4",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Harden your instances today"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Create a firewall and attach it to production Linodes.</p>"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Create an account\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cloud-firewall\" />"
+      },
+      {
+        "name": "Image",
+        "value": "<image mediaid=\"{4A120536-025E-42C8-8F24-8412246D7C26}\" />"
+      },
+      {
+        "name": "Icon",
+        "value": "<image mediaid=\"{23592312-2C5F-49EE-8517-2D9DF508280B}\" />"
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Banner Learn",
+    "name": "Cloud Firewall Banner Learn",
+    "templateId": "4900D7E5-61B0-483A-A9D6-69419D4D5982",
+    "parentId": "6E161443-E85B-430F-B301-170B54A79BC4",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Network security resources"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Best practices for firewall rules and VPC segmentation.</p>"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"See resources\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cloud-firewall\" />"
+      },
+      {
+        "name": "Image",
+        "value": "<image mediaid=\"{4A120536-025E-42C8-8F24-8412246D7C26}\" />"
+      },
+      {
+        "name": "Icon",
+        "value": "<image mediaid=\"{23592312-2C5F-49EE-8517-2D9DF508280B}\" />"
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "Contact",
+    "name": "Cloud Firewall Contact",
+    "templateId": "6D166C16-D4CC-4BA9-B1E1-FE6378916533",
+    "parentId": "09699ECB-5715-4AA1-81F2-90D273AECE92",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Talk with a Cloud Firewall specialist"
+      },
+      {
+        "name": "EmailLabel",
+        "value": "Business Email"
+      },
+      {
+        "name": "SubjectLabel",
+        "value": "Job Title"
+      },
+      {
+        "name": "MessageLabel",
+        "value": "How can we help?"
+      },
+      {
+        "name": "ButtonLabel",
+        "value": "Submit"
+      },
+      {
+        "name": "BackgroundImage",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/29d61b83511747dbb4bada3a63cda110?v=5fc11426\" dam-id=\"DiN6UrZDRyCAVpFBgzRj4A\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      }
+    ]
+  },
+  {
+    "product": "Cloud Firewall",
+    "key": "FAQ",
+    "name": "Cloud Firewall FAQ",
+    "templateId": "FAE81BF9-1117-4F97-9133-00E752F41772",
+    "parentId": "D8E44B11-8072-49FE-B6E2-8C6BB87C60CB",
+    "fields": [],
+    "faqChildren": [
+      {
+        "name": "What resources can Cloud Firewall protect",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "What resources can Cloud Firewall protect?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>Linode instances and NodeBalancers.</p>"
+          }
+        ]
+      },
+      {
+        "name": "Is it a WAF",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "Is it a WAF?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>No — Cloud Firewall is network-layer filtering; pair with WAAP/API Security for app-layer threats.</p>"
+          }
+        ]
+      },
+      {
+        "name": "Does it cost extra",
+        "fields": [
+          {
+            "name": "Question",
+            "value": "Does it cost extra?"
+          },
+          {
+            "name": "Answer",
+            "value": "<p>Cloud Firewall is included with Akamai Cloud networking.</p>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "Hero",
+    "name": "CPU Hero",
+    "templateId": "90D315E8-AA42-4B23-A7EB-4491396453F8",
+    "parentId": "4B0AD535-96E3-400F-94D3-DC0452238EE5",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "General-purpose compute with Akamai CPU instances"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Reliable, cost-efficient virtual machines for web apps, APIs, and backends — available across Akamai’s distributed cloud.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/eb4e64b104634aafa4235c4739ff7465?v=3eac35b5\" dam-id=\"7qH3BpfRQ1WJdm02Ke0MlQ\" width=\"1440\" height=\"476\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Get started\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cpu\" />"
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "Promo Comprehensive",
+    "name": "CPU Promo Comprehensive",
+    "templateId": "C0943942-AE0F-4205-86FA-84884CCE4A53",
+    "parentId": "16712A4D-2A46-4F41-B535-30E134893C1C",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "Right-size CPU for every workload"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Choose shared or dedicated CPU plans with predictable pricing and global regions.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/523ffd946e114ed188937fefff99003a?v=bd45c27f\" dam-id=\"Q5NywY0sTXCj57irhWCIOg\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Learn how it works\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cpu\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Subtitle",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  },
+  {
+    "product": "CPU",
+    "key": "Promo Discovery",
+    "name": "CPU Promo Discovery",
+    "templateId": "C0943942-AE0F-4205-86FA-84884CCE4A53",
+    "parentId": "16712A4D-2A46-4F41-B535-30E134893C1C",
+    "fields": [
+      {
+        "name": "Title",
+        "value": "The foundation of your cloud stack"
+      },
+      {
+        "name": "Text",
+        "value": "<p>Pair CPU instances with Block Storage, NodeBalancers, and Kubernetes.</p>"
+      },
+      {
+        "name": "Image",
+        "value": "<Image src=\"https://jzi-verticals.sitecoresandbox.cloud/api/public/content/4475e2a6ea5744d8b75a42548341a97e?v=7a4ff561\" dam-id=\"o6HjDHniTDOZrG7uwSe9jQ\" width=\"1280\" height=\"720\" dam-content-type=\"Image\" />"
+      },
+      {
+        "name": "Link",
+        "value": "<link text=\"Watch overview\" anchor=\"\" linktype=\"external\" class=\"\" title=\"\" target=\"\" querystring=\"\" url=\"https://www.akamai.com/products/cpu\" />"
+      },
+      {
+        "name": "Link2",
+        "value": "<link text=\"Details\" linktype=\"external\" url=\"https://example.com\" anchor=\"\" target=\"\" />"
+      },
+      {
+        "name": "Subtitle",
+        "value": ""
+      },
+      {
+        "name": "Eyebrow",
+        "value": ""
+      }
+    ]
+  }
+]

@@ -1,0 +1,1 @@
+{"name":"Is this Edge DNS","templateId":"2DC7A13E-6753-47EF-805A-1CDE39012EEC","fields":[{"name":"Question","value":"Is this Edge DNS?"},{"name":"Answer","value":"<p>DNS Manager is Akamai Cloud’s authoritative DNS for Linode domains; Edge DNS is part of the broader Akamai portfolio.</p>"}],"op":"create_faq_child","key":"FAQ: Is this Edge DNS","product":"DNS Manager"}
