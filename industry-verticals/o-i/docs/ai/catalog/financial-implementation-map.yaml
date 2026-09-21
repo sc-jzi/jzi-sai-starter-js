@@ -1,0 +1,158 @@
+# Registry semantics → Financial starter implementation
+# Used by the O-I demo pipeline (same approach as Akamai / Kal Tire).
+
+implementationLibrary: "Financial starter components"
+siteCollection: "manufacturing"
+siteName: "o-i"
+dataRoot: "/sitecore/content/manufacturing/o-i/Data"
+homePageId: "{7306F221-AAD2-47FE-923B-005890859F26}"
+
+components:
+  Header:
+    registryIds: [navigation-header]
+    renderingId: "{81317D3B-F929-426A-83EC-421982F8F1E6}"
+    templateId: "{0DA7AA52-0C24-4721-9B6C-F6D8D9FAAAA0}"
+    kind: context-only
+    apiAddable: false
+    reactFile: "src/components/navigation/Header.tsx"
+
+  Hero:
+    registryIds: [hero-banner]
+    renderingId: "{B7CDF75E-716A-4C59-B9B1-CD970AE0A4AE}"
+    templateId: "{90D315E8-AA42-4B23-A7EB-4491396453F8}"
+    kind: simple
+    apiAddable: true
+    reactFile: "src/components/pagecontent/Hero.tsx"
+    fields: [Title, Text, Image, Link]
+
+  HeroBanner:
+    registryIds: [hero-banner]
+    renderingId: "{0E8CC47E-32D6-4F55-A7BF-E713ABD06323}"
+    templateId: "{0089BCB3-0117-43F2-A760-0771D5FF7417}"
+    kind: simple
+    apiAddable: true
+    reactFile: "src/components/pagecontent/HeroBanner.tsx"
+    fields: [Tagline, Title, Text, Image, Cta1, Cta2, Icon]
+
+  Carousel:
+    registryIds: [hero-banner-carousel, feature-cards-grid]
+    renderingId: "{8094185B-4C72-40C8-B005-C6ED91708754}"
+    templateId: "{C7B8468F-4290-400F-93BB-D46C5F8DB126}"
+    childTemplateId: "{54DB209D-CD0F-49D9-AE4E-ECB65D72CC4D}"
+    kind: list
+    apiAddable: true
+    reactFile: "src/components/pagecontent/Carousel.tsx"
+
+  TwoColumnCta:
+    registryIds: [feature-cards-grid, feature-highlight]
+    renderingId: "{3A9A9D22-C092-4B54-9511-EB202CEABE8D}"
+    templateId: "{1812BF3E-6BDD-466D-99B2-0D7CEBB020FC}"
+    kind: simple
+    apiAddable: true
+    reactFile: "src/components/pagecontent/TwoColumnCta.tsx"
+
+  ThreeColumnCta:
+    registryIds: [feature-cards-grid, value-proposition-grid]
+    renderingId: "{AD385021-CE2B-4FC1-89AA-207D408034A8}"
+    templateId: "{148D07BA-F923-4FB2-8907-0BD440D5DB44}"
+    kind: simple
+    apiAddable: true
+    reactFile: "src/components/pagecontent/ThreeColumnCta.tsx"
+
+  FourColumnCta:
+    registryIds: [feature-cards-grid, value-proposition-grid]
+    renderingId: "{35075000-760E-4FF3-BD1C-F2EEBA251DCB}"
+    templateId: "{1B694EF9-154D-429A-9C3F-D7774CD4A852}"
+    kind: simple
+    apiAddable: true
+    reactFile: "src/components/pagecontent/FourColumnCta.tsx"
+
+  FiveColumnCta:
+    registryIds: [value-proposition-grid]
+    renderingId: "{333DEF3E-C272-4AD9-A493-8D5CCAE08312}"
+    templateId: "{3B41D9FC-0EDF-48E1-966C-E260339BA815}"
+    kind: simple
+    apiAddable: true
+    reactFile: "src/components/pagecontent/FiveColumnCta.tsx"
+
+  PromoCta:
+    registryIds: [feature-highlight]
+    renderingId: "{1A375FAC-6CC1-4A5A-A159-9BC6DBC66B80}"
+    templateId: "{C0943942-AE0F-4205-86FA-84884CCE4A53}"
+    kind: simple
+    apiAddable: true
+    reactFile: "src/components/pagecontent/PromoCta.tsx"
+
+  CtaBanner:
+    registryIds: [cta-banner]
+    renderingId: "{488B8AC0-0EF9-4F6F-8711-78BA182B2C4C}"
+    templateId: "{4900D7E5-61B0-483A-A9D6-69419D4D5982}"
+    kind: simple
+    apiAddable: true
+    reactFile: "src/components/pagecontent/CtaBanner.tsx"
+
+  Features:
+    registryIds: [value-proposition-grid]
+    renderingId: "{B7EFFFDB-2F0C-4C5E-A8BE-D9F8677F01DA}"
+    templateId: "{D3FDDED9-44AE-4410-961C-3320CC82D638}"
+    kind: simple
+    apiAddable: true
+    reactFile: "src/components/pagecontent/Features.tsx"
+
+  ImageGallery:
+    registryIds: [image-gallery]
+    renderingId: "{881CE560-277E-47B6-85BE-A223348D69CA}"
+    templateId: "{BD5988C0-88EA-4E5D-8CBA-A88755DD0FB8}"
+    kind: simple
+    apiAddable: true
+    reactFile: "src/components/pagecontent/ImageGallery.tsx"
+
+  StatsCounter:
+    registryIds: [trust-stats]
+    renderingId: "{316889FA-FDD4-42A6-A034-201124FE54E8}"
+    templateId: "{C24BFC74-C6E2-413A-AEBD-903180DFAFF7}"
+    kind: simple
+    apiAddable: true
+    reactFile: "src/components/pagecontent/StatsCounter.tsx"
+
+  Testimonials:
+    registryIds: [testimonial-quote]
+    renderingId: "{F3766B60-C8CE-49AF-9BFE-B2CEE6E287DF}"
+    templateId: "{91CD4DE0-ED0B-457B-9936-A333E8A874A3}"
+    childTemplateId: "{40472280-0A67-4C52-A06B-79E327AF9F44}"
+    kind: list
+    apiAddable: true
+    reactFile: "src/components/pagecontent/Testimonials.tsx"
+
+  Accordion:
+    registryIds: [faq-accordion]
+    renderingId: "{5816F979-C8BB-46E9-8EC8-513C6CAF41E6}"
+    templateId: "{9BC52F2F-FEED-47DC-88EC-1946FA308AF0}"
+    childTemplateId: "{02FC3E8B-A97F-4A7A-844B-3047E24432A0}"
+    kind: list
+    apiAddable: true
+    reactFile: "src/components/pagecontent/Accordion.tsx"
+
+  HeadingCta:
+    registryIds: [cta-banner, rich-text-block]
+    renderingId: "{89E1D547-7CD6-4EF0-9A27-1E99410797DD}"
+    templateId: "{FA136527-6302-471D-83AB-E66FC72BDA99}"
+    kind: simple
+    apiAddable: true
+    reactFile: "src/components/pagecontent/HeadingCta.tsx"
+
+  Footer:
+    registryIds: [footer]
+    renderingId: "{771A3F27-6448-44AC-ADD0-E5DE311C6E3B}"
+    templateId: "{947DB8F8-DC76-453F-ACA1-A27BABFE633B}"
+    kind: context-only
+    apiAddable: false
+    reactFile: "src/components/navigation/Footer.tsx"
+
+  ParallaxBanner:
+    registryIds: [image-gallery]
+    renderingId: "{200920AD-9645-4CB2-B72A-C7D8278E709F}"
+    templateId: "{28B7F396-DC4A-4116-8C93-3B7909CBEB0E}"
+    kind: simple
+    apiAddable: true
+    reactFile: "src/components/pagecontent/ParallaxBanner.tsx"

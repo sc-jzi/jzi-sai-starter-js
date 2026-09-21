@@ -1,0 +1,110 @@
+{
+  "title": "The Leading Glass Bottle Manufacturer O-I",
+  "themeColor": "#171717",
+  "msColor": null,
+  "ogTitle": "The Leading Glass Bottle Manufacturer O-I",
+  "ogDescription": "O-I Glass is a leading glass bottle manufacturer, designing innovative glass packaging for the world's leading brands. We love infinitely recyclable, healthy, sustainable glass packaging.",
+  "ogImage": "https://www.o-i.com/wp-content/uploads/2023/04/OI-Fire-248-1.jpg",
+  "ogSiteName": "O-I",
+  "favicon": "https://www.o-i.com/wp-content/uploads/2023/03/o-i-favicon.svg",
+  "googleFontsLinks": [],
+  "fontFaces": [
+    {
+      "family": "dearflip",
+      "src": "url(\"data:application/font-woff;base64,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\") format(\"woff\")",
+      "weight": "400"
+    },
+    {
+      "family": "Gill Sans",
+      "src": "url(\"/wp-content/uploads/2023/03/GillSans-Medium.woff\") format(\"woff\"), url(\"/wp-content/uploads/2023/03/GillSansC.woff2\") format(\"woff2\")",
+      "weight": ""
+    },
+    {
+      "family": "Gill Sans",
+      "src": "url(\"/wp-content/uploads/2023/03/GillSansC.woff2\") format(\"woff2\"), url(\"/wp-content/uploads/2023/03/GillSansC.woff\") format(\"woff\"), url(\"/wp-content/uploads/2023/03/GillSansC.ttf\") format(\"truetype\")",
+      "weight": "400"
+    },
+    {
+      "family": "Gill Sans",
+      "src": "url(\"/wp-content/uploads/2023/03/GillSansC-Bold.woff2\") format(\"woff2\"), url(\"/wp-content/uploads/2023/03/GillSansC-Bold.woff\") format(\"woff\"), url(\"/wp-content/uploads/2023/03/GillSansC-Bold.ttf\") format(\"truetype\")",
+      "weight": "700"
+    },
+    {
+      "family": "Gill Sans",
+      "src": "url(\"/wp-content/uploads/2023/03/Gill-Sans-SemiBold.woff2\") format(\"woff2\"), url(\"/wp-content/uploads/2023/03/Gill-Sans-SemiBold.woff\") format(\"woff\"), url(\"/wp-content/uploads/2023/03/Gill-Sans-SemiBold.ttf\") format(\"truetype\")",
+      "weight": "600"
+    },
+    {
+      "family": "swiper-icons",
+      "src": "url(\"data:application/font-woff;charset=utf-8;base64, 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\")",
+      "weight": "400"
+    },
+    {
+      "family": "Gill Sans",
+      "src": "url(\"/wp-content/uploads/2023/03/GillSansC.woff2\") format(\"woff2\"), url(\"/wp-content/uploads/2023/03/GillSansC.woff\") format(\"woff\"), url(\"/wp-content/uploads/2023/03/GillSansC.ttf\") format(\"truetype\")",
+      "weight": "400"
+    },
+    {
+      "family": "Gill Sans",
+      "src": "url(\"/wp-content/uploads/2023/03/GillSansC-Bold.woff2\") format(\"woff2\"), url(\"/wp-content/uploads/2023/03/GillSansC-Bold.woff\") format(\"woff\"), url(\"/wp-content/uploads/2023/03/GillSansC-Bold.ttf\") format(\"truetype\")",
+      "weight": "700"
+    },
+    {
+      "family": "Gill Sans",
+      "src": "url(\"/wp-content/uploads/2023/03/Gill-Sans-SemiBold.woff2\") format(\"woff2\"), url(\"/wp-content/uploads/2023/03/Gill-Sans-SemiBold.woff\") format(\"woff\"), url(\"/wp-content/uploads/2023/03/Gill-Sans-SemiBold.ttf\") format(\"truetype\")",
+      "weight": "600"
+    },
+    {
+      "family": "Gill Sans",
+      "src": "url(\"/wp-content/uploads/2023/03/GillSansC.woff2\") format(\"woff2\"), url(\"/wp-content/uploads/2023/03/GillSansC.woff\") format(\"woff\"), url(\"/wp-content/uploads/2023/03/GillSansC.ttf\") format(\"truetype\")",
+      "weight": "normal"
+    },
+    {
+      "family": "Gill Sans",
+      "src": "url(\"/wp-content/uploads/2023/03/GillSansC-Bold.woff2\") format(\"woff2\"), url(\"/wp-content/uploads/2023/03/GillSansC-Bold.woff\") format(\"woff\"), url(\"/wp-content/uploads/2023/03/GillSansC-Bold.ttf\") format(\"truetype\")",
+      "weight": "bold"
+    },
+    {
+      "family": "Gill Sans",
+      "src": "url(\"/wp-content/uploads/2023/03/Gill-Sans-SemiBold.woff2\") format(\"woff2\"), url(\"/wp-content/uploads/2023/03/Gill-Sans-SemiBold.woff\") format(\"woff\"), url(\"/wp-content/uploads/2023/03/Gill-Sans-SemiBold.ttf\") format(\"truetype\")",
+      "weight": "600"
+    },
+    {
+      "family": "swiper-icons",
+      "src": "url(\"data:application/font-woff;charset=utf-8;base64, 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\")",
+      "weight": "400"
+    }
+  ],
+  "logoCandidates": [
+    "https://www.o-i.com/wp-content/uploads/2023/04/Vector-4.png",
+    "https://www.o-i.com/wp-content/uploads/2026/07/beer_casual_2100x700-768x256.jpg",
+    "https://www.o-i.com/wp-content/uploads/2026/03/Nicole-STEP-Hero-Image-2026-768x256.jpg",
+    "https://www.o-i.com/wp-content/uploads/2026/01/Hero-Image-Bob-and-Bob-v2-768x256.jpg",
+    "https://www.o-i.com/wp-content/uploads/2026/01/Dry-January-Blog-2026-Hero-Image-768x256.jpg",
+    "data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20768%20256%22%3E%3C/svg%3E",
+    "data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20768%20256%22%3E%3C/svg%3E",
+    "data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20768%20256%22%3E%3C/svg%3E",
+    "data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20768%20256%22%3E%3C/svg%3E",
+    "https://www.o-i.com/wp-content/uploads/2023/03/EVP-26-Man-Presenting-the-Bottle-5651-1024x508.webp",
+    "https://www.o-i.com/wp-content/uploads/2023/03/Mask-group2-jpg.webp",
+    "https://www.o-i.com/wp-content/uploads/2023/03/Rectangle-4637-jpg.webp",
+    "https://www.o-i.com/wp-content/uploads/2023/03/EVP-26-Man-Presenting-the-Bottle-5651-1024x508.webp",
+    "https://www.o-i.com/wp-content/uploads/2023/03/Mask-group2-jpg.webp",
+    "https://www.o-i.com/wp-content/uploads/2023/04/Rectangle-4447-807x1024.webp",
+    "https://www.o-i.com/wp-content/uploads/2023/04/Screenshot-2023-04-04-at-3.07.45-PM-1024x654.webp",
+    "https://www.o-i.com/wp-content/uploads/2023/04/Screenshot-2023-04-04-at-3.08.46-PM-1024x675.webp",
+    "data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20800%20527%22%3E%3C/svg%3E",
+    "https://www.o-i.com/wp-content/uploads/2023/03/EVP-26-Man-Presenting-the-Bottle-2-1-jpg.webp",
+    "https://www.o-i.com/wp-content/uploads/sb-instagram-feed-images/717675753_2430768880723606_7060082068666238682_nthumb.webp",
+    "https://www.o-i.com/wp-content/uploads/sb-instagram-feed-images/714243979_2528781617581115_4134908101857875712_nthumb.webp",
+    "https://www.o-i.com/wp-content/uploads/sb-instagram-feed-images/708276289_18594074707008589_1778596372233537713_nthumb.webp",
+    "https://www.o-i.com/wp-content/uploads/sb-instagram-feed-images/706003255_18593348902008589_6471917541665025059_nthumb.webp",
+    "https://www.o-i.com/wp-content/uploads/sb-instagram-feed-images/705137637_1950197342289501_2246949361923587504_nthumb.webp",
+    "data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20210%20140%22%3E%3C/svg%3E",
+    "https://www.o-i.com/wp-content/uploads/2023/03/oi-white-logo.svg",
+    "https://t.co/i/adsct?bci=3&dv=America%2FToronto%26en-US%26Google%20Inc.%26Win32%26255%261440%26900%2616%2624%261440%26900%260%26na&eci=2&event_id=c8f085f1-d77c-4a9e-b293-95abbf299c1b&events=%5B%5B%22pageview%22%2C%7B%7D%5D%5D&integration=advertiser&p_id=Twitter&p_user_id=0&pl_id=d27f2b69-de53-4316-aed4-113d7465ac65&tw_ch_fvl=Not%3DA%3FBrand%2F99.0.0.0%2CHeadlessChrome%2F151.0.7922.34%2CChromium%2F151.0.7922.34&tw_ch_pv=10_15_7&tw_document_href=https%3A%2F%2Fwww.o-i.com%2F&tw_document_referrer=https%3A%2F%2Fwww.o-i.com%2F&tw_engaged_ms=11&tw_iframe_status=0&tw_order_quantity=0&tw_pid_src=1&tw_sale_amount=0&tw_session_count=1&tw_session_id=1789999651372-423178981&tw_session_start=1&twpid=tw.1789999651371.380826449796961687&txn_id=o5jft&type=javascript&version=2.4.11",
+    "https://analytics.twitter.com/i/adsct?bci=3&dv=America%2FToronto%26en-US%26Google%20Inc.%26Win32%26255%261440%26900%2616%2624%261440%26900%260%26na&eci=2&event_id=c8f085f1-d77c-4a9e-b293-95abbf299c1b&events=%5B%5B%22pageview%22%2C%7B%7D%5D%5D&integration=advertiser&p_id=Twitter&p_user_id=0&pl_id=d27f2b69-de53-4316-aed4-113d7465ac65&tw_ch_fvl=Not%3DA%3FBrand%2F99.0.0.0%2CHeadlessChrome%2F151.0.7922.34%2CChromium%2F151.0.7922.34&tw_ch_pv=10_15_7&tw_document_href=https%3A%2F%2Fwww.o-i.com%2F&tw_document_referrer=https%3A%2F%2Fwww.o-i.com%2F&tw_engaged_ms=11&tw_iframe_status=0&tw_order_quantity=0&tw_pid_src=1&tw_sale_amount=0&tw_session_count=1&tw_session_id=1789999651372-423178981&tw_session_start=1&twpid=tw.1789999651371.380826449796961687&txn_id=o5jft&type=javascript&version=2.4.11",
+    "https://www.o-i.com/"
+  ],
+  "heroBgImage": null
+}

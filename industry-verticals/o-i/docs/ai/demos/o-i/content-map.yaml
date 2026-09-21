@@ -1,0 +1,159 @@
+# O-I content map
+# Extractor failed (navigation destroyed execution context). Source: screenshot + live o-i.com copy.
+client: "O-I"
+sourceUrl: "https://www.o-i.com/"
+contentSource: "screenshot"
+extractedAt: "2026-09-21T15:00:00Z"
+language: "en"
+
+sections:
+  - position: 1
+    componentName: "Header"
+    manifestName: "Header"
+    itemName: "OI Header"
+    templateId: "0da7aa52-0c24-4721-9b6c-f6d8d9faaaa0"
+    fields:
+      LogoImage: ""
+    imageFields:
+      - field: "LogoImage"
+        src: "https://www.o-i.com/wp-content/uploads/2023/04/Vector-4.png"
+        alt: "O-I"
+
+  - position: 2
+    componentName: "FourColumnCta"
+    manifestName: "FourColumnCta"
+    itemName: "OI News Grid"
+    templateId: "1b694ef9-154d-429a-9c3f-d7774cd4a852"
+    fields:
+      Title1: "Beer Brands Are Using Their Influence to Strengthen the Circular Economy"
+      Text1: "August 4, 2026"
+      Link1: { text: "Read story", href: "https://www.o-i.com/", linktype: "external" }
+      Title2: "O-I's Nicole Lopez Honored with 2026 Leadership Award from the Manufacturing Institute"
+      Text2: "March 9, 2026"
+      Link2: { text: "Read story", href: "https://www.o-i.com/", linktype: "external" }
+      Title3: "Glass4Good at O-I Reaches New Glass Recycling & Giving Milestones in 2025"
+      Text3: "January 28, 2026"
+      Link3: { text: "Read story", href: "https://www.o-i.com/", linktype: "external" }
+      Title4: "Dry January Isn't Just a Moment: How Non-Alcoholic & Low-Alcohol Beverage Brands Win with Elevated Experiences"
+      Text4: "January 20, 2026"
+      Link4: { text: "Read story", href: "https://www.o-i.com/", linktype: "external" }
+    imageFields:
+      - field: "Image1"
+        src: "https://www.o-i.com/wp-content/uploads/2026/07/beer_casual_2100x700.jpg"
+        alt: "Beer bottles on a table"
+      - field: "Image2"
+        src: "https://www.o-i.com/wp-content/uploads/2026/03/Nicole-STEP-Hero-Image-2026.jpg"
+        alt: "Nicole Lopez leadership award"
+      - field: "Image3"
+        src: "https://www.o-i.com/wp-content/uploads/2026/01/Hero-Image-Bob-and-Bob-v2.jpg"
+        alt: "Glass4Good recycling milestone"
+      - field: "Image4"
+        src: "https://www.o-i.com/wp-content/uploads/2026/01/Dry-January-Blog-2026-Hero-Image.jpg"
+        alt: "Non-alcoholic beverage glass"
+
+  - position: 3
+    componentName: "HeroBanner"
+    manifestName: "HeroBanner"
+    itemName: "OI Hero"
+    templateId: "0089bcb3-0117-43f2-a760-0771d5ff7417"
+    fields:
+      Title: "Innovation. Transformation. Glass Packaging."
+      Text: "<p>Glass is a material unlike any other, capable of creating stunning, memorable experiences, and it's the most sustainable packaging material on earth. At O-I, we have a history of transforming how the world stores food and beverages — of making glass more accessible to more customers and consumers. We reimagine how glass is made and sold by innovating production techniques, pioneering recycling and sustainable technology, and unleashing the iconic, brand-building potential of this packaging that is the kindest material for the planet and its people.</p>"
+      Cta1: { text: "Read Our Story", href: "https://www.o-i.com/", linktype: "external" }
+
+  - position: 4
+    componentName: "Carousel"
+    manifestName: "Carousel"
+    itemName: "OI Carousel"
+    templateId: "c7b8468f-4290-400f-93bb-d46c5f8db126"
+    kind: "list"
+    childTemplateId: "54db209d-cd0f-49d9-ae4e-ecb65d72cc4d"
+    children:
+      - name: "Slide 1 Vision"
+        fields:
+          Title: "Shaping the Future Through Glass"
+          Text: "<p>OUR VISION</p><p>We create iconic, healthy glass packaging so synonymous with brands, you recognize those brands by their packaging alone, even without a label. We innovate packaging design to enable customers to meet their own ambitions, from connecting with consumers on an emotional level to creating a more sustainable future.</p>"
+          Link: { text: "Learn Our Vision", href: "https://www.o-i.com/", linktype: "external" }
+        imageFields:
+          - field: "Image"
+            src: "https://www.o-i.com/wp-content/uploads/2023/03/EVP-26-Man-Presenting-the-Bottle-5651-1024x508.webp"
+            alt: "Couple with a glass bottle"
+      - name: "Slide 2 Innovation"
+        fields:
+          Title: "Driven Through Innovation"
+          Text: "<p>INNOVATION</p><p>Innovation and transformation are in our DNA. O-I Glass was founded more than a century ago by a man whose glass bottle making machine was called the most significant invention in glass in 2000 years. Founder Michael J. Owens' motto was \"It can be done.\" And we're doing it. We're reimagining what glass can do, making it the world's most versatile, charismatic and sustainable packaging material.</p>"
+          Link: { text: "Learn Our Story", href: "https://www.o-i.com/", linktype: "external" }
+        imageFields:
+          - field: "Image"
+            src: "https://www.o-i.com/wp-content/uploads/2023/04/OI-Fire-248-1.jpg"
+            alt: "Molten glass furnace"
+      - name: "Slide 3 Mission"
+        fields:
+          Title: "Our Sustainability Vision"
+          Text: "<p>OUR MISSION</p><p>Glass is the ideal packaging material to support a low-waste, circular economy. But sustainability isn't just about what we make – it's also about how we make it. Sustainability is woven into everything we do, from transforming our glass-making technology and processes to our customer approach to how we engage our employees and support our communities.</p>"
+          Link: { text: "Learn Our Mission", href: "https://www.o-i.com/", linktype: "external" }
+        imageFields:
+          - field: "Image"
+            src: "https://www.o-i.com/wp-content/uploads/2023/03/Mask-group2-jpg.webp"
+            alt: "Gloved hands holding recycled glass cullet"
+
+  - position: 5
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    itemName: "OI Power of Glass"
+    templateId: "c0943942-ae0f-4205-86fa-84884cce4a53"
+    fields:
+      Title: "Power of Glass Packaging"
+      Text: "<p>Glass is pure, sustainable, and the kindest packaging material for the health of people and the planet. Glass has an element of magic to it. It is beautiful and iconic. It can turn into shapes. It plays with the senses. Glass is 100% recyclable and infinitely recyclable. It does not increase ocean pollution. Glass is virtually inert, which means it doesn't interact with the foods and beverages it holds.</p><p>We love glass and we aspire to create a healthier, more sustainable, and more exciting world through glass packaging.</p>"
+      Link: { text: "Discover Benefits of Glass", href: "https://www.o-i.com/", linktype: "external" }
+    imageFields:
+      - field: "Image"
+        src: "https://www.o-i.com/wp-content/uploads/2023/03/Rectangle-4637-jpg.webp"
+        alt: "Hand holding an amber glass bottle"
+
+  - position: 6
+    componentName: "PromoCta"
+    manifestName: "PromoCta"
+    itemName: "OI Values"
+    templateId: "c0943942-ae0f-4205-86fa-84884cce4a53"
+    fields:
+      Title: "Guided by Our Values"
+      Text: "<p>At O-I, we deeply care about our people and our culture. Guided by our values and behaviors, we're constantly seeking to transform how we support and engage employees and the communities in which we work and live.</p>"
+      Link: { text: "See Our Careers", href: "https://www.o-i.com/", linktype: "external" }
+    imageFields:
+      - field: "Image"
+        src: "https://www.o-i.com/wp-content/uploads/2023/04/Rectangle-4447-807x1024.webp"
+        alt: "O-I team on the factory floor"
+
+  - position: 7
+    componentName: "HeadingCta"
+    manifestName: "HeadingCta"
+    itemName: "OI Stay Connected"
+    templateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+    fields:
+      Heading: "Stay Connected"
+      Text: "Would you like to be informed about the latest innovations in glass packaging, new products, and the latest trends?"
+      Link: { text: "Submit", href: "#", linktype: "external" }
+
+  - position: 8
+    componentName: "Footer"
+    manifestName: "Footer"
+    itemName: "OI Footer"
+    templateId: "947db8f8-dc76-453f-aca1-a27babfe633b"
+    fields:
+      Title1: "Glass Packaging Innovation"
+      Text1: "<ul><li><a href=\"https://www.o-i.com/\">Our Story</a></li><li><a href=\"https://www.o-i.com/\">Sustainability</a></li><li><a href=\"https://www.o-i.com/\">Innovation</a></li><li><a href=\"https://www.o-i.com/\">Catalog</a></li></ul>"
+      Title2: "Contact Us"
+      Text2: "<ul><li><a href=\"https://www.o-i.com/\">Locations</a></li><li><a href=\"https://www.o-i.com/\">Careers</a></li><li><a href=\"https://www.o-i.com/\">Investors</a></li><li><a href=\"https://www.o-i.com/\">Media</a></li></ul>"
+      Title3: "Legal"
+      Text3: "<ul><li><a href=\"https://www.o-i.com/\">Privacy</a></li><li><a href=\"https://www.o-i.com/\">Terms of Use</a></li><li><a href=\"https://www.o-i.com/\">Cookie Policy</a></li></ul>"
+      Title4: "Stay Connected"
+      Text4: "<p>Follow along on social media as we transform glass packaging and discover what's possible with glass.</p>"
+      Copyright: "© 2025 O-I Glass. All rights reserved."
+      Link1: { text: "Privacy", href: "https://www.o-i.com/", linktype: "external" }
+      Link2: { text: "Legal", href: "https://www.o-i.com/", linktype: "external" }
+      SocialsTitle: "Social"
+    imageFields:
+      - field: "Image1"
+        src: "https://www.o-i.com/wp-content/uploads/2023/03/oi-white-logo.svg"
+        alt: "O-I"

@@ -3,3 +3,46 @@
 @import 'bootstrap/scss/bootstrap';
 @import '../assets/sass/main';
 @import '../assets/basic/main';
+
+/* CLIENT THEME: O-I */
+:root {
+  --brand-primary: #FFD100;
+  --brand-primary-foreground: #171717;
+  --brand-secondary: #171717;
+  --brand-secondary-foreground: #ffffff;
+  --brand-accent: #FFD100;
+  --brand-accent-foreground: #171717;
+  --brand-bg: #171717;
+  --brand-fg: #ffffff;
+  --brand-muted: #242424;
+  --brand-muted-fg: #C8C8C8;
+  --brand-header-bg: #171717;
+  --brand-header-fg: #ffffff;
+  --brand-footer-bg: #111111;
+  --brand-footer-fg: #ffffff;
+  --brand-border: #3A3A3A;
+  --brand-ring: #FFD100;
+  --brand-heading-font: var(--font-lato), 'Lato', 'Gill Sans', sans-serif;
+  --brand-body-font: var(--font-lato), 'Lato', 'Gill Sans', sans-serif;
+  --font-family: var(--brand-body-font);
+  --brand-radius: 0.75rem;
+  --brand-button-radius: 9999px;
+  --brand-card-radius: 0.75rem;
+  --brand-page-black: #171717;
+  --brand-gold: #FFD100;
+}
+
+body {
+  background: var(--brand-bg);
+  color: var(--brand-fg);
+  font-family: var(--brand-body-font);
+}
+
+.oi-brand {
+  --cta-banner-background: var(--brand-bg);
+  --cta-banner-foreground: var(--brand-fg);
+  --cta-banner-button: var(--brand-primary);
+  --cta-banner-button-hover: var(--brand-primary);
+  --cta-banner-button-foreground: var(--brand-primary-foreground);
+  --cta-banner-button-radius: var(--brand-button-radius);
+}

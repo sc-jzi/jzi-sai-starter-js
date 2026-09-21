@@ -1,0 +1,131 @@
+# Demo Progress Tracker — O-I
+client:
+  name: "O-I"
+  sourceUrl: "https://www.o-i.com/"
+  startedAt: "2026-09-21T14:00:00Z"
+  lastUpdatedAt: "2026-09-21T16:30:00Z"
+
+phases:
+  phase0_inputs:
+    status: "complete"
+    screenshot: true
+    url: "https://www.o-i.com/"
+
+  phase0_5_manifest:
+    status: "complete"
+    validationMode: "quick"
+    result: "pass-with-warnings"
+
+  phase1_theme:
+    status: "complete"
+    themeFile: "docs/ai/themes/o-i.theme.yaml"
+    userApproved: true
+
+  phase2_analysis:
+    status: "complete"
+    buildPlanFile: "docs/ai/demos/o-i/build-plan.yaml"
+    totalSections: 8
+    userApproved: true
+    notes: "Section 4 changed to Carousel; pixel-perfect variants required."
+
+  phase2_5_content:
+    status: "complete"
+    contentMapFile: "docs/ai/demos/o-i/content-map.yaml"
+    extractorUsed: false
+    contentSource: "screenshot"
+
+  phase3_content:
+    status: "complete"
+    completedSections: 8
+    totalSections: 8
+
+  phase4_theme:
+    status: "complete"
+    themeDelivery: "inline-root"
+    cssWritten: true
+    fontsAdded: true
+
+  phase5_custom:
+    status: "complete"
+    customComponentsNeeded: 0
+    customComponentsBuilt: 0
+
+  phase5_5_variants:
+    status: "complete"
+    variantsNeeded: 9
+    variantsCreated: 9
+    variantSpecsFile: "docs/ai/demos/o-i/variant-specs.yaml"
+
+  phase6_assembly:
+    status: "complete"
+    componentsAdded: 3
+    datasourcesWired: 6
+    totalComponents: 8
+    notes: "Hero Banner is not in Available Renderings; hero copy uses Promo CTA OIHero. Variant FieldNames must be selected in Pages."
+
+  phase7_summary:
+    status: "complete"
+
+notes:
+  - "Content Hub credentials verified for https://jzi-verticals.sitecoresandbox.cloud/"
+  - "Environment uses Financial starter library, not UIIM."
+  - "11 images uploaded to Content Hub and approved."
+  - "Carousel Headless Variants container created with Default + OI."
+  - "Hero Banner Headless Variants container created with Default + OI (component not API-addable on headless-main)."
+
+sections:
+  - position: 1
+    component: "Header"
+    itemId: "8eb10156-ddc1-42ea-b350-e34ba8f12496"
+    status: "created"
+    notes: "context-only — assign OI variant + datasource on header partial"
+
+  - position: 2
+    component: "FourColumnCta"
+    itemId: "50fbf034-483d-4e40-b4b1-cbf9088aa34a"
+    status: "wired"
+    pageComponentId: "cfbaf032-a986-4325-9b73-981173bf4283"
+    variantId: "7975a81a-befb-4fd4-aa57-2ed17a1df534"
+
+  - position: 3
+    component: "PromoCta"
+    itemId: "bd28a724-8319-4f77-97b0-926ce6be3f9f"
+    status: "wired"
+    pageComponentId: "18f50873-fae7-4e20-b84f-e97c147b0763"
+    variantId: "ee894261-acc7-4fad-9ee2-ea033b8af883"
+    notes: "OIHero fallback because Hero Banner is not allowed on headless-main"
+
+  - position: 4
+    component: "Carousel"
+    itemId: "c31996c0-0934-4b85-adf2-17f5fd775517"
+    status: "wired"
+    pageComponentId: "124106de-fb02-4b43-a521-a309fc75a5bc"
+    variantId: "cd68ef7d-6e13-47a2-a89a-6383adf41c5b"
+    notes: "Existing 3 items updated in place; shared OI Carousel also exists at 5bac2087"
+
+  - position: 5
+    component: "PromoCta"
+    itemId: "e1962f98-e6a2-4f3e-be28-2663785957cb"
+    status: "wired"
+    pageComponentId: "633506e7-54d0-4410-9051-72fb4c9fecb4"
+    variantId: "66e7380a-b647-4db1-9bbc-792a1d541d72"
+
+  - position: 6
+    component: "PromoCta"
+    itemId: "0966d3a6-9d69-468f-b49c-c5e814242261"
+    status: "wired"
+    pageComponentId: "1a516b9b-cc7b-49c9-a8eb-5be281a98612"
+    variantId: "e854f333-27b8-4ee1-a373-92e533d3baf5"
+
+  - position: 7
+    component: "HeadingCta"
+    itemId: "d94de2b1-c58c-4203-9fc4-c3915f1562a3"
+    status: "wired"
+    pageComponentId: "259c7d63-515b-48b6-8465-fe4e3c373f2d"
+    variantId: "aec58152-80bb-4c06-8c1b-1935e38a448e"
+
+  - position: 8
+    component: "Footer"
+    itemId: "0fbe1423-29e7-404c-91e4-11d571dbbb93"
+    status: "created"
+    notes: "context-only — assign OI variant + datasource on footer partial"

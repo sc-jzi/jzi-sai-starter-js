@@ -1,5 +1,7 @@
 'use client';
 
+'use client';
+
 import { JSX } from 'react';
 import { Field, Text, Link, LinkField, useSitecore } from '@sitecore-content-sdk/nextjs';
 import Head from 'next/head';
@@ -146,6 +148,71 @@ export const Centered = (props: HeadingCtaProps): JSX.Element => {
           {(isPageEditing || props.fields?.Link?.value?.href) && (
             <Link field={props.fields.Link} className="button button-main" />
           )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const HeadingCtaEmpty = (): JSX.Element => (
+  <div className="component heading-cta">
+    <div className="component-content">
+      <span className="is-empty-hint">Heading CTA</span>
+    </div>
+  </div>
+);
+
+/* OINewsletter — gold-outlined subscribe card */
+export const OINewsletter = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  if (!props.fields) {
+    return <HeadingCtaEmpty />;
+  }
+
+  return (
+    <div
+      className={`component heading-cta oi-brand oi-newsletter bg-[var(--brand-bg)] py-16 text-[var(--brand-fg)] ${sxaStyles}`}
+      id={id ? id : undefined}
+      style={{ fontFamily: 'var(--brand-heading-font)' }}
+    >
+      <div className="mx-auto max-w-[1280px] px-6">
+        <div className="mx-auto max-w-3xl rounded-[var(--brand-radius)] border border-[var(--brand-primary)] px-8 py-12 text-center md:px-16">
+          <Text
+            field={props.fields?.Heading}
+            tag="h2"
+            className="m-0 text-[2.25rem] font-semibold text-[var(--brand-fg)]"
+          />
+          {(props.fields?.Text?.value || isPageEditing) && (
+            <Text
+              field={props.fields?.Text}
+              tag="p"
+              className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-[var(--brand-muted-fg)]"
+            />
+          )}
+          <form
+            className="mx-auto mt-8 flex max-w-lg flex-col gap-3 sm:flex-row sm:items-center"
+            onSubmit={(event) => event.preventDefault()}
+          >
+            <label htmlFor="oi-newsletter-email" className="sr-only">
+              Email
+            </label>
+            <input
+              id="oi-newsletter-email"
+              type="email"
+              placeholder="Email"
+              className="min-h-11 flex-1 rounded-[var(--brand-button-radius)] border border-[var(--brand-border)] bg-transparent px-5 text-sm text-[var(--brand-fg)] outline-none placeholder:text-[var(--brand-muted-fg)]"
+            />
+            {(isPageEditing || props.fields?.Link?.value?.href) && (
+              <Link
+                field={props.fields.Link}
+                className="inline-flex min-h-11 items-center justify-center rounded-[var(--brand-button-radius)] bg-[var(--brand-primary)] px-8 text-sm font-bold text-[var(--brand-primary-foreground)] no-underline hover:brightness-95"
+              />
+            )}
+          </form>
         </div>
       </div>
     </div>

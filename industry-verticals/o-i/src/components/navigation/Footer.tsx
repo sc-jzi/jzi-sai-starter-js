@@ -169,3 +169,54 @@ export const WithSocials = (props: FooterProps): JSX.Element => {
     </div>
   );
 };
+
+/* OI variant — dark multi-column footer */
+export const OI = (props: FooterProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const columns = [
+    { title: props.fields?.Title1, text: props.fields?.Text1 },
+    { title: props.fields?.Title2, text: props.fields?.Text2 },
+    { title: props.fields?.Title3, text: props.fields?.Text3 },
+    { title: props.fields?.Title4, text: props.fields?.Text4 },
+  ];
+
+  return (
+    <footer
+      className={`component footer oi-brand oi-footer bg-[var(--brand-footer-bg)] text-[var(--brand-footer-fg)] ${sxaStyles}`}
+      id={id ? id : undefined}
+      style={{ fontFamily: 'var(--brand-heading-font)' }}
+    >
+      <div className="mx-auto max-w-[1280px] px-6 py-14">
+        <div className="mb-10">
+          <NextImage
+            field={props.fields?.Image1}
+            width={80}
+            height={36}
+            className="h-8 w-auto"
+          />
+        </div>
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          {columns.map((column, index) => (
+            <div key={index}>
+              <Text
+                field={column.title}
+                tag="h2"
+                className="mb-4 text-sm font-bold text-[var(--brand-fg)]"
+              />
+              <RichText
+                field={column.text}
+                className="text-sm leading-7 text-[var(--brand-muted-fg)] [&_a]:text-inherit [&_a]:no-underline hover:[&_a]:text-[var(--brand-primary)] [&_ul]:m-0 [&_ul]:list-none [&_ul]:p-0"
+              />
+            </div>
+          ))}
+        </div>
+        <div className="mt-12 flex flex-wrap items-center gap-4 border-t border-[var(--brand-border)] pt-6 text-xs text-[var(--brand-muted-fg)]">
+          <Text field={props.fields?.Copyright} tag="span" />
+          <Link field={props.fields?.Link1} className="text-inherit no-underline hover:text-[var(--brand-primary)]" />
+          <Link field={props.fields?.Link2} className="text-inherit no-underline hover:text-[var(--brand-primary)]" />
+        </div>
+      </div>
+    </footer>
+  );
+};

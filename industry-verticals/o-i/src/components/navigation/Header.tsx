@@ -53,3 +53,32 @@ export const WithLogoImage = (props: HeaderProps): JSX.Element => {
     </div>
   );
 };
+
+/* OI variant — dark bar, white logo, gold pill Catalog via placeholder */
+export const OI = (props: HeaderProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const sxaStyles = `${props.params.styles?.trimEnd() || ''}`;
+
+  return (
+    <header
+      className={`component header oi-brand oi-header border-b border-[var(--brand-border)] bg-[var(--brand-header-bg)] text-[var(--brand-header-fg)] ${sxaStyles}`}
+      id={id ? id : undefined}
+      style={{ fontFamily: 'var(--brand-heading-font)' }}
+    >
+      <div className="mx-auto flex min-h-16 max-w-[1280px] items-center gap-6 px-6">
+        <a href="/" className="shrink-0">
+          <NextImage field={props.fields?.LogoImage} width={72} height={36} className="h-8 w-auto" />
+        </a>
+        <div className="min-w-0 flex-1 [&_a]:text-[var(--brand-header-fg)] [&_a]:no-underline [&_a]:text-sm [&_.button]:!rounded-[var(--brand-button-radius)] [&_.button]:!border-0 [&_.button]:!bg-[var(--brand-primary)] [&_.button]:!px-5 [&_.button]:!py-2 [&_.button]:!text-sm [&_.button]:!font-bold [&_.button]:!text-[var(--brand-primary-foreground)]">
+          <AppPlaceholder
+            name="header-right"
+            rendering={props.rendering}
+            page={page}
+            componentMap={props.componentMap}
+          />
+        </div>
+      </div>
+    </header>
+  );
+};

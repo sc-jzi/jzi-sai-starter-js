@@ -83,3 +83,58 @@ export const Default = (props: HeroBannerProps): JSX.Element => {
     </div>
   );
 };
+
+const HeroBannerEmpty = (): JSX.Element => (
+  <div className="component hero-banner">
+    <div className="component-content">
+      <span className="is-empty-hint">Hero Banner</span>
+    </div>
+  </div>
+);
+
+/* OI variant — 50/50 news placeholder + stacked headline / gold pill */
+export const OI = (props: HeroBannerProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  if (!props.fields) {
+    return <HeroBannerEmpty />;
+  }
+
+  return (
+    <div
+      className={`component hero-banner oi-brand oi-hero bg-[var(--brand-bg)] py-10 text-[var(--brand-fg)] ${sxaStyles}`}
+      id={id ? id : undefined}
+      style={{ fontFamily: 'var(--brand-heading-font)' }}
+    >
+      <div className="mx-auto grid max-w-[1280px] items-center gap-10 px-6 lg:grid-cols-2 lg:gap-16">
+        <div className="min-w-0">
+          <Placeholder name="hero-banner" rendering={props.rendering} />
+        </div>
+        <div className="max-w-xl">
+          {(props.fields.Title?.value || isPageEditing) && (
+            <Text
+              field={props.fields.Title}
+              tag="h1"
+              className="m-0 max-w-[11ch] text-[2.75rem] font-semibold leading-[1.08] text-[var(--brand-fg)] md:text-[4rem]"
+            />
+          )}
+          {(props.fields.Text?.value || isPageEditing) && (
+            <RichText
+              field={props.fields.Text}
+              className="mt-6 text-[1.05rem] leading-relaxed text-[var(--brand-muted-fg)] [&_p]:mb-0"
+            />
+          )}
+          {(isPageEditing || props.fields?.Cta1?.value?.href) && (
+            <Link
+              field={props.fields.Cta1}
+              className="mt-8 inline-flex items-center rounded-[var(--brand-button-radius)] bg-[var(--brand-primary)] px-7 py-2.5 text-sm font-bold text-[var(--brand-primary-foreground)] no-underline hover:brightness-95"
+            />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};

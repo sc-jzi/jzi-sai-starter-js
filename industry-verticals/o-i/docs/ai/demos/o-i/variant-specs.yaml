@@ -1,0 +1,90 @@
+variantSpecs:
+  - position: 1
+    componentName: "Header"
+    variantName: "OI"
+    baseVariant: "WithLogoImage"
+    visualDifferences:
+      layout: "solid dark bar, logo left, nav placeholder fills remaining width"
+      spacing: "min-h-16, max-w-[1280px], px-6"
+      typography: "small white nav links, gold pill Catalog via placeholder button styles"
+      background: "var(--brand-header-bg)"
+      distinctive: "gold pill CTA, no light banking chrome"
+
+  - position: 2
+    componentName: "FourColumnCta"
+    variantName: "OINewsGrid"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "2x2 grid of photo cards"
+      spacing: "gap-4, rounded brand-radius"
+      typography: "white title overlay on image, muted date caption under card"
+      background: "dark page"
+      distinctive: "thin gold border, More and Stories + dots chrome under grid"
+
+  - position: 3
+    componentName: "HeroBanner"
+    variantName: "OI"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "50/50 — left placeholder for news grid, right stacked headline + body + gold pill"
+      spacing: "py-16, gap-12"
+      typography: "hero ~4.5rem semibold stacked lines, body muted 1.125rem"
+      background: "dark"
+      buttons: "gold pill, dark text"
+      distinctive: "no image column, no dotted accents"
+
+  - position: 4
+    componentName: "Carousel"
+    variantName: "OI"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "copy left / photo right, one slide visible"
+      spacing: "py-16, gap-12, max-w-[1280px]"
+      typography: "first Text p is gold uppercase tracked eyebrow; Title ~2.25rem; body muted"
+      background: "dark"
+      buttons: "gold circular badge overlay on image (link text wraps inside circle)"
+      distinctive: "gold photo border, dots only (no arrows), 3 slides"
+
+  - position: 5
+    componentName: "PromoCta"
+    variantName: "OIImageLeft"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "photo left / copy right"
+      spacing: "py-20, gap-12"
+      typography: "h2 ~2.5rem, body muted"
+      background: "dark"
+      distinctive: "oversized translucent OI watermark behind copy, gold text-style CTA"
+
+  - position: 6
+    componentName: "PromoCta"
+    variantName: "OIValues"
+    baseVariant: "Default"
+    visualDifferences:
+      layout: "circular photo cluster left, copy + gold pill right"
+      spacing: "py-20"
+      typography: "h2 ~2.5rem"
+      background: "dark"
+      distinctive: "primary Image clipped to circle; decorative extra circles"
+
+  - position: 7
+    componentName: "HeadingCta"
+    variantName: "OINewsletter"
+    baseVariant: "Centered"
+    visualDifferences:
+      layout: "centered gold-outlined card"
+      spacing: "py-16, inner p-10"
+      typography: "h2 centered, supporting line muted"
+      background: "dark card on dark page"
+      distinctive: "presentational email input + gold Submit pill"
+
+  - position: 8
+    componentName: "Footer"
+    variantName: "OI"
+    baseVariant: "WithSocials"
+    visualDifferences:
+      layout: "logo + 4 columns, social row, copyright bar"
+      spacing: "py-14, max-w-[1280px]"
+      typography: "small uppercase column titles, muted links"
+      background: "var(--brand-footer-bg)"
+      distinctive: "white logo, gold hover accents"

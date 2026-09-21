@@ -18,12 +18,74 @@ project:
 
 availableRenderings:
   itemId: "{B8421DB0-45AC-42E0-A808-0A48F1061D13}"
-  lastKnownValue: "{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{8094185B-4C72-40C8-B005-C6ED91708754}|{F9905F68-21E8-4C6F-8B89-56BB99020D31}|{CCC3A815-5DE9-4529-BAD5-874548667D66}|{AD385021-CE2B-4FC1-89AA-207D408034A8}|{35075000-760E-4FF3-BD1C-F2EEBA251DCB}|{333DEF3E-C272-4AD9-A493-8D5CCAE08312}|{1F52FB4E-FB4B-40ED-A5D8-F8F9784B36F2}|{20E5EA95-6B50-49CD-8852-433B7C565F06}|{3A9A9D22-C092-4B54-9511-EB202CEABE8D}|{75464A5E-CBB7-4F96-BBBC-104AFE57923A}|{B7CDF75E-716A-4C59-B9B1-CD970AE0A4AE}|{1A375FAC-6CC1-4A5A-A159-9BC6DBC66B80}|{200920AD-9645-4CB2-B72A-C7D8278E709F}"
-  lastUpdatedAt: "2026-09-14T18:15:00Z"
-  renderingCount: 15
-  warning: "Refreshed from technology/akamai Available Renderings during Phase 0.5. Financial starter library in use."
+  lastKnownValue: "{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{8094185B-4C72-40C8-B005-C6ED91708754}|{F9905F68-21E8-4C6F-8B89-56BB99020D31}|{CCC3A815-5DE9-4529-BAD5-874548667D66}|{AD385021-CE2B-4FC1-89AA-207D408034A8}|{35075000-760E-4FF3-BD1C-F2EEBA251DCB}|{333DEF3E-C272-4AD9-A493-8D5CCAE08312}|{1F52FB4E-FB4B-40ED-A5D8-F8F9784B36F2}|{20E5EA95-6B50-49CD-8852-433B7C565F06}|{3A9A9D22-C092-4B54-9511-EB202CEABE8D}|{75464A5E-CBB7-4F96-BBBC-104AFE57923A}|{B7CDF75E-716A-4C59-B9B1-CD970AE0A4AE}|{1A375FAC-6CC1-4A5A-A159-9BC6DBC66B80}|{200920AD-9645-4CB2-B72A-C7D8278E709F}|{5E6DB739-879B-4966-BDC5-793F0BFD3284}"
+  lastUpdatedAt: "2026-09-21T16:20:00Z"
+  renderingCount: 16
+  warning: "Appended Video rendering {5E6DB739-879B-4966-BDC5-793F0BFD3284}. Verify in Content Editor if other renderings were added since Phase 0.5."
 
 components:
+  - name: "Video"
+    kind: "simple"
+    category: "Page Content"
+    status: "complete"
+    createdAt: "2026-09-21T16:20:00Z"
+    updatedAt: "2026-09-21T16:20:00Z"
+    react:
+      filePath: "src/components/pagecontent/Video.tsx"
+      componentMapKey: "Video"
+      variants: ["Default"]
+    templates:
+      datasource:
+        name: "Video"
+        path: "/sitecore/templates/Project/Financial/Components/Video"
+        itemId: "{9C83BD6E-E0FE-4235-A3D8-DB95B6B452CC}"
+        sectionName: "Data"
+        fields:
+          - { name: "VideoLink", type: "General Link" }
+        baseTemplatesSet: true
+        standardValues:
+          itemId: "{66A7415B-3561-4F02-8F16-6CE1D3183E9B}"
+          linked: true
+      folder:
+        name: "Video Folder"
+        path: "/sitecore/templates/Project/Financial/Folders/Video Folder"
+        itemId: "{793FCF66-5E5A-48EF-A895-8A7FED4E1D6D}"
+        standardValues:
+          itemId: "{3CFA08AD-6CCF-4154-9C66-7D0040345EEF}"
+          linked: true
+          masters: ["Video"]
+      renderingParams:
+        name: "Video"
+        path: "/sitecore/templates/Project/Financial/Rendering Parameters/Video"
+        itemId: "{76FB46E5-D4CB-4478-AA52-0DC2961E9A34}"
+        baseTemplatesSet: true
+    datasourceFolder:
+      name: "Video"
+      path: "/sitecore/content/technology/akamai/Data/Video"
+      itemId: "{D52B7B7D-298B-4562-A009-2071B66D2E50}"
+      insertOptionsSet: true
+      exampleItem:
+        name: "Video"
+        itemId: "{BADF7962-279E-452D-8979-EE4546B6D773}"
+    rendering:
+      name: "Video"
+      path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Video"
+      itemId: "{5E6DB739-879B-4966-BDC5-793F0BFD3284}"
+      componentName: "Video"
+      datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/Video"
+      datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Video Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Video Folder']"
+      parametersTemplateId: "{76FB46E5-D4CB-4478-AA52-0DC2961E9A34}"
+      componentQuery: ""
+      addFieldEditorButton: "1"
+      registeredInAvailableRenderings: true
+    headlessVariants:
+      containerPath: "/sitecore/content/technology/akamai/Presentation/Headless Variants/Video"
+      containerId: "{2A3C6B88-A21C-4973-8BA9-70BDDA23EC56}"
+      variants:
+        - { name: "Default", itemId: "{587AC2A9-D190-4140-87B1-2E848489B91C}" }
+    notes:
+      - "Autoplay muted looping HTML5 video; custom unmute + pause controls; min-height 500px."
+
   - name: "AnnouncementBar"
     kind: "simple"
     category: "Navigation"
