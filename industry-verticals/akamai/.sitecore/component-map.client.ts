@@ -45,6 +45,7 @@ import * as AuthorDetails from 'src/components/pagecontent/AuthorDetails';
 import * as ArticleList from 'src/components/pagecontent/ArticleList';
 import * as ArticleDetails from 'src/components/pagecontent/ArticleDetails';
 import * as AppPromo from 'src/components/pagecontent/AppPromo';
+import * as AkamaiWhatsNew from 'src/components/pagecontent/AkamaiWhatsNew';
 import * as Accordion from 'src/components/pagecontent/Accordion';
 import * as ParallaxBackgroundImage from 'src/components/non-sitecore/ParallaxBackgroundImage';
 import * as IconAccent from 'src/components/non-sitecore/IconAccent';
@@ -115,6 +116,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ArticleList', { ...ArticleList }],
   ['ArticleDetails', { ...ArticleDetails }],
   ['AppPromo', { ...AppPromo }],
+  ['AkamaiWhatsNew', { ...AkamaiWhatsNew }],
   ['Accordion', { ...Accordion }],
   ['ParallaxBackgroundImage', { ...ParallaxBackgroundImage }],
   ['IconAccent', { ...IconAccent }],
