@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, type JSX } from 'react';
+import { useRef, JSX } from 'react';
 import {
   ComponentParams,
   ComponentRendering,
@@ -43,8 +43,6 @@ const getNewsItems = (items: AkamaiWhatsNewItemProps[], numOfItems: number) => {
 
 const AkamaiWhatsNewDefault = (props: AkamaiWhatsNewComponentProps): JSX.Element => {
   const id = props.params?.RenderingIdentifier;
-  const { page } = useSitecore();
-  const isPageEditing = page.mode.isEditing;
   const sxaStyles = `${props.params?.styles || ''}`;
   const scrollerRef = useRef<HTMLDivElement>(null);
   const numOfItems = parseInt(props.params?.NumberOfItems, 10) || MAX_ITEMS;
@@ -59,21 +57,6 @@ const AkamaiWhatsNewDefault = (props: AkamaiWhatsNewComponentProps): JSX.Element
       behavior: 'smooth',
     });
   };
-
-  if (!articles?.length) {
-    return (
-      <div
-        className={`component akamai-whats-new akamai-brand bg-[var(--brand-bg)] pb-14 ${sxaStyles}`}
-        id={id || undefined}
-      >
-        {isPageEditing ? (
-          <div className="mx-auto max-w-[1200px] px-6 py-10 text-sm text-black/70">
-            Select the articles folder as the datasource to display recent news.
-          </div>
-        ) : null}
-      </div>
-    );
-  }
 
   return (
     <div
