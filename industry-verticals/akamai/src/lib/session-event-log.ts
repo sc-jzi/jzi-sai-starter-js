@@ -36,7 +36,8 @@ export function readSessionEvents(): SessionEventEntry[] {
         !!entry &&
         typeof entry === 'object' &&
         typeof (entry as SessionEventEntry).type === 'string' &&
-        typeof (entry as SessionEventEntry).page === 'string'
+        typeof (entry as SessionEventEntry).page === 'string' &&
+        !(entry as SessionEventEntry).type.toUpperCase().startsWith('VIEW')
     );
   } catch {
     return [];
@@ -83,6 +84,10 @@ function tryRecordFromFetchBody(url: string, body: BodyInit | null | undefined) 
   }
 
   if (payload?.type) {
+    const type = String(payload.type);
+    // Page views are already shown under "Pages this session" — skip VIEW events here
+    if (type.toUpperCase().startsWith('VIEW')) return;
+
     const pageUrl =
       typeof window !== 'undefined'
         ? `${window.location.origin}${window.location.pathname}${window.location.search}`
@@ -90,7 +95,7 @@ function tryRecordFromFetchBody(url: string, body: BodyInit | null | undefined) 
           ? String(payload.page)
           : '';
     // Prefer live URL for display; fall back to SDK page name when offline of a window
-    recordSessionEvent(String(payload.type), pageUrl || (payload.page ? String(payload.page) : undefined));
+    recordSessionEvent(type, pageUrl || (payload.page ? String(payload.page) : undefined));
   }
 }
 
