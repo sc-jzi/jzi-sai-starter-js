@@ -28,10 +28,12 @@ import Head from 'next/head';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import { ParallaxBackgroundImage } from 'components/non-sitecore/ParallaxBackgroundImage';
 import { IconAccent } from 'components/non-sitecore/IconAccent';
+import { createPortal } from 'react-dom';
 import { Copy, Check, UserCircle, RotateCcw, X, Loader2 } from 'lucide-react';
 import { getCookieValueClientSide } from '@sitecore-content-sdk/analytics-core/utils';
 import { fetchProfileIdFromEdgeProxy } from '@sitecore-content-sdk/personalize/internal';
 import config from 'sitecore.config';
+import { clearSessionEvents, installSessionEventTracking, readSessionEvents, SESSION_EVENTS_CHANGED } from 'lib/session-event-log';
 import PreviewSearch from 'src/components/search/PreviewSearch';
 import { usePreviewSearchActions, useSearchResultsActions, WidgetDataType, useSearchResults, widget, PageController, WidgetsProvider, useQuestions, usePreviewSearch, FilterEqual, useSearchResultsSelectedFilters } from '@sitecore-search/react';
 import { PreviewSearch as PreviewSearch_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7, SortSelect, Pagination as Pagination_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7, AccordionFacets, FacetItem, RangeFacet, SearchResultsAccordionFacets, SearchResultsFacetValueRange, Select, ArticleCard, CardViewSwitcher as CardViewSwitcher_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7 } from '@sitecore-search/ui';
@@ -204,6 +206,12 @@ const importMap = [
     ]
   },
   {
+    module: 'react-dom',
+    exports: [
+      { name: 'createPortal', value: createPortal },
+    ]
+  },
+  {
     module: 'lucide-react',
     exports: [
       { name: 'Copy', value: Copy },
@@ -230,6 +238,15 @@ const importMap = [
     module: 'sitecore.config',
     exports: [
       { name: 'default', value: config },
+    ]
+  },
+  {
+    module: 'lib/session-event-log',
+    exports: [
+      { name: 'clearSessionEvents', value: clearSessionEvents },
+      { name: 'installSessionEventTracking', value: installSessionEventTracking },
+      { name: 'readSessionEvents', value: readSessionEvents },
+      { name: 'SESSION_EVENTS_CHANGED', value: SESSION_EVENTS_CHANGED },
     ]
   },
   {
