@@ -14,6 +14,7 @@ import * as ContactForm from 'src/components/utilities/ContactForm';
 import * as ApplicationForm from 'src/components/utilities/ApplicationForm';
 import * as SearchResults from 'src/components/search/SearchResults';
 import * as PreviewSearch from 'src/components/search/PreviewSearch';
+import * as MoreLikeThis from 'src/components/search/MoreLikeThis';
 import * as ColumnSplitter from 'src/components/pagestructure/ColumnSplitter';
 import * as Video from 'src/components/pagecontent/Video';
 import * as TwoColumnCta from 'src/components/pagecontent/TwoColumnCta';
@@ -46,7 +47,6 @@ import * as AuthorDetails from 'src/components/pagecontent/AuthorDetails';
 import * as ArticleList from 'src/components/pagecontent/ArticleList';
 import * as ArticleDetails from 'src/components/pagecontent/ArticleDetails';
 import * as AppPromo from 'src/components/pagecontent/AppPromo';
-import * as AkamaiWhatsNew from 'src/components/pagecontent/AkamaiWhatsNew';
 import * as Accordion from 'src/components/pagecontent/Accordion';
 import * as ProfileIdWidget from 'src/components/non-sitecore/ProfileIdWidget';
 import * as ParallaxBackgroundImage from 'src/components/non-sitecore/ParallaxBackgroundImage';
@@ -88,6 +88,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ApplicationForm', { ...ApplicationForm, componentType: 'client' }],
   ['SearchResults', { ...SearchResults, componentType: 'client' }],
   ['PreviewSearch', { ...PreviewSearch, componentType: 'client' }],
+  ['MoreLikeThis', { ...MoreLikeThis, componentType: 'client' }],
   ['ColumnSplitter', { ...ColumnSplitter, componentType: 'client' }],
   ['Video', { ...Video, componentType: 'client' }],
   ['TwoColumnCta', { ...TwoColumnCta, componentType: 'client' }],
@@ -120,7 +121,6 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ArticleList', { ...ArticleList, componentType: 'client' }],
   ['ArticleDetails', { ...ArticleDetails, componentType: 'client' }],
   ['AppPromo', { ...AppPromo, componentType: 'client' }],
-  ['AkamaiWhatsNew', { ...AkamaiWhatsNew, componentType: 'client' }],
   ['Accordion', { ...Accordion, componentType: 'client' }],
   ['ProfileIdWidget', { ...ProfileIdWidget, componentType: 'client' }],
   ['ParallaxBackgroundImage', { ...ParallaxBackgroundImage, componentType: 'client' }],

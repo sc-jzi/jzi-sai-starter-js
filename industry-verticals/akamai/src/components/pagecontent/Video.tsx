@@ -1,11 +1,12 @@
 'use client';
 
 import { useEffect, useRef, useState, type JSX } from 'react';
-import { LinkField, useSitecore } from '@sitecore-content-sdk/nextjs';
+import { LinkField, useSitecore, Link } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 
 interface Fields {
   VideoLink: LinkField;
+  CTA: LinkField;
 }
 
 export type VideoProps = ComponentProps & {
@@ -106,7 +107,7 @@ export const Default = (props: VideoProps): JSX.Element => {
 
   return (
     <div
-      className={`component video group relative min-h-[600px] w-full overflow-hidden bg-black ${sxaStyles}`}
+      className={`component video akamai-brand group relative min-h-[600px] w-full overflow-hidden bg-black ${sxaStyles}`}
       id={id || undefined}
     >
       <video
@@ -120,7 +121,10 @@ export const Default = (props: VideoProps): JSX.Element => {
         preload="auto"
         aria-label={props.fields.VideoLink?.value?.text || 'Video'}
       />
-
+      <Link
+        field={props.fields.CTA}
+        className="akamai-button-accent absolute left-1/2 top-[58%] z-10 -translate-x-1/2 -translate-y-1/2 !px-10"
+      />
       <div className="absolute bottom-4 right-4 z-10 flex gap-2 opacity-0 transition-opacity duration-200 group-hover:opacity-100 focus-within:opacity-100">
         <button
           type="button"
@@ -138,6 +142,8 @@ export const Default = (props: VideoProps): JSX.Element => {
         >
           {isMuted ? <IconMute /> : <IconUnmute />}
         </button>
+
+
       </div>
     </div>
   );

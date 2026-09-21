@@ -15,14 +15,14 @@ import { getSiteThemeClass } from 'lib/site-theme';
 import { Text, useSitecore, NextImage, Link, RichText, Placeholder, withDatasourceCheck, Image as Image_8a80e63291fea86e0744df19113dc44bec187216, AppPlaceholder, CdpHelper } from '@sitecore-content-sdk/nextjs';
 import { useParams, useRouter, useSearchParams, usePathname } from 'next/navigation';
 import Image from 'next/image';
-import { useInfiniteSearch, useSuggest } from '@sitecore-content-sdk/nextjs/search';
+import { useInfiniteSearch, useSuggest, useSearch } from '@sitecore-content-sdk/nextjs/search';
 import { DEFAULT_IMG_URL, HIGHLIGHTED_ARTICLES_RFKID, SEARCH_WIDGET_ID, PREVIEW_WIDGET_ID, HOMEHIGHLIGHTED_WIDGET_ID } from 'src/_data/customizations';
+import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import useVisibility from 'src/hooks/useVisibility';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import { CountUp } from 'components/non-sitecore/CountUp';
 import { DottedAccent } from 'components/non-sitecore/DottedAccent';
-import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import { FacebookIcon, FacebookShareButton, LinkedinIcon, LinkedinShareButton, TwitterIcon, TwitterShareButton } from 'react-share';
 import Head from 'next/head';
 import { ParallaxBanner } from 'react-scroll-parallax';
@@ -118,6 +118,7 @@ const importMap = [
     exports: [
       { name: 'useInfiniteSearch', value: useInfiniteSearch },
       { name: 'useSuggest', value: useSuggest },
+      { name: 'useSearch', value: useSearch },
     ]
   },
   {
@@ -128,6 +129,12 @@ const importMap = [
       { name: 'SEARCH_WIDGET_ID', value: SEARCH_WIDGET_ID },
       { name: 'PREVIEW_WIDGET_ID', value: PREVIEW_WIDGET_ID },
       { name: 'HOMEHIGHLIGHTED_WIDGET_ID', value: HOMEHIGHLIGHTED_WIDGET_ID },
+    ]
+  },
+  {
+    module: 'next/link',
+    exports: [
+      { name: 'default', value: Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 },
     ]
   },
   {
@@ -162,12 +169,6 @@ const importMap = [
     module: 'components/non-sitecore/DottedAccent',
     exports: [
       { name: 'DottedAccent', value: DottedAccent },
-    ]
-  },
-  {
-    module: 'next/link',
-    exports: [
-      { name: 'default', value: Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 },
     ]
   },
   {
