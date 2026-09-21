@@ -13,7 +13,7 @@ import { useEffect, useState, Suspense, useCallback, useMemo, useRef } from 'rea
 import React from 'react';
 import { getSiteThemeClass } from 'lib/site-theme';
 import { Text, useSitecore, NextImage, Link, RichText, Placeholder, withDatasourceCheck, Image as Image_8a80e63291fea86e0744df19113dc44bec187216, AppPlaceholder, CdpHelper } from '@sitecore-content-sdk/nextjs';
-import { useParams, useRouter, useSearchParams } from 'next/navigation';
+import { useParams, useRouter, useSearchParams, usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { useInfiniteSearch, useSuggest } from '@sitecore-content-sdk/nextjs/search';
 import { DEFAULT_IMG_URL, HIGHLIGHTED_ARTICLES_RFKID, SEARCH_WIDGET_ID, PREVIEW_WIDGET_ID, HOMEHIGHLIGHTED_WIDGET_ID } from 'src/_data/customizations';
@@ -28,6 +28,10 @@ import Head from 'next/head';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import { ParallaxBackgroundImage } from 'components/non-sitecore/ParallaxBackgroundImage';
 import { IconAccent } from 'components/non-sitecore/IconAccent';
+import { Copy, Check, UserCircle, RotateCcw, X, Loader2 } from 'lucide-react';
+import { getCookieValueClientSide } from '@sitecore-content-sdk/analytics-core/utils';
+import { fetchProfileIdFromEdgeProxy } from '@sitecore-content-sdk/personalize/internal';
+import config from 'sitecore.config';
 import PreviewSearch from 'src/components/search/PreviewSearch';
 import { usePreviewSearchActions, useSearchResultsActions, WidgetDataType, useSearchResults, widget, PageController, WidgetsProvider, useQuestions, usePreviewSearch, FilterEqual, useSearchResultsSelectedFilters } from '@sitecore-search/react';
 import { PreviewSearch as PreviewSearch_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7, SortSelect, Pagination as Pagination_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7, AccordionFacets, FacetItem, RangeFacet, SearchResultsAccordionFacets, SearchResultsFacetValueRange, Select, ArticleCard, CardViewSwitcher as CardViewSwitcher_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7 } from '@sitecore-search/ui';
@@ -49,7 +53,6 @@ import QuestionsAnswers from 'src/components/legacysearch/QuestionsAnswers';
 import SuggestionBlock from 'src/components/legacysearch/SuggestionBlock';
 import client from 'src/lib/sitecore-client';
 import { pageView } from '@sitecore-content-sdk/events';
-import config from 'sitecore.config';
 
 const importMap = [
   {
@@ -99,6 +102,7 @@ const importMap = [
       { name: 'useParams', value: useParams },
       { name: 'useRouter', value: useRouter },
       { name: 'useSearchParams', value: useSearchParams },
+      { name: 'usePathname', value: usePathname },
     ]
   },
   {
@@ -197,6 +201,35 @@ const importMap = [
     module: 'components/non-sitecore/IconAccent',
     exports: [
       { name: 'IconAccent', value: IconAccent },
+    ]
+  },
+  {
+    module: 'lucide-react',
+    exports: [
+      { name: 'Copy', value: Copy },
+      { name: 'Check', value: Check },
+      { name: 'UserCircle', value: UserCircle },
+      { name: 'RotateCcw', value: RotateCcw },
+      { name: 'X', value: X },
+      { name: 'Loader2', value: Loader2 },
+    ]
+  },
+  {
+    module: '@sitecore-content-sdk/analytics-core/utils',
+    exports: [
+      { name: 'getCookieValueClientSide', value: getCookieValueClientSide },
+    ]
+  },
+  {
+    module: '@sitecore-content-sdk/personalize/internal',
+    exports: [
+      { name: 'fetchProfileIdFromEdgeProxy', value: fetchProfileIdFromEdgeProxy },
+    ]
+  },
+  {
+    module: 'sitecore.config',
+    exports: [
+      { name: 'default', value: config },
     ]
   },
   {
@@ -352,12 +385,6 @@ const importMap = [
     module: '@sitecore-content-sdk/events',
     exports: [
       { name: 'pageView', value: pageView },
-    ]
-  },
-  {
-    module: 'sitecore.config',
-    exports: [
-      { name: 'default', value: config },
     ]
   }
 ] as ImportEntry[];

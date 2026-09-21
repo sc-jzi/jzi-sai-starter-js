@@ -48,6 +48,7 @@ import * as ArticleDetails from 'src/components/pagecontent/ArticleDetails';
 import * as AppPromo from 'src/components/pagecontent/AppPromo';
 import * as AkamaiWhatsNew from 'src/components/pagecontent/AkamaiWhatsNew';
 import * as Accordion from 'src/components/pagecontent/Accordion';
+import * as ProfileIdWidget from 'src/components/non-sitecore/ProfileIdWidget';
 import * as ParallaxBackgroundImage from 'src/components/non-sitecore/ParallaxBackgroundImage';
 import * as IconAccent from 'src/components/non-sitecore/IconAccent';
 import * as DottedAccent from 'src/components/non-sitecore/DottedAccent';
@@ -121,6 +122,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['AppPromo', { ...AppPromo, componentType: 'client' }],
   ['AkamaiWhatsNew', { ...AkamaiWhatsNew, componentType: 'client' }],
   ['Accordion', { ...Accordion, componentType: 'client' }],
+  ['ProfileIdWidget', { ...ProfileIdWidget, componentType: 'client' }],
   ['ParallaxBackgroundImage', { ...ParallaxBackgroundImage, componentType: 'client' }],
   ['IconAccent', { ...IconAccent, componentType: 'client' }],
   ['DottedAccent', { ...DottedAccent, componentType: 'client' }],
