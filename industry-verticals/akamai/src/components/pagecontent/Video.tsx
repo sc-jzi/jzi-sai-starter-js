@@ -123,7 +123,7 @@ export const Default = (props: VideoProps): JSX.Element => {
       />
       <Link
         field={props.fields.CTA}
-        className="akamai-button-accent absolute left-1/2 top-[58%] z-10 -translate-x-1/2 -translate-y-1/2 !px-10"
+        className="akamai-button-accent absolute bottom-10 left-1/2 z-10 -translate-x-1/2 !px-10"
       />
       <div className="absolute bottom-4 right-4 z-10 flex gap-2 opacity-0 transition-opacity duration-200 group-hover:opacity-100 focus-within:opacity-100">
         <button

@@ -8,6 +8,7 @@ import { useSearch } from '@sitecore-content-sdk/nextjs/search';
 import type { SearchDocument } from '@sitecore-content-sdk/search';
 import { ComponentProps } from 'lib/component-props';
 import { DEFAULT_IMG_URL } from '../../_data/customizations';
+import { useSitecore } from '@sitecore-content-sdk/nextjs';
 
 const RESULTS_LIMIT = 3;
 
@@ -71,25 +72,29 @@ const EmptyState = ({ message }: { message: string }): JSX.Element => (
 export const Default = (props: MoreLikeThisProps): JSX.Element => {
   const id = props.params?.RenderingIdentifier;
   const sxaStyles = `${props.params?.styles || ''}`.trimEnd();
-  const pathname = usePathname();
-  const [seedItemUrl, setSeedItemUrl] = useState('');
+  // const pathname = usePathname();
+  // const [seedItemUrl, setSeedItemUrl] = useState('');
+  const { page } = useSitecore();
+  const currentItemId = page?.layout?.sitecore?.route?.itemId;
 
   const searchIndexId =
     props.params?.SearchIndexId?.trim() ||
     process.env.NEXT_PUBLIC_SEARCH_INDEX_ID?.trim() ||
     '';
 
+    console.log(`currentItemId: ${currentItemId}`);
   // Site-crawl MLT requires the absolute URL of the current page as the seed.
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    setSeedItemUrl(window.location.href);
-  }, [pathname]);
+  // useEffect(() => {
+  //   if (typeof window === 'undefined') return;
+  //   setSeedItemUrl(window.location.href);
+  // }, [pathname]);
 
   const { results, isLoading, isSuccess, isError, error } = useSearch<SearchDocument>({
     searchIndexId,
-    ...(seedItemUrl ? { seedItemUrl } : {}),
+    //  ...(seedItemUrl ? { seedItemUrl } : {}),
+    seedItemId: currentItemId,
     pageSize: RESULTS_LIMIT,
-    enabled: Boolean(searchIndexId && seedItemUrl),
+    enabled: Boolean(searchIndexId && currentItemId),
   });
 
   const cards = useMemo(
@@ -103,7 +108,7 @@ export const Default = (props: MoreLikeThisProps): JSX.Element => {
     );
   }
 
-  if (!seedItemUrl || isLoading) {
+  if (!currentItemId || isLoading) {
     return (
       <div
         className={`component more-like-this akamai-brand bg-[var(--brand-bg)] pb-14 ${sxaStyles}`}

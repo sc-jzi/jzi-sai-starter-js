@@ -15,6 +15,7 @@ import * as ApplicationForm from 'src/components/utilities/ApplicationForm';
 import * as SearchResults from 'src/components/search/SearchResults';
 import * as PreviewSearch from 'src/components/search/PreviewSearch';
 import * as MoreLikeThis from 'src/components/search/MoreLikeThis';
+import * as ProductList from 'src/components/products/ProductList';
 import * as ColumnSplitter from 'src/components/pagestructure/ColumnSplitter';
 import * as Video from 'src/components/pagecontent/Video';
 import * as TwoColumnCta from 'src/components/pagecontent/TwoColumnCta';
@@ -87,6 +88,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['SearchResults', { ...SearchResults }],
   ['PreviewSearch', { ...PreviewSearch }],
   ['MoreLikeThis', { ...MoreLikeThis }],
+  ['ProductList', { ...ProductList }],
   ['ColumnSplitter', { ...ColumnSplitter }],
   ['Video', { ...Video }],
   ['TwoColumnCta', { ...TwoColumnCta }],
