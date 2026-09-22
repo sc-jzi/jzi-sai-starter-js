@@ -5,16 +5,18 @@
  * `@sitecore-content-sdk/personalize` (`personalize({ friendlyId: 'profile' })`)
  * and surfaces identity, sessions, events, and affinity scores.
  *
- * Visual shell matches ProfileIdWidget (fixed portal, expand/collapse, white card).
+ * If personalize fails or returns an unexpected payload, falls back to
+ * `ProfileIdWidget` and logs the error to the console for debugging.
  *
  * Note: Bootstrap does not initialize analytics/personalize in development or
- * Pages editor / preview — the widget still renders with an unavailable message.
+ * Pages editor / preview — that path uses the ProfileIdWidget fallback.
  */
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { UserCircle, X, Loader2, RotateCcw } from 'lucide-react';
+import { UserCircle, X, Loader2, RotateCcw, Copy, Check } from 'lucide-react';
 import { personalize } from '@sitecore-content-sdk/personalize';
+import { ProfileIdWidget } from 'components/non-sitecore/ProfileIdWidget';
 
 type ProfileIdentifier = {
   provider?: string;
@@ -39,12 +41,29 @@ type ProfileEvent = {
   [key: string]: unknown;
 };
 
+type ProfileGeolocation = {
+  city?: string;
+  region?: string;
+  country?: string;
+  continent?: string;
+};
+
+type ProfileClientDevice = {
+  type?: string;
+  software?: string;
+  softwareVersion?: string;
+  operatingSystem?: string;
+  operatingSystemVersion?: string;
+};
+
 type ProfileSession = {
   status?: string;
   state?: string;
   name?: string;
   endedAt?: string | null;
   closedAt?: string | null;
+  geolocation?: ProfileGeolocation;
+  clientDevice?: ProfileClientDevice;
   events?: ProfileEvent[];
   [key: string]: unknown;
 };
@@ -60,6 +79,7 @@ type AffinityCategory = {
 };
 
 type GuestProfile = {
+  id?: string;
   type?: string;
   contact?: ProfileContact;
   identifiers?: ProfileIdentifier[];
@@ -68,6 +88,32 @@ type GuestProfile = {
     affinities?: unknown;
   };
   [key: string]: unknown;
+};
+
+const regionDisplayNames =
+  typeof Intl !== 'undefined' ? new Intl.DisplayNames(['en'], { type: 'region' }) : null;
+
+const formatCountryName = (countryCode?: string): string => {
+  const code = countryCode?.trim();
+  if (!code) return '';
+  try {
+    return regionDisplayNames?.of(code.toUpperCase()) || code;
+  } catch {
+    return code;
+  }
+};
+
+const formatGeolocation = (geo?: ProfileGeolocation): string => {
+  if (!geo) return '';
+  return [geo.city, geo.region, formatCountryName(geo.country)].filter(Boolean).join(', ');
+};
+
+const formatClientDevice = (device?: ProfileClientDevice): string => {
+  if (!device) return '';
+  const typeOs = device.operatingSystem
+    ? `${device.type || 'Device'} (${device.operatingSystem})`
+    : device.type || '';
+  return [typeOs, device.software].filter(Boolean).join(', ');
 };
 
 const isFailedPersonalizeResponse = (
@@ -98,7 +144,6 @@ const isOpenSession = (session: ProfileSession): boolean => {
   if (status === 'OPEN') return true;
   if (status === 'CLOSED') return false;
   if (session.endedAt || session.closedAt) return false;
-  // Fallback when status is omitted: treat as open if no end timestamp.
   return !session.endedAt && !session.closedAt;
 };
 
@@ -108,7 +153,6 @@ const isPageViewEvent = (event: ProfileEvent): boolean => {
 };
 
 const getEventCustomData = (event: ProfileEvent): Record<string, unknown> | null => {
-  // SitecoreAI profile events use `customData` (see profile.json).
   const candidates = [
     event.customData,
     event.arbitraryData,
@@ -143,13 +187,6 @@ const parseAffinityName = (value: unknown, fallback: string): string => {
   return fallback;
 };
 
-/**
- * Supports common affinity payload shapes:
- *  - { audience: { developer: { score: 0.83 }, ... }, ... }
- *  - { audience: { developer: 0.83 }, ... }
- *  - { audience: [{ name|value, score }, ...] }
- *  - [{ category|name, values|affinities: [...] }]
- */
 const parseAffinities = (affinities: unknown): AffinityCategory[] => {
   if (!affinities) return [];
 
@@ -222,7 +259,7 @@ const AffinityBars = ({ categories }: { categories: AffinityCategory[] }) => {
       <div className="text-foreground/80 text-sm font-semibold">Top affinities</div>
       <div className="text-foreground/40 grid grid-cols-[minmax(0,1fr)_7.5rem] gap-3 text-[10px] font-medium tracking-wide uppercase">
         <span>Affinity</span>
-        <span className="text-violet-700">Score ↓</span>
+        <span>Score</span>
       </div>
 
       {categories.map((category) => (
@@ -267,13 +304,20 @@ export const ProfileWidget = () => {
   const [mounted, setMounted] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [useFallback, setUseFallback] = useState(false);
   const [profile, setProfile] = useState<GuestProfile | null>(null);
+  const [copied, setCopied] = useState(false);
   const [resetting, setResetting] = useState(false);
+
+  const activateFallback = useCallback((reason: string, details?: unknown) => {
+    console.error('[ProfileWidget] Falling back to ProfileIdWidget:', reason, details ?? '');
+    setProfile(null);
+    setUseFallback(true);
+    setLoading(false);
+  }, []);
 
   const loadProfile = useCallback(async () => {
     setLoading(true);
-    setError(null);
 
     try {
       const response = await personalize({
@@ -282,36 +326,31 @@ export const ProfileWidget = () => {
       });
 
       if (!response) {
-        setProfile(null);
-        setError('Profile unavailable — personalize returned no data.');
+        activateFallback('personalize returned no data');
         return;
       }
 
       if (isFailedPersonalizeResponse(response)) {
-        setProfile(null);
-        setError(response.message || 'Profile request failed.');
+        activateFallback(response.message || 'personalize request failed', response);
         return;
       }
 
       const nextProfile = extractProfile(response);
       if (!nextProfile) {
-        setProfile(null);
-        setError('Unexpected personalize response shape.');
+        activateFallback('unexpected personalize response shape', response);
         return;
       }
 
+      setUseFallback(false);
       setProfile(nextProfile);
-    } catch (err) {
-      setProfile(null);
-      setError(
-        err instanceof Error
-          ? err.message
-          : 'Profile unavailable — analytics may not be initialized in editing, preview, or development.'
-      );
-    } finally {
       setLoading(false);
+    } catch (err) {
+      activateFallback(
+        err instanceof Error ? err.message : 'personalize threw an unexpected error',
+        err
+      );
     }
-  }, []);
+  }, [activateFallback]);
 
   useEffect(() => {
     setMounted(true);
@@ -320,6 +359,13 @@ export const ProfileWidget = () => {
     }, 600);
     return () => clearTimeout(timer);
   }, [loadProfile]);
+
+  const handleCopy = useCallback(async () => {
+    if (!profile?.id) return;
+    await navigator.clipboard.writeText(profile.id);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }, [profile?.id]);
 
   const handleReset = useCallback(() => {
     setResetting(true);
@@ -369,6 +415,16 @@ export const ProfileWidget = () => {
     [sessions]
   );
 
+  const geoLabel = useMemo(
+    () => formatGeolocation(openSession?.geolocation),
+    [openSession?.geolocation]
+  );
+
+  const deviceLabel = useMemo(
+    () => formatClientDevice(openSession?.clientDevice),
+    [openSession?.clientDevice]
+  );
+
   const pageViews = useMemo(() => {
     const events = openSession?.events || [];
     return [...events]
@@ -398,14 +454,18 @@ export const ProfileWidget = () => {
 
   if (!mounted) return null;
 
+  if (useFallback) {
+    return <ProfileIdWidget />;
+  }
+
   const widget = (
     <div
-      className="pointer-events-none fixed right-4 bottom-4 z-[2147483000] flex flex-col items-end gap-2"
-      style={{ position: 'fixed', right: '1rem', bottom: '1rem' }}
+      className="pointer-events-none fixed inset-y-0 right-4 z-[2147483000] flex flex-col items-end gap-2 py-4"
+      style={{ position: 'fixed', right: '1rem', top: 0, bottom: 0 }}
     >
       {expanded && (
-        <div className="pointer-events-auto w-[26rem] max-h-[min(80vh,40rem)] overflow-y-auto rounded-lg border border-neutral-200 bg-white text-neutral-800 shadow-lg">
-          <div className="border-border flex items-center justify-between border-b px-3 py-2">
+        <div className="pointer-events-auto flex min-h-0 w-[26rem] flex-1 flex-col overflow-hidden rounded-lg border border-neutral-200 bg-white text-neutral-800 shadow-lg">
+          <div className="border-border flex shrink-0 items-center justify-between border-b px-3 py-2">
             <span className="text-foreground/50 text-xs font-medium tracking-wider uppercase">
               Sitecore AI Profile
             </span>
@@ -423,10 +483,34 @@ export const ProfileWidget = () => {
               <Loader2 size={14} className="animate-spin" />
               Loading profile…
             </div>
-          ) : error && !profile ? (
-            <div className="text-foreground/50 px-3 py-3 text-xs leading-snug">{error}</div>
           ) : (
-            <div className="space-y-3 px-3 py-2.5 text-xs">
+            <div className="min-h-0 flex-1 space-y-3 overflow-y-auto px-3 py-2.5 text-xs">
+              <div className="flex items-center gap-2">
+                {profile?.id ? (
+                  <>
+                    <span
+                      className="text-foreground/80 min-w-0 flex-1 truncate font-mono text-xs select-all"
+                      title={profile.id}
+                    >
+                      {profile.id}
+                    </span>
+                    <button
+                      onClick={handleCopy}
+                      className="text-foreground/50 hover:text-foreground shrink-0 transition-colors"
+                      title="Copy to clipboard"
+                    >
+                      {copied ? (
+                        <Check size={13} className="text-green-500" />
+                      ) : (
+                        <Copy size={13} />
+                      )}
+                    </button>
+                  </>
+                ) : (
+                  <span className="text-foreground/50 text-xs">Profile ID unavailable</span>
+                )}
+              </div>
+
               <div>
                 <div className="text-foreground/50 mb-1 font-medium tracking-wider uppercase">
                   Type
@@ -455,6 +539,18 @@ export const ProfileWidget = () => {
                 <div className="text-foreground/50 mb-1 font-medium tracking-wider uppercase">
                   Current session
                 </div>
+                {geoLabel ? (
+                  <p className="text-foreground/80 m-0 mb-1">
+                    <span className="text-foreground/50">Geo: </span>
+                    {geoLabel}
+                  </p>
+                ) : null}
+                {deviceLabel ? (
+                  <p className="text-foreground/80 m-0 mb-2">
+                    <span className="text-foreground/50">Device: </span>
+                    {deviceLabel}
+                  </p>
+                ) : null}
                 {pageViews.length ? (
                   <ol className="text-foreground/80 m-0 list-decimal space-y-1 pl-4">
                     {pageViews.map((event, index) => (
@@ -470,7 +566,7 @@ export const ProfileWidget = () => {
 
               <div>
                 <div className="text-foreground/50 mb-1 font-medium tracking-wider uppercase">
-                  Other events ({otherEvents.length})
+                  Events ({otherEvents.length})
                 </div>
                 {otherEvents.length ? (
                   <ul className="m-0 list-none space-y-2 p-0">
@@ -505,7 +601,7 @@ export const ProfileWidget = () => {
             </div>
           )}
 
-          <div className="border-border border-t px-2 py-2">
+          <div className="border-border shrink-0 border-t px-2 py-2">
             <button
               onClick={handleReset}
               disabled={resetting}
@@ -523,13 +619,13 @@ export const ProfileWidget = () => {
         onClick={() => {
           setExpanded((prev) => {
             const next = !prev;
-            if (next && !loading) {
+            if (next && !loading && !useFallback) {
               void loadProfile();
             }
             return next;
           });
         }}
-        className="pointer-events-auto flex size-8 items-center justify-center rounded-full border border-neutral-300 bg-white text-neutral-600 shadow-md transition-all hover:bg-neutral-50 hover:text-neutral-900"
+        className="pointer-events-auto flex size-8 shrink-0 items-center justify-center rounded-full border border-neutral-300 bg-white text-neutral-600 shadow-md transition-all hover:bg-neutral-50 hover:text-neutral-900"
         title="Sitecore AI Profile"
       >
         <UserCircle size={16} />
@@ -539,6 +635,3 @@ export const ProfileWidget = () => {
 
   return createPortal(widget, document.body);
 };
-
-/** Back-compat alias — layout previously imported ProfileIdWidget. */
-export const ProfileIdWidget = ProfileWidget;
