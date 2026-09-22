@@ -83,6 +83,7 @@ export const Default = (props: MoreLikeThisProps): JSX.Element => {
     '';
 
     console.log(`currentItemId: ${currentItemId}`);
+    console.log(`index: ${searchIndexId}`);
   // Site-crawl MLT requires the absolute URL of the current page as the seed.
   // useEffect(() => {
   //   if (typeof window === 'undefined') return;
