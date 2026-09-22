@@ -1,7 +1,8 @@
 'use client';
 
-import { JSX } from 'react';
+import { useCallback, type FormEvent, type JSX } from 'react';
 import { Field, ImageField, NextImage, Text } from '@sitecore-content-sdk/nextjs';
+import { identity } from '@sitecore-content-sdk/events';
 
 interface Fields {
   Title: Field<string>;
@@ -67,10 +68,71 @@ const ignoreAutofill = {
   'data-form-type': 'other',
 };
 
+const toTitleCase = (value: string): string =>
+  value
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1).toLowerCase())
+    .join(' ');
+
+const getFormValue = (form: HTMLFormElement, name: string): string => {
+  const element = form.elements.namedItem(name);
+  if (!element || !('value' in element)) return '';
+  return String(element.value ?? '').trim();
+};
+
 /* AkamaiLead — split portrait + lead form card (product page contact) */
 export const AkamaiLead = (props: ContactFormProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const sxaStyles = `${props.params?.styles || ''}`;
+
+  const handleSubmit = useCallback(async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const firstName = getFormValue(form, 'firstName');
+    const lastName = getFormValue(form, 'lastName');
+    const email = getFormValue(form, 'email').toLowerCase();
+    const jobTitle = getFormValue(form, 'jobTitle');
+    const company = getFormValue(form, 'company');
+    const country = getFormValue(form, 'country');
+    const phone = getFormValue(form, 'phone');
+    const message = getFormValue(form, 'message');
+
+    if (!email) {
+      return;
+    }
+
+    const extensionData: Record<string, string> = {};
+    if (jobTitle) extensionData.jobTitle = jobTitle;
+    if (company) extensionData.company = company;
+    if (message) extensionData.message = message;
+
+    try {
+      await identity({
+        channel: 'WEB',
+        currency: 'USD',
+        email,
+        ...(firstName ? { firstName: toTitleCase(firstName) } : {}),
+        ...(lastName ? { lastName: toTitleCase(lastName) } : {}),
+        ...(phone ? { phone } : {}),
+        ...(country
+          ? { country: country.length === 2 ? country.toUpperCase() : toTitleCase(country) }
+          : {}),
+        identifiers: [
+          {
+            id: email,
+            provider: 'email',
+          },
+        ],
+        ...(Object.keys(extensionData).length > 0 ? { extensionData } : {}),
+      });
+    } catch (error) {
+      // Events SDK is not initialized in development / edit / preview modes.
+      console.debug('IDENTITY event failed:', error);
+    }
+  }, []);
 
   return (
     <div
@@ -96,7 +158,7 @@ export const AkamaiLead = (props: ContactFormProps): JSX.Element => {
           />
           <form
             className="mt-6 grid gap-3 sm:grid-cols-2"
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubmit}
             autoComplete="off"
             data-lpignore="true"
             data-1p-ignore="true"
@@ -120,6 +182,7 @@ export const AkamaiLead = (props: ContactFormProps): JSX.Element => {
               name="email"
               type="text"
               inputMode="email"
+              required
               {...ignoreAutofill}
             />
             <input
