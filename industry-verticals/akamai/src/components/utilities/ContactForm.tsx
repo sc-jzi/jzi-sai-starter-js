@@ -1,8 +1,9 @@
 'use client';
 
-import { useCallback, type FormEvent, type JSX } from 'react';
+import { useCallback, useEffect, useMemo, useState, type FormEvent, type JSX } from 'react';
 import { Field, ImageField, NextImage, Text } from '@sitecore-content-sdk/nextjs';
 import { identity } from '@sitecore-content-sdk/events';
+import { personalize } from '@sitecore-content-sdk/personalize';
 
 interface Fields {
   Title: Field<string>;
@@ -57,7 +58,7 @@ export const Default = (props: ContactFormProps): JSX.Element => {
 };
 
 const leadInputClass =
-  'rounded border border-[rgba(0,40,86,0.2)] px-3 py-2.5 text-sm';
+  'rounded border border-[rgba(0,40,86,0.2)] px-3 py-2.5 text-sm bg-white';
 
 /* Password-manager / extension ignore attrs — prevent hydration mismatches in Pages */
 const ignoreAutofill = {
@@ -67,6 +68,67 @@ const ignoreAutofill = {
   'data-bwignore': 'true',
   'data-form-type': 'other',
 };
+
+/** ISO 3166-1 alpha-2 → E.164 dialing prefix (common demo set). */
+const COUNTRY_DIAL_CODES: Record<string, string> = {
+  AU: '+61',
+  AT: '+43',
+  BE: '+32',
+  BR: '+55',
+  CA: '+1',
+  CH: '+41',
+  CL: '+56',
+  CN: '+86',
+  CO: '+57',
+  CZ: '+420',
+  DE: '+49',
+  DK: '+45',
+  ES: '+34',
+  FI: '+358',
+  FR: '+33',
+  GB: '+44',
+  HK: '+852',
+  IE: '+353',
+  IL: '+972',
+  IN: '+91',
+  IT: '+39',
+  JP: '+81',
+  KR: '+82',
+  MX: '+52',
+  MY: '+60',
+  NL: '+31',
+  NO: '+47',
+  NZ: '+64',
+  PH: '+63',
+  PL: '+48',
+  PT: '+351',
+  SE: '+46',
+  SG: '+65',
+  TH: '+66',
+  TW: '+886',
+  AE: '+971',
+  US: '+1',
+  ZA: '+27',
+};
+
+const regionDisplayNames =
+  typeof Intl !== 'undefined' ? new Intl.DisplayNames(['en'], { type: 'region' }) : null;
+
+const getCountryName = (code: string): string => {
+  try {
+    return regionDisplayNames?.of(code) || code;
+  } catch {
+    return code;
+  }
+};
+
+const COUNTRY_OPTIONS = Object.keys(COUNTRY_DIAL_CODES)
+  .map((code) => ({
+    code,
+    dial: COUNTRY_DIAL_CODES[code],
+    name: getCountryName(code),
+  }))
+  .sort((a, b) => a.name.localeCompare(b.name));
 
 const toTitleCase = (value: string): string =>
   value
@@ -82,57 +144,163 @@ const getFormValue = (form: HTMLFormElement, name: string): string => {
   return String(element.value ?? '').trim();
 };
 
+/** Build E.164 from dial prefix + national number. */
+const toE164 = (dialCode: string, nationalNumber: string): string | null => {
+  const dialDigits = dialCode.replace(/\D/g, '');
+  const nationalDigits = nationalNumber.replace(/\D/g, '');
+  if (!dialDigits || !nationalDigits) return null;
+  return `+${dialDigits}${nationalDigits}`;
+};
+
+const extractProfileCountry = (response: unknown): string | null => {
+  if (!response || typeof response !== 'object') return null;
+  const root = response as Record<string, unknown>;
+  const profile =
+    root.profile && typeof root.profile === 'object'
+      ? (root.profile as Record<string, unknown>)
+      : root;
+  const sessions = Array.isArray(profile.sessions) ? profile.sessions : [];
+  const openSession =
+    sessions.find((session) => {
+      if (!session || typeof session !== 'object') return false;
+      return String((session as { status?: string }).status || '').toLowerCase() === 'open';
+    }) || sessions[0];
+
+  if (!openSession || typeof openSession !== 'object') return null;
+  const geo = (openSession as { geolocation?: { country?: string } }).geolocation;
+  const country = geo?.country?.trim().toUpperCase();
+  if (!country || country.length !== 2) return null;
+  return COUNTRY_DIAL_CODES[country] ? country : null;
+};
+
 /* AkamaiLead — split portrait + lead form card (product page contact) */
 export const AkamaiLead = (props: ContactFormProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const sxaStyles = `${props.params?.styles || ''}`;
 
-  const handleSubmit = useCallback(async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
+  const [country, setCountry] = useState('');
+  const [phoneDial, setPhoneDial] = useState('+1');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [submitState, setSubmitState] = useState<'idle' | 'submitting' | 'success' | 'error'>(
+    'idle'
+  );
+  const [submitMessage, setSubmitMessage] = useState('');
 
-    const form = event.currentTarget;
-    const firstName = getFormValue(form, 'firstName');
-    const lastName = getFormValue(form, 'lastName');
-    const email = getFormValue(form, 'email').toLowerCase();
-    const jobTitle = getFormValue(form, 'jobTitle');
-    const company = getFormValue(form, 'company');
-    const country = getFormValue(form, 'country');
-    const phone = getFormValue(form, 'phone');
-    const message = getFormValue(form, 'message');
+  const dialOptions = useMemo(() => {
+    const unique = new Map<string, string>();
+    COUNTRY_OPTIONS.forEach((option) => {
+      if (!unique.has(option.dial)) {
+        unique.set(option.dial, `${option.dial} (${option.code})`);
+      }
+    });
+    return Array.from(unique.entries())
+      .map(([dial, label]) => ({ dial, label }))
+      .sort((a, b) => a.dial.localeCompare(b.dial, undefined, { numeric: true }));
+  }, []);
 
-    if (!email) {
-      return;
-    }
+  useEffect(() => {
+    let active = true;
 
-    const extensionData: Record<string, string> = {};
-    if (jobTitle) extensionData.jobTitle = jobTitle;
-    if (company) extensionData.company = company;
-    if (message) extensionData.message = message;
+    const prefillFromProfile = async () => {
+      try {
+        const response = await personalize({
+          channel: 'WEB',
+          friendlyId: 'profile',
+        });
+        if (!active) return;
 
-    try {
-      await identity({
-        channel: 'WEB',
-        currency: 'USD',
-        email,
-        ...(firstName ? { firstName: toTitleCase(firstName) } : {}),
-        ...(lastName ? { lastName: toTitleCase(lastName) } : {}),
-        ...(phone ? { phone } : {}),
-        ...(country
-          ? { country: country.length === 2 ? country.toUpperCase() : toTitleCase(country) }
-          : {}),
-        identifiers: [
-          {
-            id: email,
-            provider: 'email',
-          },
-        ],
-        ...(Object.keys(extensionData).length > 0 ? { extensionData } : {}),
-      });
-    } catch (error) {
-      // Events SDK is not initialized in development / edit / preview modes.
-      console.debug('IDENTITY event failed:', error);
+        const profileCountry = extractProfileCountry(response);
+        if (!profileCountry) return;
+
+        setCountry(profileCountry);
+        setPhoneDial(COUNTRY_DIAL_CODES[profileCountry] || '+1');
+      } catch (error) {
+        console.debug('ContactForm: could not prefill country from profile', error);
+      }
+    };
+
+    const timer = setTimeout(() => {
+      void prefillFromProfile();
+    }, 600);
+
+    return () => {
+      active = false;
+      clearTimeout(timer);
+    };
+  }, []);
+
+  const handleCountryChange = useCallback((nextCountry: string) => {
+    setCountry(nextCountry);
+    if (nextCountry && COUNTRY_DIAL_CODES[nextCountry]) {
+      setPhoneDial(COUNTRY_DIAL_CODES[nextCountry]);
     }
   }, []);
+
+  const handleSubmit = useCallback(
+    async (event: FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+
+      const form = event.currentTarget;
+      const firstName = getFormValue(form, 'firstName');
+      const lastName = getFormValue(form, 'lastName');
+      const email = getFormValue(form, 'email').toLowerCase();
+      const jobTitle = getFormValue(form, 'jobTitle');
+      const company = getFormValue(form, 'company');
+      const message = getFormValue(form, 'message');
+      const countryCode = country.trim().toUpperCase();
+      const e164Phone = toE164(phoneDial, phoneNumber);
+
+      if (!email) {
+        return;
+      }
+
+      if (countryCode && countryCode.length !== 2) {
+        setSubmitState('error');
+        setSubmitMessage('Please select a valid country.');
+        return;
+      }
+
+      if (phoneNumber.trim() && !e164Phone) {
+        setSubmitState('error');
+        setSubmitMessage('Please enter a valid phone number with country code.');
+        return;
+      }
+
+      const extensionData: Record<string, string> = {};
+      if (jobTitle) extensionData.jobTitle = jobTitle;
+      if (company) extensionData.company = company;
+      if (message) extensionData.message = message;
+
+      setSubmitState('submitting');
+      setSubmitMessage('');
+
+      try {
+        await identity({
+          channel: 'WEB',
+          currency: 'USD',
+          email,
+          ...(firstName ? { firstName: toTitleCase(firstName) } : {}),
+          ...(lastName ? { lastName: toTitleCase(lastName) } : {}),
+          ...(e164Phone ? { phone: e164Phone } : {}),
+          ...(countryCode ? { country: countryCode } : {}),
+          identifiers: [
+            {
+              id: email,
+              provider: 'email',
+            },
+          ],
+          ...(Object.keys(extensionData).length > 0 ? { extensionData } : {}),
+        });
+        setSubmitState('success');
+        setSubmitMessage('Thanks — your details were submitted.');
+      } catch (error) {
+        console.error('IDENTITY event failed:', error);
+        setSubmitState('error');
+        setSubmitMessage('Something went wrong submitting your details. Please try again.');
+      }
+    },
+    [country, phoneDial, phoneNumber]
+  );
 
   return (
     <div
@@ -197,29 +365,71 @@ export const AkamaiLead = (props: ContactFormProps): JSX.Element => {
               name="company"
               {...ignoreAutofill}
             />
-            <input
+            <select
               className={leadInputClass}
-              placeholder="Country"
               name="country"
+              value={country}
+              onChange={(event) => handleCountryChange(event.target.value)}
+              aria-label="Country"
               {...ignoreAutofill}
-            />
-            <input
-              className={leadInputClass}
-              placeholder="Phone Number"
-              name="phone"
-              type="text"
-              inputMode="tel"
-              {...ignoreAutofill}
-            />
+            >
+              <option value="">Country</option>
+              {COUNTRY_OPTIONS.map((option) => (
+                <option key={option.code} value={option.code}>
+                  {option.name}
+                </option>
+              ))}
+            </select>
+            <div className="grid grid-cols-[7.5rem_minmax(0,1fr)] gap-2">
+              <select
+                className={leadInputClass}
+                name="phoneDial"
+                value={phoneDial}
+                onChange={(event) => setPhoneDial(event.target.value)}
+                aria-label="Phone country code"
+                {...ignoreAutofill}
+              >
+                {dialOptions.map((option) => (
+                  <option key={option.dial} value={option.dial}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+              <input
+                className={leadInputClass}
+                placeholder="Phone Number"
+                name="phoneNumber"
+                type="text"
+                inputMode="tel"
+                value={phoneNumber}
+                onChange={(event) => setPhoneNumber(event.target.value)}
+                {...ignoreAutofill}
+              />
+            </div>
             <textarea
               className={`${leadInputClass} min-h-[96px] sm:col-span-2`}
               placeholder={props.fields.MessageLabel?.value || 'How can we help?'}
               name="message"
               {...ignoreAutofill}
             />
-            <div className="flex justify-end sm:col-span-2">
-              <button type="submit" className="akamai-button-primary border-0">
-                {props.fields.ButtonLabel?.value || 'Submit'}
+            <div className="flex flex-col items-end gap-2 sm:col-span-2">
+              {submitMessage ? (
+                <p
+                  className={`m-0 text-sm ${
+                    submitState === 'error' ? 'text-red-600' : 'text-[var(--brand-primary,#0b4be8)]'
+                  }`}
+                >
+                  {submitMessage}
+                </p>
+              ) : null}
+              <button
+                type="submit"
+                className="akamai-button-primary border-0 disabled:opacity-60"
+                disabled={submitState === 'submitting'}
+              >
+                {submitState === 'submitting'
+                  ? 'Submitting…'
+                  : props.fields.ButtonLabel?.value || 'Submit'}
               </button>
             </div>
           </form>
