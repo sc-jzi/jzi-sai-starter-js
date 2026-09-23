@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, JSX } from 'react';
 import { initContentSdk } from '@sitecore-content-sdk/nextjs';
-import { eventsPlugin } from '@sitecore-content-sdk/events';
+import { eventsPlugin, identity } from '@sitecore-content-sdk/events';
 import { analyticsBrowserAdapter, analyticsPlugin } from '@sitecore-content-sdk/analytics-core';
 import {
   personalizeBrowserAdapter,
@@ -53,10 +53,16 @@ const Bootstrap = ({
           }),
         ],
       });
+      
+      (window as Window & {
+        sitecoreIdentityForDemo?: typeof identity;
+      }).sitecoreIdentityForDemo = identity;
     } else {
       console.error('Client Edge API settings missing from configuration');
     }
   }, [siteName, isPreviewMode]);
+
+
 
   return null;
 };

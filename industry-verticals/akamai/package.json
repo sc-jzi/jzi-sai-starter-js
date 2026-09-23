@@ -29,8 +29,8 @@
   },
   "dependencies": {
     "@sitecore-content-sdk/analytics-core": "^2.1.2",
-    "@sitecore-content-sdk/core": "^2.1.4",
     "@sitecore-content-sdk/content": "^2.3.0",
+    "@sitecore-content-sdk/core": "^2.1.4",
     "@sitecore-content-sdk/events": "^2.1.2",
     "@sitecore-content-sdk/nextjs": "^2.4.0",
     "@sitecore-content-sdk/personalize": "2.1.0",
@@ -40,6 +40,8 @@
     "@sitecore-search/react": "^3.0.0",
     "@sitecore-search/ui": "^3.0.0",
     "@sitecore/components": "^2.1.2",
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
     "bootstrap": "^5.3.8",
     "create-content-sdk-app": "^2.4.0",
     "font-awesome": "^4.7.0",
