@@ -32,6 +32,7 @@ import { ParallaxBackgroundImage } from 'components/non-sitecore/ParallaxBackgro
 import { IconAccent } from 'components/non-sitecore/IconAccent';
 import { createPortal } from 'react-dom';
 import { UserCircle, X, Loader2, RotateCcw, Copy, Check } from 'lucide-react';
+import { getCoreContext } from '@sitecore-content-sdk/core';
 import { ProfileIdWidget } from 'components/non-sitecore/ProfileIdWidget';
 import { getCookieValueClientSide } from '@sitecore-content-sdk/analytics-core/utils';
 import { fetchProfileIdFromEdgeProxy } from '@sitecore-content-sdk/personalize/internal';
@@ -236,6 +237,12 @@ const importMap = [
       { name: 'RotateCcw', value: RotateCcw },
       { name: 'Copy', value: Copy },
       { name: 'Check', value: Check },
+    ]
+  },
+  {
+    module: '@sitecore-content-sdk/core',
+    exports: [
+      { name: 'getCoreContext', value: getCoreContext },
     ]
   },
   {

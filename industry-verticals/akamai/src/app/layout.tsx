@@ -1,7 +1,7 @@
 import './globals.scss';
 import { Source_Sans_3 } from 'next/font/google';
-import { Analytics } from '@vercel/analytics/next';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+// import { Analytics } from '@vercel/analytics/next';
+// import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const sourceSans3 = Source_Sans_3({
   subsets: ['latin'],
@@ -14,8 +14,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={sourceSans3.variable}>
       <body style={{ fontFamily: 'var(--brand-body-font)' }}>
         {children}
-        <Analytics />
-        <SpeedInsights />
+        {/* <Analytics />
+        <SpeedInsights /> */}
       </body>
     </html>
   );
