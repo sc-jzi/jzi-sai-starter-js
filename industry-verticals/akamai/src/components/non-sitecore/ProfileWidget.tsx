@@ -8,13 +8,15 @@
  * If personalize fails or returns an unexpected payload, falls back to
  * `ProfileIdWidget` and logs the error to the console for debugging.
  *
- * Note: Bootstrap does not initialize analytics/personalize in development or
- * Pages editor / preview — that path uses the ProfileIdWidget fallback.
+ * The widget is not rendered in Pages edit mode. Bootstrap also skips SDK
+ * initialization in development and preview; when the SDK is not initialized
+ * this falls back to ProfileIdWidget without calling personalize.
  */
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { UserCircle, X, Loader2, RotateCcw, Copy, Check } from 'lucide-react';
+import { getCoreContext } from '@sitecore-content-sdk/core';
 import { personalize } from '@sitecore-content-sdk/personalize';
 import { ProfileIdWidget } from 'components/non-sitecore/ProfileIdWidget';
 
@@ -114,6 +116,15 @@ const formatClientDevice = (device?: ProfileClientDevice): string => {
     ? `${device.type || 'Device'} (${device.operatingSystem})`
     : device.type || '';
   return [typeOs, device.software].filter(Boolean).join(', ');
+};
+
+const isContentSdkInitialized = (): boolean => {
+  try {
+    getCoreContext();
+    return true;
+  } catch {
+    return false;
+  }
 };
 
 const isFailedPersonalizeResponse = (
@@ -319,6 +330,13 @@ export const ProfileWidget = () => {
   const loadProfile = useCallback(async () => {
     setLoading(true);
 
+    if (!isContentSdkInitialized()) {
+      setProfile(null);
+      setUseFallback(true);
+      setLoading(false);
+      return;
+    }
+
     try {
       const response = await personalize({
         channel: 'WEB',
@@ -345,6 +363,13 @@ export const ProfileWidget = () => {
       setProfile(nextProfile);
       setLoading(false);
     } catch (err) {
+      if (err instanceof Error && err.message.includes('SDK not initialized')) {
+        setProfile(null);
+        setUseFallback(true);
+        setLoading(false);
+        return;
+      }
+
       activateFallback(
         err instanceof Error ? err.message : 'personalize threw an unexpected error',
         err

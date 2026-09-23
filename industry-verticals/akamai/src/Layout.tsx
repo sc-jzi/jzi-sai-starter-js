@@ -4,6 +4,7 @@ import Scripts from 'src/Scripts';
 import SitecoreStyles from 'components/content-sdk/SitecoreStyles';
 import componentMap from '.sitecore/component-map';
 import { getSiteThemeClass } from 'lib/site-theme';
+import { ProfileWidget } from 'components/non-sitecore/ProfileWidget';
 
 interface LayoutProps {
   page: Page;
@@ -75,6 +76,7 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
           </>
         )}
       </div>
+      {!mode.isEditing && <ProfileWidget />}
     </>
   );
 };
