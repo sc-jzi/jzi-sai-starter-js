@@ -12,8 +12,10 @@ import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
 import { useEffect, useState, Suspense, useCallback, useMemo, useRef } from 'react';
 import React from 'react';
 import { getSiteThemeClass } from 'lib/site-theme';
-import { Text, useSitecore, NextImage, Link, RichText, Placeholder, withDatasourceCheck, Image as Image_8a80e63291fea86e0744df19113dc44bec187216, AppPlaceholder, CdpHelper } from '@sitecore-content-sdk/nextjs';
+import { Text, useSitecore, NextImage, Link, RichText, withDatasourceCheck, Placeholder, Image as Image_8a80e63291fea86e0744df19113dc44bec187216, AppPlaceholder, CdpHelper } from '@sitecore-content-sdk/nextjs';
 import { useParams, useRouter, useSearchParams, usePathname } from 'next/navigation';
+import { identity, pageView } from '@sitecore-content-sdk/events';
+import { personalize } from '@sitecore-content-sdk/personalize';
 import Image from 'next/image';
 import { useInfiniteSearch, useSuggest, useSearch } from '@sitecore-content-sdk/nextjs/search';
 import { DEFAULT_IMG_URL, HIGHLIGHTED_ARTICLES_RFKID, SEARCH_WIDGET_ID, PREVIEW_WIDGET_ID, HOMEHIGHLIGHTED_WIDGET_ID } from 'src/_data/customizations';
@@ -29,7 +31,8 @@ import { ParallaxBanner } from 'react-scroll-parallax';
 import { ParallaxBackgroundImage } from 'components/non-sitecore/ParallaxBackgroundImage';
 import { IconAccent } from 'components/non-sitecore/IconAccent';
 import { createPortal } from 'react-dom';
-import { Copy, Check, UserCircle, RotateCcw, X, Loader2 } from 'lucide-react';
+import { UserCircle, X, Loader2, RotateCcw, Copy, Check } from 'lucide-react';
+import { ProfileIdWidget } from 'components/non-sitecore/ProfileIdWidget';
 import { getCookieValueClientSide } from '@sitecore-content-sdk/analytics-core/utils';
 import { fetchProfileIdFromEdgeProxy } from '@sitecore-content-sdk/personalize/internal';
 import config from 'sitecore.config';
@@ -54,7 +57,6 @@ import SearchResultsWidget from 'src/components/legacysearch/SearchResultsCompon
 import QuestionsAnswers from 'src/components/legacysearch/QuestionsAnswers';
 import SuggestionBlock from 'src/components/legacysearch/SuggestionBlock';
 import client from 'src/lib/sitecore-client';
-import { pageView } from '@sitecore-content-sdk/events';
 
 const importMap = [
   {
@@ -91,8 +93,8 @@ const importMap = [
       { name: 'NextImage', value: NextImage },
       { name: 'Link', value: Link },
       { name: 'RichText', value: RichText },
-      { name: 'Placeholder', value: Placeholder },
       { name: 'withDatasourceCheck', value: withDatasourceCheck },
+      { name: 'Placeholder', value: Placeholder },
       { name: 'Image', value: Image_8a80e63291fea86e0744df19113dc44bec187216 },
       { name: 'AppPlaceholder', value: AppPlaceholder },
       { name: 'CdpHelper', value: CdpHelper },
@@ -105,6 +107,19 @@ const importMap = [
       { name: 'useRouter', value: useRouter },
       { name: 'useSearchParams', value: useSearchParams },
       { name: 'usePathname', value: usePathname },
+    ]
+  },
+  {
+    module: '@sitecore-content-sdk/events',
+    exports: [
+      { name: 'identity', value: identity },
+      { name: 'pageView', value: pageView },
+    ]
+  },
+  {
+    module: '@sitecore-content-sdk/personalize',
+    exports: [
+      { name: 'personalize', value: personalize },
     ]
   },
   {
@@ -215,12 +230,18 @@ const importMap = [
   {
     module: 'lucide-react',
     exports: [
-      { name: 'Copy', value: Copy },
-      { name: 'Check', value: Check },
       { name: 'UserCircle', value: UserCircle },
-      { name: 'RotateCcw', value: RotateCcw },
       { name: 'X', value: X },
       { name: 'Loader2', value: Loader2 },
+      { name: 'RotateCcw', value: RotateCcw },
+      { name: 'Copy', value: Copy },
+      { name: 'Check', value: Check },
+    ]
+  },
+  {
+    module: 'components/non-sitecore/ProfileIdWidget',
+    exports: [
+      { name: 'ProfileIdWidget', value: ProfileIdWidget },
     ]
   },
   {
@@ -397,12 +418,6 @@ const importMap = [
     module: 'src/lib/sitecore-client',
     exports: [
       { name: 'default', value: client },
-    ]
-  },
-  {
-    module: '@sitecore-content-sdk/events',
-    exports: [
-      { name: 'pageView', value: pageView },
     ]
   }
 ] as ImportEntry[];
