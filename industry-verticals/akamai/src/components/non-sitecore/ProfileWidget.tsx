@@ -576,6 +576,9 @@ export const ProfileWidget = () => {
                     {deviceLabel}
                   </p>
                 ) : null}
+                <div className="text-foreground/50 mb-1 font-medium tracking-wider uppercase">
+                  Pages viewed ({pageViews.length})
+                </div>
                 {pageViews.length ? (
                   <ol className="text-foreground/80 m-0 list-decimal space-y-1 pl-4">
                     {pageViews.map((event, index) => (
