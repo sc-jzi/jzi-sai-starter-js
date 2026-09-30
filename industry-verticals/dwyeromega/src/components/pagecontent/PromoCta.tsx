@@ -208,9 +208,6 @@ export const DwyerOmegaHelp = (props: PromoCtaProps): JSX.Element => {
           <NextImage field={props.fields.Image} className="h-[240px] w-full object-cover" width={420} height={280} />
         </div>
         <div>
-          <p className="mb-2 text-xs font-bold tracking-[0.14em]" style={{ color: 'var(--brand-accent, #D4232D)' }}>
-            <Text field={props.fields.Eyebrow} />
-          </p>
           <h2 className="mb-3 text-3xl font-semibold" style={{ color: 'var(--brand-fg, #1C1C1C)' }}>
             <Text field={props.fields.Title} />
           </h2>
