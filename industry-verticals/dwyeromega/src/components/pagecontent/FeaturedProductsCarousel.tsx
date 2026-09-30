@@ -108,12 +108,7 @@ export const Default = (props: FeaturedProductsCarouselProps): JSX.Element => {
         {(isPageEditing || datasource?.link?.jsonValue?.value?.href) && datasource?.link?.jsonValue && (
           <Link
             field={datasource.link.jsonValue}
-            className="mt-10 inline-flex rounded px-6 py-2 text-sm font-semibold"
-            style={{
-              background: 'var(--brand-primary, #232C65)',
-              color: 'var(--brand-primary-foreground, #fff)',
-              borderRadius: 'var(--brand-button-radius, 0.375rem)',
-            }}
+            className="dwyer-browse-all mt-10 inline-flex items-center justify-center rounded-[0.375rem] px-8 py-3 text-base font-semibold no-underline transition-colors duration-200"
           />
         )}
       </div>

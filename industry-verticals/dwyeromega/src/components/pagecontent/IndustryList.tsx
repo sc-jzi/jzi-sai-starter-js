@@ -77,9 +77,7 @@ export const Default = (props: IndustryListProps): JSX.Element => {
                     className="absolute inset-0 overflow-hidden rounded-2xl [backface-visibility:hidden]"
                     style={{ background: 'var(--brand-muted, #F5F5F7)' }}
                   >
-                    {industry.image?.jsonValue?.value?.src && (
-                      <NextImage field={industry.image.jsonValue} className="h-full w-full object-cover" width={520} height={280} />
-                    )}
+                    <NextImage field={industry?.image?.jsonValue} className="h-full w-full object-cover" width={520} height={280} />
                     <span className="absolute inset-0 flex items-center justify-center">
                       <span className="rounded-full bg-white/95 px-6 py-1.5 text-[17px] font-semibold shadow-sm" style={{ color: 'var(--brand-fg, #1C1C1C)' }}>
                         {industry.title?.jsonValue && <Text field={industry.title.jsonValue} />}

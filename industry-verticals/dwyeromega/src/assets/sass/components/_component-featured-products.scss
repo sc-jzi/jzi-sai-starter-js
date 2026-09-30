@@ -1,0 +1,12 @@
+a.dwyer-browse-all {
+  background-color: #262b69;
+  color: #fff !important;
+  border-bottom-color: transparent;
+
+  &:hover,
+  &:focus-visible {
+    background-color: #0034b7;
+    color: #fff !important;
+    border-bottom-color: transparent;
+  }
+}
