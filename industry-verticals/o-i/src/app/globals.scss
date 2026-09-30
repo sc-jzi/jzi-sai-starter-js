@@ -16,7 +16,7 @@
   --brand-fg: #ffffff;
   --brand-muted: #242424;
   --brand-muted-fg: #C8C8C8;
-  --brand-header-bg: #171717;
+  --brand-header-bg: #17171778;
   --brand-header-fg: #ffffff;
   --brand-footer-bg: #111111;
   --brand-footer-fg: #ffffff;
@@ -32,10 +32,25 @@
   --brand-gold: #FFD100;
 }
 
-body {
-  background: var(--brand-bg);
+html,
+html.dark,
+body,
+.dark body {
+  background-color: #171717 !important;
   color: var(--brand-fg);
   font-family: var(--brand-body-font);
+}
+
+.header,
+.eyebrow,
+.dark .header,
+.dark .eyebrow {
+  background-color: var(--brand-header-bg) !important;
+}
+
+.oi-brand.component:not(.header):not(.oi-header) {
+  background-color: transparent !important;
+  background-image: none;
 }
 
 .oi-brand {

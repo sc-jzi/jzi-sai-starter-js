@@ -212,7 +212,7 @@ export const OIImageLeft = (props: PromoCtaProps): JSX.Element => {
 
   return (
     <div
-      className={`component promo-cta oi-brand oi-promo-image-left bg-[var(--brand-bg)] py-20 text-[var(--brand-fg)] ${sxaStyles}`}
+      className={`component promo-cta oi-brand oi-promo-image-left bg-transparent py-20 text-[var(--brand-fg)] ${sxaStyles}`}
       id={id ? id : undefined}
       style={{ fontFamily: 'var(--brand-heading-font)' }}
     >
@@ -252,7 +252,7 @@ export const OIImageLeft = (props: PromoCtaProps): JSX.Element => {
             {(isPageEditing || props.fields?.Link?.value?.href) && (
               <Link
                 field={props.fields.Link}
-                className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-[var(--brand-primary)] no-underline hover:underline"
+                className="mt-8 inline-flex items-center rounded-[var(--brand-button-radius)] bg-[var(--brand-primary)] px-7 py-2.5 text-sm font-bold text-[var(--brand-primary-foreground)] no-underline hover:brightness-95"
               />
             )}
           </div>
@@ -275,7 +275,7 @@ export const OIValues = (props: PromoCtaProps): JSX.Element => {
 
   return (
     <div
-      className={`component promo-cta oi-brand oi-values bg-[var(--brand-bg)] py-20 text-[var(--brand-fg)] ${sxaStyles}`}
+      className={`component promo-cta oi-brand oi-values bg-transparent py-20 text-[var(--brand-fg)] ${sxaStyles}`}
       id={id ? id : undefined}
       style={{ fontFamily: 'var(--brand-heading-font)' }}
     >
@@ -334,7 +334,7 @@ export const OIHero = (props: PromoCtaProps): JSX.Element => {
 
   return (
     <div
-      className={`component promo-cta oi-brand oi-hero bg-[var(--brand-bg)] py-10 text-[var(--brand-fg)] ${sxaStyles}`}
+      className={`component promo-cta oi-brand oi-hero bg-transparent py-10 text-[var(--brand-fg)] ${sxaStyles}`}
       id={id ? id : undefined}
       style={{ fontFamily: 'var(--brand-heading-font)' }}
     >

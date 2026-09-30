@@ -167,7 +167,7 @@ export const OI = (props: CarouselComponentProps): JSX.Element => {
 
   return (
     <section
-      className={`component carousel oi-brand oi-carousel bg-[var(--brand-bg)] py-16 text-[var(--brand-fg)] ${sxaStyles}`}
+      className={`component carousel oi-brand oi-carousel bg-transparent py-16 text-[var(--brand-fg)] ${sxaStyles}`}
       id={id ? id : undefined}
       style={{ fontFamily: 'var(--brand-heading-font)' }}
       aria-roledescription="carousel"

@@ -1,0 +1,440 @@
+# Dwyer Omega Demo Build Plan
+client:
+  name: "Dwyer Omega"
+  sourceUrl: "https://www.dwyeromega.com/"
+  themeFile: "docs/ai/themes/dwyer-omega.theme.yaml"
+  analyzedAt: "2026-09-25T17:30:00Z"
+  implementationLibrary: "Financial starter components"
+  contentRoot: "/sitecore/content/Financial/dwyeromega"
+
+pageAnalysis:
+  screenshotFiles:
+    desktop: "docs/ai/themes/dwyer-omega/screenshot-desktop.png"
+    userScreenshot: "user-provided homepage (blocked scraper)"
+    hero: "docs/ai/themes/dwyer-omega/screenshot-hero.png"
+    mobile: "docs/ai/themes/dwyer-omega/screenshot-mobile.png"
+  totalSections: 13
+  templateMatches: 13
+  customRequired: 0
+  notes:
+    - "Implementation maps to Financial starter components (same approach as O-I / Akamai)."
+    - "Live site blocked Playwright (Akamai). Section copy is from the user homepage screenshot."
+    - "Home currently has leftover PLAY! Financial components. Phase 6 will re-wire where possible; leftovers flagged for manual removal."
+    - "Quick Order is a live part-number form on the client site. Heading CTA will carry the card chrome; inputs are presentational unless wired later."
+
+sections:
+  - position: 1
+    description: "Thin light utility bar — phone assistance line, search, Contact Us, cart, My Account."
+    matchedComponent:
+      registryId: "announcement-bar"
+      manifestName: "Eyebrow"
+      displayName: "Eyebrow"
+      renderingId: "5f765231-1da9-467a-8b35-2171cce313c1"
+      datasourceTemplateId: ""
+      variant: "DwyerOmega"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: false
+      customVariantNeeded:
+        name: "DwyerOmega"
+        description: "Light bar with assistance phone, search, Contact Us, cart badge, and My Account."
+        parentComponent: "Eyebrow"
+    kind: "context-only"
+    sectionBackground: "default"
+    content:
+      UtilityLinks: ["Need assistance? Call us: 1-800-663-4209", "Contact Us", "My Account"]
+    contentNotes: "Lives in the header partial. Eyebrow has no datasource template — cannot add via add_component_on_page."
+    variantReason: "Default Eyebrow is the PLAY! banking bar."
+
+  - position: 2
+    description: "Solid navy header — DWYEROMEGA wordmark, red All Products pill, Knowledge / Services / Support / Careers / Industry Information / Company Information, US flag."
+    matchedComponent:
+      registryId: "navigation-header"
+      manifestName: "Header"
+      displayName: "Header"
+      renderingId: "81317d3b-f929-426a-83ec-421982f8f1e6"
+      datasourceTemplateId: ""
+      variant: "DwyerOmega"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: false
+      customVariantNeeded:
+        name: "DwyerOmega"
+        description: "Navy bar, red All Products CTA, white nav links, language/flag on the right."
+        parentComponent: "Header"
+    kind: "context-only"
+    sectionBackground: "primary"
+    content:
+      NavigationLinks: ["Knowledge", "Services", "Support", "Careers", "Industry Information", "Company Information"]
+      CtaLabel: "All Products"
+    contentNotes: "Header partial design. Navigation comes from the Sitecore tree, not a datasource."
+    variantReason: "Default/WithLogoImage are light banking headers."
+
+  - position: 3
+    description: "Welcome band — SOR logo, headline DwyerOmega welcomes SOR Controls Group, red Read more, product photo of a gray SOR control box."
+    matchedComponent:
+      registryId: "hero-banner"
+      manifestName: "HeroBanner"
+      displayName: "Hero Banner"
+      renderingId: "0e8cc47e-32d6-4f55-a7bf-e713abd06323"
+      datasourceTemplateId: "0089bcb3-0117-43f2-a760-0771d5ff7417"
+      variant: "DwyerOmega"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+      customVariantNeeded:
+        name: "DwyerOmega"
+        description: "Light split hero: copy left, product photo center, optional right placeholder for Quick Order. No dotted banking accents."
+        parentComponent: "HeroBanner"
+    kind: "simple"
+    sectionBackground: "muted"
+    content:
+      Tagline: "SOR CONTROLS GROUP"
+      Title: "DwyerOmega welcomes SOR Controls Group."
+      Text: "<p>Precision measurement and control solutions, now including SOR Controls Group products.</p>"
+      Cta1: { text: "Read more", href: "https://www.dwyeromega.com/" }
+      Cta2: { text: "", href: "" }
+    contentNotes: "Product photo is the Hero Image. Quick Order is a separate Heading CTA to the right (position 4). Pixel-perfect can place Quick Order in the hero-banner placeholder."
+    variantReason: "Default Hero Banner is a banking split with dotted accents."
+
+  - position: 4
+    description: "Quick Order card — Enter part numbers to order or quote, Part # / Qty rows, navy Add to List."
+    matchedComponent:
+      registryId: "newsletter-signup"
+      manifestName: "HeadingCta"
+      displayName: "Heading CTA"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      datasourceTemplateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+      variant: "DwyerOmegaQuickOrder"
+      matchType: "template"
+      matchConfidence: "medium"
+      variantMatch: "none"
+      apiAddable: true
+      customVariantNeeded:
+        name: "DwyerOmegaQuickOrder"
+        description: "White card with heading, helper text, presentational part/qty rows, navy Add to List. Not a live commerce form unless wired later."
+        parentComponent: "HeadingCta"
+    kind: "simple"
+    sectionBackground: "muted"
+    content:
+      Eyebrow: "Quick Order"
+      Heading: "Quick Order"
+      Text: "Enter part numbers to order or quote"
+      Link: { text: "Add to List", href: "https://www.dwyeromega.com/" }
+    contentNotes: "Financial library has no Quick Order component. Inputs are variant chrome."
+    variantReason: "Default Heading CTA is a two-column banking title + button."
+
+  - position: 5
+    description: "Centered Featured Products heading above a four-up product row with carousel arrows and a navy Browse All Products button."
+    matchedComponent:
+      registryId: "cta-banner"
+      manifestName: "HeadingCta"
+      displayName: "Heading CTA"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      datasourceTemplateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+      variant: "Centered"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "exact"
+      apiAddable: true
+    kind: "simple"
+    sectionBackground: "default"
+    content:
+      Eyebrow: ""
+      Heading: "Featured Products"
+      Text: ""
+      Link: { text: "Browse All Products", href: "https://www.dwyeromega.com/" }
+    contentNotes: "Centered variant already exists. Browse button may sit under the product row in the live site; generic stack is acceptable unless Phase 5.5 splits heading vs CTA."
+    variantReason: "Centered heading matches the catalog title."
+
+  - position: 6
+    description: "Four featured products — Magnehelic 2000 Series, Mini Size Reed Transducers, TBM Velocity Air Probes, Handy-Kwik Thermocouple — with left/right arrows."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "FourColumnCta"
+      displayName: "Four Column CTA"
+      renderingId: "35075000-760e-4ff3-bd1c-f2eeba251dcb"
+      datasourceTemplateId: "1b694ef9-154d-429a-9c3f-d7774cd4a852"
+      variant: "DwyerOmegaProducts"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+      customVariantNeeded:
+        name: "DwyerOmegaProducts"
+        description: "White product tiles on a light band, image above caption, optional carousel arrows. No banking column chrome."
+        parentComponent: "FourColumnCta"
+    kind: "simple"
+    sectionBackground: "default"
+    content:
+      Title1: "Magnehelic 2000 Series"
+      Text1: ""
+      Link1: { text: "Magnehelic 2000 Series", href: "https://www.dwyeromega.com/" }
+      Title2: "Mini Size Reed Transducers"
+      Text2: ""
+      Link2: { text: "Mini Size Reed Transducers", href: "https://www.dwyeromega.com/" }
+      Title3: "TBM Velocity Air Probes"
+      Text3: ""
+      Link3: { text: "TBM Velocity Air Probes", href: "https://www.dwyeromega.com/" }
+      Title4: "Handy-Kwik Thermocouple"
+      Text4: ""
+      Link4: { text: "Handy-Kwik Thermocouple", href: "https://www.dwyeromega.com/" }
+    contentNotes: "Live site uses a carousel. Template renders four static tiles unless Phase 5.5 adds arrows."
+    variantReason: "Default Four Column is a banking promo row, not product catalog tiles."
+
+  - position: 7
+    description: "Help is here however you need it — specialist photo left, CONTACT copy, help-center form CTA."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      displayName: "Promo CTA"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      datasourceTemplateId: "c0943942-ae0f-4205-86fa-84884cce4a53"
+      variant: "DwyerOmegaHelp"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+      customVariantNeeded:
+        name: "DwyerOmegaHelp"
+        description: "Photo left, CONTACT eyebrow, body copy. Light card on gray band."
+        parentComponent: "PromoCta"
+    kind: "simple"
+    sectionBackground: "muted"
+    content:
+      Eyebrow: "CONTACT"
+      Title: "Help is here however you need it."
+      Subtitle: ""
+      Text: "<p>Contact our specialists any time using our help center form.</p>"
+      Link: { text: "Help Center", href: "https://www.dwyeromega.com/" }
+    contentNotes: "Re-wire an existing Home Promo CTA if present."
+    variantReason: "Default Promo CTA is banking image-right with dotted accents."
+
+  - position: 8
+    description: "Two white help cards — RESOURCES (search application stories) and NEWSLETTER (subscribe for news and offers)."
+    matchedComponent:
+      registryId: "value-proposition-grid"
+      manifestName: "TwoColumnCta"
+      displayName: "Two Column CTA"
+      renderingId: "3a9a9d22-c092-4b54-9511-eb202ceabe8d"
+      datasourceTemplateId: "1812bf3e-6bdd-466d-99b2-0d7cebb020fc"
+      variant: "DwyerOmegaHelpCards"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+      customVariantNeeded:
+        name: "DwyerOmegaHelpCards"
+        description: "Two elevated white cards with icon, uppercase eyebrow, and short body. No large photos."
+        parentComponent: "TwoColumnCta"
+    kind: "simple"
+    sectionBackground: "muted"
+    content:
+      Title1: "RESOURCES"
+      Text1: "Search our Resources center to view our application stories."
+      Link1: { text: "Resources", href: "https://www.dwyeromega.com/" }
+      Title2: "NEWSLETTER"
+      Text2: "Subscribe for our latest News and offers."
+      Link2: { text: "Subscribe", href: "https://www.dwyeromega.com/" }
+    contentNotes: "Re-wire existing Two Column CTA. Icons can be Image1/Image2."
+    variantReason: "Default Two Column is image-heavy banking columns."
+
+  - position: 9
+    description: "Brand story strip — DwyerOmega logo, Find out who we are and why we are the leader and provider of Instrumental Equipment & Sensors, factory photo."
+    matchedComponent:
+      registryId: "feature-highlight"
+      manifestName: "PromoCta"
+      displayName: "Promo CTA"
+      renderingId: "1a375fac-6cc1-4a5a-a159-9bc6dbc66b80"
+      datasourceTemplateId: "c0943942-ae0f-4205-86fa-84884cce4a53"
+      variant: "DwyerOmegaStory"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+      customVariantNeeded:
+        name: "DwyerOmegaStory"
+        description: "Logo/copy left, industrial photography right, light background."
+        parentComponent: "PromoCta"
+    kind: "simple"
+    sectionBackground: "muted"
+    content:
+      Eyebrow: "DWYEROMEGA"
+      Title: "Find out who we are"
+      Subtitle: ""
+      Text: "<p>Find out who we are and why we are the leader and provider of Instrumental Equipment &amp; Sensors.</p>"
+      Link: { text: "About Us", href: "https://www.dwyeromega.com/en-us/about-us" }
+    contentNotes: "Second Promo CTA instance. Factory photo is Image."
+    variantReason: "Need a light industrial story band, not banking promo."
+
+  - position: 10
+    description: "Shop by Industry — first row of three photo tiles: Beverage, Food, Medical."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "ThreeColumnCta"
+      displayName: "Three Column CTA"
+      renderingId: "ad385021-ce2b-4fc1-89aa-207d408034a8"
+      datasourceTemplateId: "148d07ba-f923-4fb2-8907-0bd440d5db44"
+      variant: "DwyerOmegaIndustry"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+      customVariantNeeded:
+        name: "DwyerOmegaIndustry"
+        description: "Rounded photo tiles with white overlay labels. Include a section heading Shop by Industry on the first row only."
+        parentComponent: "ThreeColumnCta"
+    kind: "simple"
+    sectionBackground: "default"
+    content:
+      Text1: "Beverage"
+      SubText1: ""
+      Link1: { text: "Beverage", href: "https://www.dwyeromega.com/" }
+      Text2: "Food"
+      SubText2: ""
+      Link2: { text: "Food", href: "https://www.dwyeromega.com/" }
+      Text3: "Medical"
+      SubText3: ""
+      Link3: { text: "Medical", href: "https://www.dwyeromega.com/" }
+    contentNotes: "Live site is a 2x3 grid. Two Three Column CTAs stack to match. Re-wire existing Three Column CTA for row 1."
+    variantReason: "Default Three Column is banking cards, not industry photo tiles."
+
+  - position: 11
+    description: "Shop by Industry — second row: Cold Chain, Aerospace, Read our Blog."
+    matchedComponent:
+      registryId: "feature-cards-grid"
+      manifestName: "ThreeColumnCta"
+      displayName: "Three Column CTA"
+      renderingId: "ad385021-ce2b-4fc1-89aa-207d408034a8"
+      datasourceTemplateId: "148d07ba-f923-4fb2-8907-0bd440d5db44"
+      variant: "DwyerOmegaIndustry"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "none"
+      apiAddable: true
+      customVariantNeeded:
+        name: "DwyerOmegaIndustry"
+        description: "Same industry photo-tile variant as row 1, without repeating the heading."
+        parentComponent: "ThreeColumnCta"
+    kind: "simple"
+    sectionBackground: "default"
+    content:
+      Text1: "Cold Chain"
+      SubText1: ""
+      Link1: { text: "Cold Chain", href: "https://www.dwyeromega.com/" }
+      Text2: "Aerospace"
+      SubText2: ""
+      Link2: { text: "Aerospace", href: "https://www.dwyeromega.com/" }
+      Text3: "Read our Blog"
+      SubText3: ""
+      Link3: { text: "Read our Blog", href: "https://www.dwyeromega.com/" }
+    contentNotes: "Add a second Three Column CTA instance. Blog tile uses the same overlay treatment."
+    variantReason: "Same industry tile treatment as row 1."
+
+  - position: 12
+    description: "Navy Quick Links band — pill buttons for Saved Carts, Quotes, Order History/Invoices, Project Lists, United Tax Exemption, DwyerOmega Distributors, Apply For Credit."
+    matchedComponent:
+      registryId: "cta-banner"
+      manifestName: "HeadingCta"
+      displayName: "Heading CTA"
+      renderingId: "89e1d547-7cd6-4ef0-9a27-1e99410797dd"
+      datasourceTemplateId: "fa136527-6302-471d-83ab-e66fc72bda99"
+      variant: "DwyerOmegaQuickLinks"
+      matchType: "template"
+      matchConfidence: "medium"
+      variantMatch: "none"
+      apiAddable: true
+      customVariantNeeded:
+        name: "DwyerOmegaQuickLinks"
+        description: "Dark navy band, Quick Links heading, row of light pills. Extra links live in Text as HTML if only one Link field exists."
+        parentComponent: "HeadingCta"
+    kind: "simple"
+    sectionBackground: "dark"
+    content:
+      Eyebrow: ""
+      Heading: "Quick Links"
+      Text: "Saved Carts · Quotes · Order History/Invoices · Project Lists · United Tax Exemption · DwyerOmega Distributors"
+      Link: { text: "Apply For Credit", href: "https://www.dwyeromega.com/" }
+    contentNotes: "Heading CTA has a single Link field. Remaining pills are variant chrome or HTML in Text."
+    variantReason: "No Financial component is a dark pill bar."
+
+  - position: 13
+    description: "Dark mega footer — Support, Company, Contact Us / social, TechAdvantage Club, copyright and legal."
+    matchedComponent:
+      registryId: "footer"
+      manifestName: "Footer"
+      displayName: "Footer"
+      renderingId: "771a3f27-6448-44ac-add0-e5de311c6e3b"
+      datasourceTemplateId: "947db8f8-dc76-453f-aca1-a27babfe633b"
+      variant: "DwyerOmega"
+      matchType: "template"
+      matchConfidence: "high"
+      variantMatch: "partial"
+      apiAddable: false
+      customVariantNeeded:
+        name: "DwyerOmega"
+        description: "Dark navy columns, white links, social row, TechAdvantage callout, copyright bar."
+        parentComponent: "Footer"
+    kind: "context-only"
+    sectionBackground: "dark"
+    content:
+      Title1: "Support"
+      Text1: "<p>Quick Order</p><p>Help Center</p><p>Calibration Services</p><p>Custom Engineering</p><p>RFQ</p><p>Policies &amp; Certificates</p><p>Recall</p><p>Policies &amp; Vulnerability</p>"
+      Title2: "Company"
+      Text2: "<p>About Us</p><p>Contact Us</p><p>Careers</p><p>Our Story</p>"
+      Title3: "Contact Us"
+      Text3: "<p>Follow us</p>"
+      Title4: "TechAdvantage Club"
+      Text4: "<p>Get exclusive offers, designs, and more.</p>"
+      Copyright: "© 2026 DwyerOmega, LLC dba DwyerOmega"
+    contentNotes: "Footer partial. Wire datasource and select DwyerOmega variant manually."
+    variantReason: "Default/WithSocials are PLAY! banking footers."
+
+customComponents: []
+
+existingPageCleanup:
+  pageId: "3c3f693a-5845-4168-b19c-1fd33faec403"
+  pagePath: "/sitecore/content/Financial/dwyeromega/Home"
+  note: "MCP cannot remove components. Flag leftovers in manual-tasks.md."
+  componentsLikelyToRewire:
+    - "Promo CTA (x3) → Help specialist, brand story (third leftover for cleanup)"
+    - "Three Column CTA → Shop by Industry row 1"
+    - "Two Column CTA → Help cards"
+    - "Five Column CTA → unused banking row; remove manually unless re-purposed"
+  componentsLikelyToRemoveManually:
+    - "Carousel"
+    - "Five Column CTA"
+    - "Article List"
+    - "Documents List"
+    - "App Promo"
+
+buildOrder:
+  phase1_sitecore:
+    - position: 3
+      component: "HeroBanner"
+    - position: 4
+      component: "HeadingCta"
+    - position: 5
+      component: "HeadingCta"
+    - position: 6
+      component: "FourColumnCta"
+    - position: 7
+      component: "PromoCta"
+    - position: 8
+      component: "TwoColumnCta"
+    - position: 9
+      component: "PromoCta"
+    - position: 10
+      component: "ThreeColumnCta"
+    - position: 11
+      component: "ThreeColumnCta"
+    - position: 12
+      component: "HeadingCta"
+    - position: 13
+      component: "Footer"
+      note: "context-only — populate Footer datasource; place via partial"
+  phase2_theme: "Inline Dwyer Omega :root brand variables into src/app/globals.css (or globals.scss)"
+  phase3_custom: []

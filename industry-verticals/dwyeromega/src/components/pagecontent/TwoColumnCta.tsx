@@ -109,3 +109,38 @@ export const Default = (props: TwoColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* Two elevated help cards on the gray band */
+export const DwyerOmegaHelpCards = (props: TwoColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const cards = [
+    { title: props.fields.Title1, text: props.fields.Text1, link: props.fields.Link1 },
+    { title: props.fields.Title2, text: props.fields.Text2, link: props.fields.Link2 },
+  ];
+
+  return (
+    <section
+      className={`component two-column-cta ${props.params?.styles || ''}`}
+      id={id || undefined}
+      style={{ background: 'var(--brand-muted, #F5F5F7)' }}
+    >
+      <div className="mx-auto grid max-w-[1100px] gap-5 px-6 py-6 md:grid-cols-2">
+        {cards.map((card) => (
+          <article key={card.title?.value} className="rounded-2xl bg-white p-6 shadow-sm">
+            <h3 className="mb-2 text-sm font-bold tracking-[0.12em]" style={{ color: 'var(--brand-primary, #232C65)' }}>
+              <Text field={card.title} />
+            </h3>
+            <p className="mb-3 text-sm" style={{ color: 'var(--brand-muted-fg, #5E6265)' }}>
+              <Text field={card.text} />
+            </p>
+            {(isPageEditing || card.link?.value?.href) && (
+              <Link field={card.link} className="text-sm font-semibold" style={{ color: 'var(--brand-accent, #D4232D)' }} />
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+};

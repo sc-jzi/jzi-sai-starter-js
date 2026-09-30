@@ -151,3 +151,56 @@ export const Centered = (props: HeadingCtaProps): JSX.Element => {
     </div>
   );
 };
+
+const QUICK_LINK_PILLS = [
+  'Saved Carts',
+  'Quotes',
+  'Order History/Invoices',
+  'Project Lists',
+  'United Tax Exemption',
+  'DwyerOmega Distributors',
+];
+
+/* Navy Quick Links band with light pills */
+export const DwyerOmegaQuickLinks = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const extra = (props.fields?.Text?.value || '')
+    .split('·')
+    .map((part) => part.trim())
+    .filter(Boolean);
+  const pills = extra.length > 1 ? extra : QUICK_LINK_PILLS;
+
+  return (
+    <section
+      className={`component heading-cta ${props.params?.styles || ''}`}
+      id={id || undefined}
+      style={{ background: 'var(--brand-secondary, #01014B)', color: '#fff' }}
+    >
+      <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-5 px-6 py-8">
+        <h2 className="text-2xl font-semibold">
+          <Text field={props.fields?.Heading} />
+        </h2>
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          {pills.map((label) => (
+            <span
+              key={label}
+              className="rounded-full bg-white px-4 py-1.5 text-sm font-semibold"
+              style={{ color: 'var(--brand-primary, #232C65)' }}
+            >
+              {label}
+            </span>
+          ))}
+          {(isPageEditing || props.fields?.Link?.value?.href) && (
+            <Link
+              field={props.fields.Link}
+              className="rounded-full bg-white px-4 py-1.5 text-sm font-semibold"
+              style={{ color: 'var(--brand-primary, #232C65)' }}
+            />
+          )}
+        </div>
+      </div>
+    </section>
+  );
+};

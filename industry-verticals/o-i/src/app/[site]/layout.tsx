@@ -1,5 +1,6 @@
 import { draftMode } from 'next/headers';
 import Bootstrap from 'src/Bootstrap';
+import { ProfileWidget } from 'components/non-sitecore/ProfileWidget';
 
 export default async function SiteLayout({
   children,
@@ -15,6 +16,7 @@ export default async function SiteLayout({
     <>
       <Bootstrap siteName={site} isPreviewMode={isEnabled} />
       {children}
+      <ProfileWidget />
     </>
   );
 }

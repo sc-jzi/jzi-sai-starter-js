@@ -12,22 +12,51 @@ import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
 import { useEffect, useState, Suspense, useCallback, useMemo, useRef } from 'react';
 import React from 'react';
 import { getSiteThemeClass } from 'lib/site-theme';
-import { Text, useSitecore, NextImage, Link, RichText, Placeholder, withDatasourceCheck, Image, AppPlaceholder, CdpHelper } from '@sitecore-content-sdk/nextjs';
-import { useParams, useRouter, useSearchParams } from 'next/navigation';
+import { Text, useSitecore, NextImage, Link, RichText, Placeholder, withDatasourceCheck, Image as Image_8a80e63291fea86e0744df19113dc44bec187216, AppPlaceholder, CdpHelper } from '@sitecore-content-sdk/nextjs';
+import { useParams, useRouter, useSearchParams, usePathname } from 'next/navigation';
+import Image from 'next/image';
+import { useInfiniteSearch, useSuggest, useSearch } from '@sitecore-content-sdk/nextjs/search';
+import { DEFAULT_IMG_URL, HIGHLIGHTED_ARTICLES_RFKID, SEARCH_WIDGET_ID, PREVIEW_WIDGET_ID, HOMEHIGHLIGHTED_WIDGET_ID } from 'src/_data/customizations';
+import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import useVisibility from 'src/hooks/useVisibility';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import { CountUp } from 'components/non-sitecore/CountUp';
 import { DottedAccent } from 'components/non-sitecore/DottedAccent';
-import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import { FacebookIcon, FacebookShareButton, LinkedinIcon, LinkedinShareButton, TwitterIcon, TwitterShareButton } from 'react-share';
 import Head from 'next/head';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import { ParallaxBackgroundImage } from 'components/non-sitecore/ParallaxBackgroundImage';
 import { IconAccent } from 'components/non-sitecore/IconAccent';
+import { createPortal } from 'react-dom';
+import { UserCircle, X, Loader2, RotateCcw, Copy, Check } from 'lucide-react';
+import { personalize } from '@sitecore-content-sdk/personalize';
+import { ProfileIdWidget } from 'components/non-sitecore/ProfileIdWidget';
+import { getCookieValueClientSide } from '@sitecore-content-sdk/analytics-core/utils';
+import { fetchProfileIdFromEdgeProxy } from '@sitecore-content-sdk/personalize/internal';
+import config from 'sitecore.config';
+import { clearSessionEvents, installSessionEventTracking, readSessionEvents, SESSION_EVENTS_CHANGED } from 'lib/session-event-log';
+import PreviewSearch from 'src/components/search/PreviewSearch';
+import { usePreviewSearchActions, useSearchResultsActions, WidgetDataType, useSearchResults, widget, PageController, WidgetsProvider, useQuestions, usePreviewSearch, FilterEqual, useSearchResultsSelectedFilters } from '@sitecore-search/react';
+import { PreviewSearch as PreviewSearch_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7, SortSelect, Pagination as Pagination_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7, AccordionFacets, FacetItem, RangeFacet, SearchResultsAccordionFacets, SearchResultsFacetValueRange, Select, ArticleCard, CardViewSwitcher as CardViewSwitcher_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7 } from '@sitecore-search/ui';
+import { GridIcon, ListBulletIcon, ArrowLeftIcon, ArrowRightIcon, CheckIcon, ChevronDownIcon } from '@radix-ui/react-icons';
+import HomeHighlighted from 'src/components/legacysearch/HomeHighlighted';
+import Spinner from 'src/components/legacysearch/Spinner';
+import ArticleItemCard from 'src/components/legacysearch/ArticleCard';
+import SortOrder from 'src/components/legacysearch/SortOrder';
+import ArticleHorizontalItemCard from 'src/components/legacysearch/ArticleHorizontalCard';
+import SearchPagination from 'src/components/legacysearch/SearchPagination';
+import SearchFacets from 'src/components/legacysearch/SearchFacets';
+import ResultsPerPage from 'src/components/legacysearch/ResultsPerPage';
+import QueryResultsSummary from 'src/components/legacysearch/QueryResultsSummary';
+import CardViewSwitcher from 'src/components/legacysearch/CardViewSwitcher';
+import { useSearchTracking } from 'src/hooks/useSearchTracking';
+import { Accordion, Content, Header, Item, Trigger } from '@radix-ui/react-accordion';
+import SearchResultsWidget from 'src/components/legacysearch/SearchResultsComponent';
+import QuestionsAnswers from 'src/components/legacysearch/QuestionsAnswers';
+import SuggestionBlock from 'src/components/legacysearch/SuggestionBlock';
 import client from 'src/lib/sitecore-client';
 import { pageView } from '@sitecore-content-sdk/events';
-import config from 'sitecore.config';
 
 const importMap = [
   {
@@ -66,7 +95,7 @@ const importMap = [
       { name: 'RichText', value: RichText },
       { name: 'Placeholder', value: Placeholder },
       { name: 'withDatasourceCheck', value: withDatasourceCheck },
-      { name: 'Image', value: Image },
+      { name: 'Image', value: Image_8a80e63291fea86e0744df19113dc44bec187216 },
       { name: 'AppPlaceholder', value: AppPlaceholder },
       { name: 'CdpHelper', value: CdpHelper },
     ]
@@ -77,6 +106,37 @@ const importMap = [
       { name: 'useParams', value: useParams },
       { name: 'useRouter', value: useRouter },
       { name: 'useSearchParams', value: useSearchParams },
+      { name: 'usePathname', value: usePathname },
+    ]
+  },
+  {
+    module: 'next/image',
+    exports: [
+      { name: 'default', value: Image },
+    ]
+  },
+  {
+    module: '@sitecore-content-sdk/nextjs/search',
+    exports: [
+      { name: 'useInfiniteSearch', value: useInfiniteSearch },
+      { name: 'useSuggest', value: useSuggest },
+      { name: 'useSearch', value: useSearch },
+    ]
+  },
+  {
+    module: 'src/_data/customizations',
+    exports: [
+      { name: 'DEFAULT_IMG_URL', value: DEFAULT_IMG_URL },
+      { name: 'HIGHLIGHTED_ARTICLES_RFKID', value: HIGHLIGHTED_ARTICLES_RFKID },
+      { name: 'SEARCH_WIDGET_ID', value: SEARCH_WIDGET_ID },
+      { name: 'PREVIEW_WIDGET_ID', value: PREVIEW_WIDGET_ID },
+      { name: 'HOMEHIGHLIGHTED_WIDGET_ID', value: HOMEHIGHLIGHTED_WIDGET_ID },
+    ]
+  },
+  {
+    module: 'next/link',
+    exports: [
+      { name: 'default', value: Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 },
     ]
   },
   {
@@ -111,12 +171,6 @@ const importMap = [
     module: 'components/non-sitecore/DottedAccent',
     exports: [
       { name: 'DottedAccent', value: DottedAccent },
-    ]
-  },
-  {
-    module: 'next/link',
-    exports: [
-      { name: 'default', value: Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 },
     ]
   },
   {
@@ -155,6 +209,205 @@ const importMap = [
     ]
   },
   {
+    module: 'react-dom',
+    exports: [
+      { name: 'createPortal', value: createPortal },
+    ]
+  },
+  {
+    module: 'lucide-react',
+    exports: [
+      { name: 'UserCircle', value: UserCircle },
+      { name: 'X', value: X },
+      { name: 'Loader2', value: Loader2 },
+      { name: 'RotateCcw', value: RotateCcw },
+      { name: 'Copy', value: Copy },
+      { name: 'Check', value: Check },
+    ]
+  },
+  {
+    module: '@sitecore-content-sdk/personalize',
+    exports: [
+      { name: 'personalize', value: personalize },
+    ]
+  },
+  {
+    module: 'components/non-sitecore/ProfileIdWidget',
+    exports: [
+      { name: 'ProfileIdWidget', value: ProfileIdWidget },
+    ]
+  },
+  {
+    module: '@sitecore-content-sdk/analytics-core/utils',
+    exports: [
+      { name: 'getCookieValueClientSide', value: getCookieValueClientSide },
+    ]
+  },
+  {
+    module: '@sitecore-content-sdk/personalize/internal',
+    exports: [
+      { name: 'fetchProfileIdFromEdgeProxy', value: fetchProfileIdFromEdgeProxy },
+    ]
+  },
+  {
+    module: 'sitecore.config',
+    exports: [
+      { name: 'default', value: config },
+    ]
+  },
+  {
+    module: 'lib/session-event-log',
+    exports: [
+      { name: 'clearSessionEvents', value: clearSessionEvents },
+      { name: 'installSessionEventTracking', value: installSessionEventTracking },
+      { name: 'readSessionEvents', value: readSessionEvents },
+      { name: 'SESSION_EVENTS_CHANGED', value: SESSION_EVENTS_CHANGED },
+    ]
+  },
+  {
+    module: 'src/components/search/PreviewSearch',
+    exports: [
+      { name: 'default', value: PreviewSearch },
+    ]
+  },
+  {
+    module: '@sitecore-search/react',
+    exports: [
+      { name: 'usePreviewSearchActions', value: usePreviewSearchActions },
+      { name: 'useSearchResultsActions', value: useSearchResultsActions },
+      { name: 'WidgetDataType', value: WidgetDataType },
+      { name: 'useSearchResults', value: useSearchResults },
+      { name: 'widget', value: widget },
+      { name: 'PageController', value: PageController },
+      { name: 'WidgetsProvider', value: WidgetsProvider },
+      { name: 'useQuestions', value: useQuestions },
+      { name: 'usePreviewSearch', value: usePreviewSearch },
+      { name: 'FilterEqual', value: FilterEqual },
+      { name: 'useSearchResultsSelectedFilters', value: useSearchResultsSelectedFilters },
+    ]
+  },
+  {
+    module: '@sitecore-search/ui',
+    exports: [
+      { name: 'PreviewSearch', value: PreviewSearch_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7 },
+      { name: 'SortSelect', value: SortSelect },
+      { name: 'Pagination', value: Pagination_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7 },
+      { name: 'AccordionFacets', value: AccordionFacets },
+      { name: 'FacetItem', value: FacetItem },
+      { name: 'RangeFacet', value: RangeFacet },
+      { name: 'SearchResultsAccordionFacets', value: SearchResultsAccordionFacets },
+      { name: 'SearchResultsFacetValueRange', value: SearchResultsFacetValueRange },
+      { name: 'Select', value: Select },
+      { name: 'ArticleCard', value: ArticleCard },
+      { name: 'CardViewSwitcher', value: CardViewSwitcher_b6c381477cbf12fc0dc4f9aeb9e8e41e943b6ea7 },
+    ]
+  },
+  {
+    module: '@radix-ui/react-icons',
+    exports: [
+      { name: 'GridIcon', value: GridIcon },
+      { name: 'ListBulletIcon', value: ListBulletIcon },
+      { name: 'ArrowLeftIcon', value: ArrowLeftIcon },
+      { name: 'ArrowRightIcon', value: ArrowRightIcon },
+      { name: 'CheckIcon', value: CheckIcon },
+      { name: 'ChevronDownIcon', value: ChevronDownIcon },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/HomeHighlighted',
+    exports: [
+      { name: 'default', value: HomeHighlighted },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/Spinner',
+    exports: [
+      { name: 'default', value: Spinner },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/ArticleCard',
+    exports: [
+      { name: 'default', value: ArticleItemCard },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/SortOrder',
+    exports: [
+      { name: 'default', value: SortOrder },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/ArticleHorizontalCard',
+    exports: [
+      { name: 'default', value: ArticleHorizontalItemCard },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/SearchPagination',
+    exports: [
+      { name: 'default', value: SearchPagination },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/SearchFacets',
+    exports: [
+      { name: 'default', value: SearchFacets },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/ResultsPerPage',
+    exports: [
+      { name: 'default', value: ResultsPerPage },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/QueryResultsSummary',
+    exports: [
+      { name: 'default', value: QueryResultsSummary },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/CardViewSwitcher',
+    exports: [
+      { name: 'default', value: CardViewSwitcher },
+    ]
+  },
+  {
+    module: 'src/hooks/useSearchTracking',
+    exports: [
+      { name: 'useSearchTracking', value: useSearchTracking },
+    ]
+  },
+  {
+    module: '@radix-ui/react-accordion',
+    exports: [
+      { name: 'Accordion', value: Accordion },
+      { name: 'Content', value: Content },
+      { name: 'Header', value: Header },
+      { name: 'Item', value: Item },
+      { name: 'Trigger', value: Trigger },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/SearchResultsComponent',
+    exports: [
+      { name: 'default', value: SearchResultsWidget },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/QuestionsAnswers',
+    exports: [
+      { name: 'default', value: QuestionsAnswers },
+    ]
+  },
+  {
+    module: 'src/components/legacysearch/SuggestionBlock',
+    exports: [
+      { name: 'default', value: SuggestionBlock },
+    ]
+  },
+  {
     module: 'src/lib/sitecore-client',
     exports: [
       { name: 'default', value: client },
@@ -164,12 +417,6 @@ const importMap = [
     module: '@sitecore-content-sdk/events',
     exports: [
       { name: 'pageView', value: pageView },
-    ]
-  },
-  {
-    module: 'sitecore.config',
-    exports: [
-      { name: 'default', value: config },
     ]
   }
 ] as ImportEntry[];

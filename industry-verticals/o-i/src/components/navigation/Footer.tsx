@@ -183,7 +183,7 @@ export const OI = (props: FooterProps): JSX.Element => {
 
   return (
     <footer
-      className={`component footer oi-brand oi-footer bg-[var(--brand-footer-bg)] text-[var(--brand-footer-fg)] ${sxaStyles}`}
+      className={`component footer oi-brand oi-footer bg-transparent text-[var(--brand-footer-fg)] ${sxaStyles}`}
       id={id ? id : undefined}
       style={{ fontFamily: 'var(--brand-heading-font)' }}
     >

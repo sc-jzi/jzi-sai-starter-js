@@ -1,0 +1,116 @@
+'use client';
+
+import { JSX, useState } from 'react';
+import {
+  Field,
+  ImageField,
+  Link,
+  LinkField,
+  NextImage,
+  Text,
+  useSitecore,
+} from '@sitecore-content-sdk/nextjs';
+import { ComponentProps } from 'lib/component-props';
+
+type ProductNode = {
+  id?: string;
+  title?: { jsonValue?: Field<string> };
+  link?: { jsonValue?: LinkField };
+};
+
+type IndustryNode = {
+  id?: string;
+  title?: { jsonValue?: Field<string> };
+  image?: { jsonValue?: ImageField };
+  link?: { jsonValue?: LinkField };
+  products?: { targetItems?: ProductNode[] };
+};
+
+type IndustryListFields = {
+  data?: {
+    datasource?: {
+      title?: { jsonValue?: Field<string> };
+      industries?: { targetItems?: IndustryNode[] };
+    };
+  };
+};
+
+export type IndustryListProps = ComponentProps & {
+  fields: IndustryListFields;
+};
+
+/* DwyerOmega industry grid — click flips a card to its product list */
+export const Default = (props: IndustryListProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const datasource = props.fields?.data?.datasource;
+  const industries = datasource?.industries?.targetItems ?? [];
+  const [flippedId, setFlippedId] = useState<string | null>(null);
+
+  return (
+    <section className={`component ${props.params?.styles || ''}`} id={id || undefined} style={{ background: 'var(--brand-bg, #fff)' }}>
+      <div className="mx-auto max-w-[1100px] px-6 py-14">
+        <h2 className="mb-8 text-center text-3xl font-semibold" style={{ color: 'var(--brand-fg, #1C1C1C)', fontFamily: 'var(--brand-heading-font, inherit)' }}>
+          {datasource?.title?.jsonValue && <Text field={datasource.title.jsonValue} />}
+        </h2>
+        <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {industries.map((industry) => {
+            const flipped = flippedId === industry.id;
+            return (
+              <li key={industry.id} className="h-[210px] [perspective:1200px]">
+                <div
+                  role="button"
+                  tabIndex={0}
+                  aria-pressed={flipped}
+                  className="relative h-full w-full cursor-pointer transition-transform duration-500 [transform-style:preserve-3d]"
+                  style={{ transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)' }}
+                  onClick={() => setFlippedId(flipped ? null : industry.id || null)}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      event.preventDefault();
+                      setFlippedId(flipped ? null : industry.id || null);
+                    }
+                  }}
+                >
+                  <div
+                    className="absolute inset-0 overflow-hidden rounded-2xl [backface-visibility:hidden]"
+                    style={{ background: 'var(--brand-muted, #F5F5F7)' }}
+                  >
+                    {industry.image?.jsonValue?.value?.src && (
+                      <NextImage field={industry.image.jsonValue} className="h-full w-full object-cover" width={520} height={280} />
+                    )}
+                    <span className="absolute inset-0 flex items-center justify-center">
+                      <span className="rounded-full bg-white/95 px-6 py-1.5 text-[17px] font-semibold shadow-sm" style={{ color: 'var(--brand-fg, #1C1C1C)' }}>
+                        {industry.title?.jsonValue && <Text field={industry.title.jsonValue} />}
+                      </span>
+                    </span>
+                  </div>
+                  <div
+                    className="absolute inset-0 flex flex-col items-center justify-center gap-3 rounded-2xl bg-white px-6 text-center [backface-visibility:hidden] [transform:rotateY(180deg)]"
+                    style={{ border: '2px solid var(--brand-primary, #232C65)' }}
+                  >
+                    {(industry.products?.targetItems ?? []).map((product) => (
+                      <span key={product.id} className="text-sm leading-snug" style={{ color: 'var(--brand-fg, #1C1C1C)' }}>
+                        {product.link?.jsonValue?.value?.href ? (
+                          <span onClick={(event) => event.stopPropagation()}>
+                            <Link field={product.link.jsonValue} />
+                          </span>
+                        ) : (
+                          product.title?.jsonValue && <Text field={product.title.jsonValue} />
+                        )}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+        {isPageEditing && industries.length === 0 && <p>Select industries on the datasource multilist.</p>}
+      </div>
+    </section>
+  );
+};
+
+export const DwyerOmega = Default;

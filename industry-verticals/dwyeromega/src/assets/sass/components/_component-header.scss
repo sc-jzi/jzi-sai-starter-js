@@ -1,5 +1,33 @@
 @import 'src/assets/sass/abstracts/vars';
 
+.header.dwyer-omega-header {
+  padding-top: 0;
+  padding-bottom: 0;
+  background: var(--brand-header-bg, #232c65);
+  color: #fff;
+
+  a,
+  a:link,
+  a:visited,
+  a:hover,
+  .navigation-title > a,
+  .navigation-title > a:link,
+  .navigation-title > a:visited,
+  .navigation-title > a:hover {
+    color: #fff !important;
+    border-bottom-color: transparent;
+  }
+
+  .language-switcher,
+  .language-switcher .selected-language {
+    color: #fff;
+  }
+
+  .menu-humburger span {
+    background-color: #fff;
+  }
+}
+
 .header {
   width: 100%;
   padding-top: 1.5rem;

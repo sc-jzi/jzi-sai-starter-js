@@ -169,3 +169,44 @@ export const WithSocials = (props: FooterProps): JSX.Element => {
     </div>
   );
 };
+
+/* Dark industrial footer */
+export const DwyerOmega = (props: FooterProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const columns = [
+    { title: props.fields?.Title1, text: props.fields?.Text1 },
+    { title: props.fields?.Title2, text: props.fields?.Text2 },
+    { title: props.fields?.Title3, text: props.fields?.Text3 },
+    { title: props.fields?.Title4, text: props.fields?.Text4 },
+  ];
+
+  return (
+    <footer
+      className={`component footer ${props.params?.styles || ''}`}
+      id={id || undefined}
+      style={{ background: 'var(--brand-footer-bg, #01014B)', color: 'var(--brand-footer-fg, #fff)' }}
+    >
+      <div className="mx-auto grid max-w-[1200px] gap-8 px-6 py-12 md:grid-cols-4">
+        {columns.map((column) => (
+          <div key={column.title?.value}>
+            <h3 className="mb-3 text-sm font-bold tracking-wide">
+              <Text field={column.title} />
+            </h3>
+            <div className="text-sm leading-7 opacity-90 [&_a]:text-white [&_p]:mb-0">
+              <RichText field={column.text} />
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="border-t border-white/15">
+        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-3 px-6 py-4 text-xs opacity-80">
+          <Text field={props.fields?.Copyright} />
+          <div className="flex gap-4">
+            <Link field={props.fields?.Link1} />
+            <Link field={props.fields?.Link2} />
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};

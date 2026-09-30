@@ -12,23 +12,9 @@ import * as LoanCalculator from 'src/components/utilities/LoanCalculator';
 import * as LanguageSwitcher from 'src/components/utilities/LanguageSwitcher';
 import * as ContactForm from 'src/components/utilities/ContactForm';
 import * as ApplicationForm from 'src/components/utilities/ApplicationForm';
-import * as SuggestionBlock from 'src/components/search/SuggestionBlock';
-import * as Spinner from 'src/components/search/Spinner';
-import * as SortOrder from 'src/components/search/SortOrder';
-import * as SearchResultsComponent from 'src/components/search/SearchResultsComponent';
 import * as SearchResults from 'src/components/search/SearchResults';
-import * as SearchProvider from 'src/components/search/SearchProvider';
-import * as SearchPagination from 'src/components/search/SearchPagination';
-import * as SearchFacets from 'src/components/search/SearchFacets';
-import * as ResultsPerPage from 'src/components/search/ResultsPerPage';
-import * as QuestionsAnswers from 'src/components/search/QuestionsAnswers';
-import * as QueryResultsSummary from 'src/components/search/QueryResultsSummary';
 import * as PreviewSearch from 'src/components/search/PreviewSearch';
-import * as HomeHighlighted from 'src/components/search/HomeHighlighted';
-import * as Filter from 'src/components/search/Filter';
-import * as CardViewSwitcher from 'src/components/search/CardViewSwitcher';
-import * as ArticleHorizontalCard from 'src/components/search/ArticleHorizontalCard';
-import * as ArticleCard from 'src/components/search/ArticleCard';
+import * as MoreLikeThis from 'src/components/search/MoreLikeThis';
 import * as ColumnSplitter from 'src/components/pagestructure/ColumnSplitter';
 import * as TwoColumnCta from 'src/components/pagecontent/TwoColumnCta';
 import * as ThreeColumnCta from 'src/components/pagecontent/ThreeColumnCta';
@@ -61,6 +47,8 @@ import * as ArticleList from 'src/components/pagecontent/ArticleList';
 import * as ArticleDetails from 'src/components/pagecontent/ArticleDetails';
 import * as AppPromo from 'src/components/pagecontent/AppPromo';
 import * as Accordion from 'src/components/pagecontent/Accordion';
+import * as ProfileWidget from 'src/components/non-sitecore/ProfileWidget';
+import * as ProfileIdWidget from 'src/components/non-sitecore/ProfileIdWidget';
 import * as ParallaxBackgroundImage from 'src/components/non-sitecore/ParallaxBackgroundImage';
 import * as IconAccent from 'src/components/non-sitecore/IconAccent';
 import * as DottedAccent from 'src/components/non-sitecore/DottedAccent';
@@ -70,6 +58,23 @@ import * as Header from 'src/components/navigation/Header';
 import * as Footer from 'src/components/navigation/Footer';
 import * as Eyebrow from 'src/components/navigation/Eyebrow';
 import * as Breadcrumb from 'src/components/navigation/Breadcrumb';
+import * as SuggestionBlock from 'src/components/legacysearch/SuggestionBlock';
+import * as Spinner from 'src/components/legacysearch/Spinner';
+import * as SortOrder from 'src/components/legacysearch/SortOrder';
+import * as SearchResultsComponent from 'src/components/legacysearch/SearchResultsComponent';
+import * as SearchProvider from 'src/components/legacysearch/SearchProvider';
+import * as SearchPagination from 'src/components/legacysearch/SearchPagination';
+import * as SearchFacets from 'src/components/legacysearch/SearchFacets';
+import * as ResultsPerPage from 'src/components/legacysearch/ResultsPerPage';
+import * as QuestionsAnswers from 'src/components/legacysearch/QuestionsAnswers';
+import * as QueryResultsSummary from 'src/components/legacysearch/QueryResultsSummary';
+import * as LegacySearchResults from 'src/components/legacysearch/LegacySearchResults';
+import * as LegacyPreviewSearch from 'src/components/legacysearch/LegacyPreviewSearch';
+import * as HomeHighlighted from 'src/components/legacysearch/HomeHighlighted';
+import * as Filter from 'src/components/legacysearch/Filter';
+import * as CardViewSwitcher from 'src/components/legacysearch/CardViewSwitcher';
+import * as ArticleHorizontalCard from 'src/components/legacysearch/ArticleHorizontalCard';
+import * as ArticleCard from 'src/components/legacysearch/ArticleCard';
 
 export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['BYOCWrapper', BYOCServerWrapper],
@@ -81,23 +86,9 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['LanguageSwitcher', { ...LanguageSwitcher, componentType: 'client' }],
   ['ContactForm', { ...ContactForm, componentType: 'client' }],
   ['ApplicationForm', { ...ApplicationForm, componentType: 'client' }],
-  ['SuggestionBlock', { ...SuggestionBlock, componentType: 'client' }],
-  ['Spinner', { ...Spinner }],
-  ['SortOrder', { ...SortOrder, componentType: 'client' }],
-  ['SearchResultsComponent', { ...SearchResultsComponent, componentType: 'client' }],
   ['SearchResults', { ...SearchResults, componentType: 'client' }],
-  ['SearchProvider', { ...SearchProvider, componentType: 'client' }],
-  ['SearchPagination', { ...SearchPagination, componentType: 'client' }],
-  ['SearchFacets', { ...SearchFacets, componentType: 'client' }],
-  ['ResultsPerPage', { ...ResultsPerPage, componentType: 'client' }],
-  ['QuestionsAnswers', { ...QuestionsAnswers, componentType: 'client' }],
-  ['QueryResultsSummary', { ...QueryResultsSummary, componentType: 'client' }],
   ['PreviewSearch', { ...PreviewSearch, componentType: 'client' }],
-  ['HomeHighlighted', { ...HomeHighlighted, componentType: 'client' }],
-  ['Filter', { ...Filter, componentType: 'client' }],
-  ['CardViewSwitcher', { ...CardViewSwitcher, componentType: 'client' }],
-  ['ArticleHorizontalCard', { ...ArticleHorizontalCard, componentType: 'client' }],
-  ['ArticleCard', { ...ArticleCard, componentType: 'client' }],
+  ['MoreLikeThis', { ...MoreLikeThis, componentType: 'client' }],
   ['ColumnSplitter', { ...ColumnSplitter, componentType: 'client' }],
   ['TwoColumnCta', { ...TwoColumnCta, componentType: 'client' }],
   ['ThreeColumnCta', { ...ThreeColumnCta, componentType: 'client' }],
@@ -130,6 +121,8 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ArticleDetails', { ...ArticleDetails, componentType: 'client' }],
   ['AppPromo', { ...AppPromo, componentType: 'client' }],
   ['Accordion', { ...Accordion, componentType: 'client' }],
+  ['ProfileWidget', { ...ProfileWidget, componentType: 'client' }],
+  ['ProfileIdWidget', { ...ProfileIdWidget, componentType: 'client' }],
   ['ParallaxBackgroundImage', { ...ParallaxBackgroundImage, componentType: 'client' }],
   ['IconAccent', { ...IconAccent, componentType: 'client' }],
   ['DottedAccent', { ...DottedAccent, componentType: 'client' }],
@@ -139,6 +132,23 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Footer', { ...Footer, componentType: 'client' }],
   ['Eyebrow', { ...Eyebrow, componentType: 'client' }],
   ['Breadcrumb', { ...Breadcrumb, componentType: 'client' }],
+  ['SuggestionBlock', { ...SuggestionBlock, componentType: 'client' }],
+  ['Spinner', { ...Spinner }],
+  ['SortOrder', { ...SortOrder, componentType: 'client' }],
+  ['SearchResultsComponent', { ...SearchResultsComponent, componentType: 'client' }],
+  ['SearchProvider', { ...SearchProvider, componentType: 'client' }],
+  ['SearchPagination', { ...SearchPagination, componentType: 'client' }],
+  ['SearchFacets', { ...SearchFacets, componentType: 'client' }],
+  ['ResultsPerPage', { ...ResultsPerPage, componentType: 'client' }],
+  ['QuestionsAnswers', { ...QuestionsAnswers, componentType: 'client' }],
+  ['QueryResultsSummary', { ...QueryResultsSummary, componentType: 'client' }],
+  ['LegacySearchResults', { ...LegacySearchResults, componentType: 'client' }],
+  ['LegacyPreviewSearch', { ...LegacyPreviewSearch, componentType: 'client' }],
+  ['HomeHighlighted', { ...HomeHighlighted, componentType: 'client' }],
+  ['Filter', { ...Filter, componentType: 'client' }],
+  ['CardViewSwitcher', { ...CardViewSwitcher, componentType: 'client' }],
+  ['ArticleHorizontalCard', { ...ArticleHorizontalCard, componentType: 'client' }],
+  ['ArticleCard', { ...ArticleCard, componentType: 'client' }],
 ]);
 
 export default componentMap;

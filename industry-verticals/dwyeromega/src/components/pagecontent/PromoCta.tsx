@@ -190,3 +190,85 @@ export const WithBackgroundImage = (props: PromoCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* Specialist photo left, contact copy right, on the gray help band */
+export const DwyerOmegaHelp = (props: PromoCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  return (
+    <section
+      className={`component promo-cta ${props.params?.styles || ''}`}
+      id={id || undefined}
+      style={{ background: 'var(--brand-muted, #F5F5F7)' }}
+    >
+      <div className="mx-auto grid max-w-[1100px] items-center gap-10 px-6 pb-4 pt-14 md:grid-cols-[280px_1fr]">
+        <div className="overflow-hidden rounded-2xl bg-white">
+          <NextImage field={props.fields.Image} className="h-[240px] w-full object-cover" width={420} height={280} />
+        </div>
+        <div>
+          <p className="mb-2 text-xs font-bold tracking-[0.14em]" style={{ color: 'var(--brand-accent, #D4232D)' }}>
+            <Text field={props.fields.Eyebrow} />
+          </p>
+          <h2 className="mb-3 text-3xl font-semibold" style={{ color: 'var(--brand-fg, #1C1C1C)' }}>
+            <Text field={props.fields.Title} />
+          </h2>
+          <div className="mb-4 text-base" style={{ color: 'var(--brand-muted-fg, #5E6265)' }}>
+            <RichText field={props.fields.Text} />
+          </div>
+          {(isPageEditing || props.fields?.Link?.value?.href) && (
+            <Link
+              field={props.fields.Link}
+              className="inline-flex rounded px-5 py-2 text-sm font-semibold"
+              style={{
+                background: 'var(--brand-primary, #232C65)',
+                color: '#fff',
+                borderRadius: 'var(--brand-button-radius, 0.375rem)',
+              }}
+            />
+          )}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+/* Brand story: copy left, factory photo right */
+export const DwyerOmegaStory = (props: PromoCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  return (
+    <section
+      className={`component promo-cta ${props.params?.styles || ''}`}
+      id={id || undefined}
+      style={{ background: 'var(--brand-muted, #F5F5F7)' }}
+    >
+      <div className="mx-auto grid max-w-[1100px] items-center gap-10 px-6 py-10 md:grid-cols-[1fr_1.1fr]">
+        <div>
+          <p className="mb-2 text-sm font-bold tracking-wide" style={{ color: 'var(--brand-primary, #232C65)' }}>
+            <Text field={props.fields.Eyebrow} />
+          </p>
+          <h2 className="mb-3 text-3xl font-semibold" style={{ color: 'var(--brand-fg, #1C1C1C)' }}>
+            <Text field={props.fields.Title} />
+          </h2>
+          <div className="text-base" style={{ color: 'var(--brand-muted-fg, #5E6265)' }}>
+            <RichText field={props.fields.Text} />
+          </div>
+          {(isPageEditing || props.fields?.Link?.value?.href) && (
+            <Link
+              field={props.fields.Link}
+              className="mt-4 inline-flex text-sm font-semibold"
+              style={{ color: 'var(--brand-accent, #D4232D)' }}
+            />
+          )}
+        </div>
+        <div className="overflow-hidden rounded-2xl">
+          <NextImage field={props.fields.Image} className="h-[260px] w-full object-cover" width={640} height={360} />
+        </div>
+      </div>
+    </section>
+  );
+};

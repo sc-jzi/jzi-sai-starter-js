@@ -1,5 +1,19 @@
 @import 'src/assets/sass/abstracts/vars';
 
+.eyebrow.dwyer-omega-eyebrow {
+  background: #fff;
+  color: #1c1c1c;
+  padding: 0;
+
+  a,
+  a:link,
+  a:visited,
+  a:hover {
+    color: #1c1c1c;
+    border-bottom-color: transparent;
+  }
+}
+
 .eyebrow {
   color: var(--text-footer);
   background-color: var(--bg-footer);

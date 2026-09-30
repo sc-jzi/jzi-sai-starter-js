@@ -1,0 +1,123 @@
+# Client Brand Theme — Dwyer Omega
+# Visual source: user homepage screenshot (www.dwyeromega.com/en-us).
+# Playwright was blocked by the site (Akamai Access Denied), so hex values
+# are sampled from that screenshot rather than live computed CSS.
+
+client:
+  name: "Dwyer Omega"
+  sourceUrl: "https://www.dwyeromega.com/"
+  extractedAt: "2026-09-25T16:50:00Z"
+  extractedBy: "cursor"
+
+colors:
+  primary: "#232C65"
+  primaryForeground: "#FFFFFF"
+  secondary: "#01014B"
+  secondaryForeground: "#FFFFFF"
+  accent: "#D4232D"
+  accentForeground: "#FFFFFF"
+  background: "#FFFFFF"
+  foreground: "#1C1C1C"
+  muted: "#F5F5F7"
+  mutedForeground: "#5E6265"
+  headerBackground: "#232C65"
+  headerForeground: "#FFFFFF"
+  footerBackground: "#01014B"
+  footerForeground: "#FFFFFF"
+  border: "#E4E4E7"
+  ring: "#232C65"
+  extra:
+    - { name: "logoRed", value: "#D4232D" }
+    - { name: "sectionGray", value: "#F5F5F7" }
+    - { name: "cardWhite", value: "#FFFFFF" }
+    - { name: "navyButton", value: "#232C65" }
+
+typography:
+  headingFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
+  headingWeight: "600"
+  bodyFamily: "'Source Sans 3', 'Segoe UI', sans-serif"
+  bodyWeight: "400"
+  monoFamily: "'Source Code Pro', monospace"
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap"
+  scale:
+    hero: "2rem"
+    h1: "1.75rem"
+    h2: "1.5rem"
+    h3: "1.125rem"
+    body: "1rem"
+    small: "0.875rem"
+  headingTransform: "none"
+  letterSpacing: "normal"
+  lineHeight: "normal"
+
+spacing:
+  density: "normal"
+  sectionGap: "4rem"
+  containerMaxWidth: "1200px"
+  containerPadding: "1.5rem"
+
+shape:
+  borderRadius: "0.5rem"
+  buttonRadius: "0.375rem"
+  cardRadius: "0.75rem"
+  imageRadius: "0.75rem"
+  shadowStyle: "subtle"
+  borderStyle: "light"
+
+tone:
+  overall: "corporate-industrial"
+  colorMode: "light"
+  contrast: "high"
+  imagery: "photography"
+  heroStyle: "split-image-text"
+  cardStyle: "elevated"
+  navStyle: "solid-bar"
+
+tailwind:
+  colors:
+    brand:
+      primary: "#232C65"
+      secondary: "#01014B"
+      accent: "#D4232D"
+  fontFamily:
+    heading: ["Source Sans 3", "Segoe UI", "sans-serif"]
+    body: ["Source Sans 3", "Segoe UI", "sans-serif"]
+  borderRadius:
+    DEFAULT: "0.5rem"
+    button: "0.375rem"
+    card: "0.75rem"
+
+cssVariables: |
+  :root {
+    --brand-primary: #232C65;
+    --brand-primary-foreground: #FFFFFF;
+    --brand-secondary: #01014B;
+    --brand-secondary-foreground: #FFFFFF;
+    --brand-accent: #D4232D;
+    --brand-accent-foreground: #FFFFFF;
+    --brand-bg: #FFFFFF;
+    --brand-fg: #1C1C1C;
+    --brand-muted: #F5F5F7;
+    --brand-muted-fg: #5E6265;
+    --brand-header-bg: #232C65;
+    --brand-header-fg: #FFFFFF;
+    --brand-footer-bg: #01014B;
+    --brand-footer-fg: #FFFFFF;
+    --brand-border: #E4E4E7;
+    --brand-ring: #232C65;
+    --brand-heading-font: 'Source Sans 3', 'Segoe UI', sans-serif;
+    --brand-body-font: 'Source Sans 3', 'Segoe UI', sans-serif;
+    --brand-radius: 0.5rem;
+    --brand-button-radius: 0.375rem;
+    --brand-card-radius: 0.75rem;
+  }
+
+extraction:
+  confidence: "medium"
+  method: "screenshot-analysis"
+  notes:
+    - "Playwright reached https://www.dwyeromega.com/en-us/ and received an Akamai Access Denied page, so computed CSS and fonts were not available."
+    - "Hex values were sampled from the user-supplied full-page screenshot."
+    - "Header navy is #232C65. Footer samples as a darker #01014B. Primary buttons match the header navy. Red accent (All Products, Read more) is #D4232D."
+    - "Live font family could not be read. Source Sans 3 is the Google Fonts stand-in for the site's industrial sans."
+    - "Page is light: white cards, #F5F5F7 section bands, product photography, slight card radius and soft shadow."

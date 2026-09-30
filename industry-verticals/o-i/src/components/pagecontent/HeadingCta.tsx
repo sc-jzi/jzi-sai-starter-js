@@ -175,7 +175,7 @@ export const OINewsletter = (props: HeadingCtaProps): JSX.Element => {
 
   return (
     <div
-      className={`component heading-cta oi-brand oi-newsletter bg-[var(--brand-bg)] py-16 text-[var(--brand-fg)] ${sxaStyles}`}
+      className={`component heading-cta oi-brand oi-newsletter bg-transparent py-16 text-[var(--brand-fg)] ${sxaStyles}`}
       id={id ? id : undefined}
       style={{ fontFamily: 'var(--brand-heading-font)' }}
     >

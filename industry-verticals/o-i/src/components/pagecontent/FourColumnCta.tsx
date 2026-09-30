@@ -168,7 +168,7 @@ export const OINewsGrid = (props: FourColumnCtaProps): JSX.Element => {
 
   return (
     <div
-      className={`component four-column-cta oi-brand oi-news-grid bg-[var(--brand-bg)] py-6 text-[var(--brand-fg)] ${sxaStyles}`}
+      className={`component four-column-cta oi-brand oi-news-grid bg-transparent py-6 text-[var(--brand-fg)] ${sxaStyles}`}
       id={id ? id : undefined}
       style={{ fontFamily: 'var(--brand-heading-font)' }}
     >

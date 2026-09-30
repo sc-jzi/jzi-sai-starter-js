@@ -105,7 +105,7 @@ export const OI = (props: HeroBannerProps): JSX.Element => {
 
   return (
     <div
-      className={`component hero-banner oi-brand oi-hero bg-[var(--brand-bg)] py-10 text-[var(--brand-fg)] ${sxaStyles}`}
+      className={`component hero-banner oi-brand oi-hero bg-transparent py-10 text-[var(--brand-fg)] ${sxaStyles}`}
       id={id ? id : undefined}
       style={{ fontFamily: 'var(--brand-heading-font)' }}
     >
