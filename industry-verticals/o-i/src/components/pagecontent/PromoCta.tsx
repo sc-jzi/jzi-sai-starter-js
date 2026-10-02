@@ -262,7 +262,7 @@ export const OIImageLeft = (props: PromoCtaProps): JSX.Element => {
   );
 };
 
-/* OIValues — circular photo cluster left, gold pill right */
+/* OIValues — large photo left, copy + gold pill right */
 export const OIValues = (props: PromoCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();
@@ -280,24 +280,13 @@ export const OIValues = (props: PromoCtaProps): JSX.Element => {
       style={{ fontFamily: 'var(--brand-heading-font)' }}
     >
       <div className="mx-auto grid max-w-[1280px] items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
-        <div className="relative mx-auto h-[28rem] w-full max-w-md">
-          <div className="absolute left-8 top-0 h-56 w-56 overflow-hidden rounded-full border-4 border-[var(--brand-bg)] md:h-64 md:w-64">
-            <NextImage
-              field={props.fields.Image}
-              width={400}
-              height={400}
-              className="h-full w-full object-cover"
-            />
-          </div>
-          <div className="absolute bottom-8 right-4 h-40 w-40 overflow-hidden rounded-full border-4 border-[var(--brand-bg)] bg-[var(--brand-muted)] md:h-48 md:w-48">
-            <NextImage
-              field={props.fields.Image}
-              width={300}
-              height={300}
-              className="h-full w-full scale-125 object-cover object-right"
-            />
-          </div>
-          <div className="absolute bottom-0 left-0 h-28 w-28 rounded-full border border-[var(--brand-primary)] bg-[var(--brand-muted)] md:h-32 md:w-32" />
+        <div>
+          <NextImage
+            field={props.fields.Image}
+            width={900}
+            height={1100}
+            className="h-auto w-full object-cover"
+          />
         </div>
         <div>
           <Text
