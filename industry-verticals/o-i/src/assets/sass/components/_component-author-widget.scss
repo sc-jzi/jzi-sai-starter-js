@@ -71,4 +71,51 @@
       }
     }
   }
+
+  &.oi-author-widget {
+    margin: 0;
+
+    .oi-author-widget__row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .oi-author-widget__photo {
+      width: 2.75rem;
+      height: 2.75rem;
+      object-fit: cover;
+      border-radius: 999px;
+    }
+
+    .oi-author-widget__name {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #171717;
+    }
+
+    .oi-author-widget__position {
+      margin: 0.1rem 0 0;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: #6b6b6b;
+    }
+  }
+}
+
+.oi-article-details .author-widget:not(.oi-author-widget) {
+  .author-card {
+    margin: 0;
+  }
+
+  .author-name {
+    color: #171717;
+    font-weight: 700;
+  }
+
+  .author-position {
+    font-weight: 400;
+    color: #6b6b6b;
+  }
 }

@@ -11,5 +11,8 @@
 | 6 | Promo CTA | OIValues | `…/Promo CTA/OIValues` | `{E854F333-27B8-4EE1-A373-92E533D3BAF5}` | Manual |
 | 7 | Heading CTA | OINewsletter | `…/Heading CTA/OINewsletter` | `{AEC58152-80BB-4C06-8C1B-1935E38A448E}` | Manual |
 | 8 | Footer | OI | `…/Footer/OI` | `{AF357604-FCD0-4C00-89EC-7C4DF6DDB9EF}` | Manual (partial) |
+| Article | Article Details | OI | `…/Article Details/OI` | `{939F08A2-8AE1-4C1B-8526-48B06EA242D4}` | Manual (Article Content partial) |
+| Article | Four Column CTA | OIRelated | `…/Four Column CTA/OIRelated` | `{5803140E-00E0-415B-A958-CF1880C0DC28}` | Manual (Article Content partial) |
+| Article | Author Widget | OI | `…/Author Widget/OI` | `{C9AC77E6-84D2-4475-8753-F26A78F2656D}` | Optional (per article) |
 
 TSX named exports match item names exactly. `Default` remains on every component.

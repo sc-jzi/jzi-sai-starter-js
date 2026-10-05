@@ -70,7 +70,7 @@ export const OI = (props: HeaderProps): JSX.Element => {
         <a href="/" className="shrink-0">
           <NextImage field={props.fields?.LogoImage} width={72} height={36} className="h-8 w-auto" />
         </a>
-        <div className="min-w-0 flex-1 [&_a]:text-[var(--brand-header-fg)] [&_a]:no-underline [&_a]:text-sm [&_.button]:!rounded-[var(--brand-button-radius)] [&_.button]:!border-0 [&_.button]:!bg-[var(--brand-primary)] [&_.button]:!px-5 [&_.button]:!py-2 [&_.button]:!text-sm [&_.button]:!font-bold [&_.button]:!text-[var(--brand-primary-foreground)]">
+        <div className="min-w-0 flex-1 [&_a]:!text-white [&_a]:no-underline [&_a]:text-sm [&_.button]:!rounded-[var(--brand-button-radius)] [&_.button]:!border-0 [&_.button]:!bg-[var(--brand-primary)] [&_.button]:!px-5 [&_.button]:!py-2 [&_.button]:!text-sm [&_.button]:!font-bold [&_.button]:!text-[var(--brand-primary-foreground)]">
           <AppPlaceholder
             name="header-right"
             rendering={props.rendering}

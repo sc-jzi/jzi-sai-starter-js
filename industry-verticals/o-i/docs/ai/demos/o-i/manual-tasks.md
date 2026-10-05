@@ -24,6 +24,17 @@ Header / Footer live in partial designs:
 | Header | **OI** | `{04D87FF2-0A87-477E-B8A7-0A232EABF859}` | `/sitecore/content/manufacturing/o-i/Data/OI Header` |
 | Footer | **OI** | `{AF357604-FCD0-4C00-89EC-7C4DF6DDB9EF}` | `/sitecore/content/manufacturing/o-i/Data/OI Footer` |
 
+## 1b. Article Content partial (required for news layout)
+
+Open **Article Content** (`/sitecore/content/manufacturing/o-i/Presentation/Partial Designs/Article Content`) in Pages → Design → variant:
+
+| Component | Needed variant | Variant item ID | Datasource |
+|-----------|----------------|-----------------|------------|
+| Article Details | **OI** | `{939F08A2-8AE1-4C1B-8526-48B06EA242D4}` | Context (page) |
+| Four Column CTA | **OIRelated** | `{5803140E-00E0-415B-A958-CF1880C0DC28}` | `/sitecore/content/manufacturing/o-i/Data/OI News Grid` (wired) |
+
+Optional: on each article, set Author Widget to **OI** `{C9AC77E6-84D2-4475-8753-F26A78F2656D}` (default widget is also restyled inside the OI article paper).
+
 Estimated time: ~4 minutes.
 
 ## 2. Remove leftover PLAY! components (MCP cannot delete)

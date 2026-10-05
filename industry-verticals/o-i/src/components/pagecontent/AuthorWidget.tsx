@@ -90,5 +90,27 @@ const AuthorWidgetWithSocials = (props: AuthorWidgetProps): JSX.Element => {
   );
 };
 
+const AuthorWidgetOI = (props: AuthorWidgetProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component author-widget oi-author-widget ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="oi-author-widget__row">
+        <NextImage field={props.fields.Photo} className="oi-author-widget__photo" width={48} height={48} />
+        <div>
+          <p className="oi-author-widget__name">
+            <Text field={props.fields.Name} />
+          </p>
+          <p className="oi-author-widget__position">
+            <Text field={props.fields.Position} />
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = withDatasourceCheck()<AuthorWidgetProps>(AuthorWidgetDefault);
 export const WithSocials = withDatasourceCheck()<AuthorWidgetProps>(AuthorWidgetWithSocials);
+export const OI = withDatasourceCheck()<AuthorWidgetProps>(AuthorWidgetOI);

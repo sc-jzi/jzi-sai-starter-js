@@ -68,3 +68,139 @@
     border-bottom: 1px solid var(--border-color);
   }
 }
+
+.oi-article-details {
+  padding: 0;
+  background: transparent !important;
+  color: #171717;
+
+  .oi-article-hero {
+    width: 100%;
+    overflow: hidden;
+    background: #111;
+  }
+
+  .oi-article-hero__img {
+    display: block;
+    width: 100%;
+    height: min(42vw, 28rem);
+    min-height: 14rem;
+    object-fit: cover;
+  }
+
+  .oi-article-paper {
+    background: #fff;
+    color: #171717;
+  }
+
+  .oi-article-paper__inner {
+    max-width: 46rem;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 4rem;
+  }
+
+  .oi-article-title {
+    margin: 0 0 1.75rem;
+    color: #171717;
+    font-size: clamp(1.75rem, 3vw, 2.35rem);
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  .oi-article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  .oi-article-meta__author {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .oi-article-share {
+    display: flex;
+    gap: 0.4rem;
+  }
+
+  .oi-article-share__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    background: #171717;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .oi-article-body {
+    color: #171717;
+    font-size: 1.05rem;
+    line-height: 1.75;
+
+    h2,
+    h3,
+    h4,
+    strong {
+      color: #171717;
+    }
+
+    a {
+      color: #171717;
+      text-decoration: underline;
+    }
+
+    img,
+    iframe,
+    video {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 1.75rem 0;
+    }
+
+    ul li {
+      list-style-type: unset;
+    }
+  }
+
+  .oi-article-author-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 3rem;
+    padding: 1.25rem 1.5rem;
+    background: #2b2b2b;
+    color: #fff;
+    border-radius: 0.25rem;
+  }
+
+  .oi-article-author-card__photo {
+    width: 4.5rem;
+    height: 4.5rem;
+    object-fit: cover;
+    border-radius: 0.15rem;
+    flex-shrink: 0;
+  }
+
+  .oi-article-author-card__name {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  .oi-article-author-card__role {
+    margin: 0.25rem 0 0;
+    font-size: 0.9rem;
+    color: #c8c8c8;
+  }
+}

@@ -204,13 +204,63 @@ export const OINewsGrid = (props: FourColumnCtaProps): JSX.Element => {
             </article>
           ))}
         </div>
-        <div className="mt-6 flex flex-col items-center gap-3">
-          <p className="mb-0 text-sm font-semibold text-[var(--brand-fg)]">More and Stories</p>
-          <div className="flex gap-2" aria-hidden="true">
-            <span className="h-2 w-2 rounded-full bg-[var(--brand-muted-fg)] opacity-50" />
-            <span className="h-2 w-2 rounded-full bg-[var(--brand-muted-fg)] opacity-50" />
-            <span className="h-2 w-2 rounded-full bg-[var(--brand-primary)]" />
-          </div>
+      </div>
+    </div>
+  );
+};
+
+/* OIRelated — four equal gold-border cards under You May Also Like */
+export const OIRelated = (props: FourColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  if (!props.fields) {
+    return <FourColumnCtaEmpty />;
+  }
+
+  const cards = [
+    { image: props.fields.Image1, title: props.fields.Title1, link: props.fields.Link1 },
+    { image: props.fields.Image2, title: props.fields.Title2, link: props.fields.Link2 },
+    { image: props.fields.Image3, title: props.fields.Title3, link: props.fields.Link3 },
+    { image: props.fields.Image4, title: props.fields.Title4, link: props.fields.Link4 },
+  ];
+
+  return (
+    <div
+      className={`component four-column-cta oi-brand oi-related bg-transparent py-16 text-[var(--brand-fg)] ${sxaStyles}`}
+      id={id ? id : undefined}
+      style={{ fontFamily: 'var(--brand-heading-font)' }}
+    >
+      <div className="mx-auto max-w-[1280px] px-6">
+        <div className="mb-8 flex items-center gap-4">
+          <span className="h-8 w-1.5 shrink-0 bg-[var(--brand-primary)]" aria-hidden="true" />
+          <h2 className="m-0 text-2xl font-semibold tracking-tight text-white md:text-3xl">
+            You May Also Like
+          </h2>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {cards.map((card, index) => (
+            <article key={index}>
+              <Link
+                field={card.link}
+                className="group relative block overflow-hidden rounded-[var(--brand-card-radius)] border border-[var(--brand-primary)] bg-[#2a2208] no-underline"
+              >
+                <NextImage
+                  field={card.image}
+                  width={480}
+                  height={280}
+                  className="aspect-[16/10] h-auto w-full object-cover"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent p-3">
+                  <Text
+                    field={card.title}
+                    tag="h3"
+                    className="m-0 text-sm font-semibold leading-snug text-white"
+                  />
+                </div>
+              </Link>
+            </article>
+          ))}
         </div>
       </div>
     </div>

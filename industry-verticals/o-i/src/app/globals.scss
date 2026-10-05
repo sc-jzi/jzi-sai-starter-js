@@ -48,9 +48,61 @@ body,
   background-color: var(--brand-header-bg) !important;
 }
 
-.oi-brand.component:not(.header):not(.oi-header) {
-  background-color: transparent !important;
-  background-image: none;
+.oi-header.header {
+  color: #ffffff;
+
+  a,
+  a:link,
+  a:visited,
+  .navigation .navigation-title > a,
+  .navigation .navigation-title > a:link,
+  .navigation .navigation-title > a:visited,
+  .navigation.navigation-main .rel-level1 > .navigation-title > a,
+  .navigation.navigation-main .rel-level1 > .navigation-title > a:link,
+  .navigation.navigation-main .rel-level1 > .navigation-title > a:visited,
+  .navigation.navigation-main .rel-level1.active > .navigation-title > a:link,
+  .navigation.navigation-main .rel-level1.active > .navigation-title > a:visited {
+    color: #ffffff !important;
+  }
+
+  a:hover,
+  .navigation .navigation-title > a:hover,
+  .navigation.navigation-main .rel-level1 > .navigation-title > a:hover {
+    color: #ffffff !important;
+  }
+
+  .button-nav-item a,
+  .button-nav-item a:link,
+  .button-nav-item a:visited,
+  .button-nav-item a:hover,
+  .button,
+  .button:link,
+  .button:visited,
+  .button:hover {
+    color: var(--brand-primary-foreground) !important;
+  }
+}
+
+.breadcrumb,
+.dark .breadcrumb {
+  color: #ffd100;
+}
+
+.breadcrumb a,
+.breadcrumb a:link,
+.breadcrumb a:visited,
+.breadcrumb a:hover,
+.breadcrumb span,
+.breadcrumb li,
+.breadcrumb li::before,
+.dark .breadcrumb a,
+.dark .breadcrumb a:link,
+.dark .breadcrumb a:visited,
+.dark .breadcrumb a:hover,
+.dark .breadcrumb span,
+.dark .breadcrumb li,
+.dark .breadcrumb li::before {
+  color: #ffd100 !important;
 }
 
 .oi-brand {
