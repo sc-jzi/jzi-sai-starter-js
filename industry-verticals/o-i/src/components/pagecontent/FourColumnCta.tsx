@@ -168,11 +168,11 @@ export const OINewsGrid = (props: FourColumnCtaProps): JSX.Element => {
 
   return (
     <div
-      className={`component four-column-cta oi-brand oi-news-grid bg-transparent py-6 text-[var(--brand-fg)] ${sxaStyles}`}
+      className={`component four-column-cta oi-brand oi-news-grid bg-transparent py-6 text-[var(--brand-fg)] [.hero-banner_&]:py-0 [.oi-hero_&]:py-0 ${sxaStyles}`}
       id={id ? id : undefined}
       style={{ fontFamily: 'var(--brand-heading-font)' }}
     >
-      <div className="mx-auto max-w-[1280px] px-6">
+      <div className="mx-auto max-w-[1280px] px-6 [.hero-banner_&]:max-w-none [.hero-banner_&]:px-0 [.oi-hero_&]:max-w-none [.oi-hero_&]:px-0">
         <div className="grid gap-4 sm:grid-cols-2">
           {cards.map((card, index) => (
             <article key={index} className="flex flex-col">
@@ -183,8 +183,8 @@ export const OINewsGrid = (props: FourColumnCtaProps): JSX.Element => {
                 <NextImage
                   field={card.image}
                   width={640}
-                  height={360}
-                  className="aspect-[16/7] h-auto w-full object-cover"
+                  height={480}
+                  className="aspect-[3/2] h-auto min-h-[9.5rem] w-full object-cover [.hero-banner_&]:aspect-[4/3] [.hero-banner_&]:min-h-[11rem] [.oi-hero_&]:aspect-[4/3] [.oi-hero_&]:min-h-[11rem]"
                 />
                 <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-4">
                   <Text
