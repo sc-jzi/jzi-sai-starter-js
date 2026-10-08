@@ -172,8 +172,8 @@ describe('Image Component Edge Cases should', () => {
     const propsWithoutImage = {
       ...mockImagePropsComplete,
       fields: {
-        ImageCaption: mockImagePropsComplete.fields.ImageCaption,
-        TargetUrl: mockImagePropsComplete.fields.TargetUrl,
+        ImageCaption: mockImagePropsComplete.fields?.ImageCaption,
+        TargetUrl: mockImagePropsComplete.fields?.TargetUrl,
       } as unknown as typeof mockImagePropsComplete.fields,
     };
     

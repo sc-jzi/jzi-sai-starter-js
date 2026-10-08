@@ -190,5 +190,4 @@ export const mockMultiPromoTabsProps: MultiPromoTabsProps = {
     },
     locale: 'en',
   } as Page,
-  componentMap: new Map(),
 };

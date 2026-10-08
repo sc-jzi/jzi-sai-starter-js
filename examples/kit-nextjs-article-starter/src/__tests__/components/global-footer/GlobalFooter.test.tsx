@@ -339,7 +339,7 @@ describe('GlobalFooter Component', () => {
         fields: {
           data: {
             datasource: {
-              ...defaultProps.fields.data.datasource,
+              ...defaultProps.fields?.data?.datasource,
               footerSocialLinks: {} as unknown as { results: FooterSocialLink[] },
             },
           },

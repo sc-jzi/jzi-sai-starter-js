@@ -1,4 +1,5 @@
 import { Page } from '@sitecore-content-sdk/nextjs';
+import { testComponentMap } from '@/__tests__/test-utils/component-props';
 
 // Mock page object with all required Page properties
 const mockPageBase = {
@@ -33,10 +34,8 @@ export const mockContainer25252525Props = {
   params: {
     DynamicPlaceholderId: 'main',
     styles: 'custom-25252525-styles',
-  },
-  children: document.createElement('div') as unknown as Element,
-  page: mockPageBase,
-  componentMap: new Map(),
+  },  page: mockPageBase,
+  componentMap: testComponentMap,
 };
 
 // Mock props with exclude top margin
@@ -54,8 +53,6 @@ export const mockContainer25252525PropsNoMargin = {
     DynamicPlaceholderId: 'test',
     excludeTopMargin: '1',
     styles: 'no-margin-25252525',
-  },
-  children: document.createElement('div') as unknown as Element,
-  page: mockPageBase,
-  componentMap: new Map(),
+  },  page: mockPageBase,
+  componentMap: testComponentMap,
 };

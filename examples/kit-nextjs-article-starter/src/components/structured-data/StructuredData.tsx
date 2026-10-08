@@ -1,14 +1,6 @@
 import { JSX } from 'react';
 import { JsonLdValue, toJsonLdString } from '@/lib/structured-data/jsonld';
-
-type StructuredDataProps = {
-  /**
-   * A stable id prevents duplicate JSON-LD nodes when the same component
-   * can be rendered multiple times (e.g. editing / layout variations).
-   */
-  id: string;
-  data: JsonLdValue;
-};
+import { StructuredDataProps } from './structured-data.props';
 
 export function StructuredData({ id, data }: StructuredDataProps): JSX.Element {
   if (!data || (typeof data === 'object' && Object.keys(data).length === 0)) {

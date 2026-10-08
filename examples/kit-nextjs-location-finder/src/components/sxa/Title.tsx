@@ -1,48 +1,9 @@
 import { Link, LinkField, Text, TextField, Page } from '@sitecore-content-sdk/nextjs';
 import React, { type JSX } from 'react';
 
-interface Fields {
-  data: {
-    datasource: {
-      url: {
-        path: string;
-        siteName: string;
-      };
-      field: {
-        jsonValue: {
-          value: string;
-          metadata?: { [key: string]: unknown };
-        };
-      };
-    };
-    contextItem: {
-      url: {
-        path: string;
-        siteName: string;
-      };
-      field: {
-        jsonValue: {
-          value: string;
-          metadata?: { [key: string]: unknown };
-        };
-      };
-    };
-  };
-}
+import type { TitleComponentContentProps, TitleProps } from './title.props';
 
-type TitleProps = {
-  params: { [key: string]: string };
-  fields: Fields;
-  page: Page;
-};
-
-type ComponentContentProps = {
-  id: string;
-  styles: string;
-  children: JSX.Element;
-};
-
-const ComponentContent = (props: ComponentContentProps) => {
+const ComponentContent = (props: TitleComponentContentProps) => {
   const id = props.id;
   return (
     <div className={`component title ${props.styles}`} id={id ? id : undefined}>

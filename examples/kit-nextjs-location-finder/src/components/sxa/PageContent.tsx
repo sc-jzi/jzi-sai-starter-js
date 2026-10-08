@@ -9,25 +9,9 @@ import {
 } from '@sitecore-content-sdk/nextjs';
 import Link from 'next/link';
 
-interface Fields {
-  Title: TextField;
-  Content: RichTextField;
-  MainLink: LinkField;
-}
+import type { PageContentComponentContentProps, PageContentProps } from './page-content.props';
 
-type PageContentProps = {
-  params: { [key: string]: string };
-  fields: Fields;
-  page: Page;
-};
-
-type ComponentContentProps = {
-  id: string;
-  styles: string;
-  children: JSX.Element;
-};
-
-const ComponentContent = (props: ComponentContentProps) => {
+const ComponentContent = (props: PageContentComponentContentProps) => {
   const id = props.id;
   return (
     <div className={`component content ${props.styles}`} id={id ? id : undefined}>

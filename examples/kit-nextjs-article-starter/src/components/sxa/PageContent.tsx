@@ -3,16 +3,7 @@ import {
   RichText as ContentSdkRichText,
   RichTextField,
 } from '@sitecore-content-sdk/nextjs';
-import { ComponentProps } from '@/lib/component-props';
-
-interface Fields {
-  Content: RichTextField;
-}
-
-type PageContentProps = ComponentProps & {
-  params: { [key: string]: string };
-  fields: Fields;
-};
+import { PageContentProps } from './sxa-page-content.props';
 
 export const Default = (props: PageContentProps): JSX.Element => {
   const { page, params, fields } = props;

@@ -1,4 +1,4 @@
-import type { IGQLImageField, IGQLLinkField, IGQLTextField } from '../../types/igql';
+import type { IGQLImageField, IGQLLinkField, IGQLTextField } from '@/lib/component-props';
 
 // Mock carousel slide
 const mockSlide1 = {

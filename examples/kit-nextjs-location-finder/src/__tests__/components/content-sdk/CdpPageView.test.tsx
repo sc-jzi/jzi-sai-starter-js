@@ -3,6 +3,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import CdpPageView from '@/components/content-sdk/CdpPageView';
+import { testComponentMap } from '@/__tests__/test-utils/component-props';
 
 // Mock the Sitecore SDK
 jest.mock('@sitecore-content-sdk/nextjs', () => ({
@@ -40,7 +41,7 @@ type MockSitecoreContext = ReturnType<typeof useSitecore>;
 describe('CdpPageView Component', () => {
   const mockSitecoreContext: MockSitecoreContext = {
     loadImportMap: jest.fn(),
-    componentMap: new Map(),
+    componentMap: testComponentMap,
     page: {
       layout: {
         sitecore: {

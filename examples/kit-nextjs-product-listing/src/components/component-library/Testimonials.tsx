@@ -12,50 +12,19 @@ import {
   RichText as ContentSdkRichText,
   Text as ContentSdkText,
 } from '@sitecore-content-sdk/nextjs';
-import { IGQLImageField, IGQLLinkField, IGQLRichTextField, IGQLTextField } from 'src/types/igql';
 import { useMemo, type JSX } from 'react';
 import { Button } from 'shadcd/components/ui/button';
+import { getDatasource, normalizeFieldShape } from '@/lib/component-props';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as faStarOutline } from '@fortawesome/free-regular-svg-icons';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from 'shadcd/components/ui/tabs';
 import { NoDataFallback } from '@/utils/NoDataFallback';
-import { ComponentProps } from '@/lib/component-props';
-
-interface Fields {
-  data: {
-    datasource: {
-      children: {
-        results: TestimonialFields[];
-      };
-      title: IGQLTextField;
-      tagLine: IGQLTextField;
-    };
-  };
-}
-
-interface TestimonialFields {
-  id: string;
-  caseStudyLink: IGQLLinkField;
-  customerName: IGQLTextField;
-  customerCompany: IGQLTextField;
-  customerIcon: IGQLImageField;
-  testimonialBody: IGQLRichTextField;
-  testimonialIcon: IGQLImageField;
-  testimonialRating: IGQLTextField;
-}
-
-type TestimonialsProps = ComponentProps & {
-  fields: Fields;
-};
-
-type TestimonialCardProps = ComponentProps & {
-  testimonial: TestimonialFields;
-  type: 'simple' | 'centered' | 'boxed' | 'large';
-  withRating?: boolean;
-  withLogo?: boolean;
-  className?: string;
-};
+import type { ComponentProps, IGQLTextField } from '@/lib/component-props';
+import type {
+  TestimonialCardProps,
+  TestimonialsProps,
+} from './testimonials.props';
 
 const StarRating = ({
   r: ratingField,

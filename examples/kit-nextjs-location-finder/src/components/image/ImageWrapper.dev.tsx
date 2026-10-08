@@ -3,17 +3,7 @@ import { cn } from '@/lib/utils';
 import { ImageField } from '@sitecore-content-sdk/nextjs';
 import ClientImage from './ImageWrapper.client';
 
-type ImageWrapperProps = {
-  image?: ImageField;
-  className?: string;
-  priority?: boolean;
-  sizes?: string;
-  blurDataURL?: string;
-  alt?: string;
-  wrapperClass?: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  [key: string]: any;
-};
+import type { ImageWrapperProps } from './image-wrapper.props';
 
 /**
  * Server component wrapper for ImageWrapper. Delegates to ClientImage for

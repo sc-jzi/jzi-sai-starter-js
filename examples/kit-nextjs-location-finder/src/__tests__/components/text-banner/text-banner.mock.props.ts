@@ -56,7 +56,6 @@ export const mockTextBannerProps: TextBannerProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };
 
@@ -72,7 +71,6 @@ export const mockTextBannerPropsWithoutDescription: TextBannerProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };
 
@@ -94,7 +92,6 @@ export const mockTextBannerPropsEditing: TextBannerProps = {
     },
   },
   page: mockPageEditing,
-  componentMap: new Map(),
   isPageEditing: true,
 };
 
@@ -114,6 +111,5 @@ export const mockTextBannerPropsBlueTheme: TextBannerProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };

@@ -3,7 +3,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Default as Navigation, ButtonNavigation } from '@/components/sxa/Navigation';
-import { Page } from '@sitecore-content-sdk/nextjs';
+import { baseSitecoreProps } from '@/__tests__/test-utils/component-props';
 
 // Mock Sitecore SDK
 jest.mock('@sitecore-content-sdk/nextjs', () => ({
@@ -49,24 +49,6 @@ describe('SXA Navigation', () => {
     console.log = originalConsoleLog;
   });
 
-  const mockPage = {
-    mode: {
-      isEditing: false,
-      isPreview: false,
-      isNormal: true,
-      name: 'normal' as const,
-      designLibrary: { isVariantGeneration: false },
-      isDesignLibrary: false,
-    },
-    layout: {
-      sitecore: {
-        context: {},
-        route: null,
-      },
-    },
-    locale: 'en',
-  } as Page;
-
   const mockChildFields = [
     {
       Id: '2',
@@ -107,12 +89,11 @@ describe('SXA Navigation', () => {
   it('renders navigation component structure', () => {
     const { container } = render(
       <Navigation
-        // @ts-expect-error Component types don't match implementation (expects Fields but uses as Record)
+        {...baseSitecoreProps}
         fields={mockFields}
         params={{ Styles: 'main-nav', RenderingIdentifier: 'nav-1' }}
         handleClick={jest.fn()}
         relativeLevel={0}
-        page={mockPage}
       />
     );
 
@@ -125,12 +106,11 @@ describe('SXA Navigation', () => {
   it('renders mobile menu toggle checkbox', () => {
     const { container } = render(
       <Navigation
-        // @ts-expect-error Component types don't match implementation (expects Fields but uses as Record)
+        {...baseSitecoreProps}
         fields={mockFields}
         params={{ Styles: '', RenderingIdentifier: 'nav-mobile' }}
         handleClick={jest.fn()}
         relativeLevel={0}
-        page={mockPage}
       />
     );
 
@@ -142,12 +122,11 @@ describe('SXA Navigation', () => {
   it('renders ButtonNavigation variant with grid layout', () => {
     const { container } = render(
       <ButtonNavigation
-        // @ts-expect-error Component types don't match implementation (expects Fields but uses as Record)
+        {...baseSitecoreProps}
         fields={mockFields}
         params={{ Styles: '' }}
         handleClick={jest.fn()}
         relativeLevel={0}
-        page={mockPage}
       />
     );
 

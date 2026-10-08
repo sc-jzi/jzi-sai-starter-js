@@ -165,5 +165,4 @@ export const mockLogoTabsProps: LogoTabsProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
 };

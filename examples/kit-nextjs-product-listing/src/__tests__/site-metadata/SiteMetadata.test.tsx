@@ -101,10 +101,11 @@ describe('SiteMetadata Component', () => {
   });
 
   describe('Fallback Scenarios', () => {
-    it('handles component error when no fields provided', () => {
-      expect(() => {
-        render(<SiteMetadataDefault {...siteMetadataPropsNoFields} />);
-      }).toThrow(); // Component throws error due to accessing properties on null fields
+    it('renders NoDataFallback when no fields provided', () => {
+      render(<SiteMetadataDefault {...siteMetadataPropsNoFields} />);
+
+      expect(screen.getByTestId('no-data-fallback')).toBeInTheDocument();
+      expect(screen.getByTestId('no-data-fallback')).toHaveTextContent('Site Metadata');
     });
   });
 

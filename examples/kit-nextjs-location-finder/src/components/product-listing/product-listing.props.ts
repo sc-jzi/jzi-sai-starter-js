@@ -1,6 +1,6 @@
 import { Field, ImageField, LinkField, Page } from '@sitecore-content-sdk/nextjs';
 
-import { ComponentProps } from '@/lib/component-props';
+import type { OptionalComponentProps } from '@/lib/component-props';
 
 interface ProductListingParams {
   [key: string]: any; // eslint-disable-line
@@ -44,7 +44,7 @@ export type ProductItemProps = {
   };
 };
 
-export interface ProductListingProps extends ComponentProps {
+export interface ProductListingProps extends OptionalComponentProps {
   params: ProductListingParams;
   fields: ProductListingFields;
   isPageEditing: boolean;
@@ -56,3 +56,4 @@ export interface ProductCardProps {
   isPageEditing: boolean;
   page?: Page; // Optional page prop for ImageWrapper
 }
+

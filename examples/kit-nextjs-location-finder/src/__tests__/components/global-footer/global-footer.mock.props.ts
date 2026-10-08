@@ -173,7 +173,6 @@ export const mockGlobalFooterProps: GlobalFooterProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };
 
@@ -207,6 +206,5 @@ export const mockEmptyGlobalFooterProps: GlobalFooterProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };

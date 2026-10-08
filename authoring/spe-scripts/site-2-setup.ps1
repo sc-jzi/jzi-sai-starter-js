@@ -250,6 +250,7 @@ function Invoke-ModuleScriptBody {
         $titlePartialOverlayVariant = New-Item -Parent $promoVariant -Name "TitlePartialOverlay" -ItemType "{4D50CDAE-C2D9-4DE8-B080-8F992BFB1B55}"
         $titlePartialOverlayVariant.'__Display name' = "Title Partial Overlay"
 
+
         Write-Verbose "Create AI config at $sitePath/Data/AI"
         $dataFolderPath = "$sitePath/Data"
         if (-not (Test-Path $dataFolderPath)) {

@@ -44,7 +44,6 @@ describe('SXA RichText', () => {
         fields={mockFields}
         rendering={{ componentName: 'RichText', dataSource: '', uid: '123' }}
         page={mockPageBase}
-        componentMap={new Map()}
       />
     );
 
@@ -61,7 +60,6 @@ describe('SXA RichText', () => {
         fields={mockFields}
         rendering={{ componentName: 'RichText', dataSource: '', uid: '123' }}
         page={mockPageBase}
-        componentMap={new Map()}
       />
     );
 
@@ -80,7 +78,6 @@ describe('SXA RichText', () => {
         fields={emptyFields}
         rendering={{ componentName: 'RichText', dataSource: '', uid: '123' }}
         page={mockPageBase}
-        componentMap={new Map()}
       />
     );
 

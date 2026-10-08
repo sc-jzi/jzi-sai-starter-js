@@ -9,6 +9,7 @@ import { PageHeaderProps } from './page-header.props';
 import { VideoBase as Video } from '@/components/video/Video';
 import { Default as ImageWrapper } from '@/components/image/ImageWrapper.dev';
 import { cva } from 'class-variance-authority';
+import { getDatasource, getFieldValue } from '@/lib/component-props';
 
 const pageHeaderComponentClasses = cva(
   '@container my-10 flex flex-col md:grid md:gap-8 md:items-center px-4 @xl:px-8',
@@ -28,13 +29,16 @@ export const Default: React.FC<PageHeaderProps> = ({
   params,
   page,
 }) => {
-  const { imageRequired, videoOptional, logoText, children } =
-    fields?.data?.datasource || {};
+  const datasource = getDatasource(fields);
+  const { imageRequired, videoOptional, logoText, children } = datasource || {};
   const { pageHeaderTitle, pageTitle, pageSubtitle } =
     fields?.data?.externalFields || {};
 
-  const title = pageHeaderTitle?.jsonValue ?? pageTitle?.jsonValue;
-  const subtitle = pageSubtitle?.jsonValue;
+  const imageField = getFieldValue(imageRequired);
+  const videoField = getFieldValue(videoOptional);
+  const logoTextField = getFieldValue(logoText);
+  const title = getFieldValue(pageHeaderTitle) ?? getFieldValue(pageTitle);
+  const subtitle = getFieldValue(pageSubtitle);
 
   const { colorScheme = 'default', darkPlayIcon = '0' } = params;
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
@@ -72,12 +76,12 @@ export const Default: React.FC<PageHeaderProps> = ({
                   <Text
                     tag="p"
                     className="letter-spacing-[-0.4%] line-height-[24px] text-base font-medium"
-                    field={logoText?.jsonValue}
+                    field={logoTextField}
                   />
                   <div className="flex flex-nowrap items-center justify-between gap-8">
                     {children.results.map((logo, index) => (
                       <div key={index}>
-                        <ImageWrapper image={logo.image?.jsonValue} />
+                        <ImageWrapper image={getFieldValue(logo.image)} />
                       </div>
                     ))}
                   </div>
@@ -101,17 +105,17 @@ export const Default: React.FC<PageHeaderProps> = ({
               isPageEditing={isPageEditing}
             >
               <div className="@md:rounded-[22px] @lg:ms-auto relative max-w-[547px] overflow-hidden rounded-xl">
-                {videoOptional?.jsonValue?.value?.href ? (
+                {videoField?.value?.href ? (
                   <Video
                     fields={{
-                      video: videoOptional?.jsonValue,
-                      image: imageRequired?.jsonValue,
+                      video: videoField,
+                      image: imageField,
                     }}
                     params={{ darkPlayIcon: darkPlayIcon, useModal: '1' }}
                     playButtonClassName="absolute [&_svg]:size-8  [&_svg]:bottom-7 [&_svg]:right-7 [&_svg]:absolute"
                   />
                 ) : (
-                  <ImageWrapper image={imageRequired?.jsonValue} />
+                  <ImageWrapper image={imageField} />
                 )}
               </div>
             </AnimatedSection>

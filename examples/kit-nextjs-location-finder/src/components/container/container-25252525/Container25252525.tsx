@@ -1,21 +1,10 @@
-import { ComponentRendering, AppPlaceholder } from '@sitecore-content-sdk/nextjs';
+import { AppPlaceholder } from '@sitecore-content-sdk/nextjs';
 import {
   getContainerPlaceholderProps,
   isContainerPlaceholderEmpty,
 } from '@/components/container/container.util';
 import { cn } from '@/lib/utils';
-import { ComponentProps } from '@/lib/component-props';
-
-import type { JSX } from 'react';
-
-export type Container25252525Props = ComponentProps & {
-  rendering: ComponentRendering;
-  col1?: JSX.Element;
-  col2?: JSX.Element;
-  col3?: JSX.Element;
-  col4?: JSX.Element;
-  children: Element;
-};
+import type { Container25252525Props } from './container-25252525.props';
 
 export const Default: React.FC<Container25252525Props> = (props) => {
   const { rendering, col1, col2, col3, col4, page, componentMap } = props;

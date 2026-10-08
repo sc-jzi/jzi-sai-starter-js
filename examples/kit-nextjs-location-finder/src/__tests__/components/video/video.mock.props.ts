@@ -1,4 +1,4 @@
-import { VideoComponentProps } from '@/components/video/video-props';
+import type { VideoComponentProps } from '@/components/video/video.props';
 import { Page } from '@sitecore-content-sdk/nextjs';
 
 const mockVideoFields = {
@@ -86,7 +86,6 @@ export const mockVideoProps: VideoComponentProps = {
   },
   fields: mockVideoFields,
   page: mockPageBase,
-  componentMap: new Map(),
 };
 
 export const mockVideoPropsWithoutImage: VideoComponentProps = {
@@ -101,7 +100,6 @@ export const mockVideoPropsWithoutImage: VideoComponentProps = {
   },
   fields: mockVideoFieldsWithoutImage,
   page: mockPageBase,
-  componentMap: new Map(),
 };
 
 export const mockVideoPropsWithoutVideo: VideoComponentProps = {
@@ -119,5 +117,4 @@ export const mockVideoPropsWithoutVideo: VideoComponentProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
 };

@@ -32,7 +32,6 @@ export const mockSubmissionFormProps: SubmissionFormProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };
 
@@ -50,7 +49,6 @@ export const mockSubmissionFormPropsDemo: SubmissionFormProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };
 
@@ -68,6 +66,5 @@ export const mockSubmissionFormPropsContact: SubmissionFormProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };

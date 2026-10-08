@@ -6,13 +6,7 @@ import { useVideo } from '@/contexts/VideoContext';
 import { Default as Icon } from '@/components/icon/Icon';
 import { extractVideoId } from '@/utils/video';
 
-interface VideoPlayerProps {
-  videoUrl: string;
-  isPlaying: boolean;
-  onPlay: () => void;
-  fullScreen?: boolean;
-  btnClasses: string;
-}
+import type { VideoPlayerProps } from './video-player.props';
 
 export function VideoPlayer({
   videoUrl,

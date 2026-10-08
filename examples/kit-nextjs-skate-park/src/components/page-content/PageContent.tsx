@@ -3,17 +3,9 @@ import {
   RichText as ContentSdkRichText,
   RichTextField,
 } from '@sitecore-content-sdk/nextjs';
-import { ComponentProps } from 'lib/component-props';
 import StructuredData from 'components/structured-data/StructuredData';
 import { buildArticleJsonLd } from 'src/lib/structured-data/schema';
-
-interface Fields {
-  Content: RichTextField;
-}
-
-type PageContentProps = ComponentProps & {
-  fields: Fields;
-};
+import { PageContentProps } from './page-content.props';
 
 export const Default = ({ params, fields, page }: PageContentProps): JSX.Element => {
   const { styles, RenderingIdentifier: id } = params;

@@ -1,30 +1,12 @@
 'use client';
 
-import { Text, Field, LinkField } from '@sitecore-content-sdk/nextjs';
+import { Text } from '@sitecore-content-sdk/nextjs';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useForm } from 'react-hook-form';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/form';
 import { useState } from 'react';
-import { ComponentProps } from '@/lib/component-props';
-
-interface SubscriptionBannerParams {
-  [key: string]: any; // eslint-disable-line
-}
-
-interface SubscriptionBannerFields {
-  titleRequired: Field<string>;
-  descriptionOptional?: Field<string>;
-  buttonLink: LinkField;
-  emailPlaceholder?: Field<string>;
-  emailErrorMessage?: Field<string>;
-  thankYouMessage?: Field<string>;
-}
-
-interface SubscriptionBannerProps extends ComponentProps {
-  params: SubscriptionBannerParams;
-  fields: SubscriptionBannerFields;
-}
+import type { SubscriptionBannerProps } from './subscription-banner.props';
 
 type FormValues = {
   email: string;

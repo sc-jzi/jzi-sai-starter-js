@@ -4,22 +4,12 @@ import { useSitecore, Link as ContentSdkLink, LinkField } from '@sitecore-conten
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import type { JSX } from 'react';
-
-interface Fields {
-  Id: string;
-  DisplayName: string;
-  Title: { value?: string };
-  NavigationTitle: { value?: string };
-  Href: string;
-  Querystring: string;
-  Children: Array<Fields>;
-  Styles: string[];
-}
+import type { NavigationFields } from './sxa-navigation.props';
 
 type ButtonNavigationClientProps = {
-  list: Fields[];
-  getLinkField: (props: { fields: Fields }) => LinkField;
-  getNavigationText: (props: { fields: Fields }) => JSX.Element | string;
+  list: NavigationFields[];
+  getLinkField: (props: { fields: NavigationFields }) => LinkField;
+  getNavigationText: (props: { fields: NavigationFields }) => JSX.Element | string;
 };
 
 /**

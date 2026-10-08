@@ -3,30 +3,10 @@
 import { useState } from 'react';
 import {
   Link as ContentSdkLink,
-  LinkField,
-  TextField,
 } from '@sitecore-content-sdk/nextjs';
 import type { JSX } from 'react';
-
-interface Fields {
-  Id: string;
-  DisplayName: string;
-  Title: TextField;
-  NavigationTitle: TextField;
-  Href: string;
-  Querystring: string;
-  Children: Array<Fields>;
-  Styles: string[];
-}
-
-type NavigationListProps = {
-  fields: Fields;
-  handleClick: (event?: React.MouseEvent<HTMLElement>) => void;
-  relativeLevel: number;
-  isEditing: boolean;
-  getLinkField: (props: { fields: Fields }) => LinkField;
-  getNavigationText: (props: { fields: Fields }) => JSX.Element | string;
-};
+import { NavigationListProps } from './sxa-navigation-list.props';
+import { NavigationFields } from './sxa-navigation.props';
 
 /**
  * Client component for navigation list items with interactive state
@@ -39,12 +19,16 @@ export const NavigationList = ({
   getLinkField,
   getNavigationText,
 }: NavigationListProps) => {
+  if (!fields) {
+    return null;
+  }
+
   const [active, setActive] = useState(false);
   const classNameList = `${fields.Styles.concat('rel-level' + relativeLevel).join(' ')}`;
 
   let children: JSX.Element[] = [];
   if (fields.Children && fields.Children.length) {
-    children = fields.Children.map((element: Fields, index: number) => (
+    children = fields.Children.map((element: NavigationFields, index: number) => (
       <NavigationList
         key={`${index}${element.Id}`}
         fields={element}

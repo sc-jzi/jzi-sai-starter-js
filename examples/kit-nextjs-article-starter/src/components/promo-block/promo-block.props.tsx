@@ -14,10 +14,10 @@ export type PromoBlockParams = {
 };
 
 export type PromoBlockFields = {
-  fields: {
-    heading: Field<string>;
-    description: Field<string>;
-    image: ImageField;
+  fields?: {
+    heading?: Field<string>;
+    description?: Field<string>;
+    image?: ImageField;
     link?: LinkField;
   };
 };

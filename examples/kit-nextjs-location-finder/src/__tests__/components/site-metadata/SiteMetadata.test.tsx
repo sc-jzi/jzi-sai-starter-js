@@ -44,7 +44,6 @@ describe('SiteMetadata Component', () => {
       params: {},
       rendering: mockRendering,
       page: mockPageBase,
-      componentMap: new Map(),
     };
 
     const { container } = render(<SiteMetadata {...props} />);
@@ -65,7 +64,6 @@ describe('SiteMetadata Component', () => {
       params: {},
       rendering: mockRendering,
       page: mockPageBase,
-      componentMap: new Map(),
     };
 
     const { container } = render(<SiteMetadata {...props} />);
@@ -82,7 +80,6 @@ describe('SiteMetadata Component', () => {
       params: {},
       rendering: mockRendering,
       page: mockPageBase,
-      componentMap: new Map(),
     };
 
     render(<SiteMetadata {...(props as unknown as React.ComponentProps<typeof SiteMetadata>)} />);
@@ -99,7 +96,6 @@ describe('SiteMetadata Component', () => {
       params: {},
       rendering: mockRendering,
       page: mockPageBase,
-      componentMap: new Map(),
     };
 
     const { container } = render(<SiteMetadata {...props} />);
@@ -120,7 +116,6 @@ describe('SiteMetadata Component', () => {
       params: {},
       rendering: mockRendering,
       page: mockPageBase,
-      componentMap: new Map(),
     };
 
     const { container } = render(<SiteMetadata {...props} />);
@@ -141,7 +136,6 @@ describe('SiteMetadata Component', () => {
       params: {},
       rendering: mockRendering,
       page: mockPageBase,
-      componentMap: new Map(),
     };
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     expect(() => render(<SiteMetadata {...(props as any)} />)).not.toThrow();

@@ -198,7 +198,6 @@ export const mockProductListingProps: ProductListingProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };
 

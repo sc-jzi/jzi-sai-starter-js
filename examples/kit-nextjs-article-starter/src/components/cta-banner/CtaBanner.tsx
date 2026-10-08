@@ -3,28 +3,9 @@ import type React from 'react';
 import { Button } from '@/components/ui/button';
 import { Default as AnimatedSection } from '@/components/animated-section/AnimatedSection.dev';
 import { NoDataFallback } from '@/utils/NoDataFallback';
-import { Field, LinkField, Text, Link } from '@sitecore-content-sdk/nextjs';
-import { ColorSchemeLimited as ColorScheme } from '@/enumerations/ColorSchemeLimited.enum';
-import { EnumValues } from '@/enumerations/generic.enum';
-import { ComponentProps } from '@/lib/component-props';
+import { Text, Link } from '@sitecore-content-sdk/nextjs';
 import { getDescriptiveLinkText } from '@/utils/link-text';
-
-type CtaBannerParams = {
-  params?: {
-    colorScheme?: EnumValues<typeof ColorScheme>;
-    [key: string]: any; // eslint-disable-line @typescript-eslint/no-explicit-any
-  };
-};
-
-type CtaBannerFields = {
-  fields?: {
-    titleRequired?: Field<string>;
-    descriptionOptional?: Field<string>;
-    linkOptional?: LinkField;
-  };
-};
-
-type CtaBannerProps = ComponentProps & CtaBannerFields & CtaBannerParams;
+import { CtaBannerProps } from './cta-banner.props';
 
 const ctaBannerVariants = cva('w-full mx-auto px-6 py-16 md:py-24 text-center', {
   variants: {

@@ -4,50 +4,10 @@ import {
   RichText as ContentSdkRichText,
   Text as ContentSdkText,
 } from '@sitecore-content-sdk/nextjs';
-import { IGQLImageField, IGQLLinkField, IGQLRichTextField, IGQLTextField } from 'src/types/igql';
 import { Button } from 'shadcd/components/ui/button';
 import { useMemo, type JSX } from 'react';
-
-interface Fields {
-  data: {
-    datasource: {
-      children: {
-        results: StatisticFields[];
-      };
-      heading: IGQLTextField;
-      tagLine: IGQLTextField;
-      body: IGQLRichTextField;
-      image1: IGQLImageField;
-      image2: IGQLImageField;
-      link1: IGQLLinkField;
-      link2: IGQLLinkField;
-    };
-  };
-}
-
-interface StatisticFields {
-  id: string;
-  statValue: IGQLTextField;
-  statHeading: IGQLTextField;
-  statBody: IGQLTextField;
-}
-
-type StatsProps = {
-  params: { [key: string]: string };
-  fields: Fields;
-};
-
-type StatBoxProps = {
-  stat: StatisticFields;
-  type: 'simple' | 'bordered' | 'boxed' | 'boxedSimple';
-  isSmall?: boolean;
-  className?: string;
-};
-
-type StatSectionButtonsProps = {
-  link1: IGQLLinkField;
-  link2: IGQLLinkField;
-};
+import type { StatBoxProps, StatSectionButtonsProps, StatsProps } from './stats-section.props';
+import { getDatasource, normalizeFieldShape } from '@/lib/component-props';
 
 const StatBox = (props: StatBoxProps): JSX.Element => {
   switch (props.type) {

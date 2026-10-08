@@ -173,7 +173,6 @@ describe('SecondaryNavigation Component', () => {
     params: {},
     rendering: mockRendering,
     page: mockPageBase,
-    componentMap: new Map(),
   };
 
   beforeEach(() => {
@@ -397,7 +396,6 @@ describe('SecondaryNavigation Component', () => {
         params: {},
         rendering: mockRendering,
         page: mockPageBase,
-        componentMap: new Map(),
       };
       /* eslint-disable @typescript-eslint/no-explicit-any */
       render(<SecondaryNavigation {...(propsWithoutFields as any)} />);
@@ -419,7 +417,6 @@ describe('SecondaryNavigation Component', () => {
         params: {},
         rendering: mockRendering,
         page: mockPageBase,
-        componentMap: new Map(),
       };
 
       expect(() => render(<SecondaryNavigation {...propsWithoutParentChildren} />)).not.toThrow();
@@ -439,7 +436,6 @@ describe('SecondaryNavigation Component', () => {
         params: {},
         rendering: mockRendering,
         page: mockPageBase,
-        componentMap: new Map(),
       };
 
       render(<SecondaryNavigation {...propsWithEmptyParent} />);

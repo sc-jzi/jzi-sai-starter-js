@@ -555,9 +555,11 @@ describe('MultiPromo Component', () => {
         fields: {
           data: {
             datasource: {
-              title: defaultProps.fields.data.datasource.title,
-              description: defaultProps.fields.data.datasource.description,
-              children: {} as unknown as MultiPromoProps['fields']['data']['datasource']['children'],
+              title: defaultProps.fields?.data?.datasource?.title,
+              description: defaultProps.fields?.data?.datasource?.description,
+              children: {} as unknown as NonNullable<
+                NonNullable<NonNullable<MultiPromoProps['fields']>['data']>['datasource']
+              >['children'],
             },
           },
         },

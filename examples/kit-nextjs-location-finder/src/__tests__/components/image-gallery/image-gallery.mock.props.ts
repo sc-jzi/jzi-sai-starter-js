@@ -69,6 +69,5 @@ export const mockImageGalleryProps: ImageGalleryProps = {
     componentName: 'ImageGallery',
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };

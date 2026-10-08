@@ -118,7 +118,6 @@ export const mockTopicListingProps: TopicListingProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
 };
 
 export const mockTopicListingPropsWithoutChildren: TopicListingProps = {
@@ -143,7 +142,6 @@ export const mockTopicListingPropsWithoutChildren: TopicListingProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
 };
 
 export const mockSingleTopicItem: TopicItemProps = {

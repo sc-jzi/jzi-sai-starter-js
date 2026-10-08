@@ -2,9 +2,10 @@
 
 import { useRef } from 'react';
 import { Text } from '@sitecore-content-sdk/nextjs';
-import { GlobalFooterProps } from '@/components/global-footer/global-footer.props';
+import { FooterSocialLink, GlobalFooterProps } from '@/components/global-footer/global-footer.props';
 import { NoDataFallback } from '@/utils/NoDataFallback';
 import { cn } from '@/lib/utils';
+import { getDatasource, getFieldValue } from '@/lib/component-props';
 import { Default as EmailSignupForm } from '@/components/forms/email/EmailSignupForm.dev';
 import { Default as FooterNavigationColumn } from './FooterNavigationColumn.dev';
 import { EditableButton } from '@/components/button-component/ButtonComponent';
@@ -14,7 +15,7 @@ export const GlobalFooterBlueCompact: React.FC<GlobalFooterProps> = (props) => {
   const { fields, isPageEditing } = props;
   const { dictionary } = fields;
   const { footerNavLinks, footerCopyright, socialLinks, tagline, emailSubscriptionTitle } =
-    fields.data.datasource ?? {};
+    getDatasource(fields as any) ?? {};
 
   const footerRef = useRef<HTMLDivElement>(null);
 
@@ -45,7 +46,7 @@ export const GlobalFooterBlueCompact: React.FC<GlobalFooterProps> = (props) => {
               <div>
                 <Text
                   tag="h2"
-                  field={tagline?.jsonValue}
+                  field={getFieldValue(tagline as any)}
                   className="font-heading mb-8 text-pretty text-5xl font-light antialiased"
                 />
                 {/* Navigation links */}
@@ -57,7 +58,7 @@ export const GlobalFooterBlueCompact: React.FC<GlobalFooterProps> = (props) => {
                 <div className="mt-10 max-w-[400px]">
                   <Text
                     className="font-body mb-4 text-xl font-medium"
-                    field={emailSubscriptionTitle?.jsonValue}
+                    field={getFieldValue(emailSubscriptionTitle as any)}
                     tag="p"
                   />
                   <div className="@sm:flex-row flex flex-col gap-2 ">
@@ -91,15 +92,15 @@ export const GlobalFooterBlueCompact: React.FC<GlobalFooterProps> = (props) => {
                   indicatorClassName="h-0-5 bg-secondary rounded-default bottom-0"
                 >
                   <ul className="@sm:mb-0 mb-0 flex list-none gap-6">
-                    {socialLinks?.results?.map((socialLink, index) => (
+                    {socialLinks?.results?.map((socialLink: FooterSocialLink, index: number) => (
                       <li key={index}>
                         <EditableButton
-                          buttonLink={socialLink?.link?.jsonValue}
+                          buttonLink={getFieldValue(socialLink?.link as any)}
                           className={cn('relative hover:bg-transparent')}
                           variant="ghost"
                           size={isPageEditing ? 'default' : 'icon'}
                           isPageEditing={isPageEditing}
-                          icon={socialLink?.socialIcon?.jsonValue}
+                          icon={getFieldValue(socialLink?.socialIcon as any)}
                           asIconLink={true}
                         />
                       </li>
@@ -107,7 +108,7 @@ export const GlobalFooterBlueCompact: React.FC<GlobalFooterProps> = (props) => {
                   </ul>
                 </AnimatedHoverNav>
                 {/* Copyright text */}
-                <Text field={footerCopyright?.jsonValue} encode={false} />
+                <Text field={getFieldValue(footerCopyright as any)} encode={false} />
               </div>
             </div>
           </div>
@@ -120,3 +121,5 @@ export const GlobalFooterBlueCompact: React.FC<GlobalFooterProps> = (props) => {
   }
   return <NoDataFallback componentName="Global Footer" />;
 };
+
+

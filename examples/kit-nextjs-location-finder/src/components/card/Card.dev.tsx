@@ -6,24 +6,7 @@ import { IconName } from '@/enumerations/Icon.enum';
 import { Default as ImageWrapper } from '@/components/image/ImageWrapper.dev';
 import { Link } from '@sitecore-content-sdk/nextjs';
 import { cn } from '@/lib/utils';
-import { EnumValues } from '@/enumerations/generic.enum';
-import { ComponentProps } from '@/lib/component-props';
-
-type CardFields = {
-  heading: Field<string>; // Sitecore editable text field
-  description: Field<string>;
-  image?: ImageField; // Sitecore editable image field
-  link: LinkField; // Sitecore editable link field
-};
-
-type CardProps = ComponentProps & {
-  fields: CardFields;
-  params?: {
-    icon?: EnumValues<typeof IconName>;
-    className?: string;
-    editable?: boolean;
-  };
-};
+import type { CardFields, CardProps } from './card.props';
 
 export const Default: React.FC<CardProps> = (props) => {
   // Handle both ComponentProps structure and flat structure for backward compatibility

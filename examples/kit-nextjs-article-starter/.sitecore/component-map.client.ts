@@ -29,7 +29,6 @@ import * as meteors from 'src/components/magicui/meteors';
 import * as LogoTabs from 'src/components/logo-tabs/LogoTabs';
 import * as nextImageSrcdev from 'src/components/image/nextImageSrc.dev';
 import * as ImageWrapperclient from 'src/components/image/ImageWrapper.client';
-import * as imageoptimizationcontext from 'src/components/image/image-optimization.context';
 import * as Icon from 'src/components/icon/Icon';
 import * as Hero from 'src/components/hero/Hero';
 import * as GlobalHeader from 'src/components/global-header/GlobalHeader';
@@ -71,7 +70,6 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['LogoTabs', { ...LogoTabs }],
   ['nextImageSrc', { ...nextImageSrcdev }],
   ['ImageWrapper', { ...ImageWrapperclient }],
-  ['image-optimization', { ...imageoptimizationcontext }],
   ['Icon', { ...Icon }],
   ['Hero', { ...Hero }],
   ['GlobalHeader', { ...GlobalHeader }],

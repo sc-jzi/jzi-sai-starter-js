@@ -30,6 +30,7 @@ Apply all **When to use**, **How to perform**, and **Hard rules** from the [Repo
 - **Location finder / dealer-locator:** Fetch location or layout data at the catch-all page; pass as props into finder components. Do not fetch location or layout inside child finder components. Use existing finder and locator components and types; extend rather than replace.
 - **Map and GEO:** Use this starter’s map and GEO integration patterns; pass only serializable data to client components. Do not add location/GEO fetches inside non-route components unless the starter already does so.
 - **Component maps:** Use server map (`.sitecore/component-map.ts`) and client map (`.sitecore/component-map.client.ts`); register with the same name as in the layout.
+- **Props sidecars:** Keep component props in sidecar files (`*.props.ts` / `*.props.tsx`) and exclude those files from component-map generation in `sitecore.cli.config.ts`. Regenerate maps after props-file changes and confirm sidecars are not registered as components.
 - **Project structure:** `src/app/`, `src/components/`, `src/lib/`, `src/i18n/`; follow existing patterns for new finder or map components.
 - **Local dev:** Copy `.env.remote.example` to `.env.local` in this folder; set XM Cloud and any GEO/API keys; run the dev server from this folder.
 

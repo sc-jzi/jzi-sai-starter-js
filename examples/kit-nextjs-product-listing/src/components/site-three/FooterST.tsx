@@ -4,26 +4,12 @@ import {
   RichText as ContentSdkRichText,
   Text as ContentSdkText,
   Link as ContentSdkLink,
-  Field,
-  RichTextField,
   LinkField,
   AppPlaceholder,
 } from '@sitecore-content-sdk/nextjs';
-import { ComponentProps } from 'lib/component-props';
 import componentMap from '.sitecore/component-map';
-
-interface Fields {
-  Title: Field<string>;
-  CopyrightText: RichTextField;
-  FacebookLink: LinkField;
-  InstagramLink: LinkField;
-  LinkedinLink: LinkField;
-}
-
-type FooterSTProps = ComponentProps & {
-  params: { [key: string]: string };
-  fields: Fields;
-};
+import type { FooterSTProps, SocialLinksProps } from './footer-st.props';
+import { getDatasource, getFieldValue } from '@/lib/component-props';
 
 /** Returns true if the link field has a valid href (not a placeholder like # or http://#). */
 function hasValidLink(field: LinkField | undefined): boolean {
@@ -31,11 +17,11 @@ function hasValidLink(field: LinkField | undefined): boolean {
   return !!(href && href !== '#' && !href.startsWith('http://#'));
 }
 
-const SocialLinks = ({ fields }: { fields: Fields }) => (
+const SocialLinks = ({ fields }: SocialLinksProps) => (
   <div className="flex justify-center gap-4">
-    {hasValidLink(fields?.FacebookLink) ? (
+    {hasValidLink(getFieldValue(fields?.FacebookLink)) ? (
       <ContentSdkLink
-        field={fields?.FacebookLink}
+        field={getFieldValue(fields?.FacebookLink)!}
         prefetch={false}
         aria-label="Facebook"
       >
@@ -46,9 +32,9 @@ const SocialLinks = ({ fields }: { fields: Fields }) => (
         <FontAwesomeIcon icon={faFacebook} width={20} height={20} />
       </span>
     )}
-    {hasValidLink(fields?.InstagramLink) ? (
+    {hasValidLink(getFieldValue(fields?.InstagramLink)) ? (
       <ContentSdkLink
-        field={fields?.InstagramLink}
+        field={getFieldValue(fields?.InstagramLink)!}
         prefetch={false}
         aria-label="Instagram"
       >
@@ -59,9 +45,9 @@ const SocialLinks = ({ fields }: { fields: Fields }) => (
         <FontAwesomeIcon icon={faInstagram} width={22} height={22} />
       </span>
     )}
-    {hasValidLink(fields?.LinkedinLink) ? (
+    {hasValidLink(getFieldValue(fields?.LinkedinLink)) ? (
       <ContentSdkLink
-        field={fields?.LinkedinLink}
+        field={getFieldValue(fields?.LinkedinLink)!}
         prefetch={false}
         aria-label="LinkedIn"
       >
@@ -76,6 +62,8 @@ const SocialLinks = ({ fields }: { fields: Fields }) => (
 );
 
 export const Default = (props: FooterSTProps) => {
+  const fields = getDatasource(props.fields);
+
   return (
     <section
       className={`relative bg-primary pt-16 lg:pt-30 pb-8 bg-cover bg-center ${props.params.styles}`}
@@ -84,7 +72,7 @@ export const Default = (props: FooterSTProps) => {
     >
       <div className="container mx-auto px-4">
         <h2 className="text-4xl lg:text-7xl mb-10 lg:mb-20 uppercase">
-          <ContentSdkText field={props.fields?.Title} />
+          <ContentSdkText field={getFieldValue(fields?.Title)} />
         </h2>
         <div className="max-w-5xl mx-auto mb-6 lg:mb-12 font-(family-name:--font-heading) text-2xl uppercase">
           <AppPlaceholder
@@ -106,9 +94,9 @@ export const Default = (props: FooterSTProps) => {
       <div className="h-20 lg:h-40 bg-sound-waves bg-contain bg-repeat bg-center my-12 lg:my-16"></div>
       <div className="container mx-auto px-4">
         <div className="flex flex-col gap-4 items-center lg:flex-row lg:justify-between">
-          <SocialLinks fields={props.fields} />
+          <SocialLinks fields={fields} />
           <div>
-            <ContentSdkRichText field={props.fields?.CopyrightText} />
+            <ContentSdkRichText field={getFieldValue(fields?.CopyrightText)} />
           </div>
         </div>
       </div>
@@ -117,6 +105,8 @@ export const Default = (props: FooterSTProps) => {
 };
 
 export const LogoLeft = (props: FooterSTProps) => {
+  const fields = getDatasource(props.fields);
+
   return (
     <section
       className={`relative bg-primary pt-16 lg:pt-30 bg-cover bg-center ${props.params.styles}`}
@@ -126,7 +116,7 @@ export const LogoLeft = (props: FooterSTProps) => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2">
           <h2 className="text-4xl lg:text-7xl mb-10 lg:mb-0 uppercase">
-            <ContentSdkText field={props.fields?.Title} />
+            <ContentSdkText field={getFieldValue(fields?.Title)} />
           </h2>
           <div className="lg:flex justify-end items-start gap-12">
             <div className="mb-6 lg:mb-0 font-(family-name:--font-heading) uppercase text-2xl">
@@ -148,9 +138,9 @@ export const LogoLeft = (props: FooterSTProps) => {
           </div>
         </div>
         <div className="flex flex-col gap-4 items-center lg:flex-row lg:justify-between mt-8">
-          <SocialLinks fields={props.fields} />
+          <SocialLinks fields={fields} />
           <div>
-            <ContentSdkRichText field={props.fields?.CopyrightText} />
+            <ContentSdkRichText field={getFieldValue(fields?.CopyrightText)} />
           </div>
         </div>
       </div>
@@ -160,6 +150,8 @@ export const LogoLeft = (props: FooterSTProps) => {
 };
 
 export const LogoRight = (props: FooterSTProps) => {
+  const fields = getDatasource(props.fields);
+
   return (
     <section
       className={`relative bg-primary pb-8 bg-cover bg-center ${props.params.styles}`}
@@ -170,7 +162,7 @@ export const LogoRight = (props: FooterSTProps) => {
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2">
           <h2 className="lg:order-2 text-4xl lg:text-7xl mb-10 lg:mb-0 lg:text-right uppercase">
-            <ContentSdkText field={props.fields?.Title} />
+            <ContentSdkText field={getFieldValue(fields?.Title)} />
           </h2>
           <div className="lg:flex items-start gap-12">
             <div className="mb-6 lg:mb-0 font-(family-name:--font-heading) uppercase text-2xl">
@@ -192,9 +184,9 @@ export const LogoRight = (props: FooterSTProps) => {
           </div>
         </div>
         <div className="flex flex-col gap-4 items-center lg:flex-row lg:justify-between mt-8">
-          <SocialLinks fields={props.fields} />
+          <SocialLinks fields={fields} />
           <div>
-            <ContentSdkRichText field={props.fields?.CopyrightText} />
+            <ContentSdkRichText field={getFieldValue(fields?.CopyrightText)} />
           </div>
         </div>
       </div>
@@ -203,6 +195,8 @@ export const LogoRight = (props: FooterSTProps) => {
 };
 
 export const Centered = (props: FooterSTProps) => {
+  const fields = getDatasource(props.fields);
+
   return (
     <section
       className={`relative bg-primary py-8 lg:py-20 bg-cover bg-center ${props.params.styles}`}
@@ -213,7 +207,7 @@ export const Centered = (props: FooterSTProps) => {
       <div className="relative container mx-auto px-4 z-20">
         <div className="grid lg:grid-cols-3 lg:gap-4">
           <h2 className="text-4xl lg:text-5xl mb-10 lg:mb-0 uppercase">
-            <ContentSdkText field={props.fields?.Title} />
+            <ContentSdkText field={getFieldValue(fields?.Title)} />
           </h2>
           <div>
             <div className="mb-6 lg:mb-12 font-(family-name:--font-heading) uppercase text-2xl">
@@ -234,9 +228,9 @@ export const Centered = (props: FooterSTProps) => {
             </div>
           </div>
           <div className="flex flex-col gap-4 items-center lg:items-end lg:self-end mt-8">
-            <SocialLinks fields={props.fields} />
+            <SocialLinks fields={fields} />
             <div>
-              <ContentSdkRichText field={props.fields.CopyrightText} />
+              <ContentSdkRichText field={getFieldValue(fields?.CopyrightText)} />
             </div>
           </div>
         </div>

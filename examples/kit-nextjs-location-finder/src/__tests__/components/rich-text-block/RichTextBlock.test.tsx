@@ -88,7 +88,6 @@ describe('RichTextBlock Component', () => {
         params={mockParams}
         rendering={mockRendering}
         page={mockPageBase}
-        componentMap={new Map()}
       />
     );
 
@@ -109,7 +108,6 @@ describe('RichTextBlock Component', () => {
         params={{}}
         rendering={mockRendering}
         page={mockPageBase}
-        componentMap={new Map()}
       />
     );
     expect(screen.getByText('Rich text')).toBeInTheDocument();

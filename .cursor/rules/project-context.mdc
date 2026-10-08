@@ -19,7 +19,8 @@ Repository Structure:
 ## Starter Applications
 
 Available Examples:
-- `basic-nextjs` - Simple Next.js starter with basic XM Cloud integration
+- `basic-nextjs` - Simple Next.js starter with basic XM Cloud integration (App Router)
+- `basic-nextjs-pages-router` - Minimal Pages Router baseline for legacy patterns
 - `kit-nextjs-article-starter` - **Solterra & Co.** - Editorial-style template for lifestyle brands
 - `kit-nextjs-location-finder` - **Alaris** - Car brand template with location finder functionality
 - `kit-nextjs-product-listing` - **SYNC** - Product-focused template for audio gear companies
@@ -35,7 +36,7 @@ Each starter demonstrates:
 ## Technology Stack
 
 Core Technologies:
-- **Next.js 14+** - React framework with App Router and Pages Router support
+- **Next.js 14+** - React framework with App Router (all starters except `basic-nextjs-pages-router`)
 - **TypeScript** - Strict type safety throughout all components
 - **Sitecore XM Cloud** - Headless content management and delivery
 - **Sitecore Content SDK** - Modern SDK for XM Cloud integration

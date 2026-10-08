@@ -17,10 +17,12 @@ import {
 } from './testimonial-carousel.props';
 import { Default as TestimonialCarouselItem } from './TestimonialCarouselItem';
 import { NoDataFallback } from '@/utils/NoDataFallback';
+import { getDatasource } from '@/lib/component-props';
 
 export const Default: React.FC<TestimonialCarouselProps> = (props) => {
   const { fields } = props || {};
-  const { children } = fields?.data?.datasource ?? {};
+  const datasource = getDatasource(fields);
+  const { children } = datasource ?? {};
   const [api, setApi] = useState<CarouselApi>();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(true);

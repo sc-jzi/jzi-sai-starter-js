@@ -1,13 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import type { ReactNode } from 'react';
-
-type NavigationMenuToggleProps = {
-  isEditing: boolean;
-  onToggle: (event?: React.MouseEvent<HTMLElement>, flag?: boolean) => void;
-  children: ReactNode;
-};
+import { NavigationMenuToggleProps } from './sxa-navigation-menu-toggle.props';
 
 /**
  * Client component for handling navigation menu toggle state

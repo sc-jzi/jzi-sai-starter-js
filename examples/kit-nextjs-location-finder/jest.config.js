@@ -15,6 +15,7 @@ const customJestConfig = {
     '^sitecore\\.config$': '<rootDir>/sitecore.config.ts',
     // Handle module aliases (should match paths in tsconfig.json)
     '^@/(.*)$': '<rootDir>/src/$1',
+    '^src/(.*)$': '<rootDir>/src/$1',
     '^components/(.*)$': '<rootDir>/src/components/$1',
     '^lib/(.*)$': '<rootDir>/src/lib/$1',
     '^temp/(.*)$': '<rootDir>/src/temp/$1',
@@ -36,6 +37,7 @@ const customJestConfig = {
   transformIgnorePatterns: [
     '/node_modules/',
     '^.+\\.module\\.(css|sass|scss)$',
+    'node_modules/(?!(?:@sitecore-content-sdk|@sitecore-feaas|lucide-react|change-case)/)',
   ],
   testMatch: [
     '<rootDir>/src/__tests__/**/*.test.{js,ts,tsx}',

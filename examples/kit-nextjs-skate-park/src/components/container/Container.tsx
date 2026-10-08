@@ -1,14 +1,7 @@
 import React, { JSX } from 'react';
-import { ComponentProps } from 'lib/component-props';
 import componentMap from '.sitecore/component-map';
 import { AppPlaceholder } from "@sitecore-content-sdk/nextjs";
-
-interface ContainerProps extends ComponentProps {
-  params: ComponentProps["params"] & {
-    BackgroundImage?: string;
-    DynamicPlaceholderId: string;
-  };
-}
+import { ContainerProps } from './container.props';
 
 const Container = ({
   params,

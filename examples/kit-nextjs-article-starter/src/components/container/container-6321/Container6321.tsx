@@ -3,21 +3,12 @@ import {
   isContainerPlaceholderEmpty,
 } from '@/components/container/container.util';
 import { cn } from '@/lib/utils';
-import { ComponentProps } from '@/lib/component-props';
-
-import type { JSX } from 'react';
 import componentMap from '.sitecore/component-map';
 import { AppPlaceholder } from '@sitecore-content-sdk/nextjs';
-
-export type Container6321Props = ComponentProps & {
-  col1?: JSX.Element;
-  col2?: JSX.Element;
-  col3?: JSX.Element;
-  col4?: JSX.Element;
-  col5?: JSX.Element;
-  col6?: JSX.Element;
-  children: Element;
-};
+import {
+  Container6321FlexItemProps,
+  Container6321Props,
+} from './container-6321.props';
 
 export const Default: React.FC<Container6321Props> = (props) => {
   const { rendering, col1, col2, col3, col4, col5, col6, page } = props;
@@ -125,11 +116,7 @@ export const Default: React.FC<Container6321Props> = (props) => {
   );
 };
 
-type FlexItemProps = {
-  children: React.ReactNode;
-};
-
-const FlexItem: React.FC<FlexItemProps> = (props) => {
+const FlexItem: React.FC<Container6321FlexItemProps> = (props) => {
   const { children } = props;
   return (
     <div className="w-full p-4 mb-4 md:w-1/2 lg:w-1/3 xl:w-1/6 flex items-start justify-start">

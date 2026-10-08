@@ -1,4 +1,4 @@
-import { IGQLImageField, IGQLTextField, IGQLLinkField, IGQLRichTextField } from 'src/types/igql';
+import { IGQLImageField, IGQLTextField, IGQLLinkField, IGQLRichTextField } from '@/lib/component-props';
 
 export const defaultTeamSectionProps = {
   params: {

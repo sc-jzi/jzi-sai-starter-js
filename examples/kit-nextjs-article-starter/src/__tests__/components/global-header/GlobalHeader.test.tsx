@@ -446,9 +446,9 @@ describe('GlobalHeader Component', () => {
         fields: {
           data: {
             item: {
-              logo: defaultProps.fields.data.item.logo,
+              logo: defaultProps.fields?.data?.item?.logo,
               children: {} as unknown as { results?: Array<{ link: { jsonValue: LinkField } }> },
-              headerContact: defaultProps.fields.data.item.headerContact,
+              headerContact: defaultProps.fields?.data?.item?.headerContact,
             },
           },
         },

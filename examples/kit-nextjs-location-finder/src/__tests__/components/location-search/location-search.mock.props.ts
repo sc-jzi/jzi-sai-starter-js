@@ -75,7 +75,6 @@ export const mockLocationSearchProps: LocationSearchProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
   defaultZipCode: '30303',
   googleMapsApiKey: 'test-api-key',

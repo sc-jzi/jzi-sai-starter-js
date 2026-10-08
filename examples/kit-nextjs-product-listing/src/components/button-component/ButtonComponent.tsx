@@ -4,7 +4,7 @@ import React, { type JSX } from 'react';
 import { Default as Icon } from '@/components/icon/Icon';
 import { IconName } from '@/enumerations/Icon.enum';
 import { Link, LinkField, ComponentRendering } from '@sitecore-content-sdk/nextjs';
-import NextLink from 'next/link';
+import { CompatibleLink } from '@/components/content-sdk/CompatibleLink';
 import { ComponentProps } from '@/lib/component-props';
 import { Button } from '@/components/ui/button';
 import { EnumValues } from '@/enumerations/generic.enum';
@@ -75,10 +75,10 @@ const ButtonBase = (
   return (
     <Button asChild variant={variant} size={size} className={className}>
       {isPageEditing ? (
-        <Link field={buttonLink} editable={true} />
+        <CompatibleLink field={buttonLink} editable={true} />
       ) : (
         buttonLink?.value?.href && (
-          <NextLink href={buttonLink.value.href}>
+          <CompatibleLink field={buttonLink} editable={false}>
             {iconPosition === IconPosition.LEADING && icon ? (
               <Icon
                 iconName={iconName ? iconName : IconName.ARROW_LEFT}
@@ -94,7 +94,7 @@ const ButtonBase = (
                 isAriaHidden={ariaHidden}
               />
             ) : null}
-          </NextLink>
+          </CompatibleLink>
         )
       )}
     </Button>
@@ -143,7 +143,7 @@ const EditableButton = (props: {
           ) : null}
         </span>
       ) : (
-        <Link
+        <CompatibleLink
           className={className}
           field={buttonLink}
           editable={isPageEditing}
@@ -156,7 +156,7 @@ const EditableButton = (props: {
           {iconPosition !== IconPosition.LEADING && icon?.value?.src ? (
             <ImageWrapper className={iconClassName} image={icon} aria-hidden={ariaHidden} />
           ) : null}
-        </Link>
+        </CompatibleLink>
       )}
     </Button>
   );
@@ -179,10 +179,10 @@ const Default = (props: ButtonComponentProps): JSX.Element | null => {
     return (
       <Button asChild variant={variant} size={size}>
         {isPageEditing ? (
-          <Link field={buttonLink} editable={true} />
+          <CompatibleLink field={buttonLink} editable={true} />
         ) : (
           buttonLink?.value?.href && (
-            <NextLink href={buttonLink.value.href}>
+            <CompatibleLink field={buttonLink} editable={false}>
               {iconPosition === IconPosition.LEADING && (
                 <Icon iconName={buttonIcon} className={iconClassName} isAriaHidden={ariaHidden} />
               )}
@@ -190,7 +190,7 @@ const Default = (props: ButtonComponentProps): JSX.Element | null => {
               {iconPosition !== IconPosition.LEADING && (
                 <Icon iconName={buttonIcon} className={iconClassName} isAriaHidden={ariaHidden} />
               )}
-            </NextLink>
+            </CompatibleLink>
           )
         )}
       </Button>

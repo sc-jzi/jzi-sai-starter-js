@@ -66,6 +66,5 @@ export const mockHeroProps: HeroProps = {
     componentName: 'Hero',
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };

@@ -5,15 +5,8 @@ import { useState, useEffect, useRef } from 'react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Facebook, Linkedin, Twitter, Link, Check, Mail } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import {
-  Field,
-  Item,
-  ImageField,
-  LinkField,
-  Text,
-  DateField,
-} from '@sitecore-content-sdk/nextjs';
-import { ComponentProps } from '@/lib/component-props';
+import { Text, DateField } from '@sitecore-content-sdk/nextjs';
+import { ArticleHeaderProps } from './article-header.props';
 
 import { NoDataFallback } from '@/utils/NoDataFallback';
 import { Badge } from '@/components/ui/badge';
@@ -31,65 +24,24 @@ import {
   generateArticleSchema,
   generatePersonSchema,
 } from '@/lib/structured-data/schema';
+import { getDatasource, getFieldValue } from '@/lib/component-props';
+import { hasDocument, hasNavigator, isBrowser } from '@/utils/browser';
 
-interface ArticleHeaderParams {
-  [key: string]: any; // eslint-disable-line
-}
-
-type ReferenceField = {
-  id: string;
-  name: string;
-  url?: string;
-  displayName?: string;
-  fields?: {
-    [key: string]: Field | Item[] | ReferenceField | null;
-  };
-};
-
-type AuthorReferenceField = ReferenceField & {
-  fields: PersonItem;
-};
-
-interface ArticleHeaderFields {
-  imageRequired?: { jsonValue: ImageField };
-  eyebrowOptional?: { jsonValue: Field<string> };
-}
-
-interface ArticleHeaderExternalFields {
-  pageHeaderTitle: { jsonValue: Field<string> };
-  pageReadTime?: { jsonValue: Field<string> };
-  pageDisplayDate?: { jsonValue: Field<string> };
-  pageAuthor?: { jsonValue: AuthorReferenceField };
-}
-
-interface ArticleHeaderProps extends ComponentProps {
-  params: ArticleHeaderParams;
-  fields: {
-    data: {
-      datasource: ArticleHeaderFields;
-      externalFields: ArticleHeaderExternalFields;
-    };
-  };
-}
-
-interface PersonItem {
-  personProfileImage?: ImageField;
-  personFirstName: Field<string>;
-  personLastName: Field<string>;
-  personJobTitle?: Field<string>;
-  personBio?: Field<string>;
-  personLinkedIn?: LinkField;
-}
 
 export const Default: React.FC<ArticleHeaderProps> = ({ fields, page }) => {
-  const { imageRequired, eyebrowOptional } = fields?.data?.datasource ?? {};
-  const externalFields = fields?.data?.externalFields ?? {};
-  const {
-    pageHeaderTitle = null,
-    pageReadTime = null,
-    pageDisplayDate = null,
-    pageAuthor = null,
-  } = externalFields;
+  const datasource = getDatasource(fields);
+  const { imageRequired, eyebrowOptional } = datasource ?? {};
+  const externalFields = fields?.data?.externalFields;
+  const pageHeaderTitle = externalFields?.pageHeaderTitle ?? null;
+  const pageReadTime = externalFields?.pageReadTime ?? null;
+  const pageDisplayDate = externalFields?.pageDisplayDate ?? null;
+  const pageAuthor = externalFields?.pageAuthor ?? null;
+  const imageField = getFieldValue(imageRequired);
+  const eyebrowField = getFieldValue(eyebrowOptional);
+  const pageHeaderTitleField = getFieldValue(pageHeaderTitle);
+  const pageReadTimeField = getFieldValue(pageReadTime);
+  const pageDisplayDateField = getFieldValue(pageDisplayDate);
+  const pageAuthorField = getFieldValue(pageAuthor);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const headerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
@@ -106,6 +58,8 @@ export const Default: React.FC<ArticleHeaderProps> = ({ fields, page }) => {
   };
 
   useEffect(() => {
+    if (!isBrowser || !window.matchMedia) return;
+
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
     setPrefersReducedMotion(mediaQuery.matches);
 
@@ -115,6 +69,8 @@ export const Default: React.FC<ArticleHeaderProps> = ({ fields, page }) => {
   }, []);
 
   useEffect(() => {
+    if (!isBrowser) return;
+
     let animationFrameId: number;
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -138,7 +94,7 @@ export const Default: React.FC<ArticleHeaderProps> = ({ fields, page }) => {
   }, []);
 
   if (fields) {
-    const parallaxStyle = imageRequired?.jsonValue?.value?.src
+    const parallaxStyle = imageField?.value?.src
       ? {
           transform: prefersReducedMotion
             ? 'none'
@@ -148,8 +104,10 @@ export const Default: React.FC<ArticleHeaderProps> = ({ fields, page }) => {
       : {};
 
     const handleShare = (platform: string) => {
+      if (!isBrowser) return;
+
       const url = encodeURIComponent(window.location.href);
-      const title = encodeURIComponent(document.title);
+      const title = encodeURIComponent(hasDocument ? document.title : '');
       let shareUrl = '';
 
       switch (platform) {
@@ -167,30 +125,32 @@ export const Default: React.FC<ArticleHeaderProps> = ({ fields, page }) => {
           window.location.href = shareUrl;
           return;
         case 'copy':
-          navigator.clipboard
-            .writeText(window.location.href)
-            .then(() => {
-              // Show toast notification
-              toast({
-                title: 'Link copied!',
-                description: 'The link has been copied to your clipboard.',
-                duration: 3000, // Explicitly set duration
-              });
+          if (hasNavigator() && navigator.clipboard) {
+            navigator.clipboard
+              .writeText(window.location.href)
+              .then(() => {
+                // Show toast notification
+                toast({
+                  title: 'Link copied!',
+                  description: 'The link has been copied to your clipboard.',
+                  duration: 3000, // Explicitly set duration
+                });
 
-              setCopySuccess(true);
+                setCopySuccess(true);
 
-              if (copyNotificationRef.current) {
-                copyNotificationRef.current.textContent = 'Link copied to clipboard';
-              }
-            })
-            .catch((err) => {
-              console.error('Failed to copy: ', err);
-              toast({
-                title: 'Copy failed',
-                description: 'Could not copy the link to clipboard.',
-                variant: 'destructive',
+                if (copyNotificationRef.current) {
+                  copyNotificationRef.current.textContent = 'Link copied to clipboard';
+                }
+              })
+              .catch((err) => {
+                console.error('Failed to copy: ', err);
+                toast({
+                  title: 'Copy failed',
+                  description: 'Could not copy the link to clipboard.',
+                  variant: 'destructive',
+                });
               });
-            });
+          }
           return;
       }
 
@@ -248,44 +208,44 @@ export const Default: React.FC<ArticleHeaderProps> = ({ fields, page }) => {
     ];
 
     // Generate Article schema structured data
-    const articleSchema = pageHeaderTitle?.jsonValue?.value
+    const articleSchema = pageHeaderTitleField?.value
       ? generateArticleSchema({
-          headline: pageHeaderTitle.jsonValue.value,
-          description: pageHeaderTitle.jsonValue.value,
-          image: imageRequired?.jsonValue?.value?.src
-            ? [imageRequired.jsonValue.value.src]
+          headline: pageHeaderTitleField.value,
+          description: pageHeaderTitleField.value,
+          image: imageField?.value?.src
+            ? [imageField.value.src]
             : undefined,
-          datePublished: pageDisplayDate?.jsonValue?.value
-            ? new Date(String(pageDisplayDate.jsonValue.value)).toISOString()
+          datePublished: pageDisplayDateField?.value
+            ? new Date(String(pageDisplayDateField.value)).toISOString()
             : undefined,
-          dateModified: pageDisplayDate?.jsonValue?.value
-            ? new Date(String(pageDisplayDate.jsonValue.value)).toISOString()
+          dateModified: pageDisplayDateField?.value
+            ? new Date(String(pageDisplayDateField.value)).toISOString()
             : undefined,
-          author: pageAuthor?.jsonValue
+          author: pageAuthorField
             ? {
-                name: `${pageAuthor.jsonValue.fields?.personFirstName?.value || ''} ${
-                  pageAuthor.jsonValue.fields?.personLastName?.value || ''
+                name: `${pageAuthorField.fields?.personFirstName?.value || ''} ${
+                  pageAuthorField.fields?.personLastName?.value || ''
                 }`.trim(),
               }
             : undefined,
-          url: typeof window !== 'undefined' ? window.location.href : undefined,
+          url: isBrowser ? window.location.href : undefined,
         })
       : null;
 
     // Generate Person schema for author
-    const personSchema = pageAuthor?.jsonValue
+    const personSchema = pageAuthorField
       ? generatePersonSchema({
-          name: `${pageAuthor.jsonValue.fields?.personFirstName?.value || ''} ${
-            pageAuthor.jsonValue.fields?.personLastName?.value || ''
+          name: `${pageAuthorField.fields?.personFirstName?.value || ''} ${
+            pageAuthorField.fields?.personLastName?.value || ''
           }`.trim(),
-          jobTitle: pageAuthor.jsonValue.fields?.personJobTitle?.value,
-          image: pageAuthor.jsonValue.fields?.personProfileImage?.value?.src,
+          jobTitle: pageAuthorField.fields?.personJobTitle?.value,
+          image: pageAuthorField.fields?.personProfileImage?.value?.src,
         })
       : null;
 
     // Get ISO date string for time element
-    const publishedDateISO = pageDisplayDate?.jsonValue?.value
-      ? new Date(String(pageDisplayDate.jsonValue.value)).toISOString()
+    const publishedDateISO = pageDisplayDateField?.value
+      ? new Date(String(pageDisplayDateField.value)).toISOString()
       : undefined;
 
     return (
@@ -304,8 +264,8 @@ export const Default: React.FC<ArticleHeaderProps> = ({ fields, page }) => {
               style={parallaxStyle}
             >
               <ImageWrapper
-                image={imageRequired?.jsonValue}
-                alt={pageHeaderTitle?.jsonValue.value}
+                image={imageField}
+                alt={pageHeaderTitleField?.value}
                 className="h-full w-full object-cover"
                 wrapperClass="h-full w-full"
                 priority
@@ -331,7 +291,9 @@ export const Default: React.FC<ArticleHeaderProps> = ({ fields, page }) => {
                   variant="link"
                   onClick={(e) => {
                     e.preventDefault();
-                    window.history.back();
+                    if (isBrowser) {
+                      window.history.back();
+                    }
                   }}
                 >
                   <Icon iconName="arrow-left" className="ml-2" />
@@ -349,34 +311,34 @@ export const Default: React.FC<ArticleHeaderProps> = ({ fields, page }) => {
                   )}
                 </Button>
                 {/* Category Badge */}
-                {(eyebrowOptional?.jsonValue?.value || isPageEditing) && (
+                {(eyebrowField?.value || isPageEditing) && (
                   <Badge className="bg-accent text-accent-foreground hover:bg-accent font-body mx-auto  mb-4 inline-block text-[14px] font-medium tracking-tighter">
-                    <Text field={eyebrowOptional?.jsonValue} />
+                    <Text field={eyebrowField} />
                   </Badge>
                 )}
                 {/* Title */}
                 <Text
                   tag="h1"
                   className="@md:text-[62px] @md:mb-0 font-heading line-height-[69px] mx-auto max-w-4xl text-pretty px-6 text-center text-4xl font-normal tracking-tighter text-white"
-                  field={pageHeaderTitle?.jsonValue}
+                  field={pageHeaderTitleField}
                 />
                 {/* Read Time and Date - Centered */}
-                {(pageReadTime?.jsonValue?.value ||
-                  pageDisplayDate?.jsonValue?.value ||
+                {(pageReadTimeField?.value ||
+                  pageDisplayDateField?.value ||
                   isPageEditing) && (
                   <div className="@md:flex-row @xl:px-8 mb-8 flex flex-col items-center justify-center space-x-2 px-4 text-center text-sm text-white subpixel-antialiased">
-                    {(pageReadTime?.jsonValue?.value || isPageEditing) && (
+                    {(pageReadTimeField?.value || isPageEditing) && (
                       <Text
                         tag="span"
-                        field={pageReadTime?.jsonValue}
+                        field={pageReadTimeField}
                         className="@md:inline-block block text-pretty"
                       />
                     )}
-                    {((pageReadTime?.jsonValue?.value && pageDisplayDate?.jsonValue?.value) ||
+                    {((pageReadTimeField?.value && pageDisplayDateField?.value) ||
                       isPageEditing) && (
                       <span className="@md:inline-block hidden text-pretty">•</span>
                     )}
-                    {pageDisplayDate?.jsonValue?.value && (
+                    {pageDisplayDateField?.value && (
                       <time
                         dateTime={publishedDateISO}
                         itemProp="datePublished"
@@ -384,7 +346,7 @@ export const Default: React.FC<ArticleHeaderProps> = ({ fields, page }) => {
                       >
                         <DateField
                           tag="span"
-                          field={pageDisplayDate?.jsonValue}
+                          field={pageDisplayDateField}
                           render={(date) => formatDateInUTC(String(date))}
                         />
                       </time>
@@ -394,27 +356,27 @@ export const Default: React.FC<ArticleHeaderProps> = ({ fields, page }) => {
               </div>
               <div className="@lg:grid @lg:max-w-screen-3xl @lg:mx-auto @lg:w-full @lg:gap-8 @lg:grid-cols-12 mx-6 mb-auto grid grid-cols-2 items-start justify-between">
                 <div className="@lg:col-span-3 @lg:justify-end @lg:pt-4 @lg:h-[250px] @lg:items-start col-span-1 flex h-[auto] flex-wrap items-center justify-center gap-4 p-6 subpixel-antialiased">
-                  {pageAuthor?.jsonValue && (
+                  {pageAuthorField && (
                     <div className="grid gap-y-3">
                       <p className="flex min-h-10 flex-col justify-center text-sm text-white">
                         {dictionary.ARTICLE_HEADER_AUTHOR_LABEL}
                       </p>
                       <Avatar>
                         <AvatarImage
-                          src={pageAuthor?.jsonValue?.fields?.personProfileImage?.value?.src}
-                          alt={`${pageAuthor?.jsonValue?.fields?.personFirstName?.value} ${pageAuthor?.jsonValue?.fields?.personLastName?.value}`}
+                          src={pageAuthorField?.fields?.personProfileImage?.value?.src}
+                          alt={`${pageAuthorField?.fields?.personFirstName?.value} ${pageAuthorField?.fields?.personLastName?.value}`}
                         />
-                        <AvatarFallback>{`${pageAuthor?.jsonValue?.fields?.personFirstName?.value} ${pageAuthor?.jsonValue?.fields?.personLastName?.value}`}</AvatarFallback>
+                        <AvatarFallback>{`${pageAuthorField?.fields?.personFirstName?.value} ${pageAuthorField?.fields?.personLastName?.value}`}</AvatarFallback>
                       </Avatar>
                       <div className="relative">
                         <p className="text-pretty font-medium text-white">
-                          {pageAuthor?.jsonValue?.fields?.personFirstName?.value}{' '}
-                          {pageAuthor?.jsonValue?.fields?.personLastName?.value}
+                          {pageAuthorField?.fields?.personFirstName?.value}{' '}
+                          {pageAuthorField?.fields?.personLastName?.value}
                         </p>
-                        {pageAuthor?.jsonValue?.fields?.personJobTitle && (
+                        {pageAuthorField?.fields?.personJobTitle && (
                           <Text
                             tag={'p'}
-                            field={pageAuthor?.jsonValue?.fields?.personJobTitle}
+                            field={pageAuthorField?.fields?.personJobTitle}
                             className="text-pretty text-sm text-white"
                           />
                         )}
@@ -434,8 +396,8 @@ export const Default: React.FC<ArticleHeaderProps> = ({ fields, page }) => {
                 {/* Featured Image */}
                 <figure className="@lg:col-span-6 relative z-10 col-span-2 mx-auto flex aspect-[16/9] w-full max-w-[800px] justify-center overflow-hidden rounded-[24px]">
                   <ImageWrapper
-                    image={imageRequired?.jsonValue}
-                    alt={pageHeaderTitle?.jsonValue?.value}
+                    image={imageField}
+                    alt={pageHeaderTitleField?.value}
                     className="h-full w-full object-cover "
                     wrapperClass="w-full relative"
                     priority

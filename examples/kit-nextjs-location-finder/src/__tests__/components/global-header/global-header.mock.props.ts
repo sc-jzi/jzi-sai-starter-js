@@ -102,5 +102,4 @@ export const mockGlobalHeaderProps: GlobalHeaderProps = {
     componentName: 'GlobalHeader',
   },
   page: mockPageBase,
-  componentMap: new Map(),
 };

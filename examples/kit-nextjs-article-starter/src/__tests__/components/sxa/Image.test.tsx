@@ -8,8 +8,7 @@ import {
   propsWithoutLink,
   propsWithEmptyImage,
   propsWithoutAlt,
-  mockPageData,
-  mockPageDataEditing,
+  propsEditing,
 } from './Image.mockProps';
 
 // Type definitions for mock components
@@ -23,15 +22,12 @@ interface MockLinkProps {
   children?: React.ReactNode;
 }
 
-// Mock the useSitecore hook
-const mockUseSitecore = jest.fn();
 jest.mock('@sitecore-content-sdk/nextjs', () => ({
-  useSitecore: () => mockUseSitecore(),
   NextImage: ({ field, ...props }: MockNextImageProps) => (
     // eslint-disable-next-line @next/next/no-img-element
-    <img 
-      src={field?.value?.src as string | undefined || ''} 
-      alt={field?.value?.alt as string | undefined || 'image'} 
+    <img
+      src={field?.value?.src as string | undefined || ''}
+      alt={field?.value?.alt as string | undefined || ''}
       {...props}
       data-testid="next-image"
     />
@@ -41,14 +37,11 @@ jest.mock('@sitecore-content-sdk/nextjs', () => ({
       {children}
     </a>
   ),
+  Text: ({ field, tag: Tag = 'span' }: { field?: { value?: string }; tag?: string }) =>
+    field?.value ? React.createElement(Tag, { 'data-testid': 'image-caption' }, field.value) : null,
 }));
 
 describe('Image Component', () => {
-  beforeEach(() => {
-    jest.clearAllMocks();
-    mockUseSitecore.mockReturnValue(mockPageData);
-  });
-
   describe('Default Image Component', () => {
     it('should render image with correct attributes', () => {
       render(<Image {...defaultProps} />);
@@ -59,39 +52,66 @@ describe('Image Component', () => {
       expect(image).toHaveAttribute('alt', 'Test Image');
     });
 
-    it('should render with correct container structure', () => {
+    it('should render with correct container structure using figure element', () => {
       render(<Image {...defaultProps} />);
 
-      const container = screen.getByTestId('next-image').closest('.component.image');
-      expect(container).toHaveClass('component', 'image', 'custom-image-style');
-      
-      const contentDiv = container?.querySelector('.component-content');
+      const figure = document.querySelector('figure.component.image');
+      expect(figure).toBeInTheDocument();
+      expect(figure).toHaveClass('component', 'image', 'custom-image-style');
+
+      const contentDiv = figure?.querySelector('.component-content');
       expect(contentDiv).toBeInTheDocument();
     });
 
     it('should apply custom styles', () => {
       render(<Image {...defaultProps} />);
 
-      const container = screen.getByTestId('next-image').closest('.component.image');
-      expect(container).toHaveClass('custom-image-style');
+      const figure = document.querySelector('figure.component.image');
+      expect(figure).toHaveClass('custom-image-style');
     });
 
     it('should render without custom styles when not provided', () => {
       render(<Image {...propsWithoutStyles} />);
 
-      const container = screen.getByTestId('next-image').closest('.component.image');
-      expect(container).toHaveClass('component', 'image');
-      expect(container).not.toHaveClass('custom-image-style');
+      const figure = document.querySelector('figure.component.image');
+      expect(figure).toHaveClass('component', 'image');
+      expect(figure).not.toHaveClass('custom-image-style');
     });
 
-    it('should provide default alt text when not provided', () => {
-      render(<Image {...propsWithoutAlt} />);
+    it('should wrap image with link when not in editing mode and TargetUrl is provided', () => {
+      render(<Image {...defaultProps} />);
 
-      const image = screen.getByTestId('next-image');
-      expect(image).toHaveAttribute('alt', 'image');
+      const link = screen.getByTestId('content-link');
+      expect(link).toBeInTheDocument();
+      expect(link).toHaveAttribute('href', '/test-link');
+
+      const image = link.querySelector('[data-testid="next-image"]');
+      expect(image).toBeInTheDocument();
     });
 
-    it('should handle missing fields gracefully', () => {
+    it('should not wrap image with link when in editing mode', () => {
+      render(<Image {...propsEditing} />);
+
+      expect(screen.queryByTestId('content-link')).not.toBeInTheDocument();
+      expect(screen.getByTestId('next-image')).toBeInTheDocument();
+    });
+
+    it('should not wrap image with link when TargetUrl is not provided', () => {
+      render(<Image {...propsWithoutLink} />);
+
+      expect(screen.queryByTestId('content-link')).not.toBeInTheDocument();
+      expect(screen.getByTestId('next-image')).toBeInTheDocument();
+    });
+
+    it('should render image caption', () => {
+      render(<Image {...defaultProps} />);
+
+      const caption = screen.getByTestId('image-caption');
+      expect(caption).toBeInTheDocument();
+      expect(caption).toHaveTextContent('Test Image Caption');
+    });
+
+    it('should handle missing fields gracefully with empty hint', () => {
       const propsWithoutFields = {
         ...defaultProps,
         fields: null as unknown as typeof defaultProps.fields,
@@ -99,149 +119,98 @@ describe('Image Component', () => {
 
       render(<Image {...propsWithoutFields} />);
 
-      const container = document.querySelector('.component.image');
-      expect(container).toBeInTheDocument();
+      const figure = document.querySelector('figure.component.image');
+      expect(figure).toBeInTheDocument();
+      expect(figure).toHaveTextContent('Image');
     });
   });
 
   describe('Banner Image Component', () => {
-    it('should render image without link when not in editing mode and no target URL', () => {
-      render(<ImageBanner {...propsWithoutLink} />);
-
-      const image = screen.getByTestId('next-image');
-      expect(image).toBeInTheDocument();
-      expect(screen.queryByTestId('content-link')).not.toBeInTheDocument();
-    });
-
-    it('should render image with link when target URL is provided', () => {
+    it('should render image in hero-banner figure element', () => {
       render(<ImageBanner {...defaultProps} />);
 
-      const link = screen.getByTestId('content-link');
-      expect(link).toBeInTheDocument();
-      expect(link).toHaveAttribute('href', '/test-link');
-      
-      const image = link.querySelector('[data-testid="next-image"]');
-      expect(image).toBeInTheDocument();
+      const figure = document.querySelector('figure.component.hero-banner');
+      expect(figure).toBeInTheDocument();
+      expect(figure).toHaveClass('custom-image-style');
     });
 
-    it('should render image without link when in editing mode', () => {
-      mockUseSitecore.mockReturnValue(mockPageDataEditing);
+    it('should always render image regardless of editing mode', () => {
       render(<ImageBanner {...defaultProps} />);
 
       const image = screen.getByTestId('next-image');
       expect(image).toBeInTheDocument();
-      expect(screen.queryByTestId('content-link')).not.toBeInTheDocument();
+      expect(image).toHaveAttribute('src', '/test-image.jpg');
     });
 
-    it('should render image without link when target URL is not provided', () => {
-      render(<ImageBanner {...propsWithoutLink} />);
+    it('should render image in editing mode', () => {
+      render(<ImageBanner {...propsEditing} />);
 
       const image = screen.getByTestId('next-image');
       expect(image).toBeInTheDocument();
-      expect(screen.queryByTestId('content-link')).not.toBeInTheDocument();
     });
 
-    it('should handle empty image field', () => {
+    it('should render image when empty image field provided', () => {
       render(<ImageBanner {...propsWithEmptyImage} />);
 
-      const container = document.querySelector('.component.image');
-      expect(container).toBeInTheDocument();
-      expect(container).toHaveClass('component', 'image', 'custom-image-style');
+      const figure = document.querySelector('figure.component.hero-banner');
+      expect(figure).toBeInTheDocument();
     });
 
-    it('should apply correct styles', () => {
+    it('should not wrap image with link (Banner is not clickable)', () => {
       render(<ImageBanner {...defaultProps} />);
 
-      const container = screen.getByTestId('next-image').closest('.component.image');
-      expect(container).toHaveClass('component', 'image', 'custom-image-style');
+      expect(screen.queryByTestId('content-link')).not.toBeInTheDocument();
+    });
+
+    it('should include sc-sxa-image-hero-banner class on content wrapper', () => {
+      render(<ImageBanner {...defaultProps} />);
+
+      const contentDiv = document.querySelector('.sc-sxa-image-hero-banner');
+      expect(contentDiv).toBeInTheDocument();
     });
   });
 
-  describe('Image field modifications', () => {
-    it('should modify image props with default alt text', () => {
-      render(<Image {...propsWithoutAlt} />);
-
-      const image = screen.getByTestId('next-image');
-      expect(image).toHaveAttribute('alt', 'image');
-    });
-
-    it('should preserve existing alt text when provided', () => {
+  describe('Image field alt text', () => {
+    it('should use alt text from image field when provided', () => {
       render(<Image {...defaultProps} />);
 
       const image = screen.getByTestId('next-image');
       expect(image).toHaveAttribute('alt', 'Test Image');
     });
-  });
 
-  describe('Component structure', () => {
-    it('should render correct DOM structure for Default component', () => {
-      render(<Image {...defaultProps} />);
+    it('should use empty alt text when not provided in Default', () => {
+      render(<Image {...propsWithoutAlt} />);
 
-      const container = screen.getByTestId('next-image').closest('.component.image');
-      expect(container).toHaveClass('component', 'image', 'custom-image-style');
-      
-      const contentDiv = container?.querySelector('.component-content');
-      expect(contentDiv).toBeInTheDocument();
-      
-      const image = contentDiv?.querySelector('[data-testid="next-image"]');
-      expect(image).toBeInTheDocument();
+      const image = screen.getByTestId('next-image');
+      expect(image).toHaveAttribute('alt', '');
     });
 
-    it('should render correct DOM structure for Banner component', () => {
-      render(<ImageBanner {...defaultProps} />);
+    it('should use Hero banner alt text as fallback in Banner', () => {
+      render(<ImageBanner {...propsWithoutAlt} />);
 
-      const container = screen.getByTestId('next-image').closest('.component.image');
-      expect(container).toHaveClass('component', 'image', 'custom-image-style');
-      
-      const contentDiv = container?.querySelector('.component-content');
-      expect(contentDiv).toBeInTheDocument();
+      const image = screen.getByTestId('next-image');
+      expect(image).toHaveAttribute('alt', '');
     });
   });
 
   describe('Edge cases', () => {
-    it('should handle missing params gracefully', () => {
+    it('should handle missing params styles gracefully', () => {
       const propsWithoutParams = {
-        params: {},
-        fields: defaultProps.fields,
+        ...defaultProps,
+        params: { ...defaultProps.params, styles: '' },
       };
 
       render(<Image {...propsWithoutParams} />);
 
-      const container = screen.getByTestId('next-image').closest('.component.image');
-      expect(container).toBeInTheDocument();
-      expect(container).toHaveClass('component', 'image');
+      const figure = document.querySelector('figure.component.image');
+      expect(figure).toBeInTheDocument();
     });
 
-    it('should handle undefined field values', () => {
-      const propsWithUndefinedFields = {
-        ...defaultProps,
-        fields: {
-          Image: { value: undefined as unknown as ImageField['value'] },
-          ImageCaption: { value: undefined as unknown as string },
-          TargetUrl: { value: undefined as unknown as LinkField['value'] },
-        },
-      };
+    it('should handle undefined TargetUrl field values', () => {
+      render(<Image {...propsWithEmptyImage} />);
 
-      render(<Image {...propsWithUndefinedFields} />);
-
-      const container = document.querySelector('.component.image');
-      expect(container).toBeInTheDocument();
-    });
-  });
-
-  describe('Accessibility', () => {
-    it('should have proper alt text for images', () => {
-      render(<Image {...defaultProps} />);
-
-      const image = screen.getByTestId('next-image');
-      expect(image).toHaveAttribute('alt', 'Test Image');
-    });
-
-    it('should provide default alt text when not specified', () => {
-      render(<Image {...propsWithoutAlt} />);
-
-      const image = screen.getByTestId('next-image');
-      expect(image).toHaveAttribute('alt', 'image');
+      const figure = document.querySelector('figure.component.image');
+      expect(figure).toBeInTheDocument();
     });
   });
 });

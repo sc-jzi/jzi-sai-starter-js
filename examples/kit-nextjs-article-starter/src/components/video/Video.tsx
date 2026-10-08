@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import { useSitecore } from '@sitecore-content-sdk/nextjs';
-import { VideoComponentFields, VideoComponentProps } from './video-props';
+import { VideoComponentFields, VideoComponentProps } from './video.props';
 import { VideoPlayer as VideoPlayerDev } from './VideoPlayer.dev';
 import { VideoModal } from './VideoModal.dev';
 import { useVideoModal } from '../../hooks/useVideoModal';

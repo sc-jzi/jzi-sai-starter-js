@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { IGQLTextField } from 'types/igql';
+import { IGQLTextField } from '@/lib/component-props';
 import type { Page } from '@sitecore-content-sdk/nextjs';
 
 /**
@@ -117,8 +117,6 @@ jest.mock('shadcd/components/ui/tabs', () => ({
     </div>
   ),
 }));
-
-jest.mock('../../lib/component-props', () => ({}), { virtual: true });
 
 const defaultProps = {
   params: {

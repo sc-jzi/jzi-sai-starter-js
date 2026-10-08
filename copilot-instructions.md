@@ -35,7 +35,7 @@ Before work is framed as a **pull request to the official upstream** repository,
 ## Technology Stack
 
 ### Core Technologies
-- **Next.js 14+** - React framework with App Router and Pages Router support
+- **Next.js 14+** - React framework with App Router (all starters except `basic-nextjs-pages-router`)
 - **TypeScript** - Strict type safety throughout all components
 - **Sitecore XM Cloud** - Headless content management and delivery
 - **Sitecore Content SDK** - Modern SDK for XM Cloud integration (`@sitecore-content-sdk/nextjs`)
@@ -58,10 +58,14 @@ Before work is framed as a **pull request to the official upstream** repository,
 ### File Organization:
 - Each starter is independent and self-contained; do not share code or packages across starters—copy utilities and components as needed
 - Component directories contain main file, variants, and props
-- Main component file should contain variants and props following the Locality of Behavior pattern
+- Main component file should contain variants and rendering logic; keep props/interfaces in sidecar files (`*.props.ts` / `*.props.tsx`)
 - Using `.dev.tsx` files for variant implementations is discouraged unless maintainability becomes difficult for the component and separation cannot be avoided
 - Shared utilities in dedicated directories (within each starter)
 - Group UI components in `ui/` subdirectory
+- Exclude sidecar props files from component-map generation in each starter `sitecore.cli.config.ts` with:
+  - `src/components/**/*.props.ts`
+  - `src/components/**/*.props.tsx`
+- After props-file changes, run `npm run sitecore-tools:generate-map` and confirm sidecar files are not registered in `.sitecore/component-map.ts`.
 
 ## Coding Standards
 

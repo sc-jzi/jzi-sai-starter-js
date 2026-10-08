@@ -2,46 +2,22 @@
 
 import { useState } from 'react';
 import { cn } from '@/lib/utils';
-import { Text, Field, ImageField, LinkField } from '@sitecore-content-sdk/nextjs';
+import { Text } from '@sitecore-content-sdk/nextjs';
 import { Default as ImageWrapper } from '@/components/image/ImageWrapper.dev';
 import { NoDataFallback } from '@/utils/NoDataFallback';
 import { m, AnimatePresence } from 'framer-motion';
 import { ButtonBase as Button } from '@/components/button-component/ButtonComponent';
-import { ComponentProps } from '@/lib/component-props';
-
-interface VerticalImageAccordionParams {
-  [key: string]: any; // eslint-disable-line
-}
-
-interface AccordionItem {
-  title: { jsonValue: Field<string> };
-  description: { jsonValue: Field<string> };
-  image: ImageField;
-  cta?: { jsonValue: LinkField };
-}
-
-interface VerticalImageAccordionFields {
-  data: {
-    datasource: {
-      title?: { jsonValue: Field<string> };
-      items?: {
-        results: AccordionItem[];
-      };
-    };
-  };
-}
-
-interface VerticalImageAccordionProps extends ComponentProps {
-  params: VerticalImageAccordionParams;
-  fields: VerticalImageAccordionFields;
-}
+import { getDatasource, getFieldValue } from '@/lib/component-props';
+import type { VerticalImageAccordionProps } from './vertical-image-accordion.props';
 
 export const Default: React.FC<VerticalImageAccordionProps> = (props) => {
   const { fields, page } = props;
   const [activeIndex, setActiveIndex] = useState<number>(1);
   const [isExpanding, setIsExpanding] = useState(false);
 
-  const { title, items } = fields?.data?.datasource ?? {};
+  const datasource = getDatasource(fields);
+  const { title, items } = datasource ?? {};
+  const titleField = getFieldValue(title);
 
   const handleClick = (index: number) => {
     setIsExpanding(true);
@@ -62,12 +38,12 @@ export const Default: React.FC<VerticalImageAccordionProps> = (props) => {
       <div
         className="relative mx-auto max-w-7xl my-6 px-4 py-16 sm:px-6 lg:px-8 @container bg-primary rounded-default"
         role="region"
-        aria-label={title?.jsonValue?.value || 'Image Accordion'}
+        aria-label={titleField?.value || 'Image Accordion'}
       >
-        {title && (
+        {titleField && (
           <Text
             tag="h2"
-            field={title.jsonValue}
+            field={titleField}
             className="mb-16 text-4xl font-heading font-light tracking-tight text-primary-foreground @lg:text-6xl"
           />
         )}
@@ -77,7 +53,13 @@ export const Default: React.FC<VerticalImageAccordionProps> = (props) => {
           role="tablist"
           aria-orientation="vertical"
         >
-          {items?.results.map((item, index) => (
+          {items?.results.map((item, index) => {
+            const imageField = getFieldValue(item?.image);
+            const titleItemField = getFieldValue(item?.title);
+            const descriptionField = getFieldValue(item?.description);
+            const ctaField = getFieldValue(item?.cta);
+
+            return (
             <m.div
               key={index}
               className={cn(
@@ -105,11 +87,11 @@ export const Default: React.FC<VerticalImageAccordionProps> = (props) => {
                   '@md:h-[513px]'
                 )}
                 role="img"
-                aria-label={item?.image?.value?.alt?.toString() || `Image ${index + 1}`}
+                aria-label={imageField?.value?.alt?.toString() || `Image ${index + 1}`}
               >
-                {item?.image && (
+                {imageField && (
                   <ImageWrapper
-                    image={item.image}
+                    image={imageField}
                     className="rounded-default h-full w-full object-cover"
                     wrapperClass="h-full w-full"
                     aria-hidden="true"
@@ -140,10 +122,10 @@ export const Default: React.FC<VerticalImageAccordionProps> = (props) => {
                     activeIndex === index && isExpanding && '@md:opacity-0'
                   )}
                 >
-                  {item?.title && (
+                  {titleItemField && (
                     <Text
                       tag="h3"
-                      field={item.title.jsonValue}
+                      field={titleItemField}
                       className="font-accent text-2xl font-medium text-primary-foreground"
                       id={`tab-${index}`}
                     />
@@ -168,19 +150,19 @@ export const Default: React.FC<VerticalImageAccordionProps> = (props) => {
                         opacity: { delay: 0.2 },
                       }}
                     >
-                      {item?.description && (
+                      {descriptionField && (
                         <Text
                           tag="p"
-                          field={item.description.jsonValue}
+                          field={descriptionField}
                           className="mt-2 text-primary-foreground"
                         />
                       )}
-                      {item?.cta?.jsonValue && (
+                      {ctaField && (
                         <Button
-                          buttonLink={item.cta.jsonValue}
+                          buttonLink={ctaField}
                           variant="secondary"
                           className="mt-4 inline-flex w-fit items-center justify-center px-8 py-2.5 text-sm font-heading font-medium"
-                          aria-label={`Learn more about ${item.title?.jsonValue?.value || ''}`}
+                          aria-label={`Learn more about ${titleItemField?.value || ''}`}
                         />
                       )}
                     </m.div>
@@ -188,7 +170,8 @@ export const Default: React.FC<VerticalImageAccordionProps> = (props) => {
                 </AnimatePresence>
               </div>
             </m.div>
-          ))}
+            );
+          })}
         </div>
       </div>
     );

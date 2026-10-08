@@ -21,6 +21,13 @@ export default defineCliConfig({
   },
   componentMap: {
     paths: ['src/components'],
-    exclude: ['src/components/content-sdk/*'],
+    exclude: [
+      'src/components/content-sdk/*',
+      'src/components/atoms/**',
+      'src/components/ui/**',
+      '**/*.props.ts',
+      '**/*.props.tsx',
+      '**/*.schema.ts',
+    ],
   },
 });

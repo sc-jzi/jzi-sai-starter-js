@@ -8,6 +8,7 @@ import {
 import { useMemo, type JSX } from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from 'shadcd/components/ui/tabs';
 import { IGQLTextField } from 'types/igql';
+import { getDatasource, getFieldValue } from '@/lib/component-props';
 
 type Fields = {
   data: {
@@ -31,10 +32,10 @@ type PlaceholderTabsProps = {
 };
 
 export const Default = ({ rendering, params, fields, page, componentMap }: PlaceholderTabsProps): JSX.Element => {
-  const datasource = useMemo(() => fields.data.datasource, [fields.data.datasource]);
+  const datasource = useMemo(() => getDatasource(fields), [fields]);
   const phSuffixes = ['one', 'two', 'three', 'four', 'five'];
 
-  const tabs = datasource.children.results.slice(0, phSuffixes.length);
+  const tabs = (datasource?.children?.results ?? []).slice(0, phSuffixes.length);
 
   const tabsTriggerActiveStyles =
     'data-[state=active]:pt-3 data-[state=active]:bg-white data-[state=active]:border-b-2 data-[state=active]:border-b-white data-[state=active]:z-20';
@@ -54,7 +55,7 @@ export const Default = ({ rendering, params, fields, page, componentMap }: Place
                     value={tab.id}
                     className={`relative basis-auto px-4 py-2 -ml-[2px] first:ml-0 border-2 !border-e-2 rounded-tr-sm rounded-tl-sm text-base transition-all hover:pt-3 ${tabsTriggerActiveStyles} ${tabsTriggerInactiveStyles}`}
                   >
-                    <ContentSdkText field={tab.title.jsonValue} />
+                    <ContentSdkText field={getFieldValue(tab.title)} />
                   </TabsTrigger>
                 ))}
               </TabsList>

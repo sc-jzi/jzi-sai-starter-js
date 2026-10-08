@@ -2,12 +2,13 @@ import { Link, Text } from '@sitecore-content-sdk/nextjs';
 import { Button } from '@/components/ui/button';
 import { MultiPromoItemProps } from '@/components/multi-promo/multi-promo.props';
 import { Default as ImageWrapper } from '@/components/image/ImageWrapper.dev';
+import { getFieldValue } from '@/lib/component-props';
 import { getDescriptiveLinkText } from '@/utils/link-text';
 const mapToItemProps = (fields: MultiPromoItemProps) => {
   return {
-    title: fields?.heading?.jsonValue,
-    image: fields?.image?.jsonValue,
-    link: fields?.link?.jsonValue,
+    title: getFieldValue(fields?.heading),
+    image: getFieldValue(fields?.image),
+    link: getFieldValue(fields?.link),
     isPageEditing: fields?.isPageEditing,
   };
 };
@@ -26,7 +27,7 @@ export const Default: React.FC<MultiPromoItemProps> = (props) => {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 400px"
         />
       )}
-      {(isPageEditing || title.value) && (
+      {(isPageEditing || title?.value) && (
         <Text
           tag="h3"
           field={title}

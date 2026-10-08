@@ -7,38 +7,8 @@ import { Default as ImageWrapper } from '@/components/image/ImageWrapper.dev';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { NoDataFallback } from '@/utils/NoDataFallback';
-import { ComponentProps } from 'lib/component-props';
 import type { JSX } from 'react';
-
-/**
- * Model used for Sitecore Component integration
- */
-type PromoBlockProps = ComponentProps & PromoBlockParams & PromoBlockFields;
-
-// Component Rendering Parameter fields
-type PromoBlockParams = {
-  params: {
-    orientation?: string;
-  };
-};
-
-type PromoBlockFields = {
-  fields: {
-    heading: Field<string>;
-    description: Field<string>;
-    image: ImageField;
-    link?: LinkField;
-  };
-};
-
-type PromoBlockVariationClassesProps = {
-  container: string;
-  image: string;
-  copy: string;
-  row: {
-    initial: string;
-  };
-};
+import type { PromoBlockProps, PromoBlockVariationClassesProps } from './promo-block.props';
 
 const PromoBlock = (props: PromoBlockProps): JSX.Element => {
   const { fields, params } = props;

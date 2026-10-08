@@ -9,7 +9,7 @@ import { Default as ImageWrapper } from '@/components/image/ImageWrapper.dev';
 import { Default as AnimatedSection } from '@/components/animated-section/AnimatedSection.dev';
 import { Default as ZipcodeSearchForm } from '@/components/forms/zipcode/ZipcodeSearchForm.dev';
 import type { HeroProps } from './hero.props';
-import { USER_ZIPCODE } from 'lib/constants';
+import { storeZipcodeInSession } from '@/utils/zipcode-storage';
 
 export const HeroImageBackground: React.FC<HeroProps> = (props) => {
   const { fields, isPageEditing } = props;
@@ -106,7 +106,7 @@ export const HeroImageBackground: React.FC<HeroProps> = (props) => {
                 placeholder={dictionary.ZipPlaceholder || ''}
                 buttonText={dictionary?.SubmitCTALabel || ''}
                 onSubmit={(values) => {
-                  sessionStorage.setItem(USER_ZIPCODE, values.zipcode);
+                  storeZipcodeInSession(values.zipcode);
                   if (searchLink?.value?.href) {
                     window.location.href = `${searchLink.value.href}`;
                   }

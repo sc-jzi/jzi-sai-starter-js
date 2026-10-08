@@ -85,7 +85,6 @@ export const mockTestimonialCarouselProps: TestimonialCarouselProps = {
   name: 'TestimonialCarousel',
   Testimonials: [],
   page: mockPageBase,
-  componentMap: new Map(),
 };
 
 export const mockTestimonialCarouselPropsEmpty: TestimonialCarouselProps = {
@@ -106,7 +105,6 @@ export const mockTestimonialCarouselPropsEmpty: TestimonialCarouselProps = {
   name: 'TestimonialCarousel',
   Testimonials: [],
   page: mockPageBase,
-  componentMap: new Map(),
 };
 
 export const mockSingleTestimonialItem: TestimonialCarouselItemProps = {

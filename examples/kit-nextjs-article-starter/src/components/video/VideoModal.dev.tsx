@@ -10,13 +10,15 @@ import { useVideo } from '@/contexts/VideoContext';
 import { preventScroll, allowScroll } from '@/utils/bodyClass';
 import { extractVideoId } from '@/utils/video';
 import { Portal } from '@/components/portal/portal.dev';
+import { VideoModalProps } from './video-modal.props';
 
-interface VideoModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  videoUrl: string;
-  componentRef: RefObject<HTMLDivElement | null>;
-}
+const safelyInvokePlayerAction = (action: unknown) => {
+  if (action && typeof (action as Promise<unknown>).catch === 'function') {
+    (action as Promise<unknown>).catch((reason) => {
+      console.warn('YouTube modal player action was rejected.', reason);
+    });
+  }
+};
 
 export function VideoModal({ isOpen, onClose, videoUrl }: VideoModalProps) {
   const [showCloseButton, setShowCloseButton] = useState(true);
@@ -145,7 +147,7 @@ export function VideoModal({ isOpen, onClose, videoUrl }: VideoModalProps) {
                       className="h-full w-full"
                       // eslint-disable-next-line @typescript-eslint/no-explicit-any
                       onReady={(event: any) => {
-                        event.target.playVideo();
+                        safelyInvokePlayerAction(event.target.playVideo());
                       }}
                       // eslint-disable-next-line @typescript-eslint/no-explicit-any
                       onError={(error: any) => {

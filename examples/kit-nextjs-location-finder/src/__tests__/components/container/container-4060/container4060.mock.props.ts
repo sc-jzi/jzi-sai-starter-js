@@ -1,4 +1,5 @@
 import { Page } from '@sitecore-content-sdk/nextjs';
+import { testComponentMap } from '@/__tests__/test-utils/component-props';
 
 // Mock page object with all required Page properties
 const mockPageBase = {
@@ -33,7 +34,7 @@ export const mockContainer4060Props = {
     styles: 'custom-4060-styles',
   },
   page: mockPageBase,
-  componentMap: new Map(),
+  componentMap: testComponentMap,
 };
 
 // Mock props with exclude top margin
@@ -51,5 +52,5 @@ export const mockContainer4060PropsNoMargin = {
     styles: 'no-margin-4060',
   },
   page: mockPageBase,
-  componentMap: new Map(),
+  componentMap: testComponentMap,
 };

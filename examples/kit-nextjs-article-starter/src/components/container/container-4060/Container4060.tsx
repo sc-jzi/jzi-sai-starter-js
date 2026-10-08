@@ -5,20 +5,9 @@ import {
 } from '@/components/container/container.util';
 import { Flex, FlexItem } from '@/components/flex/Flex.dev';
 import { cn } from '@/lib/utils';
-import { PlaceholderProps } from '@/types/Placeholder.props';
-import { ComponentProps } from '@/lib/component-props';
-import type { JSX } from 'react';
 import componentMap from '.sitecore/component-map';
 import { AppPlaceholder } from '@sitecore-content-sdk/nextjs';
-
-/**
- * Model used for Sitecore Component integration
- */
-type Container4060Props = ComponentProps &
-  PlaceholderProps & {
-    left?: JSX.Element;
-    right?: JSX.Element;
-  };
+import { Container4060Props } from './container-4060.props';
 
 export const Default: React.FC<Container4060Props> = (props) => {
   const { rendering, left, right, page } = props;

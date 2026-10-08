@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Default as Promo, CenteredCard } from '@/components/sxa/Promo';
-import { Page } from '@sitecore-content-sdk/nextjs';
+import { baseSitecoreProps } from '@/__tests__/test-utils/component-props';
 
 // Mock Sitecore SDK
 jest.mock('@sitecore-content-sdk/nextjs', () => ({
@@ -48,24 +48,6 @@ jest.mock('@/components/ui/button', () => ({
 }));
 
 describe('SXA Promo', () => {
-  const mockPage = {
-    mode: {
-      isEditing: false,
-      isPreview: false,
-      isNormal: true,
-      name: 'normal' as const,
-      designLibrary: { isVariantGeneration: false },
-      isDesignLibrary: false,
-    },
-    layout: {
-      sitecore: {
-        context: {},
-        route: null,
-      },
-    },
-    locale: 'en',
-  } as Page;
-
   const mockFields = {
     PromoIcon: {
       value: {
@@ -91,7 +73,7 @@ describe('SXA Promo', () => {
   };
 
   it('renders promo with vehicle image and content', () => {
-    render(<Promo params={{ styles: '', RenderingIdentifier: 'promo-1' }} fields={mockFields} page={mockPage} />);
+    render(<Promo {...baseSitecoreProps} params={{ styles: '', RenderingIdentifier: 'promo-1' }} fields={mockFields} />);
 
     expect(screen.getByTestId('promo-image')).toHaveAttribute(
       'src',
@@ -104,9 +86,9 @@ describe('SXA Promo', () => {
   it('applies custom styles and renders button', () => {
     const { container } = render(
       <Promo
+        {...baseSitecoreProps}
         params={{ styles: 'shadow-xl', RenderingIdentifier: 'vehicle-promo' }}
         fields={mockFields}
-        page={mockPage}
       />
     );
 
@@ -118,9 +100,9 @@ describe('SXA Promo', () => {
   it('renders CenteredCard variant with centered content', () => {
     render(
       <CenteredCard
+        {...baseSitecoreProps}
         params={{ styles: 'text-center', RenderingIdentifier: 'promo-centered' }}
         fields={mockFields}
-        page={mockPage}
       />
     );
 

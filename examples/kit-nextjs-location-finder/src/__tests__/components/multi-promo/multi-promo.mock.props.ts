@@ -161,5 +161,4 @@ export const mockMultiPromoProps: MultiPromoProps = {
   name: 'MultiPromo',
   promos: [],
   page: mockPageBase,
-  componentMap: new Map(),
 };

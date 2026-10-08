@@ -211,7 +211,7 @@ describe('LinkList Component Edge Cases should', () => {
       fields: {
         data: {
           datasource: {
-            field: mockLinkListProps.fields.data.datasource.field,
+            field: mockLinkListProps.fields?.data?.datasource?.field,
             children: {
               results: [],
             },

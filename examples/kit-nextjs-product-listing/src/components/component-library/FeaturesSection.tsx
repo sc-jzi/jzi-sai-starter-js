@@ -6,10 +6,8 @@ import {
   RichText as ContentSdkRichText,
   Text as ContentSdkText,
 } from '@sitecore-content-sdk/nextjs';
-import { IGQLImageField, IGQLLinkField, IGQLRichTextField, IGQLTextField } from 'src/types/igql';
 import { Button } from 'shadcd/components/ui/button';
 import { useMemo, useState, useRef, useEffect, type JSX } from 'react';
-import { ComponentProps } from '@/lib/component-props';
 import {
   Accordion,
   AccordionContent,
@@ -29,59 +27,12 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import useVisibility from '@/hooks/useVisibility';
 import React from 'react';
-
-interface Fields {
-  data: {
-    datasource: {
-      children: {
-        results: FeatureFields[];
-      };
-      heading: IGQLTextField;
-      tagLine: IGQLTextField;
-      body: IGQLRichTextField;
-      image: IGQLImageField;
-      link1: IGQLLinkField;
-      link2: IGQLLinkField;
-    };
-  };
-}
-
-interface FeatureFields {
-  id: string;
-  featureTagLine: IGQLTextField;
-  featureHeading: IGQLTextField;
-  featureDescription: IGQLTextField;
-  featureIcon: IGQLImageField;
-  featureImage: IGQLImageField;
-  featureLink1: IGQLLinkField;
-  featureLink2: IGQLLinkField;
-}
-
-type FeatureSectionProps = ComponentProps & {
-  params: { [key: string]: string };
-  fields: Fields;
-};
-
-type FeatureSectionButtonsProps = {
-  link1: IGQLLinkField;
-  link2: IGQLLinkField;
-};
-
-type FeatureBoxProps = React.HTMLProps<HTMLDivElement> & {
-  feature: FeatureFields;
-  type:
-    | 'simple'
-    | 'horizontal'
-    | 'oneLiner'
-    | 'extended'
-    | 'extendedLarge'
-    | 'withBackgroundImageSm'
-    | 'withBackgroundImageLg'
-    | 'MSCardSmall'
-    | 'MSCardSmallIcon';
-  withLinks?: boolean;
-  centered?: boolean;
-};
+import type {
+  FeatureBoxProps,
+  FeatureSectionButtonsProps,
+  FeatureSectionProps,
+} from './features-section.props';
+import { getDatasource, normalizeFieldShape } from '@/lib/component-props';
 
 const FeatureSectionButtons = (props: FeatureSectionButtonsProps): JSX.Element => (
   <div className="flex flex-wrap gap-6 mt-4">

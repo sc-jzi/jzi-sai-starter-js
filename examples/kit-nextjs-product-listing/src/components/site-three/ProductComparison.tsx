@@ -3,8 +3,6 @@
 import {
   Text as ContentSdkText,
   NextImage as ContentSdkImage,
-  Field,
-  ImageField,
 } from '@sitecore-content-sdk/nextjs';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
@@ -17,31 +15,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from 'shadcd/components/ui/carousel';
-import { Enum } from 'types/enum';
-
-interface Fields {
-  Title: Field<string>;
-  id: string;
-  url: string;
-  Products: ProductFields[];
-}
-
-interface ProductFields {
-  id: string;
-  url: string;
-  fields: {
-    ProductName: Field<string>;
-    Price: Field<string>;
-    ProductImage: ImageField;
-    AmpPower: Field<string>;
-    Specifications: Enum[];
-  };
-}
-
-type ProductComparisonProps = {
-  params: { [key: string]: string };
-  fields: Fields;
-};
+import type { ProductComparisonProps, ProductFields } from './product-comparison.props';
 
 const DICTIONARY_KEYS = {
   BUTTON_LABEL: 'Buy_Now',

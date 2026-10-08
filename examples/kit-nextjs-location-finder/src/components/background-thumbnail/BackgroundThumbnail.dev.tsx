@@ -1,11 +1,10 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import { Page } from '@sitecore-content-sdk/nextjs';
 import { Badge } from '@/components/ui/badge';
-export type BackgroundThumbailProps = { children: React.ReactElement<any>; page: Page };
 import { cn } from '@/lib/utils';
+import type { BackgroundThumbnailProps } from './background-thumbnail.props';
 
-export const Default: React.FC<BackgroundThumbailProps> = (props) => {
+export const Default: React.FC<BackgroundThumbnailProps> = (props) => {
   const { children, page } = props;
   const { isEditing } = page.mode;
 

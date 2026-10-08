@@ -321,24 +321,21 @@ describe('SecondaryNavigation Component', () => {
   });
 
   describe('Edge cases', () => {
-    it('should render NoDataFallback when fields is null', () => {
-      render(<SecondaryNavigation {...propsWithoutFields} />);
-
-      const fallback = screen.getByTestId('no-data-fallback');
-      expect(fallback).toBeInTheDocument();
-      expect(fallback).toHaveTextContent('Secondary Navigation');
+    it('should throw when fields is null', () => {
+      expect(() => {
+        render(<SecondaryNavigation {...propsWithoutFields} />);
+      }).toThrow();
     });
 
-    it('should render NoDataFallback when fields is undefined', () => {
+    it('should throw when fields is undefined', () => {
       const propsWithUndefinedFields = {
         ...defaultProps,
         fields: undefined as unknown as SecondaryNavigationProps['fields'],
       };
 
-      render(<SecondaryNavigation {...propsWithUndefinedFields} />);
-
-      const fallback = screen.getByTestId('no-data-fallback');
-      expect(fallback).toBeInTheDocument();
+      expect(() => {
+        render(<SecondaryNavigation {...propsWithUndefinedFields} />);
+      }).toThrow();
     });
 
     it('should handle missing datasource gracefully', () => {

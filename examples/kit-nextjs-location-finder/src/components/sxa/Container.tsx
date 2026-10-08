@@ -1,14 +1,8 @@
-import { ComponentParams, ComponentRendering, AppPlaceholder, NextjsContentSdkComponent, Page } from '@sitecore-content-sdk/nextjs';
+import { AppPlaceholder } from '@sitecore-content-sdk/nextjs';
 import React, { type JSX } from 'react';
+import type { SxaContainerProps } from './container.props';
 
-interface ComponentProps {
-  rendering: ComponentRendering & { params: ComponentParams };
-  params: ComponentParams;
-  page: Page;
-  componentMap: Map<string, NextjsContentSdkComponent>;
-}
-
-const DefaultContainer = (props: ComponentProps): JSX.Element => {
+const DefaultContainer = (props: SxaContainerProps): JSX.Element => {
   const containerStyles = props.params && props.params.Styles ? props.params.Styles : '';
   const styles = `${props.params.GridParameters} ${containerStyles}`.trimEnd();
   const phKey = `container-${props.params.DynamicPlaceholderId}`;
@@ -45,7 +39,7 @@ export const TailwindContainer = (): JSX.Element => {
   );
 };
 
-export const Default = (props: ComponentProps): JSX.Element => {
+export const Default = (props: SxaContainerProps): JSX.Element => {
   const splitStyles = props.params?.Styles?.split(' ');
 
   if (splitStyles && splitStyles.includes('container')) {

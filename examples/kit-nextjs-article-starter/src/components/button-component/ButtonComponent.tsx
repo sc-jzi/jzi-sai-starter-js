@@ -16,8 +16,8 @@ import { getDescriptiveLinkText } from '@/utils/link-text';
  */
 
 export type ButtonFields = {
-  fields: {
-    buttonLink: LinkField;
+  fields?: {
+    buttonLink?: LinkField;
     icon?: { value: EnumValues<typeof IconName> };
     iconClassName?: string;
     isAriaHidden?: boolean;
@@ -32,7 +32,7 @@ export type ButtonFields = {
 };
 
 export type ButtonRendering = { rendering: ComponentRendering };
-const linkIsValid = (link: LinkField) => {
+const linkIsValid = (link?: LinkField) => {
   return (
     !!link?.value?.text &&
     (!!link?.value?.href || !!link?.value?.url) &&
@@ -71,7 +71,7 @@ const ButtonBase = (
   } = props || {};
   const ariaHidden = typeof isAriaHidden === 'boolean' ? isAriaHidden : true;
   const iconName = icon?.value as EnumValues<typeof IconName>;
-  if (!isPageEditing && !linkIsValid(buttonLink)) return null;
+  if (!isPageEditing && (!buttonLink || !linkIsValid(buttonLink))) return null;
 
   // Generate descriptive link text for SEO (only in production, preserve CMS text in editing mode)
   const displayText = isPageEditing
@@ -92,9 +92,9 @@ const ButtonBase = (
 
   return (
     <Button asChild variant={variant} size={size} className={className}>
-      {isPageEditing ? (
+      {isPageEditing && buttonLink ? (
         <Link field={buttonLink} editable={true} />
-      ) : (
+      ) : enhancedButtonLink ? (
         <Link field={enhancedButtonLink} editable={isPageEditing}>
           {iconPosition === IconPosition.LEADING && icon ? (
             <Icon
@@ -112,7 +112,7 @@ const ButtonBase = (
             />
           ) : null}
         </Link>
-      )}
+      ) : null}
     </Button>
   );
 };
@@ -148,7 +148,7 @@ const EditableButton = (props: {
   } = props || {};
   const ariaHidden = typeof isAriaHidden === 'boolean' ? isAriaHidden : true;
   const iconName = icon?.value as EnumValues<typeof IconName>;
-  if (!isPageEditing && !linkIsValid(buttonLink)) return null;
+  if (!isPageEditing && (!buttonLink || !linkIsValid(buttonLink))) return null;
 
   // Generate descriptive link text for SEO (only in production, preserve CMS text in editing mode)
   const displayText = isPageEditing
@@ -303,7 +303,7 @@ const Default = (props: ButtonComponentProps): JSX.Element | null => {
   const { variant } = props || ButtonVariants.DEFAULT;
   const ariaHidden = typeof isAriaHidden === 'boolean' ? isAriaHidden : true;
   const iconName = icon?.value as EnumValues<typeof IconName>;
-  if (!isPageEditing && !linkIsValid(buttonLink)) return null;
+  if (!isPageEditing && (!buttonLink || !linkIsValid(buttonLink))) return null;
 
   // Generate descriptive link text for SEO (only in production, preserve CMS text in editing mode)
   const displayText = isPageEditing
@@ -328,9 +328,9 @@ const Default = (props: ButtonComponentProps): JSX.Element | null => {
   if (fields) {
     return (
       <Button asChild variant={variant} size={size}>
-        {isPageEditing ? (
+        {isPageEditing && buttonLink ? (
           <Link field={buttonLink} editable={true} />
-        ) : (
+        ) : enhancedButtonLink ? (
           <Link editable={isPageEditing} field={enhancedButtonLink}>
             {iconPosition === IconPosition.LEADING && (
               <Icon iconName={buttonIcon} className={iconClassName} isAriaHidden={ariaHidden} />
@@ -340,7 +340,7 @@ const Default = (props: ButtonComponentProps): JSX.Element | null => {
               <Icon iconName={buttonIcon} className={iconClassName} isAriaHidden={ariaHidden} />
             )}
           </Link>
-        )}
+        ) : null}
       </Button>
     );
   }

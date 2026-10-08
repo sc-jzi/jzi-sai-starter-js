@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Default as PageContent, TitleAndBody } from '@/components/sxa/PageContent';
 import { Page } from '@sitecore-content-sdk/nextjs';
+import { baseSitecoreProps } from '@/__tests__/test-utils/component-props';
 
 // Mock Sitecore SDK
 jest.mock('@sitecore-content-sdk/nextjs', () => ({
@@ -89,6 +90,7 @@ describe('SXA PageContent', () => {
 
     render(
       <PageContent
+        {...baseSitecoreProps}
         params={{ RenderingIdentifier: 'content-1', styles: 'vehicle-content' }}
         fields={mockFields}
         page={mockPage}
@@ -114,6 +116,7 @@ describe('SXA PageContent', () => {
 
     render(
       <TitleAndBody
+        {...baseSitecoreProps}
         params={{ RenderingIdentifier: 'title-body', styles: '' }}
         fields={mockFields}
         page={mockPage}

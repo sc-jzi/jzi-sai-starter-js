@@ -1,29 +1,13 @@
 import {
-  Field,
-  ImageField,
   NextImage as ContentSdkImage,
-  LinkField,
   Text,
 } from "@sitecore-content-sdk/nextjs";
 import React from "react";
-import { ComponentProps } from "lib/component-props";
 import { CompatibleLink } from "components/content-sdk/CompatibleLink";
+import { getFieldValue } from 'lib/component-props';
+import { ImageProps, ImageWrapperProps } from './image.props';
 
-interface ImageFields {
-  Image: ImageField;
-  ImageCaption: Field<string>;
-  TargetUrl: LinkField;
-}
-
-interface ImageProps extends ComponentProps {
-  fields: ImageFields;
-}
-
-const ImageWrapper: React.FC<{
-  className: string;
-  id?: string;
-  children: React.ReactNode;
-}> = ({ className, id, children }) => (
+const ImageWrapper: React.FC<ImageWrapperProps> = ({ className, id, children }) => (
   <figure className={className.trim()} id={id}>
     <div className="component-content">{children}</div>
   </figure>
@@ -37,17 +21,18 @@ const ImageDefault: React.FC<ImageProps> = ({ params }) => (
 
 export const Banner: React.FC<ImageProps> = ({ params, fields }) => {
   const { styles, RenderingIdentifier: id } = params;
-  const imageField = fields.Image && {
-    ...fields.Image,
+  const baseImageField = getFieldValue(fields?.Image);
+  const imageField = baseImageField && {
+    ...baseImageField,
     value: {
-      ...fields.Image.value,
+      ...baseImageField.value,
       style: { objectFit: "cover", width: "100%", height: "100%" },
     },
   };
 
   const altText =
-    typeof fields?.Image?.value?.alt === "string"
-      ? fields.Image.value.alt
+    typeof baseImageField?.value?.alt === "string"
+      ? baseImageField.value.alt
       : "Hero banner";
 
   // Use pixel caps per breakpoint so the browser picks the next-lowest srcset width
@@ -74,6 +59,9 @@ export const Banner: React.FC<ImageProps> = ({ params, fields }) => {
 export const Default: React.FC<ImageProps> = (props) => {
   const { fields, params, page } = props;
   const { styles, RenderingIdentifier: id } = params;
+  const imageField = getFieldValue(fields?.Image);
+  const imageCaptionField = getFieldValue(fields?.ImageCaption);
+  const targetUrlField = getFieldValue(fields?.TargetUrl);
 
   if (!fields) {
     return <ImageDefault {...props} />;
@@ -81,29 +69,29 @@ export const Default: React.FC<ImageProps> = (props) => {
 
   const Image = () => (
     <ContentSdkImage
-      field={fields.Image}
+      field={imageField}
       sizes="(max-width: 640px) 100vw, (max-width: 768px) 100vw, (max-width: 1024px) 90vw, 1200px"
       alt={
-        typeof fields?.Image?.value?.alt === "string"
-          ? fields.Image.value.alt
+        typeof imageField?.value?.alt === "string"
+          ? imageField.value.alt
           : ""
       }
     />
   );
   const shouldWrapWithLink =
-    !page?.mode?.isEditing && fields.TargetUrl?.value?.href;
+    !page?.mode?.isEditing && targetUrlField?.value?.href;
 
   return (
     <ImageWrapper className={`component image ${styles}`} id={typeof id === "string" ? id : undefined}>
       {shouldWrapWithLink ? (
-        <CompatibleLink field={fields.TargetUrl}>
+        <CompatibleLink field={targetUrlField}>
           <Image />
         </CompatibleLink>
       ) : (
         <Image />
       )}
       <figcaption className="image-caption field-imagecaption">
-        <Text tag="span" field={fields.ImageCaption} />
+        <Text tag="span" field={imageCaptionField} />
       </figcaption>
     </ImageWrapper>
   );

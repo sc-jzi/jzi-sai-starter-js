@@ -16,12 +16,47 @@ export default defineCliConfig({
       extractFiles(),
       writeImportMap({
         paths: ['src/components'],
+        exclude: [
+          // Exclude non-component sidecars from import map generation
+          '**/*.props.ts',
+          '**/*.props.tsx',
+          '**/*.util.ts',
+          '**/*.util.tsx',
+          '**/*.dictionary.ts',
+          '**/*.dictionary.tsx',
+          '**/*.context.ts',
+          '**/*.context.tsx',
+          '**/utils.ts',
+          '**/utils.tsx',
+        ],
       }),
     ],
   },
   componentMap: {
     paths: ['src/components'],
     // Exclude content-sdk auxillary components
-    exclude: ['src/components/content-sdk/*', 'src/components/ui/*', 'src/components/lib/*', 'src/components/video/*', 'src/components/multi-promo/*', 'src/components/image-carousel/*', 'src/components/accordion-block/*', 'src/components/image/ImageWrapper.dev.old.tsx'],
+    exclude: [
+      'src/components/content-sdk/*',
+      'src/components/atoms/**',
+      'src/components/ui/**',
+      'src/components/lib/*',
+      'src/components/video/*',
+      'src/components/multi-promo/*',
+      'src/components/image-carousel/*',
+      'src/components/accordion-block/*',
+      'src/components/image/ImageWrapper.dev.old.tsx',
+      // Exclude non-component sidecars from component map generation
+      '**/*.props.ts',
+      '**/*.props.tsx',
+      '**/*.schema.ts',
+      '**/*.util.ts',
+      '**/*.util.tsx',
+      '**/*.dictionary.ts',
+      '**/*.dictionary.tsx',
+      '**/*.context.ts',
+      '**/*.context.tsx',
+      '**/utils.ts',
+      '**/utils.tsx',
+    ],
   },
 });

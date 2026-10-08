@@ -1,20 +1,11 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Text, Field, LinkField } from '@sitecore-content-sdk/nextjs';
+import { Text } from '@sitecore-content-sdk/nextjs';
 import { ButtonBase as Button } from '@/components/button-component/ButtonComponent';
-
-interface FooterNavigationCalloutFields {
-  title?: Field<string>;
-  description?: Field<string>;
-  linkOptional?: LinkField;
-}
-
-interface FooterNavigationCalloutProps {
-  fields: FooterNavigationCalloutFields;
-}
+import { FooterNavigationCalloutProps } from './footer-navigation-callout.props';
 
 export const Default: React.FC<FooterNavigationCalloutProps> = ({ fields }) => {
-  const { title, description, linkOptional } = fields;
+  const { title, description, linkOptional } = fields || {};
 
   return (
     <aside>

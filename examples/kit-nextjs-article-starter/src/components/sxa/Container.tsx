@@ -1,16 +1,7 @@
 import React, { JSX } from 'react';
-import {
-  ComponentParams,
-  ComponentRendering,
-  AppPlaceholder,
-} from '@sitecore-content-sdk/nextjs';
+import { AppPlaceholder } from '@sitecore-content-sdk/nextjs';
 import componentMap from '.sitecore/component-map';
-import { ComponentProps } from '@/lib/component-props';
-
-interface ContainerProps extends ComponentProps {
-  rendering: ComponentRendering & { params: ComponentParams };
-  params: ComponentParams;
-}
+import { ContainerProps } from './sxa-container.props';
 
 const DefaultContainer = (props: ContainerProps): JSX.Element => {
   const containerStyles =

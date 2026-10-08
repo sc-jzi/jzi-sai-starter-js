@@ -47,7 +47,6 @@ describe('CtaBanner Component', () => {
     },
     rendering: { componentName: 'CtaBanner' },
     page: mockPageBase,
-    componentMap: new Map(),
   } as React.ComponentProps<typeof CtaBanner>;
 
   it('renders title, description, and link correctly', () => {
@@ -64,7 +63,6 @@ describe('CtaBanner Component', () => {
       params: {},
       rendering: { componentName: 'CtaBanner' },
       page: mockPageBase,
-      componentMap: new Map(),
     };
     render(<CtaBanner {...emptyProps} />);
     expect(screen.getByTestId('no-data-fallback')).toBeInTheDocument();

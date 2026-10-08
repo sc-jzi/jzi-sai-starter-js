@@ -11,12 +11,7 @@ import { preventScroll, allowScroll } from '@/utils/bodyClass';
 import { extractVideoId } from '@/utils/video';
 import { Portal } from '@/components/portal/portal.dev';
 
-interface VideoModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  videoUrl: string;
-  componentRef: RefObject<HTMLDivElement | null>;
-}
+import type { VideoModalProps } from './video-modal.props';
 
 export function VideoModal({ isOpen, onClose, videoUrl }: VideoModalProps) {
   const [showCloseButton, setShowCloseButton] = useState(true);

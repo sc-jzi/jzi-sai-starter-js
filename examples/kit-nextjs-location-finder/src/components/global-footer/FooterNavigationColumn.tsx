@@ -39,7 +39,7 @@ export const Default: FC<FooterNavigationColumnProps> = (props) => {
               </AccordionTrigger>
               <AccordionContent>
                 <ul className="space-y-2 py-2">
-                  {items?.results?.map((item: FooterNavigationLink, index) => (
+                  {items?.results?.map((item: FooterNavigationLink, index: number) => (
                     <li key={`footerlinks-${index}-accordion-item`}>
                       <Button
                         variant="link"

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Default as LogoCloud } from '../../components/component-library/logo-cloud';
-import { IGQLImageField, IGQLLinkField, IGQLRichTextField, IGQLTextField } from 'types/igql';
+import { IGQLImageField, IGQLLinkField, IGQLRichTextField, IGQLTextField } from '@/lib/component-props';
 import type { Page } from '@sitecore-content-sdk/nextjs';
 
 /**

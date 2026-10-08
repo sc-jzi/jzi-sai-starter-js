@@ -19,6 +19,7 @@ import { EditableButton } from '@/components/button-component/ButtonComponent';
 import { AnimatedHoverNav } from '@/components/ui/animated-hover-nav';
 import { useContainerQuery } from '@/hooks/use-container-query';
 import { cn } from '@/lib/utils';
+import { getFieldValue } from '@/lib/component-props';
 
 /**
  * FooterNavigationColumn component renders a navigation column in the footer.
@@ -52,13 +53,13 @@ export const Default: FC<FooterNavigationColumnDevProps> = (props) => {
   }, [items]);
 
   // Render mobile accordion view
-  if (isMobile && header?.jsonValue?.value) {
+  if (isMobile && getFieldValue(header as any)?.value) {
     return (
       <nav aria-label="Footer navigation">
         <Accordion type="single" collapsible className="w-full" aria-labelledby={accordionId}>
-          <AccordionItem value={`item-${header?.jsonValue?.value}`}>
+          <AccordionItem value={`item-${getFieldValue(header as any)?.value}`}>
             <AccordionTrigger className="text-lg font-medium" id={accordionId}>
-              <Text field={header?.jsonValue} />
+              <Text field={getFieldValue(header as any)} />
             </AccordionTrigger>
             <AccordionContent>
               <ul className="space-y-2 py-2">
@@ -69,7 +70,7 @@ export const Default: FC<FooterNavigationColumnDevProps> = (props) => {
                       asChild
                       className="h-auto text-pretty p-0 text-base font-normal text-white"
                     >
-                      <Link field={item.link?.jsonValue} />
+                      <Link field={getFieldValue(item.link as any)} />
                     </Button>
                   </li>
                 ))}
@@ -103,7 +104,7 @@ export const Default: FC<FooterNavigationColumnDevProps> = (props) => {
           {items?.map((item: FooterNavigationLink, index) => (
             <li key={index} className="relative">
               <EditableButton
-                buttonLink={item.link?.jsonValue}
+                buttonLink={getFieldValue(item.link as any)}
                 isPageEditing={isPageEditing}
                 variant="secondary"
                 className="bg-transparent text-lg hover:bg-transparent"

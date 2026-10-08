@@ -73,7 +73,6 @@ const mockProps = {
   },
   rendering: { componentName: 'AlertBanner' },
   page: mockPageBase,
-  componentMap: new Map(),
 };
 
 describe('AlertBanner', () => {

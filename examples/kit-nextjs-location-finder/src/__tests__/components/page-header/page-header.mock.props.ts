@@ -81,7 +81,6 @@ export const mockPageHeaderProps: PageHeaderProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
 };
 
 export const mockPageHeaderPropsWithoutLinks: PageHeaderProps = {
@@ -144,7 +143,6 @@ export const mockPageHeaderPropsWithoutLinks: PageHeaderProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
 };
 
 export const mockPageHeaderPropsWithStyles: PageHeaderProps = {
@@ -189,5 +187,4 @@ export const mockPageHeaderPropsWithStyles: PageHeaderProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
 };

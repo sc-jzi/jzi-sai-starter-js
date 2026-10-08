@@ -3,6 +3,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Default as Title } from '@/components/sxa/Title';
 import { Page } from '@sitecore-content-sdk/nextjs';
+import { baseSitecoreProps } from '@/__tests__/test-utils/component-props';
 
 // Mock Sitecore SDK
 jest.mock('@sitecore-content-sdk/nextjs', () => ({
@@ -86,7 +87,9 @@ describe('SXA Title', () => {
   };
 
   it('renders title with link in normal mode', () => {
-    render(<Title params={{ styles: '', RenderingIdentifier: 'title-1' }} fields={mockFields} page={mockPage} />);
+    render(
+      <Title {...baseSitecoreProps} params={{ styles: '', RenderingIdentifier: 'title-1' }} fields={mockFields} page={mockPage} />
+    );
 
     expect(screen.getByTestId('link-field')).toBeInTheDocument();
     // Component prioritizes datasource field over page title
@@ -96,6 +99,7 @@ describe('SXA Title', () => {
   it('applies custom styles and rendering identifier', () => {
     const { container } = render(
       <Title
+        {...baseSitecoreProps}
         params={{ styles: 'text-center font-bold', RenderingIdentifier: 'vehicle-title' }}
         fields={mockFields}
         page={mockPage}
@@ -127,6 +131,7 @@ describe('SXA Title', () => {
 
     render(
       <Title
+        {...baseSitecoreProps}
         params={{ styles: '', RenderingIdentifier: 'title-2' }}
         // @ts-expect-error Testing fallback behavior with null datasource
         fields={fieldsWithContextItem}

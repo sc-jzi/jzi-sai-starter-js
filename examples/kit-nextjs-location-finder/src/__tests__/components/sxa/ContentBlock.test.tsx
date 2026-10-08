@@ -56,7 +56,6 @@ describe('SXA ContentBlock', () => {
         rendering={{ componentName: 'ContentBlock', dataSource: '', uid: '123' }}
         params={{}}
         page={mockPageBase}
-        componentMap={new Map()}
       />
     );
 
@@ -75,7 +74,6 @@ describe('SXA ContentBlock', () => {
         rendering={{ componentName: 'ContentBlock', dataSource: '', uid: '123' }}
         params={{}}
         page={mockPageBase}
-        componentMap={new Map()}
       />
     );
 
@@ -92,7 +90,6 @@ describe('SXA ContentBlock', () => {
         rendering={{ componentName: 'ContentBlock', dataSource: '', uid: '123' }}
         params={{}}
         page={mockPageBase}
-        componentMap={new Map()}
       />
     );
 

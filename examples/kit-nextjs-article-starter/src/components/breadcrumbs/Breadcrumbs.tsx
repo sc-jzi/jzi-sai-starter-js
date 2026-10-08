@@ -8,38 +8,16 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import { NoDataFallback } from '@/utils/NoDataFallback';
-import { LinkFieldValue } from '@sitecore-content-sdk/nextjs';
-import { ComponentProps } from '@/lib/component-props';
-import { GqlFieldString } from '@/types/gql.props';
+import { getDatasource, getFieldValue } from '@/lib/component-props';
+import { BreadcrumbsProps, BreadcrumbsPage } from './breadcrumbs.props';
 import { StructuredData } from '@/components/structured-data/StructuredData';
 import { generateBreadcrumbListSchema } from '@/lib/structured-data/schema';
 
-/**
- * Model used for Sitecore Component integration
- */
-type BreadcrumbsProps = ComponentProps & BreadcrumbsData;
-
-type BreadcrumbsData = {
-  fields: {
-    data: {
-      datasource: {
-        ancestors: BreadcrumbsPage[];
-        name: string;
-      };
-    };
-  };
-};
-
-type BreadcrumbsPage = {
-  name: string;
-  title: GqlFieldString;
-  navigationTitle: GqlFieldString;
-  url?: LinkFieldValue;
-};
-
 export const Default: React.FC<BreadcrumbsProps> = (props) => {
   const { fields } = props;
-  const { ancestors, name } = fields?.data?.datasource ?? {};
+  const datasource = getDatasource(fields);
+  const { ancestors, name } = datasource ?? {};
+  const currentPageName = name || '';
 
   const truncate = (str: string): string => {
     return str?.length > 25
@@ -56,12 +34,14 @@ export const Default: React.FC<BreadcrumbsProps> = (props) => {
       const breadcrumbItems = [
         ...ancestors.map((ancestor: BreadcrumbsPage, index: number) => ({
           name:
-            ancestor.navigationTitle?.jsonValue.value || ancestor.title?.jsonValue.value || '',
+            getFieldValue(ancestor.navigationTitle)?.value ||
+            getFieldValue(ancestor.title)?.value ||
+            '',
           url: ancestor.url?.href || '',
           position: index + 1,
         })),
         {
-          name: truncate(name),
+          name: truncate(currentPageName),
           url: typeof window !== 'undefined' ? window.location.href : '',
           position: ancestors.length + 1,
         },
@@ -77,7 +57,8 @@ export const Default: React.FC<BreadcrumbsProps> = (props) => {
           <BreadcrumbList>
             {ancestors?.map((ancestor: BreadcrumbsPage, index) => {
               const title =
-                ancestor.navigationTitle?.jsonValue.value || ancestor.title?.jsonValue.value;
+                getFieldValue(ancestor.navigationTitle)?.value ||
+                getFieldValue(ancestor.title)?.value;
 
               return (
                 <>
@@ -89,7 +70,7 @@ export const Default: React.FC<BreadcrumbsProps> = (props) => {
               );
             })}
             <BreadcrumbItem>
-              <BreadcrumbPage>{truncate(name)}</BreadcrumbPage>
+              <BreadcrumbPage>{truncate(currentPageName)}</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>

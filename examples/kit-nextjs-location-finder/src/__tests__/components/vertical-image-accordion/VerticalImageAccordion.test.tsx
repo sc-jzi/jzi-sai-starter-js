@@ -127,7 +127,6 @@ describe('VerticalImageAccordion Component', () => {
     params: {},
     rendering: mockRendering,
     page: mockPageBase,
-    componentMap: new Map(),
   };
 
   it('renders accordion with title and items', () => {

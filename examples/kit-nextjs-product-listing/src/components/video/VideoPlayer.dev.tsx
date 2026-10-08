@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, useEffect, useRef } from 'react';
 import { IconName } from '@/enumerations/Icon.enum';
 import { EnumValues } from '@/enumerations/generic.enum';

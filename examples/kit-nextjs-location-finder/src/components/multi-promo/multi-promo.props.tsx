@@ -1,4 +1,4 @@
-import { ComponentProps } from '@/lib/component-props';
+import type { OptionalComponentProps } from '@/lib/component-props';
 import { Field, ImageField, LinkField, Page } from '@sitecore-content-sdk/nextjs';
 
 export interface MultiPromoParams {
@@ -21,7 +21,7 @@ export interface MultiPromoFields {
 /**
  * Model used for Sitecore Component integration
  */
-export interface MultiPromoProps extends ComponentProps {
+export interface MultiPromoProps extends OptionalComponentProps {
   params: MultiPromoParams;
   fields: MultiPromoFields;
   name: string;
@@ -40,3 +40,4 @@ export type MultiPromoItemProps = {
   };
   page?: Page; // Optional page prop for ImageWrapper
 };
+

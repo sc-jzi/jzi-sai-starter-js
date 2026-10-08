@@ -1,4 +1,5 @@
 import { Page } from '@sitecore-content-sdk/nextjs';
+import { testComponentMap } from '@/__tests__/test-utils/component-props';
 
 // Mock page object with all required Page properties
 const mockPageBase = {
@@ -32,7 +33,7 @@ export const mockContainerFullWidthProps = {
     styles: 'custom-fullwidth-styles',
   },
   page: mockPageBase,
-  componentMap: new Map(),
+  componentMap: testComponentMap,
 };
 
 // Mock props with exclude top margin
@@ -49,7 +50,7 @@ export const mockContainerFullWidthPropsNoMargin = {
     styles: 'no-margin-fullwidth',
   },
   page: mockPageBase,
-  componentMap: new Map(),
+  componentMap: testComponentMap,
 };
 
 // Mock props for empty container
@@ -62,5 +63,5 @@ export const mockContainerFullWidthPropsEmpty = {
     DynamicPlaceholderId: 'empty',
   },
   page: mockPageBase,
-  componentMap: new Map(),
+  componentMap: testComponentMap,
 };

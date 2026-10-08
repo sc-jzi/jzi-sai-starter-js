@@ -5,14 +5,15 @@ import YouTube from 'react-youtube';
 import { useVideo } from '@/contexts/VideoContext';
 import { Default as Icon } from '@/components/icon/Icon';
 import { extractVideoId } from '@/utils/video';
+import { VideoPlayerProps } from './video-player.props';
 
-interface VideoPlayerProps {
-  videoUrl: string;
-  isPlaying: boolean;
-  onPlay: () => void;
-  fullScreen?: boolean;
-  btnClasses: string;
-}
+const safelyInvokePlayerAction = (action: unknown) => {
+  if (action && typeof (action as Promise<unknown>).catch === 'function') {
+    (action as Promise<unknown>).catch((reason) => {
+      console.warn('YouTube player action was rejected.', reason);
+    });
+  }
+};
 
 export function VideoPlayer({
   videoUrl,
@@ -32,7 +33,7 @@ export function VideoPlayer({
 
   useEffect(() => {
     if (playingVideoId !== videoId && isPlaying) {
-      playerRef.current?.internalPlayer.pauseVideo();
+      safelyInvokePlayerAction(playerRef.current?.internalPlayer?.pauseVideo());
     }
   }, [playingVideoId, videoId, isPlaying]);
 
@@ -40,7 +41,7 @@ export function VideoPlayer({
     onPlay();
     // If player already mounted (e.g. resuming), play; otherwise autoplay will start when iframe loads
     if (playerRef.current?.internalPlayer) {
-      playerRef.current.internalPlayer.playVideo();
+      safelyInvokePlayerAction(playerRef.current.internalPlayer.playVideo());
     }
   };
 

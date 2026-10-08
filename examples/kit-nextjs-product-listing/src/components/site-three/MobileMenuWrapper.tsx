@@ -1,11 +1,7 @@
 'use client';
 
 import { useToggleWithClickOutside } from '@/hooks/useToggleWithClickOutside';
-import { ReactNode } from 'react';
-
-interface MobileMenuWrapperProps {
-  children: ReactNode;
-}
+import type { MobileMenuWrapperProps } from './mobile-menu-wrapper.props';
 
 export const MobileMenuWrapper = ({ children }: MobileMenuWrapperProps) => {
   const {

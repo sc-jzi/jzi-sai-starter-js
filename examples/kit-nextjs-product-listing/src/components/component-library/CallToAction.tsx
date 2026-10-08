@@ -4,24 +4,8 @@ import {
   RichText as ContentSdkRichText,
   Text as ContentSdkText,
   Image as ContentSdkImage,
-  ImageField,
-  Field,
-  LinkField,
 } from '@sitecore-content-sdk/nextjs';
-import { ComponentProps } from '@/lib/component-props';
-
-interface Fields {
-  CTATitle: Field<string>;
-  CTABody: Field<string>;
-  CTALink1: LinkField;
-  CTALink2: LinkField;
-  CTAImage: ImageField;
-}
-
-type CTAProps = ComponentProps & {
-  params: { [key: string]: string };
-  fields: Fields;
-};
+import type { CTAProps } from './call-to-action.props';
 
 export const Default = (props: CTAProps) => {
   return <CallToAction1 {...props} />;

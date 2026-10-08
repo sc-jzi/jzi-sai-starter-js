@@ -1,5 +1,5 @@
 import { ImageField, LinkField, TextField, ComponentRendering, Page, PageMode, ComponentParams } from '@sitecore-content-sdk/nextjs';
-import { VideoComponentProps, VideoParams, VideoFields } from '@/components/video/video-props';
+import { VideoComponentProps, VideoParams, VideoFields } from '@/components/video/video.props';
 
 // Mock rendering object
 const mockRendering: ComponentRendering = {

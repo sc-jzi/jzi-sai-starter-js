@@ -1,63 +1,59 @@
 import React, { type JSX } from 'react';
 import {
-  LinkField,
   Text,
-  TextField,
 } from '@sitecore-content-sdk/nextjs';
 import Link from 'next/link';
 import { NavigationMenuToggle } from './NavigationMenuToggle.client';
 import { NavigationList } from './NavigationList.client';
 import { ButtonNavigationClient } from './ButtonNavigation.client';
+import type {
+  GetLinkField,
+  GetNavigationText,
+  NavigationFieldProps,
+  NavigationFields,
+  NavigationProps,
+} from './sxa-navigation.props';
 
-export interface Fields {
-  Id: string;
-  DisplayName: string;
-  Title: TextField;
-  NavigationTitle: TextField;
-  Href: string;
-  Querystring: string;
-  Children: Array<Fields>;
-  Styles: string[];
-}
+const getNavigationText: GetNavigationText = function (props: NavigationFieldProps): JSX.Element | string {
+  const navigationFields = props.fields;
+  if (!navigationFields) {
+    return '';
+  }
 
-export type NavigationProps = {
-  params?: { [key: string]: string };
-  fields: Fields;
-  handleClick: (event?: React.MouseEvent<HTMLElement>) => void;
-  relativeLevel: number;
-  isEditing?: boolean;
-};
-
-const getNavigationText = function (props: { fields: Fields }): JSX.Element | string {
   let text;
 
-  if (props.fields.NavigationTitle) {
-    text = <Text field={props.fields.NavigationTitle} />;
-  } else if (props.fields.Title) {
-    text = <Text field={props.fields.Title} />;
+  if (navigationFields.NavigationTitle) {
+    text = <Text field={navigationFields.NavigationTitle} />;
+  } else if (navigationFields.Title) {
+    text = <Text field={navigationFields.Title} />;
   } else {
-    text = props.fields.DisplayName;
+    text = navigationFields.DisplayName;
   }
 
   return text;
 };
 
-const getLinkField = (props: { fields: Fields }): LinkField => ({
+const getLinkField: GetLinkField = (props: NavigationFieldProps) => ({
   value: {
-    href: props.fields.Href,
+    href: props.fields?.Href ?? '',
     title: getLinkTitle(props),
-    querystring: props.fields.Querystring,
+    querystring: props.fields?.Querystring ?? '',
   },
 });
 
-const getLinkTitle = (props: { fields: Fields }): string | undefined => {
+const getLinkTitle = (props: NavigationFieldProps): string | undefined => {
+  const navigationFields = props.fields;
+  if (!navigationFields) {
+    return undefined;
+  }
+
   let title;
-  if (props.fields.NavigationTitle?.value) {
-    title = props.fields.NavigationTitle.value.toString();
-  } else if (props.fields.Title?.value) {
-    title = props.fields.Title.value.toString();
+  if (navigationFields.NavigationTitle?.value) {
+    title = navigationFields.NavigationTitle.value.toString();
+  } else if (navigationFields.Title?.value) {
+    title = navigationFields.Title.value.toString();
   } else {
-    title = props.fields.DisplayName;
+    title = navigationFields.DisplayName;
   }
 
   return title;
@@ -75,7 +71,7 @@ export const Default = (props: NavigationProps): JSX.Element => {
       : '';
   const id = props.params != null ? props.params.RenderingIdentifier : null;
 
-  if (!Object.values(props.fields).length) {
+  if (!props.fields || !Object.values(props.fields).length) {
     return (
       <div className={`component navigation ${styles}`} id={id ? id : undefined}>
         <div className="component-content">[Navigation]</div>
@@ -89,9 +85,9 @@ export const Default = (props: NavigationProps): JSX.Element => {
     props.handleClick(event);
   };
 
-  const list = Object.values(props.fields)
+  const list = Object.values(props.fields ?? {})
     .filter((element) => element)
-    .map((element: Fields, key: number) => (
+    .map((element: NavigationFields, key: number) => (
       <NavigationList
         key={`${key}${element.Id}`}
         fields={element}
@@ -120,7 +116,7 @@ export const Default = (props: NavigationProps): JSX.Element => {
 };
 
 export const ButtonNavigation = (props: NavigationProps): JSX.Element => {
-  const list = Object.values(props.fields).filter((element) => element);
+  const list = Object.values(props.fields ?? {}).filter((element) => element);
 
   console.log(list);
 

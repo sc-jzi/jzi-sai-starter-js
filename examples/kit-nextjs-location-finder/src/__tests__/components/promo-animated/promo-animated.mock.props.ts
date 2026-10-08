@@ -62,7 +62,6 @@ export const mockPromoAnimatedProps: PromoAnimatedProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };
 
@@ -108,7 +107,6 @@ export const mockPromoAnimatedPropsFireTruck: PromoAnimatedProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };
 
@@ -135,6 +133,5 @@ export const mockPromoAnimatedPropsNoLinks: PromoAnimatedProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };

@@ -168,13 +168,18 @@ describe('Image Component', () => {
       expect(component).toHaveClass('hero-banner-styles');
     });
 
-    it('should render background image when in editing mode with empty image', () => {
+    it('should always render ContentSdkImage in Banner (not just editing mode)', () => {
+      const { container } = render(<Banner {...bannerImageProps} />);
+
+      const img = container.querySelector('img');
+      expect(img).toBeInTheDocument();
+    });
+
+    it('should render Banner image in editing mode too', () => {
       const { container } = render(<Banner {...bannerImagePropsWithBackground} />);
 
-      const content = container.querySelector('.component-content');
-      expect(content).toHaveStyle({
-        backgroundImage: "url('/-/media/image.jpg')",
-      });
+      const img = container.querySelector('img');
+      expect(img).toBeInTheDocument();
     });
   });
 

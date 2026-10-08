@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
-import { VideoComponentProps, VideoFields, VideoParams } from './video-props';
+import type { VideoComponentProps, VideoFields, VideoParams } from './video.props';
 import { useVideoModal } from '../../hooks/useVideoModal';
 
 // Dynamically import heavy sub-components (react-youtube, focus-trap-react, framer-motion animations)

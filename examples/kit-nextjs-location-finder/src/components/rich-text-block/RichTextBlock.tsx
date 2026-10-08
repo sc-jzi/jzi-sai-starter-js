@@ -1,18 +1,8 @@
-import { RichText as ContentSdkRichText, Field } from '@sitecore-content-sdk/nextjs';
+import { RichText as ContentSdkRichText } from '@sitecore-content-sdk/nextjs';
 import { cn } from '@/lib/utils';
 import { NoDataFallback } from '@/utils/NoDataFallback';
-import { ComponentProps } from '@/lib/component-props';
+import type { RichTextBlockProps } from './rich-text-block.props';
 
-/**
- * Model used for Sitecore Component integration
- */
-type RichTextBlockProps = ComponentProps & RichTextFields;
-
-interface RichTextFields {
-  fields: {
-    text: Field<string>;
-  };
-}
 export const Default: React.FC<RichTextBlockProps> = (props) => {
   const { fields } = props;
   const text = props.fields ? (

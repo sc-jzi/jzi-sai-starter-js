@@ -4,7 +4,7 @@ import type React from 'react';
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { Link as ContentSdkLink } from '@sitecore-content-sdk/nextjs';
+import { CompatibleLink } from '@/components/content-sdk/CompatibleLink';
 import { Menu } from 'lucide-react';
 import { m, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
@@ -108,29 +108,18 @@ export const GlobalHeaderDefault: React.FC<GlobalHeaderProps> = (props) => {
                         <NavigationMenuItem
                           key={`${item.link?.jsonValue?.value?.text}-${index}`}
                         >
-                          {isPageEditing ? (
+                          {item.link?.jsonValue && (isPageEditing || item.link.jsonValue?.value?.href) && (
                             <Button
                               variant="ghost"
                               asChild
                               className="font-body bg-transparent text-base font-medium hover:bg-transparent"
                             >
-                              <ContentSdkLink field={item.link?.jsonValue} />
+                              <CompatibleLink
+                                field={item.link?.jsonValue}
+                                editable={isPageEditing}
+                                prefetch={false}
+                              />
                             </Button>
-                          ) : (
-                            item.link?.jsonValue?.value?.href && (
-                              <Button
-                                variant="ghost"
-                                asChild
-                                className="font-body bg-transparent text-base font-medium hover:bg-transparent"
-                              >
-                                <Link
-                                  href={item.link.jsonValue.value.href}
-                                  prefetch={false}
-                                >
-                                  {item.link.jsonValue.value.text}
-                                </Link>
-                              </Button>
-                            )
                           )}
                         </NavigationMenuItem>
                       ))}
@@ -142,25 +131,13 @@ export const GlobalHeaderDefault: React.FC<GlobalHeaderProps> = (props) => {
           {/* Desktop CTA */}
           {headerContact?.jsonValue?.value && (
             <div className="@lg:flex @lg:items-center @lg:justify-end @lg:flex-1 hidden">
-              {isPageEditing ? (
-                <Button asChild className="font-heading text-base font-medium">
-                  <ContentSdkLink field={headerContact.jsonValue} />
-                </Button>
-              ) : (
-                headerContact.jsonValue.value.href && (
-                  <Button
-                    asChild
-                    className="font-heading text-base font-medium"
-                  >
-                    <Link
-                      href={headerContact.jsonValue.value.href}
-                      prefetch={false}
-                    >
-                      {headerContact.jsonValue.value.text}
-                    </Link>
-                  </Button>
-                )
-              )}
+              <Button asChild className="font-heading text-base font-medium">
+                <CompatibleLink
+                  field={headerContact.jsonValue}
+                  editable={isPageEditing}
+                  prefetch={false}
+                />
+              </Button>
             </div>
           )}
           {/* Mobile Navigation */}
@@ -223,31 +200,17 @@ export const GlobalHeaderDefault: React.FC<GlobalHeaderProps> = (props) => {
                                 }}
                                 className="flex justify-center"
                               >
-                                {isPageEditing ? (
-                                  <Button
-                                    variant="ghost"
-                                    asChild
-                                    onClick={() => setIsOpen(false)}
-                                  >
-                                    <ContentSdkLink
-                                      field={item.link?.jsonValue}
-                                    />
-                                  </Button>
-                                ) : (
-                                  item.link?.jsonValue?.value?.href && (
-                                    <Button
-                                      variant="ghost"
-                                      asChild
-                                      onClick={() => setIsOpen(false)}
-                                    >
-                                      <Link
-                                        href={item.link.jsonValue.value.href}
-                                      >
-                                        {item.link.jsonValue.value.text}
-                                      </Link>
-                                    </Button>
-                                  )
-                                )}
+                                <Button
+                                  variant="ghost"
+                                  asChild
+                                  onClick={() => setIsOpen(false)}
+                                >
+                                  <CompatibleLink
+                                    field={item.link?.jsonValue}
+                                    editable={isPageEditing}
+                                    prefetch={false}
+                                  />
+                                </Button>
                               </m.div>
                             ),
                           )}
@@ -264,26 +227,13 @@ export const GlobalHeaderDefault: React.FC<GlobalHeaderProps> = (props) => {
                             }}
                             className="flex justify-center"
                           >
-                            {isPageEditing ? (
-                              <Button asChild onClick={() => setIsOpen(false)}>
-                                <ContentSdkLink
-                                  field={headerContact.jsonValue}
-                                />
-                              </Button>
-                            ) : (
-                              headerContact.jsonValue.value.href && (
-                                <Button
-                                  asChild
-                                  onClick={() => setIsOpen(false)}
-                                >
-                                  <Link
-                                    href={headerContact.jsonValue.value.href}
-                                  >
-                                    {headerContact.jsonValue.value.text}
-                                  </Link>
-                                </Button>
-                              )
-                            )}
+                            <Button asChild onClick={() => setIsOpen(false)}>
+                              <CompatibleLink
+                                field={headerContact.jsonValue}
+                                editable={isPageEditing}
+                                prefetch={false}
+                              />
+                            </Button>
                           </m.div>
                         )}
                       </m.nav>

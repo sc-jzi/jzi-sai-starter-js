@@ -110,7 +110,6 @@ describe('SubscriptionBanner Component', () => {
     params: {},
     rendering: mockRendering,
     page: mockPageBase,
-    componentMap: new Map(),
   } as React.ComponentProps<typeof SubscriptionBanner>;
 
   it('renders all required elements', () => {
@@ -226,7 +225,6 @@ describe('SubscriptionBanner Component', () => {
       params: {},
       rendering: mockRendering,
       page: mockPageBase,
-      componentMap: new Map(),
     };
 
     expect(() => render(<SubscriptionBanner {...minimalProps} />)).not.toThrow();

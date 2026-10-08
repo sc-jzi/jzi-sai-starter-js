@@ -4,22 +4,13 @@ import {
   isContainerPlaceholderEmpty,
 } from '@/components/container/container.util';
 import { cn } from '@/lib/utils';
-import { FlexItemProps } from '@/components/flex/Flex.dev';
-import { ComponentProps } from '@/lib/component-props';
 import type { JSX } from 'react';
-import { PlaceholderProps } from '@/types/Placeholder.props';
 import componentMap from '.sitecore/component-map';
 import { AppPlaceholder } from '@sitecore-content-sdk/nextjs';
-
-/**
- * Model used for Sitecore Component integration
- */
-type Container303030Props = ComponentProps &
-  PlaceholderProps & {
-    left?: JSX.Element;
-    center?: JSX.Element;
-    right?: JSX.Element;
-  };
+import {
+  Container303030FlexItemProps,
+  Container303030Props,
+} from './container-303030.props';
 
 export const Default: React.FC<Container303030Props> = (props) => {
   const { rendering, left, center, right, page } = props;
@@ -88,7 +79,7 @@ export const Default: React.FC<Container303030Props> = (props) => {
   );
 };
 
-const FlexItem: React.FC<FlexItemProps> = (props) => {
+const FlexItem: React.FC<Container303030FlexItemProps> = (props) => {
   const { children } = props;
   return (
     <div className="w-full p-4 mb-4 md:w-1/2 lg:w-1/3 flex flex-col items-start justify-start">

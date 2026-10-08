@@ -1,27 +1,8 @@
 import { Flex, FlexItem } from '@/components/flex/Flex.dev';
 import { cva } from 'class-variance-authority';
-import { PlaceholderProps } from '@/types/Placeholder.props';
-import { ComponentProps } from '@/lib/component-props';
-import { BackgroundColor } from '@/enumerations/BackgroundColor.enum';
 import componentMap from '.sitecore/component-map';
 import { AppPlaceholder } from '@sitecore-content-sdk/nextjs';
-
-/**
- * Model used for Sitecore Component integration
- */
-type ContainerFullBleedProps = ComponentProps &
-  PlaceholderProps &
-  ContainerFullBleedParams;
-
-type ContainerFullBleedParams = {
-  params?: {
-    backgroundColor?: BackgroundColor;
-    backgroundImagePath?: string;
-    excludeTopMargin?: string;
-    inset?: string;
-    [key: string]: any; // eslint-disable-line @typescript-eslint/no-explicit-any
-  };
-};
+import { ContainerFullBleedProps } from './container-full-bleed.props';
 
 export const Default: React.FC<ContainerFullBleedProps> = (props) => {
   const { rendering, page } = props;

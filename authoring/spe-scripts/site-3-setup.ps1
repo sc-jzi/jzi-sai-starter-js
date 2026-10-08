@@ -197,6 +197,7 @@ function Invoke-ModuleScriptBody {
             New-Item -Parent $dataFolder -Name "AI" -ItemType $addAiConfigBranchTemplate.ID | Out-Null
         }
 
+
         Write-Verbose "Create dictionary items"
         $dictionaryRoot = Get-Item -Path "$sitePath/Dictionary" -Language $Site.Language
         $dictionaryBranchTemplate = Get-Item -Path "/sitecore/templates/Branches/Project/click-click-launch/Site 3/Add Dictionary Items" -Language $Site.Language

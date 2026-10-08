@@ -73,7 +73,6 @@ const mockPropsWithAncestors = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
 };
 
 const mockPropsWithoutAncestors = {
@@ -88,7 +87,6 @@ const mockPropsWithoutAncestors = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
 };
 
 const mockPropsMissingFields = {
@@ -141,7 +139,6 @@ describe('Breadcrumbs Component', () => {
         },
       },
       page: mockPageBase,
-      componentMap: new Map(),
     };
 
     render(<Breadcrumbs {...mockProps} />);

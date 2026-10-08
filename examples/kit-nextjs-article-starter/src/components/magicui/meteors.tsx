@@ -2,18 +2,7 @@
 
 import { cn } from '@/lib/utils';
 import React, { useEffect, useState, useRef } from 'react';
-
-interface MeteorsProps {
-  number?: number;
-  minDelay?: number;
-  maxDelay?: number;
-  minDuration?: number;
-  maxDuration?: number;
-  angle?: number;
-  className?: string;
-  color?: string;
-  size?: string;
-}
+import { MeteorsProps } from './meteors.props';
 
 export const Meteors = ({
   number = 20,

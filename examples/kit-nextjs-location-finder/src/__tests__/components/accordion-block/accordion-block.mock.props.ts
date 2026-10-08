@@ -146,7 +146,6 @@ export const mockAccordionProps = {
     uid: 'accordion-uid',
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };
 
@@ -201,7 +200,6 @@ export const mockAccordionPropsMinimal = {
     uid: 'accordion-minimal-uid',
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };
 
@@ -226,7 +224,6 @@ export const mockAccordionPropsEmpty = {
     uid: 'accordion-empty-uid',
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };
 
@@ -271,7 +268,6 @@ export const mockAccordionPropsNoExtras = {
     uid: 'accordion-simple-uid',
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };
 
@@ -390,6 +386,5 @@ export const mockAccordionPropsMany = {
     uid: 'accordion-extended-uid',
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };

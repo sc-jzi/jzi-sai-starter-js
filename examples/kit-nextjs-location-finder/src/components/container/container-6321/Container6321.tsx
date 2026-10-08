@@ -4,19 +4,7 @@ import {
   isContainerPlaceholderEmpty,
 } from '@/components/container/container.util';
 import { cn } from '@/lib/utils';
-import { ComponentProps } from '@/lib/component-props';
-
-import type { JSX } from 'react';
-
-export type Container6321Props = ComponentProps & {
-  col1?: JSX.Element;
-  col2?: JSX.Element;
-  col3?: JSX.Element;
-  col4?: JSX.Element;
-  col5?: JSX.Element;
-  col6?: JSX.Element;
-  children: Element;
-};
+import type { Container6321Props } from './container-6321.props';
 
 export const Default: React.FC<Container6321Props> = (props) => {
   const { rendering, col1, col2, col3, col4, col5, col6, page, componentMap } = props;

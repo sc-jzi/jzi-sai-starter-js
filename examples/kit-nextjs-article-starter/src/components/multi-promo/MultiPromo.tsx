@@ -9,6 +9,7 @@ import {
   CarouselItem,
   type CarouselApi,
 } from '@/components/ui/carousel';
+import { getDatasource, getFieldValue } from '@/lib/component-props';
 import { cn } from '@/lib/utils';
 import { NoDataFallback } from '@/utils/NoDataFallback';
 import { MultiPromoItemProps, MultiPromoProps } from './multi-promo.props';
@@ -17,8 +18,10 @@ import { Default as MultiPromoItem } from './MultiPromoItem.dev';
 export const Default: React.FC<MultiPromoProps> = (props) => {
   const { fields, params, page } = props;
   const { numColumns } = params ?? {};
-  const { children } = fields?.data?.datasource ?? {};
-  const { title, description } = fields?.data?.datasource || {};
+  const datasource = getDatasource(fields);
+  const { children, title, description } = datasource || {};
+  const titleField = getFieldValue(title);
+  const descriptionField = getFieldValue(description);
   const [api, setApi] = useState<CarouselApi>();
   const [announcement, setAnnouncement] = useState('');
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -88,20 +91,20 @@ export const Default: React.FC<MultiPromoProps> = (props) => {
         )}
       >
         <div className="flex flex-col gap-4 group-[.is-inset]:px-4 sm:group-[.is-inset]:px-0 xl:flex-row xl:items-end xl:justify-between xl:gap-20">
-          {title && (
+          {titleField && (
             <div className="basis-full xl:basis-1/2">
               <Text
                 tag="h2"
-                field={title?.jsonValue}
+                field={titleField}
                 className="font-heading text-box-trim-both text-box-edge-asc-baseline -ml-1 max-w-[20ch] text-pretty text-4xl font-normal leading-[1.1333] tracking-tighter sm:text-5xl md:max-w-[17.5ch] lg:text-6xl"
               />
             </div>
           )}
-          {description && (
+          {descriptionField && (
             <div className="basis-full xl:basis-1/2">
               <RichText
                 className="text-body prose text-box-trim-both text-box-edge-asc-baseline mt-6 max-w-[51.5ch] text-pretty text-lg leading-[1.444] tracking-tight"
-                field={description?.jsonValue}
+                field={descriptionField}
               />
             </div>
           )}

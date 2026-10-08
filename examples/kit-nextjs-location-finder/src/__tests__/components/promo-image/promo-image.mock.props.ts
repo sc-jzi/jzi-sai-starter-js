@@ -54,7 +54,6 @@ export const mockPromoImageProps: PromoImageProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };
 
@@ -92,7 +91,6 @@ export const mockPromoImagePropsFireTruck: PromoImageProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };
 
@@ -127,6 +125,5 @@ export const mockPromoImagePropsNoLink: PromoImageProps = {
     },
   },
   page: mockPageBase,
-  componentMap: new Map(),
   isPageEditing: false,
 };

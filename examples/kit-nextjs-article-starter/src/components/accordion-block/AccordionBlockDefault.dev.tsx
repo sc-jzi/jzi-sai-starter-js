@@ -7,6 +7,7 @@ import { AccordionBlockItem } from './AccordionBlockItem.dev';
 import { NoDataFallback } from '@/utils/NoDataFallback';
 import { StructuredData } from '@/components/structured-data/StructuredData';
 import { generateFAQPageSchema } from '@/lib/structured-data/schema';
+import { getDatasource, getFieldValue } from '@/lib/component-props';
 
 const stripHtml = (value: string): string => {
   const htmlTagPattern = /<[^>]*>/g;
@@ -18,7 +19,8 @@ const stripHtml = (value: string): string => {
 };
 
 const extractTextFromRichField = (field: AccordionItemProps['description'] | undefined): string => {
-  const value: unknown = field?.jsonValue?.value;
+  const richField = getFieldValue(field);
+  const value: unknown = richField?.value;
   if (!value) return '';
 
   if (typeof value === 'string') {
@@ -54,7 +56,11 @@ const extractTextFromRichField = (field: AccordionItemProps['description'] | und
 export const AccordionBlockDefault: React.FC<AccordionProps> = (props) => {
   const { fields, isPageEditing, params } = props || {};
 
-  const { heading, description, link, children } = fields?.data?.datasource || {};
+  const datasource = getDatasource(fields);
+  const { heading, description, link, children } = datasource || {};
+  const headingField = getFieldValue(heading);
+  const descriptionField = getFieldValue(description);
+  const linkField = getFieldValue(link);
   const accordionItems = children?.results ?? [];
   const accordionItemValues = [
     ...accordionItems.map((_, index) => `accordion-block-item-${index + 1}`),
@@ -65,7 +71,7 @@ export const AccordionBlockDefault: React.FC<AccordionProps> = (props) => {
     accordionItems.length > 0
       ? generateFAQPageSchema({
           faqs: accordionItems.map((item) => ({
-            question: item?.heading?.jsonValue?.value || '',
+            question: getFieldValue(item?.heading)?.value || '',
             answer: extractTextFromRichField(item?.description),
           })),
         })
@@ -84,22 +90,22 @@ export const AccordionBlockDefault: React.FC<AccordionProps> = (props) => {
         >
         <div className=" @md:py-16 @lg:py-20 @lg:grid-cols-[320px,1fr] @lg:gap-12 @xl:gap-16 mx-auto grid max-w-screen-xl gap-8 py-10">
           <div className="@lg:pr-0 space-y-4 px-6">
-            {heading?.jsonValue && (
+            {headingField && (
               <Text
                 tag="h2"
                 className="font-heading text-primary @lg:text-7xl -ml-1 text-pretty text-5xl font-normal leading-[1.25] tracking-tighter"
-                field={heading?.jsonValue}
+                field={headingField}
               />
             )}
-            {description?.jsonValue && (
+            {descriptionField && (
               <Text
                 className="font-body text-base font-normal"
                 tag="p"
-                field={description?.jsonValue}
+                field={descriptionField}
               />
             )}
-            {link?.jsonValue && (
-              <Button buttonLink={link.jsonValue} contextTitle={heading?.jsonValue?.value} />
+            {linkField && (
+              <Button buttonLink={linkField} contextTitle={headingField?.value} />
             )}
           </div>
           <div className="w-full max-w-[787px] justify-self-end p-6">

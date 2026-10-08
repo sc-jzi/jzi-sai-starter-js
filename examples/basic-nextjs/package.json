@@ -21,11 +21,11 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "@sitecore-content-sdk/analytics-core": "^2.1.0",
-    "@sitecore-content-sdk/events": "^2.1.0",
-    "@sitecore-content-sdk/nextjs": "^2.1.0",
+    "@sitecore-content-sdk/analytics-core": "^2.1.2",
+    "@sitecore-content-sdk/events": "^2.1.2",
+    "@sitecore-content-sdk/nextjs": "^2.4.0",
     "@sitecore-content-sdk/personalize": "^2.1.0",
-    "next": "^16.2.6",
+    "next": "^16.3.0",
     "next-intl": "^4.9.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "@sitecore-content-sdk/cli": "^2.1.0",
+    "@sitecore-content-sdk/cli": "^2.3.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^24.10.4",
     "@types/react": "^19.1.10",
@@ -54,9 +54,10 @@
     "micromatch": {
       "picomatch": "2.3.2"
     },
-    "brace-expansion@^5.0.0": "5.0.6",
+    "brace-expansion@^5.0.0": "5.0.9",
     "lodash-es": "4.18.1",
-    "flatted": "3.4.2"
+    "flatted": "3.4.2",
+    "esbuild": ">=0.28.1"
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production npm-run-all --serial sitecore-tools:generate-map sitecore-tools:build next:build",

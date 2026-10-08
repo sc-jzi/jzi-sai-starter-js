@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Default as LinkList } from '@/components/sxa/LinkList';
+import { baseSitecoreProps } from '@/__tests__/test-utils/component-props';
 
 // Mock Sitecore SDK
 jest.mock('@sitecore-content-sdk/nextjs', () => ({
@@ -65,7 +66,7 @@ describe('SXA LinkList', () => {
 
   it('renders link list with title and vehicle links', () => {
     render(
-      <LinkList params={{ styles: '', RenderingIdentifier: 'linklist-1' }} fields={mockFields} />
+      <LinkList {...baseSitecoreProps} params={{ styles: '', RenderingIdentifier: 'linklist-1' }} fields={mockFields} />
     );
 
     expect(screen.getByTestId('list-title')).toHaveTextContent('Vehicle Categories');
@@ -78,7 +79,7 @@ describe('SXA LinkList', () => {
 
   it('renders links with correct hrefs', () => {
     render(
-      <LinkList params={{ styles: '', RenderingIdentifier: 'linklist-2' }} fields={mockFields} />
+      <LinkList {...baseSitecoreProps} params={{ styles: '', RenderingIdentifier: 'linklist-2' }} fields={mockFields} />
     );
 
     const links = screen.getAllByTestId('link-item');
@@ -92,6 +93,7 @@ describe('SXA LinkList', () => {
 
     render(
       <LinkList
+        {...baseSitecoreProps}
         params={{ styles: '', RenderingIdentifier: 'linklist-empty' }}
         // @ts-expect-error Testing empty fields case
         fields={emptyFields}

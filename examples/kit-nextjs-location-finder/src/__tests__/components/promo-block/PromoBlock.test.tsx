@@ -152,7 +152,6 @@ describe('PromoBlock', () => {
       params: { orientation: Orientation.IMAGE_RIGHT },
       rendering: { componentName: 'TextLink' },
       page: mockPageBase,
-      componentMap: new Map(),
     };
     // Testing TextLink component variant - type assertion for test compatibility
     render(<TextLink {...props} />);

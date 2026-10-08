@@ -178,7 +178,9 @@ export const propsWithEmptyTestimonials: TestimonialCarouselProps = {
 export const propsWithoutChildren: TestimonialCarouselProps = {
   fields: {
     data: {
-      datasource: {} as unknown as typeof defaultProps.fields.data.datasource,
+      datasource: {} as unknown as NonNullable<
+        NonNullable<NonNullable<typeof defaultProps.fields>['data']>['datasource']
+      >,
     },
   },
   params: {},

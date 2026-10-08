@@ -1,39 +1,10 @@
 import React from 'react';
 import { Text, LinkField, TextField } from '@sitecore-content-sdk/nextjs';
 import { CompatibleLink } from 'components/content-sdk/CompatibleLink';
-import { ComponentProps } from 'lib/component-props';
+import { getDatasource } from 'lib/component-props';
+import { LinkListItemProps, LinkListProps } from './link-list.props';
 
-interface LinkListProps extends ComponentProps {
-  fields: {
-    /**
-     * The Integrated graphQL query result. This illustrates the way to access the datasource children.
-     */
-    data: {
-      datasource: {
-        children: {
-          results: Array<{
-            field: {
-              link: LinkField;
-            };
-          }>;
-        };
-        field: {
-          title: TextField;
-        };
-      };
-    };
-  };
-}
-
-const LinkListItem = ({
-  index,
-  total,
-  field,
-}: {
-  index: number;
-  total: number;
-  field: LinkField;
-}) => {
+const LinkListItem = ({ index, total, field }: LinkListItemProps) => {
   const classNames = [
     `item${index}`,
     index % 2 === 0 ? 'odd' : 'even',
@@ -53,22 +24,26 @@ const LinkListItem = ({
 };
 
 export const Default = ({ params, fields }: LinkListProps) => {
-  const datasource = fields?.data?.datasource;
+  const datasource = getDatasource(fields);
   const styles = `component link-list ${params.styles || ''}`.trim();
   const id = params.RenderingIdentifier;
 
   const renderContent = () => {
-    if (!datasource) {
+    const results = datasource?.children?.results;
+
+    if (!datasource || !Array.isArray(results)) {
       return <h3>Link List</h3>;
     }
 
-    const links = datasource.children.results
-      .filter((element) => element?.field?.link)
+    const links = results
+      .filter((element): element is typeof element & { field: { link: LinkField } } =>
+        Boolean(element?.field?.link)
+      )
       .map((element, index) => (
         <LinkListItem
-          key={`${index}-${element.field?.link}`}
+          key={`${index}-${element.field.link.value?.href ?? index}`}
           index={index}
-          total={datasource.children.results.length}
+          total={results.length}
           field={element.field.link}
         />
       ));

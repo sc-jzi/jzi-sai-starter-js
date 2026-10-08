@@ -4,25 +4,8 @@ import {
   Link as ContentSdkLink,
   RichText as ContentSdkRichText,
   Text as ContentSdkText,
-  ImageField,
-  Field,
-  LinkField,
 } from '@sitecore-content-sdk/nextjs';
-import { ComponentProps } from '@/lib/component-props';
-
-interface Fields {
-  HeroTitle: Field<string>;
-  HeroBody: Field<string>;
-  HeroLink1: LinkField;
-  HeroLink2: LinkField;
-  HeroImage1: ImageField;
-  HeroImage2: ImageField;
-}
-
-type HeroProps = ComponentProps & {
-  params: { [key: string]: string };
-  fields: Fields;
-};
+import type { HeroProps } from './clhero.props';
 
 export const Default = (props: HeroProps) => {
   return <Hero1 {...props} />;

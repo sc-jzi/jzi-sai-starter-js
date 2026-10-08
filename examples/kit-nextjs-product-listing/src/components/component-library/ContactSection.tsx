@@ -5,53 +5,17 @@ import {
   Link as ContentSdkLink,
   RichText as ContentSdkRichText,
   Text as ContentSdkText,
-  Page,
 } from '@sitecore-content-sdk/nextjs';
-import { IGQLImageField, IGQLLinkField, IGQLRichTextField, IGQLTextField } from 'src/types/igql';
 import { Button } from 'shadcd/components/ui/button';
 import { useMemo, useState, type JSX } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { ComponentProps } from '@/lib/component-props';
-
-interface Fields {
-  data: {
-    datasource: {
-      children: {
-        results: ContactFields[];
-      };
-      tagLine: IGQLTextField;
-      heading: IGQLTextField;
-      body: IGQLRichTextField;
-      image: IGQLImageField;
-    };
-  };
-}
-
-interface ContactFields {
-  id: string;
-  image: IGQLImageField;
-  heading: IGQLTextField;
-  description: IGQLTextField;
-  contactLink: IGQLLinkField;
-  buttonLink: IGQLLinkField;
-}
-
-type ContactSectionProps = ComponentProps & {
-  fields: Fields;
-};
-
-type ContactCardImageProps = {
-  contact: ContactFields;
-  size: 'xs' | 'sm' | 'md' | 'lg';
-};
-
-type ContactCardProps = {
-  contact: ContactFields;
-  type: 'sm' | 'md' | 'lg' | 'horizontal' | 'noImage';
-  centered?: boolean;
-  page: Page;
-};
+import type {
+  ContactCardImageProps,
+  ContactCardProps,
+  ContactSectionProps,
+} from './contact-section.props';
+import { getDatasource, normalizeFieldShape } from '@/lib/component-props';
 
 const ContactCardImage = (props: ContactCardImageProps) => {
   switch (props.size) {

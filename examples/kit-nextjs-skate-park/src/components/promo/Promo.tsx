@@ -2,29 +2,12 @@ import React, { JSX } from 'react';
 import {
   NextImage as ContentSdkImage,
   RichText as ContentSdkRichText,
-  ImageField,
-  Field,
-  LinkField,
 } from '@sitecore-content-sdk/nextjs';
-import { ComponentProps } from 'lib/component-props';
 import { CompatibleLink } from 'components/content-sdk/CompatibleLink';
 import StructuredData from 'components/structured-data/StructuredData';
+import { getFieldValue } from 'lib/component-props';
 import { buildProductJsonLd } from 'src/lib/structured-data/schema';
-
-interface Fields {
-  PromoIcon: ImageField;
-  PromoText: Field<string>;
-  PromoLink: LinkField;
-  PromoText2: Field<string>;
-}
-
-type PromoProps = ComponentProps & {
-  fields: Fields;
-};
-
-interface PromoContentProps extends PromoProps {
-  renderText: (fields: Fields) => JSX.Element;
-}
+import { PromoContentProps, PromoFields as Fields, PromoProps } from './promo.props';
 
 const PromoContent = (props: PromoContentProps): JSX.Element => {
   const { fields, params, renderText } = props;
@@ -49,11 +32,15 @@ const PromoContent = (props: PromoContentProps): JSX.Element => {
     );
   }
 
+  const promoIconField = getFieldValue(fields.PromoIcon);
+  const promoTextField = getFieldValue(fields.PromoText);
+  const promoLinkField = getFieldValue(fields.PromoLink);
+
   return (
     <Wrapper>
       <>
         <figure className="field-promoicon" itemProp="image">
-          <ContentSdkImage field={fields.PromoIcon} />
+          <ContentSdkImage field={promoIconField} />
         </figure>
         <div className="promo-text" itemProp="description">
           {renderText(fields)}
@@ -62,11 +49,11 @@ const PromoContent = (props: PromoContentProps): JSX.Element => {
           id={`jsonld-product-${id ?? 'promo'}`}
           data={buildProductJsonLd({
             name:
-              fields.PromoLink?.value?.title ||
-              (fields.PromoText?.value ? String(fields.PromoText.value) : undefined),
-            descriptionHtml: fields.PromoText?.value ? String(fields.PromoText.value) : undefined,
-            url: fields.PromoLink?.value?.href,
-            image: (fields.PromoIcon as unknown as { value?: { src?: string } })?.value?.src,
+              promoLinkField?.value?.title ||
+              (promoTextField?.value ? String(promoTextField.value) : undefined),
+            descriptionHtml: promoTextField?.value ? String(promoTextField.value) : undefined,
+            url: promoLinkField?.value?.href,
+            image: promoIconField?.value?.src,
           })}
         />
       </>
@@ -75,16 +62,21 @@ const PromoContent = (props: PromoContentProps): JSX.Element => {
 };
 
 export const Default = (props: PromoProps): JSX.Element => {
-  const renderText = (fields: Fields) => (
-    <>
-      <div className="field-promotext">
-        <ContentSdkRichText field={fields.PromoText} />
-      </div>
-      <div className="field-promolink">
-        <CompatibleLink field={fields.PromoLink} />
-      </div>
-    </>
-  );
+  const renderText = (fields: Fields) => {
+    const promoTextField = getFieldValue(fields.PromoText);
+    const promoLinkField = getFieldValue(fields.PromoLink);
+
+    return (
+      <>
+        <div className="field-promotext">
+          <ContentSdkRichText field={promoTextField} />
+        </div>
+        <div className="field-promolink">
+          {promoLinkField ? <CompatibleLink field={promoLinkField} /> : null}
+        </div>
+      </>
+    );
+  };
 
   return <PromoContent {...props} renderText={renderText} />;
 };
@@ -93,10 +85,10 @@ export const WithText = (props: PromoProps): JSX.Element => {
   const renderText = (fields: Fields) => (
     <>
       <div className="field-promotext">
-        <ContentSdkRichText className="promo-text" field={fields.PromoText} />
+        <ContentSdkRichText className="promo-text" field={getFieldValue(fields.PromoText)} />
       </div>
       <div className="field-promotext">
-        <ContentSdkRichText className="promo-text" field={fields.PromoText2} />
+        <ContentSdkRichText className="promo-text" field={getFieldValue(fields.PromoText2)} />
       </div>
     </>
   );

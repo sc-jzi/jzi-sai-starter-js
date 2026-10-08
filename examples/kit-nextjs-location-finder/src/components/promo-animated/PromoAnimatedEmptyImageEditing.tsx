@@ -2,9 +2,7 @@ import type React from 'react';
 import { Image as ImageIcon } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-type PromoAnimatedEmptyImageEditingProps = {
-  className?: string;
-};
+import type { PromoAnimatedEmptyImageEditingProps } from './promo-animated-empty-image-editing.props';
 
 export const PromoAnimatedEmptyImageEditing: React.FC<PromoAnimatedEmptyImageEditingProps> = ({
   className,

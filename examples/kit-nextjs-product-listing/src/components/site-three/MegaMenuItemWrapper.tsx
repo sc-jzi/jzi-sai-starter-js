@@ -1,12 +1,13 @@
 'use client';
 
 import { useToggleWithClickOutside } from '@/hooks/useToggleWithClickOutside';
-import { ReactNode, createContext, useContext } from 'react';
-
-interface MegaMenuContextType {
-  isVisible: boolean;
-  setIsVisible: (visible: boolean) => void;
-}
+import { createContext, useContext } from 'react';
+import type {
+  MegaMenuBackButtonProps,
+  MegaMenuContentProps,
+  MegaMenuContextType,
+  MegaMenuToggleProps,
+} from './mega-menu-item-wrapper.props';
 
 const MegaMenuContext = createContext<MegaMenuContextType | null>(null);
 
@@ -17,13 +18,6 @@ const useMegaMenu = (menuId: string) => {
   }
   return context;
 };
-
-interface MegaMenuToggleProps {
-  menuId: string;
-  className?: string;
-  trigger: ReactNode;
-  children: ReactNode;
-}
 
 export const MegaMenuToggle = ({ className, trigger, children }: MegaMenuToggleProps) => {
   const { isVisible, setIsVisible, ref: menuRef } = useToggleWithClickOutside<HTMLLIElement>(false);
@@ -42,11 +36,6 @@ export const MegaMenuToggle = ({ className, trigger, children }: MegaMenuToggleP
     </MegaMenuContext.Provider>
   );
 };
-
-interface MegaMenuContentProps {
-  menuId: string;
-  children: ReactNode;
-}
 
 export const MegaMenuContent = ({ menuId, children }: MegaMenuContentProps) => {
   const { isVisible } = useMegaMenu(menuId);
@@ -67,11 +56,6 @@ export const MegaMenuContent = ({ menuId, children }: MegaMenuContentProps) => {
     </div>
   );
 };
-
-interface MegaMenuBackButtonProps {
-  menuId: string;
-  children: ReactNode;
-}
 
 export const MegaMenuBackButton = ({ menuId, children }: MegaMenuBackButtonProps) => {
   const { setIsVisible } = useMegaMenu(menuId);

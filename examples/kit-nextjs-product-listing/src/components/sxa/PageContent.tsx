@@ -3,28 +3,10 @@ import {
   RichText as ContentSdkRichText,
   Text as ContentSdkText,
   RichTextField,
-  LinkField,
   TextField,
 } from '@sitecore-content-sdk/nextjs';
 import Link from 'next/link';
-import { ComponentProps } from 'lib/component-props';
-
-interface Fields {
-  Title: TextField;
-  Content: RichTextField;
-  MainLink: LinkField;
-}
-
-type PageContentProps = ComponentProps & {
-  params: { [key: string]: string };
-  fields: Fields;
-};
-
-type ComponentContentProps = {
-  id: string;
-  styles: string;
-  children: JSX.Element;
-};
+import type { ComponentContentProps, PageContentProps } from './sxa-page-content.props';
 
 const ComponentContent = (props: ComponentContentProps) => {
   const id = props.id;

@@ -94,7 +94,6 @@ const mockProps = {
   },
   rendering: { componentName: 'Card' },
   page: mockPageBase,
-  componentMap: new Map(),
 } as React.ComponentProps<typeof Card>;
 
 // ----------------------

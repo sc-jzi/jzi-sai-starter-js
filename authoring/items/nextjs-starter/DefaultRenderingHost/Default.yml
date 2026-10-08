@@ -9,16 +9,16 @@ SharedFields:
   Value: Default
 - ID: "94470b31-e282-4d8d-bc54-85689efb294c"
   Hint: ServerSideRenderingEngineConfigUrl
-  Value: "https://xmc-4txoyb26dqtvyvl6fn3s41-eh-s.sitecore-staging.cloud:443/api/editing/config"
+  Value: "http://rendering-nextjs:3000/api/editing/config"
 - ID: "9c6106ea-7a5a-48e2-8cad-f0f693b1e2d4"
   Hint: __Read Only
   Value: 1
 - ID: "e32c1801-79b3-4fc1-a9c4-3c6e6c2968ae"
   Hint: ServerSideRenderingEngineApplicationUrl
-  Value: "https://xmc-4txoyb26dqtvyvl6fn3s41-eh-s.sitecore-staging.cloud/"
+  Value: "http://rendering-nextjs:3000"
 - ID: "fc76919b-0d7c-4732-865d-2af795fb38a4"
   Hint: ServerSideRenderingEngineEndpointUrl
-  Value: "https://xmc-4txoyb26dqtvyvl6fn3s41-eh-s.sitecore-staging.cloud:443/api/editing/render"
+  Value: "http://rendering-nextjs:3000/api/editing/render"
 Languages:
 - Language: "de-DE"
   Fields:
