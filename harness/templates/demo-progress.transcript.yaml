@@ -1,0 +1,18 @@
+# Add this block to industry-verticals/<customer>/docs/ai/demos/<customer>/demo-progress.yaml for the transcript-first flow.
+# Written by sitecore-demo-from-transcript; read on "resume demo".
+transcriptFlow:
+  guardSnapshotTaken: false
+  t1_intake:        { status: "pending", file: "" }              # pending | complete
+  t2_brief:         { status: "pending", file: "industry-verticals/<customer>/docs/ai/demos/<customer>/demo-brief.md" }
+  t3_plan:          { status: "pending", file: "industry-verticals/<customer>/docs/ai/demos/<customer>/demo-plan.yaml", storyValid: false, sitePlanValid: false }
+  t4_approval:      { status: "pending", userApproved: false }   # the ONE gate
+  t6_verify:        { status: "pending", demoScript: false }
+
+# One entry per planned page (replaces the single-page assumption). Updated after every create/add/wire call.
+pages:
+  # - path: /Home
+  #   pageId: ""
+  #   status: "pending"            # pending | created | assembled | verified | failed
+  #   sectionsTotal: 0
+  #   sectionsWired: 0
+  #   error: ""

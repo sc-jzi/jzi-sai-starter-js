@@ -1,0 +1,107 @@
+# demo-plan.yaml — the ONE file the SE approves. Copy to industry-verticals/<customer>/docs/ai/demos/<customer>/demo-plan.yaml.
+# Method: harness/reference/demo-method.md. Check with:
+#   node harness/scripts/validate-story.mjs <customer>
+#   node harness/scripts/validate-site-plan.mjs <customer>
+# Never invent facts or figures. Quote the transcript in `evidence`; mark stated or inferred; write "not given" for gaps.
+
+client:
+  name: "Example Corp"
+  kebab: "example-corp"   # = the folder name under industry-verticals/
+  sourceUrl: "https://www.example.com"
+
+story:
+  situation: "Example Corp runs eight regional sites on three different platforms and needs one governed way to launch campaigns. Marketing waits weeks for IT for every change, and the compliance team cannot see what is live. Success is launching a regional campaign in days, with approval trails."
+  audiences:
+    - id: a1
+      name: "Dana Reyes, VP Digital Marketing"
+      annoyance: "Waits two to three weeks for IT to publish a campaign page"
+      afterward: "Builds and publishes a regional campaign page herself in a day"
+    - id: a2
+      name: "Sam Okoye, Head of Compliance"
+      annoyance: "Cannot see what is live or who approved it"
+      afterward: "Sees every change, approver and publish time in one place"
+  chainOfPain:
+    - id: c1
+      issue: "Campaigns launch weeks late"
+      owners: [a1]
+      reason: "Every page change goes through an IT ticket queue"
+      evidence: "\"It takes us two to three weeks to get a landing page live.\""
+      evidenceType: stated
+      impact: "not given"
+    - id: c2
+      issue: "No audit trail for regulated content"
+      owners: [a2]
+      reason: "Three platforms, three approval processes"
+      evidence: "\"We cannot tell you what was live on a given day.\""
+      evidenceType: stated
+      impact: "not given"
+  messageMap:
+    before: "Campaigns wait on IT; compliance has no single view; regional teams copy pages by hand."
+    requiredCapabilities:
+      - "Marketers assemble and publish pages without IT"
+      - "A single approval and audit trail"
+    after: "Campaigns live in days with a full approval history."
+    metrics: ["Days from brief to live page"]
+    differentiators: ["One governed platform instead of three"]
+    proofPoints: ["none yet"]
+    whyNow: "not given"
+  moments:
+    - id: m1
+      title: "A finished regional campaign page, built by marketing"
+      wow: true
+      cbi: [c1]
+      audience: [a1]
+      annoyance: "Waiting weeks for IT"
+      afterward: "Publishes in a day"
+      capability: "Composable page building by marketers"
+      mustSee: "Finished campaign page on the live site, then the editor showing it was assembled without code"
+      checkIn: "Is this how you would want your team to launch a regional campaign?"
+    - id: m2
+      title: "Approvals and audit trail"
+      cbi: [c2]
+      audience: [a2]
+      annoyance: "No view of what is live"
+      afterward: "One audit trail"
+      capability: "Workflow and publish history"
+      mustSee: "Page in review state with approver and history"
+      checkIn: "Would this answer the question you get from auditors?"
+    - id: m3
+      title: "Product information the customer sees"
+      cbi: [c1]
+      audience: [a1]
+      annoyance: "Pages copied by hand"
+      afterward: "Reusable content blocks"
+      capability: "Reusable components"
+      mustSee: "Products page built from shared blocks"
+      checkIn: "Does this match how you would want product pages to behave?"
+  recap: "c1 (campaigns launch late): we showed a regional page built by marketing in a day (m1) and reusable product blocks (m3). c2 (no audit trail): we showed approvals and history on one page (m2)."
+
+site:
+  # collection/siteName are set when the site is created (sitecore-new-site). Do not guess.
+  collection: ""
+  siteName: ""
+  pages:
+    # Order matters: parents first. /Home always exists already (Page Design + header/footer come with it).
+    - path: /Home
+      pageType: page            # page | article | landing
+      purpose: "Landing view in the prospect's brand; the WOW result in the first minute"
+      proves: [m1]
+      sections:
+        - { position: 1, component: hero-banner, variant: BackgroundImage, contentSource: site, note: "Campaign headline" }
+        - { position: 2, component: value-proposition-grid, variant: Default, contentSource: transcript, note: "Speaks to c1" }
+        - { position: 3, component: cta-banner, variant: Default, contentSource: transcript }
+    - path: /Home/products
+      pageType: page
+      purpose: "Product page built from reusable blocks"
+      proves: [m3]
+      why: "m3 needs a page that is clearly assembled from shared blocks"
+      sections:
+        - { position: 1, component: hero-banner, variant: Minimal, contentSource: site }
+        - { position: 2, component: feature-cards-grid, variant: Default, contentSource: site }
+    - path: /Home/governance
+      pageType: page
+      purpose: "Approvals and audit story"
+      proves: [m2]
+      sections:
+        - { position: 1, component: hero-banner, variant: Minimal, contentSource: transcript }
+        - { position: 2, component: faq-accordion, variant: Default, contentSource: illustrative, note: "Labelled illustrative" }

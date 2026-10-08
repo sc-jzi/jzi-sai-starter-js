@@ -49,3 +49,25 @@ packages/
 
 # VS Code settings
 .vscode/
+
+# ---- demo harness: secrets, transcripts, generated working files (never commit) ----
+# harness settings and credentials
+harness/.env.local
+# discovery transcripts (Gong exports) waiting to be taken in
+harness/inbox/*
+!harness/inbox/README.md
+# transcripts stored with a demo, and any raw call material
+industry-verticals/*/docs/ai/demos/*/inputs/
+**/discovery-transcript.*
+*.vtt
+*.srt
+# credentials and local env of the base app and every demo app
+**/docs/ai/config/credentials.local.yaml
+.env
+.env.local
+.env.*.local
+# isolation-guard baseline (machine-specific)
+**/docs/ai/demos/.guard-baseline.json
+# scraper / capture output that can hold customer pages and screenshots (keep the plan and brief, not the raw captures)
+industry-verticals/*/docs/ai/demos/*/capture/
+industry-verticals/*/docs/ai/themes/*/screenshot-*.png
