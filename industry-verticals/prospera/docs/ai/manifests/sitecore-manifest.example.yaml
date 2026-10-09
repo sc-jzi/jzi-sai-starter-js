@@ -28,7 +28,7 @@ components:
     updatedAt: "2026-03-20T10:02:00Z"
 
     react:
-      filePath: "src/components/uiim/banners/Hero.tsx"
+      filePath: "src/components/pagecontent/Hero.tsx"
       componentMapKey: "hero"
       variants:
         - "Default"
@@ -117,7 +117,7 @@ components:
         - "Rendering created as JSON Rendering"
         - "Component Name is PascalCase (Hero)"
         - "Parameters Template set to GUID"
-        - "React file created at src/components/uiim/banners/Hero.tsx"
+        - "React file created at src/components/pagecontent/Hero.tsx"
         - "Component map updated with key 'hero'"
         - "Headless Variants container created"
         - "Default Variant Definition item created"
@@ -139,7 +139,7 @@ components:
     updatedAt: "2026-03-21T14:37:00Z"
 
     react:
-      filePath: "src/components/uiim/cards/ArticleCards.tsx"
+      filePath: "src/components/pagecontent/ArticleCards.tsx"
       componentMapKey: "article-cards"
       variants:
         - "Default"

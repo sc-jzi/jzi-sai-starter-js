@@ -7,15 +7,19 @@
  *   node harness/scripts/sites-api.mjs collections
  *   node harness/scripts/sites-api.mjs templates
  *   node harness/scripts/sites-api.mjs sites [--collection-id <id>]
- *   node harness/scripts/sites-api.mjs create-site --customer <customer> --site-name "<Name>" --template-id <id> \
+ *   node harness/scripts/sites-api.mjs create-site --customer <customer> --site-name "<Name>" --template "<template name>" \
  *        (--collection-id <id> | --collection-name "<new collection>") [--language en] [--languages en,fr] [--apply]
+ *   node harness/scripts/sites-api.mjs upload-thumbnail --customer <customer> --file <image.png> [--apply]
  *
  * Credentials come from harness/.env.local (SITECORE_AUTOMATION_CLIENT_ID / _SECRET, optional SITECORE_ENVIRONMENT_ID); never printed.
- * create-site is a DRY RUN unless --apply. It refuses when a site with that name already exists. On success it writes
+ * The template is chosen BY NAME (list: `templates`, https://api-docs.sitecore.com/sai/sites-api/sites/listsitetemplates); the id is looked up
+ * here. There is no template setting in .env.local: the agent lists the names and asks the SE.
+ * create-site and upload-thumbnail are DRY RUNS unless --apply. It refuses when a site with that name already exists. On success it writes
  * industry-verticals/<customer>/docs/ai/demos/<customer>/site.json (collection, site name, ids) which later steps read.
  */
-import { ENV, ROOT, die, parseArgs, customerApp, demoDir, safeWrite, rootRel, PROTECTED_SITES } from "./_lib.mjs";
-import { join } from "node:path";
+import { ENV, ROOT, die, parseArgs, customerApp, demoDir, safeWrite, rootRel, readJson, PROTECTED_SITES } from "./_lib.mjs";
+import { join, basename } from "node:path";
+import { existsSync, readFileSync } from "node:fs";
 
 const { flags, pos } = parseArgs(process.argv.slice(2));
 const cmd = pos[0];
@@ -33,7 +37,8 @@ let jwt;
 async function api(method, path, body) {
   jwt ??= await token();
   const url = `${BASE}${path}${ENV_ID ? `${path.includes("?") ? "&" : "?"}environmentId=${encodeURIComponent(ENV_ID)}` : ""}`;
-  const go = () => fetch(url, { method, headers: { Authorization: `Bearer ${jwt}`, "Content-Type": "application/json" }, body: body ? JSON.stringify(body) : undefined });
+  const form = typeof FormData !== "undefined" && body instanceof FormData;   // multipart: let fetch set the boundary header
+  const go = () => fetch(url, { method, headers: { Authorization: `Bearer ${jwt}`, ...(form ? {} : { "Content-Type": "application/json" }) }, body: form ? body : body ? JSON.stringify(body) : undefined });
   let r = await go();
   if (r.status === 401) { jwt = await token(); r = await go(); }
   const text = await r.text(); let data; try { data = text ? JSON.parse(text) : null; } catch { data = text; }
@@ -45,6 +50,13 @@ const nameOf = (x) => x?.name ?? x?.siteName ?? x?.systemName;
 const idOf = (x) => x?.id ?? x?.siteId ?? x?.collectionId;
 const norm = (s) => String(s).toLowerCase().replace(/[-{}]/g, "");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+/** Resolve a site template NAME (case-insensitive) to its id. Lists the available names when it does not match. */
+async function templateByName(name) {
+  const all = items(await api("GET", "/api/v1/sites/templates")).filter((t) => t.enabled !== false);
+  const hit = all.filter((t) => String(t.name).toLowerCase() === String(name).toLowerCase());
+  if (hit.length === 1) return hit[0];
+  die(`${hit.length ? "Several templates" : "No enabled template"} named "${name}". Available: ${all.map((t) => `"${t.name}"`).join(", ") || "(none)"}`, 1);
+}
 async function waitJob(handle) {
   for (let i = 0; i < 60; i++) {
     const j = await api("GET", `/api/v1/jobs/${encodeURIComponent(handle)}/status`);
@@ -59,11 +71,12 @@ async function waitJob(handle) {
 switch (cmd) {
   case "auth-check": console.log(`✅ Authenticated. ${items(await api("GET", "/api/v1/sites")).length} site(s) visible.`); break;
   case "collections": for (const c of items(await api("GET", "/api/v1/collections"))) console.log(`${idOf(c)}  ${nameOf(c)}${c.displayName ? `  (${c.displayName})` : ""}`); break;
-  case "templates": for (const t of items(await api("GET", "/api/v1/sites/templates"))) console.log(`${t.id}  ${t.name}${t.enabled === false ? " [disabled]" : ""}${t.description ? ` — ${t.description}` : ""}`); break;
+  case "templates": for (const t of items(await api("GET", "/api/v1/sites/templates"))) console.log(`${t.name}${t.enabled === false ? " [disabled]" : ""}${t.description ? ` — ${t.description}` : ""}  (id ${t.id})`); break;
   case "sites": for (const s of items(await api("GET", flags["collection-id"] ? `/api/v1/collections/${flags["collection-id"]}/sites` : "/api/v1/sites"))) console.log(`${idOf(s)}  ${nameOf(s)}${s.collectionName ? `  [${s.collectionName}]` : ""}`); break;
   case "create-site": {
-    const customer = flags.customer, siteName = flags["site-name"], templateId = flags["template-id"] || ENV.SITE_TEMPLATE_ID;
-    if (!customer || !siteName || !templateId) die("need --customer, --site-name and --template-id (or SITE_TEMPLATE_ID in harness/.env.local)");
+    const customer = flags.customer, siteName = flags["site-name"];
+    if (!customer || !siteName || !flags.template) die('need --customer, --site-name and --template "<template name>" (run `templates` and ask the SE which one)');
+    const tpl = await templateByName(flags.template), templateId = tpl.id;
     if (!flags["collection-id"] === !flags["collection-name"]) die("give exactly one of --collection-id (existing) or --collection-name (create new)");
     customerApp(customer, { mustExist: false });
     if (PROTECTED_SITES.has(String(siteName).toLowerCase())) die(`"${siteName}" is a protected site name.`, 1);
@@ -75,7 +88,7 @@ switch (cmd) {
     else { if (cols.some((x) => String(nameOf(x)).toLowerCase() === String(flags["collection-name"]).toLowerCase())) die(`Collection "${flags["collection-name"]}" already exists — use --collection-id instead.`, 1); note = `NEW collection "${flags["collection-name"]}"`; }
     const body = { siteName, displayName: String(flags["display-name"] ?? siteName), templateId, language, languages,
       ...(flags["collection-id"] ? { collectionId: flags["collection-id"] } : { collectionName: flags["collection-name"], collectionDisplayName: String(flags["collection-name"]) }) };
-    console.log(`${flags.apply ? "CREATE" : "DRY RUN"} — NEW site "${siteName}" in ${note}, template ${templateId}, languages ${languages.join(",")}`);
+    console.log(`${flags.apply ? "CREATE" : "DRY RUN"} — NEW site "${siteName}" in ${note}, template "${tpl.name}", languages ${languages.join(",")}`);
     if (!flags.apply) { console.log(JSON.stringify(body, null, 2)); console.log("\nNothing created. Re-run with --apply."); break; }
     const res = await api("POST", "/api/v1/sites", body);
     console.log(`Submitted (handle ${res?.handle ?? "n/a"}) — SitecoreAI can take up to ~2 minutes…`);
@@ -84,11 +97,29 @@ switch (cmd) {
     const cols2 = items(await api("GET", "/api/v1/collections"));
     const col = flags["collection-id"] ? cols2.find((x) => norm(idOf(x)) === norm(flags["collection-id"])) : cols2.find((x) => String(nameOf(x)).toLowerCase() === String(flags["collection-name"]).toLowerCase());
     const record = { customer, siteName, siteId: idOf(after) ?? null, collection: nameOf(col) ?? String(flags["collection-name"] ?? ""), collectionId: idOf(col) ?? flags["collection-id"] ?? null,
-      collectionIsNew: !flags["collection-id"], templateId, languages, jobHandle: res?.handle ?? null, createdAt: new Date().toISOString() };
+      collectionIsNew: !flags["collection-id"], templateId, templateName: tpl.name, languages, jobHandle: res?.handle ?? null, createdAt: new Date().toISOString() };
     if (!after) console.log("⚠ Site not visible in the list yet — check SitecoreAI > Channels, then re-run `sites`.");
     safeWrite(customer, join(demoDir(customer), "site.json"), JSON.stringify(record, null, 2) + "\n");
     console.log(`✅ Created. Saved ${rootRel(join(demoDir(customer), "site.json"))}`); console.log(JSON.stringify(record, null, 2));
     break;
   }
-  default: die("usage: sites-api.mjs <auth-check|collections|templates|sites|create-site> …");
+  case "upload-thumbnail": {
+    // POST /api/v1/sites/{siteId}/upload-thumbnail — multipart/form-data, field "File"
+    // https://api-docs.sitecore.com/sai/sites-api/sites/uploadsitethumbnail
+    const customer = flags.customer, file = flags.file;
+    if (!customer || !file) die("need --customer and --file <image> (make one with: node harness/scripts/screenshot.mjs --customer <c> --url <homepage url>)");
+    const siteP = join(demoDir(customer), "site.json"), rec = readJson(siteP);
+    if (!rec?.siteId) die(`${rootRel(siteP)} has no siteId — create the site first (create-site --apply).`);
+    if (PROTECTED_SITES.has(String(rec.siteName).toLowerCase())) die(`"${rec.siteName}" is a protected site.`, 1);
+    if (!existsSync(file)) die(`image not found: ${file}`);
+    const bytes = readFileSync(file), type = /\.jpe?g$/i.test(file) ? "image/jpeg" : /\.webp$/i.test(file) ? "image/webp" : "image/png";
+    console.log(`${flags.apply ? "UPLOAD" : "DRY RUN"} — thumbnail ${file} (${Math.round(bytes.length / 1024)} KB) for site "${rec.siteName}" (${rec.siteId})`);
+    if (!flags.apply) { console.log("Nothing uploaded. Re-run with --apply."); break; }
+    const fd = new FormData(); fd.append("File", new Blob([bytes], { type }), basename(file));
+    const res = await api("POST", `/api/v1/sites/${encodeURIComponent(rec.siteId)}/upload-thumbnail`, fd);
+    safeWrite(customer, siteP, JSON.stringify({ ...rec, thumbnail: { id: res?.id ?? null, url: res?.url ?? null, uploadedAt: new Date().toISOString() } }, null, 2) + "\n");
+    console.log("✅ Thumbnail set.", JSON.stringify(res));
+    break;
+  }
+  default: die("usage: sites-api.mjs <auth-check|collections|templates|sites|create-site|upload-thumbnail> …");
 }

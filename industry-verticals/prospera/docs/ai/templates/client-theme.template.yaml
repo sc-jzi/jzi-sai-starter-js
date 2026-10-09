@@ -68,21 +68,7 @@ tone:
   cardStyle: ""
   navStyle: ""
 
-tailwind:
-  colors:
-    brand:
-      primary: ""
-      secondary: ""
-      accent: ""
-  fontFamily:
-    heading: []
-    body: []
-  borderRadius:
-    DEFAULT: ""
-    button: ""
-    card: ""
-
-cssVariables: ""
+siteThemeScss: ""   # body.site-<customer> { --text-body: ...; --bg-saturated: ...; } plus a .dark block; see .cursor/skills/sitecore-reference/references/site-theme-variables.md
 
 extraction:
   confidence: ""

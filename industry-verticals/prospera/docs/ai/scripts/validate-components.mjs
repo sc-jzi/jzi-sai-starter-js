@@ -4,7 +4,7 @@
  * validate-components.mjs
  *
  * Validates that:
- * 1. Every uiim component import in component-map.ts resolves to an existing file
+ * 1. Every src/components import in component-map.ts resolves to an existing file
  * 2. Each file exports a `Default` named export
  * 3. The component map key matches the import alias
  *
@@ -47,8 +47,8 @@ while ((match = mapEntryRegex.exec(mapContent)) !== null) {
   mapEntries.push({ key: match[1], alias: match[2] });
 }
 
-// Filter to uiim components only
-const uiimImports = imports.filter(i => i.path.includes('/uiim/'));
+// Only app components (skip SDK built-ins, which are not imported from src/components)
+const componentImports = imports.filter(i => /^(src\/)?components\//.test(i.path));
 
 let failures = 0;
 let passed = 0;
@@ -56,7 +56,7 @@ let passed = 0;
 console.log('Component Map Validation');
 console.log('========================\n');
 
-for (const imp of uiimImports) {
+for (const imp of componentImports) {
   const tsxPath = resolve(projectRoot, imp.path + '.tsx');
   const tsPath = resolve(projectRoot, imp.path + '.ts');
   const indexPath = resolve(projectRoot, imp.path, 'index.tsx');
@@ -107,11 +107,11 @@ for (const imp of uiimImports) {
 }
 
 console.log(`\n========================`);
-console.log(`Passed: ${passed}/${uiimImports.length}`);
+console.log(`Passed: ${passed}/${componentImports.length}`);
 if (failures > 0) {
-  console.log(`Failed: ${failures}/${uiimImports.length}`);
+  console.log(`Failed: ${failures}/${componentImports.length}`);
   process.exit(1);
 } else {
-  console.log('All uiim components validated.');
+  console.log('All components validated.');
   process.exit(0);
 }

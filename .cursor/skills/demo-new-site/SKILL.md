@@ -1,6 +1,27 @@
 ---
 name: demo-new-site
-description: Create a brand-new SitecoreAI site (new or existing collection) and the local app copy for a demo, from scratch, never by duplicating a site. Use when a demo needs its site created.
+description: Create the customer's NEW Sitecore site (new or existing collection) via the Sites API and its local app copy. Use as phase 1 of demo-from-transcript or when the SE says "create the site for <customer>".
 ---
 
-Follow `harness/skills/sitecore-new-site.md`. Settings come from `harness/.env.local`.
+# Create a NEW Sitecore site from scratch (never a duplicate)
+
+Called by `sitecore-demo-from-transcript` (Phase T5 step 1). Replaces the old duplicate-and-rename flow: duplicates stay in the source collection and cannot be moved by API, and a copy drags the source site's content along.
+
+## Rules
+- Sites API only creates. It never copies, renames, moves or deletes. `sites-api.mjs` refuses an existing site name and protected names.
+- Credentials: `harness/.env.local` (`SITECORE_AUTOMATION_CLIENT_ID/SECRET`, optional `SITECORE_ENVIRONMENT_ID`). Never print or ask for secrets in chat.
+- Decision to confirm at the approval gate: collection (existing or new) and site name. A new collection per customer is the safest (nothing shared with other demos).
+
+## Steps
+1. `node harness/scripts/sites-api.mjs auth-check` — stop with a clear message if it fails.
+2. Collection: the choice was made in the brief/approval. Existing → `node harness/scripts/sites-api.mjs collections` and take its id. New → use its name.
+3. Template: run `node harness/scripts/sites-api.mjs templates` (Sites API *List site templates*). Show the SE the template **names** (with their descriptions) and ask which one to use; never show or ask for ids. There is no template setting in `.env.local`. All sites in a collection must use the same template, so for an existing collection suggest the one its other sites use; for a new collection suggest the headless/Next.js template if there is one. Record the chosen name in `demo-progress.yaml`.
+4. Dry run: `node harness/scripts/sites-api.mjs create-site --customer <customer> --site-name "<Customer Name>" --template "<template name>" (--collection-id <id> | --collection-name "<name>")`. Check the output matches the approved plan.
+5. Create: same command with `--apply`. SitecoreAI can take ~2 minutes; the script waits for the job and writes `industry-verticals/<customer>/docs/ai/demos/<customer>/site.json` (collection, site name, template name, ids).
+6. Local app: `node harness/scripts/new-site.mjs <customer>` (dry run), then `--apply`. It copies `industry-verticals/prospera` to `industry-verticals/<customer>` (code only: no other demo's docs, no secrets), creates `.env.local` from `harness/.env.local`, sets `docs/ai/config/project.yaml` (siteCollection, siteName), and adds `renderingHosts.<customer>` to `xmcloud.build.json`.
+7. `node harness/scripts/guard-customer.mjs check <customer> --allow-build-json`.
+8. Optional editing host: `dotnet sitecore cloud editinghost create --cm-environment-id <id> --name <customer>` when the SE has the CLI logged in; otherwise list it under manual tasks. Also manual: Edge context ids / editing secret if `new-site` reported them empty, `npm install`, publishing item ids.
+9. Update `demo-progress.yaml` (`siteCreated`, collection, site name, ids). Continue with `sitecore-site-bootstrap`.
+10. Thumbnail: done at the END of `demo-build-pages` once the homepage exists (see that skill). The site card in SitecoreAI shows it.
+
+API reference: `harness/reference/sitecoreai-apis.md` (Sites API: https://api-docs.sitecore.com/sai/sites-api). Check it if a call fails or Sitecore has changed an endpoint.

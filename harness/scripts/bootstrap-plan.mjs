@@ -15,20 +15,21 @@
  */
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
-import { die, demoDir, baseApp, customerApp, rootRel } from "./_lib.mjs";
+import { die, demoDir, baseApp, customerApp, rootRel, ROOT } from "./_lib.mjs";
 import { parseYaml } from "./_yaml.mjs";
 
 const customer = process.argv[2]; if (!customer) die("usage: bootstrap-plan.mjs <customer>");
 const demo = demoDir(customer), app = customerApp(customer, { mustExist: false });
 const aiDir = (n) => [join(app, "docs/ai", n), join(baseApp(), "docs/ai", n)].find(existsSync);
 const planP = join(demo, "demo-plan.yaml"); if (!existsSync(planP)) die(`${rootRel(planP)} not found`);
-const manP = aiDir("manifests/sitecore-manifest.yaml"), anaP = aiDir("agents/site-analyzer.md");
+const manP = aiDir("manifests/sitecore-manifest.yaml"), anaP = [join(ROOT, ".cursor/skills/site-analyzer/SKILL.md")].find(existsSync);
 if (!manP) die("sitecore-manifest.yaml not found in the customer copy or the base app");
 const arr = (v) => (Array.isArray(v) ? v : v == null || v === "" ? [] : [v]);
 
 const plan = parseYaml(readFileSync(planP, "utf8")), man = parseYaml(readFileSync(manP, "utf8"));
+if (!arr(man.components).length) die(`${rootRel(manP)} has no components yet. Run /demo-inventory-base-site once (read-only discovery of the base site) to fill it, then re-run.`);
 const byName = new Map(arr(man.components).map((c) => [c.name, c]));
-// registry id -> manifest name (table in site-analyzer.md); fallback PascalCase
+// registry id -> manifest name (table in .cursor/skills/site-analyzer/SKILL.md); fallback PascalCase
 const map = new Map();
 if (anaP) for (const m of readFileSync(anaP, "utf8").matchAll(/^\|\s*`([a-z0-9-]+)`\s*\|\s*`([A-Za-z0-9]+)`/gm)) map.set(m[1], m[2]);
 const pascal = (id) => id.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join("");

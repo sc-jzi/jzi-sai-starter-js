@@ -8,7 +8,6 @@ const rows = [
   ["SITECORE_AUTOMATION_CLIENT_SECRET", "required", "automation client secret"],
   ["SITECORE_EDGE_CONTEXT_ID", "recommended", "copied into each demo app's .env.local"],
   ["SITECORE_EDITING_SECRET", "recommended", "copied into each demo app's .env.local"],
-  ["SITE_TEMPLATE_ID", "optional", "default site template (otherwise you are asked once)"],
   ["SITECORE_ENVIRONMENT_ID", "optional", "pin the environment"],
   ["CH_HOST", "ifCH", "Content Hub host"], ["CH_USER", "ifCH", "Content Hub user"], ["CH_PASSWORD", "ifCH", "Content Hub password"],
 ];

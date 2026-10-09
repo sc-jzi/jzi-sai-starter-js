@@ -50,7 +50,7 @@ pageTemplates:
       - id: article-hero
         name: "ArticleHero"
         category: "article"
-        filePath: "src/components/uiim/article/ArticleHero.tsx"
+        filePath: "src/components/pagecontent/ArticleHero.tsx"
         routeFieldsUsed:
           - "ArticleImage"
           - "Title"
@@ -68,7 +68,7 @@ pageTemplates:
       - id: article-body
         name: "ArticleBody"
         category: "article"
-        filePath: "src/components/uiim/article/ArticleBody.tsx"
+        filePath: "src/components/pagecontent/ArticleBody.tsx"
         routeFieldsUsed:
           - "ArticleContent"
           - "ArticleKeyTakeaways"
@@ -182,7 +182,7 @@ pageTemplates:
       - id: landing-hero
         name: "LandingHero"
         category: "landing"
-        filePath: "src/components/uiim/landing/LandingHero.tsx"
+        filePath: "src/components/pagecontent/LandingHero.tsx"
         routeFieldsUsed: ["heroEyebrow", "heroHeadline", "heroSubhead", "heroPrimaryCta", "heroSecondaryCta", "heroImage", "heroVideo"]
         variants:
           - { name: "Default", description: "Centered eyebrow + headline + subhead + dual CTAs above hero image/video. Conventional above-the-fold." }
@@ -192,7 +192,7 @@ pageTemplates:
       - id: landing-features
         name: "LandingFeatures"
         category: "landing"
-        filePath: "src/components/uiim/landing/LandingFeatures.tsx"
+        filePath: "src/components/pagecontent/LandingFeatures.tsx"
         routeFieldsUsed: ["feature1IconName", "feature1Title", "feature1Description", "feature2IconName", "feature2Title", "feature2Description", "feature3IconName", "feature3Title", "feature3Description"]
         variants:
           - { name: "Default", description: "3-up card grid. Icon + title + description per card. Responsive: 3 cols desktop, 1 col mobile." }
@@ -200,7 +200,7 @@ pageTemplates:
       - id: landing-stats
         name: "LandingStats"
         category: "landing"
-        filePath: "src/components/uiim/landing/LandingStats.tsx"
+        filePath: "src/components/pagecontent/LandingStats.tsx"
         routeFieldsUsed: ["stat1Number", "stat1Label", "stat2Number", "stat2Label", "stat3Number", "stat3Label"]
         variants:
           - { name: "Default", description: "3-up stat tiles. Large number + label below. Responsive: 3 cols desktop, stacked mobile." }
@@ -208,7 +208,7 @@ pageTemplates:
       - id: landing-social-proof
         name: "LandingSocialProof"
         category: "landing"
-        filePath: "src/components/uiim/landing/LandingSocialProof.tsx"
+        filePath: "src/components/pagecontent/LandingSocialProof.tsx"
         routeFieldsUsed: ["testimonialQuote", "testimonialAuthorName", "testimonialAuthorTitle", "testimonialAuthorImage", "partnerLogosImage"]
         variants:
           - { name: "Default", description: "Testimonial card (quote + author block) above the partner logo strip image. Logo strip hidden when partnerLogosImage is empty (unless editing)." }
@@ -216,15 +216,15 @@ pageTemplates:
       - id: landing-faq
         name: "LandingFAQ"
         category: "landing"
-        filePath: "src/components/uiim/landing/LandingFAQ.tsx"
+        filePath: "src/components/pagecontent/LandingFAQ.tsx"
         routeFieldsUsed: ["faq1Question", "faq1Answer", "faq2Question", "faq2Answer", "faq3Question", "faq3Answer", "faq4Question", "faq4Answer", "faq5Question", "faq5Answer"]
         variants:
-          - { name: "Default", description: "shadcn Accordion, 5 items, all collapsed by default. Empty Q/A pairs hidden in non-editing mode." }
+          - { name: "Default", description: "Accordion, 5 items, all collapsed by default. Empty Q/A pairs hidden in non-editing mode." }
 
       - id: landing-final-cta
         name: "LandingFinalCTA"
         category: "landing"
-        filePath: "src/components/uiim/landing/LandingFinalCTA.tsx"
+        filePath: "src/components/pagecontent/LandingFinalCTA.tsx"
         routeFieldsUsed: ["finalCtaHeadline", "finalCtaSubhead", "finalCtaButton"]
         variants:
           - { name: "Default", description: "Centered headline + subhead + single button on a contrast background band. Full-width." }

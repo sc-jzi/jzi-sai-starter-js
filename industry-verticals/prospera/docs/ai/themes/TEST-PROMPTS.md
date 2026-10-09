@@ -76,8 +76,8 @@ After each test, verify:
 - [ ] Font families populated (or alternatives suggested with note)
 - [ ] `tone.overall` is reasonable for the site type
 - [ ] `tone.heroStyle`, `cardStyle`, `navStyle` are populated
-- [ ] `tailwind` block has valid values
-- [ ] `cssVariables` block is a valid CSS `:root` declaration
+- [ ] `siteThemeScss` block has all 15 theme variables
+- [ ] `siteThemeScss` is valid SCSS with a light and a `.dark` block
 - [ ] `extraction.confidence` is set and makes sense
 - [ ] `extraction.method` reflects what actually happened (playwright-full vs fallback)
 - [ ] `extraction.notes` has at least one entry

@@ -1,10 +1,8 @@
 project:  
-  reactComponentRoot: "src/components/uiim"  
-  shadcnImportBase: "@/components/ui"  
+  reactComponentRoot: "src/components/pagecontent"  
   componentMapPath: ".sitecore/component-map.ts"  
   sitecoreJssPackage: "@sitecore-content-sdk/nextjs"
-  usesTailwind: true  
-  usesShadcn: true  
+  usesSass: true  
   
 tools:  
   marketerMcp:  
@@ -32,7 +30,7 @@ component:
   namePascal: ""  # e.g. "EurobankHeader" — used for TSX filename, Component Name [shared], rendering name, variant names
   nameKebab: ""   # e.g. "eurobank-header" — used for folder name and component map key
   kind: "" # simple | list | context-only  
-  filePath: ""    # e.g. "src/components/uiim/navigation/EurobankHeader.tsx" — folder is kebab-case, file is PascalCase
+  filePath: ""    # e.g. "src/components/navigation/Header.tsx" — subfolder by kind, file is PascalCase
   componentMapKey: ""  # kebab-case key in component-map.ts
   componentMapImportAlias: ""  
   
@@ -139,8 +137,7 @@ rendering:
 react:  
   propsShape: "" # default-jss | graphql-datasource | context-route  
   usesSitecoreJssHelpers: true  
-  usesShadcn: true  
-  usesTailwind: true  
+  usesSass: true  
   variants:        # named exports in TSX — must match headlessVariants.variants exactly
     - Default  
   

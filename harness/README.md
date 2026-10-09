@@ -7,6 +7,7 @@ Everything is configured in **`harness/.env.local`** (git-ignored; copy `harness
 ## One-time
 1. `cp harness/env.example harness/.env.local` and fill it in (automation client at minimum).
 2. `node harness/scripts/env-check.mjs`
+3. For the site thumbnail: `npm install --no-save playwright` and `npx playwright install chromium` (skip it and the thumbnail becomes a manual task).
 
 ## Per demo
 1. Drop the transcript into `harness/inbox/`.
@@ -18,9 +19,9 @@ Everything is configured in **`harness/.env.local`** (git-ignored; copy `harness
 | Path | What |
 |---|---|
 | `harness/.env.local` | credentials and switches |
-| `harness/skills/` | the skills (source of truth). `.cursor/skills/*/SKILL.md` are thin pointers so Cursor finds them |
-| `harness/scripts/` | intake, validators, isolation guard, Sites API, new-site, bootstrap plan, Content Hub wrapper |
-| `harness/templates/`, `harness/reference/` | plan/brief/progress templates, demo method |
+| `.cursor/skills/` | **all** skills (the only place). Type `/` in Cursor: `demo-*` is the transcript flow, `sitecore-*` build components/pages, `content-sdk-*` are code skills, `sitecore-reference` holds shared rules and reference |
+| `harness/scripts/` | intake, validators, isolation guard, Sites API (create site, list templates, upload thumbnail), screenshot, new-site, bootstrap plan, Content Hub wrapper |
+| `harness/templates/`, `harness/reference/` | plan/brief/progress templates, demo method, `sitecoreai-apis.md` (the SitecoreAI API docs we build on) |
 | `harness/inbox/` | transcripts waiting (never committed) |
 | `industry-verticals/<customer>/` | the demo's own app copy; `docs/ai/demos/<customer>/` holds everything the demo produces |
 | `industry-verticals/prospera/` | the base app and shared definitions: read-only, never edited by a demo |

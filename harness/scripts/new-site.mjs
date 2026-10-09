@@ -37,7 +37,7 @@ const patched = build.replace(marker, `,${EOL}    "${customer}": ${block}${EOL} 
 const SKIP = new Set(["node_modules", ".next", ".turbo", ".vercel", "coverage", "dist", "out", "package-cache"]);
 const skipFile = (n) => n === ".env" || n === ".env.local" || (n.startsWith(".env.") && n.endsWith(".local")) || n === "credentials.local.yaml" || n === "user.json" || n === ".guard-baseline.json";
 const plan = [
-  `READ industry-verticals/${BASE_APP} (never modified) → COPY to industry-verticals/${customer} (skipping ${[...SKIP].join(", ")}, other demos' docs/ai/demos, local .env files, credentials)`,
+  `READ industry-verticals/${BASE_APP} (never modified) → COPY to industry-verticals/${customer} (skipping ${[...SKIP].join(", ")}, other demos' docs/ai/demos, any skills/agents/reference left in the base app (skills are central in .cursor/skills), local .env files, credentials)`,
   `set package.json name → "${customer}"`,
   `create .env.local from .env.remote.example: NEXT_PUBLIC_DEFAULT_SITE_NAME="${site.siteName}"; Edge context ids / editing secret from harness/.env.local when set (git-ignored; values never printed)`,
   `set docs/ai/config/project.yaml siteCollection="${site.collection}" siteName="${site.siteName}"`,
@@ -48,7 +48,9 @@ if (apply) {
   cpSync(src, dst, { recursive: true, filter: (p) => {
     const parts = p.slice(src.length).split(sep).filter(Boolean);
     if (parts.some((x) => SKIP.has(x)) || skipFile(parts[parts.length - 1] ?? "")) return false;
-    return !(parts[0] === "docs" && parts[1] === "ai" && parts[2] === "demos");
+    if (parts[0] === ".agents" || parts[0] === "Skills.md") return false; // skills live in the repo-root .cursor/skills only
+    if (parts[0] === "docs" && parts[1] === "ai" && ["skills", "agents", "reference", "rules", "examples", "demos"].includes(parts[2])) return false; // central now, or per-demo
+    return true;
   } });
   const pkgPath = join(dst, "package.json"), pkg = JSON.parse(readFileSync(pkgPath, "utf8")); pkg.name = customer;
   safeWrite(customer, pkgPath, JSON.stringify(pkg, null, 2) + "\n");
