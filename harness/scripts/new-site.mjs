@@ -73,8 +73,8 @@ if (apply) {
 console.log(`
 STILL TO DO BY A PERSON (cannot be automated here)
   [ ] Edge context ids + editing secret in industry-verticals/${customer}/.env.local if they were empty
-  [ ] npm install in industry-verticals/${customer}
-  [ ] Rendering host / editing host for "${customer}" in SitecoreAI Deploy (or: dotnet sitecore cloud editinghost create — see harness/skills/sitecore-new-site.md)
+  [ ] (the agent does these) node harness/scripts/deps-check.mjs --customer ${customer} --fix   then   node harness/scripts/editing-host.mjs --customer ${customer} --apply
+  [ ] Push the code so the editing host can build (SE), check the first build in SitecoreAI Deploy
   [ ] Add this site's publish item ids to xmcloud.build.json postActions if your environment needs them
 `);
 if (!apply) console.log("Dry run only. Re-run with --apply to write.");

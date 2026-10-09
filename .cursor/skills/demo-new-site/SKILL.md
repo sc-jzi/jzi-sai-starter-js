@@ -20,8 +20,10 @@ Called by `sitecore-demo-from-transcript` (Phase T5 step 1). Replaces the old du
 5. Create: same command with `--apply`. SitecoreAI can take ~2 minutes; the script waits for the job and writes `industry-verticals/<customer>/docs/ai/demos/<customer>/site.json` (collection, site name, template name, ids).
 6. Local app: `node harness/scripts/new-site.mjs <customer>` (dry run), then `--apply`. It copies `industry-verticals/prospera` to `industry-verticals/<customer>` (code only: no other demo's docs, no secrets), creates `.env.local` from `harness/.env.local`, sets `docs/ai/config/project.yaml` (siteCollection, siteName), and adds `renderingHosts.<customer>` to `xmcloud.build.json`.
 7. `node harness/scripts/guard-customer.mjs check <customer> --allow-build-json`.
-8. Optional editing host: `dotnet sitecore cloud editinghost create --cm-environment-id <id> --name <customer>` when the SE has the CLI logged in; otherwise list it under manual tasks. Also manual: Edge context ids / editing secret if `new-site` reported them empty, `npm install`, publishing item ids.
-9. Update `demo-progress.yaml` (`siteCreated`, collection, site name, ids). Continue with `sitecore-site-bootstrap`.
-10. Thumbnail: done at the END of `demo-build-pages` once the homepage exists (see that skill). The site card in SitecoreAI shows it.
+8. Packages: `node harness/scripts/deps-check.mjs --customer <customer> --fix` (runs `npm install` in the customer app if `node_modules` is missing; never in the base app).
+9. Editing host: `node harness/scripts/editing-host.mjs --customer <customer>` (dry run), then `--apply`. It runs the Sitecore CLI `cloud editinghost create` for the name in `xmcloud.build.json`. If it fails (no CLI, not logged in, environment type not supported) do not stop: add "create the editing host in Deploy" to the manual tasks with the fallback steps the script prints. The host builds from the linked repo, so the SE must push the code; the first build is where problems show.
+10. Manual for the SE: Edge context ids / editing secret if `new-site` reported them empty, `git push`, publishing item ids.
+11. Update `demo-progress.yaml` (`siteCreated`, collection, site name, ids). Continue with `sitecore-site-bootstrap`.
+12. Thumbnail: done at the END of `demo-build-pages` once the homepage exists (see that skill). The site card in SitecoreAI shows it.
 
 API reference: `harness/reference/sitecoreai-apis.md` (Sites API: https://api-docs.sitecore.com/sai/sites-api). Check it if a call fails or Sitecore has changed an endpoint.

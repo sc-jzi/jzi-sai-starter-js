@@ -5,6 +5,7 @@
  *   node harness/scripts/intake-transcript.mjs --list                      what is waiting in harness/inbox/
  *   node harness/scripts/intake-transcript.mjs <customer>  take the newest file from harness/inbox/
  *   node harness/scripts/intake-transcript.mjs <customer> --file <p>   take a specific file (only read, not moved)
+ *   node harness/scripts/intake-transcript.mjs <customer> --none      no transcript: just create the demo folder (the brief comes from an SE interview)
  *
  * Result: industry-verticals/<customer>/docs/ai/demos/<customer>/inputs/discovery-transcript.<ext> plus inputs/.gitignore ("*") so nothing in that
  * folder is committed. Files from the inbox are MOVED; files from elsewhere are copied. Contents are never printed.
@@ -18,7 +19,7 @@ mkdirSync(INBOX, { recursive: true });
 const args = process.argv.slice(2);
 const fi = args.indexOf("--file");
 const file = fi >= 0 ? args[fi + 1] : null;
-const pos = args.filter((a, i) => !a.startsWith("--") && i !== fi + 1);
+const pos = args.filter((a, i) => !a.startsWith("--") && i !== (fi >= 0 ? fi + 1 : -1));
 const waiting = () => readdirSync(INBOX).filter((f) => !/^(README\.md|\.gitkeep|\.gitignore)$/i.test(f) && statSync(join(INBOX, f)).isFile())
   .map((f) => ({ f, t: statSync(join(INBOX, f)).mtimeMs, kb: Math.round(statSync(join(INBOX, f)).size / 1024) })).sort((a, b) => b.t - a.t);
 
@@ -29,7 +30,12 @@ if (args.includes("--list")) {
   process.exit(0);
 }
 const client = pos[0];
-if (!client) die("usage: intake-transcript.mjs <customer> [--file <path>]   |   --list");
+if (!client) die("usage: intake-transcript.mjs <customer> [--file <path>]   |   --none   |   --list");
+if (args.includes("--none")) {
+  mkdirSync(join(demoDir(client), "inputs"), { recursive: true });
+  console.log(`✔ no transcript: demo folder ready (${rootRel(demoDir(client))}). Build the brief from the SE interview (harness/templates/demo-interview.md).`);
+  process.exit(0);
+}
 
 let src, fromInbox = false;
 if (file) { src = resolve(file); if (!existsSync(src) || !statSync(src).isFile()) die(`file not found: ${src}`); fromInbox = src.startsWith(INBOX); }

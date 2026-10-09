@@ -52,6 +52,10 @@ docs/ai/themes/eurobank.theme.example.yaml
 
 ### Step 0 — Ensure Playwright is installed
 
+Run `node harness/scripts/deps-check.mjs --fix` (installs Playwright + Chromium into `harness/` if missing) and skip the OS-specific setup scripts below. **Demo flow:** the draft is made in `demo-from-transcript` Phase T3b into the demo folder; when an approved draft exists at `industry-verticals/<customer>/docs/ai/demos/<customer>/theme/theme.yaml`, do not scrape again, only apply it.
+
+(Legacy standalone setup, no longer needed:)
+
 If this is the first time running the scraper, install Playwright and Chromium:
 
 **Windows (cmd or PowerShell):**
@@ -76,14 +80,14 @@ Run the bundled Playwright script to render the client site with full JavaScript
 
 **macOS / Linux:**
 ```bash
-node docs/ai/scripts/site-scraper.mjs \
+node harness/scripts/site-scraper.mjs \
   --url <CLIENT_URL> \
-  --output docs/ai/themes/<client-kebab>
+  --output industry-verticals/<customer>/docs/ai/demos/<customer>/theme
 ```
 
 **Windows:**
 ```cmd
-node docs\ai\scripts\site-scraper.mjs --url <CLIENT_URL> --output docs\ai\themes\<client-kebab>
+node harness\scripts\site-scraper.mjs --url <CLIENT_URL> --output industry-verticals\<customer>\docs\ai\demos\<customer>\theme
 ```
 
 This produces:

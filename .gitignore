@@ -56,8 +56,10 @@ harness/.env.local
 # discovery transcripts (Gong exports) waiting to be taken in
 harness/inbox/*
 !harness/inbox/README.md
-# transcripts stored with a demo, and any raw call material
-industry-verticals/*/docs/ai/demos/*/inputs/
+# EVERYTHING a demo produces about the opportunity (transcript, brief, story, plan, script, theme draft, site ids, progress, captures)
+# stays on the SE's machine. The customer's APP CODE next to it (src/, .sitecore/, ...) is committed as usual.
+industry-verticals/*/docs/ai/demos/
+# transcripts and raw call material anywhere else
 **/discovery-transcript.*
 *.vtt
 *.srt
@@ -66,8 +68,8 @@ industry-verticals/*/docs/ai/demos/*/inputs/
 .env
 .env.local
 .env.*.local
-# isolation-guard baseline (machine-specific)
-**/docs/ai/demos/.guard-baseline.json
-# scraper / capture output that can hold customer pages and screenshots (keep the plan and brief, not the raw captures)
-industry-verticals/*/docs/ai/demos/*/capture/
+# theme scrapes of a customer's site that were saved into an app's themes folder
 industry-verticals/*/docs/ai/themes/*/screenshot-*.png
+
+# installed packages (harness/node_modules, any app)
+node_modules/

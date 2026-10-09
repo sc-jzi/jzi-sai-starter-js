@@ -7,22 +7,23 @@ Everything is configured in **`harness/.env.local`** (git-ignored; copy `harness
 ## One-time
 1. `cp harness/env.example harness/.env.local` and fill it in (automation client at minimum).
 2. `node harness/scripts/env-check.mjs`
-3. For the site thumbnail: `npm install --no-save playwright` and `npx playwright install chromium` (skip it and the thumbnail becomes a manual task).
+3. `node harness/scripts/deps-check.mjs --fix` installs Playwright + Chromium (theme scrape, content extraction, site thumbnail). Cursor runs this itself at the start of a demo, and `npm install` in the customer app after the copy is made.
 
 ## Per demo
-1. Drop the transcript into `harness/inbox/`.
-2. In Cursor: *"Build a demo from this transcript for <customer>"* (skill `demo-from-transcript`).
-3. Review the plan (story, pages, components, Sitecore collection/site) and approve.
-4. Cursor creates the site, bootstraps it, builds all pages. You do the listed manual steps (header/footer placement, variants).
+1. Optional: drop the Gong transcript into `harness/inbox/`.
+2. In Cursor type `/new-demo create a demo for <prospect> (<website>), <anything you know>`. It uses the transcript if one is waiting, interviews you if not, and resumes if the demo was started before.
+3. Review the plan once (story, pages, theme, Sitecore collection/site template) and approve.
+4. Cursor creates the site, bootstraps it, builds all pages and the thumbnail. You do the listed manual steps (variants, header/footer placement, push the code).
 
 ## Layout
 | Path | What |
 |---|---|
 | `harness/.env.local` | credentials and switches |
 | `.cursor/skills/` | **all** skills (the only place). Type `/` in Cursor: `demo-*` is the transcript flow, `sitecore-*` build components/pages, `content-sdk-*` are code skills, `sitecore-reference` holds shared rules and reference |
-| `harness/scripts/` | intake, validators, isolation guard, Sites API (create site, list templates, upload thumbnail), screenshot, new-site, bootstrap plan, Content Hub wrapper |
+| `harness/scripts/` | intake, validators, isolation guard, Sites API (create site, list templates, upload thumbnail), editing host, deps-check, site scraper / content extractor / screenshot (Playwright), new-site, bootstrap plan, Content Hub wrapper |
 | `harness/templates/`, `harness/reference/` | plan/brief/progress templates, demo method, `sitecoreai-apis.md` (the SitecoreAI API docs we build on) |
 | `harness/inbox/` | transcripts waiting (never committed) |
+| `industry-verticals/<customer>/docs/ai/demos/` | everything about the opportunity (brief, plan, theme draft, script, ids): git-ignored, stays on the SE's machine. The customer app code beside it is committed |
 | `industry-verticals/<customer>/` | the demo's own app copy; `docs/ai/demos/<customer>/` holds everything the demo produces |
 | `industry-verticals/prospera/` | the base app and shared definitions: read-only, never edited by a demo |
 

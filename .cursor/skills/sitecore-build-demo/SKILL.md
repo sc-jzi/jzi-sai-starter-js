@@ -19,7 +19,7 @@ Use this skill when:
 
 ## Prerequisites
 - Template component library must be built (check manifest for 17+ components with status "complete")
-- Playwright scraper must be installed (`node docs/ai/scripts/site-scraper.mjs --help` should work)
+- Playwright must be installed (`node harness/scripts/deps-check.mjs --fix`)
 
 ## Load first
 - `docs/ai/catalog/component-registry.yaml`
@@ -134,7 +134,7 @@ Use the `sitecore-extract-theme` skill:
 
 1. Run the Playwright scraper:
    ```
-   node docs/ai/scripts/site-scraper.mjs --url <URL> --output docs/ai/themes/<client-kebab>
+   node harness/scripts/site-scraper.mjs --url <URL> --output industry-verticals/<customer>/docs/ai/demos/<customer>/theme
    ```
 2. Read the scraper output (`extracted-styles.json`, `meta.json`)
 3. Inspect the screenshots
@@ -198,7 +198,7 @@ After the build plan is approved, extract precise content from the client site a
 
 **Step 1 — Run the content extractor script:**
 ```bash
-node docs/ai/scripts/content-extractor.mjs --url <CLIENT_URL> --output docs/ai/demos/<client-kebab> --download-images
+node harness/scripts/content-extractor.mjs --url <CLIENT_URL> --output industry-verticals/<customer>/docs/ai/demos/<customer> --download-images
 ```
 
 This produces:

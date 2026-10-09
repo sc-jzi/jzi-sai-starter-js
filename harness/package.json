@@ -1,0 +1,8 @@
+{
+  "name": "demo-harness",
+  "private": true,
+  "description": "Tools for the demo harness scripts (site scraper, screenshots). Install with: node harness/scripts/deps-check.mjs --fix",
+  "devDependencies": {
+    "playwright": "^1.56.0"
+  }
+}
