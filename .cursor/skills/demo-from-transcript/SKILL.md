@@ -20,6 +20,8 @@ Method: `harness/reference/demo-method.md` (Chain of Pain, AAA, Command of the M
 
 ## Phase T0 — Preflight
 - `node harness/scripts/env-check.mjs` passes. If `harness/.env.local` is missing or a required value is empty (Content Hub values when `CH_ENABLED=true`): tell the SE exactly which values to fill in, then stop.
+- Demo documents open as a rendered preview, not raw markdown: make sure `.vscode/settings.json` has `"workbench.editorAssociations": { "**/docs/ai/demos/**/*.md": "vscode.markdown.preview.editor" }` (add it, keeping the other settings, if it is missing).
+- If `harness/reference/marketer-mcp-tools.md` does not exist: write it from the Marketer MCP tool list you can see (every tool name with its parameters, one line each, marking any parameter that sets rendering parameters / variant / display name, or that accepts a partial design or other non-page item id). Read-only; it records what this environment's MCP can really do and is used by the bootstrap and build skills.
 - `node harness/scripts/deps-check.mjs --fix`: checks Node, git and Playwright + Chromium (in `harness/`) and installs what is missing itself. Tell the SE only if it still fails after the fix. (The customer app's packages are checked later, once its copy exists: see `demo-new-site`.)
 - `<customer>` = lower-case kebab name, also the folder under `industry-verticals/` (e.g. `acme-corp`). It must not be `prospera` or in `PROTECTED_FOLDERS`.
 - `node harness/scripts/guard-customer.mjs snapshot <customer>`
@@ -45,7 +47,7 @@ Write the answers into `demo-plan.yaml`: `site.collection`, `site.collectionMode
 Build `industry-verticals/<customer>/docs/ai/demos/<customer>/demo-plan.yaml` from `harness/templates/demo-plan.template.yaml`: copy the story, then write `site.pages`.
 - Plan /Home as the first page. Whether the new site already has one depends on its template; `demo-site-bootstrap` probes it. Moment 1 (WOW) is on /Home or one click away.
 - One page per thing a moment needs to show; pages that prove no moment are not built (except a justified nav target).
-- Page types: `page`, `article`, `landing` (confirm in `industry-verticals/prospera/docs/ai/catalog/page-template-registry.yaml`).
+- Every page has `path` (name: lower-case, hyphens, alphanumerics only) AND `displayName` (the readable title, e.g. `what-is-corrosion` -> `What is Corrosion`). Page types: `page`, `article`, `landing` (confirm in `industry-verticals/prospera/docs/ai/catalog/page-template-registry.yaml`).
 - Sections use ONLY ids and variants from `industry-verticals/prospera/docs/ai/catalog/component-registry.yaml` (matching rules: `.cursor/skills/site-analyzer/SKILL.md`). Header and footer are not sections. Each section has `contentSource`: transcript | site | illustrative.
 - /Home look and order: run the existing homepage analysis on the screenshot, then apply the story (WOW result first, drop what answers no CBI). Other pages: if the prospect's real site has the page, ask for its URL/screenshot; otherwise compose from the library using the moment.
 - `site:` (`collection`, `collectionMode`, `template`, `siteName`) comes from the SE's answers in Phase T2; do not fill it in any other way.
@@ -68,13 +70,20 @@ Fix every ❌ yourself. Then **write the whole plan as normal chat text, and onl
 3. **Pages**: the page tree, then for EACH page a table: position, component, variant, content source (transcript / site / illustrative), moment it proves.
 4. **Components**: one table of every component used (name, variants used, on which pages) marked *reused* (already registered in Sitecore) or *new*, and anything that needs custom work.
 5. **Sitecore**: collection (new or existing, name), site name, site template (name), language, and what bootstrap will create inside the new site (from `bootstrap-plan.md`).
-6. **Gaps and manual work**: assumptions, illustrative content, variants and header/footer placement the SE must do by hand.
+6. **Gaps and manual work**: assumptions, illustrative content, and what the SE must still do by hand (variants if the MCP cannot set them; the editing host if `SITECORE_ENVIRONMENT_ID` is empty).
+7. **Open the full documents** (end of the message, one link per line, workspace-relative so a click opens them; they open as a rendered preview thanks to the setting from Phase T0; if they open as raw text, say "press Ctrl+Shift+V"):
+   - `[Demo brief](industry-verticals/<customer>/docs/ai/demos/<customer>/demo-brief.md)`
+   - `[Story plan](industry-verticals/<customer>/docs/ai/demos/<customer>/story-plan.md)`
+   - `[Site plan](industry-verticals/<customer>/docs/ai/demos/<customer>/site-plan.md)`
+   - `[Theme proposal](industry-verticals/<customer>/docs/ai/demos/<customer>/theme/theme-proposal.md)`
+   - `[Bootstrap plan](industry-verticals/<customer>/docs/ai/demos/<customer>/bootstrap-plan.md)`
+   List only files that exist. Never make the SE hunt for a path.
 
 Then ask once with `AskUserQuestion`: approve / change (the SE can change story, pages, theme or Sitecore choices in the same answer). On a change: apply it, re-run the validators, show the changed sections again and ask again. On approval write `userApproved: true` and `approvedAt: <ISO time>` at the top level of `demo-plan.yaml`. `sites-api.mjs create-site --apply` refuses to run without it, and without `site.collection`, `site.template` and `site.siteName` matching what it is told to create.
 
 ## Phase T5 — Build (after approval, no more gates)
 1. **Create the site** — follow `.cursor/skills/demo-new-site/SKILL.md` (new/existing collection → NEW site from a site template → local app copy → `.env.local`).
-2. **Bootstrap the new site** — follow `.cursor/skills/demo-site-bootstrap/SKILL.md` (probe → Data folders, Headless Variants, Available Renderings, header/footer designs).
+2. **Bootstrap the new site** — follow `.cursor/skills/demo-site-bootstrap/SKILL.md` (probe → Data folders, Headless Variants, Available Renderings, derived page templates, Header/Footer partial designs, Page Designs).
 3. Then, per `.cursor/skills/sitecore-build-demo/SKILL.md` (same phase numbers) with these changes:
 | Phase | What | Change |
 |---|---|---|

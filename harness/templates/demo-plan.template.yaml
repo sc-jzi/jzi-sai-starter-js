@@ -89,6 +89,7 @@ site:
   pages:
     # Order matters: parents first. Plan /Home first; demo-site-bootstrap probes whether the template already created it.
     - path: /Home
+      displayName: "Home"      # readable title; the last path segment stays lower-case-hyphen
       pageType: page            # page | article | landing
       purpose: "Landing view in the prospect's brand; the WOW result in the first minute"
       proves: [m1]
@@ -97,6 +98,7 @@ site:
         - { position: 2, component: three-column-cta, variant: WithIcons, contentSource: transcript, note: "Speaks to c1" }
         - { position: 3, component: cta-banner, variant: Default, contentSource: transcript }
     - path: /Home/products
+      displayName: "Products"      # readable title; the last path segment stays lower-case-hyphen
       pageType: page
       purpose: "Product page built from reusable blocks"
       proves: [m3]
@@ -105,6 +107,7 @@ site:
         - { position: 1, component: heading-cta, variant: PageHeading, contentSource: site }
         - { position: 2, component: four-column-cta, variant: Default, contentSource: site }
     - path: /Home/governance
+      displayName: "Governance"      # readable title; the last path segment stays lower-case-hyphen
       pageType: page
       purpose: "Approvals and audit story"
       proves: [m2]
