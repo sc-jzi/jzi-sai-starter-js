@@ -1,5 +1,5 @@
 # Sitecore AI project configuration (Prospera base app)
-# Values are EMPTY until /demo-inventory-base-site discovers them from the live base site.
+# Values were filled by /demo-inventory-base-site from the live Prospera base site.
 # The customer copy (industry-verticals/<customer>/docs/ai/config/project.yaml) carries the customer's own site values.
 # Read by the AI agent at the start of every Sitecore task.
 # Commit this file to the repo. Update it when the project changes.
@@ -7,8 +7,8 @@
 # Required fields — agent will ask and create this file if it does not exist.
 
 # XM Cloud site identity
-siteCollection: ""   # filled by /demo-inventory-base-site
-siteName: ""         # filled by /demo-inventory-base-site
+siteCollection: "Financial"   # filled by /demo-inventory-base-site
+siteName: "ProsperaFinancial"         # filled by /demo-inventory-base-site
 
 # Sitecore SDK used by this repo's React components
 sdk: "@sitecore-content-sdk/nextjs"
@@ -16,5 +16,5 @@ sdk: "@sitecore-content-sdk/nextjs"
 # Sitecore item root paths
 # Override these only if your project uses a non-standard structure.
 # If omitted, the agent derives them from siteCollection and siteName using defaults.
-renderingsRoot: ""
-projectTemplatesRoot: ""
+renderingsRoot: "/sitecore/layout/Renderings/Project/Financial"
+projectTemplatesRoot: "/sitecore/templates/Project/Financial"

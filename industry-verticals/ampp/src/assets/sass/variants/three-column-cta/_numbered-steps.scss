@@ -1,0 +1,67 @@
+.three-column-cta.variant-numbered-steps {
+  padding: 3rem 0;
+  background: var(--bg-main);
+
+  img {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0.75rem 0 0;
+    object-fit: contain;
+  }
+
+  .numbered-steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: course-step;
+  }
+
+  .numbered-step {
+    padding: 1.5rem;
+    background: var(--bg-body);
+    border: 1px solid var(--border-color);
+    border-radius: var(--roundness);
+  }
+
+  .step-index {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-bottom: 1rem;
+    background: var(--bg-saturated);
+    border-radius: 100%;
+    color: var(--text-body-inverted);
+    font-weight: 700;
+
+    &::before {
+      counter-increment: course-step;
+      content: counter(course-step);
+    }
+  }
+
+  h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 0;
+    opacity: 1;
+  }
+
+  a.button {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 767px) {
+    .numbered-steps {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -1,0 +1,115 @@
+client:
+  name: "AMPP"
+  sourceUrl: "https://ampp.org"
+  extractedAt: "2026-10-09"
+  extractedBy: "sitecore-extract-theme"
+
+colors:
+  primary: "#2F2A95"
+  primaryForeground: "#FFFFFF"
+  secondary: "#00BFB3"
+  secondaryForeground: "#111820"
+  accent: "#EE2737"
+  accentForeground: "#FFFFFF"
+  background: "#FFFFFF"
+  foreground: "#333333"
+  muted: "#F0F1F7"
+  mutedForeground: "#5B5B61"
+  headerBackground: "#FFFFFF"
+  headerForeground: "#333333"
+  footerBackground: "#2A2D2F"
+  footerForeground: "#FFFFFF"
+  border: "#D8DAE2"
+  ring: "#2F2A95"
+  extra:
+    - { name: "heroDark", value: "#111820" }
+    - { name: "brandRedDark", value: "#C91F2D" }
+
+typography:
+  headingFamily: "Nunito Sans, sans-serif"
+  headingWeight: "300"
+  bodyFamily: "Nunito Sans, sans-serif"
+  bodyWeight: "400"
+  monoFamily: "ui-monospace, SFMono-Regular, Menlo, monospace"
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap"
+  scale:
+    hero: "46px"
+    h1: "46px"
+    h2: "40px"
+    h3: "32px"
+    body: "18px"
+    small: "14px"
+  headingTransform: "none"
+  letterSpacing: "normal"
+  lineHeight: "1.4"
+
+spacing:
+  density: "normal"
+  sectionGap: "4rem"
+  containerMaxWidth: "1200px"
+  containerPadding: "1.25rem"
+
+shape:
+  borderRadius: "2px"
+  buttonRadius: "2px"
+  cardRadius: "4px"
+  imageRadius: "0"
+  shadowStyle: "subtle"
+  borderStyle: "thin solid"
+
+tone:
+  overall: "technical, credible, practical, global, and modern"
+  colorMode: "mixed"
+  contrast: "high"
+  imagery: "industry, infrastructure, training, and professional community photography"
+  heroStyle: "split-image-text"
+  cardStyle: "flat, lightly bordered, square"
+  navStyle: "solid-bar with utility navigation"
+
+siteThemeScss: |
+  body.site-ampp,
+  .site-ampp {
+    --text-body: #333333;
+    --text-body-inverted: #ffffff;
+    --text-colored: #2f2a95;
+    --text-footer: #ffffff;
+    --text-accent: #ee2737;
+    --bg-body: #ffffff;
+    --bg-footer: #2a2d2f;
+    --bg-main: #f0f1f7;
+    --bg-main-alt: #ffffff;
+    --bg-color: #e8e7f7;
+    --bg-saturated: #2f2a95;
+    --bg-accent: #ee2737;
+    --border-color: #d8dae2;
+    --hr-color: #ffffff;
+    --roundness: 0.125rem;
+  }
+
+  body.site-ampp.dark,
+  .dark .site-ampp {
+    --text-body: #f5f5f7;
+    --text-body-inverted: #111820;
+    --text-colored: #7f7be0;
+    --text-footer: #ffffff;
+    --text-accent: #ff5b68;
+    --bg-body: #111820;
+    --bg-footer: #090d12;
+    --bg-main: #1b222b;
+    --bg-main-alt: #242c36;
+    --bg-color: #29265f;
+    --bg-saturated: #4f49bd;
+    --bg-accent: #ee2737;
+    --border-color: #3f4854;
+    --hr-color: #3f4854;
+    --roundness: 0.125rem;
+  }
+
+extraction:
+  confidence: "high"
+  method: "playwright-full"
+  notes:
+    - "Primary indigo and accent red came from computed button and link styles."
+    - "Nunito Sans was confirmed by computed styles and the Google Fonts URL."
+    - "Teal is visually sampled from homepage action icons because no explicit CSS token was exposed."
+    - "The current website is visually dated and AMPP said a brand refresh is underway; this proposal modernizes spacing while retaining current brand signals."

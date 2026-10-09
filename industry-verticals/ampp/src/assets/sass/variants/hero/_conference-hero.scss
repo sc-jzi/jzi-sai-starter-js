@@ -1,0 +1,46 @@
+.component.hero.variant-conference-hero {
+  height: auto;
+  color: var(--text-footer);
+  background:
+    linear-gradient(135deg, transparent 0 42%, color-mix(in srgb, var(--bg-accent) 55%, transparent) 42% 44%, transparent 44%),
+    var(--bg-footer);
+
+  .conference-hero-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 4.5rem 0;
+  }
+
+  h1 {
+    margin: 0 0 1rem;
+    color: var(--text-footer);
+    font-size: 2.75rem;
+    font-weight: 300;
+    line-height: 1.15;
+  }
+
+  .conference-hero-copy {
+    max-width: 40rem;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 22rem;
+    object-fit: cover;
+    border-radius: var(--roundness);
+  }
+
+  a.button {
+    margin-top: 1.25rem;
+  }
+
+  @media (max-width: 991px) {
+    .conference-hero-layout {
+      grid-template-columns: 1fr;
+      padding: 3rem 0;
+    }
+  }
+}

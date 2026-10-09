@@ -2,119 +2,2340 @@
 # Registry of the Sitecore items (renderings, templates, datasource folders, variants) that belong to the SHARED project layer
 # of the base site. Reused as-is by every customer site; only NEW components are added later.
 #
-# This file starts EMPTY on purpose. It is not generated from code: it is filled by
-#   1. /demo-inventory-base-site  (read-only discovery of the live base site via Marketer MCP + harness/scripts/inventory-components.mjs), and
-#   2. the sitecore-create-* skills, which append an entry through /sitecore-maintain-manifest whenever they add a component.
-# /sitecore-validate-manifest re-syncs it with live Sitecore. Do not hand-edit except to correct drift (add a `notes` field).
+# Filled by /demo-inventory-base-site (read-only). status is complete when a live rendering item id was found.
+# Unresolved datasource branches, missing folders, and variant mismatches are recorded on each entry and were not guessed.
 
-generatedAt: ""
-lastUpdatedAt: ""
-lastUpdatedBy: ""
+generatedAt: "2026-10-09T17:45:00Z"
+lastUpdatedAt: "2026-10-09T17:45:00Z"
+lastUpdatedBy: "demo-inventory-base-site"
 
 project:
-  siteCollection: ""            # base site collection  (docs/ai/config/project.yaml)
-  siteName: ""                  # base site name
+  siteCollection: "Financial"
+  siteName: "ProsperaFinancial"
   sdk: "@sitecore-content-sdk/nextjs"
-  renderingsRoot: ""            # e.g. /sitecore/layout/Renderings/Project/<layer>
-  projectTemplatesRoot: ""      # e.g. /sitecore/templates/Project/<layer>
+  renderingsRoot: "/sitecore/layout/Renderings/Project/Financial"
+  projectTemplatesRoot: "/sitecore/templates/Project/Financial"
+  dataRoot: "/sitecore/content/Financial/ProsperaFinancial/Data"
+  projectFoldersRoot: "/sitecore/templates/Project/Financial/Folders"
+  renderingParamsRoot: "/sitecore/templates/Project/Financial/Rendering Parameters"
+  headlessVariantsRoot: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Headless Variants"
 
-components: []`.
-# When populated, each entry follows the shape shown in the real manifest file.
-components: []
- # Each entry follows this shape:
-  #
-  # - name: "Hero"                        # PascalCase component name
-  #   kind: "simple"                      # simple | list | context-only
-  #   category: "Banners"                 # PascalCase category
-  #   status: "complete"                  # complete | partial | planned | failed
-  #   createdAt: "2026-03-21T14:00:00Z"
-  #   updatedAt: "2026-03-21T14:30:00Z"
-  #
-  #   react:
-  #     filePath: "src/components/pagecontent/Hero.tsx"
-  #     componentMapKey: "hero"
-  #     variants:
-  #       - "Default"
-  #
-  #   templates:
-  #     datasource:
-  #       name: "Hero"
-  #       path: "/sitecore/templates/Project/greece/Components/Banners/Hero"
-  #       itemId: ""
-  #       sectionName: "Data"
-  #       fields:
-  #         - { name: "Title", type: "Single-Line Text" }
-  #         - { name: "Description", type: "Rich Text" }
-  #         - { name: "BackgroundImage", type: "Image" }
-  #         - { name: "CtaLink", type: "General Link" }
-  #       baseTemplatesSet: true
-  #       standardValues:
-  #         itemId: ""
-  #         linked: true          # template's Standard values field set
-  #
-  #     child:                    # only for list components
-  #       name: ""
-  #       path: ""
-  #       itemId: ""
-  #       sectionName: "Data"
-  #       fields: []
-  #       baseTemplatesSet: false
-  #       standardValues:
-  #         itemId: ""
-  #         linked: false
-  #
-  #     folder:
-  #       name: "Hero Folder"
-  #       path: "/sitecore/templates/Project/greece/Folders/Hero Folder"
-  #       itemId: ""
-  #       standardValues:
-  #         itemId: ""
-  #         linked: true
-  #         masters: ["Hero"]     # insert options on folder template SV
-  #
-  #     renderingParams:
-  #       name: "Hero"
-  #       path: "/sitecore/templates/Project/greece/Rendering Parameters/Banners/Hero"
-  #       itemId: ""
-  #       baseTemplatesSet: true
-  #
-  #   datasourceFolder:
-  #     name: "Heroes"
-  #     path: "/sitecore/content/greece/eurobankgr/Data/Heroes"
-  #     itemId: ""
-  #     insertOptionsSet: true    # insert options on the folder instance
-  #     exampleItem:
-  #       name: "Hero"
-  #       itemId: ""
-  #
-  #   rendering:
-  #     name: "Hero"
-  #     path: "/sitecore/layout/Renderings/Project/greece/Banners/Hero"
-  #     itemId: ""
-  #     componentName: "Hero"
-  #     datasourceTemplatePath: "/sitecore/templates/Project/greece/Components/Banners/Hero"
-  #     datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Hero Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Hero Folder']"
-  #     parametersTemplateId: ""
-  #     componentQuery: ""
-  #     addFieldEditorButton: "1"
-  #     registeredInAvailableRenderings: true
-  #
-  #   headlessVariants:
-  #     containerPath: "/sitecore/content/greece/eurobankgr/Presentation/Headless Variants/Hero"
-  #     containerId: ""
-  #     variants:
-  #       - { name: "Default", itemId: "" }
-  #
-  #   verification:
-  #     checkedAt: "2026-03-21T14:30:00Z"
-  #     passed: []               # list of checks that passed
-  #     failed: []               # list of checks that failed
-  #     pendingManual: []        # silent-write fields needing Content Editor check
-  #
-  #   notes: []                  # free-form agent or human notes
+inventoryNotes:
+  - "42 code components with sitecoreRendering true have a live Json rendering whose componentName matches. 4 of those renderings live outside the Financial project layer: ColumnSplitter, Navigation, PartialDesignDynamicPlaceholder, RichText."
+  - "Datasource Template paths under /sitecore/templates/Branches/Project/Verticals did not resolve for Accordion, Carousel, Image Gallery, Questions, and Testimonials. Local template candidates are noted and were not assigned."
+  - "ProsperaFinancial/Data has no per-component folders except shared Promos and Texts. Location queries that select @@templatename equal to the component template have no separate folder template under /sitecore/templates/Project/Financial/Folders (only MetisNation Folder and Video Folder)."
+  - "Component rendering-parameter templates live under /sitecore/templates/Project/Financial/Components/Rendering Parameters. The derived Rendering Parameters folder contains only Video."
+  - "Project-layer renderings with no matching code component: DoctorDetails (componentName AuthorDetails), FeaturedProductsCarousel, IndustryList, KalTireFinderHero, KalTirePromoMosaic, MetisNation, MoreLikeThis, ProgramCarousel, SearchResults, Video."
 
-# ─────────────────────────────────────────────
-# Lookup cache (optional)
-# ─────────────────────────────────────────────
-lookups: []
+availableRenderings:
+  itemId: "{0D181447-7CA1-4661-9F55-D752460957B4}"
+  path: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Available Renderings/Page Content"
+  lastKnownValue: "{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}|{3836D951-BB14-43AC-9231-649B7F245DC5}|{8094185B-4C72-40C8-B005-C6ED91708754}|{F9905F68-21E8-4C6F-8B89-56BB99020D31}|{CCC3A815-5DE9-4529-BAD5-874548667D66}|{AD385021-CE2B-4FC1-89AA-207D408034A8}|{35075000-760E-4FF3-BD1C-F2EEBA251DCB}|{333DEF3E-C272-4AD9-A493-8D5CCAE08312}|{1F52FB4E-FB4B-40ED-A5D8-F8F9784B36F2}|{20E5EA95-6B50-49CD-8852-433B7C565F06}|{3A9A9D22-C092-4B54-9511-EB202CEABE8D}|{75464A5E-CBB7-4F96-BBBC-104AFE57923A}|{B7CDF75E-716A-4C59-B9B1-CD970AE0A4AE}|{1A375FAC-6CC1-4A5A-A159-9BC6DBC66B80}|{200920AD-9645-4CB2-B72A-C7D8278E709F}"
+  lastUpdatedAt: "2026-10-09T17:45:00Z"
+  renderingCount: 15
+  warning: "Page Content section only. Other sections also hold renderings: Custom Demo, Navigation, Articles, Page Structure, Utilities, Forms, Media, FEaaS."
 
+components:
+- name: "ArticleDetails"
+  kind: "context-only"
+  category: "Articles"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/ArticleDetails.tsx"
+    componentMapKey: "ArticleDetails"
+    variants:
+      - "Default"
+      - "Simple"
+  templates:
+    datasource: null
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Article Details"
+    path: "/sitecore/layout/Renderings/Project/Financial/Articles/Article Details"
+    itemId: "{A7343C45-4438-441E-967E-C2CB350DDA75}"
+    componentName: "ArticleDetails"
+    datasourceTemplatePath: ""
+    datasourceLocationQuery: ""
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "No Headless Variants container"
+    pendingManual: []
+  notes: 
+    - "Context item resolver {6CCCBCDE-5E95-44E4-AE66-CFE7D3A0589E}. Code variant Simple has no Variant Definition."
+- name: "ArticleList"
+  kind: "context-only"
+  category: "Articles"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/ArticleList.tsx"
+    componentMapKey: "ArticleList"
+    variants:
+      - "Default"
+      - "ThreeColumn"
+      - "Simplified"
+      - "Grid"
+  templates:
+    datasource: null
+    folder: null
+    renderingParams:
+      name: "Article List"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Article List"
+      itemId: "{175A5B0F-A181-446D-A0EA-4B8F5EE42DB2}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Article List"
+    path: "/sitecore/layout/Renderings/Project/Financial/Articles/Article List"
+    itemId: "{52733592-6F5D-4FB4-8003-9B8223C5BC76}"
+    componentName: "ArticleList"
+    datasourceTemplatePath: ""
+    datasourceLocationQuery: "query:$site/*"
+    parametersTemplateId: "{175A5B0F-A181-446D-A0EA-4B8F5EE42DB2}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Headless Variants/Article List"
+    containerId: "{F182BA51-DCD6-4782-B66C-FAFF77AE143D}"
+    variants:
+      - { name: "Default", itemId: "{96BD1766-274B-433A-81E0-6451C55247A2}" }
+      - { name: "Simplified", itemId: "{A9694CA0-7FA0-49E4-93F3-7203FAA83455}" }
+      - { name: "ThreeColumn", itemId: "{0820EAB1-0E83-405E-8099-98B33B30541D}" }
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Code variant Grid has no Variant Definition"
+    pendingManual: []
+  notes: 
+    - "No datasource template. Children resolver {2F5C334E-5615-423C-8281-9FC180191302}. Datasource location is query:$site/*."
+- name: "AuthorDetails"
+  kind: "context-only"
+  category: "Articles"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/AuthorDetails.tsx"
+    componentMapKey: "AuthorDetails"
+    variants:
+      - "Default"
+      - "Simple"
+  templates:
+    datasource: null
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Author Details"
+    path: "/sitecore/layout/Renderings/Project/Financial/Articles/Author Details"
+    itemId: "{F7BB574A-E5C1-4475-A07E-0EBF590CC50E}"
+    componentName: "AuthorDetails"
+    datasourceTemplatePath: ""
+    datasourceLocationQuery: ""
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "No Headless Variants container"
+    pendingManual: []
+  notes: 
+    - "Context item resolver {6CCCBCDE-5E95-44E4-AE66-CFE7D3A0589E}. A second rendering DoctorDetails {0CB90097-6A6D-46F3-AB94-F2406435F689} also sets componentName AuthorDetails and was not given its own entry."
+- name: "AuthorList"
+  kind: "context-only"
+  category: "Articles"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/AuthorList.tsx"
+    componentMapKey: "AuthorList"
+    variants:
+      - "Default"
+      - "Slider"
+      - "Simple"
+  templates:
+    datasource: null
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Author List"
+    path: "/sitecore/layout/Renderings/Project/Financial/Articles/Author List"
+    itemId: "{69E8A90F-59CA-4638-B53E-BDCE65835230}"
+    componentName: "AuthorList"
+    datasourceTemplatePath: ""
+    datasourceLocationQuery: ""
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "No Headless Variants container"
+    pendingManual: []
+  notes: 
+    - "No datasource template. Children resolver {2F5C334E-5615-423C-8281-9FC180191302}. Code variants Slider and Simple have no Variant Definition."
+- name: "AuthorWidget"
+  kind: "simple"
+  category: "Articles"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/AuthorWidget.tsx"
+    componentMapKey: "AuthorWidget"
+    variants:
+      - "Default"
+      - "WithSocials"
+  templates:
+    datasource:
+      name: "Author Page"
+      path: "/sitecore/templates/Project/Financial/Pages/Author Page"
+      itemId: "{AAD350F5-9331-4D71-A942-E3643653C028}"
+      sectionName: "Content"
+      fields: []
+      baseTemplatesSet: true
+      standardValues:
+        itemId: "{E3CC065A-BE56-4795-9702-4AE503FB39A7}"
+        linked: true
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Author Widget"
+    path: "/sitecore/layout/Renderings/Project/Financial/Articles/Author Widget"
+    itemId: "{9D7DE58D-9DA4-43D8-8371-3C728A582ADC}"
+    componentName: "AuthorWidget"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Pages/Author Page"
+    datasourceLocationQuery: "query:$site/Home/authors"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "No Headless Variants container"
+      - "Field types on Author Page were not expanded"
+    pendingManual: []
+  notes: 
+    - "Datasource template is the Author Page route template, not a component template. Sections read: Content, Socials. Code variant WithSocials has no Variant Definition. Resolver {3DF775BF-3F56-446F-9D81-43DE64DA4DDA}."
+- name: "PartialDesignDynamicPlaceholder"
+  kind: "context-only"
+  category: "Foundation"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/PartialDesignDynamicPlaceholder.tsx"
+    componentMapKey: "PartialDesignDynamicPlaceholder"
+    variants: []
+  templates:
+    datasource: null
+    folder: null
+    renderingParams: null
+  datasourceFolder: null
+  rendering:
+    name: "PartialDesign Dynamic Placeholder"
+    path: "/sitecore/layout/Renderings/Foundation/JSS Experience Accelerator/Dynamic Placeholders/PartialDesign Dynamic Placeholder"
+    itemId: "{57573AF2-9D3C-4078-AAB7-35E580E4823B}"
+    componentName: "PartialDesignDynamicPlaceholder"
+    datasourceTemplatePath: ""
+    datasourceLocationQuery: ""
+    parametersTemplateId: ""
+    componentQuery: ""
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: false
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Parameters Template is empty"
+      - "Not listed in Available Renderings sections that were read"
+      - "No Headless Variants container"
+    pendingManual: []
+  notes: 
+    - "Json rendering lives outside the Financial project layer. An MVC controller rendering of the same name also exists at /sitecore/layout/Renderings/Foundation/Experience Accelerator/Dynamic Placeholders/PartialDesign Dynamic Placeholder {455948A7-9860-4312-B818-994E723E8B9A} and was not used."
+- name: "Breadcrumb"
+  kind: "context-only"
+  category: "Navigation"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/navigation/Breadcrumb.tsx"
+    componentMapKey: "Breadcrumb"
+    variants:
+      - "Default"
+  templates:
+    datasource: null
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Breadcrumb"
+    path: "/sitecore/layout/Renderings/Project/Financial/Navigation/Breadcrumb"
+    itemId: "{613A1798-71DD-4A5C-A183-A3BAB92289C4}"
+    componentName: "Breadcrumb"
+    datasourceTemplatePath: ""
+    datasourceLocationQuery: ""
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: "query($contextItem: String!, $language: String!) { item(path: $contextItem, language: $language) { url { path } name displayName title: field(name: \"Title\") { value } pageTitle: field(name: \"NavigationTitle\") { value } ancestors(hasLayout: true, includeTemplateIDs: \"371D5FBB54984D94AB2BE3B70EEBE78C\") { url { path } name displayName title: field(name: \"Title\") { value } pageTitle: field(name: \"NavigationTitle\") { value } } } }"
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "No Headless Variants container"
+    pendingManual: []
+  notes: 
+    - "Context-only. ComponentQuery walks the context item and its ancestors."
+- name: "Eyebrow"
+  kind: "simple"
+  category: "Navigation"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/navigation/Eyebrow.tsx"
+    componentMapKey: "Eyebrow"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Header"
+      path: "/sitecore/templates/Project/Financial/Components/Header"
+      itemId: "{0DA7AA52-0C24-4721-9B6C-F6D8D9FAAAA0}"
+      sectionName: "Data"
+      fields:
+        - { name: "LogoImage", type: "Image" }
+      baseTemplatesSet: true
+      standardValues:
+        itemId: ""
+        linked: false
+    folder: null
+    renderingParams:
+      name: "Default with Container Width"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default with Container Width"
+      itemId: "{F03F2904-7182-4125-ACAE-8FE8AB0D398C}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Eyebrow"
+    path: "/sitecore/layout/Renderings/Project/Financial/Navigation/Eyebrow"
+    itemId: "{5F765231-1DA9-467A-8B35-2171CCE313C1}"
+    componentName: "Eyebrow"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/Header"
+    datasourceLocationQuery: ""
+    parametersTemplateId: "{F03F2904-7182-4125-ACAE-8FE8AB0D398C}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: false
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Not listed in Available Renderings sections that were read"
+      - "No Headless Variants container"
+      - "No datasource folder under ProsperaFinancial/Data"
+    pendingManual: []
+  notes: 
+    - "Shares the Header datasource template. Field type read from the Header/Data/LogoImage field item."
+- name: "Footer"
+  kind: "simple"
+  category: "Navigation"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/navigation/Footer.tsx"
+    componentMapKey: "Footer"
+    variants:
+      - "Default"
+      - "WithSocials"
+  templates:
+    datasource:
+      name: "Footer"
+      path: "/sitecore/templates/Project/Financial/Components/Footer"
+      itemId: "{947DB8F8-DC76-453F-ACA1-A27BABFE633B}"
+      sectionName: "Logo"
+      fields: []
+      baseTemplatesSet: true
+      standardValues:
+        itemId: "{D9F03E12-A5BB-4D3F-9D45-D512E9AFE343}"
+        linked: true
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Footer"
+    path: "/sitecore/layout/Renderings/Project/Financial/Navigation/Footer"
+    itemId: "{771A3F27-6448-44AC-ADD0-E5DE311C6E3B}"
+    componentName: "Footer"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/Footer"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Footer']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Footer']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Headless Variants/Footer"
+    containerId: "{072021C8-2F91-4525-A31E-BC12A8E6E6BB}"
+    variants:
+      - { name: "Default", itemId: "{8903C266-A786-43EF-BD31-5A408E852445}" }
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "No folder template whose name is Footer"
+      - "Code variant WithSocials has no Variant Definition"
+      - "Field types not read from field items"
+    pendingManual: []
+  notes: 
+    - "Sections read: Logo, Column 1, Column 2, Column 3, Column 4, Footnote, Socials. Datasource location selects items whose template name is Footer directly under Data. No such folder exists on ProsperaFinancial/Data."
+- name: "Header"
+  kind: "context-only"
+  category: "Navigation"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/navigation/Header.tsx"
+    componentMapKey: "Header"
+    variants:
+      - "Default"
+      - "WithLogoImage"
+  templates:
+    datasource: null
+    folder: null
+    renderingParams:
+      name: "Default with Container Width"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default with Container Width"
+      itemId: "{F03F2904-7182-4125-ACAE-8FE8AB0D398C}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Header"
+    path: "/sitecore/layout/Renderings/Project/Financial/Navigation/Header"
+    itemId: "{81317D3B-F929-426A-83EC-421982F8F1E6}"
+    componentName: "Header"
+    datasourceTemplatePath: ""
+    datasourceLocationQuery: ""
+    parametersTemplateId: "{F03F2904-7182-4125-ACAE-8FE8AB0D398C}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: false
+  headlessVariants:
+    containerPath: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Headless Variants/Header"
+    containerId: "{CA0A5FB7-BF12-46FC-A8E4-2838C9211AD0}"
+    variants:
+      - { name: "Default", itemId: "{D695FAFC-1591-4377-A909-4CEE28CCEF0C}" }
+      - { name: "WithLogoImage", itemId: "{2F174088-4AE7-4E8E-AD42-09AA4E4F22A8}" }
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Not listed in Available Renderings sections that were read"
+    pendingManual: []
+  notes: 
+    - "Rendering Datasource Template is empty. LogoImage lives on the Header template, which the Eyebrow rendering uses."
+- name: "Navigation"
+  kind: "context-only"
+  category: "Navigation"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/navigation/Navigation.tsx"
+    componentMapKey: "Navigation"
+    variants:
+      - "Default"
+  templates:
+    datasource: null
+    folder: null
+    renderingParams:
+      name: "Navigation"
+      path: "/sitecore/templates/Feature/JSS Experience Accelerator/Navigation/Rendering Parameters/Navigation"
+      itemId: "{9CE34BF9-5C93-4DFF-841D-8F649C2BD6C8}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Navigation"
+    path: "/sitecore/layout/Renderings/Feature/JSS Experience Accelerator/Navigation/Navigation"
+    itemId: "{1DEB067F-0BB1-405E-94F5-2ABB537A6160}"
+    componentName: "Navigation"
+    datasourceTemplatePath: ""
+    datasourceLocationQuery: ""
+    parametersTemplateId: "{9CE34BF9-5C93-4DFF-841D-8F649C2BD6C8}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Headless Variants/Navigation"
+    containerId: "{CC96226A-0264-4ECC-90CB-CD43CB586F78}"
+    variants:
+      - { name: "Default", itemId: "{6E196E11-DF2D-4720-B9C0-E2BFBA276FEC}" }
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: []
+    pendingManual: []
+  notes: 
+    - "Json rendering lives outside the Financial project layer. Resolver {B28B1B20-953B-4BFF-925A-9AE48CA00CDC}."
+- name: "Accordion"
+  kind: "list"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/Accordion.tsx"
+    componentMapKey: "Accordion"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Accordion"
+      path: "/sitecore/templates/Branches/Project/Verticals/Accordion"
+      itemId: ""
+      sectionName: ""
+      fields: []
+      baseTemplatesSet: false
+      standardValues:
+        itemId: ""
+        linked: false
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Accordion"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Accordion"
+    itemId: "{5816F979-C8BB-46E9-8EC8-513C6CAF41E6}"
+    componentName: "Accordion"
+    datasourceTemplatePath: "/sitecore/templates/Branches/Project/Verticals/Accordion"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Accordion']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Accordion']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: false
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Datasource Template path did not resolve"
+      - "Not listed in Available Renderings sections that were read"
+      - "No Headless Variants container"
+      - "No datasource folder under ProsperaFinancial/Data"
+    pendingManual: []
+  notes: 
+    - "Candidate local template /sitecore/templates/Project/Financial/Components/Accordion {9BC52F2F-FEED-47DC-88EC-1946FA308AF0} has no Data section. Candidate child template Accordion Item {02FC3E8B-A97F-4A7A-844B-3047E24432A0} was not linked because the branch item is missing. Children resolver {2F5C334E-5615-423C-8281-9FC180191302}."
+- name: "AppPromo"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/AppPromo.tsx"
+    componentMapKey: "AppPromo"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "App Promo"
+      path: "/sitecore/templates/Project/Financial/Components/App Promo"
+      itemId: "{BBCCCD48-218C-4F19-A1D4-BB3DBF1F4D89}"
+      sectionName: ""
+      fields: []
+      baseTemplatesSet: true
+      standardValues:
+        itemId: ""
+        linked: false
+    folder:
+      name: "Promo Folder"
+      path: "/sitecore/templates/Feature/JSS Experience Accelerator/Page Content/Promo Folder"
+      itemId: "{{8FE7F8DC-CB5D-42C2-99F8-76608C243F10}}"
+      standardValues:
+        itemId: ""
+        linked: false
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder:
+    name: "Promos"
+    path: "/sitecore/content/Financial/ProsperaFinancial/Data/Promos"
+    itemId: "{{E80B2EB2-F3C4-4C86-B76C-041808116D0E}}"
+    insertOptionsSet: false
+  rendering:
+    name: "App Promo"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/App Promo"
+    itemId: "{F9905F68-21E8-4C6F-8B89-56BB99020D31}"
+    componentName: "AppPromo"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/App Promo"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Promo Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Promo Folder']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "No Headless Variants container"
+      - "Field types not read"
+    pendingManual: []
+  notes: 
+    - "Datasource folder is the shared Promos folder."
+- name: "Carousel"
+  kind: "list"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/Carousel.tsx"
+    componentMapKey: "Carousel"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Carousel"
+      path: "/sitecore/templates/Branches/Project/Verticals/Carousel"
+      itemId: ""
+      sectionName: ""
+      fields: []
+      baseTemplatesSet: false
+      standardValues:
+        itemId: ""
+        linked: false
+    folder: null
+    renderingParams:
+      name: "Carousel"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Carousel"
+      itemId: "{A1ABD5CF-C257-4BB1-9F7A-93E6F3375391}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Carousel"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Carousel"
+    itemId: "{8094185B-4C72-40C8-B005-C6ED91708754}"
+    componentName: "Carousel"
+    datasourceTemplatePath: "/sitecore/templates/Branches/Project/Verticals/Carousel"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Carousel']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Carousel']"
+    parametersTemplateId: "{A1ABD5CF-C257-4BB1-9F7A-93E6F3375391}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Datasource Template path did not resolve"
+      - "No Headless Variants container"
+      - "No datasource folder under ProsperaFinancial/Data"
+    pendingManual: []
+  notes: 
+    - "Candidate local template {C7B8468F-4290-400F-93BB-D46C5F8DB126} and candidate child Carousel Item {54DB209D-CD0F-49D9-AE4E-ECB65D72CC4D} were not assigned because the branch item is missing. Children resolver {2F5C334E-5615-423C-8281-9FC180191302}."
+- name: "Comparison"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/Comparison.tsx"
+    componentMapKey: "Comparison"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Comparison"
+      path: "/sitecore/templates/Project/Financial/Components/Comparison"
+      itemId: "{32F00428-21AC-4DC0-AA2B-F2E31CA3E97E}"
+      sectionName: ""
+      fields: []
+      baseTemplatesSet: true
+      standardValues:
+        itemId: ""
+        linked: false
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Comparison"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Comparison"
+    itemId: "{20E5EA95-6B50-49CD-8852-433B7C565F06}"
+    componentName: "Comparison"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/Comparison"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Comparison']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Comparison']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "No Headless Variants container"
+      - "No folder template"
+      - "No datasource folder under ProsperaFinancial/Data"
+      - "Field types not read"
+    pendingManual: []
+  notes: []
+- name: "CtaBanner"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/CtaBanner.tsx"
+    componentMapKey: "CtaBanner"
+    variants:
+      - "Default"
+      - "LargeImage"
+  templates:
+    datasource:
+      name: "CTA Banner"
+      path: "/sitecore/templates/Project/Financial/Components/CTA Banner"
+      itemId: "{4900D7E5-61B0-483A-A9D6-69419D4D5982}"
+      sectionName: "Data"
+      fields: []
+      baseTemplatesSet: true
+      standardValues:
+        itemId: "{41A2D94B-8111-48D9-960D-10D4D7AB1067}"
+        linked: true
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "CTA Banner"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/CTA Banner"
+    itemId: "{488B8AC0-0EF9-4F6F-8711-78BA182B2C4C}"
+    componentName: "CtaBanner"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/CTA Banner"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='CTA Banner']|query:$sharedSites/*[@@name='Data']/*[@@templatename='CTA Banner']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Headless Variants/CTA Banner"
+    containerId: "{22741071-0BF8-4756-B7D5-199A29F8E0CB}"
+    variants:
+      - { name: "Default", itemId: "{F8953661-2E66-4635-8B2E-FBBDF3F43886}" }
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Code variant LargeImage has no Variant Definition"
+      - "No folder template"
+      - "No datasource folder under ProsperaFinancial/Data"
+      - "Field types not read from field items"
+    pendingManual: []
+  notes: 
+    - "Registered on Available Renderings/Custom Demo, not Page Content."
+- name: "DocumentsList"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/DocumentsList.tsx"
+    componentMapKey: "DocumentsList"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Documents List"
+      path: "/sitecore/templates/Project/Financial/Components/Documents List"
+      itemId: "{BC79B430-F5E0-4363-83F8-5FB8CCD79C61}"
+      sectionName: ""
+      fields: []
+      baseTemplatesSet: true
+      standardValues:
+        itemId: ""
+        linked: false
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Documents List"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Documents List"
+    itemId: "{CCC3A815-5DE9-4529-BAD5-874548667D66}"
+    componentName: "DocumentsList"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/Documents List"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Documents List']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Documents List']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "No Headless Variants container"
+      - "No folder template"
+      - "No datasource folder under ProsperaFinancial/Data"
+      - "Field types not read"
+    pendingManual: []
+  notes: []
+- name: "Features"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/Features.tsx"
+    componentMapKey: "Features"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Features"
+      path: "/sitecore/templates/Project/Financial/Components/Features"
+      itemId: "{D3FDDED9-44AE-4410-961C-3320CC82D638}"
+      sectionName: "Data"
+      fields: []
+      baseTemplatesSet: true
+      standardValues:
+        itemId: "{75A0E531-1E29-4E01-B6D4-76C215B4C16F}"
+        linked: true
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Features"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Features"
+    itemId: "{B7EFFFDB-2F0C-4C5E-A8BE-D9F8677F01DA}"
+    componentName: "Features"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/Features"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Features']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Features']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: false
+  headlessVariants:
+    containerPath: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Headless Variants/Features"
+    containerId: "{BDE4315E-6FDA-437D-A2B0-A27D7967D7DF}"
+    variants:
+      - { name: "Default", itemId: "{02BA5588-59F2-44CC-8B57-C8213A43B14F}" }
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Not listed in Available Renderings sections that were read"
+      - "No folder template"
+      - "No datasource folder under ProsperaFinancial/Data"
+      - "Field types not read from field items"
+    pendingManual: []
+  notes: 
+    - "Sections read: Data, Column 1, Column 2."
+- name: "FiveColumnCta"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/FiveColumnCta.tsx"
+    componentMapKey: "FiveColumnCta"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Five Column CTA"
+      path: "/sitecore/templates/Project/Financial/Components/Five Column CTA"
+      itemId: "{3B41D9FC-0EDF-48E1-966C-E260339BA815}"
+      sectionName: ""
+      fields: []
+      baseTemplatesSet: true
+      standardValues:
+        itemId: ""
+        linked: false
+    folder:
+      name: "Promo Folder"
+      path: "/sitecore/templates/Feature/JSS Experience Accelerator/Page Content/Promo Folder"
+      itemId: "{{8FE7F8DC-CB5D-42C2-99F8-76608C243F10}}"
+      standardValues:
+        itemId: ""
+        linked: false
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder:
+    name: "Promos"
+    path: "/sitecore/content/Financial/ProsperaFinancial/Data/Promos"
+    itemId: "{{E80B2EB2-F3C4-4C86-B76C-041808116D0E}}"
+    insertOptionsSet: false
+  rendering:
+    name: "Five Column CTA"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Five Column CTA"
+    itemId: "{333DEF3E-C272-4AD9-A493-8D5CCAE08312}"
+    componentName: "FiveColumnCta"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/Five Column CTA"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Promo Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Promo Folder']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Headless Variants/Five Column CTA"
+    containerId: "{504430D0-0906-4ED8-BB9B-D3F527AAADAF}"
+    variants:
+      - { name: "Default", itemId: "{3CEBA17F-674F-408E-9745-A733D1E831D9}" }
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Field types not read"
+    pendingManual: []
+  notes: 
+    - "Datasource folder is the shared Promos folder."
+- name: "FourColumnCta"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/FourColumnCta.tsx"
+    componentMapKey: "FourColumnCta"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Four Column CTA"
+      path: "/sitecore/templates/Project/Financial/Components/Four Column CTA"
+      itemId: "{1B694EF9-154D-429A-9C3F-D7774CD4A852}"
+      sectionName: ""
+      fields: []
+      baseTemplatesSet: true
+      standardValues:
+        itemId: ""
+        linked: false
+    folder:
+      name: "Promo Folder"
+      path: "/sitecore/templates/Feature/JSS Experience Accelerator/Page Content/Promo Folder"
+      itemId: "{{8FE7F8DC-CB5D-42C2-99F8-76608C243F10}}"
+      standardValues:
+        itemId: ""
+        linked: false
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder:
+    name: "Promos"
+    path: "/sitecore/content/Financial/ProsperaFinancial/Data/Promos"
+    itemId: "{{E80B2EB2-F3C4-4C86-B76C-041808116D0E}}"
+    insertOptionsSet: false
+  rendering:
+    name: "Four Column CTA"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Four Column CTA"
+    itemId: "{35075000-760E-4FF3-BD1C-F2EEBA251DCB}"
+    componentName: "FourColumnCta"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/Four Column CTA"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Promo Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Promo Folder']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Headless Variants/Four Column CTA"
+    containerId: "{6183FCFF-392F-4F1C-BD99-5AD129E751E0}"
+    variants:
+      - { name: "Default", itemId: "{FE6A098D-8634-47EB-81BB-A1DA567B8EB8}" }
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Field types not read"
+    pendingManual: []
+  notes: 
+    - "Datasource folder is the shared Promos folder."
+- name: "HeadingCta"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/HeadingCta.tsx"
+    componentMapKey: "HeadingCta"
+    variants:
+      - "Default"
+      - "Compact"
+      - "PageHeading"
+      - "Centered"
+  templates:
+    datasource:
+      name: "Heading CTA"
+      path: "/sitecore/templates/Project/Financial/Components/Heading CTA"
+      itemId: "{FA136527-6302-471D-83AB-E66FC72BDA99}"
+      sectionName: ""
+      fields: []
+      baseTemplatesSet: true
+      standardValues:
+        itemId: ""
+        linked: false
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Heading CTA"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Heading CTA"
+    itemId: "{89E1D547-7CD6-4EF0-9A27-1E99410797DD}"
+    componentName: "HeadingCta"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/Heading CTA"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Heading CTA']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Heading CTA']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Headless Variants/Heading CTA"
+    containerId: "{2C43CDDC-7940-47C6-AD3F-0914BA6EAD41}"
+    variants:
+      - { name: "Default", itemId: "{9F96A7EA-78D5-4BED-962F-834BDB72B04E}" }
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Code variants Compact, PageHeading, and Centered have no Variant Definition"
+      - "No folder template"
+      - "No datasource folder under ProsperaFinancial/Data"
+      - "Field types not read"
+    pendingManual: []
+  notes: 
+    - "Registered on Available Renderings/Custom Demo, not Page Content."
+- name: "Hero"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/Hero.tsx"
+    componentMapKey: "Hero"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Hero"
+      path: "/sitecore/templates/Project/Financial/Components/Hero"
+      itemId: "{90D315E8-AA42-4B23-A7EB-4491396453F8}"
+      sectionName: "Data"
+      fields:
+        - { name: "Title", type: "Single-Line Text" }
+        - { name: "Text", type: "Rich Text" }
+        - { name: "Image", type: "Image" }
+        - { name: "Link", type: "General Link" }
+      baseTemplatesSet: true
+      standardValues:
+        itemId: "{1D0FF4C5-5F07-4666-9061-0210D0692984}"
+        linked: true
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Hero"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Hero"
+    itemId: "{B7CDF75E-716A-4C59-B9B1-CD970AE0A4AE}"
+    componentName: "Hero"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/Hero"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Hero']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Hero']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Headless Variants/Hero"
+    containerId: "{6AC3F934-7A5B-440C-8FB9-C9ADB351AF4B}"
+    variants:
+      - { name: "Default", itemId: "{87820231-325A-4113-9276-CB5F66456A6B}" }
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "No folder template"
+      - "No datasource folder under ProsperaFinancial/Data"
+    pendingManual: []
+  notes: 
+    - "Field types read from Hero/Data field items."
+- name: "HeroBanner"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/HeroBanner.tsx"
+    componentMapKey: "HeroBanner"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "HeroBanner"
+      path: "/sitecore/templates/Project/Financial/Components/HeroBanner"
+      itemId: "{0089BCB3-0117-43F2-A760-0771D5FF7417}"
+      sectionName: "Data"
+      fields:
+        - { name: "Tagline", type: "Single-Line Text" }
+        - { name: "Title", type: "Single-Line Text" }
+        - { name: "Text", type: "Rich Text" }
+        - { name: "Image", type: "Image" }
+        - { name: "Cta1", type: "General Link" }
+        - { name: "Cta2", type: "General Link" }
+        - { name: "Icon", type: "Image" }
+      baseTemplatesSet: true
+      standardValues:
+        itemId: ""
+        linked: false
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "HeroBanner"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/HeroBanner"
+    itemId: "{0E8CC47E-32D6-4F55-A7BF-E713ABD06323}"
+    componentName: "HeroBanner"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/HeroBanner"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='HeroBanner']|query:$sharedSites/*[@@name='Data']/*[@@templatename='HeroBanner']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: false
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Not listed in Available Renderings sections that were read"
+      - "No Headless Variants container"
+      - "No folder template"
+      - "No datasource folder under ProsperaFinancial/Data"
+      - "Standard values item not read"
+    pendingManual: []
+  notes: 
+    - "Field types read from HeroBanner/Data field items."
+- name: "ImageGallery"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/ImageGallery.tsx"
+    componentMapKey: "ImageGallery"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Image Gallery"
+      path: "/sitecore/templates/Branches/Project/Verticals/Image Gallery"
+      itemId: ""
+      sectionName: ""
+      fields: []
+      baseTemplatesSet: false
+      standardValues:
+        itemId: ""
+        linked: false
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Image Gallery"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Image Gallery"
+    itemId: "{881CE560-277E-47B6-85BE-A223348D69CA}"
+    componentName: "ImageGallery"
+    datasourceTemplatePath: "/sitecore/templates/Branches/Project/Verticals/Image Gallery"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Image Gallery']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Image Gallery']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: false
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Datasource Template path did not resolve"
+      - "Not listed in Available Renderings sections that were read"
+      - "No Headless Variants container"
+      - "No datasource folder under ProsperaFinancial/Data"
+    pendingManual: []
+  notes: 
+    - "Candidate local template {BD5988C0-88EA-4E5D-8CBA-A88755DD0FB8} has only an empty standard values item and no fields. Children resolver {2F5C334E-5615-423C-8281-9FC180191302}. Kind left simple because no child template was found."
+- name: "PageBackground"
+  kind: "context-only"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/PageBackground.tsx"
+    componentMapKey: "PageBackground"
+    variants:
+      - "Default"
+  templates:
+    datasource: null
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "PageBackground"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/PageBackground"
+    itemId: "{1F52FB4E-FB4B-40ED-A5D8-F8F9784B36F2}"
+    componentName: "PageBackground"
+    datasourceTemplatePath: ""
+    datasourceLocationQuery: ""
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "No Headless Variants container"
+    pendingManual: []
+  notes: 
+    - "Context item resolver {6CCCBCDE-5E95-44E4-AE66-CFE7D3A0589E}."
+- name: "ParallaxBanner"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/ParallaxBanner.tsx"
+    componentMapKey: "ParallaxBanner"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Parallax Banner"
+      path: "/sitecore/templates/Project/Financial/Components/Parallax Banner"
+      itemId: "{28B7F396-DC4A-4116-8C93-3B7909CBEB0E}"
+      sectionName: ""
+      fields: []
+      baseTemplatesSet: true
+      standardValues:
+        itemId: ""
+        linked: false
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Parallax Banner"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Parallax Banner"
+    itemId: "{200920AD-9645-4CB2-B72A-C7D8278E709F}"
+    componentName: "ParallaxBanner"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/Parallax Banner"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Parallax Banner']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Parallax Banner']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "No Headless Variants container"
+      - "No folder template"
+      - "No datasource folder under ProsperaFinancial/Data"
+      - "Field types not read"
+    pendingManual: []
+  notes: []
+- name: "PromoCta"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/PromoCta.tsx"
+    componentMapKey: "PromoCta"
+    variants:
+      - "Default"
+      - "WithPlaceholderColumn"
+      - "WithBackgroundImage"
+  templates:
+    datasource:
+      name: "Promo CTA"
+      path: "/sitecore/templates/Project/Financial/Components/Promo CTA"
+      itemId: "{C0943942-AE0F-4205-86FA-84884CCE4A53}"
+      sectionName: ""
+      fields: []
+      baseTemplatesSet: true
+      standardValues:
+        itemId: ""
+        linked: false
+    folder:
+      name: "Promo Folder"
+      path: "/sitecore/templates/Feature/JSS Experience Accelerator/Page Content/Promo Folder"
+      itemId: "{{8FE7F8DC-CB5D-42C2-99F8-76608C243F10}}"
+      standardValues:
+        itemId: ""
+        linked: false
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder:
+    name: "Promos"
+    path: "/sitecore/content/Financial/ProsperaFinancial/Data/Promos"
+    itemId: "{{E80B2EB2-F3C4-4C86-B76C-041808116D0E}}"
+    insertOptionsSet: false
+  rendering:
+    name: "Promo CTA"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Promo CTA"
+    itemId: "{1A375FAC-6CC1-4A5A-A159-9BC6DBC66B80}"
+    componentName: "PromoCta"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/Promo CTA"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Promo Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Promo Folder']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Headless Variants/Promo CTA"
+    containerId: "{54670690-3107-45F4-AA52-B83F5A1801D2}"
+    variants:
+      - { name: "Default", itemId: "{E7077939-8F32-4C4F-AAAD-A7C53F623CE0}" }
+      - { name: "WithBackgroundImage", itemId: "{DEBA8FAB-A908-4097-B3A9-7EDE5CD0782D}" }
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Code variant WithPlaceholderColumn has no Variant Definition"
+      - "Field types not read"
+    pendingManual: []
+  notes: 
+    - "Datasource folder is the shared Promos folder."
+- name: "Questions"
+  kind: "list"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/Questions.tsx"
+    componentMapKey: "Questions"
+    variants:
+      - "Default"
+      - "SingleColumn"
+  templates:
+    datasource:
+      name: "Questions"
+      path: "/sitecore/templates/Branches/Project/Verticals/Questions"
+      itemId: ""
+      sectionName: ""
+      fields: []
+      baseTemplatesSet: false
+      standardValues:
+        itemId: ""
+        linked: false
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Questions"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Questions"
+    itemId: "{75464A5E-CBB7-4F96-BBBC-104AFE57923A}"
+    componentName: "Questions"
+    datasourceTemplatePath: "/sitecore/templates/Branches/Project/Verticals/Questions"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Questions']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Questions']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Datasource Template path did not resolve"
+      - "No Headless Variants container"
+      - "No datasource folder under ProsperaFinancial/Data"
+    pendingManual: []
+  notes: 
+    - "Candidate local template {FAE81BF9-1117-4F97-9133-00E752F41772} and candidate child Question {2DC7A13E-6753-47EF-805A-1CDE39012EEC} were not assigned because the branch item is missing. Code variant SingleColumn has no Variant Definition. Children resolver {2F5C334E-5615-423C-8281-9FC180191302}."
+- name: "Quote"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/Quote.tsx"
+    componentMapKey: "Quote"
+    variants:
+      - "Default"
+      - "Simple"
+  templates:
+    datasource:
+      name: "Quote"
+      path: "/sitecore/templates/Project/Financial/Components/Quote"
+      itemId: "{CAD49C2A-BD85-44FD-852A-10C1A1C8FD72}"
+      sectionName: "Data"
+      fields: []
+      baseTemplatesSet: true
+      standardValues:
+        itemId: "{0A1963DB-4325-4B54-A75F-3127F9C44BFD}"
+        linked: true
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Quote"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Quote"
+    itemId: "{4B94B6D0-CA8E-4807-BB9A-4C3FBD21504C}"
+    componentName: "Quote"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/Quote"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Quote']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Quote']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: false
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Not listed in Available Renderings sections that were read"
+      - "No Headless Variants container"
+      - "No folder template"
+      - "No datasource folder under ProsperaFinancial/Data"
+      - "Field types not read from field items"
+    pendingManual: []
+  notes: 
+    - "Code variant Simple has no Variant Definition. Standard values expose Quote, AuthorName, AuthorPosition, Image."
+- name: "RichText"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/RichText.tsx"
+    componentMapKey: "RichText"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Text"
+      path: "/sitecore/templates/Feature/JSS Experience Accelerator/Page Content/Text"
+      itemId: "{0A7AA373-5ED1-4E9B-9678-22D3C5FAF6DF}"
+      sectionName: "Text"
+      fields:
+        - { name: "Text", type: "Rich Text" }
+      baseTemplatesSet: true
+      standardValues:
+        itemId: ""
+        linked: false
+    folder:
+      name: "Text Folder"
+      path: "/sitecore/templates/Feature/JSS Experience Accelerator/Page Content/Text Folder"
+      itemId: "{B762D567-87F5-493C-BB48-0C455D834457}"
+      standardValues:
+        itemId: "{D240C5FF-4A48-42F5-B0E5-F8EA931D58E1}"
+        linked: true
+    renderingParams:
+      name: "Rich Text"
+      path: "/sitecore/templates/Feature/JSS Experience Accelerator/Page Content/Rendering Parameters/Rich Text"
+      itemId: "{0F3B7336-6112-418C-8BBA-B0526F3887CE}"
+      baseTemplatesSet: true
+  datasourceFolder:
+    name: "Texts"
+    path: "/sitecore/content/Financial/ProsperaFinancial/Data/Texts"
+    itemId: "{6B0AB545-FDEC-4C95-8176-BFFFD84DB1C4}"
+    insertOptionsSet: false
+  rendering:
+    name: "RichText"
+    path: "/sitecore/layout/Renderings/Feature/JSS Experience Accelerator/Page Content/RichText"
+    itemId: "{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}"
+    componentName: "RichText"
+    datasourceTemplatePath: "/sitecore/templates/Feature/JSS Experience Accelerator/Page Content/Text"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Text Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Text Folder']"
+    parametersTemplateId: "{0F3B7336-6112-418C-8BBA-B0526F3887CE}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Headless Variants/RichText"
+    containerId: "{67DD6435-F27E-405F-8C58-F48F8E873A79}"
+    variants:
+      - { name: "Default", itemId: "{28195CAE-07A4-40F2-98DA-609BDCD53B01}" }
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: []
+    pendingManual: []
+  notes: 
+    - "Json rendering lives outside the Financial project layer. Text template has no standard values child. Field type read from the Text field item."
+- name: "StatsCounter"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/StatsCounter.tsx"
+    componentMapKey: "StatsCounter"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Stats Counter"
+      path: "/sitecore/templates/Project/Financial/Components/Stats Counter"
+      itemId: "{C24BFC74-C6E2-413A-AEBD-903180DFAFF7}"
+      sectionName: ""
+      fields: []
+      baseTemplatesSet: true
+      standardValues:
+        itemId: ""
+        linked: false
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Stats Counter"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Stats Counter"
+    itemId: "{316889FA-FDD4-42A6-A034-201124FE54E8}"
+    componentName: "StatsCounter"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/Stats Counter"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Stats Counter']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Stats Counter']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: false
+  headlessVariants:
+    containerPath: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Headless Variants/StatsCounter"
+    containerId: "{E5D3F1EC-A7BB-42EE-88F7-22A1F13468B7}"
+    variants:
+      - { name: "Default", itemId: "{8DADDECC-BCA5-4764-963C-2F7A2802F6D0}" }
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Not listed in Available Renderings sections that were read"
+      - "No folder template"
+      - "No datasource folder under ProsperaFinancial/Data"
+      - "Field types not read"
+    pendingManual: []
+  notes: []
+- name: "Testimonials"
+  kind: "list"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/Testimonials.tsx"
+    componentMapKey: "Testimonials"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Testimonials"
+      path: "/sitecore/templates/Branches/Project/Verticals/Testimonials"
+      itemId: ""
+      sectionName: ""
+      fields: []
+      baseTemplatesSet: false
+      standardValues:
+        itemId: ""
+        linked: false
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Testimonials"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Testimonials"
+    itemId: "{F3766B60-C8CE-49AF-9BFE-B2CEE6E287DF}"
+    componentName: "Testimonials"
+    datasourceTemplatePath: "/sitecore/templates/Branches/Project/Verticals/Testimonials"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Testimonials']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Testimonials']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: false
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Datasource Template path did not resolve"
+      - "Not listed in Available Renderings sections that were read"
+      - "No Headless Variants container"
+      - "No datasource folder under ProsperaFinancial/Data"
+    pendingManual: []
+  notes: 
+    - "Candidate local template {91CD4DE0-ED0B-457B-9936-A333E8A874A3} and candidate child Testimonial {40472280-0A67-4C52-A06B-79E327AF9F44} were not assigned because the branch item is missing. Children resolver {2F5C334E-5615-423C-8281-9FC180191302}."
+- name: "ThreeColumnCta"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/ThreeColumnCta.tsx"
+    componentMapKey: "ThreeColumnCta"
+    variants:
+      - "Default"
+      - "WithIcons"
+      - "WithIconsCompact"
+  templates:
+    datasource:
+      name: "Three Column CTA"
+      path: "/sitecore/templates/Project/Financial/Components/Three Column CTA"
+      itemId: "{148D07BA-F923-4FB2-8907-0BD440D5DB44}"
+      sectionName: ""
+      fields: []
+      baseTemplatesSet: true
+      standardValues:
+        itemId: ""
+        linked: false
+    folder:
+      name: "Promo Folder"
+      path: "/sitecore/templates/Feature/JSS Experience Accelerator/Page Content/Promo Folder"
+      itemId: "{{8FE7F8DC-CB5D-42C2-99F8-76608C243F10}}"
+      standardValues:
+        itemId: ""
+        linked: false
+    renderingParams:
+      name: "Default with Button Style"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default with Button Style"
+      itemId: "{A94D823B-94AD-4A04-8238-3A5FD72C0E7C}"
+      baseTemplatesSet: true
+  datasourceFolder:
+    name: "Promos"
+    path: "/sitecore/content/Financial/ProsperaFinancial/Data/Promos"
+    itemId: "{{E80B2EB2-F3C4-4C86-B76C-041808116D0E}}"
+    insertOptionsSet: false
+  rendering:
+    name: "Three Column CTA"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Three Column CTA"
+    itemId: "{AD385021-CE2B-4FC1-89AA-207D408034A8}"
+    componentName: "ThreeColumnCta"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/Three Column CTA"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Promo Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Promo Folder']"
+    parametersTemplateId: "{A94D823B-94AD-4A04-8238-3A5FD72C0E7C}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Headless Variants/Three Column CTA"
+    containerId: "{3C3F4D5C-5DE7-4E43-92CA-376FA17F952B}"
+    variants:
+      - { name: "Default", itemId: "{42EB48F9-6AC5-4F05-A1DD-3FB1EA06F96C}" }
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Code variants WithIcons and WithIconsCompact have no Variant Definition"
+      - "Field types not read"
+    pendingManual: []
+  notes: 
+    - "Datasource folder is the shared Promos folder."
+- name: "TwoColumnCta"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/TwoColumnCta.tsx"
+    componentMapKey: "TwoColumnCta"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Two Column CTA"
+      path: "/sitecore/templates/Project/Financial/Components/Two Column CTA"
+      itemId: "{1812BF3E-6BDD-466D-99B2-0D7CEBB020FC}"
+      sectionName: ""
+      fields: []
+      baseTemplatesSet: true
+      standardValues:
+        itemId: ""
+        linked: false
+    folder:
+      name: "Promo Folder"
+      path: "/sitecore/templates/Feature/JSS Experience Accelerator/Page Content/Promo Folder"
+      itemId: "{{8FE7F8DC-CB5D-42C2-99F8-76608C243F10}}"
+      standardValues:
+        itemId: ""
+        linked: false
+    renderingParams:
+      name: "Default with Button Style"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default with Button Style"
+      itemId: "{A94D823B-94AD-4A04-8238-3A5FD72C0E7C}"
+      baseTemplatesSet: true
+  datasourceFolder:
+    name: "Promos"
+    path: "/sitecore/content/Financial/ProsperaFinancial/Data/Promos"
+    itemId: "{{E80B2EB2-F3C4-4C86-B76C-041808116D0E}}"
+    insertOptionsSet: false
+  rendering:
+    name: "Two Column CTA"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Two Column CTA"
+    itemId: "{3A9A9D22-C092-4B54-9511-EB202CEABE8D}"
+    componentName: "TwoColumnCta"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/Two Column CTA"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Promo Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Promo Folder']"
+    parametersTemplateId: "{A94D823B-94AD-4A04-8238-3A5FD72C0E7C}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Headless Variants/Two Column CTA"
+    containerId: "{6266C686-BB97-42A3-8724-9D4A67E745CD}"
+    variants:
+      - { name: "Default", itemId: "{20C10514-5B0B-46C2-9B86-71D0B0C2C9F8}" }
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Field types not read"
+    pendingManual: []
+  notes: 
+    - "Datasource folder is the shared Promos folder."
+- name: "ColumnSplitter"
+  kind: "context-only"
+  category: "Page Structure"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagestructure/ColumnSplitter.tsx"
+    componentMapKey: "ColumnSplitter"
+    variants:
+      - "Default"
+  templates:
+    datasource: null
+    folder: null
+    renderingParams:
+      name: "ColumnSplitter"
+      path: "/sitecore/templates/Feature/JSS Experience Accelerator/Page Structure/Rendering Parameters/ColumnSplitter"
+      itemId: "{181740EA-A7AE-4799-A649-A75917570E38}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Column Splitter"
+    path: "/sitecore/layout/Renderings/Feature/JSS Experience Accelerator/Page Structure/Column Splitter"
+    itemId: "{15CABDFF-FFD9-48F4-826D-A4C3D7868D3A}"
+    componentName: "ColumnSplitter"
+    datasourceTemplatePath: ""
+    datasourceLocationQuery: ""
+    parametersTemplateId: "{181740EA-A7AE-4799-A649-A75917570E38}"
+    componentQuery: ""
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "No Headless Variants container"
+    pendingManual: []
+  notes: 
+    - "Json rendering lives outside the Financial project layer and is registered on Available Renderings/Page Structure. An MVC Column Splitter also exists at /sitecore/layout/Renderings/Feature/Experience Accelerator/Page Structure/Column Splitter {C25766C8-9AFD-4D28-87FE-147774F6806D} and was not used."
+- name: "ProjectDetails"
+  kind: "context-only"
+  category: "Projects"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/ProjectDetails.tsx"
+    componentMapKey: "ProjectDetails"
+    variants:
+      - "Default"
+  templates:
+    datasource: null
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Project Details"
+    path: "/sitecore/layout/Renderings/Project/Financial/Projects/Project Details"
+    itemId: "{7D1264B8-DBEA-4DCD-8B2C-5DB934359EA9}"
+    componentName: "ProjectDetails"
+    datasourceTemplatePath: ""
+    datasourceLocationQuery: ""
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: false
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Not listed in Available Renderings sections that were read"
+      - "No Headless Variants container"
+    pendingManual: []
+  notes: 
+    - "Context item resolver {6CCCBCDE-5E95-44E4-AE66-CFE7D3A0589E}."
+- name: "ProjectList"
+  kind: "context-only"
+  category: "Projects"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/pagecontent/ProjectList.tsx"
+    componentMapKey: "ProjectList"
+    variants:
+      - "Default"
+      - "Mosaic"
+  templates:
+    datasource: null
+    folder: null
+    renderingParams:
+      name: "Project List"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Project List"
+      itemId: "{4F54253C-BBEB-430A-8428-11EB11DF1E09}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Project List"
+    path: "/sitecore/layout/Renderings/Project/Financial/Projects/Project List"
+    itemId: "{3F98B12E-9693-47D6-8507-18B054CCFB8E}"
+    componentName: "ProjectList"
+    datasourceTemplatePath: ""
+    datasourceLocationQuery: "query:$site/*"
+    parametersTemplateId: "{4F54253C-BBEB-430A-8428-11EB11DF1E09}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: false
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Not listed in Available Renderings sections that were read"
+      - "No Headless Variants container"
+    pendingManual: []
+  notes: 
+    - "No datasource template. Children resolver {2F5C334E-5615-423C-8281-9FC180191302}. Code variant Mosaic has no Variant Definition."
+- name: "ApplicationForm"
+  kind: "simple"
+  category: "Utilities"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/utilities/ApplicationForm.tsx"
+    componentMapKey: "ApplicationForm"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Application Form"
+      path: "/sitecore/templates/Project/Financial/Components/Application Form"
+      itemId: "{AE920CE6-5C6E-4842-B54C-E4B516DC0752}"
+      sectionName: "Data"
+      fields: []
+      baseTemplatesSet: true
+      standardValues:
+        itemId: "{DDB077DD-3692-48AC-A172-5B25DED5969C}"
+        linked: true
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Application Form"
+    path: "/sitecore/layout/Renderings/Project/Financial/Utilities/Application Form"
+    itemId: "{E4B51F7C-EF5D-4621-A05B-A0080826E54D}"
+    componentName: "ApplicationForm"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/Application Form"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Application Form']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Application Form']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "No Headless Variants container"
+      - "No folder template"
+      - "No datasource folder under ProsperaFinancial/Data"
+      - "Field types not read from field items"
+    pendingManual: []
+  notes: []
+- name: "ContactForm"
+  kind: "simple"
+  category: "Utilities"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/utilities/ContactForm.tsx"
+    componentMapKey: "ContactForm"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Contact Form"
+      path: "/sitecore/templates/Project/Financial/Components/Contact Form"
+      itemId: "{6D166C16-D4CC-4BA9-B1E1-FE6378916533}"
+      sectionName: "Data"
+      fields: []
+      baseTemplatesSet: true
+      standardValues:
+        itemId: "{2C8DB814-943A-444A-ABAE-2E5F697DC8D3}"
+        linked: true
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Contact Form"
+    path: "/sitecore/layout/Renderings/Project/Financial/Utilities/Contact Form"
+    itemId: "{09530D1F-141D-4885-8B3E-EBCA3EA5A23E}"
+    componentName: "ContactForm"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/Contact Form"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Contact Form']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Contact Form']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: false
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "Not listed in Available Renderings sections that were read"
+      - "No Headless Variants container"
+      - "No folder template"
+      - "No datasource folder under ProsperaFinancial/Data"
+      - "Field types not read from field items"
+    pendingManual: []
+  notes: []
+- name: "LanguageSwitcher"
+  kind: "context-only"
+  category: "Utilities"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/utilities/LanguageSwitcher.tsx"
+    componentMapKey: "LanguageSwitcher"
+    variants:
+      - "Default"
+  templates:
+    datasource: null
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Language Switcher"
+    path: "/sitecore/layout/Renderings/Project/Financial/Utilities/Language Switcher"
+    itemId: "{0F8E13AA-7CBE-4D00-AE30-4F0BC26870F6}"
+    componentName: "LanguageSwitcher"
+    datasourceTemplatePath: ""
+    datasourceLocationQuery: ""
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "No Headless Variants container"
+    pendingManual: []
+  notes: 
+    - "Context item resolver {6CCCBCDE-5E95-44E4-AE66-CFE7D3A0589E}."
+- name: "LoanCalculator"
+  kind: "simple"
+  category: "Utilities"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/utilities/LoanCalculator.tsx"
+    componentMapKey: "LoanCalculator"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Loan Calculator"
+      path: "/sitecore/templates/Project/Financial/Components/Loan Calculator"
+      itemId: "{8A299404-EC7C-4BC2-84C5-B6F4C5AF6121}"
+      sectionName: "Data"
+      fields: []
+      baseTemplatesSet: true
+      standardValues:
+        itemId: ""
+        linked: false
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Loan Calculator"
+    path: "/sitecore/layout/Renderings/Project/Financial/Utilities/Loan Calculator"
+    itemId: "{A9598B40-14D5-47FC-B183-0B9FF10B90D3}"
+    componentName: "LoanCalculator"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/Loan Calculator"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Loan Calculator']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Loan Calculator']"
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "No Headless Variants container"
+      - "No standard values item"
+      - "No folder template"
+      - "No datasource folder under ProsperaFinancial/Data"
+      - "Field types not read"
+    pendingManual: []
+  notes: []
+- name: "ThemeSwitcher"
+  kind: "context-only"
+  category: "Utilities"
+  status: "complete"
+  createdAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-09T17:45:00Z"
+  react:
+    filePath: "src/components/utilities/ThemeSwitcher.tsx"
+    componentMapKey: "ThemeSwitcher"
+    variants:
+      - "Default"
+  templates:
+    datasource: null
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Theme Switcher"
+    path: "/sitecore/layout/Renderings/Project/Financial/Utilities/Theme Switcher"
+    itemId: "{5558C08C-3DC9-4F6E-B492-F4316C712826}"
+    componentName: "ThemeSwitcher"
+    datasourceTemplatePath: ""
+    datasourceLocationQuery: ""
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: ""
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: ""
+    containerId: ""
+    variants: []
+  verification:
+    checkedAt: "2026-10-09T17:45:00Z"
+    passed:
+      - "Rendering item found"
+    failed: 
+      - "No Headless Variants container"
+    pendingManual: []
+  notes: 
+    - "Context item resolver {6CCCBCDE-5E95-44E4-AE66-CFE7D3A0589E}."
+
+lookups:
+  - path: "/sitecore/content/Financial/ProsperaFinancial/Data"
+    itemId: "{5C48BD53-E997-45FC-B318-672CFA349BB3}"
+    lastReadAt: "2026-10-09T17:45:00Z"
+  - path: "/sitecore/templates/Project/Financial/Components"
+    itemId: "{33429731-C234-4706-AF63-439AEB11D72B}"
+    lastReadAt: "2026-10-09T17:45:00Z"
+  - path: "/sitecore/templates/Project/Financial/Folders"
+    itemId: "{D46ED96E-1BD9-4A36-BE81-4573519BDEBE}"
+    lastReadAt: "2026-10-09T17:45:00Z"
+  - path: "/sitecore/templates/Project/Financial/Rendering Parameters"
+    itemId: "{C253C8D5-7F4E-41AF-87E0-E7156C91A1BE}"
+    lastReadAt: "2026-10-09T17:45:00Z"
+    note: "Derived rendering-params root. Live component parameter templates are under Components/Rendering Parameters {67E69C10-7B84-475A-94FB-FB50EDD28694}."
+  - path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters"
+    itemId: "{67E69C10-7B84-475A-94FB-FB50EDD28694}"
+    lastReadAt: "2026-10-09T17:45:00Z"
+  - path: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Headless Variants"
+    itemId: "{2D02FA8C-30C1-4025-9EB7-5B3C062F7035}"
+    lastReadAt: "2026-10-09T17:45:00Z"
+  - path: "/sitecore/layout/Renderings/Project/Financial"
+    itemId: "{6630C97B-F037-4F1F-87BC-907C43F167D1}"
+    lastReadAt: "2026-10-09T17:45:00Z"
+  - path: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Available Renderings/Page Content"
+    itemId: "{0D181447-7CA1-4661-9F55-D752460957B4}"
+    lastReadAt: "2026-10-09T17:45:00Z"
+    note: "Available Renderings Page Content. Renderings field was readable in this session."

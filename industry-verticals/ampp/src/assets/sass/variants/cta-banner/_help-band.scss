@@ -1,0 +1,45 @@
+.cta-banner.variant-help-band {
+  padding: 3rem 0 4rem;
+  background: var(--bg-main);
+  color: var(--text-body);
+
+  .help-band {
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    gap: 2rem;
+    align-items: center;
+    padding: 2.5rem;
+    background: var(--bg-body);
+    border: 1px solid var(--border-color);
+    border-radius: var(--roundness);
+  }
+
+  .help-band-copy:only-child {
+    grid-column: 1 / -1;
+    max-width: 46rem;
+  }
+
+  h2 {
+    margin: 0 0 0.75rem;
+    font-size: 2rem;
+    font-weight: 300;
+  }
+
+  a.button {
+    margin-top: 1rem;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 12rem;
+    object-fit: contain;
+  }
+
+  @media (max-width: 767px) {
+    .help-band {
+      grid-template-columns: 1fr;
+      padding: 1.5rem;
+    }
+  }
+}

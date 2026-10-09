@@ -1,0 +1,50 @@
+.three-column-cta.variant-fact-cards {
+  padding: 3rem 0;
+  background: var(--bg-main);
+
+  img {
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    object-fit: contain;
+    border-radius: 0;
+  }
+
+  .fact-card {
+    height: 100%;
+    padding: 1.5rem;
+    background: var(--bg-body);
+    border: 1px solid var(--border-color);
+    border-radius: var(--roundness);
+  }
+
+  .fact-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 1rem;
+    background: var(--bg-color);
+    border-radius: 100%;
+  }
+
+  h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+
+  p {
+    margin: 0;
+    opacity: 1;
+  }
+
+  .fact-card-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: var(--text-accent);
+    font-weight: 700;
+    text-decoration: none;
+  }
+}

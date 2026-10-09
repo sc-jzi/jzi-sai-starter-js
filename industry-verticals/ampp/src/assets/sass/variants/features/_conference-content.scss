@@ -1,0 +1,49 @@
+.features.variant-conference-content {
+  padding: 3.5rem 0;
+  background: var(--bg-body);
+
+  .conference-content-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .conference-content-copy {
+    max-width: 40rem;
+  }
+
+  h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 22rem;
+    object-fit: cover;
+    border-radius: var(--roundness);
+  }
+
+  .conference-content-caption {
+    margin: 0.75rem 0 0;
+    color: var(--text-colored);
+    font-weight: 700;
+  }
+
+  .conference-content-points {
+    margin-top: 2rem;
+  }
+
+  a.button {
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 991px) {
+    .conference-content-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -1,0 +1,59 @@
+.application-form.variant-account {
+  padding: 2rem 0 4rem;
+  background: var(--bg-main);
+
+  .account-card {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 2rem 2.25rem;
+    background: var(--bg-body);
+    border: 1px solid var(--border-color);
+    border-radius: var(--roundness);
+  }
+
+  h2 {
+    margin: 0 0 0.75rem;
+    color: var(--text-body);
+    font-size: 2rem;
+    font-weight: 300;
+  }
+
+  .account-intro,
+  .account-footnote {
+    margin-bottom: 1.25rem;
+    color: var(--text-body);
+  }
+
+  .account-field {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .account-field span {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--text-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+
+  .input-field {
+    margin-bottom: 0;
+    background: var(--bg-body);
+    border: 1px solid var(--border-color);
+    border-radius: var(--roundness);
+    color: var(--text-body);
+    font-size: 1rem;
+  }
+
+  .input-field::placeholder {
+    color: var(--text-body);
+    font-style: normal;
+    opacity: 0.55;
+  }
+
+  .submit-button {
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+}

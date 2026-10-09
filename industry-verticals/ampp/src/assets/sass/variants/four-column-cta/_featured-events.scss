@@ -1,0 +1,54 @@
+.four-column-cta.variant-featured-events {
+  background: var(--bg-main);
+  padding: 3rem 0 4rem;
+
+  img {
+    height: 11rem;
+    border-radius: var(--roundness) var(--roundness) 0 0;
+  }
+
+  .featured-event-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--bg-body);
+    border: 1px solid var(--border-color);
+    border-radius: var(--roundness);
+    overflow: hidden;
+  }
+
+  .featured-event-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 1.1rem 1.25rem;
+    text-align: left;
+    background: var(--bg-body);
+  }
+
+  h2 {
+    margin: 0;
+    color: var(--text-body);
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-body);
+    font-size: 0.95rem;
+    opacity: 0.85;
+  }
+
+  .featured-event-link {
+    margin-top: auto;
+    color: var(--text-accent);
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      color: var(--text-colored);
+    }
+  }
+}

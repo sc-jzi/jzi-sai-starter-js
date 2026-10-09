@@ -1,0 +1,381 @@
+# Component Registry (Prospera base app)
+# Machine-readable index used by the Site Analyzer and validate-site-plan.mjs to match page sections to components.
+# Generated from the real components in src/components (variants = named exports, fieldCount = Fields interface) on 2026-10-09.
+# Keywords and variant hints were written from component and field names: refine them after seeing the components rendered.
+# NOT sections (they come from Page Design partials or page types): Header, Footer, Navigation, Eyebrow, Breadcrumb, ColumnSplitter,
+# ArticleDetails, AuthorDetails, ProjectDetails, PageBackground, PartialDesignDynamicPlaceholder, SiteTheme, ThemeSwitcher, LanguageSwitcher.
+
+components:
+
+  - id: hero-banner
+    name: "HeroBanner"
+    kind: simple
+    category: Banners
+    file: src/components/pagecontent/HeroBanner.tsx
+    variants: [Default]
+    visualKeywords:
+      - large headline with small eyebrow tagline above
+      - body text and one or two buttons
+      - image beside or behind the headline
+      - main intro section at the top of a page
+    fieldCount: 7
+
+  - id: hero
+    name: "Hero"
+    kind: simple
+    category: Banners
+    file: src/components/pagecontent/Hero.tsx
+    variants: [Default, ConferenceHero, CourseHero]
+    visualKeywords:
+      - simple intro with title, text, one link and an image
+      - lighter alternative to the hero banner
+    fieldCount: 4
+
+  - id: parallax-banner
+    name: "ParallaxBanner"
+    kind: simple
+    category: Banners
+    file: src/components/pagecontent/ParallaxBanner.tsx
+    variants: [Default]
+    visualKeywords:
+      - full-width banner with background and foreground image
+      - parallax scrolling effect
+      - title with short text and one link
+    fieldCount: 5
+
+  - id: heading-cta
+    name: "HeadingCta"
+    kind: simple
+    category: Banners
+    file: src/components/pagecontent/HeadingCta.tsx
+    variants: [Default, Compact, PageHeading, Centered]
+    visualKeywords:
+      - section or page heading with eyebrow, text and one link
+      - centered heading strip
+      - page title bar
+    variantSelectionHints:
+      Default: "heading + text + link, left aligned"
+      Compact: "tight spacing, small heading strip"
+      PageHeading: "page title at the top of an inner page"
+      Centered: "centered heading block"
+    fieldCount: 4
+
+  - id: cta-banner
+    name: "CtaBanner"
+    kind: simple
+    category: Banners
+    file: src/components/pagecontent/CtaBanner.tsx
+    variants: [Default, LargeImage, HelpBand]
+    visualKeywords:
+      - conversion band near the bottom of a page
+      - eyebrow, title, text and a single action
+      - image or icon on one side
+    variantSelectionHints:
+      Default: "standard call-to-action band"
+      LargeImage: "call to action with a large image"
+    fieldCount: 6
+
+  - id: promo-cta
+    name: "PromoCta"
+    kind: simple
+    category: Banners
+    file: src/components/pagecontent/PromoCta.tsx
+    variants: [Default, WithPlaceholderColumn, WithBackgroundImage]
+    visualKeywords:
+      - promotional block with image, title, subtitle and two links
+      - can hold other components in a side column
+      - background image variant
+    variantSelectionHints:
+      Default: "image beside promo text"
+      WithPlaceholderColumn: "promo text plus a column where another component is placed"
+      WithBackgroundImage: "promo text over a full background image"
+    fieldCount: 7
+
+  - id: carousel
+    name: "Carousel"
+    kind: simple
+    category: Banners
+    file: src/components/pagecontent/Carousel.tsx
+    variants: [Default]
+    visualKeywords:
+      - rotating slides with title, text, image and link
+      - optional video
+      - dots or arrows
+    fieldCount: 5
+
+  - id: two-column-cta
+    name: "TwoColumnCta"
+    kind: simple
+    category: Calls to action
+    file: src/components/pagecontent/TwoColumnCta.tsx
+    variants: [Default]
+    visualKeywords:
+      - two cards side by side
+      - each with image, title, text and link
+      - two equal options
+    fieldCount: 8
+
+  - id: three-column-cta
+    name: "ThreeColumnCta"
+    kind: simple
+    category: Calls to action
+    file: src/components/pagecontent/ThreeColumnCta.tsx
+    variants: [Default, WithIcons, WithIconsCompact, FactCards, FactBar, NumberedSteps]
+    visualKeywords:
+      - three columns with image or icon
+      - short text and sub text per column
+      - link per column
+    variantSelectionHints:
+      Default: "images on top of three columns"
+      WithIcons: "small icon above each column text"
+      WithIconsCompact: "compact icon row with minimal text"
+    fieldCount: 12
+
+  - id: four-column-cta
+    name: "FourColumnCta"
+    kind: simple
+    category: Calls to action
+    file: src/components/pagecontent/FourColumnCta.tsx
+    variants: [Default, FeaturedEvents]
+    visualKeywords:
+      - four columns each with image, title, text and link
+      - four equal options or services
+    fieldCount: 16
+
+  - id: five-column-cta
+    name: "FiveColumnCta"
+    kind: simple
+    category: Calls to action
+    file: src/components/pagecontent/FiveColumnCta.tsx
+    variants: [Default]
+    visualKeywords:
+      - five narrow columns with image, text and link
+      - row of categories or products
+    fieldCount: 15
+
+  - id: app-promo
+    name: "AppPromo"
+    kind: simple
+    category: Calls to action
+    file: src/components/pagecontent/AppPromo.tsx
+    variants: [Default]
+    visualKeywords:
+      - mobile app promotion
+      - title, text and a phone or app image
+      - store badges area
+    fieldCount: 3
+
+  - id: features
+    name: "Features"
+    kind: simple
+    category: Content
+    file: src/components/pagecontent/Features.tsx
+    variants: [Default, ConferenceContent]
+    visualKeywords:
+      - feature section with eyebrow, rich text, link and image
+      - two titled feature text blocks
+    fieldCount: 8
+
+  - id: stats-counter
+    name: "StatsCounter"
+    kind: simple
+    category: Content
+    file: src/components/pagecontent/StatsCounter.tsx
+    variants: [Default]
+    visualKeywords:
+      - row of three large numbers with symbols and captions
+      - animated counting numbers
+      - supporting images
+    fieldCount: 11
+
+  - id: comparison
+    name: "Comparison"
+    kind: simple
+    category: Content
+    file: src/components/pagecontent/Comparison.tsx
+    variants: [Default]
+    visualKeywords:
+      - two amounts or offers side by side
+      - currency, subtitle and value per side
+      - before and after figures
+    fieldCount: 8
+
+  - id: quote
+    name: "Quote"
+    kind: simple
+    category: Content
+    file: src/components/pagecontent/Quote.tsx
+    variants: [Default, Simple]
+    visualKeywords:
+      - single quotation with author name, position and photo
+    variantSelectionHints:
+      Default: "quote with author photo"
+      Simple: "quote text with author, no photo emphasis"
+    fieldCount: 4
+
+  - id: image-gallery
+    name: "ImageGallery"
+    kind: simple
+    category: Content
+    file: src/components/pagecontent/ImageGallery.tsx
+    variants: [Default]
+    visualKeywords:
+      - image or photo block
+      - full-width picture
+    fieldCount: 1
+
+  - id: rich-text
+    name: "RichText"
+    kind: simple
+    category: Content
+    file: src/components/pagecontent/RichText.tsx
+    variants: [Default, Longform]
+    visualKeywords:
+      - plain heading and body copy
+      - text-only section
+    fieldCount: 1
+
+  - id: documents-list
+    name: "DocumentsList"
+    kind: simple
+    category: Content
+    file: src/components/pagecontent/DocumentsList.tsx
+    variants: [Default]
+    visualKeywords:
+      - list of downloadable documents
+      - title, subtitle, icon image and link per document
+      - up to four items
+    fieldCount: 13
+
+  - id: testimonials
+    name: "Testimonials"
+    kind: list
+    category: Lists
+    file: src/components/pagecontent/Testimonials.tsx
+    variants: [Default]
+    visualKeywords:
+      - several customer quotes
+      - slider or row of testimonials
+    fieldCount: 1
+
+  - id: questions
+    name: "Questions"
+    kind: list
+    category: Lists
+    file: src/components/pagecontent/Questions.tsx
+    variants: [Default, SingleColumn]
+    visualKeywords:
+      - frequently asked questions
+      - question and answer list
+    variantSelectionHints:
+      Default: "two-column question list"
+      SingleColumn: "one-column question list"
+    fieldCount: 1
+
+  - id: accordion
+    name: "Accordion"
+    kind: list
+    category: Lists
+    file: src/components/pagecontent/Accordion.tsx
+    variants: [Default]
+    visualKeywords:
+      - expandable and collapsible panels
+      - click to open items
+    fieldCount: 1
+
+  - id: article-list
+    name: "ArticleList"
+    kind: list
+    category: Lists
+    file: src/components/pagecontent/ArticleList.tsx
+    variants: [Default, ThreeColumn, Simplified, Grid, EventList, CourseCatalog]
+    visualKeywords:
+      - cards for articles or blog posts
+      - thumbnail, title, excerpt and author
+      - grid or list of news
+    variantSelectionHints:
+      Default: "standard article cards"
+      ThreeColumn: "three cards per row"
+      Simplified: "compact list without images"
+      Grid: "grid of article tiles"
+    fieldCount: 8
+
+  - id: author-list
+    name: "AuthorList"
+    kind: list
+    category: Lists
+    file: src/components/pagecontent/AuthorList.tsx
+    variants: [Default, Slider, Simple]
+    visualKeywords:
+      - people or authors list
+      - photo, name, position and bio
+      - team members
+    variantSelectionHints:
+      Default: "people cards"
+      Slider: "people in a slider"
+      Simple: "compact people list"
+    fieldCount: 4
+
+  - id: author-widget
+    name: "AuthorWidget"
+    kind: simple
+    category: Lists
+    file: src/components/pagecontent/AuthorWidget.tsx
+    variants: [Default, WithSocials]
+    visualKeywords:
+      - single person card with photo, name and position
+      - social media links
+    variantSelectionHints:
+      Default: "person card"
+      WithSocials: "person card with social icons"
+    fieldCount: 9
+
+  - id: project-list
+    name: "ProjectList"
+    kind: list
+    category: Lists
+    file: src/components/pagecontent/ProjectList.tsx
+    variants: [Default, Mosaic]
+    visualKeywords:
+      - case studies or projects
+      - thumbnail, client logo, category and abstract
+      - problem and solution summary
+    variantSelectionHints:
+      Default: "project cards"
+      Mosaic: "asymmetric mosaic of projects"
+    fieldCount: 7
+
+  - id: contact-form
+    name: "ContactForm"
+    kind: simple
+    category: Forms and tools
+    file: src/components/utilities/ContactForm.tsx
+    variants: [Default]
+    visualKeywords:
+      - contact form with email, subject and message
+      - submit button
+      - optional background image
+    fieldCount: 6
+
+  - id: application-form
+    name: "ApplicationForm"
+    kind: simple
+    category: Forms and tools
+    file: src/components/utilities/ApplicationForm.tsx
+    variants: [Default, Account]
+    visualKeywords:
+      - application form with name, ID number, email and mobile number
+      - submit button and footnote
+    fieldCount: 8
+
+  - id: loan-calculator
+    name: "LoanCalculator"
+    kind: simple
+    category: Forms and tools
+    file: src/components/utilities/LoanCalculator.tsx
+    variants: [Default]
+    visualKeywords:
+      - calculator with amount and term sliders
+      - interest and fee based result
+      - financial services
+    fieldCount: 8

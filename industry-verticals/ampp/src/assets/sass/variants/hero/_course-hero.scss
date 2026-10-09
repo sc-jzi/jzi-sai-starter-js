@@ -1,0 +1,39 @@
+.component.hero.variant-course-hero {
+  height: auto;
+  color: var(--text-body);
+  background: var(--bg-main);
+
+  .course-hero-layout {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2.5rem;
+    align-items: center;
+    padding: 3.5rem 0;
+  }
+
+  h1 {
+    margin: 0 0 1rem;
+    color: var(--text-body);
+    font-size: 2.6rem;
+    font-weight: 300;
+    line-height: 1.2;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    max-height: 22rem;
+    object-fit: cover;
+    border-radius: var(--roundness);
+  }
+
+  a.button {
+    margin-top: 1.25rem;
+  }
+
+  @media (max-width: 991px) {
+    .course-hero-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+# Marketer MCP tools available in this environment
+
+Generated from the connected `user-marketer` MCP namespace on 2026-10-09. Parameters marked **layout-sensitive** can select a rendering variant or non-page item.
+
+- `list_sites()` — list sites.
+- `get_site_information(siteId)` — get site metadata.
+- `get_site_id_from_item(itemId)` — resolve a site from an item.
+- `search_site(searchQuery, siteName, language?)` — search page names.
+- `get_all_languages()` — list languages.
+- `list_brandkits()` — list Brand Kits.
+- `get_brandkit_by_id(brandkitId)` — get a Brand Kit.
+- `list_brand_contexts()` — list brand contexts.
+- `get_brand_context(brandContextId)` — get a brand-context tree.
+- `get_brand_context_items(brandContextId, itemIds)` — get brand-context documents.
+- `get_all_pages_by_site(siteName, language?)` — list site pages.
+- `get_page_path_by_live_url(liveUrl)` — resolve a live URL.
+- `get_page_html(pageId, language, version?, variantId?)` — get rendered HTML; `variantId` is **layout-sensitive**.
+- `get_page_preview_url(pageId, language, variantId?)` — get preview URL; `variantId` is **layout-sensitive**.
+- `get_page_template_by_id(templateId)` — get a page template; `templateId` accepts a non-page item id.
+- `create_page(templateId, parentId, name, language?, fields?)` — create a page; `templateId` and `parentId` accept non-page item ids.
+- `get_page(pageId, language?)` — get a page.
+- `add_language_to_page(pageId, languageRequest)` — add a page language.
+- `get_page_screenshot(pageId, version, language?, width?, height?, variantId?)` — capture a page; `variantId` is **layout-sensitive**.
+- `add_component_on_page(pageId, componentRenderingId, placeholderPath, componentItemName, language?, fields?, insertBeforeComponentId?, insertAfterComponentId?)` — add a rendering; `componentRenderingId` and `placeholderPath` are **layout-sensitive** and `componentItemName` sets the instance name.
+- `get_allowed_comps_by_ph(pageId, placeholderName, language?, variantId?)` — list allowed renderings; `placeholderName` and `variantId` are **layout-sensitive**.
+- `list_components(siteName)` — list site renderings.
+- `get_component(componentId)` — get rendering details; `componentId` accepts a rendering item id.
+- `get_components_on_page(pageId, language?, version?, variantId?, includeRenderingDetails?)` — inspect placed renderings; `variantId` is **layout-sensitive**.
+- `set_component_datasource(pageId, componentId, datasourceId, variantId?, language?)` — wire a datasource; `datasourceId` accepts a non-page item id and `variantId` is **layout-sensitive**.
+- `create_component_ds(siteName, componentId, dataFields, language?, children?)` — create a rendering datasource; child `location` accepts an item location.
+- `search_component_ds(componentId, term)` — search rendering datasources.
+- `list_avail_insertopts(itemId, language?)` — list insert options for an item; `itemId` accepts a non-page item id.
+- `create_content_item(name, templateId, parentId, language?, fields?)` — create an item; `templateId` and `parentId` accept non-page item ids.
+- `update_fields_on_item(itemId, fields)` — update item fields; `itemId` accepts a non-page item id.
+- `update_content(itemId, siteName, fields?, language?, createNewVersion?)` — update item fields; `itemId` accepts a non-page item id.
+- `delete_content(itemId, language?)` — delete an item; `itemId` accepts a non-page item id.
+- `get_content_item_by_path(itemPath, language?, failOnNotFound?)` — get any content item by path.
+- `get_content_item_by_id(itemId, language?)` — get any content item by id.
+- `search_assets(query?, type?, language?, tags?)` — search assets.
+- `get_asset_information(assetId)` — get an asset.
+- `update_asset(assetId, fields, language, name?, altText?)` — update an asset.
+- `create_perso_version(pageId, name, variantName, audienceName, conditionTemplateId, language?, conditionParams?)` — create one-condition personalization; `variantName` sets the display name and `conditionTemplateId` accepts a non-page item id.
+- `create_perso_version_multi(pageId, name, variantName, audienceName, conditionGroups, language?, userConfirmation?)` — create multi-condition personalization; `variantName` sets the display name and condition template ids accept non-page item ids.
+- `update_perso_version(pageId, variantId, variantName, audienceName, conditionGroups, language?, userConfirmation?)` — update personalization; `variantId` is **layout-sensitive**, `variantName` sets the display name, and condition template ids accept non-page item ids.
+- `get_perso_ver_by_page(pageId, language?)` — list personalization versions.
+- `get_perso_cond_tmpls()` — list personalization condition templates.
+- `get_perso_cond_tmpl_by_id(templateId)` — get a condition template; `templateId` accepts a non-page item id.
+- `create_component_ab_test(siteId, pageId, componentId, name, goalType, targetedPages, variants, userConfirmed, language?)` — create an A/B test; variant `name` values set display names.
+- `update_ab_test(flowId, name, archived, goalType, targetedPages, variants, userConfirmed)` — update an A/B test; variant `name` values set display names.
+- `list_page_flows(pageId, language?, status?)` — list page flows.
+- `set_component_variant(flowId, pageId, componentId, variantId, variantStrategy, pageVersion?, language?, swappedComponent?, userConfirmed?)` — configure COPY/SWAP/HIDE; `variantId`, strategy, swapped rendering id, and datasource path are **layout-sensitive**.
+- `reset_component_variant(flowId, pageId, componentId, variantId?, language?, pageVersion?)` — reset a component variant; `variantId` is **layout-sensitive**.
+- `get_flow_definition(flowId)` — get a flow.
+- `get_flow_variant_by_id(flowId, variantId, language?, version?)` — get a flow variant; `variantId` is **layout-sensitive**.
+- `hide_component_perso_default_page(pageId, componentId, language?, pageVersion?)` — hide a rendering on the default personalized page.
+- `list_brief_types()` — list brief types.
+- `get_brief_type_by_id(briefTypeId)` — get a brief type.
+- `get_brief_by_id(briefId)` — get a brief.
+- `list_briefs(name?, status?, creatorId?, typeId?, sortBy?)` — list briefs.
+- `generate_brief_draft(brandkitId, brieftypeId, prompt, userConfirmed?)` — generate a brief draft.
+- `generate_brief_revision(brandkitId, brieftypeId, prompt, currentBrief)` — revise a brief draft.
+- `create_brief_from_draft(brandkitId, briefTypeId, name, locale?, fieldsData?, isApproved?)` — save an approved brief.
+- `update_brief_from_revision(briefId, name?, fieldsData?, isApproved?)` — save an approved brief revision.
