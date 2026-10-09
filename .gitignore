@@ -73,3 +73,4 @@ industry-verticals/*/docs/ai/themes/*/screenshot-*.png
 
 # installed packages (harness/node_modules, any app)
 node_modules/
+harness/package-lock.json

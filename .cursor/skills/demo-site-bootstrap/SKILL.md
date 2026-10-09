@@ -5,17 +5,18 @@ description: Prepare a freshly created site: Data folders, Headless Variants, Av
 
 # Bootstrap a freshly created site so the shared components work in it
 
-A site made from a site template has the standard presentation scaffolding but none of the project-specific items that ProsperaFinancial-style sites carry. The shared definitions (templates, renderings, rendering parameters under the project layer, e.g. `/sitecore/layout/Renderings/Project/fmc-custom-demo`) already exist and are REUSED. This skill creates only what lives INSIDE the new site. Use the Marketer MCP; limits are in `.cursor/skills/sitecore-reference/references/agent-api-limitations.md`.
+A site made from a site template has the standard presentation scaffolding but none of the project-specific items that ProsperaFinancial-style sites carry. The shared definitions (templates, renderings, rendering parameters under the project layer, `renderingsRoot` in `docs/ai/config/project.yaml`) already exist and are REUSED. This skill creates only what lives INSIDE the new site. Use the Marketer MCP; limits are in `.cursor/skills/sitecore-reference/references/agent-api-limitations.md`.
 
 ## Rules
 - Run `node harness/scripts/bootstrap-plan.mjs <customer>` first; it lists exactly what is needed (`bootstrap-plan.md/json`).
 - Before every write: `node harness/scripts/guard-customer.mjs sitecore-path <customer> "<path>"`.
-- Use ids from the manifest ONLY for shared things (templates, folder templates, renderings, rendering parameters). Site-level ids in the manifest (`/content/main/main-website/...`, variant definition ids, example items) belong to another site: never use or write them.
+- Use ids from the manifest ONLY for shared things (templates, folder templates, renderings, rendering parameters). Site-level ids in the manifest (any other site's `/sitecore/content/...` paths, variant definition ids, example items) belong to another site: never use or write them.
 - Record every id you create or find in `industry-verticals/<customer>/docs/ai/demos/<customer>/site-manifest.json`; all later phases read site-level ids from there.
 - Do not claim a write worked until you re-read it (several fields are silent-writes; see `sitecore-marketer-mcp-reference.md`).
 
 ## Step 0 — Probe (read-only)
 With `get_content_item_by_path`, list and record in `site-probe.json`: `/sitecore/content/<coll>/<site>` children; `Home`; `Data`; `Presentation/{Available Renderings, Headless Variants, Partial Designs, Page Designs, Styles}`; `Settings`. Also confirm the shared layer exists (`renderingsRoot`, `projectTemplatesRoot` from `docs/ai/config/project.yaml`). If the shared layer is missing in this environment or collection, STOP and tell the SE: the components are not registered there and that is a separate (new-component) job.
+If the probe shows there is no `Home` page (some site templates, e.g. Empty, may not create one), STOP and report what the probe found: do not guess a page template. The SE decides how to create Home once, then re-run.
 The probe decides each step below: create only what is absent.
 
 ## Step 1 — Data root and datasource folders

@@ -24,8 +24,8 @@ A **build plan** saved to `docs/ai/demos/<client-kebab>/build-plan.yaml` with th
 ### Step 1 — Load references
 
 Read these files before analyzing:
-- `docs/ai/catalog/component-registry.yaml` — the 18 template components with visual keywords and variant hints
-- `docs/ai/catalog/theme-component-mapping.md` — how theme tone fields drive variant selection
+- `docs/ai/catalog/component-registry.yaml` — the Prospera components with visual keywords and variant hints
+- `docs/ai/catalog/theme-component-mapping.md` — how the theme's hero/heading style drives variant selection
 - `docs/ai/manifests/sitecore-manifest.yaml` — verify all 18 components are `status: "complete"`
 - The client's theme file at `docs/ai/themes/<client>.theme.yaml`
 
@@ -91,31 +91,40 @@ Use the template at `docs/ai/templates/build-plan-summary.template.md` for the s
 
 ## Registry-to-Manifest mapping table
 
-All 18 template components are built and `status: "complete"` in the manifest.
+The registry is generated from Prospera's real components. A component is reusable when it is `status: complete` in the manifest (filled by `/demo-inventory-base-site`).
 Use this table to set both `registryId` and `manifestName` in the build plan:
 
 | registryId | manifestName | kind | variants |
 |---|---|---|---|
-| `announcement-bar` | `AnnouncementBar` | simple | Default, Highlight |
-| `navigation-header` | `NavigationHeader` | context-only | Default, Transparent, Minimal |
-| `hero-banner` | `HeroBanner` | simple | Default, SplitImageText, BackgroundImage, VideoBackground, Minimal |
-| `tab-navigation` | `TabNavigationSection` | list | Default, Underline, Boxed |
-| `product-pricing-cards` | `ProductPricingCards` | list | Default, Horizontal, Compact, Highlighted |
-| `feature-highlight` | `FeatureHighlight` | simple | Default, Centered, WithVideo, IconLeft |
-| `legal-compliance` | `LegalComplianceBanner` | simple | Default, WithImage |
-| `value-proposition-grid` | `ValuePropositionGrid` | list | Default, TwoColumn, FourColumn, Horizontal |
-| `trust-stats` | `TrustStatsRow` | list | Default, WithIcons, LogoRow |
-| `testimonial-quote` | `TestimonialBlock` | list | Default, Carousel, Grid, WithPhoto |
-| `cta-banner` | `CTABanner` | simple | Default, WithImage, Split, Minimal |
-| `feature-cards-grid` | `FeatureCardsGrid` | list | Default, TwoColumn, WithImages, Carousel |
-| `image-gallery` | `ImageGallery` | simple | Default, Gallery, Parallax |
-| `logo-cloud` | `LogoCloud` | list | Default, Grid, WithLabels |
-| `footer` | `SiteFooter` | context-only | Default, Minimal, MegaFooter |
-| `newsletter-signup` | `NewsletterSignup` | simple | Default, Banner, Compact |
-| `faq-accordion` | `FAQAccordion` | list | Default, AllOpen, TwoColumn |
-| `rich-text-block` | `RichTextBlock` | simple | Default, Centered, Narrow |
-
----
+| `hero-banner` | `HeroBanner` | simple | Default |
+| `hero` | `Hero` | simple | Default |
+| `parallax-banner` | `ParallaxBanner` | simple | Default |
+| `heading-cta` | `HeadingCta` | simple | Default, Compact, PageHeading, Centered |
+| `cta-banner` | `CtaBanner` | simple | Default, LargeImage |
+| `promo-cta` | `PromoCta` | simple | Default, WithPlaceholderColumn, WithBackgroundImage |
+| `carousel` | `Carousel` | simple | Default |
+| `two-column-cta` | `TwoColumnCta` | simple | Default |
+| `three-column-cta` | `ThreeColumnCta` | simple | Default, WithIcons, WithIconsCompact |
+| `four-column-cta` | `FourColumnCta` | simple | Default |
+| `five-column-cta` | `FiveColumnCta` | simple | Default |
+| `app-promo` | `AppPromo` | simple | Default |
+| `features` | `Features` | simple | Default |
+| `stats-counter` | `StatsCounter` | simple | Default |
+| `comparison` | `Comparison` | simple | Default |
+| `quote` | `Quote` | simple | Default, Simple |
+| `image-gallery` | `ImageGallery` | simple | Default |
+| `rich-text` | `RichText` | simple | Default |
+| `documents-list` | `DocumentsList` | simple | Default |
+| `testimonials` | `Testimonials` | list | Default |
+| `questions` | `Questions` | list | Default, SingleColumn |
+| `accordion` | `Accordion` | list | Default |
+| `article-list` | `ArticleList` | list | Default, ThreeColumn, Simplified, Grid |
+| `author-list` | `AuthorList` | list | Default, Slider, Simple |
+| `author-widget` | `AuthorWidget` | simple | Default, WithSocials |
+| `project-list` | `ProjectList` | list | Default, Mosaic |
+| `contact-form` | `ContactForm` | simple | Default |
+| `application-form` | `ApplicationForm` | simple | Default |
+| `loan-calculator` | `LoanCalculator` | simple | Default |
 
 ## Build plan format
 
@@ -164,86 +173,81 @@ buildOrder:
 
 ## Matching rules
 
-### Use the theme's tone fields first
+### Theme tone
 
-- `tone.heroStyle: "full-bleed-image"` → HeroBanner variant `BackgroundImage`
-- `tone.heroStyle: "split-image-text"` → HeroBanner variant `SplitImageText`
-- `tone.heroStyle: "centered-overlay"` or `"gradient"` → HeroBanner variant `Default`
-- `tone.heroStyle: "video-background"` → HeroBanner variant `VideoBackground`
-- `tone.heroStyle: "minimal-text"` → HeroBanner variant `Minimal`
-- `tone.navStyle: "solid-bar"` → NavigationHeader variant `Default`
-- `tone.navStyle: "transparent-overlay"` → NavigationHeader variant `Transparent`
-- `tone.navStyle: "minimal"` → NavigationHeader variant `Minimal`
-- `tone.cardStyle: "elevated"` → cards use shadow
-- `tone.cardStyle: "bordered"` → cards use border
-
-See `docs/ai/catalog/theme-component-mapping.md` for the full mapping.
+Colors, fonts and shapes come from the `site-<customer>` theme, not from variants. Only the hero/heading style steers variants: see `docs/ai/catalog/theme-component-mapping.md`.
 
 ### Visual pattern → component matching
 
 | Visual pattern | Component | Variant |
 |---|---|---|
-| Thin colored bar at very top with text | AnnouncementBar | Default |
-| Logo + nav links + CTA button in header | NavigationHeader | Default/Transparent |
-| Large heading + subtitle + CTA, dark/full-width | HeroBanner | Default |
-| Large heading + image on the side | HeroBanner | SplitImageText |
-| Full-bleed photo with text overlay | HeroBanner | BackgroundImage |
-| Full-bleed hero with icon categories or accordion overlay | **Split:** HeroBanner + FAQAccordion/TabNav, or mark custom | — |
-| Multiple full-width rotating slides with dots/arrows | HeroBannerCarousel | Default |
-| Row of cards in horizontal carousel with dots/arrows | FeatureCardsGrid | Carousel |
-| Horizontal row of pill/tab buttons | TabNavigationSection | Default |
-| 2-3 cards with title, price, CTA | ProductPricingCards | Default |
-| Single feature with image + text side by side | FeatureHighlight | Default |
-| Feature with play button overlay on image | FeatureHighlight | WithVideo |
-| Small icon left, text right, compact | FeatureHighlight | IconLeft |
-| Compliance/law text section | LegalComplianceBanner | Default |
-| 3-4 icons with short text below each | ValuePropositionGrid | Default |
-| Row of big numbers (40+, 2M, etc.) | TrustStatsRow | Default |
-| Quote with attribution | TestimonialBlock | Default |
-| Multiple quotes in a row/carousel | TestimonialBlock | Carousel/Grid |
-| Bold CTA section with button | CTABanner | Default |
-| 3 cards with icon + title + description | FeatureCardsGrid | Default |
-| Full-width photo/image break | ImageGallery | Default |
-| Row of partner/client logos | LogoCloud | Default |
-| Multi-column footer with links | SiteFooter | Default |
-| Email input + subscribe button | NewsletterSignup | Default |
-| Expandable Q&A list | FAQAccordion | Default |
-| Simple heading + body text | RichTextBlock | Default/Centered |
+| Large heading + eyebrow + text + 1-2 buttons + image, top of page | HeroBanner | Default |
+| Plain intro: title + text + one link + image | Hero | Default |
+| Full-width banner with layered/parallax images and short text | ParallaxBanner | Default |
+| Page title strip on an inner page | HeadingCta | PageHeading |
+| Centered heading + text + button | HeadingCta | Centered |
+| Small heading + link row | HeadingCta | Compact |
+| Heading + text + link, left aligned | HeadingCta | Default |
+| Bold section with one button, near the page bottom | CtaBanner | Default |
+| Call to action with a large photo | CtaBanner | LargeImage |
+| Promo block with image, subtitle, two links | PromoCta | Default |
+| Promo text over a full-bleed background photo | PromoCta | WithBackgroundImage |
+| Promo text with a second component placed beside it | PromoCta | WithPlaceholderColumn |
+| Full-width rotating slides with dots/arrows | Carousel | Default |
+| Two side-by-side cards with image, title, text, link | TwoColumnCta | Default |
+| 3 cards with image, text and link | ThreeColumnCta | Default |
+| 3 icons with short text below each | ThreeColumnCta | WithIcons |
+| Compact row of 3 icons with a line of text | ThreeColumnCta | WithIconsCompact |
+| 4 cards with image, title, text, link | FourColumnCta | Default |
+| Row of 5 image tiles with a caption and link | FiveColumnCta | Default |
+| App promotion with title, text and phone image | AppPromo | Default |
+| Feature section: image + eyebrow + text + two titled points | Features | Default |
+| Row of big numbers (40+, 2M, 98%) with captions | StatsCounter | Default |
+| Two figures/offers compared side by side | Comparison | Default |
+| One quote with attribution and photo | Quote | Default |
+| One quote, text only | Quote | Simple |
+| Full-width photo / image break | ImageGallery | Default |
+| Simple heading + body text | RichText | Default |
+| List of downloads / documents with links | DocumentsList | Default |
+| Multiple quotes in a row/carousel | Testimonials | Default |
+| Q&A list in two columns | Questions | Default |
+| Q&A list in one column | Questions | SingleColumn |
+| Expandable/collapsible list of items | Accordion | Default |
+| Grid of article/news cards | ArticleList | Default |
+| Three article cards in a row | ArticleList | ThreeColumn |
+| Compact list of article titles | ArticleList | Simplified |
+| Tile grid of articles | ArticleList | Grid |
+| Team / author cards with photo and bio | AuthorList | Default |
+| People in a horizontal slider | AuthorList | Slider |
+| Compact people list | AuthorList | Simple |
+| One person card | AuthorWidget | Default |
+| Person card with social links | AuthorWidget | WithSocials |
+| Case study / project cards | ProjectList | Default |
+| Mosaic of projects with mixed tile sizes | ProjectList | Mosaic |
+| Contact form | ContactForm | Default |
+| Application / sign-up form | ApplicationForm | Default |
+| Calculator with sliders and a result | LoanCalculator | Default |
 
 ### Disambiguating similar components
 
 | Confusion pair | How to decide |
 |---|---|
-| ValuePropositionGrid vs FeatureCardsGrid | ValueProps: short, icon-focused, 1-2 lines text. FeatureCards: longer description, may have link per card |
-| FeatureHighlight vs RichTextBlock | FeatureHighlight has an image. RichTextBlock is text-only |
-| FeatureHighlight vs HeroBanner | Hero is above the fold and full-width. FeatureHighlight is mid-page, typically half-width image |
-| CTABanner vs HeroBanner | CTA is conversion-focused (single action), appears toward page bottom. Hero is the main intro section at top |
-| ProductPricingCards vs FeatureCardsGrid | PricingCards have price/badge fields. FeatureCards have icon + description but no pricing |
-| HeroBanner vs HeroBanner + FAQAccordion | If the hero section has expandable/collapsible categories, icon navigation, or accordion-style content overlaid on the hero image, do NOT map to plain HeroBanner. See "Compound/interactive sections" below. |
-| FeatureCardsGrid vs HeroBannerCarousel | If cards are in a horizontal carousel with dots/arrows (not a static grid), consider HeroBannerCarousel if they're hero-sized, or note the carousel behavior in `contentNotes` for Phase 5.5 |
+| HeroBanner vs Hero | HeroBanner has an eyebrow tagline, two buttons and an icon; Hero is title + text + one link |
+| ThreeColumnCta vs FeatureCards-style grids | Prospera has no card-grid component: use TwoColumn/ThreeColumn/FourColumn/FiveColumnCta by the number of columns |
+| CtaBanner vs PromoCta | CtaBanner is a single conversion band near the bottom; PromoCta is a promotional block with image and two links |
+| Testimonials vs Quote | Testimonials is several quotes; Quote is exactly one |
+| Questions vs Accordion | Same behaviour; use Questions for FAQ wording, Accordion for any other expandable content |
+| StatsCounter vs Comparison | StatsCounter is three big counting numbers; Comparison puts two amounts side by side |
+| ArticleList vs ProjectList | ArticleList is news/blog cards; ProjectList is case studies with client logo and problem/solution |
 
 ### Compound / interactive sections
 
-Some homepage sections combine multiple behaviors that don't map to a single template component. Do NOT force these into one component — split them or mark as custom.
+Do not force a section with several behaviours into one component: split it or mark it custom, and say what is lost in `contentNotes`.
 
-**Hero with accordion/category navigation:**
-If a hero section includes expandable categories, icon-based navigation tabs, or an accordion overlay on top of the hero image:
-- Split into: **HeroBanner** (BackgroundImage) for the visual + **FAQAccordion** or **TabNavigationSection** for the interactive overlay
-- Or mark as `matchType: "custom"` if the interaction is tightly coupled
-- **Never** map to a plain HeroBanner and silently drop the interactive content
-- Note what's being lost in `contentNotes` so the SE can decide
-
-**Carousel sections that aren't hero-sized:**
-If a section shows cards in a horizontal carousel with dots/arrows:
-- If the cards are hero-sized with full-bleed images → **HeroBannerCarousel**
-- If the cards are mid-page content cards → **FeatureCardsGrid** with `contentNotes` noting the carousel behavior
-- Note in `contentNotes`: "Live site uses carousel; template renders as grid. Phase 5.5 can add carousel variant."
-
-**Asymmetric layouts:**
-If a section has one large image + smaller tiles (not a uniform grid):
-- Do NOT force into a symmetric grid component
-- Mark as `matchConfidence: "low"` with a note about the asymmetry
-- Suggest splitting into ImageGallery + FeatureCardsGrid, or mark custom
+- **Hero with accordion/category navigation:** `PromoCta` (`WithBackgroundImage`) for the visual + `Accordion` or `Questions` below it, or mark custom.
+- **Carousels:** `Carousel` for hero-sized rotating slides; mid-page card carousels become `ThreeColumnCta`/`FourColumnCta` with a note ("live site uses a carousel; template renders columns").
+- **Asymmetric layouts** (one large image with smaller tiles): `ProjectList` variant `Mosaic` if it shows projects, otherwise `matchConfidence: "low"` or custom.
+- **Columns holding other components:** `TwoColumnCta` and `PromoCta` (`WithPlaceholderColumn`) have a placeholder; nest only when the plan says so.
 
 ### Confidence levels
 

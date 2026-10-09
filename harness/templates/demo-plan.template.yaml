@@ -4,6 +4,10 @@
 #   node harness/scripts/validate-site-plan.mjs <customer>
 # Never invent facts or figures. Quote the transcript in `evidence`; mark stated or inferred; write "not given" for gaps.
 
+# Written after the SE approves at the gate (create-site --apply refuses without it):
+userApproved: false
+approvedAt: ""
+
 client:
   name: "Example Corp"
   kebab: "example-corp"   # = the folder name under industry-verticals/
@@ -77,18 +81,20 @@ story:
   recap: "c1 (campaigns launch late): we showed a regional page built by marketing in a day (m1) and reusable product blocks (m3). c2 (no audit trail): we showed approvals and history on one page (m2)."
 
 site:
-  # collection/siteName are set when the site is created (sitecore-new-site). Do not guess.
-  collection: ""
+  # Set from the SE's answers (collection and template are ALWAYS asked, never chosen by the agent). create-site checks these.
+  collection: ""          # collection name
+  collectionMode: ""      # new | existing
+  template: ""            # site template NAME, e.g. Empty
   siteName: ""
   pages:
-    # Order matters: parents first. /Home always exists already (Page Design + header/footer come with it).
+    # Order matters: parents first. Plan /Home first; demo-site-bootstrap probes whether the template already created it.
     - path: /Home
       pageType: page            # page | article | landing
       purpose: "Landing view in the prospect's brand; the WOW result in the first minute"
       proves: [m1]
       sections:
-        - { position: 1, component: hero-banner, variant: BackgroundImage, contentSource: site, note: "Campaign headline" }
-        - { position: 2, component: value-proposition-grid, variant: Default, contentSource: transcript, note: "Speaks to c1" }
+        - { position: 1, component: hero-banner, variant: Default, contentSource: site, note: "Campaign headline" }
+        - { position: 2, component: three-column-cta, variant: WithIcons, contentSource: transcript, note: "Speaks to c1" }
         - { position: 3, component: cta-banner, variant: Default, contentSource: transcript }
     - path: /Home/products
       pageType: page
@@ -96,12 +102,12 @@ site:
       proves: [m3]
       why: "m3 needs a page that is clearly assembled from shared blocks"
       sections:
-        - { position: 1, component: hero-banner, variant: Minimal, contentSource: site }
-        - { position: 2, component: feature-cards-grid, variant: Default, contentSource: site }
+        - { position: 1, component: heading-cta, variant: PageHeading, contentSource: site }
+        - { position: 2, component: four-column-cta, variant: Default, contentSource: site }
     - path: /Home/governance
       pageType: page
       purpose: "Approvals and audit story"
       proves: [m2]
       sections:
-        - { position: 1, component: hero-banner, variant: Minimal, contentSource: transcript }
-        - { position: 2, component: faq-accordion, variant: Default, contentSource: illustrative, note: "Labelled illustrative" }
+        - { position: 1, component: heading-cta, variant: PageHeading, contentSource: transcript }
+        - { position: 2, component: questions, variant: Default, contentSource: illustrative, note: "Labelled illustrative" }

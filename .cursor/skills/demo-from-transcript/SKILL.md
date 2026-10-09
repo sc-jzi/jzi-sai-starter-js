@@ -31,16 +31,24 @@ Method: `harness/reference/demo-method.md` (Chain of Pain, AAA, Command of the M
 ## Phase T2 — Draft the brief
 **With a transcript:** read it and fill `harness/templates/demo-brief.template.md` → `industry-verticals/<customer>/docs/ai/demos/<customer>/demo-brief.md`: Audience (AAA), Chain of Pain ranked by emphasis (owner, reason/source, quote, stated/inferred, impact only if given), message map, demo flow with moment 1 = the last thing first (3–6 moments, each with CBI, audience, annoyance → afterward, capability, must-be-visible, check-in question), situation slide, recap. If the SE supplies a colleague's discovery/demo-flow prompt, follow its sections but keep these fields.
 **Without a transcript (interview):** ask the SE the questions in `harness/templates/demo-interview.md` (at most 4 per `AskUserQuestion`, free text welcome; skip what the SE already said in the request). Fill the same brief from the answers; every fact is marked *stated by the SE*, and anything the SE does not know stays a gap (do not infer pains or numbers). If the SE already has a demo flow or a discovery prompt, take it as the starting point and only ask for what is missing.
-Also collect, in ONE `AskUserQuestion` (max 4 questions, only real gaps): **Sitecore collection** (reuse an existing one — list with `node harness/scripts/sites-api.mjs collections` — or create a new collection named after the customer), customer URL + homepage screenshot for the brand, discovery gaps that block the story.
+Also collect any real gaps that block the story (customer URL, screenshot) in ONE `AskUserQuestion` (max 4 questions), then the Sitecore choices below.
+
+### Sitecore choices (always ASK; never decide yourself)
+Do not pick the collection or the site template for the SE, not even when only one exists and not "to keep things simple". Ask with `AskUserQuestion`, options built from the live environment:
+1. `node harness/scripts/sites-api.mjs auth-check` first (it prints the environment and the collections it can see). If it fails, stop and say so.
+2. **Collection**: options `New collection named "<Customer>" (Recommended: nothing shared with other demos)` and `Use an existing collection`. Put the collection names found in this environment in the question text so the SE can tell if it is the wrong environment. If existing: ask which one (options from `sites-api.mjs collections`, max 4 + Other).
+3. **Site template**: `node harness/scripts/sites-api.mjs templates`. Options are template NAMES (never ids), `Empty` first labelled `(Recommended)` when it exists, then the others (max 4 options, rest via Other). All sites in an existing collection must use the same template: when the SE chose an existing collection, say which template its sites use if you can tell.
+4. Site name defaults to the customer's display name; it is shown at the gate, where the SE can change it.
+Write the answers into `demo-plan.yaml`: `site.collection`, `site.collectionMode` (`new` | `existing`), `site.template` (the name), `site.siteName`.
 
 ## Phase T3 — Derive the page tree and sections
 Build `industry-verticals/<customer>/docs/ai/demos/<customer>/demo-plan.yaml` from `harness/templates/demo-plan.template.yaml`: copy the story, then write `site.pages`.
-- /Home always exists in a new site. Moment 1 (WOW) is on /Home or one click away.
+- Plan /Home as the first page. Whether the new site already has one depends on its template; `demo-site-bootstrap` probes it. Moment 1 (WOW) is on /Home or one click away.
 - One page per thing a moment needs to show; pages that prove no moment are not built (except a justified nav target).
 - Page types: `page`, `article`, `landing` (confirm in `industry-verticals/prospera/docs/ai/catalog/page-template-registry.yaml`).
 - Sections use ONLY ids and variants from `industry-verticals/prospera/docs/ai/catalog/component-registry.yaml` (matching rules: `.cursor/skills/site-analyzer/SKILL.md`). Header and footer are not sections. Each section has `contentSource`: transcript | site | illustrative.
 - /Home look and order: run the existing homepage analysis on the screenshot, then apply the story (WOW result first, drop what answers no CBI). Other pages: if the prospect's real site has the page, ask for its URL/screenshot; otherwise compose from the library using the moment.
-- Add `site:` → `collection`, `siteName` (customer name) once decided.
+- `site:` (`collection`, `collectionMode`, `template`, `siteName`) comes from the SE's answers in Phase T2; do not fill it in any other way.
 
 ## Phase T3b — Theme proposal (shown at the gate, applied after it)
 Nothing in an app or in Sitecore changes here; all files stay in the demo folder.
@@ -53,7 +61,16 @@ node harness/scripts/validate-story.mjs <customer>
 node harness/scripts/validate-site-plan.mjs <customer>
 node harness/scripts/bootstrap-plan.mjs <customer>
 ```
-Fix every ❌ yourself. Then show the SE as tables: (1) `story-plan.md`, (2) `site-plan.md` (page tree + components per page), (3) `theme-proposal.md` (colours, fonts, screenshot to compare), (4) the Sitecore plan — collection (new/existing), new site name, site template, what bootstrap will create inside the new site (`bootstrap-plan.md`), (5) gaps, assumptions, illustrative content, manual work to expect (variants, header/footer placement). Ask once: approve / change; the SE can change the story, pages, theme or Sitecore plan in the same answer. Record `userApproved: true`.
+Fix every ❌ yourself. Then **write the whole plan as normal chat text, and only then ask**. The question widget shows only the question, and the SE must not have to open tool output or files to judge the plan. Use the files as sources, but print everything below in the message itself, in this order:
+
+1. **Story**: the situation in two lines; the ranked pains (id, pain, who feels it, *stated*/*inferred*); the demo moments (number, title, audience, what they see; moment 1 marked *last thing first*).
+2. **Theme**: table of the `site-<customer>` colours (variable → hex), heading and body font (plus the substitute when proprietary), tone, confidence and why, and the path of the screenshot to compare with the live site.
+3. **Pages**: the page tree, then for EACH page a table: position, component, variant, content source (transcript / site / illustrative), moment it proves.
+4. **Components**: one table of every component used (name, variants used, on which pages) marked *reused* (already registered in Sitecore) or *new*, and anything that needs custom work.
+5. **Sitecore**: collection (new or existing, name), site name, site template (name), language, and what bootstrap will create inside the new site (from `bootstrap-plan.md`).
+6. **Gaps and manual work**: assumptions, illustrative content, variants and header/footer placement the SE must do by hand.
+
+Then ask once with `AskUserQuestion`: approve / change (the SE can change story, pages, theme or Sitecore choices in the same answer). On a change: apply it, re-run the validators, show the changed sections again and ask again. On approval write `userApproved: true` and `approvedAt: <ISO time>` at the top level of `demo-plan.yaml`. `sites-api.mjs create-site --apply` refuses to run without it, and without `site.collection`, `site.template` and `site.siteName` matching what it is told to create.
 
 ## Phase T5 — Build (after approval, no more gates)
 1. **Create the site** — follow `.cursor/skills/demo-new-site/SKILL.md` (new/existing collection → NEW site from a site template → local app copy → `.env.local`).

@@ -31,3 +31,6 @@ Details from the request become part of the brief marked *stated by the SE*. If 
 
 ## Rules
 All hard rules of `demo-from-transcript` apply (nothing outside the customer folder and its own new site is touched; no secrets in chat; no invented facts).
+
+## Always ask, never assume
+The SE chooses the Sitecore collection and the site template (offered as options; `Empty` template recommended) and approves the full plan, which you print in the chat message before asking. Details in `demo-from-transcript` phases T2 and T4.

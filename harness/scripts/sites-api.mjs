@@ -19,6 +19,7 @@
  */
 import { ENV, ROOT, die, parseArgs, customerApp, demoDir, safeWrite, rootRel, readJson, PROTECTED_SITES } from "./_lib.mjs";
 import { join, basename } from "node:path";
+import { parseYaml } from "./_yaml.mjs";
 import { existsSync, readFileSync } from "node:fs";
 
 const { flags, pos } = parseArgs(process.argv.slice(2));
@@ -57,21 +58,34 @@ async function templateByName(name) {
   if (hit.length === 1) return hit[0];
   die(`${hit.length ? "Several templates" : "No enabled template"} named "${name}". Available: ${all.map((t) => `"${t.name}"`).join(", ") || "(none)"}`, 1);
 }
-async function waitJob(handle) {
+const DONE = /^(completed|complete|succeeded|success|done|finished)$/i, FAIL = /^(failed|failure|error|faulted|cancel+ed)$/i;
+/** Wait for the create-site job. The job status shape is read defensively; the site appearing in the list also counts as done. */
+async function waitJob(handle, siteName) {
+  let shown = false;
   for (let i = 0; i < 60; i++) {
-    const j = await api("GET", `/api/v1/jobs/${encodeURIComponent(handle)}/status`);
-    process.stdout.write(`  job ${j.status}\r`);
-    if (j.status === "Completed") { console.log("  job Completed   "); return j; }
-    if (j.status === "Failed") die(`Job failed: ${JSON.stringify(j)}`, 1);
+    let j = null;
+    try { j = await api("GET", `/api/v1/jobs/${encodeURIComponent(handle)}/status`); } catch { /* api() already exits on HTTP errors; keep polling the list below */ }
+    const st = String(j?.status ?? j?.state ?? j?.jobStatus ?? "").trim();
+    if (DONE.test(st)) { console.log(`  job ${st}                `); return j; }
+    if (FAIL.test(st)) die(`Job failed: ${JSON.stringify(j)}`, 1);
+    if (!st && !shown) { shown = true; console.log(`  (job status not recognised, raw: ${JSON.stringify(j)?.slice(0, 300)}) — also watching the site list`); }
+    if (siteName && items(await api("GET", "/api/v1/sites")).some((s) => String(nameOf(s)).toLowerCase() === siteName.toLowerCase())) { console.log("  site is now listed — treating the job as done"); return j; }
+    process.stdout.write(`  waiting… ${st || "status unknown"}\r`);
     await sleep(Math.min(15000, 4000 + i * 1000));
   }
   die("Timed out waiting for the job (check SitecoreAI > Channels).", 1);
 }
 
 switch (cmd) {
-  case "auth-check": console.log(`✅ Authenticated. ${items(await api("GET", "/api/v1/sites")).length} site(s) visible.`); break;
+  case "auth-check": {
+    const sites = items(await api("GET", "/api/v1/sites")), cols = items(await api("GET", "/api/v1/collections"));
+    console.log(`✅ Authenticated. Environment: ${ENV_ID || "(the automation client's default)"}`);
+    console.log(`   ${sites.length} site(s), ${cols.length} collection(s) visible. Collections: ${cols.map(nameOf).join(", ") || "(none)"}`);
+    console.log("   If these are not the collections you expect, you are connected to the wrong environment: check the automation client / SITECORE_ENVIRONMENT_ID in harness/.env.local.");
+    break;
+  }
   case "collections": for (const c of items(await api("GET", "/api/v1/collections"))) console.log(`${idOf(c)}  ${nameOf(c)}${c.displayName ? `  (${c.displayName})` : ""}`); break;
-  case "templates": for (const t of items(await api("GET", "/api/v1/sites/templates"))) console.log(`${t.name}${t.enabled === false ? " [disabled]" : ""}${t.description ? ` — ${t.description}` : ""}  (id ${t.id})`); break;
+  case "templates": for (const t of items(await api("GET", "/api/v1/sites/templates"))) console.log(`${t.name}${/^empty$/i.test(t.name) ? " (recommended for demos)" : ""}${t.enabled === false ? " [disabled]" : ""}${t.description ? ` — ${t.description}` : ""}  (id ${t.id})`); break;
   case "sites": for (const s of items(await api("GET", flags["collection-id"] ? `/api/v1/collections/${flags["collection-id"]}/sites` : "/api/v1/sites"))) console.log(`${idOf(s)}  ${nameOf(s)}${s.collectionName ? `  [${s.collectionName}]` : ""}`); break;
   case "create-site": {
     const customer = flags.customer, siteName = flags["site-name"];
@@ -83,16 +97,28 @@ switch (cmd) {
     if (!/^(?![\s-])[a-zA-Z0-9_\s-]{1,100}(?<!\s)$/.test(siteName)) die("site name may contain letters, digits, spaces, _ and - only (max 100; no leading '-' or trailing space)");
     const language = String(flags.language ?? ENV.SITECORE_DEFAULT_LANGUAGE), languages = flags.languages ? String(flags.languages).split(",") : [language];
     if (items(await api("GET", "/api/v1/sites")).some((s) => String(nameOf(s)).toLowerCase() === siteName.toLowerCase())) die(`A site named "${siteName}" already exists — refusing to create or touch it. Choose another name.`, 1);
-    const cols = items(await api("GET", "/api/v1/collections")); let note;
-    if (flags["collection-id"]) { const c = cols.find((x) => norm(idOf(x)) === norm(flags["collection-id"])); if (!c) die("collection-id not found in this environment", 1); note = `existing collection "${nameOf(c)}"`; }
+    const cols = items(await api("GET", "/api/v1/collections")); let note, colName = String(flags["collection-name"] ?? "");
+    if (flags["collection-id"]) { const c = cols.find((x) => norm(idOf(x)) === norm(flags["collection-id"])); if (!c) die("collection-id not found in this environment", 1); colName = String(nameOf(c)); note = `existing collection "${colName}"`; }
     else { if (cols.some((x) => String(nameOf(x)).toLowerCase() === String(flags["collection-name"]).toLowerCase())) die(`Collection "${flags["collection-name"]}" already exists — use --collection-id instead.`, 1); note = `NEW collection "${flags["collection-name"]}"`; }
+    if (flags.apply) {   // the SE's approval at the gate is recorded in demo-plan.yaml; creating anything requires it and the same choices
+      const planP = join(demoDir(customer), "demo-plan.yaml"), plan = existsSync(planP) ? parseYaml(readFileSync(planP, "utf8")) : null, s = plan?.site ?? {};
+      const same = (a, b) => String(a ?? "").trim().toLowerCase() === String(b ?? "").trim().toLowerCase(), bad = [];
+      if (!plan) bad.push(`${rootRel(planP)} not found`);
+      else {
+        if (plan.userApproved !== true) bad.push("the SE has not approved the plan yet (userApproved: true)");
+        if (!same(s.template, tpl.name)) bad.push(`site.template is "${s.template ?? ""}" but the command uses "${tpl.name}"`);
+        if (!same(s.collection, colName)) bad.push(`site.collection is "${s.collection ?? ""}" but the command uses "${colName}"`);
+        if (!same(s.siteName, siteName)) bad.push(`site.siteName is "${s.siteName ?? ""}" but the command uses "${siteName}"`);
+      }
+      if (bad.length) die(`Refusing --apply: ${bad.join("; ")}.\nCollection and template are chosen by the SE and the plan is approved first (demo-from-transcript phases T2 and T4).`, 1);
+    }
     const body = { siteName, displayName: String(flags["display-name"] ?? siteName), templateId, language, languages,
       ...(flags["collection-id"] ? { collectionId: flags["collection-id"] } : { collectionName: flags["collection-name"], collectionDisplayName: String(flags["collection-name"]) }) };
     console.log(`${flags.apply ? "CREATE" : "DRY RUN"} — NEW site "${siteName}" in ${note}, template "${tpl.name}", languages ${languages.join(",")}`);
     if (!flags.apply) { console.log(JSON.stringify(body, null, 2)); console.log("\nNothing created. Re-run with --apply."); break; }
     const res = await api("POST", "/api/v1/sites", body);
     console.log(`Submitted (handle ${res?.handle ?? "n/a"}) — SitecoreAI can take up to ~2 minutes…`);
-    if (res?.handle) await waitJob(res.handle);
+    if (res?.handle) await waitJob(res.handle, siteName);
     const after = items(await api("GET", "/api/v1/sites")).find((s) => String(nameOf(s)).toLowerCase() === siteName.toLowerCase());
     const cols2 = items(await api("GET", "/api/v1/collections"));
     const col = flags["collection-id"] ? cols2.find((x) => norm(idOf(x)) === norm(flags["collection-id"])) : cols2.find((x) => String(nameOf(x)).toLowerCase() === String(flags["collection-name"]).toLowerCase());
