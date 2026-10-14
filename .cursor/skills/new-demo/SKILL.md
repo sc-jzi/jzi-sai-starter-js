@@ -31,6 +31,9 @@ Follow `.cursor/skills/demo-from-transcript/SKILL.md` from Phase T0 with the rou
 
 Details from the request become part of the brief marked *stated by the SE*. If a transcript exists and the request contradicts it, show the conflict at the gate instead of picking silently.
 
+## One continuous run
+After the SE approves the plan the run does not stop, hand back or ask until the hand-over (rules: "Continuous run" in `demo-from-transcript`). A missing editing host, an unreadable field or an API limit becomes a line in `manual-tasks.md`, never a pause. Do not end a turn with "say resume demo" unless something truly blocking failed.
+
 ## Rules
 All hard rules of `demo-from-transcript` apply (nothing outside the customer folder and its own new site is touched; no secrets in chat; no invented facts).
 

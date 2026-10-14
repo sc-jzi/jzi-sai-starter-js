@@ -18,6 +18,15 @@ Method: `harness/reference/demo-method.md` (Chain of Pain, AAA, Command of the M
 6. **Existing components are reused as they are on the Sitecore side** (shared templates, renderings, rendering parameters under the project layer). Only the code files are replaced in the customer copy. Register something under /sitecore/layout only for a component that is NEW (not `status: complete` in the manifest).
 7. English-only content, Marketer MCP field-name rules and Agent API limits still apply (`.cursor/skills/sitecore-reference/references/agent-api-limitations.md`).
 
+## Continuous run: no unscheduled stops
+From the moment the SE approves the plan until the hand-over in Phase T6, the run does not stop, hand back, or ask. It is one continuous run, even if that takes a long time.
+- **Never end your turn with a status summary or "say resume demo" between phases.** The only message after approval is the T6 hand-over. (Use the task list for progress; that is what the SE watches.)
+- **A step that fails but is not needed by the steps after it is a manual task, not a stop**: append it to `<demo folder>/manual-tasks.md` (what, why, exact steps) and carry on. Examples: the editing host (Sitecore CLI missing or not logged in), the logo or a stock image that cannot be downloaded, variants the API cannot set, a visual check that needs a rendering host.
+- **No host needed to build.** Everything the build does goes through the Marketer MCP, the Sites API and the local app files. The editing host is only needed to LOOK at pages in Pages or on a deployed site; its absence never blocks content, components, datasources, theme or pages. Verify structurally with `get_components_on_page` and `get_content_item_by_id`; leave visual checks for the SE in `manual-tasks.md`.
+- **Never ask the SE a question after approval** unless a later step is impossible without the answer AND nothing sensible can be assumed. If you must assume, assume, write the assumption into `manual-tasks.md` under "Assumptions", and continue.
+- **Stop only when** (a) the same step fails twice and everything after it depends on it (site not created, no Home page, shared component layer missing), or (b) an action would touch something protected. Then say exactly what failed, what exists, and the one thing that unblocks it.
+- If the shell or tool times out, retry once, then record it and continue with what does not depend on it.
+
 ## Phase T0 — Preflight
 - `node harness/scripts/env-check.mjs` passes. If `harness/.env.local` is missing or a required value is empty (Content Hub values when `CH_ENABLED=true`): tell the SE exactly which values to fill in, then stop.
 - Demo documents open as a rendered preview, not raw markdown: make sure `.vscode/settings.json` has `"workbench.editorAssociations": { "**/docs/ai/demos/**/*.md": "vscode.markdown.preview.editor" }` (add it, keeping the other settings, if it is missing).
@@ -54,7 +63,9 @@ Write the answers into `demo-plan.yaml`: `site.collection`, `site.collectionMode
 ## Phase T3 — Derive the page tree and sections
 Build `industry-verticals/<customer>/docs/ai/demos/<customer>/demo-plan.yaml` from `harness/templates/demo-plan.template.yaml`: copy the story, then write `site.pages`.
 - Plan /Home as the first page. Whether the new site already has one depends on its template; `demo-site-bootstrap` probes it. Moment 1 (WOW) is on /Home or one click away.
-- One page per thing a moment needs to show; pages that prove no moment are not built (except a justified nav target).
+- One page per thing a moment needs to show.
+- **Information architecture = the prospect's header menu.** Run `node harness/scripts/nav-extract.mjs --customer <customer> --url <prospect url> --hover` (writes `nav.json`; check it against the homepage screenshot, because mega menus and JS menus can come out incomplete; also use the AE notes and transcript for menu items they mention). Every top-level menu item and every item in its dropdown (two levels, max 40 pages in total) becomes a page under /Home, nested the way the menu is nested; skip utility links (login, search, language) and external links. Menu items that no moment needs are planned as **navigation pages**: `navTarget: true`, `navReason: "Header menu item"`, `proves: []`, a readable `displayName` (the menu label), and at most one section, a `heading-cta` / `PageHeading` carrying the title (`contentSource: illustrative`), so the page is not blank but is clearly a placeholder. They are built so the header navigation of the demo site matches the prospect's, and they are NOT demonstrated. If the menu was not readable, say so at the gate and build the story pages only.
+- Pages that prove no moment and are not menu items are not built.
 - Every page has `path` (name: lower-case, hyphens, alphanumerics only) AND `displayName` (the readable title, e.g. `what-is-corrosion` -> `What is Corrosion`). Page types: `page`, `article`, `landing` (confirm in `industry-verticals/prospera/docs/ai/catalog/page-template-registry.yaml`).
 - Sections use ONLY ids and variants from `industry-verticals/prospera/docs/ai/catalog/component-registry.yaml` (matching rules: `.cursor/skills/site-analyzer/SKILL.md`). Header and footer are not sections. Each section has `contentSource`: transcript | site | illustrative.
 - /Home look and order: run the existing homepage analysis on the screenshot, then apply the story (WOW result first, drop what answers no CBI). Other pages: if the prospect's real site has the page, ask for its URL/screenshot; otherwise compose from the library using the moment.
@@ -75,7 +86,7 @@ Fix every ❌ yourself. Then **write the whole plan as normal chat text, and onl
 
 1. **Story**: the situation in two lines; the inputs used (file names and kinds); for an RFP-led demo the coverage line ("N of M requirements shown, K written-response only, L partly", plus every mandatory requirement that is not shown and why); the ranked pains (id, pain, who feels it, *stated*/*inferred*); the demo moments (number, title, audience, what they see; moment 1 marked *last thing first*).
 2. **Theme**: table of the `site-<customer>` colours (variable → hex), heading and body font (plus the substitute when proprietary), tone, confidence and why, and the path of the screenshot to compare with the live site.
-3. **Pages**: the page tree, then for EACH page a table: position, component, variant, content source (transcript / site / illustrative), moment it proves.
+3. **Pages**: the page tree (story pages first, then the navigation pages that only mirror the prospect's menu, with their count), then for EACH story page a table: position, component, variant, content source (transcript / site / illustrative), moment it proves. Navigation pages are listed by name only.
 4. **Components**: one table of every component used (name, variants used, on which pages) marked *reused* (already registered in Sitecore) or *new*, and anything that needs custom work.
 5. **Sitecore**: collection (new or existing, name), site name, site template (name), language, and what bootstrap will create inside the new site (from `bootstrap-plan.md`).
 6. **Gaps and manual work**: assumptions, illustrative content, and what the SE must still do by hand (variants if the MCP cannot set them; the editing host if `SITECORE_ENVIRONMENT_ID` is empty).
@@ -90,7 +101,7 @@ Fix every ❌ yourself. Then **write the whole plan as normal chat text, and onl
 
 Then ask once with `AskUserQuestion`: approve / change (the SE can change story, pages, theme or Sitecore choices in the same answer). On a change: apply it, re-run the validators, show the changed sections again and ask again. On approval write `userApproved: true` and `approvedAt: <ISO time>` at the top level of `demo-plan.yaml`. `sites-api.mjs create-site --apply` refuses to run without it, and without `site.collection`, `site.template` and `site.siteName` matching what it is told to create.
 
-## Phase T5 — Build (after approval, no more gates)
+## Phase T5 — Build (after approval, no more gates, no stops: see "Continuous run")
 1. **Create the site** — follow `.cursor/skills/demo-new-site/SKILL.md` (new/existing collection → NEW site from a site template → local app copy → `.env.local`).
 2. **Bootstrap the new site** — follow `.cursor/skills/demo-site-bootstrap/SKILL.md` (probe → Data folders, Headless Variants, Available Renderings, derived page templates, Header/Footer partial designs, Page Designs).
 3. Then, per `.cursor/skills/sitecore-build-demo/SKILL.md` (same phase numbers) with these changes:
@@ -102,13 +113,15 @@ Then ask once with `AskUserQuestion`: approve / change (the SE can change story,
 | 3 Content | datasource items from `content-map.yaml` | one set per page section; item names `<Customer> <PageName> <Component>`; parent = the NEW site's `Data/<folder>` ids from `site-manifest.json`, never the manifest's `main-website` ids |
 | 5 / 5.5 | custom components / variants | only for NEW components; existing ones are not re-registered |
 | 6 Assemble | `.cursor/skills/demo-build-pages/SKILL.md` | all planned pages |
-After each phase: update `demo-progress.yaml`, run the guard `check` (`--allow-build-json` only for step 1).
+After each phase: update `demo-progress.yaml`, run the guard `check` (`--allow-build-json` only for step 1), then START THE NEXT PHASE IMMEDIATELY (no summary, no waiting). Deferred items go into `manual-tasks.md` as you meet them.
 
 ## Phase T6 — Verify and hand over
 1. `get_components_on_page` for every page matches the plan; every datasource is wired.
 2. `variant-checklist.md` per page, manual-task list, link check (every CTA/nav target exists).
 3. `demo-script.md`: situation slide, then per moment — page URL, what to click, what must be visible, talk track (annoyance → afterward), check-in question — then the recap.
-4. Thumbnail (end of `demo-build-pages`), final guard `check`. Summary from `industry-verticals/prospera/docs/ai/templates/demo-summary.template.md`, story summary and demo script first.
+4. Thumbnail (end of `demo-build-pages`), final guard `check`.
+5. **Editing host, last**: `node harness/scripts/editing-host.mjs --customer <customer> --apply` (see `demo-new-site` step 9). It never blocks anything: if the CLI is missing or not logged in, the script records the manual steps and you add them to `manual-tasks.md`.
+6. Hand-over message: link `manual-tasks.md`, `variant-checklist.md` and `demo-script.md`; list what is built, what is deferred and why. This is the first message the SE gets since the approval. Summary from `industry-verticals/prospera/docs/ai/templates/demo-summary.template.md`, story summary and demo script first.
 
 ## Resume
 "Resume demo": read `demo-progress.yaml` and `site.json`; never recreate a site that exists (the scripts refuse); skip finished phases; retry `failed` ones.

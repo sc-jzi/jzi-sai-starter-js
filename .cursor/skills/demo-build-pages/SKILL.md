@@ -21,9 +21,9 @@ Use the Marketer MCP tools. Limits: `.cursor/skills/sitecore-reference/reference
 **2. Create the first sub-page only, then check it.** Create the first non-Home page:
 `create_page(name=<last path segment>, parentId=<parent page id>, templateId=<page template id>)`.
 Set the display name right after creating each page: `update_fields_on_content_item(fields={"__Display name": <displayName from the plan>})` (the item NAME stays lower-case-hyphen, e.g. `what-is-corrosion`; the display name is `What is Corrosion`). Re-read to confirm; if the field is refused, check `harness/reference/marketer-mcp-tools.md` for another way once, then add it to the manual tasks. Do the same for Home and for datasource items whose name is not already readable. Set its page fields (`Title` and the SEO fields listed under `inheritedFieldsUsed` in the registry) with `update_fields_on_content_item`, using field names from `get_content_item_by_id`.
-Ask the SE to open it in Pages and confirm the header and footer render (this also confirms the manual header/footer step from bootstrap) and the site navigation looks right. (One short question; this proves the Page Design is inherited before N pages are created.) If header/footer are missing: stop and report; do not try to add context-only components by API.
+Do NOT ask the SE and do not wait for a host. Check structurally: `get_content_item_by_id` shows the derived template and fields, and the Page Design mapping (bootstrap step 5) covers this page's template. Put "open /<path> and confirm header, footer and navigation render" in `manual-tasks.md` as the visual check, and continue. If the Page Design mapping is clearly missing for this template, fix the mapping (do not add header/footer components to pages) and continue.
 
-**3. Create the remaining pages** the same way, parents first. Update progress after each.
+**3. Create the remaining pages** the same way, parents first, including the navigation pages (`navTarget: true`): these mirror the prospect's header menu, get their `displayName` from the menu label, only the planned placeholder `PageHeading` (if any), and set whatever navigation fields the page template has (see `page-template-registry.yaml`: show in navigation, navigation title) so the header Navigation lists them. Update progress after each. Do not stop between pages.
 
 **4. Components per page.** For each page, for each section top to bottom (`sections[]`):
 - `add_component_on_page(pageId, componentRenderingId=<manifest rendering id>, placeholderPath="headless-main", componentItemName=<ComponentName>, insertAfterComponentId=<previous>)`.
@@ -41,10 +41,10 @@ Ask the SE to open it in Pages and confirm the header and footer render (this al
 **7. Verify.** For each page: `get_components_on_page` → compare to the plan (component + order), check every datasource is non-empty, report gaps. Mark `pages[].status: verified`.
 
 **8. Site thumbnail.** Once the Home page renders, give the site a thumbnail so it is recognisable in SitecoreAI:
-1. Pick the homepage URL. Prefer the running local app (`npm run dev` in `industry-verticals/<customer>`, usually `http://localhost:3000/`, after the pages are published or in preview); otherwise the published/preview URL. Ask the SE if neither is up.
+1. Pick the homepage URL. Prefer the local app (start `npm run dev` in `industry-verticals/<customer>` yourself, usually `http://localhost:3000/`); otherwise a published/preview URL if one exists. Never ask the SE; if nothing can be screenshotted, it is a manual task.
 2. `node harness/scripts/screenshot.mjs --customer <customer> --url <homepage url>` (Playwright; the script says how to install it once). Look at the PNG: if it shows an error page, cookie banner or an empty hero, fix the cause and re-take it.
 3. `node harness/scripts/sites-api.mjs upload-thumbnail --customer <customer> --file industry-verticals/<customer>/docs/ai/demos/<customer>/thumbnail.png` (dry run), then add `--apply`. It stores the result in `site.json`.
-If Playwright or the URL is not available, list "set site thumbnail" under the manual tasks instead of blocking.
+Ask nobody: if neither the local app nor a published URL can be screenshotted (no editing/rendering host yet, pages unpublished), list "set site thumbnail" in `manual-tasks.md` with the two commands and continue.
 
 ## Output
 - `pages[]` in `demo-progress.yaml` all `verified` (or the failures listed)

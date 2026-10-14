@@ -1,5 +1,5 @@
 # demo-plan.yaml — the ONE file the SE approves. Copy to industry-verticals/<customer>/docs/ai/demos/<customer>/demo-plan.yaml.
-# Method: harness/reference/demo-method.md. Check with:
+# Every page has displayName (readable title) next to path (lower-case-hyphen name). Method: harness/reference/demo-method.md. Check with:
 #   node harness/scripts/validate-story.mjs <customer>
 #   node harness/scripts/validate-site-plan.mjs <customer>
 # Never invent facts or figures. Quote the transcript in `evidence`; mark stated or inferred; write "not given" for gaps.
@@ -89,7 +89,7 @@ site:
   pages:
     # Order matters: parents first. Plan /Home first; demo-site-bootstrap probes whether the template already created it.
     - path: /Home
-      displayName: "Home"      # readable title; the last path segment stays lower-case-hyphen
+      displayName: "Home"
       pageType: page            # page | article | landing
       purpose: "Landing view in the prospect's brand; the WOW result in the first minute"
       proves: [m1]
@@ -98,7 +98,7 @@ site:
         - { position: 2, component: three-column-cta, variant: WithIcons, contentSource: transcript, note: "Speaks to c1" }
         - { position: 3, component: cta-banner, variant: Default, contentSource: transcript }
     - path: /Home/products
-      displayName: "Products"      # readable title; the last path segment stays lower-case-hyphen
+      displayName: "Products"
       pageType: page
       purpose: "Product page built from reusable blocks"
       proves: [m3]
@@ -106,8 +106,18 @@ site:
       sections:
         - { position: 1, component: heading-cta, variant: PageHeading, contentSource: site }
         - { position: 2, component: four-column-cta, variant: Default, contentSource: site }
+    # Navigation page: a menu item of the prospect's header that no moment needs. Built as a placeholder so the header navigation matches theirs.
+    - path: /Home/about
+      displayName: "About"
+      pageType: page
+      purpose: "Mirrors the prospect's header menu"
+      navTarget: true
+      navReason: "Header menu item"
+      proves: []
+      sections:
+        - { position: 1, component: heading-cta, variant: PageHeading, contentSource: illustrative, note: "Title only (placeholder)" }
     - path: /Home/governance
-      displayName: "Governance"      # readable title; the last path segment stays lower-case-hyphen
+      displayName: "Governance"
       pageType: page
       purpose: "Approvals and audit story"
       proves: [m2]

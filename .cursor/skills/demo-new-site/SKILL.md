@@ -8,6 +8,7 @@ description: Create the customer's NEW Sitecore site (new or existing collection
 Called by `sitecore-demo-from-transcript` (Phase T5 step 1). Replaces the old duplicate-and-rename flow: duplicates stay in the source collection and cannot be moved by API, and a copy drags the source site's content along.
 
 ## Rules
+- Never stops the run (see "Continuous run" in `demo-from-transcript`): an editing-host problem is a manual task, not a pause.
 - Sites API only creates. It never copies, renames, moves or deletes. `sites-api.mjs` refuses an existing site name and protected names.
 - Credentials: `harness/.env.local` (`SITECORE_AUTOMATION_CLIENT_ID/SECRET`, optional `SITECORE_ENVIRONMENT_ID`). Never print or ask for secrets in chat.
 - Decision to confirm at the approval gate: collection (existing or new) and site name. A new collection per customer is the safest (nothing shared with other demos).
@@ -21,8 +22,8 @@ Called by `sitecore-demo-from-transcript` (Phase T5 step 1). Replaces the old du
 6. Local app: `node harness/scripts/new-site.mjs <customer>` (dry run), then `--apply`. It copies `industry-verticals/prospera` to `industry-verticals/<customer>` (code only: no other demo's docs, no secrets), creates `.env.local` from `harness/.env.local`, sets `docs/ai/config/project.yaml` (siteCollection, siteName), and adds `renderingHosts.<customer>` to `xmcloud.build.json`.
 7. `node harness/scripts/guard-customer.mjs check <customer> --allow-build-json`.
 8. Packages: `node harness/scripts/deps-check.mjs --customer <customer> --fix` (runs `npm install` in the customer app if `node_modules` is missing; never in the base app).
-9. Editing host: `node harness/scripts/editing-host.mjs --customer <customer>` (dry run), then `--apply`. It runs the Sitecore CLI `cloud editinghost create` for the name in `xmcloud.build.json`. If it fails (no CLI, not logged in, environment type not supported) do not stop: add "create the editing host in Deploy" to the manual tasks with the fallback steps the script prints. The host builds from the linked repo, so the SE must push the code; the first build is where problems show.
-10. Manual for the SE: Edge context ids / editing secret if `new-site` reported them empty, `git push`, publishing item ids.
+9. Editing host: do this LAST, in Phase T6 (not here), so a login prompt or CLI problem can never interrupt the build. `node harness/scripts/editing-host.mjs --customer <customer>` (dry run), then `--apply`. It runs the Sitecore CLI `cloud editinghost create` for the name in `xmcloud.build.json`. The script always exits 0; if it prints `MANUAL TASK`, copy those steps into `manual-tasks.md` and continue (no CLI, not logged in, environment type not supported are all normal). The host builds from the linked repo, so the SE must push the code; the first build is where problems show.
+10. Manual for the SE (append to `manual-tasks.md`, never ask): Edge context ids / editing secret if `new-site` reported them empty, `git push`, publishing item ids.
 11. Update `demo-progress.yaml` (`siteCreated`, collection, site name, ids). Continue with `sitecore-site-bootstrap`.
 12. Thumbnail: done at the END of `demo-build-pages` once the homepage exists (see that skill). The site card in SitecoreAI shows it.
 

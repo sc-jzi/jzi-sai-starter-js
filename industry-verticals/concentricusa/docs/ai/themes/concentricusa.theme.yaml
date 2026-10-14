@@ -1,0 +1,116 @@
+# Client Brand Theme — ConcentricUSA
+# Draft for approval. Nothing in the app or in Sitecore is changed until the gate.
+
+client:
+  name: "ConcentricUSA"
+  sourceUrl: "https://www.concentricusa.com/"
+  extractedAt: "2026-10-14"
+  extractedBy: "demo-from-transcript Phase T3b (site-scraper + homepage screenshot)"
+
+colors:
+  primary: "#0099D6"
+  primaryForeground: "#FFFFFF"
+  secondary: "#465773"
+  secondaryForeground: "#FFFFFF"
+  accent: "#51C748"
+  accentForeground: "#FFFFFF"
+  background: "#FFFFFF"
+  foreground: "#333333"
+  muted: "#F5F7FA"
+  mutedForeground: "#465773"
+  headerBackground: "#FFFFFF"
+  headerForeground: "#333333"
+  footerBackground: "#000000"
+  footerForeground: "#FFFFFF"
+  border: "#D5DCE3"
+  ring: "#0099D6"
+  extra:
+    - { name: "utility-bar", value: "#000000" }
+    - { name: "hero-slate", value: "#465773" }
+    - { name: "heading-on-light", value: "#252525" }
+
+typography:
+  headingFamily: "Nunito Sans"
+  headingWeight: "800"
+  bodyFamily: "Nunito Sans"
+  bodyWeight: "400"
+  monoFamily: ""
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,700;0,6..12,800;1,6..12,400&display=swap"
+  scale:
+    hero: "45px"
+    h1: "45px"
+    h2: "30px"
+    h3: "28px"
+    body: "18px"
+    small: "14px"
+  headingTransform: "none"
+  letterSpacing: "normal"
+  lineHeight: "1.75"
+
+spacing:
+  density: "comfortable"
+  sectionGap: "spacious on the dark hero, tighter on the white bands"
+  containerMaxWidth: "1440px"
+  containerPadding: "standard"
+
+shape:
+  borderRadius: "6px"
+  buttonRadius: "6px"
+  cardRadius: "6px"
+  imageRadius: "6px"
+  shadowStyle: "none"
+  borderStyle: "none on cards"
+
+tone:
+  overall: "industrial, direct, operational"
+  colorMode: "light page with a dark hero, dark utility bar, and black footer"
+  contrast: "high on the hero (white on near-black), body text #333 on white"
+  imagery: "critical infrastructure photography: data-hall racks, power equipment, night operations"
+  heroStyle: "full-bleed dark image, centered white headline, one green button"
+  cardStyle: "flat, 6px corners, no shadow"
+  navStyle: "black utility bar (white links, green quote button) over a white main nav"
+
+siteThemeScss: |
+  body.site-concentricusa, .site-concentricusa {
+    --text-body: #333333;
+    --text-body-inverted: #ffffff;
+    --text-colored: #0099d6;
+    --text-footer: #ffffff;
+    --text-accent: #51c748;
+    --bg-body: #ffffff;
+    --bg-footer: #000000;
+    --bg-main: #f5f7fa;
+    --bg-main-alt: #e7ecf2;
+    --bg-color: #e8f4fb;
+    --bg-saturated: #465773;
+    --bg-accent: #51c748;
+    --border-color: #d5dce3;
+    --hr-color: #d5dce3;
+    --roundness: 6px;
+  }
+  body.site-concentricusa.dark, .dark .site-concentricusa {
+    --text-body: #e7ecf2;
+    --text-body-inverted: #121820;
+    --text-colored: #51c7e8;
+    --text-footer: #e7ecf2;
+    --text-accent: #51c748;
+    --bg-body: #121820;
+    --bg-footer: #000000;
+    --bg-main: #1b2430;
+    --bg-main-alt: #243040;
+    --bg-color: #1a3344;
+    --bg-saturated: #465773;
+    --bg-accent: #51c748;
+    --border-color: #314052;
+    --hr-color: #314052;
+    --roundness: 6px;
+  }
+
+extraction:
+  confidence: "high"
+  method: "Playwright computed styles on https://www.concentricusa.com/ plus the inbox homepage screenshot and the scraped hero screenshot. Avenir is proprietary; Nunito Sans is the substitute."
+  notes:
+    - "Body text rgb(51, 51, 51), header white, footer black, hero container rgb(70, 87, 115), Request a Quote and Reach an Expert rgb(81, 199, 72), button radius 6px."
+    - "Headings computed as Avenir-Black (h1) and Avenir-Book (h2/h3). Body Avenir-Book 18px / 31.5px. Montserrat and Lato/Merriweather are also loaded; they are not the computed heading or body face."
+    - "Logo blue #0099D6 is the computed blue on the page (rgb(0, 153, 214)), and it matches the logo mark. Muted section tints are derived, not sampled from a token."
+    - "Inbox screenshot and the live hero agree on layout. The live hero button reads Reach an Expert; the inbox capture description said Need to Know. Live copy is used."

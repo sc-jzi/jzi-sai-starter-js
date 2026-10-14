@@ -16,6 +16,7 @@
  *  P6 header / footer are NOT sections (they come from the Page Design partials)
  *  P7 (page type "page") each page has 2-12 sections; (landing) none, content lives on the page template fields
  *  P8 every section says where its content comes from (transcript | site | illustrative)
+ *  P9 (when nav.json exists) every top-level item of the prospect's header menu has a page; menu-only pages are `navTarget: true`
  */
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
@@ -151,27 +152,38 @@ for (const p of pages) {
     if (reg.get(c).length && !reg.get(c).includes(v)) p5.push(`${path} #${s.position ?? "?"}: ${c} has no variant "${v}" (has ${reg.get(c).join(", ")})`);
     if (!["transcript", "site", "illustrative"].includes(s.contentSource)) p8.push(`${path} #${s.position ?? "?"}: contentSource`);
   }
-  if (p.pageType === "page" && (secs.length < 2 || secs.length > 12)) p7.push(`${path}: ${secs.length} sections`);
+  if (p.pageType === "page" && p.navTarget === true && secs.length > 2) p7.push(`${path}: navigation page should have at most 2 sections`);
+  else if (p.pageType === "page" && p.navTarget !== true && (secs.length < 2 || secs.length > 12)) p7.push(`${path}: ${secs.length} sections`);
   if (p.pageType === "landing" && secs.length) p7.push(`${path}: landing pages use template fields, not sections`);
 }
 add("P5 every section is a registry component with a real variant", "required", p5.length === 0, p5.slice(0, 6).join("; "));
 add("P6 header / footer are not sections (they come from the Page Design partials)", "required", p6.length === 0, p6.join("; ") + (p6.length ? " — remove them; the Page Design already renders them" : ""));
 add("P7 page sections: 2-12 per page (landing: none)", "recommended", p7.length === 0, p7.join("; "));
+// P9: information architecture mirrors the prospect's header menu (nav.json from nav-extract.mjs)
+const navP = join(demo, "nav.json");
+if (existsSync(navP)) {
+  let nav = null; try { nav = JSON.parse(readFileSync(navP, "utf8")); } catch { /* ignore */ }
+  const slug = (t) => String(t).toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const have = new Set(pages.flatMap((p) => [slug(p.displayName ?? ""), norm(p.path).split("/").pop()]));
+  const miss = (nav?.items ?? []).filter((i) => !i.utility && !/^https?:\/\//i.test(i.href || "") ).filter((i) => !have.has(slug(i.label))).map((i) => i.label);
+  add("P9 every top-level item of the prospect's header menu has a page (navigation pages are fine)", "recommended", miss.length === 0, miss.length ? `no page for: ${miss.slice(0, 12).join(", ")}` : `${(nav?.items ?? []).length} menu items checked`);
+}
 add("P8 every section names its content source (transcript | site | illustrative)", "required", p8.length === 0, p8.slice(0, 6).join("; "));
 
 // ── approval-screen tables ──
 const cell = (v) => String(v ?? "").replace(/\|/g, "\\|").replace(/\s+/g, " ").trim();
-let md = `# Site plan — ${client}\n\nShow this on the approval screen. Source: ${rootRel(planPath)}\n\n## Page tree\n| Path | Type | Purpose | Proves moment | Why this page |\n|---|---|---|---|---|\n`;
-for (const p of pages) md += `| ${cell(p.path)} | ${cell(p.pageType)} | ${cell(p.purpose)} | ${arr(p.proves).join(", ") || "(nav target)"} | ${cell(p.why ?? p.navReason ?? "")} |\n`;
+let md = `# Site plan — ${client}\n\nShow this on the approval screen. Source: ${rootRel(planPath)}\n\n## Page tree\n| Path | Display name | Type | Purpose | Proves moment | Why this page |\n|---|---|---|---|---|---|\n`;
+for (const p of pages) md += `| ${cell(p.path)} | ${cell(p.displayName ?? "")} | ${cell(p.pageType)} | ${cell(p.purpose)} | ${arr(p.proves).join(", ") || "(navigation page)"} | ${cell(p.why ?? p.navReason ?? "")} |\n`;
 md += `\n## Page by page\n`;
 let nonDefault = 0;
 for (const p of pages) {
+  if (p.navTarget === true) continue;   // navigation pages are listed in the tree only
   md += `\n### ${cell(p.path)} — ${cell(p.purpose)}\n`;
   if (p.pageType === "landing") { md += `Landing page: content is filled in the page's template fields.\n`; continue; }
   md += `| # | Component | Variant | Content from | Note |\n|---|---|---|---|---|\n`;
   for (const s of arr(p.sections)) { if ((s.variant || "Default") !== "Default") nonDefault++; md += `| ${cell(s.position)} | ${cell(s.component)} | ${cell(s.variant || "Default")} | ${cell(s.contentSource)} | ${cell(s.note)} |\n`; }
 }
-md += `\n## Manual work to expect\n- Variants to set by hand in Pages (Agent API cannot set them): ${nonDefault}\n- Header/footer: inherited from the site's Page Design (no manual step if the duplicated site already renders them)\n- First sub-page is created alone and checked in Pages before the rest are created\n`;
+md += `\n## Manual work to expect\n- Variants to set by hand in Pages (Agent API cannot set them): ${nonDefault}\n- Header and footer: built as partial designs + Page Designs during bootstrap (anything the API refuses is listed in manual-tasks.md)\n- Navigation pages (menu items no moment needs) are created as placeholders; nothing pauses the build for checks\n`;
 try { mkdirSync(demo, { recursive: true }); writeFileSync(join(demo, "site-plan.md"), md); } catch { /* report only */ }
 
 let failed = 0;

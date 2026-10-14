@@ -74,6 +74,46 @@ body.site-services.dark,
   --roundness: 0.375rem;
 }
 
+body.site-concentricusa,
+.site-concentricusa {
+  --text-body: #333333;
+  --text-body-inverted: #ffffff;
+  --text-colored: #0099d6;
+  --text-footer: #ffffff;
+  --text-accent: #51c748;
+  --bg-body: #ffffff;
+  --bg-footer: #000000;
+  --bg-main: #f5f7fa;
+  --bg-main-alt: #e7ecf2;
+  --bg-color: #e8f4fb;
+  --bg-saturated: #465773;
+  --bg-accent: #51c748;
+  --border-color: #d5dce3;
+  --hr-color: #d5dce3;
+  --roundness: 6px;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+body.site-concentricusa.dark,
+.dark .site-concentricusa {
+  --text-body: #e7ecf2;
+  --text-body-inverted: #121820;
+  --text-colored: #51c7e8;
+  --text-footer: #e7ecf2;
+  --text-accent: #51c748;
+  --bg-body: #121820;
+  --bg-footer: #000000;
+  --bg-main: #1b2430;
+  --bg-main-alt: #243040;
+  --bg-color: #1a3344;
+  --bg-saturated: #465773;
+  --bg-accent: #51c748;
+  --border-color: #314052;
+  --hr-color: #314052;
+  --roundness: 6px;
+  font-family: "Nunito Sans", sans-serif;
+}
+
 // Backgrounds colors
 $bg-transparent: transparent !default;
 $bg-basic-color: var(--bg-body) !default;

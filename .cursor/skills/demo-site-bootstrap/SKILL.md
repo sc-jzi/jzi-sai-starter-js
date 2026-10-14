@@ -20,13 +20,13 @@ If the probe shows there is no `Home` page (some site templates, e.g. Empty, may
 The probe decides each step below: create only what is absent.
 
 ## Step 1 — Data root and datasource folders
-If `Data` is missing, create it (use the folder template the probe shows other Data roots use; if none, ask the SE once). For each component with a datasource in `bootstrap-plan.json`: create `Data/<datasourceFolderName>` with `create_content_item`, template = `folderTemplateId`. Skip existing. The rendering's datasource location query looks under `$site/Data` for that folder template, so the template and the folder name must match the plan exactly.
+If `Data` is missing, create it (use the folder template the probe shows other Data roots use; if none, use the template the plan's `folderTemplateId` implies or the Data folder template of the reference site, note the assumption in `manual-tasks.md`, and continue). For each component with a datasource in `bootstrap-plan.json`: create `Data/<datasourceFolderName>` with `create_content_item`, template = `folderTemplateId`. Skip existing. The rendering's datasource location query looks under `$site/Data` for that folder template, so the template and the folder name must match the plan exactly.
 
 ## Step 2 — Headless Variants
 For each component: ensure `Presentation/Headless Variants/<container>` exists (template **Headless Variants**), then one **Variant Definition** per variant needed (always `Default`), names exactly as the TSX exports (`industry-verticals/prospera/.cursor/skills/sitecore-add-variants/SKILL.md`). Record the variant ids in `site-manifest.json` (they feed the variant checklist).
 
 ## Step 3 — Available Renderings
-Open `Presentation/Available Renderings/Page Content` (or the probe's equivalent). Its field cannot always be read through MCP. If you can read it: write the existing value + the plan's ids (concatenate, never replace). If you cannot read it, do NOT write: save the pipe-separated list from `bootstrap-plan.md` to `available-renderings.txt` and ask the SE to paste it after the existing value in Content Editor (one minute). The build cannot add components until this is done; ask once and wait.
+Open `Presentation/Available Renderings/Page Content` (or the probe's equivalent). Its field cannot always be read through MCP. If you can read it: write the existing value + the plan's ids (concatenate, never replace). If you cannot read it, do NOT write: save the pipe-separated list from `bootstrap-plan.md` to `available-renderings.txt`, add "paste this list after the existing value of Available Renderings/Page Content" to `manual-tasks.md`, and CONTINUE: try `add_component_on_page` anyway (the API usually does not enforce Available Renderings). Do not ask or wait.
 
 ## Step 4 — Derived page templates
 Never point new pages at another site's templates directly. For each distinct page type in `demo-plan.yaml` (`page`, `article`, `landing`):
