@@ -1,30 +1,21 @@
 ---
 name: sitecore-create-demo-variants
-description: Create custom per-section visual variants that replicate the client homepage screenshot (layout, spacing, styling). Use at build-demo phase 5.5 when sections have variantMatch partial/none or the SE wants pixel-matching.
+description: ALWAYS create client-named, pixel-matching variants (layout, spacing, styling from the prospect's screenshots) for every component a demo uses. Runs as phase 5.5 of every demo build; never optional.
 ---
 
 # Sitecore create demo variants
 
-> **Where this runs:** open the repo root. Paths such as `docs/ai/...` and `src/...` below belong to the customer app `industry-verticals/<customer>/` and never to `industry-verticals/prospera` (the read-only base app). If the customer is not clear from the conversation, ask first. Shared reference docs live in `.cursor/skills/sitecore-reference/references/`.
+> **Where this runs:** open the repo root. Paths such as `docs/ai/...` and `src/...` below belong to the customer app `industry-verticals/<customer>/` and never to `industry-verticals/prospera` (the read-only base app). If the customer is not clear from the conversation, take it from the plan being built. Shared reference docs live in `.cursor/skills/sitecore-reference/references/`.
 
 Create a custom visual variant for each component on the demo page that replicates the exact layout, spacing, and styling from the client's homepage screenshot.
 
-## Trigger hints
+## ALWAYS pixel-perfect (no generic fallback)
+Every demo gets a client-named variant for EVERY component it uses. There is no "generic is fine" option, no "only where the match is partial" and no question to the SE about it. A page that renders the shared `Default` look of a component is a failed build: it looks nothing like the prospect (the SE saw exactly this on a Heading CTA: right content, completely wrong look). The shared variants (`Default`, `WithLogoImage`, ...) stay untouched in the code as starting points; the demo's own variant is added next to them.
 
-Use this skill when:
-- the demo builder pipeline reaches Phase 5.5 (after theme application, before page assembly)
-- the user says "create custom variants", "match the screenshot exactly", "replicate the visual style"
-- the build plan has sections where `variantMatch` is `"partial"` or `"none"`
-- the user wants the demo to be pixel-perfect to the client's homepage, not just color-matched
-
-## When NOT to use
-
-- If the user explicitly says generic variants are fine ("just use Default variants")
-- If the build plan has 0 sections needing custom variants and the user hasn't asked for pixel-perfect matching
+Runs as Phase 5.5 of `demo-from-transcript` T5 (after the theme is applied, before pages are built) and is never skipped because a component "already exists in Sitecore": the component exists, the VARIANT does not.
 
 ## Why this phase exists
-
-The site theme variables (`--bg-*`, `--text-*`, `--roundness`) handle colors and corner radius — but NOT:
+The site theme variables (`--bg-*`, `--text-*`, `--roundness`) handle colors and corner radius, but NOT:
 - Section-specific layout proportions (60/40 split vs 50/50)
 - Card internal structure (image position, badge placement, price layout)
 - Section padding and spacing ratios
@@ -34,76 +25,45 @@ The site theme variables (`--bg-*`, `--text-*`, `--roundness`) handle colors and
 - Grid column counts and gap sizes
 - Typography scale differences beyond font-family
 
-A custom variant for each section bridges the gap between "same colors" and "looks like their actual site."
+A custom variant per component bridges the gap between "same colors" and "looks like their actual site."
 
 ---
 
 ## Load first
-
-- `.cursor/skills/sitecore-reference/references/sitecore-rules.md`
-- `.cursor/skills/sitecore-reference/references/react-component-guidelines.md`
-- `.cursor/skills/sitecore-reference/references/site-theme-variables.md`
+- `.cursor/skills/sitecore-reference/references/sitecore-rules.md` (if present)
+- `.cursor/skills/sitecore-reference/references/react-component-guidelines.md` (if present)
+- `.cursor/skills/sitecore-reference/references/site-theme-variables.md` (if present)
 - `.cursor/skills/sitecore-add-variants/SKILL.md`
+- `.cursor/skills/sitecore-reference/references/placeholders-and-variants.md` (how the variant is set on each component)
 
----
-
-## Inputs
-
-| Input | Source | Required |
-|-------|--------|----------|
-| Desktop screenshot | `docs/ai/themes/<client>/screenshot-desktop.png` | Yes |
-| Hero screenshot | `docs/ai/themes/<client>/screenshot-hero.png` | Yes |
-| Build plan | `docs/ai/demos/<client>/build-plan.yaml` | Yes |
-| Theme file | `docs/ai/themes/<client>.theme.yaml` | Yes |
-| Component registry | `docs/ai/catalog/component-registry.yaml` | Yes |
-| Manifest | `docs/ai/manifests/sitecore-manifest.yaml` | Yes |
-
----
+## Inputs (all inside the demo folder `industry-verticals/<customer>/docs/ai/demos/<customer>/` unless noted)
+| Input | Source |
+|---|---|
+| Visual reference | EVERY screenshot available: the SE's inbox screenshots (see `materials.md` from intake), `theme/screenshot-desktop.png` and `theme/screenshot-hero.png` (site-scraper / Playwright), plus a Playwright capture of each prospect page that has a real URL (`node harness/scripts/screenshot.mjs`). Look at the actual pixels; do not design from the theme colours alone. |
+| Plan | `demo-plan.yaml`: every section of every page (component + base variant) |
+| Theme | `theme/theme.yaml` (applied as the `site-<customer>` theme) |
+| Registry / manifest | `industry-verticals/prospera/docs/ai/catalog/component-registry.yaml`, shared manifest (read-only) |
+If no screenshot exists at all (no inbox image, no URL, scraper blocked): derive the look from the transcript/RFP/brand material, say so in `manual-tasks.md`, and still create the variants; never fall back to Default.
 
 ## Naming convention
-
-Each custom variant is named after the client in PascalCase:
-
+One variant per COMPONENT, named after the client in PascalCase (`site.variantName` in the plan; if absent derive it from `client.name`):
 ```
-export const Default = ...     // generic template variant
-export const PeopleCert = ...  // custom variant matching PeopleCert's screenshot
+export const Default = ...      // shared variant, untouched
+export const ConcentricUSA = ...  // this demo's variant
 ```
-
-This keeps the generic variants intact for other demos while adding a client-specific one.
-
-**Variant Definition item name in Sitecore:** `PeopleCert` (must exactly match the export name)
-
-**If the client name contains spaces or special characters**, use a clean PascalCase form:
-- "Bank of America" → `BankOfAmerica`
-- "T-Mobile" → `TMobile`
-- "Ernst & Young" → `ErnstYoung`
-
----
+- Variant Definition item in Sitecore: same name, exactly the export name.
+- Clean PascalCase for odd names: "Bank of America" → `BankOfAmerica`, "T-Mobile" → `TMobile`, "Ernst & Young" → `ErnstYoung`.
+- A component whose different placements really look different on the prospect's site gets `<Client>`, `<Client>2`, ... (still one export each).
+- Nothing is edited in `industry-verticals/prospera`: the code change happens in the customer's own app copy (`industry-verticals/<customer>/src/components/...`), where the shared TSX was copied.
 
 ## Workflow
 
-### Step 1 — Read the build plan and identify sections
-
-Read `docs/ai/demos/<client>/build-plan.yaml`. For each section in `buildOrder.phase1_sitecore`:
-
-1. Note the `componentName`, `variant` (the closest existing match), and `sectionBackground`
-2. Note the `description` and `variantReason` (visual details from the site analyzer)
-3. Note `variantMatch` — if `"exact"` the existing variant already matches closely
-
-**Decision per section:**
-
-| `variantMatch` | Action |
-|----------------|--------|
-| `"none"` | **Must create** — no existing variant covers this layout |
-| `"partial"` | **Should create** — existing variant is close but differs in specific ways |
-| `"exact"` | **Optional** — create if user wants pixel-perfect, skip if "good enough" |
-
-If the user asked for pixel-perfect matching, create for ALL sections (including `"exact"`).
-If the user just wants the pipeline default, only create for `"none"` and `"partial"`.
+### Step 1 — List every component the demo uses
+From `demo-plan.yaml` collect each distinct component across ALL pages (story pages, /Home, the navigation placeholder pages' `PageHeading` too), plus the header-area components: `Header`, `Eyebrow`, and the footer (`SiteFooter`). Each of them gets a client variant. Record the list with the section positions that show it. For each, take the BASE variant the plan names as the code to start from.
 
 ### Step 2 — Analyze the screenshot per section
 
-For each section that needs a custom variant, inspect the screenshot and describe:
+For each component, inspect the screenshot region where it appears (Home first) and describe:
 
 1. **Layout structure** — grid columns, flex direction, alignment, content width
 2. **Spacing** — section padding (top/bottom), gap between elements, card internal padding
@@ -113,7 +73,7 @@ For each section that needs a custom variant, inspect the screenshot and describ
 6. **Interactive elements** — button style, link underline style, hover states
 7. **Distinctive visual features** — anything unique to this client's section (e.g., orange left-border on PeopleCert's membership card, date chips on news cards)
 
-Write this analysis to `docs/ai/demos/<client>/variant-specs.yaml`:
+Write this analysis to `industry-verticals/<customer>/docs/ai/demos/<customer>/variant-specs.yaml`:
 
 ```yaml
 variantSpecs:
@@ -200,47 +160,24 @@ export const PeopleCert = ({ fields, params }: ProductPricingCardsProps): JSX.El
 }
 ```
 
-### Step 4 — Create Sitecore Variant Definition items
+### Step 4 — Create the Sitecore Variant Definition items
+For every component in the Step 1 list (bootstrap step 2 may already have created some; look first, create only what is missing):
+1. The Variants container exists at `<site>/Presentation/Headless Variants/<ComponentName>`.
+2. Create the Variant Definition: `name` = the client variant name, template = Variant Definition (`4d50cdae-c2d9-4de8-b080-8f992bfb1b55`), parent = that container. Record the id in `site-manifest.json` → `variants.<Component>.<ClientName>`.
+Definitions are independent items: create them in parallel.
 
-For each new variant, create a Variant Definition item in Sitecore:
-
-1. Check if the Variants container exists at `<headlessVariantsRoot>/<ComponentName>`
-2. Create the Variant Definition item:
-   - `name` = client PascalCase name (e.g., `PeopleCert`)
-   - `template` = Variant Definition template ID `4d50cdae-c2d9-4de8-b080-8f992bfb1b55`
-   - `parent` = the Variants container item
-
-All variant definitions for a single demo can be created in **parallel** (they're independent items under different containers).
-
-### Step 5 — Update the variant checklist
-
-Update `docs/ai/demos/<client>/variant-checklist.md` to reference the custom variant names instead of generic ones:
-
-**Before (generic):**
-```markdown
-| 1 | ProductPricingCards | Default | Default | — |
-```
-
-**After (custom):**
-```markdown
-| 1 | ProductPricingCards | Default | PeopleCert | {new-variant-id} |
-```
+### Step 5 — Make the demo USE the variants
+- In `demo-plan.yaml` the section `variant:` stays the BASE variant the code started from (it is validated against the registry). The variant that is SET on every placed component is the client variant `site.variantName`, whatever the base was. `demo-build-pages` step 5 sets it on each placed component with the method ladder in `placeholders-and-variants.md` and confirms it with `get_components_on_page`.
+- Header area: after the variants exist, switch the partial design components too: `Header` (was `WithLogoImage`; the client variant must be created FROM `WithLogoImage` so the logo and `header-right` placeholder still work), `Eyebrow` (from `Default` or `WithLinks`; keep the placeholders the partial uses), `SiteFooter`. Use the same ladder; confirm by reading back.
+- `variant-checklist.md` is only a fallback list for a component whose three routes all failed; it names the client variant, never `Default`.
 
 ### Step 6 — Update demo progress
-
-Update `docs/ai/demos/<client>/demo-progress.yaml`:
-- `phases.phase5_5_variants.status: "complete"`
-- `phases.phase5_5_variants.variantsCreated: N`
+`demo-progress.yaml`: `phases.phase5_5_variants.status: "complete"`, `variantsCreated: N`, and list any component still on a shared variant with the reason (there should be none).
 
 ### Step 7 — Validate
-
-Run the component validator to confirm all new exports are valid:
-
-```bash
-node docs/ai/scripts/validate-components.mjs
-```
-
-This confirms every component still has `Default` and now also has the client variant.
+1. In the customer app run the type check/lint (`npx tsc --noEmit` and the app's lint script if dependencies are installed; if not, `node harness/scripts/deps-check.mjs` says what is missing). Fix errors; a variant that does not compile is worse than none.
+2. Every component in the list now exports `Default` (untouched) and the client variant; export names equal the Variant Definition names.
+3. After the pages are built (T6): capture each built page (`get_page_screenshot`, or Playwright against the rendering host when it runs) and compare with the reference screenshot section by section. One correction pass for visible deviations in layout, spacing, type scale, background or imagery; anything left goes to `manual-tasks.md` with the section name. Do not stop the run.
 
 ---
 
@@ -283,12 +220,12 @@ Phase 4:   Apply theme (site theme block) — colors, radius
 Phase 5:   Build custom components (if matchType: "custom")
 Phase 5.5: Create demo variants (THIS PHASE) — layout, spacing, structure per section
 Phase 6:   Assemble page — add components, wire datasources
-Phase 6+:  Variant checklist now references custom variant names
+Phase 6:   demo-build-pages sets the client variant on every section
 ```
 
 Phase 5.5 runs AFTER theme application because the variants reference the site theme variables, which must be in place first.
 
-Phase 5.5 runs BEFORE page assembly because the variant definitions must exist in Sitecore before the variant checklist can reference them.
+Phase 5.5 runs BEFORE page assembly because the variant definitions must exist in Sitecore before the build can set them on the placed components.
 
 ---
 
@@ -299,14 +236,14 @@ Phase 5.5 runs BEFORE page assembly because the variant definitions must exist i
 | `docs/ai/demos/<client>/variant-specs.yaml` | Per-section visual analysis + style plan |
 | Component TSX files (modified) | New named export per component |
 | Sitecore Variant Definition items | One per component (via MCP) |
-| `docs/ai/demos/<client>/variant-checklist.md` | Updated with custom variant names |
+| `variant-checklist.md` | Only fallback rows for variants that could not be set |
 | `docs/ai/demos/<client>/demo-progress.yaml` | Updated phase status |
 
 ---
 
 ## Verification checklist
 
-- [ ] Screenshot inspected for each section needing a custom variant
+- [ ] A client variant exists for EVERY component used (including Header, Eyebrow, footer); none left on Default
 - [ ] `variant-specs.yaml` written with visual analysis per section
 - [ ] Each custom variant uses the client's PascalCase name as the export name
 - [ ] Each variant keeps ALL Sitecore field helpers intact (Text, RichText, NextImage, Link)
@@ -316,8 +253,8 @@ Phase 5.5 runs BEFORE page assembly because the variant definitions must exist i
 - [ ] Each variant's layout styles are in a Sass partial under `src/assets/sass/variants/` imported from its `index.scss`
 - [ ] Variant Definition items created in Sitecore under correct Variants container
 - [ ] Variant export name exactly matches Variant Definition item name
-- [ ] `validate-components.mjs` passes after all variants added
-- [ ] Variant checklist updated with custom variant names
+- [ ] Type check / lint of the customer app passes after all variants were added
+- [ ] Plan sections point at the client variant; build step 5 sets it
 - [ ] Demo progress updated
 
 **Shared checks** — see `.cursor/skills/sitecore-reference/references/verification-checklist.md`

@@ -20,12 +20,14 @@ Do **not** claim that marketer MCP cannot create templates or renderings.
 
 **Content items:**
 - `create_content_item` — Create item with parent + template
-- `update_fields_on_content_item` — Update fields on existing item
+- `update_fields_on_item` — Update fields on existing item (`update_content` also updates fields; it does not publish)
 - `get_content_item_by_path` — Resolve item IDs by path
 - `get_content_item_by_id` — Inspect item after create/update
-- `delete_content` — Delete items (only if safe and explicitly requested)
+- `get_content_references` — who references an item (run before delete)
+- `delete_content` — Delete items the harness created (reference-aware since 2026-10-12; `language` is ignored)
+- `move_component_on_page` / `remove_component_on_page` — move or remove page components (since 2026-10-12)
 - `list_components` — Inspect existing renderings/components
-- `list_available_insertoptions` — Inspect insert options (content items only)
+- `list_avail_insertopts` — Inspect insert options (content items only)
 
 **Assets (search/verify only — upload uses Content Hub API, not MCP):**
 - `search_assets` — Search for assets by name/path
@@ -73,7 +75,7 @@ The script performs 5 steps per image:
 
 **Image field format (DAM):**
 ```
-update_fields_on_content_item(itemId, {
+update_fields_on_item(itemId, {
   "HeroImage": '<Image src="https://<CH_HOST>/api/public/content/<assetId>-<name>?v=<hash>" dam-id="<assetIdentifier>" width="<width>" height="<height>" alt="Description" dam-content-type="Image" thumbnailsrc="https://<CH_HOST>/api/gateway/<assetId>/thumbnail" />'
 })
 ```
@@ -121,7 +123,7 @@ For list components, create one parent + one or two child items.
 
 ## Known Tool Behavior
 
-### `list_available_insertoptions`
+### `list_avail_insertopts`
 
 Most reliable for content items in a site content tree. For template inspection under `/sitecore/templates/...`, prefer `get_content_item_by_path` or `get_content_item_by_id`.
 

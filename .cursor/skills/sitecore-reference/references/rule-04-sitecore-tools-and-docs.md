@@ -115,20 +115,20 @@ Use Content Editor verification only as a fallback when MCP cannot reliably conf
 
 ## Known tool behavior
 
-### `list_available_insertoptions`
+### `list_avail_insertopts`
 
-`list_available_insertoptions` may be most reliable for content items in a site content tree.
+`list_avail_insertopts` may be most reliable for content items in a site content tree.
 
 For items under `/sitecore/templates/...`, prefer:
 - `get_content_item_by_path`
 - `get_content_item_by_id`
 - direct inspection of `__Standard Values` and insert options fields
 
-Do not rely on `list_available_insertoptions` as the primary inspection tool for template items.
+Do not rely on `list_avail_insertopts` as the primary inspection tool for template items.
 
 ### Field update sensitivity
 
-`update_fields_on_content_item` can be sensitive to exact field names, casing, or the item template involved.
+`update_fields_on_item` can be sensitive to exact field names, casing, or the item template involved.
 
 When an update does not stick:
 1. re-read the item via MCP

@@ -1,6 +1,6 @@
 # Marketer MCP tools available in this environment
 
-Generated from the connected `user-marketer` MCP namespace on 2026-10-09. Parameters marked **layout-sensitive** can select a rendering variant or non-page item.
+Generated from the connected `user-marketer` MCP namespace on 2026-10-09; re-validated against the docs and the 2026-10-12 release on 2026-10-14 (three tools added, see NEW). Regenerate from the live list at the start of the next run. Parameters marked **layout-sensitive** can select a rendering variant or non-page item.
 
 - `list_sites()` — list sites.
 - `get_site_information(siteId)` — get site metadata.
@@ -21,7 +21,7 @@ Generated from the connected `user-marketer` MCP namespace on 2026-10-09. Parame
 - `get_page(pageId, language?)` — get a page.
 - `add_language_to_page(pageId, languageRequest)` — add a page language.
 - `get_page_screenshot(pageId, version, language?, width?, height?, variantId?)` — capture a page; `variantId` is **layout-sensitive**.
-- `add_component_on_page(pageId, componentRenderingId, placeholderPath, componentItemName, language?, fields?, insertBeforeComponentId?, insertAfterComponentId?)` — add a rendering; `componentRenderingId` and `placeholderPath` are **layout-sensitive** and `componentItemName` sets the instance name.
+- `add_component_on_page(pageId, componentRenderingId, placeholderPath, componentItemName, language?, fields?, insertBeforeComponentId?, insertAfterComponentId?)` — add a rendering (before/after ids are mutually exclusive); `componentRenderingId` and `placeholderPath` are **layout-sensitive** and `componentItemName` sets the instance name.
 - `get_allowed_comps_by_ph(pageId, placeholderName, language?, variantId?)` — list allowed renderings; `placeholderName` and `variantId` are **layout-sensitive**.
 - `list_components(siteName)` — list site renderings.
 - `get_component(componentId)` — get rendering details; `componentId` accepts a rendering item id.
@@ -33,7 +33,10 @@ Generated from the connected `user-marketer` MCP namespace on 2026-10-09. Parame
 - `create_content_item(name, templateId, parentId, language?, fields?)` — create an item; `templateId` and `parentId` accept non-page item ids.
 - `update_fields_on_item(itemId, fields)` — update item fields; `itemId` accepts a non-page item id.
 - `update_content(itemId, siteName, fields?, language?, createNewVersion?)` — update item fields; `itemId` accepts a non-page item id.
-- `delete_content(itemId, language?)` — delete an item; `itemId` accepts a non-page item id.
+- `delete_content(itemId, language?)` — delete an item; `itemId` accepts a non-page item id. Since 2026-10-12 it reports referencing pages/components/experiments and asks whether to remove references or only delete the item; `language` is ignored (the whole item goes).
+- `get_content_references(itemId, ...)` — NEW 2026-10-12, read-only: pages/components/items that reference an item (names, paths, fields, kinds). Run before any delete.
+- `move_component_on_page(pageId, componentId, ...)` — NEW 2026-10-12: move a component before/after another component or to a target placeholder; needs explicit confirmation, one mutation per call, no auto-retry.
+- `remove_component_on_page(pageId, componentId, ...)` — NEW 2026-10-12: remove a component; checks affected A/B/n tests and asks for confirmation. Parameter names for these three were taken from the docs, not from the live schema: regenerate this file from the live tool list.
 - `get_content_item_by_path(itemPath, language?, failOnNotFound?)` — get any content item by path.
 - `get_content_item_by_id(itemId, language?)` — get any content item by id.
 - `search_assets(query?, type?, language?, tags?)` — search assets.
@@ -61,3 +64,15 @@ Generated from the connected `user-marketer` MCP namespace on 2026-10-09. Parame
 - `generate_brief_revision(brandkitId, brieftypeId, prompt, currentBrief)` — revise a brief draft.
 - `create_brief_from_draft(brandkitId, briefTypeId, name, locale?, fieldsData?, isApproved?)` — save an approved brief.
 - `update_brief_from_revision(briefId, name?, fieldsData?, isApproved?)` — save an approved brief revision.
+
+## Service limits (from the tool reference, 2026-10-14)
+- Rate limit 50 requests per 10 seconds: batch work, do not poll in tight loops.
+- `search_site` matches page NAMES only. `get_page_html` is commonly several hundred KB: prefer `get_components_on_page` / `get_page_screenshot` for checks.
+- Sitecore documents the server as reliable only for the listed use cases; anything else is unvalidated, so every non-trivial write is followed by a read-back.
+- No tool uploads assets (Content Hub uploader script does that), none sets rendering parameters/variants (see `placeholders-and-variants.md`), `update_content` does not publish.
+
+## Verified methods (fill in as soon as something is proven in this environment; read this FIRST in later demos)
+How-to and ladder: `.cursor/skills/sitecore-reference/references/placeholders-and-variants.md`. Record each line as `date — what — exact call shape — result`.
+- Nested placeholder key format that rendered: _(not yet verified by the harness; SE-confirmed format is `<host path>/<name>-0-<host DynamicPlaceholderId>`)_
+- Datasource on a partial design component (`set_component_datasource` with a partial design id): _(not yet verified)_
+- Variant (`FieldNames`) route that worked (tool argument / layout XML via `update_fields_on_item` / Authoring GraphQL), incl. which layout field (`__Final Renderings` or `__Renderings`): _(not yet verified)_

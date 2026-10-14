@@ -34,6 +34,8 @@ const map = new Map();
 if (anaP) for (const m of readFileSync(anaP, "utf8").matchAll(/^\|\s*`([a-z0-9-]+)`\s*\|\s*`([A-Za-z0-9]+)`/gm)) map.set(m[1], m[2]);
 const pascal = (id) => id.split("-").map((w) => w[0].toUpperCase() + w.slice(1)).join("");
 
+const pascalName = (n) => String(n || "").replace(/&/g, " ").split(/[^A-Za-z0-9]+/).filter(Boolean).map((w) => w[0].toUpperCase() + w.slice(1)).join("");
+const clientVariant = plan.site?.variantName || pascalName(plan.client?.name || customer);   // every component gets this variant (pixel-matching, always)
 const used = new Map(); // manifestName -> {variants:Set, pages:Set}
 const warnings = [];
 for (const p of arr(plan.site?.pages)) for (const s of arr(p.sections)) {
@@ -42,6 +44,7 @@ for (const p of arr(plan.site?.pages)) for (const s of arr(p.sections)) {
   if (!byName.has(name)) { warnings.push(`${p.path}: component "${s.component}" → "${name}" is not in the manifest (needs a create-* skill, not bootstrap)`); continue; }
   const u = used.get(name) ?? { variants: new Set(["Default"]), pages: new Set() };
   u.variants.add(s.variant || "Default"); u.pages.add(p.path); used.set(name, u);
+  u.base = new Set([...(u.base ?? []), s.variant || "Default"]);
 }
 
 const components = [];
@@ -49,6 +52,7 @@ for (const [name, u] of used) {
   const c = byName.get(name);
   const mv = arr(c.headlessVariants?.variants).map((v) => v.name);
   const unknown = [...u.variants].filter((v) => mv.length && !mv.includes(v));
+  u.variants.add(clientVariant);   // created by Variant Definition in the site; the code is written by sitecore-create-demo-variants (phase 5.5)
   if (c.status !== "complete") warnings.push(`${name}: manifest status is "${c.status}" — not reusable yet`);
   if (unknown.length) warnings.push(`${name}: variants ${unknown.join(", ")} are not in the manifest/TSX (have ${mv.join(", ")})`);
   const ctxOnly = !c.templates?.datasource;
@@ -70,9 +74,10 @@ const out = {
     "A. availableRenderings: every rendering id below must be listed in <site>/Presentation/Available Renderings/Page Content (CONCATENATE — never replace)",
     "B. dataRoot: <site>/Data exists (create with the Data folder template the probe finds if missing)",
     "C. for each component with a datasource: <site>/Data/<datasourceFolderName> as an instance of folderTemplateId",
-    "D. for each component: <site>/Presentation/Headless Variants/<container> with one Variant Definition per variant (Default always)",
+    "D. for each component: <site>/Presentation/Headless Variants/<container> with one Variant Definition per variant (Default always, and the client variant `" + clientVariant + "` for EVERY component incl. Header, Eyebrow and SiteFooter; its code comes from phase 5.5)",
     "E. derived page templates: for each page type in the plan, a new template under /sitecore/templates/Project/<collection>/Pages whose Base template is the shared one",
-    "F. Header and Footer partial designs in <site>/Presentation/Partial Designs, Header = Eyebrow (+ ThemeSwitcher left, LanguageSwitcher right) above Header [WithLogoImage, own Header data item with logo] containing Navigation; Footer = SiteFooter; plus a derived Header component template under /sitecore/templates/Project/<collection>/Components (try via the MCP; manual task only for what is refused)",
+    "F. Header and Footer partial designs in <site>/Presentation/Partial Designs, Header = Eyebrow (+ ThemeSwitcher left, LanguageSwitcher right; plus an Eyebrow variant WithLinks with its own Navigation when the plan has navGroup: eyebrow pages) above Header [WithLogoImage, own Header data item with logo] containing Navigation; Footer = SiteFooter; plus a derived Header component template under /sitecore/templates/Project/<collection>/Components (try via the MCP; manual task only for what is refused)",
+    "F2. Navigation Filters: find the site's filter items (Main Navigation, ...), add an Eyebrow Navigation filter when needed; every page's NavigationFilter field hides it from the menus it does not belong to (see demo-site-bootstrap step 5b)",
     "G. Page Designs for Page and Article that use those partials, mapped to the derived templates (Template To Design)",
   ],
   availableRenderings: { ids: allRenderingIds, count: allRenderingIds.length },

@@ -9,6 +9,7 @@ const rows = [
   ["SITECORE_EDGE_CONTEXT_ID", "recommended", "copied into each demo app's .env.local"],
   ["SITECORE_EDITING_SECRET", "recommended", "copied into each demo app's .env.local"],
   ["SITECORE_ENVIRONMENT_ID", "recommended", "authoring (CM) environment id: pins the Sites API and creates the editing host"],
+  ["SITECORE_CM_HOST", "optional", "CM host: only for the Authoring GraphQL fallback that sets component variants"],
   ["CH_HOST", "ifCH", "Content Hub host"], ["CH_USER", "ifCH", "Content Hub user"], ["CH_PASSWORD", "ifCH", "Content Hub password"],
 ];
 const chOn = String(ENV.CH_ENABLED).toLowerCase() === "true";

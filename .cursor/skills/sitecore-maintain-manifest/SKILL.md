@@ -63,7 +63,7 @@ If the component already exists in the manifest:
 
 ### 2. During implementation — record item IDs
 
-After each successful MCP `create_content_item` or `update_fields_on_content_item`, update the corresponding field in the manifest entry:
+After each successful MCP `create_content_item` or `update_fields_on_item`, update the corresponding field in the manifest entry:
 - set `itemId` on the created item
 - set boolean flags (`baseTemplatesSet`, `linked`, `insertOptionsSet`, `registeredInAvailableRenderings`)
 - update `status` to `"partial"` once the first item is created

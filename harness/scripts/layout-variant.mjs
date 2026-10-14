@@ -1,0 +1,77 @@
+#!/usr/bin/env node
+/**
+ * Set the headless VARIANT (rendering parameter FieldNames) of one component in layout XML, without touching anything else.
+ * Used when the Marketer MCP has no argument for it (see .cursor/skills/sitecore-reference/references/placeholders-and-variants.md).
+ *
+ *  1. Pure XML patch (no network) — for the MCP route (read the item's layout field, patch, write it back with update_fields_on_item):
+ *       node harness/scripts/layout-variant.mjs patch --xml-file <file> --variant "{GUID}" (--uid "{GUID}" | --rendering-id "{GUID}" [--ph "/headless-header"])  [--ds "{GUID}"] [--param Key=Value ...]
+ *     prints the patched XML on stdout; exits 1 (nothing printed) when the rendering is not found or is ambiguous.
+ *     --xml-file - reads stdin. Other s:par parameters (DynamicPlaceholderId, ...) are preserved.
+ *  2. Authoring GraphQL route — reads the field, patches it, writes it back (needs SITECORE_CM_HOST + the automation client in harness/.env.local):
+ *       node harness/scripts/layout-variant.mjs apply --item "{partial or page item id}" --variant "{GUID}" (--uid ... | --rendering-id ... [--ph ...]) [--language en] [--dry-run]
+ *     Looks at "__Final Renderings" and "__Renderings", patches whichever contains the rendering, saves the original under <cwd>/layout-backup-<item>.xml first.
+ */
+import { readFileSync, writeFileSync } from "node:fs";
+import { ENV, parseArgs, die } from "./_lib.mjs";
+
+const norm = (g) => String(g ?? "").trim().replace(/[{}]/g, "").toLowerCase();
+const braced = (g) => `{${norm(g).toUpperCase()}}`;
+const attr = (tag, name) => { const m = tag.match(new RegExp(`\\s${name.replace(":", "\\:")}="([^"]*)"`)); return m ? m[1] : null; };
+
+/** Patch the s:par of one <r .../> entry. Returns { xml } or throws. */
+export function patchVariant(xml, { variant, uid, renderingId, ph, ds, params = [] }) {
+  const tags = [...xml.matchAll(/<r\b[^>]*?\/?>/g)].filter((m) => attr(m[0], "uid") !== null);
+  const hits = tags.filter((m) => {
+    if (uid) return norm(attr(m[0], "uid")) === norm(uid);
+    return norm(attr(m[0], "s:id")) === norm(renderingId) && (!ph || attr(m[0], "s:ph") === ph);
+  });
+  if (hits.length !== 1) throw new Error(hits.length ? `${hits.length} renderings match; pass --uid or --ph to pick one` : "rendering not found in this layout field");
+  const m = hits[0], tag = m[0];
+  const raw = attr(tag, "s:par");
+  const pairs = raw ? raw.replace(/&amp;/g, "&").split("&").filter(Boolean).map((p) => { const i = p.indexOf("="); return i < 0 ? [p, ""] : [p.slice(0, i), p.slice(i + 1)]; }) : [];
+  const set = (k, v) => { const e = pairs.find((p) => p[0] === k); if (e) e[1] = v; else pairs.push([k, v]); };
+  if (variant) set("FieldNames", encodeURIComponent(braced(variant)));
+  for (const kv of params) { const i = kv.indexOf("="); set(kv.slice(0, i), encodeURIComponent(kv.slice(i + 1))); }
+  const par = pairs.map(([k, v]) => `${k}=${v}`).join("&").replace(/&/g, "&amp;");
+  const newTag = raw !== null ? tag.replace(/(\ss:par=")[^"]*(")/, (_, a, b) => a + par + b) : tag.replace(/\s?\/?>$/, (e) => ` s:par="${par}"${e.trim() === "/>" || e.endsWith("/>") ? " />" : ">"}`);
+  let out = newTag;
+  if (ds) out = /\ss:ds="/.test(out) ? out.replace(/(\ss:ds=")[^"]*(")/, (_, a, b) => a + braced(ds) + b) : out.replace(/(\ss:id="[^"]*")/, `$1 s:ds="${braced(ds)}"`);
+  return xml.slice(0, m.index) + out + xml.slice(m.index + tag.length);
+}
+
+async function main() {
+  const { flags, pos } = parseArgs(process.argv.slice(2));
+  const cmd = pos[0];
+  const multi = (name) => { const out = []; const a = process.argv.slice(2); a.forEach((x, i) => { if (x === `--${name}` && a[i + 1]) out.push(a[i + 1]); }); return out; };
+  const opts = { variant: flags.variant, ds: flags.ds, uid: flags.uid, renderingId: flags["rendering-id"], ph: flags.ph, params: multi("param") };
+  if (!opts.uid && !opts.renderingId) die("Pass --uid or --rendering-id");
+  if (cmd === "patch") {
+    const src = flags["xml-file"]; if (!src) die("--xml-file <file|-> required");
+    const xml = src === "-" ? readFileSync(0, "utf8") : readFileSync(src, "utf8");
+    try { process.stdout.write(patchVariant(xml, opts)); } catch (e) { die(e.message, 1); }
+    return;
+  }
+  if (cmd !== "apply") die("Usage: layout-variant.mjs patch|apply (see header of this file)");
+  const item = flags.item, lang = flags.language && flags.language !== true ? flags.language : ENV.SITECORE_DEFAULT_LANGUAGE || "en";
+  const cm = String(ENV.SITECORE_CM_HOST || "").replace(/\/+$/, "");
+  if (!item) die("--item required");
+  if (!cm) die("SITECORE_CM_HOST is not set in harness/.env.local (the CM host of the environment, e.g. https://xmc-xxxx.sitecorecloud.io). Use the MCP route instead, or add it.");
+  const id = ENV.SITECORE_AUTOMATION_CLIENT_ID, secret = ENV.SITECORE_AUTOMATION_CLIENT_SECRET;
+  if (!id || !secret) die("SITECORE_AUTOMATION_CLIENT_ID/SECRET missing in harness/.env.local");
+  const tr = await fetch(`${ENV.SITECORE_AUTH_HOST}/oauth/token`, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams({ client_id: id, client_secret: secret, grant_type: "client_credentials", audience: "https://api.sitecorecloud.io" }) });
+  if (!tr.ok) die(`token request failed: HTTP ${tr.status}`);
+  const jwt = (await tr.json()).access_token, url = `${cm}/sitecore/api/authoring/graphql/v1/`;
+  const gql = async (query, variables) => { const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${jwt}` }, body: JSON.stringify({ query, variables }) }); const j = await r.json().catch(() => ({})); if (!r.ok || j.errors) die(`GraphQL ${r.status}: ${JSON.stringify(j.errors || j).slice(0, 600)}`, 1); return j.data; };
+  const data = await gql(`query($id:ID!,$lang:String!){ item(where:{itemId:$id,database:"master",language:$lang}){ itemId version fields(ownFields:true){ nodes{ name value } } } }`, { id: norm(item).toUpperCase(), lang });
+  const it = data.item; if (!it) die("item not found");
+  const fields = it.fields.nodes.filter((f) => /^__(Final )?Renderings$/.test(f.name) && f.value);
+  let done = null;
+  for (const f of fields) { try { done = { name: f.name, before: f.value, after: patchVariant(f.value, opts) }; break; } catch { /* try next field */ } }
+  if (!done) die(`rendering not found in ${fields.map((f) => f.name).join(" / ") || "any layout field"} of the item`, 1);
+  writeFileSync(`layout-backup-${norm(item)}.xml`, done.before);
+  if (flags["dry-run"]) { console.log(`DRY RUN — would update ${done.name}\n` + done.after); return; }
+  await gql(`mutation($id:ID!,$lang:String!,$ver:Int,$name:String!,$value:String!){ updateItem(input:{itemId:$id,database:"master",language:$lang,version:$ver,fields:[{name:$name,value:$value}]}){ item{ itemId } } }`, { id: norm(item).toUpperCase(), lang, ver: it.version, name: done.name, value: done.after });
+  console.log(`Updated ${done.name} of ${item}; original saved to layout-backup-${norm(item)}.xml. Re-read it (get_components_on_page) to confirm the variant.`);
+}
+import { fileURLToPath } from "node:url";
+if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) main().catch((e) => die(e.message, 1));

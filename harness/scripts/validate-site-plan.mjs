@@ -125,6 +125,7 @@ for (const p of pages) {
   if (bad.length) p3.push(`${norm(p.path)}: unknown moment ${bad.join(",")}`);
   if (!prov.length && !(p.navTarget === true && has(p.navReason))) p3.push(`${norm(p.path)}: proves no moment (add one, or navTarget: true with navReason)`);
 }
+for (const p of pages) if (p.navGroup !== undefined && !["main", "eyebrow", "none"].includes(p.navGroup)) p3.push(`${norm(p.path)}: navGroup must be main | eyebrow | none`);
 add("P3 every page has a purpose and proves a moment (or is a justified nav target)", "required", p3.length === 0, p3.join("; "));
 
 // P4

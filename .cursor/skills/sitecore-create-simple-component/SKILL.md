@@ -287,7 +287,7 @@ Set this immediately after creating the datasource template item, before creatin
 
 After creating the datasource folder under `/Data`, you must set insert options **on the folder item itself** — not only on the folder template's `__Standard Values`.
 
-Use `update_fields_on_content_item` on the datasource folder item to set insert options / `__Masters` pointing to the datasource template.
+Use `update_fields_on_item` on the datasource folder item to set insert options / `__Masters` pointing to the datasource template.
 
 Without this step, authors cannot create new datasource items inside the folder.
 

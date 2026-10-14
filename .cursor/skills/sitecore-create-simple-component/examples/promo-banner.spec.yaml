@@ -176,7 +176,7 @@ verification:
     - "Bootstrap + Sass component pattern used"
 
 notes:
-  - "Sitecore items created via marketer MCP (create_content_item, update_fields_on_content_item)."
+  - "Sitecore items created via marketer MCP (create_content_item, update_fields_on_item)."
   - "Style like neighbouring components (Bootstrap layout, Sass partial, site theme variables)."
   - "MCP-created items: datasource template (ce483486), Data section, Title/Description/PromoImage/PrimaryLink fields, __Standard Values (41e0101a, templateId=Promo Banner), folder template (34d06ac8), folder __Standard Values (26a3d955, templateId=Promo Banner Folder), datasource folder Promo Banners (f684a188), JSON Rendering (b8a741b2)."
   - "If datasource picker is empty: verify Datasource Template and Datasource Location on rendering in Content Editor; verify folder template __Standard Values __Masters = Promo Banner template."

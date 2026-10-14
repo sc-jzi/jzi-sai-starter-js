@@ -53,7 +53,7 @@ A screenshot is the **primary input** for demo creation. Without a visual refere
 1. **Client name** (required) — for file naming and content
 2. **Screenshot** (required) — full-page desktop screenshot of the homepage to replicate
 3. **Client URL** (optional) — used for content extraction in Phase 2.5 and theme scraping
-4. **Content Hub credentials** (if not already saved) — for image uploads in Phase 3
+4. **Content Hub settings** — `CH_*` in `harness/.env.local` (never ask for or print them in chat) — for image uploads in Phase 3
 
 **How to obtain the screenshot:**
 
@@ -66,37 +66,7 @@ A screenshot is the **primary input** for demo creation. Without a visual refere
 
 **HARD RULE: Never proceed to Phase 1 without a screenshot.** Web fetch and web search are insufficient — they miss layout, spacing, card styles, section backgrounds, and visual hierarchy that drive variant selection.
 
-**Content Hub credentials (always validate):**
-
-Read `docs/ai/config/credentials.local.yaml`.
-
-**If credentials exist** (`contentHub.host` is populated):
-1. Show the user: *"Found stored Content Hub credentials for `<host>`. Validating..."*
-2. Validate by calling `POST <host>/api/authenticate` with stored user/password
-3. If **200 OK** → credentials are valid, show: *"Content Hub credentials verified for `<host>`."*
-4. If **401 / failed** → credentials are expired or wrong:
-   - Show: *"Stored credentials for `<host>` are invalid (password expired or changed)."*
-   - Ask the user for updated credentials (same flow as "no credentials" below)
-   - Update `credentials.local.yaml` with new values
-
-**If no credentials** (file doesn't exist or `contentHub.host` is empty):
-1. Show the user: *"I need Content Hub credentials to upload images automatically. See `docs/ai/config/credentials.example.yaml` for the expected format."*
-2. Ask the user:
-   - **Content Hub hostname** — e.g., `https://your-instance.sitecorecontenthub.cloud`
-   - **Username and password**
-   - **Client ID and secret** (only if they want OAuth instead of simple auth)
-3. Validate immediately by calling `POST <host>/api/authenticate`
-4. If **200 OK** → copy from `credentials.example.yaml` to `credentials.local.yaml` and fill in values (gitignored)
-5. Tell the user: *"Credentials saved and verified. They'll be reused for future demo builds. Delete `credentials.local.yaml` to reset."*
-6. If **401 / failed** → ask the user to check and retry
-
-**If the user declines to provide credentials**, that's fine — set `contentHub.host: ""` and images will fall back to the manual `images-to-upload.md` checklist in Phase 3 Step 5.
-
-**Validation script shortcut** (agent can run this instead of manual HTTP call):
-```bash
-node docs/ai/scripts/upload-to-content-hub.mjs --images-dir docs/ai/demos/test --dry-run
-```
-If it prints `[auth] OK`, credentials are valid. If it prints `ERROR`, they need updating.
+**Content Hub settings:** they live in `harness/.env.local` (`CH_ENABLED`, `CH_HOST`, `CH_AUTH_METHOD`, `CH_USER`, `CH_PASSWORD`, `CH_CLIENT_ID`, `CH_CLIENT_SECRET`, `CH_UPLOAD_CONFIG`). Check with `node harness/scripts/env-check.mjs` (values are never printed). If `CH_ENABLED=true` and something is missing, tell the SE which names to fill in. Validate without uploading: `node harness/scripts/content-hub-upload.mjs <customer> --dry-run`. If Content Hub is off, images fall back to `images-to-upload.md`.
 
 **Create the progress file** at `docs/ai/demos/<client-kebab>/demo-progress.yaml` using the template at `docs/ai/templates/demo-progress.template.yaml`. Set `client.name`, `client.sourceUrl`, `client.startedAt`, and `phases.phase0_inputs.status: "complete"`.
 
@@ -165,9 +135,9 @@ Use the `site-analyzer` agent (`.cursor/skills/site-analyzer/SKILL.md`):
 6. Extract visible content from the screenshot (in English)
 7. **API-addable classification** — classify each component:
    - `apiAddable: true` — has a datasource template, can be added via `add_component_on_page`
-   - `apiAddable: false` — context-only component (no datasource template), must be added manually in Pages editor
+   - `apiAddable: false` — context-only component (no datasource template). Unverified since 2026-04-11: try `add_component_on_page` ONCE; only if it fails with "No datasource template found" skip it (header/footer come from the partial designs) and record the error
 
-   Context-only components (NavigationHeader, SiteFooter) will fail with "No datasource template found" when using `add_component_on_page`. Flag these in the build plan so the assembly phase skips them and includes them in the manual tasks checklist.
+   Context-only components (NavigationHeader, SiteFooter) failed with "No datasource template found" in April 2026; the 2026-10-12 release does not mention a change. Flag them in the build plan, probe once, and only on failure skip them and list them in `manual-tasks.md`.
 8. Output two files:
    - `docs/ai/demos/<client-kebab>/build-plan.yaml` — machine-readable plan for subsequent phases
    - `docs/ai/demos/<client-kebab>/build-plan-summary.md` — human-readable summary using the template at `docs/ai/templates/build-plan-summary.template.md`
@@ -273,31 +243,34 @@ Data/HeroBanners/
 
 Images were downloaded during Phase 2.5 (content extraction with `--download-images`). The local files and manifest are at `docs/ai/demos/<client>/images/`.
 
-**If Content Hub credentials are available** (check `docs/ai/config/credentials.local.yaml`):
+**If `CH_ENABLED=true` in `harness/.env.local`:**
 
 ```bash
-node docs/ai/scripts/upload-to-content-hub.mjs \
-  --images-dir docs/ai/demos/<client>/images
+node harness/scripts/content-hub-upload.mjs <customer>
 ```
 
-The script reads credentials automatically and performs 5 steps per image:
+The script reads the manifest `<demo folder>/images/image-manifest.json`, logs in with the `CH_*` settings and does per image:
 1. `POST /api/v2.0/upload` — request upload URL
-2. `POST /api/v2.0/upload/process` — upload file binary
+2. POST the file binary to the returned location
 3. `POST /api/v2.0/upload/finalize` — get `asset_id` + `asset_identifier`
-4. `POST /api/entities/{id}/lifecycle/approve` — auto-approve (Created → Approved)
-5. `POST /api/entities` (M.PublicLink) — create public link → get working public URL
+4. `POST /api/entities/{id}/lifecycle/approve` — approve (Created → Approved)
+5. `POST /api/entities` (M.PublicLink) — create the public link → working public URL
 
-After completion, `image-manifest.json` is updated with per-image:
-- `assetId`, `assetIdentifier`, `publicUrl`, `thumbnailUrl`
-- `imageFieldXml` — ready-to-use DAM Image field XML for datasource items
+It writes back per image: `assetId`, `assetIdentifier`, `publicUrl`, `thumbnailUrl`, `imageFieldXml` (ready-to-use Image field value). It is resume-safe (already uploaded images are skipped) and exits 3 if some failed (carry on; list them in `manual-tasks.md`). One extra file, e.g. the logo: `--file <path> --name logo --alt "<Customer> logo"`.
 
-**If no Content Hub credentials:** Skip this step. Image fields will be left empty and added to `images-to-upload.md` for manual upload later.
+**If Content Hub is off:** the script writes `images-to-upload.md`; image fields keep the source URL or stay empty and the SE uploads later.
 
 #### Step 2 — Create client datasource items
 
 For each section in `buildOrder.phase1_sitecore` with `matchType: "template"`:
 
 **Context-only components** (NavigationHeader, SiteFooter): skip — no datasource.
+
+**Where datasource items live (hard rule):** ALL datasource content of the demo lives under THIS site's `/sitecore/content/<collection>/<site>/Data/<component folder>` (the folders bootstrap step 1 created, ids in `site-manifest.json` → `dataFolders`). Never under a page's own `Data` folder (`<page>/Data/...`), never under another site, never in a folder made up on the spot. The ONE exception is the Header and Footer partial designs' own data items (`<partial design>/Data/Header`, `.../Footer`), which bootstrap step 5 creates on purpose.
+**How they are created and filled (hard rule): through the Marketer MCP only.** `create_content_item(name, templateId, parentId=<site Data/<folder> id>)`, then `update_fields_on_item` / `update_content` for the fields (all fields in one call), then `set_component_datasource(pageId, componentId, datasourceId=<item id>)`. No other route for writing content (no direct file/database/API writes, no hand-edited serialization). Field values are exactly the Sitecore formats: text as text, rich text as HTML, links as link XML, images as image XML (see the link/image rules in Step 3; build link XML with `node harness/scripts/link-xml.mjs make ...` and paste the output into the MCP call). After each write, read the item back (`get_content_item_by_id`) and confirm the values are stored in that format.
+`create_component_ds` is NOT used for content, because it chooses its own location (a page-local `Data` folder, which is how Pages behaves) and that breaks the rule above. `add_component_on_page` may also auto-create a local datasource under the page's `Data` folder: after wiring the shared datasource, delete such leftovers (`delete_content`) so no page carries its own data items.
+**Template ground truth:** the datasource item's template must be the rendering's configured Datasource Template. Read it once per component (`get_component(<rendering id>)` / the rendering item's `Datasource Template` field), record it in `site-manifest.json` → `datasourceTemplates.<Component>`; if it differs from `manifest.templates.datasource.itemId`, the rendering wins. Never take a template id from the registry, another site or memory.
+After the first item of each component run the content-resolved check in `demo-build-pages` step 4 before creating the rest.
 
 **Simple components:**
 ```
@@ -324,7 +297,7 @@ Then create each child item under the new parent (see Step 4).
 For each new client datasource item, build a single field update that includes **all field types**:
 
 ```
-update_fields_on_content_item(newItemId, {
+update_fields_on_item(newItemId, {
   // Text fields — from content-map
   "Title": contentMap.sections[N].fields.Title,
   "Description": contentMap.sections[N].fields.Description,
@@ -340,14 +313,17 @@ update_fields_on_content_item(newItemId, {
 **Matching images to fields:** The content-map's `imageFields` array lists `{ field, src }` per section. The `image-manifest.json` maps each `src` URL to its `imageFieldXml`. To wire them:
 1. For each section's `imageFields` entry, find the manifest entry with matching `src`
 2. Use the manifest's `imageFieldXml` as the field value
-3. Include it in the same `update_fields_on_content_item` call as text and link fields
+3. Include it in the same `update_fields_on_item` call as text and link fields
 
 **If images were not uploaded** (Step 1 was skipped), omit Image fields — add them to `images-to-upload.md` for manual handling.
 
 **Link field conversion rules:**
 - `href` starts with `http` → `linktype="external"`, set `url` attribute
 - `href` is `#` or empty → `linktype="external"`, `url="#"`
-- `href` is relative → prepend client domain, `linktype="external"`
+- `href` is relative and points to a page of the PROSPECT's real site → prepend the client domain, `linktype="external"`
+- `href` points to a page PLANNED in this demo (`/brands`, `/home/...`) → write a valid placeholder now (`linktype="external" url="#"`), and `demo-build-pages` step 6 replaces it with an INTERNAL link (`linktype="internal" id="{page id}"`) once the pages exist
+- **A link field is NEVER a raw string** (`/brands`, `https://x`, `Details`). A raw value makes the layout service drop the whole datasource: `isContentResolved: false`, the component renders empty (seen on HeroBanner and Promo CTA, cleared by emptying the link). Build every value with `node harness/scripts/link-xml.mjs make --text "<text>" --url <url>` or `--id <page guid>`, and check any value with `link-xml.mjs check "<value>"`. Same for Image fields: XML only (`imageFieldXml`), never a URL string.
+- Link fields that have no value stay empty (do not write placeholders like `-` or `#` as raw text)
 - `target` is `_blank` or absent → set `target` accordingly
 - **All attributes must be present** even if empty — `text`, `anchor`, `linktype`, `class`, `title`, `target`, `querystring`, then `id` or `url`
 
@@ -364,7 +340,7 @@ For each child in contentMap.sections[N].children:
     templateId=manifest.templates.child.itemId,
     parentId=<new client parent itemId from Step 2>
   )
-  update_fields_on_content_item(newChildId, {
+  update_fields_on_item(newChildId, {
     // Text + link + image fields — all in one call
     "CardTitle": child.fields.CardTitle,
     "CardDescription": child.fields.CardDescription,
@@ -504,7 +480,7 @@ sections:
 sections[N].phase3.status:
   "pending"   → not started
   "created"   → create_content_item succeeded, itemId recorded
-  "populated" → update_fields_on_content_item succeeded
+  "populated" → update_fields_on_item succeeded
   "failed"    → MCP call returned error, error message recorded
 ```
 
@@ -580,7 +556,7 @@ This phase bridges the gap between "same colors" (Phase 4 site theme) and "looks
 
 Add components to the page in build-plan order and wire each to its datasource item.
 
-**Known limitation:** The Agent API cannot set rendering parameters (including variant selection) when adding components. Variants must be set manually in Pages editor after assembly. See `.cursor/skills/sitecore-reference/references/agent-api-limitations.md`.
+**Variants:** `add_component_on_page` has no rendering-parameter argument, so the variant is set AFTER placement with the ladder in `.cursor/skills/sitecore-reference/references/placeholders-and-variants.md` (layout XML via MCP, then Authoring GraphQL). Never leave it to the SE unless every route failed. Component removal and moving ARE available (`remove_component_on_page`, `move_component_on_page`, since 2026-10-12).
 
 #### Step 1 — Use the existing Home page (default)
 
@@ -591,7 +567,7 @@ Add components to the page in build-plan order and wire each to its datasource i
 2. Read current components: `get_components_on_page(homePageId)`
 3. Inventory what's already on the page:
    - **Custom components** (created for this demo) already placed (match by `componentName`) — these will be re-wired to new client datasources, not re-added
-   - **OOB starter kit components** (RichText, Image, Container, Promo — identified by paths under `/sitecore/layout/Renderings/Feature/`) — these cannot be removed via MCP, note them for manual cleanup
+   - **OOB starter kit components** (RichText, Image, Container, Promo — identified by paths under `/sitecore/layout/Renderings/Feature/`) — remove the ones not in the build plan with `remove_component_on_page` (one per call, confirm, re-read)
 4. Use the Home page ID for all subsequent `add_component_on_page` and `set_component_datasource` calls
 
 **Only create a new subpage if the user explicitly requests it:**
@@ -622,12 +598,11 @@ add_component_on_page(
 **Ordering:** Use `insertAfterComponentId` to place each component after the previous one. For the first component, omit this parameter (appends to end). Track the returned component instance for the next insertion.
 
 **Context-only components** (NavigationHeader, SiteFooter):
-- These components have no datasource template and **cannot be added via `add_component_on_page`** — the API returns "No datasource template found"
+- These components have no datasource template; `add_component_on_page` returned "No datasource template found" in April 2026 (unverified since; probe once)
 - If they live in partial designs, they're already on the page via the Page Design — skip
-- If they need to be in `headless-main`, add them to the manual tasks checklist with clear positioning instructions (e.g., "Add NavigationHeader between AnnouncementBar and HeroBanner")
-- Do NOT attempt to add them via API — it will fail and waste time
+- If they need to be in `headless-main` and the one probe fails, add them to the manual tasks checklist with positioning instructions (e.g., "Add NavigationHeader between AnnouncementBar and HeroBanner")
 
-**Skip adding OOB components** that aren't in the build plan (RichText, Image, Container, Promo from starter kit). These cannot be removed via MCP — note them for manual cleanup.
+**Do not add OOB components** that aren't in the build plan (RichText, Image, Container, Promo from starter kit). If the page already has them, remove them with `remove_component_on_page`.
 
 #### Step 3 — Wire datasources
 
@@ -650,11 +625,11 @@ Same as simple — wire the client parent item ID. The children live under it an
 **Context-only components (NavigationHeader, SiteFooter):**
 No datasource to set — skip this step.
 
-#### Step 4 — Generate the variant checklist
+#### Step 4 — Set the variants (checklist only for failures)
 
-Since variants cannot be set via MCP, generate a clear checklist for the SE.
+Set every variant yourself with the ladder in `placeholders-and-variants.md` (client variant on every component, see `demo-build-pages` step 5) and read it back. Generate the checklist below ONLY for components where all routes failed.
 
-For each component in the build plan that uses a **non-Default** variant:
+For each such component:
 
 ```markdown
 ## Variant Selection Checklist
@@ -715,8 +690,8 @@ Page assembly complete:
 - Components added: 12 (of 14 in build plan)
 - Datasources wired: 10 (2 context-only, no datasource)
 - Already on page: 3 (reused existing)
-- Variants needing manual selection: 6 (see variant-checklist.md)
-- OOB components to clean up manually: 4 (RichText x2, Image, Container)
+- Variants that could not be set (all routes failed): 0 (else see variant-checklist.md)
+- OOB components removed: 4 (RichText x2, Image, Container)
 ```
 
 ### Phase 7 — Summary
@@ -802,8 +777,8 @@ docs/ai/demos/<client-kebab>/
 - **Never recreate template components** — they already exist, just populate their datasource items with client content
 - **Always use the manifest** for item IDs — don't re-resolve paths that are already cached
 - **Always present the plan before executing** — the SE must approve the theme and build plan
-- **Automate images via Content Hub** — download during Phase 2.5 (`--download-images`), upload + approve + create public link via `upload-to-content-hub.mjs` in Phase 3 Step 5, set Image fields using DAM format (`<Image src="..." dam-id="..." />`). Requires Content Hub credentials in `credentials.local.yaml`. Fall back to manual `images-to-upload.md` if no credentials.
-- **Mark variants as manual** — generate the variant checklist, don't skip this step. See `.cursor/skills/sitecore-reference/references/agent-api-limitations.md` for why.
+- **Automate images via Content Hub** — download during Phase 2.5 (`--download-images`), upload + approve + create public link via `harness/scripts/content-hub-upload.mjs` in Phase 3 Step 1, set Image fields using DAM format (`<Image src="..." dam-id="..." />`). Requires the `CH_*` settings in `harness/.env.local`. Fall back to manual `images-to-upload.md` if no credentials.
+- **Set variants yourself** — via the ladder in `placeholders-and-variants.md`; the checklist only lists variants every route failed to set.
 - **Use `insertAfterComponentId` for ordering** — add components sequentially, passing the previous component's instance ID to maintain build-plan order
-- **Use the existing Home page by default** — do not create a new subpage unless the user explicitly asks. The Home page already has the correct Page Design and URL routing. Note any OOB components for manual cleanup.
+- **Use the existing Home page by default** — do not create a new subpage unless the user explicitly asks. The Home page already has the correct Page Design and URL routing. Remove any OOB components not in the build plan with `remove_component_on_page`.
 - **All content in English** — regardless of source page language, all datasource content must be in English (en). Translate from the source language during content extraction, never after content creation.

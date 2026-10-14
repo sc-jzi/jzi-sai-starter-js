@@ -177,7 +177,7 @@ When using Content Hub as the DAM, Image fields use the DAM format with `src`, `
 
 **MCP field update:**
 ```
-update_fields_on_content_item(itemId, {
+update_fields_on_item(itemId, {
   "HeroImage": '<Image src="https://host/api/public/content/84088-hero?v=abc" dam-id="xyz" width="1200" height="600" alt="Hero" dam-content-type="Image" thumbnailsrc="https://host/api/gateway/84088/thumbnail" />'
 })
 ```

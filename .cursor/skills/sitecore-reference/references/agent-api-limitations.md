@@ -2,13 +2,17 @@
 
 Documented limitations discovered during the SitecoreAI Demo Builder project. These affect automated page assembly and demo creation workflows.
 
+> **Re-validated 2026-10-14 against the Marketer MCP release of 2026-10-12 and the tool reference at https://doc.sitecore.com/sai/en/users/sitecoreai/sitecore-marketer-mcp-server/marketer-mcp-tool-reference-and-other-information.html.** Changed by the release: component REMOVAL is now a tool (`remove_component_on_page`, section 3 is resolved), components can be MOVED (`move_component_on_page`), insert-before/after is documented (`insertBeforeComponentId` / `insertAfterComponentId`, mutually exclusive), `get_content_references` and a reference-aware `delete_content` exist. NOT changed by the release (still true until a live probe says otherwise): `add_component_on_page` has no rendering-parameter argument (section 1 below), and context-only components are unverified (section 2). `set_component_variant` / `reset_component_variant` are A/B/n and personalization tools (copy/hide/swap inside a flow); they do NOT set a headless variant (`FieldNames`). Never use them for that.
+>
+> **Status note.** Sections 1 and 3 record what failed when the ONLY thing tried was the `fields` argument of `add_component_on_page`. They are history, not rules. Variants (`FieldNames`), datasources and nested placeholder paths ARE set by the harness, by the routes in `placeholders-and-variants.md` (tool argument → layout XML through `update_fields_on_item` + `harness/scripts/layout-variant.mjs` → Authoring GraphQL). Never put a component on a manual list because of this file; try the ladder first. Context-only components (section 2) remain unverified through other routes.
+
 ---
 
-## 1. Cannot set rendering parameters via `add_component_on_page`
+## 1. `add_component_on_page` has no rendering-parameter argument (variants are set another way, see status note)
 
 **Date discovered:** 2026-04-09
 **Severity:** High — blocks full page assembly automation
-**Status:** Confirmed limitation, feature request recommended
+**Status:** `add_component_on_page` itself cannot do it; use the ladder in `placeholders-and-variants.md`
 
 ### The Problem
 
@@ -38,7 +42,7 @@ The `fields` parameter validates every top-level key against the component's **d
 - `add_component_on_page` — adds component to placeholder (works)
 - `set_component_datasource` — wires datasource item (works)
 - `get_components_on_page` — reads component list including `FieldNames` (works, can see variant after manual change)
-- `insertAfterComponentId` / `insertBeforeComponentId` — ordering (available, untested)
+- `insertAfterComponentId` / `insertBeforeComponentId` — ordering (documented since the 2026-10-12 release, mutually exclusive; the harness already uses `insertAfterComponentId`)
 
 ### What Doesn't Work
 
@@ -138,7 +142,7 @@ The only missing link is passing `FieldNames={variant-id}` to the API.
 
 **Date discovered:** 2026-04-11
 **Severity:** Medium — blocks automated placement of NavigationHeader and SiteFooter
-**Status:** Confirmed limitation
+**Status:** Last confirmed 2026-04-11; NOT addressed in the 2026-10-12 release notes, so treat as UNVERIFIED rather than as a rule. Probe once per run (see `placeholders-and-variants.md`); header/footer normally come from partial designs anyway.
 
 ### The Problem
 
@@ -173,23 +177,16 @@ For a typical 10-section demo page, 2 components (header + footer) must be added
 
 ---
 
-## 3. Cannot remove components from a page via MCP
+## 3. Removing components from a page — RESOLVED 2026-10-12
 
-**Date discovered:** 2026-04-09
-**Severity:** Medium — affects page cleanup and reset workflows
-**Status:** No `remove_component_from_page` tool found in MCP
-**Previously numbered:** #2
+**Status:** RESOLVED. The Marketer MCP now has `remove_component_on_page(pageId, componentId, ...)` (and `move_component_on_page`). This section used to say "no removal tool"; that is no longer true.
 
-### The Problem
-
-There is no MCP tool to remove a component from a page. This means:
-- Old OOB starter kit components (RichText, Image, Container, Promo) cannot be cleaned up programmatically
-- The "reset and rebuild" page assembly approach requires manual component deletion
-- Demo page refresh (swapping one client's components for another) needs manual cleanup
-
-### Workaround
-
-Create a new empty page instead of reusing an existing one. Components are only added, never removed, via the pipeline.
+### How to use it
+- Remove template leftovers (OOB RichText/Image/Container/Promo, the site template's starter components on /Home, an inherited Author Widget pointing at another site) instead of listing them as manual cleanup. Only components placed on THE PAGE can be removed; components that come from a Page Design or Partial Design are not editable on the page.
+- The tool checks affected A/B/n tests and asks for confirmation. A confirmation argument/step may be part of the live schema: read the schema, and pass the confirmation. The SE's approval of the plan covers removing components the HARNESS or the site template placed on pages of the prospect's own site. Never remove components on a protected site or anything outside the prospect's folder.
+- One mutation per call, no automatic retry. Re-read with `get_components_on_page` after each removal to confirm it is gone and the neighbours are intact.
+- Moving or re-ordering an existing component: `move_component_on_page` (before/after another component or to a target placeholder; also asks for confirmation).
+- Deleting content items (e.g. the orphaned `<page>/Data` item): `get_content_references(itemId)` first, then `delete_content(itemId)`. `delete_content` now reports referencing pages/components/experiments and asks whether to remove the references or only delete the item. The `language` argument is ignored: the whole item is deleted.
 
 ---
 
@@ -243,13 +240,13 @@ XM Cloud datasource Image fields use the Content Hub DAM format:
        thumbnailsrc="https://<CH_HOST>/api/gateway/<assetId>/thumbnail" />
 ```
 
-The upload script writes `imageFieldXml` to `image-manifest.json` — use directly with `update_fields_on_content_item`.
+The upload script writes `imageFieldXml` to `image-manifest.json` — use directly with `update_fields_on_item`.
 
 ### Pipeline integration
 
 Phase 2.5: `content-extractor.mjs --download-images` downloads all section images locally
 Phase 3 Step 1: `upload-to-content-hub.mjs` uploads + approves + creates public links with `{assetId}-{name}` URL format
-Phase 3 Step 3: Agent reads `imageFieldXml` from manifest, includes Image fields in same `update_fields_on_content_item` call as text + link fields
+Phase 3 Step 3: Agent reads `imageFieldXml` from manifest, includes Image fields in same `update_fields_on_item` call as text + link fields
 
 ### MCP asset tools (for search/verify only)
 
@@ -264,6 +261,7 @@ Phase 3 Step 3: Agent reads `imageFieldXml` from manifest, includes Image fields
 - Agent API docs: https://api-docs.sitecore.com/ai-capabilities/agent-api
 - Asset API docs: https://api-docs.sitecore.com/sai/agent-api/assets
 - Content Hub Upload API: https://doc.sitecore.com/ch/en/developers/cloud-dev/upload.html
-- Marketer MCP tools reference: https://doc.sitecore.com/sai/en/users/sitecoreai/marketer-mcp-tools-reference.html
+- Marketer MCP tool reference: https://doc.sitecore.com/sai/en/users/sitecoreai/sitecore-marketer-mcp-server/marketer-mcp-tool-reference-and-other-information.html
+- Release notes 2026-10-12: https://developers.sitecore.com/changelog/sitecoreai/12102026/improved-content-management-and-page-layout-control-in-marketer-mcp-and-agent-api
 - Pages API (UpdateFields): `PATCH /api/v1/pages/{pageId}` — page fields only, not component parameters
 - Test evidence: `docs/ai/demos/home-page-components.json` — Home page component dump showing FieldNames values
