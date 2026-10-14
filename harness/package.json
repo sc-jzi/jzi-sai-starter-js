@@ -1,7 +1,12 @@
 {
   "name": "demo-harness",
   "private": true,
-  "description": "Tools for the demo harness scripts (site scraper, screenshots). Install with: node harness/scripts/deps-check.mjs --fix",
+  "description": "Tools for the demo harness scripts (site scraper, screenshots, reading RFP/Word/Excel/PDF inputs). Install with: node harness/scripts/deps-check.mjs --fix",
+  "dependencies": {
+    "mammoth": "^1.8.0",
+    "pdf-parse": "^2.4.5",
+    "xlsx": "^0.18.5"
+  },
   "devDependencies": {
     "playwright": "^1.56.0"
   }

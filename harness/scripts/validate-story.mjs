@@ -92,11 +92,11 @@ const s3 = [];
 for (const c of cbis) {
   const why = [];
   if (!has(c.issue)) why.push("issue"); if (!has(c.reason)) why.push("reason/source"); if (!has(c.evidence)) why.push("evidence");
-  if (!["stated", "inferred"].includes(c.evidenceType)) why.push("evidenceType");
+  if (!["stated", "inferred", "rfp"].includes(c.evidenceType)) why.push("evidenceType");
   const owners = arr(c.owners); if (!owners.length || owners.some((o) => !audIds.has(o))) why.push("owners (valid audience ids)");
   if (why.length) s3.push(`${c.id ?? "?"}: ${why.join(", ")}`);
 }
-add("S3 every critical business issue has owners, a reason/source, evidence, stated|inferred", "required", cbis.length >= 2 && s3.length === 0, cbis.length < 2 ? "need at least 2 critical business issues (Chain of Pain)" : s3.join("; ") || `${cbis.length} CBIs`);
+add("S3 every critical business issue has owners, a reason/source, evidence, stated|inferred|rfp", "required", cbis.length >= 2 && s3.length === 0, cbis.length < 2 ? "need at least 2 critical business issues (Chain of Pain)" : s3.join("; ") || `${cbis.length} CBIs`);
 
 const s4 = [];
 for (const m of moments) {

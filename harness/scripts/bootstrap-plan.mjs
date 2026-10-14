@@ -72,7 +72,7 @@ const out = {
     "C. for each component with a datasource: <site>/Data/<datasourceFolderName> as an instance of folderTemplateId",
     "D. for each component: <site>/Presentation/Headless Variants/<container> with one Variant Definition per variant (Default always)",
     "E. derived page templates: for each page type in the plan, a new template under /sitecore/templates/Project/<collection>/Pages whose Base template is the shared one",
-    "F. Header and Footer partial designs in <site>/Presentation/Partial Designs, with NavigationHeader / SiteFooter added to them (try via the MCP; fall back to a manual task only if it is refused)",
+    "F. Header and Footer partial designs in <site>/Presentation/Partial Designs, Header = Eyebrow (+ ThemeSwitcher left, LanguageSwitcher right) above Header [WithLogoImage, own Header data item with logo] containing Navigation; Footer = SiteFooter; plus a derived Header component template under /sitecore/templates/Project/<collection>/Components (try via the MCP; manual task only for what is refused)",
     "G. Page Designs for Page and Article that use those partials, mapped to the derived templates (Template To Design)",
   ],
   availableRenderings: { ids: allRenderingIds, count: allRenderingIds.length },

@@ -5,6 +5,7 @@
 > Mark every row *stated* (in the transcript, with a short quote) or *inferred*. Never invent facts or figures. Write "not given" for gaps.
 
 ## 1. Who and why
+- Inputs used (file names and kinds from `inputs/index.json`; write "SE interview" if there are none):
 - Prospect / industry:
 - Competitors / incumbent platform:
 - Compelling event / why now:
@@ -23,6 +24,10 @@
 
 Discovery gaps (things the transcript did not say; ask the presenter or the next call):
 -
+
+### RFP requirements (only when an RFP exists; full list in `rfp-requirements.md`)
+- Demo requirements the RFP prescribes (scenarios, order, time limit, who attends), quoted with file / sheet / row:
+- How many requirements the demo covers, and which are answered only in the written response:
 
 ## 3. Message map (Command of the Message)
 - Before (situation today and its negative consequences):

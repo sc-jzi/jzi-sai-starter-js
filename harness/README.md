@@ -10,7 +10,7 @@ Everything is configured in **`harness/.env.local`** (git-ignored; copy `harness
 3. `node harness/scripts/deps-check.mjs --fix` installs Playwright + Chromium (theme scrape, content extraction, site thumbnail). Cursor runs this itself at the start of a demo, and `npm install` in the customer app after the copy is made.
 
 ## Per demo
-1. Optional: drop the Gong transcript into `harness/inbox/`.
+1. Optional: drop what you have into `harness/inbox/`: the Gong transcript, RFP documents (Excel, Word, PDF, any mix) and supporting material (brand guidelines, screenshots, logos). With an RFP the demo is built around its demo requirements.
 2. In Cursor type `/new-demo create a demo for <prospect> (<website>), <anything you know>`. It uses the transcript if one is waiting, interviews you if not, and resumes if the demo was started before.
 3. Review the plan once (story, pages, theme, Sitecore collection/site template) and approve.
 4. Cursor creates the site, bootstraps it, builds all pages and the thumbnail. You do the listed manual steps (variants, header/footer placement, push the code).
@@ -22,7 +22,7 @@ Everything is configured in **`harness/.env.local`** (git-ignored; copy `harness
 | `.cursor/skills/` | **all** skills (the only place). Type `/` in Cursor: `demo-*` is the transcript flow, `sitecore-*` build components/pages, `content-sdk-*` are code skills, `sitecore-reference` holds shared rules and reference |
 | `harness/scripts/` | intake, validators, isolation guard, Sites API (create site, list templates, upload thumbnail), editing host, deps-check, site scraper / content extractor / screenshot (Playwright), new-site, bootstrap plan, Content Hub wrapper |
 | `harness/templates/`, `harness/reference/` | plan/brief/progress templates, demo method, `sitecoreai-apis.md` (the SitecoreAI API docs we build on) |
-| `harness/inbox/` | transcripts waiting (never committed) |
+| `harness/inbox/` | transcripts, RFP files and supporting material waiting (never committed) |
 | `industry-verticals/<customer>/docs/ai/demos/` | everything about the opportunity (brief, plan, theme draft, script, ids): git-ignored, stays on the SE's machine. The customer app code beside it is committed |
 | `industry-verticals/<customer>/` | the demo's own app copy; `docs/ai/demos/<customer>/` holds everything the demo produces |
 | `industry-verticals/prospera/` | the base app and shared definitions: read-only, never edited by a demo |

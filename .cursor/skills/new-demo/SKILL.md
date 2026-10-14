@@ -1,6 +1,6 @@
 ---
 name: new-demo
-description: Single entry point to build a customer demo. Give it the prospect, their website and whatever you know about the opportunity; it picks the route itself (Gong transcript waiting in harness/inbox, interview if there is none, or resume) and runs the whole flow. Use for "/new-demo ...".
+description: Single entry point to build a customer demo. Give it the prospect, their website and whatever you know about the opportunity; it picks the route itself (Gong transcript, RFP documents or other material waiting in harness/inbox, interview if there is none, or resume) and runs the whole flow. Use for "/new-demo ...".
 ---
 
 # /new-demo — one command for the whole demo
@@ -19,10 +19,12 @@ node harness/scripts/demo-route.mjs --customer <customer>
 | Route | When | What happens |
 |---|---|---|
 | `resume` | `demo-progress.yaml` exists for this customer | continue from the first unfinished phase ("Resume" in `demo-from-transcript`) |
-| `transcript` | a file waits in `harness/inbox/` | `intake-transcript.mjs <customer>` stores it; the brief is built from it. Several files: say which one you take and ask only if its name does not fit the prospect |
-| `interview` | no transcript | `intake-transcript.mjs <customer> --none`; the brief comes from `harness/templates/demo-interview.md`, skipping what the SE already wrote in the request |
+| `rfp` | an RFP / requirements / tender file waits in `harness/inbox/` (Excel, Word, PDF, any mix; a transcript and supporting files may be there too) | `intake-materials.mjs <customer>` takes everything, converts it to text, and the brief is **RFP-led** (see `demo-from-transcript`, "RFP-led brief") |
+| `transcript` | a Gong-style transcript waits in `harness/inbox/` (nothing RFP-like) | `intake-materials.mjs <customer>` stores it; the brief is built from it |
+| `materials` | other files wait (brand guide, screenshots ...) | they are stored and read; the brief comes from the interview |
+| `interview` | no transcript | `intake-materials.mjs <customer> --none`; the brief comes from `harness/templates/demo-interview.md`, skipping what the SE already wrote in the request |
 
-State the route in one line ("No transcript in the inbox, so I'll interview you." / "Found `acme-call.txt` in the inbox, using it.").
+State the route in one line ("No transcript or RFP in the inbox, so I'll interview you." / "Found `acme-call.txt` and `rfp.xlsx` in the inbox, building an RFP-led brief.").
 
 ## 3. Run the flow
 Follow `.cursor/skills/demo-from-transcript/SKILL.md` from Phase T0 with the route above (it is the engine behind this command): preflight and dependency check, brief, theme proposal, page and component plan, **one approval gate** (story, pages, theme, Sitecore plan), then site creation, bootstrap, build, thumbnail and hand-over.

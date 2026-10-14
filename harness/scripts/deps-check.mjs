@@ -7,6 +7,8 @@
  *   Node >= 20, git                       required (no automatic fix)
  *   Playwright + Chromium  (harness/)     required for the theme scrape, content extraction and the site thumbnail
  *                                         fix: npm install (in harness/) + npx playwright install chromium
+ *   Excel / Word / PDF readers (harness/)  required to read RFP documents and supporting material in harness/inbox
+ *                                         fix: npm install (in harness/)
  *   node_modules of industry-verticals/<customer>   (only once the app copy exists)
  *                                         fix: npm install (in the customer app — never in the base app)
  *   dotnet + Sitecore CLI                 optional, only for the editing host (otherwise it becomes a manual task)
@@ -16,6 +18,7 @@ import { spawnSync } from "node:child_process";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { HARNESS, ROOT, parseArgs, customerApp, rootRel } from "./_lib.mjs";
+import { missingLibs } from "./_materials.mjs";
 
 const { flags } = parseArgs(process.argv.slice(2));
 const fix = !!flags.fix, win = process.platform === "win32";
@@ -41,6 +44,10 @@ if (!pw.ok && fix) {
   pw = await playwrightState();
 }
 row(pw.ok, "Playwright + Chromium", pw.ok ? pw.why : `${pw.why}${fix ? "" : "  (fix: node harness/scripts/deps-check.mjs --fix)"}`);
+
+let miss = missingLibs();
+if (miss.length && fix) { console.log("→ installing the Excel/Word/PDF readers into harness/ …"); run("npm", ["install"], HARNESS); miss = missingLibs(); }
+row(!miss.length, "Excel/Word/PDF readers", miss.length ? `missing: ${miss.join(", ")}${fix ? "" : "  (fix: node harness/scripts/deps-check.mjs --fix)"}` : "xlsx, mammoth, pdf-parse installed");
 
 if (flags.customer) {
   const app = customerApp(flags.customer, { mustExist: false });

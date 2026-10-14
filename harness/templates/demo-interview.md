@@ -21,4 +21,7 @@ If the SE has a colleague's discovery or demo-flow prompt, use its structure for
 3. Any brand constraints (colours, fonts, tone, language other than English)?
 4. Collection: reuse an existing one (list with `sites-api.mjs collections`) or create a new one named after the customer?
 
+## With an RFP but no discovery call
+Read the RFP material first (`inputs/extracted/`) and ask only for what it does not answer: who actually attends the demo and decides (the RFP may only name a procurement contact), the real pain behind the requirements, the incumbent platform, the demo length and format if the RFP does not fix them, and which requirements matter most to the evaluators. Pains taken from the RFP are marked *rfp* (file / sheet / row), the SE's answers *stated by the SE*.
+
 Output: the same `demo-brief.md` as the transcript path, with an "Inputs" line saying it came from an SE interview.
