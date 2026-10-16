@@ -51,12 +51,57 @@ For each identified section, find the best match in `component-registry.yaml`:
    - Dark/black background → `"dark"`
    - Brand-colored background → `"primary"` or `"accent"`
 
-### Step 4 — Handle unmatched sections
+### Step 4 — Fit check: reuse, variant or NEW (function first, look second)
 
-If a section doesn't match any template component:
-- Mark it as `matchType: "custom"` in the build plan
-- Describe what it would need (fields, layout, behavior)
-- The demo orchestrator will delegate these to the custom builder
+Do this for EVERY section of the page AND every feature of the header area (eyebrow, header, menu, footer). Ask in this order:
+
+1. **Function.** What does the visitor DO with it (read, click through, search, filter, switch language, calculate, play, compare, expand)? Does a registry component do that?
+2. **Content shape.** Does the section carry fields or repeated items (a count, a kind: image, rich text, link, icon, N items with title + text + link) that the component's datasource template has? Check `templates.datasource.fields` of the component in `docs/ai/manifests/sitecore-manifest.yaml`.
+3. **Look.** If function and content shape fit and only the appearance differs (layout, spacing, colour, type, radius, order of elements) it is a **variant**: the base variant is the closest one, the client variant (phase 5.5) does the rest.
+
+Outcome, written on the section as `fit` + `fitReason` (one sentence: what matches, or what is missing):
+
+| fit | When | What happens |
+|---|---|---|
+| `reuse` | function and content shape match as they are | registry component, base variant `Default` (still gets the client variant for the look) |
+| `variant` | function and shape match, appearance differs | registry component, base variant = closest; client variant carries the difference |
+| `new` | a FUNCTION or a FIELD/ITEM SHAPE is missing | a NEW component is specified in the plan (`new:` block below) and built in phase 5 |
+
+**A variant can never add a field, a child item or a behaviour**: it only re-renders the same datasource. So a missing function or field means `new`; a different look never does. Typical `new`: search box, store/branch locator, tabs, pricing or comparison table with columns the registry lacks, timeline, filterable logo wall, video gallery, map, region/language picker with flags, announcement ticker, login/account menu, cart, chat launcher, an item list whose items have fields no registry list has.
+
+Rules:
+- Never squeeze a section into a component that drops its function (a search bar is not a heading with a link), and never silently leave out a feature the prospect's page visibly has and the story or the look relies on. If you choose not to build something (mega-menu panels, for example), say so in `fitReason` and it goes to the approval gate under "not built".
+- Two registry components side by side (the compound rule below) beat a new component when nothing is lost.
+- Never call a pure look difference `new`.
+- Keep `new` small: more than 3 NEW body components in one demo needs a sentence at the gate on why.
+
+**Specifying a new component** (in the plan, on the section or on the chrome entry):
+
+```yaml
+fit: new
+fitReason: "Prospect's homepage has a branch finder (postcode search + results list); no registry component searches"
+new:
+  name: BranchFinder          # PascalCase, describes the FUNCTION, not the client
+  kind: simple                # simple | list | context   (sitecore-component-router decides the build skill)
+  cms: true                   # true = real Sitecore component authors can edit (default for body sections); false = hardcoded in code, content from a config file
+  fields: [Title, Text, SearchPlaceholder, Link]    # datasource fields; for list: children: [Title, Address, Phone]
+  behaviour: "Postcode input filters the list below; no backend, results come from the datasource children"
+  placement: body             # body | eyebrow-left | eyebrow-right | header-right | footer
+```
+
+`cms: true` is the default for everything in the page body: the demo is about authoring, so a section the story could touch must be editable. `cms: false` (hardcoded) is only for chrome and utility elements no moment needs authorable (eyebrow links and search, a login button); the approval gate lists every hardcoded element as "not editable in the CMS".
+
+**Header area (chrome) defaults**, to be written into `site.chrome` of the plan:
+
+| Feature on the prospect's site | Delivery |
+|---|---|
+| Eyebrow links, phone number, search button, CTA button | `hardcoded-variant`: the client Eyebrow variant from `header-kit.mjs` |
+| Language / region switcher | `reuse` `LanguageSwitcher` in the Eyebrow's right placeholder; a flag/region picker the registry cannot do is `new` |
+| Theme switcher | `reuse` `ThemeSwitcher` in the Eyebrow's left placeholder |
+| Logo + main menu (top level) | `reuse` `Header` + `Navigation` with the client variants |
+| Login / account menu, cart, announcement bar, chat launcher, sticky mini-header | `new` (small component, `cms: false` unless a moment needs it editable), placed in `eyebrow-left`, `eyebrow-right` or `header-right` |
+| Mega-menu panels, second-level menu | not built (the menu shows the top level only); say so at the gate |
+| Footer columns, links, socials | `reuse` `SiteFooter` with the client variant |
 
 ### Step 5 — Extract visible content
 
@@ -152,7 +197,7 @@ sections:
       registryId: ""
       manifestName: ""
       variant: ""
-      matchType: "template"     # "template" or "custom"
+      matchType: "template"     # "template" (fit reuse|variant) or "custom" (fit new)
       matchConfidence: ""       # "high", "medium", "low"
     sectionBackground: ""       # "default", "muted", "dark", "primary", "accent"
     content:
@@ -255,17 +300,13 @@ Do not force a section with several behaviours into one component: split it or m
 - **medium** — matches a component but the variant choice is uncertain, or could be two components
 - **low** — weak match, the section is unusual, might need custom work
 
-### When to mark as custom
+### When a section is `new` (custom)
 
-Mark a section as `matchType: "custom"` when:
-- No component's visual keywords match the section
-- The section requires interactivity beyond what templates support (calculators, configurators, maps)
-- The section has a unique layout that no variant covers
-- The section is a complex form beyond newsletter signup
+Only by the fit check above: a missing function or a missing field/item shape. Interactivity (calculators, configurators, maps, search, filters) beyond what a registry component does is a missing function. A unique layout alone is NOT: that is a variant.
 
 ## Do not
 
-- Do not invent components that aren't in the registry
+- Do not invent a new component when a registry component fits (run the fit check); DO specify one (`fit: new` + `new:` block) when a function or field is missing, rather than forcing the section into a component that cannot do it or leaving it out
 - Do not guess content that isn't visible in the screenshot
 - Do not pick a variant just because it sounds cool — match the visual evidence
 - Do not skip sections — every visible section on the page gets an entry

@@ -1,0 +1,93 @@
+// ConcentricUSA header area. Colours measured from the prospect's header.
+
+.eyebrow.variant-concentricusa {
+  background: #000000;
+  color: #ffffff;
+  padding: 0;
+
+  .eyebrow-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 60px;
+    height: 80px;
+  }
+
+  .eyebrow-links {
+    display: flex;
+    gap: 26px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    a {
+      color: #333333;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+
+  .eyebrow-language {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 400;
+    cursor: default;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .eyebrow-bar {
+      height: 48px;
+      gap: 24px;
+    }
+
+    .eyebrow-links {
+      gap: 16px;
+
+      a {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.header.variant-concentricusa {
+  background: #ffffff;
+  color: #333333;
+  height: 88px;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  > .container {
+    width: 100%;
+  }
+
+  img {
+    display: block;
+    width: auto;
+    height: 44px;
+  }
+
+  .navigation nav > ul > li > .navigation-title a {
+    font-size: 15px;
+    line-height: 1.35;
+  }
+}

@@ -27,3 +27,23 @@ export const Default = (props: RichTextProps): JSX.Element => {
     </div>
   );
 };
+
+/* ConcentricUSA variant: centered industry line on the dark page */
+export const ConcentricUSA = (props: RichTextProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+
+  return (
+    <div
+      className={`component rich-text variant-concentricusa ${props.params?.styles || ''}`}
+      id={id || undefined}
+    >
+      <div className="component-content">
+        {props.fields ? (
+          <JssRichText field={props.fields.Text} />
+        ) : (
+          <span className="is-empty-hint">Rich text</span>
+        )}
+      </div>
+    </div>
+  );
+};

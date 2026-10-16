@@ -40,3 +40,26 @@ export const Default = (props: ImageGalleryProps): JSX.Element => {
     </div>
   );
 };
+
+/* ConcentricUSA variant: plain three-across photo grid */
+export const ConcentricUSA = (props: ImageGalleryProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const images = props.fields?.items;
+
+  return (
+    <div
+      className={`component image-gallery variant-concentricusa ${props.params?.styles || ''}`}
+      id={id || undefined}
+    >
+      <div className="container">
+        <div className="image-gallery-grid">
+          {images?.map((image) => (
+            <div className="image-gallery-item" key={image.url}>
+              <NextImage field={image.fields.Image} width={650} height={420} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};

@@ -174,5 +174,36 @@ const ProjectListMosaic = (props: ProjectListComponentProps): JSX.Element => {
   );
 };
 
+/* ConcentricUSA variant: story cards on the dark page */
+const ProjectListConcentricUSA = (props: ProjectListComponentProps): JSX.Element => {
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const id = props.params?.RenderingIdentifier;
+  const projectItems = getProjectItems(props.fields?.items, parseInt(props.params?.NumberOfItems));
+  const filteredItems = applyCategoryFilter(projectItems, selectedCategory);
+
+  return (
+    <div
+      className={`component project-list variant-concentricusa ${props.params?.styles || ''}`}
+      id={id || undefined}
+    >
+      <div className="container">
+        {!!props.params?.ShowFilters && (
+          <ProjectFilters
+            projectItems={projectItems}
+            selectedCategory={selectedCategory}
+            setSelectedCategory={setSelectedCategory}
+          />
+        )}
+        <div className="project-list-grid">
+          {filteredItems?.map((item) => (
+            <ProjectGridItem item={item} key={item.url} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = withDatasourceCheck()<ProjectListComponentProps>(ProjectListDefault);
 export const Mosaic = withDatasourceCheck()<ProjectListComponentProps>(ProjectListMosaic);
+export const ConcentricUSA = withDatasourceCheck()<ProjectListComponentProps>(ProjectListConcentricUSA);

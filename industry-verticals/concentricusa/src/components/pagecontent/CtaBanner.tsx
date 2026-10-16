@@ -86,6 +86,30 @@ export const Default = (props: CtaBannerProps): JSX.Element => {
   );
 };
 
+/* ConcentricUSA variant: centered title and one accent button */
+export const ConcentricUSA = (props: CtaBannerProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  return (
+    <div
+      className={`component cta-banner variant-concentricusa ${props.params?.styles || ''}`}
+      id={id || undefined}
+    >
+      <div className="container">
+        <h1>
+          <Text field={props.fields?.Title} />
+        </h1>
+        {(isPageEditing || props.fields?.Text?.value) && <RichText field={props.fields.Text} />}
+        {(isPageEditing || props.fields?.Link?.value?.href) && (
+          <Link field={props.fields.Link} className="button button-main" />
+        )}
+      </div>
+    </div>
+  );
+};
+
 export const LargeImage = (props: CtaBannerProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

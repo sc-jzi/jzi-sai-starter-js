@@ -8,8 +8,8 @@
  * If personalize fails or returns an unexpected payload, falls back to
  * `ProfileIdWidget` and logs the error to the console for debugging.
  *
- * Note: Bootstrap does not initialize analytics/personalize in development or
- * Pages editor / preview — that path uses the ProfileIdWidget fallback.
+ * When the personalize SDK is not initialized (development, Pages editor,
+ * preview), the widget is not rendered.
  */
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
@@ -120,6 +120,19 @@ const isFailedPersonalizeResponse = (
   value: unknown
 ): value is { status?: string; message?: string; code?: string } =>
   Boolean(value && typeof value === 'object' && 'status' in value && 'code' in value);
+
+const isSdkNotInitialized = (details: unknown): boolean => {
+  const message =
+    details instanceof Error
+      ? details.message
+      : typeof details === 'string'
+        ? details
+        : details && typeof details === 'object' && 'message' in details
+          ? String((details as { message?: unknown }).message ?? '')
+          : '';
+
+  return message.includes('IE-002') || message.includes('SDK not initialized');
+};
 
 const extractProfile = (response: unknown): GuestProfile | null => {
   if (!response || typeof response !== 'object' || isFailedPersonalizeResponse(response)) {
@@ -305,6 +318,7 @@ export const ProfileWidget = () => {
   const [expanded, setExpanded] = useState(false);
   const [loading, setLoading] = useState(true);
   const [useFallback, setUseFallback] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [profile, setProfile] = useState<GuestProfile | null>(null);
   const [copied, setCopied] = useState(false);
   const [resetting, setResetting] = useState(false);
@@ -331,6 +345,12 @@ export const ProfileWidget = () => {
       }
 
       if (isFailedPersonalizeResponse(response)) {
+        if (isSdkNotInitialized(response)) {
+          setProfile(null);
+          setHidden(true);
+          setLoading(false);
+          return;
+        }
         activateFallback(response.message || 'personalize request failed', response);
         return;
       }
@@ -345,6 +365,12 @@ export const ProfileWidget = () => {
       setProfile(nextProfile);
       setLoading(false);
     } catch (err) {
+      if (isSdkNotInitialized(err)) {
+        setProfile(null);
+        setHidden(true);
+        setLoading(false);
+        return;
+      }
       activateFallback(
         err instanceof Error ? err.message : 'personalize threw an unexpected error',
         err
@@ -452,7 +478,7 @@ export const ProfileWidget = () => {
     [profile?.traits?.affinities]
   );
 
-  if (!mounted) return null;
+  if (!mounted || hidden) return null;
 
   if (useFallback) {
     return <ProfileIdWidget />;

@@ -17,38 +17,38 @@ export type EyebrowProps = ComponentProps & {
   componentMap: ComponentMap;
 };
 
+const CONCENTRIC_EYEBROW_LINKS = [
+  { label: 'About Us', href: '/about-us' },
+  { label: 'Join Our Team', href: '/join-our-team' },
+  { label: 'Locations', href: '/locations' },
+  { label: 'Contact Us', href: '/contact-us' },
+];
+
+/* ConcentricUSA variant: black utility bar with fixed links and the language label */
 export const ConcentricUSA = (props: EyebrowProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
-  const { page } = useSitecore();
 
   return (
     <div
-      className={`component eyebrow relative z-[60] bg-black text-white ${props.params.styles?.trimEnd() ?? ''}`}
+      className={`component eyebrow variant-concentricusa ${props.params.styles?.trimEnd() ?? ''}`}
       id={id || undefined}
     >
-      <div className={`container container-${props.params?.ContainerWidth?.toLowerCase()}-fluid`}>
-        <div className="row">
-          <div className="col col-placeholder flex items-center justify-between">
-            <AppPlaceholder
-              name="eyebrow-left"
-              rendering={props.rendering}
-              page={page}
-              componentMap={props.componentMap}
-            />
-            <AppPlaceholder
-              name="eyebrow-links"
-              rendering={props.rendering}
-              page={page}
-              componentMap={props.componentMap}
-            />
-            <AppPlaceholder
-              name="eyebrow-right"
-              rendering={props.rendering}
-              page={page}
-              componentMap={props.componentMap}
-            />
-          </div>
-        </div>
+      <div className="container">
+        <nav className="eyebrow-bar" aria-label="Utility">
+          <ul className="eyebrow-links">
+            {CONCENTRIC_EYEBROW_LINKS.map((link) => (
+              <li key={link.href}>
+                <a href={link.href}>{link.label}</a>
+              </li>
+            ))}
+          </ul>
+          <button type="button" className="eyebrow-language" aria-label="Language: English">
+            English
+            <svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor">
+              <path d="m3 6 5 5 5-5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+        </nav>
       </div>
     </div>
   );

@@ -91,36 +91,26 @@ export const ConcentricUSA = (props: HeroBannerProps): JSX.Element => {
 
   return (
     <section
-      className={`component hero-banner relative flex min-h-[520px] items-center justify-center overflow-hidden bg-[#465773] text-white ${props.params?.styles || ''}`}
+      className={`component hero-banner variant-concentricusa ${props.params?.styles || ''}`}
       id={id || undefined}
     >
       {(props.fields?.Image?.value?.src || isPageEditing) && (
-        <NextImage
-          field={props.fields.Image}
-          className="absolute inset-0 h-full w-full object-cover"
-          width={1600}
-          height={700}
-        />
+        <NextImage field={props.fields.Image} className="hero-media" width={1600} height={700} />
       )}
-      <div className="absolute inset-0 bg-black/45" />
-      <div className="relative z-10 mx-auto max-w-4xl px-6 py-20 text-center">
+      <div className="hero-scrim" />
+      <div className="hero-copy">
         {(props.fields?.Title?.value || isPageEditing) && (
-          <h1 className="text-4xl font-bold text-white md:text-5xl">
+          <h1>
             <Text field={props.fields.Title} />
           </h1>
         )}
         {(props.fields?.Text?.value || isPageEditing) && (
-          <div className="mt-4 text-lg text-white">
+          <div className="hero-text">
             <RichText field={props.fields.Text} />
           </div>
         )}
         {(isPageEditing || props.fields?.Cta1?.value?.href) && (
-          <div className="mt-8">
-            <Link
-              field={props.fields.Cta1}
-              className="inline-block rounded-[6px] bg-[#51C748] px-6 py-3 font-bold text-white"
-            />
-          </div>
+          <Link field={props.fields.Cta1} className="button button-main" />
         )}
       </div>
     </section>

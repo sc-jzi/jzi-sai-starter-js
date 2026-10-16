@@ -71,6 +71,9 @@ When the user asks to create, update, diagnose, or fix a Sitecore XM Cloud compo
 - this skill consumes the existing Landing Page template (status: complete in manifest) and creates a Sitecore content item with 40 personalized fields
 - **Prerequisite:** the Landing Page template must already exist (created by `sitecore-create-landing-page`). If it doesn't, route there first.
 
+### Use the create-* skills from a demo plan when
+- `demo-plan.yaml` has a section or `site.chrome` entry with `fit: new` and a `new:` spec: route by `new.kind` (`simple` / `list` / `context`) to the matching skill above. `cms: false` means a rendering with no datasource template and content from a config file in code. Details: `demo-from-transcript` phase T5, row 5 (NEW components).
+
 ### Use `sitecore-create-demo-variants` when
 - the demo builder pipeline reaches Phase 5.5
 - the user says "create custom variants", "match the screenshot exactly", "replicate the visual style", "pixel-perfect"

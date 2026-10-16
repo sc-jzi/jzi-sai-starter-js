@@ -10,6 +10,7 @@ import {
   RichText,
   RichTextField,
   Text,
+  useSitecore,
 } from '@sitecore-content-sdk/nextjs';
 
 interface Fields {
@@ -66,6 +67,59 @@ export const Default = (props: FeaturesProps): JSX.Element => {
               <Text field={props.fields?.Text2} />
             </p>
           </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* ConcentricUSA variant: dark band, service list beside one photograph */
+export const ConcentricUSA = (props: FeaturesProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const showPhoto = props.fields?.Image1?.value?.src || isPageEditing;
+
+  return (
+    <div
+      className={`component features variant-concentricusa ${props.params?.styles || ''}`}
+      id={id || undefined}
+    >
+      <div className="container">
+        <div className="features-layout">
+          <div className="copy">
+            <div className="tagline">
+              <RichText field={props.fields?.Text} />
+            </div>
+            <div className="feature-list">
+              <div className="item">
+                <div className="title">
+                  <Text field={props.fields?.Title1} />
+                </div>
+                <p className="subtitle">
+                  <Text field={props.fields?.Text1} />
+                </p>
+              </div>
+              <div className="item">
+                <div className="title">
+                  <Text field={props.fields?.Title2} />
+                </div>
+                <p className="subtitle">
+                  <Text field={props.fields?.Text2} />
+                </p>
+              </div>
+            </div>
+            {(isPageEditing || props.fields?.Link?.value?.href) && (
+              <div className="button button-main">
+                <Link field={props.fields?.Link} />
+              </div>
+            )}
+          </div>
+          {showPhoto && (
+            <div className="feature-photo">
+              <NextImage field={props.fields?.Image1} width={640} height={420} />
+            </div>
+          )}
         </div>
       </div>
     </div>

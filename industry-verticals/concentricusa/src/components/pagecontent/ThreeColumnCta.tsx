@@ -112,6 +112,74 @@ export const Default = (props: ThreeColumnCtaProps): JSX.Element => {
   );
 };
 
+/* ConcentricUSA variant: three facility photographs in a row */
+export const ConcentricUSA = (props: ThreeColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  const Column = ({
+    image,
+    text,
+    subText,
+    link,
+  }: {
+    image: ImageField;
+    text: Field<string>;
+    subText: Field<string>;
+    link: LinkField;
+  }) => (
+    <div className="col-sm-12 col-lg-4">
+      <div className="content-wrapper">
+        {(isPageEditing || image?.value?.src) && (
+          <NextImage field={image} width={480} height={280} />
+        )}
+        {(isPageEditing || text?.value) && (
+          <h2>
+            <Text field={text} />
+          </h2>
+        )}
+        {(isPageEditing || subText?.value) && (
+          <p>
+            <Text field={subText} />
+          </p>
+        )}
+        {(isPageEditing || link?.value?.href) && <Link field={link} className="button button-main" />}
+      </div>
+    </div>
+  );
+
+  return (
+    <div
+      className={`component three-column-cta variant-concentricusa ${props.params?.styles || ''}`}
+      id={id || undefined}
+    >
+      <div className="container">
+        <div className="row">
+          <Column
+            image={props.fields.Image1}
+            text={props.fields.Text1}
+            subText={props.fields.SubText1}
+            link={props.fields.Link1}
+          />
+          <Column
+            image={props.fields.Image2}
+            text={props.fields.Text2}
+            subText={props.fields.SubText2}
+            link={props.fields.Link2}
+          />
+          <Column
+            image={props.fields.Image3}
+            text={props.fields.Text3}
+            subText={props.fields.SubText3}
+            link={props.fields.Link3}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const WithIcons = (props: ThreeColumnCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

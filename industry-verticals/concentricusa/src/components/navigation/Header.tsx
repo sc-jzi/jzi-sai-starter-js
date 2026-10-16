@@ -39,7 +39,7 @@ export const ConcentricUSA = (props: HeaderProps): JSX.Element => {
   const { page } = useSitecore();
 
   return (
-    <div className={`component header bg-white ${sxaStyles}`} id={id ? id : undefined}>
+    <div className={`component header variant-concentricusa ${sxaStyles}`} id={id ? id : undefined}>
       <div className={`container container-${props.params?.ContainerWidth?.toLowerCase()}-fluid`}>
         <div className="row align-items-center">
           <div className="col-auto">

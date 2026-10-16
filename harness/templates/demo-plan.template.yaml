@@ -87,6 +87,15 @@ site:
   template: ""            # site template NAME, e.g. Empty
   siteName: ""
   variantName: ""      # PascalCase client name used for EVERY component's pixel-matching variant (e.g. ConcentricUSA). Empty = derived from client.name. Section `variant:` below is the BASE variant the code starts from.
+  chrome:
+    # Header-area features of the prospect's page and how each is delivered (site-analyzer step 4): reuse | hardcoded-variant | new | not-built
+    - { feature: eyebrow-links-phone-search-cta, delivery: hardcoded-variant, note: "client Eyebrow variant from header-kit.mjs; not editable in the CMS" }
+    - { feature: language-switcher, delivery: reuse, component: LanguageSwitcher }
+    - feature: login-menu
+      delivery: new
+      fitReason: "Prospect's header has a Login dropdown; the library has no account menu"
+      new: { name: AccountMenu, kind: context, cms: false, fields: [], behaviour: "Login link with a two-item dropdown, hardcoded", placement: eyebrow-right }
+    - { feature: mega-menu-panels, delivery: not-built, fitReason: "Header shows the top level only; second level is built as pages but not shown" }
   pages:
     # Order matters: parents first. Plan /Home first; demo-site-bootstrap probes whether the template already created it.
     - path: /Home
@@ -95,9 +104,11 @@ site:
       purpose: "Landing view in the prospect's brand; the WOW result in the first minute"
       proves: [m1]
       sections:
-        - { position: 1, component: hero-banner, variant: Default, contentSource: site, note: "Campaign headline" }
-        - { position: 2, component: three-column-cta, variant: WithIcons, contentSource: transcript, note: "Speaks to c1" }
-        - { position: 3, component: cta-banner, variant: Default, contentSource: transcript }
+        - { position: 1, component: hero-banner, fit: reuse, variant: Default, contentSource: site, note: "Campaign headline" }
+        - { position: 2, component: three-column-cta, fit: variant, fitReason: "icons instead of images", variant: WithIcons, contentSource: transcript, note: "Speaks to c1" }
+        - { position: 3, component: cta-banner, fit: reuse, variant: Default, contentSource: transcript }
+        # fit says why this component: reuse = fits as is | variant = same function/fields, different look (fitReason says what differs) | new = a function or field is missing (needs a new: spec)
+        # - { position: 4, component: branch-finder, fit: new, contentSource: site, fitReason: "Branch finder with postcode search; no registry component searches", new: { name: BranchFinder, kind: list, cms: true, fields: [Title, Text], children: [Name, Address, Phone], behaviour: "Postcode filters the list", placement: body } }
     - path: /Home/products
       displayName: "Products"
       pageType: page
@@ -105,13 +116,13 @@ site:
       proves: [m3]
       why: "m3 needs a page that is clearly assembled from shared blocks"
       sections:
-        - { position: 1, component: heading-cta, variant: PageHeading, contentSource: site }
-        - { position: 2, component: four-column-cta, variant: Default, contentSource: site }
+        - { position: 1, component: heading-cta, fit: reuse, variant: PageHeading, contentSource: site }
+        - { position: 2, component: four-column-cta, fit: reuse, variant: Default, contentSource: site }
     # navGroup says where a page may appear in navigation (default for every page that does not set it: none).
-    #   main    = top-level item of the prospect's MAIN header menu (the Header's Navigation lists these only)
-    #   eyebrow = link of the small utility bar above the header (About us, Join our team, Locations, Contact us): listed by the Eyebrow variant's own Navigation
-    #   none    = everything else (story pages, dropdown children): hidden from both
-    # The build sets the page's NavigationFilter field from it (demo-build-pages step 3).
+    #   main    = TOP-LEVEL item of the prospect's MAIN header menu, directly under /Home (the Header's Navigation shows these only)
+    #   eyebrow = link of the small utility bar above the header (About us, Join our team, Locations, Contact us). The eyebrow bar is HARDCODED in the client Eyebrow variant (header-kit.mjs); this value only keeps the page out of the main menu
+    #   none    = everything else (story pages, dropdown children, second level and deeper): hidden from navigation
+    # The build ticks the page's NavigationFilter 'Main Navigation' for everything that is not main (demo-build-pages step 3), and gives every page a nice __Display name.
     # Navigation page: a menu item of the prospect's header that no moment needs. Built as a placeholder so the header navigation matches theirs.
     - path: /Home/about
       displayName: "About"
@@ -122,12 +133,12 @@ site:
       navReason: "Header menu item"
       proves: []
       sections:
-        - { position: 1, component: heading-cta, variant: PageHeading, contentSource: illustrative, note: "Title only (placeholder)" }
+        - { position: 1, component: heading-cta, fit: reuse, variant: PageHeading, contentSource: illustrative, note: "Title only (placeholder)" }
     - path: /Home/governance
       displayName: "Governance"
       pageType: page
       purpose: "Approvals and audit story"
       proves: [m2]
       sections:
-        - { position: 1, component: heading-cta, variant: PageHeading, contentSource: transcript }
-        - { position: 2, component: questions, variant: Default, contentSource: illustrative, note: "Labelled illustrative" }
+        - { position: 1, component: heading-cta, fit: reuse, variant: PageHeading, contentSource: transcript }
+        - { position: 2, component: questions, fit: reuse, variant: Default, contentSource: illustrative, note: "Labelled illustrative" }

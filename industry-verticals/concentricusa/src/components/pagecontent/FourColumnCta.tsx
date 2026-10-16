@@ -119,3 +119,60 @@ export const Default = (props: FourColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* ConcentricUSA variant: four image tiles with a title under each */
+export const ConcentricUSA = (props: FourColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  const Column = ({
+    image,
+    title,
+    text,
+    link,
+  }: {
+    image: ImageField;
+    title: Field<string>;
+    text: Field<string>;
+    link: LinkField;
+  }) => (
+    <div className="col-sm-12 col-lg-3">
+      <Link field={link}>
+        <div className="content-wrapper">
+          {(isPageEditing || image?.value?.src) && (
+            <NextImage field={image} width={480} height={270} />
+          )}
+          <div className="text-wrapper">
+            {(isPageEditing || title?.value) && (
+              <h2>
+                <Text field={title} />
+              </h2>
+            )}
+            {(isPageEditing || text?.value) && (
+              <p>
+                <Text field={text} />
+              </p>
+            )}
+          </div>
+        </div>
+      </Link>
+    </div>
+  );
+
+  return (
+    <div
+      className={`component four-column-cta variant-concentricusa ${props.params?.styles || ''}`}
+      id={id || undefined}
+    >
+      <div className="container">
+        <div className="row">
+          <Column image={props.fields.Image1} title={props.fields.Title1} text={props.fields.Text1} link={props.fields.Link1} />
+          <Column image={props.fields.Image2} title={props.fields.Title2} text={props.fields.Text2} link={props.fields.Link2} />
+          <Column image={props.fields.Image3} title={props.fields.Title3} text={props.fields.Text3} link={props.fields.Link3} />
+          <Column image={props.fields.Image4} title={props.fields.Title4} text={props.fields.Text4} link={props.fields.Link4} />
+        </div>
+      </div>
+    </div>
+  );
+};

@@ -161,6 +161,78 @@ export const Default = (props: NavigationProps): JSX.Element => {
   );
 };
 
+/* ConcentricUSA variant: top-level links in the white header */
+export const ConcentricUSA = (props: NavigationProps): JSX.Element => {
+  const [isOpenMenu, openMenu] = useState(false);
+  const { page } = useSitecore();
+
+  const styles =
+    props.params != null
+      ? `${props.params.GridParameters ?? ''} ${props.params.Styles ?? ''}`.trimEnd()
+      : '';
+  const id = props.params != null ? props.params.RenderingIdentifier : null;
+
+  if (!Object.values(props.fields).length) {
+    return (
+      <div
+        className={`component navigation variant-concentricusa col-12 position-right navigation-horizontal ${styles}`}
+        id={id ? id : undefined}
+      >
+        <div className="component-content">[Navigation]</div>
+      </div>
+    );
+  }
+
+  const handleToggleMenu = (event?: React.MouseEvent<HTMLElement>, flag?: boolean): void => {
+    if (event && page?.mode.isEditing) {
+      event.preventDefault();
+    }
+
+    if (flag !== undefined) {
+      return openMenu(flag);
+    }
+
+    openMenu(!isOpenMenu);
+  };
+
+  const list = Object.values(props.fields)
+    .filter((element) => element)
+    .map((element: Fields, key: number) => (
+      <NavigationList
+        key={`${key}${element.Id}`}
+        fields={element}
+        handleClick={(event: React.MouseEvent<HTMLElement>) => handleToggleMenu(event, false)}
+        relativeLevel={1}
+      />
+    ));
+
+  return (
+    <div
+      className={`component navigation variant-concentricusa col-12 position-right navigation-horizontal ${styles}`}
+      id={id ? id : undefined}
+    >
+      <label className="menu-mobile-navigate-wrapper">
+        <input
+          type="checkbox"
+          className="menu-mobile-navigate"
+          checked={isOpenMenu}
+          onChange={() => handleToggleMenu()}
+        />
+        <div className="menu-humburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div className="component-content">
+          <nav>
+            <ul>{list}</ul>
+          </nav>
+        </div>
+      </label>
+    </div>
+  );
+};
+
 const NavigationList = (props: NavigationProps) => {
   const { page } = useSitecore();
   const [active, setActive] = useState(false);

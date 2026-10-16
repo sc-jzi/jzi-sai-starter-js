@@ -6,7 +6,7 @@ export function parseYaml(text) {
     v = v.trim();
     if (/^\{.*\}$/.test(v)) { // inline map { a: 1, b: "x, y" }
       const o = {}, inner = v.slice(1, -1); let depth = 0, q = null, cur = ""; const parts = [];
-      for (const ch of inner) { if (q) { if (ch === q) q = null; cur += ch; continue; } if (ch === '"' || ch === "'") { q = ch; cur += ch; continue; } if (ch === "[") depth++; if (ch === "]") depth--; if (ch === "," && depth === 0) { parts.push(cur); cur = ""; continue; } cur += ch; }
+      for (const ch of inner) { if (q) { if (ch === q) q = null; cur += ch; continue; } if (ch === '"' || ch === "'") { q = ch; cur += ch; continue; } if (ch === "[" || ch === "{") depth++; if (ch === "]" || ch === "}") depth--; if (ch === "," && depth === 0) { parts.push(cur); cur = ""; continue; } cur += ch; }
       if (cur.trim()) parts.push(cur);
       for (const p of parts) { const k = p.indexOf(":"); if (k > 0) o[p.slice(0, k).trim()] = scalar(p.slice(k + 1)); }
       return o;

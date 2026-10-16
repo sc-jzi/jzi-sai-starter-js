@@ -72,13 +72,14 @@ If the user wants approval first, stop after the plan.
 
 Check whether a Variants container item exists at:
 ```
-/sitecore/content/<siteCollection>/<siteName>/Presentation/Headless Variants/<ComponentName>
+/sitecore/content/<siteCollection>/<siteName>/Presentation/Headless Variants/<RenderingItemName>
 ```
+`<RenderingItemName>` is the name of the RENDERING ITEM (layout definition) in Sitecore, with spaces: `Four Column CTA`, not the React name `FourColumnCta`. Read it from the manifest (`rendering.name` / last segment of `rendering.path`).
 
 Use `get_content_item_by_path` to check.
 
 If it does **not** exist, create it:
-- `name` = component name (must match the rendering name exactly)
+- `name` = the rendering item name (must match exactly, spaces included, e.g. `Heading CTA`; not the PascalCase component name)
 - parent = the `Headless Variants` folder item
 - template = **Headless Variants** template
 

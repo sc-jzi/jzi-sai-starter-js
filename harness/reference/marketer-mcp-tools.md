@@ -73,6 +73,11 @@ Generated from the connected `user-marketer` MCP namespace on 2026-10-09; re-val
 
 ## Verified methods (fill in as soon as something is proven in this environment; read this FIRST in later demos)
 How-to and ladder: `.cursor/skills/sitecore-reference/references/placeholders-and-variants.md`. Record each line as `date — what — exact call shape — result`.
-- Nested placeholder key format that rendered: _(not yet verified by the harness; SE-confirmed format is `<host path>/<name>-0-<host DynamicPlaceholderId>`)_
-- Datasource on a partial design component (`set_component_datasource` with a partial design id): _(not yet verified)_
+- Nested placeholder key format that rendered: 2026-10-14 (Concentric run 2, SE screenshots) — `/headless-header/eyebrow-right-0-1` and `/headless-header/header-right-0-3` rendered; format `<host path>/<name>-0-<host DynamicPlaceholderId>`. `/headless-header/eyebrow-links-0-1` did NOT render anything: no Eyebrow variant has an `eyebrow-links` placeholder (the name must exist in the code of the variant that is set).
+- Datasource on a partial design component (`set_component_datasource` with a partial design id): the tool answers 'no datasource template' for context-only renderings (Header, Navigation), but Pages lets the SE set the Header datasource by hand, so `s:ds` is valid on the instance; use layout XML (`update_fields_on_item` + `layout-variant.mjs patch --ds`). _(layout-XML write itself not yet verified)_
+- Headless Variants container name: 2026-10-15 (Concentric run 2) — a container named like the React component (`FourColumnCta`) does not match the rendering `Four Column CTA`; the variant picker offers the variants but the page renders "Content SDK component is missing React implementation". The container must carry the rendering ITEM name.
+- Variant selected in Sitecore but not exported in the TSX (Features / `ConcentricUSA`): same orange error box. `variants-verify.mjs` guards it.
+- `add_component_on_page` with `fields`: creates a page-local `<page>/Data/<item>` (run 2: content ended up under page/data). Never pass `fields`; create the site-level item, place, `set_component_datasource`, delete the local item.
+- NavigationFilter write (checklist field on a page): works (about-us showed Main Navigation ticked) but the Navigation component ignored it until its filter rendering parameter was set.
+- `__Display name`: _(run 2: not set; language/version hypothesis untested; write in `en`, read back)_
 - Variant (`FieldNames`) route that worked (tool argument / layout XML via `update_fields_on_item` / Authoring GraphQL), incl. which layout field (`__Final Renderings` or `__Renderings`): _(not yet verified)_

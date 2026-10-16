@@ -518,6 +518,8 @@ The theme takes effect on the next dev server restart; components and Sass parti
 
 ### Phase 5 — Build custom components (if any)
 
+> In the `/new-demo` harness the list of new components is `demo-plan.yaml` (`fit: new` sections and `site.chrome` entries with `delivery: new`, each with a `new:` spec; also `bootstrap-plan.json` → `newComponents`); the build steps for them are in `demo-from-transcript` phase T5, row 5. After building, re-run `bootstrap-plan.mjs`.
+
 For each section in the build plan with `matchType: "custom"`:
 
 1. Use the appropriate Sitecore creation skill (simple/list/context-only)

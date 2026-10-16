@@ -59,7 +59,10 @@ export const ConcentricUSA = ...  // this demo's variant
 ## Workflow
 
 ### Step 1 — List every component the demo uses
-From `demo-plan.yaml` collect each distinct component across ALL pages (story pages, /Home, the navigation placeholder pages' `PageHeading` too), plus the header-area components: `Header`, `Eyebrow`, and the footer (`SiteFooter`). Each of them gets a client variant. Record the list with the section positions that show it. For each, take the BASE variant the plan names as the code to start from.
+**The list is `bootstrap-plan.json` → `components` (every entry, header area included), not your memory of the plan.** Every component in it gets a real client variant in code; a component you skip still has the client Variant Definition in Sitecore and the page SELECTS it, which renders "Content SDK component is missing React implementation" (Concentric run 2: Features had the variant `ConcentricUSA` selected but no `export const ConcentricUSA`). Start by running `node harness/scripts/variants-verify.mjs --customer <c> --fix`: it adds a safety-net alias (`export const <Client> = Default;`) to every component that lacks the export, so nothing can render the error box while you work, and it lists the aliases (`ALIAS`) you still owe real code for. From `demo-plan.yaml` also collect each distinct component across ALL pages (story pages, /Home, the navigation placeholder pages' `PageHeading` too), plus the header-area components: `Eyebrow`, `Header`, `Navigation` and the footer (`SiteFooter`). Each of them gets a client variant. **Eyebrow, Header and Navigation are generated, not hand-coded**: `node harness/scripts/header-kit.mjs --customer <c>` (run in bootstrap step 5 from the measured `header-styles.json`) already wrote them. Here you only verify and refine them (next step). Only the footer is coded by hand. Record the list with the section positions that show it. For each, take the BASE variant the plan names as the code to start from.
+
+### Step 1b — Header: measured, not eyeballed
+The header is the most visible part of the demo and the place where "looks roughly right" fails. Before anything else check that `header-styles.json` exists in the demo folder (else run `node harness/scripts/header-styles.mjs --customer <c> --url <prospect url>`; exit 3 = nothing found: read the values from the screenshot, write them into the same JSON shape, and note it in `manual-tasks.md`). The kit turns those numbers (eyebrow bar height and colours, link font size/weight/case/spacing, phone, search, CTA button, header band height, logo size, main menu font/colour/gap, menu item count) into the `<Client>` variants of Eyebrow, Header and Navigation plus `src/assets/sass/variants/header/_<client>.scss`. The eyebrow is hardcoded (config in `src/components/navigation/eyebrow-config.ts`) with search, phone and CTA; the Navigation variant renders the top level only. If a value is wrong, change the NUMBER in `header-styles.json` (or the generated SCSS) and re-run the kit (it replaces its own block, never duplicates); do not hand-edit the generated TSX block. Run `npx tsc --noEmit` in the app after the kit (the kit was only syntax-checked, not type-checked).
 
 ### Step 2 — Analyze the screenshot per section
 
@@ -162,22 +165,24 @@ export const PeopleCert = ({ fields, params }: ProductPricingCardsProps): JSX.El
 
 ### Step 4 — Create the Sitecore Variant Definition items
 For every component in the Step 1 list (bootstrap step 2 may already have created some; look first, create only what is missing):
-1. The Variants container exists at `<site>/Presentation/Headless Variants/<ComponentName>`.
+1. The Variants container exists at `<site>/Presentation/Headless Variants/<container>`. **Container name = the RENDERING ITEM name, exactly, spaces and capitals included** (`Four Column CTA`, `Heading CTA`, `Three Column CTA`, `Page Content`), NOT the React component name (`FourColumnCta`): Sitecore matches the container to the layout definition item by name, and a container with the PascalCase name never matches (Concentric run 2: Four Column CTA rendered "Content SDK component is missing React implementation"). Take it from `bootstrap-plan.json` → `headlessVariantContainer` (= the rendering's item name from the manifest); if absent, the last segment of `rendering.path`. FIRST list `Presentation/Headless Variants` (the template site already has containers for many renderings): reuse an existing container with that exact name, create only the missing ones, and never create a second container whose name differs only in spaces/case. A stray wrong-named container from an earlier run: leave it, add one line to `manual-tasks.md`. After creating, list the folder again and confirm every `headlessVariantContainer` name in the plan is present.
 2. Create the Variant Definition: `name` = the client variant name, template = Variant Definition (`4d50cdae-c2d9-4de8-b080-8f992bfb1b55`), parent = that container. Record the id in `site-manifest.json` → `variants.<Component>.<ClientName>`.
 Definitions are independent items: create them in parallel.
 
 ### Step 5 — Make the demo USE the variants
 - In `demo-plan.yaml` the section `variant:` stays the BASE variant the code started from (it is validated against the registry). The variant that is SET on every placed component is the client variant `site.variantName`, whatever the base was. `demo-build-pages` step 5 sets it on each placed component with the method ladder in `placeholders-and-variants.md` and confirms it with `get_components_on_page`.
-- Header area: after the variants exist, switch the partial design components too: `Header` (was `WithLogoImage`; the client variant must be created FROM `WithLogoImage` so the logo and `header-right` placeholder still work), `Eyebrow` (from `Default` or `WithLinks`; keep the placeholders the partial uses), `SiteFooter`. Use the same ladder; confirm by reading back.
+- Header area: the partial design components (`Eyebrow`, `Header`, `Navigation`, `SiteFooter`) are switched to the client variant in bootstrap step 5, BEFORE their children are placed (placeholder names must exist in the code of the variant that is set: the Eyebrow variant offers `eyebrow-left` / `eyebrow-right`, the Header variant `header-left` / `header-right`; never invent others such as `eyebrow-links`). Use the same ladder (tool, then layout XML via `layout-variant.mjs patch`, then GraphQL); confirm by reading back. Here: only check, and set what is missing (footer).
 - `variant-checklist.md` is only a fallback list for a component whose three routes all failed; it names the client variant, never `Default`.
 
 ### Step 6 — Update demo progress
 `demo-progress.yaml`: `phases.phase5_5_variants.status: "complete"`, `variantsCreated: N`, and list any component still on a shared variant with the reason (there should be none).
 
 ### Step 7 — Validate
+0. **Variant code gate:** `node harness/scripts/variants-verify.mjs --customer <c> --strict` must exit 0: every variant in `bootstrap-plan.json` is exported by its component file and NO safety-net alias is left (exit 4 lists them: write the real variant, or, if it genuinely cannot be done, keep the alias and put the component in `manual-tasks.md`; never end the phase with the gate failing silently).
 1. In the customer app run the type check/lint (`npx tsc --noEmit` and the app's lint script if dependencies are installed; if not, `node harness/scripts/deps-check.mjs` says what is missing). Fix errors; a variant that does not compile is worse than none.
 2. Every component in the list now exports `Default` (untouched) and the client variant; export names equal the Variant Definition names.
-3. After the pages are built (T6): capture each built page (`get_page_screenshot`, or Playwright against the rendering host when it runs) and compare with the reference screenshot section by section. One correction pass for visible deviations in layout, spacing, type scale, background or imagery; anything left goes to `manual-tasks.md` with the section name. Do not stop the run.
+3. **Header gate (numeric, mandatory).** After the pages are built run `node harness/scripts/header-styles.mjs --customer <c> --url <demo home url> --out header-styles.demo.json --compare header-styles.json`. Exit 4 lists every measurement that is outside tolerance (colours, bar and header height, font size/weight/case, gaps, logo size, menu item count, contrast): fix the number or SCSS, re-run the kit, re-compare. One correction pass, then anything left goes to `manual-tasks.md`.
+4. After the pages are built (T6): capture each built page (`get_page_screenshot`, or Playwright against the rendering host when it runs) and compare with the reference screenshot section by section. One correction pass for visible deviations in layout, spacing, type scale, background or imagery; anything left goes to `manual-tasks.md` with the section name. Do not stop the run.
 
 ---
 
@@ -200,7 +205,7 @@ Definitions are independent items: create them in parallel.
 | Typography scale (size, weight, spacing) | No | **Yes** |
 | Decorative elements (borders, dividers) | No | **Yes** |
 
-**Rule:** Never hardcode colors; use the site theme variables. The variant controls layout, spacing, and structure. The theme controls the palette.
+**Rule:** Never hardcode colors; use the site theme variables. **Only exception: the generated header kit SCSS**, which uses the colours measured from the prospect's header (the theme variables do not cover eyebrow bar, CTA and menu colours). The variant controls layout, spacing, and structure. The theme controls the palette.
 
 ---
 
@@ -208,7 +213,7 @@ Definitions are independent items: create them in parallel.
 
 These components have no datasource. Custom variants still work — they change the layout/structure of how context data is rendered.
 
-For NavigationHeader: logo position, nav link spacing, CTA button style, mobile menu behavior.
+For the header area use the header kit (see Step 1b). For NavigationHeader: logo position, nav link spacing, CTA button style, mobile menu behavior.
 For SiteFooter: column count, link grouping, social icon placement, legal text position.
 
 ---
@@ -243,13 +248,16 @@ Phase 5.5 runs BEFORE page assembly because the variant definitions must exist i
 
 ## Verification checklist
 
+- [ ] `variants-verify.mjs --strict` exits 0 (every planned variant is exported in code, no alias left)
+- [ ] Headless Variants containers are named like the RENDERING ITEMS (`Four Column CTA`), not the React names
 - [ ] A client variant exists for EVERY component used (including Header, Eyebrow, footer); none left on Default
 - [ ] `variant-specs.yaml` written with visual analysis per section
 - [ ] Each custom variant uses the client's PascalCase name as the export name
 - [ ] Each variant keeps ALL Sitecore field helpers intact (Text, RichText, NextImage, Link)
 - [ ] Each variant keeps `isEditing` guards for empty fields
 - [ ] Each variant uses `params.styles` and `params.RenderingIdentifier`
-- [ ] NO hardcoded hex colors — all colors use site theme variables (`var(--bg-*)`, `var(--text-*)`)
+- [ ] Eyebrow/Header/Navigation variants come from `header-kit.mjs`, `tsc --noEmit` passes and the header gate (`--compare`) exited 0
+- [ ] NO hardcoded hex colors (except the header kit SCSS) — all colors use site theme variables (`var(--bg-*)`, `var(--text-*)`)
 - [ ] Each variant's layout styles are in a Sass partial under `src/assets/sass/variants/` imported from its `index.scss`
 - [ ] Variant Definition items created in Sitecore under correct Variants container
 - [ ] Variant export name exactly matches Variant Definition item name

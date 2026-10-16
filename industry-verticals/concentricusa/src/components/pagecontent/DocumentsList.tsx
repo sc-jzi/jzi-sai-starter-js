@@ -110,3 +110,59 @@ export const Default = (props: DocumentsListProps): JSX.Element => {
     </div>
   );
 };
+
+/* ConcentricUSA variant: document rows without the starter card chrome */
+export const ConcentricUSA = (props: DocumentsListProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  const DocumentItem = ({
+    image,
+    subtitle,
+    link,
+  }: {
+    image: ImageField;
+    subtitle: Field<string>;
+    link: LinkField;
+  }) => {
+    if (!isPageEditing && !link?.value?.href && !subtitle?.value) {
+      return null;
+    }
+
+    return (
+      <div className="col">
+        <div className="item">
+          {(isPageEditing || image?.value?.src) && (
+            <NextImage field={image} width={30} height={40} />
+          )}
+          <div className="text-container">
+            <Link field={link} />
+            <span className="subtitle">
+              <Text field={subtitle} />
+            </span>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  return (
+    <div
+      className={`component documents-list variant-concentricusa ${props.params?.styles || ''}`}
+      id={id || undefined}
+    >
+      <div className="container">
+        <div className="title">
+          <Text field={props.fields?.Title1} />
+        </div>
+        <div className="row row-cols-1 row-cols-xl-2 gx-4">
+          <DocumentItem image={props.fields?.Image1} subtitle={props.fields?.Subtitle1} link={props.fields?.Link1} />
+          <DocumentItem image={props.fields?.Image2} subtitle={props.fields?.Subtitle2} link={props.fields?.Link2} />
+          <DocumentItem image={props.fields?.Image3} subtitle={props.fields?.Subtitle3} link={props.fields?.Link3} />
+          <DocumentItem image={props.fields?.Image4} subtitle={props.fields?.Subtitle4} link={props.fields?.Link4} />
+        </div>
+      </div>
+    </div>
+  );
+};

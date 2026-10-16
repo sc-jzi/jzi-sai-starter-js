@@ -37,7 +37,7 @@ function parseYaml(text) {
     v = v.trim();
     if (/^\{.*\}$/.test(v)) { // inline map { a: 1, b: "x, y" }
       const o = {}, inner = v.slice(1, -1); let depth = 0, q = null, cur = ""; const parts = [];
-      for (const ch of inner) { if (q) { if (ch === q) q = null; cur += ch; continue; } if (ch === '"' || ch === "'") { q = ch; cur += ch; continue; } if (ch === "[") depth++; if (ch === "]") depth--; if (ch === "," && depth === 0) { parts.push(cur); cur = ""; continue; } cur += ch; }
+      for (const ch of inner) { if (q) { if (ch === q) q = null; cur += ch; continue; } if (ch === '"' || ch === "'") { q = ch; cur += ch; continue; } if (ch === "[" || ch === "{") depth++; if (ch === "]" || ch === "}") depth--; if (ch === "," && depth === 0) { parts.push(cur); cur = ""; continue; } cur += ch; }
       if (cur.trim()) parts.push(cur);
       for (const p of parts) { const k = p.indexOf(":"); if (k > 0) o[p.slice(0, k).trim()] = scalar(p.slice(k + 1)); }
       return o;
@@ -89,6 +89,7 @@ for (const blk of readFileSync(regPath, "utf8").split(/\n  - id:\s*/).slice(1)) 
 }
 const CHROME = new Set(["navigation-header", "footer", "announcement-bar-nav"]);
 
+const newComps = [];   // sections / chrome entries that specify a NEW component
 const results = []; const add = (id, level, ok, detail = "") => results.push({ id, level, ok, detail });
 const norm = (p) => String(p ?? "").replace(/\/+$/, "") || "/";
 const paths = pages.map((p) => norm(p.path));
@@ -126,6 +127,7 @@ for (const p of pages) {
   if (!prov.length && !(p.navTarget === true && has(p.navReason))) p3.push(`${norm(p.path)}: proves no moment (add one, or navTarget: true with navReason)`);
 }
 for (const p of pages) if (p.navGroup !== undefined && !["main", "eyebrow", "none"].includes(p.navGroup)) p3.push(`${norm(p.path)}: navGroup must be main | eyebrow | none`);
+for (const p of pages) if (p.navGroup === "main" && norm(p.path).split("/").filter(Boolean).length !== 2) p3.push(`${norm(p.path)}: navGroup: main is only for pages directly under /Home (top level of the main menu); deeper pages are none`);
 add("P3 every page has a purpose and proves a moment (or is a justified nav target)", "required", p3.length === 0, p3.join("; "));
 
 // P4
@@ -148,7 +150,17 @@ for (const p of pages) {
     if (typeof s !== "object" || s == null) { p5.push(`${path}: a section is not a map (position/component/variant/contentSource)`); continue; }
     const c = s.component;
     if (CHROME.has(c)) { p6.push(`${path}: ${c}`); continue; }
-    if (!reg.has(c)) { p5.push(`${path} #${s.position ?? "?"}: unknown component "${c}"`); continue; }
+    if (s.fit === "new" || s.new) {   // a NEW component: needs a spec instead of a registry id
+      const n = s.new ?? {}, at = `${path} #${s.position ?? "?"}`;
+      if (!/^[A-Z][A-Za-z0-9]+$/.test(n.name ?? "")) p5.push(`${at}: new component needs new.name (PascalCase, describes the function)`);
+      else if (!["simple", "list", "context"].includes(n.kind)) p5.push(`${at}: new.kind must be simple | list | context`);
+      else if (!arr(n.fields).length && !has(n.behaviour)) p5.push(`${at}: new component needs new.fields and/or new.behaviour`);
+      else if (!has(s.fitReason)) p5.push(`${at}: new component needs fitReason (what is missing in the registry)`);
+      else newComps.push({ name: n.name, kind: n.kind, cms: n.cms !== false, where: path, placement: n.placement ?? "body", reason: s.fitReason, behaviour: n.behaviour });
+      if (!["transcript", "site", "illustrative"].includes(s.contentSource)) p8.push(`${at}: contentSource`);
+      continue;
+    }
+    if (!reg.has(c)) { p5.push(`${path} #${s.position ?? "?"}: unknown component "${c}": a typo, or a NEW component? If the registry cannot do it set fit: new plus a new: spec (site-analyzer, step 4)`); continue; }
     const v = s.variant || "Default";
     if (reg.get(c).length && !reg.get(c).includes(v)) p5.push(`${path} #${s.position ?? "?"}: ${c} has no variant "${v}" (has ${reg.get(c).join(", ")})`);
     if (!["transcript", "site", "illustrative"].includes(s.contentSource)) p8.push(`${path} #${s.position ?? "?"}: contentSource`);
@@ -157,7 +169,7 @@ for (const p of pages) {
   else if (p.pageType === "page" && p.navTarget !== true && (secs.length < 2 || secs.length > 12)) p7.push(`${path}: ${secs.length} sections`);
   if (p.pageType === "landing" && secs.length) p7.push(`${path}: landing pages use template fields, not sections`);
 }
-add("P5 every section is a registry component with a real variant", "required", p5.length === 0, p5.slice(0, 6).join("; "));
+add("P5 every section is a registry component with a real variant, or a fully specified NEW component", "required", p5.length === 0, p5.slice(0, 6).join("; "));
 add("P6 header / footer are not sections (they come from the Page Design partials)", "required", p6.length === 0, p6.join("; ") + (p6.length ? " — remove them; the Page Design already renders them" : ""));
 add("P7 page sections: 2-12 per page (landing: none)", "recommended", p7.length === 0, p7.join("; "));
 // P9: information architecture mirrors the prospect's header menu (nav.json from nav-extract.mjs)
@@ -170,6 +182,30 @@ if (existsSync(navP)) {
   add("P9 every top-level item of the prospect's header menu has a page (navigation pages are fine)", "recommended", miss.length === 0, miss.length ? `no page for: ${miss.slice(0, 12).join(", ")}` : `${(nav?.items ?? []).length} menu items checked`);
 }
 add("P8 every section names its content source (transcript | site | illustrative)", "required", p8.length === 0, p8.slice(0, 6).join("; "));
+// P10: the fit check was done (reuse | variant | new) for every section; variants say why
+const p10 = [];
+for (const p of pages) for (const s of arr(p.sections)) {
+  if (typeof s !== "object" || s == null || CHROME.has(s.component)) continue;
+  if (!["reuse", "variant", "new"].includes(s.fit)) p10.push(`${norm(p.path)} #${s.position ?? "?"}: no fit (reuse | variant | new)`);
+  else if (s.fit === "variant" && !has(s.fitReason)) p10.push(`${norm(p.path)} #${s.position ?? "?"}: fit: variant needs fitReason (what differs)`);
+}
+add("P10 every section went through the fit check (reuse | variant | new)", "recommended", p10.length === 0, p10.slice(0, 6).join("; "));
+// P11: header-area features (site.chrome): eyebrow, search, language, login ... each with a delivery
+const chrome = arr(plan.site?.chrome), p11 = [];
+for (const f of chrome) {
+  if (typeof f !== "object" || f == null || !has(f.feature)) { p11.push("a site.chrome entry has no feature name"); continue; }
+  if (!["reuse", "hardcoded-variant", "new", "not-built"].includes(f.delivery)) { p11.push(`${f.feature}: delivery must be reuse | hardcoded-variant | new | not-built`); continue; }
+  if (f.delivery === "new") {
+    const n = f.new ?? {};
+    if (!/^[A-Z][A-Za-z0-9]+$/.test(n.name ?? "") || !["simple", "list", "context"].includes(n.kind) || !(arr(n.fields).length || has(n.behaviour)) || !has(f.fitReason)) p11.push(`${f.feature}: delivery new needs fitReason and new: {name, kind, fields|behaviour, placement}`);
+    else if (!["eyebrow-left", "eyebrow-right", "header-right", "footer"].includes(n.placement)) p11.push(`${f.feature}: new.placement must be eyebrow-left | eyebrow-right | header-right | footer`);
+    else newComps.push({ name: n.name, kind: n.kind, cms: n.cms === true, where: "(header area)", placement: n.placement, reason: f.fitReason, behaviour: n.behaviour });
+  }
+  if (f.delivery === "reuse" && !has(f.component)) p11.push(`${f.feature}: delivery reuse needs component`);
+  if (f.delivery === "not-built" && !has(f.fitReason)) p11.push(`${f.feature}: not-built needs fitReason (the gate shows it)`);
+}
+add("P11 site.chrome: every header-area feature has a delivery (reuse | hardcoded-variant | new | not-built)", "required", p11.length === 0, p11.slice(0, 6).join("; "));
+if (existsSync(join(demo, "nav.json")) && !chrome.length) add("P11b site.chrome is filled from the prospect's header (eyebrow, search, language, login, ...)", "recommended", false, "site.chrome is empty: list every header-area feature (site-analyzer, step 4)");
 
 // ── approval-screen tables ──
 const cell = (v) => String(v ?? "").replace(/\|/g, "\\|").replace(/\s+/g, " ").trim();
@@ -183,6 +219,15 @@ for (const p of pages) {
   if (p.pageType === "landing") { md += `Landing page: content is filled in the page's template fields.\n`; continue; }
   md += `| # | Component | Variant | Content from | Note |\n|---|---|---|---|---|\n`;
   for (const s of arr(p.sections)) { if ((s.variant || "Default") !== "Default") nonDefault++; md += `| ${cell(s.position)} | ${cell(s.component)} | ${cell(s.variant || "Default")} | ${cell(s.contentSource)} | ${cell(s.note)} |\n`; }
+}
+if (newComps.length) {
+  md += `\n## New components (not in the library: built for this demo)\n| Name | Kind | Editable in CMS | Where | Why new | Behaviour |\n|---|---|---|---|---|---|\n`;
+  for (const n of newComps) md += `| ${cell(n.name)} | ${n.kind} | ${n.cms ? "yes" : "no (hardcoded)"} | ${cell(n.where)} (${n.placement}) | ${cell(n.reason)} | ${cell(n.behaviour ?? "")} |\n`;
+}
+if (chrome.length) {
+  md += `\n## Header area\n| Feature | Delivery | Note |\n|---|---|---|\n`;
+  for (const f of chrome) md += `| ${cell(f.feature)} | ${cell(f.delivery)}${f.component ? ` (${cell(f.component)})` : ""}${f.new?.name ? ` (new ${cell(f.new.name)})` : ""} | ${cell(f.fitReason ?? f.note ?? "")} |\n`;
+  md += `\nHardcoded or not built elements are not editable in the CMS: say so at the gate.\n`;
 }
 md += `\n## Manual work to expect\n- Variants to set by hand in Pages (Agent API cannot set them): ${nonDefault}\n- Header and footer: built as partial designs + Page Designs during bootstrap (anything the API refuses is listed in manual-tasks.md)\n- Navigation pages (menu items no moment needs) are created as placeholders; nothing pauses the build for checks\n`;
 try { mkdirSync(demo, { recursive: true }); writeFileSync(join(demo, "site-plan.md"), md); } catch { /* report only */ }

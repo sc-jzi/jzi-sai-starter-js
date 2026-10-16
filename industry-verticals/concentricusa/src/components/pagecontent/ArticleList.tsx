@@ -201,7 +201,36 @@ const ArticleListGrid = (props: ArticleListComponentProps): JSX.Element => {
   );
 };
 
+/* ConcentricUSA variant: three-across story cards on the dark page */
+const ArticleListConcentricUSA = (props: ArticleListComponentProps): JSX.Element => {
+  const id = props.params?.RenderingIdentifier;
+  const newsItems = getNewsItems(props.fields?.items, parseInt(props.params?.NumberOfItems));
+
+  return (
+    <div
+      className={`component article-list variant-concentricusa ${props.params?.styles || ''}`}
+      id={id || undefined}
+    >
+      <div className="container">
+        <div className="article-list-grid">
+          {newsItems?.map((item) => (
+            <div className="article-grid-item" key={item.url}>
+              <Link href={item.url} className="wrapper-link">
+                <NextImage field={item.fields.Thumbnail} width={800} height={400} />
+                <h3>
+                  <Text field={item.fields.Title}></Text>
+                </h3>
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const Default = withDatasourceCheck()<ArticleListComponentProps>(ArticleListDefault);
 export const ThreeColumn = withDatasourceCheck()<ArticleListComponentProps>(ArticleListThreeColumn);
 export const Simplified = withDatasourceCheck()<ArticleListComponentProps>(ArticleListSimplified);
 export const Grid = withDatasourceCheck()<ArticleListComponentProps>(ArticleListGrid);
+export const ConcentricUSA = withDatasourceCheck()<ArticleListComponentProps>(ArticleListConcentricUSA);
