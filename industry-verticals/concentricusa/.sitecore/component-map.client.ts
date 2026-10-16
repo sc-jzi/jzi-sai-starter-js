@@ -19,6 +19,7 @@ import * as ColumnSplitter from 'src/components/pagestructure/ColumnSplitter';
 import * as TwoColumnCta from 'src/components/pagecontent/TwoColumnCta';
 import * as ThreeColumnCta from 'src/components/pagecontent/ThreeColumnCta';
 import * as Testimonials from 'src/components/pagecontent/Testimonials';
+import * as TestimonialCarousel from 'src/components/pagecontent/TestimonialCarousel';
 import * as StatsCounter from 'src/components/pagecontent/StatsCounter';
 import * as RichText from 'src/components/pagecontent/RichText';
 import * as Quote from 'src/components/pagecontent/Quote';
@@ -29,6 +30,7 @@ import * as ProjectDetails from 'src/components/pagecontent/ProjectDetails';
 import * as ParallaxBanner from 'src/components/pagecontent/ParallaxBanner';
 import * as PageBackground from 'src/components/pagecontent/PageBackground';
 import * as ImageGallery from 'src/components/pagecontent/ImageGallery';
+import * as Image from 'src/components/pagecontent/Image';
 import * as HeroBanner from 'src/components/pagecontent/HeroBanner';
 import * as Hero from 'src/components/pagecontent/Hero';
 import * as HeadingCta from 'src/components/pagecontent/HeadingCta';
@@ -91,6 +93,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['TwoColumnCta', { ...TwoColumnCta }],
   ['ThreeColumnCta', { ...ThreeColumnCta }],
   ['Testimonials', { ...Testimonials }],
+  ['TestimonialCarousel', { ...TestimonialCarousel }],
   ['StatsCounter', { ...StatsCounter }],
   ['RichText', { ...RichText }],
   ['Quote', { ...Quote }],
@@ -101,6 +104,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ParallaxBanner', { ...ParallaxBanner }],
   ['PageBackground', { ...PageBackground }],
   ['ImageGallery', { ...ImageGallery }],
+  ['Image', { ...Image }],
   ['HeroBanner', { ...HeroBanner }],
   ['Hero', { ...Hero }],
   ['HeadingCta', { ...HeadingCta }],

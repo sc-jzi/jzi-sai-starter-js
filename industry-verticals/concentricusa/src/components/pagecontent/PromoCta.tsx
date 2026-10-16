@@ -157,6 +157,45 @@ export const WithPlaceholderColumn = (props: PromoCtaProps): JSX.Element => {
   );
 };
 
+/* ConcentricUSA split: centered title, then image and rich text. No eyebrow, subtitle, links, or placeholder. */
+const ConcentricSplit = (props: PromoCtaProps, imageSide: 'left' | 'right'): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const showImage = Boolean(props.fields?.Image?.value?.src) || isPageEditing;
+
+  const image = showImage ? (
+    <div className="image-wrapper">
+      <NextImage field={props.fields?.Image} width={900} height={600} />
+    </div>
+  ) : null;
+
+  return (
+    <div
+      className={`component promo-cta variant-concentricusa-image-${imageSide} ${props.params?.styles || ''}`}
+      id={id || undefined}
+    >
+      <div className="container">
+        <h2 className="promo-title">
+          <Text field={props.fields?.Title} />
+        </h2>
+        <div className="promo-split">
+          {imageSide === 'left' ? image : null}
+          <div className="promo-copy">
+            <RichText field={props.fields?.Text} />
+          </div>
+          {imageSide === 'right' ? image : null}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export const ConcentricUSAImageLeft = (props: PromoCtaProps): JSX.Element =>
+  ConcentricSplit(props, 'left');
+export const ConcentricUSAImageRight = (props: PromoCtaProps): JSX.Element =>
+  ConcentricSplit(props, 'right');
+
 export const WithBackgroundImage = (props: PromoCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

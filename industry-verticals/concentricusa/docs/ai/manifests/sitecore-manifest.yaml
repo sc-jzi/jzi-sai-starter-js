@@ -1041,6 +1041,8 @@ components:
     componentMapKey: "FourColumnCta"
     variants:
       - "Default"
+      - "ConcentricUSA"
+      - "ConcentricUSAText"
   templates:
     datasource:
       name: "Four Column CTA"
@@ -1094,6 +1096,7 @@ components:
     pendingManual: []
   notes: 
     - "Datasource folder is the shared Promos folder."
+    - "2026-10-16 ConcentricUSA site variant ConcentricUSAText {A0EDDEEE-2C0F-4794-8BE1-C12C6D3E1A7E} under Presentation/Headless Variants/Four Column CTA. Outcomes rendering FieldNames points at it."
 - name: "HeadingCta"
   kind: "simple"
   category: "Page Content"
@@ -2311,6 +2314,86 @@ components:
     pendingManual: []
   notes: 
     - "Context item resolver {6CCCBCDE-5E95-44E4-AE66-CFE7D3A0589E}."
+
+- name: "TestimonialCarousel"
+  kind: "list"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-16T17:50:00Z"
+  updatedAt: "2026-10-16T17:50:00Z"
+  react:
+    filePath: "src/components/pagecontent/TestimonialCarousel.tsx"
+    componentMapKey: "TestimonialCarousel"
+    variants:
+      - "Default"
+  templates:
+    parent:
+      name: "Testimonial Carousel"
+      path: "/sitecore/templates/Project/Financial/Components/Testimonial Carousel"
+      itemId: "{72853524-6169-466C-8664-7435001E7D7E}"
+      baseTemplatesSet: true
+      standardValues: "{79050400-66FE-4955-94C8-6DD76CD9AFF3}"
+      linked: true
+    child:
+      name: "Testimonial Slide"
+      path: "/sitecore/templates/Project/Financial/Components/Testimonial Slide"
+      itemId: "{5582B7E4-9C1C-4923-9B2B-298175D053A4}"
+      baseTemplatesSet: true
+      standardValues: "{9502E1EC-68FD-43AA-9CD9-F404ED40BC61}"
+      linked: true
+      fields:
+        - name: "Image"
+          type: "Image"
+          itemId: "{BC036C37-0CA3-44A4-B52B-D3A0BA1458E7}"
+    folder:
+      name: "Testimonial Carousel Folder"
+      path: "/sitecore/templates/Project/Financial/Folders/Testimonial Carousel Folder"
+      itemId: "{AE207A91-212F-42DF-BAA8-33C9BED7CA15}"
+      standardValues: "{1E040512-D6F7-4842-9F0F-CA6FE75C526B}"
+      linked: true
+      insertOptionsSet: true
+    renderingParams:
+      name: "Testimonial Carousel"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Testimonial Carousel"
+      itemId: "{E1DC9FE7-A81B-4355-BDF6-2079FA97A256}"
+      baseTemplatesSet: true
+  datasourceFolder:
+    name: "Testimonial Carousel"
+    path: "/sitecore/content/manufacturing/ConcentricUSA/Data/Testimonial Carousel"
+    itemId: "{E6DA7ADD-E10B-4179-AF50-5EBEB4B78354}"
+    insertOptionsSet: true
+  rendering:
+    name: "Testimonial Carousel"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Testimonial Carousel"
+    itemId: "{BD2ADEF5-12F6-49DC-866A-E69DC1EA43BE}"
+    componentName: "TestimonialCarousel"
+    datasourceTemplatePath: "/sitecore/templates/Project/Financial/Components/Testimonial Carousel"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Testimonial Carousel Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Testimonial Carousel Folder']"
+    parametersTemplateId: "{E1DC9FE7-A81B-4355-BDF6-2079FA97A256}"
+    componentQuery: "query TestimonialCarousel($datasource: String!, $language: String!) { datasource: item(path: $datasource, language: $language) { children { results { id image: field(name: \"Image\") { jsonValue } } } } }"
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/manufacturing/ConcentricUSA/Presentation/Headless Variants/Testimonial Carousel"
+    containerId: "{1E0DF3A0-5F08-4524-9DF0-35F9E24301F4}"
+    variants:
+      - name: "Default"
+        itemId: "{F5ECA16F-990C-4125-A9F4-28307A269AC9}"
+  verification:
+    checkedAt: "2026-10-16T17:50:00Z"
+    passed:
+      - "Parent and child templates created with base templates"
+      - "Image field type is Image"
+      - "Standard values created"
+      - "Rendering created with componentName TestimonialCarousel"
+      - "ComponentQuery set"
+      - "Registered on ConcentricUSA Page Content available renderings by appending"
+      - "Example datasource and two slides created"
+    failed: []
+    pendingManual:
+      - "__Standard values and __Masters are silent-write fields"
+  notes:
+    - "Image-only carousel. Authors add Testimonial Slide children and set the Image field. Text is part of the image."
 
 lookups:
   - path: "/sitecore/content/Financial/ProsperaFinancial/Data"

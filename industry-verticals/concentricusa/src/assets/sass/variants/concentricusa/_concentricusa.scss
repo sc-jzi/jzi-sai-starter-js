@@ -213,9 +213,87 @@
   height: 220px;
 }
 
-.four-column-cta.variant-concentricusa img {
-  height: 160px;
-  object-fit: contain;
+.four-column-cta.variant-concentricusa {
+  .content-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: calc(var(--roundness) * 2);
+  }
+
+  img {
+    height: auto;
+    object-fit: contain;
+    transition: filter 0.35s ease;
+  }
+
+  a {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 1rem;
+    color: var(--text-colored);
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  .content-wrapper:hover {
+    img {
+      filter: blur(8px) brightness(2.4) grayscale(0.9);
+      transform: none;
+    }
+
+    a {
+      color: var(--text-colored);
+      opacity: 1;
+    }
+  }
+}
+
+.four-column-cta.variant-concentricusa-text {
+  padding: 56px 0;
+  background-color: var(--bg-saturated);
+  color: var(--text-body-inverted);
+
+  .content-wrapper {
+    overflow: visible;
+    border-radius: 0;
+    background: transparent;
+    text-align: center;
+  }
+
+  img {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto;
+    object-fit: contain;
+    border-radius: 0;
+  }
+
+  h2,
+  p {
+    color: var(--text-body-inverted);
+  }
+
+  h2 {
+    margin: 18px 0 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  p {
+    margin: 12px 0 0;
+    text-align: center;
+  }
 }
 
 .contact-form.variant-concentricusa {
@@ -311,6 +389,31 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+}
+
+.promo-cta.variant-concentricusa-image-left,
+.promo-cta.variant-concentricusa-image-right {
+  .promo-title {
+    margin: 0 0 40px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--text-body);
+  }
+
+  .promo-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  @media (max-width: 991px) {
+    .promo-split {
+      grid-template-columns: 1fr;
+    }
+  }
 }
 
 .footer.variant-concentricusa {

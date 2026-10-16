@@ -1,0 +1,77 @@
+.component.testimonial-carousel {
+  padding: 2.5rem 0;
+
+  .testimonial-frame {
+    position: relative;
+    padding: 10px;
+    background: var(--text-colored);
+    border-radius: calc(var(--roundness) * 3);
+  }
+
+  .testimonial-stage {
+    position: relative;
+    overflow: hidden;
+    min-height: 140px;
+    background: var(--bg-footer);
+    border-radius: calc(var(--roundness) * 2);
+  }
+
+  .testimonial-track {
+    display: flex;
+    transition: transform 0.6s ease;
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+
+  .testimonial-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .is-empty-hint {
+    display: block;
+    padding: 3rem 1rem;
+    color: var(--text-body-inverted);
+    text-align: center;
+  }
+
+  .testimonial-control {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--text-colored);
+    cursor: pointer;
+    transform: translateY(-50%);
+
+    svg {
+      width: 28px;
+      height: 28px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  }
+
+  .testimonial-control-prev {
+    left: 14px;
+  }
+
+  .testimonial-control-next {
+    right: 14px;
+  }
+}

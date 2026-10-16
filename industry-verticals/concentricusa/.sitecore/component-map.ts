@@ -19,6 +19,7 @@ import * as ColumnSplitter from 'src/components/pagestructure/ColumnSplitter';
 import * as TwoColumnCta from 'src/components/pagecontent/TwoColumnCta';
 import * as ThreeColumnCta from 'src/components/pagecontent/ThreeColumnCta';
 import * as Testimonials from 'src/components/pagecontent/Testimonials';
+import * as TestimonialCarousel from 'src/components/pagecontent/TestimonialCarousel';
 import * as StatsCounter from 'src/components/pagecontent/StatsCounter';
 import * as RichText from 'src/components/pagecontent/RichText';
 import * as Quote from 'src/components/pagecontent/Quote';
@@ -30,6 +31,7 @@ import * as PartialDesignDynamicPlaceholder from 'src/components/pagecontent/Par
 import * as ParallaxBanner from 'src/components/pagecontent/ParallaxBanner';
 import * as PageBackground from 'src/components/pagecontent/PageBackground';
 import * as ImageGallery from 'src/components/pagecontent/ImageGallery';
+import * as Image from 'src/components/pagecontent/Image';
 import * as HeroBanner from 'src/components/pagecontent/HeroBanner';
 import * as Hero from 'src/components/pagecontent/Hero';
 import * as HeadingCta from 'src/components/pagecontent/HeadingCta';
@@ -93,6 +95,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['TwoColumnCta', { ...TwoColumnCta, componentType: 'client' }],
   ['ThreeColumnCta', { ...ThreeColumnCta, componentType: 'client' }],
   ['Testimonials', { ...Testimonials, componentType: 'client' }],
+  ['TestimonialCarousel', { ...TestimonialCarousel, componentType: 'client' }],
   ['StatsCounter', { ...StatsCounter, componentType: 'client' }],
   ['RichText', { ...RichText, componentType: 'client' }],
   ['Quote', { ...Quote, componentType: 'client' }],
@@ -104,6 +107,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ParallaxBanner', { ...ParallaxBanner, componentType: 'client' }],
   ['PageBackground', { ...PageBackground, componentType: 'client' }],
   ['ImageGallery', { ...ImageGallery, componentType: 'client' }],
+  ['Image', { ...Image, componentType: 'client' }],
   ['HeroBanner', { ...HeroBanner, componentType: 'client' }],
   ['Hero', { ...Hero, componentType: 'client' }],
   ['HeadingCta', { ...HeadingCta, componentType: 'client' }],
