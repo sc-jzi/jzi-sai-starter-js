@@ -59,22 +59,6 @@ import * as Header from 'src/components/navigation/Header';
 import * as Footer from 'src/components/navigation/Footer';
 import * as Eyebrow from 'src/components/navigation/Eyebrow';
 import * as Breadcrumb from 'src/components/navigation/Breadcrumb';
-import * as SuggestionBlock from 'src/components/legacysearch/SuggestionBlock';
-import * as SortOrder from 'src/components/legacysearch/SortOrder';
-import * as SearchResultsComponent from 'src/components/legacysearch/SearchResultsComponent';
-import * as SearchProvider from 'src/components/legacysearch/SearchProvider';
-import * as SearchPagination from 'src/components/legacysearch/SearchPagination';
-import * as SearchFacets from 'src/components/legacysearch/SearchFacets';
-import * as ResultsPerPage from 'src/components/legacysearch/ResultsPerPage';
-import * as QuestionsAnswers from 'src/components/legacysearch/QuestionsAnswers';
-import * as QueryResultsSummary from 'src/components/legacysearch/QueryResultsSummary';
-import * as LegacySearchResults from 'src/components/legacysearch/LegacySearchResults';
-import * as LegacyPreviewSearch from 'src/components/legacysearch/LegacyPreviewSearch';
-import * as HomeHighlighted from 'src/components/legacysearch/HomeHighlighted';
-import * as Filter from 'src/components/legacysearch/Filter';
-import * as CardViewSwitcher from 'src/components/legacysearch/CardViewSwitcher';
-import * as ArticleHorizontalCard from 'src/components/legacysearch/ArticleHorizontalCard';
-import * as ArticleCard from 'src/components/legacysearch/ArticleCard';
 
 export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['BYOCWrapper', BYOCClientWrapper],
@@ -133,22 +117,6 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Footer', { ...Footer }],
   ['Eyebrow', { ...Eyebrow }],
   ['Breadcrumb', { ...Breadcrumb }],
-  ['SuggestionBlock', { ...SuggestionBlock }],
-  ['SortOrder', { ...SortOrder }],
-  ['SearchResultsComponent', { ...SearchResultsComponent }],
-  ['SearchProvider', { ...SearchProvider }],
-  ['SearchPagination', { ...SearchPagination }],
-  ['SearchFacets', { ...SearchFacets }],
-  ['ResultsPerPage', { ...ResultsPerPage }],
-  ['QuestionsAnswers', { ...QuestionsAnswers }],
-  ['QueryResultsSummary', { ...QueryResultsSummary }],
-  ['LegacySearchResults', { ...LegacySearchResults }],
-  ['LegacyPreviewSearch', { ...LegacyPreviewSearch }],
-  ['HomeHighlighted', { ...HomeHighlighted }],
-  ['Filter', { ...Filter }],
-  ['CardViewSwitcher', { ...CardViewSwitcher }],
-  ['ArticleHorizontalCard', { ...ArticleHorizontalCard }],
-  ['ArticleCard', { ...ArticleCard }],
 ]);
 
 export default componentMap;

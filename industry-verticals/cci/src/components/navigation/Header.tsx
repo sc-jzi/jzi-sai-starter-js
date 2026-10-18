@@ -67,7 +67,9 @@ export const CCI = (props: HeaderProps): JSX.Element => {
       <div className="cci-header-brand">
         <div className={`container container-${props.params?.ContainerWidth?.toLowerCase()}-fluid`}>
           <div className="cci-header-brand-inner">
-            <NextLink className="cci-header-logo" href="/" aria-label="Critical Components Infrastructure home" />
+              <NextLink className="cci-header-logo" href="/" aria-label="Critical Components Infrastructure home">
+                <NextImage field={props.fields?.LogoImage} width={290} height={116} className="cci-header-logo-image" />
+              </NextLink>
             <div className="cci-header-phones">
               <a href="tel:7709335511"><strong>MAIN:</strong> 770-933-5511</a>
               <a href="tel:8885224911"><strong>EMERGENCY:</strong> 888-522-4911</a>

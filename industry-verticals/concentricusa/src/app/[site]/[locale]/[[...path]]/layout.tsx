@@ -1,5 +1,4 @@
 import { setCachedPageParams } from '@sitecore-content-sdk/nextjs';
-import { SearchProvider } from 'components/legacysearch/SearchProvider';
 
 export default async function SiteLayout({
   children,
@@ -13,9 +12,7 @@ export default async function SiteLayout({
   setCachedPageParams({ locale, site });
 
   return (
-    <SearchProvider locale={locale}>
-      {children}
-    </SearchProvider>
+      children
   );
 }
 
