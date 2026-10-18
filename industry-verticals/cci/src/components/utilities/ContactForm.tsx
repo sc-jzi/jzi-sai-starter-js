@@ -55,8 +55,46 @@ export const Default = (props: ContactFormProps): JSX.Element => {
   );
 };
 
-export const CCI = (props: ContactFormProps): JSX.Element => (
-  <div className="variant-cci variant-cci-contact-form">
-    <Default {...props} />
-  </div>
-);
+export const CCI = (props: ContactFormProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const { fields } = props;
+
+  return (
+    <div
+      className={`component variant-cci cci-contact-form ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container cci-contact-form-row">
+        <div className="cci-contact-form-logo">
+          <NextImage field={fields?.BackgroundImage} width={600} height={241} />
+        </div>
+        <form className="cci-contact-form-form" onSubmit={(event) => event.preventDefault()}>
+          <h2>
+            <Text field={fields?.Title} />
+          </h2>
+          <div className="cci-contact-form-grid">
+            <input
+              type="email"
+              placeholder={fields?.EmailLabel?.value}
+              aria-label={fields?.EmailLabel?.value}
+            />
+            <input
+              type="text"
+              placeholder={fields?.SubjectLabel?.value}
+              aria-label={fields?.SubjectLabel?.value}
+            />
+          </div>
+          <textarea
+            rows={5}
+            placeholder={fields?.MessageLabel?.value}
+            aria-label={fields?.MessageLabel?.value}
+          />
+          <button type="submit" className="cci-button">
+            {fields?.ButtonLabel?.value || 'Submit'}
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};

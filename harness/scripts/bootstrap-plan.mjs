@@ -47,6 +47,7 @@ for (const p of arr(plan.site?.pages)) for (const s of arr(p.sections)) {
   const u = used.get(name) ?? { variants: new Set(["Default"]), pages: new Set() };
   u.variants.add(s.variant || "Default"); u.pages.add(p.path); used.set(name, u);
   u.base = new Set([...(u.base ?? []), s.variant || "Default"]);
+  if (s.look) { u.looks = new Set([...(u.looks ?? []), clientVariant + String(s.look)]); }   // one client variant per distinct look (ImageLeft/ImageRight)
 }
 
 for (const f of arr(plan.site?.chrome)) if (f?.delivery === "new" && f.new?.name) {
@@ -59,7 +60,7 @@ for (const [name, u] of used) {
   const c = byName.get(name);
   const mv = arr(c.headlessVariants?.variants).map((v) => v.name);
   const unknown = [...u.variants].filter((v) => mv.length && !mv.includes(v));
-  u.variants.add(clientVariant);   // created by Variant Definition in the site; the code is written by sitecore-create-demo-variants (phase 5.5)
+  u.variants.add(clientVariant); for (const l of u.looks ?? []) u.variants.add(l);   // created by Variant Definition in the site; the code is written by sitecore-create-demo-variants (phase 5.5)
   if (c.status !== "complete") warnings.push(`${name}: manifest status is "${c.status}" — not reusable yet`);
   if (unknown.length) warnings.push(`${name}: variants ${unknown.join(", ")} are not in the manifest/TSX (have ${mv.join(", ")})`);
   const ctxOnly = !c.templates?.datasource;

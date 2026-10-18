@@ -122,8 +122,64 @@ export const Default = (props: FourColumnCtaProps): JSX.Element => {
   );
 };
 
-export const CCI = (props: FourColumnCtaProps): JSX.Element => (
-  <div className="variant-cci variant-cci-four-column-cta">
-    <Default {...props} />
-  </div>
-);
+type CciCardProps = {
+  title: Field<string>;
+  text: Field<string>;
+  link: LinkField;
+  isPageEditing: boolean;
+};
+
+const CciCard = ({ title, text, link, isPageEditing }: CciCardProps): JSX.Element => {
+  const content = (
+    <>
+      <h2>
+        <Text field={title} />
+      </h2>
+      <p>
+        <Text field={text} />
+      </p>
+    </>
+  );
+
+  return (
+    <div className="cci-four-column-cta-card">
+      {link?.value?.href && !isPageEditing ? (
+        <Link field={link} className="cci-four-column-cta-link">
+          {content}
+        </Link>
+      ) : (
+        content
+      )}
+    </div>
+  );
+};
+
+export const CCI = (props: FourColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const { fields } = props;
+
+  const cards = [
+    { title: fields?.Title1, text: fields?.Text1, link: fields?.Link1 },
+    { title: fields?.Title2, text: fields?.Text2, link: fields?.Link2 },
+    { title: fields?.Title3, text: fields?.Text3, link: fields?.Link3 },
+    { title: fields?.Title4, text: fields?.Text4, link: fields?.Link4 },
+  ];
+
+  return (
+    <div
+      className={`component variant-cci cci-four-column-cta ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container">
+        <div className="cci-four-column-cta-row">
+          {cards.map((card, index) => (
+            <CciCard key={index} {...card} isPageEditing={isPageEditing} />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};

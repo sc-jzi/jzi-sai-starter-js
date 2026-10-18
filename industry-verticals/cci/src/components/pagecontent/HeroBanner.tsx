@@ -84,8 +84,42 @@ export const Default = (props: HeroBannerProps): JSX.Element => {
   );
 };
 
-export const CCI = (props: HeroBannerProps): JSX.Element => (
-  <div className="variant-cci variant-cci-hero-banner">
-    <Default {...props} />
-  </div>
-);
+export const CCI = (props: HeroBannerProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div
+      className={`component variant-cci cci-hero-banner ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <NextImage
+        field={props.fields?.Image}
+        className="cci-hero-banner-image"
+        width={1920}
+        height={900}
+        priority
+      />
+      <div className="container cci-hero-banner-content">
+        {(isPageEditing || props.fields?.Tagline?.value) && (
+          <p className="cci-hero-banner-tagline">
+            <Text field={props.fields?.Tagline} />
+          </p>
+        )}
+        {(isPageEditing || props.fields?.Title?.value) && (
+          <h1>
+            <Text field={props.fields?.Title} />
+          </h1>
+        )}
+        {(isPageEditing || props.fields?.Text?.value) && (
+          <RichText field={props.fields?.Text} className="cci-hero-banner-text" />
+        )}
+        {(isPageEditing || props.fields?.Cta1?.value?.href) && (
+          <Link field={props.fields?.Cta1} className="cci-button" />
+        )}
+      </div>
+    </div>
+  );
+};

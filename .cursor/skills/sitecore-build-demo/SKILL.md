@@ -544,7 +544,7 @@ This phase bridges the gap between "same colors" (Phase 4 site theme) and "looks
 
 **What it produces:**
 1. A `variant-specs.yaml` file with per-section visual analysis
-2. A new named export in each component's TSX file (named after the client, e.g., `PeopleCert`)
+2. A new named export in each component's TSX file (named after the client, e.g., `AcmeCorp`)
 3. Variant Definition items in Sitecore (one per component)
 4. Updated variant checklist referencing the custom variant names
 

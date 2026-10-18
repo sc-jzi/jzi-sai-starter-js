@@ -89,5 +89,5 @@ The user can type either:
 or:
 
 ```text
-Deploy my Akamai site to Vercel.
+Deploy my <customer> site to Vercel.
 ```

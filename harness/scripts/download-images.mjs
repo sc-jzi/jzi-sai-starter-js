@@ -8,9 +8,9 @@
  *
  * Usage:
  *   node docs/ai/scripts/download-images.mjs \
- *     --content-map docs/ai/demos/peoplecert/content-map.yaml \
- *     --theme-dir docs/ai/themes/peoplecert \
- *     --output docs/ai/demos/peoplecert/images
+ *     --content-map docs/ai/demos/acme-corp/content-map.yaml \
+ *     --theme-dir docs/ai/themes/acme-corp \
+ *     --output docs/ai/demos/acme-corp/images
  *
  * Options:
  *   --content-map   Path to the content-map.yaml (required)

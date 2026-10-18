@@ -191,8 +191,41 @@ export const WithBackgroundImage = (props: PromoCtaProps): JSX.Element => {
   );
 };
 
+const CciPromoBand = ({
+  imagePosition,
+  ...props
+}: PromoCtaProps & { imagePosition: 'left' | 'right' }): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div
+      className={`component variant-cci cci-promo-cta cci-promo-cta-image-${imagePosition} ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="container cci-promo-cta-row">
+        <div className="cci-promo-cta-text">
+          {(isPageEditing || props.fields?.Title?.value) && (
+            <h2>
+              <Text field={props.fields?.Title} />
+            </h2>
+          )}
+          {(isPageEditing || props.fields?.Text?.value) && <RichText field={props.fields?.Text} />}
+        </div>
+        <div className="cci-promo-cta-image">
+          <NextImage field={props.fields?.Image} width={900} height={900} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export const CCI = (props: PromoCtaProps): JSX.Element => (
-  <div className="variant-cci variant-cci-promo-cta">
-    <Default {...props} />
-  </div>
+  <CciPromoBand {...props} imagePosition="right" />
+);
+
+export const CCIImageLeft = (props: PromoCtaProps): JSX.Element => (
+  <CciPromoBand {...props} imagePosition="left" />
 );

@@ -93,13 +93,34 @@ try {
       const logoEl = [...candidate.querySelectorAll("img, svg")].filter(visible).filter((x) => x.getBoundingClientRect().left < vw * 0.4 && x.getBoundingClientRect().width > 40).sort((p, q) => p.getBoundingClientRect().left - q.getBoundingClientRect().left)[0];
       const lr = logoEl ? logoEl.getBoundingClientRect() : null;
       const hcs = getComputedStyle(candidate);
+      // Colour bands down the left edge: the logo row and the menu row are often stacked in ONE <header> with different backgrounds and heights.
+      const bandsAt = []; { let cur = null; for (let y = 0; y < 420; y += 2) { const els = document.elementsFromPoint(6, y + 1); const c = els.length ? solidBg(els[0]).color : "rgb(255, 255, 255)"; if (cur && cur.color === c) cur.bottom = y + 2; else { cur = { top: y, bottom: y + 2, color: c }; bandsAt.push(cur); } } }
+      const bandOf = (yc) => bandsAt.find((b) => yc >= b.top && yc < b.bottom);
+      // The logo as DISPLAYED: many sites hide the <img> and paint another file as a CSS background (::before) — e.g. a white logo on a coloured band.
+      const urlOf = (v) => { const m = String(v).match(/^url\(\s*(["']?)(.*)\1\s*\)$/); if (!m) return null; try { return new URL(m[2], location.href).href; } catch { return m[2]; } };
+      let logoInfo = null, logoRect = null;
+      for (const a of [...new Set([...candidate.querySelectorAll("a"), ...document.querySelectorAll("header a")])]) {
+        const r = a.getBoundingClientRect(); if (r.width <= 0 || r.height <= 0 || r.left > vw * 0.4 || r.top > 300) continue;
+        const img = a.querySelector("img"), imgSrc = img ? (img.currentSrc || img.src) : null;
+        const imgHidden = img ? (() => { const st = getComputedStyle(img), ir = img.getBoundingClientRect(); return st.display === "none" || st.visibility === "hidden" || parseFloat(st.opacity) === 0 || ir.width < 2 || ir.height < 2; })() : false;
+        const css = ["::before", "::after"].map((pp) => urlOf(getComputedStyle(a, pp).backgroundImage)).find(Boolean) || urlOf(getComputedStyle(a).backgroundImage);
+        if (!imgSrc && !css) continue;
+        const shown = css && (!imgSrc || imgHidden) ? css : imgSrc;
+        logoInfo = { url: shown, source: shown === css ? "css-background" : "img", imgSrc, cssBackground: css || null, differs: !!(imgSrc && css && imgSrc !== css) };
+        logoRect = r; break;
+      }
+      const lg = lr || logoRect;
       const hasChevron = links.some((l) => l.querySelector("svg, i, [class*=chevron], [class*=arrow], [class*=caret]") || /after|before/.test("") || (l.parentElement && l.parentElement.querySelector(":scope > svg, :scope > i, :scope > button[aria-expanded]")) || getComputedStyle(l, "::after").content !== "none" && getComputedStyle(l, "::after").content !== "normal");
       const rs = links.map((l) => l.getBoundingClientRect());
       out.header = {
         band: { background: hex(hb.color), height: Math.round(Math.min(hr.bottom, hr.top + hr.height) - bandTop), borderBottom: hcs.borderBottomWidth !== "0px" ? { width: num(hcs.borderBottomWidth), color: hex(hcs.borderBottomColor) } : null, boxShadow: hcs.boxShadow !== "none" ? hcs.boxShadow : null },
-        logo: lr ? { width: Math.round(lr.width), height: Math.round(lr.height), left: Math.round(lr.left) } : null,
+        logo: lg ? { width: Math.round(lg.width), height: Math.round(lg.height), left: Math.round(lg.left), ...(logoInfo || {}) } : null,
         nav: { ...text(cs), gap: gaps(links), hasChevron, count: links.length, groupLeft: Math.round(Math.min(...rs.map((r) => r.left))), groupRight: Math.round(Math.max(...rs.map((r) => r.right))), contrastOnBand: contrast(cs.color, hb.color), paddingX: num(cs.paddingLeft), paddingY: num(cs.paddingTop) },
       };
+      { const lb = lg ? bandOf(lg.top + lg.height / 2) : null, mb = bandOf(rs[0].top + rs[0].height / 2);
+        if (lb && lb.bottom - lb.top >= 20) { out.header.band.height = lb.bottom - lb.top; out.header.band.background = hex(lb.color); }
+        if (lb && mb && mb !== lb) out.header.menuBand = { background: hex(mb.color), height: mb.bottom - mb.top };
+        out.header.bands = bandsAt.filter((b) => b.bottom - b.top >= 6).map((b) => ({ top: b.top, height: b.bottom - b.top, background: hex(b.color) })); }
       out.clipHeight = Math.min(400, Math.round(Math.max(hr.bottom, out.eyebrow ? out.eyebrow.bar.top + out.eyebrow.bar.height : 0)) + 10);
     } else out.header = null;
     return out;
@@ -114,6 +135,7 @@ try {
   const e = res.eyebrow, h = res.header;
   console.log(`✅ ${rootRel(join(demo, outName))} (+ ${pngName})`);
   console.log(e ? `Eyebrow bar: bg ${e.bar.background}, height ${e.bar.height}px; links ${e.links.fontSize}px/${e.links.fontWeight} ${e.links.textTransform} ${e.links.color} (contrast ${e.links.contrastOnBar}), gap ${e.links.gap}px; phone ${e.phone ? "yes" : "no"}, search ${e.search ? "yes" : "no"}, CTA ${e.cta ? `"${e.cta.label}" ${e.cta.background}` : "no"}` : "Eyebrow bar: NOT FOUND (no eyebrow links located)");
+  if (h?.logo?.url) console.log(`Logo as displayed: ${h.logo.source} ${h.logo.url}${h.logo.differs ? `\n⚠ the page's <img> points to a DIFFERENT file (${h.logo.imgSrc}); the site paints ${h.logo.cssBackground} instead. Use the displayed one, and list "logo differs: <img> vs CSS" in manual-tasks.md` : ""}`);
   console.log(h ? `Header band: bg ${h.band.background}, height ${h.band.height}px; logo ${h.logo ? `${h.logo.width}x${h.logo.height}` : "not found"}; nav links ${h.nav.fontSize}px/${h.nav.fontWeight} ${h.nav.textTransform} ${h.nav.color}, gap ${h.nav.gap}px, chevron ${h.nav.hasChevron}` : "Header band: NOT FOUND (no main-menu links located)");
   if (!e && !h) process.exitCode = 3;
   if (flags.compare) {

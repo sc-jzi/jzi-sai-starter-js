@@ -86,7 +86,7 @@ site:
   collectionMode: ""      # new | existing
   template: ""            # site template NAME, e.g. Empty
   siteName: ""
-  variantName: ""      # PascalCase client name used for EVERY component's pixel-matching variant (e.g. ConcentricUSA). Empty = derived from client.name. Section `variant:` below is the BASE variant the code starts from.
+  variantName: ""      # PascalCase client name used for EVERY component's pixel-matching variant (e.g. AcmeCorp). Empty = derived from client.name. Section `variant:` below is the BASE variant the code starts from.
   chrome:
     # Header-area features of the prospect's page and how each is delivered (site-analyzer step 4): reuse | hardcoded-variant | new | not-built
     - { feature: eyebrow-links-phone-search-cta, delivery: hardcoded-variant, note: "client Eyebrow variant from header-kit.mjs; not editable in the CMS" }
@@ -107,6 +107,7 @@ site:
         - { position: 1, component: hero-banner, fit: reuse, variant: Default, contentSource: site, note: "Campaign headline" }
         - { position: 2, component: three-column-cta, fit: variant, fitReason: "icons instead of images", variant: WithIcons, contentSource: transcript, note: "Speaks to c1" }
         - { position: 3, component: cta-banner, fit: reuse, variant: Default, contentSource: transcript }
+        # look: optional PascalCase. Sections of the same component that look different on the prospect site (image left vs right) get their own client variant <variantName><look>, e.g. look: ImageLeft -> AcmeCorpImageLeft
         # fit says why this component: reuse = fits as is | variant = same function/fields, different look (fitReason says what differs) | new = a function or field is missing (needs a new: spec)
         # - { position: 4, component: branch-finder, fit: new, contentSource: site, fitReason: "Branch finder with postcode search; no registry component searches", new: { name: BranchFinder, kind: list, cms: true, fields: [Title, Text], children: [Name, Address, Phone], behaviour: "Postcode filters the list", placement: body } }
     - path: /Home/products

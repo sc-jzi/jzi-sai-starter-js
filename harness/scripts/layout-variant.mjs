@@ -9,7 +9,10 @@
  *     --xml-file - reads stdin. Other s:par parameters (DynamicPlaceholderId, ...) are preserved.
  *  2. Authoring GraphQL route — reads the field, patches it, writes it back (needs SITECORE_CM_HOST + the automation client in harness/.env.local):
  *       node harness/scripts/layout-variant.mjs apply --item "{partial or page item id}" --variant "{GUID}" (--uid ... | --rendering-id ... [--ph ...]) [--language en] [--dry-run]
- *     Looks at "__Final Renderings" and "__Renderings", patches whichever contains the rendering, saves the original under <cwd>/layout-backup-<item>.xml first.
+ *  3. Plain field write (display names; same auth as 2):
+ *       node harness/scripts/layout-variant.mjs set-field --item "{id}" --field "__Display name" --value "Contact Us" [--language en] [--dry-run]
+ *     prints OK when the read-back matches (exit 1 otherwise).
+ *     (apply) Looks at "__Final Renderings" and "__Renderings", patches whichever contains the rendering, saves the original under <cwd>/layout-backup-<item>.xml first.
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { ENV, parseArgs, die } from "./_lib.mjs";
@@ -44,14 +47,14 @@ async function main() {
   const cmd = pos[0];
   const multi = (name) => { const out = []; const a = process.argv.slice(2); a.forEach((x, i) => { if (x === `--${name}` && a[i + 1]) out.push(a[i + 1]); }); return out; };
   const opts = { variant: flags.variant, ds: flags.ds, uid: flags.uid, renderingId: flags["rendering-id"], ph: flags.ph, params: multi("param") };
-  if (!opts.uid && !opts.renderingId) die("Pass --uid or --rendering-id");
+  if (cmd !== "set-field" && !opts.uid && !opts.renderingId) die("Pass --uid or --rendering-id");
   if (cmd === "patch") {
     const src = flags["xml-file"]; if (!src) die("--xml-file <file|-> required");
     const xml = src === "-" ? readFileSync(0, "utf8") : readFileSync(src, "utf8");
     try { process.stdout.write(patchVariant(xml, opts)); } catch (e) { die(e.message, 1); }
     return;
   }
-  if (cmd !== "apply") die("Usage: layout-variant.mjs patch|apply (see header of this file)");
+  if (cmd !== "apply" && cmd !== "set-field") die("Usage: layout-variant.mjs patch|apply|set-field (see header of this file)");
   const item = flags.item, lang = flags.language && flags.language !== true ? flags.language : ENV.SITECORE_DEFAULT_LANGUAGE || "en";
   const cm = String(ENV.SITECORE_CM_HOST || "").replace(/\/+$/, "");
   if (!item) die("--item required");
@@ -63,7 +66,17 @@ async function main() {
   const jwt = (await tr.json()).access_token, url = `${cm}/sitecore/api/authoring/graphql/v1/`;
   const gql = async (query, variables) => { const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${jwt}` }, body: JSON.stringify({ query, variables }) }); const j = await r.json().catch(() => ({})); if (!r.ok || j.errors) die(`GraphQL ${r.status}: ${JSON.stringify(j.errors || j).slice(0, 600)}`, 1); return j.data; };
   const data = await gql(`query($id:ID!,$lang:String!){ item(where:{itemId:$id,database:"master",language:$lang}){ itemId version fields(ownFields:true){ nodes{ name value } } } }`, { id: norm(item).toUpperCase(), lang });
-  const it = data.item; if (!it) die("item not found");
+  const it = data.item; if (!it) die(`item not found in language "${lang}"`);
+  if (cmd === "set-field") {   // plain field write (e.g. "__Display name") on the item's latest version in --language
+    const fname = flags.field, fval = flags.value;
+    if (!fname || fval === undefined || fval === true) die("set-field needs --field <name> --value <text>");
+    if (flags["dry-run"]) { console.log(`DRY RUN — would set "${fname}" = "${fval}" on ${item} (${lang}, v${it.version})`); return; }
+    await gql(`mutation($id:ID!,$lang:String!,$ver:Int,$name:String!,$value:String!){ updateItem(input:{itemId:$id,database:"master",language:$lang,version:$ver,fields:[{name:$name,value:$value}]}){ item{ itemId } } }`, { id: norm(item).toUpperCase(), lang, ver: it.version, name: fname, value: String(fval) });
+    const back = await gql(`query($id:ID!,$lang:String!){ item(where:{itemId:$id,database:"master",language:$lang}){ fields(ownFields:true){ nodes{ name value } } } }`, { id: norm(item).toUpperCase(), lang });
+    const got = back.item?.fields?.nodes?.find((f) => f.name.toLowerCase() === String(fname).toLowerCase())?.value;
+    console.log(got === String(fval) ? `OK: "${fname}" = "${got}" (${lang})` : `WRITTEN but read-back shows "${got ?? "(empty)"}": check the language/version of the item`);
+    process.exit(got === String(fval) ? 0 : 1);
+  }
   const fields = it.fields.nodes.filter((f) => /^__(Final )?Renderings$/.test(f.name) && f.value);
   let done = null;
   for (const f of fields) { try { done = { name: f.name, before: f.value, after: patchVariant(f.value, opts) }; break; } catch { /* try next field */ } }

@@ -12,6 +12,7 @@ export function parseYaml(text) {
       return o;
     }
     if (/^\[.*\]$/.test(v)) return v.slice(1, -1).split(",").map((x) => scalar(x)).filter((x) => x !== "");
+    { const qm = v.match(/^("(?:[^"\\]|\\.)*"|'(?:[^']|'')*')\s+#.*$/); if (qm) v = qm[1]; }   // quoted value followed by a comment
     if (/^".*"$/.test(v)) { try { return JSON.parse(v); } catch { return v.slice(1, -1); } }
     if (/^'.*'$/.test(v)) return v.slice(1, -1).replace(/''/g, "'");
     if (v === "true") return true; if (v === "false") return false; if (v === "null" || v === "~") return null;

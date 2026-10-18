@@ -31,7 +31,7 @@ Read these files before analyzing:
 
 ### Step 2 — Inspect the screenshots
 
-Look at the screenshots top-to-bottom. For each visually distinct section of the page, identify:
+If `sections.json` / `sections.md` exist (`section-capture.mjs`) read them FIRST: they hold the real section split, element order, colours, background and images per section; the SE's crops in `<demo folder>/sections/` are the visual truth where they exist. Then, looking at the screenshots top-to-bottom, for each visually distinct section of the page, identify:
 - **Position** — order from top of page (1, 2, 3...)
 - **What it looks like** — describe the visual pattern in 1-2 sentences
 - **Content visible** — headings, text, images, buttons, links you can read
@@ -292,6 +292,8 @@ Do not force a section with several behaviours into one component: split it or m
 - **Hero with accordion/category navigation:** `PromoCta` (`WithBackgroundImage`) for the visual + `Accordion` or `Questions` below it, or mark custom.
 - **Carousels:** `Carousel` for hero-sized rotating slides; mid-page card carousels become `ThreeColumnCta`/`FourColumnCta` with a note ("live site uses a carousel; template renders columns").
 - **Asymmetric layouts** (one large image with smaller tiles): `ProjectList` variant `Mosaic` if it shows projects, otherwise `matchConfidence: "low"` or custom.
+- **A band with two unrelated blocks side by side** (a logo next to a contact form): plan it as a container with a placeholder column (`TwoColumnCta`, or `PromoCta` `WithPlaceholderColumn`) holding nested components, or as a NEW component. The background belongs to the outer wrapper so both halves get it.
+- **Same component, different look** (e.g. a prospect that alternates image left/right on a Promo CTA): set `look: ImageLeft` / `look: ImageRight` on those sections (PascalCase). Only when the measurements really show distinct looks; otherwise leave `look` out. Each distinct look becomes its own client variant `<Client><Look>`; the section `variant:` stays the base.
 - **Columns holding other components:** `TwoColumnCta` and `PromoCta` (`WithPlaceholderColumn`) have a placeholder; nest only when the plan says so.
 
 ### Confidence levels

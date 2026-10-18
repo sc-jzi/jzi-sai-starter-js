@@ -43,6 +43,7 @@ function parseYaml(text) {
       return o;
     }
     if (/^\[.*\]$/.test(v)) return v.slice(1, -1).split(",").map((x) => scalar(x)).filter((x) => x !== "");
+    { const qm = v.match(/^("(?:[^"\\]|\\.)*"|'(?:[^']|'')*')\s+#.*$/); if (qm) v = qm[1]; }   // quoted value followed by a comment
     if (/^".*"$/.test(v)) { try { return JSON.parse(v); } catch { return v.slice(1, -1); } }
     if (/^'.*'$/.test(v)) return v.slice(1, -1).replace(/''/g, "'");
     if (v === "true") return true; if (v === "false") return false; if (v === "null" || v === "~") return null;
@@ -161,6 +162,7 @@ for (const p of pages) {
       continue;
     }
     if (!reg.has(c)) { p5.push(`${path} #${s.position ?? "?"}: unknown component "${c}": a typo, or a NEW component? If the registry cannot do it set fit: new plus a new: spec (site-analyzer, step 4)`); continue; }
+    if (s.look != null && !/^[A-Z][A-Za-z0-9]*$/.test(String(s.look))) p5.push(`${path} #${s.position ?? "?"}: look "${s.look}" must be PascalCase alphanumeric (ImageLeft)`);
     const v = s.variant || "Default";
     if (reg.get(c).length && !reg.get(c).includes(v)) p5.push(`${path} #${s.position ?? "?"}: ${c} has no variant "${v}" (has ${reg.get(c).join(", ")})`);
     if (!["transcript", "site", "illustrative"].includes(s.contentSource)) p8.push(`${path} #${s.position ?? "?"}: contentSource`);

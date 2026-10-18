@@ -2,7 +2,7 @@
 /**
  * Static gate: every variant that a Variant Definition exists (or will exist) for must also exist IN THE CODE of the customer's app.
  * A variant that is selected in Sitecore but has no `export const <Name>` in the component file renders as an orange box
- * "Content SDK component is missing React implementation" (Concentric run 2: Features with the variant ConcentricUSA).
+ * "Content SDK component is missing React implementation" (an earlier demo run: Features with the variant AcmeCorp).
  *
  *   node harness/scripts/variants-verify.mjs --customer <customer> [--fix] [--strict]
  *

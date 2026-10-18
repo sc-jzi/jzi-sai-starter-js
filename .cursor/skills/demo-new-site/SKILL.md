@@ -25,6 +25,6 @@ Called by `sitecore-demo-from-transcript` (Phase T5 step 1). Replaces the old du
 9. Editing host: do this LAST, in Phase T6 (not here), so a login prompt or CLI problem can never interrupt the build. `node harness/scripts/editing-host.mjs --customer <customer>` (dry run), then `--apply`. It runs the Sitecore CLI `cloud editinghost create` for the name in `xmcloud.build.json`. The script always exits 0; if it prints `MANUAL TASK`, copy those steps into `manual-tasks.md` and continue (no CLI, not logged in, environment type not supported are all normal). The host builds from the linked repo, so the SE must push the code; the first build is where problems show.
 10. Manual for the SE (append to `manual-tasks.md`, never ask): Edge context ids / editing secret if `new-site` reported them empty, `git push`, publishing item ids.
 11. Update `demo-progress.yaml` (`siteCreated`, collection, site name, ids). Continue with `sitecore-site-bootstrap`.
-12. Thumbnail: done at the END of `demo-build-pages` once the homepage exists (see that skill). The site card in SitecoreAI shows it.
+12. Thumbnails: NOT uploaded by the run. `manual-tasks.md` always lists "Add site thumbnail", "Add partial thumbnails" and "Update layout icons (only if a NEW component was created, rather than new variants)" (see `demo-build-pages` step 8).
 
 API reference: `harness/reference/sitecoreai-apis.md` (Sites API: https://api-docs.sitecore.com/sai/sites-api). Check it if a call fails or Sitecore has changed an endpoint.
