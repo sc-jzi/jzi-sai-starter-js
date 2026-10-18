@@ -24,33 +24,98 @@ const CONCENTRIC_EYEBROW_LINKS = [
   { label: 'Contact Us', href: '/contact-us' },
 ];
 
-/* ConcentricUSA variant: black utility bar with fixed links and the language label */
+/* ConcentricUSA variant: black utility bar with fixed links, language, and preview search */
 export const ConcentricUSA = (props: EyebrowProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const searchPanelRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isSearchOpen) return;
+
+    const handlePointerDown = (event: PointerEvent) => {
+      const target = event.target as Node;
+
+      if (searchPanelRef.current && !searchPanelRef.current.contains(target)) {
+        setIsSearchOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsSearchOpen(false);
+      }
+    };
+
+    document.addEventListener('pointerdown', handlePointerDown);
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isSearchOpen]);
 
   return (
-    <div
-      className={`component eyebrow variant-concentricusa ${props.params.styles?.trimEnd() ?? ''}`}
-      id={id || undefined}
-    >
-      <div className="container">
-        <nav className="eyebrow-bar" aria-label="Utility">
-          <ul className="eyebrow-links">
-            {CONCENTRIC_EYEBROW_LINKS.map((link) => (
-              <li key={link.href}>
-                <a href={link.href}>{link.label}</a>
-              </li>
-            ))}
-          </ul>
-          <button type="button" className="eyebrow-language" aria-label="Language: English">
-            English
-            <svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor">
-              <path d="m3 6 5 5 5-5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </button>
-        </nav>
+    <>
+      <div
+        className={`component eyebrow variant-concentricusa ${props.params.styles?.trimEnd() ?? ''}`}
+        id={id || undefined}
+      >
+        <div className="container">
+          <nav className="eyebrow-bar" aria-label="Utility">
+            <ul className="eyebrow-links">
+              {CONCENTRIC_EYEBROW_LINKS.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+            <button type="button" className="eyebrow-language" aria-label="Language: English">
+              English
+              <svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor">
+                <path d="m3 6 5 5 5-5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              className="eyebrow-search"
+              aria-label="Open search"
+              aria-expanded={isSearchOpen}
+              aria-controls="site-search-panel"
+              onClick={() => setIsSearchOpen(true)}
+            >
+              <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <circle cx="11" cy="11" r="7" strokeWidth="2" />
+                <path d="m16.25 16.25 4 4" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            </button>
+          </nav>
+        </div>
       </div>
-    </div>
+
+      {isSearchOpen && (
+        <>
+          <button
+            type="button"
+            aria-label="Close search"
+            onClick={() => setIsSearchOpen(false)}
+            className="eyebrow-search-backdrop"
+          />
+          <div
+            id="site-search-panel"
+            ref={searchPanelRef}
+            role="search"
+            className="eyebrow-search-panel"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="container">
+              <PreviewSearch isOpen={isSearchOpen} setIsSearchOpen={setIsSearchOpen} />
+            </div>
+          </div>
+        </>
+      )}
+    </>
   );
 };
 
