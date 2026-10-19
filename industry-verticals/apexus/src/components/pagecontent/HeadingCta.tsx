@@ -151,3 +151,36 @@ export const Centered = (props: HeadingCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* Apexus variant: centered page title and body, square cyan button */
+export const Apexus = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component heading-cta variant-apexus ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="heading-inner">
+        {(isPageEditing || props.fields?.Eyebrow?.value) && (
+          <p className="heading-eyebrow">
+            <Text field={props.fields?.Eyebrow} />
+          </p>
+        )}
+        {(isPageEditing || props.fields?.Heading?.value) && (
+          <h1>
+            <Text field={props.fields?.Heading} />
+          </h1>
+        )}
+        {(isPageEditing || props.fields?.Text?.value) && (
+          <p className="heading-text">
+            <Text field={props.fields?.Text} />
+          </p>
+        )}
+        {(isPageEditing || props.fields?.Link?.value?.href) && (
+          <Link field={props.fields.Link} className="heading-cta" />
+        )}
+      </div>
+    </div>
+  );
+};

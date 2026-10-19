@@ -83,3 +83,37 @@ export const Default = (props: HeroBannerProps): JSX.Element => {
     </div>
   );
 };
+
+/* Apexus variant: full-bleed photo with the title sitting on the image */
+export const Apexus = (props: HeroBannerProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component hero-banner variant-apexus ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="hero-media">
+        {(isPageEditing || props.fields?.Image?.value?.src) && (
+          <NextImage field={props.fields.Image} className="hero-image" width={1440} height={520} />
+        )}
+        <div className="hero-copy">
+          {(isPageEditing || props.fields?.Tagline?.value) && (
+            <p className="hero-tagline">
+              <Text field={props.fields.Tagline} />
+            </p>
+          )}
+          <h1>
+            <Text field={props.fields.Title} />
+          </h1>
+          {(isPageEditing || props.fields?.Text?.value) && (
+            <RichText field={props.fields.Text} className="hero-text" />
+          )}
+          {(isPageEditing || props.fields?.Cta1?.value?.href) && (
+            <Link field={props.fields.Cta1} className="hero-cta" />
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};

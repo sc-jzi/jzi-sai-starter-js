@@ -27,3 +27,20 @@ export const Default = (props: RichTextProps): JSX.Element => {
     </div>
   );
 };
+
+/* Apexus variant: centered body copy on white, no card chrome */
+export const Apexus = (props: RichTextProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const text = props.fields ? (
+    <JssRichText field={props.fields.Text} />
+  ) : (
+    <span className="is-empty-hint">Rich text</span>
+  );
+
+  return (
+    <div className={`component rich-text variant-apexus ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="copy">{text}</div>
+    </div>
+  );
+};

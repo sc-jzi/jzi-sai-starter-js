@@ -1,0 +1,70 @@
+.footer.variant-apexus {
+  --v-bg: #ffffff;
+  --v-heading: #00aeef;
+  --v-text: #212529;
+  --v-link: #212529;
+  --v-bar: #00aeef;
+  --v-bar-text: #ffffff;
+
+  background: var(--v-bg);
+
+  .footer-main {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 32px;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+
+  .logo img {
+    width: 150px;
+    height: auto;
+  }
+
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .title {
+    margin-bottom: 8px;
+    color: var(--v-heading);
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .links,
+  .links a {
+    color: var(--v-link);
+    font-size: 14px;
+    line-height: 1.7;
+    text-decoration: none;
+  }
+
+  .footnote {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 16px 24px;
+    background: var(--v-bar);
+    color: var(--v-bar-text);
+    font-size: 13px;
+  }
+
+  .privacy-links a {
+    margin-left: 16px;
+    color: var(--v-bar-text);
+    text-decoration: none;
+  }
+
+  @media (max-width: 991px) {
+    .footer-main,
+    .columns {
+      grid-template-columns: 1fr;
+    }
+  }
+}

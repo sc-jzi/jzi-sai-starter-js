@@ -140,3 +140,27 @@ export const LargeImage = (props: CtaBannerProps): JSX.Element => {
     </div>
   );
 };
+
+/* Apexus variant: full-width green band, title left, outline button right */
+export const Apexus = (props: CtaBannerProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component cta-banner variant-apexus ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="band">
+        <h2>
+          <Text field={props.fields.Title} />
+        </h2>
+        {(isPageEditing || props.fields?.Text?.value) && (
+          <RichText field={props.fields.Text} className="band-text" />
+        )}
+        {(isPageEditing || props.fields?.Link?.value?.href) && (
+          <Link field={props.fields.Link} className="band-cta" />
+        )}
+      </div>
+    </div>
+  );
+};

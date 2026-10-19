@@ -102,11 +102,53 @@ export const Default = (props: DocumentsListProps): JSX.Element => {
               image={props.fields?.Image4}
               subtitle={props.fields?.Subtitle4}
               link={props.fields?.Link4}
-              delay={1500}
-            />
+            delay={1500}
+          />
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+
+/* Apexus variant: a titled list of document links, not a photo grid */
+export const Apexus = (props: DocumentsListProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const items = [
+    { image: props.fields?.Image1, subtitle: props.fields?.Subtitle1, link: props.fields?.Link1 },
+    { image: props.fields?.Image2, subtitle: props.fields?.Subtitle2, link: props.fields?.Link2 },
+    { image: props.fields?.Image3, subtitle: props.fields?.Subtitle3, link: props.fields?.Link3 },
+    { image: props.fields?.Image4, subtitle: props.fields?.Subtitle4, link: props.fields?.Link4 },
+  ];
+
+  return (
+    <div className={`component documents-list variant-apexus ${sxaStyles}`} id={id ? id : undefined}>
+      {(isPageEditing || props.fields?.Title1?.value) && (
+        <h2>
+          <Text field={props.fields?.Title1} />
+        </h2>
+      )}
+      <ul>
+        {items.map((item, index) =>
+          isPageEditing || item.link?.value?.href ? (
+            <li key={index}>
+              {(isPageEditing || item.image?.value?.src) && (
+                <NextImage field={item.image} width={24} height={24} />
+              )}
+              <Link field={item.link} />
+              {(isPageEditing || item.subtitle?.value) && (
+                <span>
+                  <Text field={item.subtitle} />
+                </span>
+              )}
+            </li>
+          ) : null
+        )}
+      </ul>
     </div>
   );
 };

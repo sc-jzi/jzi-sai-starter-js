@@ -1,0 +1,51 @@
+.three-column-cta.variant-apexus {
+  --v-bg: #ffffff;
+  --v-heading: #0b3a6a;
+  --v-text: #212529;
+  --v-btn-text: #199fda;
+  --v-rule: #00aeef;
+
+  padding: 48px 24px;
+  background: var(--v-bg);
+
+  .card-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1170px;
+    margin: 0 auto;
+  }
+
+  .card {
+    padding: 24px 8px 8px;
+    border-top: 4px solid var(--v-rule);
+    background: var(--v-bg);
+  }
+
+  h2 {
+    margin: 0 0 8px;
+    color: var(--v-heading);
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+  }
+
+  p {
+    margin: 0 0 12px;
+    color: var(--v-text);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .card-link {
+    color: var(--v-btn-text);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  @media (max-width: 991px) {
+    .card-row {
+      grid-template-columns: 1fr;
+    }
+  }
+}

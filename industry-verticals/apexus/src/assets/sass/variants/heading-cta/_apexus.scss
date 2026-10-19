@@ -1,0 +1,55 @@
+.heading-cta.variant-apexus {
+  --v-bg: #ffffff;
+  --v-heading: #000000;
+  --v-text: #000000;
+  --v-eyebrow: #00aeef;
+  --v-btn-bg: #199fda;
+  --v-btn-text: #ffffff;
+
+  padding: 48px 24px;
+  background: var(--v-bg);
+  text-align: center;
+
+  .heading-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    margin: 0 0 16px;
+    color: var(--v-heading);
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  .heading-eyebrow {
+    margin: 0 0 8px;
+    color: var(--v-eyebrow);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .heading-text {
+    margin: 0;
+    color: var(--v-text);
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .heading-cta {
+    display: inline-block;
+    margin-top: 24px;
+    padding: 12px 28px;
+    border-radius: 0;
+    background: var(--v-btn-bg);
+    color: var(--v-btn-text);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}

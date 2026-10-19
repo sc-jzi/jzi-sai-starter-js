@@ -1,0 +1,44 @@
+.documents-list.variant-apexus {
+  --v-bg: #ffffff;
+  --v-heading: #000000;
+  --v-text: #6d6e71;
+  --v-link: #199fda;
+
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  background: var(--v-bg);
+
+  h2 {
+    margin: 0 0 16px;
+    color: var(--v-heading);
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid #ededed;
+  }
+
+  a {
+    color: var(--v-link);
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  span {
+    color: var(--v-text);
+    font-size: 14px;
+  }
+}

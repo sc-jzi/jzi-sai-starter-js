@@ -267,3 +267,60 @@ export const WithIconsCompact = (props: ThreeColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* Apexus variant: three white cards with a cyan rule, title, and text link */
+export const Apexus = (props: ThreeColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  const cards = [
+    {
+      image: props.fields.Image1,
+      text: props.fields.Text1,
+      subText: props.fields.SubText1,
+      link: props.fields.Link1,
+    },
+    {
+      image: props.fields.Image2,
+      text: props.fields.Text2,
+      subText: props.fields.SubText2,
+      link: props.fields.Link2,
+    },
+    {
+      image: props.fields.Image3,
+      text: props.fields.Text3,
+      subText: props.fields.SubText3,
+      link: props.fields.Link3,
+    },
+  ];
+
+  return (
+    <div
+      className={`component three-column-cta variant-apexus ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="card-row">
+        {cards.map((card, index) => (
+          <div className="card" key={index}>
+            {(isPageEditing || card.image?.value?.src) && (
+              <NextImage field={card.image} width={40} height={40} className="card-icon" />
+            )}
+            <h2>
+              <Text field={card.text} />
+            </h2>
+            {(isPageEditing || card.subText?.value) && (
+              <p>
+                <Text field={card.subText} />
+              </p>
+            )}
+            {(isPageEditing || card.link?.value?.href) && (
+              <Link field={card.link} className="card-link" />
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
