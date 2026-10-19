@@ -109,3 +109,54 @@ export const Default = (props: TwoColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+const BlueCard = ({
+  image,
+  title,
+  text,
+  isPageEditing,
+}: {
+  image: ImageField;
+  title: Field<string>;
+  text: Field<string>;
+  isPageEditing: boolean;
+}): JSX.Element => (
+  <div className="col-sm-12 col-lg-6">
+    <div className="content-wrapper">
+      {(isPageEditing || image?.value?.src) && <NextImage field={image} width={96} height={96} />}
+      <Text field={title} tag="h2" />
+      {(isPageEditing || text?.value) && <Text field={text} tag="p" />}
+    </div>
+  </div>
+);
+
+/* ConcentricUSA blue cards on white: icon top-left, dark title, white text. No links or placeholders. */
+export const ConcentricUSABlueCards = (props: TwoColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  return (
+    <div
+      className={`component two-column-cta variant-concentricusa-blue-cards ${props.params?.styles || ''}`}
+      id={id || undefined}
+    >
+      <div className="container">
+        <div className="row">
+          <BlueCard
+            image={props.fields.Image1}
+            title={props.fields.Title1}
+            text={props.fields.Text1}
+            isPageEditing={isPageEditing}
+          />
+          <BlueCard
+            image={props.fields.Image2}
+            title={props.fields.Title2}
+            text={props.fields.Text2}
+            isPageEditing={isPageEditing}
+          />
+        </div>
+      </div>
+    </div>
+  );
+};

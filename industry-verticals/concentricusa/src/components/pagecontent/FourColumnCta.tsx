@@ -151,7 +151,7 @@ export const ConcentricUSA = (props: FourColumnCtaProps): JSX.Element => {
 };
 
 /* Icon, bold title, and the text field. No links. */
-export const ConcentricUSAText = (props: FourColumnCtaProps): JSX.Element => {
+const ConcentricTextColumns = (props: FourColumnCtaProps, variantClass: string): JSX.Element => {
   const id = props.params.RenderingIdentifier;
 
   const Column = ({
@@ -174,7 +174,7 @@ export const ConcentricUSAText = (props: FourColumnCtaProps): JSX.Element => {
 
   return (
     <div
-      className={`component four-column-cta variant-concentricusa-text ${props.params?.styles || ''}`}
+      className={`component four-column-cta ${variantClass} ${props.params?.styles || ''}`}
       id={id || undefined}
     >
       <div className="container">
@@ -188,3 +188,10 @@ export const ConcentricUSAText = (props: FourColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+export const ConcentricUSAText = (props: FourColumnCtaProps): JSX.Element =>
+  ConcentricTextColumns(props, 'variant-concentricusa-text');
+
+/* Green cards on white: small icon top-left, large title, text */
+export const ConcentricUSAGreenCards = (props: FourColumnCtaProps): JSX.Element =>
+  ConcentricTextColumns(props, 'variant-concentricusa-green-cards');

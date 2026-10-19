@@ -30,6 +30,8 @@ import * as ProjectDetails from 'src/components/pagecontent/ProjectDetails';
 import * as PartialDesignDynamicPlaceholder from 'src/components/pagecontent/PartialDesignDynamicPlaceholder';
 import * as ParallaxBanner from 'src/components/pagecontent/ParallaxBanner';
 import * as PageBackground from 'src/components/pagecontent/PageBackground';
+import * as NewsAuthor from 'src/components/pagecontent/NewsAuthor';
+import * as NewsArticle from 'src/components/pagecontent/NewsArticle';
 import * as ImageGallery from 'src/components/pagecontent/ImageGallery';
 import * as Image from 'src/components/pagecontent/Image';
 import * as HeroBanner from 'src/components/pagecontent/HeroBanner';
@@ -89,6 +91,8 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['PartialDesignDynamicPlaceholder', { ...PartialDesignDynamicPlaceholder }],
   ['ParallaxBanner', { ...ParallaxBanner, componentType: 'client' }],
   ['PageBackground', { ...PageBackground, componentType: 'client' }],
+  ['NewsAuthor', { ...NewsAuthor, componentType: 'client' }],
+  ['NewsArticle', { ...NewsArticle, componentType: 'client' }],
   ['ImageGallery', { ...ImageGallery, componentType: 'client' }],
   ['Image', { ...Image, componentType: 'client' }],
   ['HeroBanner', { ...HeroBanner, componentType: 'client' }],

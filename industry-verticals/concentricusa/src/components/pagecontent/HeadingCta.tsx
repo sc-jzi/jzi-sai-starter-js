@@ -151,6 +151,31 @@ export const ConcentricUSA = (props: HeadingCtaProps): JSX.Element => {
   );
 };
 
+/* ConcentricUSA black band: centered white heading and optional supporting line */
+export const ConcentricUSADark = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  return (
+    <div
+      className={`component heading-cta variant-concentricusa-dark ${props.params?.styles || ''}`}
+      id={id || undefined}
+    >
+      <div className="container">
+        <h2>
+          <Text field={props.fields?.Heading} />
+        </h2>
+        {(isPageEditing || props.fields?.Text?.value) && (
+          <p>
+            <Text field={props.fields?.Text} />
+          </p>
+        )}
+      </div>
+    </div>
+  );
+};
+
 export const Centered = (props: HeadingCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

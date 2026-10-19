@@ -1043,6 +1043,7 @@ components:
       - "Default"
       - "ConcentricUSA"
       - "ConcentricUSAText"
+      - "ConcentricUSAGreenCards"
   templates:
     datasource:
       name: "Four Column CTA"
@@ -1097,6 +1098,7 @@ components:
   notes: 
     - "Datasource folder is the shared Promos folder."
     - "2026-10-16 ConcentricUSA site variant ConcentricUSAText {A0EDDEEE-2C0F-4794-8BE1-C12C6D3E1A7E} under Presentation/Headless Variants/Four Column CTA. Outcomes rendering FieldNames points at it."
+    - "2026-10-19 ConcentricUSA site variant ConcentricUSAGreenCards {582D1A2C-ACAB-4E70-B4B2-6A76FD32AE41} under ConcentricUSA Presentation/Headless Variants. Used on /motive-power/forklift-batteries."
 - name: "HeadingCta"
   kind: "simple"
   category: "Page Content"
@@ -1111,6 +1113,7 @@ components:
       - "Compact"
       - "PageHeading"
       - "Centered"
+      - "ConcentricUSADark"
   templates:
     datasource:
       name: "Heading CTA"
@@ -1157,6 +1160,7 @@ components:
     pendingManual: []
   notes: 
     - "Registered on Available Renderings/Custom Demo, not Page Content."
+    - "2026-10-19 ConcentricUSA site variant ConcentricUSADark {4D5000AB-4DCE-49A4-975E-25617FECA1FB} under ConcentricUSA Presentation/Headless Variants. Used on /motive-power/forklift-batteries."
 - name: "Hero"
   kind: "simple"
   category: "Page Content"
@@ -1227,6 +1231,7 @@ components:
     componentMapKey: "HeroBanner"
     variants:
       - "Default"
+      - "ConcentricUSAHeroLeft"
   templates:
     datasource:
       name: "HeroBanner"
@@ -1280,6 +1285,7 @@ components:
     pendingManual: []
   notes: 
     - "Field types read from HeroBanner/Data field items."
+    - "2026-10-19 ConcentricUSA site variant ConcentricUSAHeroLeft {1324FCA2-1392-483C-8E37-EAD6A1200A4D} under ConcentricUSA Presentation/Headless Variants. Used on /motive-power/forklift-batteries."
 - name: "ImageGallery"
   kind: "simple"
   category: "Page Content"
@@ -1448,6 +1454,9 @@ components:
       - "Default"
       - "WithPlaceholderColumn"
       - "WithBackgroundImage"
+      - "ConcentricUSAAccordion"
+      - "ConcentricUSABand"
+      - "ConcentricUSAImageRightCta"
   templates:
     datasource:
       name: "Promo CTA"
@@ -1503,6 +1512,9 @@ components:
     pendingManual: []
   notes: 
     - "Datasource folder is the shared Promos folder."
+    - "2026-10-19 ConcentricUSA site variant ConcentricUSAAccordion {125BC223-9C6B-45AE-BE5D-8E4EA4BB66F6} under ConcentricUSA Presentation/Headless Variants. Used on /motive-power/forklift-batteries."
+    - "2026-10-19 ConcentricUSA site variant ConcentricUSABand {8D50AEF4-3380-4047-AB13-36CA7C8D4AFF} under ConcentricUSA Presentation/Headless Variants. Used on /motive-power/forklift-batteries."
+    - "2026-10-19 ConcentricUSA site variant ConcentricUSAImageRightCta {32F91551-2CFC-49BA-B7A5-7EAE02AD189B} under ConcentricUSA Presentation/Headless Variants. Used on /motive-power/forklift-batteries."
 - name: "Questions"
   kind: "list"
   category: "Page Content"
@@ -1806,6 +1818,8 @@ components:
       - "Default"
       - "WithIcons"
       - "WithIconsCompact"
+      - "ConcentricUSABlueCards"
+      - "ConcentricUSAIconsDark"
   templates:
     datasource:
       name: "Three Column CTA"
@@ -1860,6 +1874,8 @@ components:
     pendingManual: []
   notes: 
     - "Datasource folder is the shared Promos folder."
+    - "2026-10-19 ConcentricUSA site variant ConcentricUSABlueCards {C2571478-9B4A-4036-A97B-5C3B921BF12F} under ConcentricUSA Presentation/Headless Variants. Used on /motive-power/forklift-batteries."
+    - "2026-10-19 ConcentricUSA site variant ConcentricUSAIconsDark {F65103DB-BE0B-4AE1-9FE0-8420E9102507} under ConcentricUSA Presentation/Headless Variants. Used on /motive-power/forklift-batteries."
 - name: "TwoColumnCta"
   kind: "simple"
   category: "Page Content"
@@ -1871,6 +1887,7 @@ components:
     componentMapKey: "TwoColumnCta"
     variants:
       - "Default"
+      - "ConcentricUSABlueCards"
   templates:
     datasource:
       name: "Two Column CTA"
@@ -1924,6 +1941,7 @@ components:
     pendingManual: []
   notes: 
     - "Datasource folder is the shared Promos folder."
+    - "2026-10-19 ConcentricUSA site variant ConcentricUSABlueCards {E825C69D-6560-4D53-AF35-FC5C89B5F3CB} under ConcentricUSA Presentation/Headless Variants. Used on /motive-power/forklift-batteries. Container Two Column CTA {3F0E08B0-98FA-4EAC-8BC6-977585FEA671} (with Default {00CD9CB5-27E1-42E3-9171-CA82A8103255}) was created for this."
 - name: "ColumnSplitter"
   kind: "context-only"
   category: "Page Structure"
@@ -2125,6 +2143,7 @@ components:
     componentMapKey: "ContactForm"
     variants:
       - "Default"
+      - "ConcentricUSAOverlay"
   templates:
     datasource:
       name: "Contact Form"
@@ -2169,7 +2188,8 @@ components:
       - "No datasource folder under ProsperaFinancial/Data"
       - "Field types not read from field items"
     pendingManual: []
-  notes: []
+  notes:
+    - "2026-10-19 ConcentricUSA site variant ConcentricUSAOverlay {4B50755D-B332-45BF-8982-81329B0DB4B5} under ConcentricUSA Presentation/Headless Variants. Used on /motive-power/forklift-batteries."
 - name: "LanguageSwitcher"
   kind: "context-only"
   category: "Utilities"
@@ -2394,6 +2414,95 @@ components:
       - "__Standard values and __Masters are silent-write fields"
   notes:
     - "Image-only carousel. Authors add Testimonial Slide children and set the Image field. Text is part of the image."
+
+- name: "NewsArticle"
+  kind: "context-only"
+  category: "Articles"
+  status: "complete"
+  createdAt: "2026-10-19T16:20:00Z"
+  updatedAt: "2026-10-19T16:20:00Z"
+  react:
+    filePath: "src/components/pagecontent/NewsArticle.tsx"
+    componentMapKey: "NewsArticle"
+    variants:
+      - "Default"
+  rendering:
+    name: "News Article"
+    path: "/sitecore/layout/Renderings/Project/Financial/Articles/News Article"
+    itemId: "{034B07EF-B5A2-40F8-87AE-CD4DF82D4859}"
+    componentName: "NewsArticle"
+    parametersTemplateId: "{52B2B4B2-CEAD-4340-AC06-12F67A409F2C}"
+    datasourceTemplatePath: ""
+    datasourceLocationQuery: ""
+  headlessVariants:
+    containerPath: "/sitecore/content/Concentric/ConcentricUSA/Presentation/Headless Variants/NewsArticle"
+    containerId: "{76EDD112-CB3B-4236-8F29-F641E48F6B8B}"
+    variants:
+      - { name: "Default", itemId: "{830A0750-D1F8-424C-AF61-CFEFABAC7844}" }
+  notes:
+    - "Reads the News Page route fields Title, Content and HeroImage. Placed on the News Page standard values in headless-main."
+- name: "NewsAuthor"
+  kind: "simple"
+  category: "Articles"
+  status: "complete"
+  createdAt: "2026-10-19T16:20:00Z"
+  updatedAt: "2026-10-19T16:20:00Z"
+  react:
+    filePath: "src/components/pagecontent/NewsAuthor.tsx"
+    componentMapKey: "NewsAuthor"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Author"
+      path: "/sitecore/templates/Project/manufacturing/Author"
+      itemId: "{6CDC8BE1-2E2C-467D-B0A0-60F455B5269D}"
+      fields:
+        - { name: "Image", type: "Image", itemId: "{3D88AACB-EFE8-41B4-A822-7E62458B703E}" }
+        - { name: "Name", type: "Single-Line Text", itemId: "{7CFD2632-132E-404E-A882-D29D8E22BA25}" }
+        - { name: "Bio", type: "Multi-Line Text", itemId: "{5AF97E16-DBCF-4F1B-B232-AC4263C5DDEF}" }
+      standardValues:
+        itemId: "{41B656A9-49E3-45B3-99A9-4C55BA0EAB42}"
+        linked: true
+    folder:
+      name: "Author Folder"
+      path: "/sitecore/templates/Project/manufacturing/Author Folder"
+      itemId: "{3933CFA6-97EA-4811-BBBF-2EA43FFEC214}"
+      standardValues:
+        itemId: "{558521C6-C8A1-429B-AA37-2AD21E2FAA35}"
+        linked: true
+  datasourceFolder:
+    name: "Authors"
+    path: "/sitecore/content/Concentric/ConcentricUSA/Data/Authors"
+    itemId: "{BA548668-294A-4278-9D53-B20C9F2CC9D8}"
+    insertOptionsSet: true
+  rendering:
+    name: "News Author"
+    path: "/sitecore/layout/Renderings/Project/Financial/Articles/News Author"
+    itemId: "{83C21D27-C5CA-40B6-9CF6-C7913C864CDF}"
+    componentName: "NewsAuthor"
+    parametersTemplateId: "{87DCAF35-6C4A-4844-8185-C24ADDC3FFD2}"
+    datasourceTemplatePath: "/sitecore/templates/Project/manufacturing/Author"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Author Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Author Folder']"
+  headlessVariants:
+    containerPath: "/sitecore/content/Concentric/ConcentricUSA/Presentation/Headless Variants/NewsAuthor"
+    containerId: "{5122AF86-F10E-4B6A-835C-DB52710E0DC0}"
+    variants:
+      - { name: "Default", itemId: "{739EF115-6CFC-4860-AACB-AE16342BAB4D}" }
+  pageTemplate:
+    name: "News Page"
+    path: "/sitecore/templates/Project/manufacturing/News Page"
+    itemId: "{91A9EBF6-2AE4-45EF-B03D-4E610AF16994}"
+    baseTemplate: "{E722701B-8AFF-4D1B-8F80-D07D5A09FE5D}"
+    standardValues: "{0F4313D6-80D3-4D16-8DA2-2A334A3EB739}"
+    fields:
+      - { name: "HeroImage", type: "Image", itemId: "{C14328B7-F891-43A1-8124-EB875799B67C}" }
+      - { name: "Author", type: "Droptree", source: "/sitecore/content/Concentric/ConcentricUSA/Data/Authors", itemId: "{BF6A043F-B72F-4424-87AF-25A84F719A32}" }
+    insertOptionOn: "/sitecore/content/Concentric/ConcentricUSA/Home/resources/news"
+  notes:
+    - "News Page is the insert option of Home/resources/news. Its standard values place News Article then News Author in headless-main."
+    - "Authors: David Jones {3A468DF5-0AD5-469D-8A2B-6444B99CB866}, Jason Laws {A5EFE094-D705-496E-B0AD-E0192A5EA195}, Dave Chatfield {9D0CF957-8AC7-400E-BB4A-70BB7C9BC7FF}."
+    - "Articles: power-planning {BDA888E0-8963-4990-95B3-53506E462C47} (David Jones), cold-storage {39E88EB0-DDE9-4835-AF9A-F61C9213CE46} (Jason Laws), motive-power {27047191-840B-4437-83F2-A30DF6110AFE} (Dave Chatfield)."
 
 lookups:
   - path: "/sitecore/content/Financial/ProsperaFinancial/Data"

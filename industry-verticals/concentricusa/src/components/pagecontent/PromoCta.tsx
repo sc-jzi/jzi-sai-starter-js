@@ -196,6 +196,59 @@ export const ConcentricUSAImageLeft = (props: PromoCtaProps): JSX.Element =>
 export const ConcentricUSAImageRight = (props: PromoCtaProps): JSX.Element =>
   ConcentricSplit(props, 'right');
 
+/* ConcentricUSA side layout: title, rich text and optional button beside the image. Look comes from variantClass. */
+const ConcentricSide = (
+  props: PromoCtaProps,
+  imageSide: 'left' | 'right',
+  variantClass: string
+): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const showImage = Boolean(props.fields?.Image?.value?.src) || isPageEditing;
+
+  const image = showImage ? (
+    <div className="promo-media">
+      <NextImage field={props.fields?.Image} width={900} height={900} />
+    </div>
+  ) : null;
+
+  return (
+    <div
+      className={`component promo-cta ${variantClass} promo-image-${imageSide} ${props.params?.styles || ''}`}
+      id={id || undefined}
+    >
+      <div className="container">
+        <div className="promo-side">
+          {imageSide === 'left' ? image : null}
+          <div className="promo-copy">
+            <Text field={props.fields?.Title} tag="h2" className="promo-title" />
+            {(isPageEditing || props.fields?.Text?.value) && (
+              <RichText field={props.fields?.Text} className="promo-text" />
+            )}
+            {(isPageEditing || props.fields?.Link?.value?.href) && (
+              <Link field={props.fields?.Link} className="button button-main" />
+            )}
+          </div>
+          {imageSide === 'right' ? image : null}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* White section, narrow image left; the rich text can hold <details> accordion items */
+export const ConcentricUSAAccordion = (props: PromoCtaProps): JSX.Element =>
+  ConcentricSide(props, 'left', 'variant-concentricusa-accordion');
+
+/* Dark navy band, white text and blue button, image right */
+export const ConcentricUSABand = (props: PromoCtaProps): JSX.Element =>
+  ConcentricSide(props, 'right', 'variant-concentricusa-band');
+
+/* White section, text with a wide blue button, image right */
+export const ConcentricUSAImageRightCta = (props: PromoCtaProps): JSX.Element =>
+  ConcentricSide(props, 'right', 'variant-concentricusa-image-right-cta');
+
 export const WithBackgroundImage = (props: PromoCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

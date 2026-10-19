@@ -180,6 +180,46 @@ export const ConcentricUSA = (props: ThreeColumnCtaProps): JSX.Element => {
   );
 };
 
+/* ConcentricUSA icon columns: icon, title (Text) and optional sub text. Look comes from variantClass. */
+const ConcentricIconColumns = (props: ThreeColumnCtaProps, variantClass: string): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  const Column = ({ image, text, subText }: { image: ImageField; text: Field<string>; subText: Field<string> }) => (
+    <div className="col-sm-12 col-lg-4">
+      <div className="content-wrapper">
+        {(isPageEditing || image?.value?.src) && <NextImage field={image} width={96} height={96} />}
+        <Text field={text} tag="h2" />
+        {(isPageEditing || subText?.value) && <Text field={subText} tag="p" />}
+      </div>
+    </div>
+  );
+
+  return (
+    <div
+      className={`component three-column-cta ${variantClass} ${props.params?.styles || ''}`}
+      id={id || undefined}
+    >
+      <div className="container">
+        <div className="row">
+          <Column image={props.fields.Image1} text={props.fields.Text1} subText={props.fields.SubText1} />
+          <Column image={props.fields.Image2} text={props.fields.Text2} subText={props.fields.SubText2} />
+          <Column image={props.fields.Image3} text={props.fields.Text3} subText={props.fields.SubText3} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/* Blue cards on white: icon top-left, dark title, white text */
+export const ConcentricUSABlueCards = (props: ThreeColumnCtaProps): JSX.Element =>
+  ConcentricIconColumns(props, 'variant-concentricusa-blue-cards');
+
+/* Black band: centered white icon and title */
+export const ConcentricUSAIconsDark = (props: ThreeColumnCtaProps): JSX.Element =>
+  ConcentricIconColumns(props, 'variant-concentricusa-icons-dark');
+
 export const WithIcons = (props: ThreeColumnCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

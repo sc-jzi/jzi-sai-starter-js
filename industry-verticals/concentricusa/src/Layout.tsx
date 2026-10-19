@@ -1,5 +1,5 @@
 import { JSX } from 'react';
-import { AppPlaceholder, DesignLibraryApp, Field, Page } from '@sitecore-content-sdk/nextjs';
+import { AppPlaceholder, DesignLibraryApp, Field, ImageField, Page, RichTextField } from '@sitecore-content-sdk/nextjs';
 import Scripts from 'src/Scripts';
 import SitecoreStyles from 'components/content-sdk/SitecoreStyles';
 import componentMap from '.sitecore/component-map';
@@ -12,6 +12,8 @@ interface LayoutProps {
 export interface RouteFields {
   [key: string]: unknown;
   Title?: Field;
+  Content?: RichTextField;
+  HeroImage?: ImageField;
 }
 
 const Layout = ({ page }: LayoutProps): JSX.Element => {

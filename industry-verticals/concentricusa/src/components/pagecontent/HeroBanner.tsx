@@ -116,3 +116,39 @@ export const ConcentricUSA = (props: HeroBannerProps): JSX.Element => {
     </section>
   );
 };
+
+/* ConcentricUSA product hero: photo with a dark scrim, left-aligned copy and one green button */
+export const ConcentricUSAHeroLeft = (props: HeroBannerProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  return (
+    <section
+      className={`component hero-banner variant-concentricusa-hero-left ${props.params?.styles || ''}`}
+      id={id || undefined}
+    >
+      {(props.fields?.Image?.value?.src || isPageEditing) && (
+        <NextImage field={props.fields.Image} className="hero-media" width={1920} height={800} priority />
+      )}
+      <div className="hero-scrim" />
+      <div className="container">
+        <div className="hero-copy">
+          {(props.fields?.Title?.value || isPageEditing) && (
+            <h1>
+              <Text field={props.fields.Title} />
+            </h1>
+          )}
+          {(props.fields?.Text?.value || isPageEditing) && (
+            <div className="hero-text">
+              <RichText field={props.fields.Text} />
+            </div>
+          )}
+          {(isPageEditing || props.fields?.Cta1?.value?.href) && (
+            <Link field={props.fields.Cta1} className="button button-main" />
+          )}
+        </div>
+      </div>
+    </section>
+  );
+};
