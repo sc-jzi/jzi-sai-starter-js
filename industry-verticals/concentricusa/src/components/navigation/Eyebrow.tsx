@@ -71,6 +71,12 @@ export const ConcentricUSA = (props: EyebrowProps): JSX.Element => {
                 </li>
               ))}
             </ul>
+            <a className="eyebrow-phone" href="tel:+18886918630">
+              888-691-8630
+            </a>
+            <a className="eyebrow-cta" href="/contact-us">
+              Request A Quote
+            </a>
             <button type="button" className="eyebrow-language" aria-label="Language: English">
               English
               <svg aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor">

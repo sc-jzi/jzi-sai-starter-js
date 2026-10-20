@@ -3,7 +3,6 @@
 import { JSX } from 'react';
 import { Field, Text, Link, LinkField, useSitecore } from '@sitecore-content-sdk/nextjs';
 import Head from 'next/head';
-import { useApexusAudience } from 'src/lib/apexus-audience';
 
 interface Fields {
   Eyebrow: Field<string>;
@@ -181,22 +180,6 @@ const ApexusHeadingCta = ({
   const isPageEditing = page.mode.isEditing;
   const sxaStyles = `${props.params?.styles || ''}`;
   const headingOnly = HEADING_ONLY.has(look);
-  const audience = useApexusAudience();
-  const homeBand = props.fields?.Text?.value?.includes('four main ways we support');
-  const personalized =
-    !isPageEditing && look === 'green-band' && homeBand && audience
-      ? audience === 'manufacturer'
-        ? {
-            text: 'Streamline Manufacturer Refunds to 340B Covered Entities',
-            label: 'REQUEST MORE INFORMATION',
-            href: 'https://info.340bpvp.com/l/543422/2026-03-25/8zfdhf',
-          }
-        : {
-            text: 'Simplified Refund Resolution for Covered Entities',
-            label: 'LEARN MORE',
-            href: '/apexus-refund-services/covered-entity-refund-service',
-          }
-      : null;
 
   return (
     <div
@@ -211,21 +194,10 @@ const ApexusHeadingCta = ({
             className="apexus-heading"
           />
         )}
-        {!headingOnly && personalized && <p className="apexus-text">{personalized.text}</p>}
-        {!headingOnly && !personalized && (isPageEditing || props.fields?.Text?.value) && (
+        {!headingOnly && (isPageEditing || props.fields?.Text?.value) && (
           <Text tag="p" field={props.fields?.Text} className="apexus-text" />
         )}
-        {!headingOnly && personalized && (
-          <a
-            className="apexus-button"
-            href={personalized.href}
-            target={personalized.href.startsWith('http') ? '_blank' : undefined}
-            rel={personalized.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-          >
-            {personalized.label}
-          </a>
-        )}
-        {!headingOnly && !personalized && (isPageEditing || props.fields?.Link?.value?.href) && (
+        {!headingOnly && (isPageEditing || props.fields?.Link?.value?.href) && (
           <Link field={props.fields.Link} className="apexus-button" />
         )}
       </div>

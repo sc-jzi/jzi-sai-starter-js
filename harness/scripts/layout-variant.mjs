@@ -58,7 +58,7 @@ async function main() {
   const item = flags.item, lang = flags.language && flags.language !== true ? flags.language : ENV.SITECORE_DEFAULT_LANGUAGE || "en";
   const cm = String(ENV.SITECORE_CM_HOST || "").replace(/\/+$/, "");
   if (!item) die("--item required");
-  if (!cm) die("SITECORE_CM_HOST is not set in harness/.env.local (the CM host of the environment, e.g. https://xmc-xxxx.sitecorecloud.io). Use the MCP route instead, or add it.");
+  if (!cm) die("SITECORE_CM_HOST is not set in harness/.env.local (the CM host of the environment, e.g. https://xmc-xxxx.sitecorecloud.io). This script is the LAST route: do the same change through the MCP (get_content_item_by_id, layout-variant.mjs patch, update_fields_on_item, read back), which needs no CM host. See placeholders-and-variants.md section 3, Bulk rule.");
   const id = ENV.SITECORE_AUTOMATION_CLIENT_ID, secret = ENV.SITECORE_AUTOMATION_CLIENT_SECRET;
   if (!id || !secret) die("SITECORE_AUTOMATION_CLIENT_ID/SECRET missing in harness/.env.local");
   const tr = await fetch(`${ENV.SITECORE_AUTH_HOST}/oauth/token`, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams({ client_id: id, client_secret: secret, grant_type: "client_credentials", audience: "https://api.sitecorecloud.io" }) });

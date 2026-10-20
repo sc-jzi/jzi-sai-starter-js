@@ -18,7 +18,6 @@ import Image from 'next/image';
 import { useInfiniteSearch, useSuggest, useSearch } from '@sitecore-content-sdk/nextjs/search';
 import { DEFAULT_IMG_URL } from 'src/_data/customizations';
 import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
-import { useApexusAudience } from 'src/lib/apexus-audience';
 import useVisibility from 'src/hooks/useVisibility';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
@@ -117,12 +116,6 @@ const importMap = [
     module: 'next/link',
     exports: [
       { name: 'default', value: Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 },
-    ]
-  },
-  {
-    module: 'src/lib/apexus-audience',
-    exports: [
-      { name: 'useApexusAudience', value: useApexusAudience },
     ]
   },
   {
