@@ -99,3 +99,62 @@ export const Default = (props: StatsCounterProps): JSX.Element => {
     </div>
   );
 };
+
+const Stat = ({
+  value,
+  symbol,
+  caption,
+  editing,
+}: {
+  value?: Field<string>;
+  symbol?: Field<string>;
+  caption?: Field<string>;
+  editing: boolean;
+}): JSX.Element | null => {
+  if (!editing && !value?.value && !caption?.value) return null;
+  return (
+    <div className="apexus-stat">
+      <p className="apexus-stat-value">
+        {(editing || value?.value) && <Text field={value} />}
+        {(editing || symbol?.value) && <Text field={symbol} />}
+      </p>
+      {(editing || caption?.value) && (
+        <p className="apexus-stat-caption">
+          <Text field={caption} />
+        </p>
+      )}
+    </div>
+  );
+};
+
+/* Three figures in a row. Values are shown as authored text ($25M, 98%). */
+export const Apexus = (props: StatsCounterProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  return (
+    <div className="component stats-counter variant-apexus" id={id ? id : undefined}>
+      <div className="apexus-stat-row">
+        <Stat
+          value={props.fields?.Value1}
+          symbol={props.fields?.Symbol1}
+          caption={props.fields?.Caption1}
+          editing={isPageEditing}
+        />
+        <Stat
+          value={props.fields?.Value2}
+          symbol={props.fields?.Symbol2}
+          caption={props.fields?.Caption2}
+          editing={isPageEditing}
+        />
+        <Stat
+          value={props.fields?.Value3}
+          symbol={props.fields?.Symbol3}
+          caption={props.fields?.Caption3}
+          editing={isPageEditing}
+        />
+      </div>
+    </div>
+  );
+};

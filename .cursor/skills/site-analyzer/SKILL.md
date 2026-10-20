@@ -313,3 +313,6 @@ Only by the fit check above: a missing function or a missing field/item shape. I
 - Do not pick a variant just because it sounds cool — match the visual evidence
 - Do not skip sections — every visible section on the page gets an entry
 - Do not include invisible elements (modals, menus that aren't open)
+
+## Menu pages
+Menu items nothing in the story visits are title-only stubs with `look: PageTitle` (heading-only variant; never a richer band's variant with empty fields, which prints "[No text in field]" in Pages). A menu page the demo navigates to (`proves` not empty or `visit: true`) is analysed like the homepage: capture it (`section-capture --url <page> --out sections-<slug>.json`) and map each live section to a component, variant or new (fit check). P14 enforces this.

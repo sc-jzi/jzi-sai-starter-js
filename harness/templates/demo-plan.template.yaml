@@ -59,6 +59,7 @@ story:
       afterward: "Publishes in a day"
       capability: "Composable page building by marketers"
       mustSee: "Finished campaign page on the live site, then the editor showing it was assembled without code"
+      clickPath: ["/Home", "/Home/products (click: Products in the header)"]   # EVERY page the SE clicks through for this moment, in order, incl. landing/intermediate pages; each must be linked from the page before. These pages mirror the live site (P14/P15)
       checkIn: "Is this how you would want your team to launch a regional campaign?"
     - id: m2
       title: "Approvals and audit trail"

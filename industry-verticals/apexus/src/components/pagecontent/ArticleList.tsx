@@ -205,3 +205,30 @@ export const Default = withDatasourceCheck()<ArticleListComponentProps>(ArticleL
 export const ThreeColumn = withDatasourceCheck()<ArticleListComponentProps>(ArticleListThreeColumn);
 export const Simplified = withDatasourceCheck()<ArticleListComponentProps>(ArticleListSimplified);
 export const Grid = withDatasourceCheck()<ArticleListComponentProps>(ArticleListGrid);
+
+/* Vertical article cards: image when present, title, and a link. Empty excerpts stay hidden. */
+export const Apexus = (props: ArticleListComponentProps): JSX.Element => {
+  const id = props.params?.RenderingIdentifier;
+  const newsItems = getNewsItems(props.fields?.items, parseInt(props.params?.NumberOfItems));
+
+  return (
+    <div className="component article-list variant-apexus" id={id ? id : undefined}>
+      <div className="apexus-article-list">
+        {newsItems?.map((item) => {
+          const title = item.fields?.Title?.value || item.name;
+          const excerpt = item.fields?.Excerpt?.value;
+          const thumb = item.fields?.Thumbnail?.value?.src;
+          return (
+            <Link href={item.url} className="apexus-article-card" key={item.url}>
+              {thumb && <NextImage field={item.fields.Thumbnail} width={160} height={120} />}
+              <span>
+                <h3>{title}</h3>
+                {excerpt && <p>{excerpt}</p>}
+              </span>
+            </Link>
+          );
+        })}
+      </div>
+    </div>
+  );
+};

@@ -126,3 +126,37 @@ export const Default = (props: TestimonialsProps): JSX.Element => {
     </div>
   );
 };
+
+/* Quote cards in a row. Stars and author photos stay hidden when they are empty. */
+export const Apexus = (props: TestimonialsProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const testimonials = props.fields?.items || [];
+
+  return (
+    <div className="component testimonials variant-apexus" id={id ? id : undefined}>
+      <div className="apexus-quote-row">
+        {testimonials.map((item, i) => (
+          <blockquote className="apexus-quote" key={`${item.url}${i}`}>
+            {(isPageEditing || item.fields?.Content?.value) && (
+              <p>
+                <Text field={item.fields?.Content} />
+              </p>
+            )}
+            {(isPageEditing || item.fields?.AuthorName?.value) && (
+              <footer>
+                <Text field={item.fields?.AuthorName} />
+                {(isPageEditing || item.fields?.AuthorPosition?.value) && (
+                  <span>
+                    <Text field={item.fields?.AuthorPosition} />
+                  </span>
+                )}
+              </footer>
+            )}
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  );
+};

@@ -1,0 +1,52 @@
+.component.two-column-cta.variant-apexus {
+  padding: 20px 15px 40px;
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
+
+  .apexus-service-row {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .apexus-service-box {
+    border: 1px solid #d9d9d9;
+    padding: 30px 24px;
+    background: #ffffff;
+
+    h2 {
+      color: #0ca0db;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      margin: 0 0 16px;
+    }
+
+    p {
+      color: #000000;
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 0 0 20px;
+    }
+  }
+
+  .apexus-learn-more {
+    display: inline-block;
+    background: #8dc448;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 5px 20px;
+  }
+
+  @media (max-width: 767px) {
+    .apexus-service-row {
+      grid-template-columns: 1fr;
+    }
+  }
+}

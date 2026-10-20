@@ -192,6 +192,28 @@ for (const p of pages) for (const s of arr(p.sections)) {
   else if (s.fit === "variant" && !has(s.fitReason)) p10.push(`${norm(p.path)} #${s.position ?? "?"}: fit: variant needs fitReason (what differs)`);
 }
 add("P10 every section went through the fit check (reuse | variant | new)", "recommended", p10.length === 0, p10.slice(0, 6).join("; "));
+// P15: every moment lists its clickPath (ordered page paths the SE clicks through, including intermediate/landing pages); each page must be in the plan.
+// Pages on a clickPath are visited pages: P14 then requires them to mirror their live page.
+const onPath = new Set(), p15 = [];
+for (const m of moments) {
+  const cp = arr(m.clickPath).map((x) => norm(String(x).split(/\s+[(|]/)[0].trim()).toLowerCase());
+  if (!cp.length) { p15.push(`${m.id}: no clickPath (list every page the SE clicks through, in order, starting at /Home)`); continue; }
+  for (const x of cp) { onPath.add(x); if (!paths.some((q) => q.toLowerCase() === x)) p15.push(`${m.id}: clickPath page ${x} is not in site.pages`); }
+}
+add("P15 every moment has a clickPath whose pages all exist in the plan", "required", p15.length === 0, p15.slice(0, 4).join("; "));
+// P14: a menu page (navTarget) exists so the menu matches. If the demo NAVIGATES to it (a moment proves something there: proves not empty, or visit: true) it MIRRORS its live page
+// (liveUrl + sectionsFile, then P12 applies). Otherwise it is a title-only stub: its section carries its own look (e.g. PageTitle) so no empty-field placeholders show.
+const p14 = [];
+{
+  const srcUrl14 = String(plan.client?.sourceUrl ?? ""), real14 = /^https?:\/\//.test(srcUrl14) && !/example\.com/.test(srcUrl14);
+  for (const p of pages) if (real14 && p.navTarget === true) {
+    const visited = p.visit === true || arr(p.proves).length > 0 || onPath.has(norm(p.path).toLowerCase());
+    if (visited) { if (!has(p.liveUrl) && p.titleOnly !== true) p14.push(`${norm(p.path)}: the demo navigates here, so it needs liveUrl (from nav.json) + sectionsFile, or titleOnly: true + titleOnlyReason`); }
+    else for (const s of arr(p.sections)) if (typeof s === "object" && s && !CHROME.has(s.component) && !has(s.look)) p14.push(`${norm(p.path)} #${s.position ?? "?"}: a menu-only stub needs look (e.g. PageTitle)`);
+    if (p.titleOnly === true && !has(p.titleOnlyReason)) p14.push(`${norm(p.path)}: titleOnly needs titleOnlyReason`);
+  }
+}
+add("P14 pages the demo navigates to mirror their live page; menu-only pages are title-only stubs with a look", "required", p14.length === 0, p14.slice(0, 4).join("; "));
 // P12: a page that exists on the prospect's live site MIRRORS it. Every section maps to a measured live section (liveSection = # in sections.md) or is explicitly ADDED with a reason.
 // P13: the measurements exist (header-styles.json, nav.json, sections.json + crops) when the prospect has a URL
 {
@@ -260,7 +282,7 @@ if (chrome.length) {
   for (const f of chrome) md += `| ${cell(f.feature)} | ${cell(f.delivery)}${f.component ? ` (${cell(f.component)})` : ""}${f.new?.name ? ` (new ${cell(f.new.name)})` : ""} | ${cell(f.fitReason ?? f.note ?? "")} |\n`;
   md += `\nHardcoded or not built elements are not editable in the CMS: say so at the gate.\n`;
 }
-md += `\n## Manual work to expect\n- Variants to set by hand in Pages (Agent API cannot set them): ${nonDefault}\n- Header and footer: built as partial designs + Page Designs during bootstrap (anything the API refuses is listed in manual-tasks.md)\n- Navigation pages (menu items no moment needs) are created as placeholders; nothing pauses the build for checks\n`;
+md += `\n## Manual work to expect\n- Only the fixed "Always" lines (thumbnails, layout icons) and what a person alone can do (editing host login). Variants, partial designs, page designs, datasources, theme and images are built by the run.\n- Navigation pages (menu items no moment needs) are created as placeholders; nothing pauses the build for checks\n`;
 try { mkdirSync(demo, { recursive: true }); writeFileSync(join(demo, "site-plan.md"), md); } catch { /* report only */ }
 
 let failed = 0;

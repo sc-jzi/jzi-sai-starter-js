@@ -107,4 +107,75 @@
       max-width: 900px;
     }
   }
+
+  &.apexus-page-title {
+    --v-bg: #ffffff;
+    --v-heading: #1e285d;
+
+    padding: 48px 15px 24px;
+
+    .apexus-heading {
+      font-size: 40px;
+      font-weight: 800;
+      margin: 0;
+    }
+  }
+
+  &.apexus-title-banner,
+  &.apexus-title-banner-navy,
+  &.apexus-title-banner-green {
+    --v-heading: #ffffff;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 12px;
+      background: linear-gradient(
+        to right,
+        #1e285d 0 25%,
+        #ffffff 25% 50%,
+        #8cc63e 50% 75%,
+        #b7b7b7 75% 100%
+      );
+    }
+
+    .apexus-heading {
+      font-size: 42px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      margin: 0;
+    }
+  }
+
+  &.apexus-title-banner {
+    --v-bg: #0ca0db;
+  }
+
+  &.apexus-title-banner-navy {
+    --v-bg: #001d60;
+  }
+
+  &.apexus-title-banner-green {
+    --v-bg: #8cc63e;
+    --v-heading: #1e285d;
+  }
+
+  &.apexus-section-heading {
+    --v-bg: #ffffff;
+    --v-heading: #1e285d;
+    padding: 40px 15px 10px;
+
+    .apexus-heading {
+      font-size: 32px;
+      font-weight: 800;
+      margin: 0;
+    }
+  }
 }

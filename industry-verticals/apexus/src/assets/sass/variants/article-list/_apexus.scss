@@ -1,0 +1,41 @@
+.component.article-list.variant-apexus {
+  padding: 30px 15px 50px;
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
+
+  .apexus-article-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .apexus-article-card {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    text-decoration: none;
+    border: 1px solid #d9d9d9;
+    padding: 16px;
+    color: #1e285d;
+
+    h3 {
+      margin: 0 0 6px;
+      font-size: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 0;
+      color: #000000;
+      font-size: 16px;
+    }
+
+    img {
+      width: 160px;
+      height: 120px;
+      object-fit: contain;
+    }
+  }
+}

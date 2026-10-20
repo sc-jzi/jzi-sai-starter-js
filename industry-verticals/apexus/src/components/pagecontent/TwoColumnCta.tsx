@@ -109,3 +109,43 @@ export const Default = (props: TwoColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* Two service boxes: heading, paragraph, LEARN MORE. Images stay hidden when empty. */
+export const Apexus = (props: TwoColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  const Box = ({
+    title,
+    text,
+    link,
+  }: {
+    title: Field<string>;
+    text: Field<string>;
+    link: LinkField;
+  }) => (
+    <div className="apexus-service-box">
+      {(isPageEditing || title?.value) && (
+        <h2>
+          <Text field={title} />
+        </h2>
+      )}
+      {(isPageEditing || text?.value) && (
+        <p>
+          <Text field={text} />
+        </p>
+      )}
+      {(isPageEditing || link?.value?.href) && <Link field={link} className="apexus-learn-more" />}
+    </div>
+  );
+
+  return (
+    <div className="component two-column-cta variant-apexus" id={id ? id : undefined}>
+      <div className="apexus-service-row">
+        <Box title={props.fields?.Title1} text={props.fields?.Text1} link={props.fields?.Link1} />
+        <Box title={props.fields?.Title2} text={props.fields?.Text2} link={props.fields?.Link2} />
+      </div>
+    </div>
+  );
+};

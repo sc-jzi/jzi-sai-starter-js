@@ -13,7 +13,7 @@ import scConfig from 'sitecore.config';
 import { routing } from './i18n/routing';
 import client from './lib/sitecore-client';
 
-export default function proxy(req: NextRequest, event: NextFetchEvent) {
+export default async function proxy(req: NextRequest, event: NextFetchEvent) {
   // PreviewProxy authorizes preview requests
   const preview = new PreviewProxy({
     client: client,
@@ -98,7 +98,29 @@ export default function proxy(req: NextRequest, event: NextFetchEvent) {
     // },
   });
 
-  return defineProxy(preview, botTracking, locale, multisite, redirects, personalize).exec(req);
+  const response = await defineProxy(
+    preview,
+    botTracking,
+    locale,
+    multisite,
+    redirects,
+    personalize
+  ).exec(req);
+
+  // The Sitecore page-visit rules live in the layout, and Experience Edge does not
+  // apply them until the site is published. This cookie is what the Home variants
+  // read so the same visit still changes Home on the Next.js host.
+  const path = req.nextUrl.pathname.toLowerCase();
+  if (response && 'cookies' in response) {
+    const cookie = { path: '/', maxAge: 60 * 60 * 24 * 30, sameSite: 'lax' as const };
+    if (path.includes('/manufacturer-refund-service')) {
+      response.cookies.set('apexus-audience', 'manufacturer', cookie);
+    } else if (path.includes('/covered-entity-refund-service')) {
+      response.cookies.set('apexus-audience', 'covered-entity', cookie);
+    }
+  }
+
+  return response;
 }
 
 export const config = {

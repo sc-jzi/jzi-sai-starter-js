@@ -45,3 +45,24 @@ export const Apexus = (props: RichTextProps): JSX.Element => {
     </div>
   );
 };
+
+/* Apexus variant: cyan band, left-aligned white heading, body and link (See MRS in Action) */
+export const ApexusCyanBand = (props: RichTextProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div
+      className={`component rich-text variant-apexus-cyan-band ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="apexus-rich-text-inner">
+        {props.fields ? (
+          <JssRichText field={props.fields.Text} />
+        ) : (
+          <span className="is-empty-hint">Rich text</span>
+        )}
+      </div>
+    </div>
+  );
+};

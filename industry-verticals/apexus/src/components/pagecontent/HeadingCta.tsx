@@ -3,6 +3,7 @@
 import { JSX } from 'react';
 import { Field, Text, Link, LinkField, useSitecore } from '@sitecore-content-sdk/nextjs';
 import Head from 'next/head';
+import { useApexusAudience } from 'src/lib/apexus-audience';
 
 interface Fields {
   Eyebrow: Field<string>;
@@ -152,17 +153,50 @@ export const Centered = (props: HeadingCtaProps): JSX.Element => {
   );
 };
 
+const HEADING_ONLY = new Set([
+  'page-title',
+  'title-banner',
+  'title-banner-navy',
+  'title-banner-green',
+  'section-heading',
+]);
+
 const ApexusHeadingCta = ({
   props,
   look,
 }: {
   props: HeadingCtaProps;
-  look: 'intro' | 'green-band' | 'cyan-band';
+  look:
+    | 'intro'
+    | 'green-band'
+    | 'cyan-band'
+    | 'page-title'
+    | 'title-banner'
+    | 'title-banner-navy'
+    | 'title-banner-green'
+    | 'section-heading';
 }): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
   const sxaStyles = `${props.params?.styles || ''}`;
+  const headingOnly = HEADING_ONLY.has(look);
+  const audience = useApexusAudience();
+  const homeBand = props.fields?.Text?.value?.includes('four main ways we support');
+  const personalized =
+    !isPageEditing && look === 'green-band' && homeBand && audience
+      ? audience === 'manufacturer'
+        ? {
+            text: 'Streamline Manufacturer Refunds to 340B Covered Entities',
+            label: 'REQUEST MORE INFORMATION',
+            href: 'https://info.340bpvp.com/l/543422/2026-03-25/8zfdhf',
+          }
+        : {
+            text: 'Simplified Refund Resolution for Covered Entities',
+            label: 'LEARN MORE',
+            href: '/apexus-refund-services/covered-entity-refund-service',
+          }
+      : null;
 
   return (
     <div
@@ -171,12 +205,27 @@ const ApexusHeadingCta = ({
     >
       <div className="apexus-heading-cta-inner">
         {(isPageEditing || props.fields?.Heading?.value) && (
-          <Text tag={look === 'intro' ? 'h1' : 'h2'} field={props.fields?.Heading} className="apexus-heading" />
+          <Text
+            tag={look === 'intro' || look === 'page-title' ? 'h1' : 'h2'}
+            field={props.fields?.Heading}
+            className="apexus-heading"
+          />
         )}
-        {(isPageEditing || props.fields?.Text?.value) && (
+        {!headingOnly && personalized && <p className="apexus-text">{personalized.text}</p>}
+        {!headingOnly && !personalized && (isPageEditing || props.fields?.Text?.value) && (
           <Text tag="p" field={props.fields?.Text} className="apexus-text" />
         )}
-        {(isPageEditing || props.fields?.Link?.value?.href) && (
+        {!headingOnly && personalized && (
+          <a
+            className="apexus-button"
+            href={personalized.href}
+            target={personalized.href.startsWith('http') ? '_blank' : undefined}
+            rel={personalized.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+          >
+            {personalized.label}
+          </a>
+        )}
+        {!headingOnly && !personalized && (isPageEditing || props.fields?.Link?.value?.href) && (
           <Link field={props.fields.Link} className="apexus-button" />
         )}
       </div>
@@ -197,4 +246,25 @@ export const ApexusGreenBand = (props: HeadingCtaProps): JSX.Element => (
 /* Apexus variant: cyan band, white centered heading and text, outlined white button */
 export const ApexusCyanBand = (props: HeadingCtaProps): JSX.Element => (
   <ApexusHeadingCta props={props} look="cyan-band" />
+);
+
+/* Heading only. Menu stubs use this so Pages never shows empty Text or Link chrome. */
+export const ApexusPageTitle = (props: HeadingCtaProps): JSX.Element => (
+  <ApexusHeadingCta props={props} look="page-title" />
+);
+
+/* Colored title banners from the live refund and article pages. Heading only. */
+export const ApexusTitleBanner = (props: HeadingCtaProps): JSX.Element => (
+  <ApexusHeadingCta props={props} look="title-banner" />
+);
+export const ApexusTitleBannerNavy = (props: HeadingCtaProps): JSX.Element => (
+  <ApexusHeadingCta props={props} look="title-banner-navy" />
+);
+export const ApexusTitleBannerGreen = (props: HeadingCtaProps): JSX.Element => (
+  <ApexusHeadingCta props={props} look="title-banner-green" />
+);
+
+/* Section title with no button, used above stats and closing lines. */
+export const ApexusSectionHeading = (props: HeadingCtaProps): JSX.Element => (
+  <ApexusHeadingCta props={props} look="section-heading" />
 );

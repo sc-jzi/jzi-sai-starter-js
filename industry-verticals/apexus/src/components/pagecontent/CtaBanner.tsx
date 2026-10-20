@@ -13,6 +13,7 @@ import {
   NextImage,
 } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
+import { useApexusAudience } from 'src/lib/apexus-audience';
 import { DottedAccent } from 'components/non-sitecore/DottedAccent';
 import { IconAccent } from 'components/non-sitecore/IconAccent';
 import useVisibility from 'src/hooks/useVisibility';
@@ -147,20 +148,64 @@ export const Apexus = (props: CtaBannerProps): JSX.Element => {
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
   const sxaStyles = `${props.params?.styles || ''}`;
+  const audience = useApexusAudience();
+  const homeFeature = props.fields?.Title?.value?.includes('FELLOWSHIP');
+  const personalized =
+    !isPageEditing && homeFeature && audience
+      ? audience === 'manufacturer'
+        ? {
+            title: 'Trusted, Timely, Transparent Refunds',
+            text: 'The Manufacturer Refund Service (MRS) helps manufacturers compliantly and efficiently resolve 340B overcharges to covered entities with a trusted, timely, and transparent process.',
+            label: 'Learn More',
+            href: '/apexus-refund-services/manufacturer-refund-service',
+            image:
+              'https://jzi-verticals.sitecoresandbox.cloud/api/public/content/102303-section3-img5?v=0d56dd01',
+            alt: '340B Prime Vendor Program Logo',
+          }
+        : {
+            title: 'COVERED ENTITY REFUND SERVICE - STREAMLINED REFUND RESOLUTION',
+            text: 'The Covered Entity Refund Service (CRS) facilitates the return of ineligible 340B discounts to individual manufacturers. Covered entities work directly with Apexus to efficiently process refunds to manufacturers through a proprietary process, reducing the time and effort spent resolving errors.',
+            label: 'Learn More',
+            href: '/apexus-refund-services/covered-entity-refund-service',
+            image:
+              'https://jzi-verticals.sitecoresandbox.cloud/api/public/content/102324-section3-img7?v=4451316c',
+            alt: '340B University',
+          }
+      : null;
 
   return (
     <div className={`component cta-banner variant-apexus ${sxaStyles}`} id={id ? id : undefined}>
       <div className="apexus-cta-banner-inner">
         <div className="apexus-cta-banner-image">
-          <NextImage field={props.fields?.Image} width={460} height={333} />
+          {personalized ? (
+            <img src={personalized.image} alt={personalized.alt} width={460} height={333} />
+          ) : (
+            <NextImage field={props.fields?.Image} width={460} height={333} />
+          )}
         </div>
         <div className="apexus-cta-banner-panel">
-          {(isPageEditing || props.fields?.Title?.value) && (
-            <Text tag="h3" field={props.fields?.Title} className="apexus-cta-banner-title" />
+          {personalized ? (
+            <h3 className="apexus-cta-banner-title">{personalized.title}</h3>
+          ) : (
+            (isPageEditing || props.fields?.Title?.value) && (
+              <Text tag="h3" field={props.fields?.Title} className="apexus-cta-banner-title" />
+            )
           )}
-          <RichText field={props.fields?.Text} className="apexus-cta-banner-text" />
-          {(isPageEditing || props.fields?.Link?.value?.href) && (
-            <Link field={props.fields.Link} className="apexus-button" />
+          {personalized ? (
+            <div className="apexus-cta-banner-text">
+              <p>{personalized.text}</p>
+            </div>
+          ) : (
+            <RichText field={props.fields?.Text} className="apexus-cta-banner-text" />
+          )}
+          {personalized ? (
+            <a className="apexus-button" href={personalized.href}>
+              {personalized.label}
+            </a>
+          ) : (
+            (isPageEditing || props.fields?.Link?.value?.href) && (
+              <Link field={props.fields.Link} className="apexus-button" />
+            )
           )}
         </div>
       </div>

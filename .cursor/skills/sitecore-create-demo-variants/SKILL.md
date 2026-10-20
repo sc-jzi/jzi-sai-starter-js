@@ -105,6 +105,7 @@ variantSpecs:
 
 **Content parity, both directions.** The variant renders exactly the elements measured on the prospect's section, in the measured order:
 - No eyebrow, subtitle, link or placeholder that the prospect's section does not show (an unused datasource field stays empty and is not rendered, e.g. a section that shows only a title and text does not render the eyebrow, subtitle or links the Default variant has).
+- **A different element set is a different look.** If the same component is used where the prospect shows only some of its elements (a title-only band next to a band with text and a button; the navigation/placeholder pages that show just a title), those sections get their own `look` (`PageTitle`, `Band`, ...), hence their own variant that renders only those elements. Never one variant with empty fields left to print placeholders.
 - Everything the section does have is rendered (a form's submit button, its second column, its logo).
 - No `AppPlaceholder` in a client variant unless the plan nests a component there (a placeholder that exists in Default but not on the prospect's page is removed).
 - Width = the measured content width, not the theme container.
@@ -120,7 +121,7 @@ For each section, create a new named export in the component's TSX file.
 - Start from the closest existing variant (the `baseVariant`) — copy its structure
 - Add a modifier class on the wrapper (`variant-<kebab-name>`) and put the layout and spacing differences in a Sass partial at `src/assets/sass/variants/<kebab-component>/_<kebab-variant>.scss`, imported from `src/assets/sass/variants/index.scss`
 - Keep ALL Sitecore field helpers intact (`Text`, `ContentSdkImage`, `ContentSdkLink`, `ContentSdkRichText`)
-- Keep ALL `isEditing` guards
+- Keep the `isEditing` guards ONLY for the elements this look shows (an empty field the look shows gets the editor placeholder so an author can fill it). An element the look does NOT show is not rendered at all, in the browser AND in Pages: never a bare `<Text field=…/>` or `<ContentSdkLink …/>` for an optional field the prospect's section lacks (it prints "[No text in field]" and an empty button in Pages). Wrap every optional element in a value check (`fields.X?.value`) combined with `isEditing` only where it is shown.
 - Keep `params.styles` and `params.RenderingIdentifier` on the wrapper
 - **Colours are measured, not borrowed.** Put every measured colour into variant-scoped CSS custom properties at the top of the variant's SCSS (`--v-bg`, `--v-heading`, `--v-text`, `--v-eyebrow`, `--v-btn-bg`, `--v-btn-text`, `--v-card-bg`) and use only those in the rules. Use a theme variable (`var(--bg-saturated)`, `var(--text-body)`, `var(--roundness)`) only when the measured value equals the theme value. NEVER fall back to the theme accent for buttons, eyebrows or headings (the theme accent is wrong for some components and right for others: measure each)
 - Reuse the app's button and layout classes (`button button-main`, Bootstrap grid) where they fit the design
@@ -270,7 +271,7 @@ Phase 5.5 runs BEFORE page assembly because the variant definitions must exist i
 - [ ] `variant-specs.yaml` written with visual analysis per section
 - [ ] Each custom variant uses the client's PascalCase name as the export name
 - [ ] Each variant keeps ALL Sitecore field helpers intact (Text, RichText, NextImage, Link)
-- [ ] Each variant keeps `isEditing` guards for empty fields
+- [ ] Each variant guards empty fields it shows with `isEditing`; elements it does not show are not rendered (no "[No text in field]" / empty button in Pages)
 - [ ] Each variant uses `params.styles` and `params.RenderingIdentifier`
 - [ ] Eyebrow/Header/Navigation variants come from `header-kit.mjs`, `tsc --noEmit` passes and the header gate (`--compare`) exited 0
 - [ ] Colours: measured values only in the variant's `--v-*` custom properties; theme variables only where equal; no theme-accent fallback for buttons/eyebrows/headings

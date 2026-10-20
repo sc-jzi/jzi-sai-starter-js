@@ -1,0 +1,44 @@
+.component.testimonials.variant-apexus {
+  padding: 20px 15px 50px;
+  background: #ededed;
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
+
+  .apexus-quote-row {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .apexus-quote {
+    margin: 0;
+    background: #ffffff;
+    padding: 24px;
+
+    p {
+      color: #000000;
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 0 0 16px;
+    }
+
+    footer {
+      color: #1e285d;
+      font-weight: 800;
+      font-size: 14px;
+
+      span {
+        display: block;
+        font-weight: 400;
+        margin-top: 4px;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .apexus-quote-row {
+      grid-template-columns: 1fr;
+    }
+  }
+}
