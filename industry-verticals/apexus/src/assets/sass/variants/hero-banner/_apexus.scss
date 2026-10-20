@@ -1,70 +1,26 @@
-.hero-banner.variant-apexus {
-  --v-bg: #0b3a6a;
-  --v-heading: #ffffff;
-  --v-text: #ffffff;
-  --v-eyebrow: #00aeef;
-  --v-btn-bg: #199fda;
-  --v-btn-text: #ffffff;
+// Apexus HeroBanner: measured 1440 x 517 full-width banner photo, no padding (sections.json #1)
+.component.hero-banner.variant-apexus {
+  padding: 0;
+  margin: 0;
 
-  .hero-media {
-    position: relative;
-    min-height: 420px;
-    background: var(--v-bg);
-    overflow: hidden;
-  }
-
-  .hero-image {
-    position: absolute;
-    inset: 0;
+  .hero-banner-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 517px;
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      // apexus.com squeezes its 1920px-wide banner into the 1440 x 517 box so the "340B COMMUNITY" title and stripe stay whole.
+      object-fit: fill;
+    }
   }
 
-  .hero-copy {
-    position: relative;
-    z-index: 1;
-    max-width: 1170px;
-    margin: 0 auto;
-    padding: 72px 24px 48px;
-    color: var(--v-text);
-  }
-
-  h1 {
-    margin: 0;
-    max-width: 16ch;
-    color: var(--v-heading);
-    font-family: "Nunito Sans", sans-serif;
-    font-size: 56px;
-    font-weight: 800;
-    line-height: 1.05;
-  }
-
-  .hero-tagline {
-    margin: 0 0 8px;
-    color: var(--v-eyebrow);
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
-  .hero-text {
-    max-width: 36rem;
-    margin-top: 16px;
-    font-size: 18px;
-    line-height: 1.5;
-  }
-
-  .hero-cta {
-    display: inline-block;
-    margin-top: 24px;
-    padding: 12px 28px;
-    background: var(--v-btn-bg);
-    color: var(--v-btn-text);
-    font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
-    border-radius: 0;
+  @media (max-width: 991px) {
+    .hero-banner-image {
+      height: auto;
+      aspect-ratio: 1440 / 517;
+    }
   }
 }

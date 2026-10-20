@@ -1,0 +1,59 @@
+// Apexus Quote: #00aeef band ~1000px wide, light white centered quote, bold attribution right (sections-crs.json #5)
+.component.quote.variant-apexus {
+  --v-bg: #00aeef;
+  --v-text: #ffffff;
+
+  padding: 40px 15px;
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
+
+  .apexus-quote-band {
+    max-width: 1140px;
+    margin: 0 auto;
+    background: var(--v-bg);
+    color: var(--v-text);
+    padding: 40px 80px 35px;
+  }
+
+  .apexus-quote-text {
+    margin: 0 0 18px;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.6;
+    text-align: center;
+
+    &::before {
+      content: '\201C';
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 0;
+      vertical-align: -12px;
+      margin-right: 4px;
+    }
+
+    &::after {
+      content: '\201D';
+      font-size: 40px;
+      font-weight: 800;
+      line-height: 0;
+      vertical-align: -12px;
+      margin-left: 4px;
+    }
+  }
+
+  .apexus-quote-author {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: right;
+
+    &::before {
+      content: '- ';
+    }
+  }
+
+  @media (max-width: 767px) {
+    .apexus-quote-band {
+      padding: 30px 20px;
+    }
+  }
+}

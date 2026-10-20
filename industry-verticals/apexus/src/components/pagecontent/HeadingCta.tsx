@@ -152,35 +152,49 @@ export const Centered = (props: HeadingCtaProps): JSX.Element => {
   );
 };
 
-/* Apexus variant: centered page title and body, square cyan button */
-export const Apexus = (props: HeadingCtaProps): JSX.Element => {
+const ApexusHeadingCta = ({
+  props,
+  look,
+}: {
+  props: HeadingCtaProps;
+  look: 'intro' | 'green-band' | 'cyan-band';
+}): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
   const sxaStyles = `${props.params?.styles || ''}`;
 
   return (
-    <div className={`component heading-cta variant-apexus ${sxaStyles}`} id={id ? id : undefined}>
-      <div className="heading-inner">
-        {(isPageEditing || props.fields?.Eyebrow?.value) && (
-          <p className="heading-eyebrow">
-            <Text field={props.fields?.Eyebrow} />
-          </p>
-        )}
+    <div
+      className={`component heading-cta variant-apexus apexus-${look} ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="apexus-heading-cta-inner">
         {(isPageEditing || props.fields?.Heading?.value) && (
-          <h1>
-            <Text field={props.fields?.Heading} />
-          </h1>
+          <Text tag={look === 'intro' ? 'h1' : 'h2'} field={props.fields?.Heading} className="apexus-heading" />
         )}
         {(isPageEditing || props.fields?.Text?.value) && (
-          <p className="heading-text">
-            <Text field={props.fields?.Text} />
-          </p>
+          <Text tag="p" field={props.fields?.Text} className="apexus-text" />
         )}
         {(isPageEditing || props.fields?.Link?.value?.href) && (
-          <Link field={props.fields.Link} className="heading-cta" />
+          <Link field={props.fields.Link} className="apexus-button" />
         )}
       </div>
     </div>
   );
 };
+
+/* Apexus variant: centered intro (page title and/or paragraph) with a blue square button */
+export const Apexus = (props: HeadingCtaProps): JSX.Element => (
+  <ApexusHeadingCta props={props} look="intro" />
+);
+
+/* Apexus variant: one centered white line on the green band with a white-outlined WATCH NOW button */
+export const ApexusGreenBand = (props: HeadingCtaProps): JSX.Element => (
+  <ApexusHeadingCta props={props} look="green-band" />
+);
+
+/* Apexus variant: cyan band, white centered heading and text, outlined white button */
+export const ApexusCyanBand = (props: HeadingCtaProps): JSX.Element => (
+  <ApexusHeadingCta props={props} look="cyan-band" />
+);

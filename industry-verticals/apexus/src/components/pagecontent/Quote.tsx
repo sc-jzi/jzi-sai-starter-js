@@ -77,3 +77,22 @@ export const Simple = (props: PromoCtaProps): JSX.Element => {
     </div>
   );
 };
+
+/* Apexus variant: centered quote in light white type on a cyan band with curly quote marks, bold attribution right-aligned, no photo */
+export const Apexus = (props: PromoCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component quote variant-apexus ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="apexus-quote-band">
+        <blockquote className="apexus-quote-text">
+          <Text field={props.fields?.Quote} />
+        </blockquote>
+        <p className="apexus-quote-author">
+          <Text field={props.fields?.AuthorName} />
+        </p>
+      </div>
+    </div>
+  );
+};

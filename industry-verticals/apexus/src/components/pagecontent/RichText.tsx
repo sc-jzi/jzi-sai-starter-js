@@ -28,19 +28,20 @@ export const Default = (props: RichTextProps): JSX.Element => {
   );
 };
 
-/* Apexus variant: centered body copy on white, no card chrome */
+/* Apexus variant: 1140px content column, centered uppercase heading, 18px body copy with bold lead-ins in the bullets */
 export const Apexus = (props: RichTextProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const sxaStyles = `${props.params?.styles || ''}`;
-  const text = props.fields ? (
-    <JssRichText field={props.fields.Text} />
-  ) : (
-    <span className="is-empty-hint">Rich text</span>
-  );
 
   return (
     <div className={`component rich-text variant-apexus ${sxaStyles}`} id={id ? id : undefined}>
-      <div className="copy">{text}</div>
+      <div className="apexus-rich-text-inner">
+        {props.fields ? (
+          <JssRichText field={props.fields.Text} />
+        ) : (
+          <span className="is-empty-hint">Rich text</span>
+        )}
+      </div>
     </div>
   );
 };

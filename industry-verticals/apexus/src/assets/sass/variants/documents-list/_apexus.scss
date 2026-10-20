@@ -1,44 +1,48 @@
-.documents-list.variant-apexus {
-  --v-bg: #ffffff;
+// Apexus Documents List: centered uppercase title, stacked blue link titles with a short description (CRS guides section)
+.component.documents-list.variant-apexus {
   --v-heading: #000000;
-  --v-text: #6d6e71;
-  --v-link: #199fda;
+  --v-link: #0ca0db;
+  --v-text: #000000;
 
-  max-width: 1170px;
-  margin: 0 auto;
-  padding: 32px 24px;
-  background: var(--v-bg);
+  padding: 20px 15px 40px;
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
 
-  h2 {
-    margin: 0 0 16px;
+  .apexus-documents-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  .apexus-documents-title {
     color: var(--v-heading);
-    font-family: "Nunito Sans", sans-serif;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 800;
+    letter-spacing: 0.6px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 20px;
   }
 
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+  .apexus-document {
+    margin-bottom: 18px;
   }
 
-  li {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
-    padding: 12px 0;
-    border-bottom: 1px solid #ededed;
-  }
-
-  a {
+  .apexus-document-link {
     color: var(--v-link);
-    font-weight: 700;
+    font-size: 22px;
     text-decoration: none;
+
+    &::after {
+      content: ' >';
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
-  span {
+  .apexus-document-text {
     color: var(--v-text);
-    font-size: 14px;
+    font-size: 16px;
+    margin: 4px 0 0;
   }
 }

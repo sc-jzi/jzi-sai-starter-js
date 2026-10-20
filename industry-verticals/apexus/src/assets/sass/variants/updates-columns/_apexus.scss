@@ -1,0 +1,95 @@
+// Apexus UpdatesColumns: #00aeef band, 30px white uppercase title, three white cards with grey rules (sections.json #7)
+.component.updates-columns.variant-apexus {
+  --v-bg: #00aeef;
+  --v-title: #ffffff;
+  --v-card-bg: #ffffff;
+  --v-heading: #000000;
+  --v-text: #000000;
+  --v-link: #0ca0db;
+  --v-rule: #9ca0a9;
+
+  background: var(--v-bg);
+  padding: 0 15px 93px;
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
+
+  .updates-columns-inner {
+    max-width: 1416px;
+    margin: 0 auto;
+  }
+
+  .updates-columns-title {
+    color: var(--v-title);
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 15px 0;
+    margin: 0;
+  }
+
+  .updates-columns-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 60px;
+    padding: 0 30px;
+  }
+
+  .updates-column {
+    display: flex;
+    flex-direction: column;
+    background: var(--v-card-bg);
+    padding: 30px 20px 30px;
+  }
+
+  .updates-column-heading {
+    color: var(--v-heading);
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding-bottom: 30px;
+    margin: 0 0 30px;
+    border-bottom: 1px solid var(--v-rule);
+  }
+
+  .updates-column-body {
+    flex: 1;
+    color: var(--v-text);
+    font-size: 18px;
+    line-height: 1.6;
+
+    p {
+      margin: 0 0 30px;
+    }
+
+    a {
+      color: var(--v-link);
+      font-weight: 700;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .updates-column-footer {
+    border-top: 1px solid var(--v-rule);
+    margin-top: 30px;
+    padding-top: 15px;
+
+    a {
+      color: #5a5a5a;
+      font-size: 16px;
+      text-decoration: none;
+    }
+  }
+
+  @media (max-width: 991px) {
+    .updates-columns-row {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding: 0;
+    }
+  }
+}

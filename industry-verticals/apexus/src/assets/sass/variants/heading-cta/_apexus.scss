@@ -1,55 +1,110 @@
-.heading-cta.variant-apexus {
+// Apexus Heading CTA: intro (sections.json #3, CRS #1), green band (#2) and cyan band (CRS #6)
+.component.heading-cta.variant-apexus {
   --v-bg: #ffffff;
   --v-heading: #000000;
   --v-text: #000000;
-  --v-eyebrow: #00aeef;
   --v-btn-bg: #199fda;
   --v-btn-text: #ffffff;
+  --v-btn-border: #199fda;
 
-  padding: 48px 24px;
   background: var(--v-bg);
+  padding: 50px 15px;
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
   text-align: center;
 
-  .heading-inner {
-    max-width: 760px;
+  .apexus-heading-cta-inner {
+    max-width: 1140px;
     margin: 0 auto;
   }
 
-  h1 {
-    margin: 0 0 16px;
+  .apexus-heading {
     color: var(--v-heading);
-    font-family: "Nunito Sans", sans-serif;
     font-size: 30px;
     font-weight: 800;
-    line-height: 1.25;
-  }
-
-  .heading-eyebrow {
-    margin: 0 0 8px;
-    color: var(--v-eyebrow);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.6px;
+    line-height: 1.3;
     text-transform: uppercase;
+    margin: 0 0 20px;
   }
 
-  .heading-text {
-    margin: 0;
+  .apexus-text {
     color: var(--v-text);
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.5;
+    margin: 0 0 25px;
   }
 
-  .heading-cta {
+  .apexus-button {
     display: inline-block;
-    margin-top: 24px;
-    padding: 12px 28px;
-    border-radius: 0;
     background: var(--v-btn-bg);
     color: var(--v-btn-text);
+    border: 2px solid var(--v-btn-border);
+    border-radius: 0;
+    padding: 10px 20px;
     font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 0.6px;
     text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+
+  &.apexus-green-band {
+    --v-bg: #8cc63e;
+    --v-text: #ffffff;
+    --v-btn-bg: transparent;
+    --v-btn-text: #ffffff;
+    --v-btn-border: #ffffff;
+
+    padding: 0 15px;
+
+    .apexus-heading-cta-inner {
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .apexus-text {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .apexus-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 6px 12px;
+
+      &::after {
+        content: '';
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        background: #ffffff
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6l9 6-9 6z' fill='%238cc63e'/%3E%3C/svg%3E")
+          center / 18px no-repeat;
+      }
+    }
+  }
+
+  &.apexus-cyan-band {
+    --v-bg: #00aeef;
+    --v-heading: #ffffff;
+    --v-text: #ffffff;
+    --v-btn-bg: transparent;
+    --v-btn-text: #ffffff;
+    --v-btn-border: #ffffff;
+
+    padding: 80px 15px 70px;
+
+    .apexus-heading-cta-inner {
+      max-width: 900px;
+    }
   }
 }

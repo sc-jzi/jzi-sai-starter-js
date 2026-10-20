@@ -201,43 +201,7 @@ const ArticleListGrid = (props: ArticleListComponentProps): JSX.Element => {
   );
 };
 
-/* Apexus variant: title and date rows, no thumbnails */
-const ArticleListApexus = (props: ArticleListComponentProps): JSX.Element => {
-  const id = props.params?.RenderingIdentifier;
-  const newsItems = getNewsItems(props.fields?.items, parseInt(props.params?.NumberOfItems));
-  const allArticlesPageHref = getAllArticlesPageHref(props.fields?.items);
-  const sxaStyles = `${props.params?.styles || ''}`;
-
-  return (
-    <div className={`component article-list variant-apexus ${sxaStyles}`} id={id ? id : undefined}>
-      <div className="list-head">
-        <h2>Articles and updates</h2>
-        {allArticlesPageHref && (
-          <Link href={allArticlesPageHref} className="see-all">
-            See all
-          </Link>
-        )}
-      </div>
-      <ul>
-        {newsItems?.map((item) => (
-          <li key={item.url}>
-            <Link href={item.url}>
-              <Text field={item.fields.Title} />
-            </Link>
-            {item.fields.Excerpt?.value && (
-              <span>
-                <Text field={item.fields.Excerpt} />
-              </span>
-            )}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
 export const Default = withDatasourceCheck()<ArticleListComponentProps>(ArticleListDefault);
 export const ThreeColumn = withDatasourceCheck()<ArticleListComponentProps>(ArticleListThreeColumn);
 export const Simplified = withDatasourceCheck()<ArticleListComponentProps>(ArticleListSimplified);
 export const Grid = withDatasourceCheck()<ArticleListComponentProps>(ArticleListGrid);
-export const Apexus = withDatasourceCheck()<ArticleListComponentProps>(ArticleListApexus);

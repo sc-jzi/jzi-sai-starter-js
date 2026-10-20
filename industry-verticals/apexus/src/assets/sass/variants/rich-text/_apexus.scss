@@ -1,15 +1,74 @@
-.rich-text.variant-apexus {
-  --v-bg: #ffffff;
-  --v-text: #212529;
+// Apexus RichText: 1140px column, centered uppercase 30px/800 heading, 18px body (CRS 'Why partner' and 'How much does CRS cost')
+.component.rich-text.variant-apexus {
+  --v-heading: #000000;
+  --v-text: #000000;
+  --v-link: #0ca0db;
 
-  padding: 32px 24px;
-  background: var(--v-bg);
+  padding: 30px 15px;
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
 
-  .copy {
-    max-width: 760px;
+  .apexus-rich-text-inner {
+    max-width: 1140px;
     margin: 0 auto;
     color: var(--v-text);
     font-size: 18px;
-    line-height: 1.6;
+    line-height: 1.5;
   }
+
+  h2 {
+    color: var(--v-heading);
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 20px;
+  }
+
+  p {
+    margin: 0 0 15px;
+  }
+
+  ul {
+    padding-left: 22px;
+    margin: 0 0 15px;
+  }
+
+  li {
+    list-style-type: disc;
+    margin-bottom: 8px;
+  }
+
+  a {
+    color: var(--v-link);
+  }
+
+  .apexus-disclaimer {
+    font-size: 14px;
+    font-style: italic;
+  }
+}
+
+// Three Column CTA has no title field: a RichText placed straight before it becomes the band's navy title (sections-crs.json #4).
+.component.rich-text.variant-apexus:has(+ .component.three-column-cta.variant-apexus) {
+  --v-band-bg: #e6e6e6;
+  --v-band-title: #1e285d;
+
+  background: var(--v-band-bg);
+  padding: 40px 15px 0;
+
+  h2,
+  h3 {
+    color: var(--v-band-title);
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: none;
+    margin: 0;
+  }
+}
+
+.component.rich-text.variant-apexus + .component.three-column-cta.variant-apexus {
+  padding-top: 25px;
 }

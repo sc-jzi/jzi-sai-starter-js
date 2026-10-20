@@ -141,7 +141,7 @@ export const LargeImage = (props: CtaBannerProps): JSX.Element => {
   );
 };
 
-/* Apexus variant: full-width green band, title left, outline button right */
+/* Apexus variant: image left, light grey panel right with an uppercase title over a rule, body text and a blue square button */
 export const Apexus = (props: CtaBannerProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();
@@ -150,16 +150,19 @@ export const Apexus = (props: CtaBannerProps): JSX.Element => {
 
   return (
     <div className={`component cta-banner variant-apexus ${sxaStyles}`} id={id ? id : undefined}>
-      <div className="band">
-        <h2>
-          <Text field={props.fields.Title} />
-        </h2>
-        {(isPageEditing || props.fields?.Text?.value) && (
-          <RichText field={props.fields.Text} className="band-text" />
-        )}
-        {(isPageEditing || props.fields?.Link?.value?.href) && (
-          <Link field={props.fields.Link} className="band-cta" />
-        )}
+      <div className="apexus-cta-banner-inner">
+        <div className="apexus-cta-banner-image">
+          <NextImage field={props.fields?.Image} width={460} height={333} />
+        </div>
+        <div className="apexus-cta-banner-panel">
+          {(isPageEditing || props.fields?.Title?.value) && (
+            <Text tag="h3" field={props.fields?.Title} className="apexus-cta-banner-title" />
+          )}
+          <RichText field={props.fields?.Text} className="apexus-cta-banner-text" />
+          {(isPageEditing || props.fields?.Link?.value?.href) && (
+            <Link field={props.fields.Link} className="apexus-button" />
+          )}
+        </div>
       </div>
     </div>
   );

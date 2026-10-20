@@ -222,13 +222,13 @@ export const Apexus = (props: EyebrowProps): JSX.Element => {
             type="button"
             aria-label="Close search"
             onClick={() => setIsSearchOpen(false)}
-            className="fixed inset-x-0 bottom-0 top-[476px] z-[40] cursor-default bg-white/20 backdrop-blur-md"
+            className="fixed inset-x-0 bottom-0 top-[231px] z-[40] cursor-default bg-white/20 backdrop-blur-md"
           />
           <div
             id="site-search-panel"
             ref={searchPanelRef}
             role="search"
-            className="fixed inset-x-0 top-[476px] z-[50] bg-[#f5f5f5] px-6 py-10 shadow-sm"
+            className="fixed inset-x-0 top-[231px] z-[50] bg-[#f5f5f5] px-6 py-10 shadow-sm"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="mx-auto max-w-[1200px]">

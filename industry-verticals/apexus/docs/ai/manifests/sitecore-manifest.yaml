@@ -1921,6 +1921,89 @@ components:
     pendingManual: []
   notes: 
     - "Datasource folder is the shared Promos folder."
+- name: "UpdatesColumns"
+  kind: "list"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-20T15:30:00Z"
+  updatedAt: "2026-10-20T15:30:00Z"
+  createdFor: "apexus"
+  react:
+    filePath: "src/components/pagecontent/UpdatesColumns.tsx"
+    componentMapKey: "UpdatesColumns"
+    variants:
+      - "Default"
+      - "Apexus"
+  templates:
+    datasource:
+      name: "UpdatesColumns"
+      path: "/sitecore/templates/Project/Apexus/Components/UpdatesColumns"
+      itemId: "{F101BD1D-439C-48E7-8B75-8F39D8C0357A}"
+      sectionName: "Data"
+      fields:
+        - { name: "Title", type: "Single-Line Text", itemId: "{35459785-CF4C-4758-AEB2-0E624A73D236}" }
+      baseTemplatesSet: true
+      standardValues:
+        itemId: "{070A5686-DAF1-4F1C-9836-9077E6C84018}"
+        linked: true
+    child:
+      name: "UpdatesColumn"
+      path: "/sitecore/templates/Project/Apexus/Components/UpdatesColumn"
+      itemId: "{1289211E-EE27-4910-9F2D-AB1170F57D4C}"
+      sectionName: "Data"
+      fields:
+        - { name: "Heading", type: "Single-Line Text", itemId: "{F916B3E7-E251-40D3-9DFE-589B07D5159F}" }
+        - { name: "Body", type: "Rich Text", itemId: "{791831F8-1198-46D9-8CC3-564C3AAA17D9}" }
+        - { name: "Link", type: "General Link", itemId: "{5089F3D8-DCBC-4023-94F8-57E8E26B82E0}" }
+      baseTemplatesSet: true
+      standardValues:
+        itemId: "{977731E8-9EE8-4B63-9FEE-2D4A65E2EF8E}"
+        linked: true
+    folder:
+      name: "UpdatesColumns Folder"
+      path: "/sitecore/templates/Project/Apexus/Components/UpdatesColumns Folder"
+      itemId: "{1E96B6AF-A3DB-4CD3-94DB-77E2CC2B6B53}"
+      standardValues:
+        itemId: "{AB03D72D-8B58-4776-893D-F4B1832821F6}"
+        linked: true
+    renderingParams:
+      name: "UpdatesColumns"
+      path: "/sitecore/templates/Project/Apexus/Rendering Parameters/UpdatesColumns"
+      itemId: "{E4D6919E-86DF-4778-8126-6D3CC12B9B70}"
+      baseTemplatesSet: true
+  datasourceFolder:
+    name: "UpdatesColumns"
+    path: "/sitecore/content/Apexus/Apexus/Data/UpdatesColumns"
+    itemId: "{55E3F654-5E31-4C35-864F-E7A404DE8DC9}"
+    insertOptionsSet: true
+  rendering:
+    name: "UpdatesColumns"
+    path: "/sitecore/layout/Renderings/Project/Apexus/UpdatesColumns"
+    itemId: "{C68B9F77-D603-4EC2-8F52-A5E47CFE5B73}"
+    componentName: "UpdatesColumns"
+    datasourceTemplatePath: "/sitecore/templates/Project/Apexus/Components/UpdatesColumns"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='UpdatesColumns Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='UpdatesColumns Folder']"
+    parametersTemplateId: "{E4D6919E-86DF-4778-8126-6D3CC12B9B70}"
+    componentQuery: "query UpdatesColumns($datasource: String!, $language: String!) { datasource: item(path: $datasource, language: $language) { title: field(name: \"Title\") { jsonValue } children { results { id heading: field(name: \"Heading\") { jsonValue } body: field(name: \"Body\") { jsonValue } link: field(name: \"Link\") { jsonValue } } } } }"
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Apexus/Apexus/Presentation/Headless Variants/UpdatesColumns"
+    containerId: "{AB57BD44-BECB-4CD1-A98C-1FC869812F78}"
+    variants:
+      - { name: "Default", itemId: "{46D7A866-A9A2-44CD-89E0-F9D9A2150EB9}" }
+      - { name: "Apexus", itemId: "{B4F33A47-2273-4D3C-9E51-4794EF6B5750}" }
+  verification:
+    checkedAt: "2026-10-20T15:30:00Z"
+    passed:
+      - "Rendering fields read back (componentName, Parameters Template, ComponentQuery, Datasource Template, Datasource Location, AddFieldEditorButton)"
+      - "get_component resolves the datasource template and the Title field"
+      - "Parent __Standard values linked (read back)"
+      - "Listed in Apexus Available Renderings / Page Content (38 ids)"
+    failed: []
+    pendingManual: []
+  notes:
+    - "NEW for the Apexus demo (plan Home section 7). Parent inherits _HorizonDatasourceGrouping {D0F6BE14-2A2D-4C56-ACB5-80CAA573B8E2}; parent __Masters -> UpdatesColumn; folder __Masters -> UpdatesColumns."
 - name: "ColumnSplitter"
   kind: "context-only"
   category: "Page Structure"

@@ -1,6 +1,7 @@
 const SITE_THEME_CLASS_MAP: Record<string, string> = {
   Financial: 'site-financial',
   Services: 'site-services',
+  Apexus: 'site-apexus',
 };
 
 const DEFAULT_SITE_THEME_CLASS = 'site-financial';

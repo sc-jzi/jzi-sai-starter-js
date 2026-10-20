@@ -1,0 +1,64 @@
+// Apexus Accordion: 980px column of question rows, 20px/500 black text, thin grey rules, blue plus (sections-crs.json #2)
+.component.accordion.variant-apexus {
+  --v-text: #000000;
+  --v-rule: #9ca0a9;
+  --v-toggle: #00aeef;
+
+  padding: 20px 15px 40px;
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
+
+  .apexus-accordion-inner {
+    max-width: 980px;
+    margin: 0 auto;
+    border-top: 1px solid var(--v-rule);
+  }
+
+  .apexus-accordion-item {
+    border-bottom: 1px solid var(--v-rule);
+  }
+
+  .apexus-accordion-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 95px;
+    padding: 10px;
+    background: none;
+    border: 0;
+    text-align: left;
+    color: var(--v-text);
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    cursor: pointer;
+  }
+
+  .apexus-accordion-toggle {
+    flex: 0 0 auto;
+    color: var(--v-toggle);
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  .apexus-accordion-answer {
+    padding: 0 10px 20px;
+    font-size: 18px;
+    line-height: 1.5;
+    color: var(--v-text);
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      list-style-type: disc;
+    }
+  }
+}

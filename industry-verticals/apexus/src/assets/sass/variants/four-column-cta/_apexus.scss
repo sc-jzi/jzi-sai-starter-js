@@ -1,54 +1,60 @@
-.four-column-cta.variant-apexus {
-  --v-heading: #ffffff;
-  --v-text: #ffffff;
-  --v-card-1: #0b3a6a;
-  --v-card-2: #00aeef;
-  --v-card-3: #8cc63e;
-  --v-card-4: #6d6e71;
+// Apexus Four Column CTA: 1152px row of four tiles, square image over a #ededed caption box (sections.json #4, #5)
+.component.four-column-cta.variant-apexus {
+  --v-card-bg: #ededed;
+  --v-heading: #000000;
 
-  .tile-row {
+  padding: 0 15px 20px;
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
+
+  .apexus-tiles {
+    max-width: 1152px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
   }
 
-  .tile {
+  .apexus-tile-link {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    min-height: 180px;
-    padding: 24px;
-    color: var(--v-text);
+    height: 100%;
     text-decoration: none;
+
+    &:hover .apexus-tile-caption {
+      text-decoration: underline;
+    }
   }
 
-  .tile-1 { background: var(--v-card-1); }
-  .tile-2 { background: var(--v-card-2); }
-  .tile-3 { background: var(--v-card-3); }
-  .tile-4 { background: var(--v-card-4); }
+  .apexus-tile-image {
+    display: block;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
 
-  h2 {
-    margin: 12px 0 8px;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .apexus-tile-caption {
+    flex: 1;
+    display: block;
+    background: var(--v-card-bg);
     color: var(--v-heading);
-    font-family: "Nunito Sans", sans-serif;
-    font-size: 22px;
+    padding: 20px 18px;
+    min-height: 103px;
+    font-size: 14px;
     font-weight: 800;
-  }
-
-  p {
-    margin: 0;
-    font-size: 15px;
     line-height: 1.4;
-  }
-
-  .tile-icon {
-    width: 48px;
-    height: 48px;
-    object-fit: contain;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
   }
 
   @media (max-width: 991px) {
-    .tile-row {
-      grid-template-columns: 1fr 1fr;
+    .apexus-tiles {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
 }

@@ -74,6 +74,45 @@ body.site-services.dark,
   --roundness: 0.375rem;
 }
 
+// Apexus
+body.site-apexus,
+.site-apexus {
+  --text-body: #212529;
+  --text-body-inverted: #ffffff;
+  --text-colored: #0ca0db;
+  --text-footer: #212529;
+  --text-accent: #8cc63e;
+  --bg-body: #ffffff;
+  --bg-footer: #ffffff;
+  --bg-main: #ffffff;
+  --bg-main-alt: #ededed;
+  --bg-color: #e6f7fd;
+  --bg-saturated: #00aeef;
+  --bg-accent: #8cc63e;
+  --border-color: #9ca0a9;
+  --hr-color: #9ca0a9;
+  --roundness: 0px;
+}
+
+body.site-apexus.dark,
+.dark .site-apexus {
+  --text-body: #ffffff;
+  --text-body-inverted: #1e285d;
+  --text-colored: #00aeef;
+  --text-footer: #ffffff;
+  --text-accent: #8cc63e;
+  --bg-body: #1e285d;
+  --bg-footer: #161d45;
+  --bg-main: #1e285d;
+  --bg-main-alt: #26326f;
+  --bg-color: #26326f;
+  --bg-saturated: #00aeef;
+  --bg-accent: #8cc63e;
+  --border-color: #9ca0a9;
+  --hr-color: #9ca0a9;
+  --roundness: 0px;
+}
+
 // Backgrounds colors
 $bg-transparent: transparent !default;
 $bg-basic-color: var(--bg-body) !default;

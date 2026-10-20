@@ -170,57 +170,55 @@ export const WithSocials = (props: FooterProps): JSX.Element => {
   );
 };
 
-/* Apexus variant: white link columns and a cyan legal strip */
+/* Apexus variant: About Apexus and Hot Links columns split by a vertical rule, award badge right, four-colour brand stripe,
+   program logo band, then a bottom bar with the logo, Contact Us and LinkedIn */
 export const Apexus = (props: FooterProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const sxaStyles = `${props.params?.styles || ''}`;
 
   return (
     <div className={`component footer variant-apexus ${sxaStyles}`} id={id ? id : undefined}>
-      <div className="footer-main">
-        <div className="logo">
-          <NextImage field={props.fields?.Image1} width={150} height={24} className="img-fluid" />
+      <div className="apexus-footer-top">
+        <div className="apexus-footer-column apexus-footer-column-first">
+          <Text tag="h6" field={props.fields?.Title1} className="apexus-footer-title" />
+          <div className="apexus-footer-links">
+            <RichText field={props.fields?.Text1} />
+          </div>
         </div>
-        <div className="columns">
-          <div>
-            <div className="title">
-              <Text field={props.fields?.Title1} />
-            </div>
-            <div className="links">
-              <RichText field={props.fields?.Text1} />
-            </div>
+        <div className="apexus-footer-column">
+          <Text tag="h6" field={props.fields?.Title2} className="apexus-footer-title" />
+          <div className="apexus-footer-links">
+            <RichText field={props.fields?.Text2} />
           </div>
-          <div>
-            <div className="title">
-              <Text field={props.fields?.Title2} />
-            </div>
-            <div className="links">
-              <RichText field={props.fields?.Text2} />
-            </div>
-          </div>
-          <div>
-            <div className="title">
-              <Text field={props.fields?.Title3} />
-            </div>
-            <div className="links">
-              <RichText field={props.fields?.Text3} />
-            </div>
-          </div>
-          <div>
-            <div className="title">
-              <Text field={props.fields?.Title4} />
-            </div>
-            <div className="links">
-              <RichText field={props.fields?.Text4} />
-            </div>
-          </div>
+        </div>
+        <div className="apexus-footer-award">
+          <RichText field={props.fields?.Text3} />
         </div>
       </div>
-      <div className="footnote">
-        <Text field={props.fields?.Copyright} />
-        <div className="privacy-links">
-          <Link field={props.fields?.Link1} />
-          <Link field={props.fields?.Link2} />
+      <div className="apexus-brand-stripe" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+        <span />
+      </div>
+      <div className="apexus-footer-logos">
+        <RichText field={props.fields?.Text4} />
+      </div>
+      <div className="apexus-footer-bottom">
+        <div className="apexus-footer-logo">
+          <NextImage field={props.fields?.Image1} width={110} height={53} />
+        </div>
+        <div className="apexus-footer-bottom-links">
+          <Link field={props.fields?.Link1} className="apexus-footer-contact" />
+          {props.fields?.SocialLink1?.value?.href ? (
+            <Link field={props.fields?.SocialLink1} className="apexus-footer-social">
+              <NextImage field={props.fields?.SocialIcon1} width={23} height={23} />
+            </Link>
+          ) : (
+            <span className="apexus-footer-social">
+              <NextImage field={props.fields?.SocialIcon1} width={23} height={23} />
+            </span>
+          )}
         </div>
       </div>
     </div>

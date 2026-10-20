@@ -76,3 +76,45 @@ export const Default = (props: AccordionProps): JSX.Element => {
     </div>
   );
 };
+
+const ApexusAccordionItem = ({ item }: { item: AccordionItemProps }): JSX.Element => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <div className={`apexus-accordion-item ${isExpanded ? 'expanded' : ''}`}>
+      <button
+        type="button"
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="apexus-accordion-question"
+        aria-expanded={isExpanded}
+      >
+        <span className="apexus-accordion-title">
+          <Text field={item.fields?.Title} />
+        </span>
+        <span className="apexus-accordion-toggle" aria-hidden="true">
+          {isExpanded ? '−' : '+'}
+        </span>
+      </button>
+      <div className={`apexus-accordion-answer ${isExpanded ? 'd-block' : 'd-none'}`}>
+        <RichText field={item.fields?.Content} />
+      </div>
+    </div>
+  );
+};
+
+/* Apexus variant: full-width question rows separated by thin grey rules, blue plus toggle on the right, no icons */
+export const Apexus = (props: AccordionProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const accordionItems = props.fields?.items ?? [];
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div className={`component accordion variant-apexus ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="apexus-accordion-inner">
+        {accordionItems.map((item) => (
+          <ApexusAccordionItem key={item.url || item.name} item={item} />
+        ))}
+      </div>
+    </div>
+  );
+};

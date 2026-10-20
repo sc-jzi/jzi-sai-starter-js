@@ -1,0 +1,90 @@
+# Client Brand Theme — Apexus
+client:
+  name: "Apexus"
+  sourceUrl: "https://www.apexus.com/"
+  extractedAt: "2026-10-20"
+  extractedBy: "site-scraper.mjs + DOM measurement + pixel sampling of the hero brand stripe"
+
+colors:
+  primary: "#00AEEF"            # cyan band (Find out more, How can we help)
+  primaryForeground: "#FFFFFF"
+  secondary: "#1E285D"          # navy (brand stripe, '340B' in banner, section titles)
+  secondaryForeground: "#FFFFFF"
+  accent: "#8CC63E"             # green band, CRS icon tiles, headset icon
+  accentForeground: "#FFFFFF"
+  background: "#FFFFFF"
+  foreground: "#212529"
+  muted: "#EDEDED"              # tile captions, fellowship panel
+  mutedForeground: "#000000"
+  headerBackground: "#FFFFFF"
+  headerForeground: "#000000"
+  footerBackground: "#FFFFFF"
+  footerForeground: "#212529"
+  border: "#9CA0A9"             # grey in the brand stripe, dividers in cards
+  ring: "#19A0DA"
+  extra:
+    - { name: link-blue, value: "#0CA0DB" }
+    - { name: button-blue, value: "#199FDA" }
+    - { name: stripe-blue, value: "#19A0DA" }
+    - { name: light-grey-band, value: "#E6E6E6" }
+
+typography:
+  headingFamily: "Nunito Sans"
+  headingWeight: "800"
+  bodyFamily: "Nunito Sans"
+  bodyWeight: "400"
+  monoFamily: ""
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap"
+  scale:
+    hero: "in image"
+    h1: "30px"
+    h2: "30px"
+    h3: "24px"
+    body: "18px"
+    small: "14px"
+  headingTransform: "uppercase"
+  letterSpacing: "0.6px"
+  lineHeight: "1.5"
+
+spacing:
+  density: "comfortable"
+  sectionGap: "50px"
+  containerMaxWidth: "1170px"
+  containerPadding: "15px"
+
+shape:
+  borderRadius: "0px"
+  buttonRadius: "0px"
+  cardRadius: "0px"
+  imageRadius: "0px"
+  shadowStyle: "none"
+  borderStyle: "thin grey dividers inside cards"
+
+tone:
+  overall: "institutional, educational, compliance-minded"
+  colorMode: "light"
+  contrast: "high"
+  imagery: "people in business/clinical settings, program logos"
+  heroStyle: "full-width photo with the title set in the image, brand colour stripe below"
+  cardStyle: "square image tiles over grey caption boxes; white cards on a cyan band"
+  navStyle: "uppercase bold links separated by '|', right-aligned under small utility links"
+
+siteThemeScss: |
+  body.site-apexus, .site-apexus {
+    --text-body: #212529; --text-body-inverted: #ffffff; --text-colored: #0ca0db; --text-footer: #212529; --text-accent: #8cc63e;
+    --bg-body: #ffffff; --bg-footer: #ffffff; --bg-main: #ffffff; --bg-main-alt: #ededed; --bg-color: #e6f7fd; --bg-saturated: #00aeef; --bg-accent: #8cc63e;
+    --border-color: #9ca0a9; --hr-color: #9ca0a9; --roundness: 0px;
+  }
+  body.site-apexus.dark, .dark .site-apexus {
+    --text-body: #ffffff; --text-body-inverted: #1e285d; --text-colored: #00aeef; --text-footer: #ffffff; --text-accent: #8cc63e;
+    --bg-body: #1e285d; --bg-footer: #161d45; --bg-main: #1e285d; --bg-main-alt: #26326f; --bg-color: #26326f; --bg-saturated: #00aeef; --bg-accent: #8cc63e;
+    --border-color: #9ca0a9; --hr-color: #9ca0a9; --roundness: 0px;
+  }
+
+extraction:
+  confidence: "high"
+  method: "Computed styles from the live DOM (fonts, button/link colours, band backgrounds); navy and grey sampled from the brand stripe in the hero image because they exist only in images"
+  notes:
+    - "Body text on the live site falls back to system-ui; Nunito Sans is used for headings, nav and most copy blocks, so the demo uses Nunito Sans throughout"
+    - "The '340B COMMUNITY' banner title and the colour stripe are part of the hero image"
+    - "Dark theme is a derived proposal; the live site has no dark mode"

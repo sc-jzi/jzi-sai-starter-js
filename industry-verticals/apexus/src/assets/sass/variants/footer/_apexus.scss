@@ -1,70 +1,143 @@
-.footer.variant-apexus {
+// Apexus Footer: two link columns with a vertical rule, award badge, four-colour stripe, logo band, bottom bar (sections.json #8)
+.component.footer.variant-apexus {
   --v-bg: #ffffff;
-  --v-heading: #00aeef;
-  --v-text: #212529;
-  --v-link: #212529;
-  --v-bar: #00aeef;
-  --v-bar-text: #ffffff;
+  --v-heading: #000000;
+  --v-link: #0ca0db;
+  --v-rule: #9ca0a9;
+  --v-stripe-1: #1e285d;
+  --v-stripe-2: #19a0da;
+  --v-stripe-3: #8cc63e;
+  --v-stripe-4: #9ca0a9;
 
   background: var(--v-bg);
+  padding: 10px 0 0;
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
 
-  .footer-main {
-    display: grid;
-    grid-template-columns: 180px 1fr;
-    gap: 32px;
-    max-width: 1170px;
+  .apexus-footer-top {
+    max-width: 1366px;
     margin: 0 auto;
-    padding: 40px 24px;
-  }
-
-  .logo img {
-    width: 150px;
-    height: auto;
-  }
-
-  .columns {
+    padding: 30px 100px 50px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0;
   }
 
-  .title {
-    margin-bottom: 8px;
+  .apexus-footer-column {
+    padding: 0 0 0 60px;
+  }
+
+  .apexus-footer-column-first {
+    padding: 0 60px 0 0;
+    border-right: 1px solid var(--v-rule);
+  }
+
+  .apexus-footer-title {
     color: var(--v-heading);
-    font-family: "Nunito Sans", sans-serif;
-    font-size: 14px;
-    font-weight: 800;
+    font-size: 20px;
+    font-weight: 400;
     text-transform: uppercase;
+    margin: 0 0 30px;
   }
 
-  .links,
-  .links a {
-    color: var(--v-link);
-    font-size: 14px;
-    line-height: 1.7;
-    text-decoration: none;
+  .apexus-footer-links {
+    ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    li {
+      list-style: none;
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: var(--v-link);
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
-  .footnote {
+  .apexus-footer-award {
     display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 16px 24px;
-    background: var(--v-bar);
-    color: var(--v-bar-text);
-    font-size: 13px;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      max-width: 290px;
+      height: auto;
+    }
   }
 
-  .privacy-links a {
-    margin-left: 16px;
-    color: var(--v-bar-text);
+  .apexus-brand-stripe {
+    display: grid;
+    grid-template-columns: 19% 36% 19% 26%;
+    height: 18px;
+
+    span:nth-child(1) { background: var(--v-stripe-1); }
+    span:nth-child(2) { background: var(--v-stripe-2); }
+    span:nth-child(3) { background: var(--v-stripe-3); }
+    span:nth-child(4) { background: var(--v-stripe-4); }
+  }
+
+  .apexus-footer-logos {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 30px 15px;
+
+    p {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    img {
+      max-height: 90px;
+      width: auto;
+    }
+  }
+
+  .apexus-footer-bottom {
+    border-top: 1px solid var(--v-rule);
+    max-width: 1366px;
+    margin: 0 auto;
+    padding: 20px 37px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .apexus-footer-bottom-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .apexus-footer-contact {
+    color: #5a5a5a;
+    font-size: 16px;
+    text-transform: uppercase;
     text-decoration: none;
   }
 
   @media (max-width: 991px) {
-    .footer-main,
-    .columns {
+    .apexus-footer-top {
       grid-template-columns: 1fr;
+      padding: 30px 20px;
+      gap: 30px;
+    }
+
+    .apexus-footer-column,
+    .apexus-footer-column-first {
+      padding: 0;
+      border-right: 0;
     }
   }
 }

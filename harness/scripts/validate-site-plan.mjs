@@ -192,6 +192,31 @@ for (const p of pages) for (const s of arr(p.sections)) {
   else if (s.fit === "variant" && !has(s.fitReason)) p10.push(`${norm(p.path)} #${s.position ?? "?"}: fit: variant needs fitReason (what differs)`);
 }
 add("P10 every section went through the fit check (reuse | variant | new)", "recommended", p10.length === 0, p10.slice(0, 6).join("; "));
+// P12: a page that exists on the prospect's live site MIRRORS it. Every section maps to a measured live section (liveSection = # in sections.md) or is explicitly ADDED with a reason.
+// P13: the measurements exist (header-styles.json, nav.json, sections.json + crops) when the prospect has a URL
+{
+  const srcUrl = String(plan.client?.sourceUrl ?? ""), real = /^https?:\/\//.test(srcUrl) && !/example\.com/.test(srcUrl);
+  let live = null; try { live = JSON.parse(readFileSync(join(demo, "sections.json"), "utf8")); } catch { /* not captured yet */ }
+  const liveIdx = new Set(arr(live?.sections).filter((x) => x.kind !== "footer").map((x) => x.index)), p12 = [], covered = new Set(), added = [];
+  for (const p of pages) {
+    const mirrored = has(p.liveUrl) || (real && norm(p.path).toLowerCase() === "/home");
+    if (!mirrored) continue;
+    for (const s of arr(p.sections)) {
+      if (typeof s !== "object" || s == null || CHROME.has(s.component)) continue;
+      const at = `${norm(p.path)} #${s.position ?? "?"}`;
+      if (s.added === true) { if (!has(s.addedReason)) p12.push(`${at}: added: true needs addedReason`); else added.push(at); continue; }
+      if (s.liveSection == null) p12.push(`${at}: mirrored page, so a section needs liveSection (# from sections.md) or added: true + addedReason`);
+      else if (liveIdx.size && !liveIdx.has(Number(s.liveSection))) p12.push(`${at}: liveSection ${s.liveSection} is not in sections.json`);
+      else covered.add(Number(s.liveSection));
+      if (s.contentSource === "illustrative") p12.push(`${at}: a mirrored section uses the live copy (contentSource: site), not illustrative text`);
+    }
+  }
+  add("P12 pages that exist on the prospect's site mirror it (every section = a live section, or explicitly added with a reason)", real ? "required" : "recommended", p12.length === 0, p12.slice(0, 6).join("; "));
+  const missing = [...liveIdx].filter((i) => !covered.has(i));
+  if (live && real) add("P12b every live homepage section is in the plan (or consciously dropped)", "recommended", missing.length === 0, missing.length ? `live sections not planned: ${missing.join(", ")}` : `${liveIdx.size} live sections covered, ${added.length} added`);
+  const need = ["header-styles.json", "nav.json", "sections.json"].filter((f) => !existsSync(join(demo, f)));
+  if (real) add("P13 prospect measurements exist (header-styles, nav, sections + crops: Phase T3a)", "required", need.length === 0, need.length ? `missing ${need.join(", ")}: run Phase T3a` : "ok");
+}
 // P11: header-area features (site.chrome): eyebrow, search, language, login ... each with a delivery
 const chrome = arr(plan.site?.chrome), p11 = [];
 for (const f of chrome) {

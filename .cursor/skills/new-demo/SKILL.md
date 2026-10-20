@@ -9,7 +9,8 @@ The SE types `/new-demo <description>`, e.g. *"create a demo for Acme Corp (acme
 
 ## 1. Read the request
 - Take from the message: **prospect name**, **website URL**, and everything else the SE said (pains, audience, demo flow, pages wanted, collection, template). Whatever was given is not asked again.
-- `<customer>` = lower-case kebab slug of the prospect name (`Acme Corp` → `acme-corp`). If the name is ambiguous or missing, ask ONE question for it (and the URL if missing).
+- **Default assumption: the prospect has a live website and this demo is a skinned copy of it.** The SE never has to say so. The URL comes from the request, the materials or the transcript; if none is given, find the official site with WebSearch (company name in the materials) and use it; ask only when you cannot find it or several companies fit. "No live site to copy" is the exception and only when the SE says so (a startup, a new brand, a pure concept). Everything then follows the mirror rule in `demo-from-transcript` (Phase T3): pages that exist on the site are built as they are; the story adds only what a demo moment truly needs.
+- `<customer>` = lower-case kebab slug of the prospect name (`Acme Corp` → `acme-corp`). If the name is ambiguous or missing, ask ONE question for it (the URL is looked up, see above).
 - Open with one sentence saying what you are about to do.
 
 ## 2. Pick the route (never ask the SE which one)
@@ -32,7 +33,7 @@ Follow `.cursor/skills/demo-from-transcript/SKILL.md` from Phase T0 with the rou
 Details from the request become part of the brief marked *stated by the SE*. If a transcript exists and the request contradicts it, show the conflict at the gate instead of picking silently.
 
 ## One continuous run
-After the SE approves the plan the run does not stop, hand back or ask until the hand-over (rules: "Continuous run" in `demo-from-transcript`). A missing editing host, an unreadable field or an API limit becomes a line in `manual-tasks.md`, never a pause. Do not end a turn with "say resume demo" unless something truly blocking failed.
+After the SE approves the plan the run does not stop, hand back or ask until the hand-over (rules: "Continuous run" in `demo-from-transcript`). Only the editing host and what a person alone can do go to `manual-tasks.md`; everything else is built, and the run is finished only when `node harness/scripts/run-gate.mjs check <customer>` exits 0. Never end a turn, summarise or hand over while it exits 4: do the unfinished item it names.
 
 ## Rules
 All hard rules of `demo-from-transcript` apply (nothing outside the customer folder and its own new site is touched; no secrets in chat; no invented facts).

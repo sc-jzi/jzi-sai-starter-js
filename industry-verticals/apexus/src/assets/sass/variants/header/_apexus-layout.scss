@@ -1,0 +1,95 @@
+// apexus.com puts the logo beside the utility links and the main menu under them, all inside one 177px header band.
+// The generated header kit (_apexus.scss) stacks the eyebrow above a 177px menu row, so this file folds the two rows together.
+$apexus-eyebrow-height: 54px;
+$apexus-band-height: 177px;
+$apexus-logo-top: 15px;
+$apexus-edge-left: 27px;
+$apexus-edge-right: 15px;
+
+.component.eyebrow.variant-apexus,
+.component.header.variant-apexus {
+  > .container {
+    max-width: none;
+    padding-left: $apexus-edge-left;
+    padding-right: $apexus-edge-right;
+  }
+}
+
+.component.eyebrow.variant-apexus {
+  .eyebrow-links {
+    gap: 7px;
+  }
+
+  .eyebrow-links li + li {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    &::before {
+      content: '|';
+      color: #000000;
+    }
+  }
+
+  .eyebrow-links a[href$='contact-us'] {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+
+    &::after {
+      content: '';
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #8cc63e
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z'/%3E%3Cpath d='M21 16v2a4 4 0 0 1-4 4h-5'/%3E%3C/svg%3E")
+        center / 18px no-repeat;
+    }
+  }
+
+  .theme-switcher,
+  .language-switcher {
+    display: none;
+  }
+}
+
+.component.header.variant-apexus {
+  padding-top: 0;
+  padding-bottom: 0;
+
+  .row {
+    min-height: $apexus-band-height - $apexus-eyebrow-height;
+    align-items: center;
+  }
+
+  .row > .col-auto {
+    position: relative;
+    z-index: 61;
+    align-self: flex-start;
+    margin-top: $apexus-logo-top - $apexus-eyebrow-height;
+  }
+}
+
+@media (min-width: 992px) {
+  .component.navigation.navigation-horizontal.variant-apexus .component-content {
+    nav > ul {
+      gap: 6px;
+    }
+
+    nav > ul > li {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    nav > ul > li + li::before {
+      content: '|';
+      font-weight: 800;
+      color: #000000;
+    }
+
+    nav li.level1 > .navigation-title > a {
+      font-weight: 800;
+    }
+  }
+}

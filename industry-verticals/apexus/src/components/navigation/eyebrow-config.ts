@@ -7,14 +7,15 @@ export const eyebrowConfig: {
 } = {
   "links": [
     {
+      "label": "Apexus Education Portal Login",
+      "href": "https://education.apexus.com/"
+    },
+    {
       "label": "Contact Us",
       "href": "/about-us/contact-us"
     }
   ],
   "phone": null,
-  "cta": {
-    "label": "Apexus Education Portal Login",
-    "href": "https://education.apexus.com/"
-  },
+  "cta": null,
   "search": false
 };

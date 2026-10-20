@@ -120,38 +120,17 @@ export const Default = (props: FourColumnCtaProps): JSX.Element => {
   );
 };
 
-/* Apexus variant: four equal color tiles, white type, no photo cards */
+/* Apexus variant: four square image tiles over grey caption boxes with uppercase bold titles */
 export const Apexus = (props: FourColumnCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
   const sxaStyles = `${props.params?.styles || ''}`;
-
   const tiles = [
-    {
-      image: props.fields.Image1,
-      title: props.fields.Title1,
-      text: props.fields.Text1,
-      link: props.fields.Link1,
-    },
-    {
-      image: props.fields.Image2,
-      title: props.fields.Title2,
-      text: props.fields.Text2,
-      link: props.fields.Link2,
-    },
-    {
-      image: props.fields.Image3,
-      title: props.fields.Title3,
-      text: props.fields.Text3,
-      link: props.fields.Link3,
-    },
-    {
-      image: props.fields.Image4,
-      title: props.fields.Title4,
-      text: props.fields.Text4,
-      link: props.fields.Link4,
-    },
+    { image: props.fields?.Image1, title: props.fields?.Title1, link: props.fields?.Link1 },
+    { image: props.fields?.Image2, title: props.fields?.Title2, link: props.fields?.Link2 },
+    { image: props.fields?.Image3, title: props.fields?.Title3, link: props.fields?.Link3 },
+    { image: props.fields?.Image4, title: props.fields?.Title4, link: props.fields?.Link4 },
   ];
 
   return (
@@ -159,22 +138,21 @@ export const Apexus = (props: FourColumnCtaProps): JSX.Element => {
       className={`component four-column-cta variant-apexus ${sxaStyles}`}
       id={id ? id : undefined}
     >
-      <div className="tile-row">
-        {tiles.map((tile, index) => (
-          <Link key={index} field={tile.link} className={`tile tile-${index + 1}`}>
-            {(isPageEditing || tile.image?.value?.src) && (
-              <NextImage field={tile.image} width={48} height={48} className="tile-icon" />
-            )}
-            <h2>
-              <Text field={tile.title} />
-            </h2>
-            {(isPageEditing || tile.text?.value) && (
-              <p>
-                <Text field={tile.text} />
-              </p>
-            )}
-          </Link>
-        ))}
+      <div className="apexus-tiles">
+        {tiles.map((tile, index) =>
+          isPageEditing || tile.image?.value?.src || tile.title?.value ? (
+            <div className="apexus-tile" key={index}>
+              <Link field={tile.link} className="apexus-tile-link">
+                <span className="apexus-tile-image">
+                  <NextImage field={tile.image} width={240} height={240} />
+                </span>
+                <span className="apexus-tile-caption">
+                  <Text field={tile.title} />
+                </span>
+              </Link>
+            </div>
+          ) : null
+        )}
       </div>
     </div>
   );

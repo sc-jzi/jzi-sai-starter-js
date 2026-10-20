@@ -67,7 +67,7 @@ export const Apexus = (props: HeaderProps): JSX.Element => {
         <div className="row align-items-center">
           <div className="col-auto">
             <a href="/">
-              <NextImage field={props.fields.LogoImage} width={150} height={24} />
+              <NextImage field={props.fields.LogoImage} width={150} height={73} />
             </a>
           </div>
           <div className="col">

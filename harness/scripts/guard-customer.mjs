@@ -60,9 +60,20 @@ if (cmd === "sitecore-path") {
   const coll = (proj.match(/^siteCollection:\s*"?([^"\n]+)"?/m) ?? [])[1]?.trim(), site = (proj.match(/^siteName:\s*"?([^"\n]+)"?/m) ?? [])[1]?.trim();
   if (!coll || !site) die(`${rootRel(pj)} has no siteCollection/siteName for this demo.`);
   if (PROTECTED_SITES.has(site.toLowerCase())) die(`project.yaml siteName "${site}" is a protected/master site. Point it at the duplicated demo site first.`, 1);
-  const roots = [`/sitecore/content/${coll}/${site}`, `/sitecore/media library/project/${coll}/${site}`].map((r) => r.toLowerCase());
+  // Everything a new demo site legitimately owns: its content tree, its media, and the project layer of ITS collection
+  // (derived page/component templates, project renderings/placeholder settings, project settings). Never another collection, never the shared layer itself.
+  const roots = [
+    `/sitecore/content/${coll}/${site}`,
+    `/sitecore/media library/project/${coll}`,
+    `/sitecore/templates/project/${coll}`,
+    `/sitecore/templates/branches/project/${coll}`,
+    `/sitecore/layout/renderings/project/${coll}`,
+    `/sitecore/layout/placeholder settings/project/${coll}`,
+    `/sitecore/layout/layouts/project/${coll}`,
+    `/sitecore/system/settings/project/${coll}`,
+  ].map((r) => r.toLowerCase());
   const lp = p.toLowerCase(), ok = roots.some((r) => lp === r || lp.startsWith(r + "/"));
-  console.log(ok ? `✔ ${p} is inside ${coll}/${site}` : `❌ ${p} is OUTSIDE ${roots[0]}. Do not write there.`);
+  console.log(ok ? `✔ ${p} belongs to this demo (${coll}/${site})` : `❌ ${p} is OUTSIDE this demo's own areas (${roots[0]}, or the project layer of collection "${coll}": templates, renderings, settings, media). Do not write there.`);
   process.exit(ok ? 0 : 1);
 }
 die("usage: guard-customer.mjs <snapshot|check|sitecore-path> <customer>");
