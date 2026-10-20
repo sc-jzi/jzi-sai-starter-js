@@ -197,17 +197,21 @@ add("P10 every section went through the fit check (reuse | variant | new)", "rec
 {
   const srcUrl = String(plan.client?.sourceUrl ?? ""), real = /^https?:\/\//.test(srcUrl) && !/example\.com/.test(srcUrl);
   let live = null; try { live = JSON.parse(readFileSync(join(demo, "sections.json"), "utf8")); } catch { /* not captured yet */ }
+  const idxOf = (f) => { let j = null; try { j = JSON.parse(readFileSync(join(demo, f), "utf8")); } catch { /* not captured */ } return new Set(arr(j?.sections).filter((x) => x.kind !== "footer").map((x) => x.index)); };
   const liveIdx = new Set(arr(live?.sections).filter((x) => x.kind !== "footer").map((x) => x.index)), p12 = [], covered = new Set(), added = [];
   for (const p of pages) {
     const mirrored = has(p.liveUrl) || (real && norm(p.path).toLowerCase() === "/home");
     if (!mirrored) continue;
+    // other mirrored pages are captured to their own file: section-capture --out sections-<slug>.json, named in `sectionsFile` on the page
+    const pIdx = has(p.sectionsFile) ? idxOf(String(p.sectionsFile)) : liveIdx;
+    if (has(p.sectionsFile) && !pIdx.size) p12.push(`${norm(p.path)}: sectionsFile ${p.sectionsFile} is missing or empty: run section-capture --url <live page url> --out ${p.sectionsFile}`);
     for (const s of arr(p.sections)) {
       if (typeof s !== "object" || s == null || CHROME.has(s.component)) continue;
       const at = `${norm(p.path)} #${s.position ?? "?"}`;
       if (s.added === true) { if (!has(s.addedReason)) p12.push(`${at}: added: true needs addedReason`); else added.push(at); continue; }
       if (s.liveSection == null) p12.push(`${at}: mirrored page, so a section needs liveSection (# from sections.md) or added: true + addedReason`);
-      else if (liveIdx.size && !liveIdx.has(Number(s.liveSection))) p12.push(`${at}: liveSection ${s.liveSection} is not in sections.json`);
-      else covered.add(Number(s.liveSection));
+      else if (pIdx.size && !pIdx.has(Number(s.liveSection))) p12.push(`${at}: liveSection ${s.liveSection} is not in ${p.sectionsFile || "sections.json"}`);
+      else if (!has(p.sectionsFile)) covered.add(Number(s.liveSection));
       if (s.contentSource === "illustrative") p12.push(`${at}: a mirrored section uses the live copy (contentSource: site), not illustrative text`);
     }
   }

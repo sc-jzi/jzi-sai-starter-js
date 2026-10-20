@@ -14,11 +14,37 @@
  *   5. images: downloaded, and (CH_ENABLED=true) every one uploaded with a public link
  *   6. looks gates were run on the built site: header-styles.demo.json, sections.demo.json
  *   7. demo-progress.yaml has no pending / failed / in_progress phase
+ *
+ *   node harness/scripts/run-gate.mjs hook               Cursor stop-hook entry (see .cursor/hooks.json): restarts an approved, unfinished run automatically
  */
-import { existsSync, readFileSync, writeFileSync, readdirSync, mkdirSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync, readdirSync, mkdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { spawnSync } from "node:child_process";
+import { fileURLToPath } from "node:url";
 import { ENV, ROOT, die, demoDir, customerApp, readJson } from "./_lib.mjs";
+
+
+/* ---- hook mode: Cursor "stop" hook (.cursor/hooks.json). After approval, a run that is not finished is restarted automatically. ----
+ * stdin: { status, loop_count, ... }. stdout: {} (let the turn end) or { followup_message } (Cursor submits it as the next user message). */
+if (process.argv[2] === "hook") {
+  const out = (o) => { process.stdout.write(JSON.stringify(o)); process.exit(0); };
+  let input = {}; try { input = JSON.parse(readFileSync(0, "utf8") || "{}"); } catch { /* no stdin */ }
+  if (input.status && input.status !== "completed") out({});   // the SE pressed stop, or an error: never fight them
+  const vroot = join(ROOT, "industry-verticals");
+  let best = null;
+  for (const c of existsSync(vroot) ? readdirSync(vroot) : []) {
+    if (c === ENV.BASE_APP_FOLDER) continue;
+    const d = join(vroot, c, "docs", "ai", "demos", c), plan = join(d, "demo-plan.yaml");
+    if (!existsSync(plan) || !/^userApproved:\s*true/m.test(readFileSync(plan, "utf8"))) continue;
+    if (existsSync(join(d, ".run-complete"))) continue;
+    const t = Math.max(...["demo-plan.yaml", "demo-progress.yaml", "manual-tasks.md"].map((f) => { try { return statSync(join(d, f)).mtimeMs; } catch { return 0; } }));
+    if (!best || t > best.t) best = { c, t, d };
+  }
+  if (!best) out({});   // no approved, unfinished demo: nothing to do
+  const r = spawnSync(process.execPath, [fileURLToPath(import.meta.url), "check", best.c], { encoding: "utf8" });
+  if (r.status === 0) { writeFileSync(join(best.d, ".run-complete"), new Date().toISOString()); out({}); }
+  out({ followup_message: `The demo run for "${best.c}" is NOT finished (automatic restart ${Number(input.loop_count ?? 0) + 1}). Do not summarise or hand over. Run \`node harness/scripts/run-gate.mjs check ${best.c}\`, do the first failing item now, and keep going until it exits 0. If it needs a decision only the SE can make, ask that one question.\n\n${r.stdout.trim().slice(0, 1500)}` });
+}
 
 const [cmd, customer] = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 if (!["init", "check"].includes(cmd) || !customer) die("usage: run-gate.mjs <init|check> <customer>");
@@ -84,7 +110,12 @@ if (url && !/example\.com/.test(url)) {
   for (const f of ["header-styles.json", "nav.json", "sections.json"]) if (!existsSync(join(demo, f))) fail(`measurement missing: ${f}`, `Phase T3a: node harness/scripts/${f === "nav.json" ? "nav-extract.mjs" : f === "header-styles.json" ? "header-styles.mjs" : "section-capture.mjs"} --customer ${customer} --url ${url}`);
   const crops = existsSync(join(demo, "sections")) ? readdirSync(join(demo, "sections")).filter((x) => /\.(png|jpe?g)$/i.test(x)) : [];
   if (!crops.length) fail("no section crops in sections/", `node harness/scripts/section-capture.mjs --customer ${customer} --url ${url}`);
-  for (const f of ["header-styles.demo.json", "sections.demo.json"]) if (!existsSync(join(demo, f))) fail(`looks gate not run on the built site: ${f}`, "sitecore-create-demo-variants step 7 items 3 and 3b (needs the built page URL: rendering host or preview).");
+  const lookWaived = /BLOCKED after 2 attempts:.*(looks gate|rendering host|screenshot)/i.test(read(mt));
+  if (!lookWaived) for (const f of ["header-styles.demo.json", "sections.demo.json"]) if (!existsSync(join(demo, f))) fail(`looks gate not run on the built site: ${f}`, "sitecore-create-demo-variants step 7 items 3 and 3b (needs the built page URL: rendering host or preview).");
+  for (const [v, what] of [["header-styles.demo.verdict.json", "header"], ["sections.demo.verdict.json", "sections"]]) {
+    const r = readJson(join(demo, v)); if (!r || lookWaived) continue;
+    if (!r.pass && (r.attempts ?? 1) < 2) fail(`${what} looks gate failed (${(r.diffs ?? []).length} difference(s): ${(r.diffs ?? []).slice(0, 2).join("; ").slice(0, 160)})`, `Fix the SCSS/variant/measurement cause (never hand-edit the reference JSON to match), rebuild, re-run the ${what} compare once more; leftovers after that second run go to manual-tasks.md.`);
+  }
   const man = readJson(join(demo, "images", "image-manifest.json"));
   if (!man) fail("images not downloaded (images/image-manifest.json missing)", `node harness/scripts/download-images.mjs ... from content-map.yaml (images come from sections.json images[] / backgroundImages)`);
   else if (String(ENV.CH_ENABLED).toLowerCase() === "true") {

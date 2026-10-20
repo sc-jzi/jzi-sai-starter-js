@@ -2,7 +2,8 @@
 /**
  * Read the prospect's header navigation (labels, links, dropdown hierarchy) with Playwright, so the demo site gets the same information architecture.
  *
- *   node harness/scripts/nav-extract.mjs --customer <customer> --url <prospect homepage> [--width 1440] [--hover]
+ *   node harness/scripts/nav-extract.mjs --customer <customer> --url <prospect homepage> [--width 1440] [--hover] [--root "<css selector of the MAIN menu>"]
+ *   When the result is wrong (utility links picked as the main menu, a mega menu cut off) re-run with --root, e.g. --root "ul.navbar-nav". Never hand-edit nav.json.
  *
  * Writes industry-verticals/<customer>/docs/ai/demos/<customer>/nav.json:  { url, source, items: [{ label, href, children: [...] }] }
  * Looks at <header> / <nav> / [role=navigation] (the one nearest the top of the page with the most links), follows nested lists, and with --hover also
@@ -24,13 +25,13 @@ try {
   const page = await browser.newPage({ viewport: { width: Number(flags.width ?? 1440), height: 900 } });
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 60000 }).catch((e) => die(`Could not open ${url}: ${e.message.split("\n")[0]}`, 1));
   await page.waitForTimeout(2500);
-  const read = () => page.evaluate(() => {
+  const read = () => page.evaluate((rootSel) => {
     const clean = (t) => (t || "").replace(/\s+/g, " ").trim();
     const visible = (el) => { const r = el.getBoundingClientRect(); const cs = getComputedStyle(el); return r.width > 0 && r.height > 0 && cs.visibility !== "hidden" && cs.display !== "none"; };
     // Labels that belong to a small "utility / eyebrow" bar above the main menu, not to the main menu itself.
     const EYEBROW = /^(about( us)?|join our team|careers?|jobs?|locations?|find a (store|location)|contact( us)?|investors?|news|newsroom|press|blog|support|help|partners?|customer service|request a (quote|demo)|get a quote|get started|subscribe|donate|shop|store|sign ?up)$/i;
     const SKIP = /^(search|language|en|fr|menu|close|cart|toggle.*)$/i;      // controls, not pages (Login is a page and stays in the menu)
-    const cands = [...document.querySelectorAll("header nav, nav, [role=navigation], header, ul")]
+    const cands = [...document.querySelectorAll(rootSel || "header nav, nav, [role=navigation], header, ul")]
       .filter((n) => visible(n) && n.querySelectorAll("a[href]").length >= 2 && n.getBoundingClientRect().top < 400)
       .filter((n, i, all) => !all.some((o) => o !== n && n.contains(o) && o.querySelectorAll("a[href]").length === n.querySelectorAll("a[href]").length));   // keep the innermost of equal containers
     const info = cands.map((n) => {
@@ -78,7 +79,7 @@ try {
       else if (r.width < 600) eyebrow.push({ label, href });
     }
     return { ...res, eyebrow, eyebrowExtras: extras };
-  });
+  }, typeof flags.root === "string" ? flags.root : "");
   let res = await read();
   if (flags.hover && res.items.length) {
     for (const it of res.items.filter((i) => !i.children.length && !i.utility)) {

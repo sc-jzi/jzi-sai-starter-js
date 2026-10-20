@@ -60,6 +60,11 @@ try {
       // a <main> beside <footer>: the footer is a band of its own, expand <main> into its bands
       list = list.flatMap((el) => { if (/^(MAIN)$/.test(el.tagName) || el.getAttribute("role") === "main") { const inner = kids(el).filter(band); return inner.length >= 2 ? inner : [el]; } return [el]; });
     }
+    // a band taller than ~1.5 screens is a wrapper around several sections (flat CMS pages): split it into its children, recursively
+    if (!sel) {
+      const split = (el, d) => { if (el.getBoundingClientRect().height <= 1300 || d > 5) return [el]; const ks = kids(el).filter((k) => k.getBoundingClientRect().height >= 40); return ks.length >= 2 ? ks.flatMap((k) => split(k, d + 1)) : ks.length === 1 ? split(ks[0], d + 1) : [el]; };
+      list = list.flatMap((el) => (el.tagName === "FOOTER" || el.getAttribute("role") === "contentinfo" ? [el] : split(el, 0)));
+    }
     // the footer sits beside <main>, outside the chain we descended: add it as the last section
     if (!sel) for (const f of document.querySelectorAll("footer, [role=contentinfo]")) if (vis(f) && !list.some((l) => l === f || l.contains(f) || f.contains(l)) && f.getBoundingClientRect().height >= 40) list.push(f);
     const out = [];
@@ -203,5 +208,6 @@ if (flags.compare && result) {
     else if (R.cards[0] && D.cards[0] && far(D.cards[0].background, R.cards[0].background, 20)) bad.push(`${nm}: card background ${D.cards[0].background} (prospect ${R.cards[0].background})`);
     if (R.contentWidth && Math.abs(D.contentWidth - R.contentWidth) > R.contentWidth * 0.2) bad.push(`${nm}: content width ${D.contentWidth}px (prospect ${R.contentWidth}px)`);
   }
+    { const vp = join(demo, outName.replace(/\.json$/, ".verdict.json")), prev = readJson(vp, {}); safeWrite(customer, vp, JSON.stringify({ pass: bad.length === 0, attempts: (prev.attempts || 0) + 1, diffs: bad, at: new Date().toISOString() }, null, 2) + "\n"); }   // read by run-gate.mjs
   if (bad.length) { console.log(`✖ ${bad.length} difference(s) between the demo and the prospect's sections:\n  - ${bad.join("\n  - ")}`); process.exitCode = 4; } else console.log("✔ every section matches the prospect's within tolerance");
 }

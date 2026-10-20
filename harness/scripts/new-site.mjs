@@ -66,7 +66,12 @@ if (apply) {
   const pj = join(dst, "docs/ai/config/project.yaml"); let y = existsSync(pj) ? readFileSync(pj, "utf8") : "";
   const put = (k, v) => { const re = new RegExp(`^${k}:.*$`, "m"); y = re.test(y) ? y.replace(re, `${k}: "${v}"`) : `${y}${y && !y.endsWith("\n") ? "\n" : ""}${k}: "${v}"\n`; };
   put("siteCollection", site.collection); put("siteName", site.siteName);
+  // NEW components of this demo live in ITS collection's project layer, never in the base app's collection (the copied files may still say Financial)
+  const R = { renderingsRoot: `/sitecore/layout/Renderings/Project/${site.collection}`, projectTemplatesRoot: `/sitecore/templates/Project/${site.collection}`, renderingParamsRoot: `/sitecore/templates/Project/${site.collection}/Rendering Parameters` };
+  for (const [k, v] of Object.entries(R)) put(k, v);
   safeWrite(customer, pj, y);
+  const mp = join(dst, "docs/ai/manifests/sitecore-manifest.yaml");
+  if (existsSync(mp)) { let m = readFileSync(mp, "utf8"); for (const [k, v] of Object.entries(R)) m = m.replace(new RegExp(`^(\\s*${k}:).*$`, "m"), `$1 "${v}"`); safeWrite(customer, mp, m); }
   safeWrite(customer, buildFile, patched, { buildJson: true });
   console.log(`\n.env.local: ${empty.length ? `STILL EMPTY: ${empty.join(", ")} (add them to harness/.env.local and re-run, or fill industry-verticals/${customer}/.env.local)` : "filled from harness/.env.local"}`);
 }

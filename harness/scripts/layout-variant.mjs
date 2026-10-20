@@ -7,7 +7,7 @@
  *       node harness/scripts/layout-variant.mjs patch --xml-file <file> --variant "{GUID}" (--uid "{GUID}" | --rendering-id "{GUID}" [--ph "/headless-header"])  [--ds "{GUID}"] [--param Key=Value ...]
  *     prints the patched XML on stdout; exits 1 (nothing printed) when the rendering is not found or is ambiguous.
  *     --xml-file - reads stdin. Other s:par parameters (DynamicPlaceholderId, ...) are preserved.
- *  2. Authoring GraphQL route — reads the field, patches it, writes it back (needs SITECORE_CM_HOST + the automation client in harness/.env.local):
+ *  2. Authoring GraphQL route — reads the field, patches it, writes it back (needs SITECORE_CM_HOST + the automation client in harness/.env.local; the layout fields are STANDARD fields, so every field read uses ownFields:false):
  *       node harness/scripts/layout-variant.mjs apply --item "{partial or page item id}" --variant "{GUID}" (--uid ... | --rendering-id ... [--ph ...]) [--language en] [--dry-run]
  *  3. Plain field write (display names; same auth as 2):
  *       node harness/scripts/layout-variant.mjs set-field --item "{id}" --field "__Display name" --value "Contact Us" [--language en] [--dry-run]
@@ -65,14 +65,14 @@ async function main() {
   if (!tr.ok) die(`token request failed: HTTP ${tr.status}`);
   const jwt = (await tr.json()).access_token, url = `${cm}/sitecore/api/authoring/graphql/v1/`;
   const gql = async (query, variables) => { const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${jwt}` }, body: JSON.stringify({ query, variables }) }); const j = await r.json().catch(() => ({})); if (!r.ok || j.errors) die(`GraphQL ${r.status}: ${JSON.stringify(j.errors || j).slice(0, 600)}`, 1); return j.data; };
-  const data = await gql(`query($id:ID!,$lang:String!){ item(where:{itemId:$id,database:"master",language:$lang}){ itemId version fields(ownFields:true){ nodes{ name value } } } }`, { id: norm(item).toUpperCase(), lang });
+  const data = await gql(`query($id:ID!,$lang:String!){ item(where:{itemId:$id,database:"master",language:$lang}){ itemId version fields(ownFields:false){ nodes{ name value } } } }`, { id: norm(item).toUpperCase(), lang });
   const it = data.item; if (!it) die(`item not found in language "${lang}"`);
   if (cmd === "set-field") {   // plain field write (e.g. "__Display name") on the item's latest version in --language
     const fname = flags.field, fval = flags.value;
     if (!fname || fval === undefined || fval === true) die("set-field needs --field <name> --value <text>");
     if (flags["dry-run"]) { console.log(`DRY RUN — would set "${fname}" = "${fval}" on ${item} (${lang}, v${it.version})`); return; }
     await gql(`mutation($id:ID!,$lang:String!,$ver:Int,$name:String!,$value:String!){ updateItem(input:{itemId:$id,database:"master",language:$lang,version:$ver,fields:[{name:$name,value:$value}]}){ item{ itemId } } }`, { id: norm(item).toUpperCase(), lang, ver: it.version, name: fname, value: String(fval) });
-    const back = await gql(`query($id:ID!,$lang:String!){ item(where:{itemId:$id,database:"master",language:$lang}){ fields(ownFields:true){ nodes{ name value } } } }`, { id: norm(item).toUpperCase(), lang });
+    const back = await gql(`query($id:ID!,$lang:String!){ item(where:{itemId:$id,database:"master",language:$lang}){ fields(ownFields:false){ nodes{ name value } } } }`, { id: norm(item).toUpperCase(), lang });
     const got = back.item?.fields?.nodes?.find((f) => f.name.toLowerCase() === String(fname).toLowerCase())?.value;
     console.log(got === String(fval) ? `OK: "${fname}" = "${got}" (${lang})` : `WRITTEN but read-back shows "${got ?? "(empty)"}": check the language/version of the item`);
     process.exit(got === String(fval) ? 0 : 1);

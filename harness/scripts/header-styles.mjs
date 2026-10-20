@@ -61,7 +61,11 @@ try {
     if (eb.length >= 1) {
       const bg = solidBg(eb[0]); let band = bg.el;
       while (band && band.getBoundingClientRect().width < vw * 0.9 && band.parentElement) band = band.parentElement;
-      const bandBg = band ? solidBg(band) : bg; const br = band ? band.getBoundingClientRect() : eb[0].getBoundingClientRect();
+      let bandBg = band ? solidBg(band) : bg; let br = band ? band.getBoundingClientRect() : eb[0].getBoundingClientRect();
+      if (!band || br.height > 150) {   // the only full-width ancestor is a page wrapper (utility links share the header row): the bar is the links' own row
+        const lr0 = eb.map((e) => e.getBoundingClientRect()), top0 = Math.min(...lr0.map((r) => r.top)), bot0 = Math.max(...lr0.map((r) => r.bottom)), pad = Math.min(top0, 14);
+        br = { top: Math.max(0, top0 - pad), height: bot0 + pad - Math.max(0, top0 - pad), bottom: bot0 + pad, width: vw }; bandBg = solidBg(document.body);
+      }
       const cs = getComputedStyle(eb[0]);
       const phoneEl = (a.phone.map(byLabel).filter(Boolean)[0]) || anchors.find((x) => /^tel:/i.test(x.getAttribute("href") || "") && x.getBoundingClientRect().top < br.bottom + 4);
       const ctaEl = a.cta.map(byLabel).filter(Boolean)[0];
@@ -87,6 +91,11 @@ try {
       const cs = getComputedStyle(links[0]);
       let hdr = commonBand(links); let candidate = hdr;
       for (let n = hdr; n && n !== document.body; n = n.parentElement) { const r = n.getBoundingClientRect(); if (r.width >= vw * 0.9) { candidate = n; break; } }
+      // The header ends where the <header>/banner ends; when the only full-width ancestor is a page wrapper (> 300px) it ends below the lowest of the logo and menu links.
+      const hEl = document.querySelector("header, [role=banner]"), hElR = hEl ? hEl.getBoundingClientRect() : null;
+      if (candidate.getBoundingClientRect().height > 300) candidate = hEl && hElR.height <= 300 && hEl.contains(links[0]) ? hEl : hdr;
+      const lowest = Math.max(...links.map((l) => l.getBoundingClientRect().bottom));
+      const limit = Math.round(hElR && hElR.height <= 300 && hElR.bottom > lowest ? hElR.bottom : Math.min(420, lowest + 16));
       const hb = solidBg(candidate), hr = candidate.getBoundingClientRect();
       const ebBottom = out.eyebrow ? out.eyebrow.bar.top + out.eyebrow.bar.height : 0;
       const bandTop = Math.max(hr.top, ebBottom);
@@ -94,7 +103,7 @@ try {
       const lr = logoEl ? logoEl.getBoundingClientRect() : null;
       const hcs = getComputedStyle(candidate);
       // Colour bands down the left edge: the logo row and the menu row are often stacked in ONE <header> with different backgrounds and heights.
-      const bandsAt = []; { let cur = null; for (let y = 0; y < 420; y += 2) { const els = document.elementsFromPoint(6, y + 1); const c = els.length ? solidBg(els[0]).color : "rgb(255, 255, 255)"; if (cur && cur.color === c) cur.bottom = y + 2; else { cur = { top: y, bottom: y + 2, color: c }; bandsAt.push(cur); } } }
+      const bandsAt = []; { let cur = null; for (let y = 0; y < limit; y += 2) { const els = document.elementsFromPoint(6, y + 1); const c = els.length ? solidBg(els[0]).color : "rgb(255, 255, 255)"; if (cur && cur.color === c) cur.bottom = y + 2; else { cur = { top: y, bottom: y + 2, color: c }; bandsAt.push(cur); } } }
       const bandOf = (yc) => bandsAt.find((b) => yc >= b.top && yc < b.bottom);
       // The logo as DISPLAYED: many sites hide the <img> and paint another file as a CSS background (::before) — e.g. a white logo on a coloured band.
       const urlOf = (v) => { const m = String(v).match(/^url\(\s*(["']?)(.*)\1\s*\)$/); if (!m) return null; try { return new URL(m[2], location.href).href; } catch { return m[2]; } };
@@ -179,6 +188,7 @@ try {
         chk("menu item count (top level only)", D.header.nav.count, R.header.nav.count, 1);
       }
     }
+    { const vp = join(demo, outName.replace(/\.json$/, ".verdict.json")), prev = readJson(vp, {}); safeWrite(customer, vp, JSON.stringify({ pass: bad.length === 0, attempts: (prev.attempts || 0) + 1, diffs: bad, at: new Date().toISOString() }, null, 2) + "\n"); }   // read by run-gate.mjs
     if (bad.length) { console.log(`✖ header differs from the prospect's in ${bad.length} place(s):\n  - ${bad.join("\n  - ")}`); process.exitCode = 4; } else console.log("✔ header matches the prospect's measurements within tolerance");
   }
 } finally { await browser.close(); }
