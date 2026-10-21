@@ -67,7 +67,7 @@ export const Pvp = (props: HeaderProps): JSX.Element => {
         <div className="row align-items-center">
           <div className="col-auto">
             <a href="/">
-              <NextImage field={props.fields.LogoImage} width={65} height={56} />
+              <NextImage field={props.fields.LogoImage} width={90} height={77} />
             </a>
           </div>
           <div className="col">

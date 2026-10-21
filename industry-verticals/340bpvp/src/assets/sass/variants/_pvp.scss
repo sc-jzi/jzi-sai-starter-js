@@ -1,5 +1,5 @@
 // 340BPVP body variants from sections.json (1440px): navy #001d60, cyan #0ca0db, gray band #e9e9e9, Nunito Sans.
-// The measured header is one ~148px white band (eyebrow links share that row). Overlay the eyebrow so it does not stack a second bar.
+// Logo row, then the menu on its own row (utility links sit on the logo row, Login sits on the menu row).
 
 #header {
   position: relative;
@@ -20,10 +20,11 @@ main #content {
 .component.eyebrow.variant-pvp {
   position: absolute;
   z-index: 5;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 147px;
+  top: 22px;
+  right: 28px;
+  left: auto;
+  width: auto;
+  height: auto;
   background: transparent;
   pointer-events: none;
 
@@ -34,30 +35,88 @@ main #content {
     pointer-events: auto;
   }
 
+  .eyebrow-slot-left,
+  .eyebrow-slot-right {
+    display: none;
+  }
+
   .eyebrow-bar {
     min-height: 0;
-    height: 40px;
+    height: auto;
     align-items: center;
   }
 }
 
 .component.header.variant-pvp {
-  padding: 0;
+  padding: 16px 28px 0;
   background: #ffffff;
 
   .row {
-    height: 148px;
-    min-height: 148px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: auto;
+    min-height: 0;
     margin: 0;
+  }
+
+  .col-auto {
+    flex: 0 0 auto;
+    padding: 4px 0 8px;
+  }
+
+  .col {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
   }
 }
 
+.pvp-menu-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  padding: 6px 0 14px;
+}
+
+.pvp-menu-row > .component.navigation {
+  flex: 1 1 auto;
+  width: auto;
+}
+
+.component.navigation.navigation-horizontal.variant-pvp nav > ul {
+  justify-content: flex-start;
+  gap: 22px;
+  width: auto;
+  max-width: none;
+  margin: 0;
+}
+
 .component.navigation.navigation-horizontal.variant-pvp .component-content .level1 > .navigation-title > a {
+  padding: 8px 0;
   font-family: "Nunito Sans", sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
   color: #000000;
+}
+
+.pvp-login {
+  flex: 0 0 auto;
+  margin-left: auto;
+  padding: 8px 18px;
+  background: #0ca0db;
+  color: #ffffff;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 .component.hero-banner.variant-pvp {
@@ -222,30 +281,51 @@ main #content {
 .component.footer.variant-pvp {
   background: #ffffff;
   color: #000000;
-  font-size: 16px;
-  padding: 32px 15px;
+  padding: 0;
 
-  .pvp-footer-links {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) 180px;
+  .pvp-footer-bar {
+    height: 15px;
+    background: url("../../images/apexus-branding-bar.png") left center / 160% 100% no-repeat;
+  }
+
+  .pvp-footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 24px;
-    max-width: 1348px;
-    margin: 0 auto;
+    padding: 18px 28px 22px;
   }
 
-  h3 {
-    margin: 0 0 8px;
+  .pvp-footer-logo img {
+    display: block;
+    width: 72px;
+    height: auto;
+  }
+
+  .pvp-footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-right: 18%;
+  }
+
+  .pvp-footer-socials a {
+    color: #0ca0db;
+    font-family: "Nunito Sans", sans-serif;
     font-size: 16px;
-    font-weight: 700;
+    font-weight: 600;
+    text-decoration: none;
   }
 
-  .pvp-footer-logo {
-    justify-self: end;
-  }
+  .pvp-linkedin {
+    display: inline-flex;
+    font-size: 0;
+    line-height: 0;
 
-  .pvp-footer-note {
-    max-width: 1348px;
-    margin: 24px auto 0;
+    svg {
+      width: 34px;
+      height: 34px;
+    }
   }
 }
 

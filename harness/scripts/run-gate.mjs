@@ -30,17 +30,12 @@ if (process.argv[2] === "hook") {
   const out = (o) => { process.stdout.write(JSON.stringify(o)); process.exit(0); };
   let input = {}; try { input = JSON.parse(readFileSync(0, "utf8") || "{}"); } catch { /* no stdin */ }
   if (input.status && input.status !== "completed") out({});   // the SE pressed stop, or an error: never fight them
-  const vroot = join(ROOT, "industry-verticals");
-  let best = null;
-  for (const c of existsSync(vroot) ? readdirSync(vroot) : []) {
-    if (c === ENV.BASE_APP_FOLDER) continue;
-    const d = join(vroot, c, "docs", "ai", "demos", c), plan = join(d, "demo-plan.yaml");
-    if (!existsSync(plan) || !/^userApproved:\s*true/m.test(readFileSync(plan, "utf8"))) continue;
-    if (existsSync(join(d, ".run-complete"))) continue;
-    const t = Math.max(...["demo-plan.yaml", "demo-progress.yaml", "manual-tasks.md"].map((f) => { try { return statSync(join(d, f)).mtimeMs; } catch { return 0; } }));
-    if (!best || t > best.t) best = { c, t, d };
-  }
-  if (!best) out({});   // no approved, unfinished demo: nothing to do
+  // Only the run that `init` started (harness/.active-run.json) is ever restarted. Other approved but unfinished demos are never touched.
+  let active = null; try { active = JSON.parse(readFileSync(join(ROOT, "harness", ".active-run.json"), "utf8")); } catch { /* none */ }
+  if (!active?.customer || Date.now() - Date.parse(active.startedAt || 0) > 24 * 3600 * 1000) out({});   // no active run, or abandoned for a day
+  const d = join(ROOT, "industry-verticals", active.customer, "docs", "ai", "demos", active.customer), plan = join(d, "demo-plan.yaml");
+  if (!existsSync(plan) || !/^userApproved:\s*true/m.test(readFileSync(plan, "utf8")) || existsSync(join(d, ".run-complete"))) out({});
+  const best = { c: active.customer, d };
   const r = spawnSync(process.execPath, [fileURLToPath(import.meta.url), "check", best.c], { encoding: "utf8" });
   if (r.status === 0) { writeFileSync(join(best.d, ".run-complete"), new Date().toISOString()); out({}); }
   out({ followup_message: `The demo run for "${best.c}" is NOT finished (automatic restart ${Number(input.loop_count ?? 0) + 1}). Do not summarise or hand over. Run \`node harness/scripts/run-gate.mjs check ${best.c}\`, do the first failing item now, and keep going until it exits 0. If it needs a decision only the SE can make, ask that one question.\n\n${r.stdout.trim().slice(0, 1500)}` });
@@ -76,6 +71,7 @@ if (cmd === "init") {
   const cur = read(mt);
   if (!cur) writeFileSync(mt, SKELETON);
   else if (!/^## Always \(every demo\)/m.test(cur)) writeFileSync(mt, cur.replace(/\s*$/, "\n\n") + ALWAYS);
+  writeFileSync(join(ROOT, "harness", ".active-run.json"), JSON.stringify({ customer, startedAt: new Date().toISOString() }));   // the stop hook only restarts THIS run
   console.log(`✔ ${mt.slice(ROOT.length + 1).replace(/\\/g, "/")} ready (fixed "Always" section in place)`);
   process.exit(0);
 }

@@ -173,29 +173,27 @@ export const WithSocials = (props: FooterProps): JSX.Element => {
 export const Pvp = (props: FooterProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const sxaStyles = `${props.params?.styles || ''}`;
-  const columns = [
-    [props.fields?.Title1, props.fields?.Text1],
-    [props.fields?.Title2, props.fields?.Text2],
-    [props.fields?.Title3, props.fields?.Text3],
-    [props.fields?.Title4, props.fields?.Text4],
-  ] as const;
 
   return (
-    <footer className={`component footer variant-pvp ${sxaStyles}`} id={id ? id : undefined}>
-      <div className="pvp-footer-links">
-        {columns.map(([title, text], index) => (
-          <div className="pvp-footer-col" key={index}>
-            <Text tag="h3" field={title} />
-            <RichText field={text} />
-          </div>
-        ))}
-        <div className="pvp-footer-logo">
-          <NextImage field={props.fields?.Image1} width={180} height={56} />
+    <div className={`component footer variant-pvp ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="pvp-footer-bar" aria-hidden="true" />
+      <div className="pvp-footer-bottom">
+        <a className="pvp-footer-logo" href="/">
+          <NextImage field={props.fields?.Image1} width={90} height={77} />
+        </a>
+        <div className="pvp-footer-socials">
+          <Link field={props.fields?.Link1} />
+          <Link field={props.fields?.SocialLink1} className="pvp-linkedin" title="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect width="24" height="24" rx="2" fill="#0ca0db" />
+              <path
+                fill="#ffffff"
+                d="M6.5 9.5H8.7V17.5H6.5V9.5ZM7.6 5.6C8.3 5.6 8.9 6.2 8.9 6.9C8.9 7.6 8.3 8.2 7.6 8.2C6.9 8.2 6.3 7.6 6.3 6.9C6.3 6.2 6.9 5.6 7.6 5.6ZM10.2 9.5H12.3V10.6H12.3C12.6 10 13.4 9.3 14.6 9.3C16.9 9.3 17.4 10.8 17.4 12.8V17.5H15.2V13.2C15.2 12.3 15.2 11.2 14 11.2C12.8 11.2 12.6 12.2 12.6 13.1V17.5H10.2V9.5Z"
+              />
+            </svg>
+          </Link>
         </div>
       </div>
-      <div className="pvp-footer-note">
-        <Text field={props.fields?.Copyright} />
-      </div>
-    </footer>
+    </div>
   );
 };
