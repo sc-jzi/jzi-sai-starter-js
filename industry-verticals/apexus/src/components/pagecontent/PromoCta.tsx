@@ -157,6 +157,74 @@ export const WithPlaceholderColumn = (props: PromoCtaProps): JSX.Element => {
   );
 };
 
+const ApexusPromoCta = (props: PromoCtaProps & { imageSide: 'left' | 'right' }): JSX.Element => {
+  const id = props.params?.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const { imageSide } = props;
+  const { Eyebrow, Title, Subtitle, Text: Body, Image, Link: PrimaryLink, Link2 } = props.fields || {};
+
+  if (!props.fields) {
+    return (
+      <div className="component promo-cta variant-apexus">
+        <div className="component-content">
+          <span className="is-empty-hint">Promo CTA</span>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className={`component promo-cta variant-apexus variant-apexus-image-${imageSide} ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="apexus-promo-cta-inner">
+        <div className="apexus-promo-cta-image">
+          {(isPageEditing || Image?.value?.src) && <NextImage field={Image} width={720} height={480} />}
+        </div>
+        <div className="apexus-promo-cta-copy">
+          {(isPageEditing || Eyebrow?.value) && (
+            <p className="apexus-promo-cta-eyebrow">
+              <Text field={Eyebrow} />
+            </p>
+          )}
+          {(isPageEditing || Title?.value) && (
+            <h2 className="apexus-promo-cta-title">
+              <Text field={Title} />
+            </h2>
+          )}
+          {(isPageEditing || Subtitle?.value) && (
+            <p className="apexus-promo-cta-subtitle">
+              <Text field={Subtitle} />
+            </p>
+          )}
+          {(isPageEditing || Body?.value) && <RichText field={Body} className="apexus-promo-cta-text" />}
+          <div className="apexus-promo-cta-actions">
+            {(isPageEditing || PrimaryLink?.value?.href) && (
+              <Link field={PrimaryLink} className="apexus-button" />
+            )}
+            {(isPageEditing || Link2?.value?.href) && (
+              <Link field={Link2} className="apexus-button apexus-button-secondary" />
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+/** Apexus Promo CTA: image on the left, copy on the right. */
+export const ApexusImageLeft = (props: PromoCtaProps): JSX.Element => (
+  <ApexusPromoCta {...props} imageSide="left" />
+);
+
+/** Apexus Promo CTA: copy on the left, image on the right. */
+export const ApexusImageRight = (props: PromoCtaProps): JSX.Element => (
+  <ApexusPromoCta {...props} imageSide="right" />
+);
+
 export const WithBackgroundImage = (props: PromoCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();

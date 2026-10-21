@@ -1,0 +1,117 @@
+.component.promo-cta.variant-apexus {
+  --v-heading: #000000;
+  --v-text: #000000;
+  --v-link: #0ca0db;
+  --v-btn-bg: #199fda;
+  --v-btn-text: #ffffff;
+  --v-btn-secondary: #8dc448;
+
+  padding: 40px 15px;
+  background: #ffffff;
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
+
+  .apexus-promo-cta-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  &.variant-apexus-image-left .apexus-promo-cta-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &.variant-apexus-image-right .apexus-promo-cta-inner {
+    .apexus-promo-cta-image {
+      order: 2;
+    }
+
+    .apexus-promo-cta-copy {
+      order: 1;
+    }
+  }
+
+  .apexus-promo-cta-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .apexus-promo-cta-eyebrow {
+    margin: 0 0 8px;
+    color: var(--v-link);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+  }
+
+  .apexus-promo-cta-title {
+    margin: 0 0 12px;
+    color: var(--v-heading);
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .apexus-promo-cta-subtitle {
+    margin: 0 0 12px;
+    color: var(--v-text);
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  .apexus-promo-cta-text {
+    color: var(--v-text);
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+
+    p {
+      margin: 0 0 12px;
+    }
+  }
+
+  .apexus-promo-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .apexus-button {
+    display: inline-block;
+    background: var(--v-btn-bg);
+    color: var(--v-btn-text);
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &.apexus-button-secondary {
+      background: var(--v-btn-secondary);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .apexus-promo-cta-inner {
+      grid-template-columns: 1fr;
+    }
+
+    &.variant-apexus-image-right .apexus-promo-cta-inner {
+      .apexus-promo-cta-image,
+      .apexus-promo-cta-copy {
+        order: unset;
+      }
+    }
+
+    .apexus-promo-cta-title {
+      font-size: 24px;
+    }
+  }
+}

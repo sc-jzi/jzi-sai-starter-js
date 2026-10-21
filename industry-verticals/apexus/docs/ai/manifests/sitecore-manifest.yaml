@@ -1445,7 +1445,7 @@ components:
   category: "Page Content"
   status: "complete"
   createdAt: "2026-10-09T17:45:00Z"
-  updatedAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-21T22:35:00Z"
   react:
     filePath: "src/components/pagecontent/PromoCta.tsx"
     componentMapKey: "PromoCta"
@@ -1453,6 +1453,8 @@ components:
       - "Default"
       - "WithPlaceholderColumn"
       - "WithBackgroundImage"
+      - "ApexusImageLeft"
+      - "ApexusImageRight"
   templates:
     datasource:
       name: "Promo CTA"
@@ -1493,18 +1495,21 @@ components:
     addFieldEditorButton: ""
     registeredInAvailableRenderings: true
   headlessVariants:
-    containerPath: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Headless Variants/Promo CTA"
-    containerId: "{54670690-3107-45F4-AA52-B83F5A1801D2}"
+    containerPath: "/sitecore/content/Apexus/Apexus/Presentation/Headless Variants/Promo CTA"
+    containerId: "{0D1B5A62-8B36-42ED-841B-11C800CCB87B}"
     variants:
-      - { name: "Default", itemId: "{E7077939-8F32-4C4F-AAAD-A7C53F623CE0}" }
-      - { name: "WithBackgroundImage", itemId: "{DEBA8FAB-A908-4097-B3A9-7EDE5CD0782D}" }
+      - { name: "Default", itemId: "{A49A33E3-B08D-4B32-89E9-FCC717F248F1}" }
+      - { name: "ApexusImageLeft", itemId: "{C011AB22-47C1-4493-BB7B-9377694CE8F2}" }
+      - { name: "ApexusImageRight", itemId: "{D477A83D-C84E-4833-A251-AAA1C7389227}" }
+      - { name: "WithPlaceholderColumn", itemId: "{CCBF87A6-ADEC-437F-811E-FC013B37EA20}" }
+      - { name: "WithBackgroundImage", itemId: "{0D1C22EF-DDD9-4A50-B970-00BF2EBDCC63}" }
   verification:
-    checkedAt: "2026-10-09T17:45:00Z"
+    checkedAt: "2026-10-21T22:35:00Z"
     passed:
       - "Rendering item found"
-    failed: 
-      - "Code variant WithPlaceholderColumn has no Variant Definition"
-      - "Field types not read"
+      - "Apexus Headless Variants container created"
+      - "ApexusImageLeft and ApexusImageRight Variant Definitions created"
+    failed: []
     pendingManual: []
   notes: 
     - "Datasource folder is the shared Promos folder."
