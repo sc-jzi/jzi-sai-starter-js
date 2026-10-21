@@ -23,10 +23,19 @@ export const Default = (props: ComponentProps): JSX.Element => {
 
     setStatus('sending');
     try {
-      await identity({
-        email: identifier,
-        identifiers: [{ id: identifier, provider: 'email' }],
-      });
+      const eventData = {
+        channel: 'WEB',
+        currency: 'USD',
+        identifiers: [
+          {
+            id: identifier,
+            provider: 'email',
+          },
+        ],
+        email,
+      }
+
+      await identity(eventData);
       setSignedInAs(identifier);
       setStatus('signed-in');
     } catch (error) {
