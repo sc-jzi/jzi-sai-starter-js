@@ -1,0 +1,266 @@
+// 340BPVP body variants from sections.json (1440px): navy #001d60, cyan #0ca0db, gray band #e9e9e9, Nunito Sans.
+// The measured header is one ~148px white band (eyebrow links share that row). Overlay the eyebrow so it does not stack a second bar.
+
+#header {
+  position: relative;
+}
+
+main #content {
+  display: block;
+}
+
+.component.hero-banner.variant-pvp,
+.component.rich-text.variant-pvp,
+.component.four-column-cta.variant-pvp,
+.component.footer.variant-pvp {
+  display: block;
+  width: 100%;
+}
+
+.component.eyebrow.variant-pvp {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 147px;
+  background: transparent;
+  pointer-events: none;
+
+  a,
+  button,
+  label,
+  input {
+    pointer-events: auto;
+  }
+
+  .eyebrow-bar {
+    min-height: 0;
+    height: 40px;
+    align-items: center;
+  }
+}
+
+.component.header.variant-pvp {
+  padding: 0;
+  background: #ffffff;
+
+  .row {
+    height: 148px;
+    min-height: 148px;
+    margin: 0;
+  }
+}
+
+.component.navigation.navigation-horizontal.variant-pvp .component-content .level1 > .navigation-title > a {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.component.hero-banner.variant-pvp {
+  background: #ffffff;
+  padding: 32px 15px;
+
+  .pvp-hero {
+    position: relative;
+    max-width: none;
+    margin: 0;
+  }
+
+  .pvp-hero-media img {
+    width: 92%;
+    height: 280px;
+    object-fit: cover;
+    object-position: left center;
+  }
+
+  .pvp-hero-copy {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: 40px;
+  }
+
+  h1 {
+    margin: 0 0 16px;
+    color: #001d60;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 56px;
+    font-weight: 300;
+    line-height: 1.35;
+  }
+
+  .pvp-hero-copy {
+    color: #000000;
+    font-size: 24px;
+    line-height: 1.4;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.component.rich-text.variant-pvp {
+  background: #ffffff;
+  color: #000000;
+  font-size: 32px;
+  line-height: 1.4;
+
+  .component-content {
+    max-width: 1207px;
+    margin: 0 auto;
+    padding: 24px 15px;
+  }
+}
+
+.component.rich-text.variant-pvp-gray {
+  background: #e9e9e9;
+  font-size: 16px;
+
+  a {
+    color: #001d60;
+    font-weight: 700;
+  }
+}
+
+.component.four-column-cta.variant-pvp {
+  background: #ffffff;
+
+  .pvp-cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 15px;
+  }
+
+  .pvp-card {
+    color: #000000;
+    font-size: 16px;
+  }
+
+  h3 {
+    margin: 12px 0 8px;
+    color: #001d60;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+  }
+}
+
+.component.promo-cta.variant-pvp {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: center;
+  background: #ffffff;
+  padding: 32px 15px;
+  color: #000000;
+
+  h2 {
+    margin: 0 0 12px;
+    color: #001d60;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.component.promo-cta.variant-pvp-image-right {
+  .pvp-promo-media {
+    order: 2;
+  }
+}
+
+.component.promo-cta.variant-pvp-close,
+.component.promo-cta.variant-pvp-join {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.component.heading-cta.variant-pvp {
+  background: #ffffff;
+  padding: 32px 15px;
+  color: #000000;
+
+  h1,
+  h2 {
+    margin: 0 0 12px;
+    color: #001d60;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+}
+
+.component.heading-cta.variant-pvp-steps {
+  background: #e9e9e9;
+}
+
+.component.footer.variant-pvp {
+  background: #ffffff;
+  color: #000000;
+  font-size: 16px;
+  padding: 32px 15px;
+
+  .pvp-footer-links {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) 180px;
+    gap: 24px;
+    max-width: 1348px;
+    margin: 0 auto;
+  }
+
+  h3 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  .pvp-footer-logo {
+    justify-self: end;
+  }
+
+  .pvp-footer-note {
+    max-width: 1348px;
+    margin: 24px auto 0;
+  }
+}
+
+.pvp-button {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 6px 12px;
+  background: #0ca0db;
+  color: #ffffff;
+  border-radius: 0;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
