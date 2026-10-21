@@ -1,0 +1,67 @@
+.component.login {
+  padding: 10px 15px 70px;
+  background: #ffffff;
+  font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
+
+  .apexus-login {
+    max-width: 420px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .apexus-login-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: #1e285d;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+
+    input {
+      border: 1px solid #d9d9d9;
+      color: #000000;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: none;
+      padding: 10px 12px;
+    }
+  }
+
+  .apexus-login-button {
+    align-self: flex-start;
+    border: 0;
+    background: #199fda;
+    color: #ffffff;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    padding: 10px 24px;
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: default;
+    }
+  }
+
+  .apexus-login-message {
+    margin: 0;
+    color: #1e285d;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .apexus-login-message-error {
+    color: #b00020;
+  }
+}

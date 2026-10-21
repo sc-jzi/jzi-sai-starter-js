@@ -2408,6 +2408,53 @@ components:
   notes: 
     - "Context item resolver {6CCCBCDE-5E95-44E4-AE66-CFE7D3A0589E}."
 
+- name: "Login"
+  kind: "context-only"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-21T22:55:00Z"
+  updatedAt: "2026-10-21T22:55:00Z"
+  react:
+    filePath: "src/components/pagecontent/Login.tsx"
+    componentMapKey: "Login"
+    variants:
+      - "Default"
+  templates:
+    datasource: null
+    folder: null
+    renderingParams:
+      name: "Default"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Default"
+      itemId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Login"
+    path: "/sitecore/layout/Renderings/Project/Apexus/Login"
+    itemId: "{3BEB26A6-4D7D-4369-8888-45400E3E7EB6}"
+    componentName: "Login"
+    datasourceTemplatePath: ""
+    datasourceLocationQuery: ""
+    parametersTemplateId: "{A65AEA73-8224-408B-913C-B1CEDAE0C443}"
+    componentQuery: ""
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Apexus/Apexus/Presentation/Headless Variants/Login"
+    containerId: "{8264262B-45C2-4FCE-80EA-3C1BAC4C2F00}"
+    variants:
+      - { name: "Default", itemId: "{85D39118-3105-4A4D-8B13-BF33623715EC}" }
+  verification:
+    checkedAt: "2026-10-21T22:55:00Z"
+    passed:
+      - "Rendering has no datasource"
+      - "Placed on /Home/sign-up-or-log-in after the page title"
+      - "Appended to Available Renderings / Page Content"
+    failed: []
+    pendingManual: []
+  notes:
+    - "Visitor form. Log in sends an IDENTITY event with the email as identifiers[0].id (provider email). Password is not checked or sent."
+
 lookups:
   - path: "/sitecore/content/Financial/ProsperaFinancial/Data"
     itemId: "{5C48BD53-E997-45FC-B318-672CFA349BB3}"

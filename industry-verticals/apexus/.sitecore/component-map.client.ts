@@ -29,6 +29,7 @@ import * as ProjectList from 'src/components/pagecontent/ProjectList';
 import * as ProjectDetails from 'src/components/pagecontent/ProjectDetails';
 import * as ParallaxBanner from 'src/components/pagecontent/ParallaxBanner';
 import * as PageBackground from 'src/components/pagecontent/PageBackground';
+import * as Login from 'src/components/pagecontent/Login';
 import * as ImageGallery from 'src/components/pagecontent/ImageGallery';
 import * as HeroBanner from 'src/components/pagecontent/HeroBanner';
 import * as Hero from 'src/components/pagecontent/Hero';
@@ -86,6 +87,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ProjectDetails', { ...ProjectDetails }],
   ['ParallaxBanner', { ...ParallaxBanner }],
   ['PageBackground', { ...PageBackground }],
+  ['Login', { ...Login }],
   ['ImageGallery', { ...ImageGallery }],
   ['HeroBanner', { ...HeroBanner }],
   ['Hero', { ...Hero }],
