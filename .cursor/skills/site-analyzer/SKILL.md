@@ -316,3 +316,6 @@ Only by the fit check above: a missing function or a missing field/item shape. I
 
 ## Menu pages
 Menu items nothing in the story visits are title-only stubs with `look: PageTitle` (heading-only variant; never a richer band's variant with empty fields, which prints "[No text in field]" in Pages). A menu page the demo navigates to (`proves` not empty or `visit: true`) is analysed like the homepage: capture it (`section-capture --url <page> --out sections-<slug>.json`) and map each live section to a component, variant or new (fit check). P14 enforces this.
+
+## Carousels and scrollers
+A section captured with `scroller: true` (or a content width beyond the viewport, many equal cards in one row) is a carousel or horizontal scroller. Do not map it onto a static column component with a variant: the demo would show a different thing. Use a carousel-capable component, or mark it `fit: new` (and list it at the gate). If it is deliberately simplified, say so in `fitReason`.

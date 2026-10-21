@@ -146,3 +146,24 @@ export const Simple = (props: PageBackgroundProps): JSX.Element => {
     </>
   );
 };
+
+/** Apexus article: page Title + Content in a narrow column, matching apexus.com article pages. */
+export const Apexus = (props: PageBackgroundProps): JSX.Element => {
+  const id = props.params?.RenderingIdentifier;
+
+  return (
+    <div
+      className={`component article-details variant-apexus ${props.params?.styles?.trimEnd()}`}
+      id={id ? id : undefined}
+    >
+      <div className="apexus-article-inner">
+        <h1 className="apexus-article-title">
+          <Text field={props.fields?.Title} />
+        </h1>
+        <div className="apexus-article-body">
+          <RichText field={props.fields?.Content} />
+        </div>
+      </div>
+    </div>
+  );
+};

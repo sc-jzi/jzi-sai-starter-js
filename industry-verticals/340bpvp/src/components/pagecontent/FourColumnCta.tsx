@@ -147,3 +147,62 @@ export const Pvp = (props: FourColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+export const PvpSteps = (props: FourColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const steps = [props.fields.Title1, props.fields.Title2, props.fields.Title3, props.fields.Title4];
+
+  return (
+    <div className={`component four-column-cta variant-pvp-steps ${sxaStyles}`} id={id ? id : undefined}>
+      <ol className="pvp-steps">
+        {steps.map((title, index) => (
+          <li className="pvp-step" key={index}>
+            <Text tag="span" className="pvp-step-text" field={title} />
+            <span className="pvp-step-number" aria-hidden="true">
+              {index + 1}
+            </span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
+};
+
+const PvpLinkGrid = (props: FourColumnCtaProps, look: 'cards' | 'boxes'): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const cards = [
+    [props.fields.Link1, props.fields.Text1],
+    [props.fields.Link2, props.fields.Text2],
+    [props.fields.Link3, props.fields.Text3],
+    [props.fields.Link4, props.fields.Text4],
+  ] as const;
+
+  return (
+    <div
+      className={`component four-column-cta variant-pvp-link-cards${
+        look === 'boxes' ? ' variant-pvp-link-boxes' : ''
+      } ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="pvp-link-cards">
+        {cards
+          .filter(([link]) => isPageEditing || link?.value?.href)
+          .map(([link, text], index) => (
+            <article className="pvp-link-card" key={index}>
+              <h3>
+                <Link field={link} />
+              </h3>
+              <Text tag="p" field={text} />
+            </article>
+          ))}
+      </div>
+    </div>
+  );
+};
+
+export const PvpLinkCards = (props: FourColumnCtaProps): JSX.Element => PvpLinkGrid(props, 'cards');
+export const PvpLinkBoxes = (props: FourColumnCtaProps): JSX.Element => PvpLinkGrid(props, 'boxes');

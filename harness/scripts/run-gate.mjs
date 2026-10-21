@@ -108,9 +108,28 @@ if (url && !/example\.com/.test(url)) {
   if (!crops.length) fail("no section crops in sections/", `node harness/scripts/section-capture.mjs --customer ${customer} --url ${url}`);
   const lookWaived = /BLOCKED after 2 attempts:.*(looks gate|rendering host|screenshot)/i.test(read(mt));
   if (!lookWaived) for (const f of ["header-styles.demo.json", "sections.demo.json"]) if (!existsSync(join(demo, f))) fail(`looks gate not run on the built site: ${f}`, "sitecore-create-demo-variants step 7 items 3 and 3b (needs the built page URL: rendering host or preview).");
+  const dropped = new Set([...plan.matchAll(/^\s*droppedLiveSections:\s*\[([^\]]*)\]/gm)].flatMap((m) => m[1].split(",").map((x) => Number(x.trim()))));
   for (const [v, what] of [["header-styles.demo.verdict.json", "header"], ["sections.demo.verdict.json", "sections"]]) {
     const r = readJson(join(demo, v)); if (!r || lookWaived) continue;
-    if (!r.pass && (r.attempts ?? 1) < 2) fail(`${what} looks gate failed (${(r.diffs ?? []).length} difference(s): ${(r.diffs ?? []).slice(0, 2).join("; ").slice(0, 160)})`, `Fix the SCSS/variant/measurement cause (never hand-edit the reference JSON to match), rebuild, re-run the ${what} compare once more; leftovers after that second run go to manual-tasks.md.`);
+    const diffs = (r.diffs ?? []).filter((d) => !dropped.has(Number((String(d).match(/^#(\d+)/) ?? [])[1])));
+    const missingSec = diffs.filter((d) => /not found in the demo/i.test(d));
+    if (missingSec.length) fail(`${what} looks gate: a live section or the footer is MISSING from the built page (${missingSec.slice(0, 3).join("; ").slice(0, 200)})`, "Build it (component, variant, partial) and re-run the compare. Never waived by attempts. Only if the live section is deliberately not part of the demo: site.droppedLiveSections + droppedReason in demo-plan.yaml.");
+    else if (diffs.length && (r.attempts ?? 1) < 2) fail(`${what} looks gate failed (${diffs.length} difference(s): ${diffs.slice(0, 2).join("; ").slice(0, 160)})`, `Fix the SCSS/variant/measurement cause (never hand-edit the reference JSON to match), rebuild, re-run the ${what} compare once more.`);
+    else if (diffs.length && !/^##\s+Looks leftovers[\s\S]*?^\s*[-*]\s+\S/m.test(read(mt))) fail(`${what} looks gate still shows ${diffs.length} difference(s) after ${r.attempts} runs and manual-tasks.md has no "Looks leftovers" list`, "Add a section `## Looks leftovers` to manual-tasks.md with one bullet per remaining difference (what differs, why it could not be matched).");
+  }
+  // every image the live site shows in the mirrored sections must be downloaded (and, below, uploaded)
+  {
+    const want = new Map();
+    for (const f of readdirSync(demo).filter((x) => /^sections.*\.json$/.test(x) && !/\.demo\./.test(x))) {
+      for (const sct of readJson(join(demo, f))?.sections ?? []) for (const im of [...(sct.images ?? []).map((x) => x.src), ...(sct.backgroundImages ?? [])]) {
+        const u = String(im?.url ?? im ?? ""); if (!/^https?:/.test(u)) continue;
+        let b = u.split("?")[0].split("/").pop(); try { b = decodeURIComponent(b); } catch { /* keep */ }
+        want.set(b.toLowerCase().replace(/\.[a-z0-9]+$/, ""), u);
+      }
+    }
+    const have = JSON.stringify(readJson(join(demo, "images", "image-manifest.json")) ?? []).toLowerCase().replace(/%20/g, " ");
+    const absent = [...want].filter(([k]) => !have.includes(k.replace(/%20/g, " "))).map(([, u]) => u);
+    if (absent.length) fail(`${absent.length} image(s) of the live sections are not in images/image-manifest.json (e.g. ${absent[0].slice(0, 90)})`, `Download every image of sections*.json (images[] and backgroundImages), then node harness/scripts/content-hub-upload.mjs ${customer} and attach each image to its datasource.`);
   }
   const man = readJson(join(demo, "images", "image-manifest.json"));
   if (!man) fail("images not downloaded (images/image-manifest.json missing)", `node harness/scripts/download-images.mjs ... from content-map.yaml (images come from sections.json images[] / backgroundImages)`);

@@ -1,15 +1,20 @@
 // Below are built-in components that are available in the app, it's recommended to keep them as is
+import { NextjsContentSdkComponent } from '@sitecore-content-sdk/nextjs';
 
-import { BYOCServerWrapper, NextjsContentSdkComponent, FEaaSServerWrapper } from '@sitecore-content-sdk/nextjs';
+
+import { BYOCServerWrapper, FEaaSServerWrapper } from '@sitecore-content-sdk/nextjs';
 import { Form } from '@sitecore-content-sdk/nextjs';
 
-// end of built-in components
+// end of built-in import section
 import * as ThemeSwitcher from 'src/components/utilities/ThemeSwitcher';
 import * as SiteTheme from 'src/components/utilities/SiteTheme';
 import * as LoanCalculator from 'src/components/utilities/LoanCalculator';
 import * as LanguageSwitcher from 'src/components/utilities/LanguageSwitcher';
 import * as ContactForm from 'src/components/utilities/ContactForm';
 import * as ApplicationForm from 'src/components/utilities/ApplicationForm';
+import * as SearchResults from 'src/components/search/SearchResults';
+import * as PreviewSearch from 'src/components/search/PreviewSearch';
+import * as MoreLikeThis from 'src/components/search/MoreLikeThis';
 import * as ColumnSplitter from 'src/components/pagestructure/ColumnSplitter';
 import * as TwoColumnCta from 'src/components/pagecontent/TwoColumnCta';
 import * as ThreeColumnCta from 'src/components/pagecontent/ThreeColumnCta';
@@ -31,6 +36,7 @@ import * as HeadingCta from 'src/components/pagecontent/HeadingCta';
 import * as FourColumnCta from 'src/components/pagecontent/FourColumnCta';
 import * as FiveColumnCta from 'src/components/pagecontent/FiveColumnCta';
 import * as Features from 'src/components/pagecontent/Features';
+import * as EventsCarousel from 'src/components/pagecontent/EventsCarousel';
 import * as DocumentsList from 'src/components/pagecontent/DocumentsList';
 import * as CtaBanner from 'src/components/pagecontent/CtaBanner';
 import * as Comparison from 'src/components/pagecontent/Comparison';
@@ -42,6 +48,8 @@ import * as ArticleList from 'src/components/pagecontent/ArticleList';
 import * as ArticleDetails from 'src/components/pagecontent/ArticleDetails';
 import * as AppPromo from 'src/components/pagecontent/AppPromo';
 import * as Accordion from 'src/components/pagecontent/Accordion';
+import * as ProfileWidget from 'src/components/non-sitecore/ProfileWidget';
+import * as ProfileIdWidget from 'src/components/non-sitecore/ProfileIdWidget';
 import * as ParallaxBackgroundImage from 'src/components/non-sitecore/ParallaxBackgroundImage';
 import * as IconAccent from 'src/components/non-sitecore/IconAccent';
 import * as DottedAccent from 'src/components/non-sitecore/DottedAccent';
@@ -50,6 +58,7 @@ import * as Navigation from 'src/components/navigation/Navigation';
 import * as Header from 'src/components/navigation/Header';
 import * as Footer from 'src/components/navigation/Footer';
 import * as Eyebrow from 'src/components/navigation/Eyebrow';
+import * as EyebrowConfig from 'src/components/navigation/eyebrow-config';
 import * as Breadcrumb from 'src/components/navigation/Breadcrumb';
 
 export const componentMap = new Map<string, NextjsContentSdkComponent>([
@@ -62,6 +71,9 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['LanguageSwitcher', { ...LanguageSwitcher, componentType: 'client' }],
   ['ContactForm', { ...ContactForm, componentType: 'client' }],
   ['ApplicationForm', { ...ApplicationForm, componentType: 'client' }],
+  ['SearchResults', { ...SearchResults, componentType: 'client' }],
+  ['PreviewSearch', { ...PreviewSearch, componentType: 'client' }],
+  ['MoreLikeThis', { ...MoreLikeThis, componentType: 'client' }],
   ['ColumnSplitter', { ...ColumnSplitter, componentType: 'client' }],
   ['TwoColumnCta', { ...TwoColumnCta, componentType: 'client' }],
   ['ThreeColumnCta', { ...ThreeColumnCta, componentType: 'client' }],
@@ -83,6 +95,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['FourColumnCta', { ...FourColumnCta, componentType: 'client' }],
   ['FiveColumnCta', { ...FiveColumnCta, componentType: 'client' }],
   ['Features', { ...Features, componentType: 'client' }],
+  ['EventsCarousel', { ...EventsCarousel, componentType: 'client' }],
   ['DocumentsList', { ...DocumentsList, componentType: 'client' }],
   ['CtaBanner', { ...CtaBanner, componentType: 'client' }],
   ['Comparison', { ...Comparison, componentType: 'client' }],
@@ -94,6 +107,8 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ArticleDetails', { ...ArticleDetails, componentType: 'client' }],
   ['AppPromo', { ...AppPromo, componentType: 'client' }],
   ['Accordion', { ...Accordion, componentType: 'client' }],
+  ['ProfileWidget', { ...ProfileWidget, componentType: 'client' }],
+  ['ProfileIdWidget', { ...ProfileIdWidget, componentType: 'client' }],
   ['ParallaxBackgroundImage', { ...ParallaxBackgroundImage, componentType: 'client' }],
   ['IconAccent', { ...IconAccent, componentType: 'client' }],
   ['DottedAccent', { ...DottedAccent, componentType: 'client' }],
@@ -102,6 +117,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Header', { ...Header, componentType: 'client' }],
   ['Footer', { ...Footer, componentType: 'client' }],
   ['Eyebrow', { ...Eyebrow, componentType: 'client' }],
+  ['eyebrow-config', { ...EyebrowConfig }],
   ['Breadcrumb', { ...Breadcrumb, componentType: 'client' }],
 ]);
 

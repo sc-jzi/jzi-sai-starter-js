@@ -191,7 +191,20 @@ export const WithBackgroundImage = (props: PromoCtaProps): JSX.Element => {
   );
 };
 
-const PvpPromo = (props: PromoCtaProps, look: 'side' | 'image-right' | 'close' | 'join'): JSX.Element => {
+const PvpPromo = (
+  props: PromoCtaProps,
+  look:
+    | 'side'
+    | 'image-right'
+    | 'image-left-navy'
+    | 'close'
+    | 'join'
+    | 'navy-band'
+    | 'cyan-band'
+    | 'green-band'
+    | 'navy-icon'
+    | 'navy-icon-left'
+): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
@@ -215,7 +228,7 @@ const PvpPromo = (props: PromoCtaProps, look: 'side' | 'image-right' | 'close' |
 
   return (
     <section className={`component promo-cta variant-pvp variant-pvp-${look} ${sxaStyles}`} id={id ? id : undefined}>
-      {look === 'close' ? (
+      {look === 'close' || look === 'image-left-navy' || look === 'navy-icon-left' ? (
         <>
           {media}
           {copy}
@@ -234,3 +247,29 @@ export const Pvp = (props: PromoCtaProps): JSX.Element => PvpPromo(props, 'side'
 export const PvpImageRight = (props: PromoCtaProps): JSX.Element => PvpPromo(props, 'image-right');
 export const PvpClose = (props: PromoCtaProps): JSX.Element => PvpPromo(props, 'close');
 export const PvpJoin = (props: PromoCtaProps): JSX.Element => PvpPromo(props, 'join');
+export const PvpNavyBand = (props: PromoCtaProps): JSX.Element => PvpPromo(props, 'navy-band');
+export const PvpCyanBand = (props: PromoCtaProps): JSX.Element => PvpPromo(props, 'cyan-band');
+export const PvpGreenBand = (props: PromoCtaProps): JSX.Element => PvpPromo(props, 'green-band');
+export const PvpImageLeftNavy = (props: PromoCtaProps): JSX.Element =>
+  PvpPromo(props, 'image-left-navy');
+export const PvpNavyIcon = (props: PromoCtaProps): JSX.Element => PvpPromo(props, 'navy-icon');
+export const PvpNavyIconLeft = (props: PromoCtaProps): JSX.Element =>
+  PvpPromo(props, 'navy-icon-left');
+
+export const PvpStat = (props: PromoCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <section className={`component promo-cta variant-pvp-stat ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="pvp-stat-copy">
+        <Text tag="h2" field={props.fields.Title} />
+        <RichText field={props.fields.Text} />
+      </div>
+      <div className="pvp-stat-figure">
+        <Text tag="p" className="pvp-stat-value" field={props.fields.Subtitle} />
+        <Text tag="p" className="pvp-stat-caption" field={props.fields.Eyebrow} />
+      </div>
+    </section>
+  );
+};

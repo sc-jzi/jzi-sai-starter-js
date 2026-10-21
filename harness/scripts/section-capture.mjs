@@ -146,7 +146,7 @@ try {
       const logoish = el.querySelector("footer img, img[alt*=logo i], img[src*=logo i]");
       return {
         background: secBg, backgroundImage: bgImage, backgroundImages: bgImages,
-        contentLeft: Math.round(cL), contentRight: Math.round(cR), contentWidth: Math.round(cR - cL), fullWidth: (cR - cL) >= vw * 0.9,
+        contentLeft: Math.round(cL), contentRight: Math.round(cR), contentWidth: Math.round(cR - cL), fullWidth: (cR - cL) >= vw * 0.9, scroller: el.scrollWidth > el.clientWidth + 20 || (cR - cL) > vw * 1.05,
         paddingTop: Math.max(0, Math.round(cT - sr.top)), paddingBottom: Math.max(0, Math.round(sr.bottom - cB)),
         order: elements.map((x) => x.role).filter((r, i, a) => r !== a[i - 1]).join(","),
         heading: first("heading") ? { text: first("heading").text, ...(({ role, text, x, y, w, h, ...s }) => s)(first("heading")) } : null,
@@ -187,7 +187,7 @@ if (flags.compare && result) {
   const bad = [];
   const used = new Set();
   for (const R of ref.sections) {
-    const D = result.sections.find((d) => !used.has(d.index) && R.heading?.text && norm(d.heading?.text) === norm(R.heading.text)) ?? result.sections.find((d) => !used.has(d.index) && d.index === R.index && d.kind === R.kind);
+    const D = result.sections.find((d) => !used.has(d.index) && R.heading?.text && norm(d.heading?.text) === norm(R.heading.text)) ?? result.sections.find((d) => !used.has(d.index) && (d.index === R.index || R.kind === "footer") && d.kind === R.kind);
     const nm = `#${R.index} ${(R.heading?.text || R.kind).slice(0, 30)}`;
     if (!D) { bad.push(`${nm}: not found in the demo`); continue; }
     used.add(D.index);

@@ -109,3 +109,46 @@ export const Default = (props: TwoColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+const PvpBoxesLook = (props: TwoColumnCtaProps, look: 'outline' | 'gray-navy'): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const boxes = [
+    [props.fields?.Title1, props.fields?.Text1, props.fields?.Link1, 'two-col-placeholder-left'],
+    [props.fields?.Title2, props.fields?.Text2, props.fields?.Link2, 'two-col-placeholder-right'],
+  ] as const;
+
+  return (
+    <section
+      className={`component two-column-cta variant-pvp-boxes variant-pvp-boxes-${look} ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="pvp-boxes">
+        {boxes.map(([title, text, link, placeholder], index) => (
+          <div className={`pvp-box pvp-box-${index + 1}`} key={placeholder}>
+            {(isPageEditing || title?.value) && (
+              <h2 className="pvp-box-title">
+                {link?.value?.href && !isPageEditing ? (
+                  <Link field={link}>
+                    <Text field={title} />
+                  </Link>
+                ) : (
+                  <Text field={title} />
+                )}
+              </h2>
+            )}
+            {isPageEditing && link && <Link field={link} className="pvp-box-edit-link" />}
+            {(isPageEditing || text?.value) && <Text tag="p" field={text} />}
+            <Placeholder name={placeholder} rendering={props.rendering} />
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export const PvpBoxes = (props: TwoColumnCtaProps): JSX.Element => PvpBoxesLook(props, 'outline');
+export const PvpBoxesGrayNavy = (props: TwoColumnCtaProps): JSX.Element =>
+  PvpBoxesLook(props, 'gray-navy');

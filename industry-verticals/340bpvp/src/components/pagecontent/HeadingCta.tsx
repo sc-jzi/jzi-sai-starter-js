@@ -171,6 +171,32 @@ const PvpHeading = (props: HeadingCtaProps, look: 'band' | 'steps' | 'title'): J
   );
 };
 
+const PvpCtaBand = (props: HeadingCtaProps, tone: 'green' | 'cyan'): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+
+  return (
+    <div
+      className={`component heading-cta variant-pvp-cta variant-pvp-cta-${tone} ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      <div className="pvp-cta-inner">
+        <div className="pvp-cta-copy">
+          <Text tag="h2" field={props.fields?.Heading} />
+          <Text tag="p" field={props.fields?.Text} />
+        </div>
+        {(isPageEditing || props.fields?.Link?.value?.href) && (
+          <Link field={props.fields.Link} className="pvp-cta-button" />
+        )}
+      </div>
+    </div>
+  );
+};
+
 export const Pvp = (props: HeadingCtaProps): JSX.Element => PvpHeading(props, 'band');
 export const PvpSteps = (props: HeadingCtaProps): JSX.Element => PvpHeading(props, 'steps');
 export const PvpPageTitle = (props: HeadingCtaProps): JSX.Element => PvpHeading(props, 'title');
+export const PvpCtaGreen = (props: HeadingCtaProps): JSX.Element => PvpCtaBand(props, 'green');
+export const PvpCtaCyan = (props: HeadingCtaProps): JSX.Element => PvpCtaBand(props, 'cyan');

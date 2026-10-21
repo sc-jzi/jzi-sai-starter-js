@@ -41,15 +41,22 @@ export const Pvp = (props: RichTextProps): JSX.Element => {
   );
 };
 
-export const PvpGrayBand = (props: RichTextProps): JSX.Element => {
+const PvpLook = (props: RichTextProps, lookClass: string): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const sxaStyles = `${props.params?.styles || ''}`;
 
   return (
-    <div className={`component rich-text variant-pvp variant-pvp-gray ${sxaStyles}`} id={id ? id : undefined}>
+    <div className={`component rich-text variant-pvp ${lookClass} ${sxaStyles}`} id={id ? id : undefined}>
       <div className="component-content">
         <JssRichText field={props.fields?.Text} />
       </div>
     </div>
   );
 };
+
+export const PvpGrayBand = (props: RichTextProps): JSX.Element => PvpLook(props, 'variant-pvp-gray');
+export const PvpTopics = (props: RichTextProps): JSX.Element =>
+  PvpLook(props, 'variant-pvp-gray variant-pvp-topics');
+export const PvpBox = (props: RichTextProps): JSX.Element => PvpLook(props, 'variant-pvp-box');
+export const PvpIconRow = (props: RichTextProps): JSX.Element =>
+  PvpLook(props, 'variant-pvp-icon-row');

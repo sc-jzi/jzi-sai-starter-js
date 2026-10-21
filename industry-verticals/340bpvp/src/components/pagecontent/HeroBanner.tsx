@@ -94,7 +94,7 @@ export const Pvp = (props: HeroBannerProps): JSX.Element => {
     <section className={`component hero-banner variant-pvp ${sxaStyles}`} id={id ? id : undefined}>
       <div className="pvp-hero">
         <div className="pvp-hero-media">
-          <NextImage field={props.fields.Image} width={760} height={420} />
+          <NextImage field={props.fields.Image} sizes="200vw" priority />
         </div>
         <div className="pvp-hero-copy">
           <Text tag="h1" field={props.fields.Title} />
@@ -107,3 +107,42 @@ export const Pvp = (props: HeroBannerProps): JSX.Element => {
     </section>
   );
 };
+
+const PvpTitleBand = (props: HeroBannerProps, tone: 'navy' | 'green' | 'photo'): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const hasImage = isPageEditing || !!props.fields?.Image?.value?.src;
+
+  return (
+    <section
+      className={`component hero-banner variant-pvp-band variant-pvp-band-${tone} ${sxaStyles}`}
+      id={id ? id : undefined}
+    >
+      {tone === 'photo' && hasImage && (
+        <div className="pvp-band-photo">
+          <NextImage field={props.fields.Image} sizes="100vw" priority />
+        </div>
+      )}
+      <div className="pvp-band-inner">
+        <div className="pvp-band-copy">
+          <Text tag="h1" field={props.fields.Title} />
+          {(isPageEditing || props.fields?.Text?.value) && <RichText field={props.fields.Text} />}
+          {(isPageEditing || props.fields?.Cta1?.value?.href) && (
+            <Link field={props.fields.Cta1} className="pvp-button" />
+          )}
+        </div>
+        {tone !== 'photo' && hasImage && (
+          <div className="pvp-band-icon">
+            <NextImage field={props.fields.Image} />
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
+export const PvpNavy = (props: HeroBannerProps): JSX.Element => PvpTitleBand(props, 'navy');
+export const PvpGreen = (props: HeroBannerProps): JSX.Element => PvpTitleBand(props, 'green');
+export const PvpPhoto = (props: HeroBannerProps): JSX.Element => PvpTitleBand(props, 'photo');

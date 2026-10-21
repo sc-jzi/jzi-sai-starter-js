@@ -41,13 +41,14 @@ components:
   category: "Articles"
   status: "complete"
   createdAt: "2026-10-09T17:45:00Z"
-  updatedAt: "2026-10-09T17:45:00Z"
+  updatedAt: "2026-10-21T22:15:00Z"
   react:
     filePath: "src/components/pagecontent/ArticleDetails.tsx"
     componentMapKey: "ArticleDetails"
     variants:
       - "Default"
       - "Simple"
+      - "Apexus"
   templates:
     datasource: null
     folder: null
@@ -69,18 +70,25 @@ components:
     addFieldEditorButton: "1"
     registeredInAvailableRenderings: true
   headlessVariants:
-    containerPath: ""
-    containerId: ""
-    variants: []
+    containerPath: "/sitecore/content/Apexus/Apexus/Presentation/Headless Variants/Article Details"
+    containerId: "{1BE32EBA-4701-4926-AB1B-DBDD7B5E5FB5}"
+    variants:
+      - name: "Default"
+        itemId: "{346B556C-5637-4C19-AF3B-256E90F9DF83}"
+      - name: "Simple"
+        itemId: "{DAC14B42-8B43-4966-A426-26B2C85A2DB9}"
+      - name: "Apexus"
+        itemId: "{48C94196-0D40-4D3F-8773-55CDBC3169D8}"
   verification:
-    checkedAt: "2026-10-09T17:45:00Z"
+    checkedAt: "2026-10-21T22:15:00Z"
     passed:
       - "Rendering item found"
-    failed: 
-      - "No Headless Variants container"
+      - "Headless Variants Default, Simple, Apexus created"
+      - "Article Details placed on Article __Standard Values and existing article pages"
+    failed: []
     pendingManual: []
   notes: 
-    - "Context item resolver {6CCCBCDE-5E95-44E4-AE66-CFE7D3A0589E}. Code variant Simple has no Variant Definition."
+    - "Context item resolver {6CCCBCDE-5E95-44E4-AE66-CFE7D3A0589E}. Apexus variant renders page Title + Content."
 - name: "ArticleList"
   kind: "context-only"
   category: "Articles"

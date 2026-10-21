@@ -239,7 +239,11 @@ add("P14 pages the demo navigates to mirror their live page; menu-only pages are
   }
   add("P12 pages that exist on the prospect's site mirror it (every section = a live section, or explicitly added with a reason)", real ? "required" : "recommended", p12.length === 0, p12.slice(0, 6).join("; "));
   const missing = [...liveIdx].filter((i) => !covered.has(i));
-  if (live && real) add("P12b every live homepage section is in the plan (or consciously dropped)", "recommended", missing.length === 0, missing.length ? `live sections not planned: ${missing.join(", ")}` : `${liveIdx.size} live sections covered, ${added.length} added`);
+  if (live && real) {
+    const dropped = new Set(arr(plan.site?.droppedLiveSections).map(Number)), still = missing.filter((i) => !dropped.has(i));
+    const dropOk = !dropped.size || has(plan.site?.droppedReason);
+    add("P12b every live homepage section is in the plan, or listed in site.droppedLiveSections with site.droppedReason", "required", still.length === 0 && dropOk, !dropOk ? "droppedLiveSections needs droppedReason" : still.length ? `live sections not planned: ${still.join(", ")} (add them, or drop them on purpose)` : `${liveIdx.size} live sections covered, ${added.length} added, ${dropped.size} dropped`);
+  }
   const need = ["header-styles.json", "nav.json", "sections.json"].filter((f) => !existsSync(join(demo, f)));
   if (real) add("P13 prospect measurements exist (header-styles, nav, sections + crops: Phase T3a)", "required", need.length === 0, need.length ? `missing ${need.join(", ")}: run Phase T3a` : "ok");
 }

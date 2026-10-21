@@ -11,6 +11,9 @@ import {
   RichText,
   NextImage,
 } from '@sitecore-content-sdk/nextjs';
+import Image from 'next/image';
+import NextLink from 'next/link';
+import apexusBrandingBar from 'assets/images/apexus-branding-bar.png';
 
 interface Fields {
   Image1: ImageField;
@@ -176,11 +179,24 @@ export const Pvp = (props: FooterProps): JSX.Element => {
 
   return (
     <div className={`component footer variant-pvp ${sxaStyles}`} id={id ? id : undefined}>
-      <div className="pvp-footer-bar" aria-hidden="true" />
+      <div className="pvp-footer-columns">
+        {[
+          [props.fields?.Title1, props.fields?.Text1],
+          [props.fields?.Title2, props.fields?.Text2],
+          [props.fields?.Title3, props.fields?.Text3],
+          [props.fields?.Title4, props.fields?.Text4],
+        ].map(([title, text], index) => (
+          <div className={`pvp-footer-col pvp-footer-col-${index + 1}`} key={index}>
+            <Text tag="p" className="pvp-footer-title" field={title as Field<string>} />
+            <RichText className="pvp-footer-links" field={text as RichTextField} />
+          </div>
+        ))}
+      </div>
+      <Image className="pvp-footer-bar" src={apexusBrandingBar} alt="" aria-hidden="true" />
       <div className="pvp-footer-bottom">
-        <a className="pvp-footer-logo" href="/">
+        <NextLink className="pvp-footer-logo" href="/">
           <NextImage field={props.fields?.Image1} width={90} height={77} />
-        </a>
+        </NextLink>
         <div className="pvp-footer-socials">
           <Link field={props.fields?.Link1} />
           <Link field={props.fields?.SocialLink1} className="pvp-linkedin" title="LinkedIn">

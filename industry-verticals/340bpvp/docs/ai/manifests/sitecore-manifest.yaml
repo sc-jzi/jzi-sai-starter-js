@@ -2311,6 +2311,86 @@ components:
     pendingManual: []
   notes: 
     - "Context item resolver {6CCCBCDE-5E95-44E4-AE66-CFE7D3A0589E}."
+- name: "EventsCarousel"
+  kind: "list"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-21T17:40:00Z"
+  updatedAt: "2026-10-21T19:10:00Z"
+  react:
+    filePath: "src/components/pagecontent/EventsCarousel.tsx"
+    componentMapKey: "EventsCarousel"
+    variants:
+      - "Default"
+      - "Resources"
+  templates:
+    datasource:
+      name: "EventsCarousel"
+      path: "/sitecore/templates/Project/Apexus/Components/EventsCarousel"
+      itemId: "{0D402837-6D37-440E-A975-120938DF5551}"
+      standardValuesId: "{BE3ECE37-5DE0-484A-BDB9-F4D28FA8B05E}"
+      baseTemplatesSet: true
+      fields:
+        - { name: "Title", type: "Single-Line Text", itemId: "{B4F17F87-4B63-44BB-BC88-ACC4FBB3695A}" }
+    child:
+      name: "EventsCarouselItem"
+      path: "/sitecore/templates/Project/Apexus/Components/EventsCarouselItem"
+      itemId: "{2720128C-5DDE-4AAF-B93B-9F7F686F9371}"
+      standardValuesId: "{1D24468D-4FF1-4C28-8FDA-20D361423F64}"
+      baseTemplatesSet: true
+      fields:
+        - { name: "Title", type: "Single-Line Text", itemId: "{37ACC25D-E9DA-49A5-9881-FDDB37D86454}" }
+        - { name: "Link", type: "General Link", itemId: "{210C4B85-6A13-42B3-9375-CBF1A1DCF2FB}" }
+        - { name: "Date", type: "Single-Line Text", itemId: "{5118A739-20D5-4283-8028-05F83CA99C19}" }
+        - { name: "Location", type: "Single-Line Text", itemId: "{1D44C161-3323-4883-AE79-913024772530}" }
+        - { name: "Image", type: "Image", itemId: "{4C99BD4D-B268-4727-AC63-1790581E85D5}" }
+        - { name: "Text", type: "Multi-Line Text", itemId: "{0B02B8A1-8160-46A5-9F81-DE795319B5E0}" }
+    folder:
+      name: "EventsCarousel Folder"
+      path: "/sitecore/templates/Project/Apexus/Components/EventsCarousel Folder"
+      itemId: "{90888EF1-813D-486E-A7B3-6FCB86D8DC08}"
+      standardValuesId: "{BCDC97B4-077B-4E03-83DF-C153ED0CC1C9}"
+    renderingParams:
+      name: "EventsCarousel"
+      path: "/sitecore/templates/Project/Apexus/Rendering Parameters/EventsCarousel"
+      itemId: "{D2622641-F099-416E-98CA-EFB768343A92}"
+      baseTemplatesSet: true
+  datasourceFolder:
+    path: "/sitecore/content/Apexus/340BPVP/Data/EventsCarousel"
+    itemId: "{67F8D2A8-9F2C-4336-8AEB-2BE167F61B9A}"
+    insertOptionsSet: true
+  rendering:
+    name: "EventsCarousel"
+    path: "/sitecore/layout/Renderings/Project/Apexus/EventsCarousel"
+    itemId: "{B52EF59A-880F-4C1C-9951-87E5836E3DE2}"
+    componentName: "EventsCarousel"
+    datasourceTemplatePath: "/sitecore/templates/Project/Apexus/Components/EventsCarousel"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='EventsCarousel Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='EventsCarousel Folder']"
+    parametersTemplateId: "{D2622641-F099-416E-98CA-EFB768343A92}"
+    componentQuery: "datasource { title; children { id title text link date location image } } via field(name:)"
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: true
+    availableRenderingsPath: "/sitecore/content/Apexus/340BPVP/Presentation/Available Renderings/Page Content"
+  headlessVariants:
+    containerPath: "/sitecore/content/Apexus/340BPVP/Presentation/Headless Variants/EventsCarousel"
+    containerId: "{B2D25457-579F-4E62-BE42-A43CB1A15207}"
+    variants:
+      - { name: "Default", itemId: "{E43E26E4-AF33-4887-991B-D8B257605881}" }
+      - { name: "Resources", itemId: "{53B51F38-CAF5-4102-92F2-3B2C94E939DE}" }
+  datasources:
+    - { name: "HomeUpcomingEvents", itemId: "{EDFD6B97-0F5B-4906-A1EF-F139517BBCB4}", children: 10 }
+    - { name: "HomeNewResources", itemId: "{111F94B6-5B49-4BA2-8578-E1666D72AD6A}", children: 10 }
+  verification:
+    checkedAt: "2026-10-21T19:10:00Z"
+    passed:
+      - "Templates, sections and field types verified via get_content_item_by_id"
+      - "Rendering fields written and echoed back"
+      - "Home renders 10 cards from HomeUpcomingEvents {EDFD6B97-0F5B-4906-A1EF-F139517BBCB4}"
+      - "Home renders 10 Resources cards from HomeNewResources {111F94B6-5B49-4BA2-8578-E1666D72AD6A} (rendering uid B11A0009)"
+    failed: []
+    pendingManual: []
+  notes:
+    - "340BPVP-only: registered in the 340BPVP Page Content Available Renderings only."
 
 lookups:
   - path: "/sitecore/content/Financial/ProsperaFinancial/Data"
