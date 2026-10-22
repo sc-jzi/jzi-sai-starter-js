@@ -180,6 +180,7 @@ const ApexusHeadingCta = ({
   const isPageEditing = page.mode.isEditing;
   const sxaStyles = `${props.params?.styles || ''}`;
   const headingOnly = HEADING_ONLY.has(look);
+  const hideHeading = look === 'green-band';
 
   return (
     <div
@@ -187,7 +188,7 @@ const ApexusHeadingCta = ({
       id={id ? id : undefined}
     >
       <div className="apexus-heading-cta-inner">
-        {(isPageEditing || props.fields?.Heading?.value) && (
+        {!hideHeading && (isPageEditing || props.fields?.Heading?.value) && (
           <Text
             tag={look === 'intro' || look === 'page-title' ? 'h1' : 'h2'}
             field={props.fields?.Heading}

@@ -1,0 +1,19 @@
+.component.video {
+  padding: 20px 15px 40px;
+  background: #ffffff;
+
+  .apexus-video {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  video,
+  iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    border: 0;
+    background: #000000;
+  }
+}

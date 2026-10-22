@@ -2454,6 +2454,72 @@ components:
     pendingManual: []
   notes:
     - "Visitor form. Log in sends an IDENTITY event with the email as identifiers[0].id (provider email). Password is not checked or sent."
+- name: "Video"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-22T01:10:00Z"
+  updatedAt: "2026-10-22T01:10:00Z"
+  react:
+    filePath: "src/components/pagecontent/Video.tsx"
+    componentMapKey: "Video"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Video"
+      path: "/sitecore/templates/Project/Apexus/Components/Video"
+      itemId: "{72AD29F8-8DA8-43DC-8EB3-D8C796D2202C}"
+      sectionName: "Data"
+      fields:
+        - { name: "Video", type: "General Link", itemId: "{EC31FEF8-6828-4C1B-A6C2-93E6E7155C47}" }
+      baseTemplatesSet: true
+      standardValues:
+        itemId: "{BB626BA4-B5A1-4310-A76D-C6244B6795D8}"
+        linked: true
+    folder:
+      name: "Video Folder"
+      path: "/sitecore/templates/Project/Apexus/Components/Video Folder"
+      itemId: "{EC44AB14-EBE6-43E9-96E2-809EEE6FF913}"
+      standardValues:
+        itemId: "{482656E6-F7FA-4433-878A-045F041D586A}"
+        linked: true
+    renderingParams:
+      name: "Video"
+      path: "/sitecore/templates/Project/Apexus/Rendering Parameters/Video"
+      itemId: "{EAD6278B-07F0-4957-8A9D-A59AD7164B9F}"
+      baseTemplatesSet: true
+  datasourceFolder:
+    name: "Videos"
+    path: "/sitecore/content/Apexus/Apexus/Data/Videos"
+    itemId: "{42F0E6D8-E234-49B2-8B00-4910979F75EC}"
+    insertOptionsSet: true
+  rendering:
+    name: "Video"
+    path: "/sitecore/layout/Renderings/Project/Apexus/Video"
+    itemId: "{A1B617B5-99F8-41AD-BD37-A852410F81CE}"
+    componentName: "Video"
+    datasourceTemplatePath: "/sitecore/templates/Project/Apexus/Components/Video"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Video Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Video Folder']"
+    parametersTemplateId: "{EAD6278B-07F0-4957-8A9D-A59AD7164B9F}"
+    componentQuery: ""
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Apexus/Apexus/Presentation/Headless Variants/Video"
+    containerId: "{9CE26844-D0B3-4946-9A2E-03D094393275}"
+    variants:
+      - { name: "Default", itemId: "{45424800-F488-4AE6-A7E7-7813E7745C7A}" }
+  verification:
+    checkedAt: "2026-10-22T01:10:00Z"
+    passed:
+      - "Datasource template has General Link field Video"
+      - "Rendering requires datasource and points at Video Folder"
+      - "Registered in Available Renderings / Page Content"
+    failed: []
+    pendingManual: []
+  notes:
+    - "Example datasource at /sitecore/content/Apexus/Apexus/Data/Videos/Video. Playback is muted autoplay for MP4, YouTube, and Vimeo URLs."
 
 lookups:
   - path: "/sitecore/content/Financial/ProsperaFinancial/Data"
