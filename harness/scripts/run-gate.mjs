@@ -109,7 +109,11 @@ if (url && !/example\.com/.test(url)) {
   const lookWaived = /BLOCKED after 2 attempts:.*(looks gate|rendering host|screenshot)/i.test(read(mt));
   if (!lookWaived) for (const f of ["header-styles.demo.json", "sections.demo.json"]) if (!existsSync(join(demo, f))) fail(`looks gate not run on the built site: ${f}`, "sitecore-create-demo-variants step 7 items 3 and 3b (needs the built page URL: rendering host or preview).");
   const dropped = new Set([...plan.matchAll(/^\s*droppedLiveSections:\s*\[([^\]]*)\]/gm)].flatMap((m) => m[1].split(",").map((x) => Number(x.trim()))));
-  for (const [v, what] of [["header-styles.demo.verdict.json", "header"], ["sections.demo.verdict.json", "sections"]]) {
+  // every mirrored page (Home + each page with a sectionsFile) needs its own built-vs-live comparison
+  const pageFiles = [...new Set([...plan.matchAll(/^\s*sectionsFile:\s*"?([\w.-]+\.json)/gm)].map((m) => m[1]))];
+  const verdicts = [["header-styles.demo.verdict.json", "header"], ["sections.demo.verdict.json", "sections"], ...pageFiles.map((f) => [f.replace(/\.json$/, ".demo.verdict.json"), f.replace(/\.json$/, "")])];
+  for (const [v, what] of verdicts) {
+    if (!existsSync(join(demo, v))) { if (!lookWaived && pageFiles.some((f) => f.replace(/\.json$/, ".demo.verdict.json") === v)) fail(`looks gate not run for the mirrored page ${what}`, `node harness/scripts/section-capture.mjs --customer ${customer} --url <the BUILT page url> --out ${what}.demo.json --compare ${what}.json (then fix, one more pass)`); continue; }
     const r = readJson(join(demo, v)); if (!r || lookWaived) continue;
     const diffs = (r.diffs ?? []).filter((d) => !dropped.has(Number((String(d).match(/^#(\d+)/) ?? [])[1])));
     const missingSec = diffs.filter((d) => /not found in the demo/i.test(d));
