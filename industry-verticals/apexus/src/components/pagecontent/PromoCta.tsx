@@ -74,9 +74,8 @@ export const Default = (props: PromoCtaProps): JSX.Element => {
               <DottedAccent className="dotted-accent-top" />
               <NextImage
                 field={props.fields.Image}
-                className={`d-block mx-lg-auto img-fluid ${
-                  !isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
-                }`}
+                className={`d-block mx-lg-auto img-fluid ${!isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
+                  }`}
                 width={900}
                 height={900}
               />
@@ -141,9 +140,8 @@ export const WithPlaceholderColumn = (props: PromoCtaProps): JSX.Element => {
                 <DottedAccent className="dotted-accent-top" />
                 <NextImage
                   field={props.fields.Image}
-                  className={`d-block mx-lg-auto img-fluid ${
-                    !isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
-                  }`}
+                  className={`d-block mx-lg-auto img-fluid ${!isPageEditing ? `fade-section ${isVisible ? 'is-visible' : ''}` : ''
+                    }`}
                   width={900}
                   height={900}
                 />
@@ -182,7 +180,7 @@ const ApexusPromoCta = (props: PromoCtaProps & { imageSide: 'left' | 'right' }):
     >
       <div className="apexus-promo-cta-inner">
         <div className="apexus-promo-cta-image">
-          {(isPageEditing || Image?.value?.src) && <NextImage field={Image} width={720} height={480} />}
+          <NextImage field={Image} width={720} height={480} unoptimized />
         </div>
         <div className="apexus-promo-cta-copy">
           {(isPageEditing || Eyebrow?.value) && (
