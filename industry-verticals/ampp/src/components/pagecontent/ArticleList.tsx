@@ -7,9 +7,7 @@ import {
   Field,
   ImageField,
   Text,
-  RichText,
   RichTextField,
-  useSitecore,
   withDatasourceCheck,
   NextImage,
 } from '@sitecore-content-sdk/nextjs';
@@ -203,93 +201,27 @@ const ArticleListGrid = (props: ArticleListComponentProps): JSX.Element => {
   );
 };
 
-/* AMPP variant: chronological event rows with a schedule chip and title */
-const ArticleListEventList = (props: ArticleListComponentProps): JSX.Element => {
-  const id = props.params?.RenderingIdentifier;
-  const { page } = useSitecore();
-  const isPageEditing = page.mode.isEditing;
-  const newsItems = getNewsItems(props.fields?.items, parseInt(props.params?.NumberOfItems));
-  const sxaStyles = `${props.params?.styles || ''}`;
-
-  return (
-    <div
-      className={`component article-list variant-event-list ${sxaStyles}`}
-      id={id ? id : undefined}
-    >
-      <div className="container">
-        <div className="event-list">
-          {newsItems?.map((item) => (
-            <article className="event-row" key={item.url}>
-              <div className="event-when">
-                <Text field={item.fields?.Excerpt} />
-              </div>
-              <div className="event-summary">
-                <h3>
-                  <Link href={item.url}>
-                    <Text field={item.fields?.Title} />
-                  </Link>
-                </h3>
-                {(isPageEditing || item.fields?.Content?.value) && (
-                  <RichText field={item.fields?.Content} />
-                )}
-                {(isPageEditing || item.fields?.Thumbnail?.value?.src) && (
-                  <NextImage field={item.fields?.Thumbnail} width={160} height={100} />
-                )}
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-/* AMPP variant: two-column course catalog cards */
-const ArticleListCourseCatalog = (props: ArticleListComponentProps): JSX.Element => {
-  const id = props.params?.RenderingIdentifier;
-  const { page } = useSitecore();
-  const isPageEditing = page.mode.isEditing;
-  const newsItems = getNewsItems(props.fields?.items, parseInt(props.params?.NumberOfItems));
-  const sxaStyles = `${props.params?.styles || ''}`;
-
-  return (
-    <div
-      className={`component article-list variant-course-catalog ${sxaStyles}`}
-      id={id ? id : undefined}
-    >
-      <div className="container">
-        <div className="course-catalog">
-          {newsItems?.map((item) => (
-            <article className="course-card" key={item.url}>
-              {(isPageEditing || item.fields?.Thumbnail?.value?.src) && (
-                <NextImage field={item.fields?.Thumbnail} width={640} height={360} />
-              )}
-              <div className="course-card-copy">
-                <h3>
-                  <Link href={item.url}>
-                    <Text field={item.fields?.Title} />
-                  </Link>
-                </h3>
-                {(isPageEditing || item.fields?.Excerpt?.value) && (
-                  <p>
-                    <Text field={item.fields?.Excerpt} />
-                  </p>
-                )}
-                <Link href={item.url} className="course-card-link">
-                  View course
-                </Link>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
 export const Default = withDatasourceCheck()<ArticleListComponentProps>(ArticleListDefault);
 export const ThreeColumn = withDatasourceCheck()<ArticleListComponentProps>(ArticleListThreeColumn);
 export const Simplified = withDatasourceCheck()<ArticleListComponentProps>(ArticleListSimplified);
 export const Grid = withDatasourceCheck()<ArticleListComponentProps>(ArticleListGrid);
-export const EventList = withDatasourceCheck()<ArticleListComponentProps>(ArticleListEventList);
-export const CourseCatalog = withDatasourceCheck()<ArticleListComponentProps>(ArticleListCourseCatalog);
+
+const amppList = (look: string, heading: string) =>
+  function AmppList(props: ArticleListComponentProps): JSX.Element {
+    return (
+      <section className={`ampp-look ampp-look-${look}`}>
+        <div className="component article-list">
+          <h2>{heading}</h2>
+          <Default {...props} />
+        </div>
+      </section>
+    );
+  };
+
+export const Ampp = amppList("ampp", "AMPP");
+export const AmppFeatureRows = amppList("feature-rows", "Get more out of AMPP");
+export const AmppNewsList = amppList("news-list", "What's new");
+export const AmppDiscussionRows = amppList("discussion-rows", "Communities of interest discussions");
+export const AmppEventRows = amppList("event-rows", "East Asia and Pacific Area Conference 2026");
+export const AmppHelpLinks = amppList("help-links", "Need help finding something?");
+export const AmppFeaturedEvents = amppList("featured-events", "Featured events");

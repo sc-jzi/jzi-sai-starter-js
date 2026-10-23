@@ -268,192 +268,37 @@ export const WithIconsCompact = (props: ThreeColumnCtaProps): JSX.Element => {
   );
 };
 
-const ThreeColumnEmpty = ({ variantClass }: { variantClass: string }): JSX.Element => (
-  <div className={`component three-column-cta ${variantClass}`}>
-    <span className="is-empty-hint">Three Column CTA</span>
-  </div>
-);
-
-/* AMPP variant: separate white fact cards for conference "what to expect" */
-export const FactCards = (props: ThreeColumnCtaProps): JSX.Element => {
-  const id = props.params.RenderingIdentifier;
-  const { page } = useSitecore();
-  const isPageEditing = page.mode.isEditing;
-  const sxaStyles = `${props.params?.styles || ''}`;
-
-  if (!props.fields) return <ThreeColumnEmpty variantClass="variant-fact-cards" />;
-
-  const cards = [
-    {
-      image: props.fields.Image1,
-      text: props.fields.Text1,
-      subText: props.fields.SubText1,
-      link: props.fields.Link1,
-    },
-    {
-      image: props.fields.Image2,
-      text: props.fields.Text2,
-      subText: props.fields.SubText2,
-      link: props.fields.Link2,
-    },
-    {
-      image: props.fields.Image3,
-      text: props.fields.Text3,
-      subText: props.fields.SubText3,
-      link: props.fields.Link3,
-    },
-  ];
-
+export const Ampp = (props: ThreeColumnCtaProps): JSX.Element => {
   return (
-    <div
-      className={`component three-column-cta variant-fact-cards ${sxaStyles}`}
-      id={id ? id : undefined}
-    >
-      <div className="container">
-        <div className="row row-gap-4">
-          {cards.map((card, index) => (
-            <div className="col-md-4" key={index}>
-              <article className="fact-card">
-                {(isPageEditing || card.image?.value?.src) && (
-                  <div className="fact-card-icon">
-                    <NextImage field={card.image} width={48} height={48} />
-                  </div>
-                )}
-                <h2>
-                  <Text field={card.text} />
-                </h2>
-                {(isPageEditing || card.subText?.value) && (
-                  <p>
-                    <Text field={card.subText} />
-                  </p>
-                )}
-                {(isPageEditing || card.link?.value?.href) && (
-                  <Link field={card.link} className="fact-card-link" />
-                )}
-              </article>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+    <section className="ampp-look ampp-look-ampp">
+      <Default {...props} />
+    </section>
   );
 };
 
-/* AMPP variant: three-column course fact bar (label over value) */
-export const FactBar = (props: ThreeColumnCtaProps): JSX.Element => {
-  const id = props.params.RenderingIdentifier;
-  const { page } = useSitecore();
-  const isPageEditing = page.mode.isEditing;
-  const sxaStyles = `${props.params?.styles || ''}`;
-
-  if (!props.fields) return <ThreeColumnEmpty variantClass="variant-fact-bar" />;
-
-  const facts = [
-    {
-      image: props.fields.Image1,
-      text: props.fields.Text1,
-      subText: props.fields.SubText1,
-      link: props.fields.Link1,
-    },
-    {
-      image: props.fields.Image2,
-      text: props.fields.Text2,
-      subText: props.fields.SubText2,
-      link: props.fields.Link2,
-    },
-    {
-      image: props.fields.Image3,
-      text: props.fields.Text3,
-      subText: props.fields.SubText3,
-      link: props.fields.Link3,
-    },
-  ];
-
+export const AmppIconCards = (props: ThreeColumnCtaProps): JSX.Element => {
   return (
-    <div
-      className={`component three-column-cta variant-fact-bar ${sxaStyles}`}
-      id={id ? id : undefined}
-    >
-      <div className="container">
-        <div className="fact-bar">
-          {facts.map((fact, index) => (
-            <div className="fact-bar-item" key={index}>
-              {(isPageEditing || fact.image?.value?.src) && (
-                <NextImage field={fact.image} width={32} height={32} />
-              )}
-              <p className="fact-bar-label">
-                <Text field={fact.text} />
-              </p>
-              <p className="fact-bar-value">
-                <Text field={fact.subText} />
-              </p>
-              {(isPageEditing || fact.link?.value?.href) && <Link field={fact.link} />}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+    <section className="ampp-look ampp-look-icon-cards">
+      <h2>What we offer</h2>
+      <Default {...props} />
+    </section>
   );
 };
 
-/* AMPP variant: numbered course steps shared by the certification detail pages */
-export const NumberedSteps = (props: ThreeColumnCtaProps): JSX.Element => {
-  const id = props.params.RenderingIdentifier;
-  const { page } = useSitecore();
-  const isPageEditing = page.mode.isEditing;
-  const sxaStyles = `${props.params?.styles || ''}`;
-
-  if (!props.fields) return <ThreeColumnEmpty variantClass="variant-numbered-steps" />;
-
-  const steps = [
-    {
-      image: props.fields.Image1,
-      text: props.fields.Text1,
-      subText: props.fields.SubText1,
-      link: props.fields.Link1,
-    },
-    {
-      image: props.fields.Image2,
-      text: props.fields.Text2,
-      subText: props.fields.SubText2,
-      link: props.fields.Link2,
-    },
-    {
-      image: props.fields.Image3,
-      text: props.fields.Text3,
-      subText: props.fields.SubText3,
-      link: props.fields.Link3,
-    },
-  ];
-
+export const AmppCertifications = (props: ThreeColumnCtaProps): JSX.Element => {
   return (
-    <div
-      className={`component three-column-cta variant-numbered-steps ${sxaStyles}`}
-      id={id ? id : undefined}
-    >
-      <div className="container">
-        <ol className="numbered-steps">
-          {steps.map((step, index) => (
-            <li className="numbered-step" key={index}>
-              <span className="step-index" aria-hidden="true" />
-              {(isPageEditing || step.image?.value?.src) && (
-                <NextImage field={step.image} width={48} height={48} />
-              )}
-              <h2>
-                <Text field={step.text} />
-              </h2>
-              {(isPageEditing || step.subText?.value) && (
-                <p>
-                  <Text field={step.subText} />
-                </p>
-              )}
-              {(isPageEditing || step.link?.value?.href) && (
-                <Link field={step.link} className="button button-main" />
-              )}
-            </li>
-          ))}
-        </ol>
-      </div>
-    </div>
+    <section className="ampp-look ampp-look-certifications">
+      <h2>Industry-recognized certifications</h2>
+      <Default {...props} />
+    </section>
+  );
+};
+
+export const AmppMembershipTypes = (props: ThreeColumnCtaProps): JSX.Element => {
+  return (
+    <section className="ampp-look ampp-look-membership-types">
+      <h2>Get the AMPP Membership that’s right for you</h2>
+      <Default {...props} />
+    </section>
   );
 };

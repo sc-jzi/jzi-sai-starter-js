@@ -9,7 +9,7 @@ export default async function SiteLayout({
   children: React.ReactNode;
   params: Promise<{ site: string }>;
 }) {
-  const { site } = await params;
+  const site = decodeURIComponent((await params).site);
   const { isEnabled } = await draftMode();
 
   return (

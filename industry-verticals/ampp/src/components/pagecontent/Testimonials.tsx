@@ -83,7 +83,7 @@ const Testimonial = ({ item }: { item: TestimonialItemProps }): JSX.Element => {
 
 export const Default = (props: TestimonialsProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
-  const testimonials = props.fields?.items;
+  const testimonials = props.fields?.items ?? [];
   const sxaStyles = `${props.params?.styles || ''}`;
 
   return (
@@ -124,5 +124,37 @@ export const Default = (props: TestimonialsProps): JSX.Element => {
         </Swiper>
       </div>
     </div>
+  );
+};
+
+export const Ampp = (props: TestimonialsProps): JSX.Element => {
+  return (
+    <section className="ampp-look ampp-look-ampp">
+      <Default {...props} />
+    </section>
+  );
+};
+
+export const AmppQuoteBand = (props: TestimonialsProps): JSX.Element => {
+  return (
+    <>
+      <section className="ampp-look ampp-look-quote-band">
+        <h2>See what our members are saying</h2>
+        <Default {...props} />
+      </section>
+      <section className="ampp-look ampp-look-gap" aria-hidden="true" />
+    </>
+  );
+};
+
+export const AmppDarkBand = (props: TestimonialsProps): JSX.Element => {
+  return (
+    <>
+      <section className="ampp-look ampp-look-dark-band">
+        <h2>See what our members are saying</h2>
+        <Default {...props} />
+      </section>
+      <section className="ampp-look ampp-look-gap" aria-hidden="true" />
+    </>
   );
 };

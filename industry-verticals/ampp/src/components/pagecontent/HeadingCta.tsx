@@ -151,3 +151,19 @@ export const Centered = (props: HeadingCtaProps): JSX.Element => {
     </div>
   );
 };
+
+export const Ampp = (props: HeadingCtaProps): JSX.Element => {
+  return (
+    <section className="ampp-look ampp-look-ampp">
+      <Default {...props} />
+    </section>
+  );
+};
+
+export const AmppPageTitle = (props: HeadingCtaProps): JSX.Element => {
+  return (
+    <section className="ampp-look ampp-look-page-title">
+      <Default {...props} />
+    </section>
+  );
+};

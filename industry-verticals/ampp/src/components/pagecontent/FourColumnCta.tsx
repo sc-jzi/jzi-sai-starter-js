@@ -120,59 +120,19 @@ export const Default = (props: FourColumnCtaProps): JSX.Element => {
   );
 };
 
-/* AMPP variant: white featured-event cards with image, title, schedule line, and text link */
-export const FeaturedEvents = (props: FourColumnCtaProps): JSX.Element => {
-  const id = props.params.RenderingIdentifier;
-  const { page } = useSitecore();
-  const isPageEditing = page.mode.isEditing;
-  const sxaStyles = `${props.params?.styles || ''}`;
-
-  if (!props.fields) {
-    return (
-      <div className="component four-column-cta variant-featured-events">
-        <span className="is-empty-hint">Four Column CTA</span>
-      </div>
-    );
-  }
-
-  const cards = [
-    { image: props.fields.Image1, title: props.fields.Title1, text: props.fields.Text1, link: props.fields.Link1 },
-    { image: props.fields.Image2, title: props.fields.Title2, text: props.fields.Text2, link: props.fields.Link2 },
-    { image: props.fields.Image3, title: props.fields.Title3, text: props.fields.Text3, link: props.fields.Link3 },
-    { image: props.fields.Image4, title: props.fields.Title4, text: props.fields.Text4, link: props.fields.Link4 },
-  ];
-
+export const Ampp = (props: FourColumnCtaProps): JSX.Element => {
   return (
-    <div
-      className={`component four-column-cta variant-featured-events ${sxaStyles}`}
-      id={id ? id : undefined}
-    >
-      <div className="container">
-        <div className="row row-gap-4">
-          {cards.map((card, index) => (
-            <div className="col-sm-12 col-md-6 col-lg-3" key={index}>
-              <article className="featured-event-card">
-                {(isPageEditing || card.image?.value?.src) && (
-                  <NextImage field={card.image} width={480} height={270} />
-                )}
-                <div className="featured-event-copy">
-                  <h2>
-                    <Text field={card.title} />
-                  </h2>
-                  {(isPageEditing || card.text?.value) && (
-                    <p>
-                      <Text field={card.text} />
-                    </p>
-                  )}
-                  {(isPageEditing || card.link?.value?.href) && (
-                    <Link field={card.link} className="featured-event-link" />
-                  )}
-                </div>
-              </article>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+    <section className="ampp-look ampp-look-ampp">
+      <Default {...props} />
+    </section>
+  );
+};
+
+export const AmppTileGrid = (props: FourColumnCtaProps): JSX.Element => {
+  return (
+    <section className="ampp-look ampp-look-tile-grid">
+      <h2>Find a course</h2>
+      <Default {...props} />
+    </section>
   );
 };

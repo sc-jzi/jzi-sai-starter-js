@@ -1,0 +1,21 @@
+﻿import { ENV } from "file:///C:/Projects/Demo/Harness/harness/scripts/_lib.mjs";
+const id = ENV.SITECORE_AUTOMATION_CLIENT_ID, secret = ENV.SITECORE_AUTOMATION_CLIENT_SECRET;
+const tr = await fetch(`${ENV.SITECORE_AUTH_HOST}/oauth/token`, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams({ client_id: id, client_secret: secret, grant_type: "client_credentials", audience: "https://api.sitecorecloud.io" }) });
+const jwt = (await tr.json()).access_token;
+const url = `${String(ENV.SITECORE_CM_HOST).replace(/\/+$/, "")}/sitecore/api/authoring/graphql/v1/`;
+const gql = async (query, variables) => {
+  const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${jwt}` }, body: JSON.stringify({ query, variables }) });
+  const j = await r.json();
+  if (j.errors) throw new Error(JSON.stringify(j.errors).slice(0, 600));
+  return j.data;
+};
+const schema = await gql(`{ __type(name:"PublishItemPayload") { fields { name } } }`);
+console.log("payload", schema.__type.fields.map(f => f.name).join(","));
+const map = await gql(`mutation { configurePageDesigns(input:{ siteName:"AMPP Demo", database:"master", mapping:[{ templateId:"33f3a005-57f6-4671-b7af-bfaa3b5a81f4", pageDesignId:"15cfb891-8e44-4f7a-a9dc-92fd2fdcd0fd" }] }) }`);
+console.log("configure", JSON.stringify(map).slice(0, 400));
+const folder = await gql(`query { item(where:{ path:"/sitecore/content/AMPP/AMPP Demo/Presentation/Page Designs", database:"master", language:"en" }) { fields(ownFields:false) { nodes { name value } } } }`);
+const tm = folder.item.fields.nodes.find(f => f.name === "TemplatesMapping");
+console.log("mapping", (tm?.value || "").slice(0, 300));
+const home = await gql(`query { item(where:{ path:"/sitecore/content/AMPP/AMPP Demo/Home", database:"master", language:"en" }) { fields(ownFields:false) { nodes { name value } } } }`);
+const rend = home.item.fields.nodes.find(f => f.name === "__Renderings");
+console.log("home renderings", (rend?.value || "").length, (rend?.value || "").includes("Promo") || (rend?.value || "").includes("1A375FAC"));

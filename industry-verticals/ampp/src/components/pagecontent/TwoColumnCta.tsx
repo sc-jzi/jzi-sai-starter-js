@@ -109,3 +109,20 @@ export const Default = (props: TwoColumnCtaProps): JSX.Element => {
     </div>
   );
 };
+
+export const Ampp = (props: TwoColumnCtaProps): JSX.Element => {
+  return (
+    <section className="ampp-look ampp-look-ampp">
+      <Default {...props} />
+    </section>
+  );
+};
+
+export const AmppTextCards = (props: TwoColumnCtaProps): JSX.Element => {
+  return (
+    <section className="ampp-look ampp-look-text-cards">
+      <h2>Welcome to AMPP</h2>
+      <Default {...props} />
+    </section>
+  );
+};

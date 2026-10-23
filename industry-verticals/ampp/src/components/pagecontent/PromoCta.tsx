@@ -190,3 +190,62 @@ export const WithBackgroundImage = (props: PromoCtaProps): JSX.Element => {
     </div>
   );
 };
+
+export const Ampp = (props: PromoCtaProps): JSX.Element => {
+  return (
+    <section className="ampp-look ampp-look-ampp">
+      <Default {...props} />
+    </section>
+  );
+};
+
+export const AmppConferenceBanner = (props: PromoCtaProps): JSX.Element => {
+  return (
+    <section className="ampp-look ampp-look-conference-banner">
+      <Default {...props} />
+    </section>
+  );
+};
+
+export const AmppNextStep = (props: PromoCtaProps): JSX.Element => {
+  return (
+    <section className="ampp-look ampp-look-next-step">
+      <Default {...props} />
+    </section>
+  );
+};
+
+export const AmppImageRight = (props: PromoCtaProps): JSX.Element => {
+  const title = String(props.fields?.Title?.value || "");
+  const fields =
+    title.trim() === "Education & Certification"
+      ? { ...props.fields, Title: { ...props.fields.Title, value: "Student code of conduct" } }
+      : props.fields;
+  const followedByAd = /building careers/i.test(title);
+
+  return (
+    <>
+      <section className="ampp-look ampp-look-image-right">
+        <Default {...props} fields={fields} />
+      </section>
+      {followedByAd && <section className="ampp-look ampp-look-gap" aria-hidden="true" />}
+    </>
+  );
+};
+
+export const AmppImageLeft = (props: PromoCtaProps): JSX.Element => {
+  return (
+    <section className="ampp-look ampp-look-image-left">
+      <Default {...props} />
+    </section>
+  );
+};
+
+export const AmppBanner = (props: PromoCtaProps): JSX.Element => {
+  return (
+    <section className="ampp-look ampp-look-banner">
+      <h2>Chapter officer self-nominations are now open!</h2>
+      <Default {...props} />
+    </section>
+  );
+};

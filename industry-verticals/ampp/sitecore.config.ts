@@ -6,7 +6,7 @@ import { defineConfig } from '@sitecore-content-sdk/nextjs/config';
  */
 export default defineConfig({
   multisite: {
-    enabled: false,
+    enabled: true,
   },
   generateStaticPaths: false,
 });

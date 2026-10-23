@@ -1,0 +1,177 @@
+// AMPP client looks. Each named variant wraps its base rendering in .ampp-look-*
+// so the shared Default stays untouched and the client presentation can be styled on its own.
+
+.site-ampp {
+  #header-band,
+  #footer-band {
+    display: block;
+    width: 100%;
+  }
+
+  #footer-band {
+    background: #333535;
+    color: #fff;
+  }
+
+  #content {
+    display: block;
+  }
+
+  .ampp-look-gap {
+    min-height: 80px;
+    background: #ededf5;
+  }
+
+  #content > .ampp-look {
+    display: block;
+    width: 100%;
+    max-width: none;
+    flex: 1 1 100%;
+    min-height: 80px;
+  }
+
+  .ampp-look .eyebrow-accent {
+    display: none;
+  }
+
+  .ampp-look {
+    font-family: 'Nunito Sans', Helvetica, Arial, sans-serif;
+  }
+
+  .ampp-look-conference-banner .promo-cta,
+  .ampp-look-banner .promo-cta {
+    background: #101820;
+    color: #fff;
+    border-radius: 2px;
+
+    h1,
+    h6,
+    p {
+      color: #fff;
+    }
+
+    .button-main {
+      background: #ee2737;
+      border-radius: 2px;
+      color: #fff;
+    }
+  }
+
+  .ampp-look-next-step .promo-cta {
+    background: #ededf5;
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  .ampp-look-image-right .button-main,
+  .ampp-look-image-left .button-main {
+    background: #ee2737;
+    border-radius: 2px;
+    color: #fff;
+  }
+
+  .ampp-look-tile-grid h2 {
+    font-size: 20px;
+  }
+
+  .ampp-look-text-cards h2,
+  .ampp-look-icon-cards h2,
+  .ampp-look-benefits h2,
+  .ampp-look-membership-types h2,
+  .ampp-look-feature-rows h2,
+  .ampp-look-featured-events h2 {
+    font-size: 40px;
+  }
+
+  .ampp-look-discussion-rows h2,
+  .ampp-look-event-rows h2,
+  .ampp-look-help-links h2,
+  .ampp-look-dark-band h2 {
+    font-size: 32px;
+  }
+
+  .ampp-look-banner h2 {
+    font-size: 46px;
+  }
+
+  .ampp-look-image-right .promo-cta .row,
+  .ampp-look-image-left .promo-cta .row {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .ampp-look-image-left .promo-cta .row {
+    flex-direction: row-reverse;
+  }
+
+  .ampp-look-tile-grid .component {
+    .row > * {
+      background: #101820;
+      color: #fff;
+      border-radius: 2px;
+    }
+  }
+
+  .ampp-look-text-cards .component,
+  .ampp-look-icon-cards .component,
+  .ampp-look-certifications .component,
+  .ampp-look-membership-types .component,
+  .ampp-look-benefits .component {
+    background: #fff;
+
+    .button-main,
+    a.button {
+      background: #ee2737;
+      border-radius: 2px;
+      color: #fff;
+    }
+  }
+
+  .ampp-look-feature-rows .component,
+  .ampp-look-discussion-rows .component,
+  .ampp-look-event-rows .component,
+  .ampp-look-help-links .component,
+  .ampp-look-featured-events .component,
+  .ampp-look-news-list .component {
+    background: #fff;
+  }
+
+  .ampp-look-news-list .component,
+  .ampp-look-featured-events .component {
+    background: #ededf5;
+  }
+
+  .ampp-look-quote-band .component {
+    background: #ededf5;
+    text-align: center;
+  }
+
+  .ampp-look-dark-band {
+    background: #333535;
+    color: #fff;
+
+    h2 {
+      color: #fff;
+    }
+  }
+
+  .ampp-look-dark-band .component {
+    background: #101820;
+    color: #fff;
+  }
+
+  .ampp-look-page-title .heading-cta {
+    background: #fff;
+
+    h1 {
+      font-weight: 700;
+    }
+  }
+
+  .ampp-look-ampp.footer,
+  .ampp-look-ampp .footer {
+    background: #333535;
+    color: #fff;
+  }
+}

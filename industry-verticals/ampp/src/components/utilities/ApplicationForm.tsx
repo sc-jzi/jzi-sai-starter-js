@@ -8,7 +8,6 @@ import {
   RichText,
   RichTextField,
   Text,
-  useSitecore,
 } from '@sitecore-content-sdk/nextjs';
 
 interface Fields {
@@ -66,83 +65,6 @@ export const Default = (props: ApplicationFormProps): JSX.Element => {
           </div>
           <Link field={props.fields.SubmitButton} className="button button-main submit-button" />
         </div>
-      </div>
-    </div>
-  );
-};
-
-/* AMPP variant: self-service account card used by registration, login, profile, address, and preferences */
-export const Account = (props: ApplicationFormProps): JSX.Element => {
-  const id = props.params.RenderingIdentifier;
-  const { page } = useSitecore();
-  const isPageEditing = page.mode.isEditing;
-  const sxaStyles = `${props.params?.styles || ''}`;
-
-  if (!props.fields) {
-    return (
-      <div className="component application-form variant-account">
-        <span className="is-empty-hint">Application Form</span>
-      </div>
-    );
-  }
-
-  return (
-    <div
-      className={`component application-form variant-account ${sxaStyles}`}
-      id={id ? id : undefined}
-    >
-      <div className="container">
-        <form className="account-card" onSubmit={(event) => event.preventDefault()}>
-          <h2>
-            <Text field={props.fields.Title} />
-          </h2>
-          {(isPageEditing || props.fields.Subtitle?.value) && (
-            <div className="account-intro">
-              <RichText field={props.fields.Subtitle} />
-            </div>
-          )}
-          <label className="account-field">
-            <span>Full name</span>
-            <input
-              className="input-field"
-              defaultValue={props.fields.FullName?.value}
-              placeholder="First and Last name"
-            />
-          </label>
-          <label className="account-field">
-            <span>ID number</span>
-            <input
-              className="input-field"
-              defaultValue={props.fields.IDNumber?.value}
-              placeholder="ID number"
-            />
-          </label>
-          <label className="account-field">
-            <span>Email</span>
-            <input
-              className="input-field"
-              type="email"
-              defaultValue={props.fields.Email?.value}
-              placeholder="Email"
-            />
-          </label>
-          <label className="account-field">
-            <span>Mobile number</span>
-            <input
-              className="input-field"
-              defaultValue={props.fields.MobileNumber?.value}
-              placeholder="Mobile number"
-            />
-          </label>
-          {(isPageEditing || props.fields.Footnote?.value) && (
-            <div className="account-footnote">
-              <RichText field={props.fields.Footnote} />
-            </div>
-          )}
-          {(isPageEditing || props.fields.SubmitButton?.value?.href) && (
-            <Link field={props.fields.SubmitButton} className="button button-main submit-button" />
-          )}
-        </form>
       </div>
     </div>
   );

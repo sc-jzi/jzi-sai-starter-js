@@ -169,3 +169,11 @@ export const WithSocials = (props: FooterProps): JSX.Element => {
     </div>
   );
 };
+
+export const Ampp = (props: FooterProps): JSX.Element => {
+  return (
+    <section className="ampp-look ampp-look-ampp">
+      <Default {...props} />
+    </section>
+  );
+};

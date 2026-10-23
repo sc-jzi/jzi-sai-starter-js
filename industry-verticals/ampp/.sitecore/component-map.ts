@@ -57,24 +57,8 @@ import * as Navigation from 'src/components/navigation/Navigation';
 import * as Header from 'src/components/navigation/Header';
 import * as Footer from 'src/components/navigation/Footer';
 import * as Eyebrow from 'src/components/navigation/Eyebrow';
+import * as EyebrowConfig from 'src/components/navigation/eyebrow-config';
 import * as Breadcrumb from 'src/components/navigation/Breadcrumb';
-import * as SuggestionBlock from 'src/components/legacysearch/SuggestionBlock';
-import * as Spinner from 'src/components/legacysearch/Spinner';
-import * as SortOrder from 'src/components/legacysearch/SortOrder';
-import * as SearchResultsComponent from 'src/components/legacysearch/SearchResultsComponent';
-import * as SearchProvider from 'src/components/legacysearch/SearchProvider';
-import * as SearchPagination from 'src/components/legacysearch/SearchPagination';
-import * as SearchFacets from 'src/components/legacysearch/SearchFacets';
-import * as ResultsPerPage from 'src/components/legacysearch/ResultsPerPage';
-import * as QuestionsAnswers from 'src/components/legacysearch/QuestionsAnswers';
-import * as QueryResultsSummary from 'src/components/legacysearch/QueryResultsSummary';
-import * as LegacySearchResults from 'src/components/legacysearch/LegacySearchResults';
-import * as LegacyPreviewSearch from 'src/components/legacysearch/LegacyPreviewSearch';
-import * as HomeHighlighted from 'src/components/legacysearch/HomeHighlighted';
-import * as Filter from 'src/components/legacysearch/Filter';
-import * as CardViewSwitcher from 'src/components/legacysearch/CardViewSwitcher';
-import * as ArticleHorizontalCard from 'src/components/legacysearch/ArticleHorizontalCard';
-import * as ArticleCard from 'src/components/legacysearch/ArticleCard';
 
 export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['BYOCWrapper', BYOCServerWrapper],
@@ -131,24 +115,8 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Header', { ...Header, componentType: 'client' }],
   ['Footer', { ...Footer, componentType: 'client' }],
   ['Eyebrow', { ...Eyebrow, componentType: 'client' }],
+  ['eyebrow-config', { ...EyebrowConfig }],
   ['Breadcrumb', { ...Breadcrumb, componentType: 'client' }],
-  ['SuggestionBlock', { ...SuggestionBlock, componentType: 'client' }],
-  ['Spinner', { ...Spinner }],
-  ['SortOrder', { ...SortOrder, componentType: 'client' }],
-  ['SearchResultsComponent', { ...SearchResultsComponent, componentType: 'client' }],
-  ['SearchProvider', { ...SearchProvider, componentType: 'client' }],
-  ['SearchPagination', { ...SearchPagination, componentType: 'client' }],
-  ['SearchFacets', { ...SearchFacets, componentType: 'client' }],
-  ['ResultsPerPage', { ...ResultsPerPage, componentType: 'client' }],
-  ['QuestionsAnswers', { ...QuestionsAnswers, componentType: 'client' }],
-  ['QueryResultsSummary', { ...QueryResultsSummary, componentType: 'client' }],
-  ['LegacySearchResults', { ...LegacySearchResults, componentType: 'client' }],
-  ['LegacyPreviewSearch', { ...LegacyPreviewSearch, componentType: 'client' }],
-  ['HomeHighlighted', { ...HomeHighlighted, componentType: 'client' }],
-  ['Filter', { ...Filter, componentType: 'client' }],
-  ['CardViewSwitcher', { ...CardViewSwitcher, componentType: 'client' }],
-  ['ArticleHorizontalCard', { ...ArticleHorizontalCard, componentType: 'client' }],
-  ['ArticleCard', { ...ArticleCard, componentType: 'client' }],
 ]);
 
 export default componentMap;

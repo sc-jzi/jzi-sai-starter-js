@@ -13,11 +13,11 @@ project:
   siteCollection: "Financial"
   siteName: "ProsperaFinancial"
   sdk: "@sitecore-content-sdk/nextjs"
-  renderingsRoot: "/sitecore/layout/Renderings/Project/Financial"
-  projectTemplatesRoot: "/sitecore/templates/Project/Financial"
+  renderingsRoot: "/sitecore/layout/Renderings/Project/AMPP"
+  projectTemplatesRoot: "/sitecore/templates/Project/AMPP"
   dataRoot: "/sitecore/content/Financial/ProsperaFinancial/Data"
   projectFoldersRoot: "/sitecore/templates/Project/Financial/Folders"
-  renderingParamsRoot: "/sitecore/templates/Project/Financial/Rendering Parameters"
+  renderingParamsRoot: "/sitecore/templates/Project/AMPP/Rendering Parameters"
   headlessVariantsRoot: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Headless Variants"
 
 inventoryNotes:
@@ -2339,28 +2339,3 @@ lookups:
     itemId: "{0D181447-7CA1-4661-9F55-D752460957B4}"
     lastReadAt: "2026-10-09T17:45:00Z"
     note: "Available Renderings Page Content. Renderings field was readable in this session."
-
-# AMPP customer variant definitions. These live under the AMPP site, not the shared Prospera Headless Variants root.
-# Page assembly resolves ids from industry-verticals/ampp/docs/ai/demos/ampp/site-manifest.json and content-map.yaml variantAssembly.
-amppSiteVariants:
-  updatedAt: "2026-10-09T18:50:00Z"
-  headlessVariantsRoot: "/sitecore/content/Associations/AMPP/Presentation/Headless Variants"
-  created:
-    - { component: FourColumnCta, name: FeaturedEvents, itemId: "72c92312-ef12-4d94-8a2d-652903ff9bf4" }
-    - { component: ArticleList, name: EventList, itemId: "3d457cf1-193b-4ed9-858e-4a1ac9f5e9bf" }
-    - { component: ArticleList, name: CourseCatalog, itemId: "fe8ffec5-a28f-4821-acf5-bcc03120e2c3" }
-    - { component: Hero, name: ConferenceHero, itemId: "ee2e4702-253d-4720-823a-492a14474ef1" }
-    - { component: Hero, name: CourseHero, itemId: "85e62539-725f-4277-bc58-a34cac9082d6" }
-    - { component: Features, name: ConferenceContent, itemId: "9a506f6c-85cc-47b9-9bb4-4c7232851a50" }
-    - { component: ThreeColumnCta, name: FactCards, itemId: "a10ef598-3619-475d-9319-3115aecca552" }
-    - { component: ThreeColumnCta, name: FactBar, itemId: "321a3161-78ca-482a-af07-b539036a7e36" }
-    - { component: ThreeColumnCta, name: NumberedSteps, itemId: "e584f990-dd79-49fc-81ad-32d544409148" }
-    - { component: CtaBanner, name: HelpBand, itemId: "24c41254-d357-4463-8ee0-d4293196749e" }
-    - { component: RichText, name: Longform, itemId: "b21fcb04-d165-4ac1-ab5f-a2b4eec260de" }
-    - { component: ApplicationForm, name: Account, itemId: "9a8da7a4-1658-46d7-ab00-9e652555ffb6" }
-  kept:
-    - "Questions SingleColumn already matches the single-column FAQ accordion"
-    - "HeadingCta PageHeading and Centered already cover page titles"
-    - "ArticleList ThreeColumn already matches the three-up featured-event photo row"
-    - "ArticleList Grid stays on Insights; the course catalog uses CourseCatalog"
-    - "ThreeColumnCta WithIcons stays on Home and Membership"

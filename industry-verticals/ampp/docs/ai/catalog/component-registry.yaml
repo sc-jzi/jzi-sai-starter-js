@@ -25,7 +25,7 @@ components:
     kind: simple
     category: Banners
     file: src/components/pagecontent/Hero.tsx
-    variants: [Default, ConferenceHero, CourseHero]
+    variants: [Default]
     visualKeywords:
       - simple intro with title, text, one link and an image
       - lighter alternative to the hero banner
@@ -65,7 +65,7 @@ components:
     kind: simple
     category: Banners
     file: src/components/pagecontent/CtaBanner.tsx
-    variants: [Default, LargeImage, HelpBand]
+    variants: [Default, LargeImage]
     visualKeywords:
       - conversion band near the bottom of a page
       - eyebrow, title, text and a single action
@@ -120,7 +120,7 @@ components:
     kind: simple
     category: Calls to action
     file: src/components/pagecontent/ThreeColumnCta.tsx
-    variants: [Default, WithIcons, WithIconsCompact, FactCards, FactBar, NumberedSteps]
+    variants: [Default, WithIcons, WithIconsCompact]
     visualKeywords:
       - three columns with image or icon
       - short text and sub text per column
@@ -136,7 +136,7 @@ components:
     kind: simple
     category: Calls to action
     file: src/components/pagecontent/FourColumnCta.tsx
-    variants: [Default, FeaturedEvents]
+    variants: [Default]
     visualKeywords:
       - four columns each with image, title, text and link
       - four equal options or services
@@ -170,7 +170,7 @@ components:
     kind: simple
     category: Content
     file: src/components/pagecontent/Features.tsx
-    variants: [Default, ConferenceContent]
+    variants: [Default]
     visualKeywords:
       - feature section with eyebrow, rich text, link and image
       - two titled feature text blocks
@@ -229,7 +229,7 @@ components:
     kind: simple
     category: Content
     file: src/components/pagecontent/RichText.tsx
-    variants: [Default, Longform]
+    variants: [Default]
     visualKeywords:
       - plain heading and body copy
       - text-only section
@@ -288,7 +288,7 @@ components:
     kind: list
     category: Lists
     file: src/components/pagecontent/ArticleList.tsx
-    variants: [Default, ThreeColumn, Simplified, Grid, EventList, CourseCatalog]
+    variants: [Default, ThreeColumn, Simplified, Grid]
     visualKeywords:
       - cards for articles or blog posts
       - thumbnail, title, excerpt and author
@@ -362,7 +362,7 @@ components:
     kind: simple
     category: Forms and tools
     file: src/components/utilities/ApplicationForm.tsx
-    variants: [Default, Account]
+    variants: [Default]
     visualKeywords:
       - application form with name, ID number, email and mobile number
       - submit button and footnote
