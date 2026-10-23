@@ -1,0 +1,114 @@
+# Client Brand Theme
+# Draft for the AMPP demo. Applied only after the plan is approved.
+
+client:
+  name: "AMPP"
+  sourceUrl: "https://ampp.org/home"
+  extractedAt: "2026-10-23T16:09:02.915Z"
+  extractedBy: "harness/scripts/site-scraper.mjs plus header-styles.json and sections.json"
+
+colors:
+  primary: "#ee2737"
+  primaryForeground: "#ffffff"
+  secondary: "#101820"
+  secondaryForeground: "#ffffff"
+  accent: "#ee2737"
+  accentForeground: "#ffffff"
+  background: "#ffffff"
+  foreground: "#333333"
+  muted: "#ededf5"
+  mutedForeground: "#333333"
+  headerBackground: "#e3e3e8"
+  headerForeground: "#333535"
+  footerBackground: "#333535"
+  footerForeground: "#ffffff"
+  border: "#e3e3e8"
+  ring: "#ee2737"
+  extra:
+    - { name: menuBand, value: "#ffffff" }
+    - { name: cookieButton, value: "#2f2a95", note: "Scraper primary-button sample. It is the consent Accept button, not the brand CTA." }
+
+typography:
+  headingFamily: "Nunito Sans"
+  headingWeight: "300"
+  bodyFamily: "Nunito Sans"
+  bodyWeight: "400"
+  monoFamily: ""
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap"
+  scale:
+    hero: "46px"
+    h1: "46px"
+    h2: "40px"
+    h3: "32px"
+    body: "16px"
+    small: "14px"
+  headingTransform: "none"
+  letterSpacing: "0"
+  lineHeight: "1.43"
+
+spacing:
+  density: "comfortable"
+  sectionGap: "0"
+  containerMaxWidth: "1170px"
+  containerPadding: "20px"
+
+shape:
+  borderRadius: "0"
+  buttonRadius: "0"
+  cardRadius: "0"
+  imageRadius: "0"
+  shadowStyle: "none"
+  borderStyle: "1px solid #e3e3e8"
+
+tone:
+  overall: "Association, practical, light page, red actions, dark footer"
+  colorMode: "light"
+  contrast: "high"
+  imagery: "Photography of people in the field, conferences and infrastructure. Teal line icons on the dark hero tiles and the offer grid."
+  heroStyle: "Split: conference photo on the left, four icon links on a near-black panel on the right"
+  cardStyle: "White cards, square corners, red text links"
+  navStyle: "Gray utility row (logo, links, search, red Login) over a white menu row, uppercase Nunito Sans 14px"
+
+siteThemeScss: |
+  body.site-ampp, .site-ampp {
+    --text-body: #333333;
+    --text-body-inverted: #ffffff;
+    --text-colored: #ee2737;
+    --text-footer: #ffffff;
+    --text-accent: #ee2737;
+    --bg-body: #ffffff;
+    --bg-footer: #333535;
+    --bg-main: #ffffff;
+    --bg-main-alt: #ededf5;
+    --bg-color: #e3e3e8;
+    --bg-saturated: #ee2737;
+    --bg-accent: #101820;
+    --border-color: #e3e3e8;
+    --hr-color: #e3e3e8;
+    --roundness: 0;
+  }
+  body.site-ampp.dark, .dark .site-ampp {
+    --text-body: #ffffff;
+    --text-body-inverted: #333333;
+    --text-colored: #ee2737;
+    --text-footer: #ffffff;
+    --text-accent: #ee2737;
+    --bg-body: #101820;
+    --bg-footer: #101820;
+    --bg-main: #1a1f24;
+    --bg-main-alt: #333535;
+    --bg-color: #333535;
+    --bg-saturated: #ee2737;
+    --bg-accent: #ee2737;
+    --border-color: #333535;
+    --hr-color: #333535;
+    --roundness: 0;
+  }
+
+extraction:
+  confidence: "high"
+  method: "Playwright scraper plus measured header and section colors. Brand red is the link and button color #ee2737 from sections and the Login button, not the scraper's primary-button sample."
+  notes:
+    - "Nunito Sans is already on Google Fonts. No substitute."
+    - "A brand refresh was mentioned on the call and is not applied. This is the live site."
+    - "Header measurements: utility bar #e3e3e8 at 75px, menu row white, Login #ee2737, logo 200x47 on the utility row."

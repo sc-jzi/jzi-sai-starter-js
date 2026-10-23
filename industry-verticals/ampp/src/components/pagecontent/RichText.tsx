@@ -27,3 +27,31 @@ export const Default = (props: RichTextProps): JSX.Element => {
     </div>
   );
 };
+
+/* AMPP variant: body copy in the measured column, red links. */
+export const Ampp = (props: RichTextProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const text = String(props.fields?.Text?.value || '');
+  const markers: Array<[string, string]> = [
+    ['data-ampp-band', 'ampp-band'],
+    ['data-welcome', 'welcome-band'],
+    ['data-discussions', 'discussions'],
+    ['data-dark', 'dark-band'],
+    ['data-ampp-h50', 'ampp-h50'],
+    ['data-ampp-h32', 'ampp-h32'],
+    ['data-ampp-h24', 'ampp-h24'],
+    ['data-ampp-h20', 'ampp-h20'],
+  ];
+  const band = markers
+    .filter(([marker]) => text.includes(marker))
+    .map(([, className]) => className)
+    .join(' ');
+
+  return (
+    <div className={`component rich-text variant-ampp ${band} ${props.params?.styles || ''} ${props.params?.Styles || ''}`} id={id || undefined}>
+      <div className="component-content">
+        {props.fields ? <JssRichText field={props.fields.Text} /> : <span className="is-empty-hint">Rich text</span>}
+      </div>
+    </div>
+  );
+};

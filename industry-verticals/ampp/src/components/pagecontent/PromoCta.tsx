@@ -191,61 +191,65 @@ export const WithBackgroundImage = (props: PromoCtaProps): JSX.Element => {
   );
 };
 
-export const Ampp = (props: PromoCtaProps): JSX.Element => {
+const AmppPromoSplit = (props: PromoCtaProps, look: string): JSX.Element => {
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
   return (
-    <section className="ampp-look ampp-look-ampp">
-      <Default {...props} />
-    </section>
+    <div className={`component promo-cta ${look} ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
+      <div className="container">
+        <div className="row align-items-center">
+          <div className="col-lg-6">
+            {(isPageEditing || props.fields?.Title?.value) && (
+              <h2>
+                <Text field={props.fields.Title} />
+              </h2>
+            )}
+            {(isPageEditing || props.fields?.Text?.value) && <RichText field={props.fields.Text} className="text-content" />}
+            {(isPageEditing || props.fields?.Link?.value?.href) && <Link field={props.fields.Link} className="button" />}
+            {(isPageEditing || props.fields?.Link2?.value?.href) && <Link field={props.fields.Link2} className="button" />}
+          </div>
+          <div className="col-lg-6 ampp-media">
+            {(isPageEditing || props.fields?.Image?.value?.src) && (
+              <NextImage field={props.fields.Image} width={640} height={400} />
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export const AmppConferenceBanner = (props: PromoCtaProps): JSX.Element => {
-  return (
-    <section className="ampp-look ampp-look-conference-banner">
-      <Default {...props} />
-    </section>
-  );
-};
+/* AMPP variant: text with the image on the right. */
+export const Ampp = (props: PromoCtaProps): JSX.Element => AmppPromoSplit(props, 'variant-ampp');
 
-export const AmppNextStep = (props: PromoCtaProps): JSX.Element => {
-  return (
-    <section className="ampp-look ampp-look-next-step">
-      <Default {...props} />
-    </section>
-  );
-};
+/* AMPP image right. */
+export const AmppImageRight = (props: PromoCtaProps): JSX.Element => AmppPromoSplit(props, 'variant-ampp-image-right');
 
-export const AmppImageRight = (props: PromoCtaProps): JSX.Element => {
-  const title = String(props.fields?.Title?.value || "");
-  const fields =
-    title.trim() === "Education & Certification"
-      ? { ...props.fields, Title: { ...props.fields.Title, value: "Student code of conduct" } }
-      : props.fields;
-  const followedByAd = /building careers/i.test(title);
+/* AMPP image left. */
+export const AmppImageLeft = (props: PromoCtaProps): JSX.Element => AmppPromoSplit(props, 'variant-ampp-image-left');
 
-  return (
-    <>
-      <section className="ampp-look ampp-look-image-right">
-        <Default {...props} fields={fields} />
-      </section>
-      {followedByAd && <section className="ampp-look ampp-look-gap" aria-hidden="true" />}
-    </>
-  );
-};
-
-export const AmppImageLeft = (props: PromoCtaProps): JSX.Element => {
-  return (
-    <section className="ampp-look ampp-look-image-left">
-      <Default {...props} />
-    </section>
-  );
-};
-
+/* AMPP banner: full-bleed photo, centered title, one red button. */
 export const AmppBanner = (props: PromoCtaProps): JSX.Element => {
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
   return (
-    <section className="ampp-look ampp-look-banner">
-      <h2>Chapter officer self-nominations are now open!</h2>
-      <Default {...props} />
-    </section>
+    <div className={`component promo-cta variant-ampp-banner ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
+      {(isPageEditing || props.fields?.Image?.value?.src) && (
+        <div className="ampp-hero-media">
+          <NextImage field={props.fields.Image} width={1440} height={420} />
+        </div>
+      )}
+      <div className="ampp-hero-copy">
+        <h2>
+          <Text field={props.fields.Title} />
+        </h2>
+        {(isPageEditing || props.fields?.Text?.value) && <RichText field={props.fields.Text} className="text-content" />}
+        {(isPageEditing || props.fields?.Link?.value?.href) && (
+          <Link field={props.fields.Link} className="button button-main" />
+        )}
+      </div>
+    </div>
   );
 };

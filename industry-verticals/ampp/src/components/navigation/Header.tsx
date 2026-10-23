@@ -67,7 +67,7 @@ export const Ampp = (props: HeaderProps): JSX.Element => {
         <div className="row align-items-center">
           <div className="col-auto">
             <a href="/">
-              <NextImage field={props.fields.LogoImage} width={200} height={50} />
+              <NextImage field={props.fields.LogoImage} width={200} height={47} />
             </a>
           </div>
           <div className="col">

@@ -140,3 +140,28 @@ export const LargeImage = (props: CtaBannerProps): JSX.Element => {
     </div>
   );
 };
+
+/* AMPP variant: heading, text and one red button. No image. */
+export const Ampp = (props: CtaBannerProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  return (
+    <div className={`component cta-banner variant-ampp ${props.params?.styles || ''}`} id={id || undefined}>
+      <div className="container">
+        {(isPageEditing || props.fields?.Title?.value) && (
+          <h2>
+            <Text field={props.fields.Title} />
+          </h2>
+        )}
+        {(isPageEditing || props.fields?.Text?.value) && (
+          <RichText field={props.fields.Text} className="text-content" />
+        )}
+        {(isPageEditing || props.fields?.Link?.value?.href) && (
+          <Link field={props.fields.Link} className="button button-main" />
+        )}
+      </div>
+    </div>
+  );
+};

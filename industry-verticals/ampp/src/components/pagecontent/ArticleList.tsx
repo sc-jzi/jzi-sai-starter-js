@@ -205,23 +205,3 @@ export const Default = withDatasourceCheck()<ArticleListComponentProps>(ArticleL
 export const ThreeColumn = withDatasourceCheck()<ArticleListComponentProps>(ArticleListThreeColumn);
 export const Simplified = withDatasourceCheck()<ArticleListComponentProps>(ArticleListSimplified);
 export const Grid = withDatasourceCheck()<ArticleListComponentProps>(ArticleListGrid);
-
-const amppList = (look: string, heading: string) =>
-  function AmppList(props: ArticleListComponentProps): JSX.Element {
-    return (
-      <section className={`ampp-look ampp-look-${look}`}>
-        <div className="component article-list">
-          <h2>{heading}</h2>
-          <Default {...props} />
-        </div>
-      </section>
-    );
-  };
-
-export const Ampp = amppList("ampp", "AMPP");
-export const AmppFeatureRows = amppList("feature-rows", "Get more out of AMPP");
-export const AmppNewsList = amppList("news-list", "What's new");
-export const AmppDiscussionRows = amppList("discussion-rows", "Communities of interest discussions");
-export const AmppEventRows = amppList("event-rows", "East Asia and Pacific Area Conference 2026");
-export const AmppHelpLinks = amppList("help-links", "Need help finding something?");
-export const AmppFeaturedEvents = amppList("featured-events", "Featured events");

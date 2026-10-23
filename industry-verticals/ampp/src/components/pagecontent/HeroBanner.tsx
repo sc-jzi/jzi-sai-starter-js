@@ -83,3 +83,35 @@ export const Default = (props: HeroBannerProps): JSX.Element => {
     </div>
   );
 };
+
+const AmppHero = (props: HeroBannerProps, look: string): JSX.Element => {
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  return (
+    <div className={`component hero-banner ${look} ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
+      {(isPageEditing || props.fields?.Image?.value?.src) && (
+        <div className="ampp-hero-media">
+          <NextImage field={props.fields.Image} width={1440} height={420} />
+        </div>
+      )}
+      <div className="ampp-hero-copy">
+        {(isPageEditing || props.fields?.Title?.value) && (
+          <h1>
+            <Text field={props.fields.Title} />
+          </h1>
+        )}
+        {(isPageEditing || props.fields?.Text?.value) && <RichText field={props.fields.Text} className="text-content" />}
+        {(isPageEditing || props.fields?.Cta1?.value?.href) && (
+          <Link field={props.fields.Cta1} className="button button-main" />
+        )}
+      </div>
+    </div>
+  );
+};
+
+/* AMPP variant: full-bleed photo, centered title, one red button. */
+export const Ampp = (props: HeroBannerProps): JSX.Element => AmppHero(props, 'variant-ampp');
+
+/* AMPP event hero. */
+export const AmppBanner = (props: HeroBannerProps): JSX.Element => AmppHero(props, 'variant-ampp-banner');

@@ -84,14 +84,14 @@ body.site-ampp,
   --text-accent: #ee2737;
   --bg-body: #ffffff;
   --bg-footer: #333535;
-  --bg-main: #ededf5;
-  --bg-main-alt: #ffffff;
-  --bg-color: #ededf5;
-  --bg-saturated: #101820;
-  --bg-accent: #ee2737;
+  --bg-main: #ffffff;
+  --bg-main-alt: #ededf5;
+  --bg-color: #e3e3e8;
+  --bg-saturated: #ee2737;
+  --bg-accent: #101820;
   --border-color: #e3e3e8;
-  --hr-color: #ffffff;
-  --roundness: 2px;
+  --hr-color: #e3e3e8;
+  --roundness: 0;
 }
 
 body.site-ampp.dark,
@@ -102,14 +102,15 @@ body.site-ampp.dark,
   --text-footer: #ffffff;
   --text-accent: #ee2737;
   --bg-body: #101820;
-  --bg-footer: #333535;
-  --bg-main: #101820;
-  --bg-color: #101820;
-  --bg-saturated: #ededf5;
+  --bg-footer: #101820;
+  --bg-main: #1a1f24;
+  --bg-main-alt: #333535;
+  --bg-color: #333535;
+  --bg-saturated: #ee2737;
   --bg-accent: #ee2737;
   --border-color: #333535;
-  --hr-color: #ffffff;
-  --roundness: 2px;
+  --hr-color: #333535;
+  --roundness: 0;
 }
 
 // Backgrounds colors

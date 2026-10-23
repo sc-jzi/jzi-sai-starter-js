@@ -20,6 +20,7 @@ import * as TwoColumnCta from 'src/components/pagecontent/TwoColumnCta';
 import * as ThreeColumnCta from 'src/components/pagecontent/ThreeColumnCta';
 import * as Testimonials from 'src/components/pagecontent/Testimonials';
 import * as StatsCounter from 'src/components/pagecontent/StatsCounter';
+import * as SplitPanel from 'src/components/pagecontent/SplitPanel';
 import * as RichText from 'src/components/pagecontent/RichText';
 import * as Quote from 'src/components/pagecontent/Quote';
 import * as Questions from 'src/components/pagecontent/Questions';
@@ -29,6 +30,7 @@ import * as ProjectDetails from 'src/components/pagecontent/ProjectDetails';
 import * as ParallaxBanner from 'src/components/pagecontent/ParallaxBanner';
 import * as PageBackground from 'src/components/pagecontent/PageBackground';
 import * as ImageGallery from 'src/components/pagecontent/ImageGallery';
+import * as HeroSpotlight from 'src/components/pagecontent/HeroSpotlight';
 import * as HeroBanner from 'src/components/pagecontent/HeroBanner';
 import * as Hero from 'src/components/pagecontent/Hero';
 import * as HeadingCta from 'src/components/pagecontent/HeadingCta';
@@ -76,6 +78,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ThreeColumnCta', { ...ThreeColumnCta }],
   ['Testimonials', { ...Testimonials }],
   ['StatsCounter', { ...StatsCounter }],
+  ['SplitPanel', { ...SplitPanel }],
   ['RichText', { ...RichText }],
   ['Quote', { ...Quote }],
   ['Questions', { ...Questions }],
@@ -85,6 +88,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ParallaxBanner', { ...ParallaxBanner }],
   ['PageBackground', { ...PageBackground }],
   ['ImageGallery', { ...ImageGallery }],
+  ['HeroSpotlight', { ...HeroSpotlight }],
   ['HeroBanner', { ...HeroBanner }],
   ['Hero', { ...Hero }],
   ['HeadingCta', { ...HeadingCta }],

@@ -71,23 +71,3 @@ export const Default = (props: FeaturesProps): JSX.Element => {
     </div>
   );
 };
-
-export const Ampp = (props: FeaturesProps): JSX.Element => {
-  return (
-    <section className="ampp-look ampp-look-ampp">
-      <Default {...props} />
-    </section>
-  );
-};
-
-export const AmppBenefits = (props: FeaturesProps): JSX.Element => {
-  return (
-    <>
-      <section className="ampp-look ampp-look-benefits">
-        <h2>AMPP Membership now offers more resources and benefits for less cost</h2>
-        <Default {...props} />
-      </section>
-      <section className="ampp-look ampp-look-gap" aria-hidden="true" />
-    </>
-  );
-};

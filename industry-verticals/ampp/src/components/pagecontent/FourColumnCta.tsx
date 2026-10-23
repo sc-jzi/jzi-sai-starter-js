@@ -119,20 +119,3 @@ export const Default = (props: FourColumnCtaProps): JSX.Element => {
     </div>
   );
 };
-
-export const Ampp = (props: FourColumnCtaProps): JSX.Element => {
-  return (
-    <section className="ampp-look ampp-look-ampp">
-      <Default {...props} />
-    </section>
-  );
-};
-
-export const AmppTileGrid = (props: FourColumnCtaProps): JSX.Element => {
-  return (
-    <section className="ampp-look ampp-look-tile-grid">
-      <h2>Find a course</h2>
-      <Default {...props} />
-    </section>
-  );
-};

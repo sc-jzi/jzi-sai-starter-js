@@ -36,43 +36,41 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
           )
         ) : (
           <>
-            <div id="header-band">
-              <header>
-                <div id="header">
-                  {route && (
-                    <AppPlaceholder
-                      page={page}
-                      componentMap={componentMap}
-                      name="headless-header"
-                      rendering={route}
-                    />
-                  )}
-                </div>
-              </header>
+            <div className="site-header">
+              <div id="header">
+                {route && (
+                  <AppPlaceholder
+                    page={page}
+                    componentMap={componentMap}
+                    name="headless-header"
+                    rendering={route}
+                  />
+                )}
+              </div>
             </div>
-            <main id="content">
-              {route && (
-                <AppPlaceholder
-                  page={page}
-                  componentMap={componentMap}
-                  name="headless-main"
-                  rendering={route}
-                />
-              )}
+            <main>
+              <div id="content">
+                {route && (
+                  <AppPlaceholder
+                    page={page}
+                    componentMap={componentMap}
+                    name="headless-main"
+                    rendering={route}
+                  />
+                )}
+              </div>
             </main>
-            <div id="footer-band">
-              <footer>
-                <div id="footer">
-                  {route && (
-                    <AppPlaceholder
-                      page={page}
-                      componentMap={componentMap}
-                      name="headless-footer"
-                      rendering={route}
-                    />
-                  )}
-                </div>
-              </footer>
+            <div className="site-footer">
+              <div id="footer">
+                {route && (
+                  <AppPlaceholder
+                    page={page}
+                    componentMap={componentMap}
+                    name="headless-footer"
+                    rendering={route}
+                  />
+                )}
+              </div>
             </div>
           </>
         )}

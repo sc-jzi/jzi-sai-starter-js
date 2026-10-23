@@ -110,19 +110,94 @@ export const Default = (props: TwoColumnCtaProps): JSX.Element => {
   );
 };
 
+const AmppTextColumn = ({
+  title,
+  text,
+  link,
+  showImage,
+  image,
+  isPageEditing,
+}: {
+  title: Field<string>;
+  text: Field<string>;
+  link: LinkField;
+  showImage: boolean;
+  image: ImageField;
+  isPageEditing: boolean;
+}): JSX.Element => (
+  <div className="col-lg-6">
+    {showImage && (isPageEditing || image?.value?.src) && (
+      <NextImage field={image} width={640} height={360} />
+    )}
+    {(isPageEditing || title?.value) && (
+      <h3>
+        <Text field={title} />
+      </h3>
+    )}
+    {(isPageEditing || text?.value) && (
+      <p>
+        <Text field={text} />
+      </p>
+    )}
+    {(isPageEditing || link?.value?.href) && <Link field={link} className="button button-main" />}
+  </div>
+);
+
+/* AMPP variant: two text cards on the gray band. */
 export const Ampp = (props: TwoColumnCtaProps): JSX.Element => {
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
   return (
-    <section className="ampp-look ampp-look-ampp">
-      <Default {...props} />
-    </section>
+    <div className={`component two-column-cta variant-ampp ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
+      <div className="container">
+        <div className="row">
+          <AmppTextColumn title={props.fields.Title1} text={props.fields.Text1} link={props.fields.Link1} image={props.fields.Image1} showImage={false} isPageEditing={isPageEditing} />
+          <AmppTextColumn title={props.fields.Title2} text={props.fields.Text2} link={props.fields.Link2} image={props.fields.Image2} showImage={false} isPageEditing={isPageEditing} />
+        </div>
+      </div>
+    </div>
   );
 };
 
-export const AmppTextCards = (props: TwoColumnCtaProps): JSX.Element => {
+/* AMPP text cards: same gray two-column band. */
+export const AmppTextCards = Ampp;
+
+/* AMPP membership choice: two columns, both actions under the left column. */
+export const AmppMembershipChoice = (props: TwoColumnCtaProps): JSX.Element => {
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
   return (
-    <section className="ampp-look ampp-look-text-cards">
-      <h2>Welcome to AMPP</h2>
-      <Default {...props} />
-    </section>
+    <div className={`component two-column-cta variant-ampp-membership ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-6">
+            <h3>
+              <Text field={props.fields.Title1} />
+            </h3>
+            <p>
+              <Text field={props.fields.Text1} />
+            </p>
+          </div>
+          <div className="col-lg-6">
+            <h3>
+              <Text field={props.fields.Title2} />
+            </h3>
+            <p>
+              <Text field={props.fields.Text2} />
+            </p>
+          </div>
+        </div>
+        <div className="ampp-actions">
+          {(isPageEditing || props.fields?.Link1?.value?.href) && (
+            <Link field={props.fields.Link1} className="button button-main" />
+          )}
+          {(isPageEditing || props.fields?.Link2?.value?.href) && (
+            <Link field={props.fields.Link2} className="button button-main" />
+          )}
+        </div>
+      </div>
+    </div>
   );
 };

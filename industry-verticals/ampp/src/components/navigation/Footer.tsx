@@ -170,10 +170,41 @@ export const WithSocials = (props: FooterProps): JSX.Element => {
   );
 };
 
+/* AMPP variant: dark footer, white link columns. */
 export const Ampp = (props: FooterProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+
   return (
-    <section className="ampp-look ampp-look-ampp">
-      <Default {...props} />
-    </section>
+    <div className={`component footer variant-ampp-footer ${props.params?.styles || ''}`} id={id || undefined}>
+      <div className="container">
+        {props.fields?.Image1?.value?.src && (
+          <NextImage field={props.fields.Image1} width={160} height={40} />
+        )}
+        <div className="row">
+          <div className="col-md-3">
+            <div className="title"><Text field={props.fields?.Title1} /></div>
+            <div className="links"><RichText field={props.fields?.Text1} /></div>
+          </div>
+          <div className="col-md-3">
+            <div className="title"><Text field={props.fields?.Title2} /></div>
+            <div className="links"><RichText field={props.fields?.Text2} /></div>
+          </div>
+          <div className="col-md-3">
+            <div className="title"><Text field={props.fields?.Title3} /></div>
+            <div className="links"><RichText field={props.fields?.Text3} /></div>
+          </div>
+          <div className="col-md-3">
+            <div className="title"><Text field={props.fields?.Title4} /></div>
+            <div className="links"><RichText field={props.fields?.Text4} /></div>
+          </div>
+        </div>
+        <hr />
+        <div className="footnote">
+          <Text field={props.fields?.Copyright} />
+          <Link field={props.fields?.Link1} />
+          <Link field={props.fields?.Link2} />
+        </div>
+      </div>
+    </div>
   );
 };

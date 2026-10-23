@@ -13,11 +13,11 @@ project:
   siteCollection: "Financial"
   siteName: "ProsperaFinancial"
   sdk: "@sitecore-content-sdk/nextjs"
-  renderingsRoot: "/sitecore/layout/Renderings/Project/AMPP"
-  projectTemplatesRoot: "/sitecore/templates/Project/AMPP"
+  renderingsRoot: "/sitecore/layout/Renderings/Project/Associations"
+  projectTemplatesRoot: "/sitecore/templates/Project/Associations"
   dataRoot: "/sitecore/content/Financial/ProsperaFinancial/Data"
   projectFoldersRoot: "/sitecore/templates/Project/Financial/Folders"
-  renderingParamsRoot: "/sitecore/templates/Project/AMPP/Rendering Parameters"
+  renderingParamsRoot: "/sitecore/templates/Project/Associations/Rendering Parameters"
   headlessVariantsRoot: "/sitecore/content/Financial/ProsperaFinancial/Presentation/Headless Variants"
 
 inventoryNotes:

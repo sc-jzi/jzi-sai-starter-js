@@ -83,7 +83,7 @@ const Testimonial = ({ item }: { item: TestimonialItemProps }): JSX.Element => {
 
 export const Default = (props: TestimonialsProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
-  const testimonials = props.fields?.items ?? [];
+  const testimonials = props.fields?.items;
   const sxaStyles = `${props.params?.styles || ''}`;
 
   return (
@@ -127,34 +127,34 @@ export const Default = (props: TestimonialsProps): JSX.Element => {
   );
 };
 
-export const Ampp = (props: TestimonialsProps): JSX.Element => {
+const AmppQuotes = (props: TestimonialsProps, look: string): JSX.Element => {
+  const testimonials = props.fields?.items ?? [];
+
   return (
-    <section className="ampp-look ampp-look-ampp">
-      <Default {...props} />
-    </section>
+    <div className={`component testimonials ${look} ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
+      <div className="container">
+        <div className="row">
+          {testimonials.map((item, i) => (
+            <div className="col-lg-4" key={`${item.url}${i}`}>
+              <blockquote>
+                <Text field={item.fields.Content} />
+              </blockquote>
+              <p className="author-name">
+                <Text field={item.fields.AuthorName} />
+              </p>
+              <p className="author-position">
+                <Text field={item.fields.AuthorPosition} />
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };
 
-export const AmppQuoteBand = (props: TestimonialsProps): JSX.Element => {
-  return (
-    <>
-      <section className="ampp-look ampp-look-quote-band">
-        <h2>See what our members are saying</h2>
-        <Default {...props} />
-      </section>
-      <section className="ampp-look ampp-look-gap" aria-hidden="true" />
-    </>
-  );
-};
+/* AMPP variant: quotes on the dark band. */
+export const Ampp = (props: TestimonialsProps): JSX.Element => AmppQuotes(props, 'variant-ampp');
 
-export const AmppDarkBand = (props: TestimonialsProps): JSX.Element => {
-  return (
-    <>
-      <section className="ampp-look ampp-look-dark-band">
-        <h2>See what our members are saying</h2>
-        <Default {...props} />
-      </section>
-      <section className="ampp-look ampp-look-gap" aria-hidden="true" />
-    </>
-  );
-};
+/* AMPP dark quotes. */
+export const AmppDark = (props: TestimonialsProps): JSX.Element => AmppQuotes(props, 'variant-ampp-dark');

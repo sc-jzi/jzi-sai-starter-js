@@ -20,10 +20,7 @@ type PageProps = {
 };
 
 export default async function Page({ params }: PageProps) {
-  const raw = await params;
-  const site = decodeURIComponent(raw.site);
-  const locale = raw.locale;
-  const path = raw.path?.map((segment) => decodeURIComponent(segment));
+  const { site, locale, path } = await params;
 
   // Set site and locale to be available in src/i18n/request.ts for fetching the dictionary
   setRequestLocale(`${site}_${locale}`);
@@ -79,9 +76,7 @@ export const generateStaticParams = async () => {
 };
 // Metadata fields for the page.
 export const generateMetadata = async ({ params }: PageProps) => {
-  const { locale } = await params;
-  const site = decodeURIComponent((await params).site);
-  const path = (await params).path?.map((segment) => decodeURIComponent(segment));
+  const { path, site, locale } = await params;
 
   // The same call as for rendering the page. Should be cached by default react behavior
   const page = await client.getPage(path ?? [], { site, locale });

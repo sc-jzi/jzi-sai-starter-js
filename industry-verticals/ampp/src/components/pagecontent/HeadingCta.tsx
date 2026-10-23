@@ -152,18 +152,59 @@ export const Centered = (props: HeadingCtaProps): JSX.Element => {
   );
 };
 
+/* AMPP variant: heading, text and one red link. No eyebrow. */
 export const Ampp = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
   return (
-    <section className="ampp-look ampp-look-ampp">
-      <Default {...props} />
-    </section>
+    <div className={`component heading-cta variant-ampp ${props.params?.styles || ''}`} id={id || undefined}>
+      <div className="container">
+        {(isPageEditing || props.fields?.Heading?.value) && (
+          <h2>
+            <Text field={props.fields?.Heading} />
+          </h2>
+        )}
+        {(isPageEditing || props.fields?.Text?.value) && (
+          <p>
+            <Text field={props.fields?.Text} />
+          </p>
+        )}
+        {(isPageEditing || props.fields?.Link?.value?.href) && (
+          <Link field={props.fields.Link} className="button button-main" />
+        )}
+      </div>
+    </div>
   );
 };
 
+/* AMPP page title: the heading only. */
 export const AmppPageTitle = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+
   return (
-    <section className="ampp-look ampp-look-page-title">
-      <Default {...props} />
-    </section>
+    <div className={`component heading-cta variant-ampp-page-title ${props.params?.styles || ''}`} id={id || undefined}>
+      <div className="container">
+        <h1>
+          <Text field={props.fields?.Heading} />
+        </h1>
+      </div>
+    </div>
+  );
+};
+
+/* AMPP catalog heading: centered title. */
+export const AmppCatalogHeading = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+
+  return (
+    <div className={`component heading-cta variant-ampp-catalog ${props.params?.styles || ''}`} id={id || undefined}>
+      <div className="container">
+        <h2>
+          <Text field={props.fields?.Heading} />
+        </h2>
+      </div>
+    </div>
   );
 };

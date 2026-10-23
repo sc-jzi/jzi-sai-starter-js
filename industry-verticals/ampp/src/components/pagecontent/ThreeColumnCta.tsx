@@ -268,37 +268,68 @@ export const WithIconsCompact = (props: ThreeColumnCtaProps): JSX.Element => {
   );
 };
 
-export const Ampp = (props: ThreeColumnCtaProps): JSX.Element => {
+const AmppOfferCard = ({
+  image,
+  title,
+  text,
+  link,
+  isPageEditing,
+  photo,
+}: {
+  image: ImageField;
+  title: Field<string>;
+  text: Field<string>;
+  link: LinkField;
+  isPageEditing: boolean;
+  photo: boolean;
+}): JSX.Element => (
+  <div className="col-lg-4">
+    <div className="ampp-card">
+      {(isPageEditing || image?.value?.src) && (
+        <NextImage field={image} width={photo ? 480 : 64} height={photo ? 180 : 64} />
+      )}
+      {(isPageEditing || title?.value) && (
+        <h3>
+          <Text field={title} />
+        </h3>
+      )}
+      {(isPageEditing || (text?.value && text.value !== title?.value)) && (
+        <p>
+          <Text field={text} />
+        </p>
+      )}
+      {(isPageEditing || link?.value?.href) && <Link field={link} className="button button-main" />}
+    </div>
+  </div>
+);
+
+const AmppThree = (props: ThreeColumnCtaProps, look: string, photo: boolean): JSX.Element => {
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
   return (
-    <section className="ampp-look ampp-look-ampp">
-      <Default {...props} />
-    </section>
+    <div className={`component three-column-cta ${look} ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
+      <div className="container">
+        {(isPageEditing || props.fields.Text1?.value) && (
+          <h2 className="ampp-section-title">
+            <Text field={props.fields.Text1} />
+          </h2>
+        )}
+        <div className="row">
+          <AmppOfferCard image={props.fields.Image1} title={props.fields.Text2} text={props.fields.SubText2} link={props.fields.Link1} isPageEditing={isPageEditing} photo={photo} />
+          <AmppOfferCard image={props.fields.Image2} title={props.fields.Text3} text={props.fields.SubText3} link={props.fields.Link2} isPageEditing={isPageEditing} photo={photo} />
+          <AmppOfferCard image={props.fields.Image3} title={props.fields.SubText1} text={props.fields.SubText1} link={props.fields.Link3} isPageEditing={isPageEditing} photo={photo} />
+        </div>
+      </div>
+    </div>
   );
 };
 
-export const AmppIconCards = (props: ThreeColumnCtaProps): JSX.Element => {
-  return (
-    <section className="ampp-look ampp-look-icon-cards">
-      <h2>What we offer</h2>
-      <Default {...props} />
-    </section>
-  );
-};
+/* AMPP variant: three centered offer cards with a red button. */
+export const Ampp = (props: ThreeColumnCtaProps): JSX.Element => AmppThree(props, 'variant-ampp', false);
 
-export const AmppCertifications = (props: ThreeColumnCtaProps): JSX.Element => {
-  return (
-    <section className="ampp-look ampp-look-certifications">
-      <h2>Industry-recognized certifications</h2>
-      <Default {...props} />
-    </section>
-  );
-};
+/* AMPP offer row: icon, title, text, red button. */
+export const AmppOfferRow = (props: ThreeColumnCtaProps): JSX.Element => AmppThree(props, 'variant-ampp-offer', false);
 
-export const AmppMembershipTypes = (props: ThreeColumnCtaProps): JSX.Element => {
-  return (
-    <section className="ampp-look ampp-look-membership-types">
-      <h2>Get the AMPP Membership that’s right for you</h2>
-      <Default {...props} />
-    </section>
-  );
-};
+/* AMPP next steps: photo on top of each tile. */
+export const AmppNextSteps = (props: ThreeColumnCtaProps): JSX.Element => AmppThree(props, 'variant-ampp-next', true);
