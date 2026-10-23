@@ -21,11 +21,11 @@ export type HeroSpotlightProps = {
 };
 
 const Tile = ({ link, isPageEditing }: { link?: LinkField; isPageEditing: boolean }): JSX.Element | null => {
-  if (!isPageEditing && !link?.value?.href) return null;
+  if (!link || (!isPageEditing && !link.value?.href)) return null;
   return (
     <div className="ampp-hero-tile">
       <Link field={link}>
-        <h2>{link?.value?.text}</h2>
+        <h2>{link.value?.text}</h2>
       </Link>
     </div>
   );
@@ -36,12 +36,15 @@ const Spotlight = (props: HeroSpotlightProps): JSX.Element => {
   const isPageEditing = page.mode.isEditing;
 
   const tiles = [props.fields?.Link1, props.fields?.Link2, props.fields?.Link3, props.fields?.Link4, props.fields?.Cta1, props.fields?.Cta2];
+  const image = props.fields?.Image;
+  const title = props.fields?.Title;
+  const text = props.fields?.Text;
 
   return (
     <section className={`component hero-spotlight variant-ampp ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
-      {(isPageEditing || props.fields?.Image?.value?.src) && (
+      {image && (isPageEditing || image.value?.src) && (
         <div className="ampp-hero-media">
-          <NextImage field={props.fields?.Image} width={1440} height={500} />
+          <NextImage field={image} width={1440} height={500} />
         </div>
       )}
       <div className="ampp-hero-copy container">
@@ -50,14 +53,14 @@ const Spotlight = (props: HeroSpotlightProps): JSX.Element => {
             <Tile key={link?.value?.href || i} link={link} isPageEditing={isPageEditing} />
           ))}
         </div>
-        {(isPageEditing || props.fields?.Title?.value) && (
+        {title && (isPageEditing || title.value) && (
           <p className="ampp-hero-title">
-            <Text field={props.fields?.Title} />
+            <Text field={title} />
           </p>
         )}
-        {(isPageEditing || props.fields?.Text?.value) && (
+        {text && (isPageEditing || text.value) && (
           <p>
-            <Text field={props.fields?.Text} />
+            <Text field={text} />
           </p>
         )}
       </div>
