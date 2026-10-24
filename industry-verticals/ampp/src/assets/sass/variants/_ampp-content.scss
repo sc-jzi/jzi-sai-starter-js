@@ -11,7 +11,12 @@
 .component.variant-ampp-image-right,
 .component.variant-ampp-image-left,
 .component.variant-ampp-dark,
-.component.variant-ampp-footer {
+.component.variant-ampp-footer,
+.component.variant-ampp-news,
+.component.variant-ampp-discussions {
+  width: 100%;
+  max-width: 100%;
+  flex: 0 0 100%;
   --v-bg: #ffffff;
   --v-heading: #333333;
   --v-text: #333333;
@@ -187,8 +192,11 @@
   color: #ffffff;
   padding: 48px 0 24px;
   a, .title, .links { color: #ffffff; }
-  .title { font-weight: 700; font-size: 16px; margin-bottom: 12px; }
+  .title { font-weight: 700; font-size: 16px; margin-bottom: 12px; border-bottom: 2px solid #ee2737; padding-bottom: 8px; }
   .links a { display: block; font-size: 14px; text-decoration: none; margin-bottom: 6px; }
   hr { border-color: #4a4c4c; }
   img { width: 160px; height: auto; }
+  .footnote { display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; }
+  .privacy-links, .socials, .other-sites { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+  .privacy-links a { color: #ee2737; }
 }

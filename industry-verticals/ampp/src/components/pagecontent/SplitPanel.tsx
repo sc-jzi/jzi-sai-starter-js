@@ -44,7 +44,7 @@ const Split = (props: SplitPanelProps, look: string): JSX.Element => {
   const isPageEditing = page.mode.isEditing;
 
   return (
-    <section className={`component split-panel ${look} ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
+    <section className={`component split-panel col-12 ${look} ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
       <div className="container">
         <div className="row">
           <Column title={props.fields?.Title1} text={props.fields?.Text1} link={props.fields?.Link1} isPageEditing={isPageEditing} />

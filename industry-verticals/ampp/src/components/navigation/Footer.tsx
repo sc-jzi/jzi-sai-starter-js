@@ -32,6 +32,12 @@ interface Fields {
   SocialIcon2: ImageField;
   SocialLink3: LinkField;
   SocialIcon3: ImageField;
+  Title5?: Field<string>;
+  Text5?: RichTextField;
+  Title6?: Field<string>;
+  Text6?: RichTextField;
+  Link3?: LinkField;
+  OtherSites?: RichTextField;
 }
 
 export type FooterProps = {
@@ -181,28 +187,45 @@ export const Ampp = (props: FooterProps): JSX.Element => {
           <NextImage field={props.fields.Image1} width={160} height={40} />
         )}
         <div className="row">
-          <div className="col-md-3">
+          <div className="col-md-2">
             <div className="title"><Text field={props.fields?.Title1} /></div>
             <div className="links"><RichText field={props.fields?.Text1} /></div>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-2">
             <div className="title"><Text field={props.fields?.Title2} /></div>
             <div className="links"><RichText field={props.fields?.Text2} /></div>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-2">
             <div className="title"><Text field={props.fields?.Title3} /></div>
             <div className="links"><RichText field={props.fields?.Text3} /></div>
           </div>
-          <div className="col-md-3">
+          <div className="col-md-2">
             <div className="title"><Text field={props.fields?.Title4} /></div>
             <div className="links"><RichText field={props.fields?.Text4} /></div>
+          </div>
+          <div className="col-md-2">
+            <div className="title"><Text field={props.fields?.Title5} /></div>
+            <div className="links"><RichText field={props.fields?.Text5} /></div>
+          </div>
+          <div className="col-md-2">
+            <div className="title"><Text field={props.fields?.Title6} /></div>
+            <div className="links"><RichText field={props.fields?.Text6} /></div>
           </div>
         </div>
         <hr />
         <div className="footnote">
           <Text field={props.fields?.Copyright} />
-          <Link field={props.fields?.Link1} />
-          <Link field={props.fields?.Link2} />
+          <div className="privacy-links">
+            <Link field={props.fields?.Link1} />
+            <Link field={props.fields?.Link2} />
+            <Link field={props.fields?.Link3} />
+          </div>
+          <div className="socials">
+            <Link field={props.fields?.SocialLink1} />
+            <Link field={props.fields?.SocialLink2} />
+            <Link field={props.fields?.SocialLink3} />
+          </div>
+          <div className="other-sites"><RichText field={props.fields?.OtherSites} /></div>
         </div>
       </div>
     </div>

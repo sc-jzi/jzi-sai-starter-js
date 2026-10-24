@@ -308,7 +308,7 @@ const AmppThree = (props: ThreeColumnCtaProps, look: string, photo: boolean): JS
   const isPageEditing = page.mode.isEditing;
 
   return (
-    <div className={`component three-column-cta ${look} ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
+    <div className={`component three-column-cta col-12 ${look} ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
       <div className="container">
         {(isPageEditing || props.fields.Text1?.value) && (
           <h2 className="ampp-section-title">

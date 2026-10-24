@@ -149,7 +149,7 @@ export const Ampp = (props: TwoColumnCtaProps): JSX.Element => {
   const isPageEditing = page.mode.isEditing;
 
   return (
-    <div className={`component two-column-cta variant-ampp ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
+    <div className={`component two-column-cta variant-ampp col-12 ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
       <div className="container">
         <div className="row">
           <AmppTextColumn title={props.fields.Title1} text={props.fields.Text1} link={props.fields.Link1} image={props.fields.Image1} showImage={false} isPageEditing={isPageEditing} />
@@ -169,7 +169,7 @@ export const AmppMembershipChoice = (props: TwoColumnCtaProps): JSX.Element => {
   const isPageEditing = page.mode.isEditing;
 
   return (
-    <div className={`component two-column-cta variant-ampp-membership ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
+    <div className={`component two-column-cta variant-ampp-membership col-12 ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
       <div className="container">
         <div className="row">
           <div className="col-lg-6">

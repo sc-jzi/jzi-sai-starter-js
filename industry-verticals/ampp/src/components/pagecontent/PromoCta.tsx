@@ -196,7 +196,7 @@ const AmppPromoSplit = (props: PromoCtaProps, look: string): JSX.Element => {
   const isPageEditing = page.mode.isEditing;
 
   return (
-    <div className={`component promo-cta ${look} ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
+    <div className={`component promo-cta col-12 ${look} ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-6">
@@ -235,7 +235,7 @@ export const AmppBanner = (props: PromoCtaProps): JSX.Element => {
   const isPageEditing = page.mode.isEditing;
 
   return (
-    <div className={`component promo-cta variant-ampp-banner ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
+    <div className={`component promo-cta variant-ampp-banner col-12 ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
       {(isPageEditing || props.fields?.Image?.value?.src) && (
         <div className="ampp-hero-media">
           <NextImage field={props.fields.Image} width={1440} height={420} />

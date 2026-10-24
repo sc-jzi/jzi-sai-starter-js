@@ -10,7 +10,7 @@
  *  2. Authoring GraphQL route — reads the field, patches it, writes it back (needs SITECORE_CM_HOST + the automation client in harness/.env.local; the layout fields are STANDARD fields, so every field read uses ownFields:false):
  *       node harness/scripts/layout-variant.mjs apply --item "{partial or page item id}" --variant "{GUID}" (--uid ... | --rendering-id ... [--ph ...]) [--language en] [--dry-run]
  *  3. Plain field write (display names; same auth as 2):
- *       node harness/scripts/layout-variant.mjs set-field --item "{id}" --field "__Display name" --value "Contact Us" [--language en] [--dry-run]
+ *       node harness/scripts/layout-variant.mjs set-field --item "{id}" --field "__Display name" --value "Contact Us" [--value-file <path>] [--language en] [--dry-run]
  *     prints OK when the read-back matches (exit 1 otherwise).
  *     (apply) Looks at "__Final Renderings" and "__Renderings", patches whichever contains the rendering, saves the original under <cwd>/layout-backup-<item>.xml first.
  */
@@ -68,8 +68,9 @@ async function main() {
   const data = await gql(`query($id:ID!,$lang:String!){ item(where:{itemId:$id,database:"master",language:$lang}){ itemId version fields(ownFields:false){ nodes{ name value } } } }`, { id: norm(item).toUpperCase(), lang });
   const it = data.item; if (!it) die(`item not found in language "${lang}"`);
   if (cmd === "set-field") {   // plain field write (e.g. "__Display name") on the item's latest version in --language
-    const fname = flags.field, fval = flags.value;
-    if (!fname || fval === undefined || fval === true) die("set-field needs --field <name> --value <text>");
+    const fname = flags.field;
+    const fval = flags["value-file"] ? readFileSync(flags["value-file"], "utf8") : flags.value;
+    if (!fname || fval === undefined || fval === true) die("set-field needs --field <name> and --value <text> or --value-file <path>");
     if (flags["dry-run"]) { console.log(`DRY RUN — would set "${fname}" = "${fval}" on ${item} (${lang}, v${it.version})`); return; }
     await gql(`mutation($id:ID!,$lang:String!,$ver:Int,$name:String!,$value:String!){ updateItem(input:{itemId:$id,database:"master",language:$lang,version:$ver,fields:[{name:$name,value:$value}]}){ item{ itemId } } }`, { id: norm(item).toUpperCase(), lang, ver: it.version, name: fname, value: String(fval) });
     const back = await gql(`query($id:ID!,$lang:String!){ item(where:{itemId:$id,database:"master",language:$lang}){ fields(ownFields:false){ nodes{ name value } } } }`, { id: norm(item).toUpperCase(), lang });
