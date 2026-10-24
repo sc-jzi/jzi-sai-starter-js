@@ -114,6 +114,12 @@
     object-fit: contain;
   }
 
+  .advance-hero-cta-icon,
+  a {
+    position: relative;
+    z-index: 1;
+  }
+
   a {
     color: #ffffff;
     font-size: 18px;
@@ -121,12 +127,6 @@
     line-height: 1.25;
     text-decoration: none;
     max-width: 190px;
-
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-    }
 
     &:hover {
       color: #ffffff;

@@ -19,7 +19,7 @@ node harness/scripts/demo-route.mjs --customer <customer>
 ```
 | Route | When | What happens |
 |---|---|---|
-| `resume` | `demo-progress.yaml` exists for this customer | continue from the first unfinished phase ("Resume" in `demo-from-transcript`) |
+| `resume` | `demo-progress.yaml` exists for this customer | same as `/resume-demo <customer>` (`.cursor/skills/resume-demo/SKILL.md`): Marketer MCP check first, then the first unfinished phase |
 | `rfp` | an RFP / requirements / tender file waits in `harness/inbox/` (Excel, Word, PDF, any mix; a transcript and supporting files may be there too) | `intake-materials.mjs <customer>` takes everything, converts it to text, and the brief is **RFP-led** (see `demo-from-transcript`, "RFP-led brief") |
 | `transcript` | a Gong-style transcript waits in `harness/inbox/` (nothing RFP-like) | `intake-materials.mjs <customer>` stores it; the brief is built from it |
 | `materials` | other files wait (brand guide, screenshots ...) | they are stored and read; the brief comes from the interview |
@@ -28,7 +28,8 @@ node harness/scripts/demo-route.mjs --customer <customer>
 State the route in one line ("No transcript or RFP in the inbox, so I'll interview you." / "Found `acme-call.txt` and `rfp.xlsx` in the inbox, building an RFP-led brief.").
 
 ## 3. Run the flow
-Follow `.cursor/skills/demo-from-transcript/SKILL.md` from Phase T0 with the route above (it is the engine behind this command): preflight and dependency check, brief, theme proposal, page and component plan, **one approval gate** (story, pages, theme, Sitecore plan), then site creation, bootstrap, build and hand-over (thumbnails are manual tasks).
+Follow `.cursor/skills/demo-from-transcript/SKILL.md` from Phase T0 with the route above (it is the engine behind this command): preflight and dependency check, brief, **gate 1: the story** (Chain of Pain, AAA, message map, moments with show → reveal, talk track and click path; approved before anything is measured, planned or themed), Sitecore choices, measurement, page and component plan per page from the section screenshots, theme proposal, **gate 2: the build plan** (pages, components, theme, Sitecore), then site creation, bootstrap, build and hand-over (thumbnails are manual tasks).
+The dependency check includes the Sitecore Marketer MCP: `list_sites` must return before intake. Not connected: send the authentication request and ask the SE to connect. If that request times out, the run stops with `blockedOn: marketer-mcp-auth` in `demo-progress.yaml`, and the SE continues later with `/resume-demo <customer>` (T0 in `demo-from-transcript`).
 
 Details from the request become part of the brief marked *stated by the SE*. If a transcript exists and the request contradicts it, show the conflict at the gate instead of picking silently.
 
@@ -39,4 +40,4 @@ After the SE approves the plan the run does not stop, hand back or ask until the
 All hard rules of `demo-from-transcript` apply (nothing outside the customer folder and its own new site is touched; no secrets in chat; no invented facts).
 
 ## Always ask, never assume
-The SE chooses the Sitecore collection and the site template (offered as options; `Empty` template recommended) and approves the full plan, which you print in the chat message before asking. Details in `demo-from-transcript` phases T2 and T4.
+The SE approves the story on its own first, then chooses the Sitecore collection and the site template (offered as options; `Empty` template recommended) and approves the build plan. Both are printed in the chat message before asking. Details in `demo-from-transcript` phases T2b, T2 and T4.

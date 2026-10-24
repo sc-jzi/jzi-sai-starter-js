@@ -4,7 +4,10 @@
 #   node harness/scripts/validate-site-plan.mjs <customer>
 # Never invent facts or figures. Quote the transcript in `evidence`; mark stated or inferred; write "not given" for gaps.
 
-# Written after the SE approves at the gate (create-site --apply refuses without it):
+# Gate 1 (T2b, story): written when the SE approves the story, BEFORE measurement, the site plan and the theme (validate-site-plan P0).
+storyApproved: false
+storyApprovedAt: ""
+# Gate 2 (T4, build plan): written after the SE approves pages, theme and Sitecore choices (create-site --apply refuses without it):
 userApproved: false
 approvedAt: ""
 
@@ -59,7 +62,12 @@ story:
       afterward: "Publishes in a day"
       capability: "Composable page building by marketers"
       mustSee: "Finished campaign page on the live site, then the editor showing it was assembled without code"
-      clickPath: ["/Home", "/Home/products (click: Products in the header)"]   # EVERY page the SE clicks through for this moment, in order, incl. landing/intermediate pages; each must be linked from the page before. These pages mirror the live site (P14/P15)
+      show: "The finished regional campaign page as a visitor sees it: hero, offer, regional store finder"      # FRONT END FIRST (last thing first): the result, no Sitecore screens yet
+      reveal: "Open the same page in Pages: the components, the variant picker, publish"                        # THEN how it was built: the Sitecore screen(s) that made it
+      talkTrack: "Today this page takes three weeks and an IT ticket. Dana built this one this morning."      # annoyance -> afterward, in the presenter's words
+      # clickPath: EVERY page the SE clicks through, in order, from /Home, incl. landing/intermediate pages; each step says what is clicked
+      # and must be a real link on the page before. These pages are built in full (P14/P15).
+      clickPath: ["/Home", "/Home/products (click: Products in the header)", "/Home/products/spring-campaign (click: the Spring campaign card)"]
       checkIn: "Is this how you would want your team to launch a regional campaign?"
     - id: m2
       title: "Approvals and audit trail"
@@ -69,6 +77,10 @@ story:
       afterward: "One audit trail"
       capability: "Workflow and publish history"
       mustSee: "Page in review state with approver and history"
+      show: "A page with a 'last approved by' line on the live site"
+      reveal: "Pages: the workflow state, approver and publish history of that page"
+      talkTrack: "Today nobody can say what was live on a given day. Here is every change and who approved it."
+      clickPath: ["/Home", "/Home/about (click: About in the header)"]
       checkIn: "Would this answer the question you get from auditors?"
     - id: m3
       title: "Product information the customer sees"
@@ -78,7 +90,19 @@ story:
       afterward: "Reusable content blocks"
       capability: "Reusable components"
       mustSee: "Products page built from shared blocks"
+      show: "Two product pages that share the same specification block"
+      reveal: "Pages: the shared datasource; edit it once and both pages change"
+      talkTrack: "Today regional teams copy product pages by hand. Here one edit updates every page."
+      clickPath: ["/Home", "/Home/products (click: Products in the header)", "/Home/products/model-x (click: Model X card)"]
       checkIn: "Does this match how you would want product pages to behave?"
+    # A personalization moment: the trigger is on the path BEFORE the page that changes, and is named in trigger (S12). Show first, reveal after.
+    # - id: m4
+    #   title: "The homepage adapts to a returning trade customer"
+    #   capability: "Personalization by visited content"
+    #   show: "Visit Trade accounts, go back Home: the hero now speaks to trade buyers"
+    #   reveal: "Pages > Personalize on the Home hero: the audience rule (visited Trade accounts) and the variant"
+    #   trigger: "a visit to /Home/trade-accounts"
+    #   clickPath: ["/Home", "/Home/trade-accounts (click: Trade in the header)", "/Home (click: the logo)"]
   recap: "c1 (campaigns launch late): we showed a regional page built by marketing in a day (m1) and reusable product blocks (m3). c2 (no audit trail): we showed approvals and history on one page (m2)."
 
 site:

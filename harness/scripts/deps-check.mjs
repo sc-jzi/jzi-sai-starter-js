@@ -12,6 +12,9 @@
  *   node_modules of industry-verticals/<customer>   (only once the app copy exists)
  *                                         fix: npm install (in the customer app — never in the base app)
  *   dotnet + Sitecore CLI                 optional, only for the editing host (otherwise it becomes a manual task)
+ *   Sitecore Marketer MCP                 required, but this script cannot call it. Phase T0 of
+ *                                         demo-from-transcript probes it with list_sites before intake.
+ *                                         Not connected: ask the SE to connect it. A timeout STOPs the run.
  * Exit 0 = everything required is in place, 1 = something required is missing (after the fix, when --fix).
  */
 import { spawnSync } from "node:child_process";

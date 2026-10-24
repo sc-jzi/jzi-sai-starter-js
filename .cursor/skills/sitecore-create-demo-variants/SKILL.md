@@ -41,6 +41,7 @@ A custom variant per component bridges the gap between "same colors" and "looks 
 |---|---|
 | Visual reference | EVERY screenshot available: the SE's inbox screenshots (see `materials.md` from intake), `theme/screenshot-desktop.png` and `theme/screenshot-hero.png` (site-scraper / Playwright), plus a Playwright capture of each prospect page that has a real URL (`node harness/scripts/screenshot.mjs`). Look at the actual pixels; do not design from the theme colours alone. |
 | Section measurements | `sections.json`, `sections/NN-*.png`, `sections.md` from `node harness/scripts/section-capture.mjs --customer <c> --url <prospect home url>` (per section: order of elements, colours, background, widths, images incl. CSS backgrounds, links, buttons). **The SE's own crops in `<demo folder>/sections/` take priority over the script's crops of the same section.** Match a measured section to a plan section by heading text, else by order. |
+| Per-component crops, ALL pages | `component-crops.md` / `.json` from `node harness/scripts/component-crops.mjs <customer>`: one row per planned section of EVERY mirrored page (Home and each `sectionsFile` page), with its crop (`sections/NN-*.png` or `sections-<slug>/NN-*.png`), its measured shape and its component. A component used only on an inner page is built from THAT page's crop, never from Home's or from nothing. |
 | Plan | `demo-plan.yaml`: every section of every page (component + base variant) |
 | Theme | `theme/theme.yaml` (applied as the `site-<customer>` theme) |
 | Registry / manifest | `industry-verticals/prospera/docs/ai/catalog/component-registry.yaml`, shared manifest (read-only) |
@@ -69,7 +70,7 @@ The header is the most visible part of the demo and the place where "looks rough
 
 ### Step 2 — Analyze the screenshot per section
 
-For each component, inspect the screenshot region where it appears (Home first) and describe:
+For each component, open EVERY crop it is used for in `component-crops.md` (Home first, then each inner page; one look per row) and describe:
 
 1. **Layout structure** — grid columns, flex direction, alignment, content width
 2. **Spacing** — section padding (top/bottom), gap between elements, card internal padding
@@ -198,7 +199,8 @@ Definitions are independent items: create them in parallel.
 2. Every component in the list now exports `Default` (untouched) and the client variant; export names equal the Variant Definition names.
 2b. **Run the app for the gates:** `npm run dev` in the customer app as a BACKGROUND process on a free port (not 3000), if Next refuses with "another next dev instance is running" at some URL, that dev server serves THIS app: use its URL (do not try more ports; stop it and start your own only if its code is stale), wait until `GET /` returns 200 (the first request compiles and is slow), run the gates against `http://localhost:<port>/`, and STOP the server when done. A 500 page is a failed attempt, not a waiver: read the error, fix the app/env cause, retry; only a second different failure may be written as `BLOCKED after 2 attempts: "looks gate: <error>"`.
 3. **Header gate (numeric, mandatory).** After the pages are built run `node harness/scripts/header-styles.mjs --customer <c> --url <demo home url> --out header-styles.demo.json --compare header-styles.json`. Exit 4 lists every measurement that is outside tolerance (colours, bar and header height, font size/weight/case, gaps, logo size, menu item count, contrast): fix the number or SCSS, re-run the kit, re-compare. One correction pass, then anything left goes to `manual-tasks.md`.
-3b. **Section gate (numeric, mandatory).** (verdict file `sections.demo.verdict.json`; clean result, or second run with leftovers listed in `manual-tasks.md`, never edited reference JSON.) `node harness/scripts/section-capture.mjs --customer <c> --url <demo home url> --out sections.demo.json --compare sections.json`. Exit 4 lists every section whose element order, background, text/button/eyebrow colours, width or contrast (e.g. white on white) is outside tolerance. One correction pass, then leftovers go to `manual-tasks.md` with the section name.
+3b. **Section gate (numeric, mandatory).** (verdict file `sections.demo.verdict.json`; clean result, or second run with leftovers listed in `manual-tasks.md`, never edited reference JSON.) `node harness/scripts/section-capture.mjs --customer <c> --url <demo home url> --out sections.demo.json --compare sections.json`. Exit 4 lists every section whose element order, background, text/button/eyebrow colours, width or contrast (e.g. white on white) is outside tolerance. Content width outside tolerance (more than 20% off the measured width) is a failure on every later run. A Looks leftovers bullet does not waive it, and `droppedLiveSections` does not hide it: that list only keeps a band out of the body plan. One correction pass, then other leftovers go to `manual-tasks.md` with the section name.
+3c. **Every mirrored page gets its own section gate**, not only Home: `section-capture.mjs --customer <c> --url <built page url> --out sections-<slug>.demo.json --compare sections-<slug>.json` for each `sectionsFile`. `run-gate.mjs` fails a mirrored page without its verdict. The footer is compared on every page: it is never listed in `droppedLiveSections` (it is built by the Footer partial).
 4. After the pages are built (T6): capture each built page (`get_page_screenshot`, or Playwright against the rendering host when it runs) and compare with the reference screenshot section by section. One correction pass for visible deviations in layout, spacing, type scale, background or imagery; anything left goes to `manual-tasks.md` with the section name. Do not stop the run.
 
 ---
@@ -231,7 +233,7 @@ Definitions are independent items: create them in parallel.
 These components have no datasource. Custom variants still work — they change the layout/structure of how context data is rendered.
 
 For the header area use the header kit (see Step 1b). For NavigationHeader: logo position, nav link spacing, CTA button style, mobile menu behavior.
-For SiteFooter: column count, link grouping, social icon placement, legal text position.
+For SiteFooter the column count is measured, not chosen. In `sections.json` take the footer section (kind `footer`, otherwise the last section) and count the links and headings that share its top edge. That count is the number of columns. The Footer component has four title/text pairs. Fewer pairs than that row means the component cannot hold the footer: it is `fit: new`, a component with one column per heading. Do not copy `Default`, recolor it, and call it the client variant. `variants-verify --strict` fails that short variant (status SHAPE). The labels in that row are the column headings the datasource must contain. The Footer template standard values (`Why PLAY! finance`, `Copyright © Sitecore`) are sample content: a field still equal to them means the footer was not filled.
 
 ---
 

@@ -63,3 +63,92 @@ export function parseArgs(argv) {
   }
   return { flags, pos };
 }
+
+/* ---- Sitecore field values. A link or image field holding a literal ("/about-us", "https://x/a.jpg") makes the layout service drop the
+ * WHOLE datasource: isContentResolved: false, and the component renders empty. Shared by link-xml.mjs, link-audit.mjs and the gate. ---- */
+const xmlAttr = (xml, name) => { const m = xml.match(new RegExp(`\\b${name}="([^"]*)"`)); return m ? m[1] : null; };
+const GUID = /^\{[0-9A-Fa-f]{8}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{4}-[0-9A-Fa-f]{12}\}$/;
+// "" = a valid General Link value (or empty). Otherwise the reason, with the fix.
+export function linkError(raw) {
+  const v = String(raw ?? "").trim();
+  if (v === "") return "";
+  if (!/^<link\s[^>]*(\/>|>\s*<\/link>)$/.test(v)) return `literal value "${v.slice(0, 80)}" instead of link XML — use link-xml.mjs make`;
+  const linktype = xmlAttr(v, "linktype"), id = xmlAttr(v, "id"), url = xmlAttr(v, "url");
+  switch (linktype) {
+    case "internal":
+      if (!id || !GUID.test(id)) return `internal link without id="{GUID}" — use link-xml.mjs make --id`;
+      if (url) return `internal link with url="${url}" (a path in url drops the datasource) — use link-xml.mjs make --id`;
+      return "";
+    case "media":
+      return id && GUID.test(id) ? "" : `media link without id="{GUID}"`;
+    case "external":
+      if (!url) return "external link without a url — use link-xml.mjs make --url";
+      return url === "#" || /^https?:\/\//i.test(url) ? "" : `external url "${url}" is not http(s) or "#" — a site path is an internal link: use link-xml.mjs make --id`;
+    case "mailto":
+      return /^mailto:\S+@\S+/i.test(url ?? "") ? "" : `mailto link needs url="mailto:<address>" — use link-xml.mjs make --mailto`;
+    case "anchor":
+      return xmlAttr(v, "anchor") ? "" : `anchor link needs anchor="<name>"`;
+    default:
+      return `linktype "${linktype ?? ""}" is not internal | external | media | mailto | anchor — use link-xml.mjs make`;
+  }
+}
+// "" = a valid Image field value (or empty). A bare URL or path is the same failure as a literal link.
+export function imageError(raw) {
+  const v = String(raw ?? "").trim();
+  if (v === "") return "";
+  // <image mediaid=.../> (media library) or <Image src=... dam-id=... /> (Content Hub)
+  return /^<image\s[\s\S]*(\/>|<\/image>)$/i.test(v) ? "" : `literal value "${v.slice(0, 80)}" instead of image XML — use the imageFieldXml from images/image-manifest.json`;
+}
+// Authoring GraphQL (CM) with the automation client from harness/.env.local. null when the host or client is not configured.
+export async function authoringClient() {
+  const cm = String(ENV.SITECORE_CM_HOST || "").replace(/\/+$/, ""), id = ENV.SITECORE_AUTOMATION_CLIENT_ID, secret = ENV.SITECORE_AUTOMATION_CLIENT_SECRET;
+  if (!cm || !id || !secret || !ENV.SITECORE_AUTH_HOST) return null;
+  const tr = await fetch(`${ENV.SITECORE_AUTH_HOST}/oauth/token`, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams({ client_id: id, client_secret: secret, grant_type: "client_credentials", audience: "https://api.sitecorecloud.io" }) });
+  if (!tr.ok) throw new Error(`token request failed: HTTP ${tr.status}`);
+  const jwt = (await tr.json()).access_token, url = `${cm}/sitecore/api/authoring/graphql/v1/`;
+  return async (query, variables) => {
+    const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${jwt}` }, body: JSON.stringify({ query, variables }) });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok || j.errors) throw new Error(`GraphQL ${r.status}: ${JSON.stringify(j.errors || j).slice(0, 600)}`);
+    return j.data;
+  };
+}
+
+/* ---- section captures (section-capture.mjs output), shared by the gate, the validators and variants-verify ---- */
+export const PARTIAL_DESIGN_TEMPLATE = "{FD2059FD-6043-4DFE-8C04-E2437CE87634}";   // a real Partial Design
+export const PARTIAL_DESIGN_FOLDER = "{C3CEB23C-D66D-4EF5-99E0-D45F60C02583}";     // the Partial Designs FOLDER template: holds no layout
+// The header band and the footer band of a capture. Older captures marked every band "section": then the header is the
+// first band when it starts at the top of the page, and the footer is the last band. The footer is built by the Footer partial.
+export function chromeBands(capture) {
+  const s = Array.isArray(capture?.sections) ? capture.sections : [];
+  const header = s.find((x) => x.kind === "header") ?? (s[0] && Number(s[0].top) < 10 && s.length > 1 ? s[0] : null);
+  const footer = s.find((x) => x.kind === "footer") ?? (s.length > 1 ? s.at(-1) : null);
+  return { headerIdx: header?.index ?? null, footerIdx: footer?.index ?? null, header, footer };
+}
+// The labels on the top row of a band (a footer's column headings): links and headings sharing the top edge, left to right.
+export function topLabels(section) {
+  const els = (section?.elements ?? []).filter((e) => (e.role === "link" || e.role === "heading") && e.text && e.y != null);
+  if (els.length < 3) return [];
+  const top = Math.min(...els.map((e) => e.y));
+  const row = els.filter((e) => e.y - top <= 30).sort((a, b) => a.x - b.x);
+  const kept = [];
+  for (const e of row) if (!kept.length || Math.abs(e.x - kept[kept.length - 1].x) >= 40) kept.push(e);
+  return kept.map((e) => String(e.text));
+}
+// Why a live band is more than prose. Empty = a heading and paragraphs only, the one shape Rich Text may carry.
+export function notProse(section) {
+  if (!section) return [];
+  const n = (role) => (section.elements ?? []).filter((e) => e.role === role).length;
+  const why = [];
+  if (n("image") || (section.images ?? []).length) why.push(`${Math.max(n("image"), (section.images ?? []).length)} image(s)`);
+  if (section.backgroundImage) why.push("a background image");
+  if (n("button") || section.buttons) why.push(`${Math.max(n("button"), section.buttons || 0)} button(s)`);
+  if (section.form || n("field")) why.push("a form");
+  if ((section.cards ?? []).length) why.push(`${section.cards.length} card(s)`);
+  if ((section.columns ?? 1) > 2) why.push(`${section.columns} columns`);
+  if (n("heading") > 2) why.push(`${n("heading")} headings (a repeated item: list, accordion, cards)`);
+  if (n("link") > 3) why.push(`${n("link")} links (a link list)`);
+  if (section.scroller) why.push("a carousel/scroller");
+  if (section.video) why.push("a video");
+  return why;
+}

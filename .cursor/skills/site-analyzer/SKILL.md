@@ -70,6 +70,10 @@ Outcome, written on the section as `fit` + `fitReason` (one sentence: what match
 **A variant can never add a field, a child item or a behaviour**: it only re-renders the same datasource. So a missing function or field means `new`; a different look never does. Typical `new`: search box, store/branch locator, tabs, pricing or comparison table with columns the registry lacks, timeline, filterable logo wall, video gallery, map, region/language picker with flags, announcement ticker, login/account menu, cart, chat launcher, an item list whose items have fields no registry list has.
 
 Rules:
+- The only outcomes are a registry component that has the same shape (`reuse` or `variant`) or a new component (`fit: new`). Drawing the section as HTML in a Rich Text field is not an outcome.
+- **Every mirrored page, /Home included**: the fit check runs on each crop of /Home (`sections/NN-*.png` + `sections.json`) and of each `sectionsFile` page (`sections-<slug>/NN-*.png` + its numbers in `sections-<slug>.json`), one section at a time. A FAQ, logo wall, video, card list or event list gets its own component wherever it sits, on /Home or any other page.
+- **Rich Text = a simple title and/or paragraphs, nothing more.** `validate-site-plan.mjs` P16 reads the live band and fails `rich-text` when it has images, buttons, cards, a form, a video, a carousel, more than two headings (a repeated item: FAQ, list, cards) or more than three links (a link list), and whenever a `look` is set on Rich Text. The answer is a registry component of that shape or `fit: new`.
+- A row of link columns matches a component only when that component has one column per heading on the top edge of the band (`sections.json`). The Footer component has four title/text pairs. A top row of six headings is `fit: new`. A variant cannot add the missing columns, and it is not a match.
 - Never squeeze a section into a component that drops its function (a search bar is not a heading with a link), and never silently leave out a feature the prospect's page visibly has and the story or the look relies on. If you choose not to build something (mega-menu panels, for example), say so in `fitReason` and it goes to the approval gate under "not built".
 - Two registry components side by side (the compound rule below) beat a new component when nothing is lost.
 - Never call a pure look difference `new`.
@@ -273,6 +277,8 @@ Colors, fonts and shapes come from the `site-<customer>` theme, not from variant
 | Application / sign-up form | ApplicationForm | Default |
 | Calculator with sliders and a result | LoanCalculator | Default |
 
+**Rich Text is prose only.** The row above is the only match for RichText: a heading and paragraphs. Icons, columns, cards, or a repeated title, text and button are a column component (`ThreeColumnCta` and the others) or `fit: new`. The layout of those sections is never HTML inside a Rich Text field.
+
 ### Disambiguating similar components
 
 | Confusion pair | How to decide |
@@ -309,6 +315,7 @@ Only by the fit check above: a missing function or a missing field/item shape. I
 ## Do not
 
 - Do not invent a new component when a registry component fits (run the fit check); DO specify one (`fit: new` + `new:` block) when a function or field is missing, rather than forcing the section into a component that cannot do it or leaving it out
+- Do not encode a section as HTML in a Rich Text field. That is not a component. Use the registry component that has the same shape, or `fit: new`
 - Do not guess content that isn't visible in the screenshot
 - Do not pick a variant just because it sounds cool — match the visual evidence
 - Do not skip sections — every visible section on the page gets an entry

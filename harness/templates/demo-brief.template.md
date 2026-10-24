@@ -39,13 +39,20 @@ Discovery gaps (things the transcript did not say; ask the presenter or the next
 
 ## 4. Demo flow
 Order: **moment 1 is the last thing first** (the finished result that solves c1), then one moment per remaining CBI in priority order, then a recap.
-Each moment ends with a check-in question for the audience.
+Inside every moment: **show first, reveal after**. First the result on the site as the visitor sees it, then the Sitecore screen that made it. A prospect who says "we cannot personalize" sees the personalized page first, then Personalize in Pages.
+Each moment ends with a check-in question for the audience. **This section is approved on its own (story gate, T2b) before any page plan or theme exists.**
 
-| # | Moment | CBI | Audience | Annoyance → Afterward | Capability | Talk track | Must be visible on screen | Check-in question |
-|---|---|---|---|---|---|---|---|---|
-| m1 (WOW, last thing first) | | c1 | | | | | | |
-| m2 | | | | | | | | |
-| m3 | | | | | | | | |
+| # | Moment | CBI | Audience | Annoyance → Afterward | Capability | Show first (front end) | Then reveal (Sitecore) | Talk track | Check-in question |
+|---|---|---|---|---|---|---|---|---|---|
+| m1 (WOW, last thing first) | | c1 | | | | | | | |
+| m2 | | | | | | | | | |
+| m3 | | | | | | | | | |
+
+**Click path per moment** (every page the SE clicks through, from /Home, including landing and intermediate pages and the page whose visit triggers personalization; each step says what is clicked; each page on a path is built in full, never a stub):
+| Moment | Step | Page | What is clicked | What must be visible there |
+|---|---|---|---|---|
+| m1 | 1 | /Home | (start) | |
+| m1 | 2 | | | |
 
 - Recap (for each CBI: what we showed that solves it):
 - Walkthrough in the presenter's own words, if they gave one:

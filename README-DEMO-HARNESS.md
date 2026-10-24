@@ -1,6 +1,6 @@
 # Demo harness: build a prospect demo from Cursor
 
-Type `/new-demo <prospect, their website, what you know>` in Cursor. It plans the demo, asks you for **one approval**, then builds a skinned copy of the prospect's site in Sitecore (new site, pages, components, theme, personalization) plus a local app, and hands it over with a demo script.
+Type `/new-demo <prospect, their website, what you know>` in Cursor. It drafts the story and asks you to **approve the story** (Chain of Pain, moments, click paths), then plans pages and theme and asks for **one more approval**, then builds a skinned copy of the prospect's site in Sitecore (new site, pages, components, theme, personalization) plus a local app, and hands it over with a demo script.
 
 ## First time only (about 20 minutes)
 
@@ -22,14 +22,16 @@ Type `/new-demo <prospect, their website, what you know>` in Cursor. It plans th
 
 1. **Optional:** drop whatever you have into `harness/inbox/` (call transcript, RFP, brand guide). Nothing there is fine too.
 2. **In Cursor chat:** `/new-demo Acme Corp (https://acme.com), they struggle with ...`. Cursor finds the prospect's real site and asks you to confirm the URL if you didn't give one.
-3. **Read the plan in the chat** and check three things: the page tree, the click path for each demo moment, and what is new or hand-built. Say what to change, then approve once.
-4. **Leave it running.** After approval it runs without asking questions and restarts itself if it stops. It is finished when the run gate passes.
-5. **Hand-over, a few minutes of your own work** (the list is in `industry-verticals/<customer>/docs/ai/demos/<customer>/manual-tasks.md`):
+   If the Sitecore Marketer MCP is not connected, Cursor asks you to sign in. If that times out, the run stops. Connect it, then type `/resume-demo <customer>`.
+3. **Approve the story first.** Check the pains, the order of the moments (the result first, then how it is built) and each moment's click path. Every page on a click path is built in full. Say what to change, then approve.
+4. **Then approve the build plan**: the page tree, the component for each section (built from that section's screenshot), the theme, and what is new or hand-built.
+5. **Leave it running.** After the second approval it runs without asking questions and restarts itself if it stops. It is finished when the run gate passes.
+6. **Hand-over, a few minutes of your own work** (the list is in `industry-verticals/<customer>/docs/ai/demos/<customer>/manual-tasks.md`):
    - Add the site thumbnail, partial thumbnails, and layout icons (icons only if a new component was created).
    - Editing host: `dotnet sitecore cloud login`, then `node harness/scripts/editing-host.mjs --customer <customer> --apply`.
    - Publish the site in Sitecore. Personalization from the front end only works after publish. Preview personas in Pages before that.
    - Deploy: ask Cursor "deploy my `<customer>` site to Vercel".
-6. **Rehearse** with `demo-script.md` in the same folder.
+7. **Rehearse** with `demo-script.md` in the same folder.
 
 ## From the second demo on
 

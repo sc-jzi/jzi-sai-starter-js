@@ -10,6 +10,11 @@
  *
  *  S1 situation slide  S2 AAA complete  S3 CBIs have owners/reason/evidence  S4 moments complete
  *  S5 every CBI answered  S6 moment 1 = last thing first (wow) answering c1  S7 message map  S8 recap  S9 3-6 moments
+ *  S10 show the result first, then how it is built: every moment has `show` (what the visitor sees on the site) and `reveal`
+ *      (the Sitecore screen that made it: Pages, Personalize, Content Hub, ...), and a talk track
+ *  S11 every moment has a clickPath: the pages the SE clicks through, in order, starting at /Home, each step "<path> (click: <what>)"
+ *  S12 a personalization / behaviour moment has the visit that triggers it on its clickPath (>= 2 steps) and names the trigger
+ * This file is the STORY GATE (demo-from-transcript T2b): it runs, and the SE approves the story, before any site plan or theme.
  */
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
@@ -36,7 +41,8 @@ function parseYaml(text) {
       for (const p of parts) { const k = p.indexOf(":"); if (k > 0) o[p.slice(0, k).trim()] = scalar(p.slice(k + 1)); }
       return o;
     }
-    if (/^\[.*\]$/.test(v)) return v.slice(1, -1).split(",").map((x) => scalar(x)).filter((x) => x !== "");
+    { const lc = v.match(/^(\[.*\])\s+#.*$/); if (lc) v = lc[1]; }   // inline list followed by a comment
+    if (/^\[.*\]$/.test(v)) { const parts = []; let q = null, cur = ""; for (const ch of v.slice(1, -1)) { if (q) { if (ch === q) q = null; cur += ch; continue; } if (ch === '"' || ch === "'") { q = ch; cur += ch; continue; } if (ch === ",") { parts.push(cur); cur = ""; continue; } cur += ch; } parts.push(cur); return parts.map((x) => scalar(x)).filter((x) => x !== ""); }
     if (/^".*"$/.test(v)) { try { return JSON.parse(v); } catch { return v.slice(1, -1); } }
     if (/^'.*'$/.test(v)) return v.slice(1, -1).replace(/''/g, "'");
     if (v === "true") return true; if (v === "false") return false; if (v === "null" || v === "~") return null;
@@ -122,6 +128,23 @@ add("S7 message map: before, required capabilities, after", "required", mmBad.le
 const soft = [["metrics", arr(mm.metrics).length], ["differentiators", arr(mm.differentiators).length], ["proofPoints", arr(mm.proofPoints).length]].filter(([, n]) => !n).map(([k]) => k);
 add("S7b message map: metrics, differentiators, proof points (write 'not given' if the transcript has none)", "recommended", soft.length === 0, soft.length ? `empty: ${soft.join(", ")}` : "");
 add("S8 recap present", "required", has(story.recap), has(story.recap) ? "" : "story.recap is empty (for each CBI: what we showed that solves it)");
+const s10 = moments.filter((m) => !has(m.show) || !has(m.reveal) || !has(m.talkTrack)).map((m) => `${m.id}: ${["show", "reveal", "talkTrack"].filter((k) => !has(m[k])).join(", ")}`);
+add("S10 every moment shows the result on the site first (show), then how it was built (reveal), with a talk track", "required", moments.length > 0 && s10.length === 0, s10.join("; "));
+const step = (x) => String(x ?? "").split(/\s+[(|]/)[0].trim();
+const s11 = [];
+for (const m of moments) {
+  const cp = arr(m.clickPath);
+  if (!cp.length) { s11.push(`${m.id}: no clickPath`); continue; }
+  if (!/^\/home$/i.test(step(cp[0]))) s11.push(`${m.id}: clickPath starts at ${step(cp[0]) || "?"}, not /Home`);
+  const bad = cp.filter((x) => !/^\/home(\/[a-z0-9-]+)*$/i.test(step(x)));
+  if (bad.length) s11.push(`${m.id}: not a page path: ${bad.map(step).join(", ")}`);
+  if (cp.slice(1).some((x) => !/\((click|visit|open|scroll|select|search|submit)[:\s]/i.test(String(x)))) s11.push(`${m.id}: every step after /Home says what is clicked, e.g. "/Home/membership (click: Membership in the header)"`);
+}
+add("S11 every moment has a clickPath from /Home, each step naming what the SE clicks", "required", moments.length > 0 && s11.length === 0, s11.slice(0, 4).join("; "));
+const PERSO = /personali[sz]|persona\b|behaviou?r|recommend|tailor|segment|a\/b|experiment/i;
+const s12 = moments.filter((m) => PERSO.test(`${m.capability} ${m.title} ${m.show}`)).filter((m) => arr(m.clickPath).length < 2 || !has(m.trigger)).map((m) => m.id);
+add("S12 a personalization moment shows the trigger (the visit or signal) on its clickPath before the changed page, and names it in trigger", "required", s12.length === 0, s12.length ? `${s12.join(", ")}: add trigger and the page visit that fires it to clickPath` : "");
+
 const allInferred = cbis.length > 0 && cbis.every((c) => c.evidenceType === "inferred");
 add("S9 3–6 moments; CBIs are not all merely inferred", "recommended", moments.length >= 3 && moments.length <= 6 && !allInferred, `${moments.length} moments${allInferred ? "; every CBI is inferred — confirm with the presenter" : ""}`);
 
@@ -135,6 +158,15 @@ for (const a of aud) md += `| ${cell(a.name)} | ${cell(a.annoyance)} | ${cell(a.
 md += `\n## Message map\n- Before: ${cell(mm.before)}\n- Required capabilities: ${arr(mm.requiredCapabilities).map(cell).join("; ")}\n- After: ${cell(mm.after)}\n- Metrics: ${arr(mm.metrics).map(cell).join("; ") || "not given"}\n- Differentiators: ${arr(mm.differentiators).map(cell).join("; ") || "not given"}\n- Proof points: ${arr(mm.proofPoints).map(cell).join("; ") || "none yet"}\n- Why now: ${cell(mm.whyNow) || "not given"}\n`;
 md += `\n## Demo flow (last thing first)\n| # | Moment | CBI | Audience | Annoyance → Afterward | Capability | Must be visible | Check-in |\n|---|---|---|---|---|---|---|---|\n`;
 for (const m of moments) md += `| ${cell(m.id)}${m.wow ? " (WOW)" : ""} | ${cell(m.title)} | ${arr(m.cbi).join(", ")} | ${arr(m.audience).join(", ")} | ${cell(m.annoyance)} → ${cell(m.afterward)} | ${cell(m.capability)} | ${cell(m.mustSee)} | ${cell(m.checkIn)} |\n`;
+md += `\n## Click path and show → reveal, per moment\n`;
+for (const m of moments) {
+  md += `\n### ${cell(m.id)}${m.wow ? " (WOW, last thing first)" : ""}: ${cell(m.title)}\n`;
+  md += `- **Show first (front end):** ${cell(m.show)}\n- **Then reveal (how it is built):** ${cell(m.reveal)}\n`;
+  if (has(m.trigger)) md += `- **Trigger:** ${cell(m.trigger)}\n`;
+  md += `- **Talk track:** ${cell(m.talkTrack)}\n- **Click path:**\n`;
+  arr(m.clickPath).forEach((x, i) => { md += `  ${i + 1}. ${cell(x)}\n`; });
+  md += `- **Check-in:** ${cell(m.checkIn)}\n`;
+}
 md += `\n## Recap\n${cell(story.recap)}\n`;
 try { safeWrite(slug, join(demo, "story-plan.md"), md); } catch { /* report only */ }
 

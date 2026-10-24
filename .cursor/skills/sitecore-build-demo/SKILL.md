@@ -322,7 +322,7 @@ update_fields_on_item(newItemId, {
 - `href` is `#` or empty → `linktype="external"`, `url="#"`
 - `href` is relative and points to a page of the PROSPECT's real site → prepend the client domain, `linktype="external"`
 - `href` points to a page PLANNED in this demo (`/brands`, `/home/...`) → write a valid placeholder now (`linktype="external" url="#"`), and `demo-build-pages` step 6 replaces it with an INTERNAL link (`linktype="internal" id="{page id}"`) once the pages exist
-- **A link field is NEVER a raw string** (`/brands`, `https://x`, `Details`). A raw value makes the layout service drop the whole datasource: `isContentResolved: false`, the component renders empty (seen on HeroBanner and Promo CTA, cleared by emptying the link). Build every value with `node harness/scripts/link-xml.mjs make --text "<text>" --url <url>` or `--id <page guid>`, and check any value with `link-xml.mjs check "<value>"`. Same for Image fields: XML only (`imageFieldXml`), never a URL string.
+- **A link field is NEVER a raw string** (`/brands`, `https://x`, `Details`) and NEVER `linktype="internal" url="/path"`. Both make the layout service drop the whole datasource: `isContentResolved: false`, the component renders empty. An internal link is `linktype="internal" id="{GUID}"` and has no `url`. An external link is `linktype="external" url="https://..."`. Build every value with `node harness/scripts/link-xml.mjs make --text "<text>" --id <page guid>` or `--url <url>`, and `link-xml.mjs check "<value>"` must print ok before the value is written. A failed check is fixed on that field. It is not a reason to change the component. Same for Image fields: XML only (`imageFieldXml`), never a URL string. `link-xml.mjs make --url` refuses a site path (`/about-us`): that is an internal link and needs the page id. `make --mailto <address>` builds a mailto link. **After the content items are written, `node harness/scripts/link-audit.mjs <customer>` must exit 0** (it reads every link and image field of the site back from Sitecore); `run-gate.mjs` runs it again at the end.
 - Link fields that have no value stay empty (do not write placeholders like `-` or `#` as raw text)
 - `target` is `_blank` or absent → set `target` accordingly
 - **All attributes must be present** even if empty — `text`, `anchor`, `linktype`, `class`, `title`, `target`, `querystring`, then `id` or `url`
@@ -599,10 +599,7 @@ add_component_on_page(
 
 **Ordering:** Use `insertAfterComponentId` to place each component after the previous one. For the first component, omit this parameter (appends to end). Track the returned component instance for the next insertion.
 
-**Context-only components** (NavigationHeader, SiteFooter):
-- These components have no datasource template; `add_component_on_page` returned "No datasource template found" in April 2026 (unverified since; probe once)
-- If they live in partial designs, they're already on the page via the Page Design — skip
-- If they need to be in `headless-main` and the one probe fails, add them to the manual tasks checklist with positioning instructions (e.g., "Add NavigationHeader between AnnouncementBar and HeroBanner")
+**Header and footer** are added only through partial designs based on `{FD2059FD-6043-4DFE-8C04-E2437CE87634}` (`demo-site-bootstrap` step 5). They are already on the page via the Page Design. Do not call `add_component_on_page` for them, and do not write their renderings into the page layout. `{C3CEB23C-D66D-4EF5-99E0-D45F60C02583}` is the Partial Designs folder; an item on that template is not a partial design.
 
 **Do not add OOB components** that aren't in the build plan (RichText, Image, Container, Promo from starter kit). If the page already has them, remove them with `remove_component_on_page`.
 

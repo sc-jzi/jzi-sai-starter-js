@@ -13,12 +13,14 @@
  * inner "card" backgrounds, columns, which side the image is on, images (<img> and CSS background URLs), links, form controls.
  * The split into sections is a heuristic (the stack of full-width bands under <main>); if it is wrong pass --selector, and the SE can always drop
  * hand-made crops in <demo folder>/sections/ (same NN- prefix) which take priority as visual reference.
- * Header and nav are measured by header-styles.mjs; the footer IS captured here (last section, kind: footer).
+ * Header and nav are measured by header-styles.mjs (the header band is kind: header and skipped by --compare); the footer IS captured
+ * here (kind: footer: a <footer>, a band named footer, or the last band carrying the copyright line) and is compared against the
+ * built footer, column headings included. Carousels (scroller) are not width-checked: their width is the hidden slides.
  * Exit 0 ok · 3 no sections found · 4 --compare found differences.
  */
 import { existsSync, mkdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { die, parseArgs, demoDir, safeWrite, readJson, rootRel } from "./_lib.mjs";
+import { die, parseArgs, demoDir, safeWrite, readJson, rootRel, chromeBands, topLabels } from "./_lib.mjs";
 
 const { flags } = parseArgs(process.argv.slice(2));
 const customer = flags.customer, url = flags.url;
@@ -72,8 +74,15 @@ try {
     // the footer sits beside <main>, outside the chain we descended: add it as the last section
     if (!sel) for (const f of document.querySelectorAll("footer, [role=contentinfo]")) if (vis(f) && !list.some((l) => l === f || l.contains(f) || f.contains(l)) && f.getBoundingClientRect().height >= 40) list.push(f);
     const out = [];
-    list.forEach((el, i) => { el.setAttribute("data-hsec", String(i)); const r = el.getBoundingClientRect(); out.push({ i, top: Math.round(r.top + scrollY), height: Math.round(r.height), tag: el.tagName.toLowerCase(), isFooter: el.tagName === "FOOTER" || el.getAttribute("role") === "contentinfo" || !!el.closest("footer") }); });
-    return out.filter((s) => s.height >= 40);
+    const named = (el, re) => re.test(`${el.id} ${typeof el.className === "string" ? el.className : ""}`);
+    list.forEach((el, i) => { el.setAttribute("data-hsec", String(i)); const r = el.getBoundingClientRect(); out.push({ i, top: Math.round(r.top + scrollY), height: Math.round(r.height), tag: el.tagName.toLowerCase(),
+      isFooter: el.tagName === "FOOTER" || el.getAttribute("role") === "contentinfo" || !!el.closest("footer") || !!el.querySelector("footer") || named(el, /footer/i),
+      isHeader: el.tagName === "HEADER" || el.getAttribute("role") === "banner" || !!el.closest("header") || (Math.round(r.top + scrollY) < 10 && (!!el.querySelector("nav, header") || named(el, /header|masthead/i))),
+      copyright: /©|copyright/i.test(el.textContent || "") }); });
+    const kept = out.filter((s) => s.height >= 40);
+    // a footer built from <div>s: the last band carrying the copyright line is the footer. It is never a body section.
+    if (kept.length > 1 && !kept.some((s) => s.isFooter)) { const last = kept.at(-1); if (last.copyright) last.isFooter = true; }
+    return kept;
   }, flags.selector || null);
   if (!found.length) { console.error("No sections found. Pass --selector (for example \"main > section\")."); process.exitCode = 3; }
 
@@ -161,12 +170,13 @@ try {
         cards: cards.slice(0, 6), images: elements.filter((x) => x.role === "image").map((x) => ({ src: x.src, alt: x.alt, w: x.w, h: x.h })),
         form: form || fields.length ? { fields: fields.length, submit: !!(el.querySelector("button[type=submit], input[type=submit]") || elements.some((x) => x.role === "button" && /submit|send|request|go/i.test(x.text))), fieldBackground: fields[0] ? ownBg(fields[0].e) || solid(fields[0].e) : null } : null,
         hasLogo: !!logoish, lowContrast: lowContrast.slice(0, 4), elements,
+        video: [...el.querySelectorAll("video, iframe")].some((v) => v.tagName === "VIDEO" || /youtu|vimeo|wistia|brightcove|video|player/i.test(v.getAttribute("src") || v.getAttribute("data-src") || "")),
       };
     }, f.i);
     const slug = ((m.heading?.text || f.tag).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "section").slice(0, 32);
     const nn = String(f.i + 1).padStart(2, "0"), shot = `${nn}-${slug}.png`;
     try { await page.locator(`[data-hsec="${f.i}"]`).screenshot({ path: join(shotDir, shot), timeout: 15000 }); } catch { /* very tall or detached */ }
-    sections.push({ index: f.i + 1, kind: f.isFooter ? "footer" : "section", top: f.top, height: f.height, screenshot: `${shotName}/${shot}`, ...m });
+    sections.push({ index: f.i + 1, kind: f.isFooter ? "footer" : f.isHeader ? "header" : "section", top: f.top, height: f.height, screenshot: `${shotName}/${shot}`, ...m });
   }
   result = { url, viewport: width, capturedAt: new Date().toISOString(), sections };
 } finally { await browser.close(); }
@@ -178,7 +188,7 @@ if (result) {
     safeWrite(customer, join(demo, "sections.md"), `# Prospect sections — ${url}\n\nMeasured at ${width}px. One crop per section in \`sections/\`. Roles in order: eyebrow | heading | text | button | link | image | field.\n\n| # | kind | heading | background | element order | image | cols | content width | heading | text | button bg / text | inner cards |\n|---|---|---|---|---|---|---|---|---|---|---|---|\n${result.sections.map(row).join("\n")}\n`);
   }
   console.log(`✅ ${rootRel(join(demo, outName))}: ${result.sections.length} section(s), crops in ${rootRel(shotDir)}/`);
-  for (const s of result.sections) console.log(`  ${String(s.index).padStart(2)} ${s.kind === "footer" ? "footer " : ""}${(s.heading?.text || "(no heading)").slice(0, 36).padEnd(36)} bg ${s.background}${s.backgroundImage ? "+img" : ""}  order ${s.order}  image ${s.imageSide}  cols ${s.columns}${s.form ? "  form" : ""}`);
+  for (const s of result.sections) console.log(`  ${String(s.index).padStart(2)} ${s.kind !== "section" ? s.kind + " " : ""}${(s.heading?.text || "(no heading)").slice(0, 36).padEnd(36)} bg ${s.background}${s.backgroundImage ? "+img" : ""}  order ${s.order}  image ${s.imageSide}  cols ${s.columns}${s.form ? "  form" : ""}${s.video ? "  video" : ""}`);
 }
 
 // ---- gate: the built demo vs the prospect's measurement
@@ -188,13 +198,11 @@ if (flags.compare && result) {
   const lum = (h) => { const m = /^#?([0-9a-f]{6})$/i.exec(h || ""); if (!m) return null; return [0, 2, 4].map((i) => parseInt(m[1].slice(i, i + 2), 16)); };
   const far = (a, b, t) => { const A = lum(a), B = lum(b); if (!A || !B) return a !== b; return Math.max(...A.map((v, i) => Math.abs(v - B[i]))) > t; };
   const norm = (t) => String(t || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+  const refBands = chromeBands(ref), demoBands = chromeBands(result);
   const bad = [];
-  const used = new Set();
-  for (const R of ref.sections) {
-    const D = result.sections.find((d) => !used.has(d.index) && R.heading?.text && norm(d.heading?.text) === norm(R.heading.text)) ?? result.sections.find((d) => !used.has(d.index) && d.index === R.index && d.kind === R.kind);
-    const nm = `#${R.index} ${(R.heading?.text || R.kind).slice(0, 30)}`;
-    if (!D) { bad.push(`${nm}: not found in the demo`); continue; }
-    used.add(D.index);
+  const used = new Set(demoBands.headerIdx != null ? [demoBands.headerIdx] : []);
+  // One band against its built counterpart. COLUMNS / LABELS (the footer's column headings) are checked on the footer only.
+  const compareBand = (R, D, nm, isFooter) => {
     if (far(D.background, R.background, 20)) bad.push(`${nm}: background ${D.background} (prospect ${R.background})`);
     if (R.heading && D.heading && far(D.heading.color, R.heading.color, 30)) bad.push(`${nm}: heading colour ${D.heading.color} (prospect ${R.heading.color})`);
     if (R.heading && D.heading && Math.abs(D.heading.fontSize - R.heading.fontSize) > Math.max(3, R.heading.fontSize * 0.15)) bad.push(`${nm}: heading size ${D.heading.fontSize}px (prospect ${R.heading.fontSize}px)`);
@@ -206,12 +214,34 @@ if (flags.compare && result) {
     if (R.order !== D.order) bad.push(`${nm}: element order ${D.order} (prospect ${R.order})`);
     if (!!R.eyebrow !== !!D.eyebrow) bad.push(`${nm}: eyebrow ${D.eyebrow ? "shown but the prospect has none" : "missing"}`);
     if (R.form && D.form && R.form.submit && !D.form.submit) bad.push(`${nm}: form has no submit button`);
+    if (R.video && !D.video) bad.push(`${nm}: the video is missing`);
     if (D.lowContrast?.length && !(R.lowContrast?.length)) bad.push(`${nm}: unreadable text (colour ~ background): ${D.lowContrast.map((c) => `"${c.text}" ${c.color} on ${c.on}`).join("; ")}`);
     if (R.eyebrow && D.eyebrow && far(D.eyebrow.color, R.eyebrow.color, 40)) bad.push(`${nm}: eyebrow colour ${D.eyebrow.color} (prospect ${R.eyebrow.color})`);
     if ((R.cards.length === 0) !== (D.cards.length === 0)) bad.push(`${nm}: inner card backgrounds ${D.cards.length ? "present in the demo (" + D.cards.map((c) => c.background).join(" ") + ") but not on the prospect's site" : "missing"}`);
     else if (R.cards[0] && D.cards[0] && far(D.cards[0].background, R.cards[0].background, 20)) bad.push(`${nm}: card background ${D.cards[0].background} (prospect ${R.cards[0].background})`);
-    if (R.contentWidth && Math.abs(D.contentWidth - R.contentWidth) > R.contentWidth * 0.2) bad.push(`${nm}: content width ${D.contentWidth}px (prospect ${R.contentWidth}px)`);
+    // a carousel/scroller (or a band wider than the viewport) has no meaningful content width: its width is the hidden slides
+    if (R.contentWidth && !R.scroller && Math.abs(D.contentWidth - R.contentWidth) > R.contentWidth * 0.2) bad.push(`${nm}: content width ${D.contentWidth}px (prospect ${R.contentWidth}px)`);
+    if (!isFooter) return;
+    const wantLabels = topLabels(R), gotLabels = topLabels(D);
+    if (wantLabels.length >= 3 && wantLabels.length !== gotLabels.length) bad.push(`COLUMNS ${nm}: ${gotLabels.length} columns (prospect ${wantLabels.length}: ${wantLabels.join(", ")})`);
+    const have = JSON.stringify(D.elements ?? []).toLowerCase();
+    const missingLabels = wantLabels.filter((t) => !have.includes(String(t).toLowerCase()));
+    if (missingLabels.length) bad.push(`LABELS ${nm}: missing ${missingLabels.join(", ")}`);
+  };
+  for (const R of ref.sections) {
+    if (R.index === refBands.headerIdx) continue;   // the header band is measured by header-styles.mjs --compare
+    if (R.index === refBands.footerIdx) {           // footer against footer, whatever its headings say
+      const D = demoBands.footer && !used.has(demoBands.footerIdx) ? demoBands.footer : null;
+      if (!D) { bad.push(`#${R.index} footer: not found in the demo`); continue; }
+      used.add(D.index); compareBand(R, D, `#${R.index} footer`, true); continue;
+    }
+    const D = result.sections.find((d) => !used.has(d.index) && d.index !== demoBands.footerIdx && R.heading?.text && norm(d.heading?.text) === norm(R.heading.text)) ?? result.sections.find((d) => !used.has(d.index) && d.index !== demoBands.footerIdx && d.index === R.index && d.kind === R.kind);
+    const nm = `#${R.index} ${(R.heading?.text || R.kind).slice(0, 30)}`;
+    if (!D) { bad.push(`${nm}: not found in the demo`); continue; }
+    used.add(D.index);
+    compareBand(R, D, nm, false);
   }
-    { const vp = join(demo, outName.replace(/\.json$/, ".verdict.json")), prev = readJson(vp, {}); safeWrite(customer, vp, JSON.stringify({ pass: bad.length === 0, attempts: (prev.attempts || 0) + 1, diffs: bad, at: new Date().toISOString() }, null, 2) + "\n"); }   // read by run-gate.mjs
+  for (const poison of ["Why PLAY! finance", "Copyright © Sitecore"]) if (JSON.stringify(result).includes(poison)) bad.push(`SAMPLE footer still shows the template sample "${poison}"`);
+  { const vp = join(demo, outName.replace(/\.json$/, ".verdict.json")), prev = readJson(vp, {}); safeWrite(customer, vp, JSON.stringify({ pass: bad.length === 0, attempts: (prev.attempts || 0) + 1, headerIdx: refBands.headerIdx, footerIdx: refBands.footerIdx, diffs: bad, at: new Date().toISOString() }, null, 2) + "\n"); }   // read by run-gate.mjs
   if (bad.length) { console.log(`✖ ${bad.length} difference(s) between the demo and the prospect's sections:\n  - ${bad.join("\n  - ")}`); process.exitCode = 4; } else console.log("✔ every section matches the prospect's within tolerance");
 }
