@@ -6,8 +6,8 @@
 # Unresolved datasource branches, missing folders, and variant mismatches are recorded on each entry and were not guessed.
 
 generatedAt: "2026-10-09T17:45:00Z"
-lastUpdatedAt: "2026-10-09T17:45:00Z"
-lastUpdatedBy: "demo-inventory-base-site"
+lastUpdatedAt: "2026-10-24T23:00:00Z"
+lastUpdatedBy: "ampp-component-build"
 
 project:
   siteCollection: "Financial"
@@ -2383,6 +2383,263 @@ components:
     pendingManual: []
   notes:
     - "Link labels come from each General Link text. A pipe in Main Link text splits the overlay into two lines."
+
+- name: "AmppOfferCards"
+  kind: "variant"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-24T23:00:00Z"
+  updatedAt: "2026-10-24T23:00:00Z"
+  react:
+    filePath: "src/components/pagecontent/ThreeColumnCta.tsx"
+    componentMapKey: "ThreeColumnCta"
+    variants:
+      - "AmppOfferCards"
+  notes:
+    - "Same layout and variant-ampp-offer styles as AmppOfferRow. The section title (Text1) is not rendered. Card titles stay."
+  headlessVariants:
+    containerPath: "/sitecore/content/Associations/AMPP/Presentation/Headless Variants/Three Column CTA"
+    containerId: "{F5B1B41C-C5B2-43C9-9C52-AABF59157328}"
+    variants:
+      - name: "AmppOfferCards"
+        itemId: "{B7E09412-EFE4-47F2-807D-9B9208C9C642}"
+
+- name: "EventCards"
+  kind: "list"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-24T23:00:00Z"
+  updatedAt: "2026-10-24T23:00:00Z"
+  react:
+    filePath: "src/components/pagecontent/EventCards.tsx"
+    componentMapKey: "EventCards"
+    variants:
+      - "Default"
+      - "Featured"
+      - "EventList"
+  templates:
+    datasource:
+      name: "Event Cards"
+      path: "/sitecore/templates/Project/Associations/Components/Event Cards"
+      itemId: "{B1A684AF-FB52-4EBB-81EF-7DD837B99862}"
+      standardValuesId: "{96E2BA03-DAE8-4E7A-A5E2-359CA2E43738}"
+      fields:
+        - { name: "Title", type: "Single-Line Text", itemId: "{135FF173-71C2-4E2E-9BF2-EBA229155B89}" }
+    child:
+      name: "Event Card"
+      path: "/sitecore/templates/Project/Associations/Components/Event Card"
+      itemId: "{1EDDF937-3812-4FFE-95AD-055FE1090706}"
+      standardValuesId: "{72E85613-0FA5-4ADF-B0CD-13BB18F5A158}"
+      fields:
+        - { name: "Image", type: "Image" }
+        - { name: "Title", type: "Single-Line Text" }
+        - { name: "Date", type: "Single-Line Text" }
+        - { name: "Location", type: "Single-Line Text" }
+        - { name: "Register", type: "General Link" }
+        - { name: "Info", type: "General Link" }
+    folder:
+      name: "Event Cards Folder"
+      path: "/sitecore/templates/Project/Associations/Folders/Event Cards Folder"
+      itemId: "{BA2F14E1-CE36-441B-AE03-B8B0F5170B13}"
+      standardValuesId: "{5E930948-30D0-476F-849C-D8D93722A44C}"
+    renderingParams:
+      name: "Event Cards"
+      path: "/sitecore/templates/Project/Associations/Rendering Parameters/Event Cards"
+      itemId: "{690AAA75-3852-4D04-98AB-E51CD68CF749}"
+      standardValuesId: "{E35DD9FF-5DE0-4BA7-AC6E-4FB5E2960BDF}"
+      baseTemplatesSet: true
+  datasourceFolder:
+    name: "Event Cards"
+    path: "/sitecore/content/Associations/AMPP/Data/Event Cards"
+    itemId: "{46A521A1-F435-4D4C-A98B-569B2AB98D47}"
+    exampleItemId: "{CABA1761-A66D-4A4E-BA76-3DFADFBB7828}"
+    exampleChildId: "{DB0E9CB8-06EA-4735-AA0C-5F28E24AC616}"
+  rendering:
+    name: "Event Cards"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Event Cards"
+    itemId: "{829EE6D7-B650-496B-BBAC-ED2B22426BFB}"
+    componentName: "EventCards"
+    datasourceTemplatePath: "/sitecore/templates/Project/Associations/Components/Event Cards"
+    parametersTemplateId: "{690AAA75-3852-4D04-98AB-E51CD68CF749}"
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Associations/AMPP/Presentation/Headless Variants/Event Cards"
+    containerId: "{B80BEFC7-907A-405D-9244-8BF8DE07B48B}"
+    variants:
+      - name: "Default"
+        itemId: "{B86B66B8-9ECF-421D-9289-2895AF2E2FAF}"
+      - name: "Featured"
+        itemId: "{14B7AE88-A5FB-457B-BBC8-FCB1ECAE5585}"
+      - name: "EventList"
+        itemId: "{6C2B3CEB-BC83-43A0-90BF-1F8E25340E69}"
+  notes:
+    - "Example items have the $name title only. Copy was not invented."
+    - "_HorizonDatasourceGrouping id was not resolved. Parent uses the datasource and grid bases already set."
+
+- name: "CourseCatalog"
+  kind: "list"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-24T23:00:00Z"
+  updatedAt: "2026-10-24T23:00:00Z"
+  react:
+    filePath: "src/components/pagecontent/CourseCatalog.tsx"
+    componentMapKey: "CourseCatalog"
+    variants:
+      - "Default"
+      - "Carousel"
+      - "Search"
+      - "List"
+  templates:
+    datasource:
+      name: "Course Catalog"
+      path: "/sitecore/templates/Project/Associations/Components/Course Catalog"
+      itemId: "{41B092D6-59EA-43A2-8A92-02AB99FAF8E7}"
+      standardValuesId: "{07E72753-81D8-4E96-A6E6-4154F969C75D}"
+      fields:
+        - { name: "Title", type: "Single-Line Text" }
+        - { name: "SearchPlaceholder", type: "Single-Line Text" }
+        - { name: "ShowFilters", type: "Checkbox" }
+    child:
+      name: "Course"
+      path: "/sitecore/templates/Project/Associations/Components/Course"
+      itemId: "{A8850867-031A-4F71-BB56-CBDE99F1CE8E}"
+      standardValuesId: "{BB4F46D9-A1BA-468A-9693-E40EA316B786}"
+    folder:
+      name: "Course Catalog Folder"
+      path: "/sitecore/templates/Project/Associations/Folders/Course Catalog Folder"
+      itemId: "{D0BE2CEA-CA6C-490B-860C-EE336361C6AF}"
+      standardValuesId: "{DED0C8B0-55E0-4B3C-85AA-FBAFDDC76832}"
+    renderingParams:
+      name: "Course Catalog"
+      path: "/sitecore/templates/Project/Associations/Rendering Parameters/Course Catalog"
+      itemId: "{587524D4-16C0-4D2F-8EC8-A90C2BAB864D}"
+      standardValuesId: "{BD07C022-1120-496C-8D93-DA4B01C6CA07}"
+      baseTemplatesSet: true
+  datasourceFolder:
+    name: "Course Catalog"
+    path: "/sitecore/content/Associations/AMPP/Data/Course Catalog"
+    itemId: "{4852AD9D-A96B-494F-9CF7-E7243FE22ABA}"
+    exampleItemId: "{780EAB55-E94D-4A09-A766-3202F5B7B4B5}"
+    exampleChildId: "{000AFF00-DE94-4710-A61E-D5BD5E983A62}"
+  rendering:
+    name: "Course Catalog"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Course Catalog"
+    itemId: "{9FC8DB3A-27A4-4A3C-B8D1-F8FF1742D002}"
+    componentName: "CourseCatalog"
+    datasourceTemplatePath: "/sitecore/templates/Project/Associations/Components/Course Catalog"
+    parametersTemplateId: "{587524D4-16C0-4D2F-8EC8-A90C2BAB864D}"
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Associations/AMPP/Presentation/Headless Variants/Course Catalog"
+    containerId: "{4CA33205-4217-4CED-950A-A749F65C993A}"
+    variants:
+      - name: "Default"
+        itemId: "{2FDA0CA9-E565-4CB6-83C2-7973F824FE98}"
+      - name: "Carousel"
+        itemId: "{0B49A1A5-2259-4FF5-9F27-FDAACC439EBE}"
+      - name: "Search"
+        itemId: "{76448A6D-E896-4553-932E-C68183D300CF}"
+      - name: "List"
+        itemId: "{B53E2F1B-F6F6-4D7C-BD33-22AF73BC02B6}"
+
+- name: "BlogArticle"
+  kind: "context"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-24T23:00:00Z"
+  updatedAt: "2026-10-24T23:00:00Z"
+  react:
+    filePath: "src/components/pagecontent/BlogArticle.tsx"
+    componentMapKey: "BlogArticle"
+    variants:
+      - "Default"
+      - "Article"
+  templates:
+    renderingParams:
+      name: "Blog Article"
+      path: "/sitecore/templates/Project/Associations/Rendering Parameters/Blog Article"
+      itemId: "{8EC1444F-51CF-41CD-BE3C-32E29FE55AB9}"
+      standardValuesId: "{1CA0C925-AF36-4018-AA47-64B836B13B6F}"
+      baseTemplatesSet: true
+  rendering:
+    name: "Blog Article"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Blog Article"
+    itemId: "{43243972-9E9D-4E06-A7FC-ECA561C58B8F}"
+    componentName: "BlogArticle"
+    datasourceTemplatePath: ""
+    parametersTemplateId: "{8EC1444F-51CF-41CD-BE3C-32E29FE55AB9}"
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Associations/AMPP/Presentation/Headless Variants/Blog Article"
+    containerId: "{77C5F6D2-341E-4C6F-8533-D049C8C62BC3}"
+    variants:
+      - name: "Default"
+        itemId: "{2EAFF350-1863-4254-ABF7-F0A8D054DECE}"
+      - name: "Article"
+        itemId: "{4F48250A-5B73-4B74-A787-F2EA55C11CB5}"
+  notes:
+    - "Reads Title, Description, and Image from the Blog page. No datasource and no ComponentQuery."
+
+- name: "LoginForm"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-24T23:00:00Z"
+  updatedAt: "2026-10-24T23:00:00Z"
+  react:
+    filePath: "src/components/pagecontent/LoginForm.tsx"
+    componentMapKey: "LoginForm"
+    variants:
+      - "Default"
+      - "SignIn"
+  templates:
+    datasource:
+      name: "Login Form"
+      path: "/sitecore/templates/Project/Associations/Components/Login Form"
+      itemId: "{AFBFE816-5D17-4F9E-9CA1-D0DDBCFCE204}"
+      standardValuesId: "{4FF1D632-5D9D-4121-8327-9636EE1A3012}"
+      fields:
+        - { name: "Title", type: "Single-Line Text" }
+        - { name: "Text", type: "Rich Text" }
+    folder:
+      name: "Login Form Folder"
+      path: "/sitecore/templates/Project/Associations/Folders/Login Form Folder"
+      itemId: "{6ED76305-9B0E-4507-BF03-7BD1A91AFB71}"
+      standardValuesId: "{4893AC59-53B2-46BB-AC7F-9A09C973E835}"
+    renderingParams:
+      name: "Login Form"
+      path: "/sitecore/templates/Project/Associations/Rendering Parameters/Login Form"
+      itemId: "{B8DB4CE4-40DA-4E4B-BE94-F4137A9D1AA8}"
+      standardValuesId: "{A1C19215-0CDF-4DD5-A208-117CDA8ABC83}"
+      baseTemplatesSet: true
+  datasourceFolder:
+    name: "Login Form"
+    path: "/sitecore/content/Associations/AMPP/Data/Login Form"
+    itemId: "{000F6C9C-9950-46A7-A683-D36613903F6A}"
+    exampleItemId: "{F140F94B-1A56-4A6F-B5B4-7FCF7899F4CC}"
+  rendering:
+    name: "Login Form"
+    path: "/sitecore/layout/Renderings/Project/Financial/Page Content/Login Form"
+    itemId: "{8C278F05-7123-452C-AC82-2BF104E75B58}"
+    componentName: "LoginForm"
+    datasourceTemplatePath: "/sitecore/templates/Project/Associations/Components/Login Form"
+    parametersTemplateId: "{B8DB4CE4-40DA-4E4B-BE94-F4137A9D1AA8}"
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Associations/AMPP/Presentation/Headless Variants/Login Form"
+    containerId: "{58D9460A-09D9-46F9-83D4-5D94492C403E}"
+    variants:
+      - name: "Default"
+        itemId: "{AF97D3BB-2E0B-4103-B76D-55FF52AFE3C7}"
+      - name: "SignIn"
+        itemId: "{FE8B0060-C6BF-4CB9-83B0-F2343B14DC02}"
+  notes:
+    - "Any non-empty password continues to Home. There is no account check."
 
 lookups:
   - path: "/sitecore/content/Financial/ProsperaFinancial/Data"

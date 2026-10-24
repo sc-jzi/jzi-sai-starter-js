@@ -30,6 +30,7 @@ import * as ProjectDetails from 'src/components/pagecontent/ProjectDetails';
 import * as PartialDesignDynamicPlaceholder from 'src/components/pagecontent/PartialDesignDynamicPlaceholder';
 import * as ParallaxBanner from 'src/components/pagecontent/ParallaxBanner';
 import * as PageBackground from 'src/components/pagecontent/PageBackground';
+import * as LoginForm from 'src/components/pagecontent/LoginForm';
 import * as ImageGallery from 'src/components/pagecontent/ImageGallery';
 import * as HeroSpotlight from 'src/components/pagecontent/HeroSpotlight';
 import * as HeroBanner from 'src/components/pagecontent/HeroBanner';
@@ -38,10 +39,13 @@ import * as HeadingCta from 'src/components/pagecontent/HeadingCta';
 import * as FourColumnCta from 'src/components/pagecontent/FourColumnCta';
 import * as FiveColumnCta from 'src/components/pagecontent/FiveColumnCta';
 import * as Features from 'src/components/pagecontent/Features';
+import * as EventCards from 'src/components/pagecontent/EventCards';
 import * as DocumentsList from 'src/components/pagecontent/DocumentsList';
 import * as CtaBanner from 'src/components/pagecontent/CtaBanner';
+import * as CourseCatalog from 'src/components/pagecontent/CourseCatalog';
 import * as Comparison from 'src/components/pagecontent/Comparison';
 import * as Carousel from 'src/components/pagecontent/Carousel';
+import * as BlogArticle from 'src/components/pagecontent/BlogArticle';
 import * as AuthorWidget from 'src/components/pagecontent/AuthorWidget';
 import * as AuthorList from 'src/components/pagecontent/AuthorList';
 import * as AuthorDetails from 'src/components/pagecontent/AuthorDetails';
@@ -91,6 +95,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['PartialDesignDynamicPlaceholder', { ...PartialDesignDynamicPlaceholder }],
   ['ParallaxBanner', { ...ParallaxBanner, componentType: 'client' }],
   ['PageBackground', { ...PageBackground, componentType: 'client' }],
+  ['LoginForm', { ...LoginForm, componentType: 'client' }],
   ['ImageGallery', { ...ImageGallery, componentType: 'client' }],
   ['HeroSpotlight', { ...HeroSpotlight, componentType: 'client' }],
   ['HeroBanner', { ...HeroBanner, componentType: 'client' }],
@@ -99,10 +104,13 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['FourColumnCta', { ...FourColumnCta, componentType: 'client' }],
   ['FiveColumnCta', { ...FiveColumnCta, componentType: 'client' }],
   ['Features', { ...Features, componentType: 'client' }],
+  ['EventCards', { ...EventCards }],
   ['DocumentsList', { ...DocumentsList, componentType: 'client' }],
   ['CtaBanner', { ...CtaBanner, componentType: 'client' }],
+  ['CourseCatalog', { ...CourseCatalog, componentType: 'client' }],
   ['Comparison', { ...Comparison, componentType: 'client' }],
   ['Carousel', { ...Carousel, componentType: 'client' }],
+  ['BlogArticle', { ...BlogArticle }],
   ['AuthorWidget', { ...AuthorWidget, componentType: 'client' }],
   ['AuthorList', { ...AuthorList, componentType: 'client' }],
   ['AuthorDetails', { ...AuthorDetails, componentType: 'client' }],

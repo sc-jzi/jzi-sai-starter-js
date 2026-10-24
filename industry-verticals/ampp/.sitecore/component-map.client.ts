@@ -29,6 +29,7 @@ import * as ProjectList from 'src/components/pagecontent/ProjectList';
 import * as ProjectDetails from 'src/components/pagecontent/ProjectDetails';
 import * as ParallaxBanner from 'src/components/pagecontent/ParallaxBanner';
 import * as PageBackground from 'src/components/pagecontent/PageBackground';
+import * as LoginForm from 'src/components/pagecontent/LoginForm';
 import * as ImageGallery from 'src/components/pagecontent/ImageGallery';
 import * as HeroSpotlight from 'src/components/pagecontent/HeroSpotlight';
 import * as HeroBanner from 'src/components/pagecontent/HeroBanner';
@@ -39,6 +40,7 @@ import * as FiveColumnCta from 'src/components/pagecontent/FiveColumnCta';
 import * as Features from 'src/components/pagecontent/Features';
 import * as DocumentsList from 'src/components/pagecontent/DocumentsList';
 import * as CtaBanner from 'src/components/pagecontent/CtaBanner';
+import * as CourseCatalog from 'src/components/pagecontent/CourseCatalog';
 import * as Comparison from 'src/components/pagecontent/Comparison';
 import * as Carousel from 'src/components/pagecontent/Carousel';
 import * as AuthorWidget from 'src/components/pagecontent/AuthorWidget';
@@ -88,6 +90,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ProjectDetails', { ...ProjectDetails }],
   ['ParallaxBanner', { ...ParallaxBanner }],
   ['PageBackground', { ...PageBackground }],
+  ['LoginForm', { ...LoginForm }],
   ['ImageGallery', { ...ImageGallery }],
   ['HeroSpotlight', { ...HeroSpotlight }],
   ['HeroBanner', { ...HeroBanner }],
@@ -98,6 +101,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Features', { ...Features }],
   ['DocumentsList', { ...DocumentsList }],
   ['CtaBanner', { ...CtaBanner }],
+  ['CourseCatalog', { ...CourseCatalog }],
   ['Comparison', { ...Comparison }],
   ['Carousel', { ...Carousel }],
   ['AuthorWidget', { ...AuthorWidget }],

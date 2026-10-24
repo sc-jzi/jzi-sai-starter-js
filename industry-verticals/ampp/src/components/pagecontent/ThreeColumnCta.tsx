@@ -303,14 +303,14 @@ const AmppOfferCard = ({
   </div>
 );
 
-const AmppThree = (props: ThreeColumnCtaProps, look: string, photo: boolean): JSX.Element => {
+const AmppThree = (props: ThreeColumnCtaProps, look: string, photo: boolean, showTitle: boolean): JSX.Element => {
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
 
   return (
     <div className={`component three-column-cta col-12 ${look} ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
       <div className="container">
-        {(isPageEditing || props.fields.Text1?.value) && (
+        {showTitle && (isPageEditing || props.fields.Text1?.value) && (
           <h2 className="ampp-section-title">
             <Text field={props.fields.Text1} />
           </h2>
@@ -326,10 +326,13 @@ const AmppThree = (props: ThreeColumnCtaProps, look: string, photo: boolean): JS
 };
 
 /* AMPP variant: three centered offer cards with a red button. */
-export const Ampp = (props: ThreeColumnCtaProps): JSX.Element => AmppThree(props, 'variant-ampp', false);
+export const Ampp = (props: ThreeColumnCtaProps): JSX.Element => AmppThree(props, 'variant-ampp', false, true);
 
-/* AMPP offer row: icon, title, text, red button. */
-export const AmppOfferRow = (props: ThreeColumnCtaProps): JSX.Element => AmppThree(props, 'variant-ampp-offer', false);
+/* AMPP offer row: icon, title, text, red button, and the section title. */
+export const AmppOfferRow = (props: ThreeColumnCtaProps): JSX.Element => AmppThree(props, 'variant-ampp-offer', false, true);
+
+/* Same cards as AmppOfferRow, with the section title left off. */
+export const AmppOfferCards = (props: ThreeColumnCtaProps): JSX.Element => AmppThree(props, 'variant-ampp-offer', false, false);
 
 /* AMPP next steps: photo on top of each tile. */
-export const AmppNextSteps = (props: ThreeColumnCtaProps): JSX.Element => AmppThree(props, 'variant-ampp-next', true);
+export const AmppNextSteps = (props: ThreeColumnCtaProps): JSX.Element => AmppThree(props, 'variant-ampp-next', true, true);
