@@ -48,6 +48,7 @@ import * as AuthorDetails from 'src/components/pagecontent/AuthorDetails';
 import * as ArticleList from 'src/components/pagecontent/ArticleList';
 import * as ArticleDetails from 'src/components/pagecontent/ArticleDetails';
 import * as AppPromo from 'src/components/pagecontent/AppPromo';
+import * as AdvanceHero from 'src/components/pagecontent/AdvanceHero';
 import * as Accordion from 'src/components/pagecontent/Accordion';
 import * as ProfileWidget from 'src/components/non-sitecore/ProfileWidget';
 import * as ProfileIdWidget from 'src/components/non-sitecore/ProfileIdWidget';
@@ -108,6 +109,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ArticleList', { ...ArticleList, componentType: 'client' }],
   ['ArticleDetails', { ...ArticleDetails, componentType: 'client' }],
   ['AppPromo', { ...AppPromo, componentType: 'client' }],
+  ['AdvanceHero', { ...AdvanceHero, componentType: 'client' }],
   ['Accordion', { ...Accordion, componentType: 'client' }],
   ['ProfileWidget', { ...ProfileWidget, componentType: 'client' }],
   ['ProfileIdWidget', { ...ProfileIdWidget, componentType: 'client' }],

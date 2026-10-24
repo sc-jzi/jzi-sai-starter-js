@@ -2312,6 +2312,78 @@ components:
   notes: 
     - "Context item resolver {6CCCBCDE-5E95-44E4-AE66-CFE7D3A0589E}."
 
+- name: "AdvanceHero"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-24T19:15:00Z"
+  updatedAt: "2026-10-24T19:15:00Z"
+  react:
+    filePath: "src/components/pagecontent/AdvanceHero.tsx"
+    componentMapKey: "AdvanceHero"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Advance Hero"
+      path: "/sitecore/templates/Project/Associations/Components/Advance Hero"
+      itemId: "{976EBBBA-9360-482A-A377-2069D32B8AC6}"
+      standardValuesId: "{40C0258C-5669-4EA1-9A10-09478B3F22DD}"
+      fields:
+        - { name: "Image", type: "Image", itemId: "{216ACBEC-0B8D-4B90-8B6C-3461BF2F8603}" }
+        - { name: "Main Link", type: "General Link", itemId: "{0D2AE940-1B06-4C5D-B277-82768323DD89}" }
+        - { name: "CTA1Icon", type: "Image", itemId: "{4310EF6E-2807-4C9D-A87E-F4ECC269A59D}" }
+        - { name: "CTA1Link", type: "General Link", itemId: "{A15C6D3C-3D9D-412A-AB6F-EFF6248AC608}" }
+        - { name: "CTA2Icon", type: "Image", itemId: "{36253BB3-D4A2-4892-BA43-8C6DCFECF722}" }
+        - { name: "CTA2Link", type: "General Link", itemId: "{2A638FA4-51E8-4EF4-B936-D93FE6CCD5CC}" }
+        - { name: "CTA3Icon", type: "Image", itemId: "{1D68475F-A9C0-4776-A83C-06F45CBF314F}" }
+        - { name: "CTA3Link", type: "General Link", itemId: "{D2F83CC3-B079-4390-8124-E00B4178ADFE}" }
+        - { name: "CTA4Icon", type: "Image", itemId: "{60550D1C-0E37-432C-9A39-8E496595DDCA}" }
+        - { name: "CTA4Link", type: "General Link", itemId: "{96A5AEB2-69E9-4AB8-8222-7130B5F2F36F}" }
+    folder:
+      name: "Advance Hero Folder"
+      path: "/sitecore/templates/Project/Associations/Folders/Advance Hero Folder"
+      itemId: "{54CC401C-E48D-4509-A426-256A4E549C58}"
+      standardValuesId: "{1D541F6F-7E9B-40D7-A2D5-FD32C3639697}"
+    renderingParams:
+      name: "Advance Hero"
+      path: "/sitecore/templates/Project/Associations/Rendering Parameters/Advance Hero"
+      itemId: "{1D3858B2-2C24-46F3-B413-3A3462E69212}"
+      standardValuesId: "{9ACE8E63-58E5-487B-AD43-CA7E04F8D774}"
+      baseTemplatesSet: true
+  datasourceFolder:
+    name: "Advance Hero"
+    path: "/sitecore/content/Associations/AMPP/Data/Advance Hero"
+    itemId: "{DF08B1A2-B3B8-46D9-B9F9-43781DB70546}"
+    exampleItemId: "{DE87CA7B-5F83-4744-B832-1B74EA10FE97}"
+  rendering:
+    name: "Advance Hero"
+    path: "/sitecore/layout/Renderings/Project/Associations/Advance Hero"
+    itemId: "{24FBF26D-7D4F-4648-BB1E-3249F3F0D3BA}"
+    componentName: "AdvanceHero"
+    datasourceTemplatePath: "/sitecore/templates/Project/Associations/Components/Advance Hero"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@templatename='Advance Hero Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Advance Hero Folder']"
+    parametersTemplateId: "{1D3858B2-2C24-46F3-B413-3A3462E69212}"
+    componentQuery: ""
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Associations/AMPP/Presentation/Headless Variants/Advance Hero"
+    containerId: "{F9559714-8D10-41E8-87C0-824CBFA0A1C2}"
+    variants:
+      - name: "Default"
+        itemId: "{E922333C-B856-49B6-ADBB-0D5083048B50}"
+  verification:
+    checkedAt: "2026-10-24T19:15:00Z"
+    passed:
+      - "Rendering item found"
+      - "Datasource template and fields created"
+      - "Example datasource created"
+    failed: []
+    pendingManual: []
+  notes:
+    - "Link labels come from each General Link text. A pipe in Main Link text splits the overlay into two lines."
+
 lookups:
   - path: "/sitecore/content/Financial/ProsperaFinancial/Data"
     itemId: "{5C48BD53-E997-45FC-B318-672CFA349BB3}"

@@ -1,0 +1,151 @@
+.component.advance-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 1fr);
+  width: 100%;
+  background: var(--bg-accent, #101820);
+  color: #ffffff;
+  min-height: 420px;
+
+  @media (max-width: 991px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.advance-hero-empty {
+  display: block;
+  padding: 24px;
+  color: var(--text-body, #333333);
+  background: var(--bg-main-alt, #ededf5);
+}
+
+.advance-hero-media {
+  position: relative;
+  min-height: 420px;
+  background: #101820;
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 42%;
+    background: linear-gradient(transparent, rgba(8, 12, 16, 0.62));
+    pointer-events: none;
+  }
+
+  .advance-hero-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+.advance-hero-main-link {
+  position: absolute;
+  left: 4%;
+  bottom: 11%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  max-width: 78%;
+  color: #ffffff;
+  text-decoration: none;
+
+  .advance-hero-main-title,
+  .advance-hero-main-sub {
+    display: block;
+    color: #ffffff;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+
+  .advance-hero-main-title {
+    font-size: 32px;
+  }
+
+  .advance-hero-main-sub {
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  .advance-hero-arrow {
+    color: #f5c400;
+    margin-left: 8px;
+    font-weight: 700;
+  }
+
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+.advance-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.18);
+  min-height: 420px;
+}
+
+.advance-hero-cta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 28px 20px;
+  text-align: center;
+  background: #101820;
+  min-height: 180px;
+
+  .advance-hero-cta-icon {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+  }
+
+  a {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.25;
+    text-decoration: none;
+    max-width: 190px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+
+    &:hover {
+      color: #ffffff;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .advance-hero-main-link {
+    .advance-hero-main-title {
+      font-size: 24px;
+    }
+
+    .advance-hero-main-sub {
+      font-size: 18px;
+    }
+  }
+
+  .advance-hero-cta a {
+    font-size: 16px;
+  }
+}
