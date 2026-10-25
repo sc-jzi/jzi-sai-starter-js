@@ -83,3 +83,5 @@ industry-verticals/*/next-env.d.ts
 *.tsbuildinfo
 # layout backups written by harness scripts
 layout-backup-*.xml
+# full output of the last build-check.mjs run (local only)
+.build-check.log
