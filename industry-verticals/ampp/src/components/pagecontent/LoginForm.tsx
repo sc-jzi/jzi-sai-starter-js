@@ -2,6 +2,7 @@
 
 import { FormEvent, JSX, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { identity } from '@sitecore-content-sdk/events';
 import { RichText, Text, type Field } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 
@@ -22,14 +23,36 @@ type LoginFormProps = ComponentProps & {
 
 const LoginForm = ({ fields, params, look }: LoginFormProps & { look: string }): JSX.Element => {
   const router = useRouter();
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'error'>('idle');
   const datasource = fields?.data?.datasource;
   const id = params?.RenderingIdentifier;
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (password.trim()) {
+    const identifier = email.trim().toLowerCase();
+    if (!identifier || !password.trim()) {
+      return;
+    }
+
+    setStatus('sending');
+    try {
+      await identity({
+        channel: 'WEB',
+        currency: 'USD',
+        identifiers: [
+          {
+            id: identifier,
+            provider: 'email',
+          },
+        ],
+        email,
+      });
       router.push('/');
+    } catch (error) {
+      console.error('IDENTITY event was not sent', error);
+      setStatus('error');
     }
   };
 
@@ -41,7 +64,14 @@ const LoginForm = ({ fields, params, look }: LoginFormProps & { look: string }):
         <form className="login-fields" onSubmit={handleSubmit}>
           <label>
             Email
-            <input type="email" name="email" autoComplete="username" />
+            <input
+              type="email"
+              name="email"
+              autoComplete="username"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+              required
+            />
           </label>
           <label>
             Password
@@ -53,9 +83,12 @@ const LoginForm = ({ fields, params, look }: LoginFormProps & { look: string }):
               onChange={(event) => setPassword(event.target.value)}
             />
           </label>
-          <button className="button" type="submit">
-            Sign in
+          <button className="button" type="submit" disabled={status === 'sending'}>
+            {status === 'sending' ? 'Signing in…' : 'Sign in'}
           </button>
+          {status === 'error' && (
+            <p role="alert">Sign-in could not send the identity event. Refresh the published site and try again.</p>
+          )}
         </form>
       </div>
     </section>

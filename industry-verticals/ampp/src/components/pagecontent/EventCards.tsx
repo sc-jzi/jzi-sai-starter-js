@@ -35,7 +35,7 @@ const EventCards = ({ fields, params, look, photos }: EventCardsProps & { look: 
   return (
     <section className={`component event-cards col-12 ${look} ${params?.styles || ''}`} id={id}>
       <div className="container">
-        {datasource?.title?.jsonValue && (
+        {(datasource?.title?.jsonValue as Field<string> | undefined)?.value && (
           <Text tag="h2" field={datasource.title.jsonValue as Field<string>} />
         )}
         <div className={photos ? 'row' : 'event-list'}>
