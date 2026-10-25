@@ -1,5 +1,5 @@
 import { JSX } from 'react';
-import { Image, RichText, Text, useSitecore, type Field, type ImageField } from '@sitecore-content-sdk/nextjs';
+import { Image, RichText, Text, type Field, type ImageField } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 
 type RouteField = Field<string> | ImageField;
@@ -10,8 +10,8 @@ interface BlogRouteFields {
   Image?: RouteField;
 }
 
-const BlogArticle = ({ params, look }: ComponentProps & { look: string }): JSX.Element => {
-  const { page } = useSitecore();
+// A server component: the route fields come from the `page` prop the Placeholder passes (useSitecore() is client-only)
+const BlogArticle = ({ params, page, look }: ComponentProps & { look: string }): JSX.Element => {
   const fields = (page?.layout?.sitecore?.route?.fields || {}) as BlogRouteFields;
   const id = params?.RenderingIdentifier;
 

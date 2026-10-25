@@ -129,10 +129,12 @@ export const Default = (props: TestimonialsProps): JSX.Element => {
 
 const AmppQuotes = (props: TestimonialsProps, look: string): JSX.Element => {
   const testimonials = props.fields?.items ?? [];
+  const heading = props.params?.Heading;
 
   return (
     <div className={`component testimonials ${look} ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
       <div className="container">
+        {heading ? <h2>{heading}</h2> : null}
         <div className="row">
           {testimonials.map((item, i) => (
             <div className="col-lg-4" key={`${item.url}${i}`}>

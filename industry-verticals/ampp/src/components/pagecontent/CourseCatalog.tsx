@@ -60,7 +60,7 @@ const CourseCatalog = ({
     <section className={`component course-catalog col-12 ${look} ${params?.styles || ''}`} id={id}>
       <div className="container">
         {(datasource?.title?.jsonValue as Field<string> | undefined)?.value && (
-          <Text tag="h2" field={datasource.title.jsonValue as Field<string>} />
+          <Text tag="h2" field={datasource?.title?.jsonValue as Field<string>} />
         )}
         {filters && (
           <form className="course-filters" onSubmit={(event) => event.preventDefault()}>

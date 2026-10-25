@@ -218,7 +218,7 @@ export const Ampp = (props: FooterProps): JSX.Element => {
           <div className="privacy-links">
             <Link field={props.fields?.Link1} />
             <Link field={props.fields?.Link2} />
-            <Link field={props.fields?.Link3} />
+            {props.fields?.Link3 && <Link field={props.fields.Link3} />}
           </div>
           <div className="socials">
             <Link field={props.fields?.SocialLink1} />

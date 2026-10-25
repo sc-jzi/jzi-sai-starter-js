@@ -7,6 +7,28 @@
 
 components:
 
+  - id: advance-hero
+    name: "AdvanceHero"
+    kind: simple
+    category: Banners
+    file: src/components/pagecontent/AdvanceHero.tsx
+    variants: [Default]
+    visualKeywords:
+      - conference image beside a 2x2 of icon links
+      - homepage hero
+    fieldCount: 9
+
+  - id: event-hero
+    name: "EventHero"
+    kind: simple
+    category: Banners
+    file: src/components/pagecontent/EventHero.tsx
+    variants: [Default, EventHero]
+    visualKeywords:
+      - full-bleed event title with the date, the place and a register button
+      - event page design hero
+    fieldCount: 6
+
   - id: hero-banner
     name: "HeroBanner"
     kind: simple

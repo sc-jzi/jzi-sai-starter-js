@@ -14,11 +14,36 @@ export type QuestionItemProps = {
   url: string;
 };
 
+type GqlField = { jsonValue?: Field<string> };
+
+type QuestionsData = {
+  items?: QuestionItemProps[];
+  data?: {
+    datasource?: {
+      title?: GqlField;
+      children?: { results?: { id?: string; question?: GqlField; answer?: GqlField }[] };
+    };
+  };
+};
+
 export type QuestionsProps = {
   params: { [key: string]: string };
-  fields: {
-    items: QuestionItemProps[];
-  };
+  fields: QuestionsData;
+};
+
+const questionsOf = (fields?: QuestionsData): QuestionItemProps[] => {
+  const results = fields?.data?.datasource?.children?.results;
+  if (results?.length) {
+    return results.map((item) => ({
+      fields: {
+        Question: item.question?.jsonValue as Field<string>,
+        Answer: item.answer?.jsonValue as Field<string>,
+      },
+      name: item.id || '',
+      url: item.id || '',
+    }));
+  }
+  return fields?.items || [];
 };
 
 const Question = ({ item }: { item: QuestionItemProps }): JSX.Element => {
@@ -53,7 +78,7 @@ const Question = ({ item }: { item: QuestionItemProps }): JSX.Element => {
 
 export const Default = (props: QuestionsProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
-  const questions = props.fields?.items;
+  const questions = questionsOf(props.fields);
   const sxaStyles = `${props.params?.styles || ''}`;
 
   return (
@@ -80,14 +105,16 @@ export const Default = (props: QuestionsProps): JSX.Element => {
   );
 };
 
-export const SingleColumn = (props: QuestionsProps): JSX.Element => {
+const SingleColumnView = (props: QuestionsProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
-  const questions = props.fields?.items;
+  const questions = questionsOf(props.fields);
+  const title = props.fields?.data?.datasource?.title?.jsonValue;
   const sxaStyles = `${props.params?.styles || ''}`;
 
   return (
-    <div className={`component questions single-column ${sxaStyles}`} id={id ? id : undefined}>
+    <div className={`component questions single-column col-12 ${sxaStyles}`} id={id ? id : undefined}>
       <div className="container">
+        {title?.value && <Text tag="h2" field={title} />}
         <div className="questions-wrapper">
           {questions?.map((item) => (
             <Question key={item.url} item={item} />
@@ -97,3 +124,7 @@ export const SingleColumn = (props: QuestionsProps): JSX.Element => {
     </div>
   );
 };
+
+export const SingleColumn = (props: QuestionsProps): JSX.Element => <SingleColumnView {...props} />;
+
+export const Faq = (props: QuestionsProps): JSX.Element => <SingleColumnView {...props} />;
