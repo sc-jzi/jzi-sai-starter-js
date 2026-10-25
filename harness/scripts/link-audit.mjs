@@ -10,7 +10,7 @@
  * Root: site-manifest.json → siteRoot (or siteId). Writes link-audit.json in the demo folder (read by run-gate.mjs).
  * For a literal path that matches a page of the site it prints the fix: link-xml.mjs make --id "{page id}".
  * Fixes are written through the Marketer MCP (update_fields_on_item) and read back; then run this again.
- * Exit 0 clean · 1 bad fields found · 3 no Authoring GraphQL client configured (SITECORE_CM_HOST + automation client in harness/.env.local).
+ * Exit 0 clean · 1 bad fields found · 2 the audit could not complete (auth/network error, unreadable items) · 3 no Authoring GraphQL client configured (SITECORE_CM_HOST + automation client in harness/.env.local).
  */
 import { join } from "node:path";
 import { die, demoDir, parseArgs, readJson, rootRel, safeWrite, ENV, authoringClient, linkError, imageError } from "./_lib.mjs";
@@ -24,7 +24,7 @@ const root = sm?.siteId || sm?.siteRoot;
 if (!root) die("site-manifest.json has no siteRoot / siteId yet (demo-site-bootstrap step 6)");
 
 let gql;
-try { gql = await authoringClient(); } catch (e) { die(`Authoring GraphQL: ${e.message}`, 1); }
+try { gql = await authoringClient(); } catch (e) { die(`Authoring GraphQL: ${e.message}`, 2); }   // a client/auth failure is not a finding about the site
 if (!gql) die("No Authoring GraphQL client (SITECORE_CM_HOST and SITECORE_AUTOMATION_CLIENT_ID/SECRET in harness/.env.local). Do the MCP sweep instead: demo-build-pages step 6.", 3);
 
 const LINK = /^general link/i, IMAGE = /^image$/i;
@@ -34,11 +34,16 @@ const fetchItem = async (r) => (await gql(Q, { where: where(r) })).item;
 
 const bad = [], pages = new Map();   // site-relative page path (lower case, from Home) -> item id
 let items = 0, linkFields = 0, imageFields = 0, homePath = null;
-const queue = [root];
+const queue = [root], unreadable = [];
+let inFlight = 0;
 const worker = async () => {
-  while (queue.length) {
+  // keep waiting while other workers are still reading items whose children will be queued
+  while (queue.length || inFlight) {
+    if (!queue.length) { await new Promise((r) => setTimeout(r, 40)); continue; }
     const r = queue.shift();
-    let it; try { it = await fetchItem(r); } catch (e) { bad.push({ path: String(r), field: "(item)", value: "", error: `could not read: ${e.message.slice(0, 160)}` }); continue; }
+    inFlight++;
+    let it; try { it = await fetchItem(r); } catch (e) { unreadable.push({ path: String(r), error: e.message.slice(0, 160) }); inFlight--; continue; }
+    inFlight--;
     if (!it) continue;
     items++;
     if (!homePath && /\/home$/i.test(it.path)) homePath = it.path.toLowerCase();
@@ -64,9 +69,10 @@ for (const b of bad) {
   b.fix = id ? `node harness/scripts/link-xml.mjs make --text "${text}" --id "${guid(id)}"` : `no page ${path} in the site: link the planned page with make --id, or clear the field`;
 }
 
-const out = { at: new Date().toISOString(), source: "authoring-graphql", root, language: lang, items, linkFields, imageFields, bad };
+const out = { at: new Date().toISOString(), source: "authoring-graphql", root, language: lang, items, linkFields, imageFields, bad, unreadable };
 safeWrite(customer, join(demo, "link-audit.json"), JSON.stringify(out, null, 2) + "\n");
 console.log(`${items} item(s), ${linkFields} link field(s), ${imageFields} image field(s) checked → ${rootRel(join(demo, "link-audit.json"))}`);
 for (const b of bad) console.log(`✖ ${b.path} · ${b.field}: ${b.error}${b.fix ? `\n    fix: ${b.fix}` : ""}`);
 if (!bad.length) console.log("✔ every link and image field holds valid XML");
-process.exit(bad.length ? 1 : 0);
+if (unreadable.length) console.log(`! ${unreadable.length} item(s) could not be read: the audit is incomplete (exit 2)`);
+process.exit(bad.length ? 1 : unreadable.length ? 2 : 0);

@@ -17,7 +17,7 @@
  *   - Downloads SVG logos and icons (skips only tiny inline data: SVGs)
  *
  * Usage:
- *   node docs/ai/scripts/content-extractor.mjs --url https://example.com --output ./docs/ai/demos/example
+ *   node harness/scripts/content-extractor.mjs --url https://example.com --output <demo folder>/extracted/<page-slug>   (demo flow: one folder per page, no --download-images; images come from collect-images.mjs)
  *
  * Options:
  *   --url              URL to extract content from (required)

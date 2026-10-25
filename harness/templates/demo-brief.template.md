@@ -1,6 +1,6 @@
 # Demo brief — <Prospect / Opportunity>
 
-> Filled in from the discovery transcript (skill: sitecore-demo-from-transcript). Method: `harness/reference/demo-method.md`
+> Filled in from the discovery transcript (skill: demo-from-transcript). Method: `harness/reference/demo-method.md`
 > (Chain of Pain, AAA, Command of the Message, do the last thing first). Plain language is fine. The page plan is derived from it.
 > Mark every row *stated* (in the transcript, with a short quote) or *inferred*. Never invent facts or figures. Write "not given" for gaps.
 

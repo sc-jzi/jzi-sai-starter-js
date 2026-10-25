@@ -7,11 +7,11 @@
  *   node harness/scripts/link-xml.mjs make --text "Brands" --id "{PAGE-GUID}"                                  internal link to a page of this site
  *   node harness/scripts/link-xml.mjs make --text "Details" --url "#"                                          anchor/no target yet
  *   node harness/scripts/link-xml.mjs make --text "Email us" --mailto info@example.com                         mailto link
- *   node harness/scripts/link-xml.mjs check "<value>"                                                          exit 0 = valid, 1 = literal value, internal without an id, internal with a url, ...
+ *   node harness/scripts/link-xml.mjs check "<value>"                                                          exit 0 = valid, 1 = literal value, internal without an id, ...
  *   (the whole site at once, read from Sitecore: link-audit.mjs)
  *
- * An internal link is linktype="internal" id="{GUID}" and has no url. linktype="internal" url="/path" is the same
- * failure as a raw path: the layout service drops the whole datasource. An external url is http(s), or the "#" placeholder.
+ * An internal link is linktype="internal" id="{GUID}": the id resolves it. linktype="internal" url="/path" WITHOUT an id is the same
+ * failure as a raw path: the layout service drops the whole datasource. A url next to the id (Sitecore's link picker adds one) is fine. An external url is http(s), or the "#" placeholder.
  * mailto, media and anchor links are valid too. The rules live in _lib.mjs (linkError).
  */
 import { parseArgs, die, linkError } from "./_lib.mjs";

@@ -19,7 +19,7 @@ Everything is configured in **`harness/.env.local`** (git-ignored; copy `harness
 | Path | What |
 |---|---|
 | `harness/.env.local` | credentials and switches |
-| `.cursor/skills/` | **all** skills (the only place). Type `/` in Cursor: `demo-*` is the transcript flow, `sitecore-*` build components/pages, `content-sdk-*` are code skills, `sitecore-reference` holds shared rules and reference |
+| `.skills/` | **all** skills (the only place). Type `/` in Cursor: `demo-*` is the transcript flow, `sitecore-*` build components/pages, `content-sdk-*` are code skills, `sitecore-reference` holds shared rules and reference |
 | `harness/scripts/` | intake, validators, isolation guard, Sites API (create site, list templates, upload thumbnail), editing host, deps-check, site scraper / content extractor / screenshot (Playwright), new-site, bootstrap plan, Content Hub wrapper |
 | `harness/templates/`, `harness/reference/` | plan/brief/progress templates, demo method, `sitecoreai-apis.md` (the SitecoreAI API docs we build on) |
 | `harness/inbox/` | transcripts, RFP files and supporting material waiting (never committed) |

@@ -1,5 +1,5 @@
 # Add this block to industry-verticals/<customer>/docs/ai/demos/<customer>/demo-progress.yaml for the transcript-first flow.
-# Written by sitecore-demo-from-transcript; read on "resume demo".
+# Written by demo-from-transcript; read on "resume demo".
 # blockedOn: marketer-mcp-auth   # set ONLY when the run stopped for the SE (Marketer MCP not connected / the auth request timed out).
 #                                 # The stop hook never restarts a blocked run; /resume-demo <customer> clears it after list_sites returns.
 transcriptFlow:

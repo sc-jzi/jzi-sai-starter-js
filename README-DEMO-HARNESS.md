@@ -6,7 +6,7 @@ Type `/new-demo <prospect, their website, what you know>` in Cursor. It drafts t
 
 1. **Install:** Cursor, Node 20 or newer, git, the .NET SDK and the Sitecore CLI (for the editing host), and a Vercel account (for deploying).
 2. **Clone this repo** and open the folder in Cursor.
-3. **Cursor settings:** turn on Settings → Hooks (this restarts a run that stops early), then restart Cursor. Connect the **Sitecore Marketer MCP** and check it shows as connected.
+3. **Cursor settings:** turn on Settings → Hooks (this restarts a run that stops early), then restart Cursor. Run `node harness/scripts/deps-check.mjs --fix` once: it also turns on the commit check that refuses a commit when an app no longer builds. Connect the **Sitecore Marketer MCP** and check it shows as connected.
 4. **Your settings file:** copy `harness/env.example` to `harness/.env.local` and fill it in. Never commit it, never paste its values into chat.
    - Sitecore automation client id and secret, environment id, Edge context id, editing secret.
    - Content Hub values if you want images uploaded (`CH_ENABLED=true`), otherwise leave it `false`.

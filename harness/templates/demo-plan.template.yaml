@@ -67,7 +67,7 @@ story:
       talkTrack: "Today this page takes three weeks and an IT ticket. Dana built this one this morning."      # annoyance -> afterward, in the presenter's words
       # clickPath: EVERY page the SE clicks through, in order, from /Home, incl. landing/intermediate pages; each step says what is clicked
       # and must be a real link on the page before. These pages are built in full (P14/P15).
-      clickPath: ["/Home", "/Home/products (click: Products in the header)", "/Home/products/spring-campaign (click: the Spring campaign card)"]
+      clickPath: ["/Home", "/Home/products (click: Products in the header)"]
       checkIn: "Is this how you would want your team to launch a regional campaign?"
     - id: m2
       title: "Approvals and audit trail"
@@ -93,7 +93,7 @@ story:
       show: "Two product pages that share the same specification block"
       reveal: "Pages: the shared datasource; edit it once and both pages change"
       talkTrack: "Today regional teams copy product pages by hand. Here one edit updates every page."
-      clickPath: ["/Home", "/Home/products (click: Products in the header)", "/Home/products/model-x (click: Model X card)"]
+      clickPath: ["/Home", "/Home/products (click: Products in the header)", "/Home/governance (click: Governance in the footer)"]
       checkIn: "Does this match how you would want product pages to behave?"
     # A personalization moment: the trigger is on the path BEFORE the page that changes, and is named in trigger (S12). Show first, reveal after.
     # - id: m4

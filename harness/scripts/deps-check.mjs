@@ -5,6 +5,7 @@
  *   node harness/scripts/deps-check.mjs [--customer <customer>] [--fix]
  *
  *   Node >= 20, git                       required (no automatic fix)
+ *   git pre-commit build check            required: core.hooksPath = .githooks (fix: sets it), so a commit that breaks an app build is refused
  *   Playwright + Chromium  (harness/)     required for the theme scrape, content extraction and the site thumbnail
  *                                         fix: npm install (in harness/) + npx playwright install chromium
  *   Excel / Word / PDF readers (harness/)  required to read RFP documents and supporting material in harness/inbox
@@ -18,7 +19,7 @@
  * Exit 0 = everything required is in place, 1 = something required is missing (after the fix, when --fix).
  */
 import { spawnSync } from "node:child_process";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { HARNESS, ROOT, parseArgs, customerApp, rootRel } from "./_lib.mjs";
 import { missingLibs } from "./_materials.mjs";
@@ -33,6 +34,17 @@ const row = (ok, label, detail, required = true) => { console.log(`${ok ? "✅" 
 const major = Number(process.versions.node.split(".")[0]);
 row(major >= 20, "Node.js >= 20", `found ${process.versions.node}`);
 const git = quiet("git", ["--version"]); row(git.status === 0, "git", git.status === 0 ? git.stdout.trim() : "not found (the isolation guard needs it)");
+// the tracked pre-commit hook (.githooks/pre-commit) refuses commits that break an app's build; git only runs it once core.hooksPath points there
+if (git.status === 0) {
+  let hooks = quiet("git", ["config", "--get", "core.hooksPath"]).stdout.trim();
+  if (hooks !== ".githooks" && fix) { quiet("git", ["config", "core.hooksPath", ".githooks"]); hooks = quiet("git", ["config", "--get", "core.hooksPath"]).stdout.trim(); }
+  // the setting alone proves nothing: the hook file must exist (it is committed, LF, executable) or git silently runs no hook
+  const hookFile = join(ROOT, ".githooks", "pre-commit"), hookOk = existsSync(hookFile) && /build-check\.mjs --staged/.test(readFileSync(hookFile, "utf8")) && !/\r/.test(readFileSync(hookFile, "utf8"));
+  const active = hooks === ".githooks" && hookOk;
+  row(active, "build check on commit", active ? ".githooks/pre-commit active (a commit that breaks an app's build is refused)"
+    : !hookOk ? `.githooks/pre-commit is missing, changed or has Windows line endings (git pull, or restore it from git)${hooks === ".githooks" ? "" : "; core.hooksPath is not set either"}`
+    : `not active${hooks ? ` (core.hooksPath is ${hooks})` : ""}  (fix: node harness/scripts/deps-check.mjs --fix)`);
+}
 
 async function playwrightState() {
   if (!existsSync(join(HARNESS, "node_modules", "playwright"))) return { ok: false, why: "not installed in harness/" };

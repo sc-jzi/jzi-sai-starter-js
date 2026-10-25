@@ -5,7 +5,7 @@ Index: https://api-docs.sitecore.com/?product=SitecoreAI (check it for new or ch
 | API | Docs | Used by the harness for |
 |---|---|---|
 | Sites API | https://api-docs.sitecore.com/sai/sites-api | **Yes.** Create collection/site, list site templates (`GET /api/v1/sites/templates`), upload site thumbnail (`POST /api/v1/sites/{siteId}/upload-thumbnail`, multipart field `File`). Wrapped by `harness/scripts/sites-api.mjs`. |
-| Agent API | https://api-docs.sitecore.com/sai/agent-api | Behind the Marketer MCP tools (pages, components, content). Limits: `.cursor/skills/sitecore-reference/references/agent-api-limitations.md` |
+| Agent API | https://api-docs.sitecore.com/sai/agent-api | Behind the Marketer MCP tools (pages, components, content). Limits: `.skills/sitecore-reference/references/agent-api-limitations.md` |
 | Authoring and Management API (GraphQL) | https://doc.sitecore.com/sai/en/developers/sitecoreai/the-sitecoreai-authoring-and-management-api.html | **Fallback only.** `updateItem` writes a layout field when the Marketer MCP cannot set a variant: `harness/scripts/layout-variant.mjs apply`. Needs `SITECORE_CM_HOST`; endpoint `https://<CM host>/sitecore/api/authoring/graphql/v1/`, automation-client token. Not yet verified in this environment. |
 | Pages API | https://api-docs.sitecore.com/sai/pages-api | Not called directly yet |
 | Content Items API | https://api-docs.sitecore.com/sai/content-items-api | Not called directly yet |

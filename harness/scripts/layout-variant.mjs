@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Set the headless VARIANT (rendering parameter FieldNames) of one component in layout XML, without touching anything else.
- * Used when the Marketer MCP has no argument for it (see .cursor/skills/sitecore-reference/references/placeholders-and-variants.md).
+ * Used when the Marketer MCP has no argument for it (see .skills/sitecore-reference/references/placeholders-and-variants.md).
  *
  *  1. Pure XML patch (no network) — for the MCP route (read the item's layout field, patch, write it back with update_fields_on_item):
  *       node harness/scripts/layout-variant.mjs patch --xml-file <file> --variant "{GUID}" (--uid "{GUID}" | --rendering-id "{GUID}" [--ph "/headless-header"])  [--ds "{GUID}"] [--param Key=Value ...]
@@ -12,10 +12,11 @@
  *  3. Plain field write (display names; same auth as 2):
  *       node harness/scripts/layout-variant.mjs set-field --item "{id}" --field "__Display name" --value "Contact Us" [--value-file <path>] [--language en] [--dry-run]
  *     prints OK when the read-back matches (exit 1 otherwise).
- *     (apply) Looks at "__Final Renderings" and "__Renderings", patches whichever contains the rendering, saves the original under <cwd>/layout-backup-<item>.xml first.
+ *     (apply) Looks at "__Final Renderings" and "__Renderings", patches whichever contains the rendering, saves the original (real writes only) under <demo folder>/layout-backups/ with --customer <c>, else harness/.layout-backups/, as layout-backup-<item>.xml first.
  */
-import { readFileSync, writeFileSync } from "node:fs";
-import { ENV, parseArgs, die } from "./_lib.mjs";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { join } from "node:path";
+import { ENV, HARNESS, parseArgs, die, demoDir, authoringClient } from "./_lib.mjs";
 
 const norm = (g) => String(g ?? "").trim().replace(/[{}]/g, "").toLowerCase();
 const braced = (g) => `{${norm(g).toUpperCase()}}`;
@@ -59,12 +60,11 @@ async function main() {
   const cm = String(ENV.SITECORE_CM_HOST || "").replace(/\/+$/, "");
   if (!item) die("--item required");
   if (!cm) die("SITECORE_CM_HOST is not set in harness/.env.local (the CM host of the environment, e.g. https://xmc-xxxx.sitecorecloud.io). This script is the LAST route: do the same change through the MCP (get_content_item_by_id, layout-variant.mjs patch, update_fields_on_item, read back), which needs no CM host. See placeholders-and-variants.md section 3, Bulk rule.");
-  const id = ENV.SITECORE_AUTOMATION_CLIENT_ID, secret = ENV.SITECORE_AUTOMATION_CLIENT_SECRET;
-  if (!id || !secret) die("SITECORE_AUTOMATION_CLIENT_ID/SECRET missing in harness/.env.local");
-  const tr = await fetch(`${ENV.SITECORE_AUTH_HOST}/oauth/token`, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams({ client_id: id, client_secret: secret, grant_type: "client_credentials", audience: "https://api.sitecorecloud.io" }) });
-  if (!tr.ok) die(`token request failed: HTTP ${tr.status}`);
-  const jwt = (await tr.json()).access_token, url = `${cm}/sitecore/api/authoring/graphql/v1/`;
-  const gql = async (query, variables) => { const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${jwt}` }, body: JSON.stringify({ query, variables }) }); const j = await r.json().catch(() => ({})); if (!r.ok || j.errors) die(`GraphQL ${r.status}: ${JSON.stringify(j.errors || j).slice(0, 600)}`, 1); return j.data; };
+  // the shared Authoring client (_lib.mjs): one login, timeouts on every call
+  let client = null;
+  try { client = await authoringClient(); } catch (e) { die(`Authoring GraphQL: ${e.message}`, 1); }
+  if (!client) die("SITECORE_AUTOMATION_CLIENT_ID/SECRET missing in harness/.env.local");
+  const gql = async (query, variables) => { try { return await client(query, variables); } catch (e) { die(e.message, 1); } };
   const data = await gql(`query($id:ID!,$lang:String!){ item(where:{itemId:$id,database:"master",language:$lang}){ itemId version fields(ownFields:false){ nodes{ name value } } } }`, { id: norm(item).toUpperCase(), lang });
   const it = data.item; if (!it) die(`item not found in language "${lang}"`);
   if (cmd === "set-field") {   // plain field write (e.g. "__Display name") on the item's latest version in --language
@@ -82,10 +82,14 @@ async function main() {
   let done = null;
   for (const f of fields) { try { done = { name: f.name, before: f.value, after: patchVariant(f.value, opts) }; break; } catch { /* try next field */ } }
   if (!done) die(`rendering not found in ${fields.map((f) => f.name).join(" / ") || "any layout field"} of the item`, 1);
-  writeFileSync(`layout-backup-${norm(item)}.xml`, done.before);
   if (flags["dry-run"]) { console.log(`DRY RUN — would update ${done.name}\n` + done.after); return; }
+  // the backup goes into the demo folder (--customer) or the git-ignored harness/.layout-backups/, never into the current directory
+  const backupDir = flags.customer && flags.customer !== true ? join(demoDir(String(flags.customer)), "layout-backups") : join(HARNESS, ".layout-backups");
+  mkdirSync(backupDir, { recursive: true });
+  const backup = join(backupDir, `layout-backup-${norm(item)}.xml`);
+  writeFileSync(backup, done.before);
   await gql(`mutation($id:ID!,$lang:String!,$ver:Int,$name:String!,$value:String!){ updateItem(input:{itemId:$id,database:"master",language:$lang,version:$ver,fields:[{name:$name,value:$value}]}){ item{ itemId } } }`, { id: norm(item).toUpperCase(), lang, ver: it.version, name: done.name, value: done.after });
-  console.log(`Updated ${done.name} of ${item}; original saved to layout-backup-${norm(item)}.xml. Re-read it (get_components_on_page) to confirm the variant.`);
+  console.log(`Updated ${done.name} of ${item}; original saved to ${backup}. Re-read it (get_components_on_page) to confirm the variant.`);
 }
 import { fileURLToPath } from "node:url";
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) main().catch((e) => die(e.message, 1));

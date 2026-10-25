@@ -19,6 +19,7 @@
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { die, demoDir, rootRel } from "./_lib.mjs";
+import { parseYaml } from "./_yaml.mjs";
 
 const client = process.argv[2];
 if (!client) die("Usage: validate-story.mjs <customer>");
@@ -28,57 +29,7 @@ const bpPath = join(demo, "demo-plan.yaml");
 if (!existsSync(bpPath)) die(`${rootRel(bpPath)} not found`);
 const safeWrite = (_s, p, t) => { mkdirSync(dirname(p), { recursive: true }); writeFileSync(p, t); };
 
-// ── YAML subset: maps, block lists (of scalars or maps), inline [a, b] lists, quoted/plain scalars ──
-function parseYaml(text) {
-  const lines = text.replace(/^﻿/, "").split(/\r?\n/).map((raw) => ({ raw, indent: raw.match(/^ */)[0].length, t: raw.trim() })).filter((l) => l.t && !l.t.startsWith("#"));
-  let i = 0;
-  const scalar = (v) => {
-    v = v.trim();
-    if (/^\{.*\}$/.test(v)) { // inline map { a: 1, b: "x, y" }
-      const o = {}, inner = v.slice(1, -1); let depth = 0, q = null, cur = ""; const parts = [];
-      for (const ch of inner) { if (q) { if (ch === q) q = null; cur += ch; continue; } if (ch === '"' || ch === "'") { q = ch; cur += ch; continue; } if (ch === "[") depth++; if (ch === "]") depth--; if (ch === "," && depth === 0) { parts.push(cur); cur = ""; continue; } cur += ch; }
-      if (cur.trim()) parts.push(cur);
-      for (const p of parts) { const k = p.indexOf(":"); if (k > 0) o[p.slice(0, k).trim()] = scalar(p.slice(k + 1)); }
-      return o;
-    }
-    { const lc = v.match(/^(\[.*\])\s+#.*$/); if (lc) v = lc[1]; }   // inline list followed by a comment
-    if (/^\[.*\]$/.test(v)) { const parts = []; let q = null, cur = ""; for (const ch of v.slice(1, -1)) { if (q) { if (ch === q) q = null; cur += ch; continue; } if (ch === '"' || ch === "'") { q = ch; cur += ch; continue; } if (ch === ",") { parts.push(cur); cur = ""; continue; } cur += ch; } parts.push(cur); return parts.map((x) => scalar(x)).filter((x) => x !== ""); }
-    if (/^".*"$/.test(v)) { try { return JSON.parse(v); } catch { return v.slice(1, -1); } }
-    if (/^'.*'$/.test(v)) return v.slice(1, -1).replace(/''/g, "'");
-    if (v === "true") return true; if (v === "false") return false; if (v === "null" || v === "~") return null;
-    return v.replace(/\s+#.*$/, "");
-  };
-  function block(indent) {
-    if (i >= lines.length) return null;
-    if (lines[i].t.startsWith("- ") || lines[i].t === "-") return list(lines[i].indent);
-    return map(lines[i].indent);
-  }
-  function map(indent) {
-    const o = {};
-    while (i < lines.length && lines[i].indent === indent && !lines[i].t.startsWith("- ")) {
-      const m = lines[i].t.match(/^([^:]+?):\s*(.*)$/); if (!m) { i++; continue; }
-      i++;
-      if (m[2] === "" ) { o[m[1]] = i < lines.length && lines[i].indent > indent ? block() : (i < lines.length && lines[i].indent === indent && lines[i].t.startsWith("- ") ? list(indent) : null); }
-      else o[m[1]] = scalar(m[2]);
-    }
-    return o;
-  }
-  function list(indent) {
-    const a = [];
-    while (i < lines.length && lines[i].indent === indent && lines[i].t.startsWith("-")) {
-      const rest = lines[i].t.replace(/^-\s*/, "");
-      if (!rest) { i++; a.push(i < lines.length && lines[i].indent > indent ? block() : null); continue; }
-      const m = rest.match(/^([^:"'\[{]+?):\s*(.*)$/);
-      if (m) { // item is a map starting on the dash line
-        const childIndent = indent + (lines[i].t.length - rest.length);
-        lines[i] = { raw: lines[i].raw, indent: childIndent, t: rest };
-        a.push(map(childIndent));
-      } else { a.push(scalar(rest)); i++; }
-    }
-    return a;
-  }
-  return map(lines[0]?.indent ?? 0);
-}
+
 
 let bp;
 try { bp = parseYaml(readFileSync(bpPath, "utf8")); } catch (e) { die(`Could not read demo-plan.yaml: ${e.message}`); }

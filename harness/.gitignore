@@ -1,3 +1,10 @@
 .env.local
 inbox/*
 !inbox/README.md
+
+# run state of THIS machine (the stop hook reads it): never shared
+.active-run.json
+# scratch: never committed (scripts named after a prospect included)
+tmp-*
+.tmp-inventory.json
+.layout-backups/

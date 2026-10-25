@@ -13,7 +13,7 @@
  * Writes <demo>/<--out, default header-styles.json> and the matching .png (the top band of the page; header-reference.png for the prospect, used for the before/after comparison).
  * Colours are #rrggbb, sizes are px numbers. A block is null when it was not found: say so in manual-tasks.md and measure it by eye from the screenshot.
  */
-import { die, parseArgs, demoDir, safeWrite, rootRel, readJson } from "./_lib.mjs";
+import { die, parseArgs, demoDir, safeWrite, rootRel, readJson, verdictStamp } from "./_lib.mjs";
 import { join } from "node:path";
 import { mkdirSync, writeFileSync } from "node:fs";
 
@@ -188,7 +188,11 @@ try {
         chk("menu item count (top level only)", D.header.nav.count, R.header.nav.count, 1);
       }
     }
-    { const vp = join(demo, outName.replace(/\.json$/, ".verdict.json")), prev = readJson(vp, {}); safeWrite(customer, vp, JSON.stringify({ pass: bad.length === 0, attempts: (prev.attempts || 0) + 1, diffs: bad, at: new Date().toISOString() }, null, 2) + "\n"); }   // read by run-gate.mjs
+    {   // read by run-gate.mjs, stamped like the section verdicts (url, reference hash, build fingerprint); attempts count fixes, not re-runs
+      const vp = join(demo, outName.replace(/\.json$/, ".verdict.json")), prev = readJson(vp, {}), stamp = verdictStamp(customer, url, String(flags.compare));
+      const attempts = !prev.countsFixes ? 1 : (prev.attempts || 0) + (prev.buildFingerprint === stamp.buildFingerprint ? 0 : 1);   // older verdicts counted re-runs: start fresh
+      safeWrite(customer, vp, JSON.stringify({ pass: bad.length === 0, attempts, countsFixes: true, ...stamp, diffs: bad, at: new Date().toISOString() }, null, 2) + "\n");
+    }
     if (bad.length) { console.log(`✖ header differs from the prospect's in ${bad.length} place(s):\n  - ${bad.join("\n  - ")}`); process.exitCode = 4; } else console.log("✔ header matches the prospect's measurements within tolerance");
   }
 } finally { await browser.close(); }

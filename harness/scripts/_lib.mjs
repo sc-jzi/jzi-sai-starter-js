@@ -1,5 +1,7 @@
 // Shared helpers for harness scripts. Dependency-free.
-import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync, mkdirSync, readdirSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { parseYaml as _parseYaml } from "./_yaml.mjs";
 import { join, dirname, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -17,7 +19,8 @@ export function loadEnv() {
     const m = line.match(/^\s*([A-Z0-9_]+)\s*=\s*(.*?)\s*$/); if (!m) continue;
     const v = m[2].replace(/^["']|["']$/g, ""); if (v !== "") env[m[1]] = v;
   }
-  for (const [k, v] of Object.entries(process.env)) if (k in env && v) env[k] = v;
+  // real environment variables win, including keys .env.local does not have (a shell-only secret)
+  for (const [k, v] of Object.entries(process.env)) if (v && (k in env || /^(SITECORE_|CH_|SITES_API_|PROTECTED_|RENDERING_HOST_|BASE_APP_)/.test(k))) env[k] = v;
   return env;
 }
 export const ENV = loadEnv();
@@ -76,8 +79,9 @@ export function linkError(raw) {
   const linktype = xmlAttr(v, "linktype"), id = xmlAttr(v, "id"), url = xmlAttr(v, "url");
   switch (linktype) {
     case "internal":
-      if (!id || !GUID.test(id)) return `internal link without id="{GUID}" — use link-xml.mjs make --id`;
-      if (url) return `internal link with url="${url}" (a path in url drops the datasource) — use link-xml.mjs make --id`;
+      // The id is what resolves the link. Sitecore's own link picker also writes url="/<collection>/<site>/Home/..." next to it: that is fine
+      // (checked on a live site: a hero with such links resolves). A url WITHOUT an id is the failure that drops the datasource.
+      if (!id || !GUID.test(id)) return `internal link without id="{GUID}"${url ? ` (only url="${url}": this drops the datasource)` : ""} — use link-xml.mjs make --id`;
       return "";
     case "media":
       return id && GUID.test(id) ? "" : `media link without id="{GUID}"`;
@@ -103,16 +107,36 @@ export function imageError(raw) {
 export async function authoringClient() {
   const cm = String(ENV.SITECORE_CM_HOST || "").replace(/\/+$/, ""), id = ENV.SITECORE_AUTOMATION_CLIENT_ID, secret = ENV.SITECORE_AUTOMATION_CLIENT_SECRET;
   if (!cm || !id || !secret || !ENV.SITECORE_AUTH_HOST) return null;
-  const tr = await fetch(`${ENV.SITECORE_AUTH_HOST}/oauth/token`, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams({ client_id: id, client_secret: secret, grant_type: "client_credentials", audience: "https://api.sitecorecloud.io" }) });
+  const tr = await fetch(`${ENV.SITECORE_AUTH_HOST}/oauth/token`, { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: new URLSearchParams({ client_id: id, client_secret: secret, grant_type: "client_credentials", audience: "https://api.sitecorecloud.io" }), signal: AbortSignal.timeout(30000) });
   if (!tr.ok) throw new Error(`token request failed: HTTP ${tr.status}`);
   const jwt = (await tr.json()).access_token, url = `${cm}/sitecore/api/authoring/graphql/v1/`;
-  return async (query, variables) => {
-    const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${jwt}` }, body: JSON.stringify({ query, variables }) });
+  const client = async (query, variables) => {
+    const r = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json", Authorization: `Bearer ${jwt}` }, body: JSON.stringify({ query, variables }), signal: AbortSignal.timeout(60000) });
     const j = await r.json().catch(() => ({}));
     if (!r.ok || j.errors) throw new Error(`GraphQL ${r.status}: ${JSON.stringify(j.errors || j).slice(0, 600)}`);
     return j.data;
   };
+  client.token = jwt;   // the same bearer token authorises media uploads to a presigned URL (media-upload.mjs)
+  return client;
 }
+
+// The rendered layout of a page from the app's content endpoint, with the app's own context id (industry-verticals/<app>/.env.local).
+// That context is the preview context: it serves master, so no publish is needed while building (publishing is for the deployed Vercel site).
+// Returns the route ({ placeholders: { "headless-main": [...] } }), null when the page is not served, undefined when the app env is not configured.
+export async function edgeRoute(customer, route, { site, language } = {}) {
+  let env = {};
+  try { env = Object.fromEntries(readFileSync(join(customerApp(customer, { mustExist: false }), ".env.local"), "utf8").split(/\r?\n/).filter((l) => /^[A-Z_]+=/.test(l)).map((l) => [l.slice(0, l.indexOf("=")), l.slice(l.indexOf("=") + 1).trim()])); } catch { /* no app env */ }
+  const ctx = env.SITECORE_EDGE_CONTEXT_ID || env.NEXT_PUBLIC_SITECORE_EDGE_CONTEXT_ID || ENV.SITECORE_EDGE_CONTEXT_ID;
+  const siteName = site || env.NEXT_PUBLIC_DEFAULT_SITE_NAME;
+  if (!ctx || !siteName) return undefined;
+  const r = await fetch(`https://edge-platform.sitecorecloud.io/v1/content/api/graphql/v1?sitecoreContextId=${encodeURIComponent(ctx)}`, { method: "POST", headers: { "Content-Type": "application/json" },
+    signal: AbortSignal.timeout(30000),
+    body: JSON.stringify({ query: `{ layout(site: ${JSON.stringify(siteName)}, routePath: ${JSON.stringify(route)}, language: ${JSON.stringify(language || env.NEXT_PUBLIC_DEFAULT_LANGUAGE || "en")}) { item { rendered } } }` }) });
+  if (!r.ok) throw new Error(`Edge HTTP ${r.status}`);
+  return (await r.json())?.data?.layout?.item?.rendered?.sitecore?.route ?? null;
+}
+// plan path (/Home/x) -> site route (/x)
+export const routeOf = (planPath) => String(planPath).replace(/^\/home/i, "") || "/";
 
 /* ---- section captures (section-capture.mjs output), shared by the gate, the validators and variants-verify ---- */
 export const PARTIAL_DESIGN_TEMPLATE = "{FD2059FD-6043-4DFE-8C04-E2437CE87634}";   // a real Partial Design
@@ -135,6 +159,15 @@ export function topLabels(section) {
   for (const e of row) if (!kept.length || Math.abs(e.x - kept[kept.length - 1].x) >= 40) kept.push(e);
   return kept.map((e) => String(e.text));
 }
+// An advertisement slot: no heading, and nothing but "Advertisement" / "Sponsored" labels, an ad-network slot or a bare image.
+// Never built, never compared, never needs a place in the plan (validate-site-plan, run-gate and section-capture skip it).
+export function isAdBand(section) {
+  if (!section || section.heading || section.form || section.buttons) return false;
+  const els = section.elements ?? [];
+  const labels = els.filter((e) => e.role !== "image").map((e) => String(e.text ?? "").trim()).filter(Boolean);
+  const onlyAdLabels = labels.length > 0 && labels.every((t) => /^(advertisement|advertising|sponsored( content)?|ad|ads)$/i.test(t));
+  return onlyAdLabels || (!!section.adSlot && labels.length <= 1);
+}
 // Why a live band is more than prose. Empty = a heading and paragraphs only, the one shape Rich Text may carry.
 export function notProse(section) {
   if (!section) return [];
@@ -151,4 +184,26 @@ export function notProse(section) {
   if (section.scroller) why.push("a carousel/scroller");
   if (section.video) why.push("a video");
   return why;
+}
+
+/* ---- provenance: what a verdict or approval was computed from ---- */
+export const fileHash = (p) => { try { return createHash("sha1").update(readFileSync(p)).digest("hex"); } catch { return null; } };
+export const textHash = (t) => createHash("sha1").update(String(t)).digest("hex");
+// What an app build depends on: src/ plus the configs. Same hash = same code (build-check records it; verdicts are stamped with it).
+export function sourceFingerprint(dir) {
+  if (!existsSync(dir)) return null;
+  const h = createHash("sha1");
+  const walk = (d) => { for (const e of readdirSync(d, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) { const p = join(d, e.name); if (e.isDirectory()) walk(p); else { h.update(p.slice(dir.length)); h.update(readFileSync(p)); } } };
+  if (existsSync(join(dir, "src"))) walk(join(dir, "src"));
+  for (const f of readdirSync(dir).sort()) if (/^(package\.json|tsconfig\.json|sitecore\.(cli\.)?config\.ts|next\.config\.[cm]?[jt]s)$/.test(f)) { h.update(f); h.update(readFileSync(join(dir, f))); }
+  return h.digest("hex");
+}
+// The stamp every looks verdict carries, so the gate can tell what was compared, against what, and with which code
+export const verdictStamp = (customer, url, refFile) => ({ url, refHash: fileHash(join(demoDir(customer), refFile)), buildFingerprint: sourceFingerprint(customerApp(customer, { mustExist: false })) });
+
+/* ---- the component registry, read ONE way: Map(id -> { name, variants[], ...entry }) ---- */
+export function readRegistry(customer) {
+  const y = _parseYaml(readFileSync(registryPath(customer), "utf8"));
+  const list = Array.isArray(y?.components) ? y.components : Object.values(y ?? {}).find(Array.isArray) ?? [];
+  return new Map(list.filter((e) => e && e.id).map((e) => [String(e.id), { ...e, name: String(e.name ?? ""), variants: Array.isArray(e.variants) ? e.variants.map(String) : e.variants ? [String(e.variants)] : [] }]));
 }

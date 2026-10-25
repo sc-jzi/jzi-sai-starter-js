@@ -1,4 +1,4 @@
-# Removes the OLD skill locations after the move to .cursor/skills. Review first: run with -WhatIf.
+# Removes the OLD skill locations after the move to .skills. Review first: run with -WhatIf.
 # Usage (repo root):  pwsh harness/scripts/cleanup-legacy-skills.ps1 -WhatIf   then without -WhatIf
 [CmdletBinding(SupportsShouldProcess)]
 param()
@@ -17,10 +17,10 @@ $paths = @(
   "industry-verticals/prospera/docs/ai/scripts/setup.ps1",
   "industry-verticals/prospera/docs/ai/scripts/setup.sh",
   "harness/skills",
-  ".cursor/skills/skinned-demo-setup",
-  ".cursor/skills/sitecore-reference/references/react-uiim-guidelines.md",
-  ".cursor/skills/sitecore-reference/references/rule-03-react-uiim-shadcn.md",
-  ".cursor/skills/sitecore-reference/references/brand-variables.md"
+  ".skills/skinned-demo-setup",
+  ".skills/sitecore-reference/references/react-uiim-guidelines.md",
+  ".skills/sitecore-reference/references/rule-03-react-uiim-shadcn.md",
+  ".skills/sitecore-reference/references/brand-variables.md"
 )
 foreach ($p in $paths) {
   if (Test-Path $p) {

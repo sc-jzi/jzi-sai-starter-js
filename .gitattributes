@@ -1,0 +1,3 @@
+
+# git hooks run under sh: always LF
+.githooks/* text eol=lf

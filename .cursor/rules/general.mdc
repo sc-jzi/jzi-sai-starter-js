@@ -88,6 +88,10 @@ Continuous Integration:
 - Build process must complete successfully
 - No breaking changes without proper migration
 
+Demo harness (every session): `.skills/RULES.md` is the one source of the harness rules and wins over this file. In particular R5 (Marketer MCP first),
+R16 (code only in `industry-verticals/<customer>/`), R17 (run `node harness/scripts/build-check.mjs <customer>` after a code change and fix what it prints;
+never bypass the pre-commit hook), R18 (no prospect names in the shared harness; one-off scripts in the demo's `tmp/`), R19 (edit skills in `.skills/`).
+
 Referenced:
 @examples/kit-nextjs-article-starter/src/components/
 @examples/kit-nextjs-location-finder/src/components/

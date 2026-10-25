@@ -35,15 +35,22 @@ async function token() {
   return (await r.json()).access_token;
 }
 let jwt;
-async function api(method, path, body) {
+// GETs retry transient failures (network, 429, 5xx) with backoff; { soft: true } throws instead of exiting, for polling loops.
+async function api(method, path, body, { soft = false } = {}) {
   jwt ??= await token();
   const url = `${BASE}${path}${ENV_ID ? `${path.includes("?") ? "&" : "?"}environmentId=${encodeURIComponent(ENV_ID)}` : ""}`;
   const form = typeof FormData !== "undefined" && body instanceof FormData;   // multipart: let fetch set the boundary header
   const go = () => fetch(url, { method, headers: { Authorization: `Bearer ${jwt}`, ...(form ? {} : { "Content-Type": "application/json" }) }, body: form ? body : body ? JSON.stringify(body) : undefined });
-  let r = await go();
-  if (r.status === 401) { jwt = await token(); r = await go(); }
+  const transient = (x) => !x || x.status === 429 || x.status >= 500;
+  let r = null;
+  for (let attempt = 0; attempt < (method === "GET" ? 4 : 1); attempt++) {
+    if (attempt) await new Promise((res) => setTimeout(res, 2000 * attempt));
+    try { r = await go(); } catch (e) { r = null; if (method !== "GET" || attempt === 3) { if (soft) throw e; die(`${method} ${path} → network error: ${e.message}`); } continue; }
+    if (r.status === 401) { jwt = await token(); r = await go(); }
+    if (!transient(r)) break;
+  }
   const text = await r.text(); let data; try { data = text ? JSON.parse(text) : null; } catch { data = text; }
-  if (!r.ok) die(`${method} ${path} → ${r.status}: ${typeof data === "string" ? data : JSON.stringify(data)}`);
+  if (!r.ok) { const msg = `${method} ${path} → ${r.status}: ${typeof data === "string" ? data : JSON.stringify(data)}`; if (soft) throw new Error(msg); die(msg); }
   return data;
 }
 const items = (d) => (Array.isArray(d) ? d : d?.items ?? d?.data ?? d?.sites ?? d?.collections ?? []);
@@ -64,12 +71,14 @@ async function waitJob(handle, siteName) {
   let shown = false;
   for (let i = 0; i < 60; i++) {
     let j = null;
-    try { j = await api("GET", `/api/v1/jobs/${encodeURIComponent(handle)}/status`); } catch { /* api() already exits on HTTP errors; keep polling the list below */ }
+    try { j = await api("GET", `/api/v1/jobs/${encodeURIComponent(handle)}/status`, undefined, { soft: true }); } catch { /* transient: keep polling, the site list below is the fallback */ }
     const st = String(j?.status ?? j?.state ?? j?.jobStatus ?? "").trim();
     if (DONE.test(st)) { console.log(`  job ${st}                `); return j; }
     if (FAIL.test(st)) die(`Job failed: ${JSON.stringify(j)}`, 1);
     if (!st && !shown) { shown = true; console.log(`  (job status not recognised, raw: ${JSON.stringify(j)?.slice(0, 300)}) — also watching the site list`); }
-    if (siteName && items(await api("GET", "/api/v1/sites")).some((s) => String(nameOf(s)).toLowerCase() === siteName.toLowerCase())) { console.log("  site is now listed — treating the job as done"); return j; }
+    let listed = false;
+    if (siteName) { try { listed = items(await api("GET", "/api/v1/sites", undefined, { soft: true })).some((s) => String(nameOf(s)).toLowerCase() === siteName.toLowerCase()); } catch { /* transient: try again next round */ } }
+    if (listed) { console.log("  site is now listed — treating the job as done"); return j; }
     process.stdout.write(`  waiting… ${st || "status unknown"}\r`);
     await sleep(Math.min(15000, 4000 + i * 1000));
   }

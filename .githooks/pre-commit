@@ -1,0 +1,15 @@
+#!/bin/sh
+# Refuses a commit that (1) puts a prospect's name into the shared harness, (2) leaves the skill stubs out of step with .skills/,
+# or (3) breaks the build of an app under industry-verticals/.
+# Turned on per clone by: node harness/scripts/deps-check.mjs --fix   (sets git config core.hooksPath .githooks)
+node harness/scripts/name-check.mjs --staged
+names=$?
+node harness/scripts/sync-skills.mjs --check
+skills=$?
+node harness/scripts/build-check.mjs --staged
+build=$?
+if [ $names -ne 0 ] || [ $skills -ne 0 ] || [ $build -ne 0 ]; then
+  echo ""
+  echo "Commit refused: see above. Fix it, stage the fix, and commit again."
+  exit 1
+fi

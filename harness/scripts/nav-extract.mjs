@@ -9,7 +9,7 @@
  * Looks at <header> / <nav> / [role=navigation] (the one nearest the top of the page with the most links), follows nested lists, and with --hover also
  * hovers each top-level item so dropdowns that only exist after hover are read. The MAIN menu (`items`, includes Login/Success Stories etc.) is kept apart from the small utility bar above it (`eyebrow`: About us, Join our team, Locations, Contact us ...; `eyebrowExtras`: phone number and CTA button, which are not pages). Search/language controls are flagged `utility: true`.
  * Output also: eyebrow: [{ label, href }], eyebrowExtras: [{ label, href, kind: phone|cta }]. Check all three against the homepage screenshot.
- * Mega menus and JS-only menus can come out flat or incomplete: compare with the homepage screenshot and fix the tree by hand.
+ * Mega menus and JS-only menus can come out flat or incomplete: compare with the homepage screenshot and re-run with --root "<css of the main menu>" (never edit nav.json by hand, R14).
  */
 import { die, parseArgs, demoDir, safeWrite, rootRel } from "./_lib.mjs";
 import { join } from "node:path";
