@@ -7,6 +7,7 @@ Three frameworks, one structure. The brief and `demo-plan.yaml` carry the fields
 A **critical business issue (CBI)** is a problem the organisation must solve, not a feature gap. For each CBI record:
 | Field | Meaning |
 |---|---|
+| `name` | A one- or two-word label for the issue (e.g. Governance, Marketer autonomy), used in the demo flow and the talk track |
 | `issue` | The critical business issue, in the prospect's words |
 | `owners` | Who in the audience feels it (audience ids) |
 | `reason` | **Why / source**: the cause of the issue (process, tooling, people, volume) |

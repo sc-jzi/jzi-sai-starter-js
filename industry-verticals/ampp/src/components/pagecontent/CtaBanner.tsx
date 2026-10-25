@@ -141,26 +141,36 @@ export const LargeImage = (props: CtaBannerProps): JSX.Element => {
   );
 };
 
-/* AMPP variant: heading, text and one red button. No image. */
+/* AMPP variant: heading, text and one red button; an image beside them when one is set. */
 export const Ampp = (props: CtaBannerProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
+  const hasImage = isPageEditing || !!props.fields?.Image?.value?.src;
 
   return (
     <div className={`component cta-banner variant-ampp ${props.params?.styles || ''}`} id={id || undefined}>
       <div className="container">
-        {(isPageEditing || props.fields?.Title?.value) && (
-          <h2>
-            <Text field={props.fields.Title} />
-          </h2>
-        )}
-        {(isPageEditing || props.fields?.Text?.value) && (
-          <RichText field={props.fields.Text} className="text-content" />
-        )}
-        {(isPageEditing || props.fields?.Link?.value?.href) && (
-          <Link field={props.fields.Link} className="button button-main" />
-        )}
+        <div className="row row-gap-4 align-items-start">
+          <div className={hasImage ? 'col-lg-8' : 'col-12'}>
+            {(isPageEditing || props.fields?.Title?.value) && (
+              <h2>
+                <Text field={props.fields.Title} />
+              </h2>
+            )}
+            {(isPageEditing || props.fields?.Text?.value) && (
+              <RichText field={props.fields.Text} className="text-content" />
+            )}
+            {(isPageEditing || props.fields?.Link?.value?.href) && (
+              <Link field={props.fields.Link} className="button button-main" />
+            )}
+          </div>
+          {hasImage && (
+            <div className="col-lg-4">
+              <NextImage field={props.fields?.Image} className="d-block img-fluid" width={370} height={247} />
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

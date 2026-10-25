@@ -40,7 +40,7 @@
   .button { background: var(--v-btn-bg); color: var(--v-btn-text); border-radius: 0; border: 0; padding: 10px 18px; font-weight: 700; text-decoration: none; }
 }
 
-.heading-cta.variant-ampp-catalog { text-align: center; padding: 32px 0; }
+.heading-cta.variant-ampp-catalog { text-align: center; padding: 32px 0; h2 { font-size: 40px; font-weight: 400; } }
 .heading-cta.variant-ampp-page-title { padding: 28px 0 8px; }
 
 .rich-text.variant-ampp {
@@ -83,7 +83,7 @@
   background: #ffffff;
   h2.ampp-section-title { font-size: 40px; font-weight: 700; color: #333333; margin: 0 0 24px; }
   .ampp-card { padding: 16px; }
-  img { width: 64px; height: 64px; object-fit: contain; margin-bottom: 12px; }
+  img { display: block; width: 64px; height: 64px; object-fit: contain; margin: 0 auto 12px; }
   h3 { font-size: 22px; font-weight: 700; color: #333333; }
   p { font-size: 16px; color: #333333; }
   .button { background: #ee2737; color: #ffffff; border-radius: 0; border: 0; padding: 10px 18px; font-weight: 700; text-decoration: none; display: inline-block; }

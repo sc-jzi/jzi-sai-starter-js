@@ -331,8 +331,23 @@ export const Ampp = (props: ThreeColumnCtaProps): JSX.Element => AmppThree(props
 /* AMPP offer row: icon, title, text, red button, and the section title. */
 export const AmppOfferRow = (props: ThreeColumnCtaProps): JSX.Element => AmppThree(props, 'variant-ampp-offer', false, true);
 
-/* Same cards as AmppOfferRow, with the section title left off. */
-export const AmppOfferCards = (props: ThreeColumnCtaProps): JSX.Element => AmppThree(props, 'variant-ampp-offer', false, false);
+/* Offer cards without a section title: card k shows Image k, Text k, SubText k and Link k (put the title in a heading component above). */
+export const AmppOfferCards = (props: ThreeColumnCtaProps): JSX.Element => {
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  return (
+    <div className={`component three-column-cta col-12 variant-ampp-offer ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
+      <div className="container">
+        <div className="row">
+          <AmppOfferCard image={props.fields?.Image1} title={props.fields?.Text1} text={props.fields?.SubText1} link={props.fields?.Link1} isPageEditing={isPageEditing} photo={false} />
+          <AmppOfferCard image={props.fields?.Image2} title={props.fields?.Text2} text={props.fields?.SubText2} link={props.fields?.Link2} isPageEditing={isPageEditing} photo={false} />
+          <AmppOfferCard image={props.fields?.Image3} title={props.fields?.Text3} text={props.fields?.SubText3} link={props.fields?.Link3} isPageEditing={isPageEditing} photo={false} />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 /* AMPP next steps: photo on top of each tile. */
 export const AmppNextSteps = (props: ThreeColumnCtaProps): JSX.Element => AmppThree(props, 'variant-ampp-next', true, true);

@@ -29,6 +29,7 @@ story:
       afterward: "Sees every change, approver and publish time in one place"
   chainOfPain:
     - id: c1
+      name: "Speed to market"   # short label for the CBI, used in the demo flow
       issue: "Campaigns launch weeks late"
       owners: [a1]
       reason: "Every page change goes through an IT ticket queue"
@@ -36,6 +37,7 @@ story:
       evidenceType: stated
       impact: "not given"
     - id: c2
+      name: "Compliance"
       issue: "No audit trail for regulated content"
       owners: [a2]
       reason: "Three platforms, three approval processes"

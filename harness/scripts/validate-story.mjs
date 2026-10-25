@@ -103,12 +103,12 @@ add("S9 3–6 moments; CBIs are not all merely inferred", "recommended", moments
 const cell = (v) => String(v ?? "").replace(/\|/g, "\\|").replace(/\s+/g, " ").trim();
 let md = `# Story plan — ${slug}\n\nShow this on the approval screen. Method: harness/reference/demo-method.md\n\n`;
 md += `## Situation slide\n${cell(story.situation)}\n\n## Chain of Pain\n| CBI | Critical business issue | Felt by | Why / source | Evidence | Basis | Impact |\n|---|---|---|---|---|---|---|\n`;
-for (const c of cbis) md += `| ${cell(c.id)} | ${cell(c.issue)} | ${arr(c.owners).map((o) => cell(aud.find((a) => a.id === o)?.name ?? o)).join("; ")} | ${cell(c.reason)} | ${cell(c.evidence)} | ${cell(c.evidenceType)} | ${cell(c.impact ?? c.metric ?? "not given")} |\n`;
+for (const c of cbis) md += `| ${cell(c.id)}${c.name ? ` ${cell(c.name)}` : ""} | ${cell(c.issue)} | ${arr(c.owners).map((o) => cell(aud.find((a) => a.id === o)?.name ?? o)).join("; ")} | ${cell(c.reason)} | ${cell(c.evidence)} | ${cell(c.evidenceType)} | ${cell(c.impact ?? c.metric ?? "not given")} |\n`;
 md += `\n## Audience (AAA)\n| Audience | Annoyance | Afterward |\n|---|---|---|\n`;
 for (const a of aud) md += `| ${cell(a.name)} | ${cell(a.annoyance)} | ${cell(a.afterward)} |\n`;
 md += `\n## Message map\n- Before: ${cell(mm.before)}\n- Required capabilities: ${arr(mm.requiredCapabilities).map(cell).join("; ")}\n- After: ${cell(mm.after)}\n- Metrics: ${arr(mm.metrics).map(cell).join("; ") || "not given"}\n- Differentiators: ${arr(mm.differentiators).map(cell).join("; ") || "not given"}\n- Proof points: ${arr(mm.proofPoints).map(cell).join("; ") || "none yet"}\n- Why now: ${cell(mm.whyNow) || "not given"}\n`;
 md += `\n## Demo flow (last thing first)\n| # | Moment | CBI | Audience | Annoyance → Afterward | Capability | Must be visible | Check-in |\n|---|---|---|---|---|---|---|---|\n`;
-for (const m of moments) md += `| ${cell(m.id)}${m.wow ? " (WOW)" : ""} | ${cell(m.title)} | ${arr(m.cbi).join(", ")} | ${arr(m.audience).join(", ")} | ${cell(m.annoyance)} → ${cell(m.afterward)} | ${cell(m.capability)} | ${cell(m.mustSee)} | ${cell(m.checkIn)} |\n`;
+for (const m of moments) md += `| ${cell(m.id)}${m.wow ? " (WOW)" : ""} | ${cell(m.title)} | ${arr(m.cbi).map((id) => [id, cbis.find((c) => c.id === id)?.name].filter(Boolean).join(" ")).join(", ")} | ${arr(m.audience).join(", ")} | ${cell(m.annoyance)} → ${cell(m.afterward)} | ${cell(m.capability)} | ${cell(m.mustSee)} | ${cell(m.checkIn)} |\n`;
 md += `\n## Click path and show → reveal, per moment\n`;
 for (const m of moments) {
   md += `\n### ${cell(m.id)}${m.wow ? " (WOW, last thing first)" : ""}: ${cell(m.title)}\n`;
