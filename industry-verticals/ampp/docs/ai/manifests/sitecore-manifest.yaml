@@ -6,8 +6,8 @@
 # Unresolved datasource branches, missing folders, and variant mismatches are recorded on each entry and were not guessed.
 
 generatedAt: "2026-10-09T17:45:00Z"
-lastUpdatedAt: "2026-10-24T23:00:00Z"
-lastUpdatedBy: "ampp-component-build"
+lastUpdatedAt: "2026-10-26T14:30:00Z"
+lastUpdatedBy: "ampp-course-pages"
 
 project:
   siteCollection: "Financial"
@@ -2640,6 +2640,129 @@ components:
         itemId: "{FE8B0060-C6BF-4CB9-83B0-F2343B14DC02}"
   notes:
     - "Any non-empty password continues to Home. There is no account check."
+
+- name: "CourseDetail"
+  kind: "context"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-26T14:15:00Z"
+  updatedAt: "2026-10-26T14:30:00Z"
+  react:
+    filePath: "src/components/pagecontent/CourseDetail.tsx"
+    componentMapKey: "CourseDetail"
+    variants:
+      - "Default"
+  templates:
+    renderingParams:
+      name: "Course Detail"
+      path: "/sitecore/templates/Project/Associations/Rendering Parameters/Course Detail"
+      itemId: "{9402AC7C-D980-4C7D-BDE7-08E950794543}"
+      baseTemplatesSet: true
+  rendering:
+    name: "CourseDetail"
+    path: "/sitecore/layout/Renderings/Project/Associations/CourseDetail"
+    itemId: "{FEA97690-4AF5-4C11-B863-03EB52A01B87}"
+    componentName: "CourseDetail"
+    datasourceTemplatePath: ""
+    parametersTemplateId: "{9402AC7C-D980-4C7D-BDE7-08E950794543}"
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Associations/ampp/Presentation/Headless Variants/Course Detail"
+    containerId: "{2B599D3D-2CA7-41C6-85BC-BA6420FF7700}"
+    variants:
+      - name: "Default"
+        itemId: "{A073E1E9-B608-4220-B4CB-FA578BAA2AD7}"
+  pageTemplate:
+    name: "Course"
+    path: "/sitecore/templates/Project/Associations/Pages/Course"
+    itemId: "{F234BAD1-E523-483F-B13B-10FA28DF0002}"
+    baseTemplate: "{B89663FA-2AED-42BC-96C8-436665F1758F}"
+    standardValuesId: "{47D3E7A5-435B-4AB9-9B6B-1972BFB74B6C}"
+    sectionId: "{529DAE51-7A60-42B8-8BA3-4343AEB2CD9B}"
+    fields:
+      - { name: "CourseLevel", itemId: "{78F1EC9A-DF17-4EF3-8FAC-FA9F25BC5B47}", type: "Droplist", source: "/sitecore/content/Associations/ampp/Data/Course Levels" }
+      - { name: "Description", itemId: "{A3DE6549-9F15-4BC9-BA3A-6ABC95B403CC}", type: "Rich Text" }
+      - { name: "Duration", itemId: "{C1409AC0-DD85-4658-B555-6445BC40E698}", type: "Single-Line Text" }
+      - { name: "Languages", itemId: "{37D77820-F3BE-4CFE-AB03-3A96D1744A91}", type: "Single-Line Text" }
+      - { name: "Image", itemId: "{FBF9BD1A-6EFB-413B-908E-E717804A59DC}", type: "Image" }
+      - { name: "Cta", itemId: "{5177B7CA-D753-4801-9201-B9C06550CFD2}", type: "General Link" }
+  pageDesign:
+    name: "Course"
+    itemId: "{19E12B6A-A3C6-4E1F-9726-AA38EBCA4085}"
+    partialDesigns: "{31E9B554-DDC6-4297-B9CB-6CD917100A52}|{2564A929-DB88-46EF-A807-F01C9310BDFF}|{E46852B3-2C3F-470D-9845-AB7611C1A52D}"
+    courseDetailPartialId: "{2564A929-DB88-46EF-A807-F01C9310BDFF}"
+    templatesMappingParent: "{40182A20-8E01-4493-86D5-ACB5DB2085E5}"
+  pages:
+    - { name: "ethics-for-the-corrosion-professional", itemId: "{B95126FF-08E2-4BF4-B976-05E7737B5876}", path: "/sitecore/content/Associations/ampp/Home/courses-by-program/ethics-for-the-corrosion-professional" }
+    - { name: "direct-assessment", itemId: "{A5756BCA-7B06-4A29-BB54-E356A38784C1}", path: "/sitecore/content/Associations/ampp/Home/courses-by-program/direct-assessment" }
+    - { name: "cp-technologist-refresher-virtual", itemId: "{0DB6BF5E-24A1-475C-8F16-B98CCD164867}", path: "/sitecore/content/Associations/ampp/Home/courses-by-program/cp-technologist-refresher-virtual" }
+  verification:
+    checkedAt: "2026-10-26T14:21:00Z"
+    passed:
+      - "Pages render at localhost with course-detail, title, image, and CTA"
+      - "Page design mapping read back"
+      - "Course fields read back on all three pages"
+    pendingManual:
+      - "__Masters insert option for the Course template on /Home/courses-by-program did not read back"
+  notes:
+    - "Title is the inherited Page field. CourseLevel is stored and shown only while editing."
+    - "Course Detail partial is on the page design, so the hero is shared by every course page."
+
+- name: "CourseBody"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-26T14:15:00Z"
+  updatedAt: "2026-10-26T14:30:00Z"
+  react:
+    filePath: "src/components/pagecontent/CourseBody.tsx"
+    componentMapKey: "CourseBody"
+    variants:
+      - "Default"
+  templates:
+    datasource:
+      name: "Course Body"
+      path: "/sitecore/templates/Project/Associations/Components/Course Body"
+      itemId: "{77AE6107-0A4D-4625-A173-045C6F55C190}"
+      standardValuesId: "{2ACF3A2E-CAAA-4F32-9BD4-8B8D54342048}"
+      sectionId: "{D652EE0C-8362-4FAE-BDB7-A9BDCEDF66A4}"
+      fields:
+        - { name: "Text", itemId: "{30460BB9-AF07-473C-9540-5B0DE584C6F3}", type: "Rich Text" }
+        - { name: "Video", itemId: "{6AD517F9-0D98-4BAD-87CF-961E3049981D}", type: "General Link" }
+        - { name: "Sidebar", itemId: "{2F78551B-2185-4D65-B56E-39476FB68B66}", type: "Rich Text" }
+    renderingParams:
+      name: "Course Body"
+      path: "/sitecore/templates/Project/Associations/Rendering Parameters/Course Body"
+      itemId: "{DB431714-7806-4A8F-A910-96106FBAC014}"
+      baseTemplatesSet: true
+  datasourceFolder:
+    name: "Course Body"
+    path: "/sitecore/content/Associations/ampp/Data/Course Body"
+    itemId: "{ADC912DC-A06B-4CAD-9BDF-6A24D250EA5E}"
+    items:
+      - { name: "Ethics", itemId: "{7870A448-6418-42DB-B541-F299CD663E26}" }
+      - { name: "Direct Assessment", itemId: "{D4CC58AC-7645-4689-B0C2-0591F1BB5B68}" }
+      - { name: "CP3", itemId: "{56FAA46A-2C63-4702-9452-E6352B9BE8D0}" }
+  rendering:
+    name: "CourseBody"
+    path: "/sitecore/layout/Renderings/Project/Associations/CourseBody"
+    itemId: "{389FEFDD-A636-4CDE-B1B2-DDE3F0D02DA6}"
+    componentName: "CourseBody"
+    datasourceTemplatePath: "/sitecore/templates/Project/Associations/Components/Course Body"
+    parametersTemplateId: "{DB431714-7806-4A8F-A910-96106FBAC014}"
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: true
+  headlessVariants:
+    containerPath: "/sitecore/content/Associations/ampp/Presentation/Headless Variants/Course Body"
+    containerId: "{656AEB81-5B00-423C-AC8D-F64C93228A65}"
+    variants:
+      - name: "Default"
+        itemId: "{02809878-B6FB-457C-812E-C20DB549B4DB}"
+  notes:
+    - "Placed on each course page, not on the page design, because the lower article differs."
+    - "Video is filled only on Ethics. Direct Assessment and CP3 have no video on the live page."
+    - "A YouTube Video link renders as an embed. The Ethics page has three further testimonial embeds that are not stored."
 
 lookups:
   - path: "/sitecore/content/Financial/ProsperaFinancial/Data"

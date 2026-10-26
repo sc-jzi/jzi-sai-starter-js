@@ -1,7 +1,7 @@
 'use client';
 
 import { JSX } from 'react';
-import { ImageField, Link, LinkField, NextImage, Image } from '@sitecore-content-sdk/nextjs';
+import { ImageField, Link, LinkField, NextImage, useSitecore } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 
 export type AdvanceHeroProps = ComponentProps & {
@@ -19,41 +19,39 @@ export type AdvanceHeroProps = ComponentProps & {
   }
 };
 
-const linkLines = (link?: LinkField): string[] =>
-  (link?.value?.text || '')
-    .split(/\||\r?\n/)
-    .map((line) => line.trim())
-    .filter(Boolean);
-
+/* One tile: the icon, then the link with its label as a heading (the prospect's tiles are a link around an h5). Editing keeps the plain link so its text stays editable. */
+const CtaTile = ({ icon, link, isEditing }: { icon?: ImageField; link?: LinkField; isEditing: boolean }): JSX.Element => (
+  <div className="advance-hero-cta">
+    {(isEditing || icon?.value?.src) && <NextImage field={icon} className="advance-hero-cta-icon" width={56} height={56} />}
+    {isEditing ? (
+      <Link field={link as LinkField} />
+    ) : (
+      link?.value?.href && (
+        <Link field={link}>
+          <h5 className="advance-hero-cta-label">{link.value.text}</h5>
+        </Link>
+      )
+    )}
+  </div>
+);
 
 export const Default = (props: AdvanceHeroProps): JSX.Element => {
-  const mainLink = props.fields.MainLink;
-  const lines = linkLines(mainLink);
-  console.log(props);
+  const { page } = useSitecore();
+  const isEditing = page.mode.isEditing;
+  const fields = props.fields;
+
   return (
     <section
       className={`component advance-hero ${props.params?.styles || ''}`}>
       <div className="advance-hero-media">
-        <NextImage field={props.fields.Image} className="advance-hero-image" width={900} height={520} />
-        <Link field={props.fields.MainLink} className="advance-hero-main-link" />
+        <NextImage field={fields?.Image} className="advance-hero-image" width={900} height={520} />
+        {(isEditing || fields?.MainLink?.value?.href) && <Link field={fields.MainLink} className="advance-hero-main-link" />}
       </div>
       <div className="advance-hero-grid">
-        <div className="advance-hero-cta">
-          <NextImage field={props.fields.CTA1Icon} className="advance-hero-cta-icon" width={56} height={56} />
-          <Link field={props.fields.CTA1Link} />
-        </div>
-        <div className="advance-hero-cta">
-          <NextImage field={props.fields.CTA2Icon} className="advance-hero-cta-icon" width={56} height={56} />
-          <Link field={props.fields.CTA2Link} />
-        </div>
-        <div className="advance-hero-cta">
-          <NextImage field={props.fields.CTA3Icon} className="advance-hero-cta-icon" width={56} height={56} />
-          <Link field={props.fields.CTA3Link} />
-        </div>
-        <div className="advance-hero-cta">
-          <NextImage field={props.fields.CTA4Icon} className="advance-hero-cta-icon" width={56} height={56} />
-          <Link field={props.fields.CTA4Link} />
-        </div>
+        <CtaTile icon={fields?.CTA1Icon} link={fields?.CTA1Link} isEditing={isEditing} />
+        <CtaTile icon={fields?.CTA2Icon} link={fields?.CTA2Link} isEditing={isEditing} />
+        <CtaTile icon={fields?.CTA3Icon} link={fields?.CTA3Link} isEditing={isEditing} />
+        <CtaTile icon={fields?.CTA4Icon} link={fields?.CTA4Link} isEditing={isEditing} />
       </div>
     </section>
   );

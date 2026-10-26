@@ -194,9 +194,15 @@ export const AmppPageTitle = (props: HeadingCtaProps): JSX.Element => {
   );
 };
 
-/* AMPP catalog heading: centered title. */
+/* AMPP catalog heading: centered title. Suppress=1 hides it on the published page when the next component renders the same title. */
 export const AmppCatalogHeading = (props: HeadingCtaProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const suppressed = Object.entries(props.params ?? {}).some(
+    ([key, value]) => key.toLowerCase() === 'suppress' && String(value) === '1'
+  );
+
+  if (suppressed && !page.mode.isEditing) return <></>;
 
   return (
     <div className={`component heading-cta variant-ampp-catalog ${props.params?.styles || ''}`} id={id || undefined}>

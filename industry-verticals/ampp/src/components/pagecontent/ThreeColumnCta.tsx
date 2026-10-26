@@ -331,14 +331,28 @@ export const Ampp = (props: ThreeColumnCtaProps): JSX.Element => AmppThree(props
 /* AMPP offer row: icon, title, text, red button, and the section title. */
 export const AmppOfferRow = (props: ThreeColumnCtaProps): JSX.Element => AmppThree(props, 'variant-ampp-offer', false, true);
 
-/* Offer cards without a section title: card k shows Image k, Text k, SubText k and Link k (put the title in a heading component above). */
+const renderingParam = (params: { [key: string]: string } | undefined, name: string): string => {
+  if (!params) return '';
+  const key = Object.keys(params).find((k) => k.toLowerCase() === name.toLowerCase());
+  const raw = key ? String(params[key] ?? '') : '';
+  if (!raw) return '';
+  try {
+    return decodeURIComponent(raw.replace(/\+/g, ' '));
+  } catch {
+    return raw;
+  }
+};
+
+/* Offer cards. SectionTitle puts the live section heading in this same band, with the card images. */
 export const AmppOfferCards = (props: ThreeColumnCtaProps): JSX.Element => {
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
+  const sectionTitle = renderingParam(props.params, 'SectionTitle');
 
   return (
-    <div className={`component three-column-cta col-12 variant-ampp-offer ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
+    <div className={`component three-column-cta col-12 ${sectionTitle ? 'variant-ampp-expect' : 'variant-ampp-offer'} ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
       <div className="container">
+        {sectionTitle && <h2 className="ampp-section-title">{sectionTitle}</h2>}
         <div className="row">
           <AmppOfferCard image={props.fields?.Image1} title={props.fields?.Text1} text={props.fields?.SubText1} link={props.fields?.Link1} isPageEditing={isPageEditing} photo={false} />
           <AmppOfferCard image={props.fields?.Image2} title={props.fields?.Text2} text={props.fields?.SubText2} link={props.fields?.Link2} isPageEditing={isPageEditing} photo={false} />

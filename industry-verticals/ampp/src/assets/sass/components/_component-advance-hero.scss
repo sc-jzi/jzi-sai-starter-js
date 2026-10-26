@@ -132,6 +132,14 @@
       color: #ffffff;
     }
   }
+
+  .advance-hero-cta-label {
+    margin: 0;
+    color: inherit;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 22px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -145,7 +153,8 @@
     }
   }
 
-  .advance-hero-cta a {
+  .advance-hero-cta a,
+  .advance-hero-cta .advance-hero-cta-label {
     font-size: 16px;
   }
 }

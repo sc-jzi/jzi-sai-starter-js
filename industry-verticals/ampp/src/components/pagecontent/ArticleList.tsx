@@ -201,7 +201,28 @@ const ArticleListGrid = (props: ArticleListComponentProps): JSX.Element => {
   );
 };
 
+/* AMPP post links: the child pages of the datasource (e.g. the blog posts under Blogs) as a compact list of title links. */
+const ArticleListAmppPostLinks = (props: ArticleListComponentProps): JSX.Element => {
+  const id = props.params?.RenderingIdentifier;
+  const posts = getNewsItems(props.fields?.items, parseInt(props.params?.NumberOfItems));
+
+  return (
+    <div className={`component article-list variant-ampp-post-links ${props.params?.styles || ''}`} id={id || undefined}>
+      <div className="container">
+        <ul>
+          {posts?.map((item) => (
+            <li key={item.url}>
+              <Link href={item.url}>{item.fields?.Title?.value || item.name}</Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
 export const Default = withDatasourceCheck()<ArticleListComponentProps>(ArticleListDefault);
+export const AmppPostLinks = withDatasourceCheck()<ArticleListComponentProps>(ArticleListAmppPostLinks);
 export const ThreeColumn = withDatasourceCheck()<ArticleListComponentProps>(ArticleListThreeColumn);
 export const Simplified = withDatasourceCheck()<ArticleListComponentProps>(ArticleListSimplified);
 export const Grid = withDatasourceCheck()<ArticleListComponentProps>(ArticleListGrid);

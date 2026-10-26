@@ -319,16 +319,18 @@ if (site && gql && planPages.length) {
     listFail(nav, "navigation flags are wrong", "NavigationFilter: tick Main Navigation on every page except navGroup: main pages directly under Home (demo-site-bootstrap step 5b).");
     listFail(local, "pages hold page-local datasource items", "Move each item under <site>/Data/<component folder> (create it there, set_component_datasource), then delete the page's Data folder once get_content_references shows 0.");
     // every datasource a page renders lives under the site's Data (or a partial design's own Data)
-    const dsIds = new Map();
-    const walk = (list, path) => { for (const c of list ?? []) { if (c.dataSource) dsIds.set(String(c.dataSource), `${path} ${c.componentName}`); for (const sub of Object.values(c.placeholders ?? {})) walk(sub, path); } };
+    const dsIds = new Map(), listsChildren = new Set();
+    const walk = (list, path) => { for (const c of list ?? []) { if (c.dataSource) { dsIds.set(String(c.dataSource), `${path} ${c.componentName}`); if (Array.isArray(c.fields?.items)) listsChildren.add(String(c.dataSource)); } for (const sub of Object.values(c.placeholders ?? {})) walk(sub, path); } };
     for (const [path, r] of pageRoutes) for (const list of Object.values(r.placeholders ?? {})) walk(list, path);
     const outside = [];
     await Promise.all([...dsIds].map(async ([id, where]) => {
       if (/^local:/i.test(id)) { outside.push(`${where} uses a page-local datasource (${id})`); return; }
       const it = (await gql(`query($id:ID!){ item(where:{itemId:$id,database:"master"}){ path } }`, { id }).catch(() => null))?.item;
       const pth = String(it?.path ?? "").toLowerCase(), root = sitePath.toLowerCase();
-      // allowed: the site's Data, a partial design's own Data (Presentation), and Home itself (Navigation's datasource is the navigation root)
-      if (it && !pth.startsWith(`${root}/data/`) && !pth.startsWith(`${root}/presentation/`) && pth !== `${root}/home`) outside.push(`${where} → ${it.path}`);
+      // allowed: the site's Data, a partial design's own Data (Presentation), Home itself (Navigation's datasource is the navigation root),
+      // and a page under Home when the component lists that page's children (children resolver: fields.items), e.g. an article list over a blog section
+      const childList = listsChildren.has(id) && pth.startsWith(`${root}/home/`);
+      if (it && !childList && !pth.startsWith(`${root}/data/`) && !pth.startsWith(`${root}/presentation/`) && pth !== `${root}/home`) outside.push(`${where} → ${it.path}`);
     }));
     listFail(outside, "datasources outside the site's Data folder", "Recreate the item under <site>/Data/<component folder> (create_content_item), point the component at it (set_component_datasource), read back.");
   } catch (e) { fail(`content checks could not read Sitecore: ${e.message.slice(0, 160)}`, "Check the Authoring client and the CM host, then re-run."); }

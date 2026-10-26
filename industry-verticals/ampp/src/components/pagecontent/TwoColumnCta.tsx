@@ -110,6 +110,18 @@ export const Default = (props: TwoColumnCtaProps): JSX.Element => {
   );
 };
 
+const renderingParam = (params: { [key: string]: string } | undefined, name: string): string => {
+  if (!params) return '';
+  const key = Object.keys(params).find((k) => k.toLowerCase() === name.toLowerCase());
+  const raw = key ? String(params[key] ?? '') : '';
+  if (!raw) return '';
+  try {
+    return decodeURIComponent(raw.replace(/\+/g, ' '));
+  } catch {
+    return raw;
+  }
+};
+
 const AmppTextColumn = ({
   title,
   text,
@@ -117,44 +129,68 @@ const AmppTextColumn = ({
   showImage,
   image,
   isPageEditing,
+  linkClass,
 }: {
-  title: Field<string>;
-  text: Field<string>;
-  link: LinkField;
+  title?: Field<string>;
+  text?: Field<string>;
+  link?: LinkField;
   showImage: boolean;
-  image: ImageField;
+  image?: ImageField;
   isPageEditing: boolean;
+  linkClass: string;
 }): JSX.Element => (
   <div className="col-lg-6">
-    {showImage && (isPageEditing || image?.value?.src) && (
-      <NextImage field={image} width={640} height={360} />
-    )}
-    {(isPageEditing || title?.value) && (
-      <h3>
-        <Text field={title} />
-      </h3>
-    )}
-    {(isPageEditing || text?.value) && (
-      <p>
-        <Text field={text} />
-      </p>
-    )}
-    {(isPageEditing || link?.value?.href) && <Link field={link} className="button button-main" />}
+    <div className="ampp-card">
+      {showImage && image && (isPageEditing || image.value?.src) && (
+        <NextImage field={image} width={640} height={360} />
+      )}
+      {title && (isPageEditing || title.value) && (
+        <h3>
+          <Text field={title} />
+        </h3>
+      )}
+      {text && (isPageEditing || text.value) && (
+        <p>
+          <Text field={text} />
+        </p>
+      )}
+      {link && (isPageEditing || link.value?.href) && <Link field={link} className={linkClass} />}
+    </div>
   </div>
 );
 
-/* AMPP variant: two text cards on the gray band. */
+/* AMPP variant: two text cards on the gray band. SectionTitle is the band heading the live section is named for. */
 export const Ampp = (props: TwoColumnCtaProps): JSX.Element => {
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
+  const sectionTitle = renderingParam(props.params, 'SectionTitle');
+  const intro = renderingParam(props.params, 'Intro');
+  const footnote = renderingParam(props.params, 'Footnote');
+  const footnoteLabel = renderingParam(props.params, 'FootnoteLabel');
+  const footnoteHref = renderingParam(props.params, 'FootnoteHref');
+  const linkClass = sectionTitle
+    ? `ampp-inline-link${renderingParam(props.params, 'LinkTone') === 'blue' ? ' is-blue' : ''}`
+    : 'button button-main';
 
   return (
-    <div className={`component two-column-cta variant-ampp col-12 ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
+    <div className={`component two-column-cta variant-ampp col-12 ${sectionTitle ? 'has-section-title' : ''} ${props.params?.styles || ''}`} id={props.params.RenderingIdentifier || undefined}>
       <div className="container">
+        {sectionTitle && <h2 className="ampp-section-title">{sectionTitle}</h2>}
+        {intro && <p className="ampp-intro">{intro}</p>}
         <div className="row">
-          <AmppTextColumn title={props.fields.Title1} text={props.fields.Text1} link={props.fields.Link1} image={props.fields.Image1} showImage={false} isPageEditing={isPageEditing} />
-          <AmppTextColumn title={props.fields.Title2} text={props.fields.Text2} link={props.fields.Link2} image={props.fields.Image2} showImage={false} isPageEditing={isPageEditing} />
+          <AmppTextColumn title={props.fields?.Title1} text={props.fields?.Text1} link={props.fields?.Link1} image={props.fields?.Image1} showImage={false} isPageEditing={isPageEditing} linkClass={linkClass} />
+          <AmppTextColumn title={props.fields?.Title2} text={props.fields?.Text2} link={props.fields?.Link2} image={props.fields?.Image2} showImage={false} isPageEditing={isPageEditing} linkClass={linkClass} />
         </div>
+        {(footnote || footnoteHref) && (
+          <p className="ampp-footnote">
+            {footnote}{' '}
+            {footnoteHref && (
+              <a className={linkClass} href={footnoteHref}>
+                {footnoteLabel || footnoteHref}
+              </a>
+            )}
+          </p>
+        )}
       </div>
     </div>
   );

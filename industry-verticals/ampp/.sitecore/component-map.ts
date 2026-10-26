@@ -45,7 +45,9 @@ import * as EventHero from 'src/components/pagecontent/EventHero';
 import * as EventCards from 'src/components/pagecontent/EventCards';
 import * as DocumentsList from 'src/components/pagecontent/DocumentsList';
 import * as CtaBanner from 'src/components/pagecontent/CtaBanner';
+import * as CourseDetail from 'src/components/pagecontent/CourseDetail';
 import * as CourseCatalog from 'src/components/pagecontent/CourseCatalog';
+import * as CourseBody from 'src/components/pagecontent/CourseBody';
 import * as Comparison from 'src/components/pagecontent/Comparison';
 import * as Carousel from 'src/components/pagecontent/Carousel';
 import * as BlogArticle from 'src/components/pagecontent/BlogArticle';
@@ -113,7 +115,9 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['EventCards', { ...EventCards }],
   ['DocumentsList', { ...DocumentsList, componentType: 'client' }],
   ['CtaBanner', { ...CtaBanner, componentType: 'client' }],
+  ['CourseDetail', { ...CourseDetail }],
   ['CourseCatalog', { ...CourseCatalog, componentType: 'client' }],
+  ['CourseBody', { ...CourseBody }],
   ['Comparison', { ...Comparison, componentType: 'client' }],
   ['Carousel', { ...Carousel, componentType: 'client' }],
   ['BlogArticle', { ...BlogArticle }],

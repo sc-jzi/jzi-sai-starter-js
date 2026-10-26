@@ -255,7 +255,12 @@ if (flags.compare && result) {
     }
     // several built bands with the same heading (a title component above the component that repeats it): take the one most like the live band
     const likeR = (d) => Math.abs((d.elements ?? []).length - (R.elements ?? []).length) + Math.abs((d.images ?? []).length - (R.images ?? []).length);
-    const D = result.sections.filter((d) => !used.has(d.index) && d.index !== demoBands.footerIdx && R.heading?.text && norm(d.heading?.text) === norm(R.heading.text)).sort((a, b) => likeR(a) - likeR(b))[0] ?? (R.heading?.text ? null : result.sections.find((d) => !used.has(d.index) && d.index !== demoBands.footerIdx && d.index === R.index && d.kind === R.kind));   // only a band without a heading is matched by position: a missing titled band must not take its neighbour's place
+    // a band with several headings (tiles, cards) may report a different one as its main heading: then match on any of its headings
+    const headingsOf = (d) => new Set([d.heading?.text, ...(d.elements ?? []).filter((e) => e.role === "heading").map((e) => e.text)].filter(Boolean).map(norm));
+    const open = result.sections.filter((d) => !used.has(d.index) && d.index !== demoBands.footerIdx);
+    const D = (R.heading?.text && (open.filter((d) => norm(d.heading?.text) === norm(R.heading.text)).sort((a, b) => likeR(a) - likeR(b))[0]
+      ?? open.filter((d) => headingsOf(d).has(norm(R.heading.text))).sort((a, b) => likeR(a) - likeR(b))[0]))
+      ?? (R.heading?.text ? null : open.find((d) => d.index === R.index && d.kind === R.kind));   // only a band without a heading is matched by position: a missing titled band must not take its neighbour's place
     const nm = `#${R.index} ${(R.heading?.text || R.kind).slice(0, 30)}`;
     if (!D) { bad.push(`${nm}: not found in the demo`); continue; }
     used.add(D.index); pairs[R.index] = D.index;
