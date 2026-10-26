@@ -396,3 +396,45 @@
   a { color: #ee2737; font-weight: 700; text-decoration: none; }
   a:hover { text-decoration: underline; }
 }
+
+// Logo sits on its own row; the main navigation uses the full width under it.
+.component.header.variant-ampp {
+  height: auto;
+  align-items: stretch;
+  padding: 16px 0 4px;
+  .row {
+    height: auto;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    row-gap: 4px;
+  }
+  .col-auto,
+  .col {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .component.navigation.variant-ampp {
+    .menu-mobile-navigate-wrapper,
+    .component-content {
+      display: block;
+      width: 100%;
+    }
+    nav > ul {
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 4px 20px;
+      max-width: none;
+      width: 100%;
+      padding: 8px 0 12px;
+    }
+    .rel-level1 { float: none; }
+    .navigation-title a {
+      display: inline-block;
+      padding: 10px 6px;
+    }
+  }
+}
