@@ -34,7 +34,7 @@ const Bootstrap = ({
         config: {
           contextId: config.api.edge.clientContextId,
           edgeUrl: config.api.edge.edgeUrl,
-          siteName: siteName || config.defaultSite,
+          siteName: (siteName || config.defaultSite)?.toLowerCase(),
         },
         plugins: [
           analyticsPlugin({
