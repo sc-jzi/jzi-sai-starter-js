@@ -5,7 +5,7 @@ description: Build a demo's theme, new components, images and content items for 
 
 # Theme, new components, images and content for all pages
 
-> Rules: `.skills/RULES.md` (R1–R24) is the one source and wins over anything below; this skill refers to rules by number.
+> Rules: `.skills/RULES.md` (R1–R25) is the one source and wins over anything below; this skill refers to rules by number.
 
 Runs after `demo-site-bootstrap` and before `sitecore-create-demo-variants` / `demo-build-pages`, inside an approved run (R1: no questions,
 R3: the run gate decides "done"). Input: the approved `demo-plan.yaml`, the captures (`sections*.json`, crops), `theme/theme.yaml`,

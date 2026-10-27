@@ -5,7 +5,7 @@ description: Create the customer's NEW Sitecore site (new or existing collection
 
 # Create a NEW Sitecore site from scratch (never a duplicate)
 
-> Rules: `.skills/RULES.md` (R1–R24) is the one source and wins over anything below; this skill refers to rules by number.
+> Rules: `.skills/RULES.md` (R1–R25) is the one source and wins over anything below; this skill refers to rules by number.
 
 Called by `demo-from-transcript` (Phase T5 step 1). Replaces the old duplicate-and-rename flow: duplicates stay in the source collection and cannot be moved by API, and a copy drags the source site's content along.
 

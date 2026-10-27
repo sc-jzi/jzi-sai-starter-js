@@ -4,8 +4,9 @@
  *
  *   node harness/scripts/looks-review.mjs <customer> [--open]
  *
- * Lists the SECTIONS whose measurement differences are still open after two fix attempts (build gaps such as a missing section, footer columns,
- * sample content, render errors or missing imagery are never offered: they must be built). Writes in the demo folder:
+ * Lists, for ALL pages at once, the SECTIONS whose visible differences are still open after two fix attempts (_looks.mjs tiers). Build gaps
+ * (a missing section, video, images, cards or content, footer columns, sample content, render errors) are never offered: they must be built.
+ * Cosmetic differences are never offered either: they are left as they are and listed in the hand-over. Writes in the demo folder:
  *   looks-review.html   one numbered card per section: the prospect's section and the demo's side by side, and what differs; --open shows it
  *   looks-review.json   the same list, read by `run-gate.mjs accept`
  *   .awaiting-se        the run waits for the SE: the stop hook does not restart it until the answer is recorded
@@ -30,16 +31,20 @@ const tooLarge = new Set((Array.isArray(manifest) ? manifest : []).filter((i) =>
 const { findings, problems } = looksState(customer, planObj, { tooLarge });
 if (problems.length) console.log(`! ${problems.length} looks verdict(s) missing or stale: run node harness/scripts/looks-gates.mjs ${customer} first, so the page shows the current state.`);
 
-// one review item per SECTION (both screenshots, all its differences): a person judges a section, not thirty numbers
+// one review item per SECTION (both screenshots, all its differences): a person judges a section, not thirty numbers.
+// Only VISIBLE differences are put to the SE. Build gaps are never offered (the agent builds them); cosmetic ones are left as they are.
+const sectionsOf = (list) => new Set(list.map((f) => `${f.what}|${f.n ?? "header"}`)).size;
 const groups = new Map();
-for (const f of findings.filter((x) => x.cls === "acceptable" && !x.accepted && x.attempts >= 2)) {
+for (const f of findings.filter((x) => x.cls === "visible" && !x.accepted && x.attempts >= 2)) {
   const k = `${f.what}|${f.n ?? "header"}`;
   if (!groups.has(k)) groups.set(k, { what: f.what, ref: f.ref, label: f.label, section: f.n, title: f.diff, liveCrop: f.liveCrop, builtCrop: f.builtCrop, ids: [], diffs: [] });
   const g = groups.get(k); g.ids.push(f.id); g.diffs.push(f.diff);
 }
-const items = [...groups.values()].map((g, i) => ({ n: i + 1, ...g }));
-const early = findings.filter((x) => x.cls === "acceptable" && !x.accepted && x.attempts < 2).length;
-if (!items.length) { console.log(`Nothing to put to the SE${early ? ` (${early} difference(s) have had fewer than two fix attempts: fix them first)` : ""}.`); process.exit(0); }
+const items = [...groups.values()].sort((a, b) => b.diffs.length - a.diffs.length).map((g, i) => ({ n: i + 1, ...g }));
+const early = findings.filter((x) => x.cls === "visible" && !x.accepted && x.attempts < 2).length;
+const gaps = sectionsOf(findings.filter((x) => x.cls === "fix")), small = findings.filter((x) => x.cls === "cosmetic").length;
+const summary = `${items.length} section(s) for you to look at${gaps ? ` · ${gaps} section(s) still being built (not for you to accept)` : ""}${small ? ` · ${small} small difference(s) left as they are (listed in the hand-over)` : ""}`;
+if (!items.length) { console.log(`Nothing to put to the SE${early ? ` (${early} visible difference(s) have had fewer than two fix attempts: fix them first)` : ""}${gaps ? `; ${gaps} section(s) still have build gaps: build them` : ""}.`); process.exit(0); }
 
 const esc = (t) => String(t ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const page = (label) => (label === "header" ? "Header (every page)" : label === "sections" ? "Home page" : `Page: ${label.replace(/^sections-/, "")}`);
@@ -65,6 +70,7 @@ const plain = (d) => {
   if (/^the demo shows a button the prospect's section does not have$/.test(t)) return "The demo shows a button the prospect's section does not have";
   if (/^the button is missing$/.test(t)) return "The prospect's button is missing";
   if (/^eyebrow (shown|missing)/.test(t)) return /missing/.test(t) ? "The small label above the heading is missing" : "The demo shows a small label the prospect does not have";
+  if ((m = t.match(/^heading (missing|".*") \(prospect "(.*)"\)$/))) return m[1] === "missing" ? `The heading "${m[2]}" is missing` : `The heading reads ${m[1]}, the prospect's reads "${m[2]}"`;
   return t;
 };
 // screenshots are embedded, so the page works wherever it is opened (a browser, a preview pane, forwarded to a colleague)
@@ -81,10 +87,12 @@ const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><title>
 <style>body{font:16px/1.45 system-ui,sans-serif;margin:24px auto;max-width:1400px;padding:0 16px;color:#222}h1{font-size:24px}section{border:1px solid #ddd;border-radius:8px;padding:16px;margin:16px 0}
 h2{font-size:18px;margin:0 0 6px}small{color:#666;font-weight:normal}.n{display:inline-block;background:#222;color:#fff;border-radius:50%;width:28px;height:28px;text-align:center;line-height:28px;margin-right:8px}
 .diff{background:#fff7e0;padding:6px 10px 6px 28px;border-radius:4px}.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}figure{margin:0}figcaption{font-weight:600;margin-bottom:4px}
-img{max-width:100%;border:1px solid #ccc}.none{padding:40px;text-align:center;color:#999;border:1px dashed #ccc}.tech{color:#888;font-size:12px;word-break:break-all}.how{background:#eef5ff;padding:12px 16px;border-radius:8px}</style></head><body>
-<h1>${items.length} section(s) still differ from the prospect's site</h1>
-<p class="how">The demo was fixed twice and these sections still differ. For each numbered section: is it close enough for the demo?
-Answer in the chat: <b>Accept all</b>, <b>Keep fixing</b>, or <b>Accept some</b> and type the numbers (for example 1, 3).</p>
+img{max-width:100%;border:1px solid #ccc}.none{padding:40px;text-align:center;color:#999;border:1px dashed #ccc}.tech{color:#888;font-size:12px;word-break:break-all}.how{background:#eef5ff;padding:12px 16px;border-radius:8px}.summary{font-weight:600}</style></head><body>
+<h1>${items.length} section(s) still look different from the prospect's site</h1>
+<p class="summary">${esc(summary)}</p>
+<p class="how">These sections were fixed twice and still differ in ways a viewer may notice. Small differences are not shown: they are left as
+they are and listed in the hand-over. Missing content is not shown either: that is still being built. One answer covers the whole page:
+<b>Accept all</b>, <b>Keep fixing</b>, or <b>Accept some</b> and type the numbers to accept (for example 1, 3); the rest keep being fixed.</p>
 ${cards}
 </body></html>`;
 const file = join(demo, "looks-review.html");
@@ -95,8 +103,8 @@ if (flags.open) {
   const [cmd, args] = process.platform === "win32" ? ["cmd", ["/c", "start", "", file]] : process.platform === "darwin" ? ["open", [file]] : ["xdg-open", [file]];
   spawnSync(cmd, args, { stdio: "ignore" });
 }
-console.log(`${items.length} section(s) for the SE (${items.reduce((s, i) => s + i.diffs.length, 0)} difference(s)) → ${rootRel(file)}${flags.open ? " (opened in the browser)" : ""}`);
+console.log(`${summary} → ${rootRel(file)}${flags.open ? " (opened in the browser)" : ""}`);
 for (const it of items) console.log(`  ${it.n}. ${page(it.label)} · ${sectionName(it)} (${it.diffs.length} difference(s))`);
-console.log(`\nAsk the SE ONE question: "${items.length} section(s) still differ after two fix attempts; the page shows each one side by side. Accept them?" with the options`);
+console.log(`\nAsk the SE ONE question, once for all pages: "${items.length} section(s) still look different after two fix attempts; the page shows each one side by side. Accept them?" with the options`);
 console.log("  Accept all  ·  Keep fixing  ·  Accept some (type the numbers)");
 console.log(`Then record the answer: node harness/scripts/run-gate.mjs accept ${customer} all|none|<numbers> --answer "<the SE's words>"`);

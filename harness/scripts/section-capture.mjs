@@ -174,7 +174,14 @@ try {
         form: form || fields.length ? { fields: fields.length, submit: !!(el.querySelector("button[type=submit], input[type=submit]") || elements.some((x) => x.role === "button" && /submit|send|request|go/i.test(x.text))), fieldBackground: fields[0] ? ownBg(fields[0].e) || solid(fields[0].e) : null } : null,
         hasLogo: !!logoish, lowContrast: lowContrast.slice(0, 4), elements,
         adSlot: !!el.querySelector('iframe[src*="doubleclick"], iframe[id^="google_ads"], [id^="div-gpt-ad"], ins.adsbygoogle, [data-ad-slot], [class*="advert" i], [id*="advert" i]'),
-        video: [...el.querySelectorAll("video, iframe")].some((v) => v.tagName === "VIDEO" || /youtu|vimeo|wistia|brightcove|video|player/i.test(v.getAttribute("src") || v.getAttribute("data-src") || "")),
+        // a video is an embedded player, or a poster that opens one: a link to a video host or file, a play button (an element or an icon
+        // image, e.g. alt "Play Video icon" / VideoPlayButton.svg over the poster), data-video* attributes
+        video: [...el.querySelectorAll("video, iframe")].some((v) => v.tagName === "VIDEO" || /youtu|vimeo|wistia|brightcove|vidyard|video|player/i.test(v.getAttribute("src") || v.getAttribute("data-src") || ""))
+          || [...el.querySelectorAll("img, svg")].some((i) => /(^|[^a-z])(play([^a-z]|$)|play-?(button|btn|icon|video)|video)/i.test(`${i.getAttribute("alt") || ""} ${i.getAttribute("aria-label") || ""} ${String(i.getAttribute("src") || "").split("?")[0].split("/").pop()}`))
+          || [...el.querySelectorAll("a[href], [data-src], [data-href]")].some((a) => /youtu\.?be|vimeo\.com|wistia|vidyard|brightcove|\.(mp4|webm|mov)(\?|$)/i.test(a.getAttribute("href") || a.getAttribute("data-src") || a.getAttribute("data-href") || ""))
+          || [...el.querySelectorAll("*")].some((d) => [...d.attributes].some((a) => /^data-(video|youtube|vimeo|wistia)/i.test(a.name))
+            || /(^|[\s_-])(play|play-?(button|btn|icon|video)|video-?(play|trigger|button|modal|popup))([\s_-]|$)/i.test(typeof d.className === "string" ? d.className : d.getAttribute("class") || "")
+            || /^play\b|play video/i.test(d.getAttribute("aria-label") || d.getAttribute("title") || "")),
       };
     }, f.i);
     const slug = ((m.heading?.text || f.tag).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "section").slice(0, 32);
@@ -213,6 +220,7 @@ if (flags.compare && result) {
   const bad = [];
   const used = new Set(demoBands.headerIdx != null ? [demoBands.headerIdx] : []);
   const pairs = {};   // live section index -> the built section it was compared with (the review page shows both crops)
+  let lastPaired = demoBands.headerIdx ?? -1;   // pairing by shape only looks forward from the last paired built band
   // One band against its built counterpart. COLUMNS / LABELS (the footer's column headings) are checked on the footer only.
   const compareBand = (R, D, nm, isFooter) => {
     if (far(D.background, R.background, 20)) bad.push(`${nm}: background ${D.background} (prospect ${R.background})`);
@@ -258,12 +266,24 @@ if (flags.compare && result) {
     // a band with several headings (tiles, cards) may report a different one as its main heading: then match on any of its headings
     const headingsOf = (d) => new Set([d.heading?.text, ...(d.elements ?? []).filter((e) => e.role === "heading").map((e) => e.text)].filter(Boolean).map(norm));
     const open = result.sections.filter((d) => !used.has(d.index) && d.index !== demoBands.footerIdx);
-    const D = (R.heading?.text && (open.filter((d) => norm(d.heading?.text) === norm(R.heading.text)).sort((a, b) => likeR(a) - likeR(b))[0]
+    let D = (R.heading?.text && (open.filter((d) => norm(d.heading?.text) === norm(R.heading.text)).sort((a, b) => likeR(a) - likeR(b))[0]
       ?? open.filter((d) => headingsOf(d).has(norm(R.heading.text))).sort((a, b) => likeR(a) - likeR(b))[0]))
-      ?? (R.heading?.text ? null : open.find((d) => d.index === R.index && d.kind === R.kind));   // only a band without a heading is matched by position: a missing titled band must not take its neighbour's place
+      ?? (R.heading?.text ? null : open.find((d) => d.index === R.index && d.kind === R.kind));
+    // a titled band whose heading text is not found: pair it by position and shape instead, so a section is found by what it IS, not by
+    // a heading written in to be matched. Only the next unpaired built band after the last pair, only when it has the same make-up
+    // (kind, imagery, cards, a similar number of elements) and its heading is not another live band's heading.
+    let headingDiff = null;
+    if (!D && R.heading?.text) {
+      const liveHeadings = new Set(ref.sections.filter((x) => x !== R).flatMap((x) => [...headingsOf(x)]));
+      const shaped = (d) => d.kind === R.kind && !!(d.images ?? []).length === !!(R.images ?? []).length && !!(d.cards ?? []).length === !!(R.cards ?? []).length
+        && Math.abs((d.elements ?? []).length - (R.elements ?? []).length) <= Math.max(2, (R.elements ?? []).length * 0.5);
+      const cand = open.filter((d) => d.index > lastPaired).sort((a, b) => a.index - b.index)[0];
+      if (cand && shaped(cand) && ![...headingsOf(cand)].some((h) => liveHeadings.has(h))) { D = cand; headingDiff = cand.heading?.text ?? ""; }
+    }
     const nm = `#${R.index} ${(R.heading?.text || R.kind).slice(0, 30)}`;
     if (!D) { bad.push(`${nm}: not found in the demo`); continue; }
-    used.add(D.index); pairs[R.index] = D.index;
+    used.add(D.index); pairs[R.index] = D.index; lastPaired = Math.max(lastPaired, D.index);
+    if (headingDiff != null) bad.push(`${nm}: heading ${headingDiff ? `"${headingDiff.slice(0, 40)}"` : "missing"} (prospect "${R.heading.text.slice(0, 40)}")`);
     compareBand(R, D, nm, false);
   }
   for (const poison of ["Why PLAY! finance", "Copyright © Sitecore"]) if (JSON.stringify(result).includes(poison)) bad.push(`SAMPLE footer still shows the template sample "${poison}"`);

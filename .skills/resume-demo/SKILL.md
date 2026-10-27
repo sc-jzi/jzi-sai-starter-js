@@ -20,8 +20,8 @@ Follow "Resume" in `demo-from-transcript`:
 - Never recreate a site that exists (the scripts refuse). Skip finished phases. Retry `failed` and `blocked` ones.
 - **Before gate 1** (`storyApproved` is not true): finish T1/T2, then show the story gate (T2b). Nothing is measured, planned or themed first. After the SE's yes: `node harness/scripts/run-gate.mjs approve <customer> story`.
 - **Before gate 2** (`userApproved` is not true): finish T3a/T3/T3b and show the build-plan gate (T4). After the SE's yes: `node harness/scripts/run-gate.mjs approve <customer> plan`.
-- If `run-gate.mjs check` says the story or plan changed after approval: show the SE the change, and approve again only on their yes.
+- If `run-gate.mjs check` says the story or plan changed after approval: show the SE the change, and approve again only on their yes. A section built with a different component than approved only needs its reason recorded (`run-gate.mjs swap`, R1). If it says the shared harness changed during the run: show the SE the diff, approve only on their yes (R25).
 - **After gate 2**: `node harness/scripts/run-gate.mjs init <customer>` (re-arms the stop hook for this run), then `node harness/scripts/run-gate.mjs check <customer>` and work through its items in order. That is the "Continuous run": no hand-back until it exits 0.
 
 ## Rules
-`.skills/RULES.md` (R1–R24) applies in full.
+`.skills/RULES.md` (R1–R25) applies in full.

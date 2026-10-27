@@ -1,0 +1,119 @@
+# Client Brand Theme
+# Measured from https://www.mcclabel.com/en (Playwright + section capture). Applied only after the plan is approved.
+
+client:
+  name: "MCC Label"
+  sourceUrl: "https://www.mcclabel.com/en"
+  extractedAt: "2026-10-27"
+  extractedBy: "site-scraper + section-capture"
+
+colors:
+  primary: "#2bb673"
+  primaryForeground: "#000000"
+  secondary: "#62addf"
+  secondaryForeground: "#000000"
+  accent: "#ffd64f"
+  accentForeground: "#000000"
+  background: "#ffffff"
+  foreground: "#000000"
+  muted: "#dce6eb"
+  mutedForeground: "#000000"
+  headerBackground: "#ffffff"
+  headerForeground: "#000000"
+  footerBackground: "#000000"
+  footerForeground: "#ffffff"
+  border: "#dce6eb"
+  ring: "#2bb673"
+  extra:
+    - { name: "news-button", hex: "#62addf" }
+    - { name: "pale-band", hex: "#dce6eb" }
+
+typography:
+  headingFamily: "Montserrat"
+  headingWeight: "700"
+  bodyFamily: "Cabin"
+  bodyWeight: "400"
+  monoFamily: ""
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Montserrat:wght@400;700&display=swap"
+  scale:
+    hero: "60px"
+    h1: "60px"
+    h2: "44px"
+    h3: "20px"
+    body: "16px"
+    small: "16px"
+  headingTransform: "none"
+  letterSpacing: "normal"
+  lineHeight: "30px"
+
+spacing:
+  density: "normal"
+  sectionGap: ""
+  containerMaxWidth: "1780px"
+  containerPadding: ""
+
+shape:
+  borderRadius: "28px"
+  buttonRadius: "28px"
+  cardRadius: "0px"
+  imageRadius: "0px"
+  shadowStyle: "subtle"
+  borderStyle: "none"
+
+tone:
+  overall: "corporate"
+  colorMode: "light"
+  contrast: "high"
+  imagery: "photography"
+  heroStyle: "full-bleed-image"
+  cardStyle: "image-top"
+  navStyle: "solid-bar"
+
+siteThemeScss: |
+  body.site-mcc-label,
+  .site-mcc-label {
+    --text-body: #000000;
+    --text-body-inverted: #ffffff;
+    --text-colored: #2bb673;
+    --text-footer: #ffffff;
+    --text-accent: #ffd64f;
+    --bg-body: #ffffff;
+    --bg-footer: #000000;
+    --bg-main: #ffffff;
+    --bg-main-alt: #dce6eb;
+    --bg-color: #dce6eb;
+    --bg-saturated: #2bb673;
+    --bg-accent: #ffd64f;
+    --border-color: #dce6eb;
+    --hr-color: #ffffff;
+    --roundness: 1.75rem;
+  }
+
+  body.site-mcc-label.dark,
+  .dark .site-mcc-label {
+    --text-body: #ffffff;
+    --text-body-inverted: #000000;
+    --text-colored: #2bb673;
+    --text-footer: #ffffff;
+    --text-accent: #ffd64f;
+    --bg-body: #000000;
+    --bg-footer: #000000;
+    --bg-main: #111111;
+    --bg-main-alt: #1a1a1a;
+    --bg-color: #1a1a1a;
+    --bg-saturated: #2bb673;
+    --bg-accent: #ffd64f;
+    --border-color: #333333;
+    --hr-color: #ffffff;
+    --roundness: 1.75rem;
+  }
+
+extraction:
+  confidence: "high"
+  method: "playwright-full"
+  notes:
+    - "Headings are Montserrat 700 (h1 60px, h2 44px). Body and nav are Cabin. Both are on Google Fonts. The live site serves them as Next.js font files, not a Google Fonts link."
+    - "Green #2bb673 is the sustainability and contact-title button. Yellow #ffd64f is the innovation band. Pale blue #dce6eb is the contact plant band and the article hero. Blue #62addf is the news-card button. Footer is #000000 with white text. Header band is white, nav text #000000."
+    - "Learn More buttons measure border-radius 28px. Carousel dots measure 100px. One card corner measured 92px 0 0 and is not used as the system radius."
+    - "Careers and Customer Portal are filled buttons. The header script recorded their text as #000000 and did not record a separate fill."
+    - "The live site has no dark theme. The dark block is derived from the light colors."

@@ -37,7 +37,7 @@ Details from the request become part of the brief marked *stated by the SE*. If 
 After the SE approves the plan the run does not stop, hand back or ask until the hand-over (rules: "Continuous run" in `demo-from-transcript`). Only the editing host and what a person alone can do go to `manual-tasks.md`; everything else is built, and the run is finished only when `node harness/scripts/run-gate.mjs check <customer>` exits 0. Never end a turn, summarise or hand over while it exits 4: do the unfinished item it names.
 
 ## Rules
-`.skills/RULES.md` (R1–R24) applies in full (nothing outside the customer folder and its own new site is touched; no secrets in chat; no invented facts).
+`.skills/RULES.md` (R1–R25) applies in full (nothing outside the customer folder and its own new site is touched; no secrets in chat; no invented facts).
 
 ## Always ask, never assume
 The SE approves the story on its own first, then chooses the Sitecore collection and the site template (offered as options; `Empty` template recommended) and approves the build plan. Both are printed in the chat message before asking. Details in `demo-from-transcript` phases T2b, T2 and T4.

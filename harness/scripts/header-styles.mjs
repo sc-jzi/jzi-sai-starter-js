@@ -33,6 +33,13 @@ const args = {
   cta: (nav.eyebrowExtras || []).filter((e) => e.kind === "cta").map((e) => e.label),
   phone: (nav.eyebrowExtras || []).filter((e) => e.kind === "phone").map((e) => e.label),
 };
+// A compare re-measures the same labels the reference was captured with. nav.json can miss an eyebrow that was passed
+// explicitly (--eyebrow) when the prospect was measured; the stored labels are the ones the difference is about.
+if (flags.compare) {
+  const stored = readJson(join(demoDir(customer), String(flags.compare)))?.labels;
+  if (!flags.eyebrow && stored?.eyebrow?.length) args.eyebrow = stored.eyebrow;
+  if (!flags.main && stored?.main?.length) args.main = stored.main;
+}
 
 const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
 try {

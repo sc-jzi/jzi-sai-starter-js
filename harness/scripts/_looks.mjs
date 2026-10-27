@@ -1,18 +1,38 @@
 // The looks gates, read ONE way: run-gate.mjs (pass/fail) and looks-review.mjs (the SE's click-to-accept page) both use this.
-// A difference is either FIX (a build gap: never acceptable) or ACCEPTABLE (a measurement difference the SE may accept after two fix attempts).
+// Every difference has one of three tiers:
+//   fix       a build gap: the section is missing or built wrong. The agent keeps fixing; the SE is never asked.
+//   visible   a difference a viewer notices (colours, width, image side, a missing button). Fixed; after two fix attempts the SE decides.
+//   cosmetic  a small measurement difference (a somewhat smaller heading, a label colour). Never fails the gate; listed in the hand-over.
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { demoDir, customerApp, readJson, chromeBands, isAdBand, fileHash, textHash, sourceFingerprint } from "./_lib.mjs";
 
-// build gaps: a missing section, the footer's columns/labels, template sample content, a component that crashed, imagery not shown
-export const FIX_ONLY = (d) => /^(COLUMNS|LABELS|SAMPLE|RENDER|IMAGES)\b/.test(d) || /not found in the demo/i.test(d);
+// content that a viewer sees as missing: these roles missing from a section make it a build gap (text blocks are often split differently: visible)
+const MISSING_IS_GAP = ["heading", "image", "button", "field", "link"];
+const roleCount = (s) => String(s).split(",").filter(Boolean).reduce((o, r) => ((o[r] = (o[r] || 0) + 1), o), {});
+export const tierOf = (diff) => {
+  const d = String(diff), t = d.replace(/^#\d+\s*[^:]*:\s*/, "");
+  // build gaps: a missing section, the footer's columns/labels, template sample content, a component that crashed, imagery or video not shown,
+  // the prospect's cards missing, a form that cannot be sent, text nobody can read
+  if (/^(COLUMNS|LABELS|SAMPLE|RENDER|IMAGES)\b/.test(d) || /not found in the demo/i.test(d)) return "fix";
+  if (/^the video is missing$|^inner card backgrounds (missing|present)|^form has no submit button|^unreadable text/.test(t)) return "fix";
+  let m;
+  if ((m = t.match(/^element order (.*) \(prospect (.*)\)$/))) {
+    const demo = roleCount(m[1]), live = roleCount(m[2]);
+    return MISSING_IS_GAP.some((r) => (live[r] || 0) > (demo[r] || 0)) ? "fix" : "visible";
+  }
+  // a heading within about a third of the prospect's size, and label (eyebrow) colours, are cosmetic
+  if ((m = t.match(/^heading size (\d+)px \(prospect (\d+)px\)$/))) return Math.abs(+m[1] - +m[2]) <= +m[2] * 0.35 ? "cosmetic" : "visible";
+  if (/^eyebrow colou?r /.test(t)) return "cosmetic";
+  return "visible";
+};
 export const diffId = (what, diff) => textHash(`${what}|${String(diff).trim()}`).slice(0, 10);
 export const ACCEPTED_FILE = "accepted-differences.json";
 
 /**
  * @returns {{ problems: {what:string,next:string}[], findings: object[], acceptedNow: object[] }}
  *   problems    verdicts missing, unstamped, stale, or compared against the prospect's own site
- *   findings    every in-scope difference: { id, what, label, ref, n, diff, cls: "fix"|"acceptable", attempts, accepted, liveCrop, builtCrop }
+ *   findings    every in-scope difference: { id, what, label, ref, n, diff, cls: "fix"|"visible"|"cosmetic", attempts, accepted, liveCrop, builtCrop }
  *   acceptedNow the SE's acceptances that still apply (same difference, same reference measurement)
  */
 export function looksState(customer, planObj, { tooLarge = new Set() } = {}) {
@@ -44,8 +64,8 @@ export function looksState(customer, planObj, { tooLarge = new Set() } = {}) {
     if (fp && r.buildFingerprint !== fp) { problems.push({ what: `${label} verdict is stale: the app's code changed after the compare`, next: rerun }); continue; }
 
     const add = (diff, n, liveCrop, builtCrop) => {
-      const id = diffId(what, diff), cls = FIX_ONLY(diff) ? "fix" : "acceptable";
-      findings.push({ id, what, label, ref, n, diff, cls, attempts: r.attempts ?? 1, accepted: cls === "acceptable" && isAccepted.has(id), liveCrop, builtCrop, url: r.url });
+      const id = diffId(what, diff), cls = tierOf(diff);
+      findings.push({ id, what, label, ref, n, diff, cls, attempts: r.attempts ?? 1, accepted: cls === "visible" && isAccepted.has(id), liveCrop, builtCrop, url: r.url });
     };
     if (what === "header-styles") { for (const d of r.diffs ?? []) add(d, null, "header-reference.png", "header-styles.demo.png"); continue; }
 

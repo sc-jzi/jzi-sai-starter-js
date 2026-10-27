@@ -9,7 +9,7 @@ a local Next.js app), driven from Cursor or Claude Code. Start with `README-DEMO
 - All other skills: `.skills/<name>/SKILL.md`. That is the only copy; `.cursor/skills` and `.claude/skills` hold generated stubs that point to it.
 
 ## Rules
-**`.skills/RULES.md` (R1–R24) is the one source for how a demo is built.** Read it before any demo work; when anything else disagrees, it wins.
+**`.skills/RULES.md` (R1–R25) is the one source for how a demo is built.** Read it before any demo work; when anything else disagrees, it wins.
 The ones that matter in every session, demo run or not:
 - **R5 Marketer MCP first** for every Sitecore write it supports, with a read-back. Scripts write directly only for what the MCP cannot do
   (site creation, media upload, variants / rendering parameters when the MCP route is refused, the editing host). Reading to verify is always fine.
@@ -20,6 +20,8 @@ The ones that matter in every session, demo run or not:
 - **R18 No prospect names in the shared harness** (`harness/`, `.skills/`, `.cursor/`, `.claude/`, this file). One-off scripts for a demo go in
   `industry-verticals/<customer>/docs/ai/demos/<customer>/tmp/` and import `../../../../../../../harness/scripts/_lib.mjs`.
 - **R19 Edit skills only in `.skills/`,** then `node harness/scripts/sync-skills.mjs`.
+- **R25 The harness never changes silently** during a demo run: show the SE the diff and why; only after their yes,
+  `run-gate.mjs approve <customer> harness --answer "<their words>"`. Never change a checking script to pass its own check.
 - **R20 Never invent facts; never paste secrets** (they live in `harness/.env.local`).
 - **R11 Localhost reads master** (preview context): no publish needed while building.
 
@@ -43,14 +45,17 @@ The ones that matter in every session, demo run or not:
 | `node harness/scripts/deps-check.mjs --fix` | Node, git, Playwright, readers, the pre-commit hook |
 | `node harness/scripts/run-gate.mjs check <customer>` | **the** definition of done (exit 0); `--fast` is what the stop hook runs |
 | `node harness/scripts/run-gate.mjs approve <customer> story\|plan` | record an SE approval (only right after the SE said yes) |
+| `node harness/scripts/run-gate.mjs swap <customer> "<page>#<section>" --reason "<why>"` | a section now uses a better-fitting component than the approved plan (no SE question; hand-over lists it) |
 | `node harness/scripts/run-gate.mjs block <customer> "<what>" -- <command>` | log a failed attempt (two are needed for a BLOCKED line) |
 | `node harness/scripts/looks-gates.mjs <customer>` | compare the running app with the prospect's pages (header + every mirrored page) |
-| `node harness/scripts/looks-review.mjs <customer> --open` · `run-gate.mjs accept <customer> all|none|<n>` | after two fix attempts: the SE's side-by-side page, ONE question, record the answer |
+| `node harness/scripts/looks-review.mjs <customer> --open` · `run-gate.mjs accept <customer> all|none|<n>` | after two fix attempts: ONE side-by-side page for all pages (visible differences only), ONE question, record the answer |
 | `node harness/scripts/build-check.mjs <customer> [--quick]` | `npm run build` (or a typecheck) of the customer app |
 | `node harness/scripts/link-audit.mjs <customer>` | every link / image field in the site holds valid XML |
 | `node harness/scripts/collect-images.mjs <customer>` | every image of every planned section, traced to its page and section (the only way images enter a demo) |
 | `node harness/scripts/attach-images.mjs <customer>` | proposes which uploaded image goes into which Image field (write them with the MCP) |
 | `node harness/scripts/media-upload.mjs <customer>` | upload images to the Media Library when `CH_ENABLED=false` (skips files over 50 MB) |
+| `node harness/scripts/component-showcase.mjs [--apply]` | the base site's hidden `/Home/components` pages: each component alone, every defined variant (outside demo runs) |
+| `node harness/scripts/component-catalog.mjs [--base <url>]` | regenerate `industry-verticals/prospera/docs/ai/catalog/components.md` (fields, templates, what each component can show, screenshots; base app running) |
 | `node harness/scripts/name-check.mjs` · `sync-skills.mjs` | R18 (nothing prospect-specific in the harness) · R19 |
 
 ## The customer app (Next.js 16, App Router, Content SDK 2.x)

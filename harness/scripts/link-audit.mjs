@@ -75,4 +75,5 @@ console.log(`${items} item(s), ${linkFields} link field(s), ${imageFields} image
 for (const b of bad) console.log(`✖ ${b.path} · ${b.field}: ${b.error}${b.fix ? `\n    fix: ${b.fix}` : ""}`);
 if (!bad.length) console.log("✔ every link and image field holds valid XML");
 if (unreadable.length) console.log(`! ${unreadable.length} item(s) could not be read: the audit is incomplete (exit 2)`);
-process.exit(bad.length ? 1 : unreadable.length ? 2 : 0);
+// Let open GraphQL sockets close. process.exit() here aborts on Windows (UV_HANDLE_CLOSING) and the gate treats that as "could not complete".
+process.exitCode = bad.length ? 1 : unreadable.length ? 2 : 0;

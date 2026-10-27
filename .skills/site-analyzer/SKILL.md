@@ -5,7 +5,7 @@ description: Decompose a client homepage into sections and match each to the tem
 
 # Site Analyzer
 
-> Rules: `.skills/RULES.md` (R1–R24) is the one source and wins over anything below; this skill refers to rules by number.
+> Rules: `.skills/RULES.md` (R1–R25) is the one source and wins over anything below; this skill refers to rules by number.
 
 > **Where this runs:** open the repo root. Paths such as `docs/ai/...` and `src/...` below belong to the customer app `industry-verticals/<customer>/` and never to `industry-verticals/prospera` (the read-only base app). If the customer is not clear from the conversation, ask first. Shared reference docs live in `.skills/sitecore-reference/references/`.
 
@@ -27,6 +27,7 @@ A **build plan** saved to `docs/ai/demos/<client-kebab>/build-plan.yaml` with th
 
 Read these files before analyzing:
 - `docs/ai/catalog/component-registry.yaml` — the Prospera components with visual keywords and variant hints
+- `industry-verticals/prospera/docs/ai/catalog/components.md` — per component: a screenshot of each variant on the base site, the datasource template and its fields (which are Image, Link, Rich Text), the child items of list components, what it can show (images, links, video, a list) and template fields the code does not render. Compare the section's crop with these screenshots and fields before choosing: a component that cannot show what the crop shows is the wrong one (R13)
 - `docs/ai/catalog/theme-component-mapping.md` — how the theme's hero/heading style drives variant selection
 - `docs/ai/manifests/sitecore-manifest.yaml` — verify all 18 components are `status: "complete"`
 - The client's theme file at `docs/ai/themes/<client>.theme.yaml`
@@ -43,7 +44,7 @@ If `sections.json` / `sections.md` exist (`section-capture.mjs`) read them FIRST
 
 For each identified section, find the best match in `component-registry.yaml`:
 
-1. Compare the visual pattern against each component's `visualKeywords`
+1. Compare the visual pattern against each component's `visualKeywords`, and the section's crop against the variant screenshots in `components.md`; check its "Can show" line covers what the crop shows (images, video, cards, a list of items)
 2. If multiple components could match, use the section's layout and content to disambiguate
 3. Pick the best variant using `variantSelectionHints` and the theme's `tone.*` fields
 4. Use the **registry-to-manifest mapping table** below to set both `registryId` and `manifestName`
