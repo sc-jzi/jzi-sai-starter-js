@@ -13,7 +13,7 @@
  */
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync, unlinkSync } from "node:fs";
 import { join } from "node:path";
-import { die, parseArgs, baseApp, BASE_APP, readRegistry, authoringClient, rootRel } from "./_lib.mjs";
+import { die, parseArgs, baseApp, BASE_APP, readRegistry, authoringClient, rootRel, ENV } from "./_lib.mjs";
 import { parseYaml } from "./_yaml.mjs";
 
 const { flags } = parseArgs(process.argv.slice(2));
@@ -37,7 +37,25 @@ const codeOf = (c) => {
   const src = readFileSync(p, "utf8");
   const variants = [...src.matchAll(/^export\s+(?:const|function)\s+([A-Z]\w*)/gm)].map((m) => m[1]);
   const fields = [...new Map([...src.matchAll(FIELD_TYPE)].map((m) => [m[1], m[2]])).entries()].map(([name, type]) => ({ name, type }));
-  return { src, variants, fields, video: /<video\b|<iframe\b|youtube|vimeo|ReactPlayer/i.test(src) };
+  return { src, variants, fields, placeholders: placeholdersOf(src, variants), video: /<video\b|<iframe\b|youtube|vimeo|ReactPlayer/i.test(src) };
+};
+// placeholders per variant: other components can be added there in Pages (empty, they show only while editing). Each top-level declaration
+// is read on its own; a variant also gets the placeholders of the helpers and variants it renders. "where" is the nearest field before/after.
+const placeholdersOf = (src, variants) => {
+  const starts = [...src.matchAll(/^(?:export\s+)?(?:const|function)\s+(\w+)/gm)];
+  const blocks = new Map(starts.map((m, i) => [m[1], src.slice(m.index, starts[i + 1]?.index ?? src.length)]));
+  const own = (body) => [...body.matchAll(/<Placeholder\b[^>]*?\bname=(?:"([^"]+)"|'([^']+)'|\{\s*`([^`]+)`\s*\}|\{([^}]+)\})/g)].flatMap((m) => {
+    const before = [...body.slice(0, m.index).matchAll(/fields\??\.(\w+)/g)].pop()?.[1], after = body.slice(m.index).match(/fields\??\.(\w+)/)?.[1];
+    const where = before && after ? `after ${before}, before ${after}` : before ? `after ${before}` : after ? `before ${after}` : "";
+    // a name passed in as a prop (name={placeholder}) is resolved from the call sites in the same file (placeholder="two-col-left")
+    const expr = m[4]?.trim(), passed = expr && /^\w+$/.test(expr) ? [...new Set([...src.matchAll(new RegExp(`\\b${expr}=["']([^"']+)["']`, "g"))].map((x) => x[1]))] : [];
+    return passed.length ? passed.map((name) => ({ name, where: "" })) : [{ name: (m[1] ?? m[2] ?? m[3] ?? expr).trim(), where }];
+  });
+  return Object.fromEntries(variants.map((v) => {
+    const body = blocks.get(v) ?? "", list = own(body);
+    for (const [name, b] of blocks) if (name !== v && new RegExp(`<${name}\\b|\\b${name}\\(`).test(body)) for (const p of own(b)) if (!list.some((x) => x.name === p.name)) list.push({ ...p, where: `${p.where ? `${p.where}, ` : ""}via ${name}` });
+    return [v, list];
+  }));
 };
 
 /* ---- Sitecore: rendering item, datasource template fields (with base templates), child item templates, rendering parameters ---- */
@@ -165,14 +183,26 @@ if (!flags["no-shots"] && usage.size) {
     mkdirSync(shotDir, { recursive: true });
     for (const f of readdirSync(shotDir)) if (f.endsWith(".png")) unlinkSync(join(shotDir, f));   // every run starts from the current base site
     const browser = await chromium.launch(), page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
-    // an image the environment cannot serve (the base site's media host may answer 404) is drawn as a plain grey box, so the screenshot
-    // shows where the component puts its images instead of a broken-image icon
+    // the preview context serves master, whose media URLs carry the site's target hostname (which need not serve anything): a media
+    // request that fails is fetched from the CM host with the automation token instead (CM answers anonymous media requests with a
+    // login redirect). Only an image neither can serve is drawn as a plain grey box, so the screenshot still shows where it goes.
     const GREY = Buffer.from("iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAADElEQVR4nGO4cO4CAAVqAq0NLkaFAAAAAElFTkSuQmCC", "base64");
-    let greyed = 0;
+    const cmHost = String(ENV.SITECORE_CM_HOST || "").replace(/\/+$/, "");
+    const fromCm = async (reqUrl) => {
+      if (!cmHost || !gql?.token) return null;
+      let u = new URL(reqUrl);
+      if (u.pathname === "/_next/image" && u.searchParams.get("url")) u = new URL(u.searchParams.get("url"), u.origin);
+      if (!/^\/-\/(jss)?media\//i.test(u.pathname)) return null;
+      const r = await fetch(cmHost + u.pathname.replace(/^\/-\/jssmedia\//i, "/-/media/") + u.search, { headers: { Authorization: `Bearer ${gql.token}` }, signal: AbortSignal.timeout(30000) }).catch(() => null);
+      return r?.ok ? { contentType: r.headers.get("content-type") || "application/octet-stream", body: Buffer.from(await r.arrayBuffer()) } : null;
+    };
+    let greyed = 0, viaCm = 0;
     await page.route("**/*", async (route) => {
       if (route.request().resourceType() !== "image") return route.continue();
       const res = await route.fetch().catch(() => null);
       if (res && res.status() < 400) return route.fulfill({ response: res });
+      const cm = await fromCm(route.request().url());
+      if (cm) { viaCm++; return route.fulfill({ status: 200, ...cm }); }
       greyed++; return route.fulfill({ status: 200, contentType: "image/png", body: GREY });
     });
     const want = [];
@@ -197,6 +227,7 @@ if (!flags["no-shots"] && usage.size) {
     }
     await browser.close();
     imagesGreyed = greyed;
+    if (viaCm) console.log(`  ${viaCm} image(s) the media host did not serve were read from the CM host`);
     if (greyed) console.log(`  ${greyed} image request(s) failed in this environment: drawn as grey boxes`);
   }
 }
@@ -219,7 +250,7 @@ for (const c of components) {
     rendering: sc?.rendering ?? (c.rendering ? { path: c.rendering.path, id: c.rendering.itemId } : null),
     datasource: sc?.datasource ? { name: sc.datasource.name, path: sc.datasource.path, id: sc.datasource.id } : null,
     fields: dsFields, children: (sc?.children ?? []).map((t) => ({ name: t.name, path: t.path, id: t.id, fields: t.fields })), params: sc?.params ?? [],
-    codeFields: code.fields, notRendered,
+    codeFields: code.fields, notRendered, placeholders: code.placeholders ?? {},
     canShow: { images: count(/^Image$/i), links: count(/General Link|^Link$/i), richText: count(/Rich Text/i), video: code.video, listOfItems: kind === "list" },
     usedOn: [...new Set((usage.get(c.name) ?? []).map((u) => u.route).filter((r) => !r.startsWith("/components")))].slice(0, 5),
     shots: code.variants.map((v) => ({ variant: v, ...(shots.get(`${c.name}|${v}`) ?? {}) })),
@@ -233,8 +264,8 @@ const yes = (b) => (b ? "yes" : "no");
 const md = [`# ${BASE_APP} components: what each one is, holds and looks like`, "",
   `Generated by \`node harness/scripts/component-catalog.mjs\` on ${new Date().toISOString().slice(0, 10)} from the code, Sitecore and the base site. Do not edit by hand: re-run it.`,
   "Use it to choose (or swap, R1) the component for a section: a section with pictures needs Image fields, a video needs a component that plays one, several cards need a list.", "",
-  "| Component | Category | Kind | Images | Links | Rich text | Video | Variants (screenshot) |", "|---|---|---|---|---|---|---|---|",
-  ...rows.map((r) => `| [${r.name}](#${r.name.toLowerCase()}) | ${r.category} | ${r.kind} | ${r.canShow.images} | ${r.canShow.links} | ${r.canShow.richText} | ${yes(r.canShow.video)} | ${r.shots.map((s) => (s.file ? `${s.variant} ✓` : s.variant)).join(", ")} |`),
+  "| Component | Category | Kind | Images | Links | Rich text | Video | Placeholders | Variants (screenshot) |", "|---|---|---|---|---|---|---|---|---|",
+  ...rows.map((r) => `| [${r.name}](#${r.name.toLowerCase()}) | ${r.category} | ${r.kind} | ${r.canShow.images} | ${r.canShow.links} | ${r.canShow.richText} | ${yes(r.canShow.video)} | ${[...new Set(Object.values(r.placeholders).flat().map((p) => `\`${p.name}\``))].join(", ") || "none"} | ${r.shots.map((s) => (s.file ? `${s.variant} ✓` : s.variant)).join(", ")} |`),
   "", "Kind: **simple** = one datasource item · **list** = a datasource item with child items · **context** = reads the page (no datasource).",
   "Screenshots come from the showcase pages under `/components/` (`component-showcase.mjs`: each component alone, on its template's sample text) where one exists, else from the first base-site page that uses the component and variant." +
   (imagesGreyed ? " **Grey boxes are images**: the base site's media host did not serve them when the screenshots were taken." : ""), ""];
@@ -252,6 +283,11 @@ for (const r of rows) {
   for (const ch of r.children) md.push(`**Child items: ${ch.name}** (\`${ch.path}\`)`, "", "| Field | Type |", "|---|---|", ...ch.fields.map((f) => `| ${f.name} | ${f.type} |`), "");
   if (r.notRendered.length) md.push(`**Template fields the code does not render** (filling them shows nothing): ${r.notRendered.join(", ")}`, "");
   if (r.params.length) md.push(`**Rendering parameters** (layout options, never visitor text): ${r.params.join(", ")}`, "");
+  // one line per distinct placeholder, naming the variants that have it (an empty placeholder is invisible on the site and in screenshots)
+  const phs = new Map();
+  for (const [v, list] of Object.entries(r.placeholders)) for (const p of list) { const k = `${p.name}|${p.where}`; if (!phs.has(k)) phs.set(k, { ...p, variants: [] }); phs.get(k).variants.push(v); }
+  if (phs.size) md.push("**Placeholders** (other components can be added inside it in Pages; empty, they show only while editing, not in the screenshots)", "",
+    ...[...phs.values()].map((p) => `- \`${p.name}\`${p.where ? ` (${p.where})` : ""}: ${p.variants.length === r.variants.length ? "every variant" : p.variants.join(", ")}${p.variants.length < r.variants.length ? `; not in ${r.variants.filter((v) => !p.variants.includes(v)).join(", ")}` : ""}`), "");
   const noDef = r.variants.filter((v) => !r.variantDefinitions.includes(v)), noCode = r.variantDefinitions.filter((v) => !r.variants.includes(v));
   md.push("**Variants**", "");
   for (const s of r.shots) md.push(s.file ? `*${s.variant}* (from \`${s.route}\`)\n\n![${r.name} ${s.variant}](components/${s.file})\n` : `*${s.variant}*: not placed on the base site, no screenshot\n`);

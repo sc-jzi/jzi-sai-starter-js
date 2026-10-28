@@ -5,7 +5,7 @@ description: Create the customer's NEW Sitecore site (new or existing collection
 
 # Create a NEW Sitecore site from scratch (never a duplicate)
 
-> Rules: `.skills/RULES.md` (R1–R25) is the one source and wins over anything below; this skill refers to rules by number.
+> Rules: `.skills/RULES.md` (R1–R26) is the one source and wins over anything below; this skill refers to rules by number.
 
 Called by `demo-from-transcript` (Phase T5 step 1). Replaces the old duplicate-and-rename flow: duplicates stay in the source collection and cannot be moved by API, and a copy drags the source site's content along.
 
@@ -13,7 +13,7 @@ Called by `demo-from-transcript` (Phase T5 step 1). Replaces the old duplicate-a
 - Never stops the run (see "Continuous run" in `demo-from-transcript`): an editing-host problem is a manual task, not a pause.
 - Sites API only creates. It never copies, renames, moves or deletes. `sites-api.mjs` refuses an existing site name and protected names.
 - Credentials: `harness/.env.local` (`SITECORE_AUTOMATION_CLIENT_ID/SECRET`, optional `SITECORE_ENVIRONMENT_ID`). Never print or ask for secrets in chat.
-- Decision to confirm at the approval gate: collection (existing or new) and site name. A new collection per customer is the safest (nothing shared with other demos).
+- Decision to confirm at the approval gate: collection (existing or new) and site name. A site name never contains a space (R21): `sites-api.mjs` refuses one; pass the readable name as `--display-name`. A new collection per customer is the safest (nothing shared with other demos).
 
 ## Steps
 1. `node harness/scripts/sites-api.mjs auth-check` — stop with a clear message if it fails.

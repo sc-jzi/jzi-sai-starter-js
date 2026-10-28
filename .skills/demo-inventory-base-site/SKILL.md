@@ -7,7 +7,7 @@ description: One-time, read-only discovery of the Prospera base site in Sitecore
 
 # Inventory the base site
 
-> Rules: `.skills/RULES.md` (R1–R25) is the one source and wins over anything below; this skill refers to rules by number.
+> Rules: `.skills/RULES.md` (R1–R26) is the one source and wins over anything below; this skill refers to rules by number.
 
 Why: the manifest is not generated from code. Code tells us which components exist; only Sitecore knows their rendering ids, templates and datasource folders. `/demo-site-bootstrap` and `bootstrap-plan.mjs` need those ids to reuse the base site's renderings in a new customer site.
 

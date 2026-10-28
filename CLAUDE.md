@@ -9,7 +9,7 @@ a local Next.js app), driven from Cursor or Claude Code. Start with `README-DEMO
 - All other skills: `.skills/<name>/SKILL.md`. That is the only copy; `.cursor/skills` and `.claude/skills` hold generated stubs that point to it.
 
 ## Rules
-**`.skills/RULES.md` (R1–R25) is the one source for how a demo is built.** Read it before any demo work; when anything else disagrees, it wins.
+**`.skills/RULES.md` (R1–R26) is the one source for how a demo is built.** Read it before any demo work; when anything else disagrees, it wins.
 The ones that matter in every session, demo run or not:
 - **R5 Marketer MCP first** for every Sitecore write it supports, with a read-back. Scripts write directly only for what the MCP cannot do
   (site creation, media upload, variants / rendering parameters when the MCP route is refused, the editing host). Reading to verify is always fine.
@@ -23,6 +23,8 @@ The ones that matter in every session, demo run or not:
 - **R25 The harness never changes silently** during a demo run: show the SE the diff and why; only after their yes,
   `run-gate.mjs approve <customer> harness --answer "<their words>"`. Never change a checking script to pass its own check.
 - **R20 Never invent facts; never paste secrets** (they live in `harness/.env.local`).
+- **R26 A new template is authorable:** every field has a Type that fits it (images `Image`, links `General Link`; never empty), no image/link
+  XML in other field types, no code that parses field values, decoration (play buttons, arrows) drawn by the component, not a field.
 - **R11 Localhost reads master** (preview context): no publish needed while building.
 
 ## Repository map
@@ -50,7 +52,7 @@ The ones that matter in every session, demo run or not:
 | `node harness/scripts/looks-gates.mjs <customer>` | compare the running app with the prospect's pages (header + every mirrored page) |
 | `node harness/scripts/looks-review.mjs <customer> --open` · `run-gate.mjs accept <customer> all|none|<n>` | after two fix attempts: ONE side-by-side page for all pages (visible differences only), ONE question, record the answer |
 | `node harness/scripts/build-check.mjs <customer> [--quick]` | `npm run build` (or a typecheck) of the customer app |
-| `node harness/scripts/link-audit.mjs <customer>` | every link / image field in the site holds valid XML |
+| `node harness/scripts/link-audit.mjs <customer>` | every link / image field in the site holds valid XML; every field's type fits its name and value (R26) |
 | `node harness/scripts/collect-images.mjs <customer>` | every image of every planned section, traced to its page and section (the only way images enter a demo) |
 | `node harness/scripts/attach-images.mjs <customer>` | proposes which uploaded image goes into which Image field (write them with the MCP) |
 | `node harness/scripts/media-upload.mjs <customer>` | upload images to the Media Library when `CH_ENABLED=false` (skips files over 50 MB) |

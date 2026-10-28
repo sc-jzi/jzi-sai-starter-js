@@ -10,7 +10,7 @@ It decides WHAT to build (story, pages, sections), then creates a NEW Sitecore s
 Method: `harness/reference/demo-method.md` (Chain of Pain, AAA, Command of the Message, do the last thing first). Read it first.
 
 ## Rules
-**`.skills/RULES.md` (R1–R25) applies in full; read it before Phase T0.** It is the one source: this skill refers to a rule by its number and never
+**`.skills/RULES.md` (R1–R26) applies in full; read it before Phase T0.** It is the one source: this skill refers to a rule by its number and never
 restates it. The ones this engine leans on most: R1 two approvals, R2 Marketer MCP first, R3 the gate decides "done", R4 nothing deferred, R5 MCP-first
 writes, R12–R13 mirror the live site one component per section, R16 other demos are invisible, R17 the app builds, R18 no prospect names in the shared
 harness, R21 only this demo's own new site changes.
@@ -77,7 +77,7 @@ Do not pick the collection or the site template for the SE, not even when only o
 1. `node harness/scripts/sites-api.mjs auth-check` first (it prints the environment and the collections it can see). If it fails, stop and say so.
 2. **Collection**: options `New collection named "<Customer>" (Recommended: nothing shared with other demos)` and `Use an existing collection`. Put the collection names found in this environment in the question text so the SE can tell if it is the wrong environment. If existing: ask which one (options from `sites-api.mjs collections`, max 4 + Other).
 3. **Site template**: `node harness/scripts/sites-api.mjs templates`. Options are template NAMES (never ids), `Empty` first labelled `(Recommended)` when it exists, then the others (max 4 options, rest via Other). All sites in an existing collection must use the same template: when the SE chose an existing collection, say which template its sites use if you can tell.
-4. Site name defaults to the customer's display name; it is shown at the gate, where the SE can change it.
+4. Site name defaults to the customer's display name with the spaces removed (never a space, R21; the readable name is the site's display name); it is shown at the gate, where the SE can change it.
 Write the answers into `demo-plan.yaml`: `site.collection`, `site.collectionMode` (`new` | `existing`), `site.template` (the name), `site.siteName`.
 
 ## Phase T3a — Measure the prospect (mandatory when the prospect has a URL; never skipped)

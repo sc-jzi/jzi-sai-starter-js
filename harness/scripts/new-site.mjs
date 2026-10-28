@@ -20,6 +20,7 @@ if (!customer) die("usage: new-site.mjs <customer> [--apply]");
 const dst = customerApp(customer, { mustExist: false }), src = baseApp();
 if (!existsSync(src)) die(`base app not found: industry-verticals/${BASE_APP}`);
 const site = readJson(join(demoDir(customer), "site.json"));
+if (site?.siteName && /\s/.test(site.siteName)) die(`site.json names the site "${site.siteName}": site names never contain spaces (R21), so NEXT_PUBLIC_DEFAULT_SITE_NAME cannot be written. Use the name SitecoreAI lists for the site.`, 1);
 if (!site?.siteName) die(`No site.json for "${customer}". Create the Sitecore site first: node harness/scripts/sites-api.mjs create-site --customer ${customer} …`, 1);
 if (existsSync(dst)) { const extra = readdirSync(dst).filter((e) => e !== "docs"); if (extra.length) die(`industry-verticals/${customer} already has app files (${extra.slice(0, 4).join(", ")}…) — refusing to overwrite`, 1); }
 const buildFile = join(ROOT, "xmcloud.build.json");

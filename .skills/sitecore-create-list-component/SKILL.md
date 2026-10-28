@@ -149,7 +149,7 @@ Batch 1 (if new category): Create 3 category folders (Components, Rendering Para
 Batch 2: Create parent template + child template + folder template (parallel)
 Batch 3: Set base templates on both datasource templates + create both Data sections (parallel)
 Batch 4: Create all fields — parent + child (parallel)
-Batch 5: Set all field types (parallel)
+Batch 5: Set all field types (parallel), then read every Type back: none may be empty (R26) — stop here until they are
 Batch 6: Create all 3 __Standard Values (parallel)
 Batch 7: Link all SVs + set defaults + set __Masters + create datasource folder + rendering params + rendering (all parallel)
 Batch 8: Set folder insert options + rendering params base templates + rendering fields + create example parent + create variants container (all parallel)
@@ -172,6 +172,10 @@ For each field:
 - verify the resulting field type after update
 
 Common field types: `Single-Line Text`, `Rich Text`, `Image`, `General Link`
+
+An empty `Type` is Single-Line Text: an image written into it is stored as text and can't be edited as an image (R26). Pictures, icons,
+posters, logos and backgrounds are `Image`; links, buttons and video URLs are `General Link`. Decoration (play button, arrows, quote marks,
+dividers) is drawn by the component, never a field. `link-audit.mjs` fails any of this.
 
 ### `__Standard Values` rule
 

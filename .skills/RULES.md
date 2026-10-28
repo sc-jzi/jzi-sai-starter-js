@@ -101,7 +101,8 @@ disagree, **this file wins** and the skill is the bug. Change a rule here, once.
 ## Sitecore scope and safety
 - **R21 Only this demo's own new site changes.** Never touch an existing site; no site is ever duplicated, copied, renamed or moved. (The one
   exception, outside demo runs: `component-showcase.mjs` maintains the base site's hidden `/Home/components` pages and adds the Headless
-  Variant definitions the base app's code variants need.) Before EVERY
+  Variant definitions the base app's code variants need.) **A site name never contains a space** (`AcmeFoods`, not `Acme Foods`: letters, digits, `_`,
+  `-`); the readable name is the display name. The app's `NEXT_PUBLIC_DEFAULT_SITE_NAME` is exactly that site name. Before EVERY
   Sitecore write: `node harness/scripts/guard-customer.mjs sitecore-path <customer> "<item path>"`, stop on a failure; after every phase:
   `guard-customer.mjs check <customer>`. *Enforced: guard-customer.*
 - **R22 Existing components are reused as they are on the Sitecore side** (shared templates, renderings, rendering parameters under the project layer);
@@ -113,3 +114,13 @@ disagree, **this file wins** and the skill is the bug. Change a rule here, once.
 - **R24 A front-end workaround for a Sitecore feature is disclosed.** Code that imitates a Sitecore behaviour (for example a cookie that drives
   personalization) is allowed only when Sitecore's own mechanism cannot work on the demo host. The Sitecore rules are still built; the workaround is
   named at the approval gate under "Personalization / behaviour" and in `demo-script.md`, with what the SE does instead in Pages.
+- **R26 A new template is authorable.** An editor must be able to change every field in Pages with the right editor.
+  - Every template field gets an explicit Type, read back after it is set. An empty Type is Single-Line Text, so it is never left empty.
+    Pictures, icons, posters, logos, backgrounds → `Image`; links, buttons, CTAs, video URLs → `General Link`; formatted text → `Rich Text`;
+    plain text → `Single-Line Text` / `Multi-Line Text`.
+  - Image or link XML never goes in a field of another type, and component code never parses a field value (no regex on `src=` / `href=`, no
+    "as image field" helpers). A value that reaches the app as a string means the field type is wrong: fix the template, not the code.
+  - Decoration is code, not content: play buttons, arrows, chevrons, quote marks, dividers and accents are drawn by the component (SVG/CSS).
+    A field exists only for something an editor would change.
+  - A video next to text is a two-column component: video link + poster `Image` + the text fields, with the play button drawn in code.
+  *Enforced: `link-audit.mjs` (field types against names and values; Rich Text is never checked for markup) and `run-gate.mjs` (the code).*

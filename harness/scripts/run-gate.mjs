@@ -25,7 +25,9 @@
  *   plan        the approved story and plan are unchanged since approval (approvals.json); every section whose component differs from the
  *               approved one has a recorded reason (plan-changes.jsonl); validate-site-plan passes, component-crops passes
  *   partials    Header and Footer partial designs exist in Sitecore on template {FD2059FD-...} (read from Sitecore, not from a file)
- *   links       link-audit.mjs: no General Link / Image field in the site holds a literal value (needs the Authoring client; no self-reported fallback)
+ *   links       link-audit.mjs: no General Link / Image field in the site holds a literal value, and every field is authorable (R26: has a
+ *               type that fits its name and value) (needs the Authoring client; no self-reported fallback); the app's code parses no field
+ *               value for src= / href= and has no Image field for decoration (play button, arrow, quote mark, divider)
  *   placement   every planned page's headless-main renderings, read from the app's content endpoint (preview context = master), match the plan;
  *               no header/footer renderings on a page; no text in rendering parameters (content lives in datasource fields)
  *   images      every live image is in the manifest and uploaded (Content Hub, or the Media Library when CH_ENABLED=false); files over 50 MB are
@@ -39,7 +41,7 @@
  *   progress    demo-progress.yaml has no pending / failed / in_progress / blocked phase
  */
 import { existsSync, readFileSync, writeFileSync, readdirSync, mkdirSync, appendFileSync, unlinkSync, statSync } from "node:fs";
-import { join } from "node:path";
+import { join, sep } from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { ENV, ROOT, die, demoDir, customerApp, readJson, readRegistry, chromeBands, topLabels, isAdBand, edgeRoute, routeOf, authoringClient,
@@ -361,14 +363,36 @@ if (site && gql) {
 stage = "links";
 if (site) {
   const prev = readJson(join(demo, "link-audit.json"));
-  const fresh = fast && prev && Array.isArray(prev.bad) && !prev.bad.length && !(prev.unreadable ?? []).length && Date.now() - Date.parse(prev.at || 0) < 20 * 60 * 1000;
+  const fresh = fast && prev && Array.isArray(prev.bad) && !prev.bad.length && Array.isArray(prev.wrongType) && !prev.wrongType.length && !(prev.unreadable ?? []).length && Date.now() - Date.parse(prev.at || 0) < 20 * 60 * 1000;
   if (!fresh) {
     const r = node("link-audit.mjs", [customer], 90000), audit = readJson(join(demo, "link-audit.json"));
     if (timedOut(r)) fail("link-audit did not finish in time", `node harness/scripts/link-audit.mjs ${customer}`);
-    else if (r.status === 1) fail(`link-audit: ${(audit?.bad ?? []).length} link/image field(s) hold a literal value, so their components render empty (${(audit?.bad ?? []).slice(0, 2).map((b) => `${b.path.split("/").slice(-2).join("/")} · ${b.field}`).join("; ")})`, `Write each fix printed by node harness/scripts/link-audit.mjs ${customer} with update_fields_on_item (internal link = link-xml.mjs make --id, never a path), read back, re-run the audit.`);
-    else if (r.status === 3) fail("link-audit needs the Authoring GraphQL client (SITECORE_CM_HOST + automation client in harness/.env.local)", "node harness/scripts/env-check.mjs; there is no self-reported fallback.");
+    else if (r.status === 1) {
+      // both kinds of finding can be open at once: report each
+      if ((audit?.wrongType ?? []).length) fail(`${audit.wrongType.length} template field(s) are not authorable: no type, or a type that does not fit the name or value (${audit.wrongType.slice(0, 3).map((w) => `${w.template} · ${w.field}`).join("; ")})`, `R26: set each field's Type on its template (Image for pictures and icons, General Link for links and buttons; read it back), re-write the values as that type, then re-run node harness/scripts/link-audit.mjs ${customer}. Never parse a value in code instead.`);
+      if ((audit?.bad ?? []).length) fail(`link-audit: ${(audit?.bad ?? []).length} link/image field(s) hold a literal value, so their components render empty (${(audit?.bad ?? []).slice(0, 2).map((b) => `${b.path.split("/").slice(-2).join("/")} · ${b.field}`).join("; ")})`, `Write each fix printed by node harness/scripts/link-audit.mjs ${customer} with update_fields_on_item (internal link = link-xml.mjs make --id, never a path), read back, re-run the audit.`);
+    } else if (r.status === 3) fail("link-audit needs the Authoring GraphQL client (SITECORE_CM_HOST + automation client in harness/.env.local)", "node harness/scripts/env-check.mjs; there is no self-reported fallback.");
     else if (r.status !== 0) fail(`link-audit could not complete: ${(r.stderr || r.stdout).trim().split(/\r?\n/).pop()?.slice(0, 200)}`, `node harness/scripts/link-audit.mjs ${customer}`);
   }
+}
+// R26 in code: a field value is never parsed (the template's field type is fixed instead); decoration is drawn by the component, not a field
+{
+  const PARSE = /\.(match|matchAll|exec|replace|replaceAll|test)\(\s*\/[^\n]*\b(src|href)=/, DECOR = /\b(Play\w*|\w*Arrow\w*|Chevron\w*|Quote(?:Mark|Icon)\w*|Divider\w*|Bullet\w*)\??\s*:\s*(?:ImageField|NextImageField)\b/;
+  const srcDir = join(customerApp(customer, { mustExist: false }), "src"), hits = [];
+  const walk = (d) => {
+    for (const f of existsSync(d) ? readdirSync(d) : []) {
+      const p = join(d, f);
+      if (statSync(p).isDirectory()) { walk(p); continue; }
+      if (!/\.(tsx?|jsx?)$/.test(f)) continue;
+      readFileSync(p, "utf8").split(/\r?\n/).forEach((l, i) => {
+        const rel = `src${p.slice(srcDir.length).split(sep).join("/")}:${i + 1}`;
+        if (PARSE.test(l)) hits.push(`${rel} parses src=/href= out of a value`);
+        if (DECOR.test(l)) hits.push(`${rel} makes decoration an Image field`);
+      });
+    }
+  };
+  walk(srcDir);
+  if (hits.length) fail(`the app's code works around content that is not authorable (${hits.slice(0, 3).join("; ")}${hits.length > 3 ? `; ${hits.length - 3} more` : ""})`, `R26: fix the template field's type instead of parsing its value; draw play buttons, arrows, quote marks and dividers in the component (SVG/CSS) and remove the field. Then node harness/scripts/build-check.mjs ${customer}.`);
 }
 
 // placement, read from the app's content endpoint (the preview context in the app's .env.local serves master: no publish needed)
@@ -377,10 +401,14 @@ stage = "placement";
 const pageRoutes = new Map();   // plan path -> served route, reused by the content checks
 {
   const withSections = planPages.filter((p) => Array.isArray(p?.sections) && p.sections.length);
-  if (withSections.length && site) {
+  // a site name never contains a space (R21): the content endpoint knows such a site by another name, and every page then reads as missing
+  let appSite = ""; try { appSite = (readFileSync(join(customerApp(customer, { mustExist: false }), ".env.local"), "utf8").match(/^NEXT_PUBLIC_DEFAULT_SITE_NAME=(.*)$/m)?.[1] ?? "").trim().replace(/^["']|["']$/g, ""); } catch { /* no app env: reported below */ }
+  if (/\s/.test(appSite)) fail(`the app's site name "${appSite}" contains a space (NEXT_PUBLIC_DEFAULT_SITE_NAME)`, `Site names never contain spaces (R21). The SE sets NEXT_PUBLIC_DEFAULT_SITE_NAME in industry-verticals/${customer}/.env.local to the name SitecoreAI lists for the site (e.g. "${appSite.replace(/\s+/g, "")}"); restart the app so .sitecore/sites.json regenerates, then re-run.`);
+  else if (withSections.length && site) {
     let routes = null;
     try { routes = await Promise.all(withSections.map((p) => edgeRoute(customer, routeOf(p.path)))); } catch (e) { fail(`the app's content endpoint could not be reached: ${e.message.slice(0, 120)}`, "Check the network and the context id in the app's .env.local, then re-run."); }
     if (routes && routes.some((r) => r === undefined)) fail(`the app's .env.local has no content context id or site name (SITECORE_EDGE_CONTEXT_ID, NEXT_PUBLIC_DEFAULT_SITE_NAME)`, `demo-new-site: write industry-verticals/${customer}/.env.local. The gate reads placements from the app's content endpoint; it has no file fallback.`);
+    else if (routes && routes.length > 1 && routes.every((r) => r === null)) fail(`no page of the site is served by the app's content endpoint (site "${appSite}")`, "One cause, not missing pages: check that NEXT_PUBLIC_DEFAULT_SITE_NAME and the context id in the app's .env.local match the site as SitecoreAI lists it, then re-run.");
     else if (routes) withSections.forEach((p, i) => {
       const r = routes[i], want = p.sections.map(plannedName).filter(Boolean);
       if (r) pageRoutes.set(p.path, r);

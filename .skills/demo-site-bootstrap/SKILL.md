@@ -5,7 +5,7 @@ description: Prepare a freshly created site: Data folders, Headless Variants, Av
 
 # Bootstrap a freshly created site so the shared components work in it
 
-> Rules: `.skills/RULES.md` (R1–R25) is the one source and wins over anything below; this skill refers to rules by number.
+> Rules: `.skills/RULES.md` (R1–R26) is the one source and wins over anything below; this skill refers to rules by number.
 
 A site made from a site template has the standard presentation scaffolding but none of the project-specific items that ProsperaFinancial-style sites carry. The shared definitions (templates, renderings, rendering parameters under the project layer, `renderingsRoot` in `docs/ai/config/project.yaml`) already exist and are REUSED. This skill creates only what lives INSIDE the new site. Use the Marketer MCP; how to do nested placeholders, datasources and variants is in `.skills/sitecore-reference/references/placeholders-and-variants.md` (earlier notes in `agent-api-limitations.md` are history, not rules).
 

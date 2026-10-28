@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T20:31:34.226Z",
+  "generatedAt": "2026-10-27T23:06:37.444Z",
   "components": [
     {
       "name": "ArticleDetails",
@@ -63,6 +63,40 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": [
+          {
+            "name": "page-navigation",
+            "where": "after BackgroundImage, before Thumbnail"
+          },
+          {
+            "name": "article-meta",
+            "where": "after Thumbnail, before Title"
+          },
+          {
+            "name": "background-page-content",
+            "where": "after Content"
+          },
+          {
+            "name": "page-content",
+            "where": "after Content"
+          }
+        ],
+        "Simple": [
+          {
+            "name": "article-meta",
+            "where": "after Content"
+          },
+          {
+            "name": "background-page-content",
+            "where": "after Content"
+          },
+          {
+            "name": "page-content",
+            "where": "after Content"
+          }
+        ]
+      },
       "canShow": {
         "images": 0,
         "links": 0,
@@ -141,6 +175,23 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": [
+          {
+            "name": "page-navigation",
+            "where": "after BackgroundImage, before Photo"
+          },
+          {
+            "name": "background-page-content",
+            "where": "after Bio"
+          },
+          {
+            "name": "page-content",
+            "where": "after Bio"
+          }
+        ],
+        "Simple": []
+      },
       "canShow": {
         "images": 0,
         "links": 0,
@@ -257,6 +308,9 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
       "canShow": {
         "images": 2,
         "links": 1,
@@ -373,6 +427,10 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": [],
+        "LargeImage": []
+      },
       "canShow": {
         "images": 2,
         "links": 1,
@@ -476,6 +534,12 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": [],
+        "Compact": [],
+        "PageHeading": [],
+        "Centered": []
+      },
       "canShow": {
         "images": 0,
         "links": 1,
@@ -583,6 +647,9 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
       "canShow": {
         "images": 1,
         "links": 1,
@@ -727,6 +794,14 @@
         "QuickOrderText",
         "QuickOrderTitle"
       ],
+      "placeholders": {
+        "Default": [
+          {
+            "name": "hero-banner",
+            "where": "after Cta2, before Icon"
+          }
+        ]
+      },
       "canShow": {
         "images": 2,
         "links": 2,
@@ -829,6 +904,9 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
       "canShow": {
         "images": 2,
         "links": 1,
@@ -953,6 +1031,21 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": [
+          {
+            "name": "promo-cta",
+            "where": "after Text, before Link"
+          }
+        ],
+        "WithPlaceholderColumn": [
+          {
+            "name": "promo-cta",
+            "where": "after Link2, before Image"
+          }
+        ],
+        "WithBackgroundImage": []
+      },
       "canShow": {
         "images": 1,
         "links": 2,
@@ -1051,6 +1144,9 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
       "canShow": {
         "images": 1,
         "links": 0,
@@ -1307,6 +1403,9 @@
         "Description4",
         "Description5"
       ],
+      "placeholders": {
+        "Default": []
+      },
       "canShow": {
         "images": 5,
         "links": 5,
@@ -1537,6 +1636,9 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
       "canShow": {
         "images": 4,
         "links": 4,
@@ -1758,6 +1860,11 @@
         "Video2",
         "Video3"
       ],
+      "placeholders": {
+        "Default": [],
+        "WithIcons": [],
+        "WithIconsCompact": []
+      },
       "canShow": {
         "images": 3,
         "links": 3,
@@ -1923,6 +2030,18 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": [
+          {
+            "name": "two-col-placeholder-left",
+            "where": ""
+          },
+          {
+            "name": "two-col-placeholder-right",
+            "where": ""
+          }
+        ]
+      },
       "canShow": {
         "images": 2,
         "links": 2,
@@ -2059,6 +2178,9 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
       "canShow": {
         "images": 0,
         "links": 0,
@@ -2253,6 +2375,9 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
       "canShow": {
         "images": 4,
         "links": 4,
@@ -2393,6 +2518,9 @@
       "notRendered": [
         "Image2"
       ],
+      "placeholders": {
+        "Default": []
+      },
       "canShow": {
         "images": 1,
         "links": 1,
@@ -2477,6 +2605,9 @@
         "TargetUrl",
         "ImageCaption"
       ],
+      "placeholders": {
+        "Default": []
+      },
       "canShow": {
         "images": 1,
         "links": 0,
@@ -2571,6 +2702,10 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": [],
+        "Simple": []
+      },
       "canShow": {
         "images": 1,
         "links": 0,
@@ -2638,6 +2773,9 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
       "canShow": {
         "images": 0,
         "links": 0,
@@ -2806,6 +2944,9 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
       "canShow": {
         "images": 2,
         "links": 0,
@@ -2936,6 +3077,9 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
       "canShow": {
         "images": 0,
         "links": 1,
@@ -3048,6 +3192,9 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
       "canShow": {
         "images": 1,
         "links": 0,
@@ -3178,6 +3325,9 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
       "canShow": {
         "images": 0,
         "links": 0,
@@ -3267,6 +3417,9 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
       "canShow": {
         "images": 1,
         "links": 0,
@@ -3353,6 +3506,12 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": [],
+        "ThreeColumn": [],
+        "Simplified": [],
+        "Grid": []
+      },
       "canShow": {
         "images": 0,
         "links": 0,
@@ -3434,6 +3593,11 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": [],
+        "Slider": [],
+        "Simple": []
+      },
       "canShow": {
         "images": 0,
         "links": 0,
@@ -3706,6 +3870,10 @@
         "SxaTags",
         "Page Design"
       ],
+      "placeholders": {
+        "Default": [],
+        "WithSocials": []
+      },
       "canShow": {
         "images": 4,
         "links": 3,
@@ -3796,6 +3964,10 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": [],
+        "Mosaic": []
+      },
       "canShow": {
         "images": 0,
         "links": 0,
@@ -3878,6 +4050,10 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": [],
+        "SingleColumn": []
+      },
       "canShow": {
         "images": 0,
         "links": 0,
@@ -3997,6 +4173,9 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
       "canShow": {
         "images": 1,
         "links": 0,
@@ -4072,6 +4251,14 @@
         }
       ],
       "notRendered": [],
+      "placeholders": {
+        "Default": [
+          {
+            "name": "project-additional-content",
+            "where": "after Problem, before Solution"
+          }
+        ]
+      },
       "canShow": {
         "images": 0,
         "links": 0,

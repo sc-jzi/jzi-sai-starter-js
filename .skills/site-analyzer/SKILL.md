@@ -5,7 +5,7 @@ description: Decompose a client homepage into sections and match each to the tem
 
 # Site Analyzer
 
-> Rules: `.skills/RULES.md` (R1–R25) is the one source and wins over anything below; this skill refers to rules by number.
+> Rules: `.skills/RULES.md` (R1–R26) is the one source and wins over anything below; this skill refers to rules by number.
 
 > **Where this runs:** open the repo root. Paths such as `docs/ai/...` and `src/...` below belong to the customer app `industry-verticals/<customer>/` and never to `industry-verticals/prospera` (the read-only base app). If the customer is not clear from the conversation, ask first. Shared reference docs live in `.skills/sitecore-reference/references/`.
 

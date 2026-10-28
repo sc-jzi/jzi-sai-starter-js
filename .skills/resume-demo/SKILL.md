@@ -24,4 +24,4 @@ Follow "Resume" in `demo-from-transcript`:
 - **After gate 2**: `node harness/scripts/run-gate.mjs init <customer>` (re-arms the stop hook for this run), then `node harness/scripts/run-gate.mjs check <customer>` and work through its items in order. That is the "Continuous run": no hand-back until it exits 0.
 
 ## Rules
-`.skills/RULES.md` (R1–R25) applies in full.
+`.skills/RULES.md` (R1–R26) applies in full.

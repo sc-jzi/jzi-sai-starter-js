@@ -5,7 +5,7 @@ description: Build every planned page of a customer demo via Marketer MCP (compo
 
 # Create and assemble ALL planned pages (replaces "Home only" Phase 6)
 
-> Rules: `.skills/RULES.md` (R1–R25) is the one source and wins over anything below; this skill refers to rules by number.
+> Rules: `.skills/RULES.md` (R1–R26) is the one source and wins over anything below; this skill refers to rules by number.
 
 Called by `demo-from-transcript` (Phase T5) after the NEW site is created and bootstrapped, and theme, images and content items exist. Input: the approved
 `industry-verticals/<customer>/docs/ai/demos/<customer>/demo-plan.yaml` (`site.pages`) and `content-map.yaml`.
