@@ -8,11 +8,11 @@ import {
   ImageField,
   Text,
   RichTextField,
+  RichText,
   withDatasourceCheck,
   NextImage,
 } from '@sitecore-content-sdk/nextjs';
 import Link from 'next/link';
-import { asImageField } from 'lib/as-image-field';
 
 interface Fields {
   Title: Field<string>;
@@ -55,7 +55,7 @@ const ArticleListDefault = (props: ArticleListComponentProps): JSX.Element => {
 
   return (
     <div
-      className={`component article-list ${props.params?.styles?.trimEnd() || ''}`}
+      className={`component article-list ${props.params?.styles?.trimEnd() ?? ''}`}
       id={id ? id : undefined}
     >
       <div className="container">
@@ -207,58 +207,76 @@ export const ThreeColumn = withDatasourceCheck()<ArticleListComponentProps>(Arti
 export const Simplified = withDatasourceCheck()<ArticleListComponentProps>(ArticleListSimplified);
 export const Grid = withDatasourceCheck()<ArticleListComponentProps>(ArticleListGrid);
 
-export const MccLabel = (props: ArticleListComponentProps): JSX.Element => {
-  const first = props.fields?.items?.[0] as
-    | { fields?: Fields & { Image?: ImageField; Date?: Field<string>; Excerpt?: Field<string> } }
-    | undefined;
-  const image = asImageField(first?.fields?.Image);
+export const MccLabel = (props: ArticleListComponentProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label">
+    <Default {...props} />
+  </section>
+);
+
+export const MccLabelNews = (props: ArticleListComponentProps): JSX.Element => {
+  const item = getNewsItems(props.fields?.items, 1)?.[0];
+  const id = props.params?.RenderingIdentifier;
+
   return (
-    <div className="component article-list mcc-label-variant MccLabel">
-      <div className="news-card">
-        {image && <NextImage field={image} width={430} height={250} />}
-        <div className="news-copy">
-          <Text field={first?.fields?.Date} tag="p" />
-          <Text field={first?.fields?.Title} tag="h2" />
-          <Text field={first?.fields?.Excerpt} tag="p" />
-          <a className="news-see-all" href="/news">See All</a>
-          <a className="news-read-more" href="/news/mcc-earns-ecovadis-silver-medal">Read More</a>
-        </div>
+    <div className={`component article-list variant-mcc-label ${props.params?.styles || ''}`} id={id}>
+      <div className="container">
+        {item && (
+          <div className="row gx-5 align-items-center">
+            <div className="col-lg-4">
+              <NextImage field={item.fields.Thumbnail} width={400} height={300} />
+            </div>
+            <div className="col-lg-8">
+              {item.fields.Excerpt?.value && (
+                <p>
+                  <Text field={item.fields.Excerpt} />
+                </p>
+              )}
+              <h3>
+                <Text field={item.fields.Title} />
+              </h3>
+              {item.fields.Content?.value && <RichText field={item.fields.Content} />}
+              <Link href={item.url} className="button btn">
+                Read More
+              </Link>
+              <Link href={getAllArticlesPageHref(props.fields?.items)}>See All</Link>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
 };
 
-export const MccLabelNewsCards = (props: ArticleListComponentProps): JSX.Element => (
-  <div className="mcc-label-variant MccLabelNewsCards">
-    <Default {...props} />
-  </div>
-);
+export const MccLabelKnowledge = (props: ArticleListComponentProps): JSX.Element => {
+  const item = getNewsItems(props.fields?.items, 1)?.[0];
+  const id = props.params?.RenderingIdentifier;
 
-export const MccLabelResourceRow = (props: ArticleListComponentProps): JSX.Element => {
-  const items = (props.fields?.items ?? []).filter((item) => item.fields?.Title);
-  const head = items.find((item) => item.fields.Title?.value === "Label expert knowledge to inspire you") ?? items[0];
-  const rest = items.filter((item) => item !== head);
   return (
-    <div className="component article-list mcc-label-variant MccLabelResourceRow">
-      <div className="resource-row">
-        <div className="resource-photos">
-          {rest.map((item, index) => {
-            const image = asImageField((item.fields as { Image?: ImageField }).Image);
-            return image ? <NextImage key={item.url || index} field={image} width={430} height={250} /> : null;
-          })}
-        </div>
-        <div className="resource-copy">
-          <Text field={head?.fields?.Title} tag="h2" />
-          <Text field={(head?.fields as { Text?: Field<string> } | undefined)?.Text} tag="p" />
-          {rest.map((item, index) => (
-            <article key={item.url || index}>
-              <Text field={item.fields?.Title} tag="h3" />
-              <Text field={item.fields?.Excerpt} tag="p" />
-            </article>
-          ))}
-          <a className="news-see-all" href="/resources">SEE ALL</a>
-          <a href="/resources">Read More</a>
-        </div>
+    <div className={`component article-list variant-mcc-label ${props.params?.styles || ''}`} id={id}>
+      <div className="container">
+        {item && (
+          <div className="row gx-5 align-items-center">
+            <div className="col-lg-4">
+              <NextImage field={item.fields.Thumbnail} width={400} height={300} />
+            </div>
+            <div className="col-lg-8">
+              <h2>Label expert knowledge to inspire you</h2>
+              {item.fields.Content?.value && <RichText field={item.fields.Content} />}
+              <h3>
+                <Text field={item.fields.Title} />
+              </h3>
+              {item.fields.Excerpt?.value && (
+                <p>
+                  <Text field={item.fields.Excerpt} />
+                </p>
+              )}
+              <a className="button btn" href="https://www.mcclabel.com/en/resources">
+                See All
+              </a>
+              <Link href={item.url}>Read More</Link>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

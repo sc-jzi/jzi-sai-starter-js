@@ -19,7 +19,6 @@ import { useInfiniteSearch, useSuggest, useSearch } from '@sitecore-content-sdk/
 import { DEFAULT_IMG_URL } from 'src/_data/customizations';
 import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import useVisibility from 'src/hooks/useVisibility';
-import { asImageField } from 'lib/as-image-field';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import { CountUp } from 'components/non-sitecore/CountUp';
@@ -123,12 +122,6 @@ const importMap = [
     module: 'src/hooks/useVisibility',
     exports: [
       { name: 'default', value: useVisibility },
-    ]
-  },
-  {
-    module: 'lib/as-image-field',
-    exports: [
-      { name: 'asImageField', value: asImageField },
     ]
   },
   {

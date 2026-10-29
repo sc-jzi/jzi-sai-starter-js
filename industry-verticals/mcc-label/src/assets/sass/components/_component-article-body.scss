@@ -1,0 +1,76 @@
+// Article body: the article text with a Share / Print rail on the left (the rail is drawn by the component)
+.article-body {
+  padding: 100px 0 80px;
+
+  .article-body-layout {
+    display: flex;
+    gap: 2rem;
+    max-width: 1440px;
+
+    @include respond-to(mobile-large) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  .article-body-rail {
+    flex: 0 0 280px;
+    text-align: left;
+
+    .rail-label {
+      font-weight: 700;
+      margin: 0 0 12px;
+      text-transform: uppercase;
+      width: 50px;
+      text-align: center;
+    }
+
+    .rail-icons {
+      list-style: none;
+      margin: 0 0 24px;
+      padding: 0;
+
+      li {
+        margin-bottom: 10px;
+      }
+    }
+
+    .rail-print {
+      background: none;
+      border: 0;
+      color: #000000;
+      display: flex;
+      flex-direction: column;
+      font: inherit;
+      padding: 0;
+
+      .rail-label {
+        margin-bottom: 12px;
+      }
+    }
+
+    a,
+    .rail-icon {
+      align-items: center;
+      background: #2bb673;
+      border: 0;
+      border-radius: 50%;
+      color: #ffffff;
+      display: inline-flex;
+      height: 40px;
+      justify-content: center;
+      margin-left: 5px;
+      width: 40px;
+    }
+  }
+
+  .article-body-text {
+    color: #000000;
+    flex: 0 1 800px;
+    font-size: 16px;
+    line-height: 24px;
+
+    p {
+      margin: 0;
+    }
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-27T23:06:37.444Z",
+  "generatedAt": "2026-10-29T15:38:44.414Z",
   "components": [
     {
       "name": "ArticleDetails",
@@ -115,7 +115,24 @@
         {
           "variant": "Default",
           "file": "ArticleDetails--Default.png",
-          "route": "/articles/introducing-mobile-finance"
+          "route": "/articles/introducing-mobile-finance",
+          "shape": {
+            "layout": "items",
+            "imageSide": null,
+            "items": 4,
+            "rows": 1,
+            "itemMedia": "photo",
+            "iconSize": null,
+            "mainImage": null,
+            "photos": 6,
+            "slider": false,
+            "video": true,
+            "form": false,
+            "headings": 6,
+            "buttons": 0,
+            "eyebrow": false
+          },
+          "looksLike": "a row of 4 items, each a photo with text; no button, a video"
         },
         {
           "variant": "Simple"
@@ -325,7 +342,27 @@
         {
           "variant": "Default",
           "file": "Carousel--Default.png",
-          "route": "/components/carousel"
+          "route": "/components/carousel",
+          "shape": {
+            "layout": "cover",
+            "imageSide": null,
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": {
+              "w": 1178,
+              "h": 656
+            },
+            "photos": 1,
+            "slider": true,
+            "video": true,
+            "form": false,
+            "headings": 1,
+            "buttons": 1,
+            "eyebrow": false
+          },
+          "looksLike": "full-width photo with the text over it; 1 button, sliding, a video"
         }
       ],
       "notes": [
@@ -443,12 +480,52 @@
         {
           "variant": "Default",
           "file": "CtaBanner--Default.png",
-          "route": "/components/cta-banner"
+          "route": "/components/cta-banner",
+          "shape": {
+            "layout": "split",
+            "imageSide": "right",
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": {
+              "w": 565,
+              "h": 565
+            },
+            "photos": 1,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 2,
+            "buttons": 1,
+            "eyebrow": false
+          },
+          "looksLike": "text beside one large photo (photo right); 1 button"
         },
         {
           "variant": "LargeImage",
           "file": "CtaBanner--LargeImage.png",
-          "route": "/components/cta-banner"
+          "route": "/components/cta-banner",
+          "shape": {
+            "layout": "split",
+            "imageSide": "right",
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": {
+              "w": 565,
+              "h": 565
+            },
+            "photos": 1,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 2,
+            "buttons": 1,
+            "eyebrow": false
+          },
+          "looksLike": "text beside one large photo (photo right); 1 button"
         }
       ],
       "notes": [
@@ -552,22 +629,90 @@
         {
           "variant": "Default",
           "file": "HeadingCta--Default.png",
-          "route": "/components/heading-cta"
+          "route": "/components/heading-cta",
+          "shape": {
+            "layout": "text",
+            "imageSide": null,
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": null,
+            "photos": 0,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 2,
+            "buttons": 1,
+            "eyebrow": false
+          },
+          "looksLike": "text only; 1 button"
         },
         {
           "variant": "Compact",
           "file": "HeadingCta--Compact.png",
-          "route": "/components/heading-cta"
+          "route": "/components/heading-cta",
+          "shape": {
+            "layout": "text",
+            "imageSide": null,
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": null,
+            "photos": 0,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 2,
+            "buttons": 1,
+            "eyebrow": false
+          },
+          "looksLike": "text only; 1 button"
         },
         {
           "variant": "PageHeading",
           "file": "HeadingCta--PageHeading.png",
-          "route": "/components/heading-cta"
+          "route": "/components/heading-cta",
+          "shape": {
+            "layout": "text",
+            "imageSide": null,
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": null,
+            "photos": 0,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 2,
+            "buttons": 1,
+            "eyebrow": false
+          },
+          "looksLike": "text only; 1 button"
         },
         {
           "variant": "Centered",
           "file": "HeadingCta--Centered.png",
-          "route": "/components/heading-cta"
+          "route": "/components/heading-cta",
+          "shape": {
+            "layout": "text",
+            "imageSide": null,
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": null,
+            "photos": 0,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 2,
+            "buttons": 1,
+            "eyebrow": false
+          },
+          "looksLike": "text only; 1 button"
         }
       ],
       "notes": [
@@ -662,7 +807,27 @@
         {
           "variant": "Default",
           "file": "Hero--Default.png",
-          "route": "/components/hero"
+          "route": "/components/hero",
+          "shape": {
+            "layout": "cover",
+            "imageSide": null,
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": {
+              "w": 1178,
+              "h": 640
+            },
+            "photos": 1,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 0,
+            "buttons": 1,
+            "eyebrow": false
+          },
+          "looksLike": "full-width photo with the text over it; 1 button"
         }
       ],
       "notes": [
@@ -814,7 +979,27 @@
         {
           "variant": "Default",
           "file": "HeroBanner--Default.png",
-          "route": "/components/hero-banner"
+          "route": "/components/hero-banner",
+          "shape": {
+            "layout": "split",
+            "imageSide": "right",
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": {
+              "w": 565,
+              "h": 376
+            },
+            "photos": 1,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 2,
+            "buttons": 2,
+            "eyebrow": false
+          },
+          "looksLike": "text beside one large photo (photo right); 2 buttons"
         }
       ],
       "notes": [
@@ -919,7 +1104,27 @@
         {
           "variant": "Default",
           "file": "ParallaxBanner--Default.png",
-          "route": "/components/parallax-banner"
+          "route": "/components/parallax-banner",
+          "shape": {
+            "layout": "cover",
+            "imageSide": null,
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": {
+              "w": 1199,
+              "h": 1099
+            },
+            "photos": 2,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 0,
+            "buttons": 0,
+            "eyebrow": false
+          },
+          "looksLike": "full-width photo with the text over it; no button"
         }
       ],
       "notes": []
@@ -1064,17 +1269,77 @@
         {
           "variant": "Default",
           "file": "PromoCta--Default.png",
-          "route": "/components/promo-cta"
+          "route": "/components/promo-cta",
+          "shape": {
+            "layout": "split",
+            "imageSide": "right",
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": {
+              "w": 620,
+              "h": 413
+            },
+            "photos": 1,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 2,
+            "buttons": 2,
+            "eyebrow": false
+          },
+          "looksLike": "text beside one large photo (photo right); 2 buttons"
         },
         {
           "variant": "WithPlaceholderColumn",
           "file": "PromoCta--WithPlaceholderColumn.png",
-          "route": "/components/promo-cta"
+          "route": "/components/promo-cta",
+          "shape": {
+            "layout": "split",
+            "imageSide": "right",
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": {
+              "w": 405,
+              "h": 270
+            },
+            "photos": 1,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 2,
+            "buttons": 2,
+            "eyebrow": false
+          },
+          "looksLike": "text beside one large photo (photo right); 2 buttons"
         },
         {
           "variant": "WithBackgroundImage",
           "file": "PromoCta--WithBackgroundImage.png",
-          "route": "/components/promo-cta"
+          "route": "/components/promo-cta",
+          "shape": {
+            "layout": "cover",
+            "imageSide": null,
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": {
+              "w": 1178,
+              "h": 630
+            },
+            "photos": 1,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 1,
+            "buttons": 1,
+            "eyebrow": false
+          },
+          "looksLike": "full-width photo with the text over it; 1 button"
         }
       ],
       "notes": [
@@ -1165,7 +1430,27 @@
         {
           "variant": "Default",
           "file": "AppPromo--Default.png",
-          "route": "/components/app-promo"
+          "route": "/components/app-promo",
+          "shape": {
+            "layout": "split",
+            "imageSide": "right",
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": {
+              "w": 601,
+              "h": 368
+            },
+            "photos": 2,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 1,
+            "buttons": 0,
+            "eyebrow": false
+          },
+          "looksLike": "text beside one large photo (photo right); no button"
         }
       ],
       "notes": [
@@ -1420,7 +1705,24 @@
         {
           "variant": "Default",
           "file": "FiveColumnCta--Default.png",
-          "route": "/components/five-column-cta"
+          "route": "/components/five-column-cta",
+          "shape": {
+            "layout": "items",
+            "imageSide": null,
+            "items": 5,
+            "rows": 1,
+            "itemMedia": "icon",
+            "iconSize": 112,
+            "mainImage": null,
+            "photos": 0,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 0,
+            "buttons": 0,
+            "eyebrow": false
+          },
+          "looksLike": "a row of 5 items, each a small icon (112px) with text; no button"
         }
       ],
       "notes": [
@@ -1657,7 +1959,24 @@
         {
           "variant": "Default",
           "file": "FourColumnCta--Default.png",
-          "route": "/components/four-column-cta"
+          "route": "/components/four-column-cta",
+          "shape": {
+            "layout": "items",
+            "imageSide": null,
+            "items": 4,
+            "rows": 1,
+            "itemMedia": "photo",
+            "iconSize": null,
+            "mainImage": null,
+            "photos": 4,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 4,
+            "buttons": 0,
+            "eyebrow": false
+          },
+          "looksLike": "a row of 4 items, each a photo with text; no button"
         }
       ],
       "notes": [
@@ -1883,17 +2202,68 @@
         {
           "variant": "Default",
           "file": "ThreeColumnCta--Default.png",
-          "route": "/components/three-column-cta"
+          "route": "/components/three-column-cta",
+          "shape": {
+            "layout": "items",
+            "imageSide": null,
+            "items": 3,
+            "rows": 1,
+            "itemMedia": "photo",
+            "iconSize": null,
+            "mainImage": null,
+            "photos": 3,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 3,
+            "buttons": 3,
+            "eyebrow": false
+          },
+          "looksLike": "a row of 3 items, each a photo with text; 3 buttons"
         },
         {
           "variant": "WithIcons",
           "file": "ThreeColumnCta--WithIcons.png",
-          "route": "/components/three-column-cta"
+          "route": "/components/three-column-cta",
+          "shape": {
+            "layout": "items",
+            "imageSide": null,
+            "items": 3,
+            "rows": 1,
+            "itemMedia": "icon",
+            "iconSize": 32,
+            "mainImage": null,
+            "photos": 0,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 3,
+            "buttons": 0,
+            "eyebrow": false
+          },
+          "looksLike": "a row of 3 items, each a small icon (32px) with text; no button"
         },
         {
           "variant": "WithIconsCompact",
           "file": "ThreeColumnCta--WithIconsCompact.png",
-          "route": "/components/three-column-cta"
+          "route": "/components/three-column-cta",
+          "shape": {
+            "layout": "items",
+            "imageSide": null,
+            "items": 3,
+            "rows": 1,
+            "itemMedia": "icon",
+            "iconSize": 24,
+            "mainImage": null,
+            "photos": 0,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 3,
+            "buttons": 0,
+            "eyebrow": false
+          },
+          "looksLike": "a row of 3 items, each a small icon (24px) with text; no button"
         }
       ],
       "notes": [
@@ -2058,7 +2428,24 @@
         {
           "variant": "Default",
           "file": "TwoColumnCta--Default.png",
-          "route": "/components/two-column-cta"
+          "route": "/components/two-column-cta",
+          "shape": {
+            "layout": "items",
+            "imageSide": null,
+            "items": 2,
+            "rows": 1,
+            "itemMedia": "photo",
+            "iconSize": null,
+            "mainImage": null,
+            "photos": 2,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 2,
+            "buttons": 2,
+            "eyebrow": false
+          },
+          "looksLike": "a row of 2 items, each a photo with text; 2 buttons"
         }
       ],
       "notes": [
@@ -2195,7 +2582,24 @@
         {
           "variant": "Default",
           "file": "Comparison--Default.png",
-          "route": "/components/comparison"
+          "route": "/components/comparison",
+          "shape": {
+            "layout": "items",
+            "imageSide": null,
+            "items": 2,
+            "rows": 1,
+            "itemMedia": "none",
+            "iconSize": null,
+            "mainImage": null,
+            "photos": 0,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 0,
+            "buttons": 0,
+            "eyebrow": false
+          },
+          "looksLike": "a row of 2 items, each text only; no button"
         }
       ],
       "notes": []
@@ -2392,7 +2796,24 @@
         {
           "variant": "Default",
           "file": "DocumentsList--Default.png",
-          "route": "/components/documents-list"
+          "route": "/components/documents-list",
+          "shape": {
+            "layout": "items",
+            "imageSide": null,
+            "items": 4,
+            "rows": 2,
+            "itemMedia": "icon",
+            "iconSize": 78,
+            "mainImage": null,
+            "photos": 0,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 0,
+            "buttons": 0,
+            "eyebrow": false
+          },
+          "looksLike": "2 rows of 4 items, each a small icon (78px) with text; no button"
         }
       ],
       "notes": []
@@ -2533,7 +2954,24 @@
         {
           "variant": "Default",
           "file": "Features--Default.png",
-          "route": "/components/features"
+          "route": "/components/features",
+          "shape": {
+            "layout": "items",
+            "imageSide": null,
+            "items": 2,
+            "rows": 1,
+            "itemMedia": "icon",
+            "iconSize": 32,
+            "mainImage": null,
+            "photos": 0,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 0,
+            "buttons": 0,
+            "eyebrow": true
+          },
+          "looksLike": "a row of 2 items, each a small icon (32px) with text; an eyebrow, no button"
         }
       ],
       "notes": [
@@ -2620,7 +3058,27 @@
         {
           "variant": "Default",
           "file": "ImageGallery--Default.png",
-          "route": "/components/image-gallery"
+          "route": "/components/image-gallery",
+          "shape": {
+            "layout": "split",
+            "imageSide": "right",
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": {
+              "w": 565,
+              "h": 565
+            },
+            "photos": 3,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 0,
+            "buttons": 0,
+            "eyebrow": false
+          },
+          "looksLike": "text beside one large photo (photo right); no button"
         }
       ],
       "notes": [
@@ -2718,12 +3176,46 @@
         {
           "variant": "Default",
           "file": "Quote--Default.png",
-          "route": "/components/quote"
+          "route": "/components/quote",
+          "shape": {
+            "layout": "text",
+            "imageSide": null,
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": null,
+            "photos": 0,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 0,
+            "buttons": 0,
+            "eyebrow": false
+          },
+          "looksLike": "text only; no button"
         },
         {
           "variant": "Simple",
           "file": "Quote--Simple.png",
-          "route": "/components/quote"
+          "route": "/components/quote",
+          "shape": {
+            "layout": "text",
+            "imageSide": null,
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": null,
+            "photos": 0,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 0,
+            "buttons": 0,
+            "eyebrow": false
+          },
+          "looksLike": "text only; no button"
         }
       ],
       "notes": [
@@ -2794,7 +3286,24 @@
         {
           "variant": "Default",
           "file": "RichText--Default.png",
-          "route": "/components/accordion"
+          "route": "/components/accordion",
+          "shape": {
+            "layout": "text",
+            "imageSide": null,
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": null,
+            "photos": 0,
+            "slider": false,
+            "video": true,
+            "form": false,
+            "headings": 1,
+            "buttons": 0,
+            "eyebrow": false
+          },
+          "looksLike": "text only; no button, a video"
         }
       ],
       "notes": [
@@ -2959,7 +3468,27 @@
         {
           "variant": "Default",
           "file": "StatsCounter--Default.png",
-          "route": "/components/stats-counter"
+          "route": "/components/stats-counter",
+          "shape": {
+            "layout": "items",
+            "imageSide": null,
+            "items": 3,
+            "rows": 1,
+            "itemMedia": "none",
+            "iconSize": null,
+            "mainImage": {
+              "w": 272,
+              "h": 272
+            },
+            "photos": 2,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 0,
+            "buttons": 0,
+            "eyebrow": false
+          },
+          "looksLike": "a row of 3 items, each text only; no button"
         }
       ],
       "notes": []
@@ -3094,7 +3623,24 @@
         {
           "variant": "Default",
           "file": "ApplicationForm--Default.png",
-          "route": "/components/application-form"
+          "route": "/components/application-form",
+          "shape": {
+            "layout": "text",
+            "imageSide": null,
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": null,
+            "photos": 0,
+            "slider": false,
+            "video": false,
+            "form": true,
+            "headings": 0,
+            "buttons": 1,
+            "eyebrow": false
+          },
+          "looksLike": "text only; 1 button, a form"
         }
       ],
       "notes": []
@@ -3207,7 +3753,27 @@
         {
           "variant": "Default",
           "file": "ContactForm--Default.png",
-          "route": "/components/contact-form"
+          "route": "/components/contact-form",
+          "shape": {
+            "layout": "cover",
+            "imageSide": null,
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": {
+              "w": 1154,
+              "h": 702
+            },
+            "photos": 1,
+            "slider": false,
+            "video": false,
+            "form": true,
+            "headings": 1,
+            "buttons": 0,
+            "eyebrow": false
+          },
+          "looksLike": "full-width photo with the text over it; no button, a form"
         }
       ],
       "notes": []
@@ -3342,7 +3908,24 @@
         {
           "variant": "Default",
           "file": "LoanCalculator--Default.png",
-          "route": "/components/loan-calculator"
+          "route": "/components/loan-calculator",
+          "shape": {
+            "layout": "text",
+            "imageSide": null,
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": null,
+            "photos": 0,
+            "slider": false,
+            "video": false,
+            "form": true,
+            "headings": 0,
+            "buttons": 0,
+            "eyebrow": false
+          },
+          "looksLike": "text only; no button, a form"
         }
       ],
       "notes": []
@@ -3432,7 +4015,24 @@
         {
           "variant": "Default",
           "file": "Accordion--Default.png",
-          "route": "/components/accordion"
+          "route": "/components/accordion",
+          "shape": {
+            "layout": "list",
+            "imageSide": null,
+            "items": 3,
+            "rows": 3,
+            "itemMedia": "icon",
+            "iconSize": 32,
+            "mainImage": null,
+            "photos": 0,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 3,
+            "buttons": 3,
+            "eyebrow": false
+          },
+          "looksLike": "a stacked list of 3 full-width rows, each a small icon (32px) with text; 3 buttons"
         }
       ],
       "notes": [
@@ -3527,7 +4127,24 @@
         {
           "variant": "Default",
           "file": "ArticleList--Default.png",
-          "route": "/articles"
+          "route": "/articles",
+          "shape": {
+            "layout": "list",
+            "imageSide": null,
+            "items": 8,
+            "rows": 8,
+            "itemMedia": "photo",
+            "iconSize": null,
+            "mainImage": null,
+            "photos": 8,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 8,
+            "buttons": 7,
+            "eyebrow": false
+          },
+          "looksLike": "a stacked list of 8 full-width rows, each a photo with text; 7 buttons"
         },
         {
           "variant": "ThreeColumn"
@@ -3535,7 +4152,24 @@
         {
           "variant": "Simplified",
           "file": "ArticleList--Simplified.png",
-          "route": "/"
+          "route": "/",
+          "shape": {
+            "layout": "list",
+            "imageSide": null,
+            "items": 2,
+            "rows": 2,
+            "itemMedia": "photo",
+            "iconSize": null,
+            "mainImage": null,
+            "photos": 2,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 2,
+            "buttons": 3,
+            "eyebrow": false
+          },
+          "looksLike": "a stacked list of 2 full-width rows, each a photo with text; 3 buttons"
         },
         {
           "variant": "Grid"
@@ -3612,7 +4246,24 @@
         {
           "variant": "Default",
           "file": "AuthorList--Default.png",
-          "route": "/authors"
+          "route": "/authors",
+          "shape": {
+            "layout": "list",
+            "imageSide": null,
+            "items": 7,
+            "rows": 7,
+            "itemMedia": "photo",
+            "iconSize": null,
+            "mainImage": null,
+            "photos": 7,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 6,
+            "buttons": 6,
+            "eyebrow": false
+          },
+          "looksLike": "a stacked list of 7 full-width rows, each a photo with text; 6 buttons"
         },
         {
           "variant": "Slider"
@@ -3892,12 +4543,46 @@
         {
           "variant": "Default",
           "file": "AuthorWidget--Default.png",
-          "route": "/components/author-widget"
+          "route": "/components/author-widget",
+          "shape": {
+            "layout": "text",
+            "imageSide": null,
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": null,
+            "photos": 0,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 1,
+            "buttons": 0,
+            "eyebrow": false
+          },
+          "looksLike": "text only; no button"
         },
         {
           "variant": "WithSocials",
           "file": "AuthorWidget--WithSocials.png",
-          "route": "/components/author-widget"
+          "route": "/components/author-widget",
+          "shape": {
+            "layout": "text",
+            "imageSide": null,
+            "items": 0,
+            "rows": 0,
+            "itemMedia": null,
+            "iconSize": null,
+            "mainImage": null,
+            "photos": 0,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 1,
+            "buttons": 0,
+            "eyebrow": false
+          },
+          "looksLike": "text only; no button"
         }
       ],
       "notes": [
@@ -4071,12 +4756,46 @@
         {
           "variant": "Default",
           "file": "Questions--Default.png",
-          "route": "/components/questions"
+          "route": "/components/questions",
+          "shape": {
+            "layout": "items",
+            "imageSide": null,
+            "items": 2,
+            "rows": 1,
+            "itemMedia": "icon",
+            "iconSize": 23,
+            "mainImage": null,
+            "photos": 0,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 3,
+            "buttons": 3,
+            "eyebrow": false
+          },
+          "looksLike": "a row of 2 items, each a small icon (23px) with text; 3 buttons"
         },
         {
           "variant": "SingleColumn",
           "file": "Questions--SingleColumn.png",
-          "route": "/components/questions"
+          "route": "/components/questions",
+          "shape": {
+            "layout": "list",
+            "imageSide": null,
+            "items": 3,
+            "rows": 3,
+            "itemMedia": "icon",
+            "iconSize": 16,
+            "mainImage": null,
+            "photos": 0,
+            "slider": false,
+            "video": false,
+            "form": false,
+            "headings": 3,
+            "buttons": 3,
+            "eyebrow": false
+          },
+          "looksLike": "a stacked list of 3 full-width rows, each a small icon (16px) with text; 3 buttons"
         }
       ],
       "notes": [
@@ -4188,7 +4907,24 @@
         {
           "variant": "Default",
           "file": "Testimonials--Default.png",
-          "route": "/components/testimonials"
+          "route": "/components/testimonials",
+          "shape": {
+            "layout": "items",
+            "imageSide": null,
+            "items": 2,
+            "rows": 1,
+            "itemMedia": "icon",
+            "iconSize": 88,
+            "mainImage": null,
+            "photos": 0,
+            "slider": true,
+            "video": false,
+            "form": false,
+            "headings": 0,
+            "buttons": 0,
+            "eyebrow": false
+          },
+          "looksLike": "a row of 2 items, each a small icon (88px) with text; no button, sliding"
         }
       ],
       "notes": [

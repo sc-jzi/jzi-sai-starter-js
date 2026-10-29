@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, JSX } from 'react';
+import { useState, JSX, MouseEvent } from 'react';
 import {
   ComponentParams,
   ComponentRendering,
@@ -11,6 +11,7 @@ import {
   Text,
   Link,
   RichText,
+  Image,
   useSitecore,
   NextImage,
 } from '@sitecore-content-sdk/nextjs';
@@ -19,8 +20,21 @@ interface Fields {
   Title: Field<string>;
   Text: RichTextField;
   Image: ImageField;
+  Image2?: ImageField;
+  Image3?: ImageField;
+  Image4?: ImageField;
   Link: LinkField;
   Video: ImageField;
+}
+
+const PICTURE_FIELDS = ['Image', 'Image2', 'Image3', 'Image4'] as const;
+
+function pictureFields(item: CarouselItemProps | undefined, editing: boolean): ImageField[] {
+  if (!item?.fields) return [];
+  const named = PICTURE_FIELDS.map((name) => item.fields[name]).filter(
+    (field): field is ImageField => !!field && (editing || !!field.value?.src)
+  );
+  return named.length ? named : item.fields.Image ? [item.fields.Image] : [];
 }
 
 export type CarouselItemProps = {
@@ -32,8 +46,16 @@ interface CarouselComponentProps {
   rendering: ComponentRendering & { params: ComponentParams };
   params: ComponentParams;
   fields: {
-    items: CarouselItemProps[];
-  };
+    items?: CarouselItemProps[];
+  } & Partial<Fields>;
+}
+
+function slideFromFields(
+  fields: CarouselComponentProps['fields'] | undefined,
+  id: string
+): CarouselItemProps | undefined {
+  if (!fields?.Title && !fields?.Text && !fields?.Image && !fields?.Image2) return undefined;
+  return { id, fields: fields as Fields };
 }
 
 export const Default = (props: CarouselComponentProps): JSX.Element => {
@@ -42,41 +64,60 @@ export const Default = (props: CarouselComponentProps): JSX.Element => {
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
 
-  const items = props.fields?.items ?? [];
-  const handleNext = () => {
-    setIndex((prevIndex) => (items.length && prevIndex < items.length - 1 ? prevIndex + 1 : 0));
-  };
-
-  const handlePrev = () => {
-    setIndex((prevIndex) => (items.length && prevIndex > 0 ? prevIndex - 1 : Math.max(items.length - 1, 0)));
-  };
-
   const sxaStyles = `${props.params?.styles || ''}`;
+  const childItems = props.fields?.items ?? [];
+  const flatSlide = slideFromFields(props.fields, String(props.rendering?.dataSource || 'hero'));
+  const sharedCopy = props.params?.heroPictures === 'true' || (!childItems.length && !!flatSlide);
+  const items = childItems;
+  const source = sharedCopy ? flatSlide ?? items[0] : items[index];
+  const pictures = sharedCopy ? pictureFields(source, isPageEditing) : [];
+  const count = sharedCopy ? pictures.length : items.length;
+  const item = source;
+  const picture = sharedCopy ? pictures[index] : item?.fields?.Image;
+
+  const handleNext = (event: MouseEvent) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setIndex((prevIndex) => (count === 0 ? 0 : prevIndex < count - 1 ? prevIndex + 1 : 0));
+  };
+
+  const handlePrev = (event: MouseEvent) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setIndex((prevIndex) => (count === 0 ? 0 : prevIndex > 0 ? prevIndex - 1 : count - 1));
+  };
+  const videoSrc = item?.fields?.Video?.value?.src;
+  const showVideo = !isPageEditing && !!videoSrc && /\.(mp4|webm|mov)(\?|$)/i.test(videoSrc);
 
   return (
     <section className={`component carousel ${sxaStyles}`} id={id ? id : undefined}>
+      <span className="band-edge" aria-hidden="true" />
+      <span className="play video-play" aria-hidden="true" />
       <div className="carousel-inner">
-        {items.map((item, i) => (
-          <div key={i} className={'carousel-item ' + (i == index ? 'active' : '')}>
-            {!isPageEditing && item.fields?.Video?.value?.src ? (
+        {item && (
+          <div className="carousel-item active" key={item.id}>
+            {showVideo ? (
               <video
                 className="object-fit-cover d-block w-100 h-100"
-                key={item.id}
                 autoPlay={true}
                 loop={true}
                 muted
                 playsInline
                 poster={item.fields.Image?.value?.src}
               >
-                <source src={item.fields.Video.value.src} type="video/webm" />
+                <source src={videoSrc} type="video/webm" />
               </video>
+            ) : isPageEditing ? (
+              <Image field={picture} className="d-block w-100 carousel-picture" />
             ) : (
-              <NextImage
-                field={item.fields.Image}
-                className="object-fit-cover d-block w-100 h-100"
-                width={1920}
-                height={800}
-              />
+              picture && (
+                <NextImage
+                  field={picture}
+                  className="object-fit-cover d-block w-100 h-100"
+                  width={1920}
+                  height={800}
+                />
+              )
             )}
 
             <div className="side-content">
@@ -86,30 +127,32 @@ export const Default = (props: CarouselComponentProps): JSX.Element => {
                     <Text field={item.fields.Title}></Text>
                   </h1>
                   <RichText field={item.fields.Text}></RichText>
-                  {!isPageEditing && item.fields?.Link?.value?.href && (
+                  {(isPageEditing || item.fields?.Link?.value?.href) && (
                     <Link field={item.fields.Link} className="button button-accent"></Link>
                   )}
                 </div>
               </div>
             </div>
           </div>
-        ))}
+        )}
       </div>
       <ol className="carousel-indicators">
-        {items.map((_item, i) => (
+        {(sharedCopy ? pictures : items).map((_entry, i) => (
           <li
             key={i}
             aria-label="Slide"
             className={i == index ? 'active' : ''}
-            onClick={() => setIndex(i)}
+            onClick={(event) => {
+              event.preventDefault();
+              event.stopPropagation();
+              setIndex(i);
+            }}
           ></li>
         ))}
       </ol>
       <button
         className="carousel-control-prev"
         type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="prev"
         onClick={handlePrev}
       >
         <span className="carousel-control-prev-icon" aria-hidden="true">
@@ -122,8 +165,6 @@ export const Default = (props: CarouselComponentProps): JSX.Element => {
       <button
         className="carousel-control-next"
         type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="next"
         onClick={handleNext}
       >
         <span className="carousel-control-next-icon" aria-hidden="true">
@@ -138,13 +179,13 @@ export const Default = (props: CarouselComponentProps): JSX.Element => {
 };
 
 export const MccLabel = (props: CarouselComponentProps): JSX.Element => (
-  <div className="mcc-label-variant MccLabel">
+  <section className="variant-mcc-label mcc-label">
     <Default {...props} />
-  </div>
+  </section>
 );
 
-export const MccLabelOverlay = (props: CarouselComponentProps): JSX.Element => (
-  <div className="mcc-label-variant MccLabelOverlay">
-    <Default {...props} />
-  </div>
+export const MccLabelHero = (props: CarouselComponentProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label-hero">
+    <Default {...props} params={{ ...props.params, heroPictures: 'true' }} />
+  </section>
 );

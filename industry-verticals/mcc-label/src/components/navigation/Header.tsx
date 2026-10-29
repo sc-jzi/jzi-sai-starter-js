@@ -63,7 +63,6 @@ export const MccLabel = (props: HeaderProps): JSX.Element => {
 
   return (
     <div className={`component header variant-mcc-label ${sxaStyles}`} id={id ? id : undefined}>
-      <div className="header-frame">
       <div className={`container container-${props.params?.ContainerWidth?.toLowerCase()}-fluid`}>
         <div className="row align-items-center">
           <div className="col-auto">
@@ -75,7 +74,6 @@ export const MccLabel = (props: HeaderProps): JSX.Element => {
             <AppPlaceholder name="header-right" rendering={props.rendering} page={page} componentMap={props.componentMap} />
           </div>
         </div>
-      </div>
       </div>
     </div>
   );

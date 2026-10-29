@@ -25,3 +25,95 @@
     }
   }
 }
+
+// MCC Label: the closing "Ready to get started?" band (CtaBand). The shapes on the right are decoration drawn here, not content.
+section.mcc-label-cta-band {
+  display: block;
+  padding: 24px 0;
+  width: 100%;
+
+  .heading-cta {
+    padding: 0;
+
+    .container {
+      max-width: 1056px;
+      position: relative;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        width: 220px;
+      }
+
+      // yellow block with a green leaf over its left edge
+      &::before {
+        background: radial-gradient(circle at 0 0, #2d9a24 0 118px, transparent 119px) 0 0 / 118px 207px no-repeat, #ffd64f;
+        border-radius: 0;
+        height: 207px;
+        top: -24px;
+      }
+
+      // blue block with a teal corner under the panel
+      &::after {
+        background: linear-gradient(#11806a, #11806a) 0 0 / 110px 60px no-repeat, #5dade0;
+        border-top-left-radius: 110px;
+        bottom: -48px;
+        height: 113px;
+      }
+    }
+
+    .row {
+      background: #2bb673;
+      flex-direction: column;
+      margin: 0;
+      max-width: 954px;
+      padding: 56px 110px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .col,
+    .col-12 {
+      flex: none;
+      padding: 0;
+      width: auto;
+    }
+
+    .pt-lg-5 {
+      padding-top: 0 !important;
+    }
+
+    .heading-content-wrapper {
+      max-width: 640px;
+    }
+
+    h2 {
+      color: #000000;
+      font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 44px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      color: #000000;
+      font-size: 16px;
+      line-height: 24px;
+      opacity: 1;
+    }
+
+    .button-main {
+      background: #ffffff;
+      border-radius: 28px;
+      color: #000000;
+      display: inline-block;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-top: 24px;
+      padding: 12px 40px;
+      text-transform: uppercase;
+    }
+  }
+}

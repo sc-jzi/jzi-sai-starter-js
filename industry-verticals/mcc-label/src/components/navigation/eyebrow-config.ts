@@ -7,15 +7,14 @@ export const eyebrowConfig: {
 } = {
   "links": [
     {
-      "label": "Careers",
-      "href": "https://jobs.dayforcehcm.com/mul/CANDIDATEPORTAL"
-    },
-    {
       "label": "Customer Portal",
       "href": "/customer-portal"
     }
   ],
   "phone": null,
-  "cta": null,
+  "cta": {
+    "label": "Careers",
+    "href": "https://jobs.dayforcehcm.com/mul/CANDIDATEPORTAL"
+  },
   "search": true
 };

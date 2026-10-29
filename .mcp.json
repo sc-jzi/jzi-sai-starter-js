@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "sitecore-documentation-docs": {
+      "name": "sitecore-documentation-docs",
+      "type": "http",
+      "url": "https://sitecore.mcp.kapa.ai",
+      "headers": {}
+    },
+    "marketer": {
+      "url": "https://marketer.sitecorecloud.io/mcp/marketer-mcp-prod",
+	  "type": "http",
+      "auth": {
+        "type": "external"
+      }
+    }
+  }
+}

@@ -8,7 +8,7 @@
 
 # XM Cloud site identity
 siteCollection: "manufacturing"
-siteName: "MCC Label"
+siteName: "MCCLabel"
 
 # Sitecore SDK used by this repo's React components
 sdk: "@sitecore-content-sdk/nextjs"

@@ -12,22 +12,33 @@ import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
 import { useEffect, useState, Suspense, useCallback, useMemo, useRef } from 'react';
 import React from 'react';
 import { getSiteThemeClass } from 'lib/site-theme';
-import { Text, useSitecore, NextImage, Link, RichText, Placeholder, withDatasourceCheck, Image, AppPlaceholder, CdpHelper } from '@sitecore-content-sdk/nextjs';
-import { useParams, useRouter, useSearchParams } from 'next/navigation';
+import { Text, useSitecore, NextImage, Link, RichText, Placeholder, withDatasourceCheck, Image as Image_8a80e63291fea86e0744df19113dc44bec187216, AppPlaceholder, CdpHelper } from '@sitecore-content-sdk/nextjs';
+import { useParams, useRouter, useSearchParams, usePathname } from 'next/navigation';
+import Image from 'next/image';
+import { useInfiniteSearch, useSuggest, useSearch } from '@sitecore-content-sdk/nextjs/search';
+import { DEFAULT_IMG_URL } from 'src/_data/customizations';
+import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import useVisibility from 'src/hooks/useVisibility';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
 import { CountUp } from 'components/non-sitecore/CountUp';
 import { DottedAccent } from 'components/non-sitecore/DottedAccent';
-import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import { FacebookIcon, FacebookShareButton, LinkedinIcon, LinkedinShareButton, TwitterIcon, TwitterShareButton } from 'react-share';
 import Head from 'next/head';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import { ParallaxBackgroundImage } from 'components/non-sitecore/ParallaxBackgroundImage';
 import { IconAccent } from 'components/non-sitecore/IconAccent';
+import { createPortal } from 'react-dom';
+import { UserCircle, X, Loader2, RotateCcw, Copy, Check } from 'lucide-react';
+import { personalize } from '@sitecore-content-sdk/personalize';
+import { ProfileIdWidget } from 'components/non-sitecore/ProfileIdWidget';
+import { getCookieValueClientSide } from '@sitecore-content-sdk/analytics-core/utils';
+import { fetchProfileIdFromEdgeProxy } from '@sitecore-content-sdk/personalize/internal';
+import config from 'sitecore.config';
+import { clearSessionEvents, installSessionEventTracking, readSessionEvents, SESSION_EVENTS_CHANGED } from 'lib/session-event-log';
+import PreviewSearch from 'src/components/search/PreviewSearch';
 import client from 'src/lib/sitecore-client';
 import { pageView } from '@sitecore-content-sdk/events';
-import config from 'sitecore.config';
 
 const importMap = [
   {
@@ -66,7 +77,7 @@ const importMap = [
       { name: 'RichText', value: RichText },
       { name: 'Placeholder', value: Placeholder },
       { name: 'withDatasourceCheck', value: withDatasourceCheck },
-      { name: 'Image', value: Image },
+      { name: 'Image', value: Image_8a80e63291fea86e0744df19113dc44bec187216 },
       { name: 'AppPlaceholder', value: AppPlaceholder },
       { name: 'CdpHelper', value: CdpHelper },
     ]
@@ -77,6 +88,33 @@ const importMap = [
       { name: 'useParams', value: useParams },
       { name: 'useRouter', value: useRouter },
       { name: 'useSearchParams', value: useSearchParams },
+      { name: 'usePathname', value: usePathname },
+    ]
+  },
+  {
+    module: 'next/image',
+    exports: [
+      { name: 'default', value: Image },
+    ]
+  },
+  {
+    module: '@sitecore-content-sdk/nextjs/search',
+    exports: [
+      { name: 'useInfiniteSearch', value: useInfiniteSearch },
+      { name: 'useSuggest', value: useSuggest },
+      { name: 'useSearch', value: useSearch },
+    ]
+  },
+  {
+    module: 'src/_data/customizations',
+    exports: [
+      { name: 'DEFAULT_IMG_URL', value: DEFAULT_IMG_URL },
+    ]
+  },
+  {
+    module: 'next/link',
+    exports: [
+      { name: 'default', value: Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 },
     ]
   },
   {
@@ -111,12 +149,6 @@ const importMap = [
     module: 'components/non-sitecore/DottedAccent',
     exports: [
       { name: 'DottedAccent', value: DottedAccent },
-    ]
-  },
-  {
-    module: 'next/link',
-    exports: [
-      { name: 'default', value: Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 },
     ]
   },
   {
@@ -155,6 +187,68 @@ const importMap = [
     ]
   },
   {
+    module: 'react-dom',
+    exports: [
+      { name: 'createPortal', value: createPortal },
+    ]
+  },
+  {
+    module: 'lucide-react',
+    exports: [
+      { name: 'UserCircle', value: UserCircle },
+      { name: 'X', value: X },
+      { name: 'Loader2', value: Loader2 },
+      { name: 'RotateCcw', value: RotateCcw },
+      { name: 'Copy', value: Copy },
+      { name: 'Check', value: Check },
+    ]
+  },
+  {
+    module: '@sitecore-content-sdk/personalize',
+    exports: [
+      { name: 'personalize', value: personalize },
+    ]
+  },
+  {
+    module: 'components/non-sitecore/ProfileIdWidget',
+    exports: [
+      { name: 'ProfileIdWidget', value: ProfileIdWidget },
+    ]
+  },
+  {
+    module: '@sitecore-content-sdk/analytics-core/utils',
+    exports: [
+      { name: 'getCookieValueClientSide', value: getCookieValueClientSide },
+    ]
+  },
+  {
+    module: '@sitecore-content-sdk/personalize/internal',
+    exports: [
+      { name: 'fetchProfileIdFromEdgeProxy', value: fetchProfileIdFromEdgeProxy },
+    ]
+  },
+  {
+    module: 'sitecore.config',
+    exports: [
+      { name: 'default', value: config },
+    ]
+  },
+  {
+    module: 'lib/session-event-log',
+    exports: [
+      { name: 'clearSessionEvents', value: clearSessionEvents },
+      { name: 'installSessionEventTracking', value: installSessionEventTracking },
+      { name: 'readSessionEvents', value: readSessionEvents },
+      { name: 'SESSION_EVENTS_CHANGED', value: SESSION_EVENTS_CHANGED },
+    ]
+  },
+  {
+    module: 'src/components/search/PreviewSearch',
+    exports: [
+      { name: 'default', value: PreviewSearch },
+    ]
+  },
+  {
     module: 'src/lib/sitecore-client',
     exports: [
       { name: 'default', value: client },
@@ -164,12 +258,6 @@ const importMap = [
     module: '@sitecore-content-sdk/events',
     exports: [
       { name: 'pageView', value: pageView },
-    ]
-  },
-  {
-    module: 'sitecore.config',
-    exports: [
-      { name: 'default', value: config },
     ]
   }
 ] as ImportEntry[];

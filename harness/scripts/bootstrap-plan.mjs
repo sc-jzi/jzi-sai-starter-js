@@ -38,6 +38,7 @@ const pascalName = (n) => String(n || "").replace(/&/g, " ").split(/[^A-Za-z0-9]
 const clientVariant = plan.site?.variantName || pascalName(plan.client?.name || customer);   // every component gets this variant (pixel-matching, always)
 const newPending = new Map();   // NEW components from the plan (sections `new:` and site.chrome) that are not in the manifest yet
 const used = new Map(); // manifestName -> {variants:Set, pages:Set}
+const extensions = new Map();   // manifestName -> the derived template a `fit: extend` section needs
 const warnings = [];
 for (const p of arr(plan.site?.pages)) for (const s of arr(p.sections)) {
   if (typeof s !== "object" || !s?.component) continue;
@@ -48,6 +49,12 @@ for (const p of arr(plan.site?.pages)) for (const s of arr(p.sections)) {
   u.variants.add(s.variant || "Default"); u.pages.add(p.path); used.set(name, u);
   u.base = new Set([...(u.base ?? []), s.variant || "Default"]);
   if (s.look) { u.looks = new Set([...(u.looks ?? []), clientVariant + String(s.look)]); }   // one client variant per distinct look (ImageLeft/ImageRight)
+  if (s.fit === "extend" || s.extend) {   // R22: a derived template adds fields; the shared template stays as it is
+    const c = byName.get(name), e = extensions.get(name) ?? { component: name, template: `${name}${clientVariant}`, baseTemplateId: c.templates?.datasource?.itemId ?? null, fields: new Map(), pages: new Set() };
+    for (const f of arr(s.extend?.fields)) if (f?.name) e.fields.set(String(f.name), String(f.type ?? ""));
+    e.pages.add(p.path); extensions.set(name, e);
+    if (!e.baseTemplateId) warnings.push(`${name}: no datasource template in the manifest, so it cannot be extended (fit: new)`);
+  }
 }
 
 for (const f of arr(plan.site?.chrome)) if (f?.delivery === "new" && f.new?.name) {
@@ -105,8 +112,10 @@ const out = {
     "F2. Navigation Filters: find the site's filter items (Main Navigation, ...). No Eyebrow filter (the eyebrow is hardcoded). Main Navigation is visible ONLY for navGroup: main pages directly under Home; every other page gets Main Navigation ticked. The Navigation rendering must also carry the filter/levels rendering parameters (layout-variant.mjs patch --param), otherwise the filter is ignored (see demo-site-bootstrap step 5b)",
     "H. NEW components (newComponents above, from `new:` specs): built in phase 5 with the create-* skills; afterwards re-run bootstrap-plan.mjs and do steps A-D for them (Available Renderings, Data folder, container named like the rendering item, Default + client variant); header-area ones are then placed in the partial design placeholder named in their spec (demo-build-pages step 0)",
     "G. Page Designs for Page and Article that use those partials, mapped to the derived templates (Template To Design)",
+    "I. EXTENDED components (extensions below, `fit: extend`): in phase 5 (demo-build-content 2b) create each derived template under /sitecore/templates/Project/<collection>/Components with __Base template = baseTemplateId and only the listed fields (typed, read back, no standard values); add it to the insert options of the site's own Data/<component folder> item. The shared template, rendering and standard values are never edited (R22)",
   ],
   newComponents: [...newPending.values()],
+  extensions: [...extensions.values()].map((e) => ({ ...e, fields: [...e.fields].map(([name, type]) => ({ name, type })), pages: [...e.pages] })),
   availableRenderings: { ids: allRenderingIds, count: allRenderingIds.length },
   components, warnings,
 };
@@ -114,6 +123,7 @@ mkdirSync(demo, { recursive: true });
 writeFileSync(join(demo, "bootstrap-plan.json"), JSON.stringify(out, null, 2) + "\n");
 let md = `# Site bootstrap plan — ${customer}\n\nSource: demo-plan.yaml + shared manifest. Shared definitions (templates, renderings, rendering parameters) are reused, not created.\n\n## Per component (items to create inside the NEW site)\n| Component | Kind | Rendering id (shared) | Data folder | Variants needed | Pages |\n|---|---|---|---|---|---|\n`;
 for (const c of components) md += c.headerArea ? `| ${c.name} (header area) | ${c.kind}${c.contextOnly ? " (context-only)" : ""} | ${c.renderingId ?? "-"} | - | ${c.variants.join(", ")} | ${c.pages.join(", ")} |\n` : `| ${c.name} | ${c.kind}${c.contextOnly ? " (context-only)" : ""} | ${c.renderingId ?? "-"} | ${c.contextOnly ? "-" : c.datasourceFolderName} | ${c.variants.join(", ")} | ${c.pages.join(", ")} |\n`;
+if (out.extensions.length) md += `\n## Extended components (derived templates, R22)\n| Component | Derived template | Base template | Extra fields | Pages |\n|---|---|---|---|---|\n${out.extensions.map((e) => `| ${e.component} | ${e.template} | ${e.baseTemplateId ?? "-"} | ${e.fields.map((f) => `${f.name} (${f.type})`).join(", ")} | ${e.pages.join(", ")} |`).join("\n")}\n`;
 md += `\n## Site-level steps\n${out.siteLevelSteps.map((s) => `- ${s}`).join("\n")}\n\n## Available Renderings value to concatenate (${allRenderingIds.length} ids)\n\`\`\`\n${allRenderingIds.join("|")}\n\`\`\`\n`;
 if (warnings.length) md += `\n## Warnings\n${warnings.map((w) => `- ${w}`).join("\n")}\n`;
 writeFileSync(join(demo, "bootstrap-plan.md"), md);

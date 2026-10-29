@@ -22,11 +22,14 @@
  *      never body sections and the footer is never droppable (it is built by the Footer partial and always compared by the gate)
  *  P16 Rich Text carries prose only (a heading and paragraphs): never a live band with images, buttons, cards, a form, a video,
  *      a carousel, a repeated item (FAQ, logo wall, link list), and never with a look
+ * P17 each mirrored section was compared with its measured shortlist (the base variants closest in shape, _measure.mjs): off the shortlist or
+ *      fit: new, fitReason names the shortlisted variant it was compared with; a look never restructures (another layout, sliding vs static)
  */
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
-import { die, demoDir, registryPath, rootRel, readJson, chromeBands, notProse, isAdBand, readRegistry } from "./_lib.mjs";
+import { die, demoDir, registryPath, rootRel, readJson, chromeBands, notProse, isAdBand, readRegistry, baseApp } from "./_lib.mjs";
 import { parseYaml } from "./_yaml.mjs";
+import { shapeOf, catalogVariants, rankVariants, restructures } from "./_measure.mjs";
 
 const client = process.argv[2];
 if (!client) die("Usage: validate-site-plan.mjs <customer>");
@@ -47,6 +50,9 @@ const momentIds = new Set(moments.map((m) => m.id));
 // registry: id -> variants[] (the shared reader: inline and block variant lists)
 const reg = new Map([...readRegistry(client)].map(([id, e]) => [id, e.variants]));
 const CHROME = new Set(["navigation-header", "footer", "announcement-bar-nav"]);
+// the base components as the catalog measured them (component-catalog.mjs): fields, and whether the rendering builds its data with a ComponentQuery
+const catalog = new Map((readJson(join(baseApp(), "docs", "ai", "catalog", "components.json"))?.components ?? []).filter((c) => c.id).map((c) => [c.id, c]));
+const FIELD_TYPES = /^(Single-Line Text|Multi-Line Text|Rich Text|Image|General Link|Number|Integer|Checkbox|Date|Datetime|Droplink|Droptree|Multilist|Treelist|File)$/;
 
 const newComps = [];   // sections / chrome entries that specify a NEW component
 const results = []; const add = (id, level, ok, detail = "") => results.push({ id, level, ok, detail });
@@ -126,13 +132,25 @@ for (const p of pages) {
     if (s.look != null && !/^[A-Z][A-Za-z0-9]*$/.test(String(s.look))) p5.push(`${path} #${s.position ?? "?"}: look "${s.look}" must be PascalCase alphanumeric (ImageLeft)`);
     const v = s.variant || "Default";
     if (reg.get(c).length && !reg.get(c).includes(v)) p5.push(`${path} #${s.position ?? "?"}: ${c} has no variant "${v}" (has ${reg.get(c).join(", ")})`);
+    if (s.fit === "extend" || s.extend) {   // the registry component on a derived template that adds fields (R22)
+      const at = `${path} #${s.position ?? "?"}`, cat = catalog.get(c), fields = arr(s.extend?.fields);
+      const own = new Set([...(cat?.fields ?? []), ...(cat?.children ?? []).flatMap((ch) => ch.fields ?? [])].map((f) => String(f.name).toLowerCase()));
+      if (!fields.length) p5.push(`${at}: fit: extend needs extend.fields (only the fields ${c} lacks, each { name, type })`);
+      else if (!has(s.fitReason)) p5.push(`${at}: fit: extend needs fitReason (what matches, and which field is missing)`);
+      if (cat?.rendering?.componentQuery) p5.push(`${at}: ${c} builds its data with a ComponentQuery on the shared rendering, so a derived template cannot add a field to it: fit: new`);
+      for (const f of fields) {
+        if (!/^[A-Z][A-Za-z0-9]*$/.test(String(f?.name ?? ""))) p5.push(`${at}: extend field "${f?.name ?? ""}" needs a PascalCase name`);
+        else if (own.has(String(f.name).toLowerCase())) p5.push(`${at}: ${c} already has a field "${f.name}": use it, or name the extra field differently`);
+        if (!FIELD_TYPES.test(String(f?.type ?? ""))) p5.push(`${at}: extend field "${f?.name ?? ""}" needs a Sitecore field type (Image, General Link, Rich Text, Single-Line Text, ...; R26)`);
+      }
+    }
     if (!["transcript", "site", "illustrative"].includes(s.contentSource)) p8.push(`${path} #${s.position ?? "?"}: contentSource`);
   }
   if (p.pageType === "page" && p.navTarget === true && secs.length > 2) p7.push(`${path}: navigation page should have at most 2 sections`);
   else if (p.pageType === "page" && p.navTarget !== true && (secs.length < 2 || secs.length > 12)) p7.push(`${path}: ${secs.length} sections`);
   if (p.pageType === "landing" && secs.length) p7.push(`${path}: landing pages use template fields, not sections`);
 }
-add("P5 every section is a registry component with a real variant, or a fully specified NEW component", "required", p5.length === 0, p5.slice(0, 6).join("; "));
+add("P5 every section is a registry component with a real variant (extended with typed fields where it lacks one), or a fully specified NEW component", "required", p5.length === 0, p5.slice(0, 6).join("; "));
 add("P6 header / footer are not sections (they come from the Page Design partials)", "required", p6.length === 0, p6.join("; ") + (p6.length ? " — remove them; the Page Design already renders them" : ""));
 add("P7 page sections: 2-12 per page (landing: none)", "recommended", p7.length === 0, p7.join("; "));
 // P9: information architecture mirrors the prospect's header menu (nav.json from nav-extract.mjs)
@@ -145,14 +163,14 @@ if (existsSync(navP)) {
   add("P9 every top-level item of the prospect's header menu has a page (navigation pages are fine)", "recommended", miss.length === 0, miss.length ? `no page for: ${miss.slice(0, 12).join(", ")}` : `${(nav?.items ?? []).length} menu items checked`);
 }
 add("P8 every section names its content source (transcript | site | illustrative)", "required", p8.length === 0, p8.slice(0, 6).join("; "));
-// P10: the fit check was done (reuse | variant | new) for every section; variants say why
+// P10: the fit check was done (reuse | variant | extend | new) for every section; variants and extensions say why
 const p10 = [];
 for (const p of pages) for (const s of arr(p.sections)) {
   if (typeof s !== "object" || s == null || CHROME.has(s.component)) continue;
-  if (!["reuse", "variant", "new"].includes(s.fit)) p10.push(`${norm(p.path)} #${s.position ?? "?"}: no fit (reuse | variant | new)`);
+  if (!["reuse", "variant", "extend", "new"].includes(s.fit)) p10.push(`${norm(p.path)} #${s.position ?? "?"}: no fit (reuse | variant | extend | new)`);
   else if (s.fit === "variant" && !has(s.fitReason)) p10.push(`${norm(p.path)} #${s.position ?? "?"}: fit: variant needs fitReason (what differs)`);
 }
-add("P10 every section went through the fit check (reuse | variant | new)", "recommended", p10.length === 0, p10.slice(0, 6).join("; "));
+add("P10 every section went through the fit check (reuse | variant | extend | new)", "recommended", p10.length === 0, p10.slice(0, 6).join("; "));
 // P15: every moment lists its clickPath (ordered page paths the SE clicks through, including intermediate/landing pages); each page must be in the plan.
 // Pages on a clickPath are visited pages: P14 then requires them to mirror their live page.
 const onPath = new Set(), p15 = [];
@@ -236,6 +254,34 @@ add("P14 pages the demo navigates to mirror their live page; menu-only pages are
     if (why.length) p16.push(`${at} (${s.note ?? "live " + s.liveSection}): the live band has ${why.join(", ")}: reuse a component of that shape or specify fit: new`);
   }
   add("P16 Rich Text only for prose (a heading and paragraphs): never for images, buttons, cards, lists, FAQs, logo walls, video or forms", "required", p16.length === 0, p16.slice(0, 6).join("; "));
+}
+// P17: the component was chosen by COMPARISON, not from words: the live band's measured shape against every measured base variant
+// (_measure.mjs, the same shortlist as component-match.mjs and plan-review.mjs). A section built off its shortlist, or as fit: new, names in
+// fitReason the shortlisted variant it was compared with. A look restyles, it never restructures (R13): another layout, or sliding vs static.
+{
+  const measured = catalogVariants(readJson(join(baseApp(), "docs", "ai", "catalog", "components.json"))).filter((v) => v.shape);
+  const p17 = [], key = (t) => String(t ?? "").toLowerCase().replace(/[^a-z0-9]/g, "");
+  if (!measured.length) add("P17 every section was compared with its measured shortlist (component-match.mjs)", "recommended", false, "the base catalog has no measured variants: start the base app and run component-catalog.mjs");
+  else {
+    for (const p of pages) {
+      const file = has(p.sectionsFile) ? String(p.sectionsFile) : norm(p.path).toLowerCase() === "/home" ? "sections.json" : null;
+      const cap = file ? readJson(join(demo, file)) : null; if (!cap) continue;
+      for (const s of arr(p.sections)) {
+        if (typeof s !== "object" || s == null || s.liveSection == null || CHROME.has(s.component)) continue;
+        const band = arr(cap.sections).find((x) => x.index === Number(s.liveSection)); if (!band) continue;
+        const at = `${norm(p.path)} #${s.position ?? "?"}`, live = shapeOf(band, cap.viewport ?? 1440), all = rankVariants(live, measured, 0), short = all.slice(0, 3);
+        const named = short.some((v) => key(s.fitReason).includes(key(v.name)) || key(s.fitReason).includes(key(v.id)));
+        const list = short.map((v) => `${v.name} ${v.variant}`).join(", ");
+        if (s.fit === "new" || s.new) { if (!named) p17.push(`${at}: fit: new, but fitReason does not name the closest variant it was compared with (shortlist: ${list}): "closest to <Component> <Variant>: …; lacks …"`); continue; }
+        const chosen = all.find((v) => v.id === s.component && v.variant === String(s.variant || "Default"));
+        if (!chosen) continue;   // a variant without a measurement (no showcase screenshot) cannot be compared
+        if (!short.includes(chosen) && !named) p17.push(`${at}: ${chosen.name} ${chosen.variant} is not on the shortlist (${list}); it ranks #${all.indexOf(chosen) + 1}. Use a shortlisted one, or name in fitReason the shortlisted variant it was compared with and why this one fits better`);
+        const re = restructures(live, chosen.shape);
+        if (re.length && !has(s.shapeReason)) p17.push(`${at}: a look restyles, it cannot restructure: ${chosen.name} ${chosen.variant} (${re.join("; ")}). Choose a component of the live shape (shortlist: ${list}) or fit: new; if the measurement is wrong, say why in shapeReason (shown at the gate)`);
+      }
+    }
+    add("P17 every section was compared with its measured shortlist, and no look restructures its component (component-match.mjs, plan-review.mjs)", "required", p17.length === 0, p17.slice(0, 6).join("; "));
+  }
 }
 // P11: header-area features (site.chrome): eyebrow, search, language, login ... each with a delivery
 const chrome = arr(plan.site?.chrome), p11 = [];

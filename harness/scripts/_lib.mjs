@@ -1,8 +1,8 @@
 // Shared helpers for harness scripts. Dependency-free.
-import { existsSync, readFileSync, writeFileSync, mkdirSync, readdirSync } from "node:fs";
+import { closeSync, existsSync, mkdirSync, openSync, readFileSync, readSync, readdirSync, renameSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { parseYaml as _parseYaml } from "./_yaml.mjs";
-import { join, dirname, resolve, sep } from "node:path";
+import { basename, dirname, join, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
 export const HARNESS = resolve(join(dirname(fileURLToPath(import.meta.url)), ".."));   // <repo>/harness
@@ -102,6 +102,40 @@ export function imageError(raw) {
   if (v === "") return "";
   // <image mediaid=.../> (media library) or <Image src=... dam-id=... /> (Content Hub)
   return /^<image\s[\s\S]*(\/>|<\/image>)$/i.test(v) ? "" : `literal value "${v.slice(0, 80)}" instead of image XML — use the imageFieldXml from images/image-manifest.json`;
+}
+// Sitecore's media handler (.ashx) is not an image type. Sniff the bytes and rename to the real extension.
+// { path, ext } when the name is not .ashx (unchanged) or after a rename; null when the bytes are not a known image.
+export const ASHX_SNIFF_ERROR = "unrecognized image in .ashx file";
+// Also used by collect-images.mjs when the response has no image content-type.
+export function imageExtFromBytes(buf) {
+  if (buf.length >= 2 && buf[0] === 0xff && buf[1] === 0xd8) return ".jpg";
+  if (buf.length >= 4 && buf[0] === 0x89 && buf[1] === 0x50 && buf[2] === 0x4e && buf[3] === 0x47) return ".png";
+  if (buf.length >= 6) { const g = buf.toString("ascii", 0, 6); if (g === "GIF87a" || g === "GIF89a") return ".gif"; }
+  if (buf.length >= 12 && buf.toString("ascii", 0, 4) === "RIFF" && buf.toString("ascii", 8, 12) === "WEBP") return ".webp";
+  const head = buf.toString("utf8").replace(/^\uFEFF/, "").trimStart();
+  if (/^<!doctype\s+html/i.test(head) || /^<html[\s>]/i.test(head)) return null;
+  if (/^(<\?xml\b[^>]*\?>\s*)?<svg[\s>]/i.test(head)) return ".svg";
+  return null;
+}
+export function renameAshxImage(filePath) {
+  const base = basename(filePath);
+  const current = (base.match(/\.[^.]+$/) || [""])[0].toLowerCase();
+  if (!/\.ashx$/i.test(base)) return { path: filePath, ext: current };
+  let fh;
+  let ext = null;
+  try {
+    fh = openSync(filePath, "r");
+    const buf = Buffer.alloc(512);
+    const n = readSync(fh, buf, 0, 512, 0);
+    ext = imageExtFromBytes(buf.subarray(0, n));
+  } catch { return null; } finally { if (fh !== undefined) closeSync(fh); }
+  if (!ext) return null;
+  const stem = base.replace(/\.ashx$/i, "");
+  const dir = dirname(filePath);
+  let dest = join(dir, stem + ext), n = 2;
+  while (existsSync(dest)) dest = join(dir, `${stem}-${n++}${ext}`);
+  renameSync(filePath, dest);
+  return { path: dest, ext };
 }
 // Authoring GraphQL (CM) with the automation client from harness/.env.local. null when the host or client is not configured.
 export async function authoringClient() {

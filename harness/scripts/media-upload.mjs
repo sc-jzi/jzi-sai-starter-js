@@ -9,6 +9,7 @@
  *   - a file over 50 MB is NOT uploaded: Experience Edge cannot publish it. The entry gets uploadStatus "too-large" and a line under
  *     "## Missing assets" in manual-tasks.md (file, size, live URL, the page/section it belongs to when the captures say so). The run carries on;
  *     run-gate.mjs does not fail a section for imagery that is listed there.
+ *   - a local file named *.ashx is sniffed and renamed to its real image extension (R8) before it is posted. Unrecognized bytes fail that entry.
  *   - otherwise: Authoring GraphQL uploadMedia (item under /sitecore/media library/Project/<collection>/<site>/demo-images/) → POST the file to the
  *     presigned URL → the entry gets uploadStatus "uploaded", mediaItemId and imageFieldXml `<image mediaid="{id}" />` (attach-images.mjs uses it).
  * Never overwrites an existing media item and never uploads an entry twice (resume-safe). The manifest is merged in place, not rewritten.
@@ -16,7 +17,7 @@
  */
 import { existsSync, readFileSync, statSync, readdirSync } from "node:fs";
 import { join, basename } from "node:path";
-import { die, demoDir, parseArgs, readJson, rootRel, safeWrite, ENV, authoringClient } from "./_lib.mjs";
+import { ASHX_SNIFF_ERROR, die, demoDir, parseArgs, readJson, renameAshxImage, rootRel, safeWrite, ENV, authoringClient } from "./_lib.mjs";
 
 const { flags, pos } = parseArgs(process.argv.slice(2));
 const customer = pos[0];
@@ -48,8 +49,26 @@ const folder = `Project/${site.collection}/${site.siteName}/demo-images`;
 
 const todo = entries.filter((e) => e.uploadStatus !== "uploaded" && e.uploadStatus !== "too-large");
 const missing = [], tooLarge = [], failed = [];
-let uploaded = 0;
-const queue = [...todo];
+let uploaded = 0, ashxChanged = false;
+const ashxBad = new Set();   // this run's failures only: a file fixed since an earlier run is retried
+for (const e of todo) {
+  const file = fileOf(e);
+  if (!file || !/\.ashx$/i.test(basename(file))) continue;
+  const renamed = renameAshxImage(file);
+  ashxChanged = true;
+  if (!renamed) {
+    e.uploadStatus = "failed"; e.uploadError = ASHX_SNIFF_ERROR; ashxBad.add(e);
+    failed.push(`${basename(file)}: ${ASHX_SNIFF_ERROR}`);
+    console.error(`  FAIL ${basename(file)}: ${ASHX_SNIFF_ERROR}`);
+    continue;
+  }
+  const name = basename(renamed.path);
+  e.localPath = renamed.path; e.localFileName = name;
+  if (e.uploadError === ASHX_SNIFF_ERROR) delete e.uploadError;
+  if (e.localFile) e.localFile = renamed.path;   // fileOf() takes the full path; the bare name would lose its folder
+  console.log(`  ${basename(file)} → ${name}`);
+}
+const queue = todo.filter((e) => !ashxBad.has(e));
 const worker = async () => {
   while (queue.length) {
     const e = queue.shift(), file = fileOf(e);
@@ -74,9 +93,9 @@ const worker = async () => {
 };
 await Promise.all(Array.from({ length: 4 }, worker));
 
-if (!dry) {
+if (!dry || ashxChanged) {
   safeWrite(customer, manifestPath, JSON.stringify(manifest, null, 2) + "\n");   // merged in place: entries keep their other fields
-  if (tooLarge.length) {
+  if (!dry && tooLarge.length) {
     // one line per file under "## Missing assets": the SE replaces or hosts it elsewhere; the run carries on
     const mt = join(demo, "manual-tasks.md");
     let text = existsSync(mt) ? readFileSync(mt, "utf8") : `# Manual tasks — ${customer}\n`;
@@ -88,7 +107,7 @@ if (!dry) {
     safeWrite(customer, mt, text);
   }
 }
-console.log(`${entries.length} image(s) in the manifest: ${dry ? `${todo.length} to upload` : `${uploaded} uploaded now`}, ${entries.filter((e) => e.uploadStatus === "uploaded").length} uploaded in total, ${tooLarge.length} too large (${dry ? "would be listed" : "listed"} under Missing assets), ${missing.length} file(s) missing on disk, ${failed.length} failed`);
+console.log(`${entries.length} image(s) in the manifest: ${dry ? `${queue.length} to upload` : `${uploaded} uploaded now`}, ${entries.filter((e) => e.uploadStatus === "uploaded").length} uploaded in total, ${tooLarge.length} too large (${dry ? "would be listed" : "listed"} under Missing assets), ${missing.length} file(s) missing on disk, ${failed.length} failed`);
 for (const m of missing) console.log(`✖ file missing on disk: ${m} (download it again)`);
 for (const f of failed) console.log(`✖ ${f}`);
 process.exit(failed.length || missing.length ? 1 : 0);

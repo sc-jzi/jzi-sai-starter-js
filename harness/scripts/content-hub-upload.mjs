@@ -8,6 +8,7 @@
  *
  * Reads/writes <demo folder>/images/image-manifest.json (entries from download-images.mjs: localPath | localFile, alt, field, ...).
  * Each uploaded entry gets: uploadStatus "uploaded", assetId, assetIdentifier, publicUrl, thumbnailUrl, width, height, imageFieldXml.
+ * A local file named *.ashx is sniffed and renamed to its real image extension (R8) before file_name is sent. Unrecognized bytes fail that entry.
  * Use `imageFieldXml` verbatim as the value of an Image field (hero images, the Header datasource LogoImage, ...).
  * Resume-safe: entries already "uploaded" are skipped (use --force to redo). Last line of output for --file: `RESULT {json}`.
  *
@@ -16,7 +17,7 @@
  */
 import { readFileSync, writeFileSync, statSync, existsSync, copyFileSync, mkdirSync } from "node:fs";
 import { join, basename, resolve, isAbsolute } from "node:path";
-import { ENV, die, parseArgs, demoDir, safeWrite, rootRel } from "./_lib.mjs";
+import { ASHX_SNIFF_ERROR, ENV, die, parseArgs, demoDir, renameAshxImage, safeWrite, rootRel } from "./_lib.mjs";
 
 const { flags, pos } = parseArgs(process.argv.slice(2));
 const customer = pos[0];
@@ -55,6 +56,26 @@ if (flags.file) {
 const entries = only ? [only] : manifest.filter((e) => e.status === "downloaded" || (e.status === undefined && (e.localPath || e.localFile)));
 const todo = entries.filter((e) => force || !(e.uploadStatus === "uploaded" && e.imageFieldXml));
 const fileName = (e) => e.localFileName || basename(resolveFile(e) || e.localPath || e.localFile || "image");
+let ashxChanged = false;
+const ashxFailed = [], ashxBad = new Set();   // this run's failures only: a file fixed since an earlier run is retried
+for (const e of todo) {
+  const p = resolveFile(e);
+  if (!p || !/\.ashx$/i.test(basename(p))) continue;
+  const renamed = renameAshxImage(p);
+  ashxChanged = true;
+  if (!renamed) {
+    e.uploadStatus = "failed"; e.uploadError = ASHX_SNIFF_ERROR; ashxFailed.push(basename(p)); ashxBad.add(e);
+    console.error(`  FAIL ${basename(p)}: ${ASHX_SNIFF_ERROR}`);
+    continue;
+  }
+  const name = basename(renamed.path);
+  e.localPath = renamed.path; e.localFileName = name;
+  if (e.uploadError === ASHX_SNIFF_ERROR) delete e.uploadError;
+  if (e.localFile) e.localFile = isAbsolute(String(e.localFile)) ? renamed.path : name;
+  console.log(`  ${basename(p)} → ${name}`);
+}
+if (ashxChanged) saveManifest(manifest);
+const ready = todo.filter((e) => !ashxBad.has(e));
 
 // ---- disabled / dry-run ----------------------------------------------------------------------------------------------------
 function writeManualList(reason) {
@@ -69,10 +90,10 @@ if (String(get("CH_ENABLED")).toLowerCase() !== "true") {
 }
 const host = get("CH_HOST").replace(/\/+$/, "");
 if (!host || !((get("CH_USER") && get("CH_PASSWORD")) || get("CH_TOKEN"))) die("Content Hub is enabled but CH_HOST and (CH_USER + CH_PASSWORD, or CH_TOKEN) are not all set in harness/.env.local");
-console.log(`Content Hub upload: ${todo.length} to upload, ${entries.length - todo.length} already done (${host})`);
-for (const e of todo) { const p = resolveFile(e); console.log(`  ${fileName(e)} ${p ? `(${(statSync(p).size / 1024).toFixed(1)} KB)` : "— FILE MISSING"}`); }
-if (dryRun) { console.log("DRY RUN — nothing uploaded."); process.exit(0); }
-if (!todo.length) { if (only) saveManifest(manifest); if (only) console.log("RESULT " + JSON.stringify(slim(only))); process.exit(0); }
+console.log(`Content Hub upload: ${ready.length} to upload, ${entries.length - todo.length} already done (${host})`);
+for (const e of ready) { const p = resolveFile(e); console.log(`  ${fileName(e)} ${p ? `(${(statSync(p).size / 1024).toFixed(1)} KB)` : "— FILE MISSING"}`); }
+if (dryRun) { console.log("DRY RUN — nothing uploaded."); process.exit(ashxFailed.length ? 3 : 0); }
+if (!ready.length) { if (only) saveManifest(manifest); if (only) console.log("RESULT " + JSON.stringify(slim(only))); process.exit(ashxFailed.length ? 3 : 0); }
 
 // ---- auth ------------------------------------------------------------------------------------------------------------------
 let authH = {};
@@ -121,8 +142,8 @@ function slim(e) { const { field, localFileName, alt, uploadStatus, assetId, ass
 
 // ---- upload loop -----------------------------------------------------------------------------------------------------------
 const uploadConfig = get("CH_UPLOAD_CONFIG") || "AssetUploadConfiguration";
-let ok = 0, failed = 0;
-for (const e of todo) {
+let ok = 0, failed = ashxFailed.length;
+for (const e of ready) {
   const p = resolveFile(e), name = fileName(e);
   if (!p) { e.uploadStatus = "failed"; e.uploadError = "file not found"; failed++; console.error(`  FAIL ${name}: file not found`); continue; }
   try {

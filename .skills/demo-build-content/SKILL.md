@@ -35,10 +35,21 @@ the client variant.
   the rendering ITEM, Default + client variant, Available Renderings, Data folder when it has a datasource), `variants-verify.mjs --customer <customer> --fix`,
   and `build-check.mjs <customer>` (R17). Header-area components are placed in their partial design in `demo-build-pages` step 0.
 
+## 2b. Extended components (`fit: extend`)
+Every section with `fit: extend` (listed in `bootstrap-plan.json` → `extensions`): the registry component on a derived template (R22). The
+Financial template, the shared rendering and their standard values are never edited.
+1. Create the template `<Component><client variant>` under `/sitecore/templates/Project/<collection>/Components` (once per component, shared by
+   every section of this demo that extends it) with `__Base template` = the component's datasource template id (`bootstrap-plan.json`).
+2. Add a `Data` section with only the `extend.fields`, each with its Type, read back (R26). No `__Standard Values` content: an editor starts empty.
+3. On the site's own `Data/<component folder>` item (not the shared folder template), add the derived template to `__Masters` (insert options).
+4. Create those sections' datasource items from the derived template (`demo-build-pages` step 4 as usual). The client variant in the customer's
+   app reads the extra field; `Default` keeps ignoring it.
+
 ## 3. Images (R8): collect → upload → (after placement) attach
 1. `node harness/scripts/collect-images.mjs <customer>`: every image of every planned section on every mirrored page (and the footer), downloaded
    once, each manifest entry carrying its live URL and the page/section that uses it (`uses`). Re-running merges; nothing is uploaded twice.
-2. Upload: `node harness/scripts/content-hub-upload.mjs <customer>` when `CH_ENABLED=true`, else `node harness/scripts/media-upload.mjs <customer>`
+2. Before either upload command, both scripts rename a local file whose name ends in `.ashx` per R8. An `.ashx` file is never passed to Content Hub.
+   Upload: `node harness/scripts/content-hub-upload.mjs <customer>` when `CH_ENABLED=true`, else `node harness/scripts/media-upload.mjs <customer>`
    (Media Library; files over 50 MB are listed under `## Missing assets` and the run carries on). Every entry ends with `uploadStatus: uploaded` and an
    `imageFieldXml`, or `too-large`. Exit 3 / failures: retry once, then fix the cause (download URL, size, format).
 3. Attaching happens once the components are placed (`demo-build-pages` step 4): `attach-images.mjs <customer> --page <path>` proposes each Image

@@ -12,7 +12,6 @@ import {
   NextImage,
 } from '@sitecore-content-sdk/nextjs';
 import Link from 'next/link';
-import { asImageField } from 'lib/as-image-field';
 
 interface Fields {
   Title: Field<string>;
@@ -177,45 +176,3 @@ const ProjectListMosaic = (props: ProjectListComponentProps): JSX.Element => {
 
 export const Default = withDatasourceCheck()<ProjectListComponentProps>(ProjectListDefault);
 export const Mosaic = withDatasourceCheck()<ProjectListComponentProps>(ProjectListMosaic);
-
-export const MccLabel = (props: ProjectListComponentProps): JSX.Element => (
-  <div className="mcc-label-variant MccLabel">
-    <Default {...props} />
-  </div>
-);
-
-export const MccLabelSlider = (props: ProjectListComponentProps): JSX.Element => {
-  const items = (props.fields?.items ?? []).filter((item) => item.fields?.Title);
-  const head = items.find((item) => item.fields.Title?.value === "Customer Success Stories") ?? items[0];
-  const rest = items.filter((item) => item !== head);
-  return (
-    <div className="component project-list mcc-label-variant MccLabelSlider">
-      <Text field={head?.fields?.Title} tag="h2" />
-      <Text field={(head?.fields as { Text?: Field<string> } | undefined)?.Text} tag="p" />
-      {rest.map((item, index) => {
-        const image = asImageField((item.fields as { Image?: ImageField }).Image);
-        const extra = (item.fields as { Excerpt?: Field<string> }).Excerpt;
-        return (
-          <article key={item.url || index}>
-            {image && <NextImage field={image} width={311} height={514} />}
-            <Text field={item.fields?.Title} tag="h3" />
-            {extra?.value ? (
-              <>
-                <Text field={(item.fields as { Text?: Field<string> }).Text} tag="p" />
-                <button type="button" className="story-nav">Previous</button>
-                <Text field={extra} tag="p" />
-                <button type="button" className="story-nav">Next</button>
-              </>
-            ) : (
-              <>
-                <button type="button" className="story-nav">Previous</button>
-                <Text field={(item.fields as { Text?: Field<string> }).Text} tag="p" />
-                <button type="button" className="story-nav">Next</button>
-              </>
-            )}
-          </article>
-        );
-      })}
-    </div>
-  );
-};

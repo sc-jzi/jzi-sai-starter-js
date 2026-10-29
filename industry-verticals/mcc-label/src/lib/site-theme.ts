@@ -1,7 +1,7 @@
 const SITE_THEME_CLASS_MAP: Record<string, string> = {
   Financial: 'site-financial',
   Services: 'site-services',
-  'MCC Label': 'site-mcc-label',
+  MCCLabel: 'site-mcc-label',
 };
 
 const DEFAULT_SITE_THEME_CLASS = 'site-financial';

@@ -16,7 +16,6 @@ import {
 import { ComponentProps } from 'lib/component-props';
 import { IconAccent } from 'components/non-sitecore/IconAccent';
 import { DottedAccent } from 'components/non-sitecore/DottedAccent';
-import { asImageField } from 'lib/as-image-field';
 
 interface Fields {
   Tagline: Field<string>;
@@ -82,26 +81,5 @@ export const Default = (props: HeroBannerProps): JSX.Element => {
         </div>
       </div>
     </div>
-  );
-};
-
-export const MccLabel = (props: HeroBannerProps): JSX.Element => (
-  <div className="mcc-label-variant MccLabel">
-    <Default {...props} />
-  </div>
-);
-
-export const MccLabelPaleBand = (props: HeroBannerProps): JSX.Element => {
-  const image = asImageField(props.fields?.Image);
-  return (
-    <section className="component hero-banner mcc-label-pale" id={props.params?.RenderingIdentifier || undefined}>
-      <div className="pale-row">
-        <div className="pale-copy">
-          <a href="/news">News</a>
-          {props.fields?.Title?.value && <Text field={props.fields.Title} tag="h2" />}
-        </div>
-        {image && <NextImage field={image} width={520} height={348} />}
-      </div>
-    </section>
   );
 };

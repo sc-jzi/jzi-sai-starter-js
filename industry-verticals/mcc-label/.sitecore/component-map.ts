@@ -16,36 +16,36 @@ import * as SearchResults from 'src/components/search/SearchResults';
 import * as PreviewSearch from 'src/components/search/PreviewSearch';
 import * as MoreLikeThis from 'src/components/search/MoreLikeThis';
 import * as ColumnSplitter from 'src/components/pagestructure/ColumnSplitter';
-import * as VideoPanel from 'src/components/pagecontent/VideoPanel';
+import * as VideoWithCopy from 'src/components/pagecontent/VideoWithCopy';
 import * as TwoColumnCta from 'src/components/pagecontent/TwoColumnCta';
 import * as ThreeColumnCta from 'src/components/pagecontent/ThreeColumnCta';
 import * as Testimonials from 'src/components/pagecontent/Testimonials';
-import * as TabbedCards from 'src/components/pagecontent/TabbedCards';
 import * as StatsCounter from 'src/components/pagecontent/StatsCounter';
 import * as RichText from 'src/components/pagecontent/RichText';
-import * as ResourceBrowser from 'src/components/pagecontent/ResourceBrowser';
 import * as Quote from 'src/components/pagecontent/Quote';
 import * as Questions from 'src/components/pagecontent/Questions';
 import * as PromoCta from 'src/components/pagecontent/PromoCta';
 import * as ProjectList from 'src/components/pagecontent/ProjectList';
 import * as ProjectDetails from 'src/components/pagecontent/ProjectDetails';
-import * as ProductTabs from 'src/components/pagecontent/ProductTabs';
 import * as PartialDesignDynamicPlaceholder from 'src/components/pagecontent/PartialDesignDynamicPlaceholder';
 import * as ParallaxBanner from 'src/components/pagecontent/ParallaxBanner';
 import * as PageBackground from 'src/components/pagecontent/PageBackground';
 import * as LocationDirectory from 'src/components/pagecontent/LocationDirectory';
+import * as LabelTypeTabs from 'src/components/pagecontent/LabelTypeTabs';
+import * as ImageWall from 'src/components/pagecontent/ImageWall';
 import * as ImageGallery from 'src/components/pagecontent/ImageGallery';
-import * as IconStats from 'src/components/pagecontent/IconStats';
 import * as HeroBanner from 'src/components/pagecontent/HeroBanner';
 import * as Hero from 'src/components/pagecontent/Hero';
 import * as HeadingCta from 'src/components/pagecontent/HeadingCta';
 import * as FourColumnCta from 'src/components/pagecontent/FourColumnCta';
 import * as FiveColumnCta from 'src/components/pagecontent/FiveColumnCta';
+import * as FilterableCards from 'src/components/pagecontent/FilterableCards';
 import * as Features from 'src/components/pagecontent/Features';
 import * as DocumentsList from 'src/components/pagecontent/DocumentsList';
 import * as CtaBanner from 'src/components/pagecontent/CtaBanner';
 import * as Comparison from 'src/components/pagecontent/Comparison';
 import * as Carousel from 'src/components/pagecontent/Carousel';
+import * as CardTabs from 'src/components/pagecontent/CardTabs';
 import * as AuthorWidget from 'src/components/pagecontent/AuthorWidget';
 import * as AuthorList from 'src/components/pagecontent/AuthorList';
 import * as AuthorDetails from 'src/components/pagecontent/AuthorDetails';
@@ -81,42 +81,42 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['PreviewSearch', { ...PreviewSearch, componentType: 'client' }],
   ['MoreLikeThis', { ...MoreLikeThis, componentType: 'client' }],
   ['ColumnSplitter', { ...ColumnSplitter, componentType: 'client' }],
-  ['VideoPanel', { ...VideoPanel }],
+  ['VideoWithCopy', { ...VideoWithCopy, componentType: 'client' }],
   ['TwoColumnCta', { ...TwoColumnCta, componentType: 'client' }],
   ['ThreeColumnCta', { ...ThreeColumnCta, componentType: 'client' }],
   ['Testimonials', { ...Testimonials, componentType: 'client' }],
-  ['TabbedCards', { ...TabbedCards }],
   ['StatsCounter', { ...StatsCounter, componentType: 'client' }],
   ['RichText', { ...RichText, componentType: 'client' }],
-  ['ResourceBrowser', { ...ResourceBrowser }],
   ['Quote', { ...Quote, componentType: 'client' }],
   ['Questions', { ...Questions, componentType: 'client' }],
   ['PromoCta', { ...PromoCta, componentType: 'client' }],
   ['ProjectList', { ...ProjectList, componentType: 'client' }],
   ['ProjectDetails', { ...ProjectDetails, componentType: 'client' }],
-  ['ProductTabs', { ...ProductTabs }],
   ['PartialDesignDynamicPlaceholder', { ...PartialDesignDynamicPlaceholder }],
   ['ParallaxBanner', { ...ParallaxBanner, componentType: 'client' }],
   ['PageBackground', { ...PageBackground, componentType: 'client' }],
-  ['LocationDirectory', { ...LocationDirectory }],
+  ['LocationDirectory', { ...LocationDirectory, componentType: 'client' }],
+  ['LabelTypeTabs', { ...LabelTypeTabs, componentType: 'client' }],
+  ['ImageWall', { ...ImageWall }],
   ['ImageGallery', { ...ImageGallery, componentType: 'client' }],
-  ['IconStats', { ...IconStats }],
   ['HeroBanner', { ...HeroBanner, componentType: 'client' }],
   ['Hero', { ...Hero, componentType: 'client' }],
   ['HeadingCta', { ...HeadingCta, componentType: 'client' }],
   ['FourColumnCta', { ...FourColumnCta, componentType: 'client' }],
   ['FiveColumnCta', { ...FiveColumnCta, componentType: 'client' }],
+  ['FilterableCards', { ...FilterableCards, componentType: 'client' }],
   ['Features', { ...Features, componentType: 'client' }],
   ['DocumentsList', { ...DocumentsList, componentType: 'client' }],
   ['CtaBanner', { ...CtaBanner, componentType: 'client' }],
   ['Comparison', { ...Comparison, componentType: 'client' }],
   ['Carousel', { ...Carousel, componentType: 'client' }],
+  ['CardTabs', { ...CardTabs, componentType: 'client' }],
   ['AuthorWidget', { ...AuthorWidget, componentType: 'client' }],
   ['AuthorList', { ...AuthorList, componentType: 'client' }],
   ['AuthorDetails', { ...AuthorDetails, componentType: 'client' }],
   ['ArticleList', { ...ArticleList, componentType: 'client' }],
   ['ArticleDetails', { ...ArticleDetails, componentType: 'client' }],
-  ['ArticleBody', { ...ArticleBody }],
+  ['ArticleBody', { ...ArticleBody, componentType: 'client' }],
   ['AppPromo', { ...AppPromo, componentType: 'client' }],
   ['Accordion', { ...Accordion, componentType: 'client' }],
   ['ProfileWidget', { ...ProfileWidget, componentType: 'client' }],

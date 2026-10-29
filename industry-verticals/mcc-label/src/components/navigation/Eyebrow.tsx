@@ -169,10 +169,10 @@ export const MccLabel = (props: EyebrowProps): JSX.Element => {
   return (
     <>
       <div
-        className={`component eyebrow variant-mcc-label relative z-[60] ${props.params.styles?.trimEnd() ?? ''}`}
+        className={`eyebrow variant-mcc-label relative z-[60] ${props.params.styles?.trimEnd() ?? ''}`}
         id={id || undefined}
       >
-        <div className="eyebrow-frame">
+        <span className="eyebrow-edge" aria-hidden="true" />
         <div className={`container container-${props.params?.ContainerWidth?.toLowerCase()}-fluid`}>
           <div className="eyebrow-bar">
             <div className="eyebrow-slot eyebrow-slot-left">
@@ -190,6 +190,11 @@ export const MccLabel = (props: EyebrowProps): JSX.Element => {
                 {eyebrowConfig.phone.label}
               </a>
             )}
+            {eyebrowConfig.cta && (
+              <a className="eyebrow-cta" href={eyebrowConfig.cta.href}>
+                {eyebrowConfig.cta.label}
+              </a>
+            )}
             {eyebrowConfig.search && (
               <button
                 type="button"
@@ -205,16 +210,10 @@ export const MccLabel = (props: EyebrowProps): JSX.Element => {
                 </svg>
               </button>
             )}
-            {eyebrowConfig.cta && (
-              <a className="eyebrow-cta" href={eyebrowConfig.cta.href}>
-                {eyebrowConfig.cta.label}
-              </a>
-            )}
             <div className="eyebrow-slot eyebrow-slot-right">
               <AppPlaceholder name="eyebrow-right" rendering={props.rendering} page={page} componentMap={props.componentMap} />
             </div>
           </div>
-        </div>
         </div>
       </div>
 

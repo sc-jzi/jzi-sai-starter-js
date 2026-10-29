@@ -96,7 +96,8 @@ const sectionGroups = (p) => {
   for (const s of p?.sections ?? []) { const key = Number(s?.liveSection) > 0 ? String(Number(s.liveSection)) : `added${++k}`; if (!g.has(key)) g.set(key, []); g.get(key).push(s); }
   return g;
 };
-const choiceOf = (list) => list.map((s) => [s?.new?.name ? `${s.new.name} (new)` : String(s?.component ?? ""), s?.variant, s?.look ? `look ${s.look}` : null].filter(Boolean).join(" ")).join(" + ");
+const choiceOf = (list) => list.map((s) => [s?.new?.name ? `${s.new.name} (new)` : String(s?.component ?? ""), s?.variant, s?.look ? `look ${s.look}` : null,
+  s?.extend ? `extended +${(Array.isArray(s.extend.fields) ? s.extend.fields : []).map((f) => f?.name).filter(Boolean).join("+")}` : null].filter(Boolean).join(" ")).join(" + ");
 const componentChoices = () => Object.fromEntries((planObj?.site?.pages ?? []).flatMap((p) => [...sectionGroups(p)].map(([k, list]) => [`${p.path}#${k}`, choiceOf(list)])));
 const planShape = () => {
   const { componentVariants, pages, ...site } = planObj?.site ?? {};

@@ -105,4 +105,107 @@
       }
     }
   }
+
+  &.variant-mcc-label {
+    background: #000000;
+    color: #ffffff;
+    font-size: 16px;
+    padding: 48px 0 40px;
+
+    a { color: #ffffff; }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 220px 220px;
+      column-gap: 24px;
+      width: 1280px;
+      max-width: calc(100% - 160px);
+      margin: 0 auto;
+      min-height: 520px;
+    }
+
+    h2 {
+      margin: 0;
+      height: 46px;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 46px;
+      color: #ffffff;
+    }
+
+    .links p { margin: 0; height: 36px; }
+    .links a {
+      display: block;
+      height: 36px;
+      line-height: 36px;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .brand { position: relative; min-height: 520px; }
+    .logo-img { position: absolute; top: 0; left: 0; width: 120px; height: 29px; }
+    .blurb {
+      position: absolute;
+      top: 64px;
+      left: 0;
+      width: 420px;
+      color: #ffffff;
+      font-weight: 700;
+      p { margin: 0; }
+    }
+    .footer-cta {
+      position: absolute;
+      top: 172px;
+      left: 0;
+      display: inline-flex;
+      align-items: center;
+      background: #ffffff;
+      color: #000000;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 28px;
+      padding: 12px 40px;
+    }
+    .partner {
+      position: absolute;
+      top: 280px;
+      left: 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      width: 560px;
+      color: #ffffff;
+    }
+    .partner-img { width: 105px; height: 42px; flex: none; }
+    .partner p { margin: 0; }
+    .base {
+      position: absolute;
+      top: 400px;
+      left: 0;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .base p { margin: 0; }
+    .footer-social {
+      position: static;
+      padding: 8px 16px;
+    }
+    .legal {
+      position: absolute;
+      top: 430px;
+      left: 560px;
+      a {
+        display: inline-block;
+        margin-right: 24px;
+        color: #ffffff;
+        text-decoration: none;
+        line-height: 24px;
+      }
+    }
+  }
 }

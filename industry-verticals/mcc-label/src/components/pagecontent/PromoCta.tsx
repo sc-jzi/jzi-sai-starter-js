@@ -15,7 +15,6 @@ import {
 } from '@sitecore-content-sdk/nextjs';
 import useVisibility from 'src/hooks/useVisibility';
 import { ComponentProps } from 'lib/component-props';
-import { asImageField } from 'lib/as-image-field';
 import { DottedAccent } from 'components/non-sitecore/DottedAccent';
 
 interface Fields {
@@ -191,67 +190,3 @@ export const WithBackgroundImage = (props: PromoCtaProps): JSX.Element => {
     </div>
   );
 };
-
-const Band = ({
-  props,
-  side,
-  tone,
-}: {
-  props: PromoCtaProps;
-  side: 'left' | 'right';
-  tone: 'white' | 'yellow';
-}): JSX.Element => {
-  const id = props.params.RenderingIdentifier;
-  const { page } = useSitecore();
-  const isPageEditing = page.mode.isEditing;
-  const plant = props.fields?.Title?.value === 'Plant Locations';
-  const imageField = asImageField(props.fields?.Image);
-  const image = imageField ? (
-    <div className="promo-band-media">
-      <NextImage field={imageField} width={560} height={420} />
-    </div>
-  ) : null;
-  const copy = (
-    <div className="promo-band-copy">
-      {(props.fields?.Title?.value || isPageEditing) && <Text field={props.fields?.Title} tag="h2" />}
-      {(props.fields?.Subtitle?.value || isPageEditing) && <Text field={props.fields?.Subtitle} tag="h3" />}
-      {(props.fields?.Text?.value || isPageEditing) && <RichText field={props.fields?.Text} />}
-      {(isPageEditing || props.fields?.Link?.value?.href) && (
-        <Link field={props.fields.Link} className="button button-main" />
-      )}
-    </div>
-  );
-  return (
-    <section className={`component promo-cta promo-band tone-${tone} side-${side}${plant ? " plant-locations" : ""}`} id={id || undefined}>
-      <div className="container">
-        {side === 'left' ? (
-          <>
-            {image}
-            {copy}
-          </>
-        ) : (
-          <>
-            {copy}
-            {image}
-          </>
-        )}
-      </div>
-    </section>
-  );
-};
-
-export const MccLabel = (props: PromoCtaProps): JSX.Element => <Band props={props} side="left" tone="yellow" />;
-
-export const MccLabelImageLeft = (props: PromoCtaProps): JSX.Element => (
-  <Band props={props} side="left" tone="white" />
-);
-
-export const MccLabelImageRight = (props: PromoCtaProps): JSX.Element => (
-  <Band props={props} side="right" tone="white" />
-);
-
-export const MccLabelFeature = (props: PromoCtaProps): JSX.Element => (
-  <div className="mcc-label-variant MccLabelFeature">
-    <Default {...props} />
-  </div>
-);

@@ -1,3 +1,5 @@
+.mcc-label-image-left .button { display: none; }
+
 .features {
   .container {
     display: flex;
@@ -19,7 +21,7 @@
       justify-content: center;
 
       .eyebrow-accent {
-        margin-bottom: 2.5rem;
+        display: none;
       }
 
       .tagline {
@@ -29,6 +31,13 @@
 
       .button {
         max-width: fit-content;
+
+        a {
+          background: #2bb673;
+          color: #ffffff;
+          border-radius: 28px;
+          padding: 12px 24px;
+        }
       }
     }
 
@@ -103,3 +112,6 @@
     }
   }
 }
+
+.mcc-label-image-right .features .item.left .title { order: -1; }
+.mcc-label-image-right .features .item.right { margin-top: 180px; }

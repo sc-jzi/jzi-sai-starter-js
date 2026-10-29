@@ -33,14 +33,18 @@ export const Default = (props: AppPromoProps): JSX.Element => {
 
   return (
     <div className={`component hero ${sxaStyles}`} id={id ? id : undefined}>
+      {(isPageEditing || props.fields?.Link?.value?.href) && (
+        <Link field={props.fields.Link} className="hero-back" />
+      )}
       <picture>
         <NextImage field={props.fields.Image} className="" width={1920} height={400}></NextImage>
       </picture>
       <div className="container content-container">
+        <div className="hero-card">
         <div className="top-layout">
-          <div className="title">
+          <h1 className="title">
             <Text field={props.fields.Title} />
-          </div>
+          </h1>
           <div className="subtitle">
             <RichText field={props.fields.Text} />
           </div>
@@ -52,7 +56,26 @@ export const Default = (props: AppPromoProps): JSX.Element => {
             )}
           </div>
         </div>
+        </div>
       </div>
     </div>
   );
 };
+
+export const MccLabel = (props: AppPromoProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label">
+    <Default {...props} />
+  </section>
+);
+
+export const MccLabelPageHero = (props: AppPromoProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label-page-hero">
+    <Default {...props} />
+  </section>
+);
+
+export const MccLabelArticle = (props: AppPromoProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label-article">
+    <Default {...props} />
+  </section>
+);

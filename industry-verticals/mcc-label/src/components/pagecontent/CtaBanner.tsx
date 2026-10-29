@@ -50,9 +50,11 @@ export const Default = (props: CtaBannerProps): JSX.Element => {
             <div className="col-lg-6">
               <IconAccent image={props.fields.Icon} inverted />
               <div className="content-wrapper">
-                <h6 className="eyebrow-accent">
-                  <Text field={props.fields.Eyebrow} />
-                </h6>
+                {props.fields?.Eyebrow?.value && (
+                  <p className="eyebrow-accent">
+                    <Text field={props.fields.Eyebrow} />
+                  </p>
+                )}
                 <h1 className="display-4 fw-bold mb-3">
                   <Text field={props.fields.Title} />
                 </h1>
@@ -105,9 +107,11 @@ export const LargeImage = (props: CtaBannerProps): JSX.Element => {
             <div className="content-column">
               <IconAccent image={props.fields.Icon} inverted />
               <div className="content-wrapper">
-                <h6 className="eyebrow-accent">
-                  <Text field={props.fields.Eyebrow} />
-                </h6>
+                {props.fields?.Eyebrow?.value && (
+                  <p className="eyebrow-accent">
+                    <Text field={props.fields.Eyebrow} />
+                  </p>
+                )}
                 <h1 className="display-4 fw-bold mb-3">
                   <Text field={props.fields.Title} />
                 </h1>
@@ -141,34 +145,76 @@ export const LargeImage = (props: CtaBannerProps): JSX.Element => {
   );
 };
 
-export const MccLabel = (props: CtaBannerProps): JSX.Element => {
+export const MccLabel = (props: CtaBannerProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label">
+    <Default {...props} />
+  </section>
+);
+
+export const MccLabelSimple = (props: CtaBannerProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label-simple">
+    <Default {...props} />
+  </section>
+);
+
+export const MccLabelImageLeft = (props: CtaBannerProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label-split mcc-label-image-left">
+    <Default {...props} />
+  </section>
+);
+
+export const MccLabelImageRight = (props: CtaBannerProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label-split mcc-label-image-right">
+    <Default {...props} />
+  </section>
+);
+
+export const MccLabelImageLeftYellow = (props: CtaBannerProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label-split mcc-label-image-left mcc-label-yellow">
+    <Default {...props} />
+  </section>
+);
+
+// Article head: the same fields, with the Link shown as a small back link above the title (not a button)
+export const MccLabelArticle = (props: CtaBannerProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
+
   return (
-    <section className="component cta-banner mcc-label-variant MccLabel">
-      <div className="cta-card">
-        {(props.fields?.Title?.value || isPageEditing) && <Text field={props.fields?.Title} tag="h2" />}
-        <RichText field={props.fields?.Text} />
-        {(isPageEditing || props.fields?.Link?.value?.href) && (
-          <Link field={props.fields.Link} className="button button-main" />
-        )}
+    <section className="variant-mcc-label mcc-label-split mcc-label-article-head">
+      <div className={`component cta-banner ${props.params?.styles || ''}`} id={id ? id : undefined}>
+        <div className="container-widest-fluid">
+          <div className="container">
+            <div className="row row-gap-4 main-content">
+              <div className="col-lg-6">
+                <div className="content-wrapper">
+                  {(isPageEditing || props.fields?.Link?.value?.href) && (
+                    <Link field={props.fields.Link} className="back-link" />
+                  )}
+                  <h1 className="display-4 fw-bold mb-3">
+                    <Text field={props.fields?.Title} />
+                  </h1>
+                  {(isPageEditing || props.fields?.Text?.value) && (
+                    <RichText field={props.fields?.Text} className="text-content" />
+                  )}
+                </div>
+              </div>
+              <div className="col-md-10 mx-auto col-lg-6 mx-lg-0">
+                <div className="image-wrapper">
+                  <NextImage field={props.fields?.Image} className="d-block mx-lg-auto img-fluid" width={520} height={390} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
 };
 
-export const MccLabelCentered = (props: CtaBannerProps): JSX.Element => {
-  const { page } = useSitecore();
-  const isPageEditing = page.mode.isEditing;
-  return (
-    <section className="component cta-banner mcc-label-variant MccLabelCentered">
-      <div className="cta-card">
-        {(props.fields?.Title?.value || isPageEditing) && <Text field={props.fields?.Title} tag="h2" />}
-        <RichText field={props.fields?.Text} />
-        {(isPageEditing || props.fields?.Link?.value?.href) && (
-          <Link field={props.fields.Link} className="button button-main" />
-        )}
-      </div>
-    </section>
-  );
-};
+export const MccLabelImageRightPale = (props: CtaBannerProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label-split mcc-label-image-right mcc-label-pale">
+    <Default {...props} />
+  </section>
+);

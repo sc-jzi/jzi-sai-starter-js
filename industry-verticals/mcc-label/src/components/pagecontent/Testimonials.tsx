@@ -4,7 +4,6 @@ import { JSX } from 'react';
 import { Field, ImageField, NextImage, Text, useSitecore } from '@sitecore-content-sdk/nextjs';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
-import { asImageField } from 'lib/as-image-field';
 
 interface TestimonialFields {
   Rating: Field<string>;
@@ -23,7 +22,6 @@ export type TestimonialItemProps = {
 export type TestimonialsProps = {
   params: { [key: string]: string };
   fields: {
-    Title?: Field<string>;
     items: TestimonialItemProps[];
   };
 };
@@ -32,7 +30,7 @@ const StarRating = ({ item }: { item: TestimonialItemProps }): JSX.Element => {
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
 
-  const rating = item.fields?.Rating?.value;
+  const rating = item.fields?.Rating.value;
   const ratingField = isPageEditing && <Text field={item.fields?.Rating} />;
 
   if (!rating) return <></>;
@@ -85,11 +83,18 @@ const Testimonial = ({ item }: { item: TestimonialItemProps }): JSX.Element => {
 
 export const Default = (props: TestimonialsProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
-  const testimonials = (props.fields?.items ?? []).filter((item) => item.fields?.Content || item.fields?.AuthorName);
+  const testimonials = props.fields?.items;
   const sxaStyles = `${props.params?.styles || ''}`;
+  const title = testimonials?.find((item) => item.fields?.Content?.value && !item.fields?.AuthorName?.value);
+  const quotes = title ? testimonials?.filter((item) => item !== title) : testimonials;
 
   return (
     <div className={`component testimonials ${sxaStyles}`} id={id ? id : undefined}>
+      {title?.fields?.Content && (
+        <h2 className="testimonials-title">
+          <Text field={title.fields.Content} />
+        </h2>
+      )}
       <div className="">
         <Swiper
           effect="coverflow"
@@ -114,11 +119,11 @@ export const Default = (props: TestimonialsProps): JSX.Element => {
             clickable: true,
           }}
           centeredSlides={true}
-          loop={testimonials.length > 3}
+          loop={(quotes?.length ?? 0) > 3}
           grabCursor={true}
           modules={[Autoplay, EffectCoverflow, Pagination]}
         >
-          {testimonials.map((item, i) => (
+          {quotes?.map((item, i) => (
             <SwiperSlide key={`${item.url}${i}`}>
               <Testimonial key={item.url} item={item} />
             </SwiperSlide>
@@ -129,34 +134,40 @@ export const Default = (props: TestimonialsProps): JSX.Element => {
   );
 };
 
-export const MccLabel = (props: TestimonialsProps): JSX.Element => {
-  const first = props.fields?.items?.[0] as
-    | { fields?: { Title?: Field<string>; Text?: Field<string>; Author?: Field<string>; Image?: ImageField } }
-    | undefined;
-  const portraits = (props.fields?.items ?? []) as { fields?: { Image?: ImageField } }[];
+export const MccLabel = (props: TestimonialsProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label">
+    <Default {...props} />
+  </section>
+);
+
+export const MccLabelSlider = (props: TestimonialsProps): JSX.Element => {
+  const items = props.fields?.items ?? [];
+  const title = items.find((item) => item.fields?.Content?.value && !item.fields?.AuthorName?.value);
+  const quotes = items.filter((item) => item !== title && item.fields?.Content?.value);
+  const photo = items.find((item) => item.fields?.AuthorImage?.value?.src);
+
   return (
-    <div className="component testimonials mcc-label-variant MccLabel">
-      <div className="testimonial-layout">
-        <div className="testimonial-copy">
-          <Text field={props.fields?.Title || first?.fields?.Title} tag="h2" />
-          <Text field={first?.fields?.Text} tag="p" />
-          <button type="button" className="testimonial-nav">Previous</button>
-          <Text field={first?.fields?.Author} tag="p" />
-          <button type="button" className="testimonial-nav">Next</button>
+    <section className={`component testimonials variant-mcc-label ${props.params?.styles || ''}`}>
+      {title?.fields?.Content && (
+        <h2 className="testimonials-title">
+          <Text field={title.fields.Content} />
+        </h2>
+      )}
+      {photo?.fields?.AuthorImage?.value?.src && (
+        <NextImage field={photo.fields.AuthorImage} width={120} height={120} />
+      )}
+      {quotes.map((item, index) => (
+        <div key={item.url || index}>
+          <p>
+            <Text field={item.fields.Content} />
+          </p>
+          {index < quotes.length - 1 ? (
+            <button type="button" className="btn">Previous</button>
+          ) : (
+            <button type="button" className="btn">Next</button>
+          )}
         </div>
-        <div className="testimonial-photos">
-          {portraits.map((item, index) => {
-            const image = asImageField(item.fields?.Image);
-            return image ? <NextImage key={index} field={image} width={240} height={240} /> : null;
-          })}
-        </div>
-      </div>
-    </div>
+      ))}
+    </section>
   );
 };
-
-export const MccLabelSlider = (props: TestimonialsProps): JSX.Element => (
-  <div className="mcc-label-variant MccLabelSlider">
-    <Default {...props} />
-  </div>
-);

@@ -8,9 +8,8 @@ import {
 // end of built-in imports
 
 import { jsx, jsxs } from 'react/jsx-runtime';
-import { NextImage, Text, Link, RichText, AppPlaceholder } from '@sitecore-content-sdk/nextjs';
-import { asImageField } from 'lib/as-image-field';
 import componentMap from '.sitecore/component-map';
+import { AppPlaceholder, NextImage, Text } from '@sitecore-content-sdk/nextjs';
 
 const importMap = [
   {
@@ -21,25 +20,17 @@ const importMap = [
     ]
   },
   {
-    module: '@sitecore-content-sdk/nextjs',
-    exports: [
-      { name: 'NextImage', value: NextImage },
-      { name: 'Text', value: Text },
-      { name: 'Link', value: Link },
-      { name: 'RichText', value: RichText },
-      { name: 'AppPlaceholder', value: AppPlaceholder },
-    ]
-  },
-  {
-    module: 'lib/as-image-field',
-    exports: [
-      { name: 'asImageField', value: asImageField },
-    ]
-  },
-  {
     module: '.sitecore/component-map',
     exports: [
       { name: 'default', value: componentMap },
+    ]
+  },
+  {
+    module: '@sitecore-content-sdk/nextjs',
+    exports: [
+      { name: 'AppPlaceholder', value: AppPlaceholder },
+      { name: 'NextImage', value: NextImage },
+      { name: 'Text', value: Text },
     ]
   }
 ] as ImportEntry[];

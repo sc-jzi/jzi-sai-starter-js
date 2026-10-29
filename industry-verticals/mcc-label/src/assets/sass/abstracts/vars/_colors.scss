@@ -37,6 +37,84 @@ body.site-financial.dark,
   --roundness: 1rem;
 }
 
+// MCC Label
+body.site-mcc-label,
+.site-mcc-label {
+  --text-body: #0d210a;
+  --text-body-inverted: #ffffff;
+  --text-colored: #2bb673;
+  --text-footer: #ffffff;
+  --text-accent: #0d210a;
+  --bg-body: #ffffff;
+  --bg-footer: #000000;
+  --bg-main: #ffffff;
+  --bg-main-alt: #dce6eb;
+  --bg-color: #e8f7ef;
+  --bg-saturated: #2bb673;
+  --bg-accent: #ffd64f;
+  --border-color: #e5e7eb;
+  --hr-color: #e5e7eb;
+  --roundness: 16px;
+}
+
+body.site-mcc-label.dark,
+.dark .site-mcc-label {
+  --text-body: #ffffff;
+  --text-body-inverted: #0d210a;
+  --text-colored: #2bb673;
+  --text-footer: #ffffff;
+  --text-accent: #ffd64f;
+  --bg-body: #0d210a;
+  --bg-footer: #000000;
+  --bg-main: #0d210a;
+  --bg-main-alt: #16301a;
+  --bg-color: #16301a;
+  --bg-saturated: #2bb673;
+  --bg-accent: #ffd64f;
+  --border-color: #2a4a30;
+  --hr-color: #2a4a30;
+  --roundness: 16px;
+}
+
+// MCC Label
+body.site-mcc-label,
+.site-mcc-label {
+  --text-body: #0d210a;
+  --text-body-inverted: #ffffff;
+  --text-colored: #2bb673;
+  --text-footer: #ffffff;
+  --text-accent: #0d210a;
+  --bg-body: #ffffff;
+  --bg-footer: #000000;
+  --bg-main: #ffffff;
+  --bg-main-alt: #dce6eb;
+  --bg-color: #e8f7ef;
+  --bg-saturated: #2bb673;
+  --bg-accent: #ffd64f;
+  --border-color: #e5e7eb;
+  --hr-color: #e5e7eb;
+  --roundness: 16px;
+}
+
+body.site-mcc-label.dark,
+.dark .site-mcc-label {
+  --text-body: #ffffff;
+  --text-body-inverted: #0d210a;
+  --text-colored: #2bb673;
+  --text-footer: #ffffff;
+  --text-accent: #ffd64f;
+  --bg-body: #0d210a;
+  --bg-footer: #000000;
+  --bg-main: #0d210a;
+  --bg-main-alt: #16301a;
+  --bg-color: #16301a;
+  --bg-saturated: #2bb673;
+  --bg-accent: #ffd64f;
+  --border-color: #2a4a30;
+  --hr-color: #2a4a30;
+  --roundness: 16px;
+}
+
 // Services
 body.site-services,
 .site-services {
@@ -72,45 +150,6 @@ body.site-services.dark,
   --border-color: #5d5f7f;
   --hr-color: #fff;
   --roundness: 0.375rem;
-}
-
-// MCC Label
-body.site-mcc-label,
-.site-mcc-label {
-  --text-body: #000000;
-  --text-body-inverted: #ffffff;
-  --text-colored: #2bb673;
-  --text-footer: #ffffff;
-  --text-accent: #ffd64f;
-  --bg-body: #ffffff;
-  --bg-footer: #000000;
-  --bg-main: #ffffff;
-  --bg-main-alt: #dce6eb;
-  --bg-color: #dce6eb;
-  --bg-saturated: #2bb673;
-  --bg-accent: #ffd64f;
-  --border-color: #dce6eb;
-  --hr-color: #ffffff;
-  --roundness: 1.75rem;
-}
-
-body.site-mcc-label.dark,
-.dark .site-mcc-label {
-  --text-body: #ffffff;
-  --text-body-inverted: #000000;
-  --text-colored: #2bb673;
-  --text-footer: #ffffff;
-  --text-accent: #ffd64f;
-  --bg-body: #000000;
-  --bg-footer: #000000;
-  --bg-main: #111111;
-  --bg-main-alt: #1a1a1a;
-  --bg-color: #1a1a1a;
-  --bg-saturated: #2bb673;
-  --bg-accent: #ffd64f;
-  --border-color: #333333;
-  --hr-color: #ffffff;
-  --roundness: 1.75rem;
 }
 
 // Backgrounds colors

@@ -7,9 +7,7 @@ export default async function SiteLayout({
   children: React.ReactNode;
   params: Promise<{ site: string; locale: string }>;
 }) {
-  const raw = await params;
-  const site = decodeURIComponent(raw.site);
-  const locale = decodeURIComponent(raw.locale);
+  const { site, locale } = await params;
 
   setCachedPageParams({ locale, site });
 

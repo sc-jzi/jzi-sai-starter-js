@@ -40,8 +40,11 @@ disagree, **this file wins** and the skill is the bug. Change a rule here, once.
   path such as `/about-us` is always an internal link with the page id. *Enforced: link-xml check, link-audit, run-gate (links).*
 - **R8 Image fields hold image XML, never a URL.** Upload first (Content Hub, or the Media Library when `CH_ENABLED=false`), then write the manifest's
   `imageFieldXml`; images enter a demo only through `collect-images.mjs` (each traced to its page and section). A file over 50 MB is not uploaded to the Media Library (Experience Edge cannot publish it) and is listed under `## Missing assets`;
-  the run carries on. Uploaded is not attached: every image of a built section ends up in that component's Image field (`attach-images.mjs` proposes
-  each write; make it with `update_fields_on_item`, R5). *Enforced: run-gate (images, looks IMAGES).*
+  the run carries on. A local file whose name ends in `.ashx` is not uploaded under that name: the upload scripts sniff its bytes and rename it in place
+  (JPEG `FF D8` → `.jpg`, PNG `89 50 4E 47` → `.png`, GIF `GIF87a`/`GIF89a` → `.gif`, WebP `RIFF`…`WEBP` → `.webp`, SVG after an optional XML declaration → `.svg`),
+  updating `localPath`, `localFileName` and `localFile`. Bytes that match none of those fail that entry (`uploadStatus: "failed"`, a short `uploadError`) and are not
+  renamed to `.jpg`; an HTML error page is not treated as SVG. Uploaded is not attached: every image of a built section ends up in that component's Image field
+  (`attach-images.mjs` proposes each write; make it with `update_fields_on_item`, R5). *Enforced: content-hub-upload.mjs, media-upload.mjs, run-gate (images, looks IMAGES).*
 - **R9 Header and footer are partial designs** on template `{FD2059FD-6043-4DFE-8C04-E2437CE87634}`, listed in every Page Design. `{C3CEB23C-...}` is the
   Partial Designs folder, not a partial. Never copy header or footer renderings onto a page. *Enforced: run-gate (partials, placement).*
 - **R10 Pages.** Item names are lower-case-hyphen; the display name (`__Display name`, en) is the plan's `displayName`, or else the item name in Title Case
@@ -55,11 +58,15 @@ disagree, **this file wins** and the skill is the bug. Change a rule here, once.
   (`liveSection`) or dropped with a reason; the story only adds sections a moment needs (`added: true`). Advertisement slots are never built. The footer
   is never dropped (R9). *Enforced: validate-site-plan P12/P12b/P12c.*
 - **R13 One component per section, chosen from its screenshot.** Open the section's crop (`component-crops.md`), then reuse a registry component of the
-  same shape (with the client variant or look) or build a new one (`fit: new`). Rich Text is only a heading and paragraphs: never images, buttons,
+  same shape (with the client variant or look) or build a new one (`fit: new`). **The choice is a comparison, not a description:** `component-match.mjs`
+  measures the live band and every base variant the same way and shortlists the closest three; pick from it, or name in `fitReason` the
+  shortlisted variant you compared with ("closest to PromoCta Default: …; differs: …"), for `fit: new` too. **Layout is shape, not look:** a variant
+  or look may restyle (colours, fonts, spacing, mirroring the photo left/right) but never restructure: a card row cannot become an image-and-text
+  split, a static row cannot become a slider. Only when the measurement is wrong, `shapeReason` on the section says why (shown at the gate). Rich Text is only a heading and paragraphs: never images, buttons,
   cards, columns, lists, an FAQ, a logo wall, a video, a form, a carousel, never with a `look`, never section HTML in a field. A section with
   pictures needs a component with an Image field, a video a component that plays one; if the chosen one cannot, swap it (R1). Text the visitor reads
   lives in datasource fields, never in rendering parameters (a heading written into a parameter so the compare finds the section is a fake fix).
-  *Enforced: validate-site-plan P16, component-crops, run-gate (placement, text in rendering parameters).*
+  *Enforced: validate-site-plan P16/P17, component-crops, run-gate (placement, text in rendering parameters); seen by the SE on `plan-review.mjs`.*
 - **R14 Measurements come from the scripts.** `nav.json`, `header-styles*.json`, `sections*.json` are never edited by hand. A wrong result is re-measured
   with the script's override (`nav-extract --root`, `header-styles --eyebrow/--main`, `section-capture --selector`); a wrong demo is fixed in the
   variant/SCSS, never in the measurement. Only when a site blocks headless capture entirely may the numbers be read from the SE's screenshots into the
@@ -108,6 +115,13 @@ disagree, **this file wins** and the skill is the bug. Change a rule here, once.
 - **R22 Existing components are reused as they are on the Sitecore side** (shared templates, renderings, rendering parameters under the project layer);
   only their code is replaced in the customer copy. Register something under /sitecore/layout only for a component that is NEW (not
   `status: complete` in the manifest). Marketer MCP field-name rules and the Agent API limits apply (`.skills/sitecore-reference/references/agent-api-limitations.md`).
+  **The default is never changed:** nothing in the base site's templates, renderings or standard values (the Prospera / Financial project
+  layer) is edited for a demo. When a registry component is the right shape but needs a field it lacks (a second image, an extra link), the
+  section is `fit: extend`: a DERIVED datasource template `/sitecore/templates/Project/<collection>/Components/<Component><client variant>`
+  whose `__Base template` is the component's own datasource template, plus only the extra fields (each with its Type, R26; no standard
+  values). The shared rendering is reused unchanged; the site's own Data folder for that component gets the derived template in its insert
+  options; the demo's client variant reads the extra field. Not for a component with a ComponentQuery (the query lives on the shared
+  rendering): that is `fit: new`.
 - **R23 No fire-and-forget writes.** Writes run in the foreground, one result checked (read back) per item. A script or job that exits non-zero, or a
   read-back that disagrees, is a FAILED step: fix it before saying the work is done. Only the app dev server runs in the background. Timestamps come
   from the real clock (`new Date().toISOString()`). On Windows PowerShell write a `.mjs` file instead of inline `node -e` (quotes get mangled).

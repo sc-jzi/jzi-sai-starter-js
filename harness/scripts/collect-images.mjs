@@ -15,7 +15,7 @@
  */
 import { existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { die, demoDir, parseArgs, readJson, rootRel, safeWrite, chromeBands } from "./_lib.mjs";
+import { die, demoDir, parseArgs, readJson, rootRel, safeWrite, chromeBands, imageExtFromBytes } from "./_lib.mjs";
 import { parseYaml } from "./_yaml.mjs";
 
 const { flags, pos } = parseArgs(process.argv.slice(2));
@@ -51,7 +51,8 @@ for (const p of pages) {
 const old = readJson(manifestPath, []);
 const entries = []; (function walk(o) { if (o && typeof o === "object") { if ("localFileName" in o || "localPath" in o || "src" in o) entries.push(o); else for (const v of Object.values(o)) walk(v); } })(old);
 const bySrc = new Map(entries.filter((e) => e.src).map((e) => [String(e.src).split("#")[0], e]));
-const extOf = (src, type) => (/png/.test(type) ? ".png" : /webp/.test(type) ? ".webp" : /svg/.test(type) ? ".svg" : /gif/.test(type) ? ".gif" : /jpe?g/.test(type) ? ".jpg" : (src.split("?")[0].match(/\.(png|jpe?g|webp|svg|gif)$/i)?.[0] ?? ".jpg").toLowerCase());
+// content-type first, then the URL, then the bytes (a media handler URL such as .ashx served as octet-stream), .jpg last
+const extOf = (src, type, buf) => (/png/.test(type) ? ".png" : /webp/.test(type) ? ".webp" : /svg/.test(type) ? ".svg" : /gif/.test(type) ? ".gif" : /jpe?g/.test(type) ? ".jpg" : (src.split("?")[0].match(/\.(png|jpe?g|webp|svg|gif)$/i)?.[0] ?? imageExtFromBytes(buf.subarray(0, 512)) ?? ".jpg").toLowerCase());
 const counter = new Map();
 let added = 0, downloaded = 0, failed = [];
 if (!dry) mkdirSync(dir, { recursive: true });
@@ -67,7 +68,7 @@ for (const [src, w] of wanted) {
   try {
     const r = await fetch(src, { headers: { "User-Agent": "Mozilla/5.0 demo-harness" }, signal: AbortSignal.timeout(30000) });
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
-    const buf = Buffer.from(await r.arrayBuffer()), name = `${key}-${counter.get(key)}${extOf(src, r.headers.get("content-type") ?? "")}`;
+    const buf = Buffer.from(await r.arrayBuffer()), name = `${key}-${counter.get(key)}${extOf(src, r.headers.get("content-type") ?? "", buf)}`;
     writeFileSync(join(dir, name), buf);
     Object.assign(e, { localFileName: name, localPath: join(dir, name), status: "downloaded", sizeBytes: buf.length, alt: e.alt || first.page });
     downloaded++;

@@ -1,0 +1,4280 @@
+{
+  "generatedAt": "2026-10-27T23:06:37.444Z",
+  "components": [
+    {
+      "name": "ArticleDetails",
+      "id": null,
+      "category": "Articles",
+      "purpose": "",
+      "file": "src/components/pagecontent/ArticleDetails.tsx",
+      "kind": "context",
+      "variants": [
+        "Default",
+        "Simple"
+      ],
+      "variantDefinitions": [
+        "Default",
+        "Simple"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Articles/Article Details",
+        "id": "a7343c454438441e967ec2cb350dda75",
+        "datasourceLocation": "",
+        "componentQuery": false
+      },
+      "datasource": null,
+      "fields": [],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Title",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Excerpt",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Content",
+          "type": "RichTextField"
+        },
+        {
+          "name": "Thumbnail",
+          "type": "ImageField"
+        },
+        {
+          "name": "BackgroundImage",
+          "type": "ImageField"
+        },
+        {
+          "name": "Name",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Photo",
+          "type": "ImageField"
+        },
+        {
+          "name": "Position",
+          "type": "Field<string>"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": [
+          {
+            "name": "page-navigation",
+            "where": "after BackgroundImage, before Thumbnail"
+          },
+          {
+            "name": "article-meta",
+            "where": "after Thumbnail, before Title"
+          },
+          {
+            "name": "background-page-content",
+            "where": "after Content"
+          },
+          {
+            "name": "page-content",
+            "where": "after Content"
+          }
+        ],
+        "Simple": [
+          {
+            "name": "article-meta",
+            "where": "after Content"
+          },
+          {
+            "name": "background-page-content",
+            "where": "after Content"
+          },
+          {
+            "name": "page-content",
+            "where": "after Content"
+          }
+        ]
+      },
+      "canShow": {
+        "images": 0,
+        "links": 0,
+        "richText": 0,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [
+        "/articles/introducing-mobile-finance",
+        "/articles/beware-of-financial-online-scams",
+        "/articles/exploring-the-use-of-blockchain-technology",
+        "/articles/empowering-young-adults",
+        "/articles/closing-the-wealth-gap"
+      ],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "ArticleDetails--Default.png",
+          "route": "/articles/introducing-mobile-finance"
+        },
+        {
+          "variant": "Simple"
+        }
+      ],
+      "notes": [
+        "Context item resolver {6CCCBCDE-5E95-44E4-AE66-CFE7D3A0589E}. Code variant Simple has no Variant Definition."
+      ]
+    },
+    {
+      "name": "AuthorDetails",
+      "id": null,
+      "category": "Articles",
+      "purpose": "",
+      "file": "src/components/pagecontent/AuthorDetails.tsx",
+      "kind": "context",
+      "variants": [
+        "Default",
+        "Simple"
+      ],
+      "variantDefinitions": [
+        "Default",
+        "Simple"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Articles/Author Details",
+        "id": "f7bb574ae5c14475a07e0ebf590cc50e",
+        "datasourceLocation": "",
+        "componentQuery": false
+      },
+      "datasource": null,
+      "fields": [],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Name",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Position",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Photo",
+          "type": "ImageField"
+        },
+        {
+          "name": "Bio",
+          "type": "RichTextField"
+        },
+        {
+          "name": "BackgroundImage",
+          "type": "ImageField"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": [
+          {
+            "name": "page-navigation",
+            "where": "after BackgroundImage, before Photo"
+          },
+          {
+            "name": "background-page-content",
+            "where": "after Bio"
+          },
+          {
+            "name": "page-content",
+            "where": "after Bio"
+          }
+        ],
+        "Simple": []
+      },
+      "canShow": {
+        "images": 0,
+        "links": 0,
+        "richText": 0,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [
+        "/authors/Josephine Baxter",
+        "/authors/Nick Reddick",
+        "/authors/Olly Damon",
+        "/authors/Patricia Ball",
+        "/authors/Gabby Ross"
+      ],
+      "shots": [
+        {
+          "variant": "Default"
+        },
+        {
+          "variant": "Simple"
+        }
+      ],
+      "notes": [
+        "Context item resolver {6CCCBCDE-5E95-44E4-AE66-CFE7D3A0589E}. A second rendering DoctorDetails {0CB90097-6A6D-46F3-AB94-F2406435F689} also sets componentName AuthorDetails and was not given its own entry."
+      ]
+    },
+    {
+      "name": "Carousel",
+      "id": "carousel",
+      "category": "Banners",
+      "purpose": "rotating slides with title, text, image and link; optional video; dots or arrows",
+      "file": "src/components/pagecontent/Carousel.tsx",
+      "kind": "list",
+      "variants": [
+        "Default"
+      ],
+      "variantDefinitions": [
+        "Default"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/Carousel",
+        "id": "8094185b4c7240c8b005c6ed91708754",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Carousel']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Carousel']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Carousel",
+        "path": "/sitecore/templates/Project/Financial/Components/Carousel",
+        "id": "c7b8468f4290400f93bbd46c5f8db126"
+      },
+      "fields": [],
+      "children": [
+        {
+          "name": "Carousel Item",
+          "path": "/sitecore/templates/Project/Financial/Components/Carousel Item",
+          "id": "54db209dcd0f49d9ae4eecb65d72cc4d",
+          "fields": [
+            {
+              "name": "Title",
+              "type": "Single-Line Text",
+              "section": "Data",
+              "from": "Carousel Item"
+            },
+            {
+              "name": "Text",
+              "type": "Rich Text",
+              "section": "Data",
+              "from": "Carousel Item"
+            },
+            {
+              "name": "Link",
+              "type": "General Link",
+              "section": "Data",
+              "from": "Carousel Item"
+            },
+            {
+              "name": "Image",
+              "type": "Image",
+              "section": "Data",
+              "from": "Carousel Item"
+            },
+            {
+              "name": "Video",
+              "type": "Image",
+              "section": "Data",
+              "from": "Carousel Item"
+            }
+          ]
+        }
+      ],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Title",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Text",
+          "type": "RichTextField"
+        },
+        {
+          "name": "Image",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link",
+          "type": "LinkField"
+        },
+        {
+          "name": "Video",
+          "type": "ImageField"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
+      "canShow": {
+        "images": 2,
+        "links": 1,
+        "richText": 1,
+        "video": true,
+        "listOfItems": true
+      },
+      "usedOn": [
+        "/"
+      ],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "Carousel--Default.png",
+          "route": "/components/carousel"
+        }
+      ],
+      "notes": [
+        "Candidate local template {C7B8468F-4290-400F-93BB-D46C5F8DB126} and candidate child Carousel Item {54DB209D-CD0F-49D9-AE4E-ECB65D72CC4D} were not assigned because the branch item is missing. Children resolver {2F5C334E-5615-423C-8281-9FC180191302}."
+      ]
+    },
+    {
+      "name": "CtaBanner",
+      "id": "cta-banner",
+      "category": "Banners",
+      "purpose": "conversion band near the bottom of a page; eyebrow, title, text and a single action; image or icon on one side",
+      "file": "src/components/pagecontent/CtaBanner.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default",
+        "LargeImage"
+      ],
+      "variantDefinitions": [
+        "Default",
+        "LargeImage"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/CTA Banner",
+        "id": "488b8ac00ef94f6f871178ba182b2c4c",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='CTA Banner']|query:$sharedSites/*[@@name='Data']/*[@@templatename='CTA Banner']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "CTA Banner",
+        "path": "/sitecore/templates/Project/Financial/Components/CTA Banner",
+        "id": "4900d7e561b0483aa9d669419d4d5982"
+      },
+      "fields": [
+        {
+          "name": "Eyebrow",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "CTA Banner"
+        },
+        {
+          "name": "Title",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "CTA Banner"
+        },
+        {
+          "name": "Text",
+          "type": "Rich Text",
+          "section": "Data",
+          "from": "CTA Banner"
+        },
+        {
+          "name": "Link",
+          "type": "General Link",
+          "section": "Data",
+          "from": "CTA Banner"
+        },
+        {
+          "name": "Image",
+          "type": "Image",
+          "section": "Data",
+          "from": "CTA Banner"
+        },
+        {
+          "name": "Icon",
+          "type": "Image",
+          "section": "Data",
+          "from": "CTA Banner"
+        }
+      ],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Eyebrow",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Title",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Text",
+          "type": "RichTextField"
+        },
+        {
+          "name": "Link",
+          "type": "LinkField"
+        },
+        {
+          "name": "Image",
+          "type": "ImageField"
+        },
+        {
+          "name": "Icon",
+          "type": "ImageField"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": [],
+        "LargeImage": []
+      },
+      "canShow": {
+        "images": 2,
+        "links": 1,
+        "richText": 1,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "CtaBanner--Default.png",
+          "route": "/components/cta-banner"
+        },
+        {
+          "variant": "LargeImage",
+          "file": "CtaBanner--LargeImage.png",
+          "route": "/components/cta-banner"
+        }
+      ],
+      "notes": [
+        "Registered on Available Renderings/Custom Demo, not Page Content."
+      ]
+    },
+    {
+      "name": "HeadingCta",
+      "id": "heading-cta",
+      "category": "Banners",
+      "purpose": "section or page heading with eyebrow, text and one link; centered heading strip; page title bar",
+      "file": "src/components/pagecontent/HeadingCta.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default",
+        "Compact",
+        "PageHeading",
+        "Centered"
+      ],
+      "variantDefinitions": [
+        "Centered",
+        "Compact",
+        "Default",
+        "PageHeading"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/Heading CTA",
+        "id": "89e1d5477cd64ef09a271e99410797dd",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Heading CTA']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Heading CTA']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Heading CTA",
+        "path": "/sitecore/templates/Project/Financial/Components/Heading CTA",
+        "id": "fa1365276302471d83abe66fc72bda99"
+      },
+      "fields": [
+        {
+          "name": "Eyebrow",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Heading CTA"
+        },
+        {
+          "name": "Heading",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Heading CTA"
+        },
+        {
+          "name": "Text",
+          "type": "Multi-Line Text",
+          "section": "Data",
+          "from": "Heading CTA"
+        },
+        {
+          "name": "Link",
+          "type": "General Link",
+          "section": "Data",
+          "from": "Heading CTA"
+        }
+      ],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Eyebrow",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Heading",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Text",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Link",
+          "type": "LinkField"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": [],
+        "Compact": [],
+        "PageHeading": [],
+        "Centered": []
+      },
+      "canShow": {
+        "images": 0,
+        "links": 1,
+        "richText": 0,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "HeadingCta--Default.png",
+          "route": "/components/heading-cta"
+        },
+        {
+          "variant": "Compact",
+          "file": "HeadingCta--Compact.png",
+          "route": "/components/heading-cta"
+        },
+        {
+          "variant": "PageHeading",
+          "file": "HeadingCta--PageHeading.png",
+          "route": "/components/heading-cta"
+        },
+        {
+          "variant": "Centered",
+          "file": "HeadingCta--Centered.png",
+          "route": "/components/heading-cta"
+        }
+      ],
+      "notes": [
+        "Registered on Available Renderings/Custom Demo, not Page Content."
+      ]
+    },
+    {
+      "name": "Hero",
+      "id": "hero",
+      "category": "Banners",
+      "purpose": "simple intro with title, text, one link and an image; lighter alternative to the hero banner",
+      "file": "src/components/pagecontent/Hero.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default"
+      ],
+      "variantDefinitions": [
+        "Default"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/Hero",
+        "id": "b7cdf75e716a4c59b9b1cd970ae0a4ae",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Hero']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Hero']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Hero",
+        "path": "/sitecore/templates/Project/Financial/Components/Hero",
+        "id": "90d315e8aa424b23a7eb4491396453f8"
+      },
+      "fields": [
+        {
+          "name": "Title",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Hero"
+        },
+        {
+          "name": "Text",
+          "type": "Rich Text",
+          "section": "Data",
+          "from": "Hero"
+        },
+        {
+          "name": "Image",
+          "type": "Image",
+          "section": "Data",
+          "from": "Hero"
+        },
+        {
+          "name": "Link",
+          "type": "General Link",
+          "section": "Data",
+          "from": "Hero"
+        }
+      ],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Title",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Text",
+          "type": "RichTextField"
+        },
+        {
+          "name": "Image",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link",
+          "type": "LinkField"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
+      "canShow": {
+        "images": 1,
+        "links": 1,
+        "richText": 1,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "Hero--Default.png",
+          "route": "/components/hero"
+        }
+      ],
+      "notes": [
+        "Field types read from Hero/Data field items."
+      ]
+    },
+    {
+      "name": "HeroBanner",
+      "id": "hero-banner",
+      "category": "Banners",
+      "purpose": "large headline with small eyebrow tagline above; body text and one or two buttons; image beside or behind the headline; main intro section at the top of a page",
+      "file": "src/components/pagecontent/HeroBanner.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default"
+      ],
+      "variantDefinitions": [
+        "Default"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/HeroBanner",
+        "id": "0e8cc47e32d64f55a7bfe713abd06323",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='HeroBanner']|query:$sharedSites/*[@@name='Data']/*[@@templatename='HeroBanner']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "HeroBanner",
+        "path": "/sitecore/templates/Project/Financial/Components/HeroBanner",
+        "id": "0089bcb3011743f2a7600771d5ff7417"
+      },
+      "fields": [
+        {
+          "name": "Tagline",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "HeroBanner"
+        },
+        {
+          "name": "Title",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "HeroBanner"
+        },
+        {
+          "name": "Text",
+          "type": "Rich Text",
+          "section": "Data",
+          "from": "HeroBanner"
+        },
+        {
+          "name": "Image",
+          "type": "Image",
+          "section": "Data",
+          "from": "HeroBanner"
+        },
+        {
+          "name": "Cta1",
+          "type": "General Link",
+          "section": "Data",
+          "from": "HeroBanner"
+        },
+        {
+          "name": "Cta2",
+          "type": "General Link",
+          "section": "Data",
+          "from": "HeroBanner"
+        },
+        {
+          "name": "Icon",
+          "type": "Image",
+          "section": "Data",
+          "from": "HeroBanner"
+        },
+        {
+          "name": "QuickOrderLink",
+          "type": "General Link",
+          "section": "Quick Order",
+          "from": "HeroBanner"
+        },
+        {
+          "name": "QuickOrderText",
+          "type": "Single-Line Text",
+          "section": "Quick Order",
+          "from": "HeroBanner"
+        },
+        {
+          "name": "QuickOrderTitle",
+          "type": "Single-Line Text",
+          "section": "Quick Order",
+          "from": "HeroBanner"
+        }
+      ],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Tagline",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Title",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Text",
+          "type": "RichTextField"
+        },
+        {
+          "name": "Image",
+          "type": "ImageField"
+        },
+        {
+          "name": "Cta1",
+          "type": "LinkField"
+        },
+        {
+          "name": "Cta2",
+          "type": "LinkField"
+        },
+        {
+          "name": "Icon",
+          "type": "ImageField"
+        }
+      ],
+      "notRendered": [
+        "QuickOrderLink",
+        "QuickOrderText",
+        "QuickOrderTitle"
+      ],
+      "placeholders": {
+        "Default": [
+          {
+            "name": "hero-banner",
+            "where": "after Cta2, before Icon"
+          }
+        ]
+      },
+      "canShow": {
+        "images": 2,
+        "links": 2,
+        "richText": 1,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "HeroBanner--Default.png",
+          "route": "/components/hero-banner"
+        }
+      ],
+      "notes": [
+        "Field types read from HeroBanner/Data field items."
+      ]
+    },
+    {
+      "name": "ParallaxBanner",
+      "id": "parallax-banner",
+      "category": "Banners",
+      "purpose": "full-width banner with background and foreground image; parallax scrolling effect; title with short text and one link",
+      "file": "src/components/pagecontent/ParallaxBanner.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default"
+      ],
+      "variantDefinitions": [
+        "Default"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/Parallax Banner",
+        "id": "200920ad96454cb2b72ac7d8278e709f",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Parallax Banner']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Parallax Banner']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Parallax Banner",
+        "path": "/sitecore/templates/Project/Financial/Components/Parallax Banner",
+        "id": "28b7f396dc4a41168c933b7909cbeb0e"
+      },
+      "fields": [
+        {
+          "name": "Title",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Parallax Banner"
+        },
+        {
+          "name": "Text",
+          "type": "Rich Text",
+          "section": "Data",
+          "from": "Parallax Banner"
+        },
+        {
+          "name": "Link",
+          "type": "General Link",
+          "section": "Data",
+          "from": "Parallax Banner"
+        },
+        {
+          "name": "BackgroundImage",
+          "type": "Image",
+          "section": "Data",
+          "from": "Parallax Banner"
+        },
+        {
+          "name": "ForegroundImage",
+          "type": "Image",
+          "section": "Data",
+          "from": "Parallax Banner"
+        }
+      ],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Title",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Text",
+          "type": "RichTextField"
+        },
+        {
+          "name": "BackgroundImage",
+          "type": "ImageField"
+        },
+        {
+          "name": "ForegroundImage",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link",
+          "type": "LinkField"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
+      "canShow": {
+        "images": 2,
+        "links": 1,
+        "richText": 1,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "ParallaxBanner--Default.png",
+          "route": "/components/parallax-banner"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "name": "PromoCta",
+      "id": "promo-cta",
+      "category": "Banners",
+      "purpose": "promotional block with image, title, subtitle and two links; can hold other components in a side column; background image variant",
+      "file": "src/components/pagecontent/PromoCta.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default",
+        "WithPlaceholderColumn",
+        "WithBackgroundImage"
+      ],
+      "variantDefinitions": [
+        "Default",
+        "WithBackgroundImage",
+        "WithPlaceholderColumn"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/Promo CTA",
+        "id": "1a375fac6cc14a5aa1599bc6dbc66b80",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Promo Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Promo Folder']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Promo CTA",
+        "path": "/sitecore/templates/Project/Financial/Components/Promo CTA",
+        "id": "c0943942ae0f420586fa84884cce4a53"
+      },
+      "fields": [
+        {
+          "name": "Eyebrow",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Promo CTA"
+        },
+        {
+          "name": "Title",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Promo CTA"
+        },
+        {
+          "name": "Subtitle",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Promo CTA"
+        },
+        {
+          "name": "Text",
+          "type": "Rich Text",
+          "section": "Data",
+          "from": "Promo CTA"
+        },
+        {
+          "name": "Link",
+          "type": "General Link",
+          "section": "Data",
+          "from": "Promo CTA"
+        },
+        {
+          "name": "Link2",
+          "type": "General Link",
+          "section": "Data",
+          "from": "Promo CTA"
+        },
+        {
+          "name": "Image",
+          "type": "Image",
+          "section": "Data",
+          "from": "Promo CTA"
+        }
+      ],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Eyebrow",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Title",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Subtitle",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Text",
+          "type": "RichTextField"
+        },
+        {
+          "name": "Image",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link",
+          "type": "LinkField"
+        },
+        {
+          "name": "Link2",
+          "type": "LinkField"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": [
+          {
+            "name": "promo-cta",
+            "where": "after Text, before Link"
+          }
+        ],
+        "WithPlaceholderColumn": [
+          {
+            "name": "promo-cta",
+            "where": "after Link2, before Image"
+          }
+        ],
+        "WithBackgroundImage": []
+      },
+      "canShow": {
+        "images": 1,
+        "links": 2,
+        "richText": 1,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [
+        "/",
+        "/personal",
+        "/personal/everyday-banking",
+        "/personal/investing",
+        "/personal/borrowing"
+      ],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "PromoCta--Default.png",
+          "route": "/components/promo-cta"
+        },
+        {
+          "variant": "WithPlaceholderColumn",
+          "file": "PromoCta--WithPlaceholderColumn.png",
+          "route": "/components/promo-cta"
+        },
+        {
+          "variant": "WithBackgroundImage",
+          "file": "PromoCta--WithBackgroundImage.png",
+          "route": "/components/promo-cta"
+        }
+      ],
+      "notes": [
+        "Datasource folder is the shared Promos folder."
+      ]
+    },
+    {
+      "name": "AppPromo",
+      "id": "app-promo",
+      "category": "Calls to action",
+      "purpose": "mobile app promotion; title, text and a phone or app image; store badges area",
+      "file": "src/components/pagecontent/AppPromo.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default"
+      ],
+      "variantDefinitions": [
+        "Default"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/App Promo",
+        "id": "f9905f6821e84c6f8b8956bb99020d31",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Promo Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Promo Folder']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "App Promo",
+        "path": "/sitecore/templates/Project/Financial/Components/App Promo",
+        "id": "bbcccd48218c4f19a1d4bb3dbf1f4d89"
+      },
+      "fields": [
+        {
+          "name": "Title",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "App Promo"
+        },
+        {
+          "name": "Text",
+          "type": "Rich Text",
+          "section": "Data",
+          "from": "App Promo"
+        },
+        {
+          "name": "Image",
+          "type": "Image",
+          "section": "Data",
+          "from": "App Promo"
+        }
+      ],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Title",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Text",
+          "type": "RichTextField"
+        },
+        {
+          "name": "Image",
+          "type": "ImageField"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
+      "canShow": {
+        "images": 1,
+        "links": 0,
+        "richText": 1,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [
+        "/",
+        "/personal",
+        "/personal/everyday-banking",
+        "/personal/investing",
+        "/personal/borrowing"
+      ],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "AppPromo--Default.png",
+          "route": "/components/app-promo"
+        }
+      ],
+      "notes": [
+        "Datasource folder is the shared Promos folder."
+      ]
+    },
+    {
+      "name": "FiveColumnCta",
+      "id": "five-column-cta",
+      "category": "Calls to action",
+      "purpose": "five narrow columns with image, text and link; row of categories or products",
+      "file": "src/components/pagecontent/FiveColumnCta.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default"
+      ],
+      "variantDefinitions": [
+        "Default"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/Five Column CTA",
+        "id": "333def3ec2724ad9a4938d5ccae08312",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Promo Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Promo Folder']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Five Column CTA",
+        "path": "/sitecore/templates/Project/Financial/Components/Five Column CTA",
+        "id": "3b41d9fc0edf48e1966ce260339ba815"
+      },
+      "fields": [
+        {
+          "name": "Text1",
+          "type": "Single-Line Text",
+          "section": "Column 1",
+          "from": "Five Column CTA"
+        },
+        {
+          "name": "Link1",
+          "type": "General Link",
+          "section": "Column 1",
+          "from": "Five Column CTA"
+        },
+        {
+          "name": "Image1",
+          "type": "Image",
+          "section": "Column 1",
+          "from": "Five Column CTA"
+        },
+        {
+          "name": "Description1",
+          "type": "Single-Line Text",
+          "section": "Column 1",
+          "from": "Five Column CTA"
+        },
+        {
+          "name": "Text2",
+          "type": "Single-Line Text",
+          "section": "Column 2",
+          "from": "Five Column CTA"
+        },
+        {
+          "name": "Link2",
+          "type": "General Link",
+          "section": "Column 2",
+          "from": "Five Column CTA"
+        },
+        {
+          "name": "Image2",
+          "type": "Image",
+          "section": "Column 2",
+          "from": "Five Column CTA"
+        },
+        {
+          "name": "Description2",
+          "type": "Single-Line Text",
+          "section": "Column 2",
+          "from": "Five Column CTA"
+        },
+        {
+          "name": "Text3",
+          "type": "Single-Line Text",
+          "section": "Column 3",
+          "from": "Five Column CTA"
+        },
+        {
+          "name": "Link3",
+          "type": "General Link",
+          "section": "Column 3",
+          "from": "Five Column CTA"
+        },
+        {
+          "name": "Image3",
+          "type": "Image",
+          "section": "Column 3",
+          "from": "Five Column CTA"
+        },
+        {
+          "name": "Description3",
+          "type": "Single-Line Text",
+          "section": "Column 3",
+          "from": "Five Column CTA"
+        },
+        {
+          "name": "Text4",
+          "type": "Single-Line Text",
+          "section": "Column 4",
+          "from": "Five Column CTA"
+        },
+        {
+          "name": "Link4",
+          "type": "General Link",
+          "section": "Column 4",
+          "from": "Five Column CTA"
+        },
+        {
+          "name": "Image4",
+          "type": "Image",
+          "section": "Column 4",
+          "from": "Five Column CTA"
+        },
+        {
+          "name": "Description4",
+          "type": "Single-Line Text",
+          "section": "Column 4",
+          "from": "Five Column CTA"
+        },
+        {
+          "name": "Text5",
+          "type": "Single-Line Text",
+          "section": "Column 5",
+          "from": "Five Column CTA"
+        },
+        {
+          "name": "Link5",
+          "type": "General Link",
+          "section": "Column 5",
+          "from": "Five Column CTA"
+        },
+        {
+          "name": "Image5",
+          "type": "Image",
+          "section": "Column 5",
+          "from": "Five Column CTA"
+        },
+        {
+          "name": "Description5",
+          "type": "Single-Line Text",
+          "section": "Column 5",
+          "from": "Five Column CTA"
+        }
+      ],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Text1",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Image1",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link1",
+          "type": "LinkField"
+        },
+        {
+          "name": "Text2",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Image2",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link2",
+          "type": "LinkField"
+        },
+        {
+          "name": "Text3",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Image3",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link3",
+          "type": "LinkField"
+        },
+        {
+          "name": "Text4",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Image4",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link4",
+          "type": "LinkField"
+        },
+        {
+          "name": "Text5",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Image5",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link5",
+          "type": "LinkField"
+        },
+        {
+          "name": "image",
+          "type": "ImageField"
+        },
+        {
+          "name": "text",
+          "type": "Field<string>"
+        },
+        {
+          "name": "link",
+          "type": "LinkField"
+        }
+      ],
+      "notRendered": [
+        "Description1",
+        "Description2",
+        "Description3",
+        "Description4",
+        "Description5"
+      ],
+      "placeholders": {
+        "Default": []
+      },
+      "canShow": {
+        "images": 5,
+        "links": 5,
+        "richText": 0,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [
+        "/"
+      ],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "FiveColumnCta--Default.png",
+          "route": "/components/five-column-cta"
+        }
+      ],
+      "notes": [
+        "Datasource folder is the shared Promos folder."
+      ]
+    },
+    {
+      "name": "FourColumnCta",
+      "id": "four-column-cta",
+      "category": "Calls to action",
+      "purpose": "four columns each with image, title, text and link; four equal options or services",
+      "file": "src/components/pagecontent/FourColumnCta.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default"
+      ],
+      "variantDefinitions": [
+        "Default"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/Four Column CTA",
+        "id": "35075000760e4ff3bd1cf2eeba251dcb",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Promo Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Promo Folder']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Four Column CTA",
+        "path": "/sitecore/templates/Project/Financial/Components/Four Column CTA",
+        "id": "1b694ef9154d429a9c3fd7774cd4a852"
+      },
+      "fields": [
+        {
+          "name": "Title1",
+          "type": "Single-Line Text",
+          "section": "Column 1",
+          "from": "Four Column CTA"
+        },
+        {
+          "name": "Text1",
+          "type": "Single-Line Text",
+          "section": "Column 1",
+          "from": "Four Column CTA"
+        },
+        {
+          "name": "Link1",
+          "type": "General Link",
+          "section": "Column 1",
+          "from": "Four Column CTA"
+        },
+        {
+          "name": "Image1",
+          "type": "Image",
+          "section": "Column 1",
+          "from": "Four Column CTA"
+        },
+        {
+          "name": "Title2",
+          "type": "Single-Line Text",
+          "section": "Column 2",
+          "from": "Four Column CTA"
+        },
+        {
+          "name": "Text2",
+          "type": "Single-Line Text",
+          "section": "Column 2",
+          "from": "Four Column CTA"
+        },
+        {
+          "name": "Link2",
+          "type": "General Link",
+          "section": "Column 2",
+          "from": "Four Column CTA"
+        },
+        {
+          "name": "Image2",
+          "type": "Image",
+          "section": "Column 2",
+          "from": "Four Column CTA"
+        },
+        {
+          "name": "Title3",
+          "type": "Single-Line Text",
+          "section": "Column 3",
+          "from": "Four Column CTA"
+        },
+        {
+          "name": "Text3",
+          "type": "Single-Line Text",
+          "section": "Column 3",
+          "from": "Four Column CTA"
+        },
+        {
+          "name": "Link3",
+          "type": "General Link",
+          "section": "Column 3",
+          "from": "Four Column CTA"
+        },
+        {
+          "name": "Image3",
+          "type": "Image",
+          "section": "Column 3",
+          "from": "Four Column CTA"
+        },
+        {
+          "name": "Title4",
+          "type": "Single-Line Text",
+          "section": "Column 4",
+          "from": "Four Column CTA"
+        },
+        {
+          "name": "Text4",
+          "type": "Single-Line Text",
+          "section": "Column 4",
+          "from": "Four Column CTA"
+        },
+        {
+          "name": "Link4",
+          "type": "General Link",
+          "section": "Column 4",
+          "from": "Four Column CTA"
+        },
+        {
+          "name": "Image4",
+          "type": "Image",
+          "section": "Column 4",
+          "from": "Four Column CTA"
+        }
+      ],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Title1",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Text1",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Image1",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link1",
+          "type": "LinkField"
+        },
+        {
+          "name": "Title2",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Text2",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Image2",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link2",
+          "type": "LinkField"
+        },
+        {
+          "name": "Title3",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Text3",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Image3",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link3",
+          "type": "LinkField"
+        },
+        {
+          "name": "Title4",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Text4",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Image4",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link4",
+          "type": "LinkField"
+        },
+        {
+          "name": "image",
+          "type": "ImageField"
+        },
+        {
+          "name": "title",
+          "type": "Field<string>"
+        },
+        {
+          "name": "text",
+          "type": "Field<string>"
+        },
+        {
+          "name": "link",
+          "type": "LinkField"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
+      "canShow": {
+        "images": 4,
+        "links": 4,
+        "richText": 0,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [
+        "/articles",
+        "/articles/introducing-mobile-finance",
+        "/articles/beware-of-financial-online-scams",
+        "/articles/exploring-the-use-of-blockchain-technology",
+        "/articles/empowering-young-adults"
+      ],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "FourColumnCta--Default.png",
+          "route": "/components/four-column-cta"
+        }
+      ],
+      "notes": [
+        "Datasource folder is the shared Promos folder."
+      ]
+    },
+    {
+      "name": "ThreeColumnCta",
+      "id": "three-column-cta",
+      "category": "Calls to action",
+      "purpose": "three columns with image or icon; short text and sub text per column; link per column",
+      "file": "src/components/pagecontent/ThreeColumnCta.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default",
+        "WithIcons",
+        "WithIconsCompact"
+      ],
+      "variantDefinitions": [
+        "Default",
+        "WithIcons",
+        "WithIconsCompact"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/Three Column CTA",
+        "id": "ad385021ce2b4fc189aa207d408034a8",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Promo Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Promo Folder']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Three Column CTA",
+        "path": "/sitecore/templates/Project/Financial/Components/Three Column CTA",
+        "id": "148d07baf9234fb289070bd440d5db44"
+      },
+      "fields": [
+        {
+          "name": "Text1",
+          "type": "Single-Line Text",
+          "section": "Column 1",
+          "from": "Three Column CTA"
+        },
+        {
+          "name": "Video1",
+          "type": "File",
+          "section": "Column 1",
+          "from": "Three Column CTA"
+        },
+        {
+          "name": "SubText1",
+          "type": "Single-Line Text",
+          "section": "Column 1",
+          "from": "Three Column CTA"
+        },
+        {
+          "name": "Link1",
+          "type": "General Link",
+          "section": "Column 1",
+          "from": "Three Column CTA"
+        },
+        {
+          "name": "Image1",
+          "type": "Image",
+          "section": "Column 1",
+          "from": "Three Column CTA"
+        },
+        {
+          "name": "Text2",
+          "type": "Single-Line Text",
+          "section": "Column 2",
+          "from": "Three Column CTA"
+        },
+        {
+          "name": "Video2",
+          "type": "File",
+          "section": "Column 2",
+          "from": "Three Column CTA"
+        },
+        {
+          "name": "SubText2",
+          "type": "Single-Line Text",
+          "section": "Column 2",
+          "from": "Three Column CTA"
+        },
+        {
+          "name": "Link2",
+          "type": "General Link",
+          "section": "Column 2",
+          "from": "Three Column CTA"
+        },
+        {
+          "name": "Image2",
+          "type": "Image",
+          "section": "Column 2",
+          "from": "Three Column CTA"
+        },
+        {
+          "name": "Text3",
+          "type": "Single-Line Text",
+          "section": "Column 3",
+          "from": "Three Column CTA"
+        },
+        {
+          "name": "Video3",
+          "type": "File",
+          "section": "Column 3",
+          "from": "Three Column CTA"
+        },
+        {
+          "name": "SubText3",
+          "type": "Single-Line Text",
+          "section": "Column 3",
+          "from": "Three Column CTA"
+        },
+        {
+          "name": "Link3",
+          "type": "General Link",
+          "section": "Column 3",
+          "from": "Three Column CTA"
+        },
+        {
+          "name": "Image3",
+          "type": "Image",
+          "section": "Column 3",
+          "from": "Three Column CTA"
+        }
+      ],
+      "children": [],
+      "params": [
+        "ButtonStyle",
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Text1",
+          "type": "Field<string>"
+        },
+        {
+          "name": "SubText1",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Image1",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link1",
+          "type": "LinkField"
+        },
+        {
+          "name": "Text2",
+          "type": "Field<string>"
+        },
+        {
+          "name": "SubText2",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Image2",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link2",
+          "type": "LinkField"
+        },
+        {
+          "name": "Text3",
+          "type": "Field<string>"
+        },
+        {
+          "name": "SubText3",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Image3",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link3",
+          "type": "LinkField"
+        },
+        {
+          "name": "image",
+          "type": "ImageField"
+        },
+        {
+          "name": "text",
+          "type": "Field<string>"
+        },
+        {
+          "name": "subText",
+          "type": "Field<string>"
+        },
+        {
+          "name": "link",
+          "type": "LinkField"
+        }
+      ],
+      "notRendered": [
+        "Video1",
+        "Video2",
+        "Video3"
+      ],
+      "placeholders": {
+        "Default": [],
+        "WithIcons": [],
+        "WithIconsCompact": []
+      },
+      "canShow": {
+        "images": 3,
+        "links": 3,
+        "richText": 0,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [
+        "/",
+        "/personal",
+        "/business",
+        "/retirement-planning",
+        "/get-a-loan"
+      ],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "ThreeColumnCta--Default.png",
+          "route": "/components/three-column-cta"
+        },
+        {
+          "variant": "WithIcons",
+          "file": "ThreeColumnCta--WithIcons.png",
+          "route": "/components/three-column-cta"
+        },
+        {
+          "variant": "WithIconsCompact",
+          "file": "ThreeColumnCta--WithIconsCompact.png",
+          "route": "/components/three-column-cta"
+        }
+      ],
+      "notes": [
+        "Datasource folder is the shared Promos folder."
+      ]
+    },
+    {
+      "name": "TwoColumnCta",
+      "id": "two-column-cta",
+      "category": "Calls to action",
+      "purpose": "two cards side by side; each with image, title, text and link; two equal options",
+      "file": "src/components/pagecontent/TwoColumnCta.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default"
+      ],
+      "variantDefinitions": [
+        "Default"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/Two Column CTA",
+        "id": "3a9a9d22c0924b549511eb202ceabe8d",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Promo Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Promo Folder']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Two Column CTA",
+        "path": "/sitecore/templates/Project/Financial/Components/Two Column CTA",
+        "id": "1812bf3e6bdd466d99b20d7cebb020fc"
+      },
+      "fields": [
+        {
+          "name": "Title1",
+          "type": "Single-Line Text",
+          "section": "Column 1",
+          "from": "Two Column CTA"
+        },
+        {
+          "name": "Text1",
+          "type": "Single-Line Text",
+          "section": "Column 1",
+          "from": "Two Column CTA"
+        },
+        {
+          "name": "Link1",
+          "type": "General Link",
+          "section": "Column 1",
+          "from": "Two Column CTA"
+        },
+        {
+          "name": "Image1",
+          "type": "Image",
+          "section": "Column 1",
+          "from": "Two Column CTA"
+        },
+        {
+          "name": "Title2",
+          "type": "Single-Line Text",
+          "section": "Column 2",
+          "from": "Two Column CTA"
+        },
+        {
+          "name": "Text2",
+          "type": "Single-Line Text",
+          "section": "Column 2",
+          "from": "Two Column CTA"
+        },
+        {
+          "name": "Link2",
+          "type": "General Link",
+          "section": "Column 2",
+          "from": "Two Column CTA"
+        },
+        {
+          "name": "Image2",
+          "type": "Image",
+          "section": "Column 2",
+          "from": "Two Column CTA"
+        }
+      ],
+      "children": [],
+      "params": [
+        "ButtonStyle",
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Title1",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Text1",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Image1",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link1",
+          "type": "LinkField"
+        },
+        {
+          "name": "Title2",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Text2",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Image2",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link2",
+          "type": "LinkField"
+        },
+        {
+          "name": "image",
+          "type": "ImageField"
+        },
+        {
+          "name": "title",
+          "type": "Field<string>"
+        },
+        {
+          "name": "text",
+          "type": "Field<string>"
+        },
+        {
+          "name": "link",
+          "type": "LinkField"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": [
+          {
+            "name": "two-col-placeholder-left",
+            "where": ""
+          },
+          {
+            "name": "two-col-placeholder-right",
+            "where": ""
+          }
+        ]
+      },
+      "canShow": {
+        "images": 2,
+        "links": 2,
+        "richText": 0,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [
+        "/",
+        "/personal/borrowing",
+        "/get-a-loan"
+      ],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "TwoColumnCta--Default.png",
+          "route": "/components/two-column-cta"
+        }
+      ],
+      "notes": [
+        "Datasource folder is the shared Promos folder."
+      ]
+    },
+    {
+      "name": "Comparison",
+      "id": "comparison",
+      "category": "Content",
+      "purpose": "two amounts or offers side by side; currency, subtitle and value per side; before and after figures",
+      "file": "src/components/pagecontent/Comparison.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default"
+      ],
+      "variantDefinitions": [
+        "Default"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/Comparison",
+        "id": "20e5ea956b5049cd8852433b7c565f06",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Comparison']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Comparison']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Comparison",
+        "path": "/sitecore/templates/Project/Financial/Components/Comparison",
+        "id": "32f0042821ac4dc0aa2bf2e31ca3e97e"
+      },
+      "fields": [
+        {
+          "name": "Title1",
+          "type": "Single-Line Text",
+          "section": "Title",
+          "from": "Comparison"
+        },
+        {
+          "name": "Amount1",
+          "type": "Single-Line Text",
+          "section": "Item 1",
+          "from": "Comparison"
+        },
+        {
+          "name": "Currency1",
+          "type": "Single-Line Text",
+          "section": "Item 1",
+          "from": "Comparison"
+        },
+        {
+          "name": "Subtitle1",
+          "type": "Single-Line Text",
+          "section": "Item 1",
+          "from": "Comparison"
+        },
+        {
+          "name": "Value1",
+          "type": "Single-Line Text",
+          "section": "Operator",
+          "from": "Comparison"
+        },
+        {
+          "name": "Amount2",
+          "type": "Single-Line Text",
+          "section": "Item 2",
+          "from": "Comparison"
+        },
+        {
+          "name": "Currency2",
+          "type": "Single-Line Text",
+          "section": "Item 2",
+          "from": "Comparison"
+        },
+        {
+          "name": "Subtitle2",
+          "type": "Single-Line Text",
+          "section": "Item 2",
+          "from": "Comparison"
+        }
+      ],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Title1",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Amount1",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Currency1",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Subtitle1",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Value1",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Amount2",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Currency2",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Subtitle2",
+          "type": "Field<string>"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
+      "canShow": {
+        "images": 0,
+        "links": 0,
+        "richText": 0,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [
+        "/get-a-loan"
+      ],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "Comparison--Default.png",
+          "route": "/components/comparison"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "name": "DocumentsList",
+      "id": "documents-list",
+      "category": "Content",
+      "purpose": "list of downloadable documents; title, subtitle, icon image and link per document; up to four items",
+      "file": "src/components/pagecontent/DocumentsList.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default"
+      ],
+      "variantDefinitions": [
+        "Default"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/Documents List",
+        "id": "ccc3a8155de94529bad5874548667d66",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Documents List']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Documents List']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Documents List",
+        "path": "/sitecore/templates/Project/Financial/Components/Documents List",
+        "id": "bc79b430f5e0436383f85fb8ccd79c61"
+      },
+      "fields": [
+        {
+          "name": "Title1",
+          "type": "Single-Line Text",
+          "section": "Title",
+          "from": "Documents List"
+        },
+        {
+          "name": "Subtitle1",
+          "type": "Single-Line Text",
+          "section": "Item 1",
+          "from": "Documents List"
+        },
+        {
+          "name": "Link1",
+          "type": "General Link",
+          "section": "Item 1",
+          "from": "Documents List"
+        },
+        {
+          "name": "Image1",
+          "type": "Image",
+          "section": "Item 1",
+          "from": "Documents List"
+        },
+        {
+          "name": "Subtitle2",
+          "type": "Single-Line Text",
+          "section": "Item 2",
+          "from": "Documents List"
+        },
+        {
+          "name": "Link2",
+          "type": "General Link",
+          "section": "Item 2",
+          "from": "Documents List"
+        },
+        {
+          "name": "Image2",
+          "type": "Image",
+          "section": "Item 2",
+          "from": "Documents List"
+        },
+        {
+          "name": "Subtitle3",
+          "type": "Single-Line Text",
+          "section": "Item 3",
+          "from": "Documents List"
+        },
+        {
+          "name": "Link3",
+          "type": "General Link",
+          "section": "Item 3",
+          "from": "Documents List"
+        },
+        {
+          "name": "Image3",
+          "type": "Image",
+          "section": "Item 3",
+          "from": "Documents List"
+        },
+        {
+          "name": "Subtitle4",
+          "type": "Single-Line Text",
+          "section": "Item 4",
+          "from": "Documents List"
+        },
+        {
+          "name": "Link4",
+          "type": "General Link",
+          "section": "Item 4",
+          "from": "Documents List"
+        },
+        {
+          "name": "Image4",
+          "type": "Image",
+          "section": "Item 4",
+          "from": "Documents List"
+        }
+      ],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Title1",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Subtitle1",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Image1",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link1",
+          "type": "LinkField"
+        },
+        {
+          "name": "Subtitle2",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Image2",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link2",
+          "type": "LinkField"
+        },
+        {
+          "name": "Subtitle3",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Image3",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link3",
+          "type": "LinkField"
+        },
+        {
+          "name": "Subtitle4",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Image4",
+          "type": "ImageField"
+        },
+        {
+          "name": "Link4",
+          "type": "LinkField"
+        },
+        {
+          "name": "image",
+          "type": "ImageField"
+        },
+        {
+          "name": "subtitle",
+          "type": "Field<string>"
+        },
+        {
+          "name": "link",
+          "type": "LinkField"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
+      "canShow": {
+        "images": 4,
+        "links": 4,
+        "richText": 0,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [
+        "/"
+      ],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "DocumentsList--Default.png",
+          "route": "/components/documents-list"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "name": "Features",
+      "id": "features",
+      "category": "Content",
+      "purpose": "feature section with eyebrow, rich text, link and image; two titled feature text blocks",
+      "file": "src/components/pagecontent/Features.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default"
+      ],
+      "variantDefinitions": [
+        "Default"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/Features",
+        "id": "b7efffdb2f0c4c5ea8bed9f8677f01da",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Features']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Features']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Features",
+        "path": "/sitecore/templates/Project/Financial/Components/Features",
+        "id": "d3fdded944ae4410961c3320cc82d638"
+      },
+      "fields": [
+        {
+          "name": "Eyebrow",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Features"
+        },
+        {
+          "name": "Text",
+          "type": "Rich Text",
+          "section": "Data",
+          "from": "Features"
+        },
+        {
+          "name": "Link",
+          "type": "General Link",
+          "section": "Data",
+          "from": "Features"
+        },
+        {
+          "name": "Image1",
+          "type": "Image",
+          "section": "Column 1",
+          "from": "Features"
+        },
+        {
+          "name": "Title1",
+          "type": "Single-Line Text",
+          "section": "Column 1",
+          "from": "Features"
+        },
+        {
+          "name": "Text1",
+          "type": "Single-Line Text",
+          "section": "Column 1",
+          "from": "Features"
+        },
+        {
+          "name": "Image2",
+          "type": "Image",
+          "section": "Column 2",
+          "from": "Features"
+        },
+        {
+          "name": "Title2",
+          "type": "Single-Line Text",
+          "section": "Column 2",
+          "from": "Features"
+        },
+        {
+          "name": "Text2",
+          "type": "Single-Line Text",
+          "section": "Column 2",
+          "from": "Features"
+        }
+      ],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Eyebrow",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Text",
+          "type": "RichTextField"
+        },
+        {
+          "name": "Link",
+          "type": "LinkField"
+        },
+        {
+          "name": "Image1",
+          "type": "ImageField"
+        },
+        {
+          "name": "Title1",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Text1",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Title2",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Text2",
+          "type": "Field<string>"
+        }
+      ],
+      "notRendered": [
+        "Image2"
+      ],
+      "placeholders": {
+        "Default": []
+      },
+      "canShow": {
+        "images": 1,
+        "links": 1,
+        "richText": 1,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "Features--Default.png",
+          "route": "/components/features"
+        }
+      ],
+      "notes": [
+        "Sections read: Data, Column 1, Column 2."
+      ]
+    },
+    {
+      "name": "ImageGallery",
+      "id": "image-gallery",
+      "category": "Content",
+      "purpose": "image or photo block; full-width picture",
+      "file": "src/components/pagecontent/ImageGallery.tsx",
+      "kind": "list",
+      "variants": [
+        "Default"
+      ],
+      "variantDefinitions": [
+        "Default"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/Image Gallery",
+        "id": "881ce560277e47b685bea223348d69ca",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Image Gallery']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Image Gallery']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Image Gallery",
+        "path": "/sitecore/templates/Project/Financial/Components/Image Gallery",
+        "id": "bd5988c088ea4e5d8cbaa88755dd0fb8"
+      },
+      "fields": [],
+      "children": [
+        {
+          "name": "Image",
+          "path": "/sitecore/templates/Feature/JSS Experience Accelerator/Media/Image",
+          "id": "d885df8cb2d64007b34b2bbafb527304",
+          "fields": [
+            {
+              "name": "Image",
+              "type": "Image",
+              "section": "Image",
+              "from": "Image"
+            },
+            {
+              "name": "TargetUrl",
+              "type": "General Link",
+              "section": "Image",
+              "from": "Image"
+            },
+            {
+              "name": "ImageCaption",
+              "type": "Single-Line Text",
+              "section": "Image",
+              "from": "Image"
+            }
+          ]
+        }
+      ],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Image",
+          "type": "ImageField"
+        }
+      ],
+      "notRendered": [
+        "TargetUrl",
+        "ImageCaption"
+      ],
+      "placeholders": {
+        "Default": []
+      },
+      "canShow": {
+        "images": 1,
+        "links": 0,
+        "richText": 0,
+        "video": false,
+        "listOfItems": true
+      },
+      "usedOn": [],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "ImageGallery--Default.png",
+          "route": "/components/image-gallery"
+        }
+      ],
+      "notes": [
+        "Candidate local template {BD5988C0-88EA-4E5D-8CBA-A88755DD0FB8} has only an empty standard values item and no fields. Children resolver {2F5C334E-5615-423C-8281-9FC180191302}. Kind left simple because no child template was found."
+      ]
+    },
+    {
+      "name": "Quote",
+      "id": "quote",
+      "category": "Content",
+      "purpose": "single quotation with author name, position and photo",
+      "file": "src/components/pagecontent/Quote.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default",
+        "Simple"
+      ],
+      "variantDefinitions": [
+        "Default",
+        "Simple"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/Quote",
+        "id": "4b94b6d0ca8e4807bb9a4c3fbd21504c",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Quote']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Quote']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Quote",
+        "path": "/sitecore/templates/Project/Financial/Components/Quote",
+        "id": "cad49c2abd8544fd852a10c1a1c8fd72"
+      },
+      "fields": [
+        {
+          "name": "Quote",
+          "type": "Multi-Line Text",
+          "section": "Data",
+          "from": "Quote"
+        },
+        {
+          "name": "AuthorName",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Quote"
+        },
+        {
+          "name": "AuthorPosition",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Quote"
+        },
+        {
+          "name": "Image",
+          "type": "Image",
+          "section": "Data",
+          "from": "Quote"
+        }
+      ],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Quote",
+          "type": "Field<string>"
+        },
+        {
+          "name": "AuthorName",
+          "type": "Field<string>"
+        },
+        {
+          "name": "AuthorPosition",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Image",
+          "type": "ImageField"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": [],
+        "Simple": []
+      },
+      "canShow": {
+        "images": 1,
+        "links": 0,
+        "richText": 0,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "Quote--Default.png",
+          "route": "/components/quote"
+        },
+        {
+          "variant": "Simple",
+          "file": "Quote--Simple.png",
+          "route": "/components/quote"
+        }
+      ],
+      "notes": [
+        "Code variant Simple has no Variant Definition. Standard values expose Quote, AuthorName, AuthorPosition, Image."
+      ]
+    },
+    {
+      "name": "RichText",
+      "id": "rich-text",
+      "category": "Content",
+      "purpose": "plain heading and body copy; text-only section",
+      "file": "src/components/pagecontent/RichText.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default"
+      ],
+      "variantDefinitions": [
+        "Default"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Feature/JSS Experience Accelerator/Page Content/RichText",
+        "id": "9c6d53e3fe574638af7b6d68304c7a94",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Text Folder']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Text Folder']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Text",
+        "path": "/sitecore/templates/Feature/JSS Experience Accelerator/Page Content/Text",
+        "id": "0a7aa3735ed14e9b967822d3c5faf6df"
+      },
+      "fields": [
+        {
+          "name": "Text",
+          "type": "Rich Text",
+          "section": "Text",
+          "from": "Text"
+        }
+      ],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Text",
+          "type": "Field<string>"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
+      "canShow": {
+        "images": 0,
+        "links": 0,
+        "richText": 1,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [
+        "/",
+        "/personal",
+        "/personal/everyday-banking",
+        "/personal/investing",
+        "/personal/borrowing"
+      ],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "RichText--Default.png",
+          "route": "/components/accordion"
+        }
+      ],
+      "notes": [
+        "Json rendering lives outside the Financial project layer. Text template has no standard values child. Field type read from the Text field item."
+      ]
+    },
+    {
+      "name": "StatsCounter",
+      "id": "stats-counter",
+      "category": "Content",
+      "purpose": "row of three large numbers with symbols and captions; animated counting numbers; supporting images",
+      "file": "src/components/pagecontent/StatsCounter.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default"
+      ],
+      "variantDefinitions": [
+        "Default"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/Stats Counter",
+        "id": "316889fafdd442a6a034201124fe54e8",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Stats Counter']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Stats Counter']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Stats Counter",
+        "path": "/sitecore/templates/Project/Financial/Components/Stats Counter",
+        "id": "c24bfc74c6e2413aaebd903180dfaff7"
+      },
+      "fields": [
+        {
+          "name": "Image1",
+          "type": "Image",
+          "section": "Data",
+          "from": "Stats Counter"
+        },
+        {
+          "name": "Image2",
+          "type": "Image",
+          "section": "Data",
+          "from": "Stats Counter"
+        },
+        {
+          "name": "Value1",
+          "type": "Number",
+          "section": "Column 1",
+          "from": "Stats Counter"
+        },
+        {
+          "name": "Symbol1",
+          "type": "Single-Line Text",
+          "section": "Column 1",
+          "from": "Stats Counter"
+        },
+        {
+          "name": "Caption1",
+          "type": "Single-Line Text",
+          "section": "Column 1",
+          "from": "Stats Counter"
+        },
+        {
+          "name": "Value2",
+          "type": "Number",
+          "section": "Column 2",
+          "from": "Stats Counter"
+        },
+        {
+          "name": "Symbol2",
+          "type": "Single-Line Text",
+          "section": "Column 2",
+          "from": "Stats Counter"
+        },
+        {
+          "name": "Caption2",
+          "type": "Single-Line Text",
+          "section": "Column 2",
+          "from": "Stats Counter"
+        },
+        {
+          "name": "Value3",
+          "type": "Number",
+          "section": "Column 3",
+          "from": "Stats Counter"
+        },
+        {
+          "name": "Symbol3",
+          "type": "Single-Line Text",
+          "section": "Column 3",
+          "from": "Stats Counter"
+        },
+        {
+          "name": "Caption3",
+          "type": "Single-Line Text",
+          "section": "Column 3",
+          "from": "Stats Counter"
+        }
+      ],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Image1",
+          "type": "ImageField"
+        },
+        {
+          "name": "Image2",
+          "type": "ImageField"
+        },
+        {
+          "name": "Value1",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Symbol1",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Caption1",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Value2",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Symbol2",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Caption2",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Value3",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Symbol3",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Caption3",
+          "type": "Field<string>"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
+      "canShow": {
+        "images": 2,
+        "links": 0,
+        "richText": 0,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "StatsCounter--Default.png",
+          "route": "/components/stats-counter"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "name": "ApplicationForm",
+      "id": "application-form",
+      "category": "Forms and tools",
+      "purpose": "application form with name, ID number, email and mobile number; submit button and footnote",
+      "file": "src/components/utilities/ApplicationForm.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default"
+      ],
+      "variantDefinitions": [
+        "Default"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Utilities/Application Form",
+        "id": "e4b51f7cef5d4621a05ba0080826e54d",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Application Form']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Application Form']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Application Form",
+        "path": "/sitecore/templates/Project/Financial/Components/Application Form",
+        "id": "ae920ce65c6e4842b54ce4b516dc0752"
+      },
+      "fields": [
+        {
+          "name": "Title",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Application Form"
+        },
+        {
+          "name": "Subtitle",
+          "type": "Rich Text",
+          "section": "Data",
+          "from": "Application Form"
+        },
+        {
+          "name": "FullName",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Application Form"
+        },
+        {
+          "name": "IDNumber",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Application Form"
+        },
+        {
+          "name": "Email",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Application Form"
+        },
+        {
+          "name": "MobileNumber",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Application Form"
+        },
+        {
+          "name": "Footnote",
+          "type": "Rich Text",
+          "section": "Data",
+          "from": "Application Form"
+        },
+        {
+          "name": "SubmitButton",
+          "type": "General Link",
+          "section": "Data",
+          "from": "Application Form"
+        }
+      ],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Title",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Subtitle",
+          "type": "RichTextField"
+        },
+        {
+          "name": "FullName",
+          "type": "Field<string>"
+        },
+        {
+          "name": "IDNumber",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Email",
+          "type": "Field<string>"
+        },
+        {
+          "name": "MobileNumber",
+          "type": "Field<number>"
+        },
+        {
+          "name": "Footnote",
+          "type": "RichTextField"
+        },
+        {
+          "name": "SubmitButton",
+          "type": "LinkField"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
+      "canShow": {
+        "images": 0,
+        "links": 1,
+        "richText": 2,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [
+        "/get-a-loan"
+      ],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "ApplicationForm--Default.png",
+          "route": "/components/application-form"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "name": "ContactForm",
+      "id": "contact-form",
+      "category": "Forms and tools",
+      "purpose": "contact form with email, subject and message; submit button; optional background image",
+      "file": "src/components/utilities/ContactForm.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default"
+      ],
+      "variantDefinitions": [
+        "Default"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Utilities/Contact Form",
+        "id": "09530d1f141d48858b3eebca3ea5a23e",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Contact Form']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Contact Form']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Contact Form",
+        "path": "/sitecore/templates/Project/Financial/Components/Contact Form",
+        "id": "6d166c16d4cc4ba9b1e1fe6378916533"
+      },
+      "fields": [
+        {
+          "name": "Title",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Contact Form"
+        },
+        {
+          "name": "EmailLabel",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Contact Form"
+        },
+        {
+          "name": "SubjectLabel",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Contact Form"
+        },
+        {
+          "name": "MessageLabel",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Contact Form"
+        },
+        {
+          "name": "ButtonLabel",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Contact Form"
+        },
+        {
+          "name": "BackgroundImage",
+          "type": "Image",
+          "section": "Data",
+          "from": "Contact Form"
+        }
+      ],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Title",
+          "type": "Field<string>"
+        },
+        {
+          "name": "EmailLabel",
+          "type": "Field<string>"
+        },
+        {
+          "name": "SubjectLabel",
+          "type": "Field<string>"
+        },
+        {
+          "name": "MessageLabel",
+          "type": "Field<string>"
+        },
+        {
+          "name": "ButtonLabel",
+          "type": "Field<string>"
+        },
+        {
+          "name": "BackgroundImage",
+          "type": "ImageField"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
+      "canShow": {
+        "images": 1,
+        "links": 0,
+        "richText": 0,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "ContactForm--Default.png",
+          "route": "/components/contact-form"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "name": "LoanCalculator",
+      "id": "loan-calculator",
+      "category": "Forms and tools",
+      "purpose": "calculator with amount and term sliders; interest and fee based result; financial services",
+      "file": "src/components/utilities/LoanCalculator.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default"
+      ],
+      "variantDefinitions": [
+        "Default"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Utilities/Loan Calculator",
+        "id": "a9598b4014d547fcb1830b9ff10b90d3",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Loan Calculator']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Loan Calculator']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Loan Calculator",
+        "path": "/sitecore/templates/Project/Financial/Components/Loan Calculator",
+        "id": "8a299404ec7c4bc284c5b6f4c5af6121"
+      },
+      "fields": [
+        {
+          "name": "MinAmount",
+          "type": "Integer",
+          "section": "Data",
+          "from": "Loan Calculator"
+        },
+        {
+          "name": "MaxAmount",
+          "type": "Integer",
+          "section": "Data",
+          "from": "Loan Calculator"
+        },
+        {
+          "name": "Currency",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Loan Calculator"
+        },
+        {
+          "name": "MinTerm",
+          "type": "Integer",
+          "section": "Data",
+          "from": "Loan Calculator"
+        },
+        {
+          "name": "MaxTerm",
+          "type": "Integer",
+          "section": "Data",
+          "from": "Loan Calculator"
+        },
+        {
+          "name": "TermName",
+          "type": "Single-Line Text",
+          "section": "Data",
+          "from": "Loan Calculator"
+        },
+        {
+          "name": "InterestRate",
+          "type": "Number",
+          "section": "Data",
+          "from": "Loan Calculator"
+        },
+        {
+          "name": "BankFee",
+          "type": "Number",
+          "section": "Data",
+          "from": "Loan Calculator"
+        }
+      ],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "BankFee",
+          "type": "Field<number>"
+        },
+        {
+          "name": "Currency",
+          "type": "Field<string>"
+        },
+        {
+          "name": "InterestRate",
+          "type": "Field<number>"
+        },
+        {
+          "name": "MaxAmount",
+          "type": "Field<number>"
+        },
+        {
+          "name": "MaxTerm",
+          "type": "Field<number>"
+        },
+        {
+          "name": "MinAmount",
+          "type": "Field<number>"
+        },
+        {
+          "name": "MinTerm",
+          "type": "Field<number>"
+        },
+        {
+          "name": "TermName",
+          "type": "Field<string>"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
+      "canShow": {
+        "images": 0,
+        "links": 0,
+        "richText": 0,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [
+        "/get-a-loan"
+      ],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "LoanCalculator--Default.png",
+          "route": "/components/loan-calculator"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "name": "Accordion",
+      "id": "accordion",
+      "category": "Lists",
+      "purpose": "expandable and collapsible panels; click to open items",
+      "file": "src/components/pagecontent/Accordion.tsx",
+      "kind": "list",
+      "variants": [
+        "Default"
+      ],
+      "variantDefinitions": [
+        "Default"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/Accordion",
+        "id": "5816f979c8bb46e98ec8513c6caf41e6",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Accordion']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Accordion']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Accordion",
+        "path": "/sitecore/templates/Project/Financial/Components/Accordion",
+        "id": "9bc52f2ffeed47dc88ec1946fa308af0"
+      },
+      "fields": [],
+      "children": [
+        {
+          "name": "Accordion Item",
+          "path": "/sitecore/templates/Project/Financial/Components/Accordion Item",
+          "id": "02fc3e8ba97f4a7a844b3047e24432a0",
+          "fields": [
+            {
+              "name": "Icon",
+              "type": "Image",
+              "section": "Data",
+              "from": "Accordion Item"
+            },
+            {
+              "name": "Title",
+              "type": "Single-Line Text",
+              "section": "Data",
+              "from": "Accordion Item"
+            },
+            {
+              "name": "Content",
+              "type": "Rich Text",
+              "section": "Data",
+              "from": "Accordion Item"
+            }
+          ]
+        }
+      ],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Icon",
+          "type": "ImageField"
+        },
+        {
+          "name": "Title",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Content",
+          "type": "Field<string>"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
+      "canShow": {
+        "images": 1,
+        "links": 0,
+        "richText": 1,
+        "video": false,
+        "listOfItems": true
+      },
+      "usedOn": [],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "Accordion--Default.png",
+          "route": "/components/accordion"
+        }
+      ],
+      "notes": [
+        "Candidate local template /sitecore/templates/Project/Financial/Components/Accordion {9BC52F2F-FEED-47DC-88EC-1946FA308AF0} has no Data section. Candidate child template Accordion Item {02FC3E8B-A97F-4A7A-844B-3047E24432A0} was not linked because the branch item is missing. Children resolver {2F5C334E-5615-423C-8281-9FC180191302}."
+      ]
+    },
+    {
+      "name": "ArticleList",
+      "id": "article-list",
+      "category": "Lists",
+      "purpose": "cards for articles or blog posts; thumbnail, title, excerpt and author; grid or list of news",
+      "file": "src/components/pagecontent/ArticleList.tsx",
+      "kind": "context",
+      "variants": [
+        "Default",
+        "ThreeColumn",
+        "Simplified",
+        "Grid"
+      ],
+      "variantDefinitions": [
+        "Default",
+        "Grid",
+        "Simplified",
+        "ThreeColumn"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Articles/Article List",
+        "id": "527335926f5d4fb480039b8223c5bc76",
+        "datasourceLocation": "query:$site/*",
+        "componentQuery": false
+      },
+      "datasource": null,
+      "fields": [],
+      "children": [],
+      "params": [
+        "NumberOfItems",
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Title",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Excerpt",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Content",
+          "type": "RichTextField"
+        },
+        {
+          "name": "Thumbnail",
+          "type": "ImageField"
+        },
+        {
+          "name": "BackgroundImage",
+          "type": "ImageField"
+        },
+        {
+          "name": "Name",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Photo",
+          "type": "ImageField"
+        },
+        {
+          "name": "Position",
+          "type": "Field<string>"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": [],
+        "ThreeColumn": [],
+        "Simplified": [],
+        "Grid": []
+      },
+      "canShow": {
+        "images": 0,
+        "links": 0,
+        "richText": 0,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [
+        "/",
+        "/articles"
+      ],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "ArticleList--Default.png",
+          "route": "/articles"
+        },
+        {
+          "variant": "ThreeColumn"
+        },
+        {
+          "variant": "Simplified",
+          "file": "ArticleList--Simplified.png",
+          "route": "/"
+        },
+        {
+          "variant": "Grid"
+        }
+      ],
+      "notes": [
+        "No datasource template. Children resolver {2F5C334E-5615-423C-8281-9FC180191302}. Datasource location is query:$site/*."
+      ]
+    },
+    {
+      "name": "AuthorList",
+      "id": "author-list",
+      "category": "Lists",
+      "purpose": "people or authors list; photo, name, position and bio; team members",
+      "file": "src/components/pagecontent/AuthorList.tsx",
+      "kind": "context",
+      "variants": [
+        "Default",
+        "Slider",
+        "Simple"
+      ],
+      "variantDefinitions": [
+        "Default",
+        "Simple",
+        "Slider"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Articles/Author List",
+        "id": "69e8a90f59ca4638b53ebdce65835230",
+        "datasourceLocation": "",
+        "componentQuery": false
+      },
+      "datasource": null,
+      "fields": [],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Name",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Photo",
+          "type": "ImageField"
+        },
+        {
+          "name": "Bio",
+          "type": "RichTextField"
+        },
+        {
+          "name": "Position",
+          "type": "Field<string>"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": [],
+        "Slider": [],
+        "Simple": []
+      },
+      "canShow": {
+        "images": 0,
+        "links": 0,
+        "richText": 0,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [
+        "/authors"
+      ],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "AuthorList--Default.png",
+          "route": "/authors"
+        },
+        {
+          "variant": "Slider"
+        },
+        {
+          "variant": "Simple"
+        }
+      ],
+      "notes": [
+        "No datasource template. Children resolver {2F5C334E-5615-423C-8281-9FC180191302}. Code variants Slider and Simple have no Variant Definition."
+      ]
+    },
+    {
+      "name": "AuthorWidget",
+      "id": "author-widget",
+      "category": "Lists",
+      "purpose": "single person card with photo, name and position; social media links",
+      "file": "src/components/pagecontent/AuthorWidget.tsx",
+      "kind": "simple",
+      "variants": [
+        "Default",
+        "WithSocials"
+      ],
+      "variantDefinitions": [
+        "Default",
+        "WithSocials"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Articles/Author Widget",
+        "id": "9d7de58d9da443d883713c728a582adc",
+        "datasourceLocation": "query:$site/Home/authors",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Author Page",
+        "path": "/sitecore/templates/Project/Financial/Pages/Author Page",
+        "id": "aad350f593314d71a942e3643653c028"
+      },
+      "fields": [
+        {
+          "name": "Name",
+          "type": "Single-Line Text",
+          "section": "Content",
+          "from": "Author Page"
+        },
+        {
+          "name": "Position",
+          "type": "Single-Line Text",
+          "section": "Content",
+          "from": "Author Page"
+        },
+        {
+          "name": "Photo",
+          "type": "Image",
+          "section": "Content",
+          "from": "Author Page"
+        },
+        {
+          "name": "Bio",
+          "type": "Rich Text",
+          "section": "Content",
+          "from": "Author Page"
+        },
+        {
+          "name": "BackgroundImage",
+          "type": "Image",
+          "section": "Content",
+          "from": "Author Page"
+        },
+        {
+          "name": "SocialLink1",
+          "type": "General Link",
+          "section": "Socials",
+          "from": "Author Page"
+        },
+        {
+          "name": "SocialIcon1",
+          "type": "Image",
+          "section": "Socials",
+          "from": "Author Page"
+        },
+        {
+          "name": "SocialLink2",
+          "type": "General Link",
+          "section": "Socials",
+          "from": "Author Page"
+        },
+        {
+          "name": "SocialIcon2",
+          "type": "Image",
+          "section": "Socials",
+          "from": "Author Page"
+        },
+        {
+          "name": "SocialLink3",
+          "type": "General Link",
+          "section": "Socials",
+          "from": "Author Page"
+        },
+        {
+          "name": "SocialIcon3",
+          "type": "Image",
+          "section": "Socials",
+          "from": "Author Page"
+        },
+        {
+          "name": "baseMetadataTitle",
+          "type": "Single-Line Text",
+          "section": "Metadata",
+          "from": "_Base Site Metadata"
+        },
+        {
+          "name": "baseMetadataKeywords",
+          "type": "Single-Line Text",
+          "section": "Metadata",
+          "from": "_Base Site Metadata"
+        },
+        {
+          "name": "baseMetadataDescription",
+          "type": "Multi-Line Text",
+          "section": "Metadata",
+          "from": "_Base Site Metadata"
+        },
+        {
+          "name": "baseMetadataAuthor",
+          "type": "Single-Line Text",
+          "section": "Metadata",
+          "from": "_Base Site Metadata"
+        },
+        {
+          "name": "baseOgTitle",
+          "type": "Single-Line Text",
+          "section": "Open Graph",
+          "from": "_Base Open Graph"
+        },
+        {
+          "name": "baseOgDescription",
+          "type": "Multi-Line Text",
+          "section": "Open Graph",
+          "from": "_Base Open Graph"
+        },
+        {
+          "name": "baseOgImage",
+          "type": "Image",
+          "section": "Open Graph",
+          "from": "_Base Open Graph"
+        },
+        {
+          "name": "baseOgType",
+          "type": "Single-Line Text",
+          "section": "Open Graph",
+          "from": "_Base Open Graph"
+        },
+        {
+          "name": "NavigationTitle",
+          "type": "Single-Line Text",
+          "section": "Navigation",
+          "from": "_Navigable"
+        },
+        {
+          "name": "NavigationFilter",
+          "type": "Checklist",
+          "section": "Navigation",
+          "from": "_Navigable"
+        },
+        {
+          "name": "NavigationClass",
+          "type": "Droplink",
+          "section": "Navigation",
+          "from": "_Navigable"
+        },
+        {
+          "name": "ChangeFrequency",
+          "type": "Droplink",
+          "section": "Sitemap Settings",
+          "from": "_Sitemap"
+        },
+        {
+          "name": "Priority",
+          "type": "Droplink",
+          "section": "Sitemap Settings",
+          "from": "_Sitemap"
+        },
+        {
+          "name": "SxaTags",
+          "type": "Tag Treelist",
+          "section": "Tagging",
+          "from": "_Taggable"
+        },
+        {
+          "name": "Page Design",
+          "type": "Droplink",
+          "section": "Designing",
+          "from": "_Designable"
+        }
+      ],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Name",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Position",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Photo",
+          "type": "ImageField"
+        },
+        {
+          "name": "SocialLink1",
+          "type": "LinkField"
+        },
+        {
+          "name": "SocialIcon1",
+          "type": "ImageField"
+        },
+        {
+          "name": "SocialLink2",
+          "type": "LinkField"
+        },
+        {
+          "name": "SocialIcon2",
+          "type": "ImageField"
+        },
+        {
+          "name": "SocialLink3",
+          "type": "LinkField"
+        },
+        {
+          "name": "SocialIcon3",
+          "type": "ImageField"
+        }
+      ],
+      "notRendered": [
+        "Bio",
+        "BackgroundImage",
+        "baseMetadataTitle",
+        "baseMetadataKeywords",
+        "baseMetadataDescription",
+        "baseMetadataAuthor",
+        "baseOgTitle",
+        "baseOgDescription",
+        "baseOgImage",
+        "baseOgType",
+        "NavigationTitle",
+        "NavigationFilter",
+        "NavigationClass",
+        "ChangeFrequency",
+        "Priority",
+        "SxaTags",
+        "Page Design"
+      ],
+      "placeholders": {
+        "Default": [],
+        "WithSocials": []
+      },
+      "canShow": {
+        "images": 4,
+        "links": 3,
+        "richText": 0,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [
+        "/articles/introducing-mobile-finance",
+        "/articles/beware-of-financial-online-scams",
+        "/articles/exploring-the-use-of-blockchain-technology",
+        "/articles/empowering-young-adults",
+        "/articles/closing-the-wealth-gap"
+      ],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "AuthorWidget--Default.png",
+          "route": "/components/author-widget"
+        },
+        {
+          "variant": "WithSocials",
+          "file": "AuthorWidget--WithSocials.png",
+          "route": "/components/author-widget"
+        }
+      ],
+      "notes": [
+        "Datasource template is the Author Page route template, not a component template. Sections read: Content, Socials. Code variant WithSocials has no Variant Definition. Resolver {3DF775BF-3F56-446F-9D81-43DE64DA4DDA}."
+      ]
+    },
+    {
+      "name": "ProjectList",
+      "id": "project-list",
+      "category": "Lists",
+      "purpose": "case studies or projects; thumbnail, client logo, category and abstract; problem and solution summary",
+      "file": "src/components/pagecontent/ProjectList.tsx",
+      "kind": "context",
+      "variants": [
+        "Default",
+        "Mosaic"
+      ],
+      "variantDefinitions": [
+        "Default",
+        "Mosaic"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Projects/Project List",
+        "id": "3f98b12e969347d6850718b054ccfb8e",
+        "datasourceLocation": "query:$site/*",
+        "componentQuery": false
+      },
+      "datasource": null,
+      "fields": [],
+      "children": [],
+      "params": [
+        "NumberOfItems",
+        "ShowFilters",
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Title",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Category",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Abstract",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Problem",
+          "type": "RichTextField"
+        },
+        {
+          "name": "Solution",
+          "type": "RichTextField"
+        },
+        {
+          "name": "Thumbnail",
+          "type": "ImageField"
+        },
+        {
+          "name": "Client",
+          "type": "ImageField"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": [],
+        "Mosaic": []
+      },
+      "canShow": {
+        "images": 0,
+        "links": 0,
+        "richText": 0,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [],
+      "shots": [
+        {
+          "variant": "Default"
+        },
+        {
+          "variant": "Mosaic"
+        }
+      ],
+      "notes": [
+        "No datasource template. Children resolver {2F5C334E-5615-423C-8281-9FC180191302}. Code variant Mosaic has no Variant Definition."
+      ]
+    },
+    {
+      "name": "Questions",
+      "id": "questions",
+      "category": "Lists",
+      "purpose": "frequently asked questions; question and answer list",
+      "file": "src/components/pagecontent/Questions.tsx",
+      "kind": "list",
+      "variants": [
+        "Default",
+        "SingleColumn"
+      ],
+      "variantDefinitions": [
+        "Default",
+        "SingleColumn"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/Questions",
+        "id": "75464a5ecbb74f96bbbc104afe57923a",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Questions']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Questions']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Questions",
+        "path": "/sitecore/templates/Project/Financial/Components/Questions",
+        "id": "fae81bf911174f97913300e752f41772"
+      },
+      "fields": [],
+      "children": [
+        {
+          "name": "Question",
+          "path": "/sitecore/templates/Project/Financial/Components/Question",
+          "id": "2dc7a13e675347ef805a1cde39012eec",
+          "fields": [
+            {
+              "name": "Question",
+              "type": "Single-Line Text",
+              "section": "Data",
+              "from": "Question"
+            },
+            {
+              "name": "Answer",
+              "type": "Rich Text",
+              "section": "Data",
+              "from": "Question"
+            }
+          ]
+        }
+      ],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Question",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Answer",
+          "type": "Field<string>"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": [],
+        "SingleColumn": []
+      },
+      "canShow": {
+        "images": 0,
+        "links": 0,
+        "richText": 1,
+        "video": false,
+        "listOfItems": true
+      },
+      "usedOn": [
+        "/personal",
+        "/business",
+        "/retirement-planning",
+        "/get-a-loan"
+      ],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "Questions--Default.png",
+          "route": "/components/questions"
+        },
+        {
+          "variant": "SingleColumn",
+          "file": "Questions--SingleColumn.png",
+          "route": "/components/questions"
+        }
+      ],
+      "notes": [
+        "Candidate local template {FAE81BF9-1117-4F97-9133-00E752F41772} and candidate child Question {2DC7A13E-6753-47EF-805A-1CDE39012EEC} were not assigned because the branch item is missing. Code variant SingleColumn has no Variant Definition. Children resolver {2F5C334E-5615-423C-8281-9FC180191302}."
+      ]
+    },
+    {
+      "name": "Testimonials",
+      "id": "testimonials",
+      "category": "Lists",
+      "purpose": "several customer quotes; slider or row of testimonials",
+      "file": "src/components/pagecontent/Testimonials.tsx",
+      "kind": "list",
+      "variants": [
+        "Default"
+      ],
+      "variantDefinitions": [
+        "Default"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Page Content/Testimonials",
+        "id": "f3766b60c8ce49af9bfeb2cee6e287df",
+        "datasourceLocation": "query:$site/*[@@name='Data']/*[@@templatename='Testimonials']|query:$sharedSites/*[@@name='Data']/*[@@templatename='Testimonials']",
+        "componentQuery": false
+      },
+      "datasource": {
+        "name": "Testimonials",
+        "path": "/sitecore/templates/Project/Financial/Components/Testimonials",
+        "id": "91cd4de0ed0b457b9936a333e8a874a3"
+      },
+      "fields": [],
+      "children": [
+        {
+          "name": "Testimonial",
+          "path": "/sitecore/templates/Project/Financial/Components/Testimonial",
+          "id": "404722800a674c52a06b79e327af9f44",
+          "fields": [
+            {
+              "name": "Rating",
+              "type": "Number",
+              "section": "Data",
+              "from": "Testimonial"
+            },
+            {
+              "name": "Content",
+              "type": "Multi-Line Text",
+              "section": "Data",
+              "from": "Testimonial"
+            },
+            {
+              "name": "AuthorName",
+              "type": "Single-Line Text",
+              "section": "Data",
+              "from": "Testimonial"
+            },
+            {
+              "name": "AuthorPosition",
+              "type": "Single-Line Text",
+              "section": "Data",
+              "from": "Testimonial"
+            },
+            {
+              "name": "AuthorImage",
+              "type": "Image",
+              "section": "Data",
+              "from": "Testimonial"
+            }
+          ]
+        }
+      ],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Rating",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Content",
+          "type": "Field<string>"
+        },
+        {
+          "name": "AuthorName",
+          "type": "Field<string>"
+        },
+        {
+          "name": "AuthorPosition",
+          "type": "Field<string>"
+        },
+        {
+          "name": "AuthorImage",
+          "type": "ImageField"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": []
+      },
+      "canShow": {
+        "images": 1,
+        "links": 0,
+        "richText": 0,
+        "video": false,
+        "listOfItems": true
+      },
+      "usedOn": [],
+      "shots": [
+        {
+          "variant": "Default",
+          "file": "Testimonials--Default.png",
+          "route": "/components/testimonials"
+        }
+      ],
+      "notes": [
+        "Candidate local template {91CD4DE0-ED0B-457B-9936-A333E8A874A3} and candidate child Testimonial {40472280-0A67-4C52-A06B-79E327AF9F44} were not assigned because the branch item is missing. Children resolver {2F5C334E-5615-423C-8281-9FC180191302}."
+      ]
+    },
+    {
+      "name": "ProjectDetails",
+      "id": null,
+      "category": "Projects",
+      "purpose": "",
+      "file": "src/components/pagecontent/ProjectDetails.tsx",
+      "kind": "context",
+      "variants": [
+        "Default"
+      ],
+      "variantDefinitions": [
+        "Default"
+      ],
+      "rendering": {
+        "path": "/sitecore/layout/Renderings/Project/Financial/Projects/Project Details",
+        "id": "7d1264b8dbea4dcd8b2c5db934359ea9",
+        "datasourceLocation": "",
+        "componentQuery": false
+      },
+      "datasource": null,
+      "fields": [],
+      "children": [],
+      "params": [
+        "Include in schema"
+      ],
+      "codeFields": [
+        {
+          "name": "Title",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Abstract",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Category",
+          "type": "Field<string>"
+        },
+        {
+          "name": "Client",
+          "type": "ImageField"
+        },
+        {
+          "name": "Problem",
+          "type": "RichTextField"
+        },
+        {
+          "name": "Solution",
+          "type": "RichTextField"
+        },
+        {
+          "name": "Thumbnail",
+          "type": "ImageField"
+        }
+      ],
+      "notRendered": [],
+      "placeholders": {
+        "Default": [
+          {
+            "name": "project-additional-content",
+            "where": "after Problem, before Solution"
+          }
+        ]
+      },
+      "canShow": {
+        "images": 0,
+        "links": 0,
+        "richText": 0,
+        "video": false,
+        "listOfItems": false
+      },
+      "usedOn": [],
+      "shots": [
+        {
+          "variant": "Default"
+        }
+      ],
+      "notes": [
+        "Context item resolver {6CCCBCDE-5E95-44E4-AE66-CFE7D3A0589E}."
+      ]
+    }
+  ]
+}

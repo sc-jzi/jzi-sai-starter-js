@@ -170,30 +170,55 @@ export const WithSocials = (props: FooterProps): JSX.Element => {
   );
 };
 
-export const MccLabel = (props: FooterProps): JSX.Element => (
-  <footer className={`component footer mcc-label ${props.params?.styles || ''}`}>
-    <div className="mcc-footer">
-      <NextImage field={props.fields?.Image1} width={168} height={41} className="mcc-footer-logo" />
-      <div className="mcc-footer-markets">
-        <Text field={props.fields?.Title1} tag="h2" />
-        <RichText field={props.fields?.Text1} />
-      </div>
-      <div className="mcc-footer-quick">
-        <Text field={props.fields?.Title2} tag="h2" />
-        <RichText field={props.fields?.Text2} />
-      </div>
-      <RichText field={props.fields?.Text3} className="mcc-footer-news" />
-      <button type="button" className="mcc-footer-subscribe">Subscribe Now</button>
-      <div className="mcc-footer-iml">
-        <NextImage field={props.fields?.SocialIcon1} width={105} height={42} />
-        <p>MCC Global IML is a global supplier of premium IML label solutions.</p>
-      </div>
-      <div className="mcc-footer-base">
-        <Text field={props.fields?.Copyright} tag="p" />
-        <button type="button" className="mcc-footer-social">linkedin icon</button>
-        <Link field={props.fields?.Link1} />
-        <Link field={props.fields?.Link2} />
+export const MccLabel = (props: FooterProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const logo = props.fields?.Image1;
+  const partner = props.fields?.SocialIcon1;
+  const subscribe = props.fields?.Link1;
+  const linkedIn = props.fields?.SocialLink1;
+
+  return (
+    <div className={`component footer variant-mcc-label ${props.params?.styles || ''}`} id={id ? id : undefined}>
+      <div className="footer-grid">
+        <div className="brand">
+          {logo?.value?.src && (
+            <NextImage field={logo} width={168} height={41} className="logo-img" />
+          )}
+          <div className="blurb">
+            <RichText field={props.fields?.Text3} />
+          </div>
+          {subscribe?.value?.href && (
+            <Link field={subscribe} className="footer-cta" />
+          )}
+          <div className="partner">
+            {partner?.value?.src && (
+              <NextImage field={partner} width={105} height={42} className="partner-img" />
+            )}
+            <Text tag="p" field={props.fields?.SocialsTitle} />
+          </div>
+          <div className="base">
+            <Text tag="p" field={props.fields?.Copyright} />
+            {linkedIn?.value?.href && (
+              <Link field={linkedIn} className="footer-cta footer-social" />
+            )}
+          </div>
+          <div className="legal">
+            <RichText field={props.fields?.Text4} />
+          </div>
+        </div>
+        <div className="col markets">
+          <Text tag="h2" field={props.fields?.Title1} />
+          <div className="links">
+            <RichText field={props.fields?.Text1} />
+          </div>
+        </div>
+        <div className="col quick">
+          <Text tag="h2" field={props.fields?.Title2} />
+          <div className="links">
+            <RichText field={props.fields?.Text2} />
+          </div>
+        </div>
       </div>
     </div>
-  </footer>
-);
+  );
+};

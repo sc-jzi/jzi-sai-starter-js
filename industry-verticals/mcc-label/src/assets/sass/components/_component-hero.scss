@@ -55,4 +55,37 @@
       line-height: 32px;
     }
   }
+
+  .hero-card {
+    background: #000000;
+    color: #ffffff;
+    width: 1152px;
+    max-width: 80%;
+    min-height: 180px;
+    padding: 32px;
+  }
+
+  a.hero-back {
+    background: none;
+    border: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+}
+
+.mcc-label-article .hero-card {
+  background: transparent;
+  width: auto;
+  max-width: none;
+  min-height: 0;
+  padding: 0;
+}
+
+.label-type-tabs__card {
+  background: #000000;
+  color: #ffffff;
+  width: 502px;
+  max-width: 80%;
+  min-height: 160px;
+  padding: 24px;
 }

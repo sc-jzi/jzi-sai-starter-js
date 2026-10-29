@@ -6,7 +6,7 @@
 # Unresolved datasource branches, missing folders, and variant mismatches are recorded on each entry and were not guessed.
 
 generatedAt: "2026-10-09T17:45:00Z"
-lastUpdatedAt: "2026-10-09T17:45:00Z"
+lastUpdatedAt: "2026-10-28T16:50:00Z"
 lastUpdatedBy: "demo-inventory-base-site"
 
 project:
@@ -741,6 +741,70 @@ components:
     pendingManual: []
   notes: 
     - "Candidate local template {C7B8468F-4290-400F-93BB-D46C5F8DB126} and candidate child Carousel Item {54DB209D-CD0F-49D9-AE4E-ECB65D72CC4D} were not assigned because the branch item is missing. Children resolver {2F5C334E-5615-423C-8281-9FC180191302}."
+- name: "Hero Carousel"
+  kind: "simple"
+  category: "Page Content"
+  status: "complete"
+  createdAt: "2026-10-28T16:50:00Z"
+  updatedAt: "2026-10-28T16:50:00Z"
+  react:
+    filePath: "src/components/pagecontent/Carousel.tsx"
+    componentMapKey: "Carousel"
+    variants:
+      - "MccLabelHero"
+  templates:
+    datasource:
+      name: "Carousel Slide"
+      path: "/sitecore/templates/Project/manufacturing/Components/Carousel Slide"
+      itemId: "{3C4F1088-5863-4A27-BEDC-46B15A7383ED}"
+      sectionName: "Data"
+      fields:
+        - "Title"
+        - "Text"
+        - "Link"
+        - "Image"
+        - "Image2"
+        - "Image3"
+        - "Image4"
+        - "Video"
+      baseTemplatesSet: true
+      standardValues:
+        itemId: ""
+        linked: false
+    folder: null
+    renderingParams:
+      name: "Carousel"
+      path: "/sitecore/templates/Project/Financial/Components/Rendering Parameters/Carousel"
+      itemId: "{A1ABD5CF-C257-4BB1-9F7A-93E6F3375391}"
+      baseTemplatesSet: true
+  datasourceFolder: null
+  rendering:
+    name: "Hero Carousel"
+    path: "/sitecore/layout/Renderings/Project/manufacturing/Hero Carousel"
+    itemId: "{FA1096C7-AD7B-48BB-92C3-B90EF5C80895}"
+    componentName: "Carousel"
+    datasourceTemplatePath: "/sitecore/templates/Project/manufacturing/Components/Carousel Slide"
+    datasourceLocationQuery: "query:$site/*[@@name='Data']/*[@@name='Carousel']"
+    parametersTemplateId: "{A1ABD5CF-C257-4BB1-9F7A-93E6F3375391}"
+    componentQuery: ""
+    addFieldEditorButton: "1"
+    registeredInAvailableRenderings: false
+  headlessVariants:
+    containerPath: "/sitecore/content/manufacturing/MCCLabel/Presentation/Headless Variants/Carousel"
+    containerId: "{BD97CA20-6F42-4911-B3DE-523DFECBD93E}"
+    variants:
+      - name: "MccLabelHero"
+        itemId: "{43C0DE52-E85D-4F4B-B031-13505FB8F6C8}"
+  verification:
+    checkedAt: "2026-10-28T16:50:00Z"
+    passed:
+      - "Rendering item found"
+      - "Homepage layout points at this rendering with datasource Carousel 1"
+      - "Layout returns the slide fields directly"
+    failed: []
+    pendingManual: []
+  notes:
+    - "No contents resolver, so the selected Carousel Slide item's own fields are the component fields. The shared Financial Carousel rendering still uses the children resolver."
 - name: "Comparison"
   kind: "simple"
   category: "Page Content"

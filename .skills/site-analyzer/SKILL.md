@@ -44,8 +44,12 @@ If `sections.json` / `sections.md` exist (`section-capture.mjs`) read them FIRST
 
 For each identified section, find the best match in `component-registry.yaml`:
 
-1. Compare the visual pattern against each component's `visualKeywords`, and the section's crop against the variant screenshots in `components.md`; check its "Can show" line covers what the crop shows (images, video, cards, a list of items)
-2. If multiple components could match, use the section's layout and content to disambiguate
+1. **Start from the measured shortlist, not from words.** Run `node harness/scripts/component-match.mjs <customer>` once the sections are in the plan
+   (or `component-crops.md`'s Shortlist column): per live band, the three base variants closest in measured shape (layout, repeated items,
+   photo or icon, sliding, video, form), with what differs and field notes ("… has 1 Image field(s): fit: extend", "cannot play a video").
+   Open the section's crop next to each shortlisted screenshot in `components.md`. `visualKeywords` only break a tie between shortlisted variants.
+2. If multiple shortlisted components could match, use the section's content and function to disambiguate. Off the shortlist, or `fit: new`,
+   `fitReason` names the shortlisted variant you compared with ("closest to PromoCta Default: …; differs: …"): P17 fails it otherwise
 3. Pick the best variant using `variantSelectionHints` and the theme's `tone.*` fields
 4. Use the **registry-to-manifest mapping table** below to set both `registryId` and `manifestName`
 5. Assign a `sectionBackground` hint based on the visual background observed:
@@ -60,7 +64,8 @@ Do this for EVERY section of the page AND every feature of the header area (eyeb
 
 1. **Function.** What does the visitor DO with it (read, click through, search, filter, switch language, calculate, play, compare, expand)? Does a registry component do that?
 2. **Content shape.** Does the section carry fields or repeated items (a count, a kind: image, rich text, link, icon, N items with title + text + link) that the component's datasource template has? Check `templates.datasource.fields` of the component in `docs/ai/manifests/sitecore-manifest.yaml`.
-3. **Look.** If function and content shape fit and only the appearance differs (layout, spacing, colour, type, radius, order of elements) it is a **variant**: the base variant is the closest one, the client variant (phase 5.5) does the rest.
+3. **Layout.** The layout is SHAPE, not look: a card row, an image-and-text split, a full-width photo with text over it, a stacked list, a slider. The component's measured layout must be the live band's (`component-match.md`); mirroring the photo left/right or putting it above the text is fine. A card-row component restyled as an image-and-text split, or a static row made to slide, is not a variant: P17 fails it (R13).
+4. **Look.** If function, content shape and layout fit and only the appearance differs (spacing, colour, type, radius, mirroring) it is a **variant**: the base variant is the closest one, the client variant (phase 5.5) does the rest.
 
 Outcome, written on the section as `fit` + `fitReason` (one sentence: what matches, or what is missing):
 
@@ -68,9 +73,23 @@ Outcome, written on the section as `fit` + `fitReason` (one sentence: what match
 |---|---|---|
 | `reuse` | function and content shape match as they are | registry component, base variant `Default` (still gets the client variant for the look) |
 | `variant` | function and shape match, appearance differs | registry component, base variant = closest; client variant carries the difference |
-| `new` | a FUNCTION or a FIELD/ITEM SHAPE is missing | a NEW component is specified in the plan (`new:` block below) and built in phase 5 |
+| `extend` | the shape matches but one or two FIELDS are missing (a second image, an extra link) | the registry component on a derived datasource template that adds those fields (`extend:` block below, R22); the shared template and rendering stay unchanged |
+| `new` | a FUNCTION or an ITEM SHAPE is missing, or the component builds its data with a ComponentQuery | a NEW component is specified in the plan (`new:` block below) and built in phase 5 |
 
-**A variant can never add a field, a child item or a behaviour**: it only re-renders the same datasource. So a missing function or field means `new`; a different look never does. Typical `new`: search box, store/branch locator, tabs, pricing or comparison table with columns the registry lacks, timeline, filterable logo wall, video gallery, map, region/language picker with flags, announcement ticker, login/account menu, cart, chat launcher, an item list whose items have fields no registry list has.
+**A variant can never add a field, a child item or a behaviour**: it only re-renders the same datasource. A missing field on a component that otherwise fits is `extend`; a missing function or item shape is `new`; a different look never is either.
+
+**Specifying an extension** (on the section; `component` stays the registry id):
+
+```yaml
+component: promo-cta
+fit: extend
+fitReason: "Image beside promo text like PromoCta Default; the live band also has a decorative outline image behind the photo"
+extend:
+  fields:                       # only what the base template lacks; each with its Type (R26)
+    - { name: BackgroundImage, type: Image }
+```
+
+The derived template is `<Component><client variant>` under `/sitecore/templates/Project/<collection>/Components`, built in phase 5 (`demo-build-content`). Typical `new`: search box, store/branch locator, tabs, pricing or comparison table with columns the registry lacks, timeline, filterable logo wall, video gallery, map, region/language picker with flags, announcement ticker, login/account menu, cart, chat launcher, an item list whose items have fields no registry list has.
 
 Rules:
 - The only outcomes are a registry component that has the same shape (`reuse` or `variant`) or a new component (`fit: new`). Drawing the section as HTML in a Rich Text field is not an outcome.

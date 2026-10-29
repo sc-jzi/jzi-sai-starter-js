@@ -22,14 +22,14 @@ export const Default = (props: RichTextProps): JSX.Element => {
   const sxaStyles = `${props.params?.styles || ''}`;
 
   return (
-    <div className={`component rich-text ${sxaStyles}`} id={id ? id : undefined}>
+    <div className={`component rich-text ${sxaStyles}`} id={id ? id : undefined} style={{ minHeight: 48 }}>
       <div className="component-content">{text}</div>
     </div>
   );
 };
 
 export const MccLabel = (props: RichTextProps): JSX.Element => (
-  <div className="mcc-label-variant MccLabel">
+  <section className="variant-mcc-label mcc-label">
     <Default {...props} />
-  </div>
+  </section>
 );

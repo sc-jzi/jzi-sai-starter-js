@@ -53,11 +53,13 @@ The ones that matter in every session, demo run or not:
 | `node harness/scripts/looks-review.mjs <customer> --open` · `run-gate.mjs accept <customer> all|none|<n>` | after two fix attempts: ONE side-by-side page for all pages (visible differences only), ONE question, record the answer |
 | `node harness/scripts/build-check.mjs <customer> [--quick]` | `npm run build` (or a typecheck) of the customer app |
 | `node harness/scripts/link-audit.mjs <customer>` | every link / image field in the site holds valid XML; every field's type fits its name and value (R26) |
+| `node harness/scripts/component-match.mjs <customer>` | per planned section, the 3 base variants closest in measured shape (`_measure.mjs`; validate-site-plan P17 uses the same shortlist) |
+| `node harness/scripts/plan-review.mjs <customer> --open` | gate 2's page: each live section beside its chosen variant, the other shortlisted ones and any flag |
 | `node harness/scripts/collect-images.mjs <customer>` | every image of every planned section, traced to its page and section (the only way images enter a demo) |
 | `node harness/scripts/attach-images.mjs <customer>` | proposes which uploaded image goes into which Image field (write them with the MCP) |
 | `node harness/scripts/media-upload.mjs <customer>` | upload images to the Media Library when `CH_ENABLED=false` (skips files over 50 MB) |
 | `node harness/scripts/component-showcase.mjs [--apply]` | the base site's hidden `/Home/components` pages: each component alone, every defined variant (outside demo runs) |
-| `node harness/scripts/component-catalog.mjs [--base <url>]` | regenerate `industry-verticals/prospera/docs/ai/catalog/components.md` (fields, templates, what each component can show, screenshots; base app running) |
+| `node harness/scripts/component-catalog.mjs [--base <url>]` | regenerate `industry-verticals/prospera/docs/ai/catalog/components.md` (fields, templates, what each component can show, screenshots and measured shape per variant; base app running) |
 | `node harness/scripts/name-check.mjs` · `sync-skills.mjs` | R18 (nothing prospect-specific in the harness) · R19 |
 
 ## The customer app (Next.js 16, App Router, Content SDK 2.x)

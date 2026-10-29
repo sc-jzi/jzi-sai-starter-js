@@ -28,9 +28,11 @@ export const Default = (props: HeadingCtaProps): JSX.Element => {
         <div className="row gx-5">
           <div className="col">
             <div className="heading-content-wrapper">
-              <h6 className="eyebrow-accent">
-                <Text field={props.fields?.Eyebrow} />
-              </h6>
+              {props.fields?.Eyebrow?.value && (
+                <p className="eyebrow-accent">
+                  <Text field={props.fields?.Eyebrow} />
+                </p>
+              )}
               <h2 className="display-4 fw-bold">
                 <Text field={props.fields?.Heading} />
               </h2>
@@ -62,9 +64,11 @@ export const Compact = (props: HeadingCtaProps): JSX.Element => {
         <div className="row">
           <div className="col">
             <div className="heading-content-wrapper">
-              <h6 className="eyebrow-accent">
-                <Text field={props.fields?.Eyebrow} />
-              </h6>
+              {props.fields?.Eyebrow?.value && (
+                <p className="eyebrow-accent">
+                  <Text field={props.fields?.Eyebrow} />
+                </p>
+              )}
               <h2 className="display-6 fw-bold">
                 <Text field={props.fields?.Heading} />
               </h2>
@@ -101,9 +105,11 @@ export const PageHeading = (props: HeadingCtaProps): JSX.Element => {
           <div className="row gx-5">
             <div className="col">
               <div className="heading-content-wrapper">
-                <h6 className="eyebrow-accent">
-                  <Text field={props.fields?.Eyebrow} />
-                </h6>
+                {props.fields?.Eyebrow?.value && (
+                  <p className="eyebrow-accent">
+                    <Text field={props.fields?.Eyebrow} />
+                  </p>
+                )}
                 <h1 className="display-1 fw-bold">
                   <Text field={props.fields?.Heading} />
                 </h1>
@@ -134,9 +140,11 @@ export const Centered = (props: HeadingCtaProps): JSX.Element => {
     <div className={`component heading-cta ${sxaStyles}`} id={id ? id : undefined}>
       <div className="container">
         <div className="heading-content-wrapper mx-auto text-center">
-          <h6 className="eyebrow-accent">
-            <Text field={props.fields?.Eyebrow} />
-          </h6>
+          {props.fields?.Eyebrow?.value && (
+            <p className="eyebrow-accent">
+              <Text field={props.fields?.Eyebrow} />
+            </p>
+          )}
           <h2 className="display-4 fw-bold">
             <Text field={props.fields?.Heading} />
           </h2>
@@ -153,30 +161,31 @@ export const Centered = (props: HeadingCtaProps): JSX.Element => {
 };
 
 export const MccLabel = (props: HeadingCtaProps): JSX.Element => (
-  <div className="mcc-label-variant MccLabel">
+  <section className="variant-mcc-label mcc-label">
     <Default {...props} />
-  </div>
+  </section>
 );
 
 export const MccLabelPageTitle = (props: HeadingCtaProps): JSX.Element => (
-  <div className="mcc-label-variant MccLabelPageTitle">
+  <section className="variant-mcc-label mcc-label-page-title">
     <Default {...props} />
-  </div>
+  </section>
 );
 
-export const MccLabelSplit = (props: HeadingCtaProps): JSX.Element => (
-  <div className="component heading-cta mcc-label-variant MccLabelSplit">
-    <div className="container">
-      <Text field={props.fields?.Heading} tag="h2" />
-      <Text field={props.fields?.Text} tag="h3" />
-    </div>
-  </div>
+export const MccLabelSectionTitle = (props: HeadingCtaProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label-section-title">
+    <Default {...props} />
+  </section>
 );
 
-export const MccLabelGreenBand = (props: HeadingCtaProps): JSX.Element => (
-  <div className="component heading-cta mcc-label-variant MccLabelGreenBand">
-    <div className="container">
-      {props.fields?.Heading?.value && <Text field={props.fields.Heading} tag="h2" />}
-    </div>
-  </div>
+export const MccLabelGreenBar = (props: HeadingCtaProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label-green-bar">
+    <Default {...props} />
+  </section>
+);
+
+export const MccLabelCtaBand = (props: HeadingCtaProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label-cta-band">
+    <Default {...props} />
+  </section>
 );

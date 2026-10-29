@@ -43,25 +43,26 @@ export const Default = (props: FeaturesProps): JSX.Element => {
             <RichText field={props.fields?.Text} />
           </div>
           <div className="button button-main">
-            <Link field={props.fields?.Link} />
+            <Link field={props.fields?.Link} className="button btn" />
           </div>
+          {props.fields?.Link?.value?.href && <Link field={props.fields.Link} />}
         </div>
         <div className="items">
           <div className="item left">
             <div className="icon">
               <NextImage field={props.fields?.Image1} width={32} height={32} />
             </div>
-            <div className="title">
+            <h2 className="title">
               <Text field={props.fields?.Title1} />
-            </div>
+            </h2>
             <p className="subtitle">
               <Text field={props.fields?.Text1} />
             </p>
           </div>
           <div className="item right">
-            <div className="title">
+            <h2 className="title">
               <Text field={props.fields?.Title2} />
-            </div>
+            </h2>
             <p className="subtitle">
               <Text field={props.fields?.Text2} />
             </p>
@@ -71,3 +72,33 @@ export const Default = (props: FeaturesProps): JSX.Element => {
     </div>
   );
 };
+
+export const MccLabel = (props: FeaturesProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label">
+    <Default {...props} />
+  </section>
+);
+
+export const MccLabelImageLeft = (props: FeaturesProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label-image-left">
+    <Default {...props} />
+  </section>
+);
+
+export const MccLabelImageRight = (props: FeaturesProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label-image-right">
+    <Default {...props} />
+  </section>
+);
+
+export const MccLabelImageLeftYellow = (props: FeaturesProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label-image-left-yellow">
+    <Default {...props} />
+  </section>
+);
+
+export const MccLabelArticleBody = (props: FeaturesProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label-article-body">
+    <Default {...props} />
+  </section>
+);
