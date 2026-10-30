@@ -238,7 +238,7 @@ section.mcc-label-hero {
     margin-left: 0;
     height: auto;
     background: rgba(0, 0, 0, 0.55);
-    border-radius: 28px;
+    border-radius: 0 120px 0 0;
     padding: 48px 56px 72px;
     color: #ffffff;
   }
@@ -284,6 +284,7 @@ section.mcc-label-hero {
 
   .video-with-copy__copy {
     background: #2bb673;
+    border-radius: 0 0 150px 0;
     padding: 32px;
     display: flex;
     flex-direction: column;
