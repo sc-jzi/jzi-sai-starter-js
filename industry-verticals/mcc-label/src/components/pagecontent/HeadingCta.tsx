@@ -172,11 +172,30 @@ export const MccLabelPageTitle = (props: HeadingCtaProps): JSX.Element => (
   </section>
 );
 
-export const MccLabelSectionTitle = (props: HeadingCtaProps): JSX.Element => (
-  <section className="variant-mcc-label mcc-label-section-title">
-    <Default {...props} />
-  </section>
-);
+// Section title: the heading across the full width; an intro (Text) beside it and a link only when they have content
+export const MccLabelSectionTitle = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const hasText = !!props.fields?.Text?.value;
+  const hasLink = !!props.fields?.Link?.value?.href;
+
+  return (
+    <section className="variant-mcc-label mcc-label-section-title">
+      <div className={`component heading-cta ${props.params?.styles || ''}`} id={id ? id : undefined}>
+        <div className={`container section-title-layout${hasText ? ' with-text' : ''}`}>
+          <h2>
+            <Text field={props.fields?.Heading} />
+          </h2>
+          {hasText && (
+            <p className="section-title-text">
+              <Text field={props.fields.Text} />
+            </p>
+          )}
+          {hasLink && <Link field={props.fields.Link} className="button button-main" />}
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export const MccLabelGreenBar = (props: HeadingCtaProps): JSX.Element => (
   <section className="variant-mcc-label mcc-label-green-bar">

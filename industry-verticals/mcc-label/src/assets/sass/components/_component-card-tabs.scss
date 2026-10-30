@@ -1,0 +1,78 @@
+// CardTabs (MCC Label): two half-width tab bars over a four-column grid of photo cards
+.component.card-tabs {
+  display: block;
+  flex: 1 0 100%;
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 40px 40px 60px;
+  width: 100%;
+
+  @include respond-to(mobile-large) {
+    padding: 24px $size-padding;
+  }
+
+  .card-tabs__tabs {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 40px;
+
+    @include respond-to(mobile-large) {
+      gap: 12px;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .card-tabs__tab {
+    background: #ffffff;
+    border: 1.5px solid #000000;
+    border-top-left-radius: 40px;
+    color: #000000;
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 22px;
+    height: 58px;
+    padding: 0 24px;
+
+    &.is-active {
+      background: #000000;
+      color: #ffffff;
+    }
+  }
+
+  .card-tabs__grid {
+    display: grid;
+    gap: 40px 30px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    @include respond-to(mobile-large) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .card-tabs__link {
+    color: inherit;
+    display: block;
+    text-decoration: none;
+
+    &:hover .card-tabs__title {
+      text-decoration: underline;
+    }
+  }
+
+  .card-tabs__image {
+    aspect-ratio: 5 / 3;
+    background: #dce6eb;
+    border-top-left-radius: 40px;
+    display: block;
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .card-tabs__title {
+    color: #000000;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 30px 0 0;
+  }
+}

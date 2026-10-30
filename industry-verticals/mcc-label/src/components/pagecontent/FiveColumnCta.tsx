@@ -130,8 +130,49 @@ export const MccLabel = (props: FiveColumnCtaProps): JSX.Element => (
   </section>
 );
 
-export const MccLabelStats = (props: FiveColumnCtaProps): JSX.Element => (
-  <section className="variant-mcc-label mcc-label-stats">
-    <Default {...props} />
-  </section>
-);
+// MCC Label Stats: a full-width row of five stats, each an icon on a blue tile, the figure and its caption.
+// The tile is drawn by the component; a figure, caption or link renders only when it has content.
+export const MccLabelStats = (props: FiveColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+  const f = props.fields;
+  const stats = [
+    { image: f?.Image1, text: f?.Text1, link: f?.Link1, description: f?.Description1 },
+    { image: f?.Image2, text: f?.Text2, link: f?.Link2, description: f?.Description2 },
+    { image: f?.Image3, text: f?.Text3, link: f?.Link3, description: f?.Description3 },
+    { image: f?.Image4, text: f?.Text4, link: f?.Link4, description: f?.Description4 },
+    { image: f?.Image5, text: f?.Text5, link: f?.Link5, description: f?.Description5 },
+  ];
+
+  return (
+    <section className="variant-mcc-label mcc-label-stats">
+      <div className={`component five-column-cta ${props.params?.styles || ''}`} id={id ? id : undefined}>
+        <div className="mcc-stats">
+          {stats.map((s, i) => {
+            const tile = (
+              <div className="mcc-stat-tile">
+                <NextImage field={s.image} width={32} height={32} />
+              </div>
+            );
+            return (
+              <div className="mcc-stat" key={i}>
+                {s.link?.value?.href && !isPageEditing ? <Link field={s.link}>{tile}</Link> : tile}
+                {(isPageEditing || s.text?.value) && (
+                  <p className="mcc-stat-figure">
+                    <Text field={s.text} />
+                  </p>
+                )}
+                {(isPageEditing || s.description?.value) && (
+                  <p className="mcc-stat-caption">
+                    <Text field={s.description} />
+                  </p>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};

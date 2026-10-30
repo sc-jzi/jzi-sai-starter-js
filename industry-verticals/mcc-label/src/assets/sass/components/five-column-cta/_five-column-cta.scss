@@ -62,3 +62,86 @@
     }
   }
 }
+
+// MCC Label Stats: full width, five stats on blue tiles with one rounded corner each
+section.mcc-label-stats {
+  display: block;
+  flex: 1 0 100%;
+  width: 100%;
+
+  .five-column-cta {
+    margin: 0;
+    padding: 70px 0 60px;
+  }
+
+  .mcc-stats {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(5, 1fr);
+    margin: 0 auto;
+    max-width: 1160px;
+    padding: 0 24px;
+
+    @include respond-to(mobile-large) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .mcc-stat {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  .mcc-stat-tile {
+    align-items: center;
+    background: #62addf;
+    display: flex;
+    height: 78px;
+    justify-content: center;
+    margin-bottom: 16px;
+    width: 78px;
+
+    img {
+      height: 32px;
+      width: 32px;
+    }
+  }
+
+  // the live tiles round one corner each, in turn
+  .mcc-stat:nth-child(1) .mcc-stat-tile,
+  .mcc-stat:nth-child(2) .mcc-stat-tile {
+    border-top-left-radius: 24px;
+  }
+
+  .mcc-stat:nth-child(3) .mcc-stat-tile,
+  .mcc-stat:nth-child(5) .mcc-stat-tile {
+    border-top-right-radius: 24px;
+  }
+
+  .mcc-stat:nth-child(4) .mcc-stat-tile {
+    border-bottom-left-radius: 24px;
+  }
+
+  .mcc-stat-figure {
+    color: #000000;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 6px;
+  }
+
+  .mcc-stat-caption {
+    color: #000000;
+    font-size: 15px;
+    line-height: 24px;
+    margin: 0;
+    max-width: 150px;
+  }
+}

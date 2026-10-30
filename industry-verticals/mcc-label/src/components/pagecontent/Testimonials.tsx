@@ -1,9 +1,10 @@
 'use client';
 
-import { JSX } from 'react';
+import { JSX, useState } from 'react';
 import { Field, ImageField, NextImage, Text, useSitecore } from '@sitecore-content-sdk/nextjs';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectCoverflow, Pagination } from 'swiper/modules';
+import type { Swiper as SwiperInstance } from 'swiper';
 
 interface TestimonialFields {
   Rating: Field<string>;
@@ -85,16 +86,9 @@ export const Default = (props: TestimonialsProps): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const testimonials = props.fields?.items;
   const sxaStyles = `${props.params?.styles || ''}`;
-  const title = testimonials?.find((item) => item.fields?.Content?.value && !item.fields?.AuthorName?.value);
-  const quotes = title ? testimonials?.filter((item) => item !== title) : testimonials;
 
   return (
     <div className={`component testimonials ${sxaStyles}`} id={id ? id : undefined}>
-      {title?.fields?.Content && (
-        <h2 className="testimonials-title">
-          <Text field={title.fields.Content} />
-        </h2>
-      )}
       <div className="">
         <Swiper
           effect="coverflow"
@@ -119,11 +113,11 @@ export const Default = (props: TestimonialsProps): JSX.Element => {
             clickable: true,
           }}
           centeredSlides={true}
-          loop={(quotes?.length ?? 0) > 3}
+          loop={testimonials.length > 3}
           grabCursor={true}
           modules={[Autoplay, EffectCoverflow, Pagination]}
         >
-          {quotes?.map((item, i) => (
+          {testimonials?.map((item, i) => (
             <SwiperSlide key={`${item.url}${i}`}>
               <Testimonial key={item.url} item={item} />
             </SwiperSlide>
@@ -140,34 +134,68 @@ export const MccLabel = (props: TestimonialsProps): JSX.Element => (
   </section>
 );
 
+// MCC Label: one testimonial per slide, the quote beside a round product photo, arrows at the sides and dots below.
+// The quote mark and arrows are drawn by the component.
 export const MccLabelSlider = (props: TestimonialsProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
   const items = props.fields?.items ?? [];
-  const title = items.find((item) => item.fields?.Content?.value && !item.fields?.AuthorName?.value);
-  const quotes = items.filter((item) => item !== title && item.fields?.Content?.value);
-  const photo = items.find((item) => item.fields?.AuthorImage?.value?.src);
+  const [swiper, setSwiper] = useState<SwiperInstance | null>(null);
 
   return (
-    <section className={`component testimonials variant-mcc-label ${props.params?.styles || ''}`}>
-      {title?.fields?.Content && (
-        <h2 className="testimonials-title">
-          <Text field={title.fields.Content} />
-        </h2>
+    <section
+      className={`component testimonials variant-mcc-label mcc-label-slider ${props.params?.styles || ''}`}
+      id={id ? id : undefined}
+    >
+      <Swiper
+        slidesPerView={1}
+        loop={items.length > 1}
+        autoHeight={false}
+        allowTouchMove={!isPageEditing}
+        pagination={{ clickable: true }}
+        modules={[Pagination]}
+        onSwiper={setSwiper}
+      >
+        {items.map((item, i) => (
+          <SwiperSlide key={`${item.url}${i}`}>
+            <div className="mcc-testimonial">
+              <div className="mcc-testimonial-quote">
+                <span className="quote-mark" aria-hidden="true">
+                  &ldquo;
+                </span>
+                <div>
+                  <blockquote>
+                    <Text field={item.fields?.Content} />
+                  </blockquote>
+                  <p className="mcc-testimonial-author">
+                    {(isPageEditing || item.fields?.AuthorName?.value) && (
+                      <strong>
+                        <Text field={item.fields?.AuthorName} />
+                        {item.fields?.AuthorName?.value && item.fields?.AuthorPosition?.value ? ', ' : ''}
+                      </strong>
+                    )}
+                    <Text field={item.fields?.AuthorPosition} />
+                  </p>
+                </div>
+              </div>
+              <div className="mcc-testimonial-photo">
+                <NextImage field={item.fields?.AuthorImage} width={580} height={580} />
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+      {items.length > 1 && (
+        <>
+          <button type="button" className="mcc-slider-arrow prev" aria-label="Previous testimonial" onClick={() => swiper?.slidePrev()}>
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" strokeWidth="2" /></svg>
+          </button>
+          <button type="button" className="mcc-slider-arrow next" aria-label="Next testimonial" onClick={() => swiper?.slideNext()}>
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" strokeWidth="2" /></svg>
+          </button>
+        </>
       )}
-      {photo?.fields?.AuthorImage?.value?.src && (
-        <NextImage field={photo.fields.AuthorImage} width={120} height={120} />
-      )}
-      {quotes.map((item, index) => (
-        <div key={item.url || index}>
-          <p>
-            <Text field={item.fields.Content} />
-          </p>
-          {index < quotes.length - 1 ? (
-            <button type="button" className="btn">Previous</button>
-          ) : (
-            <button type="button" className="btn">Next</button>
-          )}
-        </div>
-      ))}
     </section>
   );
 };

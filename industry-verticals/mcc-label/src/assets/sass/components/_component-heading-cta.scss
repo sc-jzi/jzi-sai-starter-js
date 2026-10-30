@@ -117,3 +117,69 @@ section.mcc-label-cta-band {
     }
   }
 }
+
+// MCC Label: a section title (SectionTitle), e.g. the testimonials heading and Market Overview
+section.mcc-label-section-title {
+  display: block;
+  width: 100%;
+
+  .heading-cta {
+    padding: 64px 0 24px;
+
+    .container {
+      max-width: 1440px;
+      padding: 0 160px;
+
+      @include respond-to(mobile-large) {
+        padding: 0 $size-padding;
+      }
+    }
+
+    // the heading spans the full width; with an intro, heading and intro sit side by side
+    .section-title-layout {
+      display: block;
+
+      &.with-text {
+        align-items: center;
+        display: flex;
+        gap: 64px;
+
+        @include respond-to(mobile-large) {
+          display: block;
+        }
+
+        h2 {
+          flex: 0 0 auto;
+          width: auto;
+        }
+
+        .section-title-text {
+          flex: 0 1 560px;
+          margin-left: auto;
+        }
+      }
+    }
+
+    h2 {
+      color: #000000;
+      font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0;
+      width: 100%;
+    }
+
+    .section-title-text {
+      color: #000000;
+      font-size: 16px;
+      line-height: 24px;
+      margin: 0;
+      max-width: 560px;
+    }
+
+    .button-main {
+      margin-top: 24px;
+    }
+  }
+}

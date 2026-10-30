@@ -30,34 +30,40 @@ const CardTabsView = (props: CardTabsProps): JSX.Element => {
   const cards = source?.children?.results ?? [];
   const labels = [source?.tabOneLabel?.jsonValue?.value, source?.tabTwoLabel?.jsonValue?.value].filter(Boolean) as string[];
   const [tab, setTab] = useState(0);
-  const selected = labels[tab] ?? String(tab + 1);
-  const matched = cards.filter((card) => {
-    const mark = String(card.tab?.jsonValue?.value ?? '');
-    return mark === selected || mark === String(tab + 1);
-  });
-  const visible = matched.length ? matched : cards;
+  // each card names the tab it belongs to: its Tab field holds that tab's label
+  const selected = (labels[tab] ?? '').trim();
+  const visible = cards.filter((card) => String(card.tab?.jsonValue?.value ?? '').trim() === selected);
   const id = props.params?.RenderingIdentifier;
 
   return (
     <section className={`component card-tabs ${props.params?.styles || ''}`} id={id || undefined}>
       <div className="card-tabs__tabs" role="tablist">
         {labels.map((label, index) => (
-          <button key={label} type="button" role="tab" aria-selected={index === tab} onClick={() => setTab(index)}>
+          <button
+            key={label}
+            type="button"
+            role="tab"
+            className={`card-tabs__tab${index === tab ? ' is-active' : ''}`}
+            aria-selected={index === tab}
+            onClick={() => setTab(index)}
+          >
             {label}
           </button>
         ))}
       </div>
-      <div className="card-tabs__grid">
+      <div className="card-tabs__grid" role="tabpanel">
         {visible.map((card) => {
           const link = card.link?.jsonValue;
           const image = card.image?.jsonValue;
           const title = card.title?.jsonValue;
-          const picture = image?.value?.src ? <NextImage field={image} width={320} height={200} /> : null;
-          const heading = title?.value ? <Text tag="h2" field={title} /> : null;
+          const picture = image?.value?.src ? (
+            <NextImage field={image} width={664} height={400} className="card-tabs__image" />
+          ) : null;
+          const heading = title?.value ? <Text tag="h3" field={title} className="card-tabs__title" /> : null;
           return (
             <div key={card.id} className="card-tabs__card">
               {link?.value?.href ? (
-                <Link field={link}>
+                <Link field={link} className="card-tabs__link">
                   {picture}
                   {heading}
                 </Link>
