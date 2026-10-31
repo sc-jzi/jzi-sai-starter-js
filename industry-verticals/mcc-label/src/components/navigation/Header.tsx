@@ -43,7 +43,7 @@ export const WithLogoImage = (props: HeaderProps): JSX.Element => {
       <div className={`container container-${props.params?.ContainerWidth?.toLowerCase()}-fluid`}>
         <div className="row align-items-center">
           <div className="col-auto">
-            <a href="/"><NextImage field={props.fields.LogoImage} width={200} height={50} /></a>
+            <a href="/"><NextImage field={props.fields.LogoImage} width={200} height={50} unoptimized /></a>
           </div>
           <div className="col">
             <AppPlaceholder name="header-right" rendering={props.rendering} page={page} componentMap={props.componentMap} />
@@ -67,7 +67,7 @@ export const MccLabel = (props: HeaderProps): JSX.Element => {
         <div className="row align-items-center">
           <div className="col-auto">
             <a href="/">
-              <NextImage field={props.fields.LogoImage} width={239} height={55} />
+              <NextImage field={props.fields.LogoImage} width={239} height={55} unoptimized />
             </a>
           </div>
           <div className="col">

@@ -53,6 +53,7 @@ export const Default = (props: FooterProps): JSX.Element => {
               width={200}
               height={200}
               className="img-fluid"
+              unoptimized
             />
           </div>
           <div className="row row-cols-1 row-cols-sm-2 row-cols-xl-4 row-gap-5 gx-5">
@@ -120,6 +121,7 @@ export const WithSocials = (props: FooterProps): JSX.Element => {
               width={200}
               height={200}
               className="img-fluid"
+              unoptimized
             />
           </div>
           <div className="row row-cols-1 row-cols-md-3 row-gap-5 gx-5">
@@ -182,7 +184,7 @@ export const MccLabel = (props: FooterProps): JSX.Element => {
       <div className="footer-grid">
         <div className="brand">
           {logo?.value?.src && (
-            <NextImage field={logo} width={168} height={41} className="logo-img" />
+            <NextImage field={logo} width={168} height={41} className="logo-img" unoptimized />
           )}
           <div className="blurb">
             <RichText field={props.fields?.Text3} />
