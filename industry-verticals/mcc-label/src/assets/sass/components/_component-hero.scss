@@ -81,6 +81,88 @@
   padding: 0;
 }
 
+// Page hero (news center): translucent panel on the bottom-left edge with one rounded corner
+.mcc-label-page-hero {
+  width: 100%;
+  flex: 0 0 100%;
+}
+
+.mcc-label-page-hero .hero {
+  height: 600px;
+
+  picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    object-position: left center;
+  }
+
+  .content-container {
+    left: 0;
+    transform: none;
+    max-width: none;
+    padding: 0;
+    justify-content: flex-end;
+  }
+
+  .hero-card {
+    background: rgb(0 0 0 / 40%);
+    border-radius: 0 150px 0 0;
+    width: 1152px;
+    max-width: 80%;
+    min-height: 314px;
+    padding: 56px 80px 50px;
+
+    @include respond-to(mobile-large) {
+      max-width: 100%;
+      padding: 32px 24px;
+      border-radius: 0 80px 0 0;
+    }
+  }
+
+  .content-container .title {
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 60px;
+    line-height: 72px;
+    margin-bottom: 48px;
+
+    @include respond-to(mobile-large) {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+
+  .content-container .subtitle {
+    font-family: __Cabin_86047d, sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  // The Link is the panel's button only (no back link above the image)
+  a.hero-back {
+    display: none;
+  }
+
+  .btn-array a.button {
+    display: inline-block;
+    margin-top: 0;
+    padding: 12px 40px;
+    border: 0;
+    border-radius: 28px;
+    background: #2bb673;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}
+
 .label-type-tabs__card {
   background: #000000;
   color: #ffffff;

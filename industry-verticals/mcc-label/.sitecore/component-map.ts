@@ -18,6 +18,7 @@ import * as MoreLikeThis from 'src/components/search/MoreLikeThis';
 import * as ColumnSplitter from 'src/components/pagestructure/ColumnSplitter';
 import * as VideoWithCopy from 'src/components/pagecontent/VideoWithCopy';
 import * as TwoColumnCta from 'src/components/pagecontent/TwoColumnCta';
+import * as TopicList from 'src/components/pagecontent/TopicList';
 import * as ThreeColumnCta from 'src/components/pagecontent/ThreeColumnCta';
 import * as Testimonials from 'src/components/pagecontent/Testimonials';
 import * as StatsCounter from 'src/components/pagecontent/StatsCounter';
@@ -32,6 +33,7 @@ import * as ParallaxBanner from 'src/components/pagecontent/ParallaxBanner';
 import * as PageBackground from 'src/components/pagecontent/PageBackground';
 import * as LocationDirectory from 'src/components/pagecontent/LocationDirectory';
 import * as LabelTypeTabs from 'src/components/pagecontent/LabelTypeTabs';
+import * as IntroSplit from 'src/components/pagecontent/IntroSplit';
 import * as ImageWall from 'src/components/pagecontent/ImageWall';
 import * as ImageGallery from 'src/components/pagecontent/ImageGallery';
 import * as HeroBanner from 'src/components/pagecontent/HeroBanner';
@@ -41,6 +43,9 @@ import * as FourColumnCta from 'src/components/pagecontent/FourColumnCta';
 import * as FiveColumnCta from 'src/components/pagecontent/FiveColumnCta';
 import * as FilterableCards from 'src/components/pagecontent/FilterableCards';
 import * as Features from 'src/components/pagecontent/Features';
+import * as EventRegistration from 'src/components/pagecontent/EventRegistration';
+import * as EventHero from 'src/components/pagecontent/EventHero';
+import * as EventDetails from 'src/components/pagecontent/EventDetails';
 import * as DocumentsList from 'src/components/pagecontent/DocumentsList';
 import * as CtaBanner from 'src/components/pagecontent/CtaBanner';
 import * as Comparison from 'src/components/pagecontent/Comparison';
@@ -83,6 +88,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ColumnSplitter', { ...ColumnSplitter, componentType: 'client' }],
   ['VideoWithCopy', { ...VideoWithCopy, componentType: 'client' }],
   ['TwoColumnCta', { ...TwoColumnCta, componentType: 'client' }],
+  ['TopicList', { ...TopicList }],
   ['ThreeColumnCta', { ...ThreeColumnCta, componentType: 'client' }],
   ['Testimonials', { ...Testimonials, componentType: 'client' }],
   ['StatsCounter', { ...StatsCounter, componentType: 'client' }],
@@ -97,6 +103,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['PageBackground', { ...PageBackground, componentType: 'client' }],
   ['LocationDirectory', { ...LocationDirectory, componentType: 'client' }],
   ['LabelTypeTabs', { ...LabelTypeTabs, componentType: 'client' }],
+  ['IntroSplit', { ...IntroSplit }],
   ['ImageWall', { ...ImageWall }],
   ['ImageGallery', { ...ImageGallery, componentType: 'client' }],
   ['HeroBanner', { ...HeroBanner, componentType: 'client' }],
@@ -106,6 +113,9 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['FiveColumnCta', { ...FiveColumnCta, componentType: 'client' }],
   ['FilterableCards', { ...FilterableCards, componentType: 'client' }],
   ['Features', { ...Features, componentType: 'client' }],
+  ['EventRegistration', { ...EventRegistration }],
+  ['EventHero', { ...EventHero }],
+  ['EventDetails', { ...EventDetails }],
   ['DocumentsList', { ...DocumentsList, componentType: 'client' }],
   ['CtaBanner', { ...CtaBanner, componentType: 'client' }],
   ['Comparison', { ...Comparison, componentType: 'client' }],

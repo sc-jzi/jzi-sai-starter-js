@@ -25,6 +25,9 @@ interface Fields {
   SubText3: Field<string>;
   Image3: ImageField;
   Link3: LinkField;
+  // Only on the ThreeColumnCtaMccLabel template (heading above the cards, footnote below)
+  Heading?: Field<string>;
+  Footnote?: Field<string>;
 }
 
 export type ThreeColumnCtaProps = {
@@ -32,7 +35,8 @@ export type ThreeColumnCtaProps = {
   fields: Fields;
 };
 
-export const Default = (props: ThreeColumnCtaProps): JSX.Element => {
+// hideLinks: a client variant without the per-card buttons (the Link fields are not rendered, not even in the editor)
+export const Default = (props: ThreeColumnCtaProps & { hideLinks?: boolean }): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
@@ -71,7 +75,7 @@ export const Default = (props: ThreeColumnCtaProps): JSX.Element => {
           <p>
             <Text field={subText} />
           </p>
-          {(isPageEditing || link?.value?.href) && (
+          {!props.hideLinks && (isPageEditing || link?.value?.href) && (
             <Link field={link} className={`button ${buttonStyle}`} />
           )}
         </div>
@@ -279,3 +283,19 @@ export const MccLabelTextCards = (props: ThreeColumnCtaProps): JSX.Element => (
     <Default {...props} />
   </section>
 );
+
+export const MccLabelEventReasons = (props: ThreeColumnCtaProps): JSX.Element => {
+  const { page } = useSitecore();
+  const isPageEditing = page?.mode?.isEditing;
+  return (
+    <section className="variant-mcc-label mcc-label-event-reasons">
+      {props.fields?.Heading && (isPageEditing || props.fields.Heading.value) && (
+        <Text tag="h2" className="event-reasons__heading" field={props.fields.Heading} />
+      )}
+      <Default {...props} hideLinks />
+      {props.fields?.Footnote && (isPageEditing || props.fields.Footnote.value) && (
+        <Text tag="p" className="event-reasons__footnote" field={props.fields.Footnote} />
+      )}
+    </section>
+  );
+};

@@ -1,0 +1,96 @@
+// Filterable Cards: the news center's article cards (image, title, excerpt, date and read time, Read More), three per row
+.component.filterable-cards {
+  width: 100%;
+  flex: 0 0 100%;
+  padding: 100px 20px 150px;
+  background: #ffffff;
+
+  .filterable-cards__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 72px 20px;
+    max-width: 1133px;
+    margin: 0 auto;
+
+    @include respond-to(tablet) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include respond-to(mobile-large) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .filterable-cards__card {
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+  }
+
+  .filterable-cards__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    margin-bottom: 32px;
+
+    img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  .filterable-cards__title {
+    margin: 0 0 16px;
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 30px;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
+
+  .filterable-cards__excerpt,
+  .filterable-cards__meta {
+    margin: 0;
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  .filterable-cards__meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .filterable-cards__dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  .filterable-cards__more {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: auto;
+    color: #000000;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

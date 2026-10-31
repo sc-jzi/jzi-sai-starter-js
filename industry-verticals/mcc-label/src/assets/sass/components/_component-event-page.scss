@@ -1,0 +1,244 @@
+// Event detail page (events template): hero, description with an Event details card, registration band
+
+$event-width: 1310px;
+$event-green: #2bb673;
+$event-heading-font: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+
+.mcc-label-event {
+  width: 100%;
+  flex: 0 0 100%;
+  color: #212529;
+}
+
+// Hero: title left, image right with the top-right corner rounded
+.component.event-hero {
+  padding: 40px 20px 60px;
+
+  .event-hero__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 48px;
+    align-items: center;
+    max-width: $event-width;
+    margin: 0 auto;
+
+    @include respond-to(tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .event-hero__title {
+    margin: 0;
+    color: #000000;
+    font-family: $event-heading-font;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 80px;
+
+    @include respond-to(mobile-large) {
+      font-size: 36px;
+      line-height: 44px;
+    }
+  }
+
+  .event-hero__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 0 150px 0 0;
+  }
+}
+
+// Description left, Event details card right
+.component.event-details {
+  padding: 40px 20px 80px;
+
+  .event-details__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 655px) minmax(0, 407px);
+    justify-content: center;
+    gap: 30px;
+    align-items: start;
+
+    @include respond-to(tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .event-details__body {
+    font-size: 16px;
+    line-height: 29px;
+
+    p {
+      margin: 0 0 32px;
+    }
+
+    h2,
+    h3,
+    h4 {
+      margin: 40px 0 8px;
+      font-family: $event-heading-font;
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 51px;
+    }
+  }
+
+  .event-details__card {
+    position: sticky;
+    top: 120px;
+    background: #ffffff;
+    box-shadow: 0 10px 40px rgb(0 0 0 / 12%);
+    padding: 40px;
+
+    @include respond-to(tablet) {
+      position: static;
+      grid-row: 1;
+    }
+  }
+
+  .event-details__card-title {
+    margin: 0 0 24px;
+    font-family: $event-heading-font;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+  }
+
+  .event-details__type {
+    margin: 0 0 16px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .event-details__row {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+
+    svg {
+      flex: 0 0 24px;
+      color: $event-green;
+    }
+  }
+
+  .event-details__location,
+  .event-details__dates {
+    margin: 0;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .event-details__dates {
+    margin-bottom: 8px;
+  }
+
+  .event-details__schedule {
+    font-size: 14px;
+    line-height: 22px;
+
+    h4 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 24px;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 0 0 16px;
+    }
+  }
+
+  .event-details__register {
+    display: inline-block;
+    margin-top: 8px;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+// Registration: grey band with heading and text left, white card right (it runs past the band's bottom edge)
+.component.event-registration {
+  padding: 0 20px 80px;
+  background: linear-gradient(#e3eaee, #e3eaee) top / 100% 400px no-repeat;
+  scroll-margin-top: 120px;
+
+  .event-registration__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 4fr) minmax(0, 8fr);
+    gap: 40px;
+    max-width: $event-width;
+    margin: 0 auto;
+    padding-top: 85px;
+
+    @include respond-to(tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .event-registration__title {
+    margin: 0 0 12px;
+    font-family: $event-heading-font;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 64px;
+  }
+
+  .event-registration__text {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .event-registration__card {
+    background: #ffffff;
+    box-shadow: 0 20px 40px rgb(0 0 0 / 12%);
+    padding: 60px 80px;
+    font-size: 15px;
+    line-height: 24px;
+
+    h3 {
+      margin: 0 0 24px;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 30px;
+    }
+
+    h4 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 0 0 20px;
+    }
+
+    @include respond-to(mobile-large) {
+      padding: 32px 24px;
+    }
+  }
+
+  .event-registration__button {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 14px 40px;
+    border-radius: 28px;
+    background: $event-green;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+}
