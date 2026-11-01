@@ -108,8 +108,9 @@ disagree, **this file wins** and the skill is the bug. Change a rule here, once.
 ## Sitecore scope and safety
 - **R21 Only this demo's own new site changes.** Never touch an existing site; no site is ever duplicated, copied, renamed or moved. (The one
   exception, outside demo runs: `component-showcase.mjs` maintains the base site's hidden `/Home/components` pages and adds the Headless
-  Variant definitions the base app's code variants need.) **A site name never contains a space** (`AcmeFoods`, not `Acme Foods`: letters, digits, `_`,
-  `-`); the readable name is the display name. The app's `NEXT_PUBLIC_DEFAULT_SITE_NAME` is exactly that site name. Before EVERY
+  Variant definitions the base app's code variants need.) **A site name is lowercase letters and digits only** (`acmefoods`, not `AcmeFoods`,
+  `acme-foods` or `Acme Foods`); the readable name is the display name. SitecoreAI recorded no affinities for a mixed-case site name, and renaming
+  a site later wipes its page affinities, so the name is right at creation. The app's `NEXT_PUBLIC_DEFAULT_SITE_NAME` is exactly that site name. Before EVERY
   Sitecore write: `node harness/scripts/guard-customer.mjs sitecore-path <customer> "<item path>"`, stop on a failure; after every phase:
   `guard-customer.mjs check <customer>`. *Enforced: guard-customer.*
 - **R22 Existing components are reused as they are on the Sitecore side** (shared templates, renderings, rendering parameters under the project layer);

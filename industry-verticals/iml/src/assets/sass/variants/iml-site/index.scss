@@ -1,0 +1,673 @@
+// IML site look (site-iml): measured from iml.mcclabel.com (sections.json, header-styles.json, theme/theme.yaml).
+// Shapes, check marks, arrows and chevrons are decoration, drawn here or in the components.
+
+$iml-green: #2bb673;
+$iml-yellow: #ffd54f;
+$iml-periwinkle: #788cc8;
+$iml-panel: #f6f9fa;
+$iml-bluegrey: #dce6eb;
+$iml-podcast-band: #e6edf1;
+$iml-font: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+
+body.site-iml {
+  font-family: $iml-font;
+  color: #000;
+  background: #fff;
+
+  h1, h2, h3, h4, h5, h6, p, a, button, li {
+    font-family: $iml-font;
+  }
+
+  .component.navigation.variant-iml .navigation-title a,
+  .component.eyebrow.variant-iml a {
+    font-family: $iml-font;
+  }
+}
+
+.iml-container {
+  max-width: 1370px;
+  margin: 0 auto;
+  padding: 0 40px;
+
+  @media (max-width: 767px) {
+    padding: 0 20px;
+  }
+}
+
+.iml-section-title {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0 0 48px;
+  color: #000;
+}
+
+.iml-eyebrow {
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: $iml-green;
+  margin-bottom: 12px;
+}
+
+// Buttons: pills, uppercase, letter-spaced
+.iml-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 36px;
+  margin-top: 40px;
+}
+
+.iml-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  border: 2px solid $iml-green;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+
+  &--primary {
+    background: $iml-green;
+    color: #fff;
+    &:hover { background: darken($iml-green, 6%); color: #fff; }
+  }
+  &--outline {
+    background: #fff;
+    color: #000;
+    &:hover { background: $iml-green; color: #fff; }
+  }
+  &--white {
+    background: #fff;
+    border-color: #fff;
+    color: #000;
+    &:hover { background: #000; border-color: #000; color: #fff; }
+  }
+}
+
+// Check lists (Rich Text <ul>): green ticks drawn in CSS
+.iml-checklist {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 32px;
+  }
+  li {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 18px;
+    font-size: 16px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 4px;
+      top: 2px;
+      width: 9px;
+      height: 15px;
+      border: solid $iml-green;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+    }
+  }
+  &--small li {
+    padding-left: 28px;
+    margin-bottom: 14px;
+    font-size: 15px;
+    &::before { left: 2px; width: 7px; height: 12px; }
+  }
+}
+
+// Header CTA (hardcoded); the band is 102px high like the live header
+.component.header.variant-iml {
+  padding-top: 0;
+  padding-bottom: 0;
+
+  .iml-header-cta {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 24px;
+    border-radius: 999px;
+    background: $iml-green;
+    color: #fff;
+    font-family: $iml-font;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    &:hover { background: darken($iml-green, 6%); }
+  }
+}
+
+// Hero
+.iml-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 40px 0 80px;
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+    @media (max-width: 991px) { grid-template-columns: 1fr; }
+  }
+  &__title {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 40px;
+    color: #000;
+    @media (max-width: 767px) { font-size: 44px; }
+  }
+  &__text p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin: 0;
+  }
+  &__media {
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__shape {
+    position: absolute;
+    right: -140px;
+    top: -40px;
+    width: 720px;
+    height: 560px;
+    background: $iml-yellow;
+    border-radius: 0 0 320px 0;
+    transform: rotate(-22deg);
+    z-index: 0;
+  }
+  &__img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+  }
+}
+
+// Podcast promo (CtaBanner)
+.iml-cta-banner {
+  background: transparent;
+
+  &__band {
+    background: $iml-podcast-band;
+    padding: 76px 0;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+    @media (max-width: 991px) { grid-template-columns: 1fr; }
+  }
+  &--left &__media { order: 0; }
+  &:not(&--left) &__media { order: 2; }
+  &__img {
+    width: 100%;
+    height: auto;
+    border-radius: 120px 0 0 0;
+    object-fit: cover;
+  }
+  &__title {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.3;
+    color: #212529;
+    margin-bottom: 24px;
+  }
+  &__text p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 32px;
+  }
+}
+
+// Statement
+.iml-statement {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0;
+
+  &__inner { max-width: 1184px; }
+  &__text {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+    color: #212529;
+    margin: 0;
+    @media (max-width: 767px) { font-size: 28px; }
+  }
+  &__shape {
+    position: absolute;
+    width: 90px;
+    height: 80px;
+    border: 1.5px solid $iml-bluegrey;
+    border-radius: 0 40px 0 40px;
+    transform: rotate(-28deg);
+    &--top { right: 90px; top: 80px; }
+    &--bottom { left: 165px; bottom: 90px; }
+  }
+}
+
+// Label technology tabs
+.iml-tabs {
+  padding: 40px 0 80px;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 48px;
+  }
+  &__tab {
+    background: #fff;
+    border: 1px solid $iml-bluegrey;
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    cursor: pointer;
+    &.is-active, &:hover { background: $iml-bluegrey; }
+  }
+  &__panel {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 72px;
+    align-items: center;
+    background: $iml-panel;
+    border-radius: 8px;
+    padding: 60px;
+    @media (max-width: 991px) { grid-template-columns: 1fr; padding: 32px; }
+  }
+  &__img {
+    width: 100%;
+    height: auto;
+    border-radius: 60px 0 0 0;
+  }
+  .iml-section-title { color: #212529; }
+  &__title {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 24px;
+  }
+  &__subtitle {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+}
+
+// Card sliders
+.iml-slider {
+  padding: 60px 0 80px;
+  overflow: hidden;
+
+  .iml-slider__track {
+    display: flex;
+    gap: 32px;
+    padding: 0 40px;
+    max-width: 100%;
+
+    &.is-sliding {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+      &::-webkit-scrollbar { display: none; }
+      > * { flex: 0 0 528px; scroll-snap-align: start; max-width: 85vw; }
+    }
+    &.is-grid {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      @media (max-width: 1199px) { grid-template-columns: repeat(2, 1fr); }
+      @media (max-width: 575px) { grid-template-columns: 1fr; }
+    }
+  }
+  &__controls {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    margin-top: 48px;
+    &.is-centered { justify-content: center; }
+  }
+  &__arrows {
+    display: flex;
+    gap: 44px;
+  }
+  &__arrow {
+    background: none;
+    border: 0;
+    padding: 4px;
+    color: $iml-green;
+    cursor: pointer;
+  }
+  &__more {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: $iml-green;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+  }
+}
+
+.iml-card {
+  position: relative;
+  border-radius: 8px;
+
+  &__tag {
+    display: inline-block;
+    background: $iml-panel;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 16px;
+    margin-bottom: 28px;
+
+    &--floating {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: #fff;
+      margin: 0;
+    }
+  }
+  &__category {
+    font-size: 15px;
+    margin-bottom: 12px;
+    &--dot::after {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      margin-left: 10px;
+      border-radius: 50%;
+      background: #8fc1ec;
+      vertical-align: middle;
+    }
+  }
+  &__date {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+  &__title {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 18px;
+    &--large { font-size: 32px; line-height: 1.35; }
+    &--bold { font-size: 28px; font-weight: 700; margin-bottom: 20px; }
+  }
+  &__title-link { color: inherit; text-decoration: none; }
+  &__text p { font-size: 15px; line-height: 1.75; margin: 0; }
+  &__link {
+    color: $iml-green;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  // Enhancement cards: photo, white rounded panel over it, link bar below
+  &--image {
+    .iml-card__media {
+      height: 420px;
+      border-radius: 8px;
+      overflow: hidden;
+      background: $iml-bluegrey;
+    }
+    .iml-card__img { width: 100%; height: 100%; object-fit: cover; }
+    .iml-card__overlay {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 88px;
+      background: #fff;
+      border-radius: 0 200px 0 0;
+      padding: 40px 40px 8px;
+    }
+    .iml-card__footer-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 20px;
+      padding: 32px 40px;
+      background: linear-gradient(180deg, #eef3f5, #f7f9fa);
+      color: $iml-green;
+      font-weight: 700;
+      text-decoration: none;
+    }
+  }
+
+  // Customer stories: text-only blue-grey cards
+  &--story {
+    background: $iml-bluegrey;
+    padding: 60px 80px 72px;
+    min-height: 480px;
+    display: flex;
+    flex-direction: column;
+    .iml-card__tag { align-self: flex-start; }
+    .iml-card__link { margin-top: auto; }
+  }
+
+  // Resources: image with rounded top-left corner, pale body
+  &--resource {
+    background: $iml-panel;
+    overflow: hidden;
+    .iml-card__media { position: relative; height: 240px; }
+    .iml-card__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 100px 0 0 0;
+    }
+    .iml-card__body { padding: 40px 36px 48px; }
+  }
+}
+
+// Applications: icon tiles on a yellow shape
+.iml-tiles {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+
+  &__shape {
+    position: absolute;
+    left: -10%;
+    top: 30px;
+    width: 62%;
+    height: 85%;
+    background: $iml-yellow;
+    border-radius: 0 50% 0 0;
+    transform: rotate(-8deg);
+    z-index: 0;
+  }
+  &__row {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 360px 1fr;
+    align-items: center;
+    gap: 16px;
+    @media (max-width: 991px) { grid-template-columns: 1fr; }
+  }
+  &__heading {
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: right;
+    margin: 0;
+    @media (max-width: 991px) { text-align: left; }
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 70px 64px;
+    > :nth-child(4n + 1) { margin-left: 0; }
+    > :nth-child(4n + 3) { margin-left: 150px; }
+    @media (max-width: 991px) { > * { margin-left: 0 !important; } }
+  }
+}
+
+.iml-tile {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  background: $iml-panel;
+  border-radius: 8px;
+  padding: 24px 32px;
+  color: #000;
+  text-decoration: none;
+  justify-self: start;
+
+  &__icon img { width: 64px; height: 64px; object-fit: contain; }
+  &__title { font-size: 20px; font-weight: 700; }
+  &__chevron { color: $iml-bluegrey; }
+  &:hover &__chevron { color: $iml-green; }
+}
+
+// Social line
+.iml-social {
+  padding: 60px 0;
+  &__inner { text-align: center; max-width: 1142px; }
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    color: #212529;
+    margin-bottom: 14px;
+  }
+  &__icons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    a { color: $iml-green; }
+  }
+}
+
+// Next-step CTA band
+.iml-two-col {
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0;
+
+  &__shape {
+    position: absolute;
+    left: -15%;
+    top: -20%;
+    width: 63%;
+    height: 140%;
+    background: $iml-periwinkle;
+    border-radius: 0 50% 50% 0;
+    z-index: 0;
+  }
+  &__row {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 140px;
+    @media (max-width: 991px) { grid-template-columns: 1fr; gap: 60px; }
+  }
+  &__title {
+    font-size: 72px;
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 64px;
+    @media (max-width: 767px) { font-size: 40px; }
+  }
+  &__strong {
+    display: block;
+    font-weight: 700;
+    margin-top: 16px;
+  }
+}
+
+// Stub page title
+.iml-page-title {
+  padding: 120px 0 160px;
+  &__title {
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+    @media (max-width: 767px) { font-size: 44px; }
+  }
+}
+
+// Footer
+.component.footer.iml-footer {
+  background: #fff;
+  padding: 0;
+  color: #000;
+}
+
+.iml-footer {
+  &__language {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 32px;
+    padding: 12px 16px;
+    border: 0;
+    border-radius: 8px;
+    background: $iml-panel;
+    color: #000;
+    font-size: 15px;
+    cursor: default;
+  }
+  &__panel {
+    background: $iml-bluegrey;
+    border-radius: 0 0 220px 0;
+    margin-right: 64px;
+    padding: 80px 0 100px;
+  }
+  &__row {
+    display: grid;
+    grid-template-columns: 1.1fr repeat(4, 1fr);
+    gap: 40px;
+    @media (max-width: 991px) { grid-template-columns: repeat(2, 1fr); }
+  }
+  &__logo { width: 200px; height: auto; }
+  &__socials {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+    img { width: 20px; height: 20px; }
+  }
+  &__title {
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 40px;
+  }
+  &__links p { margin: 0 0 22px; }
+  &__links a {
+    color: #000;
+    text-decoration: none;
+    font-size: 16px;
+    &:hover { color: $iml-green; }
+  }
+  &__legal {
+    display: flex;
+    gap: 32px;
+    padding-top: 32px;
+    padding-bottom: 40px;
+    font-size: 14px;
+    a { color: #000; text-decoration: none; &:hover { color: $iml-green; } }
+  }
+}

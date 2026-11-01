@@ -489,7 +489,9 @@ if (hasLive) {
       want.set(b.toLowerCase().replace(/\.[a-z0-9]+$/, ""), u);
     }
   }
-  const have = JSON.stringify(manifest ?? []).toLowerCase().replace(/%20/g, " ");
+  // the live URL's file name is decoded above, so compare with the decoded manifest URLs too (%E2%80%93, %26, ... not only %20)
+  const dec = (u) => { try { return decodeURIComponent(String(u ?? "")); } catch { return String(u ?? ""); } };
+  const have = `${JSON.stringify(manifest ?? []).toLowerCase().replace(/%20/g, " ")} ${manifestItems.map((x) => dec(x.src)).join(" ").toLowerCase()}`;
   const absent = [...want].filter(([k]) => !have.includes(k.replace(/%20/g, " "))).map(([, u]) => u);
   if (!manifest) fail("images not collected (images/image-manifest.json missing)", `node harness/scripts/collect-images.mjs ${customer} (every image of every planned section, traced to its page and section)`);
   else if (absent.length) fail(`${absent.length} image(s) of the live sections are not in images/image-manifest.json (e.g. ${absent[0].slice(0, 90)})`, `node harness/scripts/collect-images.mjs ${customer}, upload (content-hub-upload.mjs / media-upload.mjs), then node harness/scripts/attach-images.mjs ${customer} and write each proposed field with the MCP (uploaded is not attached).`);

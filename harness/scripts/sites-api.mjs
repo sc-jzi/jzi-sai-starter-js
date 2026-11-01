@@ -7,7 +7,7 @@
  *   node harness/scripts/sites-api.mjs collections
  *   node harness/scripts/sites-api.mjs templates
  *   node harness/scripts/sites-api.mjs sites [--collection-id <id>]
- *   node harness/scripts/sites-api.mjs create-site --customer <customer> --site-name "<Name>" --template "<template name>" \
+ *   node harness/scripts/sites-api.mjs create-site --customer <customer> --site-name "<name>" --template "<template name>" \
  *        (--collection-id <id> | --collection-name "<new collection>") [--language en] [--languages en,fr] [--apply]
  *   node harness/scripts/sites-api.mjs upload-thumbnail --customer <customer> --file <image.png> [--apply]
  *
@@ -103,9 +103,9 @@ switch (cmd) {
     if (!flags["collection-id"] === !flags["collection-name"]) die("give exactly one of --collection-id (existing) or --collection-name (create new)");
     customerApp(customer, { mustExist: false });
     if (PROTECTED_SITES.has(String(siteName).toLowerCase())) die(`"${siteName}" is a protected site name.`, 1);
-    // never a space (R21): the app's NEXT_PUBLIC_DEFAULT_SITE_NAME must equal the site name, and a name with a space is served under another one
-    if (/\s/.test(siteName)) die(`site names never contain spaces (R21): use "${String(siteName).replace(/\s+/g, "")}" (the readable name goes in --display-name)`);
-    if (!/^(?!-)[a-zA-Z0-9_-]{1,100}$/.test(siteName)) die("site name may contain letters, digits, _ and - only (max 100; no leading '-')");
+    // lowercase letters and digits only (R21): the app's NEXT_PUBLIC_DEFAULT_SITE_NAME must equal the site name, a name with a space is served
+    // under another one, and SitecoreAI recorded no affinities for a mixed-case site (renaming it later wipes the page affinities)
+    if (!/^[a-z0-9]{1,100}$/.test(siteName)) die(`site names are lowercase letters and digits only (R21; no spaces, '-' or '_', max 100): use "${String(siteName).toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 100)}" (the readable name goes in --display-name)`);
     const language = String(flags.language ?? ENV.SITECORE_DEFAULT_LANGUAGE), languages = flags.languages ? String(flags.languages).split(",") : [language];
     if (items(await api("GET", "/api/v1/sites")).some((s) => String(nameOf(s)).toLowerCase() === siteName.toLowerCase())) die(`A site named "${siteName}" already exists — refusing to create or touch it. Choose another name.`, 1);
     const cols = items(await api("GET", "/api/v1/collections")); let note, colName = String(flags["collection-name"] ?? "");
