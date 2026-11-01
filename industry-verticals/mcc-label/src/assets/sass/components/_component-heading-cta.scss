@@ -183,3 +183,53 @@ section.mcc-label-section-title {
     }
   }
 }
+
+// CTA bar (header): full width, the tab shape of the homepage CardTabs (rounded top-left corner); the whole bar is the link
+section.mcc-label-cta-bar {
+  display: block;
+  flex: 1 0 100%;
+  width: 100%;
+
+  .heading-cta {
+    padding: 0;
+  }
+
+  .cta-bar__link {
+    align-items: center;
+    background: #ffffff;
+    border: 1.5px solid #000000;
+    border-top-left-radius: 40px;
+    color: #000000;
+    display: flex;
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 22px;
+    justify-content: center;
+    min-height: 58px;
+    padding: 8px 24px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    @include respond-to(mobile-large) {
+      font-size: 18px;
+      min-height: 48px;
+    }
+  }
+
+  &.mcc-label-cta-bar--black .cta-bar__link {
+    background: #000000;
+    color: #ffffff;
+  }
+
+  &.mcc-label-cta-bar--green .cta-bar__link {
+    background: rgb(43, 182, 115);
+    border-color: rgb(43, 182, 115);
+    color: #000000;
+  }
+}

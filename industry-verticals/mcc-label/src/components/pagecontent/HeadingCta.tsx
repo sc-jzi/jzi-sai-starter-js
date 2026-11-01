@@ -208,3 +208,26 @@ export const MccLabelCtaBand = (props: HeadingCtaProps): JSX.Element => (
     <Default {...props} />
   </section>
 );
+
+// CTA bar: a full-width tab-shaped bar (rounded top-left corner) whose only content is the Link; the link text is the bar's label
+const CtaBar = ({ tone, ...props }: HeadingCtaProps & { tone: 'white' | 'black' | 'green' }): JSX.Element | null => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isPageEditing = page.mode.isEditing;
+
+  if (!isPageEditing && !props.fields?.Link?.value?.href) return null;
+
+  return (
+    <section className={`variant-mcc-label mcc-label-cta-bar mcc-label-cta-bar--${tone}`}>
+      <div className={`component heading-cta ${props.params?.styles || ''}`} id={id ? id : undefined}>
+        {props.fields?.Link && <Link field={props.fields.Link} className="cta-bar__link" />}
+      </div>
+    </section>
+  );
+};
+
+export const MccLabelCtaBarWhite = (props: HeadingCtaProps): JSX.Element | null => <CtaBar tone="white" {...props} />;
+
+export const MccLabelCtaBarBlack = (props: HeadingCtaProps): JSX.Element | null => <CtaBar tone="black" {...props} />;
+
+export const MccLabelCtaBarGreen = (props: HeadingCtaProps): JSX.Element | null => <CtaBar tone="green" {...props} />;
