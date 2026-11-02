@@ -21,7 +21,12 @@ const formatDate = (date?: Date | null): string =>
     ? date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' })
     : '';
 
-const PinIcon = (): JSX.Element => (
+// Server component: a render function cannot be passed to DateField (a Client Component in editing, which breaks the Pages canvas).
+// Editing gets the plain editable DateField; elsewhere the date is formatted here.
+const EventDate = ({ field, isEditing }: { field: Field<string>; isEditing?: boolean }): JSX.Element =>
+  isEditing ? <DateField field={field} /> : <span>{formatDate(new Date(String(field.value)))}</span>;
+
+const PinIcon =(): JSX.Element => (
   <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
     <path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z" />
     <circle cx="12" cy="9.5" r="2.5" />
@@ -65,11 +70,11 @@ export const Default = (props: EventDetailsProps): JSX.Element => {
               <div>
                 {hasDates && (
                   <p className="event-details__dates">
-                    {showDate(fields.StartDate) && <DateField field={fields.StartDate!} render={formatDate} />}
+                    {showDate(fields.StartDate) && <EventDate field={fields.StartDate!} isEditing={isPageEditing} />}
                     {showDate(fields.EndDate) && (
                       <>
                         {' – '}
-                        <DateField field={fields.EndDate!} render={formatDate} />
+                        <EventDate field={fields.EndDate!} isEditing={isPageEditing} />
                       </>
                     )}
                   </p>
