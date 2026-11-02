@@ -51,3 +51,119 @@
     }
   }
 }
+
+// MCC Label contact form: two-column fields, green pill button; the thank-you text replaces the form after submit
+section.mcc-label-contact-form {
+  display: block;
+  flex: 0 0 100%;
+  width: 100%;
+  padding: 40px 20px 80px;
+
+  .mcc-contact {
+    max-width: 960px;
+    margin: 0 auto;
+    color: #000000;
+  }
+
+  h2 {
+    margin: 0 0 32px;
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.2;
+
+    @include respond-to(mobile-large) {
+      font-size: 32px;
+    }
+  }
+
+  .mcc-contact__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 30px;
+
+    @include respond-to(mobile-large) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .mcc-contact__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 0;
+    font-size: 16px;
+
+    span {
+      font-weight: 600;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #b9c2c7;
+      border-radius: 0;
+      background: #ffffff;
+      color: #000000;
+      font: inherit;
+      padding: 12px 14px;
+
+      &:focus {
+        border-color: #2bb673;
+        outline: 2px solid rgb(43 182 115 / 30%);
+      }
+    }
+
+    textarea {
+      resize: vertical;
+    }
+  }
+
+  .mcc-contact__field--wide {
+    grid-column: 1 / -1;
+  }
+
+  .mcc-contact__check {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+
+    input {
+      width: 20px;
+      height: 20px;
+      accent-color: #2bb673;
+    }
+  }
+
+  .mcc-contact__submit {
+    margin-top: 32px;
+    padding: 14px 48px;
+    border: 0;
+    border-radius: 28px;
+    background: #2bb673;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      background: #23965e;
+    }
+  }
+
+  .mcc-contact__thanks {
+    padding: 48px;
+    background: #e3eaee;
+
+    p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+}

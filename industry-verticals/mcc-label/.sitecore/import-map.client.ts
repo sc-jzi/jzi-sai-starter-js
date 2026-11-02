@@ -14,6 +14,8 @@ import React from 'react';
 import { getSiteThemeClass } from 'lib/site-theme';
 import { Text, useSitecore, NextImage, Link, RichText, Placeholder, withDatasourceCheck, Image as Image_8a80e63291fea86e0744df19113dc44bec187216, DateField, AppPlaceholder, CdpHelper } from '@sitecore-content-sdk/nextjs';
 import { useParams, useRouter, useSearchParams, usePathname } from 'next/navigation';
+import { identity, pageView } from '@sitecore-content-sdk/events';
+import { COUNTRIES } from 'src/lib/countries';
 import Image from 'next/image';
 import { useInfiniteSearch, useSuggest, useSearch } from '@sitecore-content-sdk/nextjs/search';
 import { DEFAULT_IMG_URL } from 'src/_data/customizations';
@@ -39,7 +41,6 @@ import { clearSessionEvents, installSessionEventTracking, readSessionEvents, SES
 import PreviewSearch from 'src/components/search/PreviewSearch';
 import { eyebrowConfig } from 'src/components/navigation/eyebrow-config';
 import client from 'src/lib/sitecore-client';
-import { pageView } from '@sitecore-content-sdk/events';
 
 const importMap = [
   {
@@ -91,6 +92,19 @@ const importMap = [
       { name: 'useRouter', value: useRouter },
       { name: 'useSearchParams', value: useSearchParams },
       { name: 'usePathname', value: usePathname },
+    ]
+  },
+  {
+    module: '@sitecore-content-sdk/events',
+    exports: [
+      { name: 'identity', value: identity },
+      { name: 'pageView', value: pageView },
+    ]
+  },
+  {
+    module: 'src/lib/countries',
+    exports: [
+      { name: 'COUNTRIES', value: COUNTRIES },
     ]
   },
   {
@@ -260,12 +274,6 @@ const importMap = [
     module: 'src/lib/sitecore-client',
     exports: [
       { name: 'default', value: client },
-    ]
-  },
-  {
-    module: '@sitecore-content-sdk/events',
-    exports: [
-      { name: 'pageView', value: pageView },
     ]
   }
 ] as ImportEntry[];
