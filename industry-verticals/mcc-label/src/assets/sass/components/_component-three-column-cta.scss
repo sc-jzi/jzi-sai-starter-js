@@ -163,3 +163,20 @@
     }
   }
 }
+
+// MCC Label: the cards without images (NoImages), centred on the page
+section.mcc-label-no-images {
+  display: block;
+  flex: 0 0 100%;
+  width: 100%;
+
+  .three-column-cta {
+    margin-left: auto;
+    margin-right: auto;
+
+    .container {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

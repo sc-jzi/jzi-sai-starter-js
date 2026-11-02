@@ -233,3 +233,32 @@ section.mcc-label-cta-bar {
     color: #000000;
   }
 }
+
+// MCC Label: a full-width green band holding only the heading (HeadingBand)
+section.mcc-label-heading-band {
+  background: #2bb673;
+  display: block;
+  flex: 0 0 100%;
+  width: 100%;
+
+  .heading-cta {
+    padding: 48px 0;
+
+    @include respond-to(mobile-large) {
+      padding: 32px $size-padding;
+    }
+  }
+
+  h2 {
+    color: #000000;
+    font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+
+    @include respond-to(mobile-large) {
+      font-size: 32px;
+    }
+  }
+}

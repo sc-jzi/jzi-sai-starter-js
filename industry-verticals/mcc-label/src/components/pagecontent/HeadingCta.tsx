@@ -203,6 +203,22 @@ export const MccLabelGreenBar = (props: HeadingCtaProps): JSX.Element => (
   </section>
 );
 
+// Heading band: full width, green, only the Heading field
+export const MccLabelHeadingBand = (props: HeadingCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  return (
+    <section className="variant-mcc-label mcc-label-heading-band">
+      <div className={`component heading-cta ${props.params?.styles || ''}`} id={id ? id : undefined}>
+        <div className="container">
+          <h2>
+            <Text field={props.fields?.Heading} />
+          </h2>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export const MccLabelCtaBand = (props: HeadingCtaProps): JSX.Element => (
   <section className="variant-mcc-label mcc-label-cta-band">
     <Default {...props} />

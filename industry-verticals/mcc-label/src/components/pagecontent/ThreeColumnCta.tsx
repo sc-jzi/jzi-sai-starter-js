@@ -35,8 +35,10 @@ export type ThreeColumnCtaProps = {
   fields: Fields;
 };
 
-// hideLinks: a client variant without the per-card buttons (the Link fields are not rendered, not even in the editor)
-export const Default = (props: ThreeColumnCtaProps & { hideLinks?: boolean }): JSX.Element => {
+// hideLinks / hideImages: client variants without the per-card buttons or images (those fields are not rendered, not even in the editor)
+export const Default = (
+  props: ThreeColumnCtaProps & { hideLinks?: boolean; hideImages?: boolean }
+): JSX.Element => {
   const id = props.params.RenderingIdentifier;
   const { page } = useSitecore();
   const isPageEditing = page.mode.isEditing;
@@ -68,7 +70,7 @@ export const Default = (props: ThreeColumnCtaProps & { hideLinks?: boolean }): J
         ref={domRef}
       >
         <div className="content-wrapper">
-          <NextImage field={image} width={400} height={400} />
+          {!props.hideImages && <NextImage field={image} width={400} height={400} />}
           <h2>
             <Text field={text} />
           </h2>
@@ -281,6 +283,13 @@ export const MccLabel = (props: ThreeColumnCtaProps): JSX.Element => (
 export const MccLabelTextCards = (props: ThreeColumnCtaProps): JSX.Element => (
   <section className="variant-mcc-label mcc-label-text-cards">
     <Default {...props} />
+  </section>
+);
+
+// Text cards without images, centred on the page
+export const MccLabelNoImages = (props: ThreeColumnCtaProps): JSX.Element => (
+  <section className="variant-mcc-label mcc-label-no-images">
+    <Default {...props} hideImages />
   </section>
 );
 
