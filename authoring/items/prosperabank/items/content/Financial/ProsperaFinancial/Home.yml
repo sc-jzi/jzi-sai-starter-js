@@ -123,18 +123,6 @@ Languages:
           <d
             id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
             <r
-              uid="{09CFD835-87F6-4D58-9681-9C6EA1A3228B}">
-              <p:d />
-            </r>
-            <r
-              uid="{654C4B49-B268-4EA3-A123-7A2162FA9ECC}">
-              <p:d />
-            </r>
-            <r
-              uid="{36E87C5B-94DF-4C70-827E-E88DCCD07907}">
-              <p:d />
-            </r>
-            <r
               uid="{D49A8931-F041-4988-9CC3-F2400E6422D0}"
               p:after="r[@uid='{124106DE-FB02-4B43-A521-A309FC75A5BC}']"
               s:ds="local:/Data/Promo CTA 1"
@@ -161,7 +149,7 @@ Languages:
         sitecore\kaitlyn.folsom@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "916aa215-dfa3-4969-81f7-5637012db978"
+      Value: "5af7d6cd-f332-4d62-be68-74bd35d49ada"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
@@ -171,20 +159,7 @@ Languages:
       Value: "PLAY! Financial"
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260904T011410Z
-- Language: "fr-CA"
-  Versions:
-  - Version: 1
-    Fields:
-    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
-      Hint: NavigationTitle
-      Value: Financial
-    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
-      Hint: __Revision
-      Value: "8798f3d5-ea7d-47a5-8991-d4b44d188ee5"
-    - ID: "d77eab5a-d654-445f-b15c-d32283737e1f"
-      Hint: Title
-      Value: Financial
+      Value: 20261013T192652Z
 - Language: "ja-JP"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"

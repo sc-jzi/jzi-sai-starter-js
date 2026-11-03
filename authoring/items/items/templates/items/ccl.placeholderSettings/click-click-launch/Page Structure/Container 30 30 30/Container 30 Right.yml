@@ -1,4 +1,4 @@
----
+﻿---
 ID: "5c7c0997-c6f1-4da5-a917-922617943526"
 Parent: "b80312c7-5d8f-4caf-87e1-485dc03120fc"
 Template: "5c547d4e-7111-4995-95b0-6b561751bf2e"
@@ -9,7 +9,11 @@ SharedFields:
   Value: "container-thirty-right-{*}"
 - ID: "e391b526-d0c5-439d-803e-17512eae6222"
   Hint: Allowed Controls
-  Value: 
+  Value: |
+    {50B36874-8C4E-4958-9DD6-8B95C6AFD09A}
+    {B2F8C9E3-4A7D-4E9B-8C1F-5D6A7B8C9D0E}
+    {7CB831E8-C889-4193-B822-A1131CB0B755}
+    {09BE0A81-23F2-4A4F-A042-7DD0003C2D0C}
 Languages:
 - Language: en
   Versions:

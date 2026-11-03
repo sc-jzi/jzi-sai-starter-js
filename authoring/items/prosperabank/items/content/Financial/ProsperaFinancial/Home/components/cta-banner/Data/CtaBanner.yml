@@ -1,0 +1,39 @@
+﻿---
+ID: "a90dfa34-6105-4068-a3e3-b38cde9ec1a7"
+Parent: "2d90ef14-fa46-40e6-9c9b-3b828bcfd6c8"
+Template: "4900d7e5-61b0-483a-a9d6-69419d4d5982"
+Path: "/sitecore/content/Financial/ProsperaFinancial/Home/components/cta-banner/Data/CtaBanner"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261027T200543Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\howJ8M8Mg6jdvkeY8nTJZ9MQ4nu6Tie0
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\howJ8M8Mg6jdvkeY8nTJZ9MQ4nu6Tie0
+    - ID: "6f94c5b4-e2b4-41eb-899f-9a29904b8e18"
+      Hint: Image
+      Value: |
+        <image mediaid="d7575add-9b52-4b2e-9450-e908e7c5d832" />
+    - ID: "7f7e12e1-0768-4edd-b86b-ea9db84d71b5"
+      Hint: Icon
+      Value: |
+        <image mediaid="d7575add-9b52-4b2e-9450-e908e7c5d832" />
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a98f6205-8efd-4554-8efb-ec93b3ec53d8"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\howJ8M8Mg6jdvkeY8nTJZ9MQ4nu6Tie0
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T201307Z

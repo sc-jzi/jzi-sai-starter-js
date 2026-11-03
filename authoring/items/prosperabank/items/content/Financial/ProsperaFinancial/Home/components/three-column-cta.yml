@@ -1,0 +1,81 @@
+﻿---
+ID: "2ea65f00-d848-4530-8910-f3df285a8d04"
+Parent: "1a4ebde4-1831-4a27-8417-7f1b6c1cb234"
+Template: "1226c3c7-2d1f-48f5-87b4-c1da459f05e5"
+Path: "/sitecore/content/Financial/ProsperaFinancial/Home/components/three-column-cta"
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{A5BC37E7-ED96-4C1E-8590-A26E64DB55EA}"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{646DCBDF-954D-4F0C-80AA-87F265F6B3B3}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "b566ae37-003b-4dde-9593-eced8fb00a6e"
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Value: |
+    <r xmlns:p="p" xmlns:s="s"
+      p:p="1">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+        <r
+          uid="{269764AD-4501-4D4C-BBB7-FF3F3E6E4FBE}"
+          p:before="*"
+          s:ds="local:/Data/ThreeColumnCta"
+          s:id="{AD385021-CE2B-4FC1-89AA-207D408034A8}"
+          s:par="FieldNames=%7B42EB48F9-6AC5-4F05-A1DD-3FB1EA06F96C%7D&amp;DynamicPlaceholderId=1"
+          s:ph="/headless-main/sxa-page-content/background-page-content-0-1" />
+        <r
+          uid="{A51A0B2E-0F8A-4558-BB67-8D5EF355F29E}"
+          p:after="r[@uid='{269764AD-4501-4D4C-BBB7-FF3F3E6E4FBE}']"
+          s:ds="local:/Data/ThreeColumnCta"
+          s:id="{AD385021-CE2B-4FC1-89AA-207D408034A8}"
+          s:par="FieldNames=%7B525B8277-A304-46EF-9747-D23E63AE47B5%7D&amp;DynamicPlaceholderId=2"
+          s:ph="/headless-main/sxa-page-content/background-page-content-0-1" />
+        <r
+          uid="{2EEF1902-8BB9-4F29-9117-55116C9152D2}"
+          p:after="r[@uid='{A51A0B2E-0F8A-4558-BB67-8D5EF355F29E}']"
+          s:ds="local:/Data/ThreeColumnCta"
+          s:id="{AD385021-CE2B-4FC1-89AA-207D408034A8}"
+          s:par="FieldNames=%7B0718F346-F5F0-458B-BD44-325BA20006D1%7D&amp;DynamicPlaceholderId=3"
+          s:ph="/headless-main/sxa-page-content/background-page-content-0-1" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "247be607-394a-4bf2-8c8a-509b07025dd9"
+      Hint: Title
+      Value: ThreeColumnCta
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261027T200610Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{190B1C84-F1BE-47ED-AA41-F42193D9C8FC}"
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: "three-column-cta"
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\howJ8M8Mg6jdvkeY8nTJZ9MQ4nu6Tie0
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\howJ8M8Mg6jdvkeY8nTJZ9MQ4nu6Tie0
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "6e6da58a-bbd8-419b-b255-3b8842c90437"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\howJ8M8Mg6jdvkeY8nTJZ9MQ4nu6Tie0
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T202808Z

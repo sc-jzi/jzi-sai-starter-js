@@ -1,0 +1,35 @@
+﻿---
+ID: "509f88d3-af76-44ed-977c-d5995c509035"
+Parent: "f99e1151-3d36-41a3-bf85-8a01381b2273"
+Template: "cad49c2a-bd85-44fd-852a-10c1a1c8fd72"
+Path: /sitecore/content/Financial/ProsperaFinancial/Home/components/quote/Data/Quote
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261027T200604Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\howJ8M8Mg6jdvkeY8nTJZ9MQ4nu6Tie0
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\howJ8M8Mg6jdvkeY8nTJZ9MQ4nu6Tie0
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a45ff80e-2735-4638-9763-8a9b15cb8e02"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\howJ8M8Mg6jdvkeY8nTJZ9MQ4nu6Tie0
+    - ID: "c84f94ae-a643-42a1-85f4-506ff34dcb52"
+      Hint: Image
+      Value: |
+        <image mediaid="d7575add-9b52-4b2e-9450-e908e7c5d832" />
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T201314Z

@@ -1,0 +1,39 @@
+﻿---
+ID: "8bd8ac8b-7dc8-4874-9b3f-18d8d2d4a05e"
+Parent: "df5830ae-7b28-4f59-b2aa-c33ad9946f9b"
+Template: "90d315e8-aa42-4b23-a7eb-4491396453f8"
+Path: /sitecore/content/Financial/ProsperaFinancial/Home/components/hero/Data/Hero
+SharedFields:
+- ID: "3ed91913-9018-4580-a112-9cb5b921fcca"
+  Hint: Image
+  Value: |
+    <image mediaid="d7575add-9b52-4b2e-9450-e908e7c5d832" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "3bfe1681-a5a1-4a52-9795-9b3e719612ba"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261027T200554Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\howJ8M8Mg6jdvkeY8nTJZ9MQ4nu6Tie0
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\howJ8M8Mg6jdvkeY8nTJZ9MQ4nu6Tie0
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "8f2fa0a7-7b58-48f0-bde1-6dc5f5e86720"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\howJ8M8Mg6jdvkeY8nTJZ9MQ4nu6Tie0
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T201310Z

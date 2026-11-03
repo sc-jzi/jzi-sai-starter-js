@@ -1,0 +1,51 @@
+﻿---
+ID: "a153db3e-e94c-4e43-8d65-7bd3adcaec41"
+Parent: "60cbafcb-4738-4710-8acc-054ad9032ea6"
+Template: "bc79b430-f5e0-4363-83f8-5fb8ccd79c61"
+Path: "/sitecore/content/Financial/ProsperaFinancial/Home/components/documents-list/Data/DocumentsList"
+SharedFields:
+- ID: "0bba1dd8-0978-4359-b817-15b65886ba06"
+  Hint: Image2
+  Value: |
+    <image mediaid="d7575add-9b52-4b2e-9450-e908e7c5d832" />
+- ID: "1a120861-bc28-4699-adef-abbdfb67bf05"
+  Hint: Image1
+  Value: |
+    <image mediaid="d7575add-9b52-4b2e-9450-e908e7c5d832" />
+- ID: "8afcdc7d-211b-4136-94f5-f158a0fd0fd9"
+  Hint: Image3
+  Value: |
+    <image mediaid="d7575add-9b52-4b2e-9450-e908e7c5d832" />
+- ID: "c6019204-c52e-4650-8875-b19e2482cd76"
+  Hint: Image4
+  Value: |
+    <image mediaid="d7575add-9b52-4b2e-9450-e908e7c5d832" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "0f162e9b-c2af-4a8c-84df-c3a13105a08c"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261027T200545Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\howJ8M8Mg6jdvkeY8nTJZ9MQ4nu6Tie0
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\howJ8M8Mg6jdvkeY8nTJZ9MQ4nu6Tie0
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "974de813-17c9-44b8-991c-d88ca1d5b440"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\howJ8M8Mg6jdvkeY8nTJZ9MQ4nu6Tie0
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T201307Z

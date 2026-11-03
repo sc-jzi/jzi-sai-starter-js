@@ -12,7 +12,7 @@ SharedFields:
   Value: "{A5BC37E7-ED96-4C1E-8590-A26E64DB55EA}"
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "c78f25a8-1a1d-43cd-bcef-f52d6172489e"
+  Value: "d3d197f7-bb31-431c-95ea-d281d4b0ef61"
 - ID: "e495efd3-5c43-45fc-af43-796a6b503716"
   Hint: Image
   Value: |
@@ -45,7 +45,7 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "0696d268-1913-43be-a7d0-24451b43ed34"
+      Value: "9adc9c4d-0df7-42d9-b13a-36e5f5289f6b"
     - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
       Hint: __Updated by
       Value: |
@@ -55,7 +55,7 @@ Languages:
       Value: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20260905T111550Z
+      Value: 20260920T004040Z
     - ID: "e4f11fe1-3b24-42e4-8cea-9ed7fda32bab"
       Hint: Subtitle
       Value: Maecenas nec rhoncus risus.

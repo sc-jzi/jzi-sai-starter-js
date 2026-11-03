@@ -1,0 +1,49 @@
+﻿---
+ID: "7ac4eb30-77c1-45b5-868a-29d621f46c7b"
+Parent: "3f6e8967-b905-4107-a45f-1f0e1928be5d"
+Template: "3f6e8967-b905-4107-a45f-1f0e1928be5d"
+Path: /sitecore/templates/Project/Financial/Pages/Program/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: "{34033609-F171-46F1-9E0A-7F5C87F36560}"
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "891c566f-deeb-4e09-869b-a1e394b59228"
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Value: |
+    <r xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        l="{96E5F4BA-A2CF-4A4C-A4E7-64DA88226362}">
+        <r
+          ds="{A75F02EA-1490-4626-B2F6-B773BD9216DD}"
+          id="{9C6D53E3-FE57-4638-AF7B-6D68304C7A94}"
+          par="GridParameters&amp;FieldNames&amp;Styles=%7B5D98FA01-9915-4850-88BB-09979348EC3C%7D%7C%7BD6C05987-711F-460E-92A3-F775284E34F0%7D&amp;RenderingIdentifier&amp;CSSStyles&amp;DynamicPlaceholderId=1"
+          ph="/headless-main/sxa-page-content/background-page-content-0-1"
+          uid="{AF0BD10B-B5A0-4668-9D81-D4CCE4D7FCD6}" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260907T162305Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d440205c-8648-4fb2-8392-759e6bdb61e7"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260908T165004Z
+    - ID: "dd14827a-a4f1-4bea-ba66-9a8f89b4dc49"
+      Hint: BackgroundImage
+      Value: |
+        <image mediaid="{5BE54E1D-4DBD-4E90-8BEA-E6E7E3CAAC27}" />

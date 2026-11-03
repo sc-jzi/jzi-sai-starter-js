@@ -1,0 +1,74 @@
+﻿---
+ID: "9693ef5b-cf0b-45c9-81e9-0cacd775ef89"
+Parent: "1a4ebde4-1831-4a27-8417-7f1b6c1cb234"
+Template: "1226c3c7-2d1f-48f5-87b4-c1da459f05e5"
+Path: "/sitecore/content/Financial/ProsperaFinancial/Home/components/cta-banner"
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: "{A5BC37E7-ED96-4C1E-8590-A26E64DB55EA}"
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{1C43F1D5-8D96-4EE0-AA9C-AE93DB8C6BD5}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "891844b9-d9f9-4657-8a25-bd6a89a14626"
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Value: |
+    <r xmlns:p="p" xmlns:s="s"
+      p:p="1">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+        <r
+          uid="{01476538-ED9B-4369-8C39-17C4E52BC248}"
+          p:before="*"
+          s:ds="local:/Data/CtaBanner"
+          s:id="{488B8AC0-0EF9-4F6F-8711-78BA182B2C4C}"
+          s:par="FieldNames=%7BF8953661-2E66-4635-8B2E-FBBDF3F43886%7D&amp;DynamicPlaceholderId=1"
+          s:ph="/headless-main/sxa-page-content/background-page-content-0-1" />
+        <r
+          uid="{A80CAA52-2A6A-4FB5-B10C-843C631B1EBB}"
+          p:after="r[@uid='{01476538-ED9B-4369-8C39-17C4E52BC248}']"
+          s:ds="local:/Data/CtaBanner"
+          s:id="{488B8AC0-0EF9-4F6F-8711-78BA182B2C4C}"
+          s:par="FieldNames=%7B382268D7-16F1-490A-B3ED-7C37D9A1356B%7D&amp;DynamicPlaceholderId=2"
+          s:ph="/headless-main/sxa-page-content/background-page-content-0-1" />
+      </d>
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "247be607-394a-4bf2-8c8a-509b07025dd9"
+      Hint: Title
+      Value: CtaBanner
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20261027T200542Z
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: "{190B1C84-F1BE-47ED-AA41-F42193D9C8FC}"
+    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
+      Hint: NavigationTitle
+      Value: "cta-banner"
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\howJ8M8Mg6jdvkeY8nTJZ9MQ4nu6Tie0
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\howJ8M8Mg6jdvkeY8nTJZ9MQ4nu6Tie0
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "e1c6e550-c7ab-4f3f-9363-1d47a9a019ae"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\howJ8M8Mg6jdvkeY8nTJZ9MQ4nu6Tie0
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20261027T202800Z

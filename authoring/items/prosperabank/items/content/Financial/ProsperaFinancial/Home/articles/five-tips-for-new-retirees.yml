@@ -18,6 +18,13 @@ SharedFields:
 - ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
   Hint: __Sortorder
   Value: 600
+- ID: "c7c26117-dbb1-42b2-ab5e-f7223845cca3"
+  Hint: __Thumbnail
+  Value: |
+    <image mediaid="{C0B41CAB-9DDE-4E1A-A3F0-CCC8C0505204}" />
+- ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
+  Hint: __Shared revision
+  Value: "f22f608e-4228-4475-bb2b-89faafd7fdb2"
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
   Value: |
@@ -74,6 +81,9 @@ Languages:
         <p>Retirement is an exciting milestone that offers the opportunity to embrace new experiences and enjoy the fruits of your labor. By taking the time to plan and prepare for retirement, you can ensure a smooth transition and set yourself up for a fulfilling and financially secure future. Remember to stay informed, stay engaged, and make the most of every moment as you embark on this new chapter of your life.
         </p>
         <p><strong><em>Are you ready to start your retirement journey? Contact us today to learn more about how we can help you plan for a successful retirement.</em></strong></p>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20260905T114256Z
     - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
       Hint: __Workflow state
       Value: "{FCA998C5-0CC3-4F91-94D8-0A4E6CAECE88}"
@@ -83,56 +93,23 @@ Languages:
     - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
       Hint: NavigationTitle
       Value: 5 tips for new retirees
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "64e46c09-6a08-4f64-9254-bca2da71e206"
+      Value: "95328664-2376-4e5b-b09f-ffa3c7dc6510"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\johannes.zijlstra@sitecore.com
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20260905T114256Z
     - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
       Hint: Title
       Value: "Starting your retirement journey: 5 tips for new retirees"
-- Language: "fr-CA"
-  Fields:
-  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
-    Hint: __Display name
-    Value: 5 conseils pour les nouveaux retraités
-  Versions:
-  - Version: 1
-    Fields:
-    - ID: "03117268-f84f-4fd8-ad9e-5990b3a21fe6"
-      Hint: Content
-      Value: |
-        <p>La retraite marque le début d'un nouveau chapitre de la vie&mdash;un chapitre rempli de liberté, d'opportunités et de nouvelles aventures. Alors que vous commencez ce voyage passionnant, il est important d'être préparé et équipé des connaissances et des ressources nécessaires pour tirer le meilleur parti de vos années de retraite.</p>
-        
-        <p><strong>1. Planification financière</strong></p>
-        <p>Une des premières étapes pour se préparer à la retraite est de créer un plan financier complet. Évaluez vos économies de retraite, vos investissements et vos sources de revenus, et déterminez un budget qui correspond à votre style de vie et à vos objectifs. Envisagez de consulter un conseiller financier pour vous assurer que votre plan de retraite est solide et durable à long terme.</p>
-        
-        <p><strong>2. Couverture des soins de santé</strong></p>
-        <p>Les coûts des soins de santé peuvent représenter une dépense importante à la retraite, il est donc essentiel de comprendre vos options de couverture. Si vous êtes éligible à Medicare, familiarisez-vous avec les différentes parties et options de couverture qui s'offrent à vous. Envisagez des plans d'assurance complémentaire pour combler les lacunes de la couverture et vous protéger contre les dépenses médicales imprévues.</p>
-        
-        <p><strong>3. Prestations de sécurité sociale</strong></p>
-        <p>Assurez-vous de comprendre le fonctionnement des prestations de sécurité sociale et le moment idéal pour commencer à les réclamer. Bien que vous puissiez commencer à recevoir des prestations dès l'âge de 62 ans, retarder votre retraite peut augmenter le montant de vos prestations mensuelles. Réfléchissez attentivement à votre situation financière et à vos objectifs de retraite avant de décider quand commencer à réclamer la sécurité sociale.</p>
-        
-        <p><strong>4. Ajustements de style de vie</strong></p>
-        <p>La retraite implique souvent des changements de style de vie importants, tant en termes de façon dont vous passez votre temps que de gestion de vos finances. Prenez le temps d'évaluer vos priorités, vos intérêts et vos objectifs pour la retraite, et ajustez votre style de vie en conséquence. Explorez de nouveaux passe-temps, des opportunités de voyage et des moyens de rester actif et engagé dans votre communauté.</p>
-        
-        <p><strong>5. Planification successorale</strong></p>
-        <p>La planification successorale est un aspect essentiel de la planification de la retraite que beaucoup de gens négligent. Passez en revue votre plan successoral, y compris votre testament, vos fiducies et vos procurations, pour vous assurer que vos souhaits sont documentés et que vos actifs sont protégés. Envisagez de mettre à jour vos bénéficiaires et de désigner quelqu'un pour prendre des décisions financières et médicales en votre nom si nécessaire.</p>
-        
-        <p><strong>Conclusion</strong></p>
-        <p>La retraite est une étape passionnante qui offre l'opportunité de vivre de nouvelles expériences et de profiter des fruits de votre travail. En prenant le temps de planifier et de vous préparer à la retraite, vous pouvez assurer une transition en douceur et vous préparer à un avenir épanouissant et financièrement sécurisé. N'oubliez pas de rester informé, de rester engagé et de tirer le meilleur parti de chaque moment alors que vous entamez ce nouveau chapitre de votre vie.</p>
-        
-        <p><strong><em>Êtes-vous prêt à commencer votre parcours de retraite ? Contactez-nous dès aujourd'hui pour en savoir plus sur la façon dont nous pouvons vous aider à planifier une retraite réussie.</em></strong></p>
-    - ID: "3e700dce-26eb-4bf0-990f-9d9fe555990d"
-      Hint: Excerpt
-      Value: Que vous commenciez tout juste à planifier votre retraite ou que vous veniez de prendre votre retraite, voici quelques conseils essentiels pour vous aider à naviguer cette transition avec confiance et tranquillité d'esprit.
-    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
-      Hint: NavigationTitle
-      Value: 5 conseils pour les nouveaux retraités
-    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
-      Hint: __Revision
-      Value: "6fb5707b-a1ee-493b-a498-50be7054279d"
-    - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
-      Hint: Title
-      Value: "Commencer votre parcours de retraite : 5 conseils pour les nouveaux retraités"
 - Language: "ja-JP"
   Fields:
   - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"

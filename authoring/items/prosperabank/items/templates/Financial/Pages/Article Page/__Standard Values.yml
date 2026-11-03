@@ -73,31 +73,6 @@ Languages:
     - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
       Hint: Title
       Value: $name
-- Language: "fr-CA"
-  Versions:
-  - Version: 1
-    Fields:
-    - ID: "03117268-f84f-4fd8-ad9e-5990b3a21fe6"
-      Hint: Content
-      Value: |
-        <p><strong>Lorem Ipsum Finance</strong></p>
-        <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper neque id elit convallis, at varius lorem aliquet. Phasellus consequat, ante sed tristique commodo, felis mi vehicula justo, id finibus neque velit vitae nunc.</p>
-        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin at mauris vel purus vestibulum consectetur. Nam efficitur lectus auctor, hendrerit ligula nec, pharetra ex.</p>
-        <p>Suspendisse potenti. Sed ac arcu scelerisque, hendrerit risus eu, ultricies libero. Pellentesque ut magna eu elit fringilla viverra. Quisque ullamcorper orci a magna finibus, nec feugiat urna semper. Praesent blandit purus vel ligula finibus, nec fermentum dui ultrices. Nulla vitae justo a felis luctus dignissim. Aliquam eu tortor eget libero placerat semper.</p>
-        <p>In consequat, libero sed viverra placerat, metus lectus accumsan velit, a suscipit elit dui sit amet justo. Fusce vitae purus vel justo aliquam hendrerit. Integer pretium mi vel ex convallis, vel dignissim ex finibus.</p>
-    - ID: "3e700dce-26eb-4bf0-990f-9d9fe555990d"
-      Hint: Excerpt
-      Value: Découvrez les clés de la littératie financière grâce aux conseils d'experts en budgétisation, épargne, investissement et planification de la retraite. Découvrez des astuces et des stratégies pratiques pour prendre le contrôle de vos finances et bâtir un avenir sûr pour vous et votre famille.
-    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
-      Hint: NavigationTitle
-      Value: $name
-    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
-      Hint: __Revision
-      Value: "9c1bc455-734e-43c5-a55c-ca34c8d1b3cd"
-    - ID: "e81c4912-a4d2-4466-842c-02f0b2c9dc42"
-      Hint: Title
-      Value: $name
 - Language: "ja-JP"
   Versions:
   - Version: 1

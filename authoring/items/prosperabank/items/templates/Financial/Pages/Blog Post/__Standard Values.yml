@@ -13,10 +13,10 @@ SharedFields:
   Value: 300
 - ID: "ca9b9f52-4fb0-4f87-a79f-24dea62cda65"
   Hint: __Default workflow
-  Value: "{63CC4D0D-63F1-4BFB-BF63-7EC9D231AFA8}"
+  Value: "{A5BC37E7-ED96-4C1E-8590-A26E64DB55EA}"
 - ID: "dbbbeca1-21c7-4906-9dd2-493c1efa59a2"
   Hint: __Shared revision
-  Value: "f36db8bf-8126-45ed-b336-88f23521d812"
+  Value: "141048d8-a211-48c7-8d6a-d547332d9414"
 - ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
   Hint: __Renderings
   Value: |
@@ -46,7 +46,7 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
       Hint: __Revision
-      Value: "ad165192-0588-409e-bad5-171c4aec813c"
+      Value: "e3f860a5-37e5-4a86-8c71-d607b4ec3d73"
     - ID: "95c8ce75-41ba-4036-9722-fd143984f630"
       Hint: Content
       Value: |
@@ -68,29 +68,4 @@ Languages:
         sitecore\johannes.zijlstra@sitecore.com
     - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
       Hint: __Updated
-      Value: 20251030T165908Z
-- Language: "fr-CA"
-  Versions:
-  - Version: 1
-    Fields:
-    - ID: "4e0720e9-9d50-4ddc-87cf-ecd65e8e94c8"
-      Hint: NavigationTitle
-      Value: $name
-    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
-      Hint: __Revision
-      Value: "108f2a5e-e4b9-4f69-a8d8-34bcaeb4dec7"
-    - ID: "95c8ce75-41ba-4036-9722-fd143984f630"
-      Hint: Content
-      Value: |
-        <p><strong>Lorem Ipsum Finance</strong></p>
-        <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ullamcorper neque id elit convallis, at varius lorem aliquet. Phasellus consequat, ante sed tristique commodo, felis mi vehicula justo, id finibus neque velit vitae nunc.</p>
-        <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Proin at mauris vel purus vestibulum consectetur. Nam efficitur lectus auctor, hendrerit ligula nec, pharetra ex.</p>
-        <p>Suspendisse potenti. Sed ac arcu scelerisque, hendrerit risus eu, ultricies libero. Pellentesque ut magna eu elit fringilla viverra. Quisque ullamcorper orci a magna finibus, nec feugiat urna semper. Praesent blandit purus vel ligula finibus, nec fermentum dui ultrices. Nulla vitae justo a felis luctus dignissim. Aliquam eu tortor eget libero placerat semper.</p>
-        <p>In consequat, libero sed viverra placerat, metus lectus accumsan velit, a suscipit elit dui sit amet justo. Fusce vitae purus vel justo aliquam hendrerit. Integer pretium mi vel ex convallis, vel dignissim ex finibus.</p>
-    - ID: "9756a066-a311-41b8-9613-477bfd471c23"
-      Hint: Excerpt
-      Value: Découvrez les clés de la littératie financière grâce aux conseils d'experts en budgétisation, épargne, investissement et planification de la retraite. Découvrez des astuces et des stratégies pratiques pour prendre le contrôle de vos finances et bâtir un avenir sûr pour vous et votre famille.
-    - ID: "afa77e48-1e92-44b7-ae46-db24b601e6d1"
-      Hint: Title
-      Value: $name
+      Value: 20260905T111422Z
