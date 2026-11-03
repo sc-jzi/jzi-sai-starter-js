@@ -10,8 +10,10 @@ disagree, **this file wins** and the skill is the bug. Change a rule here, once.
   is shown to the SE and approved again. It does NOT pin which component builds a section: when another component fits a section better (it can show
   the section's images, video, cards or layout and the planned one cannot), change it in `demo-plan.yaml` and record why with
   `run-gate.mjs swap <customer> "<page path>#<live section>" --reason "<why>"`; no question to the SE, the hand-over lists the change. The plan is
-  never changed to make a check pass. The only other questions after approval are R2's, R15's single looks review, R25's and a decision that is
-  truly impossible to assume. *Enforced: run-gate (approval hashes, recorded swaps).*
+  never changed to make a check pass. The only other questions after approval are R2's, R15's single looks review, R25's, the confirmations
+  Marketer MCP tools demand by design (`delete_content` of the page-local `harness-tmp-*` items, `set_component_variant` for a personalization or
+  A/B variant: collect them and ask ONCE, near the end of the build) and a decision that is truly impossible to assume.
+  *Enforced: run-gate (approval hashes, recorded swaps).*
 - **R2 Marketer MCP connected first.** `list_sites` must answer before anything else; not connected → send the auth request, ask once; a timeout stops the
   run with `blockedOn: marketer-mcp-auth` and the SE resumes with `/resume-demo <customer>`.
 - **R3 The run ends only when `node harness/scripts/run-gate.mjs check <customer>` exits 0.** Do its items in the printed order (build first). The stop
@@ -69,8 +71,10 @@ disagree, **this file wins** and the skill is the bug. Change a rule here, once.
   *Enforced: validate-site-plan P16/P17, component-crops, run-gate (placement, text in rendering parameters); seen by the SE on `plan-review.mjs`.*
 - **R14 Measurements come from the scripts.** `nav.json`, `header-styles*.json`, `sections*.json` are never edited by hand. A wrong result is re-measured
   with the script's override (`nav-extract --root`, `header-styles --eyebrow/--main`, `section-capture --selector`); a wrong demo is fixed in the
-  variant/SCSS, never in the measurement. Only when a site blocks headless capture entirely may the numbers be read from the SE's screenshots into the
-  same JSON shape, marked `"source": "screenshot"`. *Enforced: run-gate (verdict reference hash).*
+  variant/SCSS, never in the measurement. When a site blocks headless browsers, the scripts measure snapshots the SE takes in their own browser
+  (`page-snapshot-server.mjs` + `harness/reference/page-snapshot-snippet.js`, `demo-from-transcript` T3a); never work around the site's bot
+  protection. Only when no snapshot is possible may the numbers be read from the SE's screenshots into the same JSON shape, marked
+  `"source": "screenshot"`. *Enforced: run-gate (verdict reference hash).*
 - **R15 Looks gates.** `node harness/scripts/looks-gates.mjs <customer>` against the running app compares the header and every mirrored page. Every
   difference has one of three tiers (`_looks.mjs`):
   - **Build gap**, always built, never put to the SE: a missing section, video, images, cards, heading, button or form field, footer columns or
@@ -97,8 +101,9 @@ disagree, **this file wins** and the skill is the bug. Change a rule here, once.
 - **R25 The harness never changes silently.** During a demo run, the shared harness (`harness/scripts`, `harness/reference`, `harness/templates`,
   `.skills/`, the skill stubs, `.cursor/hooks.json` and rules, `.githooks`, `CLAUDE.md`) is left as it is. A harness bug that blocks the run is
   shown to the SE: what fails, the diff (`git diff -- <files>`) and why every demo needs it. After their yes,
-  `run-gate.mjs approve <customer> harness --answer "<the SE's words>"`; after a no, revert it. Never change a measuring or checking script to pass
-  its own check. *Enforced: run-gate (harness-snapshot.json, taken at `init`).*
+  `run-gate.mjs approve <customer> harness --answer "<the SE's words>"`, then `guard-customer.mjs snapshot <customer>` (the guard does not read
+  approvals; without a new snapshot it keeps reporting the approved file); after a no, revert it. Never change a measuring or checking script to
+  pass its own check. *Enforced: run-gate (harness-snapshot.json, taken at `init`).*
 
 ## Facts
 - **R20 Never invent facts.** Pains, quotes, numbers and names come from the transcript, RFP or the SE, marked stated / rfp / inferred; gaps stay gaps;

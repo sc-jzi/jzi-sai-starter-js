@@ -227,6 +227,25 @@ query ComponentName($datasource: String!, $language: String!) {
 - Always wrap with `{ jsonValue }`
 - **Do NOT use** `... on TemplateName` fragments — they are fragile in shared XM Cloud environments
 
+### Experience Edge limits (test the query against Edge before it ships)
+
+The layout service runs the ComponentQuery on Experience Edge. When Edge rejects it, the component simply gets **no data** (`fields` is
+empty, the page shows the empty-datasource hint) and nothing in Sitecore reports an error. Two limits apply:
+- **"Query is too complex to execute"**: grows with `children(first: N)` × the number of fields selected per child. A list with 12 child
+  fields was rejected at `first: 50` and accepted at `first: 12`; one with 13 child fields needed `first: 9`.
+- **"Query is too nested … max depth 15"**: grows with the number of aliased `field(name:) { jsonValue }` selections, not only with real nesting.
+
+Rules:
+- Set `children(first: N)` to the largest number of items any planned section really has (plus a little headroom), never a default 50.
+- Many child fields: fetch them generically and map names to props in the component (a lookup by field name, not parsing a value):
+  ```graphql
+  children(first: 12) { results { id fields(ownFields: true) { name jsonValue } } }
+  ```
+- Before writing the query to the rendering, run it against the app's preview Edge endpoint (`SITECORE_EDGE_CONTEXT_ID` from the customer's
+  `.env.local`, `https://edge-platform.sitecorecloud.io/v1/content/api/graphql/v1?sitecoreContextId=<id>`) with a real datasource id, and
+  check the response has no `errors` (a one-off script in the demo's `tmp/`). Re-test after every field you add to the template.
+- After placing the component, confirm the layout service returns `fields.data.datasource` for it, not an empty `fields`.
+
 **Avoided pattern (causes silent failures):**
 ```graphql
 # ❌ DO NOT USE — breaks when template name conflicts exist

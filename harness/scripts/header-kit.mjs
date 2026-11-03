@@ -35,7 +35,11 @@ const px = (n, d = 0) => (typeof n === "number" ? n : d);
 const log = [];
 
 // ---------- eyebrow content (hardcoded)
-const siteOrigin = (() => { try { return new URL(hs.url || nav.url).origin; } catch { return ""; } })();
+// a measurement taken on a local page snapshot (page-snapshot-server.mjs) has a 127.0.0.1 / localhost url: links resolve against the
+// prospect's real site (client.sourceUrl in the plan) instead, so the eyebrow never points at the snapshot server
+const LOCAL = /^https?:\/\/(127\.0\.0\.1|localhost)(:\d+)?\//i;
+const measuredUrl = [hs.url, nav.url].find((u) => u && !LOCAL.test(u)) || plan.client?.sourceUrl || hs.url || nav.url;
+const siteOrigin = (() => { try { return new URL(measuredUrl).origin; } catch { return ""; } })();
 const abs = (href) => { if (!href) return "#"; if (/^(https?:|tel:|mailto:|#)/i.test(href)) return href; try { return new URL(href, siteOrigin || "https://example.com").href; } catch { return href; } };
 const pages = (plan.site?.pages || []).filter((p) => p && p.path);
 const route = (p) => "/" + p.path.replace(/^\/?home\/?/i, "");

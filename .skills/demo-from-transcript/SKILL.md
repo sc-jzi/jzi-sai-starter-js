@@ -85,7 +85,25 @@ Everything the build copies from the prospect's site is MEASURED first, in this 
 1. `node harness/scripts/nav-extract.mjs --customer <customer> --url <prospect url> --hover` → `nav.json`. Check it against the homepage screenshot: the MAIN menu must not contain the utility links; if it does or a menu is cut off, re-run with `--root "<css selector of the main menu>"`.
 2. `node harness/scripts/header-styles.mjs --customer <customer> --url <prospect url>` → `header-styles.json` (+ reference crop). Check the band heights it prints against the reference crop (a page-wide height means a wrong band): pass the real labels with `--eyebrow "A,B" --main "C,D"` and re-run.
 3. `node harness/scripts/section-capture.mjs --customer <customer> --url <prospect url>` (a flat page is split into its bands automatically; `--selector` overrides) → `sections.json`, `sections/NN-*.png` (one crop per section: this is the per-component screenshot set the variant phase builds from), `sections.md`. For every other mirrored page (`liveUrl` on the page) capture it to its own file: `--url <live page url> --out sections-<slug>.json`, and name that file in the page's `sectionsFile` in the plan (its `liveSection` numbers refer to that file).
-The SE's own crops in `<demo folder>/sections/` take priority over the script's. If the site blocks headless capture (exit 3) take the SE's inbox screenshots, cut them into `sections/` crops yourself, and write the numbers you can read into the same JSON shape; do not skip the step.
+The SE's own crops in `<demo folder>/sections/` take priority over the script's.
+
+**The site blocks headless browsers** (bot protection: `nav-extract` reads 0 items, the page title is a captcha/"robot" page, or exit 3). Never
+work around the protection (no spoofed user agents, no automating a captcha the SE solved). Measure from snapshots the SE takes in their OWN
+browser instead; this works the same in Cursor and Claude Code:
+1. Tell the SE in one line what is happening, then start `node harness/scripts/page-snapshot-server.mjs --customer <customer>` in the background.
+2. For each page to measure (/Home, then every `liveUrl` page of the plan, later), give the SE the snippet
+   `harness/reference/page-snapshot-snippet.js` with `NAME` set (`home`, `<page-slug>`): they open the live page in their normal browser, pass any
+   captcha, open DevTools → Console, paste it. The tab moves to `127.0.0.1:8765/receive` and says "Saved". Ask once per batch of pages, not per page.
+3. Run every measuring script against `http://127.0.0.1:8765/<name>` instead of the live URL (nav-extract, header-styles, section-capture,
+   site-scraper, content-extractor). The snippet embeds the page's woff2 web fonts so text wraps as on the live site (a snapshot without them
+   reorders elements by height and produces false "element order" build gaps); lazy sections load because it scrolls the page first; check the
+   band count is plausible (a snapshot taken before lazy sections rendered has too few bands: take it again).
+4. Mega menus built from buttons with separate panels come out of `nav-extract` as the first panel: plan the top-level items from the crop and
+   pass them to `header-styles.mjs --main "…"`; say so at the gate (P9 then lists the panel items, a recommendation only).
+5. Images still download from the prospect's CDN (`collect-images.mjs` follows the snapshot's absolute URLs); check the files are images, not a
+   captcha HTML page.
+Only if the SE cannot take snapshots: their inbox screenshots, cut into `sections/` crops by hand, numbers written into the same JSON shape
+(`"source": "screenshot"`, R14). Do not skip the step.
 
 ## Phase T3 — Derive the page tree and sections
 Build `industry-verticals/<customer>/docs/ai/demos/<customer>/demo-plan.yaml` from `harness/templates/demo-plan.template.yaml`: copy the story, then write `site.pages`.
