@@ -1,0 +1,124 @@
+// Bobcat variant of CTA Banner. Measured: one card 351px at the content edge (161), padding 0/64 (it continues
+// the card grid above it), badge 14px uppercase white on orange at the card's top-left, picture 351x234,
+// title 44px/66, text 16/24, link 16px orange.
+
+.cta-banner-bobcat {
+  --v-bg: #ffffff;
+  --v-card-bg: #ffffff;
+  --v-heading: #212529;
+  --v-text: #212529;
+  --v-link: var(--text-colored);
+  --v-badge-bg: var(--bg-saturated);
+  --v-badge-text: #ffffff;
+
+  padding: 24px 15px 64px;
+  background: var(--v-bg);
+  color: var(--v-text);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--v-card-bg);
+    box-shadow: 0 2px 6px rgb(0 0 0 / 18%);
+  }
+
+  // Card-wide link; its title text is moved off-screen (screen readers still read it), the ::after covers the card.
+  &__stretched {
+    display: block;
+    height: 0;
+    text-indent: -9999px;
+    color: var(--text-colored);
+
+    h2 {
+      margin: 0;
+      font-size: 44px;
+      line-height: 1.5;
+      color: inherit;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: transparent;
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    padding: 0 8px;
+    background: var(--v-badge-bg);
+    color: var(--v-badge-text);
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24.5px;
+    text-transform: uppercase;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 351 / 234;
+    object-fit: contain;
+  }
+
+  &__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 16px;
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    font-family: var(--font-heading);
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 66px;
+    color: var(--v-heading);
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 24px;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__actions {
+    margin-top: auto;
+    padding-top: 32px;
+  }
+
+  // text link (no "cta" in its class: it is a link, not a button)
+  .bobcat-card-link {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: var(--v-link);
+  }
+
+  @media (max-width: 991.98px) {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

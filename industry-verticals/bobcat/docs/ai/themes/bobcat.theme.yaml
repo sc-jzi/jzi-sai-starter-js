@@ -1,0 +1,82 @@
+# Client Brand Theme: Bobcat (format: industry-verticals/prospera/docs/ai/templates/client-theme.template.yaml)
+client:
+  name: "Bobcat"
+  sourceUrl: "https://www.bobcat.com/na/en"
+  extractedAt: "2026-11-02"
+  extractedBy: "site-scraper.mjs + header-styles.mjs + section-capture.mjs on page snapshots taken in the SE's browser session (the live site blocks headless browsers)"
+
+colors:
+  primary: "#ff3600"            # --primary on the live site; buttons, eyebrow bar, accent words in headlines
+  primaryForeground: "#ffffff"
+  secondary: "#333333"          # dark bands (Loader Evolution, feature cards)
+  secondaryForeground: "#ffffff"
+  accent: "#ff3600"
+  accentForeground: "#ffffff"
+  background: "#ffffff"
+  foreground: "#212529"
+  muted: "#f1f1f1"              # light grey bands (quick links, offer cards, testimonials)
+  mutedForeground: "#212529"
+  headerBackground: "#ff3600"   # logo + utility bar; the menu band below is #ffffff
+  headerForeground: "#ffffff"
+  footerBackground: "#ffffff"
+  footerForeground: "#212529"
+  border: "#dee2e6"
+  ring: "#ff3600"
+  extra:
+    - { name: menuBand, value: "#ffffff" }
+    - { name: specBar, value: "#333333" }
+
+typography:
+  headingFamily: "BobcatMain-BoldCondensed (proprietary); substitute Barlow Condensed 500"
+  headingWeight: "500"
+  bodyFamily: "Helvetica Neue / BobcatMain-Roman (proprietary); substitute Roboto 400"
+  bodyWeight: "400"
+  monoFamily: ""
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Roboto:wght@400;500&display=swap"
+  scale: { hero: "56px", h1: "56px", h2: "44px", h3: "24px", body: "16px", small: "14px" }
+  headingTransform: "uppercase on hero and section headlines (as shown on the live site)"
+  letterSpacing: "normal"
+  lineHeight: "24px body"
+
+spacing:
+  density: "comfortable"
+  sectionGap: "40-64px"
+  containerMaxWidth: "1140px"
+  containerPadding: "15px"
+
+shape:
+  borderRadius: "0"
+  buttonRadius: "0, with one clipped corner (chamfer) top-right and bottom-left"
+  cardRadius: "0"
+  imageRadius: "0"
+  shadowStyle: "subtle card shadow on white cards over grey bands"
+  borderStyle: "none"
+
+tone:
+  overall: "rugged, industrial, high contrast"
+  colorMode: "light, with dark #333 bands"
+  contrast: "high"
+  imagery: "machines at work on jobsites, studio product shots on white"
+  heroStyle: "full-bleed photo, uppercase white headline at the bottom, one orange button"
+  cardStyle: "white cards, photo on top, orange eyebrow, link with arrow"
+  navStyle: "orange bar with logo and utility links, white menu band with six uppercase items and chevrons"
+
+siteThemeScss: |
+  body.site-bobcat, .site-bobcat {
+    --text-body: #212529; --text-body-inverted: #ffffff; --text-colored: #ff3600; --text-footer: #212529; --text-accent: #ff3600;
+    --bg-body: #ffffff; --bg-footer: #ffffff; --bg-main: #f1f1f1; --bg-main-alt: #333333; --bg-color: #fff1ec; --bg-saturated: #ff3600; --bg-accent: #ff3600;
+    --border-color: #dee2e6; --hr-color: #dee2e6; --roundness: 0px;
+  }
+  body.site-bobcat.dark, .dark .site-bobcat {
+    --text-body: #f1f1f1; --text-body-inverted: #212529; --text-colored: #ff5a2a; --text-footer: #f1f1f1; --text-accent: #ff5a2a;
+    --bg-body: #1e1e1e; --bg-footer: #1e1e1e; --bg-main: #2a2a2a; --bg-main-alt: #333333; --bg-color: #3a2018; --bg-saturated: #ff3600; --bg-accent: #ff3600;
+    --border-color: #444444; --hr-color: #444444; --roundness: 0px;
+  }
+
+extraction:
+  confidence: "high for colours and sizes (measured on the rendered page), medium for fonts (proprietary, substituted)"
+  method: "Computed styles from snapshots of the rendered pages; the snapshot cannot load Bobcat's web fonts (cross-origin), so font families come from the CSS, not from rendering"
+  notes:
+    - "--primary #ff3600 and --secondary #fff are declared as CSS variables on bobcat.com"
+    - "Light-grey band value read from the section crops; dark band #333333 measured on the homepage"
+    - "Dark mode is not on the live site; the dark block is derived for the theme switcher only"

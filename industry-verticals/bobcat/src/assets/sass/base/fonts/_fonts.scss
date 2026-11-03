@@ -1,0 +1,37 @@
+/* stylelint-disable value-keyword-case */
+@import 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Roboto:wght@400;500&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap';
+
+.site-basic {
+  --font-family: 'Open Sans', Helvetica, Verdana, Tahoma, sans-serif;
+}
+
+.site-financial {
+  --font-family: 'Source Sans 3', Helvetica, Arial, sans-serif;
+}
+
+.site-services {
+  --font-family: 'Epilogue', Helvetica, Arial, sans-serif;
+}
+
+// Bobcat: BobcatMain is proprietary; Barlow Condensed (headings) and Roboto (body) substitute it
+.site-bobcat {
+  --font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-heading: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .h1,
+  .h2,
+  .h3,
+  .h4,
+  .h5,
+  .h6 {
+    font-family: var(--font-heading);
+    font-weight: 500;
+  }
+}

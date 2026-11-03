@@ -1,0 +1,175 @@
+// Bobcat header refinements on top of the header-kit output (_bobcat.scss is generated; this file is not).
+// Measured (header-styles.json + header-reference.png at 1440px): one orange #ff3600 bar 59px high holding the logo
+// (143x43 at x=175), the utility links (18px, from x=334, 19px apart) and a white search box at the right
+// (308x38, 16px #333 placeholder); below it a white 82px menu band with six uppercase 16px items with a chevron,
+// spread from x=194 to x=1250, and a soft shadow under the band. The Header (logo) is rendered after the Eyebrow
+// in the partial design, so its logo column is lifted into the eyebrow bar and its menu column becomes the white band.
+
+$bc-bar-h: 59px;
+
+.component.eyebrow.variant-bobcat {
+  padding: 0;
+
+  > .container {
+    max-width: 1150px;
+    padding: 0 15px;
+  }
+
+  .eyebrow-bar {
+    justify-content: flex-start;
+    min-height: $bc-bar-h;
+  }
+
+  .eyebrow-links {
+    order: 1;
+    margin-left: 174px; // the logo sits in the first 174px of the bar
+    margin-right: auto;
+  }
+
+  .eyebrow-links a {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+
+  .eyebrow-slot-right {
+    order: 2;
+  }
+
+  .eyebrow-search {
+    order: 3;
+    justify-content: flex-start;
+    gap: 12px;
+    width: 308px;
+    height: 38px;
+    padding: 0 12px;
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    color: #333333;
+    cursor: text;
+
+    &::after {
+      content: 'Search';
+      font-family: var(--font-family);
+      font-size: 16px;
+      color: #6c757d;
+    }
+  }
+
+  .eyebrow-slot-left {
+    order: 4;
+    margin-right: 0;
+  }
+
+  @media (max-width: 991.98px) {
+    .eyebrow-links {
+      display: none;
+    }
+
+    .eyebrow-search {
+      width: 44px;
+      margin-left: auto;
+
+      &::after {
+        content: none;
+      }
+    }
+  }
+}
+
+.component.header.variant-bobcat {
+  position: relative;
+  z-index: 61; // above the eyebrow bar (z 60) so the lifted logo shows in it
+  padding: 0;
+  background: #ffffff;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 12%);
+
+  > .container {
+    max-width: 1150px;
+    padding: 0 15px;
+  }
+
+  .row {
+    position: relative;
+    display: block;
+    min-height: 82px;
+    margin: 0;
+  }
+
+  .row > .col-auto {
+    position: absolute;
+    top: -$bc-bar-h;
+    left: 15px;
+    display: flex;
+    align-items: center;
+    height: $bc-bar-h;
+    padding: 0;
+
+    img {
+      display: block;
+      width: 143px;
+      height: 43px;
+      object-fit: contain;
+    }
+  }
+
+  .row > .col {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .component.navigation.variant-bobcat {
+    min-height: 82px;
+    padding: 0;
+
+    .menu-mobile-navigate-wrapper,
+    .component-content {
+      width: 100%;
+    }
+
+    .navigation-title a {
+      // inline-block (a block container) so ::first-line below applies
+      display: inline-block;
+      padding: 16px;
+      font-family: var(--font-family);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      // measured text-transform none on the link with the labels shown in capitals: the capitals come from the
+      // first (only) line, so the link itself keeps the measured case
+      text-transform: none;
+      color: #000000;
+
+      &::first-line {
+        text-transform: uppercase;
+      }
+
+      // chevron after each top-level item (decoration, drawn in CSS)
+      &::after {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width: 6px;
+        height: 6px;
+        margin-top: -6px;
+        margin-left: 8px;
+        border-right: 1.5px solid currentcolor;
+        border-bottom: 1.5px solid currentcolor;
+        transform: rotate(45deg);
+      }
+
+      &:hover {
+        color: var(--text-colored);
+      }
+    }
+
+  }
+
+  // the base horizontal navigation sets the top-level links bold; the prospect's menu is regular (400)
+  .component.navigation.variant-bobcat.navigation-horizontal .component-content .level1 > .navigation-title > a {
+    font-weight: 400;
+  }
+}

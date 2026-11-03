@@ -1,0 +1,44 @@
+.link-columns {
+  padding: 40px 0;
+  background: var(--bg-main);
+  color: var(--text-body);
+
+  &__inner {
+    @extend %bc-wrap;
+  }
+
+  &__heading {
+    font-size: 44px;
+    margin: 0 0 24px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+  }
+
+  &__title {
+    font-size: 34px;
+    line-height: 1.2;
+    margin: 0 0 20px;
+    text-transform: none;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 15px;
+  }
+
+
+  @media (width < 768px) {
+    &__grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+}

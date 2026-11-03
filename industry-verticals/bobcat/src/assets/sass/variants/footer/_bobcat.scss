@@ -1,0 +1,185 @@
+// Bobcat variant of the Footer. Measured (sections.json band 10): content 160-1280, dark band #333 with padding 40/56,
+// logo 177x24 at the content edge, four 186px columns from x=448 (29px apart), titles and links 16px/24 uppercase in the
+// heading font (titles white at reduced opacity, links white, 40px pitch), then the 14px/21 copyright at x=409.
+// The footer element itself is white (measured #ffffff); the dark #333 band is a full-width panel inside it.
+
+.footer-bobcat {
+  --v-bg: #ffffff;
+  --v-panel-bg: var(--bg-main-alt);
+  --v-title: #ffffff;
+  --v-link: #ffffff;
+  --v-legal-bg: #ffffff;
+  --v-legal-text: #212529;
+
+  padding: 0;
+  background: var(--v-bg);
+  font-size: 16px;
+
+  &__main {
+    padding: 40px 15px 56px;
+    background: var(--v-panel-bg);
+    color: var(--v-link);
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 288px minmax(0, 1fr);
+    max-width: 1120px;
+    margin: 0 auto;
+
+    // group logo (219px) on the left, legal paragraphs + copyright from x=409 (249px in)
+    &--legal {
+      grid-template-columns: 249px minmax(0, 1fr);
+      align-items: start;
+    }
+  }
+
+  &__logo-img {
+    display: block;
+    width: 177px;
+    height: auto;
+  }
+
+  &__socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 19px;
+    margin-top: 24px;
+  }
+
+  &__social {
+    display: inline-flex;
+    min-width: 16px;
+    height: 16px;
+    color: var(--v-link);
+    font-family: var(--font-heading);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--v-link);
+      text-decoration: underline;
+    }
+
+    img {
+      display: block;
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+    }
+  }
+
+  &__columns {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 186px));
+    column-gap: 29px;
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: var(--v-title);
+    opacity: 0.75;
+  }
+
+  &__links {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-transform: uppercase;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    p,
+    li {
+      margin: 0 0 16px;
+    }
+
+    a {
+      color: var(--v-link);
+      text-decoration: none;
+
+      &:hover,
+      &:focus-visible {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__legal {
+    padding: 0 15px 32px;
+    background: transparent;
+    color: var(--v-legal-text);
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  &__group-logo {
+    grid-column: 1;
+    padding: 16px 0;
+  }
+
+  &__group-logo-img {
+    display: block;
+    width: 219px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  &__legal-body {
+    grid-column: 2;
+    padding-top: 16px;
+  }
+
+  &__legal-text {
+    p {
+      margin: 0 0 16px;
+    }
+  }
+
+  &__copyright {
+    margin: 0;
+  }
+
+  &__legal-links {
+    display: flex;
+    gap: 24px;
+
+    a {
+      color: var(--v-legal-text);
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    &__legal-body {
+      grid-column: 1;
+    }
+
+    &__inner {
+      grid-template-columns: 1fr;
+      row-gap: 32px;
+
+      &--legal {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &__columns {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      row-gap: 24px;
+    }
+  }
+}

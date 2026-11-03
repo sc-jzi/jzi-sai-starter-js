@@ -180,7 +180,8 @@ export const PARTIAL_DESIGN_FOLDER = "{C3CEB23C-D66D-4EF5-99E0-D45F60C02583}";  
 export function chromeBands(capture) {
   const s = Array.isArray(capture?.sections) ? capture.sections : [];
   const header = s.find((x) => x.kind === "header") ?? (s[0] && Number(s[0].top) < 10 && s.length > 1 ? s[0] : null);
-  const footer = s.find((x) => x.kind === "footer") ?? (s.length > 1 ? s.at(-1) : null);
+  // the LAST footer band: a body band whose cards use <footer> tags is also marked footer, the page footer comes after it
+  const footer = s.findLast((x) => x.kind === "footer") ?? (s.length > 1 ? s.at(-1) : null);
   return { headerIdx: header?.index ?? null, footerIdx: footer?.index ?? null, header, footer };
 }
 // The labels on the top row of a band (a footer's column headings): links and headings sharing the top edge, left to right.

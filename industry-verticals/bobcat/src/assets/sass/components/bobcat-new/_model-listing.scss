@@ -1,0 +1,348 @@
+// The band colour sits on a full-size layer inside the component (__band), as on the prospect's pages.
+.model-listing {
+  --v-model-title: #000;
+
+  color: #212529;
+
+  &.component {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__band {
+    padding: 16px 0 40px;
+    background: #000;
+  }
+
+  &__toolbar {
+    display: grid;
+    grid-template-columns: 353px 353px minmax(0, 1fr);
+    gap: 30px;
+    margin: 8px 0 36px;
+  }
+
+  &__toolbar-col:nth-child(2) {
+    margin-top: 14px;
+  }
+
+  &__toolbar-col--sort {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-top: 19px;
+  }
+
+  &__sort-box {
+    background: #fff;
+  }
+
+  &__sort {
+    min-width: 199px;
+    padding: 8px 16px;
+    border: 0;
+    background: transparent;
+    color: #000;
+    font-size: 16px;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  &__count {
+    margin: 0;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  &__toolbar-link {
+    color: var(--text-colored);
+    font-size: 18px;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--text-colored);
+      text-decoration: underline;
+    }
+  }
+
+  &__inner {
+    @extend %bc-wrap;
+
+    max-width: 1170px;
+  }
+
+  &__heading {
+    color: #fff;
+    font-size: 44px;
+    margin: 16px 0 24px;
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 265px minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+  }
+
+  &__filters {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__filter {
+    background: #fff;
+  }
+
+  &__filter-title {
+    position: relative;
+    display: block;
+    width: 100%;
+    border: 0;
+    background: transparent;
+    color: #212529;
+    text-align: left;
+    padding: 12px 36px 12px 16px;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  &__filter-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    border: 5px solid transparent;
+    border-bottom-color: currentcolor;
+    transform: translateY(-75%);
+  }
+
+  .is-closed &__filter-title::after {
+    border-bottom-color: transparent;
+    border-top-color: currentcolor;
+    transform: translateY(-25%);
+  }
+
+  &__filter-options {
+    padding: 12px 16px;
+  }
+
+  &__check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+    font-size: 15px;
+    cursor: pointer;
+
+    position: relative;
+
+    // the native box stays focusable and clickable but is drawn by the span (as on the prospect's form)
+    input {
+      position: absolute;
+      top: 4px;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      margin: 0;
+      opacity: 0;
+    }
+
+    span {
+      position: relative;
+      padding-left: 26px;
+    }
+
+    span::before {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      border: 2px solid #212529;
+      background: #fff;
+    }
+
+    input:checked + span::before {
+      border-color: var(--bg-saturated);
+      background: var(--bg-saturated);
+      box-shadow: inset 0 0 0 2px #fff;
+    }
+
+    input:focus-visible + span::before {
+      outline: 2px solid var(--bg-saturated);
+      outline-offset: 2px;
+    }
+  }
+
+  &__apply {
+    width: 100%;
+    background: #8c8c8c;
+    text-transform: none;
+    font-family: inherit;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  &__none {
+    color: #fff;
+  }
+
+  &__compare-bar {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 16px;
+    padding: 12px 16px;
+    background: var(--bg-main-alt);
+    color: #fff;
+  }
+
+  &__compare-clear {
+    border: 0;
+    background: transparent;
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .model-card {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 16px 16px;
+    background: #fff;
+
+    &__media {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      min-height: 110px;
+    }
+
+    &__badges {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+    }
+
+    &__badge {
+      padding: 1px 4px;
+      background: var(--bg-main-alt);
+      color: #fff;
+      font-size: 12px;
+      text-transform: uppercase;
+
+      &.is-new {
+        background: var(--bg-saturated);
+      }
+    }
+
+    &__image {
+      width: auto;
+      max-width: 82%;
+      min-width: 198px;
+      height: auto;
+      max-height: 110px;
+      object-fit: contain;
+    }
+
+    &__model {
+      color: var(--v-model-title);
+      margin: 12px 0 8px;
+      font-size: 24px;
+      text-transform: none;
+    }
+
+    &__price {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 6px 8px;
+      border: 1px solid var(--border-color);
+      font-size: 14px;
+    }
+
+    &__price-value {
+      color: var(--text-colored);
+      font-size: 16px;
+    }
+
+    &__text {
+      margin: 16px 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    &__specs {
+      margin: auto 0 16px;
+      font-size: 14px;
+    }
+
+    &__spec {
+      display: flex;
+      justify-content: space-between;
+      padding: 4px 0;
+
+      dt {
+        font-weight: 400;
+      }
+
+      dd {
+        margin: 0;
+      }
+    }
+
+    &__actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .bobcat-button {
+        min-height: 40px;
+        font-size: 16px;
+      }
+    }
+
+    &__compare {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 12px;
+      font-size: 14px;
+      cursor: pointer;
+
+      input:disabled + span {
+        opacity: 0.5;
+      }
+    }
+  }
+
+  @media (width < 1200px) {
+    &__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (width < 768px) {
+    &__layout {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    &__grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+}

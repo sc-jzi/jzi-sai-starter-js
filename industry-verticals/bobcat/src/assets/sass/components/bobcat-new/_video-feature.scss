@@ -1,0 +1,215 @@
+// The band colour sits on a full-size layer inside the component (__band), as on the prospect's pages.
+.video-feature {
+  position: relative;
+
+  // the band reaches the full width (no column gutter around it)
+  &.component {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  color: var(--text-body);
+
+  &__band {
+    position: relative;
+    padding: 32px 0;
+    background: var(--bg-main);
+  }
+
+  &__inner {
+    @extend %bc-wrap;
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 48px;
+    align-items: center;
+  }
+
+  &__media {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    overflow: hidden;
+  }
+
+  &__poster,
+  &__video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    object-fit: cover;
+  }
+
+  &__play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+
+    svg {
+      transition: transform 0.2s;
+    }
+
+    &:hover svg,
+    &:focus-visible svg {
+      transform: scale(1.08);
+    }
+  }
+
+  &__video-link {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    padding: 4px 8px;
+    background: rgb(255 255 255 / 90%);
+    font-size: 13px;
+  }
+
+  &__eyebrow {
+    margin: 0 0 4px;
+    font-family: inherit;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.25;
+    text-transform: none;
+  }
+
+  &__title {
+    font-size: 44px;
+    line-height: 1.2;
+    margin: 0 0 24px;
+  }
+
+  &__accent {
+    color: var(--text-colored);
+  }
+
+  &__text {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  &__actions {
+    margin-top: 24px;
+  }
+
+  // Split (client look): grey band, video left, text right
+  &--split &__title {
+    color: var(--text-body);
+  }
+
+  // Split dark: dark band, text left, video right
+  &--split-dark {
+    color: #fff;
+
+    .video-feature__band {
+      background: var(--bg-main-alt);
+    }
+
+    .video-feature__content {
+      order: -1;
+    }
+  }
+
+  // Split dark, video left: dark band, video left, text right
+  &--split-dark-left {
+    color: #fff;
+
+    .video-feature__band {
+      padding: 60px 0;
+      background: var(--bg-main-alt);
+    }
+
+    .video-feature__inner {
+      gap: 54px;
+    }
+
+    .video-feature__title {
+      font-size: 44px;
+      line-height: 1.4;
+    }
+  }
+
+  // Banner: full-width video or poster behind the headline
+  &--banner {
+    color: #fff;
+
+    .video-feature__band {
+      min-height: 480px;
+      padding: 0;
+      background: #000;
+    }
+
+    .video-feature__inner {
+      display: block;
+      max-width: none;
+      padding: 0;
+    }
+
+    .video-feature__media {
+      position: absolute;
+      inset: 0;
+      aspect-ratio: auto;
+    }
+
+    .video-feature__media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgb(0 0 0 / 10%) 0%, rgb(0 0 0 / 65%) 60%);
+      pointer-events: none;
+    }
+
+    .video-feature__media.is-playing::after {
+      display: none;
+    }
+
+    .video-feature__play {
+      z-index: 2;
+      justify-content: flex-start;
+      padding-left: 12%;
+    }
+
+    .video-feature__content {
+      position: relative;
+      z-index: 1;
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 150px 15px 100px calc(15px + 33%);
+      pointer-events: none;
+
+      a,
+      button {
+        pointer-events: auto;
+      }
+    }
+
+    .video-feature__media.is-playing + .video-feature__content {
+      display: none;
+    }
+
+    .video-feature__title {
+      font-size: 36px;
+    }
+  }
+
+  @media (width < 992px) {
+    &__inner {
+      grid-template-columns: minmax(0, 1fr);
+      gap: 24px;
+    }
+
+    &__title {
+      font-size: 34px;
+    }
+
+    &--banner .video-feature__content {
+      padding: 120px 15px 60px;
+    }
+  }
+}

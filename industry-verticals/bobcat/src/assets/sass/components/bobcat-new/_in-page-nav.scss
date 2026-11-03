@@ -1,0 +1,114 @@
+// The bar colour sits on a full-size layer inside the component (__band), as on the prospect's pages.
+.in-page-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  color: #fff;
+
+  &.component {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__band {
+    background: var(--bg-main-alt);
+  }
+
+  &.is-editing {
+    position: relative;
+  }
+
+  &__inner {
+    @extend %bc-wrap;
+
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    min-height: 80px;
+  }
+
+  &__title {
+    flex: 1 1 auto;
+    margin: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 40px;
+    text-transform: none;
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    display: block;
+    padding: 0 8px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 40px;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      color: #fff;
+      text-decoration: underline;
+    }
+  }
+
+  &__anchor {
+    margin-left: 4px;
+    opacity: 0.7;
+  }
+
+  &__button {
+    flex: 0 0 auto;
+    min-height: 52px;
+  }
+
+  @media (width < 992px) {
+    &__inner {
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    &__title {
+      flex-basis: 100%;
+    }
+
+    &__links {
+      flex: 1 1 auto;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+    }
+  }
+}
+
+// BobcatLight: white bar with black title and links (the prospect's industry pages)
+.in-page-nav--bobcat-light {
+  color: #000;
+
+  .in-page-nav__band {
+    background: #fff;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 15%);
+  }
+
+  .in-page-nav__link {
+    color: #000;
+
+    &:hover,
+    &:focus-visible {
+      color: #000;
+    }
+  }
+}

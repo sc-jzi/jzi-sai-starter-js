@@ -178,7 +178,15 @@ if (flags.compare && result) {
     const open = result.sections.filter((d) => !used.has(d.index) && d.index !== demoBands.footerIdx);
     let D = (R.heading?.text && (open.filter((d) => norm(d.heading?.text) === norm(R.heading.text)).sort((a, b) => likeR(a) - likeR(b))[0]
       ?? open.filter((d) => headingsOf(d).has(norm(R.heading.text))).sort((a, b) => likeR(a) - likeR(b))[0]))
-      ?? (R.heading?.text ? null : open.find((d) => d.index === R.index && d.kind === R.kind));
+      ?? (R.heading?.text ? null : (open.find((d) => d.index === R.index && d.kind === R.kind)
+        // the built page can count its header bands differently (eyebrow, menu, breadcrumb), which shifts every index: then take the next
+        // unpaired heading-less band of the same kind between the last pair and the built band of the next titled live band (so it stays
+        // in its own gap). It is still compared band against band below.
+        ?? (() => {
+          const nextTitled = ref.sections.find((x) => x.index > R.index && x.heading?.text && x.index !== refBands.footerIdx);
+          const bound = nextTitled ? (open.find((d) => norm(d.heading?.text) === norm(nextTitled.heading.text))?.index ?? Infinity) : Infinity;
+          return open.filter((d) => d.index > lastPaired && d.index < bound && d.kind === R.kind && !d.heading?.text).sort((a, b) => a.index - b.index)[0];
+        })()));
     // a titled band whose heading text is not found: pair it by position and shape instead, so a section is found by what it IS, not by
     // a heading written in to be matched. Only the next unpaired built band after the last pair, only when it has the same make-up
     // (kind, imagery, cards, a similar number of elements) and its heading is not another live band's heading.

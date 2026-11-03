@@ -1,0 +1,53 @@
+// Breadcrumb (Bobcat): small orange underlined links with drawn triangle separators, current page in dark text.
+.breadcrumb-bobcat {
+  background: #fff;
+
+  &.component {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__list {
+    @extend %bc-wrap;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    color: #333;
+  }
+
+  &__item {
+    display: inline-flex;
+    align-items: center;
+
+    & + &::before {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 0;
+      margin: 0 10px;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 6px solid var(--bg-saturated, #ff3600);
+    }
+  }
+
+  &__link {
+    color: var(--text-colored, #ff3600);
+    text-decoration: underline;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--text-colored, #ff3600);
+      text-decoration: none;
+    }
+  }
+}

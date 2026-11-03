@@ -1,0 +1,100 @@
+// Bobcat variant of Accordion. Measured: content 160-1280, padding 24/51, "Expand all" 16px orange at the right,
+// rows #f1f1f1 72px high, 8px apart, title 24px/36 uppercase #212529 at a 33px inset after the chevron.
+
+.accordion-bobcat {
+  --v-bg: #ffffff;
+  --v-row-bg: var(--bg-main);
+  --v-heading: #212529;
+  --v-text: #212529;
+  --v-link: var(--text-colored);
+
+  padding: 24px 15px 51px;
+  background: var(--v-bg);
+  color: var(--v-text);
+
+  &__inner {
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  &__toolbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 17px;
+  }
+
+  &__expand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 1px 16px;
+    border: 0;
+    background: none;
+    color: var(--v-link);
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    cursor: pointer;
+
+    .accordion-bobcat__chevron {
+      transform: rotate(90deg);
+
+      &.is-open {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  &__group {
+    margin-bottom: 8px;
+    background: var(--v-row-bg);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 72px;
+    padding: 18px 20px;
+    border: 0;
+    background: none;
+    color: var(--v-heading);
+    text-align: left;
+    cursor: pointer;
+  }
+
+  &__chevron {
+    flex: 0 0 auto;
+    transition: transform 0.2s;
+
+    &.is-open {
+      transform: rotate(90deg);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    text-transform: uppercase;
+    color: var(--v-heading);
+  }
+
+  &__panel {
+    padding: 0 20px 24px 44px;
+  }
+
+  &__content {
+    font-size: 16px;
+    line-height: 24px;
+
+    p:last-child,
+    ul:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

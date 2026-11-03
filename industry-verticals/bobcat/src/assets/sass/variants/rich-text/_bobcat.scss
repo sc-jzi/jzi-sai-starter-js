@@ -1,0 +1,24 @@
+// Bobcat variant of Rich Text: the offer terms. Measured: content 160-1280 (1120px), padding 32/32, 14px/21 #212529.
+
+.rich-text.rich-text-bobcat {
+  --v-bg: #ffffff;
+  --v-text: #212529;
+
+  padding: 32px 15px;
+  background: var(--v-bg);
+  color: var(--v-text);
+
+  .rich-text-bobcat__inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    font-family: var(--font-family);
+    font-size: 14px;
+    line-height: 21px;
+
+    p {
+      margin: 0;
+      font-size: inherit;
+      line-height: inherit;
+    }
+  }
+}

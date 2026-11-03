@@ -1,0 +1,98 @@
+// The band colour sits on a full-size layer inside the component (__band), as on the prospect's pages.
+.icon-link-tiles {
+  --v-tile-label: #000;
+
+  // the band reaches the full width (no column gutter around it)
+  &.component {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__band {
+    padding: 40px 0;
+    background: var(--bg-main);
+  }
+
+  &__inner {
+    @extend %bc-wrap;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  &__item {
+    flex: 0 1 174px;
+    min-width: 0;
+    display: flex;
+  }
+
+  .icon-link-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    width: 100%;
+    min-height: 194px;
+    padding: 28px 12px 20px;
+    background: var(--bg-body);
+    color: var(--v-tile-label);
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 15%);
+    transition: transform 0.2s;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--text-colored);
+      transform: translateY(-2px);
+    }
+
+    &__media {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 80px;
+    }
+
+    &__image {
+      display: block;
+      max-width: 140px;
+      width: auto;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    &__label {
+      margin: 0;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: normal;
+      color: inherit;
+      line-height: 1.5;
+    }
+  }
+
+  // ImageTiles: grey tiles on a white band, bigger picture
+  &--image-tiles {
+    .icon-link-tiles__band {
+      background: var(--bg-body);
+    }
+
+    .icon-link-tile {
+      background: var(--bg-main);
+      box-shadow: none;
+    }
+  }
+
+  @media (width < 576px) {
+    &__item {
+      flex-basis: calc(50% - 8px);
+    }
+  }
+}

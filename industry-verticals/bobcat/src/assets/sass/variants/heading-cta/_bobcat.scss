@@ -1,0 +1,122 @@
+// Bobcat variants of Heading CTA. Measured: centred band, content 400-1040 (640px), padding 32/32,
+// eyebrow 24px, headline 36-44px (line-height 1.375), text 16/24, link 18px uppercase orange with an arrow.
+// Page title: left at the 1120px content edge, 56px/84, intro 16/24, padding 32/40.
+
+.heading-cta-bobcat {
+  --v-bg: #ffffff;
+  --v-heading: #212529;
+  --v-text: #212529;
+  --v-link: var(--text-colored);
+
+  padding: 32px 15px;
+  background: var(--v-bg);
+  color: var(--v-text);
+  text-align: center;
+
+  &__inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  // Dark band (Home "Bobcat Company"): measured as a white band holding a full-width #333 panel, the text
+  // column 1120px wide.
+  &--dark {
+    --v-panel-bg: var(--bg-main-alt);
+    --v-heading: #ffffff;
+    --v-text: #ffffff;
+
+    padding: 0;
+    background: transparent;
+  }
+
+  &--dark &__inner {
+    max-width: none;
+    padding: 32px 15px;
+    background: var(--v-panel-bg);
+  }
+
+  &--dark &__inner > * {
+    max-width: 1120px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  &__eyebrow {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--v-heading);
+  }
+
+  &__title {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 1.375;
+    color: var(--v-heading);
+  }
+
+  &__text {
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__actions {
+    margin-top: 32px;
+  }
+
+  &__link {
+    padding: 12px 16px;
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: var(--v-link);
+  }
+
+  @media (max-width: 991.98px) {
+    &__title {
+      font-size: 32px;
+    }
+  }
+}
+
+.heading-cta-bobcat-title {
+  padding: 32px 15px 40px;
+  background: #ffffff;
+  color: #212529;
+
+  &__inner {
+    max-width: 1150px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 56px;
+    font-weight: 500;
+    line-height: 84px;
+    color: #212529;
+  }
+
+  &__text {
+    max-width: 1120px;
+    margin: 8px 15px 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  @media (max-width: 991.98px) {
+    &__title {
+      font-size: 40px;
+      line-height: 1.3;
+    }
+  }
+}

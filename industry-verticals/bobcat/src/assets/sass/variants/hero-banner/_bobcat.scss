@@ -1,0 +1,119 @@
+// Bobcat variant of Hero Banner. Measured: centred, content 400-1040 (640px), padding 32/32 on #f1f1f1,
+// eyebrow 24px, headline 36px/49.5, text 16/24, point titles 24px, photo 415x277, links 18px uppercase orange.
+
+.hero-banner-bobcat {
+  --v-bg: var(--bg-main);
+  --v-heading: #212529;
+  --v-text: #212529;
+  --v-link: var(--text-colored);
+
+  padding: 32px 15px;
+  background: var(--v-bg);
+  color: var(--v-text);
+  text-align: center;
+
+  &__inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  &__eyebrow {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--v-heading);
+  }
+
+  &__title {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 49.5px;
+    text-transform: uppercase;
+    color: var(--v-heading);
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 24px;
+
+    p {
+      margin: 0;
+    }
+
+    h3,
+    h4 {
+      margin: 0;
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.15;
+      text-transform: uppercase;
+      color: var(--v-heading);
+    }
+  }
+
+  &__media {
+    margin: 16px auto;
+  }
+
+  &__image {
+    display: block;
+    width: 415px;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  &__link {
+    padding: 12px 16px;
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 22px;
+    text-transform: uppercase;
+    color: var(--v-link);
+  }
+
+  // Photo between the intro paragraph and the points: the rich text's children join the column flow.
+  &--flow &__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--flow &__text {
+    display: contents;
+
+    > * {
+      order: 3;
+    }
+
+    > :first-child {
+      order: 1;
+    }
+  }
+
+  &--flow &__eyebrow,
+  &--flow &__title {
+    order: 0;
+  }
+
+  &--flow &__media {
+    order: 2;
+  }
+
+  &--flow &__actions {
+    order: 4;
+  }
+}

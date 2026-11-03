@@ -1,0 +1,171 @@
+.accordion-section {
+  padding: 40px 0;
+  color: var(--text-body);
+
+  &__inner {
+    @extend %bc-wrap;
+  }
+
+  &__header {
+    margin-bottom: 40px;
+  }
+
+  &__eyebrow {
+    margin: 0;
+    font-family: inherit;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.25;
+    text-transform: none;
+  }
+
+  &__title {
+    font-size: 36px;
+    line-height: 1.1;
+    margin: 0 0 8px;
+  }
+
+  &__text {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  &__split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: start;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__toolbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+  }
+
+  &__expand-all {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--text-colored);
+    cursor: pointer;
+  }
+
+  &__panel {
+    border-left: 4px solid transparent;
+
+    &.is-open {
+      border-left-color: var(--bg-saturated);
+    }
+  }
+
+  &__panel-heading {
+    margin: 0;
+    color: #000;
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-transform: none;
+  }
+
+  // Item count after an offer group's title: small, raised to the title's cap height
+  &__count {
+    align-self: flex-start;
+    margin: 8px 0 0 2px;
+    color: var(--text-body);
+    font-family: var(--font-family, inherit);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+  }
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 16px 16px 16px 36px;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  &__chevron {
+    flex: 0 0 auto;
+    transition: transform 0.2s;
+
+    &.is-open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__body {
+    padding: 0 16px 16px 66px;
+    font-size: 15px;
+    line-height: 1.6;
+
+    ul {
+      padding-left: 18px;
+      list-style: circle;
+    }
+  }
+
+  // Faq: one column of grey question bars
+  &--faq,
+  &--bobcat {
+    .accordion-section__header {
+      margin-bottom: 16px;
+    }
+
+    .accordion-section__panels {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .accordion-section__panel {
+      border-left: 0;
+      background: var(--bg-main);
+    }
+
+    .accordion-section__trigger {
+      min-height: 74px;
+      padding-left: 20px;
+    }
+
+    .accordion-section__panel-heading {
+      color: var(--text-body);
+    }
+
+    .accordion-section__body {
+      padding-left: 50px;
+    }
+  }
+
+  @media (width < 992px) {
+    &__split {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    &__title {
+      font-size: 34px;
+    }
+  }
+}
+
+// WithImage: the panel bar is the button; its heading sits 8px in from the top (prospect measurement)
+.accordion-section--with-image .accordion-section__trigger {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  min-height: 56px;
+}

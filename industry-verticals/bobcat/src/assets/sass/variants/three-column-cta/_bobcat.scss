@@ -1,0 +1,84 @@
+// Bobcat variant of Three Column CTA. Measured: cards 351px wide, 32px apart, content 161-1279,
+// padding 24/64, picture 351x234, card body 16px inset, title 44px/66, text 16/24, link 16px orange.
+
+.three-column-cta-bobcat {
+  --v-bg: #ffffff;
+  --v-card-bg: #ffffff;
+  --v-heading: #212529;
+  --v-text: #212529;
+  --v-link: var(--text-colored);
+
+  padding: 24px 15px 64px;
+  background: var(--v-bg);
+  color: var(--v-text);
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    background: var(--v-card-bg);
+    box-shadow: 0 2px 6px rgb(0 0 0 / 18%);
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 351 / 234;
+    object-fit: contain;
+  }
+
+  &__body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 16px 16px 16px;
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    font-family: var(--font-heading);
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 66px;
+    color: var(--v-heading);
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__actions {
+    margin-top: auto;
+    padding-top: 32px;
+  }
+
+  // text link (no "cta" in its class: it is a link, not a button)
+  .bobcat-card-link {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: var(--v-link);
+  }
+
+  @media (max-width: 991.98px) {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+
+    &__title {
+      font-size: 32px;
+      line-height: 1.3;
+    }
+  }
+}

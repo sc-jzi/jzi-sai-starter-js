@@ -1,0 +1,363 @@
+// Bobcat variants of Promo CTA (Bobcat, BobcatImageLeft, BobcatDark, BobcatBackgroundImage).
+// Measured (sections*.json): content 160-1280 (1120px), text column 521px, photo 545x363, padding 32/32,
+// eyebrow 24px, headline 44px/66 (36px/54 on the lighter bands), text 16/24, buttons 18px uppercase 48px high.
+
+.promo-cta-bobcat {
+  --v-bg: #ffffff;
+  --v-heading: #212529;
+  --v-text: #212529;
+  --v-accent: var(--text-colored);
+  --v-btn2-bg: #ffffff;
+  --v-btn2-text: var(--text-colored);
+
+  padding: 32px 15px;
+  background: var(--v-bg);
+  color: var(--v-text);
+
+  // Dark bands are measured as a white band holding a full-width #333 panel (the __band).
+  &--dark {
+    --v-panel-bg: var(--bg-main-alt);
+    --v-heading: #ffffff;
+    --v-text: #ffffff;
+
+    padding: 0;
+    background: transparent;
+  }
+
+  &--dark &__band {
+    padding: 32px 15px;
+    background: var(--v-panel-bg);
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 521fr) minmax(0, 545fr);
+    gap: 54px;
+    align-items: center;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  // photo on the right: the text column starts at the top of the band (the eyebrow level with the photo's
+  // top edge, as measured), the photo stays centred against it
+  &:not(.promo-cta-bobcat--image-left) &__inner {
+    align-items: start;
+  }
+
+  &:not(.promo-cta-bobcat--image-left) &__media {
+    align-self: center;
+  }
+
+  &--image-left &__inner {
+    grid-template-columns: minmax(0, 545fr) minmax(0, 521fr);
+  }
+
+  &--image-left &__media {
+    order: -1;
+  }
+
+  &__eyebrow {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--v-heading);
+  }
+
+  &__title {
+    margin: 0 0 24px;
+    font-family: var(--font-heading);
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-transform: uppercase;
+    color: var(--v-heading);
+
+    > span {
+      display: block;
+    }
+  }
+
+  &__accent {
+    color: var(--v-accent);
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 24px;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 40px;
+
+    .bobcat-button--secondary {
+      margin-left: 0;
+      background: var(--v-btn2-bg);
+      color: var(--v-btn2-text);
+      box-shadow: inset 0 0 0 2px var(--v-btn2-text);
+
+      &:hover,
+      &:focus-visible {
+        color: var(--v-btn2-text);
+      }
+    }
+  }
+
+  &__media {
+    position: relative;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 545 / 363;
+    object-fit: cover;
+  }
+
+  // Offers page hero (image left, no eyebrow): measured photo 720x544 edge to edge on the left half,
+  // text on a #f1f1f1 panel (content 840-1320), 56px/84 title, buttons right-aligned 16px, 40px high:
+  // outlined white first, solid orange second, 2px corners.
+  &--panel {
+    --v-panel-bg: var(--bg-main);
+
+    padding: 0;
+  }
+
+  &--panel &__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 0;
+    align-items: stretch;
+    max-width: none;
+  }
+
+  &--panel &__media {
+    min-height: 544px;
+  }
+
+  &--panel &__image {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  &--panel &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 48px 120px 56px;
+    background: var(--v-panel-bg);
+  }
+
+  &--panel &__title {
+    margin: 0;
+    font-size: 56px;
+    line-height: 84px;
+  }
+
+  &--panel &__actions {
+    justify-content: flex-end;
+    margin-top: 40px;
+
+    .bobcat-button {
+      min-height: 40px;
+      padding: 8px 16px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+      text-transform: none;
+      border-radius: 2px;
+      clip-path: none;
+    }
+
+    .bobcat-button--secondary {
+      box-shadow: inset 0 0 0 1px var(--v-btn2-text);
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    &__inner,
+    &--image-left &__inner,
+    &--panel &__inner {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    &--panel &__media {
+      min-height: 280px;
+    }
+
+    &--panel &__content {
+      padding: 24px 15px 32px;
+    }
+
+    &__media,
+    &--image-left &__media {
+      order: -1;
+    }
+
+    &__title {
+      font-size: 32px;
+      line-height: 1.3;
+    }
+  }
+}
+
+// Full-bleed photo with the headline over a dark fade; the --strip form is the short eyebrow + headline band.
+.promo-cta-bobcat-bg {
+  // The band itself is transparent (measured #ffffff): the photo layer fills it edge to edge, black under the fade.
+  --v-bg: transparent;
+  --v-heading: #ffffff;
+  --v-text: #ffffff;
+  --v-btn2-bg: #ffffff;
+  --v-btn2-text: var(--text-colored);
+
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 720px;
+  padding: 0 15px 32px;
+  overflow: hidden;
+  background: var(--v-bg);
+  color: var(--v-text);
+  text-align: center;
+
+  &__media {
+    position: absolute;
+    inset: 0;
+    background: #000000;
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgb(0 0 0 / 0%) 55%, rgb(0 0 0 / 75%) 75%, #000 92%);
+      pointer-events: none;
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+
+  &__eyebrow {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.15;
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    font-family: var(--font-heading);
+    font-size: 44px;
+    font-weight: 500;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: var(--v-heading);
+  }
+
+  &__subtitle {
+    margin: 0 auto;
+    max-width: 1080px;
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  // Category page header: 56px title, 16px uppercase offer line
+  &--page &__title {
+    font-size: 56px;
+  }
+
+  &--page &__subtitle {
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  &__text {
+    max-width: 760px;
+    margin: 12px auto 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 16px;
+
+    .bobcat-button--secondary {
+      margin-left: 0;
+      background: var(--v-btn2-bg);
+      color: var(--v-btn2-text);
+      box-shadow: inset 0 0 0 2px var(--v-btn2-text);
+
+      &:hover,
+      &:focus-visible {
+        color: var(--v-btn2-text);
+      }
+    }
+  }
+
+  &--strip {
+    align-items: center;
+    min-height: 152px;
+    padding: 32px 15px;
+    background-position: center;
+    background-size: cover;
+
+    .promo-cta-bobcat-bg__content {
+      max-width: 640px;
+    }
+
+    .promo-cta-bobcat-bg__media::after {
+      background: rgb(0 0 0 / 35%);
+    }
+
+    .promo-cta-bobcat-bg__title {
+      margin: 0;
+      font-size: 36px;
+      line-height: 49.5px;
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    min-height: 480px;
+
+    &__title {
+      font-size: 36px;
+    }
+
+    &__subtitle {
+      font-size: 18px;
+    }
+  }
+}
