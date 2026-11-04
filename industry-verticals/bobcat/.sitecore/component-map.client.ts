@@ -15,6 +15,15 @@ import * as ApplicationForm from 'src/components/utilities/ApplicationForm';
 import * as SearchResults from 'src/components/search/SearchResults';
 import * as PreviewSearch from 'src/components/search/PreviewSearch';
 import * as MoreLikeThis from 'src/components/search/MoreLikeThis';
+import * as PortalWelcome from 'src/components/portal/PortalWelcome';
+import * as PortalResources from 'src/components/portal/PortalResources';
+import * as PortalMachines from 'src/components/portal/PortalMachines';
+import * as PortalLogin from 'src/components/portal/PortalLogin';
+import * as PortalHeader from 'src/components/portal/PortalHeader';
+import * as PortalFooter from 'src/components/portal/PortalFooter';
+import * as PortalDealer from 'src/components/portal/PortalDealer';
+import * as PortalConsideredMachine from 'src/components/portal/PortalConsideredMachine';
+import * as PortalAttachments from 'src/components/portal/PortalAttachments';
 import * as ColumnSplitter from 'src/components/pagestructure/ColumnSplitter';
 import * as VideoFeature from 'src/components/pagecontent/VideoFeature';
 import * as TwoColumnCta from 'src/components/pagecontent/TwoColumnCta';
@@ -84,6 +93,15 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['SearchResults', { ...SearchResults }],
   ['PreviewSearch', { ...PreviewSearch }],
   ['MoreLikeThis', { ...MoreLikeThis }],
+  ['PortalWelcome', { ...PortalWelcome }],
+  ['PortalResources', { ...PortalResources }],
+  ['PortalMachines', { ...PortalMachines }],
+  ['PortalLogin', { ...PortalLogin }],
+  ['PortalHeader', { ...PortalHeader }],
+  ['PortalFooter', { ...PortalFooter }],
+  ['PortalDealer', { ...PortalDealer }],
+  ['PortalConsideredMachine', { ...PortalConsideredMachine }],
+  ['PortalAttachments', { ...PortalAttachments }],
   ['ColumnSplitter', { ...ColumnSplitter }],
   ['VideoFeature', { ...VideoFeature }],
   ['TwoColumnCta', { ...TwoColumnCta }],

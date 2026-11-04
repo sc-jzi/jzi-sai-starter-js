@@ -15,6 +15,15 @@ import * as ApplicationForm from 'src/components/utilities/ApplicationForm';
 import * as SearchResults from 'src/components/search/SearchResults';
 import * as PreviewSearch from 'src/components/search/PreviewSearch';
 import * as MoreLikeThis from 'src/components/search/MoreLikeThis';
+import * as PortalWelcome from 'src/components/portal/PortalWelcome';
+import * as PortalResources from 'src/components/portal/PortalResources';
+import * as PortalMachines from 'src/components/portal/PortalMachines';
+import * as PortalLogin from 'src/components/portal/PortalLogin';
+import * as PortalHeader from 'src/components/portal/PortalHeader';
+import * as PortalFooter from 'src/components/portal/PortalFooter';
+import * as PortalDealer from 'src/components/portal/PortalDealer';
+import * as PortalConsideredMachine from 'src/components/portal/PortalConsideredMachine';
+import * as PortalAttachments from 'src/components/portal/PortalAttachments';
 import * as ColumnSplitter from 'src/components/pagestructure/ColumnSplitter';
 import * as VideoFeature from 'src/components/pagecontent/VideoFeature';
 import * as TwoColumnCta from 'src/components/pagecontent/TwoColumnCta';
@@ -86,6 +95,15 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['SearchResults', { ...SearchResults, componentType: 'client' }],
   ['PreviewSearch', { ...PreviewSearch, componentType: 'client' }],
   ['MoreLikeThis', { ...MoreLikeThis, componentType: 'client' }],
+  ['PortalWelcome', { ...PortalWelcome, componentType: 'client' }],
+  ['PortalResources', { ...PortalResources, componentType: 'client' }],
+  ['PortalMachines', { ...PortalMachines, componentType: 'client' }],
+  ['PortalLogin', { ...PortalLogin, componentType: 'client' }],
+  ['PortalHeader', { ...PortalHeader, componentType: 'client' }],
+  ['PortalFooter', { ...PortalFooter, componentType: 'client' }],
+  ['PortalDealer', { ...PortalDealer, componentType: 'client' }],
+  ['PortalConsideredMachine', { ...PortalConsideredMachine, componentType: 'client' }],
+  ['PortalAttachments', { ...PortalAttachments, componentType: 'client' }],
   ['ColumnSplitter', { ...ColumnSplitter, componentType: 'client' }],
   ['VideoFeature', { ...VideoFeature, componentType: 'client' }],
   ['TwoColumnCta', { ...TwoColumnCta, componentType: 'client' }],

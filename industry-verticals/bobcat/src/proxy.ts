@@ -1,4 +1,4 @@
-import { NextFetchEvent, type NextRequest } from 'next/server';
+import { NextFetchEvent, NextResponse, type NextRequest } from 'next/server';
 import {
   defineProxy,
   AppRouterMultisiteProxy,
@@ -12,8 +12,37 @@ import sites from '.sitecore/sites.json';
 import scConfig from 'sitecore.config';
 import { routing } from './i18n/routing';
 import client from './lib/sitecore-client';
+import { portalPath, SESSION_COOKIE, verifySessionToken } from './lib/portal/session';
 
-export default function proxy(req: NextRequest, event: NextFetchEvent) {
+/**
+ * My Machine portal: /my-machine pages need a portal session (else the login page, with a returnUrl); a signed-in
+ * visitor who opens the login page goes straight to the portal. Pages editing and preview run in Next.js draft mode
+ * (the __prerender_bypass cookie) and are let through, so the page builder can always open the portal pages.
+ */
+const portalGuard = async (req: NextRequest): Promise<NextResponse | null> => {
+  const area = portalPath(req.nextUrl.pathname);
+  if (!area || req.cookies.has('__prerender_bypass')) return null;
+  const session = await verifySessionToken(req.cookies.get(SESSION_COOKIE)?.value);
+  const base = req.nextUrl.pathname.replace(/\/my-machine(\/.*)?$/i, '');
+  if (area === 'protected' && !session) {
+    const url = req.nextUrl.clone();
+    url.pathname = `${base}/my-machine/login`;
+    url.search = `?returnUrl=${encodeURIComponent(req.nextUrl.pathname + req.nextUrl.search)}`;
+    return NextResponse.redirect(url);
+  }
+  if (area === 'login' && session) {
+    const url = req.nextUrl.clone();
+    url.pathname = `${base}/my-machine`;
+    url.search = '';
+    return NextResponse.redirect(url);
+  }
+  return null;
+};
+
+export default async function proxy(req: NextRequest, event: NextFetchEvent) {
+  const guarded = await portalGuard(req);
+  if (guarded) return guarded;
+
   // PreviewProxy authorizes preview requests
   const preview = new PreviewProxy({
     client: client,
