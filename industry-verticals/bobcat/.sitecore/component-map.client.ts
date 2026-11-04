@@ -51,8 +51,11 @@ import * as Carousel from 'src/components/pagecontent/Carousel';
 import * as AuthorWidget from 'src/components/pagecontent/AuthorWidget';
 import * as AuthorList from 'src/components/pagecontent/AuthorList';
 import * as AuthorDetails from 'src/components/pagecontent/AuthorDetails';
+import * as ArticleListing from 'src/components/pagecontent/ArticleListing';
 import * as ArticleList from 'src/components/pagecontent/ArticleList';
+import * as ArticleHeader from 'src/components/pagecontent/ArticleHeader';
 import * as ArticleDetails from 'src/components/pagecontent/ArticleDetails';
+import * as ArticleBody from 'src/components/pagecontent/ArticleBody';
 import * as AppPromo from 'src/components/pagecontent/AppPromo';
 import * as AccordionSection from 'src/components/pagecontent/AccordionSection';
 import * as Accordion from 'src/components/pagecontent/Accordion';
@@ -117,8 +120,11 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['AuthorWidget', { ...AuthorWidget }],
   ['AuthorList', { ...AuthorList }],
   ['AuthorDetails', { ...AuthorDetails }],
+  ['ArticleListing', { ...ArticleListing }],
   ['ArticleList', { ...ArticleList }],
+  ['ArticleHeader', { ...ArticleHeader }],
   ['ArticleDetails', { ...ArticleDetails }],
+  ['ArticleBody', { ...ArticleBody }],
   ['AppPromo', { ...AppPromo }],
   ['AccordionSection', { ...AccordionSection }],
   ['Accordion', { ...Accordion }],

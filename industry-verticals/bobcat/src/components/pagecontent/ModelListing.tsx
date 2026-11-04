@@ -13,6 +13,7 @@ import {
   useSitecore,
 } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
+import { plainText, toJsonLd } from 'lib/json-ld';
 
 /**
  * ModelListing: model cards (children) with a filter column built from the children's values:
@@ -23,6 +24,9 @@ import { ComponentProps } from 'lib/component-props';
  * Other machine types (excavators, tractors): when the listing's Spec1Label is filled, each card shows up to three specs
  * (SpecNLabel / SpecNUnit on the listing, SpecN a plain number on each model), every labelled spec gets a Min-Max range
  * filter, and GroupLabel / Group2Label add checkbox filters built from each model's Group / Group2 value.
+ *
+ * The models are also written as schema.org JSON-LD: an ItemList of Products (name, image, description, the card's specs
+ * as additionalProperty, the "Starting at" price as an Offer when it is a dollar amount, the details link when absolute).
  */
 
 type JsonField<T> = { jsonValue?: T };
@@ -151,6 +155,39 @@ const range = (values: number[], unit: string, plus = false) => {
   const max = Math.max(...values);
   if (plus) return `${Math.floor(min / 100) * 100} ${unit}+`;
   return min === max ? `${min} ${unit}` : `${min}-${max} ${unit}`;
+};
+
+const productListJsonLd = (title: string, items: ModelItem[], specs: Spec[] | null): string | null => {
+  const products = items
+    .filter((m) => str(m.model))
+    .map((m, i) => {
+      const price = str(m.price);
+      const amount = price.startsWith('$') ? Number(price.replace(/[^0-9.]/g, '')) : NaN;
+      const url = m.detailsLink?.jsonValue?.value?.href ?? '';
+      const properties = specs
+        ? specs.map((s) => ({ name: s.label.replace(/:\s*$/, ''), value: str(m[s.key]), unitText: s.unit }))
+        : [
+            { name: 'Horsepower', value: str(m.horsepower), unitText: 'hp' },
+            { name: 'Rated Operating Capacity', value: str(m.operatingCapacity), unitText: 'lbs' },
+            { name: 'Compatible Attachments', value: str(m.attachments) },
+          ];
+      return {
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'Product',
+          name: str(m.model),
+          brand: { '@type': 'Brand', name: 'Bobcat' },
+          image: m.image?.jsonValue?.value?.src,
+          description: plainText(m.text?.jsonValue?.value as string | undefined),
+          url: /^https?:\/\//.test(url) ? url : '',
+          additionalProperty: properties.filter((p) => p.value).map((p) => ({ '@type': 'PropertyValue', ...p })),
+          offers: Number.isFinite(amount) && amount > 0 ? { '@type': 'Offer', price: amount, priceCurrency: 'USD' } : undefined,
+        },
+      };
+    });
+  if (!products.length) return null;
+  return toJsonLd({ '@context': 'https://schema.org', '@type': 'ItemList', name: title, itemListElement: products });
 };
 
 const ModelCard = ({
@@ -475,12 +512,15 @@ const ModelListingView = ({
     setClosed((c) => (c.includes(key) ? c.filter((k) => k !== key) : [...c, key]));
 
   const applyLabel = datasource.applyLabel?.jsonValue;
+  const pageTitle = `${(page?.layout?.sitecore?.route?.fields?.Title as Field<string> | undefined)?.value ?? ''}`.trim();
+  const jsonLd = isEditing ? null : productListJsonLd(pageTitle || str(datasource.title), items, specs);
 
   return (
     <div
       className={`component model-listing model-listing--${look} ${styles}`}
       id={id ? id : undefined}
     >
+      {jsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />}
       <div className="model-listing__band">
         <div className="model-listing__inner">
           {(isEditing || !!datasource.title?.jsonValue?.value) && (

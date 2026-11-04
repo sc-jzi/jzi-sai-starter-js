@@ -52,8 +52,11 @@ import * as Carousel from 'src/components/pagecontent/Carousel';
 import * as AuthorWidget from 'src/components/pagecontent/AuthorWidget';
 import * as AuthorList from 'src/components/pagecontent/AuthorList';
 import * as AuthorDetails from 'src/components/pagecontent/AuthorDetails';
+import * as ArticleListing from 'src/components/pagecontent/ArticleListing';
 import * as ArticleList from 'src/components/pagecontent/ArticleList';
+import * as ArticleHeader from 'src/components/pagecontent/ArticleHeader';
 import * as ArticleDetails from 'src/components/pagecontent/ArticleDetails';
+import * as ArticleBody from 'src/components/pagecontent/ArticleBody';
 import * as AppPromo from 'src/components/pagecontent/AppPromo';
 import * as AccordionSection from 'src/components/pagecontent/AccordionSection';
 import * as Accordion from 'src/components/pagecontent/Accordion';
@@ -120,8 +123,11 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['AuthorWidget', { ...AuthorWidget, componentType: 'client' }],
   ['AuthorList', { ...AuthorList, componentType: 'client' }],
   ['AuthorDetails', { ...AuthorDetails, componentType: 'client' }],
+  ['ArticleListing', { ...ArticleListing, componentType: 'client' }],
   ['ArticleList', { ...ArticleList, componentType: 'client' }],
+  ['ArticleHeader', { ...ArticleHeader, componentType: 'client' }],
   ['ArticleDetails', { ...ArticleDetails, componentType: 'client' }],
+  ['ArticleBody', { ...ArticleBody, componentType: 'client' }],
   ['AppPromo', { ...AppPromo, componentType: 'client' }],
   ['AccordionSection', { ...AccordionSection, componentType: 'client' }],
   ['Accordion', { ...Accordion, componentType: 'client' }],
