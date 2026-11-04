@@ -12,7 +12,7 @@ import { jsx, jsxs, Fragment } from 'react/jsx-runtime';
 import { useEffect, useState, Suspense, useCallback, useMemo, useRef } from 'react';
 import React from 'react';
 import { getSiteThemeClass } from 'lib/site-theme';
-import { Text, useSitecore, NextImage, Link, RichText, Placeholder, withDatasourceCheck, Image as Image_8a80e63291fea86e0744df19113dc44bec187216, AppPlaceholder, CdpHelper } from '@sitecore-content-sdk/nextjs';
+import { Text, useSitecore, NextImage, Link, RichText, Placeholder, withDatasourceCheck, Image as Image_8a80e63291fea86e0744df19113dc44bec187216, DateField, AppPlaceholder, CdpHelper } from '@sitecore-content-sdk/nextjs';
 import { useParams, useRouter, useSearchParams, usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { useInfiniteSearch, useSuggest, useSearch } from '@sitecore-content-sdk/nextjs/search';
@@ -27,8 +27,10 @@ import { FacebookIcon, FacebookShareButton, LinkedinIcon, LinkedinShareButton, T
 import Head from 'next/head';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import { ParallaxBackgroundImage } from 'components/non-sitecore/ParallaxBackgroundImage';
+import { plainText, toJsonLd } from 'lib/json-ld';
 import { identity, pageView } from '@sitecore-content-sdk/events';
 import { IconAccent } from 'components/non-sitecore/IconAccent';
+import { formatArticleDate } from 'src/components/pagecontent/ArticleHeader';
 import { createPortal } from 'react-dom';
 import { UserCircle, X, Loader2, RotateCcw, Copy, Check } from 'lucide-react';
 import { personalize } from '@sitecore-content-sdk/personalize';
@@ -79,6 +81,7 @@ const importMap = [
       { name: 'Placeholder', value: Placeholder },
       { name: 'withDatasourceCheck', value: withDatasourceCheck },
       { name: 'Image', value: Image_8a80e63291fea86e0744df19113dc44bec187216 },
+      { name: 'DateField', value: DateField },
       { name: 'AppPlaceholder', value: AppPlaceholder },
       { name: 'CdpHelper', value: CdpHelper },
     ]
@@ -182,6 +185,13 @@ const importMap = [
     ]
   },
   {
+    module: 'lib/json-ld',
+    exports: [
+      { name: 'plainText', value: plainText },
+      { name: 'toJsonLd', value: toJsonLd },
+    ]
+  },
+  {
     module: '@sitecore-content-sdk/events',
     exports: [
       { name: 'identity', value: identity },
@@ -192,6 +202,12 @@ const importMap = [
     module: 'components/non-sitecore/IconAccent',
     exports: [
       { name: 'IconAccent', value: IconAccent },
+    ]
+  },
+  {
+    module: 'src/components/pagecontent/ArticleHeader',
+    exports: [
+      { name: 'formatArticleDate', value: formatArticleDate },
     ]
   },
   {
