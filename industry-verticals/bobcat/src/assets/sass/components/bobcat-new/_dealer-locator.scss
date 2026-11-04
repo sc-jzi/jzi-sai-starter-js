@@ -1,0 +1,225 @@
+// Dealer locator (Find a Dealer). As on the live page: headline 36px and intro text on white, a form row (Location with
+// Auto Detect, Product, a grey Search button), then a #f1f1f1 band with "Product: X  N Results" and numbered dealer cards
+// (name with an arrow, address, distance, Call / Visit Website / Get Directions). The live page's Google map is not built.
+.dealer-locator {
+  color: #212529;
+  background: #fff;
+
+  &.component {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__inner {
+    max-width: 1150px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    font-family: var(--font-heading);
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.5;
+    text-transform: none;
+  }
+
+  &__text {
+    max-width: 1120px;
+    font-size: 16px;
+    line-height: 24px;
+
+    p {
+      margin: 0 0 16px;
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: minmax(0, 360px) minmax(0, 300px) auto;
+    gap: 16px;
+    align-items: end;
+    margin: 24px 0 32px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  &__label {
+    display: block;
+    margin: 0 0 8px;
+    font-size: 14px;
+  }
+
+  &__detect {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--text-colored);
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  &__field {
+    position: relative;
+  }
+
+  &__pin {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+  }
+
+  &__input,
+  &__select {
+    width: 100%;
+    height: 44px;
+    border: 1px solid #8c8c8c;
+    border-radius: 0;
+    background: #fff;
+    font: inherit;
+    font-size: 15px;
+  }
+
+  &__input {
+    padding: 0 12px 0 34px;
+  }
+
+  &__select {
+    padding: 0 12px;
+  }
+
+  &__submit {
+    justify-self: start;
+    min-width: 160px;
+    height: 44px;
+    padding: 0 32px;
+    border: 0;
+    background: var(--bg-saturated);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-size: 16px;
+    cursor: pointer;
+
+    &:disabled {
+      background: #d6d6d6;
+      color: #707070;
+      cursor: default;
+    }
+  }
+
+  &__hint {
+    font-size: 12px;
+    color: #666;
+  }
+
+  &__results {
+    padding: 32px 0 48px;
+    background: #f1f1f1;
+  }
+
+  &__prompt {
+    margin: 0;
+    padding: 24px 0;
+    text-align: center;
+    font-size: 16px;
+  }
+
+  &__summary {
+    display: flex;
+    gap: 24px;
+    margin: 0 0 16px;
+    font-size: 16px;
+  }
+
+  &__count {
+    margin-left: auto;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .dealer-card {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    background: #fff;
+
+    &__index {
+      flex: 0 0 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--bg-saturated);
+      color: #fff;
+      font-weight: 700;
+      line-height: 32px;
+      text-align: center;
+    }
+
+    &__body {
+      min-width: 0;
+    }
+
+    &__name {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin: 0 0 8px;
+      font-size: 18px;
+      text-transform: none;
+    }
+
+    &__address,
+    &__distance {
+      margin: 0 0 4px;
+      font-size: 14px;
+    }
+
+    &__distance {
+      color: #575757;
+    }
+
+    &__links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      margin-top: 12px;
+      font-size: 14px;
+
+      a {
+        color: var(--text-colored);
+        text-decoration: none;
+
+        &:hover,
+        &:focus-visible {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  @media (width < 992px) {
+    &__form {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    &__list {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+}
