@@ -535,3 +535,72 @@
     z-index: 3;
   }
 }
+
+// BobcatSliderCards (Large Excavators "Articles & Buying Resources"): measured white band, cards #f1f1f1 (radius 2) with a light shadow,
+// heading row: title left, View All right, a 1px rule under it; card title title case, link line at the bottom.
+.product-cards.product-cards--slider-cards {
+  .product-cards__band {
+    background: #fff;
+  }
+
+  .product-cards__header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #707070;
+  }
+
+  .product-cards__heading {
+    text-transform: none;
+  }
+
+  .product-cards__track {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    padding-bottom: 8px;
+  }
+
+  .product-cards__item {
+    flex: 0 0 calc((100% - 16px) / 3);
+    scroll-snap-align: start;
+  }
+
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 2px;
+    background: #f1f1f1;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 15%);
+    color: #212529;
+
+    &__media {
+      aspect-ratio: 3 / 2;
+    }
+
+    &__title {
+      text-transform: none;
+    }
+
+    &__actions {
+      margin-top: auto;
+    }
+  }
+
+  @media (width < 992px) {
+    .product-cards__item {
+      flex-basis: calc((100% - 8px) / 2);
+    }
+  }
+
+  @media (width < 576px) {
+    .product-cards__item {
+      flex-basis: 85%;
+    }
+  }
+}

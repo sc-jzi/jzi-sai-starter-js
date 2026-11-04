@@ -201,6 +201,37 @@
     font-size: 18px;
   }
 
+  // Pages: each control is wrapped with its collapsed settings; the wrapper takes the flex slot (half width or full)
+  &__editable {
+    flex: 1 1 100%;
+    min-width: 0;
+
+    &.is-half {
+      flex-basis: calc(50% - 15px);
+    }
+
+    > .lead-form__field {
+      flex: none;
+    }
+
+    input:disabled,
+    select:disabled,
+    textarea:disabled {
+      cursor: default;
+      background: #fff;
+    }
+  }
+
+  &__settings {
+    margin-top: 6px;
+
+    > summary {
+      cursor: pointer;
+      font-size: 12px;
+      color: #666;
+    }
+  }
+
   &__editing-meta,
   &__editing-options {
     font-size: 12px;
@@ -213,7 +244,8 @@
       padding: 24px 16px;
     }
 
-    &__field.is-half {
+    &__field.is-half,
+    &__editable.is-half {
       flex-basis: 100%;
     }
 

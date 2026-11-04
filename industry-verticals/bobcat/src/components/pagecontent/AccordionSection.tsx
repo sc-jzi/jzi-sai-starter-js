@@ -14,7 +14,7 @@ import { ComponentProps } from 'lib/component-props';
 
 /**
  * AccordionSection: a headline block (Eyebrow, Title, Text) and expandable panels (children: Title, Body);
- * the first panel starts open; "Expand all" shows when ExpandAllLabel is filled.
+ * the first panel starts open (FAQ and offer looks only when OpenFirst is ticked); "Expand all" shows when ExpandAllLabel is filled.
  * Looks: WithImage = panels left, Image right. Faq = one column of questions, plus a schema.org FAQPage
  * JSON-LD block built from the panels; it renders on the server pass, so it is in the initial HTML.
  */
@@ -38,6 +38,7 @@ export type AccordionSectionProps = ComponentProps & {
         text?: JsonField<RichTextField>;
         image?: JsonField<ImageField>;
         expandAllLabel?: JsonField<Field<string>>;
+        openFirst?: JsonField<Field<boolean | string>>;
         children?: { results?: AccordionPanelItem[] };
       };
     };
@@ -118,8 +119,9 @@ const AccordionSectionView = ({
   const styles = `${props.params?.styles || ''}`.trim();
   const datasource = props.fields?.data?.datasource;
   const panels = datasource?.children?.results ?? [];
-  // FAQ and offer groups start collapsed (as on the prospect's pages); the other looks open the first panel.
-  const startClosed = look === 'faq' || look === 'bobcat';
+  // FAQ and offer groups start collapsed (as on the prospect's pages) unless OpenFirst is ticked; the other looks open the first panel.
+  const openFirst = [true, '1', 'true'].includes(datasource?.openFirst?.jsonValue?.value as boolean | string);
+  const startClosed = (look === 'faq' || look === 'bobcat') && !openFirst;
   const [open, setOpen] = useState<string[]>(panels[0] && !startClosed ? [panels[0].id] : []);
 
   if (!datasource) {
@@ -196,8 +198,9 @@ const AccordionSectionView = ({
                   </p>
                 )}
               </div>
-            ) : startClosed ? (
-              // the question itself is the heading; the whole bar toggles it
+            ) : look === 'faq' ? (
+              // the question itself is the heading; the whole bar toggles it (a row count, when filled, follows the heading)
+              <div className="accordion-section__faq-head">
               <h3 className="accordion-section__panel-heading">
                 <span
                   role="button"
@@ -220,6 +223,12 @@ const AccordionSectionView = ({
                   </span>
                 </span>
               </h3>
+              {(isEditing || !!panel.count?.jsonValue?.value) && (
+                <span className="accordion-section__count">
+                  <Text field={panel.count?.jsonValue} />
+                </span>
+              )}
+              </div>
             ) : (
               <button
                 type="button"

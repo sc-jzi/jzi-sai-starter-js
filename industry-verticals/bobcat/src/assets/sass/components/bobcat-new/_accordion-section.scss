@@ -169,3 +169,26 @@
   padding-bottom: 8px;
   min-height: 56px;
 }
+
+// FAQ look: a row count (Utility Tractors "Performance 3") follows the question; without an eyebrow the band title is the 44px heading
+.accordion-section--faq {
+  .accordion-section__faq-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .accordion-section__panel-heading {
+      flex: 1 1 auto;
+    }
+
+    .accordion-section__count {
+      flex: none;
+      margin: 0 16px 0 0;
+    }
+  }
+
+  .accordion-section__header > .accordion-section__title:first-child {
+    font-size: 44px;
+    line-height: 66px;
+  }
+}

@@ -87,6 +87,16 @@
     font-size: 16px;
     line-height: 24px;
 
+    // a second heading line under the title ("Skid-Steer Loaders & Compact Track Loaders")
+    h3 {
+      margin: -8px 0 24px;
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 36px;
+      text-transform: none;
+    }
+
     p:last-child {
       margin-bottom: 0;
     }

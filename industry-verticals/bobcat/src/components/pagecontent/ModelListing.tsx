@@ -19,6 +19,10 @@ import { ComponentProps } from 'lib/component-props';
  * Category, rated operating capacity bucket, horsepower bucket and lift path, each with a count.
  * Apply filters the cards in the browser; Compare ticks up to three models (illustrative, no compare page).
  * Horsepower and OperatingCapacity hold plain numbers (the units are added here).
+ *
+ * Other machine types (excavators, tractors): when the listing's Spec1Label is filled, each card shows up to three specs
+ * (SpecNLabel / SpecNUnit on the listing, SpecN a plain number on each model), every labelled spec gets a Min-Max range
+ * filter, and GroupLabel / Group2Label add checkbox filters built from each model's Group / Group2 value.
  */
 
 type JsonField<T> = { jsonValue?: T };
@@ -35,32 +39,51 @@ export interface ModelItem {
   attachments?: JsonField<Field<string>>;
   category?: JsonField<Field<string>>;
   liftPath?: JsonField<Field<string>>;
+  spec1?: JsonField<Field<string>>;
+  spec2?: JsonField<Field<string>>;
+  spec3?: JsonField<Field<string>>;
+  group?: JsonField<Field<string>>;
+  group2?: JsonField<Field<string>>;
   quoteLink?: JsonField<LinkField>;
   detailsLink?: JsonField<LinkField>;
+}
+
+interface ListingFields {
+  id?: string;
+  title?: JsonField<Field<string>>;
+  applyLabel?: JsonField<Field<string>>;
+  guideLink?: JsonField<LinkField>;
+  alternativeText?: JsonField<Field<string>>;
+  alternativeLink?: JsonField<LinkField>;
+  spec1Label?: JsonField<Field<string>>;
+  spec1Unit?: JsonField<Field<string>>;
+  spec2Label?: JsonField<Field<string>>;
+  spec2Unit?: JsonField<Field<string>>;
+  spec3Label?: JsonField<Field<string>>;
+  spec3Unit?: JsonField<Field<string>>;
+  groupLabel?: JsonField<Field<string>>;
+  group2Label?: JsonField<Field<string>>;
+  children?: { results?: ModelItem[] };
 }
 
 export type ModelListingProps = ComponentProps & {
   fields: {
     data?: {
-      datasource?: {
-        id?: string;
-        title?: JsonField<Field<string>>;
-        applyLabel?: JsonField<Field<string>>;
-        guideLink?: JsonField<LinkField>;
-        alternativeText?: JsonField<Field<string>>;
-        alternativeLink?: JsonField<LinkField>;
-        children?: { results?: ModelItem[] };
-      };
+      datasource?: ListingFields;
     };
   };
 };
 
-type Look = 'default' | 'bobcat';
-type FilterKey = 'category' | 'roc' | 'hp' | 'liftPath';
+type Look = 'default' | 'bobcat' | 'bobcat-light';
+type FilterKey = string;
 type Filters = Record<FilterKey, string[]>;
+type SpecKey = 'spec1' | 'spec2' | 'spec3';
+type Ranges = Partial<Record<SpecKey, { min: string; max: string }>>;
+type Spec = { key: SpecKey; label: string; unit: string; labelField?: Field<string> };
 
-const EMPTY_FILTERS: Filters = { category: [], roc: [], hp: [], liftPath: [] };
+const EMPTY_FILTERS: Filters = {};
 const MAX_COMPARE = 3;
+const SPEC_KEYS: SpecKey[] = ['spec1', 'spec2', 'spec3'];
 
 /**
  * The ComponentQuery reads each child's own fields as a list (`fields(ownFields: true) { name jsonValue }`) to stay within
@@ -75,6 +98,13 @@ const keyedChild = (child: ModelItem & ChildFieldList): ModelItem => {
       keyed[f.name.charAt(0).toLowerCase() + f.name.slice(1)] = { jsonValue: f.jsonValue };
   }
   return keyed as unknown as ModelItem;
+};
+
+/** The listing's own fields come as the same list (same query-depth reason); its children stay as they are. */
+const keyedListing = (ds?: ListingFields & Partial<ChildFieldList>): ListingFields | undefined => {
+  if (!ds || !Array.isArray(ds.fields)) return ds;
+  const keyed = keyedChild(ds as unknown as ModelItem & ChildFieldList) as unknown as ListingFields;
+  return { ...keyed, children: ds.children };
 };
 
 const str = (f?: JsonField<Field<string>>) => `${f?.jsonValue?.value ?? ''}`.trim();
@@ -125,12 +155,14 @@ const range = (values: number[], unit: string, plus = false) => {
 
 const ModelCard = ({
   item,
+  specs,
   isEditing,
   compared,
   compareDisabled,
   onCompare,
 }: {
   item: ModelItem;
+  specs: Spec[] | null;
   isEditing: boolean;
   compared: boolean;
   compareDisabled: boolean;
@@ -190,6 +222,36 @@ const ModelCard = ({
       {(isEditing || !!item.text?.jsonValue?.value) && (
         <RichText field={item.text?.jsonValue} className="model-card__text" />
       )}
+      {specs ? (
+        <dl className="model-card__specs">
+          {specs.map((s) =>
+            isEditing || str(item[s.key]) ? (
+              <div className="model-card__spec" key={s.key}>
+                <dt>{s.label}</dt>
+                <dd>
+                  <Text field={item[s.key]?.jsonValue} /> {s.unit}
+                </dd>
+              </div>
+            ) : null
+          )}
+          {isEditing && (
+            <>
+              <div className="model-card__spec">
+                <dt>Group:</dt>
+                <dd>
+                  <Text field={item.group?.jsonValue} />
+                </dd>
+              </div>
+              <div className="model-card__spec">
+                <dt>Group 2:</dt>
+                <dd>
+                  <Text field={item.group2?.jsonValue} />
+                </dd>
+              </div>
+            </>
+          )}
+        </dl>
+      ) : (
       <dl className="model-card__specs">
         {(isEditing || hp) && (
           <div className="model-card__spec">
@@ -232,6 +294,7 @@ const ModelCard = ({
           </>
         )}
       </dl>
+      )}
       <div className="model-card__actions">
         {(isEditing || !!item.quoteLink?.jsonValue?.value?.href) && (
           <Link
@@ -272,7 +335,10 @@ const ModelListingView = ({
   const isEditing = !!page?.mode?.isEditing;
   const id = props.params?.RenderingIdentifier;
   const styles = `${props.params?.styles || ''}`.trim();
-  const datasource = props.fields?.data?.datasource;
+  const datasource = useMemo(
+    () => keyedListing(props.fields?.data?.datasource),
+    [props.fields?.data?.datasource]
+  );
   const items = useMemo(
     () =>
       (datasource?.children?.results ?? []).map((c) => keyedChild(c as ModelItem & ChildFieldList)),
@@ -281,19 +347,47 @@ const ModelListingView = ({
 
   const [pending, setPending] = useState<Filters>(EMPTY_FILTERS);
   const [applied, setApplied] = useState<Filters>(EMPTY_FILTERS);
+  const [pendingRange, setPendingRange] = useState<Ranges>({});
+  const [appliedRange, setAppliedRange] = useState<Ranges>({});
   const [compare, setCompare] = useState<string[]>([]);
   const [closed, setClosed] = useState<FilterKey[]>([]);
   const [sort, setSort] = useState<'asc' | 'desc'>('asc');
 
-  const keyOf: Record<FilterKey, (m: ModelItem) => string | null> = {
-    category: (m) => str(m.category) || null,
-    roc: (m) => rocBucket(num(m.operatingCapacity)),
-    hp: (m) => hpBucket(num(m.horsepower)),
-    liftPath: (m) => str(m.liftPath) || null,
-  };
+  // Other machine types: the listing names its specs (see the header comment); loaders keep the fixed filters.
+  const specs: Spec[] | null = str(datasource?.spec1Label)
+    ? SPEC_KEYS.map((key) => {
+        const label = datasource?.[`${key}Label` as const];
+        return {
+          key,
+          label: str(label),
+          unit: str(datasource?.[`${key}Unit` as const]),
+          labelField: label?.jsonValue,
+        };
+      }).filter((s) => s.label)
+    : null;
+
+  const keyOf: Record<FilterKey, (m: ModelItem) => string | null> = specs
+    ? {
+        group: (m) => str(m.group) || null,
+        group2: (m) => str(m.group2) || null,
+      }
+    : {
+        category: (m) => str(m.category) || null,
+        roc: (m) => rocBucket(num(m.operatingCapacity)),
+        hp: (m) => hpBucket(num(m.horsepower)),
+        liftPath: (m) => str(m.liftPath) || null,
+      };
 
   const groups = useMemo(
-    () => [
+    () =>
+      specs
+        ? [
+            { key: 'group', title: str(datasource?.groupLabel) },
+            { key: 'group2', title: str(datasource?.group2Label) },
+          ]
+            .filter((g) => g.title)
+            .map((g) => ({ ...g, options: buildGroup(items, keyOf[g.key], (k) => k) }))
+        : [
       {
         key: 'category' as FilterKey,
         title: 'Category',
@@ -326,7 +420,7 @@ const ModelListingView = ({
       },
     ],
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [items]
+    [items, datasource]
   );
 
   if (!datasource) {
@@ -339,27 +433,46 @@ const ModelListingView = ({
     );
   }
 
-  // sorted by rated operating capacity (a plain number field, as the filters use it); models without one go last
+  // sorted by rated operating capacity (loaders) or the first named spec (a plain number field, as the filters use it);
+  // models without one go last
+  const sortValue = (m: ModelItem) => (specs ? num(m.spec1) : num(m.operatingCapacity));
   const byRoc = (a: ModelItem, b: ModelItem) => {
-    const x = num(a.operatingCapacity);
-    const y = num(b.operatingCapacity);
+    const x = sortValue(a);
+    const y = sortValue(b);
     if (x === null) return y === null ? 0 : 1;
     if (y === null) return -1;
     return sort === 'asc' ? x - y : y - x;
   };
+  const inRange = (item: ModelItem) =>
+    SPEC_KEYS.every((k) => {
+      const r = appliedRange[k];
+      if (!r || (r.min === '' && r.max === '')) return true;
+      const v = num(item[k]);
+      if (v === null) return false;
+      return (r.min === '' || v >= Number(r.min)) && (r.max === '' || v <= Number(r.max));
+    });
   const visible = isEditing
     ? items
-    : [...items].sort(byRoc).filter((item) =>
-        (Object.keys(applied) as FilterKey[]).every((k) => {
-          const chosen = applied[k];
-          if (!chosen.length) return true;
-          const key = keyOf[k](item);
-          return !!key && chosen.includes(key);
-        })
+    : [...items].sort(byRoc).filter(
+        (item) =>
+          inRange(item) &&
+          (Object.keys(applied) as FilterKey[]).every((k) => {
+            const chosen = applied[k] ?? [];
+            if (!chosen.length) return true;
+            const key = keyOf[k]?.(item);
+            return !!key && chosen.includes(key);
+          })
       );
 
   const togglePending = (k: FilterKey, option: string, on: boolean) =>
-    setPending((p) => ({ ...p, [k]: on ? [...p[k], option] : p[k].filter((o) => o !== option) }));
+    setPending((p) => {
+      const now = p[k] ?? [];
+      return { ...p, [k]: on ? [...now, option] : now.filter((o) => o !== option) };
+    });
+  const setRange = (k: SpecKey, end: 'min' | 'max', value: string) =>
+    setPendingRange((r) => ({ ...r, [k]: { min: '', max: '', ...r[k], [end]: value } }));
+  const toggleClosed = (key: string) =>
+    setClosed((c) => (c.includes(key) ? c.filter((k) => k !== key) : [...c, key]));
 
   const applyLabel = datasource.applyLabel?.jsonValue;
 
@@ -379,7 +492,16 @@ const ModelListingView = ({
             <div className="model-listing__toolbar-col">
               {!isEditing && (
                 <p className="model-listing__count">
-                  {visible.length} {visible.length === 1 ? 'Machine' : 'Machines'}
+                  {specs ? (
+                    <>
+                      <span className="model-listing__count-num">{visible.length}</span>{' '}
+                      {visible.length === 1 ? 'Result' : 'Results'}
+                    </>
+                  ) : (
+                    <>
+                      {visible.length} {visible.length === 1 ? 'Machine' : 'Machines'}
+                    </>
+                  )}
                 </p>
               )}
               {(isEditing || !!datasource.guideLink?.jsonValue?.value?.href) && (
@@ -408,13 +530,14 @@ const ModelListingView = ({
             )}
             {!isEditing && (
               <div className="model-listing__toolbar-col model-listing__toolbar-col--sort">
+                {specs && <p className="model-listing__sort-label">Sort By</p>}
                 <div className="model-listing__sort-box">
                   <button
                     type="button"
                     className="model-listing__sort"
                     onClick={() => setSort((v) => (v === 'asc' ? 'desc' : 'asc'))}
                   >
-                    ROC ({sort === 'asc' ? 'Low to High' : 'High to Low'})
+                    {specs ? specs[0].label : 'ROC'} ({sort === 'asc' ? 'Low to High' : 'High to Low'})
                   </button>
                 </div>
               </div>
@@ -422,6 +545,40 @@ const ModelListingView = ({
           </div>
           <div className="model-listing__layout">
             <aside className="model-listing__filters" aria-label="Filters">
+              {specs?.map((s) => (
+                <div
+                  className={`model-listing__filter${closed.includes(s.key) ? ' is-closed' : ''}`}
+                  key={s.key}
+                >
+                  <button
+                    type="button"
+                    className="model-listing__filter-title"
+                    aria-expanded={!closed.includes(s.key)}
+                    onClick={() => toggleClosed(s.key)}
+                  >
+                    {isEditing ? <Text field={s.labelField} /> : s.label}
+                  </button>
+                  <div className="model-listing__filter-options model-listing__range" hidden={closed.includes(s.key)}>
+                    <input
+                      type="number"
+                      className="model-listing__range-input"
+                      placeholder="Min"
+                      aria-label={`${s.label} minimum`}
+                      value={pendingRange[s.key]?.min ?? ''}
+                      onChange={(e) => setRange(s.key, 'min', e.target.value)}
+                    />
+                    <span>to</span>
+                    <input
+                      type="number"
+                      className="model-listing__range-input"
+                      placeholder="Max"
+                      aria-label={`${s.label} maximum`}
+                      value={pendingRange[s.key]?.max ?? ''}
+                      onChange={(e) => setRange(s.key, 'max', e.target.value)}
+                    />
+                  </div>
+                </div>
+              ))}
               {groups.map((group) =>
                 group.options.length ? (
                   <div
@@ -432,13 +589,7 @@ const ModelListingView = ({
                       type="button"
                       className="model-listing__filter-title"
                       aria-expanded={!closed.includes(group.key)}
-                      onClick={() =>
-                        setClosed((c) =>
-                          c.includes(group.key)
-                            ? c.filter((k) => k !== group.key)
-                            : [...c, group.key]
-                        )
-                      }
+                      onClick={() => toggleClosed(group.key)}
                     >
                       {group.title}
                     </button>
@@ -450,7 +601,7 @@ const ModelListingView = ({
                         <label className="model-listing__check" key={o.key}>
                           <input
                             type="checkbox"
-                            checked={pending[group.key].includes(o.key)}
+                            checked={(pending[group.key] ?? []).includes(o.key)}
                             onChange={(e) => togglePending(group.key, o.key, e.target.checked)}
                           />
                           <span>
@@ -470,7 +621,10 @@ const ModelListingView = ({
                 <button
                   type="button"
                   className="bobcat-button model-listing__apply"
-                  onClick={() => setApplied(pending)}
+                  onClick={() => {
+                    setApplied(pending);
+                    setAppliedRange(pendingRange);
+                  }}
                 >
                   {applyLabel?.value || 'Apply'}
                 </button>
@@ -485,6 +639,7 @@ const ModelListingView = ({
                   <ModelCard
                     key={item.id}
                     item={item}
+                    specs={specs}
                     isEditing={isEditing}
                     compared={compare.includes(item.id)}
                     compareDisabled={compare.length >= MAX_COMPARE}
@@ -522,4 +677,9 @@ export const Default = (props: ModelListingProps): JSX.Element => (
 
 export const Bobcat = (props: ModelListingProps): JSX.Element => (
   <ModelListingView props={props} look="bobcat" />
+);
+
+/* BobcatLight: the excavator and tractor pages' Models band, light grey with a dark title-case heading. */
+export const BobcatLight = (props: ModelListingProps): JSX.Element => (
+  <ModelListingView props={props} look="bobcat-light" />
 );

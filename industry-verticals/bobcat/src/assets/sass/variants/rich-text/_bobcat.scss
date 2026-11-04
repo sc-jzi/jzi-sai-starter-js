@@ -21,4 +21,31 @@
       line-height: inherit;
     }
   }
+
+  // Industry page intro (Construction "Compact Equipment Solutions for Worksites"): measured headline 44px/66
+  // left, text 16px/24, content 1150px.
+  &.rich-text-bobcat--intro .rich-text-bobcat__inner {
+    font-size: 16px;
+    line-height: 24px;
+
+    h2 {
+      margin: 0 0 8px;
+      font-family: var(--font-heading);
+      font-size: 44px;
+      font-weight: 500;
+      line-height: 66px;
+      color: #212529;
+    }
+
+    a {
+      color: var(--text-colored);
+    }
+
+    @media (max-width: 991.98px) {
+      h2 {
+        font-size: 32px;
+        line-height: 1.3;
+      }
+    }
+  }
 }

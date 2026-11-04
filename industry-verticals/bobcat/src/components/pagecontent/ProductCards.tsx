@@ -89,6 +89,7 @@ type Look =
   | 'attachments'
   | 'slider'
   | 'slider-dark'
+  | 'slider-cards'
   | 'stories';
 
 const hasText = (f?: Field<string> | RichTextField) => !!f?.value;
@@ -198,8 +199,10 @@ const Card = ({
     </p>
   );
   const textEl = show(hasText(text)) && <RichText field={text} className="product-card__text" />;
-  // Slider (offer cards): the whole card is the link, no link line (as on the prospect's page)
-  const stretched = look === 'slider' && !isEditing && hasLink(link);
+  // Slider (offer cards): the whole card is the link, no link line (as on the prospect's page). A link with a label of its
+  // own ("Read Story", "Offer Details" on the industry pages) is shown as the link line instead.
+  const ownLabel = !!link?.value?.text && link.value.text.trim() !== `${title?.value ?? ''}`.trim();
+  const stretched = look === 'slider' && !isEditing && hasLink(link) && !ownLabel;
   const linkEl = stretched ? (
     <a
       className="product-card__stretched"
@@ -350,7 +353,7 @@ const ProductCardsView = ({
   const title = datasource.title?.jsonValue;
   const link = datasource.link?.jsonValue;
   const showHeader = isEditing || hasText(eyebrow) || hasText(title) || hasLink(link);
-  const isSlider = look === 'slider' || look === 'slider-dark';
+  const isSlider = look === 'slider' || look === 'slider-dark' || look === 'slider-cards';
 
   return (
     <div
@@ -446,6 +449,11 @@ export const BobcatAttachments = (props: ProductCardsProps): JSX.Element => (
 
 export const BobcatSlider = (props: ProductCardsProps): JSX.Element => (
   <ProductCardsView props={props} look="slider" />
+);
+
+/* BobcatSliderCards: article and story scroller on a white band, light grey cards with their link line, heading row with View All on the right */
+export const BobcatSliderCards = (props: ProductCardsProps): JSX.Element => (
+  <ProductCardsView props={props} look="slider-cards" />
 );
 
 export const BobcatSliderDark = (props: ProductCardsProps): JSX.Element => (

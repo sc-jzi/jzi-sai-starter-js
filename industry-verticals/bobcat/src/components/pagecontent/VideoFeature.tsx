@@ -16,8 +16,8 @@ import { ComponentProps } from 'lib/component-props';
 
 /**
  * VideoFeature: a video (VideoLink, General Link to a YouTube or .mp4 URL) with its Poster image and text.
- * The play button is drawn here; a click swaps the poster for the player. In editing mode the poster stays
- * so the Poster field can be edited.
+ * The play button is drawn here; a click swaps the poster for the player. In editing mode the player is shown
+ * (without autoplay) and the VideoLink and Poster fields sit in a collapsed "Video settings" block on it.
  */
 
 interface Fields {
@@ -58,7 +58,7 @@ const videoSource = (href?: string): VideoSource => {
   if (youtubeId) {
     return {
       kind: 'youtube',
-      src: `https://www.youtube-nocookie.com/embed/${encodeURIComponent(youtubeId)}?autoplay=1&rel=0`,
+      src: `https://www.youtube-nocookie.com/embed/${encodeURIComponent(youtubeId)}?rel=0`,
     };
   }
   return { kind: 'file', src: url.toString() };
@@ -71,6 +71,20 @@ const PlayButton = ({ onClick }: { onClick: () => void }): JSX.Element => (
       <path d="M32 24 58 40 32 56Z" fill="#fff" />
     </svg>
   </button>
+);
+
+/** Pages only: the VideoLink and Poster fields, collapsed over the player. */
+const VideoSettings = ({ fields }: { fields: Fields }): JSX.Element => (
+  <details className="video-feature__settings">
+    <summary>Video settings</summary>
+    <div className="video-feature__settings-body">
+      <div>
+        Video link (YouTube or .mp4): <Link field={fields.VideoLink as LinkField} />
+      </div>
+      <div>Poster (shown before the video plays):</div>
+      <NextImage field={fields.Poster} width={320} height={180} className="video-feature__settings-poster" />
+    </div>
+  </details>
 );
 
 const VideoMedia = ({
@@ -88,18 +102,59 @@ const VideoMedia = ({
   // A background file video in the banner plays muted on its own, like the live band.
   const autoBackground = look === 'banner' && source?.kind === 'file' && !isEditing;
 
-  // Dark split with the video left: a file video shows the browser's own player, as on the live band.
-  if (look === 'split-dark-left' && source?.kind === 'file' && !isEditing) {
+  const posterSrc = fields.Poster?.value?.src as string | undefined;
+
+  // Pages: the player itself (no autoplay), with the fields in a collapsed block on it.
+  if (isEditing && source) {
+    return (
+      <div className="video-feature__media is-editing">
+        {source.kind === 'youtube' ? (
+          <iframe
+            className="video-feature__video"
+            src={source.src}
+            title={fields.Title?.value || 'Video'}
+            allow="encrypted-media; picture-in-picture"
+            allowFullScreen
+          />
+        ) : (
+          <video
+            className="video-feature__video"
+            src={source.src}
+            controls
+            muted={look === 'banner'}
+            playsInline
+            preload="metadata"
+            poster={posterSrc}
+          />
+        )}
+        <VideoSettings fields={fields} />
+      </div>
+    );
+  }
+
+  // Split looks: a file video shows the browser's own player, as on the live bands; so does a YouTube video
+  // without a poster (there is nothing to put the play button on).
+  if (look !== 'banner' && source && (source.kind === 'file' || !hasPoster)) {
     return (
       <div className="video-feature__media">
-        <video
-          className="video-feature__video"
-          src={source.src}
-          controls
-          playsInline
-          preload="metadata"
-          poster={fields.Poster?.value?.src as string | undefined}
-        />
+        {source.kind === 'youtube' ? (
+          <iframe
+            className="video-feature__video"
+            src={source.src}
+            title={fields.Title?.value || 'Video'}
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+          />
+        ) : (
+          <video
+            className="video-feature__video"
+            src={source.src}
+            controls
+            playsInline
+            preload="metadata"
+            poster={posterSrc}
+          />
+        )}
       </div>
     );
   }
@@ -126,7 +181,7 @@ const VideoMedia = ({
         {source.kind === 'youtube' ? (
           <iframe
             className="video-feature__video"
-            src={source.src}
+            src={`${source.src}&autoplay=1`}
             title={fields.Title?.value || 'Video'}
             allow="autoplay; encrypted-media; picture-in-picture"
             allowFullScreen
@@ -138,9 +193,18 @@ const VideoMedia = ({
     );
   }
 
+  if (isEditing) {
+    return (
+      <div className="video-feature__media is-editing">
+        <span className="video-feature__empty">Add a video link under Video settings</span>
+        <VideoSettings fields={fields} />
+      </div>
+    );
+  }
+
   return (
     <div className="video-feature__media">
-      {(isEditing || hasPoster) && (
+      {hasPoster && (
         <NextImage
           field={fields.Poster}
           width={1280}
@@ -148,12 +212,7 @@ const VideoMedia = ({
           className="video-feature__poster"
         />
       )}
-      {source && !isEditing && <PlayButton onClick={() => setPlaying(true)} />}
-      {isEditing && (
-        <div className="video-feature__video-link">
-          Video link: <Link field={fields.VideoLink as LinkField} />
-        </div>
-      )}
+      {source && <PlayButton onClick={() => setPlaying(true)} />}
     </div>
   );
 };

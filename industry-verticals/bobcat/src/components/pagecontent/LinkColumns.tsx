@@ -40,7 +40,7 @@ export type LinkColumnsProps = ComponentProps & {
   };
 };
 
-type Look = 'default' | 'bobcat';
+type Look = 'default' | 'bobcat' | 'compact';
 
 const linksOf = (item: LinkColumnItem) =>
   [
@@ -117,4 +117,9 @@ export const Default = (props: LinkColumnsProps): JSX.Element => (
 
 export const Bobcat = (props: LinkColumnsProps): JSX.Element => (
   <LinkColumnsView props={props} look="bobcat" />
+);
+
+/* BobcatCompact: the industry pages' product link columns, 24px column titles. */
+export const BobcatCompact = (props: LinkColumnsProps): JSX.Element => (
+  <LinkColumnsView props={props} look="compact" />
 );

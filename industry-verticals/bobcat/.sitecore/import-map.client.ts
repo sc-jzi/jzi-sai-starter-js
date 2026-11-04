@@ -27,6 +27,7 @@ import { FacebookIcon, FacebookShareButton, LinkedinIcon, LinkedinShareButton, T
 import Head from 'next/head';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import { ParallaxBackgroundImage } from 'components/non-sitecore/ParallaxBackgroundImage';
+import { identity, pageView } from '@sitecore-content-sdk/events';
 import { IconAccent } from 'components/non-sitecore/IconAccent';
 import { createPortal } from 'react-dom';
 import { UserCircle, X, Loader2, RotateCcw, Copy, Check } from 'lucide-react';
@@ -39,7 +40,6 @@ import { clearSessionEvents, installSessionEventTracking, readSessionEvents, SES
 import PreviewSearch from 'src/components/search/PreviewSearch';
 import { eyebrowConfig } from 'src/components/navigation/eyebrow-config';
 import client from 'src/lib/sitecore-client';
-import { pageView } from '@sitecore-content-sdk/events';
 
 const importMap = [
   {
@@ -182,6 +182,13 @@ const importMap = [
     ]
   },
   {
+    module: '@sitecore-content-sdk/events',
+    exports: [
+      { name: 'identity', value: identity },
+      { name: 'pageView', value: pageView },
+    ]
+  },
+  {
     module: 'components/non-sitecore/IconAccent',
     exports: [
       { name: 'IconAccent', value: IconAccent },
@@ -259,12 +266,6 @@ const importMap = [
     module: 'src/lib/sitecore-client',
     exports: [
       { name: 'default', value: client },
-    ]
-  },
-  {
-    module: '@sitecore-content-sdk/events',
-    exports: [
-      { name: 'pageView', value: pageView },
     ]
   }
 ] as ImportEntry[];

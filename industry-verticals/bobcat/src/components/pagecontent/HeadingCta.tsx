@@ -182,9 +182,11 @@ export const Centered = (props: HeadingCtaProps): JSX.Element => {
 const BobcatHeading = ({
   props,
   dark,
+  look,
 }: {
   props: HeadingCtaProps;
   dark?: boolean;
+  look?: "panel" | "panel-dark" | "intro";
 }): JSX.Element => {
   const id = props.params?.RenderingIdentifier;
   const { page } = useSitecore();
@@ -194,7 +196,7 @@ const BobcatHeading = ({
 
   return (
     <div
-      className={`component heading-cta-bobcat ${dark ? "heading-cta-bobcat--dark" : ""} ${sxaStyles}`}
+      className={`component heading-cta-bobcat ${dark ? "heading-cta-bobcat--dark" : ""} ${look ? `heading-cta-bobcat--${look}` : ""} ${sxaStyles}`}
       id={id || undefined}
     >
       <div className="heading-cta-bobcat__inner">
@@ -225,7 +227,9 @@ const BobcatHeading = ({
               <div className="heading-cta-bobcat__actions">
                 <Link
                   field={f.Link}
-                  className="bobcat-arrow-link heading-cta-bobcat__link"
+                  className={
+                    look ? "bobcat-button heading-cta-bobcat__button" : "bobcat-arrow-link heading-cta-bobcat__link"
+                  }
                 />
               </div>
             )}
@@ -246,6 +250,22 @@ export const Bobcat = (props: HeadingCtaProps): JSX.Element => (
 /* BobcatDark variant: the same heading on the dark #333 band with white text (Home "Bobcat Company") */
 export const BobcatDark = (props: HeadingCtaProps): JSX.Element => (
   <BobcatHeading props={props} dark />
+);
+
+/* BobcatPanel: left text column on a light grey band, eyebrow over a large uppercase headline, orange button
+   (equipment pages "New Build & Price Tool", "Depth Check System") */
+export const BobcatPanel = (props: HeadingCtaProps): JSX.Element => (
+  <BobcatHeading props={props} look="panel" />
+);
+
+/* BobcatPanelDark: the same panel on the dark #333 band with white text (Large Excavators Build & Price, RogueX) */
+export const BobcatPanelDark = (props: HeadingCtaProps): JSX.Element => (
+  <BobcatHeading props={props} look="panel-dark" />
+);
+
+/* BobcatIntroCta: a left-aligned intro across the content width with an orange button (Utility Tractors, RogueX) */
+export const BobcatIntroCta = (props: HeadingCtaProps): JSX.Element => (
+  <BobcatHeading props={props} look="intro" />
 );
 
 /* BobcatPageTitle variant: left-aligned page title, the intro line only when it has text */

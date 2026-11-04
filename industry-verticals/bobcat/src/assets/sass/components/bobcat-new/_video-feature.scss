@@ -61,13 +61,44 @@
     }
   }
 
-  &__video-link {
+  // Pages: the VideoLink and Poster fields, collapsed at the top left of the player
+  &__settings {
     position: absolute;
+    top: 8px;
     left: 8px;
-    bottom: 8px;
+    z-index: 3;
+    max-width: calc(100% - 16px);
     padding: 4px 8px;
-    background: rgb(255 255 255 / 90%);
+    background: rgb(255 255 255 / 92%);
+    color: #212529;
     font-size: 13px;
+
+    > summary {
+      cursor: pointer;
+    }
+  }
+
+  &__settings-body {
+    display: grid;
+    gap: 6px;
+    margin-top: 6px;
+    word-break: break-all;
+  }
+
+  &__settings-poster {
+    display: block;
+    max-width: 240px;
+    height: auto;
+  }
+
+  &__empty {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ccc;
+    font-size: 14px;
   }
 
   &__eyebrow {
@@ -92,6 +123,16 @@
   &__text {
     font-size: 15px;
     line-height: 1.6;
+
+    // a second heading line under the title ("with More Solutions")
+    h3 {
+      margin: -16px 0 24px;
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 36px;
+      text-transform: none;
+    }
   }
 
   &__actions {

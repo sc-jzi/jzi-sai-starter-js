@@ -33,6 +33,7 @@ import * as PageBackground from 'src/components/pagecontent/PageBackground';
 import * as ModelListing from 'src/components/pagecontent/ModelListing';
 import * as LinkColumns from 'src/components/pagecontent/LinkColumns';
 import * as LeadForm from 'src/components/pagecontent/LeadForm';
+import * as InventorySearch from 'src/components/pagecontent/InventorySearch';
 import * as InPageNav from 'src/components/pagecontent/InPageNav';
 import * as ImageGallery from 'src/components/pagecontent/ImageGallery';
 import * as IconLinkTiles from 'src/components/pagecontent/IconLinkTiles';
@@ -97,6 +98,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ModelListing', { ...ModelListing }],
   ['LinkColumns', { ...LinkColumns }],
   ['LeadForm', { ...LeadForm }],
+  ['InventorySearch', { ...InventorySearch }],
   ['InPageNav', { ...InPageNav }],
   ['ImageGallery', { ...ImageGallery }],
   ['IconLinkTiles', { ...IconLinkTiles }],

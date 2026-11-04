@@ -367,9 +367,11 @@ export const BobcatBackgroundImage = (props: PromoCtaProps): JSX.Element => {
   // The strip shows an eyebrow and a headline only; an empty datasource renders the full hero so every field can be authored.
   const isStrip =
     !!f.Eyebrow?.value && !hasActions && !f.Subtitle?.value && !f.Text?.value;
-  // With two calls to action the band is a category page header (56px title, small uppercase offer line);
-  // with one it is the campaign hero (44px title, the sub-headline as a 24px second heading).
-  const isPageHeader = !isStrip && !!f.Link2?.value?.href;
+  // With two calls to action, or none and no text (industry pages), the band is a category page header
+  // (56px title, small uppercase line); with one it is the campaign hero (44px title, the sub-headline as a
+  // 24px second heading).
+  const isPageHeader =
+    !isStrip && (!!f.Link2?.value?.href || (!hasActions && !f.Text?.value));
   const variantClass = isStrip
     ? "promo-cta-bobcat-bg--strip"
     : isPageHeader

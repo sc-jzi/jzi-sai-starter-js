@@ -85,6 +85,62 @@
       font-size: 32px;
     }
   }
+
+  // Panels (equipment pages "New Build & Price Tool", RogueX): measured text column 160-681 (521px) on #f1f1f1 or #333,
+  // eyebrow 24px/1.15, headline 44px uppercase, text 16/24, orange block button; padding 32/32.
+  // Intro with a button (Utility Tractors, RogueX): the same type left across the 1120px content width on white.
+  &--panel,
+  &--panel-dark,
+  &--intro {
+    text-align: left;
+  }
+
+  &--panel {
+    --v-bg: #f1f1f1;
+  }
+
+  &--panel-dark {
+    --v-bg: var(--bg-main-alt);
+    --v-heading: #ffffff;
+    --v-text: #ffffff;
+  }
+
+  &--panel &__inner,
+  &--panel-dark &__inner,
+  &--intro &__inner {
+    max-width: 1120px;
+  }
+
+  &--panel &__inner > *,
+  &--panel-dark &__inner > * {
+    max-width: 521px;
+  }
+
+  &--panel &__title,
+  &--panel-dark &__title {
+    text-transform: uppercase;
+  }
+
+  &--panel &__text,
+  &--panel-dark &__text,
+  &--intro &__text {
+    margin: 24px 0 0;
+  }
+
+  &--panel &__text,
+  &--panel-dark &__text {
+    max-width: 521px;
+  }
+
+  &--intro &__text {
+    max-width: none;
+  }
+
+  &--panel &__actions,
+  &--panel-dark &__actions,
+  &--intro &__actions {
+    margin-top: 40px;
+  }
 }
 
 .heading-cta-bobcat-title {
