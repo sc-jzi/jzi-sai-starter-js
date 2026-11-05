@@ -27,3 +27,15 @@ export const eyebrowConfig: {
   "cta": null,
   "search": true
 };
+
+// Bobcat EU site (bobcat.com/eu/en): Request a Quote, Find a Dealer (EU site pages) and the region selector.
+export const eyebrowConfigEU: typeof eyebrowConfig = {
+  links: [
+    { label: 'Request a Quote', href: '/request-a-quote' },
+    { label: 'Find a Dealer', href: '/find-a-dealer' },
+    { label: 'Europe (English)', href: 'https://www.bobcat.com/regions' },
+  ],
+  phone: null,
+  cta: null,
+  search: true,
+};
