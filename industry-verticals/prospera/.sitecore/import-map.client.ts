@@ -13,7 +13,8 @@ import { useEffect, useState, Suspense, useCallback, useMemo, useRef } from 'rea
 import React from 'react';
 import { getSiteThemeClass } from 'lib/site-theme';
 import { Text, useSitecore, NextImage, Link, RichText, Placeholder, withDatasourceCheck, Image as Image_8a80e63291fea86e0744df19113dc44bec187216, AppPlaceholder, CdpHelper } from '@sitecore-content-sdk/nextjs';
-import { useParams, useRouter, useSearchParams, usePathname } from 'next/navigation';
+import { useParams, useSearchParams, useRouter, usePathname } from 'next/navigation';
+import { DEFAULT_LANGUAGE, LOCALE_COOKIE, SITE_LANGUAGES, findLanguage, sameLocale } from 'src/i18n/languages';
 import Image from 'next/image';
 import { useInfiniteSearch, useSuggest, useSearch } from '@sitecore-content-sdk/nextjs/search';
 import { DEFAULT_IMG_URL } from 'src/_data/customizations';
@@ -86,9 +87,19 @@ const importMap = [
     module: 'next/navigation',
     exports: [
       { name: 'useParams', value: useParams },
-      { name: 'useRouter', value: useRouter },
       { name: 'useSearchParams', value: useSearchParams },
+      { name: 'useRouter', value: useRouter },
       { name: 'usePathname', value: usePathname },
+    ]
+  },
+  {
+    module: 'src/i18n/languages',
+    exports: [
+      { name: 'DEFAULT_LANGUAGE', value: DEFAULT_LANGUAGE },
+      { name: 'LOCALE_COOKIE', value: LOCALE_COOKIE },
+      { name: 'SITE_LANGUAGES', value: SITE_LANGUAGES },
+      { name: 'findLanguage', value: findLanguage },
+      { name: 'sameLocale', value: sameLocale },
     ]
   },
   {

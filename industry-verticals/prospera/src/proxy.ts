@@ -1,4 +1,4 @@
-import { NextFetchEvent, type NextRequest } from 'next/server';
+import { NextFetchEvent, NextResponse, type NextRequest } from 'next/server';
 import {
   defineProxy,
   AppRouterMultisiteProxy,
@@ -11,9 +11,44 @@ import {
 import sites from '.sitecore/sites.json';
 import scConfig from 'sitecore.config';
 import { routing } from './i18n/routing';
+import { LOCALE_COOKIE } from './i18n/languages';
 import client from './lib/sitecore-client';
 
-export default function proxy(req: NextRequest, event: NextFetchEvent) {
+/**
+ * Remembered language. Sitecore's links carry no locale prefix, so without this a visitor who picked another language
+ * drops back to the default language on the next click. The language switcher stores the choice in LOCALE_COOKIE (and
+ * opening a prefixed URL stores it too); while a non-default language is chosen, an unprefixed URL redirects to the same
+ * path in that language (/products -> /fr-CA/products), and so does a default-language prefix (/en/products). Choosing
+ * the default language stops the redirects. Pages editing and preview (Next.js draft mode) are left alone.
+ */
+const localeOfPath = (pathname: string): string | undefined => {
+  const first = pathname.split('/')[1]?.toLowerCase();
+  return routing.locales.find((l) => l.toLowerCase() === first);
+};
+
+const isDraft = (req: NextRequest) => req.cookies.has('__prerender_bypass');
+
+const localeRedirect = (req: NextRequest): NextResponse | null => {
+  if (isDraft(req)) return null;
+  const chosen = routing.locales.find(
+    (l) => l.toLowerCase() === req.cookies.get(LOCALE_COOKIE)?.value?.toLowerCase()
+  );
+  if (!chosen || chosen === routing.defaultLocale) return null;
+  const { pathname } = req.nextUrl;
+  const pathLocale = localeOfPath(pathname);
+  if (pathLocale && pathLocale !== routing.defaultLocale) return null;
+  // a page shown in the default language because it is not translated yet links with an explicit default-language
+  // prefix (/en/products); the switcher never does (it sends the default language unprefixed), so keep the chosen one
+  const rest = pathLocale ? pathname.slice(pathLocale.length + 1) : pathname;
+  const url = req.nextUrl.clone();
+  url.pathname = `/${chosen}${rest === '/' ? '' : rest}`;
+  return NextResponse.redirect(url);
+};
+
+export default async function proxy(req: NextRequest, event: NextFetchEvent) {
+  const relocalized = localeRedirect(req);
+  if (relocalized) return relocalized;
+
   // PreviewProxy authorizes preview requests
   const preview = new PreviewProxy({
     client: client,
@@ -98,7 +133,12 @@ export default function proxy(req: NextRequest, event: NextFetchEvent) {
     // },
   });
 
-  return defineProxy(preview, botTracking, locale, multisite, redirects, personalize).exec(req);
+  const res = await defineProxy(preview, botTracking, locale, multisite, redirects, personalize).exec(req);
+  const pathLocale = localeOfPath(req.nextUrl.pathname);
+  if (pathLocale && !isDraft(req) && req.cookies.get(LOCALE_COOKIE)?.value !== pathLocale) {
+    res.cookies.set(LOCALE_COOKIE, pathLocale, { path: '/', sameSite: 'lax', maxAge: 60 * 60 * 24 * 365 });
+  }
+  return res;
 }
 
 export const config = {

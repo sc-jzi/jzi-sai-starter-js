@@ -19,6 +19,17 @@ type PageProps = {
   params: Promise<{ site: string; locale: string; path?: string[]; [key: string]: string | string[] | undefined }>;
 };
 
+/**
+ * The page in the requested language. A page with no version in that language (not translated yet) is shown in the
+ * default language instead of a 404, so a visitor browsing in another language never hits a dead end. Set
+ * LANGUAGE_FALLBACK=false to answer 404 instead.
+ */
+const getPageWithFallback = async (path: string[] | undefined, site: string, locale: string) => {
+  const page = await client.getPage(path ?? [], { site, locale });
+  if (page || locale === routing.defaultLocale || process.env.LANGUAGE_FALLBACK === 'false') return page;
+  return client.getPage(path ?? [], { site, locale: routing.defaultLocale });
+};
+
 export default async function Page({ params }: PageProps) {
   const { site, locale, path } = await params;
 
@@ -39,7 +50,7 @@ export default async function Page({ params }: PageProps) {
       page = await client.getPreview(previewData);
     }
   } else {
-    page = await client.getPage(path ?? [], { site, locale });
+    page = await getPageWithFallback(path, site, locale);
   }
 
   // If the page is not found, return a 404
@@ -79,7 +90,7 @@ export const generateMetadata = async ({ params }: PageProps) => {
   const { path, site, locale } = await params;
 
   // The same call as for rendering the page. Should be cached by default react behavior
-  const page = await client.getPage(path ?? [], { site, locale });
+  const page = await getPageWithFallback(path, site, locale);
   return {
     title: (page?.layout.sitecore.route?.fields as RouteFields)?.Title?.value?.toString() || 'Page',
   };
