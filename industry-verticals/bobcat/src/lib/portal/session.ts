@@ -1,8 +1,8 @@
 /**
  * My Machine portal session: a signed, httpOnly cookie "<payload>.<signature>" (base64url JSON + HMAC-SHA256).
  * Web Crypto only, so the same code runs in the proxy (edge) and in the route handlers (node).
- * The signing key is derived from SITECORE_EDITING_SECRET (a server-only secret the app already has); without it no
- * session can be created or verified, so the portal stays closed rather than open.
+ * The signing key is derived from a server setting (see sessionSecret); without any of them no session can be created or
+ * verified, so the portal stays closed rather than open.
  */
 
 export const SESSION_COOKIE = 'bobcat_mm_session';
@@ -23,8 +23,20 @@ const fromB64url = (value: string): Uint8Array => {
   return Uint8Array.from(s, (c) => c.charCodeAt(0));
 };
 
+/**
+ * The first server setting that is present: a dedicated PORTAL_SESSION_SECRET, the editing secret, or (demo fallback, so a
+ * front-end deployment without the editing secret still signs in) the Edge context id. The context id is not a real
+ * secret: set PORTAL_SESSION_SECRET wherever the portal must resist forged sessions.
+ */
+const sessionSecret = (): string =>
+  process.env.PORTAL_SESSION_SECRET ||
+  process.env.SITECORE_EDITING_SECRET ||
+  process.env.SITECORE_EDGE_CONTEXT_ID ||
+  process.env.NEXT_PUBLIC_SITECORE_EDGE_CONTEXT_ID ||
+  '';
+
 const signingKey = async (): Promise<CryptoKey | null> => {
-  const secret = process.env.SITECORE_EDITING_SECRET;
+  const secret = sessionSecret();
   if (!secret) return null;
   const material = await crypto.subtle.digest('SHA-256', encoder.encode(`bobcat-my-machine-session:${secret}`));
   return crypto.subtle.importKey('raw', material, { name: 'HMAC', hash: 'SHA-256' }, false, ['sign', 'verify']);

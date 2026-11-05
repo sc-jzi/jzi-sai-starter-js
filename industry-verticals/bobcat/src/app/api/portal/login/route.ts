@@ -14,6 +14,9 @@ export async function POST(request: NextRequest) {
   const body = (await request.json().catch(() => ({}))) as { username?: string; password?: string };
   const account = verifyCredentials(`${body.username ?? ''}`, `${body.password ?? ''}`);
   const token = account ? await createSessionToken(account.accountId) : null;
+  if (account && !token) {
+    console.error('My Machine login: no session signing secret (set PORTAL_SESSION_SECRET or SITECORE_EDITING_SECRET)');
+  }
   if (!account || !token) {
     return NextResponse.json({ ok: false, error: 'invalid_credentials' }, { status: 401 });
   }
