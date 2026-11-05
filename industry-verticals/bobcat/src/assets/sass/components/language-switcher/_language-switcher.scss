@@ -2,12 +2,21 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
   color: inherit;
-  border: none;
   margin: 10px 0;
-  cursor: pointer;
   white-space: nowrap;
+
+  &__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+  }
 
   .selected-language {
     margin-right: 0;
@@ -20,24 +29,72 @@
     transition: transform 0.3s ease-in-out;
   }
 
+  // the panel has its own colours: it opens over any header colour (the orange Bobcat bar included)
   .language-dropdown {
+    position: absolute;
+    top: calc(100% + 0.75rem);
+    right: 0;
+    z-index: 70;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-    position: absolute;
-    top: calc(100% + 1rem);
-    right: 0;
-    background-color: var(--bg-footer);
-    border-radius: var(--roundness);
-    border: 1px solid var(--border-color);
+    min-width: 180px;
+    margin: 0;
+    padding: 6px 0;
+    list-style: none;
+    background-color: #ffffff;
+    border: 1px solid rgb(0 0 0 / 12%);
+    border-radius: var(--roundness, 0);
+    box-shadow: 0 8px 24px rgb(0 0 0 / 16%);
     white-space: nowrap;
-    z-index: 50;
+  }
+
+  .language-dropdown__option {
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    border: 0;
+    background: none;
+    color: #212529;
+    font: inherit;
+    font-size: 15px;
+    text-align: left;
+    text-transform: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      background: #f1f1f1;
+      color: var(--bg-saturated, #212529);
+    }
+
+    &.is-active {
+      font-weight: 700;
+    }
   }
 
   &.expanded {
     .chevron-icon {
       transform: rotate(180deg);
+    }
+  }
+}
+
+// the header row below the eyebrow stacks above it (z-index 61 vs 60): while the panel is open it opens over the header
+.component.eyebrow:has(.language-switcher.expanded) {
+  z-index: 62;
+}
+
+// header eyebrows set every descendant of their slots to `color: inherit` (white on the orange Bobcat bar); the open panel
+// keeps its own dark text, so these selectors are deliberately more specific than `.component.eyebrow.* .eyebrow-slot-* *`
+.component.eyebrow .eyebrow-slot .language-switcher .language-dropdown {
+  color: #212529;
+
+  .language-dropdown__option {
+    color: #212529;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--bg-saturated, #212529);
     }
   }
 }

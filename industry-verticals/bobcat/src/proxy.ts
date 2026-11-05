@@ -39,7 +39,32 @@ const portalGuard = async (req: NextRequest): Promise<NextResponse | null> => {
   return null;
 };
 
+/**
+ * Remembered language: the language switcher stores the visitor's choice in LOCALE_COOKIE. Sitecore's links carry no
+ * locale prefix, so while a non-default language is chosen an unprefixed URL redirects to the same path in that language
+ * (/equipment -> /ko-KR/equipment); choosing the default language in the switcher stores it and stops the redirects.
+ * Opening a prefixed URL directly remembers that language too. Pages editing and preview (draft mode) are left alone.
+ */
+const LOCALE_COOKIE = 'site_locale';
+
+const localeOfPath = (pathname: string): string | undefined => {
+  const first = pathname.split('/')[1]?.toLowerCase();
+  return routing.locales.find((l) => l.toLowerCase() === first);
+};
+
+const localeRedirect = (req: NextRequest): NextResponse | null => {
+  if (req.cookies.has('__prerender_bypass')) return null;
+  const chosen = routing.locales.find((l) => l.toLowerCase() === req.cookies.get(LOCALE_COOKIE)?.value?.toLowerCase());
+  if (!chosen || chosen === routing.defaultLocale || localeOfPath(req.nextUrl.pathname)) return null;
+  const url = req.nextUrl.clone();
+  url.pathname = `/${chosen}${req.nextUrl.pathname === '/' ? '' : req.nextUrl.pathname}`;
+  return NextResponse.redirect(url);
+};
+
 export default async function proxy(req: NextRequest, event: NextFetchEvent) {
+  const relocalized = localeRedirect(req);
+  if (relocalized) return relocalized;
+
   const guarded = await portalGuard(req);
   if (guarded) return guarded;
 
@@ -127,7 +152,12 @@ export default async function proxy(req: NextRequest, event: NextFetchEvent) {
     // },
   });
 
-  return defineProxy(preview, botTracking, locale, multisite, redirects, personalize).exec(req);
+  const res = await defineProxy(preview, botTracking, locale, multisite, redirects, personalize).exec(req);
+  const pathLocale = localeOfPath(req.nextUrl.pathname);
+  if (pathLocale && !req.cookies.has('__prerender_bypass') && req.cookies.get(LOCALE_COOKIE)?.value !== pathLocale) {
+    res.cookies.set(LOCALE_COOKIE, pathLocale, { path: '/', sameSite: 'lax', maxAge: 60 * 60 * 24 * 365 });
+  }
+  return res;
 }
 
 export const config = {

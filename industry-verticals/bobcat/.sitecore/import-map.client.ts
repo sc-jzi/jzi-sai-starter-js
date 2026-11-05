@@ -13,7 +13,7 @@ import { useEffect, useState, Suspense, useCallback, useMemo, useRef } from 'rea
 import React from 'react';
 import { getSiteThemeClass } from 'lib/site-theme';
 import { Text, useSitecore, NextImage, Link, RichText, Placeholder, withDatasourceCheck, Image as Image_8a80e63291fea86e0744df19113dc44bec187216, DateField, AppPlaceholder, CdpHelper } from '@sitecore-content-sdk/nextjs';
-import { useParams, useRouter, useSearchParams, usePathname } from 'next/navigation';
+import { useParams, useSearchParams, useRouter, usePathname } from 'next/navigation';
 import Image from 'next/image';
 import { useInfiniteSearch, useSuggest, useSearch } from '@sitecore-content-sdk/nextjs/search';
 import { DEFAULT_IMG_URL } from 'src/_data/customizations';
@@ -92,8 +92,8 @@ const importMap = [
     module: 'next/navigation',
     exports: [
       { name: 'useParams', value: useParams },
-      { name: 'useRouter', value: useRouter },
       { name: 'useSearchParams', value: useSearchParams },
+      { name: 'useRouter', value: useRouter },
       { name: 'usePathname', value: usePathname },
     ]
   },
