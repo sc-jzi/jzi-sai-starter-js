@@ -54,7 +54,7 @@ const PortalWelcomeView = ({ props, look }: { props: PortalWelcomeProps; look: '
                 </div>
                 <div>
                   <dt>Machines</dt>
-                  <dd>{data.owned.length} owned · 1 considered</dd>
+                  <dd>{data.owned.length} owned · {data.considered.length} considered</dd>
                 </div>
               </dl>
             </>

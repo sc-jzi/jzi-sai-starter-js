@@ -7,12 +7,21 @@ import { signOut, usePortalData } from 'lib/portal/use-portal-data';
 
 /**
  * PortalHeader: the My Machine top bar - the logo on its orange block (linking to Link) on a dark bar; when the visitor
- * is signed in, their name and Sign out on the right. Used in the Portal Header partial design.
+ * is signed in, their name and Sign out on the right, and under the bar the portal navigation: the pages picked in
+ * Navigation (My Machine pages, by their NavigationTitle), the current one underlined. Used in the Portal Header partial.
  */
+
+interface NavPage {
+  id?: string;
+  url?: string;
+  name?: string;
+  fields?: { NavigationTitle?: { value?: string }; Title?: { value?: string } };
+}
 
 interface HeaderFields {
   Logo?: ImageField;
   Link?: LinkField;
+  Navigation?: NavPage[];
 }
 
 type PortalHeaderProps = ComponentProps & { fields?: HeaderFields };
@@ -26,6 +35,8 @@ const PortalHeaderView = ({ props, look }: { props: PortalHeaderProps; look: 'de
   const { data } = usePortalData(isEditing, false, !onLoginPage);
   const id = props.params?.RenderingIdentifier;
   const styles = `${props.params?.styles || ''}`.trim();
+  const nav = Array.isArray(f.Navigation) ? f.Navigation : [];
+  const current = `${page?.layout?.sitecore?.route?.itemId ?? ''}`.replace(/[^0-9a-f]/gi, '').toLowerCase();
   const logo = <NextImage field={f.Logo} width={143} height={38} className="portal-header__logo" priority />;
 
   return (
@@ -54,6 +65,22 @@ const PortalHeaderView = ({ props, look }: { props: PortalHeaderProps; look: 'de
             </button>
           )}
         </div>
+      )}
+      {(isEditing || !!data) && nav.length > 0 && (
+        <nav className="portal-header__nav" aria-label="My Machine">
+          <ul>
+            {nav.map((p) => {
+              const active = `${p.id ?? ''}`.replace(/[^0-9a-f]/gi, '').toLowerCase() === current;
+              return (
+                <li key={p.id}>
+                  <a href={p.url} className={active ? 'is-active' : undefined} aria-current={active ? 'page' : undefined}>
+                    {p.fields?.NavigationTitle?.value || p.fields?.Title?.value || p.name}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
       )}
     </header>
   );

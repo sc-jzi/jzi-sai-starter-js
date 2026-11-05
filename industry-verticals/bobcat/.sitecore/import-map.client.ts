@@ -18,6 +18,9 @@ import Image from 'next/image';
 import { useInfiniteSearch, useSuggest, useSearch } from '@sitecore-content-sdk/nextjs/search';
 import { DEFAULT_IMG_URL } from 'src/_data/customizations';
 import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
+import { ExampleDataTag, PortalLoading, PortalBlock } from 'lib/portal/ui';
+import { usePortalData, formatPortalDate, signOut } from 'lib/portal/use-portal-data';
+import { identity, pageView } from '@sitecore-content-sdk/events';
 import useVisibility from 'src/hooks/useVisibility';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
@@ -25,10 +28,9 @@ import { CountUp } from 'components/non-sitecore/CountUp';
 import { DottedAccent } from 'components/non-sitecore/DottedAccent';
 import { FacebookIcon, FacebookShareButton, LinkedinIcon, LinkedinShareButton, TwitterIcon, TwitterShareButton } from 'react-share';
 import Head from 'next/head';
+import { plainText, toJsonLd } from 'lib/json-ld';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import { ParallaxBackgroundImage } from 'components/non-sitecore/ParallaxBackgroundImage';
-import { plainText, toJsonLd } from 'lib/json-ld';
-import { identity, pageView } from '@sitecore-content-sdk/events';
 import { IconAccent } from 'components/non-sitecore/IconAccent';
 import { formatArticleDate } from 'src/components/pagecontent/ArticleHeader';
 import { createPortal } from 'react-dom';
@@ -40,7 +42,7 @@ import { fetchProfileIdFromEdgeProxy } from '@sitecore-content-sdk/personalize/i
 import config from 'sitecore.config';
 import { clearSessionEvents, installSessionEventTracking, readSessionEvents, SESSION_EVENTS_CHANGED } from 'lib/session-event-log';
 import PreviewSearch from 'src/components/search/PreviewSearch';
-import { eyebrowConfig } from 'src/components/navigation/eyebrow-config';
+import { eyebrowConfig, eyebrowConfigEU } from 'src/components/navigation/eyebrow-config';
 import client from 'src/lib/sitecore-client';
 
 const importMap = [
@@ -122,6 +124,29 @@ const importMap = [
     ]
   },
   {
+    module: 'lib/portal/ui',
+    exports: [
+      { name: 'ExampleDataTag', value: ExampleDataTag },
+      { name: 'PortalLoading', value: PortalLoading },
+      { name: 'PortalBlock', value: PortalBlock },
+    ]
+  },
+  {
+    module: 'lib/portal/use-portal-data',
+    exports: [
+      { name: 'usePortalData', value: usePortalData },
+      { name: 'formatPortalDate', value: formatPortalDate },
+      { name: 'signOut', value: signOut },
+    ]
+  },
+  {
+    module: '@sitecore-content-sdk/events',
+    exports: [
+      { name: 'identity', value: identity },
+      { name: 'pageView', value: pageView },
+    ]
+  },
+  {
     module: 'src/hooks/useVisibility',
     exports: [
       { name: 'default', value: useVisibility },
@@ -173,6 +198,13 @@ const importMap = [
     ]
   },
   {
+    module: 'lib/json-ld',
+    exports: [
+      { name: 'plainText', value: plainText },
+      { name: 'toJsonLd', value: toJsonLd },
+    ]
+  },
+  {
     module: 'react-scroll-parallax',
     exports: [
       { name: 'ParallaxBanner', value: ParallaxBanner },
@@ -182,20 +214,6 @@ const importMap = [
     module: 'components/non-sitecore/ParallaxBackgroundImage',
     exports: [
       { name: 'ParallaxBackgroundImage', value: ParallaxBackgroundImage },
-    ]
-  },
-  {
-    module: 'lib/json-ld',
-    exports: [
-      { name: 'plainText', value: plainText },
-      { name: 'toJsonLd', value: toJsonLd },
-    ]
-  },
-  {
-    module: '@sitecore-content-sdk/events',
-    exports: [
-      { name: 'identity', value: identity },
-      { name: 'pageView', value: pageView },
     ]
   },
   {
@@ -276,6 +294,7 @@ const importMap = [
     module: 'src/components/navigation/eyebrow-config',
     exports: [
       { name: 'eyebrowConfig', value: eyebrowConfig },
+      { name: 'eyebrowConfigEU', value: eyebrowConfigEU },
     ]
   },
   {

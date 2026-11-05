@@ -25,18 +25,21 @@ export type OwnedMachine = {
   warranty: { status: 'active' | 'expired'; until: string; label: string };
   openRecalls: number;
   detailsUrl: string;
+  serviceHistory: { date: string; hours: number; work: string; by: string }[];
 };
 
+/** A machine the owner saved on a Product page (catalog values from Sitecore, statuses from the saved list and the CRM). */
 export type ConsideredMachine = {
+  id: string;
   model: string;
   type: string;
   image: string;
   imageAlt: string;
   summary: string;
+  highlights: string[];
   statuses: ConsideredStatus[];
   savedOn: string;
   recommendedBy: string;
-  specs: { label: string; value: string }[];
   detailsUrl: string;
 };
 
@@ -60,7 +63,9 @@ export type PortalData = {
   source: string;
   profile: { firstName: string; lastName: string; email: string; company: string; city: string; customerSince: number };
   owned: OwnedMachine[];
-  considered: ConsideredMachine;
+  considered: ConsideredMachine[];
+  /** CRM: models the dealer recommends to this owner; a saved machine with one of these names is marked Recommended */
+  recommendations: { models: string[]; by: string };
   resources: { forModel: string; links: PortalLink[] }[];
   ownerResources: PortalLink[];
   attachments: AttachmentGroup[];
@@ -96,6 +101,11 @@ const DEMO_ACCOUNT: PortalData = {
       warranty: { status: 'active', until: '2027-05-14', label: 'Standard machine warranty' },
       openRecalls: 0,
       detailsUrl: 'https://www.bobcat.com/na/en/equipment/loaders/compact-track-loaders/t66-2',
+      serviceHistory: [
+        { date: '2026-08-19', hours: 250, work: '250-hour service (engine oil and filter, hydraulic filter)', by: 'Bobcat of Ottawa Valley' },
+        { date: '2025-09-03', hours: 50, work: 'First 50-hour inspection', by: 'Bobcat of Ottawa Valley' },
+        { date: '2025-05-14', hours: 0, work: 'Delivery and pre-delivery inspection', by: 'Bobcat of Ottawa Valley' },
+      ],
     },
     {
       id: 'm-t650',
@@ -112,25 +122,16 @@ const DEMO_ACCOUNT: PortalData = {
       warranty: { status: 'expired', until: '2023-04-30', label: 'Standard machine warranty' },
       openRecalls: 0,
       detailsUrl: 'https://www.bobcat.com/na/en/equipment/loaders/compact-track-loaders/t650',
+      serviceHistory: [
+        { date: '2026-06-02', hours: 2250, work: '2,000-hour service (hydraulic fluid, fuel filters, drive motor oil)', by: 'Bobcat of Ottawa Valley' },
+        { date: '2025-10-21', hours: 1760, work: 'Track replacement', by: 'Bobcat of Ottawa Valley' },
+        { date: '2025-04-08', hours: 1510, work: '1,500-hour service', by: 'Bobcat of Ottawa Valley' },
+      ],
     },
   ],
-  considered: {
-    model: 'E35',
-    type: 'Compact Excavator',
-    image: 'https://jzi-verticals.sitecoresandbox.cloud/api/public/content/111279-compact-excavators-card-e35?v=6e295f69',
-    imageAlt: 'Bobcat E35 Compact Excavator Knockout Image On White Background',
-    summary:
-      'The Bobcat E35 is our best-selling compact excavator, delivering proven performance on the most demanding jobsites. This zero-tail-swing machine is designed with practical features that enhance durability, simplify routine maintenance and take operator productivity to a new level.',
-    statuses: ['saved', 'recommended'],
-    savedOn: '2026-10-28',
-    recommendedBy: 'Bobcat of Ottawa Valley',
-    specs: [
-      { label: 'Horsepower', value: '24.8 hp' },
-      { label: 'Operating Weight', value: '7659 lb' },
-      { label: 'Max. Dig Depth', value: '121.2 in' },
-    ],
-    detailsUrl: 'https://www.bobcat.com/na/en/equipment/excavators/compact-excavators/e35',
-  },
+  // filled per visitor from the machines they save on Product pages (see /api/portal/me)
+  considered: [],
+  recommendations: { models: ['E35'], by: 'Bobcat of Ottawa Valley' },
   resources: [
     {
       forModel: 'T66-2',
@@ -195,5 +196,31 @@ const DATA: Record<string, PortalData> = { 'demo-tremblay-site-works': DEMO_ACCO
 
 export const getPortalData = (accountId: string): PortalData | null => DATA[accountId] ?? null;
 
-/** What the components show in Pages (no portal session there): the demo account, marked as a sample. */
-export const SAMPLE_PORTAL_DATA: PortalData = DEMO_ACCOUNT;
+/**
+ * What the components show in Pages (no portal session there): the demo account with the E35 as a saved, recommended
+ * machine, so every block has something to show while it is being placed and styled.
+ */
+export const SAMPLE_PORTAL_DATA: PortalData = {
+  ...DEMO_ACCOUNT,
+  considered: [
+    {
+      id: 'sample-e35',
+      model: 'E35',
+      type: 'Compact Excavator',
+      image: 'https://jzi-verticals.sitecoresandbox.cloud/api/public/content/111279-compact-excavators-card-e35?v=6e295f69',
+      imageAlt: 'Bobcat E35 Compact Excavator Knockout Image On White Background',
+      summary:
+        'The time-tested E35 is our best-selling compact excavator, delivering proven performance on the most demanding jobsites.',
+      highlights: [
+        'Refined, low-effort joysticks',
+        'Exclusive in-track swing frame',
+        'Dual-flange roller system',
+        'Reduced and simplified routine maintenance',
+      ],
+      statuses: ['saved', 'recommended'],
+      savedOn: '2026-11-05',
+      recommendedBy: DEMO_ACCOUNT.recommendations.by,
+      detailsUrl: '/equipment/excavators/compact-excavators/e35',
+    },
+  ],
+};

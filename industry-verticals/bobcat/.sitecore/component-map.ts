@@ -36,6 +36,8 @@ import * as Questions from 'src/components/pagecontent/Questions';
 import * as PromoCta from 'src/components/pagecontent/PromoCta';
 import * as ProjectList from 'src/components/pagecontent/ProjectList';
 import * as ProjectDetails from 'src/components/pagecontent/ProjectDetails';
+import * as ProductHero from 'src/components/pagecontent/ProductHero';
+import * as ProductDetails from 'src/components/pagecontent/ProductDetails';
 import * as ProductCards from 'src/components/pagecontent/ProductCards';
 import * as PartialDesignDynamicPlaceholder from 'src/components/pagecontent/PartialDesignDynamicPlaceholder';
 import * as ParallaxBanner from 'src/components/pagecontent/ParallaxBanner';
@@ -116,6 +118,8 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['PromoCta', { ...PromoCta, componentType: 'client' }],
   ['ProjectList', { ...ProjectList, componentType: 'client' }],
   ['ProjectDetails', { ...ProjectDetails, componentType: 'client' }],
+  ['ProductHero', { ...ProductHero, componentType: 'client' }],
+  ['ProductDetails', { ...ProductDetails, componentType: 'client' }],
   ['ProductCards', { ...ProductCards, componentType: 'client' }],
   ['PartialDesignDynamicPlaceholder', { ...PartialDesignDynamicPlaceholder }],
   ['ParallaxBanner', { ...ParallaxBanner, componentType: 'client' }],

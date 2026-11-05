@@ -1,18 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { QUOTE_COOKIE } from 'lib/portal/quote';
-import { SESSION_COOKIE, SESSION_TTL_SECONDS, verifySessionToken } from 'lib/portal/session';
+import { SESSION_COOKIE, verifySessionToken } from 'lib/portal/session';
+import { normalizeId, readSaved, writeSaved } from 'lib/portal/saved';
 
-/** POST -> records a quote request for the considered machine (simulated; it becomes "Quote pending"). */
-export async function POST(request: NextRequest) {
-  const session = await verifySessionToken(request.cookies.get(SESSION_COOKIE)?.value);
+/** POST { productId } -> records a quote request for a saved machine (simulated; it shows "Quote pending"). */
+export async function POST(req: NextRequest) {
+  const session = await verifySessionToken(req.cookies.get(SESSION_COOKIE)?.value);
   if (!session) return NextResponse.json({ ok: false }, { status: 401 });
+  const { productId } = (await req.json().catch(() => ({}))) as { productId?: string };
+  const key = normalizeId(`${productId ?? ''}`);
+  const list = readSaved(req);
+  if (!list.some((e) => e.id === key)) return NextResponse.json({ ok: false }, { status: 404 });
   const res = NextResponse.json({ ok: true });
-  res.cookies.set(QUOTE_COOKIE, '1', {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: 'lax',
-    path: '/',
-    maxAge: SESSION_TTL_SECONDS,
-  });
+  writeSaved(
+    res,
+    list.map((e) => (e.id === key ? { ...e, quote: true } : e))
+  );
   return res;
 }

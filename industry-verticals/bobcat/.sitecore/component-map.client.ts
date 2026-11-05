@@ -36,6 +36,8 @@ import * as Questions from 'src/components/pagecontent/Questions';
 import * as PromoCta from 'src/components/pagecontent/PromoCta';
 import * as ProjectList from 'src/components/pagecontent/ProjectList';
 import * as ProjectDetails from 'src/components/pagecontent/ProjectDetails';
+import * as ProductHero from 'src/components/pagecontent/ProductHero';
+import * as ProductDetails from 'src/components/pagecontent/ProductDetails';
 import * as ProductCards from 'src/components/pagecontent/ProductCards';
 import * as ParallaxBanner from 'src/components/pagecontent/ParallaxBanner';
 import * as PageBackground from 'src/components/pagecontent/PageBackground';
@@ -114,6 +116,8 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['PromoCta', { ...PromoCta }],
   ['ProjectList', { ...ProjectList }],
   ['ProjectDetails', { ...ProjectDetails }],
+  ['ProductHero', { ...ProductHero }],
+  ['ProductDetails', { ...ProductDetails }],
   ['ProductCards', { ...ProductCards }],
   ['ParallaxBanner', { ...ParallaxBanner }],
   ['PageBackground', { ...PageBackground }],

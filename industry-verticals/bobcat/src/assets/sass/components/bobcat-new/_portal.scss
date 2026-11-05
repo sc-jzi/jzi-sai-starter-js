@@ -17,6 +17,7 @@ $portal-amber: #b26a00;
   }
 
   display: flex;
+  flex-wrap: wrap;
   align-items: stretch;
   justify-content: space-between;
   min-height: 71px;
@@ -52,6 +53,45 @@ $portal-amber: #b26a00;
     display: inline-flex;
     align-items: center;
     gap: 8px;
+  }
+
+  &__brand,
+  &__account {
+    min-height: 71px;
+  }
+
+  // portal navigation: a light bar under the dark one, the current page underlined in orange
+  &__nav {
+    flex: 0 0 100%;
+    background: #fff;
+    border-bottom: 1px solid #e3e3e3;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 32px;
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 0 15px;
+      list-style: none;
+    }
+
+    a {
+      display: block;
+      padding: 14px 0 11px;
+      border-bottom: 3px solid transparent;
+      color: #333;
+      font-family: var(--font-heading);
+      font-size: 17px;
+      text-decoration: none;
+      text-transform: uppercase;
+
+      &:hover,
+      &:focus-visible,
+      &.is-active {
+        border-bottom-color: var(--bg-saturated);
+      }
+    }
   }
 
   &__signout {
@@ -935,6 +975,124 @@ $portal-amber: #b26a00;
   }
 }
 
+/* saved machines: highlights, list variant, empty state */
+.portal-considered {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__highlights {
+    margin: 0 0 22px;
+    padding: 12px 0;
+    border-top: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+    list-style: none;
+
+    li {
+      position: relative;
+      padding: 4px 0 4px 22px;
+      font-size: 15px;
+
+      &::before {
+        position: absolute;
+        top: 11px;
+        left: 2px;
+        width: 10px;
+        height: 6px;
+        border-bottom: 2px solid var(--bg-saturated);
+        border-left: 2px solid var(--bg-saturated);
+        transform: rotate(-45deg);
+        content: '';
+      }
+    }
+  }
+
+  &__remove {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #555;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &__empty {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 16px;
+    padding: 28px 32px;
+    background: #fff;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 10%);
+
+    p {
+      margin: 0;
+      font-size: 16px;
+    }
+  }
+
+  &__more {
+    margin: 16px 0 0;
+  }
+
+  &--list .portal-considered__card {
+    grid-template-columns: 240px minmax(0, 1fr);
+    margin-top: 0;
+  }
+
+  &--list .portal-considered__body {
+    padding: 20px 24px;
+  }
+
+  &--list .portal-considered__model {
+    font-size: 30px;
+  }
+}
+
+/* My Machines page: one machine per row with its service history */
+.portal-machines--detailed {
+  .portal-machines__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .portal-machine {
+    grid-template-columns: 320px minmax(0, 1fr);
+  }
+}
+
+.portal-machine__history {
+  h4 {
+    margin: 8px 0;
+    font-family: var(--font-heading);
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+
+  th {
+    padding: 6px 8px;
+    background: $portal-grey;
+    font-weight: 600;
+    text-align: left;
+  }
+
+  td {
+    padding: 8px;
+    border-bottom: 1px solid #e3e3e3;
+    vertical-align: top;
+  }
+}
+
 @media (width < 992px) {
   .portal-machines__grid,
   .portal-considered__card,
@@ -949,7 +1107,9 @@ $portal-amber: #b26a00;
 }
 
 @media (width < 576px) {
-  .portal-machine {
+  .portal-machine,
+  .portal-machines--detailed .portal-machine,
+  .portal-considered--list .portal-considered__card {
     grid-template-columns: minmax(0, 1fr);
   }
 

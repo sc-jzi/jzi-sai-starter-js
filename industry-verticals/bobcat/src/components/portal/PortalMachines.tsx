@@ -10,11 +10,12 @@ import { formatPortalDate, usePortalData } from 'lib/portal/use-portal-data';
  * PortalMachines: "My Machines" - one card per owned machine from the My Machine API (photo, type, model, serial, year,
  * engine hours with progress to the next service, last service, warranty and recalls, model details link). Title, Text
  * and an optional Link (e.g. register a machine) are authored; the machine values are example data.
+ * BobcatDetailed (the My Machines page) adds each machine's service history.
  */
 
 type PortalMachinesProps = ComponentProps & { fields?: PortalSectionFields };
 
-const PortalMachinesView = ({ props, look }: { props: PortalMachinesProps; look: 'default' | 'bobcat' }): JSX.Element => {
+const PortalMachinesView = ({ props, look }: { props: PortalMachinesProps; look: 'default' | 'bobcat' | 'detailed' }): JSX.Element => {
   const { page } = useSitecore();
   const isEditing = !!page?.mode?.isEditing;
   const f = props.fields ?? {};
@@ -83,6 +84,31 @@ const PortalMachinesView = ({ props, look }: { props: PortalMachinesProps; look:
                       {m.openRecalls ? `${m.openRecalls} open recall(s)` : 'No open recalls'}
                     </li>
                   </ul>
+                  {look === 'detailed' && m.serviceHistory.length > 0 && (
+                    <div className="portal-machine__history">
+                      <h4>Service history</h4>
+                      <table>
+                        <thead>
+                          <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Hours</th>
+                            <th scope="col">Work</th>
+                            <th scope="col">By</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {m.serviceHistory.map((h) => (
+                            <tr key={`${h.date}-${h.hours}`}>
+                              <td>{formatPortalDate(h.date)}</td>
+                              <td>{h.hours.toLocaleString('en-US')} h</td>
+                              <td>{h.work}</td>
+                              <td>{h.by}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
                   <a className="bobcat-arrow-link portal-machine__link" href={m.detailsUrl} target="_blank" rel="noreferrer">
                     Model details
                   </a>
@@ -100,3 +126,8 @@ export const Default = (props: PortalMachinesProps): JSX.Element => <PortalMachi
 
 /* Bobcat: white cards on the light grey band, photo on top, service progress bar in Bobcat orange */
 export const Bobcat = (props: PortalMachinesProps): JSX.Element => <PortalMachinesView props={props} look="bobcat" />;
+
+/* BobcatDetailed: the My Machines page - one machine per row with its service history table */
+export const BobcatDetailed = (props: PortalMachinesProps): JSX.Element => (
+  <PortalMachinesView props={props} look="detailed" />
+);
