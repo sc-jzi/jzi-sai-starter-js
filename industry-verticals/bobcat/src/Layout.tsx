@@ -4,6 +4,7 @@ import Scripts from 'src/Scripts';
 import SitecoreStyles from 'components/content-sdk/SitecoreStyles';
 import componentMap from '.sitecore/component-map';
 import { getSiteThemeClass } from 'lib/site-theme';
+import OpenGraphMeta from 'src/OpenGraphMeta';
 
 interface LayoutProps {
   page: Page;
@@ -22,6 +23,7 @@ const Layout = ({ page }: LayoutProps): JSX.Element => {
   return (
     <>
       <Scripts />
+      <OpenGraphMeta page={page} />
       <SitecoreStyles layoutData={layout} />
       {/* root placeholder for the app, which we add components to using route data */}
       <div className={`${mainClassPageEditing} ${siteThemeClass}`}>
