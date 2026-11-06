@@ -8,6 +8,7 @@ import scConfig from 'sitecore.config';
 import client from 'src/lib/sitecore-client';
 import Layout, { RouteFields } from 'src/Layout';
 import Providers from 'src/Providers';
+import AlternateLinks from 'src/AlternateLinks';
 import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 
@@ -59,6 +60,9 @@ export default async function Page({ params }: PageProps) {
 
   return (
     <NextIntlClientProvider>
+      {!draft.isEnabled && (
+        <AlternateLinks site={site} locale={locale} contentLocale={page.locale} path={path} />
+      )}
       <Providers page={page}>
         <Layout page={page} />
       </Providers>
