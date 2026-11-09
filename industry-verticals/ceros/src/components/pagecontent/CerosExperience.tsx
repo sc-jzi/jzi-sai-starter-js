@@ -9,7 +9,8 @@ import { ComponentProps } from 'lib/component-props';
  *   documented as "the customer's server fetches this manifest, emits the rendered HTML inline in their page output, ships
  *   this script to hydrate". This server component does exactly that, so the experience's text is in the HTML the server
  *   sends (search and AI engines read it), and flex-ssr.js hydrates the interactions in the browser.
- * - A URL without a Flex manifest (a classic Ceros Studio experience on view.ceros.com) is rendered with the Ceros iframe embed.
+ * - A URL without a Flex manifest (a classic Ceros Studio experience on view.ceros.com) is rendered with Ceros's own embed code
+ *   (from its oEmbed endpoint): full height, scrolled by the page, so there is one scroll bar.
  *
  * The editor only picks the experience (ExperienceUrl, a General Link) and names it (Title). Nothing is parsed out of a
  * field value: the link's href is used as the address of the experience.
@@ -104,20 +105,49 @@ async function FlexSsr({ url, label }: { url: string; label: string }): Promise<
   );
 }
 
-/** Classic Ceros Studio experience: the Ceros iframe embed, full viewport height as on ceros.com. */
-function StudioEmbed({ url, label }: { url: string; label: string }): JSX.Element {
+type CerosOembed = { html?: string; embedType?: string };
+
+/** Ceros's public oEmbed endpoint returns the official embed code for a Studio experience. */
+async function loadStudioEmbed(experienceUrl: string): Promise<string | null> {
+  const oembedUrl = `https://view.ceros.com/oembed?format=json&url=${encodeURIComponent(experienceUrl)}`;
+  try {
+    const res = await fetch(oembedUrl, { next: { revalidate: 300 } });
+    if (!res.ok) return null;
+    const json = (await res.json()) as CerosOembed;
+    // The scroll proxy is rendered once by the component; a <script> in injected HTML would not run anyway.
+    const html = (json?.html || '').replace(/<script[\s\S]*?<\/script>/gi, '').trim();
+    return html.includes('<iframe') ? html : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Classic Ceros Studio experience, embedded the way Ceros's embed code does it: an aspect-ratio box sized to the whole
+ * experience, an iframe that does not scroll itself (scrolling="no"), and Ceros's scroll proxy, which passes the page's
+ * scroll position into the experience. The page is the only thing that scrolls (one scroll bar).
+ * Without an oEmbed answer it falls back to a full-viewport iframe.
+ */
+async function StudioEmbed({ url, label }: { url: string; label: string }): Promise<JSX.Element> {
+  const embedHtml = await loadStudioEmbed(url);
   return (
-    <div className="ceros-experience__embed">
-      <iframe
-        src={url}
-        title={label || 'Ceros experience'}
-        className="ceros-experience__iframe"
-        allow="fullscreen; autoplay; clipboard-write"
-        allowFullScreen
-        loading="lazy"
-      />
+    <>
+      {embedHtml ? (
+        <div className="ceros-experience__studio" dangerouslySetInnerHTML={{ __html: embedHtml }} />
+      ) : (
+        <div className="ceros-experience__embed">
+          <iframe
+            src={url}
+            title={label || 'Ceros experience'}
+            className="ceros-experience__iframe ceros-experience"
+            allow="fullscreen; autoplay; clipboard-write"
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
+      )}
       <script src="https://view.ceros.com/scroll-proxy.min.js" data-ceros-origin-domains="view.ceros.com" async />
-    </div>
+    </>
   );
 }
 
