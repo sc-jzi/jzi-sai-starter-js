@@ -482,8 +482,12 @@ if (hasLive) {
   const crops = existsSync(join(demo, "sections")) ? readdirSync(join(demo, "sections")).filter((x) => /\.(png|jpe?g)$/i.test(x)) : [];
   if (!crops.length) fail("no section crops in sections/", `node harness/scripts/section-capture.mjs --customer ${customer} --url ${sourceUrl}`);
   const want = new Map();
+  // a live band the plan drops on purpose (droppedLiveSections + droppedReason, validated by P12b/P12c) is not built, so its images are not
+  // owed: the same set collect-images.mjs collects from (planned sections + the footer)
+  const droppedIn = (f) => new Set((f === "sections.json" ? planObj?.site?.droppedLiveSections : planPages.find((pg) => pg?.sectionsFile === f)?.droppedLiveSections) ?? []);
   for (const f of readdirSync(demo).filter((x) => /^sections.*\.json$/.test(x) && !/\.demo\./.test(x))) {
-    for (const sct of readJson(join(demo, f))?.sections ?? []) for (const im of [...(sct.images ?? []).map((x) => x.src), ...(sct.backgroundImages ?? [])]) {
+    const dropped = new Set([...droppedIn(f)].map(Number));
+    for (const sct of (readJson(join(demo, f))?.sections ?? []).filter((x) => !dropped.has(Number(x.index)))) for (const im of [...(sct.images ?? []).map((x) => x.src), ...(sct.backgroundImages ?? [])]) {
       const u = String(im?.url ?? im ?? ""); if (!/^https?:/.test(u)) continue;
       let b = u.split("?")[0].split("/").pop(); try { b = decodeURIComponent(b); } catch { /* keep */ }
       want.set(b.toLowerCase().replace(/\.[a-z0-9]+$/, ""), u);

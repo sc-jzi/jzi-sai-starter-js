@@ -1,0 +1,52 @@
+# Client Brand Theme: Ceros (from site-scraper extracted-styles.json, header-styles.json and live DOM samples, 2026-11-09)
+client:
+  name: "Ceros"
+  sourceUrl: "https://www.ceros.com/"
+  extractedAt: "2026-11-09"
+  extractedBy: "site-scraper.mjs + header-styles.mjs + DOM sample"
+
+colors:
+  primary: "#FFFFFF"            # primary buttons: white pill
+  primaryForeground: "#141414"
+  secondary: "#000000"          # form card, footer
+  secondaryForeground: "#FFFFFF"
+  accent: "#8B5CF6"             # Ceros violet (gradient #8B5CF6 -> #5B3FD9 / #5B6EF5 on accents)
+  accentForeground: "#FFFFFF"
+  background: "#141414"
+  foreground: "#FFFFFF"
+  muted: "#000000"
+  mutedForeground: "#7F7F7F"    # grey part of two-tone headings (read from the form band crop)
+  headerBackground: "#141414"
+  headerForeground: "#FFFFFF"
+  footerBackground: "#000000"
+  footerForeground: "#FFFFFF"
+  border: "#FFFFFF"             # input borders, FAQ rules (white, low opacity on rules)
+  ring: "#8B5CF6"
+  extra:
+    - { name: accentGradient, value: "linear-gradient(135deg, #8B5CF6 0%, #5B3FD9 100%)" }
+
+typography:
+  headingFamily: "Fustat"
+  headingWeight: "400"
+  bodyFamily: "Source Sans 3"
+  bodyWeight: "400"
+  monoFamily: ""
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Fustat:wght@100..900&family=Source+Sans+3:wght@200..900&display=swap"
+  scale: { hero: "100px", h1: "100px", h2: "56px", h3: "28px", body: "16px", small: "14px" }
+  headingTransform: "none"
+  letterSpacing: "-3px on h1"
+  lineHeight: "24px body"
+
+spacing:
+  density: "airy"
+  sectionGap: "80-120px"
+  containerMaxWidth: "1200px"
+  containerPadding: "40px"
+
+shape:
+  borderRadius: "24px"
+  buttonRadius: "35px"
+  cardRadius: "24px"
+  imageRadius: "0px"
+  shadowStyle: "none"
+  borderStyle: "1px solid white on inputs; thin translucent rules on the FAQ"
