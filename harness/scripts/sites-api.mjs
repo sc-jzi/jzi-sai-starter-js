@@ -20,6 +20,7 @@
 import { ENV, ROOT, die, parseArgs, customerApp, demoDir, safeWrite, rootRel, readJson, PROTECTED_SITES } from "./_lib.mjs";
 import { join, basename } from "node:path";
 import { parseYaml } from "./_yaml.mjs";
+import { sharedLayerStatus } from "./shared-layer-check.mjs";
 import { existsSync, readFileSync } from "node:fs";
 
 const { flags, pos } = parseArgs(process.argv.slice(2));
@@ -122,6 +123,10 @@ switch (cmd) {
         if (!same(s.siteName, siteName)) bad.push(`site.siteName is "${s.siteName ?? ""}" but the command uses "${siteName}"`);
       }
       if (bad.length) die(`Refusing --apply: ${bad.join("; ")}.\nCollection and template are chosen by the SE and the plan is approved first (demo-from-transcript phases T2 and T4).`, 1);
+      // no site in an environment that cannot host a demo (the base app's shared renderings and templates are missing there)
+      const layer = await sharedLayerStatus();
+      if (layer.status === "missing") die(`Refusing --apply: ${layer.message}`, 1);
+      if (layer.status === "unchecked") console.log(`! shared layer not checked (${layer.message}); T0 checked it with the Marketer MCP`);
     }
     const body = { siteName, displayName: String(flags["display-name"] ?? siteName), templateId, language, languages,
       ...(flags["collection-id"] ? { collectionId: flags["collection-id"] } : { collectionName: flags["collection-name"], collectionDisplayName: String(flags["collection-name"]) }) };

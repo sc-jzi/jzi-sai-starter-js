@@ -1,10 +1,12 @@
 # Add this block to industry-verticals/<customer>/docs/ai/demos/<customer>/demo-progress.yaml for the transcript-first flow.
 # Written by demo-from-transcript; read on "resume demo".
-# blockedOn: marketer-mcp-auth   # set ONLY when the run stopped for the SE (Marketer MCP not connected / the auth request timed out).
-#                                 # The stop hook never restarts a blocked run; /resume-demo <customer> clears it after list_sites returns.
+# blockedOn: marketer-mcp-auth   # set ONLY when the run stopped for the SE: marketer-mcp-auth (Marketer MCP not connected / the auth request
+#                                 # timed out), shared-layer-missing (T0: the base components are not in this environment), content-hub-render
+#                                 # (Content Hub images do not render here), or another short reason. The stop hook never restarts a run
+#                                 # with any blockedOn; /resume-demo <customer> re-checks that reason and clears it.
 transcriptFlow:
   guardSnapshotTaken: false
-  t0_preflight:     { status: "pending", marketerMcp: "" }       # marketerMcp: connected (list_sites returned) | blocked
+  t0_preflight:     { status: "pending", marketerMcp: "", sharedLayer: "" }   # marketerMcp: connected | blocked · sharedLayer: present | missing
   t1_intake:        { status: "pending", file: "" }              # pending | complete
   t2_brief:         { status: "pending", file: "industry-verticals/<customer>/docs/ai/demos/<customer>/demo-brief.md" }
   t2b_story:        { status: "pending", storyApproved: false }  # gate 1: the story alone, before measurement / plan / theme

@@ -13,11 +13,11 @@
  * Resume-safe: entries already "uploaded" are skipped (use --force to redo). Last line of output for --file: `RESULT {json}`.
  *
  * Exit codes: 0 = all done (or CH disabled -> images-to-upload.md written), 3 = some uploads failed (manifest says which; the demo
- * continues, add the failures to manual-tasks.md), 2 = configuration/auth problem.
+ * continues, add the failures to manual-tasks.md), 2 = configuration/auth problem, 4 = bulk upload refused: ch-render-check.mjs has not passed.
  */
 import { readFileSync, writeFileSync, statSync, existsSync, copyFileSync, mkdirSync } from "node:fs";
 import { join, basename, resolve, isAbsolute } from "node:path";
-import { ASHX_SNIFF_ERROR, ENV, die, parseArgs, demoDir, renameAshxImage, safeWrite, rootRel } from "./_lib.mjs";
+import { ASHX_SNIFF_ERROR, ENV, die, parseArgs, demoDir, readJson, renameAshxImage, safeWrite, rootRel, tlsHint } from "./_lib.mjs";
 
 const { flags, pos } = parseArgs(process.argv.slice(2));
 const customer = pos[0];
@@ -88,6 +88,16 @@ if (String(get("CH_ENABLED")).toLowerCase() !== "true") {
   console.log("CH_ENABLED is not true in harness/.env.local — nothing uploaded. Images will be left as source URLs; list written for a manual upload.");
   writeManualList("CH_ENABLED is not true"); if (only) saveManifest(manifest); process.exit(0);
 }
+// the bulk upload waits until a Content Hub image is known to reach the app (ch-render-check.mjs, run after the logo is written in bootstrap):
+// without the environment's DAM connector every Content Hub image field renders empty, and dozens of uploads would be wasted
+if (!only && !dryRun && ready.length) {
+  // ok:null (inconclusive: no page showed the logo yet) does not block: the run gate re-checks once pages exist
+  const chk = readJson(join(demoDir(customer), "images", "ch-render-check.json"));
+  if (chk?.ok === null) console.log(`! Content Hub rendering not confirmed yet (ch-render-check.mjs was inconclusive); the run gate checks it again on a built page.`);
+  if (!chk || chk.ok === false) die(chk?.ok === false
+    ? `Content Hub images do not render in this environment (images/ch-render-check.json, ${chk.checkedAt}). Nothing uploaded. Use the Media Library (node harness/scripts/media-upload.mjs ${customer} --force), or enable the DAM connector and re-run node harness/scripts/ch-render-check.mjs ${customer}.`
+    : `Not uploaded yet: first confirm Content Hub images render here. Upload the logo (--file), write it into the Header, then node harness/scripts/ch-render-check.mjs ${customer} (demo-site-bootstrap step 5).`, 4);
+}
 const host = get("CH_HOST").replace(/\/+$/, "");
 if (!host || !((get("CH_USER") && get("CH_PASSWORD")) || get("CH_TOKEN"))) die("Content Hub is enabled but CH_HOST and (CH_USER + CH_PASSWORD, or CH_TOKEN) are not all set in harness/.env.local");
 console.log(`Content Hub upload: ${ready.length} to upload, ${entries.length - todo.length} already done (${host})`);
@@ -117,7 +127,7 @@ const call = async (method, url, body, extra = {}) => {
   const raw = await r.text(); let json = null; try { json = JSON.parse(raw); } catch { /* not json */ }
   return { status: r.status, location: r.headers.get("location"), json, raw };
 };
-try { await login(); } catch (err) { die(`Content Hub login error: ${err.message}`); }
+try { await login(); } catch (err) { const hint = tlsHint(err); die(`Content Hub login error: ${err.message}${hint ? `\n${hint}` : ""}`); }
 
 // ---- image size (no deps) --------------------------------------------------------------------------------------------------
 function dims(p) {

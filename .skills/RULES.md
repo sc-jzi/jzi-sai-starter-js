@@ -15,7 +15,8 @@ disagree, **this file wins** and the skill is the bug. Change a rule here, once.
   A/B variant: collect them and ask ONCE, near the end of the build) and a decision that is truly impossible to assume.
   *Enforced: run-gate (approval hashes, recorded swaps).*
 - **R2 Marketer MCP connected first.** `list_sites` must answer before anything else; not connected → send the auth request, ask once; a timeout stops the
-  run with `blockedOn: marketer-mcp-auth` and the SE resumes with `/resume-demo <customer>`.
+  run with `blockedOn: marketer-mcp-auth` and the SE resumes with `/resume-demo <customer>`. Any stop for the SE writes a `blockedOn: <reason>`
+  the same way (`shared-layer-missing`, `content-hub-render`, ...); the stop hook never restarts a run that has one.
 - **R3 The run ends only when `node harness/scripts/run-gate.mjs check <customer>` exits 0.** Do its items in the printed order (build first). The stop
   hook restarts an unfinished run; never end a turn, summarise or hand over while the gate is red.
 - **R4 Core work is built, not deferred.** A line goes into `manual-tasks.md` under "Open" only as `BLOCKED after 2 attempts: "<error>"` with both attempts
@@ -40,7 +41,8 @@ disagree, **this file wins** and the skill is the bug. Change a rule here, once.
 - **R7 Link fields hold link XML.** Internal: `linktype="internal" id="{GUID}"` (a `url` next to the id is fine, a url without an id drops the whole
   datasource); external: `linktype="external" url="https://..."` or `#`; also `mailto`, `media`, `anchor`. Build values with `link-xml.mjs make`; a site
   path such as `/about-us` is always an internal link with the page id. *Enforced: link-xml check, link-audit, run-gate (links).*
-- **R8 Image fields hold image XML, never a URL.** Upload first (Content Hub, or the Media Library when `CH_ENABLED=false`), then write the manifest's
+- **R8 Image fields hold image XML, never a URL.** Upload first (Content Hub, or the Media Library when `CH_ENABLED=false` or when
+  `ch-render-check.mjs` shows Content Hub images reach the app empty in this environment: `media-upload.mjs --force`), then write the manifest's
   `imageFieldXml`; images enter a demo only through `collect-images.mjs` (each traced to its page and section). A file over 50 MB is not uploaded to the Media Library (Experience Edge cannot publish it) and is listed under `## Missing assets`;
   the run carries on. A local file whose name ends in `.ashx` is not uploaded under that name: the upload scripts sniff its bytes and rename it in place
   (JPEG `FF D8` → `.jpg`, PNG `89 50 4E 47` → `.png`, GIF `GIF87a`/`GIF89a` → `.gif`, WebP `RIFF`…`WEBP` → `.webp`, SVG after an optional XML declaration → `.svg`),

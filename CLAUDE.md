@@ -44,7 +44,8 @@ The ones that matter in every session, demo run or not:
 | Command | Purpose |
 |---|---|
 | `node harness/scripts/env-check.mjs` | settings in `harness/.env.local` present |
-| `node harness/scripts/deps-check.mjs --fix` | Node, git, Playwright, readers, the pre-commit hook |
+| `node harness/scripts/deps-check.mjs --fix` | Node, git, Playwright, readers, the pre-commit hook || `node harness/scripts/shared-layer-check.mjs` | the environment has the base app's shared renderings and templates (T0; `create-site --apply` refuses without) |
+| `node harness/scripts/ch-render-check.mjs <customer>` | Content Hub images reach the app (not empty); the bulk Content Hub upload and the gate need it |
 | `node harness/scripts/run-gate.mjs check <customer>` | **the** definition of done (exit 0); `--fast` is what the stop hook runs |
 | `node harness/scripts/run-gate.mjs approve <customer> story\|plan` | record an SE approval (only right after the SE said yes) |
 | `node harness/scripts/run-gate.mjs swap <customer> "<page>#<section>" --reason "<why>"` | a section now uses a better-fitting component than the approved plan (no SE question; hand-over lists it) |

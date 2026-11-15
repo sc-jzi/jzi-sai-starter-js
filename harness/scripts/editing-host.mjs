@@ -27,7 +27,11 @@ const buildP = join(ROOT, "xmcloud.build.json");
 const build = existsSync(buildP) ? JSON.parse(readFileSync(buildP, "utf8")) : {};
 if (!build.renderingHosts?.[customer]) { console.log(`MANUAL TASK (not blocking): renderingHosts.${customer} is not in xmcloud.build.json, so no editing host was requested. Run new-site.mjs --apply first, then re-run this script.`); process.exit(0); }
 const envId = ENV.SITECORE_ENVIRONMENT_ID;
-const manual = `Manual fallback: SitecoreAI Deploy → your project → Editing hosts → Add editing host: name "${customer}" (= the xmcloud.build.json key), link the authoring environment, pick the repo and branch, save.`;
+// Without this the site keeps RenderingHost = Default (another app), and Pages shows "Content SDK component is missing React implementation"
+// for every component of the demo, although the demo's own app has them all.
+const siteGrouping = `/sitecore/content/${rec.collection ?? "<collection>"}/${rec.siteName}/Settings/Site Grouping/${rec.siteName}`;
+const pointSite = `Once the editing host's first build has finished, a Rendering Host item "${customer}" exists under /sitecore/system/Settings/Services/Rendering Hosts: set the RenderingHost field of ${siteGrouping} to it (the agent can do this with the Marketer MCP; until then Pages renders the site with the Default host and every component shows "Content SDK component is missing React implementation").`;
+const manual = `Manual fallback: SitecoreAI Deploy → your project → Editing hosts → Add editing host: name "${customer}" (= the xmcloud.build.json key), link the authoring environment, pick the repo and branch, save. ${pointSite}`;
 if (!envId) { console.log(`MANUAL TASK (not blocking): SITECORE_ENVIRONMENT_ID is not set in harness/.env.local (the authoring/CM environment id is needed), so the editing host was not created.\n${manual}\nContinue the build.`); process.exit(0); }
 const args = ["sitecore", "cloud", "editinghost", "create", "--name", customer, "--cm-environment-id", envId, "--json"];
 console.log(`${flags.apply ? "RUN" : "DRY RUN"}: dotnet ${args.join(" ").replace(envId, "<environment id>")}`);
@@ -39,4 +43,4 @@ if (r.error || r.status !== 0) {
   process.exit(0);
 }
 safeWrite(customer, siteP, JSON.stringify({ ...rec, editingHost: { created: true, name: customer, at: new Date().toISOString() } }, null, 2) + "\n");
-console.log(`✅ Editing host "${customer}" requested.\n${out.slice(0, 800)}\nIt deploys from the repo/branch the project is linked to: push the code, then check the first build in Deploy.`);
+console.log(`✅ Editing host "${customer}" requested.\n${out.slice(0, 800)}\nIt deploys from the repo/branch the project is linked to: push the code, then check the first build in Deploy.\n${pointSite}`);

@@ -44,7 +44,7 @@ export function measureBand(idx) {
   const firstHeading = items.find((x) => x.role === "heading"), hSize = firstHeading ? num(getComputedStyle(firstHeading.e).fontSize) : null;
   // eyebrow = small uppercase / letter-spaced text that is not a link or button (above OR below the heading)
   for (const x of items) if (x.role === "text") { const cs = getComputedStyle(x.e), fs = num(cs.fontSize), t = clean(x.e.textContent); if (t.length <= 60 && ((cs.textTransform === "uppercase" || num(cs.letterSpacing) > 0.8 || t === t.toUpperCase()) && (!hSize || fs <= hSize * 0.85)) && fs <= 18) x.role = "eyebrow"; }
-  const elements = items.slice(0, 30).map((x) => { const cs = getComputedStyle(x.e); const o = { role: x.role, text: clean(x.e.textContent).slice(0, 80), x: Math.round(x.r.left), y: Math.round(x.r.top - sr.top), w: Math.round(x.r.width), h: Math.round(x.r.height) };
+  const elements = items.slice(0, 30).map((x) => { const cs = getComputedStyle(x.e); const o = { role: x.role, text: clean(x.e.textContent).slice(0, 400), x: Math.round(x.r.left), y: Math.round(x.r.top - sr.top), w: Math.round(x.r.width), h: Math.round(x.r.height) };
     if (x.role !== "image") { Object.assign(o, sty(x.e)); }
     if (x.role === "button") Object.assign(o, { background: ownBg(x.e), borderRadius: num(cs.borderTopLeftRadius), paddingX: num(cs.paddingLeft), paddingY: num(cs.paddingTop), border: parseFloat(cs.borderTopWidth) > 0 ? { width: num(cs.borderTopWidth), color: hex(cs.borderTopColor) } : null });
     if (x.e.tagName === "A") o.href = x.e.getAttribute("href") || "";

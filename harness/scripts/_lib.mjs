@@ -103,6 +103,17 @@ export function imageError(raw) {
   // <image mediaid=.../> (media library) or <Image src=... dam-id=... /> (Content Hub)
   return /^<image\s[\s\S]*(\/>|<\/image>)$/i.test(v) ? "" : `literal value "${v.slice(0, 80)}" instead of image XML — use the imageFieldXml from images/image-manifest.json`;
 }
+// A corporate proxy or security agent that re-signs HTTPS makes Node refuse every call ("self-signed certificate in certificate chain") while
+// curl and the browser work, because Node does not read the operating system's certificate store by default. The fix is per shell.
+const TLS_CODES = new Set(["SELF_SIGNED_CERT_IN_CHAIN", "UNABLE_TO_GET_ISSUER_CERT_LOCALLY", "UNABLE_TO_GET_ISSUER_CERT", "DEPTH_ZERO_SELF_SIGNED_CERT", "UNABLE_TO_VERIFY_LEAF_SIGNATURE", "CERT_UNTRUSTED"]);
+/** A one-line fix when err (a failed fetch) is a certificate-trust error, else "". */
+export function tlsHint(err) {
+  const code = err?.cause?.code ?? err?.code ?? "";
+  if (!TLS_CODES.has(code) && !/self[- ]signed certificate|unable to (get|verify) .*certificate/i.test(`${err?.message ?? ""} ${err?.cause?.message ?? ""}`)) return "";
+  return `Node does not trust this network's HTTPS certificate (${code || "certificate error"}): a corporate proxy or security agent re-signs the traffic. ` +
+    `Make Node use the system certificates, then re-run: ${process.platform === "win32" ? `$env:NODE_OPTIONS="--use-system-ca"` : `export NODE_OPTIONS=--use-system-ca`} ` +
+    `(Node 22.15+ / 23.8+; on older Node set NODE_EXTRA_CA_CERTS to the company's root certificate file).`;
+}
 // Sitecore's media handler (.ashx) is not an image type. Sniff the bytes and rename to the real extension.
 // { path, ext } when the name is not .ashx (unchanged) or after a rename; null when the bytes are not a known image.
 export const ASHX_SNIFF_ERROR = "unrecognized image in .ashx file";

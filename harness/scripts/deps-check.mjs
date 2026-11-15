@@ -13,6 +13,7 @@
  *   node_modules of industry-verticals/<customer>   (only once the app copy exists)
  *                                         fix: npm install (in the customer app — never in the base app)
  *   dotnet + Sitecore CLI                 optional, only for the editing host (otherwise it becomes a manual task)
+ *   HTTPS from Node (Sitecore, Content Hub)  required: a re-signing corporate proxy fails every script; prints the NODE_OPTIONS fix
  *   Sitecore Marketer MCP                 required, but this script cannot call it. Phase T0 of
  *                                         demo-from-transcript probes it with list_sites before intake.
  *                                         Not connected: ask the SE to connect it. A timeout STOPs the run.
@@ -21,7 +22,7 @@
 import { spawnSync } from "node:child_process";
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { HARNESS, ROOT, parseArgs, customerApp, rootRel } from "./_lib.mjs";
+import { HARNESS, ROOT, ENV, parseArgs, customerApp, rootRel, tlsHint } from "./_lib.mjs";
 import { missingLibs } from "./_materials.mjs";
 
 const { flags } = parseArgs(process.argv.slice(2));
@@ -75,4 +76,12 @@ if (flags.customer) {
 }
 const dn = quiet("dotnet", ["sitecore", "--version"]);
 row(dn.status === 0, "dotnet sitecore (CLI)", dn.status === 0 ? `available ${String(dn.stdout).trim().split("\n").pop()}` : "not available — the editing host becomes a manual task (run `dotnet tool restore` at the repo root)", false);
-process.exit(bad ? 1 : 0);
+// HTTPS from Node: a re-signing corporate proxy breaks every script while curl and the browser still work (tlsHint says how to fix it)
+for (const [label, url] of [["HTTPS to Sitecore (Node)", ENV.SITECORE_AUTH_HOST], ...(String(ENV.CH_ENABLED).toLowerCase() === "true" && ENV.CH_HOST ? [["HTTPS to Content Hub (Node)", ENV.CH_HOST]] : [])]) {
+  const ac = new AbortController(), timer = setTimeout(() => ac.abort(), 8000);   // a cleared timer: AbortSignal.timeout breaks exit on Windows
+  // any HTTP answer proves the certificate is trusted; redirect "manual" so a redirect to another host is not followed
+  try { await fetch(url, { method: "HEAD", redirect: "manual", signal: ac.signal }); row(true, label, "certificate trusted"); }
+  catch (e) { const hint = tlsHint(e); if (hint) row(false, label, hint); else row(false, label, `not checked: not reachable (${e?.cause?.code ?? e.name}); offline? (not a certificate problem)`, false); }
+  finally { clearTimeout(timer); }
+}
+process.exitCode = bad ? 1 : 0;   // not process.exit(): it crashes on Windows right after a fetch (libuv)

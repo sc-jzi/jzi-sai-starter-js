@@ -84,7 +84,7 @@ export function looksState(customer, planObj, { tooLarge = new Set() } = {}) {
       return planned.size ? planned.has(n) : !dropped.has(n);
     };
     // the built section a live one was compared with: recorded by section-capture (pairs); older verdicts: same heading, else same position
-    const norm = (t) => String(t || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+    const norm = (t) => String(t || "").toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 50);   // 50: captures made before the 400-character text limit hold 80 characters
     const builtFor = (n) => {
       if (r.pairs && r.pairs[n] != null) return r.pairs[n];
       const h = norm(bandOf(n)?.heading?.text);

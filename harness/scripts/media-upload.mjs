@@ -13,6 +13,8 @@
  *   - otherwise: Authoring GraphQL uploadMedia (item under /sitecore/media library/Project/<collection>/<site>/demo-images/) → POST the file to the
  *     presigned URL → the entry gets uploadStatus "uploaded", mediaItemId and imageFieldXml `<image mediaid="{id}" />` (attach-images.mjs uses it).
  * Never overwrites an existing media item and never uploads an entry twice (resume-safe). The manifest is merged in place, not rewritten.
+ * With CH_ENABLED=true it needs --force: the fallback when Content Hub images do not render (ch-render-check.mjs). --force also re-uploads entries
+ * that only hold a Content Hub value, so their fields can be rewritten with Media Library XML.
  * Exit 0 every entry uploaded or listed as too large · 1 some uploads failed (retry) · 3 no Authoring client / site.json · 2 usage.
  */
 import { existsSync, readFileSync, statSync, readdirSync } from "node:fs";
@@ -47,7 +49,10 @@ let gql = null;
 if (!dry) { try { gql = await authoringClient(); } catch (e) { die(`Authoring GraphQL: ${e.message}`, 3); } if (!gql) die("No Authoring GraphQL client (SITECORE_CM_HOST + automation client in harness/.env.local): node harness/scripts/env-check.mjs", 3); }
 const folder = `Project/${site.collection}/${site.siteName}/demo-images`;
 
-const todo = entries.filter((e) => e.uploadStatus !== "uploaded" && e.uploadStatus !== "too-large");
+// an entry that only holds a Content Hub value (content-hub-upload.mjs) is uploaded again with --force: the Media Library is the fallback when
+// Content Hub images do not render in this environment (ch-render-check.mjs). Its Content Hub ids stay on the entry as chAssetId / chPublicUrl.
+const chOnly = (e) => !!flags.force && e.uploadStatus === "uploaded" && !e.mediaItemId && /\bdam-id\s*=|stylelabs-content-id\s*=/i.test(String(e.imageFieldXml ?? ""));
+const todo = entries.filter((e) => (e.uploadStatus !== "uploaded" || chOnly(e)) && e.uploadStatus !== "too-large");
 const missing = [], tooLarge = [], failed = [];
 let uploaded = 0, ashxChanged = false;
 const ashxBad = new Set();   // this run's failures only: a file fixed since an earlier run is retried
@@ -86,6 +91,7 @@ const worker = async () => {
       const id = j.Id ?? j.id;
       if (!r.ok || !id) throw new Error(`upload HTTP ${r.status}: ${JSON.stringify(j).slice(0, 160)}`);
       const guid = `{${String(id).replace(/[{}]/g, "").toUpperCase()}}`;
+      if (e.assetIdentifier && !e.chAssetId) Object.assign(e, { chAssetId: e.assetIdentifier, chPublicUrl: e.publicUrl });
       Object.assign(e, { uploadStatus: "uploaded", mediaItemId: guid, mediaPath: `/sitecore/media library/${itemPath}`, imageFieldXml: `<image mediaid="${guid}" />`, uploadedAt: new Date().toISOString() });
       uploaded++;
     } catch (err) { e.uploadStatus = "failed"; e.uploadError = err.message.slice(0, 200); failed.push(`${basename(file)}: ${e.uploadError}`); }

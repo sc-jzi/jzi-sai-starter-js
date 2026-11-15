@@ -150,9 +150,11 @@ export const config = {
    * 4. /- (Sitecore media)
    * 5. /healthz (Health check)
    * 7. all root files inside /public
+   * 8. any path ending in a static file extension: files a demo adds under /public (e.g. /header-icons/x.svg) are served as files,
+   *    not sent through the Sitecore pipeline, which answered them with 404
    */
   matcher: [
     '/',
-    '/((?!api/|sitemap|robots|_next/|healthz|sitecore/api/|-/|favicon.ico|sc_logo.svg).*)',
+    '/((?!api/|sitemap|robots|_next/|healthz|sitecore/api/|-/|favicon.ico|sc_logo.svg|.*\\.(?:svg|png|jpe?g|gif|webp|avif|ico|css|js|mjs|map|woff2?|ttf|otf|eot|txt|pdf|mp4|webm|json)$).*)',
   ],
 };

@@ -67,8 +67,9 @@ if (process.argv[2] === "hook") {
   if (!existsSync(plan) || !/^userApproved:\s*true/m.test(readFileSync(plan, "utf8")) || existsSync(join(d, ".run-complete"))) out({});
   // the SE is deciding on measurement differences (looks-review.mjs): wait for the answer, do not restart
   if (existsSync(join(d, ".awaiting-se"))) out({});
-  // a run that stopped for the SE (Marketer MCP not connected, see demo-from-transcript T0) waits for /resume-demo: never auto-restart it
-  try { if (/^\s*blockedOn:\s*"?marketer-mcp-auth/m.test(readFileSync(join(d, "demo-progress.yaml"), "utf8"))) out({}); } catch { /* no progress yet */ }
+  // a run that stopped for the SE waits for /resume-demo: never auto-restart it. Any top-level blockedOn counts (marketer-mcp-auth,
+  // shared-layer-missing, content-hub-render, ...: demo-from-transcript "Stop only when"), not only the Marketer MCP login
+  try { if (/^[ \t]*blockedOn:[ \t]*"?[a-z0-9]/im.test(readFileSync(join(d, "demo-progress.yaml"), "utf8"))) out({}); } catch { /* no progress yet */ }
   const c = active.customer, n = Number(input.loop_count ?? 0) + 1;
   const r = spawnSync(process.execPath, [SELF, "check", c, "--fast"], { encoding: "utf8", timeout: 100000 });
   if (timedOut(r)) out({ followup_message: `The demo run for "${c}" is NOT finished (automatic restart ${n}). The fast gate did not finish within the hook's time. Run \`node harness/scripts/run-gate.mjs check ${c}\` yourself (it can take minutes), do the first failing item, and keep going until it exits 0.` });
@@ -500,9 +501,19 @@ if (hasLive) {
   if (!manifest) fail("images not collected (images/image-manifest.json missing)", `node harness/scripts/collect-images.mjs ${customer} (every image of every planned section, traced to its page and section)`);
   else if (absent.length) fail(`${absent.length} image(s) of the live sections are not in images/image-manifest.json (e.g. ${absent[0].slice(0, 90)})`, `node harness/scripts/collect-images.mjs ${customer}, upload (content-hub-upload.mjs / media-upload.mjs), then node harness/scripts/attach-images.mjs ${customer} and write each proposed field with the MCP (uploaded is not attached).`);
   if (manifest) {
-    const ch = String(ENV.CH_ENABLED).toLowerCase() === "true";
+    // Content Hub only when it is on AND a Content Hub image was seen to reach the app (ch-render-check.mjs); otherwise the Media Library
+    const chk = readJson(join(demo, "images", "ch-render-check.json"));
+    const ch = String(ENV.CH_ENABLED).toLowerCase() === "true" && chk?.ok !== false;
     const notUp = manifestItems.filter((i) => i.uploadStatus !== "too-large" && !(i.uploadStatus === "uploaded" && i.imageFieldXml));
-    if (!manifestItems.length || notUp.length) fail(`${ch ? "Content Hub" : "Media Library"}: ${manifestItems.length ? `${notUp.length} of ${manifestItems.length} images not uploaded` : "no image uploaded"}`, `node harness/scripts/${ch ? "content-hub-upload.mjs" : "media-upload.mjs"} ${customer} (retries; files over 50 MB are listed under "## Missing assets" instead), then attach-images.mjs ${customer} --apply.`);
+    if (!manifestItems.length || notUp.length) fail(`${ch ? "Content Hub" : "Media Library"}: ${manifestItems.length ? `${notUp.length} of ${manifestItems.length} images not uploaded` : "no image uploaded"}`, `node harness/scripts/${ch ? "content-hub-upload.mjs" : `media-upload.mjs${String(ENV.CH_ENABLED).toLowerCase() === "true" ? " --force" : ""}`} ${customer} (retries; files over 50 MB are listed under "## Missing assets" instead), then attach-images.mjs ${customer} --apply.`);
+    // Content Hub values are only worth keeping when they render: an empty image on every page is not a built section
+    const chValues = manifestItems.filter((i) => /\bdam-id\s*=|stylelabs-content-id\s*=/i.test(String(i.imageFieldXml ?? "")));
+    if (chValues.length && chk?.ok !== true) fail(chk?.ok === false
+      ? `${chValues.length} image(s) hold Content Hub values, but Content Hub images do not render in this environment (images/ch-render-check.json)`
+      : `${chValues.length} image(s) hold Content Hub values that were never seen to render (images/ch-render-check.json missing or inconclusive)`,
+      chk?.ok === false
+        ? `Re-upload them to the Media Library (node harness/scripts/media-upload.mjs ${customer} --force), then attach-images.mjs ${customer} --apply; or the SE enables the DAM connector and node harness/scripts/ch-render-check.mjs ${customer} passes.`
+        : `node harness/scripts/ch-render-check.mjs ${customer} (the logo in the Header is enough).`);
   }
 }
 

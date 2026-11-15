@@ -125,7 +125,7 @@ if (flags.compare && result) {
   if (!ref) die(`${flags.compare} not found in the demo folder`);
   const lum = (h) => { const m = /^#?([0-9a-f]{6})$/i.exec(h || ""); if (!m) return null; return [0, 2, 4].map((i) => parseInt(m[1].slice(i, i + 2), 16)); };
   const far = (a, b, t) => { const A = lum(a), B = lum(b); if (!A || !B) return a !== b; return Math.max(...A.map((v, i) => Math.abs(v - B[i]))) > t; };
-  const norm = (t) => String(t || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+  const norm = (t) => String(t || "").toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 50);   // 50: captures made before the 400-character text limit hold 80 characters
   const refBands = chromeBands(ref), demoBands = chromeBands(result);
   const bad = [];
   const used = new Set(demoBands.headerIdx != null ? [demoBands.headerIdx] : []);

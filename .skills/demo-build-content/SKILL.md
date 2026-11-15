@@ -49,7 +49,9 @@ Financial template, the shared rendering and their standard values are never edi
 1. `node harness/scripts/collect-images.mjs <customer>`: every image of every planned section on every mirrored page (and the footer), downloaded
    once, each manifest entry carrying its live URL and the page/section that uses it (`uses`). Re-running merges; nothing is uploaded twice.
 2. Before either upload command, both scripts rename a local file whose name ends in `.ashx` per R8. An `.ashx` file is never passed to Content Hub.
-   Upload: `node harness/scripts/content-hub-upload.mjs <customer>` when `CH_ENABLED=true`, else `node harness/scripts/media-upload.mjs <customer>`
+   Upload: `node harness/scripts/content-hub-upload.mjs <customer>` when `CH_ENABLED=true` and `images/ch-render-check.json` does not say
+   `ok: false` (bootstrap step 5 item 3b; exit 4 = that check has not run or failed: do item 3b first), else `node harness/scripts/media-upload.mjs <customer>`
+   (`--force` when `CH_ENABLED=true` but Content Hub images do not render here)
    (Media Library; files over 50 MB are listed under `## Missing assets` and the run carries on). Every entry ends with `uploadStatus: uploaded` and an
    `imageFieldXml`, or `too-large`. Exit 3 / failures: retry once, then fix the cause (download URL, size, format).
 3. Attaching happens once the components are placed (`demo-build-pages` step 4): `attach-images.mjs <customer> --page <path>` proposes each Image

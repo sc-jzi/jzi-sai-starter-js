@@ -13,7 +13,12 @@ The SE types `/resume-demo <customer>` (e.g. `/resume-demo acme-corp`) after a r
 
 ## 2. Marketer MCP first, always
 Run the T0 Marketer MCP check of `.skills/demo-from-transcript/SKILL.md` exactly as written: probe `list_sites`; not connected → send the authentication request and ask the SE once; a timeout or "Not now" stops again with `blockedOn: marketer-mcp-auth` and the same one-line message. Nothing else runs before `list_sites` returns.
-When it returns: remove the top-level `blockedOn` line from `demo-progress.yaml`, set `transcriptFlow.t0_preflight: { status: complete, marketerMcp: connected }`, and set the phase that was `blocked` back to `pending`.
+When it returns, re-check what `blockedOn` names before clearing it:
+- `marketer-mcp-auth`: nothing more (`list_sites` just returned).
+- `shared-layer-missing`: `node harness/scripts/shared-layer-check.mjs` must exit 0 (the SE pointed the harness at the right environment). Exit 1 again → stop again with the same message.
+- `content-hub-render`: `node harness/scripts/ch-render-check.mjs <customer>` must exit 0 (the DAM connector is now enabled), or the SE now answers "Media Library" to the question in `demo-site-bootstrap` step 5.
+- anything else: the one thing the stop message said would unblock it; ask the SE whether it is done if you cannot check it.
+Then remove the top-level `blockedOn` line from `demo-progress.yaml`, set `transcriptFlow.t0_preflight: { status: complete, marketerMcp: connected }`, and set the phase that was `blocked` back to `pending`.
 
 ## 3. Continue where it stopped
 Follow "Resume" in `demo-from-transcript`:

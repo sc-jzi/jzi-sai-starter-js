@@ -21,6 +21,12 @@ const nextConfig: NextConfig = {
   // can be served from the Next.js Image Optimization API
   // see https://nextjs.org/docs/app/api-reference/components/image#remotepatterns
   images: {
+    // An SVG served from a URL that does not end in .svg (a Content Hub public link, a media handler URL) otherwise fails with
+    // 'type "image/svg+xml" but dangerouslyAllowSVG is disabled' and the image stays blank. The CSP sandbox and attachment disposition are the
+    // settings the Next.js docs require with it: scripts inside an SVG never run, and the optimizer's SVG response is never shown as a page.
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [
 	  {
         protocol: 'https',
