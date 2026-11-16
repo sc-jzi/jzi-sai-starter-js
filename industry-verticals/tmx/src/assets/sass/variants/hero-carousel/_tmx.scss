@@ -1,0 +1,288 @@
+// Hero Carousel (HeroCarousel.tsx). The shared slider structure + the plain Default look come first; the Tmx look follows.
+// Tmx measured from the tmx.com home banner (sections.json #2, crop sections/02-montr-al-exchange.png): 1440x400 full width,
+// eyebrow Sofia Sans Extra Condensed 32/38 700, title Inter 40/48 700, text 20.8/25, button 18px 700 on #40c2cc, radius 25, 2px border,
+// arrows 60px wide hit areas with 20px chevrons at x 20 / 1400.
+
+// ---- Shared structure + Default (plain) look ----
+.component.hero-carousel {
+  --v-bg: #333333;
+  --v-eyebrow: #ffffff;
+  --v-heading: #ffffff;
+  --v-text: #eeeeee;
+  --v-btn-bg: #ffffff;
+  --v-btn-text: #222222;
+  --v-btn-border: #ffffff;
+  --v-arrow: #ffffff;
+  --v-dot: rgba(255, 255, 255, 0.6);
+  --v-dot-active: #ffffff;
+  --v-height: 420px;
+
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--v-bg);
+
+  .hc-slides {
+    position: relative;
+    height: var(--v-height);
+  }
+
+  .hc-slide {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--v-bg);
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  .hc-slide-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .hc-slide-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    padding: 0 80px 30px;
+    text-align: center;
+    color: var(--v-text);
+  }
+
+  .hc-eyebrow {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--v-eyebrow);
+  }
+
+  .hc-title {
+    margin: 0 0 8px;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--v-heading);
+  }
+
+  .hc-text {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.4;
+    color: var(--v-text);
+  }
+
+  .hc-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 160px;
+    height: 44px;
+    margin-top: 24px;
+    padding: 0 24px;
+    border: 2px solid var(--v-btn-border);
+    border-radius: 4px;
+    background-color: var(--v-btn-bg);
+    color: var(--v-btn-text);
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      filter: brightness(92%);
+      color: var(--v-btn-text);
+    }
+  }
+
+  .hc-arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--v-arrow);
+    cursor: pointer;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .hc-arrow-prev {
+    left: 0;
+  }
+
+  .hc-arrow-next {
+    right: 0;
+  }
+
+  .hc-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 24px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    button {
+      display: block;
+      width: 10px;
+      height: 10px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background-color: var(--v-dot);
+      cursor: pointer;
+
+      &.active {
+        background-color: var(--v-dot-active);
+      }
+    }
+  }
+
+  // Pages editing: every slide stacked and visible so each one can be edited.
+  &.is-editing {
+    .hc-slides {
+      height: auto;
+    }
+
+    .hc-slide {
+      position: relative;
+      display: flex;
+      min-height: var(--v-height);
+
+      + .hc-slide {
+        border-top: 2px dashed rgba(255, 255, 255, 0.4);
+      }
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .hc-slide-content {
+      padding: 0 48px 30px;
+    }
+
+    .hc-title {
+      font-size: 28px;
+    }
+  }
+}
+
+// ---- Tmx look ----
+.component.hero-carousel.variant-tmx {
+  --v-bg: #22313b;
+  --v-eyebrow: #ffffff;
+  --v-heading: #ffffff;
+  --v-text: #ffffff;
+  --v-btn-bg: #40c2cc;
+  --v-btn-border: #40c2cc;
+  --v-btn-text: #000000;
+  --v-arrow: #a7adb1;
+  --v-dot: #c9cdd0;
+  --v-dot-active: #40c2cc;
+  --v-height: 400px;
+
+  // the band itself is white (as on tmx.com); the slide photo is the slide's CSS background, slate only until it loads
+  background-color: #ffffff;
+
+  .hc-slide {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .hc-arrow {
+    text-decoration: none;
+  }
+
+  // brand label (an h3, as the tmx.com banner's brand line)
+  .hc-eyebrow {
+    margin: 0 0 2px;
+    font-family: var(--font-family-label), 'Sofia Sans Extra Condensed', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .hc-title {
+    margin: 0 0 6px;
+    font-family: var(--font-family), Inter, sans-serif;
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .hc-text {
+    font-family: var(--font-family), Inter, sans-serif;
+    font-size: 20.8px;
+    font-weight: 400;
+    line-height: 25px;
+  }
+
+  .hc-button {
+    min-width: 180px;
+    height: 48px;
+    margin-top: 28px;
+    padding: 0 24px;
+    border-radius: 25px;
+    font-family: var(--font-family), Inter, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+
+  .hc-arrow:hover {
+    opacity: 1;
+    color: #ffffff;
+  }
+
+  .hc-dots {
+    bottom: 34px;
+    gap: 6px;
+
+    button {
+      width: 8px;
+      height: 6px;
+      border-radius: 3px;
+
+      &.active {
+        width: 24px;
+      }
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .hc-title {
+      font-size: 30px;
+      line-height: 36px;
+    }
+  }
+}

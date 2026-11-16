@@ -1,0 +1,200 @@
+/* TMX variant of ArticleList: measured on tmx.com /pov section 3 "TMX POV" (sections-pov.json) */
+.component.article-list.variant-tmx {
+  --v-bg: #efefef;
+  --v-panel-bg: #ffffff;
+  --v-heading: #000000;
+  --v-text: #000000;
+  --v-accent: #309299;
+  --v-date: #777777;
+  --v-icon: #999999;
+
+  background-color: var(--v-bg);
+  padding: 0;
+  margin: 0;
+
+  .article-list-tmx__panel {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 36px 24px 62px;
+    background-color: var(--v-panel-bg);
+  }
+
+  .article-list-tmx__heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    font-family: var(--font-family), Inter, sans-serif;
+    font-size: 25px;
+    line-height: 27.5px;
+    font-weight: 900;
+    color: var(--v-heading);
+  }
+
+  .article-list-tmx__icon {
+    flex: 0 0 auto;
+    width: 40px;
+    height: 40px;
+    stroke: var(--v-icon);
+  }
+
+  .article-list-tmx__body {
+    padding: 0 19px;
+    border-radius: 4px;
+  }
+
+  .article-list-tmx__label {
+    margin: 32px 0 40px;
+    padding: 15px 0;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 17.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--v-accent);
+  }
+
+  .article-list-tmx__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 549px) minmax(0, 470px);
+    column-gap: 30px;
+    align-items: start;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  // The whole card is the link: the image link is stretched over the card (title and date line stay plain text).
+  .article-list-tmx__card {
+    position: relative;
+  }
+
+  .article-list-tmx__card-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  // Featured article
+  .article-list-tmx__featured-media {
+    display: block;
+    margin-bottom: 18px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 300px;
+      object-fit: contain;
+      border-radius: 0;
+    }
+  }
+
+  .article-list-tmx__featured-title {
+    margin: 0 0 8px;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--v-text);
+  }
+
+  .article-list-tmx__featured:hover .article-list-tmx__featured-title {
+    color: var(--v-accent);
+  }
+
+  .article-list-tmx__featured .article-list-tmx__meta {
+    margin-bottom: 6px;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--v-accent);
+  }
+
+  .article-list-tmx__excerpt {
+    margin: 0;
+    font-size: 14px;
+    line-height: 16.5px;
+    color: var(--v-text);
+  }
+
+  // Compact rows
+  .article-list-tmx__list {
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+  }
+
+  .article-list-tmx__row {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .article-list-tmx__row-media {
+    flex: 0 0 144px;
+
+    img {
+      display: block;
+      width: 144px;
+      height: 76px;
+      object-fit: cover;
+      border-radius: 0;
+    }
+  }
+
+  .article-list-tmx__row-text {
+    min-width: 0;
+    max-width: 310px;
+  }
+
+  .article-list-tmx__row-title {
+    margin: 0 0 5px;
+    font-size: 14px;
+    line-height: 17.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--v-accent);
+  }
+
+  .article-list-tmx__row:hover .article-list-tmx__row-title {
+    text-decoration: underline;
+  }
+
+  .article-list-tmx__row .article-list-tmx__meta {
+    font-size: 14px;
+    line-height: 17.5px;
+    color: var(--v-text);
+
+    .article-list-tmx__date {
+      font-size: 13px;
+      line-height: 16.3px;
+      font-weight: 500;
+      color: var(--v-date);
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    .article-list-tmx__panel {
+      padding: 28px 20px 40px;
+    }
+
+    .article-list-tmx__body {
+      padding: 0;
+    }
+
+    .article-list-tmx__label {
+      margin: 32px 0 24px;
+    }
+
+    .article-list-tmx__grid {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 40px;
+    }
+
+    .article-list-tmx__featured-media img {
+      height: auto;
+      aspect-ratio: 549 / 300;
+    }
+  }
+}

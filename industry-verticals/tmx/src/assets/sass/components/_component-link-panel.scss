@@ -1,0 +1,223 @@
+// Link Panel: a titled list of links (Default = plain list, Tmx = white bordered panel with text-size and print tools).
+.link-panel {
+  --link-panel-link: var(--text-colored);
+  --link-panel-scale: 1;
+
+  .link-panel-title {
+    margin: 0 0 1rem;
+  }
+
+  .link-panel-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin-bottom: 0.75rem;
+    }
+  }
+}
+
+// Tmx: tmx.com "TMX Group Companies" (sections-tmx-group-companies.json #2): a full-width #efefef page band; inside it the
+// 1280px band (left 80 at 1440) holds the breadcrumb trail (14px, links #0061af, current page #000, chevron separators, rule
+// below) and the white panel spanning the band (title 25px 600 #000, each company a 19px 600 heading holding a #0061af link,
+// 40px apart; A-/A+/print icons top right).
+.link-panel-page--tmx {
+  flex: 0 0 100%;
+  width: 100%;
+  background: var(--bg-main-alt, #efefef);
+  padding-bottom: 90px;
+}
+
+.link-panel.link-panel--tmx {
+  --link-panel-link: #0061af;
+  --link-panel-border: #dddddd;
+  --link-panel-page-bg: var(--bg-main-alt, #efefef);
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  background: var(--link-panel-page-bg);
+  padding: 19px 0 0;
+  font-family: var(--font-family, Inter, sans-serif);
+
+  .link-panel-crumbs {
+    min-height: 38px;
+    margin: 0 0 20px;
+    padding: 0 10px 20px;
+    border-bottom: 1px solid var(--link-panel-border);
+    font-size: 14px;
+    line-height: 17px;
+
+    ol {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      display: inline-flex;
+      align-items: center;
+      color: #000000;
+
+      + li::before {
+        content: '';
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        margin: 0 9px 0 7px;
+        border-top: 2px solid #000000;
+        border-right: 2px solid #000000;
+        transform: rotate(45deg);
+      }
+    }
+
+    a {
+      color: var(--link-panel-link);
+      text-decoration: none;
+
+      &:hover,
+      &:focus-visible {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .link-panel-card {
+    background: #ffffff;
+    border: 1px solid var(--link-panel-border);
+    border-radius: 2px;
+    padding: 14px 20px 22px;
+  }
+
+  .link-panel-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 40px;
+  }
+
+  .link-panel-title {
+    margin: 0;
+    color: #000000;
+    font-size: calc(25px * var(--link-panel-scale));
+    font-weight: 600;
+    line-height: 38px;
+  }
+
+  .link-panel-tools {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    padding-top: 10px;
+  }
+
+  .link-panel-tool {
+    display: inline-flex;
+    align-items: baseline;
+    border: 0;
+    background: none;
+    padding: 0;
+    color: #000000;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--link-panel-link);
+      outline-offset: 2px;
+    }
+
+    svg {
+      align-self: center;
+    }
+
+    // the A- / A+ glyphs are drawn here (icons, as on tmx.com)
+    &--smaller::before,
+    &--larger::before {
+      content: 'A';
+      font-size: 19px;
+    }
+
+    &--smaller::before {
+      font-size: 15px;
+    }
+
+    &--smaller::after,
+    &--larger::after {
+      font-size: 16px;
+      margin-left: 1px;
+    }
+
+    &--smaller::after {
+      content: '\2212';
+    }
+
+
+    &--larger::after {
+      content: '+';
+    }
+  }
+
+  .link-panel-list li {
+    margin: 0 0 40px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .link-panel-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+    color: #000000;
+    font-family: inherit;
+    font-size: calc(19px * var(--link-panel-scale));
+    font-weight: 600;
+    line-height: 23px;
+  }
+
+  .link-panel-link {
+    color: var(--link-panel-link);
+    font-size: inherit;
+    font-weight: 600;
+    line-height: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+    }
+  }
+
+  .link-panel-external {
+    flex-shrink: 0;
+    color: var(--link-panel-link);
+    width: calc(14px * var(--link-panel-scale));
+    height: calc(14px * var(--link-panel-scale));
+  }
+
+  @media (max-width: 1299.98px) {
+    margin: 0 10px;
+  }
+
+  @media print {
+    background: none;
+
+    .link-panel-tools {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,271 @@
+// ArticleDetails Tmx (ArticleDetails.tsx): tmx.com press release page, measured from sections-dividend-declaration.json #2 and its crop.
+// Full-width #efefef page band; the 1280px band (left 80 at 1440): breadcrumb 14px (links #0061af, current #000, chevrons, rule below),
+// white panel 847px (border 1px #ccc, radius 4; title Inter 25px 600 #000, A-/A+/print icons, date and body 14px #000, links #0061af)
+// and a 413px "Newsroom" box on the right (heading 19px 600 #000 with chevron, bulleted 14px links separated by a rule).
+
+.article-page--tmx {
+  flex: 0 0 100%;
+  width: 100%;
+  background: var(--bg-main-alt, #efefef);
+  padding-bottom: 90px;
+}
+
+.component.article-details.article-details--tmx {
+  --article-scale: 1;
+  --article-link: #0061af;
+  --article-border: #cccccc;
+  --article-rule: #dddddd;
+
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 19px 0 0;
+  background: var(--bg-main-alt, #efefef);
+  color: #000000;
+  font-family: var(--font-family, Inter, sans-serif);
+
+  a {
+    color: var(--article-link);
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+    }
+  }
+
+  .article-crumbs {
+    min-height: 38px;
+    margin: 0 0 20px;
+    padding: 0 10px 20px;
+    border-bottom: 1px solid var(--article-rule);
+    font-size: 14px;
+    line-height: 17px;
+
+    ol {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      display: inline-flex;
+      align-items: center;
+      color: #000000;
+
+      + li::before {
+        content: '';
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        margin: 0 9px 0 7px;
+        border-top: 2px solid #000000;
+        border-right: 2px solid #000000;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  .article-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 847fr) minmax(0, 413fr);
+    gap: 20px;
+    align-items: start;
+  }
+
+  .article-panel,
+  .article-sidebar-box {
+    background: #ffffff;
+    border: 1px solid var(--article-border);
+    border-radius: 4px;
+  }
+
+  .article-panel {
+    padding: 14px 20px 20px;
+  }
+
+  .article-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 30px;
+  }
+
+  .article-title {
+    margin: 0;
+    color: #000000;
+    font-family: inherit;
+    font-size: calc(25px * var(--article-scale));
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: 0;
+  }
+
+  .article-tools {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    padding-top: 10px;
+  }
+
+  .article-tool {
+    display: inline-flex;
+    align-items: baseline;
+    border: 0;
+    background: none;
+    padding: 0;
+    color: #000000;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: default;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--article-link);
+      outline-offset: 2px;
+    }
+
+    svg {
+      align-self: center;
+    }
+
+    // the A- / A+ glyphs are drawn here (icons, as on tmx.com)
+    &--smaller::before,
+    &--larger::before {
+      content: 'A';
+      font-size: 19px;
+    }
+
+    &--smaller::before {
+      font-size: 15px;
+    }
+
+    &--smaller::after,
+    &--larger::after {
+      font-size: 16px;
+      margin-left: 1px;
+    }
+
+    &--smaller::after {
+      content: '\2212';
+    }
+
+    &--larger::after {
+      content: '+';
+    }
+  }
+
+  .article-date {
+    margin: 15px 0 9px;
+    font-size: calc(14px * var(--article-scale));
+    line-height: 20px;
+    color: #000000;
+  }
+
+  .article-body {
+    font-size: calc(14px * var(--article-scale));
+    line-height: 1.4;
+    color: #000000;
+
+    p {
+      margin: 0 0 16px;
+      font-size: inherit;
+      line-height: inherit;
+      color: inherit;
+    }
+
+    h2,
+    h3,
+    h4 {
+      margin: 40px 0 16px;
+      color: #000000;
+      font-family: inherit;
+      font-size: calc(15px * var(--article-scale));
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    ul li {
+      list-style-type: unset;
+    }
+  }
+
+  .article-sidebar-box {
+    padding: 19px 20px 20px;
+  }
+
+  .article-sidebar-title {
+    margin: 0 0 16px;
+    font-family: inherit;
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 24px;
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #000000;
+    }
+  }
+
+  .article-sidebar-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+    line-height: 17px;
+
+    li {
+      position: relative;
+      padding-left: 20px;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 2px;
+        top: 4px;
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: #aab4bb;
+      }
+
+      + li {
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid var(--article-rule);
+
+        &::before {
+          top: 17px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1299.98px) {
+    max-width: calc(100% - 20px);
+  }
+
+  @media (max-width: 991.98px) {
+    .article-layout {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media print {
+    .article-tools,
+    .article-sidebar {
+      display: none;
+    }
+  }
+}

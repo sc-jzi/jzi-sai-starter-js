@@ -1,0 +1,150 @@
+/* TMX variant of DocumentsList: measured on tmx.com /Home section 9 "Investor Relations" (sections.json) */
+.component.documents-list.variant-tmx {
+  --v-bg: #e4f8fe;
+  --v-heading: #000000;
+  --v-text: #555555;
+  --v-accent: #40c2cc;
+  --v-btn-bg: #09263a;
+  --v-btn-border: #09263a;
+  --v-btn-text: #ffffff;
+  --v-card-bg: #ffffff;
+  --v-card-text: #000000;
+
+  background-color: var(--v-bg);
+  padding: 64px 0 72px;
+  margin: 0;
+
+  .documents-list-tmx__inner {
+    padding: 0 35px;
+  }
+
+  .documents-list-tmx__section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 22px;
+    font-family: var(--font-family), Inter, sans-serif;
+    font-size: 38px;
+    line-height: 40px;
+    font-weight: 700;
+    color: var(--v-heading);
+
+    .tmx-chevron {
+      flex: 0 0 auto;
+      width: 28px;
+      height: 30px;
+      fill: var(--v-accent);
+    }
+  }
+
+  .documents-list-tmx__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 787fr) minmax(0, 553fr);
+    column-gap: 30px;
+    align-items: start;
+  }
+
+  .documents-list-tmx__heading {
+    margin: 0 0 9px;
+    font-family: var(--font-family), Inter, sans-serif;
+    font-size: 17px;
+    line-height: 20.4px;
+    font-weight: 700;
+    color: var(--v-heading);
+  }
+
+  .documents-list-tmx__text {
+    margin: 0 0 16px;
+    font-size: 16px;
+    line-height: 21.6px;
+    color: var(--v-text);
+  }
+
+  .documents-list-tmx__button {
+    display: inline-flex;
+    align-items: center;
+    box-sizing: border-box;
+    height: 38px;
+    padding: 0 18.9px;
+    border: 2px solid var(--v-btn-border);
+    border-radius: 20px;
+    background-color: var(--v-btn-bg);
+    color: var(--v-btn-text);
+    font-size: 14px;
+    line-height: 34px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 0.85;
+      color: var(--v-btn-text);
+    }
+  }
+
+  .documents-list-tmx__tiles {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 29px;
+  }
+
+  .documents-list-tmx__tile {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    box-sizing: border-box;
+    min-height: 62px;
+    padding: 0 15px;
+    background-color: var(--v-card-bg);
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    color: var(--v-card-text);
+    text-decoration: none;
+    transition: box-shadow 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--v-card-text);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    }
+  }
+
+  .documents-list-tmx__icon {
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    filter: none;
+  }
+
+  .documents-list-tmx__tile-label {
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 700;
+  }
+
+  @media (max-width: 991.98px) {
+    padding: 48px 0;
+
+    .documents-list-tmx__inner {
+      padding: 0 20px;
+    }
+
+    .documents-list-tmx__grid {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 32px;
+    }
+
+    .documents-list-tmx__section-title {
+      font-size: 30px;
+      line-height: 34px;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .documents-list-tmx__tiles {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+}

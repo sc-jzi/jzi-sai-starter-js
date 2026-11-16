@@ -1,0 +1,97 @@
+// Tmx variant of ThreeColumnCta: TMX POV cards (sections.json #8, crop sections/08-news-and-insights.png, left part)
+.component.three-column-cta.variant-tmx {
+  --v-bg: transparent;
+  --v-card-bg: #ffffff;
+  --v-card-shadow: rgba(0, 0, 0, 0.2) 1px 1px 5px;
+  --v-heading: #000000;
+  --v-text: #666666;
+
+  padding: 40px 0 64px;
+  background-color: var(--v-bg);
+
+  .tmx-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 35px;
+  }
+
+  .tmx-card-col {
+    display: flex;
+  }
+
+  .tmx-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: var(--v-card-bg);
+    box-shadow: var(--v-card-shadow);
+    color: var(--v-heading);
+    text-decoration: none;
+
+    &:hover .tmx-card-title {
+      text-decoration: underline;
+    }
+  }
+
+  .tmx-card-media {
+    height: 200px;
+  }
+
+  .tmx-card-img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    margin: 0;
+    border-radius: 0;
+    object-fit: cover;
+  }
+
+  .tmx-card-body {
+    padding: 20px 20px 22px;
+  }
+
+  .tmx-card-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    margin: 0 0 6px;
+    font-family: var(--font-family), Inter, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21px;
+    color: var(--v-heading);
+  }
+
+  .tmx-card-subtext {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21.6px;
+    color: var(--v-text);
+    opacity: 1;
+  }
+
+  .tmx-card-edit-link {
+    display: block;
+    padding: 0 20px 16px;
+    font-size: 12px;
+  }
+
+  @media (max-width: 991.98px) {
+    .tmx-cards {
+      grid-template-columns: minmax(0, 1fr);
+      padding: 0 20px;
+    }
+  }
+}

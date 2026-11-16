@@ -1,0 +1,131 @@
+// Tmx variant of HeroBanner: TMX visual language from the Our Companies band (sections.json #4, crop sections/04-our-companies.png)
+.component.hero-banner.variant-tmx {
+  --v-bg: #e4f8fe;
+  --v-frame: #40c2cc;
+  --v-tagline: #000000;
+  --v-heading: #000000;
+  --v-text: #555555;
+  --v-btn-bg: #09263a;
+  --v-btn-text: #ffffff;
+
+  margin: 0;
+  padding: 64px 0 84px;
+  background-color: var(--v-bg);
+
+  .tmx-hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 35px;
+  }
+
+  .tmx-hero-media {
+    flex: 0 0 565px;
+    max-width: 565px;
+  }
+
+  // teal offset frame: the image sits 20px in from the top-left of the frame and overhangs it on the right
+  .tmx-hero-frame {
+    position: relative;
+    padding: 20px 0 20px 20px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 12px;
+      background-color: var(--v-frame);
+    }
+  }
+
+  .tmx-hero-img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+
+  .tmx-hero-copy {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .tmx-hero-tagline {
+    margin: 0 0 6px;
+    font-family: var(--font-family-label), 'Sofia Sans Extra Condensed', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: var(--v-tagline);
+  }
+
+  .tmx-hero-title {
+    margin: 0 0 16px;
+    font-family: var(--font-family), Inter, sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 48px;
+    color: var(--v-heading);
+  }
+
+  .tmx-hero-text {
+    font-size: 16px;
+    line-height: 21.6px;
+    color: var(--v-text);
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .tmx-hero-button {
+    display: inline-flex;
+    align-items: center;
+    height: 38px;
+    margin-top: 20px;
+    padding: 0 19px;
+    border: 2px solid var(--v-btn-bg);
+    border-radius: 20px;
+    background-color: var(--v-btn-bg);
+    color: var(--v-btn-text);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      filter: brightness(130%);
+      color: var(--v-btn-text);
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    padding: 40px 0;
+
+    .tmx-hero-inner {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 32px;
+      padding: 0 20px;
+    }
+
+    .tmx-hero-media {
+      flex-basis: auto;
+      max-width: 100%;
+    }
+
+    .tmx-hero-img {
+      height: 280px;
+    }
+
+    .tmx-hero-title {
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+}

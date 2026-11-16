@@ -1,0 +1,88 @@
+// Tmx variant of CtaBanner: navy band in the TMX palette (navy #09263a, teal #40c2cc), no image or icon
+.component.cta-banner.variant-tmx {
+  --v-bg: #09263a;
+  --v-eyebrow: #40c2cc;
+  --v-heading: #ffffff;
+  --v-text: #d3d8dc;
+  --v-btn-bg: #40c2cc;
+  --v-btn-text: #000000;
+
+  padding: 64px 0;
+  background-color: var(--v-bg);
+
+  .tmx-cta-inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 35px;
+  }
+
+  .tmx-cta-eyebrow {
+    margin: 0 0 6px;
+    font-family: var(--font-family-label), 'Sofia Sans Extra Condensed', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: var(--v-eyebrow);
+  }
+
+  .tmx-cta-title {
+    max-width: 900px;
+    margin: 0 0 14px;
+    font-family: var(--font-family), Inter, sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    color: var(--v-heading);
+  }
+
+  .tmx-cta-text {
+    max-width: 900px;
+    font-size: 18px;
+    line-height: 26px;
+    color: var(--v-text);
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    a {
+      color: var(--v-eyebrow);
+    }
+  }
+
+  .tmx-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    height: 48px;
+    margin-top: 28px;
+    padding: 0 24px;
+    border: 2px solid var(--v-btn-bg);
+    border-radius: 25px;
+    background-color: var(--v-btn-bg);
+    color: var(--v-btn-text);
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      filter: brightness(92%);
+      color: var(--v-btn-text);
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    padding: 40px 0;
+
+    .tmx-cta-inner {
+      padding: 0 20px;
+    }
+
+    .tmx-cta-title {
+      font-size: 26px;
+      line-height: 32px;
+    }
+  }
+}

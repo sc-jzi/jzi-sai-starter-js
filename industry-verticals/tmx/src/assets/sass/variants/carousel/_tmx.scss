@@ -1,0 +1,180 @@
+// Tmx variant of Carousel: measured from the tmx.com home banner (sections.json #2, crop sections/02-montr-al-exchange.png)
+.component.carousel.variant-tmx {
+  --v-bg: #22313b;
+  --v-label: #ffffff;
+  --v-heading: #ffffff;
+  --v-text: #d3d8dc;
+  --v-btn-bg: #40c2cc;
+  --v-btn-text: #000000;
+  --v-arrow: #a7adb1;
+  --v-dot: #c9cdd0;
+  --v-dot-active: #40c2cc;
+
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--v-bg);
+
+  .tmx-slides {
+    position: relative;
+    height: 400px;
+  }
+
+  .tmx-slide {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--v-bg);
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  .tmx-slide-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
+  .tmx-slide-content {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    padding: 0 80px 30px;
+    text-align: center;
+    color: var(--v-text);
+  }
+
+  .tmx-slide-label {
+    margin: 0 0 4px;
+    font-family: var(--font-family-label), 'Sofia Sans Extra Condensed', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 38px;
+    text-transform: uppercase;
+    color: var(--v-label);
+  }
+
+  .tmx-slide-text {
+    h1,
+    h2,
+    h3 {
+      margin: 0 0 6px;
+      font-family: var(--font-family), Inter, sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      line-height: 48px;
+      color: var(--v-heading);
+    }
+
+    p {
+      margin: 0;
+      font-size: 20.8px;
+      font-weight: 400;
+      line-height: 25px;
+      color: var(--v-text);
+    }
+  }
+
+  .tmx-slide-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    height: 48px;
+    margin-top: 28px;
+    padding: 0 24px;
+    border: 2px solid var(--v-btn-bg);
+    border-radius: 25px;
+    background-color: var(--v-btn-bg);
+    color: var(--v-btn-text);
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+
+    &:hover {
+      filter: brightness(92%);
+      color: var(--v-btn-text);
+    }
+  }
+
+  .tmx-arrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--v-arrow);
+    cursor: pointer;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    &:hover {
+      color: var(--v-label);
+    }
+  }
+
+  .tmx-arrow-prev {
+    left: 0;
+  }
+
+  .tmx-arrow-next {
+    right: 0;
+  }
+
+  .tmx-dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 34px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    button {
+      display: block;
+      width: 8px;
+      height: 6px;
+      padding: 0;
+      border: 0;
+      border-radius: 3px;
+      background-color: var(--v-dot);
+      cursor: pointer;
+
+      &.active {
+        width: 24px;
+        background-color: var(--v-dot-active);
+      }
+    }
+  }
+
+  @media (max-width: 767.98px) {
+    .tmx-slide-content {
+      padding: 0 48px 30px;
+    }
+
+    .tmx-slide-text h2 {
+      font-size: 30px;
+      line-height: 36px;
+    }
+  }
+}

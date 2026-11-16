@@ -1,0 +1,79 @@
+# Client Brand Theme — TMX (tmx.com). Measured 2026-11-16 (site-scraper extracted-styles.json, sections.json, header-styles.json).
+client:
+  name: "TMX"
+  sourceUrl: "https://www.tmx.com/"
+  extractedAt: "2026-11-16"
+  extractedBy: "site-scraper + section-capture"
+
+colors:
+  primary: "#09263a"            # navy: pill buttons, dark buttons (sections.json button.background x4, border x23)
+  primaryForeground: "#ffffff"
+  secondary: "#006b86"          # dark teal: links, heading highlight, outline buttons (extracted linkColor)
+  secondaryForeground: "#ffffff"
+  accent: "#40c2cc"             # teal: hero button, image frames, section chevrons, quarter-arc, TOP button
+  accentForeground: "#000000"   # hero 'Learn More' text is black on teal
+  background: "#ffffff"
+  foreground: "#555555"         # body text; headings #000000
+  muted: "#e4f8fe"              # light cyan section bands (Our Companies, Investor Relations)
+  mutedForeground: "#555555"
+  headerBackground: "#ffffff"
+  headerForeground: "#1a1a1a"   # nav links 15px/600 (header-styles.json)
+  footerBackground: "#ecf1f3"
+  footerForeground: "#333333"
+  border: "#d9e0e4"             # header dividers, read from the crop (low confidence)
+  ring: "#40c2cc"
+  extra:
+    - { name: inner-page-background, value: "#efefef", note: "grey page background behind white content panels on inner pages" }
+    - { name: search-field, value: "#eaeff1", note: "symbol search input" }
+    - { name: heading, value: "#000000" }
+    - { name: logo-navy, value: "#1d2a5c", note: "logo wordmark (from the logo image, not used as a theme colour)" }
+
+typography:
+  headingFamily: "Inter"
+  headingWeight: "700"
+  bodyFamily: "Inter"
+  bodyWeight: "400"
+  monoFamily: ""
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Sofia+Sans+Condensed:ital,wght@0,500;1,500&family=Sofia+Sans+Extra+Condensed:wght@700&display=swap"
+  scale:
+    hero: "40px"
+    h1: "40px"
+    h2: "32px"
+    h3: "17px"
+    body: "16px"
+    small: "13px"
+  headingTransform: "none"
+  letterSpacing: "normal"
+  lineHeight: "1.35"
+  note: "Brand labels on hero slides (MONTRÉAL EXCHANGE) use Sofia Sans Extra Condensed 700, uppercase"
+
+spacing:
+  density: "comfortable"
+  sectionGap: "64px"
+  containerMaxWidth: "1400px"
+  containerPadding: "35px"
+
+shape:
+  borderRadius: "4px"
+  buttonRadius: "20px"          # pill buttons
+  cardRadius: "4px"
+  imageRadius: "0px"
+  shadowStyle: "rgba(0,0,0,0.2) 1px 1px 5px 0px"
+  borderStyle: "none"
+
+siteThemeVariables:   # .site-tmx block in _colors.scss (light); dark block = same values (the live site has no dark mode)
+  --text-body: "#555555"
+  --text-body-inverted: "#ffffff"
+  --text-colored: "#006b86"
+  --text-footer: "#333333"
+  --text-accent: "#40c2cc"
+  --bg-body: "#ffffff"
+  --bg-footer: "#ecf1f3"
+  --bg-main: "#e4f8fe"
+  --bg-main-alt: "#efefef"
+  --bg-color: "#eaeff1"
+  --bg-saturated: "#09263a"
+  --bg-accent: "#40c2cc"
+  --border-color: "#d9e0e4"
+  --hr-color: "#d9e0e4"
+  --roundness: "20px"

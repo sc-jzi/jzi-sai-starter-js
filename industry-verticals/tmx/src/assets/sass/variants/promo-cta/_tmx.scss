@@ -1,0 +1,161 @@
+/* TMX variants of PromoCta (TmxImageLeft, TmxImageRight, Tmx): measured on tmx.com /Home sections 4-7 (sections.json) */
+.component.promo-cta.variant-tmx {
+  --v-bg: #e4f8fe;
+  --v-heading: #000000;
+  --v-text: #555555;
+  --v-accent: #40c2cc;
+  --v-frame: #40c2cc;
+  --v-btn-bg: #09263a;
+  --v-btn-border: #09263a;
+  --v-btn-text: #ffffff;
+
+  background-color: var(--v-bg);
+  padding: 64px 0;
+  margin: 0;
+
+  .promo-cta-tmx__inner {
+    padding: 0 35px;
+  }
+
+  .promo-cta-tmx__section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 22px;
+    font-family: var(--font-family), Inter, sans-serif;
+    font-size: 38px;
+    line-height: 40px;
+    font-weight: 700;
+    color: var(--v-heading);
+
+    .tmx-chevron {
+      flex: 0 0 auto;
+      width: 28px;
+      height: 30px;
+      fill: var(--v-accent);
+    }
+  }
+
+  .promo-cta-tmx__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 565fr) minmax(0, 787fr);
+    column-gap: 18px;
+    align-items: center;
+  }
+
+  &.promo-cta-tmx--image-right .promo-cta-tmx__grid {
+    grid-template-columns: minmax(0, 787fr) minmax(0, 565fr);
+  }
+
+  // Photo inside a teal offset frame (frame = 20px above, below and on the outer side; 12px short on the inner side)
+  .promo-cta-tmx__media {
+    position: relative;
+    padding: 20px 0 20px 20px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0 12px 0 0;
+      background-color: var(--v-frame);
+    }
+  }
+
+  &.promo-cta-tmx--image-right .promo-cta-tmx__media {
+    padding: 20px 20px 20px 0;
+
+    &::before {
+      inset: 0 0 0 12px;
+    }
+  }
+
+  .promo-cta-tmx__image {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 545 / 400;
+    object-fit: cover;
+    border-radius: 0;
+  }
+
+  .promo-cta-tmx__body {
+    text-align: center;
+  }
+
+  .promo-cta-tmx__title {
+    margin: 0 0 22px;
+    font-family: var(--font-family), Inter, sans-serif;
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 700;
+    color: var(--v-heading);
+  }
+
+  .promo-cta-tmx__text {
+    margin: 0 0 16px;
+    font-size: 16px;
+    line-height: 21.6px;
+    font-weight: 400;
+    color: var(--v-text);
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .promo-cta-tmx__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px 12px;
+  }
+
+  .promo-cta-tmx__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 38px;
+    padding: 0 18.9px;
+    border: 2px solid var(--v-btn-border);
+    border-radius: 20px;
+    background-color: var(--v-btn-bg);
+    color: var(--v-btn-text);
+    font-family: var(--font-family), Inter, sans-serif;
+    font-size: 14px;
+    line-height: 34px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 0.85;
+      color: var(--v-btn-text);
+    }
+  }
+
+  @media (max-width: 991.98px) {
+    padding: 48px 0;
+
+    .promo-cta-tmx__inner {
+      padding: 0 20px;
+    }
+
+    .promo-cta-tmx__grid,
+    &.promo-cta-tmx--image-right .promo-cta-tmx__grid {
+      grid-template-columns: minmax(0, 1fr);
+      row-gap: 32px;
+    }
+
+    &.promo-cta-tmx--image-right .promo-cta-tmx__media {
+      order: -1;
+    }
+
+    .promo-cta-tmx__section-title {
+      font-size: 30px;
+      line-height: 34px;
+    }
+  }
+}

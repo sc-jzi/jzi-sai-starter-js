@@ -1,0 +1,30 @@
+// StockTicker (new component): base layout for every variant, then the Tmx look measured from header-reference.png.
+.component.stock-ticker {
+  --v-text: #333333;
+  --v-label: #1a1a1a;
+  --v-up: #00dd00;
+  --v-down: #d0021b;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: Inter, sans-serif;
+  font-size: 13px;
+  line-height: 40px;
+  color: var(--v-text);
+  white-space: nowrap;
+  .stock-ticker__label { font-weight: 600; color: var(--v-label); }
+  .stock-ticker__price { font-weight: 400; }
+  .stock-ticker__change {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 6px;
+    &.is-up { color: var(--v-up); }
+    &.is-down { color: var(--v-down); }
+  }
+  .stock-ticker__arrow { width: 10px; height: 6px; }
+}
+
+.component.stock-ticker.variant-tmx {
+  padding: 0;
+}
