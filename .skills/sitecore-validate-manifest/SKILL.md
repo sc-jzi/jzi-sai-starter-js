@@ -118,11 +118,11 @@ Read `.sitecore/component-map.ts` and verify:
 - The `componentMapKey` matches the import key
 
 **If component missing from map:**
-- **Cannot auto-fix** — requires code change and dev server restart
-- **Flag for user:** "Component `<name>` (key: `<key>`) is in the manifest but not in component-map.ts. Run the component registration step."
+- **Cannot auto-fix** — the file is missing, misnamed, or the maps were not regenerated (`sitecore-rules.md` → Component map)
+- **Flag for user:** "Component `<name>` (key: `<key>`) is in the manifest but not in component-map.ts. Check the component file exists under `src/components/` with that name, then run `npm run sitecore-tools:generate-map`."
 
 **If component in map but not in manifest:**
-- Informational only — could be a manually added component
+- Informational only — a component file that the manifest does not record
 - **Flag for user:** "Component `<key>` is in component-map.ts but not in the manifest. Consider adding it."
 
 ### Step 5 — Quick validation report

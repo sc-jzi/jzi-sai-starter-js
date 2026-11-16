@@ -33,7 +33,7 @@ Use this skill when:
 - `docs/ai/manifests/sitecore-manifest.yaml`
 - `.skills/sitecore-maintain-manifest/SKILL.md`
 - `.skills/sitecore-reference/references/sitecore-rules.md`
-- `.skills/sitecore-reference/references/sitecore-marketer-mcp-reference.md`
+- `harness/reference/marketer-mcp-tools.md`
 - `.skills/sitecore-reference/references/react-component-guidelines.md`
 
 ---
@@ -83,7 +83,7 @@ For each component:
    - `AddFieldEditorButton = 1`
 3. Register in Available Renderings (append to existing `Renderings [shared]` value on Page Content, never replace)
 4. Create React component file under `src/components/pagecontent/landing/<ComponentName>.tsx`
-5. Update `.sitecore/component-map.ts`
+5. Regenerate the component maps (`npm run sitecore-tools:generate-map`)
 
 Components to create (see `page-template-registry.yaml` → `landing.contextComponents` for the canonical list):
 
@@ -187,13 +187,9 @@ Verify all items from Phases 1-4. Update manifest with:
 
 ## Component map entries
 
-Register all six in **both** `.sitecore/component-map.ts` and `.sitecore/component-map.client.ts`, in the existing style (see `react-component-guidelines.md`). Keys are PascalCase and equal the component names:
-```typescript
-import * as LandingHero from 'src/components/pagecontent/LandingHero';   // likewise LandingFeatures, LandingStats, LandingSocialProof, LandingFAQ, LandingFinalCTA
-// map.ts:        ['LandingHero', { ...LandingHero, componentType: 'client' }],
-// map.client.ts: ['LandingHero', { ...LandingHero }],
-```
-
+None by hand: the six files under `src/components/pagecontent/landing/` are picked up by `npm run sitecore-tools:generate-map`; each file
+name must equal its rendering component name (`LandingHero`, `LandingFeatures`, `LandingStats`, `LandingSocialProof`, `LandingFAQ`, `LandingFinalCTA`).
+`sitecore-rules.md` → Component map.
 
 ---
 
@@ -240,7 +236,7 @@ The task is only complete when ALL phases succeed:
 - [ ] All 6 renderings registered in Available Renderings (appended, never replaced)
 - [ ] 6 Headless Variants containers + 8 Variant Definition items (LandingHero: 3, others: 1 each)
 - [ ] 6 React component files created with 8 named exports total
-- [ ] `.sitecore/component-map.ts` updated with 6 entries
+- [ ] Component maps regenerated and holding the 6 keys
 - [ ] Partial Design "Landing Page Layout" created with all 6 components placed on `headless-main` in render order
 - [ ] Landing Page `__Standard Values` references the partial design
 - [ ] Manifest fully updated with all item IDs and status

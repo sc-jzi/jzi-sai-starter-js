@@ -530,7 +530,7 @@ For each section in the build plan with `matchType: "custom"`:
 4. Populate the datasource with client content
 5. Update the manifest (template, rendering, datasource folder, example item, variants)
 6. Register in Available Renderings
-7. Register in component-map.ts
+7. Regenerate the component maps (`npm run sitecore-tools:generate-map`; never edit them by hand)
 
 Custom components must be fully built before page assembly so they can be placed alongside template components in a single pass.
 

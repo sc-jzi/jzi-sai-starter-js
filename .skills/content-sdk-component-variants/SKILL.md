@@ -1,6 +1,6 @@
 ---
 name: content-sdk-component-variants
-description: Implements component variants: different renderings or data-driven variants of the same component type. App Router: register in component-map.ts or component-map.client.ts as appropriate. Use when one component has multiple presentations.
+description: Implements component variants: different renderings or data-driven variants of the same component type. Variants are named exports of one component file; the generated component maps need no extra entry. Use when one component has multiple presentations.
 ---
 
 # Content SDK Component Variants (App Router)
@@ -23,7 +23,7 @@ One component definition can have multiple presentations or data-driven variants
 
 - Prefer a single component registration that accepts variant/style data (e.g. params or fields) and branches internally, over multiple map entries for the same logical component unless the app pattern uses separate registrations per variant.
 - Use props (fields, params) from layout to decide variant; do not rely on global state or URL for variant selection when data comes from Sitecore.
-- Register in `.sitecore/component-map.ts` (Server) or `.sitecore/component-map.client.ts` (Client) as appropriate. If the app uses one key per variant, register each; if one key with variant param, single registration. Follow existing app convention.
+- No map registration per variant: the variants are named exports of the component's file, and the generated maps hold one entry per file (`sitecore-rules.md` → Component map).
 - Keep component maps in sync with src/components/.
 
 ## Stop Conditions

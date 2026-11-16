@@ -24,7 +24,7 @@ This app does **not** use getComponentData. Page and layout data come from **get
 - **Data source:** Page and layout from `client.getPage(path ?? [], { site, locale })` in the catch-all page (or getPreview/getDesignLibraryData when draftMode() is enabled). All Sitecore-driven data flows from this single fetch at the route level.
 - **Server Components:** Use the same SitecoreClient in server context (e.g. in the page or layout). Pass data as props to children.
 - **Client Components:** Receive **serializable** props from parent (no functions or non-serializable values). Do not create a new client inside components. Pass data from page/layout level into components.
-- **BYOC or custom components:** Must be registered in the appropriate component map (.sitecore/component-map.ts or component-map.client.ts) and receive props in the shape the layout expects (e.g. fields, params).
+- **BYOC or custom components:** Must be resolvable from the generated component maps (file under `src/components/`, file name = rendering name; `sitecore-rules.md` → Component map) and receive props in the shape the layout expects (e.g. fields, params).
 - Do not fetch layout or page data inside a child component (e.g. another getPage call); fetch at page/layout level and pass props.
 
 ## Stop Conditions

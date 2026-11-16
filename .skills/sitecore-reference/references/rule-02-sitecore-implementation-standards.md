@@ -6,7 +6,7 @@ Apply these rules to all Sitecore XM Cloud component work.
 - `.skills/sitecore-reference/references/sitecore-rules.md`
 - `.skills/sitecore-reference/references/react-component-guidelines.md`
 - `docs/ai/templates/sitecore-component-spec.template.yaml`
-- `.skills/sitecore-reference/references/sitecore-marketer-mcp-reference.md`
+- `harness/reference/marketer-mcp-tools.md`
 
 ## Sitecore item change rules
 - Use the **Sitecore marketer MCP** whenever Sitecore items must be created or updated.

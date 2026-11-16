@@ -28,7 +28,7 @@ Use this skill when:
 - `docs/ai/manifests/sitecore-manifest.yaml`
 - `.skills/sitecore-maintain-manifest/SKILL.md`
 - `.skills/sitecore-reference/references/sitecore-rules.md`
-- `.skills/sitecore-reference/references/sitecore-marketer-mcp-reference.md`
+- `harness/reference/marketer-mcp-tools.md`
 - `.skills/sitecore-reference/references/react-component-guidelines.md`
 
 ---
@@ -95,7 +95,7 @@ For each component:
 3. Set `Parameters Template [shared]` to the rendering params template GUID
 4. Register in Available Renderings (append to existing value)
 5. Create React component file
-6. Update `.sitecore/component-map.ts`
+6. Regenerate the component maps (`npm run sitecore-tools:generate-map`)
 
 ### Phase 3 — Variants (delegates to `sitecore-add-variants`)
 
@@ -161,15 +161,8 @@ Verify all items from Phases 1-4. Update manifest with:
 
 ## Component map entries
 
-Register in **both** `.sitecore/component-map.ts` and `.sitecore/component-map.client.ts` (see `react-component-guidelines.md`):
-```typescript
-import * as ArticleHero from 'src/components/pagecontent/ArticleHero';
-import * as ArticleBody from 'src/components/pagecontent/ArticleBody';
-// map.ts:        ['ArticleHero', { ...ArticleHero, componentType: 'client' }], ['ArticleBody', { ...ArticleBody, componentType: 'client' }],
-// map.client.ts: ['ArticleHero', { ...ArticleHero }], ['ArticleBody', { ...ArticleBody }],
-```
-
-Follow the existing naming pattern in the file.
+None by hand: `ArticleHero.tsx` and `ArticleBody.tsx` under `src/components/` are picked up by `npm run sitecore-tools:generate-map`; their file names
+must equal the rendering component names. `sitecore-rules.md` → Component map.
 
 ---
 

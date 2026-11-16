@@ -146,3 +146,15 @@ disagree, **this file wins** and the skill is the bug. Change a rule here, once.
     A field exists only for something an editor would change.
   - A video next to text is a two-column component: video link + poster `Image` + the text fields, with the play button drawn in code.
   *Enforced: `link-audit.mjs` (field types against names and values; Rich Text is never checked for markup) and `run-gate.mjs` (the code).*
+
+## Cost: keep the context small
+Every model call re-reads the whole conversation, so each extra step and each long tool output costs again on every later step.
+- **R27 Batch the work, trim the output.** Fewer, smaller steps mean less re-reading.
+  - Independent tool calls go in ONE message (MCP reads/writes for different items, parallel file reads). Several fields of one item go in ONE
+    `update_fields_on_item` call.
+  - Independent checks go in ONE shell command: loop over the pages, or use the all-pages script (`looks-gates.mjs`, `run-gate.mjs check`)
+    instead of one `section-capture.mjs` call per page. A loop stops at the first error and prints which item failed.
+  - Print only what decides the next step: filter script output to its verdict lines (`grep -E "✔|✖|  - "`, `tail`); read a measurement or
+    layout file by the slice you need (`node -e`, an offset), never whole.
+  - Do not re-read a file that is already in the conversation and has not changed; do not re-run a check when nothing it covers changed.
+  - Look at a screenshot only when the measured numbers cannot explain a difference, and then only the band in question.

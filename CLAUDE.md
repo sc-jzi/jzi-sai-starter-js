@@ -9,23 +9,10 @@ a local Next.js app), driven from Cursor or Claude Code. Start with `README-DEMO
 - All other skills: `.skills/<name>/SKILL.md`. That is the only copy; `.cursor/skills` and `.claude/skills` hold generated stubs that point to it.
 
 ## Rules
-**`.skills/RULES.md` (R1–R26) is the one source for how a demo is built.** Read it before any demo work; when anything else disagrees, it wins.
-The ones that matter in every session, demo run or not:
-- **R5 Marketer MCP first** for every Sitecore write it supports, with a read-back. Scripts write directly only for what the MCP cannot do
-  (site creation, media upload, variants / rendering parameters when the MCP route is refused, the editing host). Reading to verify is always fine.
-- **R16 Code only in `industry-verticals/<customer>/`.** `industry-verticals/prospera` is the base app (read-only). Other customers' folders are
-  invisible: never open, list or search them.
-- **R17 The app always builds:** `node harness/scripts/build-check.mjs <customer>` after a code change; fix what it prints before saying you are done.
-  The pre-commit hook refuses a commit that breaks a build; never bypass it (`--no-verify`).
-- **R18 No prospect names in the shared harness** (`harness/`, `.skills/`, `.cursor/`, `.claude/`, this file). One-off scripts for a demo go in
-  `industry-verticals/<customer>/docs/ai/demos/<customer>/tmp/` and import `../../../../../../../harness/scripts/_lib.mjs`.
-- **R19 Edit skills only in `.skills/`,** then `node harness/scripts/sync-skills.mjs`.
-- **R25 The harness never changes silently** during a demo run: show the SE the diff and why; only after their yes,
-  `run-gate.mjs approve <customer> harness --answer "<their words>"`. Never change a checking script to pass its own check.
-- **R20 Never invent facts; never paste secrets** (they live in `harness/.env.local`).
-- **R26 A new template is authorable:** every field has a Type that fits it (images `Image`, links `General Link`; never empty), no image/link
-  XML in other field types, no code that parses field values, decoration (play buttons, arrows) drawn by the component, not a field.
-- **R11 Localhost reads master** (preview context): no publish needed while building.
+**`.skills/RULES.md` (R1–R27) is the one source for how a demo is built**, and it applies in every session, demo run or not. It is loaded
+here in full, never summarised (a summary drifts): when anything else disagrees, it wins.
+
+@.skills/RULES.md
 
 ## Repository map
 | Path | What |

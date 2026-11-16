@@ -26,7 +26,7 @@ Use this skill when:
 ## Load first
 - `docs/ai/config/project.yaml`
 - `.skills/sitecore-reference/references/sitecore-rules.md`
-- `.skills/sitecore-reference/references/sitecore-marketer-mcp-reference.md`
+- `harness/reference/marketer-mcp-tools.md`
 - `docs/ai/manifests/sitecore-manifest.yaml`
 - `.skills/sitecore-maintain-manifest/SKILL.md`
 - `docs/ai/catalog/page-template-registry.yaml`

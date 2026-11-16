@@ -32,7 +32,7 @@ Use instead:
 - `.skills/sitecore-reference/references/sitecore-rules.md`
 - `.skills/sitecore-reference/references/react-component-guidelines.md`
 - `docs/ai/templates/sitecore-component-spec.template.yaml`
-- `.skills/sitecore-reference/references/sitecore-marketer-mcp-reference.md`
+- `harness/reference/marketer-mcp-tools.md`
 - `.skills/sitecore-maintain-manifest/SKILL.md`
 
 ## Examples
@@ -98,24 +98,7 @@ If not explicitly specified:
 
 ### Marketer MCP first
 
-Use marketer MCP first for Sitecore item operations, including:
-- datasource templates
-- template sections
-- template fields
-- template `__Standard Values`
-- folder templates
-- folder template `__Standard Values`
-- datasource folders
-- renderings
-
-Do not claim marketer MCP cannot create templates or renderings by default.
-
-Only fall back to manual/serialization/patch-ready output when:
-- a specific MCP action fails
-- permissions block the change
-- repo governance requires serialized definitions
-
----
+R5 (`.skills/RULES.md`) and `harness/reference/marketer-mcp-tools.md`: every item this skill creates (templates, sections, fields, Standard Values, folders, renderings) goes through the Marketer MCP; fall back to other output only after an observed failure.
 
 ### Creation order
 
@@ -174,33 +157,11 @@ Batch 10: Ask user for Available Renderings value → append
 
 ### Parent resolution
 
-Before creating child items:
-- resolve parents with `get_content_item_by_path`
-- use resolved item IDs
-- do not guess IDs
-
----
+Resolve parents, never guess ids: `harness/reference/marketer-mcp-tools.md` → "Usage patterns and known behaviour".
 
 ### Template field rule
 
-When creating template fields:
-- create the field item under the correct section
-- explicitly set the field item `Type`
-- verify the final `Type`
-
-Common field types:
-- `Single-Line Text`
-- `Rich Text`
-- `Image`
-- `General Link`
-
-If needed, also set `Source`, `Shared`, `Unversioned`.
-
-Do not assume the field type is correct by default. An empty `Type` is Single-Line Text: an image written into it is stored as text and can't
-be edited as an image (R26). Pictures, icons, posters, logos and backgrounds are `Image`; links, buttons and video URLs are `General Link`.
-Decoration (play button, arrows, quote marks, dividers) is drawn by the component, never a field. `link-audit.mjs` fails any of this.
-
----
+Every field gets an explicit `Type`, read back after it is set: `sitecore-rules.md` → Template fields (and R26 in `.skills/RULES.md`).
 
 ### `__Standard Values` rule
 
@@ -241,69 +202,19 @@ Use exact field names returned by MCP inspection when updating the item.
 
 ### Example datasource item rule
 
-After creating the datasource folder, create one example content item inside it.
-
-This ensures:
-- the datasource picker is not empty when the component is first used
-- authors have something to duplicate or edit immediately
-- the component can render in Experience Editor without manual content creation
-
-**Simple component:** create one item using the datasource template. Name it after the component (e.g. `Hero`, `Promo Banner`).
-
-**List component:** create one parent item using the parent template, then create one or two child items using the child template inside the parent.
-
-#### Field values for example items
-
-- **If the user provided a screenshot or design reference:** populate the example item fields with content that matches the design — extract text, headings, descriptions, image URLs, and link targets from the visual reference. The goal is for the component to render identically to the design from day one.
-- **If the user provided a URL in the prompt:** use it to extract real content for the example item fields (text, images, links visible on the page).
-- **If no visual reference was provided:** use `__Standard Values` defaults where set. If no defaults exist, leave fields empty — do not invent placeholder copy.
-
-Use `get_content_item_by_path` to resolve the folder, then `create_content_item` with:
-- `parentId` = datasource folder item ID
-- `templateId` = datasource template item ID
-- `name` = component name
-
-Verify with `get_content_item_by_id` after creation.
-
----
+`sitecore-rules.md` → Example datasource items: one item from the datasource template, named after the component.
 
 ### Datasource template base templates rule
 
-Every datasource template (parent and child) must inherit these two base templates. This does **not** apply to folder templates.
-
-Set `__Base template` to:
-```
-{1930BBEB-7805-471A-A3BE-4858AC7CF696}|{44A022DB-56D3-419A-B43B-E27E4D8E9C41}
-```
-
-| ID | Purpose |
-|---|---|
-| `{1930BBEB-7805-471A-A3BE-4858AC7CF696}` | Standard Template |
-| `{44A022DB-56D3-419A-B43B-E27E4D8E9C41}` | Grid Parameters |
-
-Set this immediately after creating the datasource template item, before creating sections or fields.
-
----
+`sitecore-rules.md` → Base Templates (datasource templates): set right after creating the datasource template, before its sections and fields.
 
 ### Insert options on datasource folder instance rule
 
-After creating the datasource folder under `/Data`, you must set insert options **on the folder item itself** — not only on the folder template's `__Standard Values`.
-
-Use `update_fields_on_item` on the datasource folder item to set insert options / `__Masters` pointing to the datasource template.
-
-Without this step, authors cannot create new datasource items inside the folder.
-
----
+`sitecore-rules.md` → Insert Options: `__Masters` = the datasource template on the folder template's Standard Values AND on the datasource folder item itself.
 
 ### Available Renderings rule
 
-**CRITICAL:** `Renderings` field is silent-write AND silent-read — MCP cannot read the current value.
-1. Ask user for current value (or use manifest `lastKnownValue`)
-2. **Concatenate**: `<existing>|{NEW-RENDERING-GUID}` (uppercase, braces, pipe)
-3. **NEVER replace** — overwriting removes all other components
-4. Path: `<siteCollection>/<siteName>/Presentation/Available Renderings/Page Content`
-
----
+`sitecore-rules.md` → Available Renderings: append the new rendering id to `Renderings`, never replace the value.
 
 ### Verification rule
 
@@ -340,27 +251,15 @@ If something cannot be reliably verified through MCP, state that explicitly and 
 
 ### Rendering Parameters template rule
 
-Create at `renderingParamsRoot/<Category>/<ComponentName>` before the rendering item.
-1. Create template item (standard Template template ID)
-2. Set `__Base template` to: `{4247AAD4-EBDE-4994-998F-E067A51B1FE4}|{5C74E985-E055-43FF-B28C-DB6C6A6450A2}|{44A022DB-56D3-419A-B43B-E27E4D8E9C41}|{3DB3EB10-F8D0-4CC9-BE26-18CE7B139EC8}`
-3. Set rendering `Parameters Template [shared]` to this template's **Item ID (GUID)**, not a path
-
----
+`sitecore-rules.md` → Rendering Parameters templates: create it before the rendering, all four base templates, and set the rendering's `Parameters Template [shared]` to its item id.
 
 ### Named exports and variants rule
 
-- Named exports only (`export const Default`), never `export default`
-- `Default` is mandatory and must be first export
-- Include a non-exported empty-state fallback component
-- Export name must exactly match Variant Definition item name in Sitecore
-- For variants beyond `Default`, use `.skills/sitecore-add-variants/SKILL.md`
+`sitecore-rules.md` → Named Exports (further variants: `.skills/sitecore-add-variants/SKILL.md`).
 
 ### Component map rule
 
-- Update `.sitecore/component-map.ts` with the new component
-- Follow the existing naming pattern in the file
-
----
+`sitecore-rules.md` → Component map: the maps are generated (`npm run sitecore-tools:generate-map`); never edit them by hand.
 
 ## Output format
 

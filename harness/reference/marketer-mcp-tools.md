@@ -71,6 +71,24 @@ Generated from the connected `user-marketer` MCP namespace on 2026-10-09; re-val
 - Sitecore documents the server as reliable only for the listed use cases; anything else is unvalidated, so every non-trivial write is followed by a read-back.
 - No tool uploads assets (Content Hub uploader script does that), none sets rendering parameters/variants (see `placeholders-and-variants.md`), `update_content` does not publish.
 
+## Usage patterns and known behaviour
+This is the only Marketer MCP reference; skills point here. Use the MCP first for every write it supports (R5) and read every write back (R23).
+When the tool list above is regenerated from the live tools, keep this section and "Verified methods" below.
+- **Resolve, never guess ids.** Resolve a parent with `get_content_item_by_path` (check the manifest `lookups` cache first:
+  `.skills/sitecore-maintain-manifest/SKILL.md` → "Lookup cache rules") and use the returned id.
+- **Exact field names.** Read the item with `get_content_item_by_id` before updating and use the field names it returns, not display names. A write that
+  does not stick: re-read, retry with the returned names, then report it as needing verification.
+- **Silent-write fields, collision-prone field names and the Content Hub image field XML** are in
+  `.skills/sitecore-reference/references/sitecore-rules.md` (one copy). `search_assets` / `get_asset_information` / `update_asset` only find and
+  edit assets; they do not upload.
+- **`create_component_ds` children.** The `children` array can report success while creating nothing. Read the parent back; create missing children
+  with `create_content_item`, or skip `children` and create parent and children individually.
+- **`list_avail_insertopts`** is reliable for items in a site's content tree; for items under `/sitecore/templates/...` read them with
+  `get_content_item_by_path` / `get_content_item_by_id` instead.
+- **Templates and renderings can be created with the MCP** (`create_content_item` with the template/rendering item templates). Never claim otherwise
+  without an observed failure.
+- **Report precisely:** created / updated / verified / planned are different states; "created via the Marketer MCP and verified by item lookup", not "done".
+
 ## Verified methods (fill in as soon as something is proven in this environment; read this FIRST in later demos)
 How-to and ladder: `.skills/sitecore-reference/references/placeholders-and-variants.md`. Record each line as `date — what — exact call shape — result`.
 - Nested placeholder key format that rendered: 2026-10-14 (an earlier demo run, SE screenshots) — `/headless-header/eyebrow-right-0-1` and `/headless-header/header-right-0-3` rendered; format `<host path>/<name>-0-<host DynamicPlaceholderId>`. `/headless-header/eyebrow-links-0-1` did NOT render anything: no Eyebrow variant has an `eyebrow-links` placeholder (the name must exist in the code of the variant that is set).

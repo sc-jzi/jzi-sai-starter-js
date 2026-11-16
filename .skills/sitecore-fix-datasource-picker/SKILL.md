@@ -27,7 +27,7 @@ If during diagnosis you discover the root cause is a `ComponentQuery` problem ra
 ## Load first
 - `.skills/sitecore-reference/references/sitecore-rules.md`
 - `docs/ai/templates/sitecore-component-spec.template.yaml`
-- `.skills/sitecore-reference/references/sitecore-marketer-mcp-reference.md`
+- `harness/reference/marketer-mcp-tools.md`
 - `.skills/sitecore-maintain-manifest/SKILL.md`
 
 ---

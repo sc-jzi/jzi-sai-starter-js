@@ -3,7 +3,7 @@
 The full standard is `react-component-guidelines.md` in this folder; read it first. Summary of the non-negotiables for this app:
 
 - Components go in `src/components/pagecontent/` (or `pagestructure/`, `navigation/`, `utilities/`), PascalCase, one per file.
-- Register in both `.sitecore/component-map.ts` and `.sitecore/component-map.client.ts`.
+- The component maps are generated from `src/components/` (file name = rendering name); never edit them by hand (`sitecore-rules.md` → Component map).
 - Named exports only (`Default` plus variants), never `export default`.
 - Props extend `ComponentProps` from `lib/component-props`; wrapper uses `params.styles` and `params.RenderingIdentifier`.
 - Every authorable field uses `Text`, `RichText`, `NextImage` or `Link` from `@sitecore-content-sdk/nextjs`; keep fields visible in edit mode.

@@ -28,7 +28,7 @@ If during diagnosis you discover the root cause is a datasource picker problem r
 - `.skills/sitecore-reference/references/sitecore-rules.md`
 - `.skills/sitecore-reference/references/react-component-guidelines.md`
 - `docs/ai/templates/sitecore-component-spec.template.yaml`
-- `.skills/sitecore-reference/references/sitecore-marketer-mcp-reference.md`
+- `harness/reference/marketer-mcp-tools.md`
 - `.skills/sitecore-maintain-manifest/SKILL.md`
 
 ---

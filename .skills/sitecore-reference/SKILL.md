@@ -18,7 +18,7 @@ Open only what the task needs:
 - `references/rule-05-sitecore-manifest.md`
 - `references/site-theme-variables.md`
 - `references/sitecore-content-resolvers.md`
-- `references/sitecore-marketer-mcp-reference.md`
+- `harness/reference/marketer-mcp-tools.md` (the Marketer MCP reference lives in the harness, not in this skill)
 - `references/sitecore-rules.md`
 - `references/verification-checklist.md`
 

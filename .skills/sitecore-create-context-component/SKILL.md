@@ -32,7 +32,7 @@ Use instead:
 - `.skills/sitecore-reference/references/sitecore-rules.md`
 - `.skills/sitecore-reference/references/react-component-guidelines.md`
 - `docs/ai/templates/sitecore-component-spec.template.yaml`
-- `.skills/sitecore-reference/references/sitecore-marketer-mcp-reference.md`
+- `harness/reference/marketer-mcp-tools.md`
 - `.skills/sitecore-maintain-manifest/SKILL.md`
 
 ## Examples
@@ -147,11 +147,7 @@ Some context-only components benefit from a **Rendering Contents Resolver** inst
 
 ### Available Renderings rule
 
-**CRITICAL:** `Renderings` field is silent-write AND silent-read — MCP cannot read the current value.
-1. Ask user for current value (or use manifest `lastKnownValue`)
-2. **Concatenate**: `<existing>|{NEW-RENDERING-GUID}` (uppercase, braces, pipe)
-3. **NEVER replace** — overwriting removes all other components
-4. Path: `<siteCollection>/<siteName>/Presentation/Available Renderings/Page Content`
+`sitecore-rules.md` → Available Renderings: append the new rendering id to `Renderings`, never replace the value.
 
 ### Route/page field rules
 
@@ -193,27 +189,15 @@ After create/update, verify:
 
 ### Rendering Parameters template rule
 
-Create at `renderingParamsRoot/<Category>/<ComponentName>` before the rendering item.
-1. Create template item (standard Template template ID)
-2. Set `__Base template` to: `{4247AAD4-EBDE-4994-998F-E067A51B1FE4}|{5C74E985-E055-43FF-B28C-DB6C6A6450A2}|{44A022DB-56D3-419A-B43B-E27E4D8E9C41}|{3DB3EB10-F8D0-4CC9-BE26-18CE7B139EC8}`
-3. Set rendering `Parameters Template [shared]` to this template's **Item ID (GUID)**, not a path
-
----
+`sitecore-rules.md` → Rendering Parameters templates: create it before the rendering, all four base templates, and set the rendering's `Parameters Template [shared]` to its item id.
 
 ### Named exports and variants rule
 
-- Named exports only (`export const Default`), never `export default`
-- `Default` is mandatory and must be first export
-- Include a non-exported empty-state fallback component
-- Export name must exactly match Variant Definition item name in Sitecore
-- For variants beyond `Default`, use `.skills/sitecore-add-variants/SKILL.md`
+`sitecore-rules.md` → Named Exports (further variants: `.skills/sitecore-add-variants/SKILL.md`).
 
 ### Component map rule
 
-- Update `.sitecore/component-map.ts` with the new component
-- Follow the existing naming pattern in the file
-
----
+`sitecore-rules.md` → Component map: the maps are generated (`npm run sitecore-tools:generate-map`); never edit them by hand.
 
 ## Output format
 

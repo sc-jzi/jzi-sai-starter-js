@@ -34,7 +34,7 @@ Every component must have at least a `Default` variant. `Default` is always requ
 
 ## Load first
 - `.skills/sitecore-reference/references/react-component-guidelines.md`
-- `.skills/sitecore-reference/references/sitecore-marketer-mcp-reference.md`
+- `harness/reference/marketer-mcp-tools.md`
 - `.skills/sitecore-maintain-manifest/SKILL.md`
 
 ---
