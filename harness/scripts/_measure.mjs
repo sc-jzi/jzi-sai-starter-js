@@ -22,6 +22,8 @@ export function measureBand(idx) {
   let bgImage = urlOf(getComputedStyle(el).backgroundImage), bgImages = bgImage ? [bgImage] : [];
   for (const d of all) { const u = urlOf(getComputedStyle(d).backgroundImage); if (u && !bgImages.includes(u)) { const r = d.getBoundingClientRect(); if (r.width * r.height >= sr.width * sr.height * 0.12) bgImages.push(u); } }
   if (!bgImage && bgImages.length) bgImage = bgImages[0];
+  // smaller card photos painted as CSS backgrounds (e.g. a stacked card's thumbnail): listed so collect-images finds them, never chosen as the band background
+  for (const d of all) { const u = urlOf(getComputedStyle(d).backgroundImage); if (u && !bgImages.includes(u)) { const r = d.getBoundingClientRect(); if (r.width >= 80 && r.height >= 80 && r.width * r.height >= sr.width * sr.height * 0.02) bgImages.push(u); } }
   const sty = (e) => { const cs = getComputedStyle(e); return { fontFamily: (cs.fontFamily || "").split(",")[0].replace(/["']/g, "").trim(), fontSize: num(cs.fontSize), fontWeight: cs.fontWeight, textTransform: cs.textTransform, letterSpacing: cs.letterSpacing === "normal" ? 0 : num(cs.letterSpacing), lineHeight: cs.lineHeight === "normal" ? null : num(cs.lineHeight), color: hex(cs.color), textAlign: cs.textAlign }; };
   const direct = (e) => [...e.childNodes].some((n) => n.nodeType === 3 && clean(n.textContent));
   const els = [];

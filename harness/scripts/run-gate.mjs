@@ -221,7 +221,9 @@ if (cmd === "accept") {
   const file = join(demo, ACCEPTED_FILE), cur = readJson(file, { accepted: [] }), now = new Date().toISOString();
   for (const it of review.items.filter((i) => nums.includes(i.n))) {
     // one item is one section: accepting it accepts each of its differences, pinned to the measurement it came from
-    it.ids.forEach((id, k) => { if (!cur.accepted.some((a) => a.id === id)) cur.accepted.push({ id, what: it.what, ref: it.ref, refHash: fileHash(join(demo, it.ref)), page: it.label, diff: it.diffs[k], answer, acceptedAt: now }); });
+    // an id already accepted against an OLDER measurement (the reference was re-captured) is accepted again for the current one
+    const refHash = fileHash(join(demo, it.ref));
+    it.ids.forEach((id, k) => { if (!cur.accepted.some((a) => a.id === id && a.refHash === refHash)) cur.accepted.push({ id, what: it.what, ref: it.ref, refHash, page: it.label, diff: it.diffs[k], answer, acceptedAt: now }); });
   }
   writeFileSync(file, JSON.stringify(cur, null, 2) + "\n");
   try { unlinkSync(join(demo, ".awaiting-se")); } catch { /* not waiting */ }

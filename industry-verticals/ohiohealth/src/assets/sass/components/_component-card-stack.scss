@@ -1,0 +1,66 @@
+// CardStack (OhioHealth demo): bordered horizontal cards stacked vertically.
+.card-stack {
+  padding: 1rem;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 668px;
+  }
+
+  &__card {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    border: 1px solid var(--border-color, #7fb3d1);
+    min-height: 208px;
+
+    &--no-image {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__media {
+    position: relative;
+    min-height: 100%;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__body {
+    padding: 1.75rem 1.5rem 1.5rem 2rem;
+  }
+
+  &__title {
+    font-family: var(--font-family-heading, Georgia, serif);
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 32px;
+    color: var(--text-colored, #0070ab);
+    margin: 0 0 0.75rem;
+  }
+
+  &__text p {
+    font-size: 16px;
+    margin: 0 0 1.25rem;
+  }
+
+  &__button {
+    display: inline-block;
+    padding: 0.6rem 1.25rem;
+    border-radius: var(--roundness, 4px);
+    background: var(--bg-accent, #0073ae);
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    text-decoration: none;
+
+    &:hover {
+      color: #fff;
+      filter: brightness(90%);
+    }
+  }
+}

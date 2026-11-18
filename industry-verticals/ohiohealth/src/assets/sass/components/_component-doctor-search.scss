@@ -1,0 +1,123 @@
+// DoctorSearch (OhioHealth demo): bordered search box with keyword and location fields.
+.doctor-search {
+  padding: 3rem 1rem;
+
+  &__inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  &__eyebrow {
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    margin: 0 0 1rem;
+  }
+
+  &__box {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 1.75rem;
+    align-items: center;
+    border: 1px solid var(--border-color, #7fb3d1);
+    padding: 1.5rem 1.5rem 1.5rem 1.75rem;
+
+    @include respond-to(mobile-large) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  &__title {
+    font-family: var(--font-family-heading, Georgia, serif);
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 44px;
+    color: var(--text-colored, #0070ab);
+    margin: 0;
+  }
+
+  &__badge {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--text-colored, #0070ab);
+    color: #fff;
+  }
+
+  &__inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+
+    @include respond-to(mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__input {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid #999;
+    border-radius: 2px;
+    padding: 0 0.75rem;
+    height: 42px;
+    color: var(--text-colored, #0070ab);
+
+    input {
+      flex: 1;
+      border: 0;
+      outline: none;
+      font-size: 16px;
+      background: transparent;
+      color: var(--text-body, #0a0a0a);
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    gap: 1rem;
+  }
+
+  &__check {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 16px;
+
+    input {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__button {
+    min-width: 118px;
+    height: 40px;
+    border: 0;
+    border-radius: var(--roundness, 4px);
+    background: var(--bg-accent, #0073ae);
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(90%);
+    }
+  }
+}

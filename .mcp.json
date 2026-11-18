@@ -8,10 +8,18 @@
     },
     "marketer": {
       "url": "https://marketer.sitecorecloud.io/mcp/marketer-mcp-prod",
-	  "type": "http",
+      "type": "http",
       "auth": {
         "type": "external"
       }
+    },
+    "auth0": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@auth0/auth0-mcp-server",
+        "run"
+      ]
     }
   }
 }

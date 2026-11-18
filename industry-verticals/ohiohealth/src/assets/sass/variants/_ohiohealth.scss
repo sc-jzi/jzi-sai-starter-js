@@ -1,0 +1,499 @@
+// OhioHealth client variants (reused components + footer). Measured from the live crops in docs/ai/demos/ohiohealth/sections*/.
+.site-ohiohealth {
+  font-family: var(--font-family);
+
+  .oh-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .oh-button {
+    display: inline-block;
+    background: #0073ae;
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    line-height: 20px;
+
+    &:hover {
+      background: #005a8a;
+      color: #fff;
+    }
+
+    &--wide {
+      min-width: 250px;
+      text-align: center;
+      padding: 18px 24px;
+    }
+  }
+
+  // CtaBanner: grey panel left, photo right
+  .oh-cta {
+    padding: 16px 0;
+
+    &__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    &__panel {
+      background: #ebebeb;
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &__title {
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-weight: 600;
+      font-size: 22px;
+      color: #333;
+      margin: 0 0 8px;
+    }
+
+    &__text {
+      color: #555;
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+
+    &__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 767px) {
+      &__row {
+        grid-template-columns: 1fr;
+      }
+
+      &__panel {
+        padding: 32px 24px;
+      }
+    }
+  }
+
+  // Hero: card / plain / picture
+  .oh-hero {
+    padding: 16px 0;
+
+    &__media img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    &__body {
+      padding: 32px;
+    }
+
+    &__title {
+      font-family: 'Source Sans 3', Arial, sans-serif;
+      font-weight: 600;
+      font-size: 28px;
+      color: #0070ab;
+      margin: 0 0 8px;
+    }
+
+    &__text {
+      font-size: 15px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    &--card .oh-hero__box {
+      border: 1px solid var(--border-color);
+      max-width: 665px;
+    }
+
+    &--card .oh-hero__media img {
+      height: 220px;
+      object-fit: cover;
+    }
+
+    &--picture .oh-container {
+      max-width: 916px;
+    }
+  }
+
+  // ThreeColumnCta: centred columns on a light-blue band
+  .oh-three {
+    background: var(--bg-color);
+    padding: 56px 0;
+
+    &__row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      text-align: center;
+    }
+
+    &__media {
+      margin: 0 auto 12px;
+      width: 140px;
+    }
+
+    &--round .oh-three__media img {
+      width: 132px;
+      height: 132px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    &__title {
+      font-family: var(--font-family-heading);
+      color: #0070ab;
+      font-size: 20px;
+      margin: 0 0 4px;
+    }
+
+    &__text {
+      color: #666;
+      font-size: 15px;
+      line-height: 22px;
+      margin: 0 0 20px;
+    }
+
+    @media (max-width: 767px) {
+      &__row {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+
+  // HeadingCta: centred band, and the title-only page heading
+  .oh-heading {
+    background: var(--bg-color);
+    padding: 32px 0 24px;
+    text-align: center;
+
+    &__title {
+      font-family: var(--font-family-heading);
+      font-size: 39px;
+      line-height: 50px;
+      color: #002a5c;
+      margin: 0 0 16px;
+    }
+
+    &__text {
+      font-size: 22px;
+      color: #002a5c;
+      margin: 0 0 32px;
+    }
+  }
+
+  .oh-page-title {
+    padding: 40px 0 24px;
+
+    &__title {
+      font-family: var(--font-family-heading);
+      font-size: 40px;
+      line-height: 44px;
+      color: #002a5c;
+      margin: 0;
+    }
+  }
+
+  // PromoCta: photo with a blue title box
+  .oh-promo {
+    &__stage {
+      position: relative;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    &__bg {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      display: block;
+    }
+
+    &__box {
+      position: absolute;
+      background: rgba(0, 94, 150, 0.9);
+      color: #fff;
+      padding: 32px 40px;
+    }
+
+    &__title {
+      font-family: var(--font-family-heading);
+      font-weight: 600;
+      color: #fff;
+      margin: 0;
+    }
+
+    &__subtitle {
+      font-size: 22px;
+      margin: 12px 0 0;
+    }
+
+    &--right .oh-promo__box {
+      right: 5%;
+      top: 27%;
+      width: 540px;
+    }
+
+    &--right .oh-promo__title {
+      font-size: 40px;
+      line-height: 46px;
+    }
+
+    &--bottom-left .oh-promo__bg {
+      height: 440px;
+    }
+
+    &--bottom-left .oh-promo__box {
+      left: 45px;
+      bottom: 0;
+      padding: 16px 32px;
+      min-width: 320px;
+    }
+
+    &--bottom-left .oh-promo__title {
+      font-size: 30px;
+    }
+
+    &__below {
+      text-align: center;
+      padding: 40px 0 16px;
+    }
+
+    &--bottom-left .oh-promo__subtitle {
+      font-family: var(--font-family-heading);
+      color: #666;
+      font-size: 22px;
+      margin: 0;
+    }
+
+    @media (max-width: 767px) {
+      &--right .oh-promo__box {
+        position: static;
+        width: auto;
+      }
+    }
+  }
+
+  // RichText: centred heading, body at 916px
+  .oh-richtext {
+    padding: 24px 0;
+
+    &__inner {
+      max-width: 916px;
+    }
+
+    h2 {
+      font-family: var(--font-family-heading);
+      color: #1a7dbc;
+      font-size: 36px;
+      text-align: center;
+      margin: 0 0 16px;
+    }
+
+    p {
+      font-size: 22px;
+      line-height: 26px;
+      color: #002a5c;
+    }
+  }
+
+  // Footer
+  .oh-footer {
+    background: var(--bg-footer);
+    color: #fff;
+    padding: 44px 0 40px;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    &__top {
+      display: grid;
+      grid-template-columns: 335px 1fr;
+      gap: 32px;
+    }
+
+    &__logo {
+      width: 200px;
+      height: auto;
+    }
+
+    &__socials {
+      display: flex;
+      gap: 12px;
+      margin: 36px 0 16px 50px;
+    }
+
+    &__social {
+      width: 30px;
+      height: 30px;
+      border: 1.5px solid #fff;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    &__note {
+      margin-left: 50px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    &__cols {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    &__title {
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    &__links {
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 22px;
+        margin-bottom: 16px;
+      }
+    }
+
+    &__rule {
+      border: 0;
+      border-top: 1px solid var(--hr-color);
+      margin: 32px 50px 24px;
+    }
+
+    &__bottom {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 50px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    &__sep {
+      margin: 0 16px;
+    }
+
+    @media (max-width: 991px) {
+      &__top {
+        grid-template-columns: 1fr;
+      }
+
+      &__cols {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      &__bottom {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+  }
+}
+
+// Header layout of the live site (fixed here, not in the measurement, R14): a white 260px logo column spanning the full 106px header on the
+// left; on the right a 46px utility bar (#0070ab) above a 60px menu bar (#116397). The eyebrow and header components stack, so the logo
+// column of the Header is lifted into the eyebrow row.
+.site-ohiohealth {
+  .component.eyebrow.variant-ohio-health {
+    background: #0070ab;
+    margin-left: 260px;
+
+    .container { max-width: none; padding: 0 20px; }
+    .eyebrow-bar { min-height: 46px; gap: 0; justify-content: space-between; }
+    .eyebrow-links { flex: 1; justify-content: space-around; gap: 24px; }
+    .eyebrow-links a { font-family: var(--font-family); font-size: 11px; letter-spacing: 0.2px; color: #fff; }
+    .eyebrow-search { color: #fff; border: 1px solid #fff; border-radius: 2px; width: 177px; height: 22px; justify-content: flex-end; padding-right: 6px; svg { width: 12px; height: 12px; } }
+    .eyebrow-slot-left, .eyebrow-slot-right { display: none; }
+  }
+
+  .component.header.variant-ohio-health {
+    position: relative;
+    background: transparent;
+
+    > .container { max-width: none; padding: 0; margin: 0; }
+    .row { min-height: 60px; margin: 0; flex-wrap: nowrap; }
+    .row > .col-auto {
+      position: absolute;
+      left: 0;
+      top: -46px;
+      width: 260px;
+      height: 106px;
+      padding: 0 30px;
+      background: #fefefe;
+      display: flex;
+      align-items: center;
+      z-index: 61;
+    }
+    .row > .col { margin-left: 260px; background: #116397; min-height: 60px; display: flex; align-items: center; padding: 0; }
+  }
+
+  .component.navigation.variant-ohio-health {
+    width: 100%;
+
+    nav > ul { max-width: none; justify-content: stretch; gap: 0; }
+    nav > ul > li { flex: 1; text-align: center; border-left: 1px solid rgba(255, 255, 255, 0.25); }
+    nav > ul > li:first-child { border-left: 0; }
+    .navigation-title a { font-family: var(--font-family-heading); font-size: 17px; font-weight: 400; color: #fff; }
+  }
+
+  @media (max-width: 991px) {
+    .component.eyebrow.variant-ohio-health { margin-left: 0; }
+    .component.header.variant-ohio-health .row > .col-auto { position: static; height: 72px; }
+    .component.header.variant-ohio-health .row > .col { margin-left: 0; }
+  }
+
+  // Home: the Women's Center card (left) and the stacked cards (right) share one row on the live page
+  .oh-hero--card { float: left; width: 50%; }
+  .oh-hero--card .oh-container { padding-right: 8px; }
+  .oh-hero--card + .component { width: 50%; margin-left: 50%; }
+  .oh-three, .component.three-column-cta { clear: both; }
+  .promo-cta.oh-promo { background: transparent; }
+
+  @media (max-width: 767px) {
+    .oh-hero--card { float: none; width: auto; }
+    .oh-hero--card + .component { width: auto; margin-left: 0; }
+  }
+}
+.site-ohiohealth .oh-footer__social-img { width: 16px; height: 16px; filter: brightness(0) invert(1); }
+.site-ohiohealth {
+  .oh-promo__box { background: none; }
+  .oh-promo--right .oh-promo__box { background-image: radial-gradient(100% 100% at 0 0, rgba(0, 42, 92, 0.87) 0, rgba(0, 94, 145, 0.87) 100%); }
+  .oh-promo--bottom-left .oh-promo__box { background-color: #056ba0; }
+  .oh-three__title a { color: inherit; text-decoration: none; }
+  .oh-footer__social--img { border: 0; }
+  .doctor-search__input { position: relative; }
+  .doctor-search__label { position: absolute; left: 38px; top: 50%; transform: translateY(-50%); color: #888; font-size: 15px; pointer-events: none; margin: 0; }
+}
+.site-ohiohealth {
+  .oh-promo--bottom-left .oh-promo__box { width: 320px; min-height: 112px; display: flex; align-items: center; padding: 24px 32px; }
+  .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}
+.site-ohiohealth .oh-promo--bottom-left .oh-promo__box { width: 380px; min-height: 124px; }

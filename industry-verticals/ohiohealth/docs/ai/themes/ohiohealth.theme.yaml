@@ -1,0 +1,38 @@
+client:
+  name: "OhioHealth"
+  sourceUrl: "https://www.ohiohealth.com/"
+  extractedAt: "2026-11-18T15:00:54.222Z"
+  extractedBy: "site-scraper.mjs + header-styles.mjs + section crops"
+colors:
+  primary: "#0070ab"            # links, footer, eyebrow bar
+  primaryForeground: "#ffffff"
+  secondary: "#116397"          # main menu bar
+  secondaryForeground: "#ffffff"
+  accent: "#0073ae"             # buttons
+  accentForeground: "#ffffff"
+  background: "#fefefe"
+  foreground: "#0a0a0a"
+  muted: "#f1f9fd"              # light-blue section band
+  mutedForeground: "#002a5c"
+  headerBackground: "#fefefe"   # logo column; bars are #0070ab / #116397
+  headerForeground: "#ffffff"
+  footerBackground: "#0070ab"
+  footerForeground: "#ffffff"
+  border: "#7fb3d1"             # card outlines (light blue)
+  ring: "#0070ab"
+  extra:
+    - { name: heading-navy, value: "#002a5c" }
+    - { name: panel-grey, value: "#ebebeb" }
+typography:
+  headingFamily: "TheSerif SemiBold (proprietary) -> Source Serif 4 600"
+  headingWeight: "600"
+  bodyFamily: "TheSans (proprietary) -> Source Sans 3"
+  bodyWeight: "400"
+  monoFamily: ""
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@600&family=Source+Sans+3:wght@400;600;700&display=swap"
+  scale: { hero: "48px", h1: "48px", h2: "40px", h3: "22.4px", body: "14px", small: "11px" }
+  headingTransform: "none"
+  letterSpacing: "-0.95px (h1)"
+  lineHeight: "56px (h1), 20px (body)"
+spacing: { density: "comfortable", sectionGap: "48px", containerMaxWidth: "1400px", containerPadding: "20px" }
+shape: { borderRadius: "4px", buttonRadius: "4px", cardRadius: "0px", imageRadius: "0px (round photos in the three-column band)", shadowStyle: "none", borderStyle: "1px light-blue card outlines" }
