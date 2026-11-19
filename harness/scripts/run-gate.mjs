@@ -29,7 +29,8 @@
  *               type that fits its name and value) (needs the Authoring client; no self-reported fallback); the app's code parses no field
  *               value for src= / href= and has no Image field for decoration (play button, arrow, quote mark, divider)
  *   placement   every planned page's headless-main renderings, read from the app's content endpoint (preview context = master), match the plan;
- *               no header/footer renderings on a page; no text in rendering parameters (content lives in datasource fields)
+ *               no header/footer renderings on a page; no text in rendering parameters (content lives in datasource fields); a menu stub
+ *               (navTarget page the demo never visits, sections: []) is served with an EMPTY headless-main (display name + navigation flag: content)
  *   images      every live image is in the manifest and uploaded (Content Hub, or the Media Library when CH_ENABLED=false); files over 50 MB are
  *               not uploaded but listed under "## Missing assets" and their sections are not failed for missing imagery
  *   looks       measurements exist; EVERY verdict (header, /Home, each mirrored page) exists, is stamped (url, reference hash, build fingerprint),
@@ -45,7 +46,7 @@ import { join, sep } from "node:path";
 import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { ENV, ROOT, die, demoDir, customerApp, readJson, readRegistry, chromeBands, topLabels, isAdBand, edgeRoute, routeOf, authoringClient,
-  fileHash, textHash, sourceFingerprint, PARTIAL_DESIGN_TEMPLATE, PARTIAL_DESIGN_FOLDER } from "./_lib.mjs";
+  fileHash, textHash, sourceFingerprint, PARTIAL_DESIGN_TEMPLATE, PARTIAL_DESIGN_FOLDER, isMenuStub, clickPathPages } from "./_lib.mjs";
 import { parseYaml } from "./_yaml.mjs";
 import { looksState, diffId, ACCEPTED_FILE } from "./_looks.mjs";
 
@@ -404,7 +405,10 @@ const CHROME_RENDERINGS = /^(Eyebrow|Header|Navigation|NavigationHeader|SiteFoot
 stage = "placement";
 const pageRoutes = new Map();   // plan path -> served route, reused by the content checks
 {
-  const withSections = planPages.filter((p) => Array.isArray(p?.sections) && p.sections.length);
+  // menu stubs (sections: []) are checked too: the page must be served and its headless-main must be empty (header/footer come from the Page Design)
+  const onPath = clickPathPages(planObj);
+  const stubPaths = new Set(planPages.filter((p) => isMenuStub(p, onPath) && !(Array.isArray(p?.sections) && p.sections.length)).map((p) => p.path));
+  const withSections = planPages.filter((p) => (Array.isArray(p?.sections) && p.sections.length) || stubPaths.has(p.path));
   // a site name never contains a space (R21): the content endpoint knows such a site by another name, and every page then reads as missing
   let appSite = ""; try { appSite = (readFileSync(join(customerApp(customer, { mustExist: false }), ".env.local"), "utf8").match(/^NEXT_PUBLIC_DEFAULT_SITE_NAME=(.*)$/m)?.[1] ?? "").trim().replace(/^["']|["']$/g, ""); } catch { /* no app env: reported below */ }
   if (/\s/.test(appSite)) fail(`the app's site name "${appSite}" contains a space (NEXT_PUBLIC_DEFAULT_SITE_NAME)`, `Site names never contain spaces (R21). The SE sets NEXT_PUBLIC_DEFAULT_SITE_NAME in industry-verticals/${customer}/.env.local to the name SitecoreAI lists for the site (e.g. "${appSite.replace(/\s+/g, "")}"); restart the app so .sitecore/sites.json regenerates, then re-run.`);
@@ -414,13 +418,14 @@ const pageRoutes = new Map();   // plan path -> served route, reused by the cont
     if (routes && routes.some((r) => r === undefined)) fail(`the app's .env.local has no content context id or site name (SITECORE_EDGE_CONTEXT_ID, NEXT_PUBLIC_DEFAULT_SITE_NAME)`, `demo-new-site: write industry-verticals/${customer}/.env.local. The gate reads placements from the app's content endpoint; it has no file fallback.`);
     else if (routes && routes.length > 1 && routes.every((r) => r === null)) fail(`no page of the site is served by the app's content endpoint (site "${appSite}")`, "One cause, not missing pages: check that NEXT_PUBLIC_DEFAULT_SITE_NAME and the context id in the app's .env.local match the site as SitecoreAI lists it, then re-run.");
     else if (routes) withSections.forEach((p, i) => {
-      const r = routes[i], want = p.sections.map(plannedName).filter(Boolean);
+      const r = routes[i], want = stubPaths.has(p.path) ? [] : p.sections.map(plannedName).filter(Boolean);
       if (r) pageRoutes.set(p.path, r);
       if (r === null) { fail(`${p.path} is not served by the app's content endpoint`, "Create the page (or fix its name/path); check the site name and context id in the app's .env.local."); return; }
       // PartialDesignDynamicPlaceholder is how a page design injects a partial (e.g. an Event Hero) into the body: count what it contains, in place
       const expand = (list) => (list ?? []).flatMap((c) => (c.componentName === "PartialDesignDynamicPlaceholder" ? Object.values(c.placeholders ?? {}).flatMap(expand) : c.componentName ? [c.componentName] : []));
       const got = expand(r.placeholders?.["headless-main"]);
       if (got.some((n) => CHROME_RENDERINGS.test(n))) fail(`${p.path} has header/footer renderings in its own layout (${got.filter((n) => CHROME_RENDERINGS.test(n)).join(", ")})`, "Remove them from the page. Header and footer come only from the Header and Footer partial designs (template {FD2059FD-6043-4DFE-8C04-E2437CE87634}) via the Page Design. If the page shows no header, fix the partial and the Page Design mapping, never the page.");
+      else if (stubPaths.has(p.path) && got.length) fail(`${p.path} is a menu stub but holds ${got.join(", ")}`, `A menu stub has no components (sections: [] in the plan): remove them with remove_component_on_page (read back with get_components_on_page). Header and footer come from the Page Design.`);
       else if (got.join("|") !== want.join("|")) fail(`${p.path} renderings are ${got.join(", ") || "(none)"}; the plan is ${want.join(", ")}`, `Place the planned component with add_component_on_page (never by writing the page's layout field), or build the one marked fit: new. If another component fits the section better, change it in demo-plan.yaml and record why: run-gate.mjs swap ${customer} "<page path>#<live section>" --reason "<why>". Do not substitute Rich Text or put the layout in a Text field as HTML. Nothing in manual-tasks.md waives this.`);
     });
     // content belongs in datasource fields a marketer edits, never in rendering parameters (a heading written into a parameter to be matched)
@@ -459,7 +464,7 @@ if (site && gql && planPages.length) {
     });
     listFail(names, "display names differ from the plan", "Set __Display name in en (update_fields_on_item) to the plan's displayName, read it back.");
     listFail(nav, "navigation flags are wrong", "NavigationFilter: tick Main Navigation on every page except navGroup: main pages directly under Home (demo-site-bootstrap step 5b).");
-    listFail(local, "pages hold page-local datasource items", "Move each item under <site>/Data/<component folder> (create it there, set_component_datasource), then delete the page's Data folder once get_content_references shows 0.");
+    listFail(local, "pages hold page-local datasource items", `Move each item still in use under <site>/Data/<component folder> (create it there, set_component_datasource). Then run node harness/scripts/local-data-check.mjs ${customer}: it confirms no page layout (personalization rules included) references a local: datasource and lists the page Data folder ids; delete each folder with ONE delete_content, all of them after ONE SE confirmation (R5).`);
     // every datasource a page renders lives under the site's Data (or a partial design's own Data)
     const dsIds = new Map(), listsChildren = new Set();
     const walk = (list, path) => { for (const c of list ?? []) { if (c.dataSource) { dsIds.set(String(c.dataSource), `${path} ${c.componentName}`); if (Array.isArray(c.fields?.items)) listsChildren.add(String(c.dataSource)); } for (const sub of Object.values(c.placeholders ?? {})) walk(sub, path); } };

@@ -15,7 +15,7 @@
  */
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
-import { die, demoDir, baseApp, customerApp, rootRel, ROOT } from "./_lib.mjs";
+import { die, demoDir, baseApp, customerApp, rootRel, ROOT, isMenuStub, clickPathPages } from "./_lib.mjs";
 import { parseYaml } from "./_yaml.mjs";
 
 const customer = process.argv[2]; if (!customer) die("usage: bootstrap-plan.mjs <customer>");
@@ -40,7 +40,10 @@ const newPending = new Map();   // NEW components from the plan (sections `new:`
 const used = new Map(); // manifestName -> {variants:Set, pages:Set}
 const extensions = new Map();   // manifestName -> the derived template a `fit: extend` section needs
 const warnings = [];
-for (const p of arr(plan.site?.pages)) for (const s of arr(p.sections)) {
+// menu stubs hold no components (create_page + one update_fields_on_item; header/footer from the Page Design): nothing of theirs is bootstrapped
+const onPath = clickPathPages(plan), menuStubs = arr(plan.site?.pages).filter((p) => isMenuStub(p, onPath));
+for (const p of menuStubs) if (arr(p.sections).length) warnings.push(`${p.path}: menu stub with ${arr(p.sections).length} section(s), ignored here; set sections: [] (validate-site-plan P14)`);
+for (const p of arr(plan.site?.pages)) for (const s of (menuStubs.includes(p) ? [] : arr(p.sections))) {
   if (typeof s !== "object" || !s?.component) continue;
   const name = s.new?.name ?? map.get(s.component) ?? pascal(s.component);
   if (!byName.has(name) && s.new) { newPending.set(name, { name, kind: s.new.kind, cms: s.new.cms !== false, where: p.path }); continue; }
@@ -125,6 +128,7 @@ let md = `# Site bootstrap plan — ${customer}\n\nSource: demo-plan.yaml + shar
 for (const c of components) md += c.headerArea ? `| ${c.name} (header area) | ${c.kind}${c.contextOnly ? " (context-only)" : ""} | ${c.renderingId ?? "-"} | - | ${c.variants.join(", ")} | ${c.pages.join(", ")} |\n` : `| ${c.name} | ${c.kind}${c.contextOnly ? " (context-only)" : ""} | ${c.renderingId ?? "-"} | ${c.contextOnly ? "-" : c.datasourceFolderName} | ${c.variants.join(", ")} | ${c.pages.join(", ")} |\n`;
 if (out.extensions.length) md += `\n## Extended components (derived templates, R22)\n| Component | Derived template | Base template | Extra fields | Pages |\n|---|---|---|---|---|\n${out.extensions.map((e) => `| ${e.component} | ${e.template} | ${e.baseTemplateId ?? "-"} | ${e.fields.map((f) => `${f.name} (${f.type})`).join(", ")} | ${e.pages.join(", ")} |`).join("\n")}\n`;
 md += `\n## Site-level steps\n${out.siteLevelSteps.map((s) => `- ${s}`).join("\n")}\n\n## Available Renderings value to concatenate (${allRenderingIds.length} ids)\n\`\`\`\n${allRenderingIds.join("|")}\n\`\`\`\n`;
+if (menuStubs.length) md += `\n## Menu stubs (${menuStubs.length}): no components, no Data folder, no variant\nEach is \`create_page\` + ONE \`update_fields_on_item\` (Title, __Display name, NavigationTitle, NavigationFilter); header and footer come from the partial designs through the Page Design.\n${menuStubs.map((p) => `- ${p.path}`).join("\n")}\n`;
 if (warnings.length) md += `\n## Warnings\n${warnings.map((w) => `- ${w}`).join("\n")}\n`;
 writeFileSync(join(demo, "bootstrap-plan.md"), md);
 console.log(`✔ ${components.length} component(s) planned; ${allRenderingIds.length} rendering id(s) for Available Renderings`);

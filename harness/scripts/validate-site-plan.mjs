@@ -14,9 +14,11 @@
  *  P4 every moment is proved by >=1 page; the WOW moment is on /Home or one click away
  *  P5 every section uses a component id from component-registry.yaml and one of its variants
  *  P6 header / footer are NOT sections (they come from the Page Design partials)
- *  P7 (page type "page") each page has 2-12 sections; (landing) none, content lives on the page template fields
+ *  P7 (page type "page") each page has 2-12 sections; (landing) none, content lives on the page template fields; menu stubs none (P14)
  *  P8 every section says where its content comes from (transcript | site | illustrative)
  *  P9 (when nav.json exists) every top-level item of the prospect's header menu has a page; menu-only pages are `navTarget: true`
+ *  P14 a menu page the demo navigates to mirrors its live page; a menu-only stub has NO sections (sections: []): only the Header/Footer
+ *      partials through the Page Design, built with create_page + one update_fields_on_item
  *  P0 the story was approved on its own before the site plan was written (storyApproved: true, demo-from-transcript T2b)
  *  P12b/P12c every live band of every mirrored page is built (liveSection) or dropped with a reason; the header and footer bands are
  *      never body sections and the footer is never droppable (it is built by the Footer partial and always compared by the gate)
@@ -27,7 +29,7 @@
  */
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
-import { die, demoDir, registryPath, rootRel, readJson, chromeBands, notProse, isAdBand, readRegistry, baseApp } from "./_lib.mjs";
+import { die, demoDir, registryPath, rootRel, readJson, chromeBands, notProse, isAdBand, readRegistry, baseApp, isMenuStub } from "./_lib.mjs";
 import { parseYaml } from "./_yaml.mjs";
 import { shapeOf, catalogVariants, rankVariants, restructures } from "./_measure.mjs";
 
@@ -146,7 +148,7 @@ for (const p of pages) {
     }
     if (!["transcript", "site", "illustrative"].includes(s.contentSource)) p8.push(`${path} #${s.position ?? "?"}: contentSource`);
   }
-  if (p.pageType === "page" && p.navTarget === true && secs.length > 2) p7.push(`${path}: navigation page should have at most 2 sections`);
+  if (p.pageType === "page" && p.navTarget === true) { if (secs.length > 2 && !isMenuStub(p)) p7.push(`${path}: navigation page should have at most 2 sections`); }   // menu stubs: no sections at all (P14)
   else if (p.pageType === "page" && p.navTarget !== true && (secs.length < 2 || secs.length > 12)) p7.push(`${path}: ${secs.length} sections`);
   if (p.pageType === "landing" && secs.length) p7.push(`${path}: landing pages use template fields, not sections`);
 }
@@ -181,18 +183,19 @@ for (const m of moments) {
 }
 add("P15 every moment has a clickPath whose pages all exist in the plan", "required", p15.length === 0, p15.slice(0, 4).join("; "));
 // P14: a menu page (navTarget) exists so the menu matches. If the demo NAVIGATES to it (a moment proves something there: proves not empty, or visit: true) it MIRRORS its live page
-// (liveUrl + sectionsFile, then P12 applies). Otherwise it is a title-only stub: its section carries its own look (e.g. PageTitle) so no empty-field placeholders show.
+// (liveUrl + sectionsFile, then P12 applies). Otherwise it is a menu stub with NO components (sections: []): create_page + one update_fields_on_item
+// (Title, __Display name, NavigationTitle, NavigationFilter); the Header/Footer partials come through the Page Design.
 const p14 = [];
 {
   const srcUrl14 = String(plan.client?.sourceUrl ?? ""), real14 = /^https?:\/\//.test(srcUrl14) && !/example\.com/.test(srcUrl14);
   for (const p of pages) if (real14 && p.navTarget === true) {
     const visited = p.visit === true || arr(p.proves).length > 0 || onPath.has(norm(p.path).toLowerCase());
     if (visited) { if (!has(p.liveUrl) && p.titleOnly !== true) p14.push(`${norm(p.path)}: the demo navigates here, so it needs liveUrl (from nav.json) + sectionsFile, or titleOnly: true + titleOnlyReason`); }
-    else for (const s of arr(p.sections)) if (typeof s === "object" && s && !CHROME.has(s.component) && !has(s.look)) p14.push(`${norm(p.path)} #${s.position ?? "?"}: a menu-only stub needs look (e.g. PageTitle)`);
+    else if (isMenuStub(p, onPath) && arr(p.sections).length) p14.push(`${norm(p.path)}: a menu-only stub holds no components: set sections: [] (header and footer come from the Page Design; the page is create_page + one update_fields_on_item)`);
     if (p.titleOnly === true && !has(p.titleOnlyReason)) p14.push(`${norm(p.path)}: titleOnly needs titleOnlyReason`);
   }
 }
-add("P14 pages the demo navigates to mirror their live page; menu-only pages are title-only stubs with a look", "required", p14.length === 0, p14.slice(0, 4).join("; "));
+add("P14 pages the demo navigates to mirror their live page; menu-only pages are stubs without components (sections: [])", "required", p14.length === 0, p14.slice(0, 4).join("; "));
 // P12: a page that exists on the prospect's live site MIRRORS it. Every section maps to a measured live section (liveSection = # in sections.md) or is explicitly ADDED with a reason.
 // P13: the measurements exist (header-styles.json, nav.json, sections.json + crops) when the prospect has a URL
 {
@@ -322,7 +325,7 @@ if (chrome.length) {
   for (const f of chrome) md += `| ${cell(f.feature)} | ${cell(f.delivery)}${f.component ? ` (${cell(f.component)})` : ""}${f.new?.name ? ` (new ${cell(f.new.name)})` : ""} | ${cell(f.fitReason ?? f.note ?? "")} |\n`;
   md += `\nHardcoded or not built elements are not editable in the CMS: say so at the gate.\n`;
 }
-md += `\n## Manual work to expect\n- Only the fixed "Always" lines (thumbnails, layout icons) and what a person alone can do (editing host login). Variants, partial designs, page designs, datasources, theme and images are built by the run.\n- Navigation pages (menu items no moment needs) are created as placeholders; nothing pauses the build for checks\n`;
+md += `\n## Manual work to expect\n- Only the fixed "Always" lines (thumbnails, layout icons) and what a person alone can do (editing host login). Variants, partial designs, page designs, datasources, theme and images are built by the run.\n- Navigation pages (menu items no moment needs) are created as empty menu pages (no components; header and footer from the Page Design); nothing pauses the build for checks\n`;
 try { mkdirSync(demo, { recursive: true }); writeFileSync(join(demo, "site-plan.md"), md); } catch { /* report only */ }
 
 let failed = 0;

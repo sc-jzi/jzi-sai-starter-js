@@ -1,0 +1,882 @@
+// Bristol County Savings Bank client variants (BcsbVariants.tsx, TestimonialSlider, FaqAccordion).
+// Measured: green #006f51, slate #334957, olive #c0cb71, strip #e8e8e8; container 1200px; headings 45/28px weight 500; square corners.
+$bcsb-green: #006f51;
+$bcsb-slate: #334957;
+$bcsb-olive: #c0cb71;
+$bcsb-text: #222;
+
+.bcsb-cards,
+.bcsb-news,
+.bcsb-promo,
+.bcsb-bgpromo,
+.bcsb-app,
+.bcsb-hero,
+.bcsb-rates,
+.bcsb-text,
+.bcsb-footer,
+.testimonial-slider,
+.faq-accordion {
+  font-family: 'Montserrat', 'Proxima Nova', Arial, sans-serif;
+  color: $bcsb-text;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+.bcsb-btn {
+  display: inline-block;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  border: 1px solid $bcsb-green;
+
+  &--solid {
+    background: $bcsb-green;
+    color: #fff;
+  }
+
+  &--outline {
+    background: #fff;
+    color: $bcsb-green;
+  }
+
+  &--green {
+    background: $bcsb-green;
+    color: #fff;
+  }
+}
+
+// Cards (home icon cards, Personal / Small Business product cards)
+.bcsb-cards {
+  padding: 25px 0;
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+
+    &--wrap {
+      max-width: 840px;
+      margin: 0 auto;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: stretch;
+    }
+  }
+
+  &--text .bcsb-cards__row--wrap > :nth-child(4) {
+    grid-column: 2;
+  }
+}
+
+.bcsb-card {
+  background: #fff;
+  border-top: 6px solid $bcsb-green;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 12%);
+  padding: 26px 22px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &--left {
+    text-align: left;
+    align-items: flex-start;
+    padding: 22px 20px;
+  }
+
+  &__icon {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    margin-bottom: 14px;
+    color: #222;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 12px;
+
+    &--green {
+      color: $bcsb-green;
+      font-weight: 500;
+      font-size: 17px;
+    }
+  }
+
+  &__text {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #595959;
+    margin: 0 0 18px;
+    flex: 1;
+  }
+
+  &__link {
+    font-weight: 700;
+    font-size: 14px;
+    color: #222;
+    text-decoration: none;
+
+    &--green {
+      color: $bcsb-green;
+      font-size: 12px;
+    }
+  }
+}
+
+// Featured news
+.bcsb-news {
+  padding: 25px 0;
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+
+  &__heading {
+    font-size: 36px;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  &__all {
+    background: $bcsb-slate;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
+    background: #fff;
+  }
+
+  &__img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  &__body {
+    padding: 14px 18px;
+    flex: 1;
+  }
+
+  &__tags {
+    font-size: 10px;
+    font-weight: 600;
+    color: #444;
+    margin: 0 0 10px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    line-height: 1.3;
+  }
+
+  &__link {
+    display: block;
+    padding: 12px 18px;
+    border-top: 1px solid #e8e8e8;
+    font-weight: 700;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+  }
+}
+
+// Image + text promo
+.bcsb-promo {
+  padding: 25px 0;
+
+  &__row {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    gap: 22px;
+    align-items: center;
+  }
+
+  &__media img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &__title {
+    color: $bcsb-green;
+    font-size: 26px;
+    font-weight: 400;
+    margin: 0 0 18px;
+  }
+
+  &__text {
+    font-size: 13px;
+    line-height: 1.65;
+
+    ol {
+      padding-left: 18px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+  }
+}
+
+// Background-image promo (community) and help band (Need Help?)
+.bcsb-bgpromo {
+  position: relative;
+  overflow: hidden;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__inner {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &--boxed {
+    min-height: 390px;
+
+    .bcsb-bgpromo__inner {
+      padding: 60px 15px;
+    }
+
+    .bcsb-bgpromo__box {
+      background: rgb(255 255 255 / 95%);
+      max-width: 340px;
+      padding: 32px 34px;
+    }
+
+    .bcsb-bgpromo__title {
+      color: $bcsb-green;
+      font-size: 22px;
+      font-weight: 400;
+    }
+
+    .bcsb-bgpromo__text {
+      font-size: 11px;
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+  }
+
+  &--band {
+    background: #666;
+    color: #fff;
+
+    .bcsb-bgpromo__bg {
+      opacity: 0.25;
+    }
+
+    .bcsb-bgpromo__inner {
+      justify-content: flex-start;
+      padding: 30px 15px;
+    }
+
+    .bcsb-bgpromo__box {
+      width: 100%;
+    }
+
+    .bcsb-bgpromo__title {
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+
+    .bcsb-bgpromo__text {
+      font-size: 12px;
+      position: relative;
+
+      a {
+        color: #fff;
+      }
+
+      .promo-phone {
+        position: absolute;
+        right: 0;
+        top: -10px;
+        font-size: 22px;
+
+        a::before {
+          content: '\260E\00a0';
+        }
+      }
+    }
+  }
+}
+
+// App band
+.bcsb-app {
+  background: linear-gradient(90deg, $bcsb-green 0%, $bcsb-slate 100%);
+  color: #fff;
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 20px;
+  }
+
+  &__badges {
+    display: flex;
+    gap: 14px;
+  }
+}
+
+.bcsb-badge {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  column-gap: 8px;
+  align-items: center;
+  border: 1px solid rgb(255 255 255 / 80%);
+  border-radius: 4px;
+  padding: 4px 12px;
+  color: #fff;
+  text-decoration: none;
+
+  &__icon {
+    grid-row: 1 / 3;
+    font-size: 22px;
+  }
+
+  &__small {
+    font-size: 8px;
+  }
+
+  &__big {
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+
+// Page hero (photo + title strip)
+.bcsb-hero {
+  &__photo img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 15px;
+  }
+
+  &__title {
+    font-size: 30px;
+    font-weight: 400;
+    margin: 0;
+    color: #333;
+  }
+}
+
+// Rate cards (Prime Time CD)
+.bcsb-rates {
+  padding: 25px 0;
+
+  &__row {
+    display: flex;
+    gap: 22px;
+  }
+}
+
+.bcsb-rate {
+  background: $bcsb-slate;
+  color: #fff;
+  width: 310px;
+  text-align: center;
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 22px 16px 0;
+    margin: 0;
+  }
+
+  &__figure {
+    font-size: 48px;
+    font-weight: 700;
+    padding: 24px 0 8px;
+  }
+
+  &__sub {
+    font-size: 11px;
+    font-style: italic;
+    margin: 0 0 22px;
+  }
+
+  &__foot {
+    border-top: 1px solid rgb(255 255 255 / 25%);
+    padding: 18px 22px 24px;
+  }
+
+  &__button {
+    display: block;
+    background: $bcsb-olive;
+    color: #222;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 12px;
+    text-decoration: none;
+  }
+}
+
+// Rich text: heading + paragraphs; without a heading it is the grey disclosure strip
+.bcsb-text {
+  padding: 25px 0;
+
+  h2 {
+    color: $bcsb-green;
+    font-size: 36px;
+    font-weight: 400;
+    margin: 0 0 14px;
+  }
+
+  p {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  &:not(:has(h2)) {
+    background: #e8e8e8;
+    padding: 22px 0;
+
+    p {
+      font-size: 10px;
+      margin: 0 0 8px;
+      color: #444;
+    }
+  }
+}
+
+// Footer
+.bcsb-footer {
+  background: #fff;
+  border-top: 1px solid #e8e8e8;
+
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    gap: 70px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__badge {
+    width: 200px;
+    height: 165px;
+    margin-bottom: -60px;
+    border-radius: 100px 100px 0 0;
+    background: $bcsb-green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 130px;
+      height: auto;
+    }
+  }
+
+  &__quick {
+    display: flex;
+    gap: 46px;
+    padding-top: 30px;
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: $bcsb-green;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+    }
+  }
+
+  &__socials {
+    margin-left: auto;
+    display: flex;
+    gap: 40px;
+    padding-top: 28px;
+  }
+
+  &__social {
+    color: $bcsb-green;
+    font-size: 28px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  &__bar {
+    background: linear-gradient(90deg, $bcsb-green 225px, $bcsb-slate 100%);
+    color: #fff;
+  }
+
+  &__bar-inner {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 18px 15px 18px 225px;
+  }
+
+  &__ids,
+  &__legal {
+    display: flex;
+    gap: 24px;
+    font-size: 14px;
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+  }
+
+  &__legal {
+    margin-left: auto;
+  }
+
+  &__about {
+    padding: 30px 15px 10px;
+    font-size: 15px;
+    line-height: 1.75;
+
+    a {
+      color: $bcsb-green;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px 15px 30px;
+    font-size: 15px;
+  }
+
+  &__marks {
+    display: flex;
+    gap: 24px;
+
+    a {
+      color: $bcsb-green;
+    }
+  }
+
+  &__copy {
+    margin: 0 auto;
+  }
+}
+
+// Testimonial slider
+.testimonial-slider {
+  padding: 25px 0;
+  text-align: center;
+
+  &__heading {
+    font-size: 30px;
+    font-weight: 400;
+    color: #333;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  &__stage {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 30px 0;
+    border-bottom: 1px solid #e8e8e8;
+  }
+
+  &__arrow {
+    background: none;
+    border: 0;
+    color: #333;
+    cursor: pointer;
+  }
+
+  &__slides {
+    flex: 1;
+    text-align: left;
+  }
+
+  &__quote {
+    position: relative;
+    padding-left: 60px;
+    margin: 0;
+
+    blockquote {
+      margin: 0 0 14px;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+  }
+
+  &__mark {
+    position: absolute;
+    left: 0;
+    top: -20px;
+    font-size: 90px;
+    color: #dfe3c2;
+    font-family: Georgia, serif;
+  }
+
+  &__name {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: $bcsb-slate;
+  }
+
+  &__position {
+    font-size: 11px;
+    color: #666;
+  }
+
+  &__dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 14px;
+
+    button {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid $bcsb-slate;
+      background: #fff;
+      padding: 0;
+
+      &.is-active {
+        background: $bcsb-slate;
+      }
+    }
+  }
+}
+
+// FAQ
+.faq-accordion {
+  padding: 25px 0;
+
+  &__heading {
+    font-size: 28px;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    border-bottom: 1px solid #e8e8e8;
+
+    &.is-open {
+      background: #f3f4f5;
+    }
+  }
+
+  &__question {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    background: none;
+    border: 0;
+    padding: 14px 10px;
+    font-size: 16px;
+    color: $bcsb-green;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  &__chevron {
+    transform: rotate(0deg);
+    transition: transform 0.2s;
+
+    &.is-open {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__answer {
+    padding: 0 30px 14px;
+    font-size: 12px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 991px) {
+  .bcsb-cards__row,
+  .bcsb-news__row,
+  .bcsb-promo__row {
+    grid-template-columns: 1fr;
+  }
+
+  .bcsb-cards--text .bcsb-cards__row--wrap > :nth-child(4) {
+    grid-column: auto;
+  }
+
+  .bcsb-rates__row,
+  .bcsb-footer__top,
+  .bcsb-footer__bar-inner {
+    flex-direction: column;
+  }
+}
+
+// ---- Looks pass 1 (measured against the live pages) ----
+.sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.bcsb-hero__photo {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+.bcsb-hero__title { font-size: 45px; font-weight: 500; }
+
+.bcsb-promo__row { grid-template-columns: 1fr 1fr; gap: 38px; }
+.bcsb-promo__media { min-height: 300px; height: 100%; background-size: cover; background-position: center; }
+.bcsb-promo__title { font-size: 32px; }
+
+.bcsb-bgpromo { background-color: #fff; background-size: cover; background-position: center; }
+.bcsb-bgpromo--boxed .bcsb-bgpromo__box { max-width: 390px; }
+.bcsb-bgpromo--boxed .bcsb-bgpromo__title,
+.bcsb-bgpromo--band .bcsb-bgpromo__title { font-size: 32px; }
+.bcsb-bgpromo--band { background-color: #fff; background-size: auto 100%; background-repeat: no-repeat; background-position: left center; }
+.bcsb-bgpromo--band .bcsb-bgpromo__inner { background: rgb(102 102 102 / 88%); max-width: none; }
+
+.bcsb-text h2 { color: #393939; font-size: 45px; font-weight: 500; }
+.bcsb-text--plain,
+.bcsb-text--plain:not(:has(h2)) { background: #fff; }
+
+.bcsb-rate__title { font-size: 24px; }
+.bcsb-rate__figure { margin: 0; font-size: 48px; font-weight: 700; padding: 24px 0 8px; }
+.bcsb-rate__figure .bcsb-rate__sub { display: block; font-size: 11px; font-weight: 400; font-style: italic; margin: 6px 0 16px; }
+
+.rate-promo-hero--image .rate-promo-hero__photo { background-size: cover; background-position: center; min-height: 360px; }
+.rate-promo-hero--image .rate-promo-hero__title { font-size: 45px; font-weight: 500; }
+.rate-promo-hero--image .rate-promo-hero__button { background: transparent; }
+
+.testimonial-slider__heading { font-size: 40px; }
+.testimonial-slider__quote::before {
+  content: '\201C';
+  position: absolute;
+  left: 0;
+  top: -20px;
+  font-size: 90px;
+  color: #dfe3c2;
+  font-family: Georgia, serif;
+}
+.testimonial-slider__arrow { display: inline-flex; color: #333; }
+
+.faq-accordion__heading { font-size: 40px; }
+.faq-accordion__question { text-decoration: none; }
+
+// ---- Looks pass 2 ----
+.bcsb-news__img { height: 200px; background-size: cover; background-position: center; }
+.bcsb-rate__sub { font-size: 11px; font-style: italic; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 22px; }
+.testimonial-slider__name { margin: 0; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.i-want-to__title { color: #5a7b8e; font-size: 39px; }
+
+// ---- Looks pass 3 ----
+.bcsb-card--block { text-decoration: none; color: inherit; }
+.bcsb-card--block .bcsb-card__title, .bcsb-card--block .bcsb-card__text, .bcsb-card--block .bcsb-card__link { display: block; }
+.rate-promo-hero--has-bg { background-size: cover; background-position: center; }
+.rate-promo-hero--has-bg .rate-promo-hero__text { background: transparent; }
+.rate-promo-hero--has-bg .rate-promo-hero__aside { background: #e4ede9; }
+
+.bcsb-card__name { display: block; font-size: 18px; font-weight: 600; margin: 0 0 12px; color: #222; }
+.bcsb-cards--text .bcsb-card__name { color: #006f51; font-weight: 500; font-size: 17px; }
+
+
+.bcsb-card__hit { display: block; color: inherit; text-decoration: none; }
+.bcsb-card__hit > span { display: block; }
+.bcsb-badge__art { grid-row: 1 / 3; }
+
+
+.bcsb-footer__apps { display: flex; gap: 10px; }
+
+
+// ---- Looks pass 4 ----
+.rate-promo-hero--has-bg { background-color: #e4ede9; background-size: 200% 100%; background-position: left center; background-repeat: no-repeat; }
+.rate-promo-hero--has-bg .rate-promo-hero__aside { background: transparent; }
+.bcsb-footer__about { font-size: 14px; line-height: 26px; }
+.testimonial-slider__slides { overflow: hidden; }
+.testimonial-slider__track { display: flex; transition: transform 0.4s ease; }
+.testimonial-slider__track > .testimonial-slider__quote { flex: 0 0 100%; }
+.bcsb-badge { display: inline-block; padding: 0; border: 0; }
+.bcsb-badge img { display: block; height: 40px; width: auto; }
+
+.testimonial-slider__arrow { flex: 0 0 auto; }
+.testimonial-slider__slides { flex: 1 1 auto; min-width: 0; }
+
+
+.i-want-to { margin-top: -28px; }
+.i-want-to .i-want-to__bar { margin-top: 0; }
+.bcsb-footer__about { font-size: 14.5px; }
+
+
+.i-want-to__combo { position: relative; flex: 1; display: flex; align-items: center; border-bottom: 1px solid #999; min-height: 43px; }
+.i-want-to__current { flex: 1; font-size: 20px; color: #333; padding: 8px 4px; }
+.i-want-to__caret { font-size: 18px; color: #333; padding: 0 6px; }
+.i-want-to__combo .i-want-to__select { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; border: 0; }
+
+.i-want-to__combo .i-want-to__select { opacity: 0.01; }
+.i-want-to__combo::after { content: ''; width: 0; height: 0; border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 7px solid #333; margin: 0 8px; }
+.testimonial-slider__stage { align-items: flex-start; }
+.testimonial-slider__arrow--prev { margin-top: 20px; }
+.testimonial-slider__arrow--next { margin-top: 110px; }

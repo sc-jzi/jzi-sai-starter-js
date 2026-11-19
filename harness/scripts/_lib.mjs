@@ -182,6 +182,21 @@ export async function edgeRoute(customer, route, { site, language } = {}) {
 }
 // plan path (/Home/x) -> site route (/x)
 export const routeOf = (planPath) => String(planPath).replace(/^\/home/i, "") || "/";
+// A MENU STUB: a navTarget page the demo never navigates to (no moment, no visit: true, not on a clickPath, no live mirror, not titleOnly).
+// It holds NO components: create_page + one update_fields_on_item (Title, __Display name, NavigationTitle, NavigationFilter); header and
+// footer come from the partial designs through the Page Design. `onPath` (optional): Set of lower-case clickPath page paths.
+export function isMenuStub(page, onPath) {
+  if (page?.navTarget !== true || page.visit === true || page.titleOnly === true) return false;
+  if ((Array.isArray(page.proves) && page.proves.length) || page.liveUrl || page.sectionsFile) return false;
+  const path = String(page.path ?? "").replace(/\/+$/, "").toLowerCase();
+  return !(onPath && onPath.has(path));
+}
+// every clickPath page of the plan's moments (lower-case, as validate-site-plan P15 reads them: "/Home/x (click: ...)" -> /home/x)
+export function clickPathPages(plan) {
+  const out = new Set();
+  for (const m of Array.isArray(plan?.story?.moments) ? plan.story.moments : []) for (const x of Array.isArray(m?.clickPath) ? m.clickPath : []) out.add((String(x).split(/\s+[(|]/)[0].trim().replace(/\/+$/, "") || "/").toLowerCase());
+  return out;
+}
 
 /* ---- section captures (section-capture.mjs output), shared by the gate, the validators and variants-verify ---- */
 export const PARTIAL_DESIGN_TEMPLATE = "{FD2059FD-6043-4DFE-8C04-E2437CE87634}";   // a real Partial Design

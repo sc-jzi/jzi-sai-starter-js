@@ -12,7 +12,7 @@
  */
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { die, demoDir, rootRel, readJson, safeWrite, chromeBands, notProse, baseApp } from "./_lib.mjs";
+import { die, demoDir, rootRel, readJson, safeWrite, chromeBands, notProse, baseApp, isMenuStub, clickPathPages } from "./_lib.mjs";
 import { parseYaml } from "./_yaml.mjs";
 import { shapeOf, describeShape, catalogVariants, rankVariants } from "./_measure.mjs";
 
@@ -23,12 +23,14 @@ if (!existsSync(planPath)) die(`${rootRel(planPath)} not found`);
 const plan = parseYaml(readFileSync(planPath, "utf8"));
 const pages = Array.isArray(plan?.site?.pages) ? plan.site.pages : [];
 
-const rows = [], problems = [];
+const rows = [], problems = [], stubs = [], onPath = clickPathPages(plan);
 // the 3 measured base variants closest in shape to each live band (the same shortlist as component-match.mjs and validate-site-plan P17)
 const measured = catalogVariants(readJson(join(baseApp(), "docs", "ai", "catalog", "components.json"))).filter((v) => v.shape);
 for (const p of pages) {
+  // menu stubs hold no components (header/footer come from the Page Design): nothing to crop; a section planned on one is a plan error (P14)
+  if (isMenuStub(p, onPath)) { stubs.push(p.path); if (Array.isArray(p.sections) && p.sections.length) problems.push(`${p.path}: menu stub with ${p.sections.length} section(s); a menu stub holds no components (sections: [], validate-site-plan P14)`); continue; }
   const file = p.sectionsFile ? String(p.sectionsFile) : /^\/home$/i.test(String(p.path)) ? "sections.json" : null;
-  if (!file) continue;   // story pages and title-only stubs have no live counterpart
+  if (!file) continue;   // story pages have no live counterpart
   const cap = readJson(join(demo, file));
   if (!cap) { problems.push(`${p.path}: ${file} not captured (section-capture --out ${file})`); continue; }
   const { footerIdx } = chromeBands(cap);
@@ -53,8 +55,9 @@ safeWrite(customer, join(demo, "component-crops.json"), JSON.stringify({ at: new
 const cell = (v) => String(v ?? "").replace(/\|/g, "\\|").replace(/\s+/g, " ").trim();
 let md = `# Component crops — ${customer}\n\nOne row per planned section of every mirrored page. Build each from its crop: open it, then reuse the component (with the client variant or look) or build the \`fit: new\` one. Rich Text only where the shape is "prose". Shortlist: the measured base variants closest in shape (distance 0 = same shape; \`component-match.md\` says what differs, \`plan-review.mjs\` shows them side by side).\n\n| Page | # | Live | Crop | Heading | Measured shape | Component | Fit | Variant / look | Shortlist |\n|---|---|---|---|---|---|---|---|---|---|\n`;
 for (const r of rows) md += `| ${cell(r.page)} | ${r.position} | ${r.liveSection} | [${cell(r.crop.split("/").pop())}](${encodeURI(r.crop)}) | ${cell(r.heading)} | ${cell(r.looksLike || r.shape)}${r.shape !== "prose" ? ` (${cell(r.shape)})` : ""} | ${cell(r.component)} | ${cell(r.fit)} | ${cell(r.variant)}${r.look ? ` / ${cell(r.look)}` : ""} | ${cell(r.shortlist.map((v) => `${v.name} ${v.variant} (${v.distance}${v.notes.length ? `; ${v.notes.join("; ")}` : ""})`).join(", "))} |\n`;
+if (stubs.length) md += `\n## Menu stubs (no components: create_page + one update_fields_on_item; header and footer from the Page Design)\n${stubs.map((x) => `- ${x}`).join("\n")}\n`;
 if (problems.length) md += `\n## Problems\n${problems.map((x) => `- ${x}`).join("\n")}\n`;
 safeWrite(customer, join(demo, "component-crops.md"), md);
-console.log(`${rows.length} planned section(s) on ${new Set(rows.map((r) => r.page)).size} mirrored page(s) → ${rootRel(join(demo, "component-crops.md"))}`);
+console.log(`${rows.length} planned section(s) on ${new Set(rows.map((r) => r.page)).size} mirrored page(s), ${stubs.length} menu stub(s) without components → ${rootRel(join(demo, "component-crops.md"))}`);
 for (const x of problems) console.log(`✖ ${x}`);
 process.exit(problems.length ? 1 : 0);

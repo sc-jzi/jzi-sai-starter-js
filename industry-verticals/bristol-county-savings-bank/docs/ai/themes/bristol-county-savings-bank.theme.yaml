@@ -1,0 +1,57 @@
+# Client Brand Theme — Bristol County Savings Bank
+# Measured from the SE's browser snapshot of the homepage (site-scraper.mjs + computed colours of every element).
+
+client:
+  name: "Bristol County Savings Bank"
+  sourceUrl: "https://www.bristolcountysavings.com/"
+  extractedAt: "2026-11-18"
+  extractedBy: "site-scraper.mjs on snapshot http://127.0.0.1:8765/home"
+
+colors:
+  primary: "#006F51"            # links, nav text, buttons on white, theme-color meta
+  primaryForeground: "#FFFFFF"
+  secondary: "#334957"          # slate: primary button background, home hero text panel, rate cards
+  secondaryForeground: "#FFFFFF"
+  accent: "#C0CB71"             # olive: Open Prime Time CD buttons on the rate cards
+  accentForeground: "#222222"
+  background: "#FFFFFF"
+  foreground: "#222222"
+  muted: "#F5F5F5"
+  mutedForeground: "#595959"
+  headerBackground: "#FFFFFF"
+  headerForeground: "#006F51"
+  footerBackground: "#FFFFFF"
+  footerForeground: "#222222"
+  border: "#E8E8E8"
+  ring: "#006F51"
+  extra:
+    - { name: utility-bar-gradient, value: "linear-gradient(90deg, #006F51 225px, #334957 100%)" }
+    - { name: app-band-gradient, value: "linear-gradient(90deg, #006F51 0%, #334957 100%)" }
+    - { name: disclosure-strip, value: "#E8E8E8" }
+    - { name: rates-panel-tint, value: "#F3F4F5" }
+
+typography:
+  headingFamily: "Proxima Nova (Adobe Fonts, proprietary) → Montserrat (Google Fonts substitute)"
+  headingWeight: "500"
+  bodyFamily: "Proxima Nova → Montserrat"
+  bodyWeight: "400"
+  monoFamily: ""
+  googleFontsUrl: "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+  scale: { hero: "45px", h1: "45px", h2: "45px", h3: "28px", body: "16px", small: "13px" }
+  headingTransform: "none"
+  letterSpacing: "normal"
+  lineHeight: "26px body"
+
+spacing:
+  density: "comfortable"
+  sectionGap: "25px padding per band (section-padding)"
+  containerMaxWidth: "1200px"
+  containerPadding: "15px"
+
+shape:
+  borderRadius: "0"
+  buttonRadius: "0"
+  cardRadius: "0"
+  imageRadius: "0"
+  shadowStyle: "soft card shadow; 6px green top border on cards"
+  borderStyle: "1px #E8E8E8 dividers"

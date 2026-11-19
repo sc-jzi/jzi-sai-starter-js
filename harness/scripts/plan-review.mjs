@@ -39,7 +39,7 @@ for (const p of Array.isArray(plan?.site?.pages) ? plan.site.pages : []) {
   const file = p.sectionsFile ? String(p.sectionsFile) : /^\/home$/i.test(String(p.path)) ? "sections.json" : null;
   const cap = file ? readJson(join(demo, file)) : null;
   const secs = (Array.isArray(p.sections) ? p.sections : []).filter((s) => s && typeof s === "object");
-  if (!cap || !secs.length) continue;   // story pages and title-only stubs: listed in site-plan.md, nothing to compare
+  if (!cap || !secs.length) continue;   // story pages and menu stubs (no components): listed in site-plan.md, nothing to compare
   const rows = [];
   for (const s of secs) {
     n++;

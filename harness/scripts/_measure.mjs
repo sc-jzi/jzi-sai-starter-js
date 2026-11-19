@@ -126,10 +126,11 @@ export function measureBand(idx) {
     adSlot: !!el.querySelector('iframe[src*="doubleclick"], iframe[id^="google_ads"], [id^="div-gpt-ad"], ins.adsbygoogle, [data-ad-slot], [class*="advert" i], [id*="advert" i]'),
     // a video is an embedded player, or a poster that opens one: a link to a video host or file, a play button (an element or an icon
     // image, e.g. alt "Play Video icon" / VideoPlayButton.svg over the poster), data-video* attributes
-    video: [...el.querySelectorAll("video, iframe")].some((v) => v.tagName === "VIDEO" || /youtu|vimeo|wistia|brightcove|vidyard|video|player/i.test(v.getAttribute("src") || v.getAttribute("data-src") || ""))
-      || [...el.querySelectorAll("img, svg")].some((i) => /(^|[^a-z])(play([^a-z]|$)|play-?(button|btn|icon|video)|video)/i.test(`${i.getAttribute("alt") || ""} ${i.getAttribute("aria-label") || ""} ${String(i.getAttribute("src") || "").split("?")[0].split("/").pop()}`))
-      || [...el.querySelectorAll("a[href], [data-src], [data-href]")].some((a) => /youtu\.?be|vimeo\.com|wistia|vidyard|brightcove|\.(mp4|webm|mov)(\?|$)/i.test(a.getAttribute("href") || a.getAttribute("data-src") || a.getAttribute("data-href") || ""))
-      || [...el.querySelectorAll("*")].some((d) => [...d.attributes].some((a) => /^data-(video|youtube|vimeo|wistia)/i.test(a.name))
+    // only what the visitor can see: a hidden, empty video modal in the markup is not a video in the band
+    video: [...el.querySelectorAll("video, iframe")].filter(vis).some((v) => v.tagName === "VIDEO" || /youtu|vimeo|wistia|brightcove|vidyard|video|player/i.test(v.getAttribute("src") || v.getAttribute("data-src") || ""))
+      || [...el.querySelectorAll("img, svg")].filter(vis).some((i) => /(^|[^a-z])(play([^a-z]|$)|play-?(button|btn|icon|video)|video)/i.test(`${i.getAttribute("alt") || ""} ${i.getAttribute("aria-label") || ""} ${String(i.getAttribute("src") || "").split("?")[0].split("/").pop()}`))
+      || [...el.querySelectorAll("a[href], [data-src], [data-href]")].filter(vis).some((a) => /youtu\.?be|vimeo\.com|wistia|vidyard|brightcove|\.(mp4|webm|mov)(\?|$)/i.test(a.getAttribute("href") || a.getAttribute("data-src") || a.getAttribute("data-href") || ""))
+      || [...el.querySelectorAll("*")].filter(vis).some((d) => [...d.attributes].some((a) => /^data-(video|youtube|vimeo|wistia)/i.test(a.name))
         || /(^|[\s_-])(play|play-?(button|btn|icon|video)|video-?(play|trigger|button|modal|popup))([\s_-]|$)/i.test(typeof d.className === "string" ? d.className : d.getAttribute("class") || "")
         || /^play\b|play video/i.test(d.getAttribute("aria-label") || d.getAttribute("title") || "")),
   };

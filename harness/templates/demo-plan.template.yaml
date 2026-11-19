@@ -152,7 +152,9 @@ site:
     #   eyebrow = link of the small utility bar above the header (About us, Join our team, Locations, Contact us). The eyebrow bar is HARDCODED in the client Eyebrow variant (header-kit.mjs); this value only keeps the page out of the main menu
     #   none    = everything else (story pages, dropdown children, second level and deeper): hidden from navigation
     # The build ticks the page's NavigationFilter 'Main Navigation' for everything that is not main (demo-build-pages step 3), and gives every page a nice __Display name.
-    # Navigation page: a menu item of the prospect's header that no moment needs. Built as a placeholder so the header navigation matches theirs.
+    # Navigation page (menu stub): a menu item of the prospect's header that no moment needs, so the header navigation matches theirs.
+    # It holds NO components (sections: []): create_page + one update_fields_on_item (Title, __Display name, NavigationTitle, NavigationFilter);
+    # header and footer come from the partial designs through the Page Design. A menu page the demo navigates to mirrors its live page instead (P14).
     - path: /Home/about
       displayName: "About"
       pageType: page
@@ -161,8 +163,7 @@ site:
       navGroup: main
       navReason: "Header menu item"
       proves: []
-      sections:
-        - { position: 1, component: heading-cta, fit: reuse, variant: PageHeading, contentSource: illustrative, note: "Title only (placeholder)" }
+      sections: []
     - path: /Home/governance
       displayName: "Governance"
       pageType: page

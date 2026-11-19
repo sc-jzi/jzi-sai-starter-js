@@ -40,6 +40,8 @@ here in full, never summarised (a summary drifts): when anything else disagrees,
 | `node harness/scripts/looks-gates.mjs <customer>` | compare the running app with the prospect's pages (header + every mirrored page) |
 | `node harness/scripts/looks-review.mjs <customer> --open` · `run-gate.mjs accept <customer> all|none|<n>` | after two fix attempts: ONE side-by-side page for all pages (visible differences only), ONE question, record the answer |
 | `node harness/scripts/build-check.mjs <customer> [--quick]` | `npm run build` (or a typecheck) of the customer app |
+| `node harness/scripts/layout-variant.mjs apply --plan <json> --customer <c> [--dry-run]` | variants / datasources / rendering parameters of placed renderings, all pages in one run (R5) |
+| `node harness/scripts/local-data-check.mjs <customer>` | read-only: page `Data` folders and whether any page layout still references them; lists the folders to delete (R5) |
 | `node harness/scripts/link-audit.mjs <customer>` | every link / image field in the site holds valid XML; every field's type fits its name and value (R26) |
 | `node harness/scripts/component-match.mjs <customer>` | per planned section, the 3 base variants closest in measured shape (`_measure.mjs`; validate-site-plan P17 uses the same shortlist) |
 | `node harness/scripts/plan-review.mjs <customer> --open` | gate 2's page: each live section beside its chosen variant, the other shortlisted ones and any flag |

@@ -81,7 +81,7 @@ try {
     const named = (el, re) => re.test(`${el.id} ${typeof el.className === "string" ? el.className : ""}`);
     list.forEach((el, i) => { el.setAttribute("data-hsec", String(i)); const r = el.getBoundingClientRect(); out.push({ i, top: Math.round(r.top + scrollY), height: Math.round(r.height), tag: el.tagName.toLowerCase(),
       isFooter: el.tagName === "FOOTER" || el.getAttribute("role") === "contentinfo" || !!el.closest("footer") || !!el.querySelector("footer") || named(el, /footer/i),
-      isHeader: named(el, /\bcomponent\b.*\b(eyebrow|header|navigation)\b/) || el.tagName === "HEADER" || el.getAttribute("role") === "banner" || !!el.closest("header") || (Math.round(r.top + scrollY) < 10 && (!!el.querySelector("nav, header") || named(el, /header|masthead/i))),
+      isHeader: named(el, /\bcomponent\b.*\b(eyebrow|header|navigation)\b/) || el.tagName === "HEADER" || (el.getAttribute("role") === "banner" && (Math.round(r.top + scrollY) < 10 || !document.querySelector("header"))) || !!el.closest("header") || (Math.round(r.top + scrollY) < 10 && (!!el.querySelector("nav, header") || named(el, /header|masthead/i))),
       copyright: /©|copyright/i.test(el.textContent || "") }); });
     const kept = out.filter((s) => s.height >= 40);
     // a footer built from <div>s: the last band carrying the copyright line is the footer. It is never a body section.

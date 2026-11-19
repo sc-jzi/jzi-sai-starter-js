@@ -11,7 +11,7 @@ disagree, **this file wins** and the skill is the bug. Change a rule here, once.
   the section's images, video, cards or layout and the planned one cannot), change it in `demo-plan.yaml` and record why with
   `run-gate.mjs swap <customer> "<page path>#<live section>" --reason "<why>"`; no question to the SE, the hand-over lists the change. The plan is
   never changed to make a check pass. The only other questions after approval are R2's, R15's single looks review, R25's, the confirmations
-  Marketer MCP tools demand by design (`delete_content` of the page-local `harness-tmp-*` items, `set_component_variant` for a personalization or
+  Marketer MCP tools demand by design (`delete_content` of the page `Data` folders listed by `local-data-check.mjs`, `set_component_variant` for a personalization or
   A/B variant: collect them and ask ONCE, near the end of the build) and a decision that is truly impossible to assume.
   *Enforced: run-gate (approval hashes, recorded swaps).*
 - **R2 Marketer MCP connected first.** `list_sites` must answer before anything else; not connected → send the auth request, ask once; a timeout stops the
@@ -27,16 +27,24 @@ disagree, **this file wins** and the skill is the bug. Change a rule here, once.
 - **R5 Marketer MCP first.** Every write the MCP supports goes through the MCP (`create_content_item`, `update_fields_on_item`, `create_page`,
   `add_component_on_page`, `set_component_datasource`, `remove_component_on_page`, ...), followed by a read-back. Scripts write directly (Authoring
   GraphQL / Sites API) ONLY for what the MCP cannot do: creating the collection and site (`sites-api.mjs`), uploading media (`media-upload.mjs`,
-  `content-hub-upload.mjs`), setting a variant or rendering parameter on a placed rendering when the MCP route (writing the layout XML with
-  `update_fields_on_item`) is refused (`layout-variant.mjs apply`), the editing host, and the base site's component showcase
+  `content-hub-upload.mjs`), setting the variant, datasource or rendering parameters of PLACED renderings in bulk (`layout-variant.mjs apply
+  --plan <json>`: one login for all pages, per item backup, patch, ONE write and a read-back; personalization `<rls>` blocks are left as they
+  are), the editing host, and the base site's component showcase
   (`component-showcase.mjs`, only under `<base site>/Home/components` plus missing Headless Variant definitions, outside demo runs). Scripts may always READ Sitecore to verify (the run gate,
   `link-audit.mjs`, the `attach-images.mjs` dry run). Never write a one-off script that creates items or layouts: a component is placed on a page
   with `add_component_on_page` (the placeholder from `get_allowed_comps_by_ph`), never by writing the page's `__Final Renderings` / `__Renderings`
-  yourself; only its variant or a rendering parameter goes through `layout-variant.mjs` when the MCP route is refused. To read what is on a page or in
-  an item, use the MCP read tools (`get_components_on_page`, `get_content_item_by_path` / `_by_id`) rather than writing probe scripts.
+  yourself; only its variant, datasource or a rendering parameter goes through `layout-variant.mjs apply --plan` after placement. Components that
+  belong on EVERY page of a page type may be written once into that page type's own template `__Standard Values` → `__Renderings` with
+  `update_fields_on_item` (MCP) and read back: only this demo's derived page template (`site-manifest.json` → `pageTemplates`), never a shared
+  one (R22); per-page placement stays `add_component_on_page`. **Page-local cleanup:** the page-local items `add_component_on_page` leaves are not
+  checked and deleted one by one. After the pages are wired, `node harness/scripts/local-data-check.mjs <customer>` (read-only) lists every
+  page's `Data` folder and confirms no page layout (`__Final Renderings` / `__Renderings`, personalization `<rls>` actions included) references a
+  `local:` datasource or an item inside one; then ONE `delete_content` per page `Data` folder, all collected into ONE SE confirmation (R1). To read
+  what is on a page or in an item, use the MCP read tools (`get_components_on_page`, `get_content_item_by_path` / `_by_id`) rather than writing
+  probe scripts.
 - **R6 Datasources live under the site's Data folder:** `/sitecore/content/<collection>/<site>/Data/<component folder>/<Customer> <Page> <Component>`,
   never under a page (`<page>/Data`), never in another site. Create the item first, place the component, point it at the item
-  (`set_component_datasource`), delete the page-local item `add_component_on_page` made. Exceptions: the Header/Footer partial designs' own Data, and
+  (`set_component_datasource`); the page-local items `add_component_on_page` made go with their page's `Data` folder (R5). Exceptions: the Header/Footer partial designs' own Data, and
   Navigation, whose datasource is the Home item. *Enforced: run-gate (content).*
 - **R7 Link fields hold link XML.** Internal: `linktype="internal" id="{GUID}"` (a `url` next to the id is fine, a url without an id drops the whole
   datasource); external: `linktype="external" url="https://..."` or `#`; also `mailto`, `media`, `anchor`. Build values with `link-xml.mjs make`; a site
@@ -53,7 +61,9 @@ disagree, **this file wins** and the skill is the bug. Change a rule here, once.
   Partial Designs folder, not a partial. Never copy header or footer renderings onto a page. *Enforced: run-gate (partials, placement).*
 - **R10 Pages.** Item names are lower-case-hyphen; the display name (`__Display name`, en) is the plan's `displayName`, or else the item name in Title Case
   (`what-is-corrosion` → `What Is Corrosion`). Navigation: only `navGroup: main` pages directly under Home are visible in the main navigation; every
-  other page has `Main Navigation` ticked in `NavigationFilter`. *Enforced: run-gate (content).*
+  other page has `Main Navigation` ticked in `NavigationFilter`. A **menu stub** (a `navTarget` page the demo never visits) holds NO components
+  (`sections: []`): `create_page` + one `update_fields_on_item` (Title, `__Display name`, NavigationTitle, NavigationFilter); header and footer come
+  from the partial designs through the Page Design. *Enforced: validate-site-plan P14, run-gate (placement: empty headless-main; content).*
 - **R11 Localhost reads master** (the app's `.env.local` holds a preview context): no publish while building. Publishing is only for the deployed
   (Vercel) site, a hand-over task.
 
