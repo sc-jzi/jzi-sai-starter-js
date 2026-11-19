@@ -10,4 +10,10 @@ export default defineConfig({
     enabled: true,
   },
   generateStaticPaths: false,
+  // Redirect maps (Settings/Redirects in Sitecore) also apply on localhost: the SDK default turns them off in development.
+  // locales = the languages of src/i18n/routing.ts (not imported: routing imports this file), so /fr-CA/... URLs match too.
+  redirects: {
+    enabled: true,
+    locales: ['en', 'fr-CA', 'ko-KR'],
+  },
 });

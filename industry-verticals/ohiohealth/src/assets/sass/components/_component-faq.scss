@@ -1,0 +1,83 @@
+// Faq (OhioHealth demo): heading, then the questions split over two columns; each opens its answer below it.
+.faq {
+  padding: 2.5rem 0;
+
+  &__inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  &__title {
+    font-family: var(--font-family-heading, Georgia, serif);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    color: var(--text-colored, #0070ab);
+    margin: 0 0 1.5rem 15px;
+  }
+
+  &__columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+
+    @include respond-to(mobile-large) {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+  }
+
+  &__question {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    min-height: 60px;
+    padding: 10px 20px;
+    background: none;
+    border: 0;
+    text-align: left;
+    cursor: pointer;
+    color: var(--text-colored, #0070ab);
+  }
+
+  &__icon {
+    flex: none;
+    color: #5b9fd0;
+  }
+
+  &__question-text {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: var(--text-colored, #0070ab);
+  }
+
+  &__answer {
+    padding: 0 20px 20px;
+    font-size: 16px;
+    line-height: 21px;
+    color: #555;
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: var(--text-colored, #0070ab);
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // every second row in a column is shaded, as on the live site
+  &__item:nth-child(even) {
+    background: #cce1ee;
+  }
+}

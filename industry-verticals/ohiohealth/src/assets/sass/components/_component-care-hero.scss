@@ -159,3 +159,88 @@
     color: var(--text-colored, #0070ab);
   }
 }
+
+// Stacked (OhioHealth live look): one narrow, slightly translucent schedule panel on the right, cards in a column, a "see all" link below.
+.care-hero--stacked {
+  .care-hero__inner {
+    grid-template-columns: 1fr 322px;
+    max-width: none;
+    gap: 3rem;
+    min-height: 651px;
+    padding: 2rem 284px 2rem 280px;
+
+    @media (max-width: 1599px) {
+      padding: 2rem 52px;
+    }
+
+    @include respond-to(mobile-large) {
+      grid-template-columns: 1fr;
+      min-height: 0;
+      padding: 1.5rem 1rem;
+    }
+  }
+
+  .care-hero__copy {
+    max-width: 400px;
+  }
+
+  .care-hero__title {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: 0;
+  }
+
+  .care-hero__text {
+    max-width: 400px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+
+  .care-hero__panel {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.25rem 1.5rem 1rem;
+  }
+
+  .care-hero__panel-title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 30px;
+    color: var(--text-heading, #002a5c);
+    margin-bottom: 1rem;
+  }
+
+  .care-hero__cards {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .care-hero__card-link {
+    background: #fff;
+    padding: 0.55rem 0.75rem;
+  }
+
+  .care-hero__card-title {
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 24px;
+  }
+
+  .care-hero__card-subtitle {
+    font-size: 13px;
+    color: #555;
+  }
+
+  .care-hero__panel-link {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-colored, #0070ab);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

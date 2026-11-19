@@ -31,6 +31,7 @@ interface CareHeroDatasource {
   text?: JsonValue<RichTextField>;
   backgroundImage?: JsonValue<ImageField>;
   scheduleTitle?: JsonValue<Field<string>>;
+  scheduleLink?: JsonValue<LinkField>;
   quickAccessTitle?: JsonValue<Field<string>>;
   children?: { results?: CareHeroChild[] };
 }
@@ -47,7 +48,12 @@ const Chevron = (): JSX.Element => (
   </svg>
 );
 
-const render = (props: CareHeroProps, variantClass: string): JSX.Element | null => {
+// stacked: one narrow schedule panel with the cards in a column and a "see all" link under them, no quick links panel.
+const render = (
+  props: CareHeroProps,
+  variantClass: string,
+  stacked = false
+): JSX.Element | null => {
   const ds = props.fields?.data?.datasource;
   const id = props.params?.RenderingIdentifier;
   const styles = props.params?.styles || '';
@@ -113,7 +119,11 @@ const render = (props: CareHeroProps, variantClass: string): JSX.Element | null 
                 </div>
               ))}
             </div>
+            {stacked && ds.scheduleLink?.jsonValue && (ds.scheduleLink.jsonValue.value?.href || isEditing) && (
+              <Link field={ds.scheduleLink.jsonValue} className="care-hero__panel-link" />
+            )}
           </div>
+          {!stacked && (
           <div className="care-hero__panel care-hero__panel--quick">
             {ds.quickAccessTitle?.jsonValue && (
               <h2 className="care-hero__panel-title">
@@ -141,6 +151,7 @@ const render = (props: CareHeroProps, variantClass: string): JSX.Element | null 
               ))}
             </ul>
           </div>
+          )}
         </div>
       </div>
     </section>
@@ -151,3 +162,6 @@ export const Default = (props: CareHeroProps): JSX.Element | null => render(prop
 
 export const OhioHealth = (props: CareHeroProps): JSX.Element | null =>
   render(props, 'care-hero--ohiohealth');
+
+export const OhioHealthStacked = (props: CareHeroProps): JSX.Element | null =>
+  render(props, 'care-hero--ohiohealth care-hero--stacked', true);

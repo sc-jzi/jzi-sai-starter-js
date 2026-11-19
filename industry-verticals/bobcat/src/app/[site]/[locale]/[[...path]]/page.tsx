@@ -9,6 +9,7 @@ import client from 'src/lib/sitecore-client';
 import Layout, { RouteFields } from 'src/Layout';
 import Providers from 'src/Providers';
 import AlternateLinks from 'src/AlternateLinks';
+import { readSeoControls, SeoRouteFields } from 'src/lib/seo-controls';
 import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
 
@@ -61,7 +62,15 @@ export default async function Page({ params }: PageProps) {
   return (
     <NextIntlClientProvider>
       {!draft.isEnabled && (
-        <AlternateLinks site={site} locale={locale} contentLocale={page.locale} path={path} />
+        <AlternateLinks
+          site={site}
+          locale={locale}
+          contentLocale={page.locale}
+          path={path}
+          canonicalOverride={
+            readSeoControls(page.layout.sitecore.route?.fields as SeoRouteFields | undefined).canonicalHref
+          }
+        />
       )}
       <Providers page={page}>
         <Layout page={page} />
@@ -94,7 +103,10 @@ export const generateMetadata = async ({ params }: PageProps) => {
 
   // The same call as for rendering the page. Should be cached by default react behavior
   const page = await getPageWithFallback(path, site, locale);
+  const { noIndex, noFollow } = readSeoControls(page?.layout.sitecore.route?.fields as SeoRouteFields | undefined);
   return {
     title: (page?.layout.sitecore.route?.fields as RouteFields)?.Title?.value?.toString() || 'Page',
+    // <meta name="robots"> only when an editor ticked noindex or nofollow on the page (the default is index, follow)
+    ...((noIndex || noFollow) && { robots: { index: !noIndex, follow: !noFollow } }),
   };
 };

@@ -36,6 +36,7 @@ import * as HeadingCta from 'src/components/pagecontent/HeadingCta';
 import * as FourColumnCta from 'src/components/pagecontent/FourColumnCta';
 import * as FiveColumnCta from 'src/components/pagecontent/FiveColumnCta';
 import * as Features from 'src/components/pagecontent/Features';
+import * as Faq from 'src/components/pagecontent/Faq';
 import * as DocumentsList from 'src/components/pagecontent/DocumentsList';
 import * as DoctorSearch from 'src/components/pagecontent/DoctorSearch';
 import * as CtaBanner from 'src/components/pagecontent/CtaBanner';
@@ -99,6 +100,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['FourColumnCta', { ...FourColumnCta, componentType: 'client' }],
   ['FiveColumnCta', { ...FiveColumnCta, componentType: 'client' }],
   ['Features', { ...Features, componentType: 'client' }],
+  ['Faq', { ...Faq, componentType: 'client' }],
   ['DocumentsList', { ...DocumentsList, componentType: 'client' }],
   ['DoctorSearch', { ...DoctorSearch, componentType: 'client' }],
   ['CtaBanner', { ...CtaBanner, componentType: 'client' }],

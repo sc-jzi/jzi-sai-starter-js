@@ -21,17 +21,36 @@ type AlternateLinksProps = {
   /** the language of the content actually shown (the default language on a fallback page) */
   contentLocale: string;
   path?: string[];
+  /**
+   * the page's CanonicalUrl field (src/lib/seo-controls.ts): an absolute URL or a site path. When set it replaces the
+   * computed canonical, and the hreflang set is left out (a page that declares another URL canonical is not a
+   * language alternate itself).
+   */
+  canonicalOverride?: string;
 };
 
 const sameLocale = (a?: string, b?: string) => !!a && !!b && a.toLowerCase() === b.toLowerCase();
 
-const AlternateLinks = async ({ site, locale, contentLocale, path }: AlternateLinksProps): Promise<JSX.Element> => {
+const AlternateLinks = async ({
+  site,
+  locale,
+  contentLocale,
+  path,
+  canonicalOverride,
+}: AlternateLinksProps): Promise<JSX.Element> => {
   const h = await headers();
   const host = h.get('x-forwarded-host') ?? h.get('host') ?? 'localhost';
   const proto = h.get('x-forwarded-proto') ?? (host.startsWith('localhost') ? 'http' : 'https');
   const pagePath = path?.length ? `/${path.join('/')}` : '';
   const urlFor = (lang: string) =>
     `${proto}://${host}${`${sameLocale(lang, routing.defaultLocale) ? '' : `/${lang}`}${pagePath}` || '/'}`;
+
+  if (canonicalOverride) {
+    const href = /^https?:\/\//i.test(canonicalOverride)
+      ? canonicalOverride
+      : `${proto}://${host}${canonicalOverride.startsWith('/') ? '' : '/'}${canonicalOverride}`;
+    return <link rel="canonical" href={href} />;
+  }
 
   // the languages this page has a version in (the shown language always does)
   const languages = (
