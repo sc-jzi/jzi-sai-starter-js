@@ -9,7 +9,7 @@ import {
 
 import { jsx, jsxs } from 'react/jsx-runtime';
 import componentMap from '.sitecore/component-map';
-import { AppPlaceholder, Text, RichText, Link, NextImage } from '@sitecore-content-sdk/nextjs';
+import { AppPlaceholder, Link, Text, RichText, NextImage } from '@sitecore-content-sdk/nextjs';
 
 const importMap = [
   {
@@ -29,9 +29,9 @@ const importMap = [
     module: '@sitecore-content-sdk/nextjs',
     exports: [
       { name: 'AppPlaceholder', value: AppPlaceholder },
+      { name: 'Link', value: Link },
       { name: 'Text', value: Text },
       { name: 'RichText', value: RichText },
-      { name: 'Link', value: Link },
       { name: 'NextImage', value: NextImage },
     ]
   }

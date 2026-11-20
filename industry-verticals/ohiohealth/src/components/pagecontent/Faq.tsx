@@ -78,25 +78,32 @@ const FaqView = ({ variantClass, ...props }: FaqProps & { variantClass: string }
   const half = Math.ceil(items.length / 2);
   const columns = [items.slice(0, half), items.slice(half)];
 
+  // Two bands, as on the live page: the heading block, then the questions block.
   return (
-    <section className={`component faq ${variantClass} ${styles}`} id={id ? id : undefined}>
-      <div className="faq__inner">
-        {(ds.title?.jsonValue?.value || isEditing) && ds.title?.jsonValue && (
-          <h2 className="faq__title">
-            <Text field={ds.title.jsonValue} />
-          </h2>
-        )}
-        <div className="faq__columns">
-          {columns.map((col, i) => (
-            <div className="faq__column" key={i}>
-              {col.map((item) => (
-                <Question key={item.id} item={item} isEditing={isEditing} />
-              ))}
-            </div>
-          ))}
+    <>
+      {(ds.title?.jsonValue?.value || isEditing) && ds.title?.jsonValue && (
+        <section className={`component faq faq--heading ${variantClass} ${styles}`}>
+          <div className="faq__inner">
+            <h2 className="faq__title">
+              <Text field={ds.title.jsonValue} />
+            </h2>
+          </div>
+        </section>
+      )}
+      <section className={`component faq ${variantClass} ${styles}`} id={id ? id : undefined}>
+        <div className="faq__inner">
+          <div className="faq__columns">
+            {columns.map((col, i) => (
+              <div className="faq__column" key={i}>
+                {col.map((item) => (
+                  <Question key={item.id} item={item} isEditing={isEditing} />
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 

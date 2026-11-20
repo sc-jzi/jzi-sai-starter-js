@@ -1,5 +1,5 @@
 import { JSX } from 'react';
-import { Page } from '@sitecore-content-sdk/nextjs';
+import { LinkField, Page } from '@sitecore-content-sdk/nextjs';
 
 /**
  * Open Graph tags for every page, from the page item's own fields (baseOgTitle, baseOgDescription, baseOgImage,
@@ -16,6 +16,7 @@ type OgRouteFields = {
   baseOgDescription?: TextField;
   baseOgType?: TextField;
   baseOgImage?: ImageField;
+  baseOgUrl?: LinkField;
 };
 
 const text = (field?: TextField): string => `${field?.value ?? ''}`.trim();
@@ -29,6 +30,7 @@ const OpenGraphMeta = ({ page }: { page: Page }): JSX.Element | null => {
     ['og:description', text(fields.baseOgDescription) || text(fields.baseMetadataDescription)],
     ['og:image', `${fields.baseOgImage?.value?.src ?? ''}`.trim()],
     ['og:type', text(fields.baseOgType) || 'website'],
+    ['og:url', fields.baseOgUrl?.value.text || 'website'],
   ];
 
   return (

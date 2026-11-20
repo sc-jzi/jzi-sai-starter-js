@@ -29,6 +29,8 @@ interface Fields {
   Text4: Field<string>;
   Image4: ImageField;
   Link4: LinkField;
+  // section heading: only on the demo's derived datasource template (FourColumnCtaOhioHealth, R22 extend)
+  Title?: Field<string>;
 }
 
 export type FourColumnCtaProps = {
@@ -117,5 +119,60 @@ export const Default = (props: FourColumnCtaProps): JSX.Element => {
         </div>
       </div>
     </div>
+  );
+};
+
+// OhioHealth: centred heading over four tall photo cards; each card is one link with its title on a dark gradient at the bottom.
+export const OhioHealth = (props: FourColumnCtaProps): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const f = props.fields;
+  const cards = [
+    { image: f?.Image1, title: f?.Title1, link: f?.Link1 },
+    { image: f?.Image2, title: f?.Title2, link: f?.Link2 },
+    { image: f?.Image3, title: f?.Title3, link: f?.Link3 },
+    { image: f?.Image4, title: f?.Title4, link: f?.Link4 },
+  ];
+
+  return (
+    <section className={`component oh-specialty ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="oh-specialty__inner">
+        {f?.Title && (f.Title.value || isEditing) && (
+          <h2 className="oh-specialty__title">
+            <Text field={f.Title} />
+          </h2>
+        )}
+        <div className="oh-specialty__row">
+          {cards.map((c, i) => {
+            const body = (
+              <>
+                {c.image && (c.image.value?.src || isEditing) && (
+                  <NextImage field={c.image} fill sizes="(max-width: 991px) 50vw, 25vw" className="oh-specialty__img" />
+                )}
+                <span className="oh-specialty__shade" aria-hidden="true" />
+                {c.title && (
+                  <span className="oh-specialty__label">
+                    <Text field={c.title} />
+                  </span>
+                )}
+              </>
+            );
+            return (
+              <div className="oh-specialty__card" key={i}>
+                {c.link?.value?.href && !isEditing ? (
+                  <Link field={c.link} className="oh-specialty__link" showLinkTextWithChildrenPresent={false}>
+                    {body}
+                  </Link>
+                ) : (
+                  <div className="oh-specialty__link">{body}</div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
   );
 };

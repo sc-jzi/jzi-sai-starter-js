@@ -1,5 +1,5 @@
 import { JSX } from 'react';
-import { Field, Text } from '@sitecore-content-sdk/nextjs';
+import { Field, LinkField, Link, Text } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 
 interface JsonValue<T> {
@@ -9,6 +9,7 @@ interface JsonValue<T> {
 interface ListItem {
   id: string;
   text?: JsonValue<Field<string>>;
+  link?: JsonValue<LinkField>;
 }
 
 export type ColumnListProps = ComponentProps & {
@@ -17,13 +18,15 @@ export type ColumnListProps = ComponentProps & {
       datasource?: {
         id?: string;
         title?: JsonValue<Field<string>>;
+        link?: JsonValue<LinkField>;
         children?: { results?: ListItem[] };
       };
     };
   };
 };
 
-const render = (props: ColumnListProps, variantClass: string): JSX.Element | null => {
+// links: every item is a link (its Link field) and the datasource's Link shows under the columns ('see all').
+const render = (props: ColumnListProps, variantClass: string, links = false): JSX.Element | null => {
   const ds = props.fields?.data?.datasource;
   const id = props.params?.RenderingIdentifier;
   const styles = props.params?.styles || '';
@@ -47,13 +50,22 @@ const render = (props: ColumnListProps, variantClass: string): JSX.Element | nul
         )}
         <ul className="column-list__items">
           {items.map((i) =>
-            i.text?.jsonValue ? (
+            links && i.link?.jsonValue && (i.link.jsonValue.value?.href || isEditing) ? (
+              <li key={i.id}>
+                <Link field={i.link.jsonValue} />
+              </li>
+            ) : i.text?.jsonValue ? (
               <li key={i.id}>
                 <Text field={i.text.jsonValue} />
               </li>
             ) : null
           )}
         </ul>
+        {links && ds.link?.jsonValue && (ds.link.jsonValue.value?.href || isEditing) && (
+          <div className="column-list__more">
+            <Link field={ds.link.jsonValue} className="column-list__cta column-list__more-link" />
+          </div>
+        )}
       </div>
     </section>
   );
@@ -63,3 +75,6 @@ export const Default = (props: ColumnListProps): JSX.Element | null => render(pr
 
 export const OhioHealth = (props: ColumnListProps): JSX.Element | null =>
   render(props, 'column-list--ohiohealth');
+
+export const OhioHealthLinks = (props: ColumnListProps): JSX.Element | null =>
+  render(props, 'column-list--ohiohealth column-list--links', true);

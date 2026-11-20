@@ -25,6 +25,9 @@ interface Fields {
   SubText3: Field<string>;
   Image3: ImageField;
   Link3: LinkField;
+  // section heading and intro: only on the demo's derived datasource template (ThreeColumnCtaOhioHealth, R22 extend)
+  Heading?: Field<string>;
+  Intro?: Field<string>;
 }
 
 export type ThreeColumnCtaProps = {
@@ -315,3 +318,80 @@ const OhThree = (props: ThreeColumnCtaProps, round: boolean): JSX.Element => {
 };
 export const OhioHealth = (props: ThreeColumnCtaProps): JSX.Element => OhThree(props, false);
 export const OhioHealthCircleImages = (props: ThreeColumnCtaProps): JSX.Element => OhThree(props, true);
+
+// OhioHealth "Get care now" and "Expertise and innovation": a section heading (and intro) over three columns.
+const OhColumns = (props: ThreeColumnCtaProps, kind: 'care' | 'expertise'): JSX.Element => {
+  const id = props.params.RenderingIdentifier;
+  const { page } = useSitecore();
+  const isEditing = page.mode.isEditing;
+  const sxaStyles = `${props.params?.styles || ''}`;
+  const f = props.fields;
+  const cols = [
+    { title: f?.Text1, text: f?.SubText1, image: f?.Image1, link: f?.Link1 },
+    { title: f?.Text2, text: f?.SubText2, image: f?.Image2, link: f?.Link2 },
+    { title: f?.Text3, text: f?.SubText3, image: f?.Image3, link: f?.Link3 },
+  ];
+  const show = (fld?: Field<string>) => !!fld && (!!fld.value || isEditing);
+
+  return (
+    <section className={`component oh-cols oh-cols--${kind} ${sxaStyles}`} id={id ? id : undefined}>
+      <div className="oh-cols__inner">
+        {show(f?.Heading) && (
+          <h2 className="oh-cols__heading">
+            <Text field={f.Heading} />
+          </h2>
+        )}
+        {show(f?.Intro) && (
+          <p className="oh-cols__intro">
+            <Text field={f.Intro} />
+          </p>
+        )}
+        <div className="oh-cols__row">
+          {cols.map((c, i) => (
+            <div className="oh-cols__col" key={i}>
+              {c.image && (c.image.value?.src || isEditing) && (
+                <div className="oh-cols__media">
+                  {kind === 'expertise' && c.link?.value?.href && !isEditing ? (
+                    <Link field={c.link} showLinkTextWithChildrenPresent={false} aria-hidden="true" tabIndex={-1}>
+                      <NextImage field={c.image} width={375} height={140} />
+                    </Link>
+                  ) : (
+                    <NextImage field={c.image} width={kind === 'care' ? 90 : 375} height={kind === 'care' ? 80 : 140} />
+                  )}
+                </div>
+              )}
+              {show(c.title) && (
+                <h3 className="oh-cols__title">
+                  {kind === 'expertise' && c.link?.value?.href && !isEditing ? (
+                    <Link field={c.link} showLinkTextWithChildrenPresent={false}>
+                      <Text field={c.title} />
+                    </Link>
+                  ) : (
+                    <Text field={c.title} />
+                  )}
+                </h3>
+              )}
+              {show(c.text) && (
+                <p className="oh-cols__text">
+                  <Text field={c.text} />
+                </p>
+              )}
+              {c.link && (c.link.value?.href || isEditing) && (
+                <Link field={c.link} className={kind === 'care' ? 'oh-cols__cta oh-cols__more' : 'oh-cols__cta oh-cols__button'} showLinkTextWithChildrenPresent>
+                  {kind === 'care' && (
+                    <svg viewBox="0 0 8 14" width="8" height="14" aria-hidden="true">
+                      <path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                    </svg>
+                  )}
+                </Link>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export const OhioHealthCareNow = (props: ThreeColumnCtaProps): JSX.Element => OhColumns(props, 'care');
+export const OhioHealthExpertise = (props: ThreeColumnCtaProps): JSX.Element => OhColumns(props, 'expertise');
