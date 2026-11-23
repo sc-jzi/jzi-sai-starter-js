@@ -354,6 +354,12 @@ export const ProfileWidget = () => {
 
   useEffect(() => {
     setMounted(true);
+    // Bootstrap skips the personalize SDK under `next dev`; show the ID-only fallback instead of calling it and logging an error.
+    if (process.env.NODE_ENV === 'development') {
+      setUseFallback(true);
+      setLoading(false);
+      return;
+    }
     const timer = setTimeout(() => {
       void loadProfile();
     }, 600);

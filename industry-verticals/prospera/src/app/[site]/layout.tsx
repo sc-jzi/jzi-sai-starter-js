@@ -16,7 +16,8 @@ export default async function SiteLayout({
     <>
       <Bootstrap siteName={site} isPreviewMode={isEnabled} />
       {children}
-      <ProfileWidget />
+      {/* Not in Pages edit / preview: Bootstrap does not initialise the personalize SDK there. */}
+      {!isEnabled && <ProfileWidget />}
     </>
   );
 }
