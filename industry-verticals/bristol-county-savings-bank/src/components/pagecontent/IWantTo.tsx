@@ -118,6 +118,10 @@ const IWantToBody = ({ props, className }: { props: IWantToProps; className: str
   }
 
   const active = options.find((o) => o.id === shown);
+  // In Pages: edit one option at a time, the one picked in the dropdown (no Go needed); nothing picked → the personal option.
+  const personal =
+    options.find((o) => /personal/i.test(String(o.label?.jsonValue?.value ?? o.name ?? ''))) ?? options[0];
+  const editOption = options.find((o) => o.id === choice) ?? personal;
 
   return (
     <div className={`component i-want-to ${className}`} id={id}>
@@ -157,14 +161,14 @@ const IWantToBody = ({ props, className }: { props: IWantToProps; className: str
         )}
       </form>
       {editing ? (
-        <div className="i-want-to__panels container">
-          {options.map((o) => (
-            <div key={o.id} className="i-want-to__edit-option">
-              <Text tag="div" className="i-want-to__edit-label" field={o.label?.jsonValue} />
-              <Panel option={o} editing />
+        editOption && (
+          <div className="i-want-to__panels container">
+            <div key={editOption.id} className="i-want-to__edit-option">
+              <Text tag="div" className="i-want-to__edit-label" field={editOption.label?.jsonValue} />
+              <Panel option={editOption} editing />
             </div>
-          ))}
-        </div>
+          </div>
+        )
       ) : (
         active && (
           <div className="i-want-to__panels container">
