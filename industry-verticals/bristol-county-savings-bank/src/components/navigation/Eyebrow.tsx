@@ -172,11 +172,29 @@ export const BristolCountySavingsBank = (props: EyebrowProps): JSX.Element => {
         className={`component eyebrow variant-bristol-county-savings-bank relative z-[60] ${props.params.styles?.trimEnd() ?? ''}`}
         id={id || undefined}
       >
+        {/* FDIC strip above the green bar: hardcoded chrome, as on the live header (the FDIC mark is their SVG). */}
+        <div className="eyebrow-fdic">
+          <div className={`container container-${props.params?.ContainerWidth?.toLowerCase()}-fluid`}>
+            <svg
+              className="eyebrow-fdic__logo"
+              width="37.36"
+              height="15.74"
+              viewBox="0 0 37.36 15.74"
+              role="img"
+              aria-label="FDIC"
+            >
+              <g>
+                <path fillRule="evenodd" clipRule="evenodd" d="M8.79102 0.673615H13.9183C18.5271 0.673615 21.4825 3.66654 21.4825 8.34109C21.4825 13.5134 18.216 16.0328 13.0138 16.0328H8.79102V0.673615ZM13.5956 4.19475C13.4113 4.19475 13.1751 4.2251 12.8525 4.2251V12.5057C15.4564 12.5057 17.4613 11.413 17.4613 8.25614C17.4613 5.54248 15.8194 4.20082 13.5841 4.20082L13.5956 4.19475Z" fill="currentColor" />
+                <path fillRule="evenodd" clipRule="evenodd" d="M37.3603 5.14182V1.0865C36.3305 0.61301 35.2172 0.375059 34.0938 0.388356C32.0639 0.322493 30.0956 1.12816 28.6402 2.6207C27.1847 4.11323 26.3669 6.16465 26.3741 8.30473C26.3741 12.8093 29.7673 16.1118 34.0131 16.1118C35.2019 16.1973 36.3828 15.8524 37.3603 15.1344V11.073C36.4505 11.779 35.3558 12.1713 34.2263 12.1961C33.1948 12.2257 32.198 11.8027 31.4739 11.0281C30.7497 10.2535 30.3632 9.19685 30.4068 8.11047C30.3706 7.02121 30.7578 5.96358 31.4788 5.18208C32.1997 4.40058 33.192 3.96287 34.2263 3.97015C35.3567 4.01174 36.4489 4.41161 37.3603 5.11754V5.14182Z" fill="currentColor" />
+                <path fillRule="evenodd" clipRule="evenodd" d="M0 0.673615V16.0328H4.00964L4.03845 10.1563H7.93863V6.60483H4.06149L4.03845 4.22506H8.23244V0.673615H0Z" fill="currentColor" />
+                <path fillRule="evenodd" clipRule="evenodd" d="M21.9092 16.0328H25.9188V0.673615H21.9092V16.0328Z" fill="currentColor" />
+              </g>
+            </svg>
+            <span className="eyebrow-fdic__text">FDIC-Insured - Backed by the full faith and credit of the U.S. Government</span>
+          </div>
+        </div>
         <div className={`container container-${props.params?.ContainerWidth?.toLowerCase()}-fluid`}>
           <div className="eyebrow-bar">
-            <div className="eyebrow-slot eyebrow-slot-left">
-              <AppPlaceholder name="eyebrow-left" rendering={props.rendering} page={page} componentMap={props.componentMap} />
-            </div>
             <ul className="eyebrow-links">
               {eyebrowConfig.links.map((link) => (
                 <li key={link.label}>
@@ -189,6 +207,14 @@ export const BristolCountySavingsBank = (props: EyebrowProps): JSX.Element => {
                 {eyebrowConfig.phone.label}
               </a>
             )}
+            {eyebrowConfig.cta && (
+              <a className="eyebrow-cta" href={eyebrowConfig.cta.href}>
+                {eyebrowConfig.cta.label}
+              </a>
+            )}
+            <div className="eyebrow-slot eyebrow-slot-right">
+              <AppPlaceholder name="eyebrow-right" rendering={props.rendering} page={page} componentMap={props.componentMap} />
+            </div>
             {eyebrowConfig.search && (
               <button
                 type="button"
@@ -204,14 +230,6 @@ export const BristolCountySavingsBank = (props: EyebrowProps): JSX.Element => {
                 </svg>
               </button>
             )}
-            {eyebrowConfig.cta && (
-              <a className="eyebrow-cta" href={eyebrowConfig.cta.href}>
-                {eyebrowConfig.cta.label}
-              </a>
-            )}
-            <div className="eyebrow-slot eyebrow-slot-right">
-              <AppPlaceholder name="eyebrow-right" rendering={props.rendering} page={page} componentMap={props.componentMap} />
-            </div>
           </div>
         </div>
       </div>
@@ -222,13 +240,13 @@ export const BristolCountySavingsBank = (props: EyebrowProps): JSX.Element => {
             type="button"
             aria-label="Close search"
             onClick={() => setIsSearchOpen(false)}
-            className="fixed inset-x-0 bottom-0 top-[294px] z-[40] cursor-default bg-white/20 backdrop-blur-md"
+            className="fixed inset-x-0 bottom-0 top-[207px] z-[40] cursor-default bg-white/20 backdrop-blur-md"
           />
           <div
             id="site-search-panel"
             ref={searchPanelRef}
             role="search"
-            className="fixed inset-x-0 top-[294px] z-[50] bg-[#f5f5f5] px-6 py-10 shadow-sm"
+            className="fixed inset-x-0 top-[207px] z-[50] bg-[#f5f5f5] px-6 py-10 shadow-sm"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="mx-auto max-w-[1200px]">

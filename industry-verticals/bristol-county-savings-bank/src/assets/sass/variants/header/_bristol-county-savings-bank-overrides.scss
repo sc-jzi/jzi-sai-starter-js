@@ -1,35 +1,62 @@
 // Corrections on top of the generated header kit (header-kit.mjs output is not edited): the bank's gradient utility bar, the FDIC strip
-// above it (hardcoded chrome, not editable in the CMS) and the round green logo badge that overlaps both bars. Measured on the live header.
+// above it (hardcoded chrome in the Eyebrow variant, not editable in the CMS) and the round green logo badge that overlaps the bars.
+// Numbers measured on the live header at 1280px: FDIC strip 62px (10px green top border), green bar 60px, nav row 85px; the logo badge
+// is a 200px circle whose top 55px hides behind the FDIC strip, logo image ~118px wide, 10px below the green bar's top edge.
+$bcsb-fdic-h: 62px;
+$bcsb-bar-h: 60px;
+$bcsb-row-h: 85px;
+$bcsb-badge: 200px;
+$bcsb-badge-hidden: 55px;
+
 .component.eyebrow.variant-bristol-county-savings-bank {
   position: relative;
-  margin-top: 62px;
+  margin-top: $bcsb-fdic-h;
   background-color: #006f51;
   background-image: linear-gradient(90deg, #006f51 225px, #334957 100%);
 
-  &::before {
-    content: 'FDIC   FDIC-Insured - Backed by the full faith and credit of the U.S. Government';
+  .eyebrow-fdic {
     position: absolute;
     left: 0;
     right: 0;
-    top: -62px;
-    height: 62px;
+    top: -$bcsb-fdic-h;
+    height: $bcsb-fdic-h;
     display: flex;
     align-items: center;
-    padding-left: max(15px, calc((100% - 1200px) / 2 + 15px));
     background: #fff;
     border-top: 10px solid #006f51;
+
+    > .container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+
+  .eyebrow-fdic__logo {
+    flex: none;
+    width: 37px;
+    height: 16px;
+    color: #003256;
+  }
+
+  .eyebrow-fdic__text {
     color: #1f2c39;
     font-size: 13px;
     font-style: italic;
-    white-space: pre;
   }
 
   .eyebrow-bar {
-    min-height: 60px;
+    min-height: $bcsb-bar-h;
     padding-left: 240px;
+    gap: 16px;
+  }
+
+  .eyebrow-links {
+    margin-right: 20px;
   }
 
   .eyebrow-search {
+    margin-left: 4px;
     color: #fff;
   }
 
@@ -38,37 +65,56 @@
     color: #fff;
     border: 1px solid #fff;
   }
+
+  // The generated kit makes everything in the right slot inherit white; the Login button is white with green text.
+  .eyebrow-slot-right .login-panel__toggle {
+    color: #006f51;
+  }
 }
 
+// Above the eyebrow (z-index 60) so the logo badge can rise over the green bar; the login drawer is portalled to <body> and sits above both.
 .component.header.variant-bristol-county-savings-bank {
+  position: relative;
+  z-index: 61;
+  padding-top: 0;
+  padding-bottom: 0;
   box-shadow: 0 8px 16px rgb(0 0 0 / 15%);
 
   .row {
-    min-height: 84px;
+    min-height: $bcsb-row-h;
   }
 
   .col-auto {
     position: relative;
     width: 240px;
-    align-self: stretch;
+    align-self: stretch !important; // the row's align-items-center otherwise shrinks it to the image height
+    min-height: $bcsb-row-h;
+  }
+
+  // without this the nav column's min-content width wraps it onto a second line under the logo column
+  .col {
+    min-width: 0;
   }
 
   .col-auto > a {
     position: absolute;
     left: 15px;
     bottom: 0;
-    width: 200px;
-    height: 145px;
+    width: $bcsb-badge;
+    height: $bcsb-badge;
     z-index: 5;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: $bcsb-badge-hidden + 10px;
     background: #006f51;
-    border-radius: 0 0 100px 100px;
+    border-radius: 50%;
+    clip-path: inset($bcsb-badge-hidden 0 0 0);
   }
 
   .col-auto img {
-    width: 120px !important;
+    width: 118px !important;
     height: auto !important;
   }
 
@@ -76,10 +122,3 @@
     font-weight: 600 !important;
   }
 }
-
-// ---- Looks pass 2 (measured numbers) ----
-.component.eyebrow.variant-bristol-county-savings-bank .eyebrow-bar { min-height: 88px; }
-.component.header.variant-bristol-county-savings-bank .row { min-height: 170px; }
-.component.header.variant-bristol-county-savings-bank .col-auto { width: 260px; }
-.component.header.variant-bristol-county-savings-bank .col-auto > a { width: 240px; height: 200px; border-radius: 0 0 120px 120px; }
-.component.header.variant-bristol-county-savings-bank .col-auto img { width: 200px !important; }
