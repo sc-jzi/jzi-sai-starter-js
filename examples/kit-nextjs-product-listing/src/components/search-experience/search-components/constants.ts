@@ -2,6 +2,36 @@ export const DEBOUNCE_TIME = 400;
 
 export const DEFAULT_PAGE_SIZE = 6;
 
+export const MORE_LIKE_THIS_PAGE_SIZE = 3;
+
+export const getEffectivePageSize = (
+  moreLikeThisEnabled: boolean,
+  configuredPageSize: number
+): number => (moreLikeThisEnabled ? MORE_LIKE_THIS_PAGE_SIZE : configuredPageSize);
+
+export const limitSearchResults = <T>(results: T[], moreLikeThisEnabled: boolean): T[] =>
+  moreLikeThisEnabled ? results.slice(0, MORE_LIKE_THIS_PAGE_SIZE) : results;
+
+/**
+ * `useSuggest` returns `QuerySuggestionItem` objects (`text`, `queryPlusText`).
+ * SearchDropdown expects plain strings, so normalize here.
+ */
+export const toSuggestionTerms = (
+  suggestions: Array<{ text?: string; queryPlusText?: string } | string> | undefined | null
+): string[] => {
+  if (!suggestions?.length) return [];
+
+  return suggestions
+    .map((item) => {
+      if (typeof item === 'string') {
+        return item.trim();
+      }
+
+      return (item.queryPlusText || item.text || '').trim();
+    })
+    .filter((term) => term.length > 0);
+};
+
 export const gridColsClass = (value = 3): string => {
   const cols = Number(value) || 3;
   const map: Record<number, string> = {
@@ -28,4 +58,7 @@ export const DICTIONARY_KEYS = {
   PREVIOUS_PAGE: 'SearchExperience_PreviousPage',
   NEXT_PAGE: 'SearchExperience_NextPage',
   READ_MORE: 'SearchExperience_ReadMore',
+  AUTOCOMPLETE: 'SearchExperience_Autocomplete',
+  RESULT_PREVIEW: 'SearchExperience_ResultPreview',
+  MATCHES: 'SearchExperience_Matches',
 };

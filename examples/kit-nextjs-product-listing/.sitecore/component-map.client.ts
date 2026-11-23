@@ -44,11 +44,14 @@ import * as UseParams from 'src/components/search-experience/search-components/u
 import * as UseEvent from 'src/components/search-experience/search-components/useEvent';
 import * as UseDebounce from 'src/components/search-experience/search-components/useDebounce';
 import * as SearchSkeletonItem from 'src/components/search-experience/search-components/SearchSkeletonItem';
+import * as SearchPreviewItem from 'src/components/search-experience/search-components/SearchPreviewItem';
 import * as SearchPagination from 'src/components/search-experience/search-components/SearchPagination';
 import * as SearchItemCommon from 'src/components/search-experience/search-components/SearchItemCommon';
 import * as SearchInput from 'src/components/search-experience/search-components/SearchInput';
 import * as SearchError from 'src/components/search-experience/search-components/SearchError';
 import * as SearchEmptyResults from 'src/components/search-experience/search-components/SearchEmptyResults';
+import * as SearchDropdown from 'src/components/search-experience/search-components/SearchDropdown';
+import * as Index from 'src/components/search-experience/search-components/SearchItem/index';
 import * as SearchItemTitle from 'src/components/search-experience/search-components/SearchItem/SearchItemTitle';
 import * as SearchItemTags from 'src/components/search-experience/search-components/SearchItem/SearchItemTags';
 import * as SearchItemSummary from 'src/components/search-experience/search-components/SearchItem/SearchItemSummary';
@@ -56,7 +59,6 @@ import * as SearchItemSubTitle from 'src/components/search-experience/search-com
 import * as SearchItemLink from 'src/components/search-experience/search-components/SearchItem/SearchItemLink';
 import * as SearchItemImage from 'src/components/search-experience/search-components/SearchItem/SearchItemImage';
 import * as SearchItemCategory from 'src/components/search-experience/search-components/SearchItem/SearchItemCategory';
-import * as Index from 'src/components/search-experience/search-components/SearchItem/index';
 import * as PromoAnimatedImageRightdev from 'src/components/promo-animated/PromoAnimatedImageRight.dev';
 import * as PromoAnimatedDefaultdev from 'src/components/promo-animated/PromoAnimatedDefault.dev';
 import * as PromoAnimated from 'src/components/promo-animated/PromoAnimated';
@@ -127,9 +129,9 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['BYOCWrapper', BYOCClientWrapper],
   ['FEaaSWrapper', FEaaSClientWrapper],
   ['Form', Form],
-  ['ZipcodeModal', { ...ZipcodeModaldev }],
+  ['zipcode-modal', { ...ZipcodeModaldev }],
   ['VerticalImageAccordion', { ...VerticalImageAccordion }],
-  ['ThemeProvider', { ...ThemeProviderdev }],
+  ['theme-provider', { ...ThemeProviderdev }],
   ['TextBannerTextTop', { ...TextBannerTextTopdev }],
   ['TextBannerDefault', { ...TextBannerDefaultdev }],
   ['TextBannerBlueTitleRight', { ...TextBannerBlueTitleRightdev }],
@@ -158,17 +160,20 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['MiniCart', { ...MiniCart }],
   ['SecondaryNavigation', { ...SecondaryNavigation }],
   ['SearchExperience', { ...SearchExperienceLoadMore, ...SearchExperience }],
-  ['UseSearchField', { ...UseSearchField }],
-  ['UseRouter', { ...UseRouter }],
-  ['UseParams', { ...UseParams }],
-  ['UseEvent', { ...UseEvent }],
-  ['UseDebounce', { ...UseDebounce }],
+  ['useSearchField', { ...UseSearchField }],
+  ['useRouter', { ...UseRouter }],
+  ['useParams', { ...UseParams }],
+  ['useEvent', { ...UseEvent }],
+  ['useDebounce', { ...UseDebounce }],
   ['SearchSkeletonItem', { ...SearchSkeletonItem }],
+  ['SearchPreviewItem', { ...SearchPreviewItem }],
   ['SearchPagination', { ...SearchPagination }],
   ['SearchItemCommon', { ...SearchItemCommon }],
   ['SearchInput', { ...SearchInput }],
   ['SearchError', { ...SearchError }],
   ['SearchEmptyResults', { ...SearchEmptyResults }],
+  ['SearchDropdown', { ...SearchDropdown }],
+  ['index', { ...Index }],
   ['SearchItemTitle', { ...SearchItemTitle }],
   ['SearchItemTags', { ...SearchItemTags }],
   ['SearchItemSummary', { ...SearchItemSummary }],
@@ -176,7 +181,6 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['SearchItemLink', { ...SearchItemLink }],
   ['SearchItemImage', { ...SearchItemImage }],
   ['SearchItemCategory', { ...SearchItemCategory }],
-  ['Index', { ...Index }],
   ['PromoAnimatedImageRight', { ...PromoAnimatedImageRightdev }],
   ['PromoAnimatedDefault', { ...PromoAnimatedDefaultdev }],
   ['PromoAnimated', { ...PromoAnimated }],
@@ -184,7 +188,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ProductListingSlider', { ...ProductListingSliderdev }],
   ['ProductListingDefault', { ...ProductListingDefaultdev }],
   ['ProductListing', { ...ProductListing }],
-  ['Portal', { ...Portaldev }],
+  ['portal', { ...Portaldev }],
   ['PageHeaderFiftyFifty', { ...PageHeaderFiftyFiftydev }],
   ['PageHeaderDefault', { ...PageHeaderDefaultdev }],
   ['PageHeaderCentered', { ...PageHeaderCentereddev }],
@@ -192,9 +196,9 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['PageHeaderBlueBackground', { ...PageHeaderBlueBackgrounddev }],
   ['PageHeader', { ...PageHeader }],
   ['MultiPromoTabs', { ...MultiPromoTabs }],
-  ['ModeToggle', { ...ModeToggledev }],
+  ['mode-toggle', { ...ModeToggledev }],
   ['MediaSection', { ...MediaSectiondev }],
-  ['Meteors', { ...Meteors }],
+  ['meteors', { ...Meteors }],
   ['LogoTabs', { ...LogoTabs }],
   ['LocationSearchTitleZipCentered', { ...LocationSearchTitleZipCentereddev }],
   ['LocationSearchMapTopAllCentered', { ...LocationSearchMapTopAllCentereddev }],
@@ -229,14 +233,14 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ZipcodeSearchForm', { ...ZipcodeSearchFormdev }],
   ['SubmitInfoForm', { ...SubmitInfoFormdev }],
   ['EmailSignupForm', { ...EmailSignupFormdev }],
-  ['FloatingDock', { ...FloatingDockdev }],
+  ['floating-dock', { ...FloatingDockdev }],
   ['ProductsSection', { ...ProductsSection }],
   ['Header', { ...Header }],
   ['FeaturesSection', { ...FeaturesSection }],
   ['FAQ', { ...FAQ }],
   ['ContactSection', { ...ContactSection }],
   ['Carousel', { ...Carousel }],
-  ['CardSpotlight', { ...CardSpotlightdev }],
+  ['card-spotlight', { ...CardSpotlightdev }],
   ['ArticleHeader', { ...ArticleHeader }],
   ['AnimatedSection', { ...AnimatedSectiondev }],
   ['AlertBanner', { ...AlertBannerdev }],

@@ -34,6 +34,14 @@ export interface SearchFieldsMapping {
 export interface SearchField {
   searchIndex: string;
   fieldsMapping: SearchFieldsMapping;
+  previewEnabled?: boolean;
+  autocompleteEnabled?: boolean;
+  moreLikeThisEnabled?: boolean;
+  /**
+   * camelCase keys (tags, images, description, title, type, link) mapping to
+   * whether that field slot should be shown in the result preview panel.
+   */
+  fieldPreviewEnabled?: Record<string, boolean>;
 }
 
 export interface SearchExperienceProps {

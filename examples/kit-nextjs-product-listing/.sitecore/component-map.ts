@@ -68,14 +68,17 @@ import * as UseRouter from 'src/components/search-experience/search-components/u
 import * as UseParams from 'src/components/search-experience/search-components/useParams';
 import * as UseEvent from 'src/components/search-experience/search-components/useEvent';
 import * as UseDebounce from 'src/components/search-experience/search-components/useDebounce';
+import * as Models from 'src/components/search-experience/search-components/models';
+import * as Constants from 'src/components/search-experience/search-components/constants';
 import * as SearchSkeletonItem from 'src/components/search-experience/search-components/SearchSkeletonItem';
+import * as SearchPreviewItem from 'src/components/search-experience/search-components/SearchPreviewItem';
 import * as SearchPagination from 'src/components/search-experience/search-components/SearchPagination';
 import * as SearchItemCommon from 'src/components/search-experience/search-components/SearchItemCommon';
 import * as SearchInput from 'src/components/search-experience/search-components/SearchInput';
 import * as SearchError from 'src/components/search-experience/search-components/SearchError';
 import * as SearchEmptyResults from 'src/components/search-experience/search-components/SearchEmptyResults';
-import * as Models from 'src/components/search-experience/search-components/models';
-import * as Constants from 'src/components/search-experience/search-components/constants';
+import * as SearchDropdown from 'src/components/search-experience/search-components/SearchDropdown';
+import * as Index from 'src/components/search-experience/search-components/SearchItem/index';
 import * as SearchItemTitle from 'src/components/search-experience/search-components/SearchItem/SearchItemTitle';
 import * as SearchItemTags from 'src/components/search-experience/search-components/SearchItem/SearchItemTags';
 import * as SearchItemSummary from 'src/components/search-experience/search-components/SearchItem/SearchItemSummary';
@@ -83,7 +86,6 @@ import * as SearchItemSubTitle from 'src/components/search-experience/search-com
 import * as SearchItemLink from 'src/components/search-experience/search-components/SearchItem/SearchItemLink';
 import * as SearchItemImage from 'src/components/search-experience/search-components/SearchItem/SearchItemImage';
 import * as SearchItemCategory from 'src/components/search-experience/search-components/SearchItem/SearchItemCategory';
-import * as Index from 'src/components/search-experience/search-components/SearchItem/index';
 import * as RichTextBlock from 'src/components/rich-text-block/RichTextBlock';
 import * as PromoImageTitlePartialOverlaydev from 'src/components/promo-image/PromoImageTitlePartialOverlay.dev';
 import * as PromoImageRightdev from 'src/components/promo-image/PromoImageRight.dev';
@@ -134,24 +136,24 @@ import * as NextImageSrcdev from 'src/components/image/nextImageSrc.dev';
 import * as ImageWrapperdev from 'src/components/image/ImageWrapper.dev';
 import * as ImageWrapperclient from 'src/components/image/ImageWrapper.client';
 import * as Icon from 'src/components/icon/Icon';
-import * as YoutubeIcondev from 'src/components/icon/svg/YoutubeIcon.dev';
-import * as TwitterIcondev from 'src/components/icon/svg/TwitterIcon.dev';
 import * as Signaldev from 'src/components/icon/svg/signal.dev';
 import * as Playdev from 'src/components/icon/svg/play.dev';
-import * as LinkedInIcondev from 'src/components/icon/svg/LinkedInIcon.dev';
 import * as LinePlaydev from 'src/components/icon/svg/line-play.dev';
-import * as InternalIcondev from 'src/components/icon/svg/InternalIcon.dev';
-import * as InstagramIcondev from 'src/components/icon/svg/InstagramIcon.dev';
-import * as FileIcondev from 'src/components/icon/svg/FileIcon.dev';
-import * as FacebookIcondev from 'src/components/icon/svg/FacebookIcon.dev';
-import * as ExternalIcondev from 'src/components/icon/svg/ExternalIcon.dev';
-import * as EmailIcondev from 'src/components/icon/svg/EmailIcon.dev';
 import * as Diversitydev from 'src/components/icon/svg/diversity.dev';
 import * as CrossArrowsdev from 'src/components/icon/svg/cross-arrows.dev';
 import * as Communitiesdev from 'src/components/icon/svg/communities.dev';
 import * as ArrowUpRightdev from 'src/components/icon/svg/arrow-up-right.dev';
 import * as ArrowRightdev from 'src/components/icon/svg/arrow-right.dev';
 import * as ArrowLeftdev from 'src/components/icon/svg/arrow-left.dev';
+import * as YoutubeIcondev from 'src/components/icon/svg/YoutubeIcon.dev';
+import * as TwitterIcondev from 'src/components/icon/svg/TwitterIcon.dev';
+import * as LinkedInIcondev from 'src/components/icon/svg/LinkedInIcon.dev';
+import * as InternalIcondev from 'src/components/icon/svg/InternalIcon.dev';
+import * as InstagramIcondev from 'src/components/icon/svg/InstagramIcon.dev';
+import * as FileIcondev from 'src/components/icon/svg/FileIcon.dev';
+import * as FacebookIcondev from 'src/components/icon/svg/FacebookIcon.dev';
+import * as ExternalIcondev from 'src/components/icon/svg/ExternalIcon.dev';
+import * as EmailIcondev from 'src/components/icon/svg/EmailIcon.dev';
 import * as HeroImageRightdev from 'src/components/hero/HeroImageRight.dev';
 import * as HeroImageBottomInsetdev from 'src/components/hero/HeroImageBottomInset.dev';
 import * as HeroImageBottomdev from 'src/components/hero/HeroImageBottom.dev';
@@ -189,19 +191,19 @@ import * as Container4060 from 'src/components/container/container-4060/Containe
 import * as Container3070 from 'src/components/container/container-3070/Container3070';
 import * as Container303030 from 'src/components/container/container-303030/Container303030';
 import * as Container25252525 from 'src/components/container/container-25252525/Container25252525';
+import * as LogoCloud from 'src/components/component-library/logo-cloud';
 import * as Testimonials from 'src/components/component-library/Testimonials';
 import * as TeamSection from 'src/components/component-library/TeamSection';
 import * as StatsSection from 'src/components/component-library/StatsSection';
 import * as ProductsSection from 'src/components/component-library/ProductsSection';
 import * as PlaceholderTabs from 'src/components/component-library/PlaceholderTabs';
 import * as NewsletterSection from 'src/components/component-library/NewsletterSection';
-import * as LogoCloud from 'src/components/component-library/logo-cloud';
 import * as Header from 'src/components/component-library/Header';
 import * as FeaturesSection from 'src/components/component-library/FeaturesSection';
 import * as FAQ from 'src/components/component-library/FAQ';
 import * as ContactSection from 'src/components/component-library/ContactSection';
-import * as CLHero from 'src/components/component-library/CLHero';
 import * as CallToAction from 'src/components/component-library/CallToAction';
+import * as CLHero from 'src/components/component-library/CLHero';
 import * as Carousel from 'src/components/carousel/Carousel';
 import * as CardSpotlightdev from 'src/components/card-spotlight/card-spotlight.dev';
 import * as Carddev from 'src/components/card/Card.dev';
@@ -216,11 +218,11 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['BYOCWrapper', BYOCServerWrapper],
   ['FEaaSWrapper', FEaaSServerWrapper],
   ['Form', { ...Form, componentType: 'client' }],
-  ['ZipcodeModal', { ...ZipcodeModaldev }],
+  ['zipcode-modal', { ...ZipcodeModaldev }],
   ['VerticalImageAccordion', { ...VerticalImageAccordion, componentType: 'client' }],
   ['TopicListing', { ...TopicListing }],
   ['TopicItem', { ...TopicItemdev }],
-  ['ThemeProvider', { ...ThemeProviderdev }],
+  ['theme-provider', { ...ThemeProviderdev }],
   ['TextBannerTextTop', { ...TextBannerTextTopdev }],
   ['TextBannerDefault', { ...TextBannerDefaultdev }],
   ['TextBannerBlueTitleRight', { ...TextBannerBlueTitleRightdev }],
@@ -272,19 +274,22 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['SiteMetadata', { ...SiteMetadata }],
   ['SecondaryNavigation', { ...SecondaryNavigation, componentType: 'client' }],
   ['SearchExperience', { ...SearchExperienceLoadMore, ...SearchExperience, componentType: 'client' }],
-  ['UseSearchField', { ...UseSearchField, componentType: 'client' }],
-  ['UseRouter', { ...UseRouter, componentType: 'client' }],
-  ['UseParams', { ...UseParams, componentType: 'client' }],
-  ['UseEvent', { ...UseEvent, componentType: 'client' }],
-  ['UseDebounce', { ...UseDebounce, componentType: 'client' }],
+  ['useSearchField', { ...UseSearchField, componentType: 'client' }],
+  ['useRouter', { ...UseRouter, componentType: 'client' }],
+  ['useParams', { ...UseParams, componentType: 'client' }],
+  ['useEvent', { ...UseEvent, componentType: 'client' }],
+  ['useDebounce', { ...UseDebounce, componentType: 'client' }],
+  ['models', { ...Models }],
+  ['constants', { ...Constants }],
   ['SearchSkeletonItem', { ...SearchSkeletonItem, componentType: 'client' }],
+  ['SearchPreviewItem', { ...SearchPreviewItem, componentType: 'client' }],
   ['SearchPagination', { ...SearchPagination, componentType: 'client' }],
   ['SearchItemCommon', { ...SearchItemCommon, componentType: 'client' }],
   ['SearchInput', { ...SearchInput, componentType: 'client' }],
   ['SearchError', { ...SearchError, componentType: 'client' }],
   ['SearchEmptyResults', { ...SearchEmptyResults, componentType: 'client' }],
-  ['Models', { ...Models }],
-  ['Constants', { ...Constants }],
+  ['SearchDropdown', { ...SearchDropdown, componentType: 'client' }],
+  ['index', { ...Index, componentType: 'client' }],
   ['SearchItemTitle', { ...SearchItemTitle, componentType: 'client' }],
   ['SearchItemTags', { ...SearchItemTags, componentType: 'client' }],
   ['SearchItemSummary', { ...SearchItemSummary, componentType: 'client' }],
@@ -292,7 +297,6 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['SearchItemLink', { ...SearchItemLink, componentType: 'client' }],
   ['SearchItemImage', { ...SearchItemImage, componentType: 'client' }],
   ['SearchItemCategory', { ...SearchItemCategory, componentType: 'client' }],
-  ['Index', { ...Index, componentType: 'client' }],
   ['RichTextBlock', { ...RichTextBlock }],
   ['PromoImageTitlePartialOverlay', { ...PromoImageTitlePartialOverlaydev }],
   ['PromoImageRight', { ...PromoImageRightdev }],
@@ -310,7 +314,7 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ProductListingDefault', { ...ProductListingDefaultdev }],
   ['ProductListingCard', { ...ProductListingCarddev }],
   ['ProductListing', { ...ProductListing, componentType: 'client' }],
-  ['Portal', { ...Portaldev }],
+  ['portal', { ...Portaldev }],
   ['PageHeaderFiftyFifty', { ...PageHeaderFiftyFiftydev }],
   ['PageHeaderDefault', { ...PageHeaderDefaultdev }],
   ['PageHeaderCentered', { ...PageHeaderCentereddev }],
@@ -319,9 +323,9 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['PageHeader', { ...PageHeader, componentType: 'client' }],
   ['MultiPromoTabs', { ...MultiPromoTabs, componentType: 'client' }],
   ['MultiPromoTab', { ...MultiPromoTabdev }],
-  ['ModeToggle', { ...ModeToggledev }],
+  ['mode-toggle', { ...ModeToggledev }],
   ['MediaSection', { ...MediaSectiondev }],
-  ['Meteors', { ...Meteors, componentType: 'client' }],
+  ['meteors', { ...Meteors, componentType: 'client' }],
   ['LogoTabs', { ...LogoTabs, componentType: 'client' }],
   ['LogoItem', { ...LogoItem }],
   ['Logo', { ...Logodev }],
@@ -338,27 +342,27 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['ImageGalleryFiftyFifty', { ...ImageGalleryFiftyFiftydev }],
   ['ImageGalleryFeaturedImage', { ...ImageGalleryFeaturedImagedev }],
   ['ImageGallery', { ...ImageGallerydev, ...ImageGallery, componentType: 'client' }],
-  ['NextImageSrc', { ...NextImageSrcdev }],
+  ['nextImageSrc', { ...NextImageSrcdev }],
   ['ImageWrapper', { ...ImageWrapperdev, ...ImageWrapperclient }],
   ['Icon', { ...Icon, componentType: 'client' }],
+  ['signal', { ...Signaldev }],
+  ['play', { ...Playdev }],
+  ['line-play', { ...LinePlaydev }],
+  ['diversity', { ...Diversitydev }],
+  ['cross-arrows', { ...CrossArrowsdev }],
+  ['communities', { ...Communitiesdev }],
+  ['arrow-up-right', { ...ArrowUpRightdev }],
+  ['arrow-right', { ...ArrowRightdev }],
+  ['arrow-left', { ...ArrowLeftdev }],
   ['YoutubeIcon', { ...YoutubeIcondev }],
   ['TwitterIcon', { ...TwitterIcondev }],
-  ['Signal', { ...Signaldev }],
-  ['Play', { ...Playdev }],
   ['LinkedInIcon', { ...LinkedInIcondev }],
-  ['LinePlay', { ...LinePlaydev }],
   ['InternalIcon', { ...InternalIcondev }],
   ['InstagramIcon', { ...InstagramIcondev }],
   ['FileIcon', { ...FileIcondev }],
   ['FacebookIcon', { ...FacebookIcondev }],
   ['ExternalIcon', { ...ExternalIcondev }],
   ['EmailIcon', { ...EmailIcondev }],
-  ['Diversity', { ...Diversitydev }],
-  ['CrossArrows', { ...CrossArrowsdev }],
-  ['Communities', { ...Communitiesdev }],
-  ['ArrowUpRight', { ...ArrowUpRightdev }],
-  ['ArrowRight', { ...ArrowRightdev }],
-  ['ArrowLeft', { ...ArrowLeftdev }],
   ['HeroImageRight', { ...HeroImageRightdev }],
   ['HeroImageBottomInset', { ...HeroImageBottomInsetdev }],
   ['HeroImageBottom', { ...HeroImageBottomdev }],
@@ -376,11 +380,11 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['GlobalFooter', { ...GlobalFooter, componentType: 'client' }],
   ['FooterNavigationColumn', { ...FooterNavigationColumndev, ...FooterNavigationColumn, componentType: 'client' }],
   ['ZipcodeSearchForm', { ...ZipcodeSearchFormdev }],
-  ['SuccessCompact', { ...SuccessCompactdev }],
+  ['success-compact', { ...SuccessCompactdev }],
   ['SubmitInfoForm', { ...SubmitInfoFormdev }],
   ['EmailSignupForm', { ...EmailSignupFormdev }],
   ['FooterNavigationCallout', { ...FooterNavigationCalloutdev }],
-  ['FloatingDock', { ...FloatingDockdev }],
+  ['floating-dock', { ...FloatingDockdev }],
   ['Flex', { ...Flexdev }],
   ['CtaBanner', { ...CtaBanner }],
   ['ContentSdkRichText', { ...ContentSdkRichText }],
@@ -395,21 +399,21 @@ export const componentMap = new Map<string, NextjsContentSdkComponent>([
   ['Container3070', { ...Container3070 }],
   ['Container303030', { ...Container303030 }],
   ['Container25252525', { ...Container25252525 }],
+  ['logo-cloud', { ...LogoCloud }],
   ['Testimonials', { ...Testimonials }],
   ['TeamSection', { ...TeamSection }],
   ['StatsSection', { ...StatsSection }],
   ['ProductsSection', { ...ProductsSection, componentType: 'client' }],
   ['PlaceholderTabs', { ...PlaceholderTabs }],
   ['NewsletterSection', { ...NewsletterSection }],
-  ['LogoCloud', { ...LogoCloud }],
   ['Header', { ...Header, componentType: 'client' }],
   ['FeaturesSection', { ...FeaturesSection, componentType: 'client' }],
   ['FAQ', { ...FAQ, componentType: 'client' }],
   ['ContactSection', { ...ContactSection, componentType: 'client' }],
-  ['CLHero', { ...CLHero }],
   ['CallToAction', { ...CallToAction }],
+  ['CLHero', { ...CLHero }],
   ['Carousel', { ...Carousel, componentType: 'client' }],
-  ['CardSpotlight', { ...CardSpotlightdev }],
+  ['card-spotlight', { ...CardSpotlightdev }],
   ['Card', { ...Carddev }],
   ['ButtonComponent', { ...ButtonComponent }],
   ['Breadcrumbs', { ...Breadcrumbs }],

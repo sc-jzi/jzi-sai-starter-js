@@ -1,7 +1,7 @@
 'use client';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, usePathname } from 'next/navigation';
 import { useSitecore } from '@sitecore-content-sdk/nextjs';
 import { useInfiniteSearch } from '@sitecore-content-sdk/nextjs/search';
 import { cn } from 'lib/utils';
@@ -13,7 +13,12 @@ import { SearchSkeletonItem } from './search-components/SearchSkeletonItem';
 import { SearchInput } from './search-components/SearchInput';
 import { useEvent } from './search-components/useEvent';
 import { useSearchField } from './search-components/useSearchField';
-import { DICTIONARY_KEYS, gridColsClass } from './search-components/constants';
+import {
+  DICTIONARY_KEYS,
+  getEffectivePageSize,
+  gridColsClass,
+  limitSearchResults,
+} from './search-components/constants';
 import { useParams } from './search-components/useParams';
 import { useRouter } from './search-components/useRouter';
 
@@ -21,10 +26,16 @@ export const LoadMore = (props: SearchExperienceProps) => {
   const { page } = useSitecore();
   const { params } = props;
   const t = useTranslations();
-  const { searchIndex, fieldsMapping } = useSearchField(props.fields.search.value);
+  const { searchIndex, fieldsMapping, moreLikeThisEnabled } = useSearchField(
+    props.fields.search.value
+  );
 
-  const { styles, id, pageSize, columns } = useParams(params);
+  const { styles, id, pageSize: configuredPageSize, columns } = useParams(params);
+  const pageSize = getEffectivePageSize(moreLikeThisEnabled, configuredPageSize);
   const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const seedItemUrl =
+    typeof window === 'undefined' ? pathname : new URL(pathname, window.location.origin).toString();
 
   const { isEditing, isPreview } = page.mode;
   const [inputValue, setInputValue] = useState<string>((searchParams.get('q') as string) || '');
@@ -45,10 +56,18 @@ export const LoadMore = (props: SearchExperienceProps) => {
     searchIndexId: searchIndex,
     pageSize,
     enabled: searchEnabled,
-    query: searchQuery,
+    ...(moreLikeThisEnabled ? { seedItemUrl } : { query: searchQuery }),
   });
 
-  const sendEvent = useEvent({ query: searchQuery, uid: props.rendering.uid });
+  const displayedResults = limitSearchResults(results ?? [], moreLikeThisEnabled);
+  const sendEvent = useEvent({
+    query: searchQuery,
+    uid: props.rendering.uid,
+    searchIndexId: searchIndex,
+    pageSize,
+    numResults: displayedResults.length,
+    totalResults: total ?? 0,
+  });
 
   const { setRouterQuery } = useRouter();
 
@@ -90,7 +109,9 @@ export const LoadMore = (props: SearchExperienceProps) => {
           })}
         >
           <div className="mb-8">
-            <SearchInput value={inputValue} onChange={(value) => onSearchChange(value, true)} />
+            {!moreLikeThisEnabled && (
+              <SearchInput value={inputValue} onChange={(value) => onSearchChange(value, true)} />
+            )}
 
             <p className="text-gray-600 mb-6">
               {total} {t(DICTIONARY_KEYS.RESULTS_FOUND) || 'results found'}
@@ -110,7 +131,7 @@ export const LoadMore = (props: SearchExperienceProps) => {
 
           <div className={cn('grid gap-6 mb-8', gridColsClass(Number(columns)))}>
             {!isLoading &&
-              results.map((result) => (
+              displayedResults.map((result) => (
                 <SearchItem
                   variant={Number(columns) === 1 ? 'list' : 'card'}
                   key={result.sc_item_id}
@@ -130,7 +151,7 @@ export const LoadMore = (props: SearchExperienceProps) => {
               ))}
           </div>
 
-          {hasNextPage && (
+          {!moreLikeThisEnabled && hasNextPage && (
             <div className="flex justify-center items-center">
               <button
                 onClick={() => {

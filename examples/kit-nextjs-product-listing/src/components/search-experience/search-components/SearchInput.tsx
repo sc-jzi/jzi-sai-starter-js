@@ -6,9 +6,10 @@ import { DICTIONARY_KEYS } from './constants';
 interface SearchInputProps {
   value: string;
   onChange: (query: string) => void;
+  onFocus?: React.FocusEventHandler<HTMLInputElement>;
 }
 
-export const SearchInput = ({ value, onChange }: SearchInputProps) => {
+export const SearchInput = ({ value, onChange, onFocus }: SearchInputProps) => {
   const t = useTranslations();
 
   return (
@@ -19,6 +20,7 @@ export const SearchInput = ({ value, onChange }: SearchInputProps) => {
           placeholder={t(DICTIONARY_KEYS.SEARCH_INPUT_PLACEHOLDER) || 'Search items...'}
           value={value}
           onChange={(e) => onChange(e.target.value)}
+          onFocus={onFocus}
           className="w-full px-4 py-3 pl-12 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
         />
         <svg
