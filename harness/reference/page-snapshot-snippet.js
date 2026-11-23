@@ -26,7 +26,21 @@
       } catch { /* a font the page cannot fetch is skipped */ }
     }
   }
+  // same-origin stylesheets: inline their rules. A <link> to the prospect's own domain is fetched again when the scripts render the
+  // snapshot headless, and bot protection answers that fetch with a challenge page, so the page would be measured unstyled.
+  const inlined = new Map();
+  for (const ss of [...document.styleSheets]) {
+    if (!ss.href || new URL(ss.href).origin !== location.origin) continue;
+    let rules; try { rules = ss.cssRules; } catch { continue; }
+    const abs = (t) => t.replace(/url\(\s*["']?(?!data:|https?:|\/\/|#)([^"')]+)["']?\s*\)/g, (_, u) => `url("${new URL(u, ss.href).href}")`);
+    inlined.set(ss.href, [...rules].filter((r) => r.constructor.name !== "CSSFontFaceRule").map((r) => abs(r.cssText)).join("\n"));
+  }
   const doc = document.documentElement.cloneNode(true);
+  doc.querySelectorAll('link[rel~="stylesheet"][href]').forEach((l) => {
+    const text = inlined.get(new URL(l.getAttribute("href"), location.href).href);
+    if (text == null) return;
+    const st = document.createElement("style"); if (l.media) st.media = l.media; st.textContent = text; l.replaceWith(st);
+  });
   doc.querySelectorAll("script, noscript, iframe").forEach((n) => n.remove());
   doc.querySelectorAll("meta[http-equiv]").forEach((n) => n.remove());
   const live = [...document.images];

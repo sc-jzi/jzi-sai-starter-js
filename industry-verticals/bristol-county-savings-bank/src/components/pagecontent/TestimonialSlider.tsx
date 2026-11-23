@@ -17,14 +17,23 @@ export type TestimonialSliderProps = ComponentProps & {
   fields?: { data?: { datasource?: { heading?: JsonValue<Field<string>>; children?: { results?: Quote[] } } } };
 };
 
-// A button, not a link: Pages swallows clicks on links, and the slider must be browsable while editing too.
+// A link with role=button, as on the bank's slider; the click handler (preventDefault) keeps it working in Pages too.
 const Arrow = ({ dir, onClick }: { dir: 'prev' | 'next'; onClick: () => void }): JSX.Element => (
-  <button type="button" className={`testimonial-slider__arrow testimonial-slider__arrow--${dir}`} onClick={onClick}>
+  <a
+    href="#"
+    role="button"
+    className={`testimonial-slider__arrow testimonial-slider__arrow--${dir}`}
+    onClick={(e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      onClick();
+    }}
+  >
     <svg viewBox="0 0 20 60" width="20" height="60" aria-hidden="true">
       <path d={dir === 'prev' ? 'M18 2 L2 30 L18 58' : 'M2 2 L18 30 L2 58'} fill="none" stroke="currentColor" strokeWidth="1.5" />
     </svg>
     <span className="sr-only">{dir === 'prev' ? 'Scroll left...' : 'Scroll right...'}</span>
-  </button>
+  </a>
 );
 
 const Body = ({ props, className }: { props: TestimonialSliderProps; className: string }): JSX.Element => {

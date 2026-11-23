@@ -130,7 +130,12 @@ const RatePromoHeroBody = ({ props, look }: { props: RatePromoHeroProps; look: L
       className={`component rate-promo-hero rate-promo-hero--split ${look === 'default' ? 'rate-promo-hero--plain' : ''} ${styles}`}
       id={id}
     >
-      <div className="rate-promo-hero__text">
+      <div
+        className={`rate-promo-hero__text${hasImage && look === 'split' ? ' rate-promo-hero__text--photo' : ''}`}
+        // the bank's hero picture is the band image: cropped to the text column only its slate half shows (the rates baked into its
+        // right half fall outside the column, so they never repeat the editable rates). Applied in Pages too, so the text stays readable.
+        style={hasImage && look === 'split' ? { backgroundImage: `url("${fields.Image?.value?.src}")` } : undefined}
+      >
         {/* The page's own title (route field Title) as the visually hidden h1, as on the bank's homepage */}
         {pageTitle?.value && <Text tag="h1" className="sr-only" field={pageTitle} />}
         <div className="rate-promo-hero__text-inner">

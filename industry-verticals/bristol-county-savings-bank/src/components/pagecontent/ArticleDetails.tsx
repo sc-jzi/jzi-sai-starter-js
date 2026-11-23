@@ -146,3 +146,37 @@ export const Simple = (props: PageBackgroundProps): JSX.Element => {
     </>
   );
 };
+
+/* BristolCountySavingsBank variant (News Article pages): the bank's article layout. One 900px column: back link to the news listing,
+   the title, the article photo (Thumbnail), the subtitle (Excerpt) and the body (Content, which also holds the small-print disclosure).
+   Measured on the bank's article pages: title 45px/500, subtitle 25px/500, body 16px, photo 830px wide. */
+export const BristolCountySavingsBank = (props: PageBackgroundProps): JSX.Element => {
+  const id = props.params?.RenderingIdentifier;
+  const editing = !!props.page?.mode?.isEditing;
+  const f = props.fields;
+  const has = (v?: { value?: unknown }) => !!v?.value && String(v.value).trim() !== '';
+  return (
+    <>
+      <Head>
+        <meta property="og:description" content={f?.Excerpt?.value} />
+        <meta property="og:title" content={f?.Title?.value} />
+        <meta property="og:image" content={f?.Thumbnail?.value?.src} />
+        <meta property="og:type" content="article" />
+      </Head>
+      <article className={`component article-details bcsb-article ${props.params?.styles?.trimEnd() ?? ''}`} id={id || undefined}>
+        <div className="bcsb-article__inner">
+          {/* back link: hardcoded chrome, as on the bank's article pages */}
+          <a className="bcsb-article__back" href="/news">
+            Back to News Listing
+          </a>
+          <Text tag="h1" className="bcsb-article__title" field={f?.Title} />
+          {(editing || f?.Thumbnail?.value?.src) && (
+            <NextImage field={f?.Thumbnail} className="bcsb-article__image" width={830} height={365} />
+          )}
+          {(editing || has(f?.Excerpt)) && <Text tag="h2" className="bcsb-article__subtitle" field={f?.Excerpt} />}
+          {(editing || has(f?.Content)) && <RichText className="bcsb-article__body" field={f?.Content} />}
+        </div>
+      </article>
+    </>
+  );
+};
