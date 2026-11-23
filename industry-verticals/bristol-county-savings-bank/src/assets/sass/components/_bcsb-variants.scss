@@ -835,9 +835,6 @@ $bcsb-text: #222;
 // ---- Looks pass 3 ----
 .bcsb-card--block { text-decoration: none; color: inherit; }
 .bcsb-card--block .bcsb-card__title, .bcsb-card--block .bcsb-card__text, .bcsb-card--block .bcsb-card__link { display: block; }
-.rate-promo-hero--has-bg { background-size: cover; background-position: center; }
-.rate-promo-hero--has-bg .rate-promo-hero__text { background: transparent; }
-.rate-promo-hero--has-bg .rate-promo-hero__aside { background: #e4ede9; }
 
 .bcsb-card__name { display: block; font-size: 18px; font-weight: 600; margin: 0 0 12px; color: #222; }
 .bcsb-cards--text .bcsb-card__name { color: #006f51; font-weight: 500; font-size: 17px; }
@@ -852,8 +849,6 @@ $bcsb-text: #222;
 
 
 // ---- Looks pass 4 ----
-.rate-promo-hero--has-bg { background-color: #e4ede9; background-size: 200% 100%; background-position: left center; background-repeat: no-repeat; }
-.rate-promo-hero--has-bg .rate-promo-hero__aside { background: transparent; }
 .bcsb-footer__about { font-size: 14px; line-height: 26px; }
 .testimonial-slider__slides { overflow: hidden; }
 .testimonial-slider__track { display: flex; transition: transform 0.4s ease; }
@@ -908,4 +903,33 @@ $bcsb-text: #222;
   .bcsb-footer__legal a::after { content: '\00a0\203A'; }
   .bcsb-footer__about { padding-top: 30px; }
   .bcsb-footer__about a { text-decoration: underline; }
+}
+
+// RatePromoHero (homepage look): two solid columns, slate text left (~40%), light green-grey rates panel right, as on the bank's page.
+// The text lines up with the page container's left edge.
+.rate-promo-hero--split:not(.rate-promo-hero--plain) {
+  grid-template-columns: 40% 60%;
+  min-height: 360px;
+
+  .rate-promo-hero__text {
+    background: #334957;
+    color: #fff;
+    justify-content: flex-start;
+    padding: 0 50px 0 max(30px, calc((100vw - 1200px) / 2 + 15px));
+  }
+  .rate-promo-hero__text-inner { max-width: 470px; margin-right: 0; }
+  .rate-promo-hero__title { color: #fff; font-size: 40px; }
+  .rate-promo-hero__body { color: #fff; font-size: 16px; line-height: 1.6; }
+
+  .rate-promo-hero__aside { background: #e4ede9; color: #006f51; }
+  .rate-promo-hero__rate-label { color: #222; font-size: 24px; font-weight: 700; }
+  .rate-promo-hero__note { color: #333; font-size: 14px; }
+  .rate-promo-hero__disclosure { color: #333; }
+}
+
+@media (max-width: 991px) {
+  .rate-promo-hero--split:not(.rate-promo-hero--plain) {
+    grid-template-columns: 1fr;
+    .rate-promo-hero__text { padding: 0 20px; }
+  }
 }

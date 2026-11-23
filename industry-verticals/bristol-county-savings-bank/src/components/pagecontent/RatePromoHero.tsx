@@ -123,13 +123,12 @@ const RatePromoHeroBody = ({ props, look }: { props: RatePromoHeroProps; look: L
     );
   }
 
-  // Homepage: text panel left, rates (or, without rates, the photo) right.
+  // Homepage: two columns in solid colours (slate text panel left, light rates panel right), the same in Pages and on the site;
+  // without rates, the photo fills the right column.
   return (
     <section
-      className={`component rate-promo-hero rate-promo-hero--split ${look === 'default' ? 'rate-promo-hero--plain' : ''} ${hasImage && hasRates ? 'rate-promo-hero--has-bg' : ''} ${styles}`}
+      className={`component rate-promo-hero rate-promo-hero--split ${look === 'default' ? 'rate-promo-hero--plain' : ''} ${styles}`}
       id={id}
-      // the bank's hero picture is the band background; the editable rates panel (with its disclosure) sits over the right half
-      style={!editing && hasImage && hasRates ? { backgroundImage: `url("${fields.Image?.value?.src}")` } : undefined}
     >
       <div className="rate-promo-hero__text">
         {/* The page's own title (route field Title) as the visually hidden h1, as on the bank's homepage */}
