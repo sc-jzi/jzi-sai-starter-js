@@ -821,7 +821,7 @@ $bcsb-text: #222;
   color: #dfe3c2;
   font-family: Georgia, serif;
 }
-.testimonial-slider__arrow { display: inline-flex; color: #333; }
+.testimonial-slider__arrow { display: inline-flex; color: #333; background: none; border: 0; padding: 0; cursor: pointer; }
 
 .faq-accordion__heading { font-size: 40px; }
 .faq-accordion__question { text-decoration: none; }
@@ -880,3 +880,32 @@ $bcsb-text: #222;
 .testimonial-slider__stage { align-items: flex-start; }
 .testimonial-slider__arrow--prev { margin-top: 20px; }
 .testimonial-slider__arrow--next { margin-top: 110px; }
+
+// ---- Fixes (SE review): the shared `.container` rule zeroes vertical padding, so these use the section class as well ----
+// App band: room above and below the store badges.
+.bcsb-app .bcsb-app__row { padding-top: 18px; padding-bottom: 18px; }
+
+// Help band (PromoCta without a button): grey #676767 with the clock photo on the left only, as on the bank's page.
+.bcsb-bgpromo.bcsb-bgpromo--band {
+  background-color: #676767;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: left center;
+
+  .bcsb-bgpromo__inner { background: transparent; padding-top: 50px; padding-bottom: 50px; }
+  .bcsb-bgpromo__box { max-width: 1170px; padding-left: 300px; }
+  .bcsb-bgpromo__text { padding-right: 340px; } // the phone number sits on the right of the text, as on the bank's band
+  // In Pages the photo is an <img> (editable): same place as the background, left side at full height.
+  .bcsb-bgpromo__bg { right: auto; width: auto; max-width: none; height: 100%; object-fit: contain; object-position: left center; opacity: 1; }
+}
+
+// Footer: the gradient bar is 62px tall and the logo badge ends on its bottom edge (it rose 60px into a 21px bar before).
+.bcsb-footer {
+  .bcsb-footer__top { min-height: 103px; }
+  .bcsb-footer__badge { height: 165px; margin-bottom: -62px; flex: 0 0 200px; }
+  .bcsb-footer__bar-inner { min-height: 62px; padding-top: 0; padding-bottom: 0; padding-left: 225px; }
+  .bcsb-footer__ids strong { margin-right: 8px; font-size: 13px; text-transform: uppercase; }
+  .bcsb-footer__legal a::after { content: '\00a0\203A'; }
+  .bcsb-footer__about { padding-top: 30px; }
+  .bcsb-footer__about a { text-decoration: underline; }
+}

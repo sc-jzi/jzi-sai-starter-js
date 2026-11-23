@@ -122,3 +122,36 @@ $bcsb-badge-hidden: 55px;
     font-weight: 600 !important;
   }
 }
+
+// Narrower windows: the bar is right-aligned, so on overflow the first links ("About Us") slid under the logo badge.
+// Tighter gaps below 1200px; below 992px the links wrap inside the green bar instead of overflowing.
+.component.eyebrow.variant-bristol-county-savings-bank .eyebrow-links {
+  min-width: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  row-gap: 6px;
+}
+
+@media (max-width: 1199.98px) {
+  .component.eyebrow.variant-bristol-county-savings-bank {
+    .eyebrow-bar { padding-left: 230px; gap: 12px; }
+    .eyebrow-links { gap: 20px; margin-right: 8px; }
+    .eyebrow-links a { font-size: 14px; }
+  }
+}
+
+@media (max-width: 991.98px) {
+  .component.eyebrow.variant-bristol-county-savings-bank {
+    .eyebrow-bar { padding-top: 8px; padding-bottom: 8px; }
+    .eyebrow-links { flex: 1 1 100%; gap: 6px 18px; }
+    .eyebrow-bar { flex-wrap: wrap; }
+  }
+}
+
+// The product row (Personal … Bristol Wealth Group) also overflowed between 992px and 1200px.
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .component.navigation.variant-bristol-county-savings-bank {
+    nav > ul { gap: 20px; }
+    .navigation-title a { font-size: 16px; }
+  }
+}

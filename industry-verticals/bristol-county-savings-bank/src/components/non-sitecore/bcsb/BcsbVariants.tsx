@@ -120,7 +120,8 @@ export const BcsbPromoCta = (p: VariantProps): JSX.Element => {
 export const BcsbPromoCtaBackground = (p: VariantProps): JSX.Element => {
   const f = p.fields ?? {};
   const editing = useEditing();
-  const boxed = editing || hasLink(f.Link);
+  // Same look in Pages as on the site: a button makes it the boxed promo, no button the grey help band (image on the left)
+  const boxed = hasLink(f.Link);
   return (
     <section {...wrap(p, `bcsb-bgpromo ${boxed ? 'bcsb-bgpromo--boxed' : 'bcsb-bgpromo--band'}`)} style={editing ? undefined : bg(f.Image)}>
       {editing && <NextImage field={f.Image} className="bcsb-bgpromo__bg" width={1600} height={650} />}
@@ -128,7 +129,7 @@ export const BcsbPromoCtaBackground = (p: VariantProps): JSX.Element => {
         <div className="bcsb-bgpromo__box">
           <Text tag="h2" className="bcsb-bgpromo__title" field={f.Title} />
           {(editing || has(f.Text)) && <RichText className="bcsb-bgpromo__text" field={f.Text} />}
-          {(editing || hasLink(f.Link)) && <Link field={f.Link} className="bcsb-btn bcsb-btn--solid" />}
+          {boxed && <Link field={f.Link} className="bcsb-btn bcsb-btn--solid" />}
         </div>
       </div>
     </section>
