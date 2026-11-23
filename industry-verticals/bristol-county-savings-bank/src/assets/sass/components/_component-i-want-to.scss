@@ -70,18 +70,40 @@
     gap: 14px;
   }
 
+  // The green top bar is a pseudo-element that slides down to fill the card on hover (as on the bank's cards);
+  // the content sits above it and turns white.
   &__card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     background: #fff;
-    border-top: 6px solid var(--bg-saturated, #006f51);
     box-shadow: 0 2px 10px rgb(0 0 0 / 10%);
-    padding: 26px 22px;
+    padding: 32px 22px 26px;
     text-align: center;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 auto;
+      height: 6px;
+      z-index: -1;
+      background: var(--bg-saturated, #006f51);
+      transition: height 0.35s ease;
+    }
+
+    &:hover::before,
+    &:focus-within::before {
+      height: 100%;
+    }
   }
 
+  // The icon artwork is white on transparent: shown dark on the white card, white on the green hover.
   &__card-icon {
     width: 72px;
     height: auto;
     margin: 0 auto 12px;
+    filter: invert(1);
+    transition: filter 0.35s ease;
   }
 
   &__card-title {
@@ -89,12 +111,30 @@
     font-weight: 600;
     color: #222;
     margin-bottom: 18px;
+    transition: color 0.35s ease;
   }
 
   &__card-link {
     font-weight: 700;
     color: #222;
     text-decoration: none;
+    transition: color 0.35s ease;
+
+    &::after {
+      content: '\00a0\00a0\203A';
+    }
+  }
+
+  &__card:hover,
+  &__card:focus-within {
+    .i-want-to__card-icon {
+      filter: none;
+    }
+
+    .i-want-to__card-title,
+    .i-want-to__card-link {
+      color: #fff;
+    }
   }
 
   &__edit-label {
