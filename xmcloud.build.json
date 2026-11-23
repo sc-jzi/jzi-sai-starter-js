@@ -2,7 +2,7 @@
   "renderingHosts": {
     "prospera": {
       "path": "./industry-verticals/prospera",
-      "nodeVersion": "24.14.1",
+      "nodeVersion": "24.22.3",
       "packageManager": "npm",
       "jssDeploymentSecret": "110F1C44A496B45478640DD36F80C18C9",
       "enabled": true,
@@ -192,7 +192,7 @@
     },
     "bristol-county-savings-bank": {
       "path": "./industry-verticals/bristol-county-savings-bank",
-      "nodeVersion": "24.14.1",
+      "nodeVersion": "24.22.3",
       "packageManager": "npm",
       "jssDeploymentSecret": "110F1C44A496B45478640DD36F80C18C9",
       "enabled": true,
