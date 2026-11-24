@@ -155,14 +155,9 @@ export const BristolCountySavingsBank = (props: PageBackgroundProps): JSX.Elemen
   const editing = !!props.page?.mode?.isEditing;
   const f = props.fields;
   const has = (v?: { value?: unknown }) => !!v?.value && String(v.value).trim() !== '';
+  // meta and Open Graph tags come from the page's SEO fields (generateMetadata in the route), not from this component
   return (
     <>
-      <Head>
-        <meta property="og:description" content={f?.Excerpt?.value} />
-        <meta property="og:title" content={f?.Title?.value} />
-        <meta property="og:image" content={f?.Thumbnail?.value?.src} />
-        <meta property="og:type" content="article" />
-      </Head>
       <article className={`component article-details bcsb-article ${props.params?.styles?.trimEnd() ?? ''}`} id={id || undefined}>
         <div className="bcsb-article__inner">
           {/* back link: hardcoded chrome, as on the bank's article pages */}

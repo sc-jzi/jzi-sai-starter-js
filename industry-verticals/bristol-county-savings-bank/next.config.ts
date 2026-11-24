@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
     turbopackFileSystemCacheForDev: true,
   },
 
+  // Metadata (title, description, canonical, og:*, twitter:*) always rendered in <head>, for every user agent. Next.js otherwise
+  // streams it into <body> for user agents it does not list as bots, so a search crawler it does not recognise could miss it.
+  htmlLimitedBots: /.*/,
+
   turbopack: {
     resolveAlias: {
       // Bootstrap's `@import "progress"` otherwise hits the npm `progress` package.

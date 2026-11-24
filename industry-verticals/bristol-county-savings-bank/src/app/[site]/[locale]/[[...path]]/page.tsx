@@ -1,4 +1,5 @@
 import { isDesignLibraryPreviewData } from '@sitecore-content-sdk/nextjs/editing';
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { draftMode, headers as nextHeaders } from 'next/headers';
 import { SiteInfo } from '@sitecore-content-sdk/nextjs';
@@ -85,13 +86,71 @@ export const generateStaticParams = async () => {
     },
   ];
 };
-// Metadata fields for the page.
-export const generateMetadata = async ({ params }: PageProps) => {
+type TextValue = { value?: unknown };
+type ImageValue = { value?: { src?: string; alt?: string; width?: string | number; height?: string | number } };
+type LinkValue = { value?: { href?: string } };
+type SeoFields = RouteFields & {
+  Excerpt?: TextValue;
+  Thumbnail?: ImageValue;
+  baseMetadataTitle?: TextValue;
+  baseMetadataDescription?: TextValue;
+  baseMetadataKeywords?: TextValue;
+  baseMetadataAuthor?: TextValue;
+  baseMetadataUrl?: LinkValue;
+  baseOgTitle?: TextValue;
+  baseOgDescription?: TextValue;
+  baseOgType?: TextValue;
+  baseOgImage?: ImageValue;
+};
+
+const text = (f?: TextValue) =>
+  typeof f?.value === 'string' || typeof f?.value === 'number' ? String(f.value).trim() || undefined : undefined;
+const num = (v?: string | number) => (v != null && Number(v) > 0 ? Number(v) : undefined);
+
+// Metadata for the page from its SEO fields (baseMetadata* / baseOg*), with fallbacks to the page's Title, Excerpt and Thumbnail.
+export const generateMetadata = async ({ params }: PageProps): Promise<Metadata> => {
   const { path, site, locale } = await params;
 
   // The same call as for rendering the page. Should be cached by default react behavior
   const page = await getPageWithFallback(path, site, locale);
+  const f = (page?.layout.sitecore.route?.fields ?? {}) as SeoFields;
+
+  // absolute URLs (canonical, og:url) are built on the host that served the request
+  const h = await nextHeaders();
+  const host = h.get('x-forwarded-host') ?? h.get('host');
+  const proto = h.get('x-forwarded-proto') ?? (host?.startsWith('localhost') ? 'http' : 'https');
+  const metadataBase = host ? new URL(`${proto}://${host}`) : undefined;
+
+  const title = text(f.baseMetadataTitle) ?? text(f.Title) ?? 'Page';
+  const description = text(f.baseMetadataDescription) ?? text(f.baseOgDescription) ?? text(f.Excerpt);
+  const ogTitle = text(f.baseOgTitle) ?? title;
+  const ogDescription = text(f.baseOgDescription) ?? description;
+  const canonical = f.baseMetadataUrl?.value?.href || undefined;
+  const image = f.baseOgImage?.value?.src ? f.baseOgImage.value : f.Thumbnail?.value?.src ? f.Thumbnail.value : undefined;
+  const images = image?.src
+    ? [{ url: image.src, alt: image.alt || ogTitle, width: num(image.width), height: num(image.height) }]
+    : undefined;
+  const author = text(f.baseMetadataAuthor);
+
   return {
-    title: (page?.layout.sitecore.route?.fields as RouteFields)?.Title?.value?.toString() || 'Page',
+    metadataBase,
+    title,
+    description,
+    keywords: text(f.baseMetadataKeywords),
+    authors: author ? [{ name: author }] : undefined,
+    alternates: canonical ? { canonical } : undefined,
+    openGraph: {
+      title: ogTitle,
+      description: ogDescription,
+      type: text(f.baseOgType) === 'article' ? 'article' : 'website',
+      url: canonical,
+      images,
+    },
+    twitter: {
+      card: images ? 'summary_large_image' : 'summary',
+      title: ogTitle,
+      description: ogDescription,
+      images: images?.map((i) => i.url),
+    },
   };
 };
