@@ -29,7 +29,7 @@ The companion script is `industry-verticals/<customer>/docs/ai/scripts/vercel.sh
    - If not logged in, stop and tell the user to run `vercel login` once, then retry the deployment request.
    - Never ask for a Vercel access token and never store one in `.env.local`.
 5. Read `.env.local` without printing values.
-   - Require `NEXT_PUBLIC_DEFAULT_SITE_NAME` and all four Search variables listed below for every deployment.
+   - Require `NEXT_PUBLIC_DEFAULT_SITE_NAME` for every deployment. Search variables are not needed.
    - Ask only for values missing from `.env.local`.
 6. Resolve the Sitecore context IDs:
    - Preview: use `SITECORE_EDGE_CONTEXT_ID` and `NEXT_PUBLIC_SITECORE_EDGE_CONTEXT_ID` directly from `.env.local`. Ask only for whichever value is missing, including when `.env.local` itself is missing.
@@ -43,7 +43,6 @@ The companion script is `industry-verticals/<customer>/docs/ai/scripts/vercel.sh
    bash industry-verticals/<customer>/docs/ai/scripts/vercel.sh \
      --customer <customer> \
      --target <preview|production|both> \
-     --search <embedded|standalone> \
      --branch <branch> \
      --skip-build
    ```
@@ -58,12 +57,7 @@ Always create in each Vercel project:
 - `NEXT_PUBLIC_SITECORE_EDGE_CONTEXT_ID` — use the value from `.env.local` for Preview; use the Production context ID for Production
 - `NEXT_PUBLIC_DEFAULT_SITE_NAME`
 
-Always create the four Search variables, using shared values from `.env.local` or asking for any that are missing:
-
-- `NEXT_PUBLIC_SEARCH_API_KEY`
-- `NEXT_PUBLIC_SEARCH_CUSTOMER_KEY`
-- `NEXT_PUBLIC_SEARCH_ENV`
-- `NEXT_PUBLIC_SEARCH_SOURCE`
+Search variables (`NEXT_PUBLIC_SEARCH_*`) are no longer required and are not created.
 
 Assign applicable variables to both Vercel `production` and `preview` targets inside each project. The `<customer>-preview` project receives the Sitecore Preview context ID; `<customer>-production` receives the Sitecore Production context ID. The suffix describes the Sitecore endpoint used by that project, while its tracked Git branch produces Vercel Production deployments.
 

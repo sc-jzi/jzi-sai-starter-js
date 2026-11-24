@@ -11,7 +11,6 @@ SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
 PROJECT_DIR="$(cd -- "$SCRIPT_DIR/../../.." 2>/dev/null && pwd -P || true)"
 CUSTOMER=""
 TARGET=""
-SEARCH_MODE=""
 BRANCH=""
 BUILD_COMMAND=""
 VALIDATE_ONLY=false
@@ -22,7 +21,7 @@ usage() {
 Usage:
   ./vercel.sh --customer <slug> --validate-only [--project-dir <path>]
   ./vercel.sh --customer <slug> --target preview|production|both \
-    --search embedded|standalone [--branch <branch>] [--project-dir <path>] [--skip-build]
+    [--branch <branch>] [--project-dir <path>] [--skip-build]
 
 One-time authentication:
   Run `vercel login` before the first deployment. The script reuses that CLI session.
@@ -33,10 +32,6 @@ Optional non-interactive inputs:
   VERCEL_PREVIEW_NEXT_PUBLIC_SITECORE_EDGE_CONTEXT_ID
   VERCEL_PRODUCTION_SITECORE_EDGE_CONTEXT_ID
   VERCEL_NEXT_PUBLIC_DEFAULT_SITE_NAME
-  VERCEL_NEXT_PUBLIC_SEARCH_API_KEY
-  VERCEL_NEXT_PUBLIC_SEARCH_CUSTOMER_KEY
-  VERCEL_NEXT_PUBLIC_SEARCH_ENV
-  VERCEL_NEXT_PUBLIC_SEARCH_SOURCE
 USAGE
 }
 
@@ -49,7 +44,7 @@ while (($#)); do
   case "$1" in
     --customer) CUSTOMER="${2:-}"; shift 2 ;;
     --target) TARGET="${2:-}"; shift 2 ;;
-    --search) SEARCH_MODE="${2:-}"; shift 2 ;;
+    --search) shift 2 ;; # accepted for older calls; Search variables are no longer used
     --branch) BRANCH="${2:-}"; shift 2 ;;
     --project-dir) PROJECT_DIR="$(cd -- "${2:-}" && pwd -P)"; shift 2 ;;
     --build-command) BUILD_COMMAND="${2:-}"; shift 2 ;;
@@ -94,7 +89,6 @@ fi
 [[ "$VALIDATE_ONLY" == true ]] && exit 0
 
 [[ "$TARGET" == preview || "$TARGET" == production || "$TARGET" == both ]] || die "--target must be preview, production, or both."
-[[ "$SEARCH_MODE" == embedded || "$SEARCH_MODE" == standalone ]] || die "--search must be embedded or standalone."
 
 command -v vercel >/dev/null || die "Vercel CLI is required. Run: npm install --global vercel"
 vercel whoami >/dev/null 2>&1 || die "Vercel is not connected. Run 'vercel login' once, then retry."
@@ -152,10 +146,6 @@ prompt_value() {
 LOCAL_ENV="$PROJECT_DIR/.env.local"
 
 prompt_value VERCEL_NEXT_PUBLIC_DEFAULT_SITE_NAME "NEXT_PUBLIC_DEFAULT_SITE_NAME" "$(read_env_value "$LOCAL_ENV" NEXT_PUBLIC_DEFAULT_SITE_NAME)" false
-prompt_value VERCEL_NEXT_PUBLIC_SEARCH_API_KEY "NEXT_PUBLIC_SEARCH_API_KEY" "$(read_env_value "$LOCAL_ENV" NEXT_PUBLIC_SEARCH_API_KEY)" true
-prompt_value VERCEL_NEXT_PUBLIC_SEARCH_CUSTOMER_KEY "NEXT_PUBLIC_SEARCH_CUSTOMER_KEY" "$(read_env_value "$LOCAL_ENV" NEXT_PUBLIC_SEARCH_CUSTOMER_KEY)" true
-prompt_value VERCEL_NEXT_PUBLIC_SEARCH_ENV "NEXT_PUBLIC_SEARCH_ENV" "$(read_env_value "$LOCAL_ENV" NEXT_PUBLIC_SEARCH_ENV)" false
-prompt_value VERCEL_NEXT_PUBLIC_SEARCH_SOURCE "NEXT_PUBLIC_SEARCH_SOURCE" "$(read_env_value "$LOCAL_ENV" NEXT_PUBLIC_SEARCH_SOURCE)" false
 
 if [[ "$TARGET" == preview || "$TARGET" == both ]]; then
   prompt_value VERCEL_PREVIEW_SITECORE_EDGE_CONTEXT_ID "Preview SITECORE_EDGE_CONTEXT_ID" "$(read_env_value "$LOCAL_ENV" SITECORE_EDGE_CONTEXT_ID)" true
@@ -249,10 +239,6 @@ NODE
   upsert_env "$project_id" SITECORE_EDGE_CONTEXT_ID "$edge"
   upsert_env "$project_id" NEXT_PUBLIC_SITECORE_EDGE_CONTEXT_ID "$public_edge"
   upsert_env "$project_id" NEXT_PUBLIC_DEFAULT_SITE_NAME "$VERCEL_NEXT_PUBLIC_DEFAULT_SITE_NAME"
-  upsert_env "$project_id" NEXT_PUBLIC_SEARCH_API_KEY "$VERCEL_NEXT_PUBLIC_SEARCH_API_KEY"
-  upsert_env "$project_id" NEXT_PUBLIC_SEARCH_CUSTOMER_KEY "$VERCEL_NEXT_PUBLIC_SEARCH_CUSTOMER_KEY"
-  upsert_env "$project_id" NEXT_PUBLIC_SEARCH_ENV "$VERCEL_NEXT_PUBLIC_SEARCH_ENV"
-  upsert_env "$project_id" NEXT_PUBLIC_SEARCH_SOURCE "$VERCEL_NEXT_PUBLIC_SEARCH_SOURCE"
 
   env_backup="$(mktemp)"
   if [[ -f "$LOCAL_ENV" ]]; then
