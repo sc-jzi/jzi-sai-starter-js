@@ -508,3 +508,97 @@ textarea {
   text-align: center;
   color: var(--pe-muted);
 }
+
+/* Page Builder context panel (/panel): narrow, list-first */
+.pp {
+  padding: 14px 14px 32px;
+}
+.pp-title {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 650;
+}
+.pp-sub {
+  margin: 0 0 12px;
+  font-size: 13px;
+}
+.pp-note p {
+  margin: 0 0 8px;
+}
+.pp-label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--pe-muted);
+}
+.pp-current {
+  margin-bottom: 12px;
+  padding: 10px;
+  border: 1px solid var(--pe-border);
+  border-radius: var(--pe-radius);
+  background: var(--pe-surface);
+}
+.pp-current__item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.pp-current__item img {
+  width: 56px;
+  height: 38px;
+  object-fit: contain;
+}
+.pp-tabs {
+  margin: 10px 0;
+}
+.pp-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pp-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: var(--pe-surface);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.pp-item:hover:not(:disabled),
+.pp-item:focus-visible {
+  border-color: var(--pe-accent);
+}
+.pp-item.is-on {
+  border-color: var(--pe-accent);
+  background: var(--pe-accent-soft);
+}
+.pp-item:disabled {
+  cursor: progress;
+}
+.pp-item img,
+.pp-item__noimg {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 32px;
+  object-fit: contain;
+}
+.pp-item__text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.pp-tick {
+  color: var(--pe-accent);
+  font-weight: 700;
+}
