@@ -29,6 +29,7 @@ import { DottedAccent } from 'components/non-sitecore/DottedAccent';
 import { FacebookIcon, FacebookShareButton, LinkedinIcon, LinkedinShareButton, TwitterIcon, TwitterShareButton } from 'react-share';
 import Head from 'next/head';
 import { plainText, toJsonLd } from 'lib/json-ld';
+import { productOf, productPath, fitmentOf, carrierLabel, FACET_UNITS, listingOf } from 'lib/pim/product-context';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import { ParallaxBackgroundImage } from 'components/non-sitecore/ParallaxBackgroundImage';
 import { IconAccent } from 'components/non-sitecore/IconAccent';
@@ -202,6 +203,17 @@ const importMap = [
     exports: [
       { name: 'plainText', value: plainText },
       { name: 'toJsonLd', value: toJsonLd },
+    ]
+  },
+  {
+    module: 'lib/pim/product-context',
+    exports: [
+      { name: 'productOf', value: productOf },
+      { name: 'productPath', value: productPath },
+      { name: 'fitmentOf', value: fitmentOf },
+      { name: 'carrierLabel', value: carrierLabel },
+      { name: 'FACET_UNITS', value: FACET_UNITS },
+      { name: 'listingOf', value: listingOf },
     ]
   },
   {

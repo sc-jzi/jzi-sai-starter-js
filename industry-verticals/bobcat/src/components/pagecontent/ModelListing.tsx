@@ -14,6 +14,7 @@ import {
 } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 import { plainText, toJsonLd } from 'lib/json-ld';
+import { carrierLabel, FACET_UNITS, ListingProduct, listingOf, productPath } from 'lib/pim/product-context';
 
 /**
  * ModelListing: model cards (children) with a filter column built from the children's values:
@@ -27,12 +28,25 @@ import { plainText, toJsonLd } from 'lib/json-ld';
  *
  * The models are also written as schema.org JSON-LD: an ItemList of Products (name, image, description, the card's specs
  * as additionalProperty, the "Starting at" price as an Offer when it is a dollar amount, the details link when absolute).
+ *
+ * PIM products (catalog plan section 4): on a category page the route puts the category's PIM products on the page
+ * context (src/lib/pim/listing.ts). Each becomes a card like an authored child (model, image, summary, price, the
+ * listing's specs matched to the PIM facet by label, a Details link to its wildcard page); a model that already has an
+ * authored card is not repeated. Discontinued models leave the main grid: a Current / Previous models switch shows them,
+ * with a "Previous model" badge and their model years. Filters and counts cover the models in view.
+ * Attachment categories (catalog plan section 4b): the cards are attachments, the filters are "Works With" (the machine
+ * types each is listed for) and a "Fits my machine?" picker (PIM fitment); there is no spec sort.
  */
 
 type JsonField<T> = { jsonValue?: T };
 
 export interface ModelItem {
   id: string;
+  /** set on cards built from the PIM */
+  pimStatus?: 'active' | 'discontinued';
+  /** PIM attachments: machine types it is listed for, and the machine SKUs it fits */
+  pimCarrierTypes?: string[];
+  pimFits?: string[];
   image?: JsonField<ImageField>;
   badges?: JsonField<Field<string>>;
   model?: JsonField<Field<string>>;
@@ -80,12 +94,72 @@ export type ModelListingProps = ComponentProps & {
 
 type Look = 'default' | 'bobcat' | 'bobcat-light';
 type FilterKey = string;
+/** a card's value(s) for one filter group: an attachment can work with several machine types */
+type KeyOf = (m: ModelItem) => string | string[] | null;
+const keysOf = (k: string | string[] | null): string[] => (k === null ? [] : Array.isArray(k) ? k : [k]);
 type Filters = Record<FilterKey, string[]>;
 type SpecKey = 'spec1' | 'spec2' | 'spec3';
 type Ranges = Partial<Record<SpecKey, { min: string; max: string }>>;
 type Spec = { key: SpecKey; label: string; unit: string; labelField?: Field<string> };
 
 const EMPTY_FILTERS: Filters = {};
+
+/** The PIM facet a listing spec label stands for ("Maximum Dig Depth" -> dig_depth). */
+const facetOfLabel = (label: string): string | null => {
+  const l = label.toLowerCase();
+  if (l.includes('pto')) return 'pto_horsepower';
+  if (l.includes('horsepower')) return 'horsepower';
+  if (l.includes('operating weight')) return 'operating_weight';
+  if (l.includes('dig depth')) return 'dig_depth';
+  if (l.includes('lift capacity')) return 'lift_capacity';
+  if (l.includes('rated operating') || l.includes('roc')) return 'rated_operating_capacity';
+  return null;
+};
+
+/** A PIM facet value in the unit the listing shows (only feet <-> inches differ today). */
+const inUnit = (value: string | undefined, facet: string, unit: string): string => {
+  const n = Number(`${value ?? ''}`.replace(/,/g, ''));
+  if (!value || !Number.isFinite(n)) return value ?? '';
+  const from = FACET_UNITS[facet];
+  const to = unit.trim().toLowerCase();
+  const round = (v: number) => `${Math.round(v * 10) / 10}`;
+  if (from === 'ft' && to === 'in') return round(n * 12);
+  if (from === 'in' && to === 'ft') return round(n / 12);
+  return value;
+};
+
+const textField = (value: string): JsonField<Field<string>> => ({ jsonValue: { value } });
+
+/** A PIM product as a model card (the same shape as an authored child). */
+const pimCard = (p: ListingProduct, specs: Spec[] | null): ModelItem => {
+  const discontinued = p.status === 'discontinued';
+  const k = p.key_specs ?? {};
+  const item: ModelItem = {
+    id: `pim:${p.sku}`,
+    pimStatus: discontinued ? 'discontinued' : 'active',
+    model: textField(p.model),
+    badges: textField(discontinued ? `Previous model${p.model_years ? ` ${p.model_years}` : ''}` : ''),
+    price: textField(!discontinued && p.msrp ? `$${Math.round(p.msrp).toLocaleString('en-US')} USD` : ''),
+    text: { jsonValue: { value: p.summary ? `<p>${p.summary.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</p>` : '' } },
+    horsepower: textField(k.horsepower ?? ''),
+    operatingCapacity: textField(k.rated_operating_capacity ?? ''),
+    image: p.hero_image_url ? { jsonValue: { value: { src: p.hero_image_url, alt: p.name } } } : undefined,
+    detailsLink: { jsonValue: { value: { href: productPath(p), text: 'Details', linktype: 'internal' } } },
+    pimCarrierTypes: p.carrier_types ?? [],
+    pimFits: p.fits ?? [],
+  };
+  for (const s of specs ?? []) {
+    const facet = facetOfLabel(s.label);
+    if (facet) item[s.key] = textField(inUnit(k[facet], facet, s.unit));
+  }
+  return item;
+};
+
+/** The keys an authored card and a PIM product share: the model name ("e35") and the last segment of its link. */
+const modelKeys = (m: ModelItem): string[] => {
+  const href = `${m.detailsLink?.jsonValue?.value?.href ?? ''}`.replace(/[?#].*$/, '').replace(/\/$/, '');
+  return [str(m.model).toLowerCase(), (href.split('/').pop() ?? '').toLowerCase()].filter(Boolean);
+};
 const MAX_COMPARE = 3;
 const SPEC_KEYS: SpecKey[] = ['spec1', 'spec2', 'spec3'];
 
@@ -134,14 +208,14 @@ const hpBucket = (hp: number | null): string | null => {
 /** One filter group: its options in first-seen order with counts and a readable label. */
 const buildGroup = (
   items: ModelItem[],
-  keyOf: (m: ModelItem) => string | null,
+  keyOf: KeyOf,
   labelOf: (key: string, members: ModelItem[]) => string
 ) => {
   const map = new Map<string, ModelItem[]>();
   for (const item of items) {
-    const key = keyOf(item);
-    if (!key) continue;
-    map.set(key, [...(map.get(key) ?? []), item]);
+    for (const key of keysOf(keyOf(item))) {
+      if (key) map.set(key, [...(map.get(key) ?? []), item]);
+    }
   }
   return [...map.entries()].map(([key, members]) => ({
     key,
@@ -376,7 +450,7 @@ const ModelListingView = ({
     () => keyedListing(props.fields?.data?.datasource),
     [props.fields?.data?.datasource]
   );
-  const items = useMemo(
+  const authored = useMemo(
     () =>
       (datasource?.children?.results ?? []).map((c) => keyedChild(c as ModelItem & ChildFieldList)),
     [datasource]
@@ -389,6 +463,8 @@ const ModelListingView = ({
   const [compare, setCompare] = useState<string[]>([]);
   const [closed, setClosed] = useState<FilterKey[]>([]);
   const [sort, setSort] = useState<'asc' | 'desc'>('asc');
+
+  const [view, setView] = useState<'current' | 'previous'>('current');
 
   // Other machine types: the listing names its specs (see the header comment); loaders keep the fixed filters.
   const specs: Spec[] | null = str(datasource?.spec1Label)
@@ -403,7 +479,31 @@ const ModelListingView = ({
       }).filter((s) => s.label)
     : null;
 
-  const keyOf: Record<FilterKey, (m: ModelItem) => string | null> = specs
+  // Authored cards plus the PIM products of this category that have no authored card (catalog plan section 4)
+  const pimListing = listingOf(page);
+  const allItems = useMemo(() => {
+    if (!pimListing || isEditing) return authored;
+    const taken = new Set(authored.flatMap(modelKeys));
+    const extra = pimListing.products
+      .map((p) => pimCard(p, specs))
+      .filter((m) => !modelKeys(m).some((key) => taken.has(key)));
+    return [...authored, ...extra];
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [authored, pimListing, isEditing, datasource]);
+  const previousCount = allItems.filter((m) => m.pimStatus === 'discontinued').length;
+  const showPrevious = view === 'previous' && previousCount > 0;
+  const items = useMemo(
+    () => allItems.filter((m) => (m.pimStatus === 'discontinued') === showPrevious),
+    [allItems, showPrevious]
+  );
+
+  const isAttachments = pimListing?.kind === 'attachment';
+  const [fitsMachine, setFitsMachine] = useState('');
+  const [appliedFits, setAppliedFits] = useState('');
+
+  const keyOf: Record<FilterKey, KeyOf> = isAttachments
+    ? { worksWith: (m) => m.pimCarrierTypes ?? null }
+    : specs
     ? {
         group: (m) => str(m.group) || null,
         group2: (m) => str(m.group2) || null,
@@ -417,7 +517,15 @@ const ModelListingView = ({
 
   const groups = useMemo(
     () =>
-      specs
+      isAttachments
+        ? [
+            {
+              key: 'worksWith' as FilterKey,
+              title: 'Works With',
+              options: buildGroup(items, keyOf.worksWith, (k) => carrierLabel(k)),
+            },
+          ]
+        : specs
         ? [
             { key: 'group', title: str(datasource?.groupLabel) },
             { key: 'group2', title: str(datasource?.group2Label) },
@@ -493,11 +601,12 @@ const ModelListingView = ({
     : [...items].sort(byRoc).filter(
         (item) =>
           inRange(item) &&
+          (!appliedFits || (item.pimFits ?? []).includes(appliedFits)) &&
           (Object.keys(applied) as FilterKey[]).every((k) => {
             const chosen = applied[k] ?? [];
             if (!chosen.length) return true;
-            const key = keyOf[k]?.(item);
-            return !!key && chosen.includes(key);
+            const keys = keyOf[k] ? keysOf(keyOf[k](item)) : [];
+            return keys.some((key) => chosen.includes(key));
           })
       );
 
@@ -513,7 +622,13 @@ const ModelListingView = ({
 
   const applyLabel = datasource.applyLabel?.jsonValue;
   const pageTitle = `${(page?.layout?.sitecore?.route?.fields?.Title as Field<string> | undefined)?.value ?? ''}`.trim();
-  const jsonLd = isEditing ? null : productListJsonLd(pageTitle || str(datasource.title), items, specs);
+  const jsonLd = isEditing
+    ? null
+    : productListJsonLd(
+        pageTitle || str(datasource.title),
+        allItems.filter((m) => m.pimStatus !== 'discontinued'),
+        specs
+      );
 
   return (
     <div
@@ -528,11 +643,31 @@ const ModelListingView = ({
               <Text field={datasource.title?.jsonValue} />
             </h2>
           )}
+          {!isEditing && previousCount > 0 && (
+            <div className="model-listing__views" role="group" aria-label="Models">
+              <button
+                type="button"
+                className={`model-listing__view${showPrevious ? '' : ' is-active'}`}
+                aria-pressed={!showPrevious}
+                onClick={() => setView('current')}
+              >
+                Current models ({allItems.length - previousCount})
+              </button>
+              <button
+                type="button"
+                className={`model-listing__view${showPrevious ? ' is-active' : ''}`}
+                aria-pressed={showPrevious}
+                onClick={() => setView('previous')}
+              >
+                Previous models ({previousCount})
+              </button>
+            </div>
+          )}
           <div className="model-listing__toolbar">
             <div className="model-listing__toolbar-col">
               {!isEditing && (
                 <p className="model-listing__count">
-                  {specs ? (
+                  {specs || isAttachments ? (
                     <>
                       <span className="model-listing__count-num">{visible.length}</span>{' '}
                       {visible.length === 1 ? 'Result' : 'Results'}
@@ -568,7 +703,7 @@ const ModelListingView = ({
                 )}
               </div>
             )}
-            {!isEditing && (
+            {!isEditing && !isAttachments && (
               <div className="model-listing__toolbar-col model-listing__toolbar-col--sort">
                 {specs && <p className="model-listing__sort-label">Sort By</p>}
                 <div className="model-listing__sort-box">
@@ -585,6 +720,29 @@ const ModelListingView = ({
           </div>
           <div className="model-listing__layout">
             <aside className="model-listing__filters" aria-label="Filters">
+              {isAttachments && !isEditing && (pimListing?.machines.length ?? 0) > 0 && (
+                <div className="model-listing__filter model-listing__fits">
+                  <label className="model-listing__filter-title" htmlFor={`fits-${id || 'listing'}`}>
+                    Fits my machine?
+                  </label>
+                  <div className="model-listing__filter-options">
+                    <select
+                      id={`fits-${id || 'listing'}`}
+                      className="model-listing__fits-select"
+                      value={fitsMachine}
+                      onChange={(e) => setFitsMachine(e.target.value)}
+                    >
+                      <option value="">Any machine</option>
+                      {pimListing?.machines.map((m) => (
+                        <option key={m.sku} value={m.sku}>
+                          {m.model}
+                          {m.status === 'discontinued' ? ' (previous model)' : ''}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+              )}
               {specs?.map((s) => (
                 <div
                   className={`model-listing__filter${closed.includes(s.key) ? ' is-closed' : ''}`}
@@ -664,6 +822,7 @@ const ModelListingView = ({
                   onClick={() => {
                     setApplied(pending);
                     setAppliedRange(pendingRange);
+                    setAppliedFits(fitsMachine);
                   }}
                 >
                   {applyLabel?.value || 'Apply'}
@@ -672,7 +831,13 @@ const ModelListingView = ({
             </aside>
             <div className="model-listing__results">
               {visible.length === 0 && (
-                <p className="model-listing__none">No models match these filters.</p>
+                <p className="model-listing__none">
+                  {isAttachments && !allItems.length
+                    ? 'No attachments in this category yet.'
+                    : isAttachments
+                      ? 'No attachments match these filters.'
+                      : 'No models match these filters.'}
+                </p>
               )}
               <div className="model-listing__grid">
                 {visible.map((item) => (

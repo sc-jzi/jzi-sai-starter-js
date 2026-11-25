@@ -118,6 +118,69 @@
     }
   }
 
+  /* PIM product pages: Discontinued badge + model years above the model name, and the "Replaced by" card */
+  &__status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin: 0 0 8px;
+    font-size: 14px;
+  }
+
+  &__badge {
+    padding: 4px 10px;
+    color: #fff;
+    background: var(--text-color, #222);
+    font-family: var(--font-heading);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  &__years {
+    color: var(--text-muted, #666);
+  }
+
+  &__successor {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin: 0 0 20px;
+    padding: 12px 16px;
+    color: inherit;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    border-left: 4px solid var(--bg-saturated);
+
+    &:hover {
+      border-color: var(--bg-saturated);
+    }
+  }
+
+  &__successor-image {
+    width: 96px;
+    aspect-ratio: 3 / 2;
+    object-fit: contain;
+  }
+
+  &__successor-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    strong {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 500;
+    }
+  }
+
+  &__successor-label {
+    font-size: 13px;
+    text-transform: uppercase;
+  }
+
   &__price {
     margin: 0 0 20px;
     font-size: 16px;
@@ -276,5 +339,192 @@
     tbody td:first-child {
       font-weight: 600;
     }
+
+    /* PIM product pages: a group heading row (Engine, Performance, ...) when the specs have several groups */
+    tbody tr.specs-group {
+      background: #e6e6e6;
+
+      th {
+        font-family: var(--font-heading);
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+/* Attachment pages: "<model> Works With" (ProductDetails BobcatWorksWith, PIM fitment) */
+.works-with {
+  .product-details__inner {
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__machine {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    height: 100%;
+    padding: 12px 14px;
+    color: inherit;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    border-left: 4px solid var(--bg-saturated);
+
+    strong {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    span {
+      font-size: 13px;
+      color: var(--text-muted, #666);
+    }
+
+    &:hover,
+    &:focus-visible {
+      border-color: var(--bg-saturated);
+    }
+  }
+
+  &__toggle {
+    padding: 6px 0;
+    color: inherit;
+    background: none;
+    border: 0;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &__check {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    margin-top: 24px;
+    padding: 16px;
+    background: #f2f2f2;
+  }
+
+  &__check-label {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+
+  &__select {
+    min-width: 220px;
+    padding: 8px 10px;
+    border: 1px solid #999;
+  }
+
+  &__answer {
+    flex-basis: 100%;
+    margin: 0;
+    font-weight: 600;
+
+    &.is-yes {
+      color: #1e7b34;
+    }
+
+    &.is-no {
+      color: #a12b16;
+    }
+  }
+}
+
+/* Machine pages: "<model> Compatible Attachments" (ProductDetails BobcatAttachments, PIM fitment) */
+.compatible-attachments {
+  background: #f2f2f2;
+
+  .product-details__inner {
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
+
+  &__tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0 20px;
+  }
+
+  &__tab {
+    padding: 8px 14px;
+    color: inherit;
+    background: #fff;
+    border: 1px solid #bbb;
+    font-family: var(--font-heading);
+    font-size: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &.is-active {
+      color: #fff;
+      background: var(--bg-saturated);
+      border-color: var(--bg-saturated);
+    }
+  }
+
+  &__group-title {
+    margin: 20px 0 10px;
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 100%;
+    padding: 12px;
+    color: inherit;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #ddd;
+
+    strong {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    &:hover,
+    &:focus-visible {
+      border-color: var(--bg-saturated);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: contain;
+  }
+
+  &__note {
+    font-size: 13px;
+    color: #a12b16;
   }
 }

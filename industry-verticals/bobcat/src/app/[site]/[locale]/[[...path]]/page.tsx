@@ -12,6 +12,10 @@ import AlternateLinks from 'src/AlternateLinks';
 import { readSeoControls, SeoRouteFields } from 'src/lib/seo-controls';
 import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
+import { resolveProductPage } from 'src/lib/pim/product-page';
+import { attachCategoryListing } from 'src/lib/pim/listing';
+import { attachMachineFitment } from 'src/lib/pim/fitment';
+import { productOf } from 'src/lib/pim/product-context';
 
 export const dynamic = 'force-dynamic';
 export const fetchCache = 'force-no-store';
@@ -29,6 +33,16 @@ const getPageWithFallback = async (path: string[] | undefined, site: string, loc
   const page = await client.getPage(path ?? [], { site, locale });
   if (page || locale === routing.defaultLocale) return page;
   return client.getPage(path ?? [], { site, locale: routing.defaultLocale });
+};
+
+/**
+ * The page for a path. A category's `*` (wildcard) item answers every unknown slug under it; such a page is a PIM product
+ * page, merged with the product, or null (404) when the slug is not a product of that category. A category page with a
+ * ModelListing also gets the category's PIM products, and a machine page the attachments that fit it (src/lib/pim).
+ */
+const getSitePage = async (path: string[] | undefined, site: string, locale: string) => {
+  const page = await resolveProductPage(await getPageWithFallback(path, site, locale), path);
+  return attachMachineFitment(await attachCategoryListing(page, path), path);
 };
 
 export default async function Page({ params }: PageProps) {
@@ -51,7 +65,7 @@ export default async function Page({ params }: PageProps) {
       page = await client.getPreview(previewData);
     }
   } else {
-    page = await getPageWithFallback(path, site, locale);
+    page = await getSitePage(path, site, locale);
   }
 
   // If the page is not found, return a 404
@@ -102,10 +116,13 @@ export const generateMetadata = async ({ params }: PageProps) => {
   const { path, site, locale } = await params;
 
   // The same call as for rendering the page. Should be cached by default react behavior
-  const page = await getPageWithFallback(path, site, locale);
+  const page = await getSitePage(path, site, locale);
+  const product = productOf(page);
   const { noIndex, noFollow } = readSeoControls(page?.layout.sitecore.route?.fields as SeoRouteFields | undefined);
   return {
-    title: (page?.layout.sitecore.route?.fields as RouteFields)?.Title?.value?.toString() || 'Page',
+    title: product
+      ? `${product.name} | Bobcat Company`
+      : (page?.layout.sitecore.route?.fields as RouteFields)?.Title?.value?.toString() || 'Page',
     // <meta name="robots"> only when an editor ticked noindex or nofollow on the page (the default is index, follow)
     ...((noIndex || noFollow) && { robots: { index: !noIndex, follow: !noFollow } }),
   };

@@ -14,6 +14,34 @@
     background: #000;
   }
 
+  /* Current / Previous models switch (shown when the PIM has discontinued models for this category) */
+  &__views {
+    display: inline-flex;
+    margin: 8px 0 0;
+    border: 1px solid currentColor;
+  }
+
+  &__view {
+    padding: 8px 18px;
+    color: inherit;
+    background: transparent;
+    border: 0;
+    font-family: var(--font-heading);
+    font-size: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+    &.is-active {
+      color: #fff;
+      background: var(--bg-saturated);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--bg-saturated);
+      outline-offset: 2px;
+    }
+  }
+
   &__toolbar {
     display: grid;
     grid-template-columns: 353px 353px minmax(0, 1fr);
@@ -428,4 +456,11 @@
     grid-column: 2;
     grid-row: 2;
   }
+}
+
+/* Attachment categories: the "Fits my machine?" picker above the Works With filter */
+.model-listing__fits-select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #999;
 }

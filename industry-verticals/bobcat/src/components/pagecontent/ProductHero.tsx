@@ -14,6 +14,7 @@ import {
 } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
 import { plainText, toJsonLd } from 'lib/json-ld';
+import { productOf, productPath, ProductContext } from 'lib/pim/product-context';
 
 /**
  * ProductHero: the Product page's own fields (no datasource) - a gallery of Image1-Image4 beside the model name (Title),
@@ -21,6 +22,9 @@ import { plainText, toJsonLd } from 'lib/json-ld';
  * the Special Offers box and the brochure link. "Save to My Machine" (SaveLabel / SavedLabel) adds the page to the
  * owner's saved machines (POST /api/portal/saved); signed out, the save is kept and the visitor goes to the My Machine
  * sign-in, then to Saved Machines. Also writes the page's schema.org Product JSON-LD.
+ * On a PIM product page (a category's wildcard, src/lib/pim) the route fields hold the PIM product; a discontinued model
+ * shows the Discontinued badge with its model years and a "Replaced by" card, and no price, Build & Price or offer.
+ * Save to My Machine is hidden there until My Machine can store PIM SKUs (every PIM product shares the wildcard item).
  */
 
 interface ProductRouteFields {
@@ -50,7 +54,7 @@ type SaveState = 'idle' | 'busy' | 'saved';
 
 const IMAGE_KEYS = ['Image1', 'Image2', 'Image3', 'Image4'] as const;
 
-const productJsonLd = (f: ProductRouteFields): string | null => {
+const productJsonLd = (f: ProductRouteFields, product: ProductContext | null): string | null => {
   const name = `${f.Title?.value ?? ''}`.trim();
   if (!name) return null;
   const price = `${f.Price?.value ?? ''}`.replace(/[^0-9.]/g, '');
@@ -62,9 +66,17 @@ const productJsonLd = (f: ProductRouteFields): string | null => {
     image: IMAGE_KEYS.map((k) => f[k]?.value?.src).filter(Boolean),
     brand: { '@type': 'Brand', name: 'Bobcat' },
     category: `${f.Subtitle?.value ?? ''}`.trim(),
-    offers: price
-      ? { '@type': 'Offer', price, priceCurrency: 'USD', availability: 'https://schema.org/InStock' }
+    sku: product?.sku,
+    // attachments: the machines it fits (PIM fitment, current models)
+    isAccessoryOrSparePartFor: product?.worksWith?.current.length
+      ? product.worksWith.current.map((m) => ({ '@type': 'Product', name: m.name, sku: m.sku }))
       : undefined,
+    offers:
+      product?.status === 'discontinued'
+        ? { '@type': 'Offer', availability: 'https://schema.org/Discontinued' }
+        : price
+          ? { '@type': 'Offer', price, priceCurrency: 'USD', availability: 'https://schema.org/InStock' }
+          : undefined,
   });
 };
 
@@ -86,7 +98,9 @@ const ProductHeroView = ({ props, look }: { props: ComponentProps; look: Look })
   const images = IMAGE_KEYS.filter((k) => isEditing || !!f[k]?.value?.src);
   const [active, setActive] = useState<(typeof IMAGE_KEYS)[number]>('Image1');
   const [save, setSave] = useState<SaveState>('idle');
-  const jsonLd = isEditing ? null : productJsonLd(f);
+  const product = productOf(page);
+  const discontinued = product?.status === 'discontinued';
+  const jsonLd = isEditing ? null : productJsonLd(f, product);
 
   useEffect(() => {
     if (isEditing || !key) return;
@@ -147,6 +161,12 @@ const ProductHeroView = ({ props, look }: { props: ComponentProps; look: Look })
         </div>
 
         <div className="product-hero__body">
+          {discontinued && (
+            <p className="product-hero__status">
+              <span className="product-hero__badge">Discontinued</span>
+              {product?.model_years && <span className="product-hero__years">Produced {product.model_years}</span>}
+            </p>
+          )}
           <h1 className="product-hero__title">
             <Text field={f.Title} />
           </h1>
@@ -159,16 +179,30 @@ const ProductHeroView = ({ props, look }: { props: ComponentProps; look: Look })
           {(isEditing || !!f.Highlights?.value) && (
             <RichText field={f.Highlights} className="product-hero__highlights" />
           )}
-          {(isEditing || !!f.Price?.value) && (
+          {!discontinued && (isEditing || !!f.Price?.value) && (
             <p className="product-hero__price">
               <Text field={f.PriceLabel} tag="span" className="product-hero__price-label" />{' '}
               <Text field={f.Price} tag="strong" />
             </p>
           )}
 
+          {discontinued && product?.successor && (
+            <a className="product-hero__successor" href={productPath(product.successor)}>
+              {product.successor.hero_image_url && (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={product.successor.hero_image_url} alt="" className="product-hero__successor-image" />
+              )}
+              <span className="product-hero__successor-text">
+                <span className="product-hero__successor-label">Replaced by</span>
+                <strong>{product.successor.name}</strong>
+              </span>
+            </a>
+          )}
+
           <div className="product-hero__actions">
-            {has(f.BuildLink) && <Link field={f.BuildLink as LinkField} className="bobcat-button" />}
-            {(isEditing || !!f.SaveLabel?.value) &&
+            {!discontinued && has(f.BuildLink) && <Link field={f.BuildLink as LinkField} className="bobcat-button" />}
+            {!product &&
+              (isEditing || !!f.SaveLabel?.value) &&
               (isEditing ? (
                 <span className="bobcat-button bobcat-button--secondary product-hero__save">
                   <Text field={f.SaveLabel} />
@@ -200,7 +234,7 @@ const ProductHeroView = ({ props, look }: { props: ComponentProps; look: Look })
             )}
           </ul>
 
-          {(isEditing || !!f.OfferText?.value) && (
+          {!discontinued && (isEditing || !!f.OfferText?.value) && (
             <div className="product-hero__offer">
               <h2 className="product-hero__offer-title">
                 <Text field={f.OfferTitle} />

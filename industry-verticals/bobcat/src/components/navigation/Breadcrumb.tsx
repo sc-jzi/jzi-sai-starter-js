@@ -1,7 +1,9 @@
 'use client';
 
 import { JSX } from 'react';
+import { useSitecore } from '@sitecore-content-sdk/nextjs';
 import { ComponentProps } from 'lib/component-props';
+import { productOf } from 'lib/pim/product-context';
 
 function formatBreadcrumb(text: string) {
   text = decodeURIComponent(text);
@@ -35,7 +37,7 @@ function getBreadcrumbTitle(propItem: contextItem) {
     name = propItem.displayName;
   }
   if (!name) {
-    name = propItem.title.value;
+    name = propItem.title?.value ?? '';
   }
   return formatBreadcrumb(name);
 }
@@ -44,7 +46,14 @@ function getBreadcrumbUrl(propItem: contextItem) {
   return propItem?.url?.path;
 }
 
+/** The current page's crumb; on a PIM product page (the category's `*` item) the product's model, not "*". */
+const useCurrentTitle = (item: contextItem): string => {
+  const { page } = useSitecore();
+  return productOf(page)?.model || getBreadcrumbTitle(item);
+};
+
 const Breadcrumb = (props: BreadcrumbProps): JSX.Element => {
+  const currentTitle = useCurrentTitle(props?.fields?.data?.item ?? ({} as contextItem));
   if (props?.fields?.data?.item === null) {
     return <div></div>;
   }
@@ -56,7 +65,7 @@ const Breadcrumb = (props: BreadcrumbProps): JSX.Element => {
   const sxaStyles = `${props.params?.styles || ''}`;
 
   const pageItems = {
-    title: getBreadcrumbTitle(propItem),
+    title: currentTitle,
     url: getBreadcrumbUrl(propItem),
     className: 'active',
   };
@@ -93,6 +102,7 @@ export const Default = Breadcrumb;
 // Bobcat: a slim band of small links (Home › … › parent) with drawn triangle separators; the current page is plain text.
 export const Bobcat = (props: BreadcrumbProps): JSX.Element => {
   const item = props?.fields?.data?.item;
+  const currentTitle = useCurrentTitle(item ?? ({} as contextItem));
   if (!item) {
     return <div className="breadcrumb-bobcat component" />;
   }
@@ -113,7 +123,7 @@ export const Bobcat = (props: BreadcrumbProps): JSX.Element => {
           </li>
         ))}
         <li className="breadcrumb-bobcat__item breadcrumb-bobcat__item--current" aria-current="page">
-          <span>{getBreadcrumbTitle(item)}</span>
+          <span>{currentTitle}</span>
         </li>
       </ol>
     </nav>
