@@ -13,7 +13,8 @@ import { fitmentOf, MachineOption, productOf, productPath } from 'lib/pim/produc
  * page's product context (src/lib/pim): current models as linked cards, previous models behind a toggle, and a
  * "Fits my machine?" check (pick any machine: yes / no). What fits is PIM data; nothing here is authored.
  * BobcatAttachments (machine pages, catalog plan section 4b): "<model> Compatible Attachments", the current attachments
- * that fit the machine (PIM fitment on `pimFitment`, src/lib/pim/fitment.ts) as cards, with a tab per subcategory.
+ * that fit the machine (PIM fitment on `pimFitment`, src/lib/pim/fitment.ts) as cards, with a tab per subcategory. When
+ * marketing featured some (enrichment, Product Enrichment app), a Featured tab comes first and is open on page load.
  */
 
 interface ProductDetailsFields {
@@ -151,7 +152,7 @@ const CompatibleAttachmentsView = ({ props }: { props: ComponentProps }): JSX.El
   const { page } = useSitecore();
   const isEditing = !!page?.mode?.isEditing;
   const fitment = fitmentOf(page);
-  const [tab, setTab] = useState('all');
+  const [tab, setTab] = useState(() => (fitmentOf(page)?.featured?.length ? 'featured' : 'all'));
   const id = props.params?.RenderingIdentifier;
   const styles = `${props.params?.styles || ''}`.trim();
   if (!fitment) {
@@ -164,14 +165,25 @@ const CompatibleAttachmentsView = ({ props }: { props: ComponentProps }): JSX.El
     ) : null;
   }
   const total = fitment.groups.reduce((n, g) => n + g.items.length, 0);
-  const shown = tab === 'all' ? fitment.groups : fitment.groups.filter((g) => g.slug === tab);
+  const featured = fitment.featured ?? [];
+  const shown =
+    tab === 'featured' && featured.length
+      ? [{ slug: 'featured', name: 'Featured', items: featured }]
+      : tab === 'all' || tab === 'featured'
+        ? fitment.groups
+        : fitment.groups.filter((g) => g.slug === tab);
+  const tabs = [
+    ...(featured.length ? [{ slug: 'featured', name: 'Featured', count: featured.length }] : []),
+    { slug: 'all', name: 'All', count: total },
+    ...fitment.groups.map((g) => ({ slug: g.slug, name: g.name, count: g.items.length })),
+  ];
 
   return (
     <div className={`component product-details compatible-attachments ${styles}`} id={id ? id : undefined}>
       <div className="product-details__inner">
         <h2 className="product-details__title">{fitment.machine.model} Compatible Attachments</h2>
         <div className="compatible-attachments__tabs" role="tablist" aria-label="Attachment types">
-          {[{ slug: 'all', name: 'All', count: total }, ...fitment.groups.map((g) => ({ ...g, count: g.items.length }))].map(
+          {tabs.map(
             (t) => (
               <button
                 key={t.slug}
@@ -188,7 +200,9 @@ const CompatibleAttachmentsView = ({ props }: { props: ComponentProps }): JSX.El
         </div>
         {shown.map((g) => (
           <div className="compatible-attachments__group" key={g.slug}>
-            {tab === 'all' && <h3 className="compatible-attachments__group-title">{g.name}</h3>}
+            {(tab === 'all' || (tab === 'featured' && !featured.length)) && (
+              <h3 className="compatible-attachments__group-title">{g.name}</h3>
+            )}
             <ul className="compatible-attachments__grid">
               {g.items.map((a) => (
                 <li key={a.sku}>
@@ -197,6 +211,7 @@ const CompatibleAttachmentsView = ({ props }: { props: ComponentProps }): JSX.El
                       // eslint-disable-next-line @next/next/no-img-element
                       <img src={a.hero_image_url} alt="" loading="lazy" className="compatible-attachments__image" />
                     )}
+                    {a.featured && tab !== 'featured' && <span className="compatible-attachments__featured">Featured</span>}
                     <strong>{a.model}</strong>
                     {a.hydraulics_required && (
                       <span className="compatible-attachments__note">Requires {a.hydraulics_required}</span>

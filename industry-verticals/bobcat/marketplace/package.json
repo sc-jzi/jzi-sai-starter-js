@@ -1,0 +1,26 @@
+{
+  "name": "bobcat-product-enrichment",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Sitecore Marketplace app (Full screen): enrich PIM products in SitecoreAI. Catalog plan section 7.",
+  "scripts": {
+    "dev": "next dev -p 3020",
+    "build": "next build",
+    "start": "next start -p 3020",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@sitecore-marketplace-sdk/client": "0.5.0",
+    "@sitecore-marketplace-sdk/core": "0.5.0",
+    "@sitecore-marketplace-sdk/xmc": "0.5.0",
+    "next": "16.2.6",
+    "react": "19.2.1",
+    "react-dom": "19.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "~5.8.3"
+  }
+}

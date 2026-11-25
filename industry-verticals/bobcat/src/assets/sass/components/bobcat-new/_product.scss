@@ -528,3 +528,24 @@
     color: #a12b16;
   }
 }
+
+/* Enrichment on PIM product pages: marketing's badge and tagline (Product Enrichment app) */
+.product-hero__badge--offer {
+  background: var(--bg-saturated);
+}
+
+.product-hero__tagline {
+  margin: 0 0 12px;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.compatible-attachments__featured {
+  align-self: flex-start;
+  padding: 2px 8px;
+  color: #fff;
+  background: var(--bg-saturated);
+  font-size: 12px;
+  text-transform: uppercase;
+}

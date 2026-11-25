@@ -1,6 +1,18 @@
 import { Page } from '@sitecore-content-sdk/nextjs';
-import { getCompatibleMachines, getMachines, getProductBySlug, PimProduct, PimSpec } from './client';
-import { MachineOption, ProductContext } from './product-context';
+import {
+  getCategories,
+  getCategoryProducts,
+  getCompatibleMachines,
+  getMachines,
+  getProductBySku,
+  getProductBySlug,
+  PimCategory,
+  PimListedProduct,
+  PimProduct,
+  PimSpec,
+} from './client';
+import { MachineOption, ProductContext, productPath } from './product-context';
+import { Enrichment, getEnrichment } from './enrichment';
 
 /**
  * Wildcard product pages (catalog plan section 4). Sitecore resolves an unknown slug under a category to that category's
@@ -50,7 +62,14 @@ const priceOf = (p: PimProduct) =>
   p.status === 'active' && p.msrp ? `$${Math.round(p.msrp).toLocaleString('en-US')} USD (illustrative)` : '';
 
 /** Merges the PIM product into a wildcard page (a copy; the cached Sitecore page is not mutated). */
-export const mergeProduct = (page: Page, p: PimProduct, extra: Partial<ProductContext> = {}): Page => {
+const highlightsHtml = (lines: string[]) => (lines.length ? `<ul>${lines.map((l) => `<li>${esc(l)}</li>`).join('')}</ul>` : '');
+
+export const mergeProduct = (
+  page: Page,
+  p: PimProduct,
+  extra: Partial<ProductContext> = {},
+  e: Enrichment | null = null
+): Page => {
   const route = page.layout.sitecore.route!;
   const f = (route.fields ?? {}) as Record<string, unknown>;
   const gallery = (p.gallery_urls ?? []).filter(Boolean);
@@ -60,15 +79,21 @@ export const mergeProduct = (page: Page, p: PimProduct, extra: Partial<ProductCo
     Title: { value: p.model },
     NavigationTitle: { value: p.model },
     Subtitle: { value: subtitle },
-    Summary: { value: p.summary ? `<p>${esc(p.summary)}</p>` : '' },
+    // PIM default, enrichment overrides when filled
+    Summary: { value: e?.summaryOverride || (p.summary ? `<p>${esc(p.summary)}</p>` : '') },
+    // enrichment only
+    Highlights: { value: highlightsHtml(e?.highlights ?? []) },
+    Overview: { value: e?.aeoShortAnswer ? `<p>${esc(e.aeoShortAnswer)}</p>` : '' },
+    OffersLink: e?.offerLink ? { value: { href: e.offerLink.href, text: e.offerLink.text, linktype: 'internal' } } : f.OffersLink,
     Price: { value: priceOf(p) },
     Specs: { value: specsTable(p) },
     Image1: image(p.hero_image_url, `Bobcat ${p.model} ${subtitle}`.trim()) ?? f.Image1,
     Image2: image(gallery[0], `Bobcat ${p.model}`) ?? f.Image2,
     Image3: image(gallery[1], `Bobcat ${p.model}`) ?? f.Image3,
     Image4: image(gallery[2], `Bobcat ${p.model}`) ?? f.Image4,
-    baseOgTitle: { value: `${p.name} | Bobcat Company` },
-    baseOgDescription: { value: p.summary ?? '' },
+    baseOgTitle: { value: e?.metaTitle || `${p.name} | Bobcat Company` },
+    baseOgDescription: { value: e?.metaDescription || p.summary || '' },
+    ...(e?.ogImage ? { baseOgImage: { value: e.ogImage } } : {}),
     baseOgType: { value: 'product' },
   };
   const product: ProductContext = {
@@ -83,6 +108,9 @@ export const mergeProduct = (page: Page, p: PimProduct, extra: Partial<ProductCo
     discontinued_on: p.discontinued_on ?? null,
     successor: p.successor ?? null,
     category: p.category,
+    enrichment: e
+      ? { marketingTitle: e.marketingTitle, badge: e.badge, metaTitle: e.metaTitle, metaDescription: e.metaDescription, noindex: e.noindex }
+      : null,
     ...extra,
   };
   return {
@@ -99,6 +127,39 @@ export const mergeProduct = (page: Page, p: PimProduct, extra: Partial<ProductCo
 };
 
 /**
+ * The product page for a PIM product: enrichment, discontinued handling, and for an attachment the machines it fits.
+ * `editing` (Pages): no redirect and no "Hide", so authors always see the layout with a real product in it.
+ */
+const buildProductPage = async (page: Page, product: PimProduct, editing = false): Promise<Page | null> => {
+  const categorySlug = product.category?.slug ?? '';
+  // Marketing's enrichment (secondary: without it the page shows the PIM data alone)
+  const e = categorySlug ? await getEnrichment(categorySlug, product.sku).catch(() => null) : null;
+  if (!editing && product.status === 'discontinued' && e?.discontinuedHandling === 'hide') return null;
+  if (!editing && product.status === 'discontinued' && e?.discontinuedHandling === 'redirect' && product.successor) {
+    return mergeProduct(page, product, { redirectTo: productPath(product.successor) }, e);
+  }
+  if (product.product_kind !== 'attachment') return mergeProduct(page, product, {}, e);
+
+  // An attachment: the machines it fits ("Works with") and every machine (the "Fits my machine?" check), from the PIM
+  const toOption = (m: { sku: string; slug: string; model: string; name: string; status: MachineOption['status']; category_path: string }): MachineOption => ({
+    sku: m.sku, slug: m.slug, model: m.model, name: m.name, status: m.status, category_path: m.category_path,
+  });
+  // Secondary data: if the PIM cannot answer (rate limit, outage), the page renders without these sections, never a 500
+  const [fits, machines] = await Promise.all([
+    getCompatibleMachines(product.sku).catch(() => null),
+    getMachines().catch(() => null),
+  ]);
+  if (!fits || !machines) return mergeProduct(page, product, {}, e);
+  return mergeProduct(page, product, {
+    worksWith: { current: fits.current.map(toOption), previous: fits.previous.map(toOption) },
+    machines: machines
+      .filter((m) => m.status === 'active' || m.status === 'discontinued')
+      .map(toOption)
+      .sort((a, b) => Number(a.status !== 'active') - Number(b.status !== 'active')),
+  }, e);
+};
+
+/**
  * For a wildcard page: the merged page, or null when the slug is not a PIM product of that category (the caller 404s).
  * Any other page is returned unchanged.
  */
@@ -112,23 +173,30 @@ export const resolveProductPage = async (page: Page | null, path: string[] | und
   // The category's Sitecore path must be the requested parent path, so a product has exactly one URL.
   const parent = `/${segments.slice(0, -1).join('/')}`;
   if (!product || product.category?.sitecore_path?.toLowerCase() !== parent) return null;
-  if (product.product_kind !== 'attachment') return mergeProduct(page, product);
+  return buildProductPage(page, product);
+};
 
-  // An attachment: the machines it fits ("Works with") and every machine (the "Fits my machine?" check), from the PIM
-  const toOption = (m: { sku: string; slug: string; model: string; name: string; status: MachineOption['status']; category_path: string }): MachineOption => ({
-    sku: m.sku, slug: m.slug, model: m.model, name: m.name, status: m.status, category_path: m.category_path,
-  });
-  // Secondary data: if the PIM cannot answer (rate limit, outage), the page renders without these sections, never a 500
-  const [fits, machines] = await Promise.all([
-    getCompatibleMachines(product.sku).catch(() => null),
-    getMachines().catch(() => null),
-  ]);
-  if (!fits || !machines) return mergeProduct(page, product);
-  return mergeProduct(page, product, {
-    worksWith: { current: fits.current.map(toOption), previous: fits.previous.map(toOption) },
-    machines: machines
-      .filter((m) => m.status === 'active' || m.status === 'discontinued')
-      .map(toOption)
-      .sort((a, b) => Number(a.status !== 'active') - Number(b.status !== 'active')),
-  });
+/**
+ * Pages editing (catalog plan section 4, "Editing in Pages"): a wildcard item renders the PIM product named in its
+ * `Preview SKU` field, so authors see a real machine while they edit the layout; with no Preview SKU (or an unknown one),
+ * the category's first current product. PIM values are not Sitecore fields, so Pages shows them read-only. If nothing
+ * can be found the wildcard item renders as it is. Any other page is returned unchanged.
+ */
+export const resolvePreviewProductPage = async (page: Page | null): Promise<Page | null> => {
+  if (!page || !isWildcardPage(page)) return page;
+  const fields = (page.layout.sitecore.route?.fields ?? {}) as Record<string, { value?: unknown } | undefined>;
+  const previewSku = `${fields['Preview SKU']?.value ?? ''}`.trim().toUpperCase();
+  let product = previewSku ? await getProductBySku(previewSku).catch(() => null) : null;
+  if (!product || product.status === 'draft') {
+    // the wildcard's category, from its item path (".../compact-excavators/*" or "/,-w-,")
+    const ctx = page.layout.sitecore.context as { itemPath?: string } | undefined;
+    const parent = `${ctx?.itemPath ?? ''}`.replace(/\/(\*|,-w-,)$/i, '').toLowerCase();
+    const category = parent ? (await getCategories().catch((): PimCategory[] => [])).find((c) => c.sitecore_path?.toLowerCase() === parent) : undefined;
+    const first = category
+      ? (await getCategoryProducts(category.slug).catch((): PimListedProduct[] => [])).find((p) => p.status === 'active')
+      : undefined;
+    product = first ? await getProductBySku(first.sku).catch(() => null) : null;
+  }
+  if (!product) return page;
+  return (await buildProductPage(page, product, true)) ?? page;
 };

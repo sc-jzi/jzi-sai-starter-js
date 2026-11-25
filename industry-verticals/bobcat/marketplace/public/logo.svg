@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Product Enrichment">
+  <!-- tile: Bobcat charcoal -->
+  <rect width="512" height="512" rx="104" fill="#262626"/>
+  <rect x="10" y="10" width="492" height="492" rx="96" fill="none" stroke="#3a3a3a" stroke-width="4"/>
+  <!-- product box (isometric), Bobcat orange in three shades -->
+  <g stroke="#262626" stroke-width="6" stroke-linejoin="round">
+    <polygon points="228,118 368,188 228,258 88,188" fill="#FF6B3D"/>
+    <polygon points="88,188 228,258 228,418 88,348" fill="#FF3600"/>
+    <polygon points="228,258 368,188 368,348 228,418" fill="#C42A00"/>
+  </g>
+  <!-- packing tape across the lid -->
+  <polygon points="150,157 290,227 306,219 166,149" fill="#262626" opacity="0.35"/>
+  <!-- product tag (white), tied to the box corner -->
+  <path d="M368 252 C 384 262, 392 272, 396 286" fill="none" stroke="#F1F1F1" stroke-width="6" stroke-linecap="round"/>
+  <g transform="rotate(-18 392 360)">
+    <path d="M330 300 H 452 a 14 14 0 0 1 14 14 V 406 a 14 14 0 0 1 -14 14 H 330 L 296 360 Z" fill="#FFFFFF"/>
+    <circle cx="324" cy="360" r="9" fill="#262626"/>
+    <!-- spec lines: managed product data -->
+    <rect x="350" y="328" width="92" height="12" rx="6" fill="#FF3600"/>
+    <rect x="350" y="354" width="76" height="10" rx="5" fill="#9A9A9A"/>
+    <rect x="350" y="376" width="84" height="10" rx="5" fill="#9A9A9A"/>
+    <rect x="350" y="398" width="56" height="10" rx="5" fill="#9A9A9A"/>
+  </g>
+</svg>

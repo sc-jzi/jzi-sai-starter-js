@@ -30,12 +30,12 @@ export async function POST(req: NextRequest) {
   const all = body.all === true || q.get('all') === 'true';
 
   const tags: string[] = [];
-  if (all) tags.push('pim');
+  if (all) tags.push('pim', 'enrichment');
   if (category) tags.push(`pim:cat:${category}`);
   if (sku) {
     const p = await getProductBySku(sku).catch(() => null);
     if (!p?.category) return NextResponse.json({ error: `unknown SKU ${sku}` }, { status: 404 });
-    tags.push(slugTag(p.category.slug, p.slug));
+    tags.push(slugTag(p.category.slug, p.slug), `enrichment:${p.sku.toUpperCase()}`);
   }
   if (!tags.length) return NextResponse.json({ error: 'give sku, category or all' }, { status: 400 });
 

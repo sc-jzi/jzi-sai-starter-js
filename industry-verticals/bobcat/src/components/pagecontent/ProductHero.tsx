@@ -161,6 +161,11 @@ const ProductHeroView = ({ props, look }: { props: ComponentProps; look: Look })
         </div>
 
         <div className="product-hero__body">
+          {!discontinued && product?.enrichment?.badge && (
+            <p className="product-hero__status">
+              <span className="product-hero__badge product-hero__badge--offer">{product.enrichment.badge}</span>
+            </p>
+          )}
           {discontinued && (
             <p className="product-hero__status">
               <span className="product-hero__badge">Discontinued</span>
@@ -174,6 +179,9 @@ const ProductHeroView = ({ props, look }: { props: ComponentProps; look: Look })
             <p className="product-hero__subtitle">
               <Text field={f.Subtitle} />
             </p>
+          )}
+          {product?.enrichment?.marketingTitle && (
+            <p className="product-hero__tagline">{product.enrichment.marketingTitle}</p>
           )}
           {(isEditing || !!f.Summary?.value) && <RichText field={f.Summary} className="product-hero__summary" />}
           {(isEditing || !!f.Highlights?.value) && (

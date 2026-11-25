@@ -17,5 +17,7 @@ export default defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // the Product Enrichment Marketplace app is its own Next.js project (catalog plan section 7)
+    "marketplace/**",
   ]),
 ]);

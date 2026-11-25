@@ -29,6 +29,10 @@ export interface ProductContext {
   worksWith?: { current: MachineOption[]; previous: MachineOption[] } | null;
   /** attachments: every machine, for the "Fits my machine?" check */
   machines?: MachineOption[] | null;
+  /** marketing's enrichment shown on the page (Product Enrichment app); null when the product is not enriched */
+  enrichment?: { marketingTitle: string; badge: string; metaTitle: string; metaDescription: string; noindex: boolean } | null;
+  /** set when enrichment says "Redirect to successor": the route answers with a permanent redirect to this path */
+  redirectTo?: string | null;
 }
 
 /** A machine in a "Works with" list or a "Fits my machine" picker. */
@@ -112,6 +116,8 @@ export interface AttachmentCard {
   hero_image_url: string | null;
   category_path: string;
   hydraulics_required: string | null;
+  /** marketing featured it for this machine (enrichment Featured Attachments) */
+  featured?: boolean;
 }
 
 /**
@@ -122,6 +128,8 @@ export interface AttachmentCard {
 export interface MachineFitment {
   machine: { sku: string; model: string };
   groups: { slug: string; name: string; items: AttachmentCard[] }[];
+  /** marketing's Featured Attachments (enrichment) that fit, in marketing's order; empty when none are featured */
+  featured: AttachmentCard[];
 }
 
 export const fitmentOf = (page: Page | null | undefined): MachineFitment | null =>

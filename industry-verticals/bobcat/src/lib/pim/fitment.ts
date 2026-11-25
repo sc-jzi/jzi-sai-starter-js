@@ -1,5 +1,6 @@
 import { Page } from '@sitecore-content-sdk/nextjs';
 import { getCompatibleAttachments, getProductBySlug } from './client';
+import { getEnrichment } from './enrichment';
 import { MachineFitment, productOf } from './product-context';
 
 /**
@@ -29,8 +30,14 @@ export const attachMachineFitment = async (page: Page | null, path: string[] | u
   if (machine.product_kind !== 'machine') return page;
 
   // Secondary data: without an answer from the PIM the page renders without the row, never a 500
-  const res = await getCompatibleAttachments(machine.sku).catch(() => null);
+  const [res, enrichment] = await Promise.all([
+    getCompatibleAttachments(machine.sku).catch(() => null),
+    machine.category ? getEnrichment(machine.category.slug, machine.sku).catch(() => null) : null,
+  ]);
   if (!res) return page;
+  // Marketing's Featured Attachments (enrichment) come first, but only ones that fit: what fits stays PIM data
+  const featured = enrichment?.featuredAttachments ?? [];
+  const rank = (sku: string) => (featured.includes(sku) ? featured.indexOf(sku) : featured.length);
   const groups = [...res.groups]
     .sort((a, b) => (a.sort ?? 0) - (b.sort ?? 0))
     .map((g) => ({
@@ -44,12 +51,20 @@ export const attachMachineFitment = async (page: Page | null, path: string[] | u
         hero_image_url: i.hero_image_url || null,
         category_path: i.category_path,
         hydraulics_required: i.hydraulics_required || null,
-      })),
+        featured: featured.includes(i.sku),
+      })).sort((a, b) => rank(a.sku) - rank(b.sku)),
     }))
     .filter((g) => g.items.length);
   if (!groups.length) return page;
 
-  const pimFitment: MachineFitment = { machine: { sku: machine.sku, model: machine.model }, groups };
+  // the Featured tab: marketing's picks in their order, only those that fit (a pick that no longer fits drops out)
+  const all = groups.flatMap((g) => g.items);
+  const featuredCards = featured.map((sku) => all.find((i) => i.sku === sku)).filter((i): i is (typeof all)[number] => !!i);
+  const pimFitment: MachineFitment = {
+    machine: { sku: machine.sku, model: machine.model },
+    groups,
+    featured: featuredCards,
+  };
   return {
     ...page,
     layout: {

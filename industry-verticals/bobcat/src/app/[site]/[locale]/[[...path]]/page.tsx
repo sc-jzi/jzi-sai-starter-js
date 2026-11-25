@@ -1,5 +1,5 @@
 import { isDesignLibraryPreviewData } from '@sitecore-content-sdk/nextjs/editing';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import { draftMode, headers as nextHeaders } from 'next/headers';
 import { SiteInfo } from '@sitecore-content-sdk/nextjs';
 import sites from '.sitecore/sites.json';
@@ -12,7 +12,7 @@ import AlternateLinks from 'src/AlternateLinks';
 import { readSeoControls, SeoRouteFields } from 'src/lib/seo-controls';
 import { NextIntlClientProvider } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
-import { resolveProductPage } from 'src/lib/pim/product-page';
+import { resolvePreviewProductPage, resolveProductPage } from 'src/lib/pim/product-page';
 import { attachCategoryListing } from 'src/lib/pim/listing';
 import { attachMachineFitment } from 'src/lib/pim/fitment';
 import { productOf } from 'src/lib/pim/product-context';
@@ -62,7 +62,8 @@ export default async function Page({ params }: PageProps) {
     if (isDesignLibraryPreviewData(previewData)) {
       page = await client.getDesignLibraryData(previewData);
     } else {
-      page = await client.getPreview(previewData);
+      // Pages editing: a wildcard (*) item shows its Preview SKU's PIM product (src/lib/pim/product-page.ts)
+      page = await attachMachineFitment(await resolvePreviewProductPage(await client.getPreview(previewData)), undefined);
     }
   } else {
     page = await getSitePage(path, site, locale);
@@ -72,6 +73,9 @@ export default async function Page({ params }: PageProps) {
   if (!page) {
     notFound();
   }
+  // A discontinued PIM product whose enrichment says "Redirect to successor"
+  const redirectTo = productOf(page)?.redirectTo;
+  if (redirectTo && !draft.isEnabled) permanentRedirect(redirectTo);
 
   return (
     <NextIntlClientProvider>
@@ -118,11 +122,15 @@ export const generateMetadata = async ({ params }: PageProps) => {
   // The same call as for rendering the page. Should be cached by default react behavior
   const page = await getSitePage(path, site, locale);
   const product = productOf(page);
-  const { noIndex, noFollow } = readSeoControls(page?.layout.sitecore.route?.fields as SeoRouteFields | undefined);
+  const enrichment = product?.enrichment;
+  const { noIndex: authoredNoIndex, noFollow } = readSeoControls(page?.layout.sitecore.route?.fields as SeoRouteFields | undefined);
+  // a PIM product page is noindex when its enrichment says so
+  const noIndex = authoredNoIndex || !!enrichment?.noindex;
   return {
     title: product
-      ? `${product.name} | Bobcat Company`
+      ? enrichment?.metaTitle || `${product.name} | Bobcat Company`
       : (page?.layout.sitecore.route?.fields as RouteFields)?.Title?.value?.toString() || 'Page',
+    ...(enrichment?.metaDescription && { description: enrichment.metaDescription }),
     // <meta name="robots"> only when an editor ticked noindex or nofollow on the page (the default is index, follow)
     ...((noIndex || noFollow) && { robots: { index: !noIndex, follow: !noFollow } }),
   };

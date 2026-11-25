@@ -5,6 +5,7 @@ import { SiteResolver } from '@sitecore-content-sdk/content/site';
 import sites from '.sitecore/sites.json';
 import client from 'lib/sitecore-client';
 import { getCategories, getProductSitemapEntries, PIM_REVALIDATE_SECONDS } from 'lib/pim/client';
+import { getEnrichmentFlags } from 'lib/pim/enrichment';
 
 /**
  * sitemap.xml (catalog plan section 5). Next rewrites /sitemap*.xml here.
@@ -12,7 +13,8 @@ import { getCategories, getProductSitemapEntries, PIM_REVALIDATE_SECONDS } from 
  *  - /sitemap-pages.xml: the Sitecore-generated sitemap (managed in SitecoreAI), minus any wildcard (`*`) item URL.
  *  - /sitemap-products-<category>.xml: the category's PIM products, only URLs the product route serves: active or
  *    discontinued (drafts are never listed), the category has a `*` item in Sitecore, and the slug is not an authored page
- *    (authored pages are in the Sitecore sitemap already). lastmod is the PIM's updated_at.
+ *    (authored pages are in the Sitecore sitemap already), and its enrichment is not noindex, Redirect or Hide.
+ *    lastmod is the PIM's updated_at.
  *  - /sitemap-<n>.xml: the SDK's own handling, unchanged.
  * Product sitemaps are listed for the site that holds the catalog (the default site) only.
  */
@@ -68,11 +70,17 @@ const hasWildcard = unstable_cache(
 
 /** category slug -> its product entries, for the categories whose products the route can serve. */
 const productGroups = async (site: string) => {
-  const [entries, categories] = await Promise.all([getProductSitemapEntries(), getCategories()]);
+  const [entries, categories, flags] = await Promise.all([
+    getProductSitemapEntries(),
+    getCategories(),
+    getEnrichmentFlags().catch(() => new Map()),
+  ]);
   const byPath = new Map(categories.map((c) => [`${c.sitecore_path.toLowerCase()}/`, c]));
   const groups = new Map<string, { path: string; entries: typeof entries }>();
   for (const e of entries) {
     if (e.status !== 'active' && e.status !== 'discontinued') continue;
+    const flag = flags.get(e.sku.toUpperCase());
+    if (flag?.noindex || (e.status === 'discontinued' && flag && flag.handling !== 'keep')) continue;
     const cat = byPath.get(e.category_path.toLowerCase());
     if (!cat) continue;
     const g = groups.get(cat.slug) ?? { path: cat.sitecore_path, entries: [] };
