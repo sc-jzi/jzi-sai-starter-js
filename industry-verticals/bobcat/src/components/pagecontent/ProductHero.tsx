@@ -95,10 +95,12 @@ const ProductHeroView = ({ props, look }: { props: ComponentProps; look: Look })
   const key = itemId.replace(/[^0-9a-f]/gi, '').toLowerCase();
   const id = props.params?.RenderingIdentifier;
   const styles = `${props.params?.styles || ''}`.trim();
-  const images = IMAGE_KEYS.filter((k) => isEditing || !!f[k]?.value?.src);
+  const product = productOf(page);
+  // PIM product pages (wildcard): images come from the PIM, so only the ones it has, and never editable in Pages
+  const editImages = isEditing && !product;
+  const images = IMAGE_KEYS.filter((k) => editImages || !!f[k]?.value?.src);
   const [active, setActive] = useState<(typeof IMAGE_KEYS)[number]>('Image1');
   const [save, setSave] = useState<SaveState>('idle');
-  const product = productOf(page);
   const discontinued = product?.status === 'discontinued';
   const jsonLd = isEditing ? null : productJsonLd(f, product);
 
@@ -130,7 +132,7 @@ const ProductHeroView = ({ props, look }: { props: ComponentProps; look: Look })
   };
 
   const has = (l?: LinkField) => isEditing || !!l?.value?.href;
-  const main = f[active]?.value?.src || isEditing ? active : images[0];
+  const main = f[active]?.value?.src || editImages ? active : images[0];
 
   return (
     <div className={`component product-hero product-hero--${look} ${styles}`} id={id ? id : undefined}>
@@ -142,7 +144,7 @@ const ProductHeroView = ({ props, look }: { props: ComponentProps; look: Look })
             <ul className="product-hero__thumbs">
               {images.map((k) => (
                 <li key={k}>
-                  {isEditing ? (
+                  {editImages ? (
                     <Image field={f[k]} className="product-hero__thumb" />
                   ) : (
                     <button
