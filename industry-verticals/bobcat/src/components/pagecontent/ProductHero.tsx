@@ -49,7 +49,7 @@ interface ProductRouteFields {
   SavedLabel?: Field<string>;
 }
 
-type Look = 'default' | 'bobcat';
+type Look = 'default' | 'bobcat' | 'showcase';
 type SaveState = 'idle' | 'busy' | 'saved';
 
 const IMAGE_KEYS = ['Image1', 'Image2', 'Image3', 'Image4'] as const;
@@ -134,131 +134,197 @@ const ProductHeroView = ({ props, look }: { props: ComponentProps; look: Look })
   const has = (l?: LinkField) => isEditing || !!l?.value?.href;
   const main = f[active]?.value?.src || editImages ? active : images[0];
 
+  const mainImage = (
+    <div className="product-hero__main">{main && <Image field={f[main]} className="product-hero__image" />}</div>
+  );
+  const thumbs = images.length > 1 && (
+    <ul className="product-hero__thumbs">
+      {images.map((k) => (
+        <li key={k}>
+          {editImages ? (
+            <Image field={f[k]} className="product-hero__thumb" />
+          ) : (
+            <button
+              type="button"
+              className={`product-hero__thumb-button${k === main ? ' is-active' : ''}`}
+              onClick={() => setActive(k)}
+              aria-label={`Show image ${k.slice(-1)}`}
+            >
+              <Image field={f[k]} className="product-hero__thumb" />
+            </button>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+
+  const status = (
+    <>
+      {!discontinued && product?.enrichment?.badge && (
+        <p className="product-hero__status">
+          <span className="product-hero__badge product-hero__badge--offer">{product.enrichment.badge}</span>
+        </p>
+      )}
+      {discontinued && (
+        <p className="product-hero__status">
+          <span className="product-hero__badge">Discontinued</span>
+          {product?.model_years && <span className="product-hero__years">Produced {product.model_years}</span>}
+        </p>
+      )}
+    </>
+  );
+
+  const heading = (
+    <>
+      <h1 className="product-hero__title">
+        <Text field={f.Title} />
+      </h1>
+      {(isEditing || !!f.Subtitle?.value) && (
+        <p className="product-hero__subtitle">
+          <Text field={f.Subtitle} />
+        </p>
+      )}
+    </>
+  );
+
+  const price = !discontinued && (isEditing || !!f.Price?.value) && (
+    <p className="product-hero__price">
+      <Text field={f.PriceLabel} tag="span" className="product-hero__price-label" />{' '}
+      <Text field={f.Price} tag="strong" />
+    </p>
+  );
+
+  const copy = (
+    <>
+      {product?.enrichment?.marketingTitle && (
+        <p className="product-hero__tagline">{product.enrichment.marketingTitle}</p>
+      )}
+      {(isEditing || !!f.Summary?.value) && <RichText field={f.Summary} className="product-hero__summary" />}
+      {(isEditing || !!f.Highlights?.value) && <RichText field={f.Highlights} className="product-hero__highlights" />}
+    </>
+  );
+
+  const successor = discontinued && product?.successor && (
+    <a className="product-hero__successor" href={productPath(product.successor)}>
+      {product.successor.hero_image_url && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={product.successor.hero_image_url} alt="" className="product-hero__successor-image" />
+      )}
+      <span className="product-hero__successor-text">
+        <span className="product-hero__successor-label">Replaced by</span>
+        <strong>{product.successor.name}</strong>
+      </span>
+    </a>
+  );
+
+  const actions = (
+    <>
+      <div className="product-hero__actions">
+        {!discontinued && has(f.BuildLink) && <Link field={f.BuildLink as LinkField} className="bobcat-button" />}
+        {!product &&
+          (isEditing || !!f.SaveLabel?.value) &&
+          (isEditing ? (
+            <span className="bobcat-button bobcat-button--secondary product-hero__save">
+              <Text field={f.SaveLabel} />
+            </span>
+          ) : save === 'saved' ? (
+            <a
+              className="bobcat-button bobcat-button--secondary product-hero__save is-saved"
+              href={portalPath('/saved')}
+            >
+              {`${f.SavedLabel?.value || f.SaveLabel?.value}`}
+            </a>
+          ) : (
+            <button
+              type="button"
+              className="bobcat-button bobcat-button--secondary product-hero__save"
+              onClick={onSave}
+              disabled={save === 'busy'}
+            >
+              {`${f.SaveLabel?.value}`}
+            </button>
+          ))}
+      </div>
+
+      <ul className="product-hero__links">
+        {[f.InventoryLink, f.OffersLink, f.DealerLink].map(
+          (l, i) =>
+            has(l) && (
+              <li key={i}>
+                <Link field={l as LinkField} className="bobcat-arrow-link" />
+              </li>
+            )
+        )}
+      </ul>
+    </>
+  );
+
+  const extras = (
+    <>
+      {!discontinued && (isEditing || !!f.OfferText?.value) && (
+        <div className="product-hero__offer">
+          <h2 className="product-hero__offer-title">
+            <Text field={f.OfferTitle} />
+          </h2>
+          <RichText field={f.OfferText} className="product-hero__offer-text" />
+        </div>
+      )}
+      {has(f.BrochureLink) && (
+        <p className="product-hero__brochure">
+          <Link field={f.BrochureLink as LinkField} className="bobcat-arrow-link" />
+        </p>
+      )}
+    </>
+  );
+
+  // Showcase: the special-offer flag on the stage comes from the page's own Special Offers box (no extra field)
+  const offerFlag = !product && !discontinued && !!f.OfferText?.value && (
+    <p className="product-hero__status">
+      <span className="product-hero__badge product-hero__badge--offer">{`${f.OfferTitle?.value || 'Special offer'}`}</span>
+    </p>
+  );
+
   return (
     <div className={`component product-hero product-hero--${look} ${styles}`} id={id ? id : undefined}>
       {jsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLd }} />}
-      <div className="product-hero__inner">
-        <div className="product-hero__gallery">
-          <div className="product-hero__main">{main && <Image field={f[main]} className="product-hero__image" />}</div>
-          {images.length > 1 && (
-            <ul className="product-hero__thumbs">
-              {images.map((k) => (
-                <li key={k}>
-                  {editImages ? (
-                    <Image field={f[k]} className="product-hero__thumb" />
-                  ) : (
-                    <button
-                      type="button"
-                      className={`product-hero__thumb-button${k === main ? ' is-active' : ''}`}
-                      onClick={() => setActive(k)}
-                      aria-label={`Show image ${k.slice(-1)}`}
-                    >
-                      <Image field={f[k]} className="product-hero__thumb" />
-                    </button>
-                  )}
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-
-        <div className="product-hero__body">
-          {!discontinued && product?.enrichment?.badge && (
-            <p className="product-hero__status">
-              <span className="product-hero__badge product-hero__badge--offer">{product.enrichment.badge}</span>
-            </p>
-          )}
-          {discontinued && (
-            <p className="product-hero__status">
-              <span className="product-hero__badge">Discontinued</span>
-              {product?.model_years && <span className="product-hero__years">Produced {product.model_years}</span>}
-            </p>
-          )}
-          <h1 className="product-hero__title">
-            <Text field={f.Title} />
-          </h1>
-          {(isEditing || !!f.Subtitle?.value) && (
-            <p className="product-hero__subtitle">
-              <Text field={f.Subtitle} />
-            </p>
-          )}
-          {product?.enrichment?.marketingTitle && (
-            <p className="product-hero__tagline">{product.enrichment.marketingTitle}</p>
-          )}
-          {(isEditing || !!f.Summary?.value) && <RichText field={f.Summary} className="product-hero__summary" />}
-          {(isEditing || !!f.Highlights?.value) && (
-            <RichText field={f.Highlights} className="product-hero__highlights" />
-          )}
-          {!discontinued && (isEditing || !!f.Price?.value) && (
-            <p className="product-hero__price">
-              <Text field={f.PriceLabel} tag="span" className="product-hero__price-label" />{' '}
-              <Text field={f.Price} tag="strong" />
-            </p>
-          )}
-
-          {discontinued && product?.successor && (
-            <a className="product-hero__successor" href={productPath(product.successor)}>
-              {product.successor.hero_image_url && (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={product.successor.hero_image_url} alt="" className="product-hero__successor-image" />
-              )}
-              <span className="product-hero__successor-text">
-                <span className="product-hero__successor-label">Replaced by</span>
-                <strong>{product.successor.name}</strong>
-              </span>
-            </a>
-          )}
-
-          <div className="product-hero__actions">
-            {!discontinued && has(f.BuildLink) && <Link field={f.BuildLink as LinkField} className="bobcat-button" />}
-            {!product &&
-              (isEditing || !!f.SaveLabel?.value) &&
-              (isEditing ? (
-                <span className="bobcat-button bobcat-button--secondary product-hero__save">
-                  <Text field={f.SaveLabel} />
-                </span>
-              ) : save === 'saved' ? (
-                <a className="bobcat-button bobcat-button--secondary product-hero__save is-saved" href={portalPath('/saved')}>
-                  {`${f.SavedLabel?.value || f.SaveLabel?.value}`}
-                </a>
-              ) : (
-                <button
-                  type="button"
-                  className="bobcat-button bobcat-button--secondary product-hero__save"
-                  onClick={onSave}
-                  disabled={save === 'busy'}
-                >
-                  {`${f.SaveLabel?.value}`}
-                </button>
-              ))}
-          </div>
-
-          <ul className="product-hero__links">
-            {[f.InventoryLink, f.OffersLink, f.DealerLink].map(
-              (l, i) =>
-                has(l) && (
-                  <li key={i}>
-                    <Link field={l as LinkField} className="bobcat-arrow-link" />
-                  </li>
-                )
-            )}
-          </ul>
-
-          {!discontinued && (isEditing || !!f.OfferText?.value) && (
-            <div className="product-hero__offer">
-              <h2 className="product-hero__offer-title">
-                <Text field={f.OfferTitle} />
-              </h2>
-              <RichText field={f.OfferText} className="product-hero__offer-text" />
+      {look === 'showcase' ? (
+        <>
+          <div className="product-hero__stage">
+            <div className="product-hero__stage-image">{mainImage}</div>
+            <div className="product-hero__stage-text">
+              {status}
+              {offerFlag}
+              {heading}
+              {price}
             </div>
-          )}
-          {has(f.BrochureLink) && (
-            <p className="product-hero__brochure">
-              <Link field={f.BrochureLink as LinkField} className="bobcat-arrow-link" />
-            </p>
-          )}
+          </div>
+          {thumbs && <div className="product-hero__strip">{thumbs}</div>}
+          <div className="product-hero__inner">
+            <div className="product-hero__body">{copy}</div>
+            <aside className="product-hero__side">
+              {successor}
+              {actions}
+              {extras}
+            </aside>
+          </div>
+        </>
+      ) : (
+        <div className="product-hero__inner">
+          <div className="product-hero__gallery">
+            {mainImage}
+            {thumbs}
+          </div>
+          <div className="product-hero__body">
+            {status}
+            {heading}
+            {copy}
+            {price}
+            {successor}
+            {actions}
+            {extras}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
@@ -268,3 +334,9 @@ export const Default = (props: ComponentProps): JSX.Element => <ProductHeroView 
 /* Bobcat: gallery left (main image over a row of thumbnails), 64px condensed model name, orange check highlights,
    price line, orange Build & Price beside an outlined Save, grey Special Offers box */
 export const Bobcat = (props: ComponentProps): JSX.Element => <ProductHeroView props={props} look="bobcat" />;
+
+/* Showcase: for hand-built flagship product pages. A full-width grey stage with the large product photo and the model
+   name, machine type, offer flag and starting price over it; the thumbnails as a strip under the stage (the main photo
+   on the stage is the one they switch); then the copy (tagline, summary, highlights) beside a column with Build & Price,
+   Save, the links, the Special Offers box and the brochure. */
+export const Showcase = (props: ComponentProps): JSX.Element => <ProductHeroView props={props} look="showcase" />;
