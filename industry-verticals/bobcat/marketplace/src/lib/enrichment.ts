@@ -24,6 +24,8 @@ export interface EnrichmentValues {
   offerPageId: string;
   metaTitle: string;
   metaDescription: string;
+  /** Cloudinary asset URL (picked in the Cloudinary Media Library widget), stored as an external General Link. */
+  ogImageUrl: string;
   aeoShortAnswer: string;
   noindex: boolean;
   discontinuedHandling: '' | 'Keep page' | 'Redirect to successor' | 'Hide';
@@ -48,6 +50,7 @@ export const EMPTY_VALUES: EnrichmentValues = {
   offerPageId: '',
   metaTitle: '',
   metaDescription: '',
+  ogImageUrl: '',
   aeoShortAnswer: '',
   noindex: false,
   discontinuedHandling: '',
@@ -77,6 +80,7 @@ const whoOf = (v: string): string | null => {
 const toItem = (category: string, n: Node): EnrichmentItem => {
   const f = Object.fromEntries(n.fields.nodes.map((x) => [x.name, x.value ?? '']));
   const offerId = (f['Offer Link'] || '').match(/id="(\{[^"]+\})"/i)?.[1]?.toUpperCase() ?? '';
+  const ogUrl = (f['OG Image URL'] || '').match(/url="([^"]+)"/i)?.[1]?.replace(/&amp;/g, '&') ?? '';
   return {
     itemId: n.itemId,
     sku: (f['SKU'] || n.name).toUpperCase(),
@@ -92,6 +96,7 @@ const toItem = (category: string, n: Node): EnrichmentItem => {
       offerPageId: offerId,
       metaTitle: f['Meta Title'] || '',
       metaDescription: f['Meta Description'] || '',
+      ogImageUrl: ogUrl,
       aeoShortAnswer: f['AEO Short Answer'] || '',
       noindex: f['Noindex'] === '1',
       discontinuedHandling: (f['Discontinued Handling'] || '') as EnrichmentValues['discontinuedHandling'],
@@ -128,6 +133,10 @@ export async function listEnrichment(client: ClientSDK, contextId: string) {
   return { folders, items };
 }
 
+const xmlAttr = (v: string) => v.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+/** An external General Link (R7): the asset URL itself, no text. */
+const externalLinkXml = (url: string) => (url.trim() ? `<link linktype="external" url="${xmlAttr(url.trim())}" />` : '');
+
 const linkXml = (pageId: string) => {
   const page = OFFER_PAGES.find((p) => p.id === pageId);
   return page ? `<link text="${page.text}" linktype="internal" id="${page.id}" />` : '';
@@ -142,6 +151,7 @@ const toFields = (sku: string, v: EnrichmentValues): Field[] => [
   { name: 'Offer Link', value: linkXml(v.offerPageId) },
   { name: 'Meta Title', value: v.metaTitle.trim() },
   { name: 'Meta Description', value: v.metaDescription.trim() },
+  { name: 'OG Image URL', value: externalLinkXml(v.ogImageUrl) },
   { name: 'AEO Short Answer', value: v.aeoShortAnswer.trim() },
   { name: 'Noindex', value: v.noindex ? '1' : '' },
   { name: 'Discontinued Handling', value: v.discontinuedHandling },

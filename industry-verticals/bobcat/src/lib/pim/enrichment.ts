@@ -50,7 +50,8 @@ const toEnrichment = (sku: string, fields: EdgeField[]): Enrichment => {
   const text = (n: string) => `${f[n]?.value ?? ''}`.trim();
   const link = (f['Offer Link']?.jsonValue as { value?: { href?: string; text?: string } } | undefined)?.value;
   const img = (f['OG Image']?.jsonValue as { value?: { src?: string; alt?: string } } | undefined)?.value;
-  return {
+  // the social image picked from Cloudinary in the Product Enrichment app: an external General Link holding the asset URL
+  const cld = (f['OG Image URL']?.jsonValue as { value?: { href?: string } } | undefined)?.value?.href;  return {
     sku: text('SKU') || sku,
     marketingTitle: text('Marketing Title'),
     summaryOverride: text('Summary Override'),
@@ -60,7 +61,7 @@ const toEnrichment = (sku: string, fields: EdgeField[]): Enrichment => {
     metaTitle: text('Meta Title'),
     metaDescription: text('Meta Description'),
     aeoShortAnswer: text('AEO Short Answer'),
-    ogImage: img?.src ? { src: img.src, alt: img.alt } : null,
+    ogImage: cld ? { src: cld } : img?.src ? { src: img.src, alt: img.alt } : null,
     noindex: text('Noindex') === '1',
     discontinuedHandling: handlingOf(text('Discontinued Handling')),
     featuredAttachments: lines(text('Featured Attachments')).map((s) => s.toUpperCase()),

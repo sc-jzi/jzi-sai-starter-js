@@ -94,7 +94,12 @@ export const mergeProduct = (
     Image4: image(gallery[2], `Bobcat ${p.model}`),
     baseOgTitle: { value: e?.metaTitle || `${p.name} | Bobcat Company` },
     baseOgDescription: { value: e?.metaDescription || p.summary || '' },
-    ...(e?.ogImage ? { baseOgImage: { value: e.ogImage } } : {}),
+    // social image: the one picked in the enrichment app (Cloudinary), else the PIM hero image
+    ...(e?.ogImage
+      ? { baseOgImage: { value: e.ogImage } }
+      : p.hero_image_url
+        ? { baseOgImage: { value: { src: p.hero_image_url, alt: `Bobcat ${p.model}` } } }
+        : {}),
     baseOgType: { value: 'product' },
   };
   const product: ProductContext = {

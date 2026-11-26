@@ -646,3 +646,12 @@ textarea {
     order: 0;
   }
 }
+
+/* Cloudinary social image picker */
+.pe-cld { display: grid; gap: 8px; }
+.pe-cld__preview { margin: 0; display: grid; gap: 4px; max-width: 360px; }
+.pe-cld__preview img { width: 100%; aspect-ratio: 1200 / 630; object-fit: cover; border-radius: 6px; border: 1px solid var(--pe-border, #ddd); background: #f4f4f4; }
+.pe-cld__preview figcaption { font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.pe-cld__empty { max-width: 360px; aspect-ratio: 1200 / 630; display: grid; place-items: center; text-align: center; padding: 12px; border: 1px dashed var(--pe-border, #ccc); border-radius: 6px; font-size: 13px; }
+.pe-cld__actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.pe-cld__actions .pe-btn { display: inline-flex; align-items: center; gap: 6px; }

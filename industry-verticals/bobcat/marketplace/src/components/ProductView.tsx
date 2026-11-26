@@ -12,6 +12,7 @@ import {
 } from '@/lib/enrichment';
 import { AttachmentGroup, pim, PimProduct, productUrl } from '@/lib/pim-client';
 import { formatDate } from './CategoryView';
+import CloudinaryPicker from './CloudinaryPicker';
 
 /** Rich text <-> the plain paragraphs the form edits (the override is stored as Rich Text, R26). */
 const toPlain = (html: string) =>
@@ -387,6 +388,11 @@ export default function ProductView({
               </span>
               <textarea className="pe-input" rows={3} value={values.metaDescription} onChange={(e) => set('metaDescription', e.target.value)} />
             </label>
+            <div className="pe-field">
+              <span className="pe-label">Social image (og:image)</span>
+              <CloudinaryPicker value={values.ogImageUrl} onChange={(url) => set('ogImageUrl', url)} alt={`Bobcat ${product.model}`} />
+              <span className="pe-hint">Shown when the page is shared on LinkedIn, Facebook or in chat apps. Picked from Cloudinary, stored as its URL.</span>
+            </div>
             <label className="pe-field">
               <span className="pe-label">
                 Short answer (AEO) <Counter v={values.aeoShortAnswer} max={LIMITS.aeoShortAnswer} />
