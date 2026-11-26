@@ -133,7 +133,7 @@ export const mergeProduct = (
 const buildProductPage = async (page: Page, product: PimProduct, editing = false): Promise<Page | null> => {
   const categorySlug = product.category?.slug ?? '';
   // Marketing's enrichment (secondary: without it the page shows the PIM data alone)
-  const e = categorySlug ? await getEnrichment(categorySlug, product.sku).catch(() => null) : null;
+  const e = categorySlug ? await getEnrichment(categorySlug, product.sku, editing).catch(() => null) : null;
   if (!editing && product.status === 'discontinued' && e?.discontinuedHandling === 'hide') return null;
   if (!editing && product.status === 'discontinued' && e?.discontinuedHandling === 'redirect' && product.successor) {
     return mergeProduct(page, product, { redirectTo: productPath(product.successor) }, e);

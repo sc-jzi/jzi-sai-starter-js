@@ -2,12 +2,16 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import { authoring, useMarketplace } from '@/lib/marketplace';
+import { EnrichmentItem, listEnrichment } from '@/lib/enrichment';
 import { pim, PimCategory, PimListed } from '@/lib/pim-client';
+import ProductView from './ProductView';
 
 /**
  * Page Builder context panel (catalog plan section 7): on a category's wildcard (*) page, pick which PIM product Pages
  * shows while you edit the layout. The pick is saved in the wildcard's `Preview SKU` field (shared, so every author
  * editing that category's layout sees it) and the canvas reloads; the site's route renders that product in editing.
+ * Below the picker, the previewed product's enrichment can be edited (the same editor as the full-screen app); a save
+ * reloads the canvas, so the change shows in Pages at once. Maximize the panel for the side-by-side layout.
  */
 type PageInfo = { id?: string; name?: string; path?: string; displayName?: string };
 
@@ -25,6 +29,13 @@ export default function PanelApp() {
   const [show, setShow] = useState<'current' | 'previous'>('current');
   const [busy, setBusy] = useState<string | null>(null);
   const [message, setMessage] = useState<{ kind: 'ok' | 'err'; text: string } | null>(null);
+  const [picking, setPicking] = useState(false);
+  const [enrichment, setEnrichment] = useState<{ folders: Record<string, string>; items: Record<string, EnrichmentItem> } | null>(null);
+
+  useEffect(() => {
+    if (!mp.client || !mp.contextId) return;
+    listEnrichment(mp.client, mp.contextId).then(setEnrichment).catch(() => setEnrichment({ folders: {}, items: {} }));
+  }, [mp.client, mp.contextId]);
 
   // the page open in Pages, following navigation
   useEffect(() => {
@@ -73,7 +84,9 @@ export default function PanelApp() {
       .filter((p) => (show === 'current' ? p.status === 'active' : p.status === 'discontinued'))
       .filter((p) => !needle || `${p.model} ${p.name} ${p.sku}`.toLowerCase().includes(needle));
   }, [products, q, show]);
-  const current = products?.find((p) => p.sku === previewSku) ?? null;
+  // the product Pages shows: the Preview SKU, or (none chosen / not in this category) the category's first current product
+  const current =
+    products?.find((p) => p.sku === previewSku) ?? (previewSku !== null ? products?.find((p) => p.status === 'active') : undefined) ?? null;
 
   const pick = async (p: PimListed) => {
     if (!mp.client || !mp.contextId || !page?.id) return;
@@ -96,6 +109,7 @@ export default function PanelApp() {
       const stored = (back.item?.previewSku?.value || '').toUpperCase();
       if (stored !== p.sku) throw new Error(`Saved, but the item reads back "${stored || 'empty'}".`);
       setPreviewSku(stored);
+      setPicking(false);
       await mp.client.mutate('pages.reloadCanvas');
       setMessage({ kind: 'ok', text: `Pages now previews the ${p.model}.` });
     } catch (e) {
@@ -139,73 +153,99 @@ export default function PanelApp() {
           </p>
 
           <div className="pp-current">
-            <span className="pp-label">Previewing</span>
-            {previewSku === null ? (
-              <span className="pe-muted">…</span>
-            ) : current ? (
-              <span className="pp-current__item">
-                {current.hero_image_url && (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={current.hero_image_url} alt="" />
-                )}
-                <strong>{current.model}</strong>
-              </span>
-            ) : previewSku ? (
-              <span className="pe-muted">{previewSku} (not in this category)</span>
-            ) : (
-              <span className="pe-muted">the category&rsquo;s first product (none chosen)</span>
-            )}
+            <span className="pp-label">Previewing in Pages</span>
+            <div className="pp-current__row">
+              {previewSku === null || !products ? (
+                <span className="pe-muted">…</span>
+              ) : current ? (
+                <span className="pp-current__item">
+                  {current.hero_image_url && (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img src={current.hero_image_url} alt="" />
+                  )}
+                  <strong>{current.model}</strong>
+                  <span className="pe-muted pe-mono">{current.sku}</span>
+                  {!previewSku && <span className="pe-muted">(first product: none chosen)</span>}
+                </span>
+              ) : (
+                <span className="pe-muted">No products in this category yet.</span>
+              )}
+              {!!products?.length && (
+                <button type="button" className="pe-btn pe-btn--ghost pp-change" onClick={() => setPicking((v) => !v)} aria-expanded={picking}>
+                  {picking ? 'Done' : 'Change product'}
+                </button>
+              )}
+            </div>
           </div>
 
           {message && <p className={message.kind === 'ok' ? 'pe-ok' : 'pe-error'} role="status">{message.text}</p>}
 
-          <input
-            type="search"
-            className="pe-input"
-            placeholder="Search model, name or SKU"
-            value={q}
-            onChange={(e) => setQ(e.target.value)}
-            aria-label="Search products"
-          />
-          <div className="pe-tabs pp-tabs" role="group" aria-label="Status">
-            <button type="button" className={`pe-tab${show === 'current' ? ' is-active' : ''}`} onClick={() => setShow('current')}>
-              Current
-            </button>
-            <button type="button" className={`pe-tab${show === 'previous' ? ' is-active' : ''}`} onClick={() => setShow('previous')}>
-              Previous
-            </button>
-          </div>
+          {picking && (
+            <div className="pp-picker">
+              <input
+                type="search"
+                className="pe-input"
+                placeholder="Search model, name or SKU"
+                value={q}
+                onChange={(e) => setQ(e.target.value)}
+                aria-label="Search products"
+                autoFocus
+              />
+              <div className="pe-tabs pp-tabs" role="group" aria-label="Status">
+                <button type="button" className={`pe-tab${show === 'current' ? ' is-active' : ''}`} onClick={() => setShow('current')}>
+                  Current
+                </button>
+                <button type="button" className={`pe-tab${show === 'previous' ? ' is-active' : ''}`} onClick={() => setShow('previous')}>
+                  Previous
+                </button>
+              </div>
+              {!shown.length ? (
+                <p className="pe-muted">No products match.</p>
+              ) : (
+                <ul className="pp-list">
+                  {shown.map((p) => (
+                    <li key={p.sku}>
+                      <button
+                        type="button"
+                        className={`pp-item${p.sku === current?.sku ? ' is-on' : ''}`}
+                        onClick={() => pick(p)}
+                        disabled={!!busy || mp.status !== 'ready'}
+                        aria-pressed={p.sku === current?.sku}
+                      >
+                        {p.hero_image_url ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img src={p.hero_image_url} alt="" loading="lazy" />
+                        ) : (
+                          <span className="pp-item__noimg" />
+                        )}
+                        <span className="pp-item__text">
+                          <strong>{p.model}</strong>
+                          <span className="pe-muted pe-mono">{p.sku}</span>
+                        </span>
+                        {enrichment?.items[p.sku] && <span className="pe-badge pe-badge--enriched">Enriched</span>}
+                        {busy === p.sku ? <span className="pe-muted">Saving…</span> : p.sku === current?.sku ? <span className="pp-tick">✓</span> : null}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          )}
 
-          {!products ? (
-            <p className="pe-muted">Loading products…</p>
-          ) : !shown.length ? (
-            <p className="pe-muted">No products match.</p>
-          ) : (
-            <ul className="pp-list">
-              {shown.map((p) => (
-                <li key={p.sku}>
-                  <button
-                    type="button"
-                    className={`pp-item${p.sku === previewSku ? ' is-on' : ''}`}
-                    onClick={() => pick(p)}
-                    disabled={!!busy || mp.status !== 'ready'}
-                    aria-pressed={p.sku === previewSku}
-                  >
-                    {p.hero_image_url ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={p.hero_image_url} alt="" loading="lazy" />
-                    ) : (
-                      <span className="pp-item__noimg" />
-                    )}
-                    <span className="pp-item__text">
-                      <strong>{p.model}</strong>
-                      <span className="pe-muted pe-mono">{p.sku}</span>
-                    </span>
-                    {busy === p.sku ? <span className="pe-muted">Saving…</span> : p.sku === previewSku ? <span className="pp-tick">✓</span> : null}
-                  </button>
-                </li>
-              ))}
-            </ul>
+          {/* the previewed product's enrichment, edited here; a save reloads the canvas */}
+          {current && enrichment && !picking && (
+            <div className="pp-editor">
+              <ProductView
+                key={current.sku}
+                sku={current.sku}
+                mp={mp}
+                item={enrichment.items[current.sku] ?? null}
+                folders={enrichment.folders}
+                onSaved={(it) => setEnrichment((e) => (e ? { ...e, items: { ...e.items, [it.sku]: it } } : e))}
+                inPanel
+                onAfterSave={() => mp.client?.mutate('pages.reloadCanvas')}
+              />
+            </div>
           )}
         </>
       )}

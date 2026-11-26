@@ -71,19 +71,25 @@ const ITEM_QUERY = `query Enrichment($path: String!, $language: String!) {
   item(path: $path, language: $language) { fields(ownFields: true) { name value jsonValue } }
 }`;
 
-/** The enrichment of one product, or null when it has none. */
-export const getEnrichment = cache((categorySlug: string, sku: string) =>
-  unstable_cache(
-    async (): Promise<Enrichment | null> => {
-      const data = (await client.getData(ITEM_QUERY, {
-        path: `${ENRICHMENT_ROOT}/${categorySlug}/${sku}`,
-        language: 'en',
-      })) as { item?: { fields?: EdgeField[] } | null };
-      return data?.item?.fields ? toEnrichment(sku, data.item.fields) : null;
-    },
-    ['enrichment', categorySlug, sku],
-    { revalidate: ENRICHMENT_REVALIDATE_SECONDS, tags: ['enrichment', `enrichment:${sku.toUpperCase()}`] }
-  )()
+const readEnrichment = async (categorySlug: string, sku: string): Promise<Enrichment | null> => {
+  const data = (await client.getData(ITEM_QUERY, {
+    path: `${ENRICHMENT_ROOT}/${categorySlug}/${sku}`,
+    language: 'en',
+  })) as { item?: { fields?: EdgeField[] } | null };
+  return data?.item?.fields ? toEnrichment(sku, data.item.fields) : null;
+};
+
+/**
+ * The enrichment of one product, or null when it has none. `fresh` (Pages editing) skips the one-minute cache, so a save
+ * in the Pages panel shows on the reloaded canvas at once.
+ */
+export const getEnrichment = cache((categorySlug: string, sku: string, fresh = false) =>
+  fresh
+    ? readEnrichment(categorySlug, sku)
+    : unstable_cache(() => readEnrichment(categorySlug, sku), ['enrichment', categorySlug, sku], {
+        revalidate: ENRICHMENT_REVALIDATE_SECONDS,
+        tags: ['enrichment', `enrichment:${sku.toUpperCase()}`],
+      })()
 );
 
 // Experience Edge limits query complexity, so the folders and each folder's items are read in separate, flat queries.

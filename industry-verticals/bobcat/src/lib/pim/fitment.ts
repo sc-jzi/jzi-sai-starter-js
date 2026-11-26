@@ -12,7 +12,11 @@ import { MachineFitment, productOf } from './product-context';
  */
 const PRODUCT_TEMPLATE = 'Product';
 
-export const attachMachineFitment = async (page: Page | null, path: string[] | undefined): Promise<Page | null> => {
+export const attachMachineFitment = async (
+  page: Page | null,
+  path: string[] | undefined,
+  editing = false
+): Promise<Page | null> => {
   const route = page?.layout?.sitecore?.route;
   if (!page || !route || route.templateName !== PRODUCT_TEMPLATE) return page;
 
@@ -32,7 +36,7 @@ export const attachMachineFitment = async (page: Page | null, path: string[] | u
   // Secondary data: without an answer from the PIM the page renders without the row, never a 500
   const [res, enrichment] = await Promise.all([
     getCompatibleAttachments(machine.sku).catch(() => null),
-    machine.category ? getEnrichment(machine.category.slug, machine.sku).catch(() => null) : null,
+    machine.category ? getEnrichment(machine.category.slug, machine.sku, editing).catch(() => null) : null,
   ]);
   if (!res) return page;
   // Marketing's Featured Attachments (enrichment) come first, but only ones that fit: what fits stays PIM data

@@ -63,7 +63,7 @@ export default async function Page({ params }: PageProps) {
       page = await client.getDesignLibraryData(previewData);
     } else {
       // Pages editing: a wildcard (*) item shows its Preview SKU's PIM product (src/lib/pim/product-page.ts)
-      page = await attachMachineFitment(await resolvePreviewProductPage(await client.getPreview(previewData)), undefined);
+      page = await attachMachineFitment(await resolvePreviewProductPage(await client.getPreview(previewData)), undefined, true);
     }
   } else {
     page = await getSitePage(path, site, locale);

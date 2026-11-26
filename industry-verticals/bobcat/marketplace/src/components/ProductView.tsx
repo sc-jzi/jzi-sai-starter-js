@@ -45,12 +45,17 @@ export default function ProductView({
   item,
   folders,
   onSaved,
+  inPanel = false,
+  onAfterSave,
 }: {
   sku: string;
   mp: MarketplaceState;
   item: EnrichmentItem | null;
   folders: Record<string, string>;
   onSaved: (item: EnrichmentItem) => void;
+  /** in the Page Builder panel: no Preview link (Pages is the preview), and the canvas reloads after a save */
+  inPanel?: boolean;
+  onAfterSave?: () => Promise<void> | void;
 }) {
   const [product, setProduct] = useState<PimProduct | null>(null);
   const [groups, setGroups] = useState<AttachmentGroup[] | null>(null);
@@ -103,9 +108,12 @@ export default function ProductView({
       const rv = await fetch('/api/revalidate', { method: 'POST', body: JSON.stringify({ sku: product.sku }) })
         .then((r) => r.json())
         .catch(() => ({ ok: false }));
+      if (onAfterSave) await Promise.resolve(onAfterSave()).catch(() => undefined);
       setMessage({
         kind: 'ok',
-        text: `${item ? 'Saved' : 'Created and saved'} in SitecoreAI.${rv.ok ? ' The site preview is refreshed.' : ' The site preview refreshes within a minute.'}`,
+        text: inPanel
+          ? `${item ? 'Saved' : 'Created and saved'} in SitecoreAI. The page in Pages is reloaded.`
+          : `${item ? 'Saved' : 'Created and saved'} in SitecoreAI.${rv.ok ? ' The site preview is refreshed.' : ' The site preview refreshes within a minute.'}`,
       });
     } catch (e) {
       setMessage({ kind: 'err', text: e instanceof Error ? e.message : String(e) });
@@ -184,7 +192,7 @@ export default function ProductView({
     );
 
   return (
-    <section className="pe-product">
+    <section className={`pe-product${inPanel ? ' pe-product--panel' : ''}`}>
       <div className="pe-product__bar">
         <div>
           <h2 className="pe-h1">
@@ -211,9 +219,11 @@ export default function ProductView({
             title="Re-read this product from the PIM and refresh the site's copy">
             {busy === 'refresh' ? 'Refreshing…' : 'Refresh from PIM'}
           </button>
-          <a className="pe-btn pe-btn--ghost" href={productUrl(product)} target="_blank" rel="noreferrer">
-            Preview
-          </a>
+          {!inPanel && (
+            <a className="pe-btn pe-btn--ghost" href={productUrl(product)} target="_blank" rel="noreferrer">
+              Preview
+            </a>
+          )}
           <button type="button" className="pe-btn pe-btn--ghost" onClick={onPublish} disabled={!canEdit || !item || dirty || !!busy}
             title={dirty ? 'Save first' : !item ? 'Nothing saved yet' : 'Publish to the live site'}>
             {busy === 'publish' ? 'Publishing…' : 'Publish'}

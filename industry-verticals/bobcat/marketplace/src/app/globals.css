@@ -602,3 +602,47 @@ textarea {
   color: var(--pe-accent);
   font-weight: 700;
 }
+
+/* Panel: current product row, collapsible picker, embedded editor */
+.pp-current__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+.pp-change {
+  padding: 5px 12px;
+  font-size: 13px;
+}
+.pp-picker {
+  margin-bottom: 16px;
+}
+.pp-editor {
+  margin-top: 8px;
+}
+/* the product editor inside the panel: tighter, one column until the panel is maximized */
+.pe-product--panel .pe-h1 {
+  font-size: 18px;
+}
+.pe-product--panel .pe-product__bar {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  padding: 8px 0;
+  background: var(--pe-bg);
+}
+.pe-product--panel .pe-panes {
+  grid-template-columns: 1fr;
+}
+.pe-product--panel .pe-pane--pim {
+  order: 2;
+}
+@media (width >= 1100px) {
+  .pe-product--panel .pe-panes {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  }
+  .pe-product--panel .pe-pane--pim {
+    order: 0;
+  }
+}
