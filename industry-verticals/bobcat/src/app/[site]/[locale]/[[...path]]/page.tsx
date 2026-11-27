@@ -15,6 +15,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { resolvePreviewProductPage, resolveProductPage } from 'src/lib/pim/product-page';
 import { attachCategoryListing } from 'src/lib/pim/listing';
 import { attachMachineFitment } from 'src/lib/pim/fitment';
+import { attachProductAnalytics } from 'src/lib/pim/analytics';
 import { productOf } from 'src/lib/pim/product-context';
 
 export const dynamic = 'force-dynamic';
@@ -42,7 +43,7 @@ const getPageWithFallback = async (path: string[] | undefined, site: string, loc
  */
 const getSitePage = async (path: string[] | undefined, site: string, locale: string) => {
   const page = await resolveProductPage(await getPageWithFallback(path, site, locale), path);
-  return attachMachineFitment(await attachCategoryListing(page, path), path);
+  return attachProductAnalytics(await attachMachineFitment(await attachCategoryListing(page, path), path), path);
 };
 
 export default async function Page({ params }: PageProps) {

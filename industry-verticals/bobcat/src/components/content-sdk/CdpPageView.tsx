@@ -1,19 +1,24 @@
 'use client';
 import { CdpHelper, useSitecore } from '@sitecore-content-sdk/nextjs';
 import { useEffect, JSX } from 'react';
-import { pageView } from '@sitecore-content-sdk/events';
+import { event, pageView } from '@sitecore-content-sdk/events';
 import config from 'sitecore.config';
+import { productAnalyticsOf } from 'lib/pim/product-context';
 
 /**
  * This is the CDP page view component.
  * See Sitecore Content SDK documentation for details.
  * https://www.npmjs.com/package/@sitecore-content-sdk/events
+ *
+ * Product pages (catalog plan section 8): a PIM product page's route item is the category's `*` wildcard, so the page view
+ * is named after the product's model instead and carries the product as extension data; a PRODUCT_VIEW custom event with
+ * the same data follows, for audiences and personalization conditions (authored product pages such as E35 send both too).
  */
 const CdpPageView = (): JSX.Element => {
-  const {
-    page: { layout, siteName, mode },
-  } = useSitecore();
+  const { page } = useSitecore();
+  const { layout, siteName, mode } = page;
   const { route, context } = layout.sitecore;
+  const product = productAnalyticsOf(page);
 
   /**
    * Determines if the page view events should be turned off.
@@ -43,15 +48,16 @@ const CdpPageView = (): JSX.Element => {
       context.variantId as string,
       scope
     );
+    const common = { channel: 'WEB', currency: 'USD', language, page: product?.model || route.name };
     // there can be cases where Events are not initialized which are expected to reject
     pageView({
-      channel: 'WEB',
-      currency: 'USD',
-      page: route.name,
+      ...common,
       pageVariantId,
-      language,
-    }).catch((e) => console.debug(e));
-  }, [mode, route, context.variantId, siteName]);
+      ...(product ? { extensionData: { ...product } } : {}),
+    })
+      .then(() => (product ? event({ ...common, type: 'PRODUCT_VIEW', extensionData: { ...product } }) : null))
+      .catch((e) => console.debug(e));
+  }, [mode, route, context.variantId, siteName, product]);
 
   return <></>;
 };

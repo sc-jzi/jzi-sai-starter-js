@@ -20,7 +20,7 @@ import { DEFAULT_IMG_URL } from 'src/_data/customizations';
 import Link_a258c208ba01265ca0aa9c7abae745cc7141aa63 from 'next/link';
 import { ExampleDataTag, PortalLoading, PortalBlock } from 'lib/portal/ui';
 import { usePortalData, formatPortalDate, signOut } from 'lib/portal/use-portal-data';
-import { identity, pageView } from '@sitecore-content-sdk/events';
+import { identity, event, pageView } from '@sitecore-content-sdk/events';
 import useVisibility from 'src/hooks/useVisibility';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
@@ -29,7 +29,7 @@ import { DottedAccent } from 'components/non-sitecore/DottedAccent';
 import { FacebookIcon, FacebookShareButton, LinkedinIcon, LinkedinShareButton, TwitterIcon, TwitterShareButton } from 'react-share';
 import Head from 'next/head';
 import { plainText, toJsonLd } from 'lib/json-ld';
-import { productOf, productPath, fitmentOf, carrierLabel, FACET_UNITS, listingOf } from 'lib/pim/product-context';
+import { productOf, productPath, fitmentOf, carrierLabel, FACET_UNITS, listingOf, productAnalyticsOf } from 'lib/pim/product-context';
 import { ParallaxBanner } from 'react-scroll-parallax';
 import { ParallaxBackgroundImage } from 'components/non-sitecore/ParallaxBackgroundImage';
 import { IconAccent } from 'components/non-sitecore/IconAccent';
@@ -144,6 +144,7 @@ const importMap = [
     module: '@sitecore-content-sdk/events',
     exports: [
       { name: 'identity', value: identity },
+      { name: 'event', value: event },
       { name: 'pageView', value: pageView },
     ]
   },
@@ -214,6 +215,7 @@ const importMap = [
       { name: 'carrierLabel', value: carrierLabel },
       { name: 'FACET_UNITS', value: FACET_UNITS },
       { name: 'listingOf', value: listingOf },
+      { name: 'productAnalyticsOf', value: productAnalyticsOf },
     ]
   },
   {

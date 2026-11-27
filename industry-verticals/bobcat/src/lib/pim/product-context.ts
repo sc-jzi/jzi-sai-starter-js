@@ -134,3 +134,30 @@ export interface MachineFitment {
 
 export const fitmentOf = (page: Page | null | undefined): MachineFitment | null =>
   (page?.layout?.sitecore?.context as { pimFitment?: MachineFitment } | undefined)?.pimFitment ?? null;
+
+/**
+ * What the analytics events (CdpPageView: the page view and PRODUCT_VIEW) say about the product on a page, set server-side on
+ * `layout.sitecore.context.productAnalytics` (pim/analytics.ts) for PIM wildcard pages and authored product pages alike.
+ * Flat values only: CDP stores them as the event's `ext` attributes (at most 50).
+ */
+export interface ProductAnalytics {
+  sku: string;
+  model: string;
+  product_name: string;
+  category: string;
+  category_name: string;
+  product_kind: 'machine' | 'attachment';
+  status: 'active' | 'discontinued' | 'draft';
+  /** the page is a Sitecore item (authored) or the category wildcard filled from the PIM */
+  source: 'pim' | 'authored';
+  data_origin: 'real' | 'illustrative';
+  successor_sku?: string;
+  /** PIM MSRP, illustrative (D4) */
+  price?: number;
+  enriched: boolean;
+  badge?: string;
+  has_offer: boolean;
+}
+
+export const productAnalyticsOf = (page: Page | null | undefined): ProductAnalytics | null =>
+  (page?.layout?.sitecore?.context as { productAnalytics?: ProductAnalytics } | undefined)?.productAnalytics ?? null;
